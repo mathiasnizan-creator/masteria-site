@@ -1,0 +1,501 @@
+import { useState } from 'react'
+import { useLocation, Link } from 'react-router-dom'
+import {
+  Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
+  Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
+  ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
+} from 'lucide-react'
+import SEOHead from '../components/SEOHead'
+import ToolLogo from '../components/ToolLogo'
+import { HUBS, SPOKES, METIERS } from '../data/seo-pages'
+import { HUB_CONTENT } from '../data/hub-content'
+
+const METIER_ICONS = {
+  marketing:             Megaphone,
+  'ressources-humaines': Users,
+  rh:                    Users,
+  finance:               TrendingUp,
+  commercial:            Briefcase,
+  juridique:             Scale,
+  communication:         Radio,
+  management:            Target,
+  assistante:            CalendarCheck,
+  seo:                   Search,
+  'service-client':      Headphones,
+  informatique:          Server,
+  pedagogique:           GraduationCap,
+}
+
+/* ── Composant accordéon FAQ ──────────────────────────────────── */
+function FaqItem({ q, a }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div style={{
+      borderBottom: '1px solid #E5E7EB',
+    }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          width: '100%', textAlign: 'left', background: 'none', border: 'none',
+          padding: '20px 0', cursor: 'pointer',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16,
+        }}
+        aria-expanded={open}
+      >
+        <span style={{ fontSize: 16, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.4 }}>{q}</span>
+        <ChevronDown
+          size={20}
+          strokeWidth={2}
+          style={{
+            flexShrink: 0, color: '#6B7280', marginTop: 2,
+            transform: open ? 'rotate(180deg)' : 'none',
+            transition: 'transform 200ms',
+          }}
+        />
+      </button>
+      {open && (
+        <p style={{
+          fontSize: 15, color: '#374151', lineHeight: 1.75,
+          paddingBottom: 20, marginTop: -4,
+        }}>
+          {a}
+        </p>
+      )}
+    </div>
+  )
+}
+
+export default function HubPage() {
+  const location = useLocation()
+  const hubSlug = location.pathname.replace(/^\//, '')
+  const hub = HUBS.find(h => h.slug === hubSlug)
+
+  if (!hub) {
+    return (
+      <div style={{ padding: '120px 40px', textAlign: 'center', fontFamily: 'DM Sans, sans-serif' }}>
+        <h1>Page non trouvée</h1>
+        <Link to="/" style={{ color: '#2563EB' }}>Retour à l'accueil</Link>
+      </div>
+    )
+  }
+
+  const spokes      = SPOKES.filter(s => s.hubSlug === hub.slug)
+  const hubContent  = HUB_CONTENT[hub.id] || {}
+  const { why = [], programme = [], faq = [] } = hubContent
+
+  /* JSON-LD : FAQPage + Course */
+  const jsonLdFaq = faq.length ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  } : null
+
+  const jsonLdCourse = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: hub.h1,
+    description: hub.metaDesc,
+    provider: {
+      '@type': 'Organization',
+      name: 'Masteria',
+      url: 'https://www.master-ia.fr',
+      hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'Qualiopi' },
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '760',
+      priceCurrency: 'EUR',
+      description: 'Par jour et par participant (inter-entreprises)',
+    },
+    courseWorkload: 'PT14H',
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: ['Blended', 'Online', 'Onsite'],
+      location: 'France, Belgique, Suisse',
+    },
+  }
+
+  return (
+    <>
+      <SEOHead
+        title={hub.metaTitle}
+        description={hub.metaDesc}
+        slug={hub.slug}
+      />
+      {jsonLdFaq && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
+      )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCourse) }} />
+
+      {/* NAV */}
+      <nav style={{
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+        background: 'rgba(10,10,10,0.95)', backdropFilter: 'blur(8px)',
+        padding: '16px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <img src="/assets/logo-horizontal.png" alt="Masteria, Centre de formation IA certifié Qualiopi" width="1920" height="1080" loading="lazy" decoding="async" style={{ height: 36, width: 'auto', display: 'block' }} />
+        </Link>
+        <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
+          <Link to="/formations" style={{ color: '#fff', textDecoration: 'none', fontSize: 15 }}>Formations</Link>
+          <Link to="/conseil-ia" style={{ color: '#fff', textDecoration: 'none', fontSize: 15 }}>Conseil IA</Link>
+          <Link to="/contact" style={{
+            background: '#2563EB', color: '#fff', padding: '10px 20px',
+            borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 600,
+          }}>Contacter notre équipe</Link>
+        </div>
+      </nav>
+
+      {/* HERO clair */}
+      <section style={{
+        paddingTop: 120, paddingBottom: 80, paddingLeft: 40, paddingRight: 40,
+        background: '#FAFAF7', color: '#0A0A0A', textAlign: 'center',
+        borderBottom: '1px solid #E5E7EB',
+      }}>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 8,
+          background: hub.colorLight, color: hub.color,
+          padding: '6px 16px', borderRadius: 99, fontSize: 14, fontWeight: 700,
+          marginBottom: 24,
+        }}>
+          <ToolLogo tool={hub.id} size={18} color={hub.color} />
+          <span>{hub.tool}</span>
+        </div>
+        <h1 style={{
+          fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 900,
+          fontFamily: 'Nunito, sans-serif', marginBottom: 24, lineHeight: 1.1,
+          color: '#0A0A0A', letterSpacing: '-0.02em',
+        }}>
+          {hub.h1}
+        </h1>
+        <p style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }}>
+          {hub.intro}
+        </p>
+        <p style={{ fontSize: 16, color: hub.color, maxWidth: 580, margin: '0 auto 40px', fontStyle: 'italic', fontWeight: 600 }}>
+          {hub.pitch}
+        </p>
+        <Link to="/contact" style={{
+          display: 'inline-block', background: hub.color, color: '#fff',
+          padding: '14px 32px', borderRadius: 8, textDecoration: 'none',
+          fontSize: 16, fontWeight: 700, boxShadow: `0 4px 12px ${hub.color}30`,
+        }}>
+          Contacter notre équipe
+        </Link>
+
+        {/* Badges réassurance */}
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center', marginTop: 40 }}>
+          {[
+            { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
+            { icon: Wallet,            label: 'Finançable OPCO' },
+            { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
+            { icon: Building2,         label: 'Intra ou inter-entreprises' },
+          ].map(({ icon: Icon, label }) => (
+            <span
+              key={label}
+              style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 6, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+            >
+              <Icon size={15} strokeWidth={2.2} style={{ color: hub.color }} />
+              {label}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* BADGES DE CONFIANCE, chiffres clés */}
+      <section style={{
+        background: '#fff', padding: '32px 40px',
+        display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap',
+        borderBottom: '1px solid #E5E7EB',
+      }}>
+        {[
+          { label: '+500 formés', sub: 'depuis 2023' },
+          { label: '100% finançable', sub: 'via OPCO' },
+          { label: '98% satisfaction', sub: 'taux moyen' },
+          { label: 'Qualiopi', sub: 'certifié' },
+        ].map(b => (
+          <div key={b.label} style={{ textAlign: 'center' }}>
+            <div style={{ fontWeight: 800, fontSize: 20, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{b.label}</div>
+            <div style={{ fontSize: 13, color: '#6B7280' }}>{b.sub}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* POURQUOI SE FORMER */}
+      {why.length > 0 && (
+        <section style={{ padding: '80px 40px', background: '#fff' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
+              fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
+            }}>
+              Pourquoi former vos équipes à {hub.tool} ?
+            </h2>
+            <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
+              Des bénéfices concrets, mesurables dès le retour en poste.
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gap: 28,
+            }}>
+              {why.map((item, i) => (
+                <div key={i} style={{
+                  background: '#F9FAFB', borderRadius: 12, padding: '28px 28px 32px',
+                  borderLeft: `4px solid ${hub.color}`,
+                }}>
+                  <div style={{
+                    width: 36, height: 36, borderRadius: 8, background: hub.colorLight,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    marginBottom: 16,
+                  }}>
+                    <span style={{ fontSize: 16, fontWeight: 900, color: hub.color }}>{i + 1}</span>
+                  </div>
+                  <h3 style={{
+                    fontSize: 15, fontWeight: 800, color: '#0A0A0A',
+                    fontFamily: 'Nunito, sans-serif', marginBottom: 10, lineHeight: 1.35,
+                  }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* GRILLE DES SPOKES */}
+      <section style={{ padding: '80px 40px', background: why.length ? '#F9FAFB' : '#fff', maxWidth: 1100, margin: '0 auto' }}>
+        <h2 style={{
+          fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800,
+          fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
+        }}>
+          {hub.tool} adapté à chaque métier
+        </h2>
+        <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
+          Chaque formation est construite autour des cas d'usage réels de votre fonction.
+        </p>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: 24,
+        }}>
+          {spokes.map(spoke => {
+            const metierData = METIERS.find(m => m.slug === spoke.metierSlug)
+            return (
+              <Link
+                key={spoke.slug}
+                to={`/${spoke.slug}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <div style={{
+                  border: '2px solid #E5E7EB',
+                  borderRadius: 12, padding: 28,
+                  background: '#fff',
+                  transition: 'box-shadow 0.2s',
+                  cursor: 'pointer',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    width: 48, height: 48, borderRadius: 12,
+                    background: spoke.toolColorLight,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    marginBottom: 14,
+                  }}>
+                    {(() => { const Icon = METIER_ICONS[spoke.metierSlug]; return Icon ? <Icon size={22} color={spoke.toolColor} strokeWidth={1.75} /> : null })()}
+                  </div>
+                  <h3 style={{
+                    fontSize: 18, fontWeight: 800, color: '#0A0A0A',
+                    fontFamily: 'Nunito, sans-serif', marginBottom: 8,
+                  }}>
+                    {hub.tool} pour {spoke.metier}
+                  </h3>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, marginBottom: 16 }}>
+                    {metierData?.desc || spoke.intro?.slice(0, 120) + '…'}
+                  </p>
+                  <span style={{ color: spoke.toolColor, fontWeight: 700, fontSize: 14 }}>
+                    Voir le programme →
+                  </span>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* CTA MILIEU DE PAGE */}
+      <section style={{
+        padding: '48px 40px',
+        background: `linear-gradient(135deg, ${hub.color} 0%, ${hub.color}dd 100%)`,
+        color: '#fff',
+      }}>
+        <div style={{
+          maxWidth: 1000, margin: '0 auto',
+          display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24,
+        }}>
+          <div style={{ flex: '1 1 360px' }}>
+            <h2 style={{
+              fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800,
+              fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25,
+            }}>
+              Envie de former vos équipes à {hub.tool} ?
+            </h2>
+            <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
+              Réponse sous 24h · Programme sur mesure · Inter ou intra-entreprises
+            </p>
+          </div>
+          <Link to="/contact" style={{
+            background: '#fff', color: hub.color, padding: '14px 28px',
+            borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 800,
+            whiteSpace: 'nowrap',
+          }}>
+            Contacter notre équipe →
+          </Link>
+        </div>
+      </section>
+
+      {/* PROGRAMME TYPE */}
+      {programme.length > 0 && (
+        <section style={{ padding: '80px 40px', background: '#0A0A0A', color: '#fff' }}>
+          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
+              fontFamily: 'Nunito, sans-serif', marginBottom: 12,
+            }}>
+              Programme de formation {hub.tool}
+            </h2>
+            <p style={{ color: '#9CA3AF', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
+              2 jours · 14 heures · Certifié Qualiopi · Adapté à votre secteur
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: 24 }}>
+              {programme.map((day, i) => (
+                <div key={i} style={{
+                  background: '#1C1C1C', borderRadius: 12, padding: '28px 28px 32px',
+                  borderTop: `3px solid ${hub.color}`,
+                }}>
+                  <div style={{
+                    display: 'inline-block', background: hub.colorLight, color: hub.color,
+                    fontSize: 12, fontWeight: 700, padding: '4px 12px', borderRadius: 99,
+                    marginBottom: 14,
+                  }}>
+                    Jour {day.day}
+                  </div>
+                  <h3 style={{
+                    fontSize: 15, fontWeight: 800, color: '#fff',
+                    fontFamily: 'Nunito, sans-serif', marginBottom: 18, lineHeight: 1.35,
+                  }}>
+                    {day.title}
+                  </h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {day.items.map((item, j) => (
+                      <li key={j} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                        <span style={{ color: hub.color, fontWeight: 900, flexShrink: 0, marginTop: 1 }}>›</span>
+                        <span style={{ fontSize: 14, color: '#D1D5DB', lineHeight: 1.6 }}>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: 40, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+              <Link to="/contact" style={{
+                background: '#2563EB', color: '#fff', padding: '14px 28px',
+                borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700,
+              }}>
+                Contacter notre équipe
+              </Link>
+              <Link to="/contact" style={{
+                background: 'transparent', color: '#9CA3AF', padding: '14px 28px',
+                borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 600,
+                border: '1px solid #374151',
+              }}>
+                Questions sur le financement OPCO
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {faq.length > 0 && (
+        <section style={{ padding: '80px 40px', background: '#fff' }}>
+          <div style={{ maxWidth: 800, margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
+              fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
+            }}>
+              Questions fréquentes sur la formation {hub.tool}
+            </h2>
+            <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 40, maxWidth: 580 }}>
+              Tout ce que vous devez savoir avant de vous inscrire.
+            </p>
+            <div>
+              {faq.map((item, i) => (
+                <FaqItem key={i} q={item.q} a={item.a} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* MAILLAGE INTERNE, autres formations */}
+      <section style={{ padding: '48px 40px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: 16 }}>
+            Autres formations IA disponibles
+          </p>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            {HUBS.filter(h => h.id !== hub.id && h.id !== 'metiers').map(h => (
+              <Link key={h.slug} to={`/${h.slug}`} style={{
+                background: '#fff', border: '1px solid #E5E7EB', borderRadius: 8,
+                padding: '10px 16px', textDecoration: 'none',
+                display: 'flex', alignItems: 'center', gap: 8,
+                fontSize: 14, fontWeight: 600, color: '#374151',
+                transition: 'border-color 150ms',
+              }}>
+                <ToolLogo tool={h.id} size={16} color={h.color} />
+                Formation {h.tool}
+              </Link>
+            ))}
+            <Link to="/formation-ia-par-metier" style={{
+              background: '#fff', border: '1px solid #E5E7EB', borderRadius: 8,
+              padding: '10px 16px', textDecoration: 'none',
+              fontSize: 14, fontWeight: 600, color: '#374151',
+            }}>
+              Formations par métier →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA BAS DE PAGE */}
+      <section style={{
+        background: '#0A0A0A', color: '#fff',
+        padding: '80px 40px', textAlign: 'center',
+      }}>
+        <h2 style={{
+          fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900,
+          fontFamily: 'Nunito, sans-serif', marginBottom: 16,
+        }}>
+          Pas encore sûr de quelle formation vous convient ?
+        </h2>
+        <p style={{ color: '#9CA3AF', fontSize: 16, marginBottom: 32, maxWidth: 500, margin: '0 auto 32px' }}>
+          Échangeons 20 minutes pour identifier le programme idéal pour vos équipes.
+        </p>
+        <Link to="/contact" style={{
+          display: 'inline-block', background: '#2563EB', color: '#fff',
+          padding: '14px 32px', borderRadius: 8, textDecoration: 'none',
+          fontSize: 16, fontWeight: 700,
+        }}>
+          Contacter notre équipe
+        </Link>
+      </section>
+    </>
+  )
+}

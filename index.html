@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Favicons (logo Masteria) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Thème (barre de statut mobile) -->
+    <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- Title & description par défaut (écrasés par react-helmet-async sur chaque page) -->
+    <title>Formation IA entreprise, certifiée Qualiopi, Masteria</title>
+    <meta name="description" content="Centre de formation IA certifié Qualiopi. +500 professionnels formés à ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI. Finançable OPCO. France, Suisse, Belgique." />
+
+    <!-- Robots & indexation -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="Masteria" />
+    <meta name="publisher" content="Masteria" />
+    <meta name="geo.region" content="FR-ARA" />
+    <meta name="geo.placename" content="Lyon" />
+
+    <!-- Canonical par défaut (écrasé par SEOHead) -->
+    <link rel="canonical" href="https://www.master-ia.fr/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Masteria" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://www.master-ia.fr/" />
+    <meta property="og:title" content="Formation IA entreprise, certifiée Qualiopi, Masteria" />
+    <meta property="og:description" content="Centre de formation IA certifié Qualiopi. +500 professionnels formés. Finançable OPCO. France, Suisse, Belgique." />
+    <meta property="og:image" content="https://www.master-ia.fr/assets/logo-horizontal.png" />
+    <meta property="og:image:alt" content="Masteria, centre de formation IA certifié Qualiopi" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Formation IA entreprise, certifiée Qualiopi, Masteria" />
+    <meta name="twitter:description" content="Centre de formation IA certifié Qualiopi. +500 professionnels formés à ChatGPT, Copilot, Gemini, Claude, Mistral." />
+    <meta name="twitter:image" content="https://www.master-ia.fr/assets/logo-horizontal.png" />
+
+    <!-- Préconnexions & préchargements -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Organization global (visible par les crawlers sans rendu JS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "EducationalOrganization", "LocalBusiness"],
+      "@id": "https://www.master-ia.fr/#organization",
+      "name": "Masteria",
+      "legalName": "Masteria",
+      "url": "https://www.master-ia.fr",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.master-ia.fr/assets/logo-horizontal.png",
+        "width": 512,
+        "height": 128
+      },
+      "image": "https://www.master-ia.fr/assets/logo-horizontal.png",
+      "description": "Centre de formation et cabinet de conseil en intelligence artificielle. Formations ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI certifiées Qualiopi, finançables OPCO.",
+      "slogan": "L'intelligence artificielle au service de votre excellence opérationnelle",
+      "foundingDate": "2022",
+      "founder": {
+        "@type": "Person",
+        "name": "Mathias Nizan",
+        "jobTitle": "Fondateur de Masteria",
+        "sameAs": ["https://www.linkedin.com/in/mathias-nizan/"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "17 Rue Richan",
+        "postalCode": "69004",
+        "addressLocality": "Lyon",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "France" },
+        { "@type": "Country", "name": "Suisse" },
+        { "@type": "Country", "name": "Belgique" }
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+33-6-67-75-41-28",
+        "email": "mathias.nizan@master-ia.fr",
+        "availableLanguage": ["fr", "en"],
+        "areaServed": ["FR", "CH", "BE"]
+      }],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Certification Qualiopi"
+      },
+      "sameAs": ["https://www.linkedin.com/in/mathias-nizan/"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:40px;text-align:center;font-family:sans-serif;">
+        Masteria, formation IA en entreprise. Pour afficher ce site, activez JavaScript ou consultez
+        <a href="https://www.master-ia.fr">master-ia.fr</a>.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

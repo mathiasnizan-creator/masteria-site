@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    { "source": "/((?!api).*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    { "source": "/formation-ia-et-chatgpt-pour-la-direction-generale", "destination": "/formation-chatgpt-management", "permanent": true },
+    { "source": "/formation-chatgpt", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-chatgpt-pour-la-comptabilite-et-la-finance", "destination": "/formation-chatgpt-finance", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-les-equipes-administratives", "destination": "/formation-chatgpt-assistante", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-le-marketing-et-la-communication", "destination": "/formation-chatgpt-marketing", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-les-ressources-humaines", "destination": "/formation-chatgpt-ressources-humaines", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-le-commercial-et-la-vente", "destination": "/formation-chatgpt-commercial", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-le-service-client", "destination": "/formation-chatgpt-service-client", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-la-gestion-de-projet", "destination": "/formation-chatgpt-management", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-pour-les-equipes-pedagogiques", "destination": "/formation-chatgpt-pedagogique", "permanent": true },
+    { "source": "/formation-ia-et-chatgpt-seo", "destination": "/formation-chatgpt-seo", "permanent": true },
+    { "source": "/formation-chatgpt-lyon", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-chatgpt-paris", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-chatgpt-marseille", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-chatgpt-nice", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-chatgpt-valence", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-chatgpt-distance", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/chat-gpt-formation-professionnelle", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-professionnelle-chatgpt", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-ia-chatgpt", "destination": "/formation-chatgpt-entreprise", "permanent": true },
+    { "source": "/formation-intelligence-artificielle", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/formation-ia-entreprise", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/formation-ia-lyon", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/formation-ia-marseille", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/formation-ia-suisse-romande", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/organisme-de-formation-ia", "destination": "/a-propos", "permanent": true },
+    { "source": "/centre-de-formation-ia-et-chatgpt-formations-ia-et-chatgpt", "destination": "/a-propos", "permanent": true },
+
+    { "source": "/formations-intelligence-artificielle-entreprise", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/formation-ia-pour-les-appels-doffres", "destination": "/formation-chatgpt-commercial", "permanent": true },
+    { "source": "/formation-ia-pour-entreprise", "destination": "/formation-ia-par-metier", "permanent": true },
+    { "source": "/centre-formation-ia-entreprise", "destination": "/a-propos", "permanent": true },
+    { "source": "/demande-inscription", "destination": "/contact", "permanent": true }
+  ]
+}

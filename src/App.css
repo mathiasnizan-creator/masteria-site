@@ -1,0 +1,53 @@
+/* ════════════════════════════════════════════════════════════════
+   RESET & BASE
+   ════════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+  color: #0A0A0A;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* évite le scroll horizontal accidentel */
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+/* empêche les inputs zoomés sur iOS */
+input, select, textarea, button { font-size: 16px; font-family: inherit; }
+
+/* ════════════════════════════════════════════════════════════════
+   HELPERS RESPONSIVE (classes utilitaires optionnelles)
+   ════════════════════════════════════════════════════════════════ */
+.hide-mobile   { display: initial; }
+.show-mobile   { display: none; }
+
+@media (max-width: 767px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: initial !important; }
+}
+
+/* Prévenir les débordements classiques */
+h1, h2, h3, p, a, span, div {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SCROLL LOCK (quand le menu mobile est ouvert)
+   ════════════════════════════════════════════════════════════════ */
+body.no-scroll { overflow: hidden; }
