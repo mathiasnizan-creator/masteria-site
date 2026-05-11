@@ -29,9 +29,35 @@ export default function SEOHead({
   articleData,
   ogImage,
   noindex = false,
+  extraJsonLd,
+  locale,           // ex: 'fr-CH' ou 'fr-BE' — ajoute un hreflang supplémentaire pour le SEO international
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
+
+  /* ───── JSON-LD Person (Mathias Nizan — E-E-A-T réutilisable) ───── */
+  const jsonLdPerson = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#mathias-nizan`,
+    name: 'Mathias Nizan',
+    givenName: 'Mathias',
+    familyName: 'Nizan',
+    jobTitle: 'Fondateur & formateur principal',
+    worksFor: { '@id': `${SITE_URL}/#organization` },
+    url: `${SITE_URL}/centre-formation-ia-entreprise`,
+    image: `${SITE_URL}/assets/mathias-nizan@240.jpg`,
+    sameAs: [
+      'https://www.linkedin.com/in/mathias-nizan/',
+      'https://www.linkedin.com/company/masteria-conseil-et-formation-ia/',
+    ],
+    knowsAbout: [
+      'Intelligence artificielle générative',
+      'ChatGPT', 'Microsoft Copilot', 'Google Gemini', 'Claude (Anthropic)', 'Mistral AI',
+      'Prompt engineering', 'Formation professionnelle IA', 'Transformation par l\'IA',
+    ],
+    description: "Fondateur de Masteria, centre de formation IA certifié Qualiopi. Forme PME, ETI et grands groupes à ChatGPT, Copilot, Gemini, Claude et Mistral AI depuis 2022.",
+  }
 
   /* ───── JSON-LD Organization (référence globale) ───── */
   const jsonLdOrg = {
@@ -39,11 +65,18 @@ export default function SEOHead({
     '@type': ['Organization', 'EducationalOrganization'],
     '@id': `${SITE_URL}/#organization`,
     name: 'Masteria',
+    alternateName: 'Master IA',
     url: SITE_URL,
-    logo: `${SITE_URL}/assets/logo-horizontal.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/assets/logo-square.png`,
+      width: 512,
+      height: 512,
+    },
     description:
       "Centre de formation IA certifié Qualiopi et cabinet de conseil. Formations ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI, finançables OPCO.",
-    founder: { '@type': 'Person', name: 'Mathias Nizan' },
+    foundingDate: '2022',
+    founder: { '@id': `${SITE_URL}/#mathias-nizan` },
     address: {
       '@type': 'PostalAddress',
       streetAddress: '17 Rue Richan',
@@ -51,15 +84,58 @@ export default function SEOHead({
       addressLocality: 'Lyon',
       addressCountry: 'FR',
     },
-    areaServed: ['FR', 'CH', 'BE'],
+    areaServed: [
+      { '@type': 'Country', name: 'France' },
+      { '@type': 'Country', name: 'Suisse' },
+      { '@type': 'Country', name: 'Belgique' },
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
       telephone: '+33-6-67-75-41-28',
       email: 'mathias.nizan@master-ia.fr',
       availableLanguage: ['fr', 'en'],
+      areaServed: ['FR', 'CH', 'BE'],
     },
-    sameAs: ['https://www.linkedin.com/in/mathias-nizan/'],
+    sameAs: [
+      'https://www.linkedin.com/company/masteria-conseil-et-formation-ia/',
+      'https://share.google/AoLHOIoAT9yMocn1s',
+      'https://www.linkedin.com/in/mathias-nizan/',
+    ],
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Certification Qualiopi',
+      credentialCategory: 'Actions de formation',
+      recognizedBy: { '@type': 'Organization', name: 'France Compétences' },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '1500',
+      reviewCount: '1500',
+    },
+  }
+
+  /* ───── JSON-LD WebSite (global + SearchAction) ───── */
+  const jsonLdWebsite = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: 'Masteria',
+    description: "Centre de formation IA certifié Qualiopi et cabinet de conseil.",
+    inLanguage: 'fr-FR',
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/formation-intelligence-artificielle?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   }
 
   /* ───── JSON-LD WebPage (page courante) ───── */
@@ -76,34 +152,86 @@ export default function SEOHead({
     primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
   }
 
-  /* ───── JSON-LD Course ───── */
+  /* ───── JSON-LD Course (enrichi : aggregateRating, teaches, timeRequired, hasCredential) ───── */
   const jsonLdCourse = courseData
     ? {
         '@context': 'https://schema.org',
         '@type': 'Course',
+        '@id': `${fullUrl}#course`,
         name: courseData.name,
         description: courseData.description,
         provider: {
           '@type': 'Organization',
           '@id': `${SITE_URL}/#organization`,
           name: 'Masteria',
+          url: SITE_URL,
           sameAs: SITE_URL,
         },
-        educationalLevel: courseData.level || 'Tous niveaux',
-        inLanguage: 'fr',
+        educationalLevel: courseData.level || 'Intermédiaire',
+        inLanguage: 'fr-FR',
         url: fullUrl,
+        // Compétences enseignées (objectifs pédagogiques)
+        teaches: courseData.teaches || courseData.objectives || undefined,
+        // Sujets couverts (rich result Course)
+        about: courseData.about || courseData.tool || undefined,
+        // Durée totale au format ISO 8601 (PT14H = 14 heures = 2 jours)
+        timeRequired: courseData.timeRequired || 'PT14H',
+        // Pas de prérequis sauf indication contraire
+        coursePrerequisites: courseData.prerequisites || 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
+        // Certification Qualiopi (rich result)
+        occupationalCredentialAwarded: {
+          '@type': 'EducationalOccupationalCredential',
+          name: 'Attestation de fin de formation',
+          credentialCategory: 'Attestation',
+          recognizedBy: { '@type': 'Organization', name: 'Masteria (organisme certifié Qualiopi)' },
+        },
+        // Note moyenne sur le catalogue Masteria (rich result étoiles)
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          bestRating: '5',
+          worstRating: '1',
+          ratingCount: '1500',
+          reviewCount: '1500',
+        },
         hasCourseInstance: {
           '@type': 'CourseInstance',
-          courseMode: ['Onsite', 'Online'],
-          courseWorkload: courseData.duration || 'PT7H',
+          courseMode: ['Onsite', 'Online', 'Blended'],
+          courseWorkload: courseData.duration || 'PT14H',
+          inLanguage: 'fr-FR',
           location: {
             '@type': 'Place',
-            name: 'Masteria, présentiel ou distanciel',
+            name: 'Masteria — présentiel France/Suisse/Belgique ou distanciel',
             address: {
               '@type': 'PostalAddress',
-              addressCountry: 'FR',
+              streetAddress: '17 Rue Richan',
+              postalCode: '69004',
               addressLocality: 'Lyon',
+              addressRegion: 'Auvergne-Rhône-Alpes',
+              addressCountry: 'FR',
             },
+          },
+          offers: {
+            '@type': 'Offer',
+            '@id': `${fullUrl}#offer`,
+            price: courseData.price || '760',
+            priceCurrency: 'EUR',
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              price: courseData.price || '760',
+              priceCurrency: 'EUR',
+              valueAddedTaxIncluded: false,
+              description: 'Tarif inter-entreprises, par jour et par participant. Intra : 1 500 €/jour pour groupe jusqu\'à 12.',
+            },
+            category: 'Formation professionnelle',
+            availability: 'https://schema.org/InStock',
+            url: fullUrl,
+            seller: { '@id': `${SITE_URL}/#organization` },
+            eligibleRegion: [
+              { '@type': 'Country', name: 'France' },
+              { '@type': 'Country', name: 'Suisse' },
+              { '@type': 'Country', name: 'Belgique' },
+            ],
           },
         },
         offers: {
@@ -114,11 +242,57 @@ export default function SEOHead({
           availability: 'https://schema.org/InStock',
           url: fullUrl,
         },
-        audience: courseData.audience
-          ? { '@type': 'EducationalAudience', educationalRole: courseData.audience }
-          : undefined,
+        audience: {
+          '@type': 'EducationalAudience',
+          educationalRole: courseData.audience || 'Professionnels en entreprise',
+          audienceType: 'B2B',
+        },
+        // Financement OPCO (rich result)
+        offers_alternative: undefined,
+        // Indique que la formation est financée publiquement (OPCO)
+        funder: {
+          '@type': 'Organization',
+          name: 'OPCO (financement professionnel)',
+          description: 'Formation 100% finançable par les Opérateurs de Compétences (OPCO Atlas, AKTO, OPCO EP, etc.)',
+        },
       }
     : null
+
+  /* ───── JSON-LD HowTo (modules de formation = étapes) ───── */
+  const jsonLdHowTo = courseData?.modules && courseData.modules.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: `Comment se déroule la ${courseData.name} ?`,
+        description: `Programme structuré sur ${Math.ceil((courseData.modules.length) / 4)} jours en ${courseData.modules.length} modules pratiques.`,
+        totalTime: courseData.timeRequired || 'PT14H',
+        estimatedCost: {
+          '@type': 'MonetaryAmount',
+          currency: 'EUR',
+          value: courseData.price || '760',
+        },
+        tool: courseData.tool ? [{ '@type': 'HowToTool', name: courseData.tool }] : undefined,
+        step: courseData.modules.map((m, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: m.title,
+          text: m.description || m.title,
+          url: `${fullUrl}#module-${i + 1}`,
+        })),
+      }
+    : null
+
+  /* ───── JSON-LD Speakable (Google Assistant + SEO vocal) ───── */
+  const jsonLdSpeakable = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${fullUrl}#speakable`,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.intro', '[itemprop=description]'],
+    },
+    url: fullUrl,
+  }
 
   /* ───── JSON-LD FAQPage ───── */
   const jsonLdFaq = faqItems && faqItems.length
@@ -165,7 +339,7 @@ export default function SEOHead({
         publisher: {
           '@type': 'Organization',
           name: 'Masteria',
-          logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo-horizontal.png` },
+          logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo-square.png` },
         },
         mainEntityOfPage: { '@type': 'WebPage', '@id': fullUrl },
         articleSection: articleData.tag,
@@ -182,6 +356,13 @@ export default function SEOHead({
 
       {/* Canonical */}
       <link rel="canonical" href={fullUrl} />
+
+      {/* hreflang */}
+      <link rel="alternate" hrefLang="fr-FR" href={fullUrl} />
+      {locale && locale !== 'fr-FR' && (
+        <link rel="alternate" hrefLang={locale} href={fullUrl} />
+      )}
+      <link rel="alternate" hrefLang="x-default" href={fullUrl} />
 
       {/* Robots */}
       {noindex ? (
@@ -202,12 +383,20 @@ export default function SEOHead({
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={`${title}, Masteria`} />
 
-      {/* Twitter */}
+      {/* Twitter (avec site + creator pour SEO authority) */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
       <meta name="twitter:image:alt" content={`${title}, Masteria`} />
+      <meta name="twitter:site" content="@masteria_ia" />
+      <meta name="twitter:creator" content="@mathias_nizan" />
+
+      {/* Keywords (utile pour Bing/Yandex + meilleure pertinence sémantique) */}
+      <meta name="keywords" content="formation IA entreprise, formation ChatGPT, formation Claude IA, formation Microsoft Copilot, formation Google Gemini, formation Mistral AI, IA en entreprise, certifié Qualiopi, finançable OPCO, Lyon" />
+
+      {/* Pragma : pas de cache pour navigation entre pages prerendées */}
+      <meta httpEquiv="content-language" content="fr-FR" />
 
       {/* Article meta (si article) */}
       {articleData && articleData.datePublished && (
@@ -225,11 +414,18 @@ export default function SEOHead({
 
       {/* JSON-LD */}
       <script type="application/ld+json">{JSON.stringify(jsonLdOrg)}</script>
+      <script type="application/ld+json">{JSON.stringify(jsonLdPerson)}</script>
+      <script type="application/ld+json">{JSON.stringify(jsonLdWebsite)}</script>
       <script type="application/ld+json">{JSON.stringify(jsonLdWebPage)}</script>
       {jsonLdCourse && <script type="application/ld+json">{JSON.stringify(jsonLdCourse)}</script>}
+      {jsonLdHowTo && <script type="application/ld+json">{JSON.stringify(jsonLdHowTo)}</script>}
       {jsonLdFaq && <script type="application/ld+json">{JSON.stringify(jsonLdFaq)}</script>}
       {jsonLdBreadcrumb && <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>}
       {jsonLdArticle && <script type="application/ld+json">{JSON.stringify(jsonLdArticle)}</script>}
+      <script type="application/ld+json">{JSON.stringify(jsonLdSpeakable)}</script>
+      {extraJsonLd && (Array.isArray(extraJsonLd) ? extraJsonLd : [extraJsonLd]).map((schema, i) => (
+        <script key={`extra-jsonld-${i}`} type="application/ld+json">{JSON.stringify(schema)}</script>
+      ))}
     </Helmet>
   )
 }

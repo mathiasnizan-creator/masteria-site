@@ -1,40 +1,745 @@
 {
-  "rewrites": [
-    { "source": "/((?!api).*)", "destination": "/index.html" }
-  ],
+  "cleanUrls": true,
   "redirects": [
-    { "source": "/formation-ia-et-chatgpt-pour-la-direction-generale", "destination": "/formation-chatgpt-management", "permanent": true },
-    { "source": "/formation-chatgpt", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-chatgpt-pour-la-comptabilite-et-la-finance", "destination": "/formation-chatgpt-finance", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-les-equipes-administratives", "destination": "/formation-chatgpt-assistante", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-le-marketing-et-la-communication", "destination": "/formation-chatgpt-marketing", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-les-ressources-humaines", "destination": "/formation-chatgpt-ressources-humaines", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-le-commercial-et-la-vente", "destination": "/formation-chatgpt-commercial", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-le-service-client", "destination": "/formation-chatgpt-service-client", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-la-gestion-de-projet", "destination": "/formation-chatgpt-management", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-pour-les-equipes-pedagogiques", "destination": "/formation-chatgpt-pedagogique", "permanent": true },
-    { "source": "/formation-ia-et-chatgpt-seo", "destination": "/formation-chatgpt-seo", "permanent": true },
-    { "source": "/formation-chatgpt-lyon", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-chatgpt-paris", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-chatgpt-marseille", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-chatgpt-nice", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-chatgpt-valence", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-chatgpt-distance", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/chat-gpt-formation-professionnelle", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-professionnelle-chatgpt", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-ia-chatgpt", "destination": "/formation-chatgpt-entreprise", "permanent": true },
-    { "source": "/formation-intelligence-artificielle", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/formation-ia-entreprise", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/formation-ia-lyon", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/formation-ia-marseille", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/formation-ia-suisse-romande", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/organisme-de-formation-ia", "destination": "/a-propos", "permanent": true },
-    { "source": "/centre-de-formation-ia-et-chatgpt-formations-ia-et-chatgpt", "destination": "/a-propos", "permanent": true },
-
-    { "source": "/formations-intelligence-artificielle-entreprise", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/formation-ia-pour-les-appels-doffres", "destination": "/formation-chatgpt-commercial", "permanent": true },
-    { "source": "/formation-ia-pour-entreprise", "destination": "/formation-ia-par-metier", "permanent": true },
-    { "source": "/centre-formation-ia-entreprise", "destination": "/a-propos", "permanent": true },
-    { "source": "/demande-inscription", "destination": "/contact", "permanent": true }
+    {
+      "source": "/formation-ia-et-chatgpt-pour-la-direction-generale",
+      "destination": "/formation-chatgpt-management",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-pour-la-comptabilite-et-la-finance",
+      "destination": "/formation-chatgpt-finance",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-les-equipes-administratives",
+      "destination": "/formation-chatgpt-assistante",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-le-marketing-et-la-communication",
+      "destination": "/formation-chatgpt-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-les-ressources-humaines",
+      "destination": "/formation-chatgpt-ressources-humaines",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-le-commercial-et-la-vente",
+      "destination": "/formation-chatgpt-commercial",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-le-service-client",
+      "destination": "/formation-chatgpt-service-client",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-la-gestion-de-projet",
+      "destination": "/formation-chatgpt-management",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-les-equipes-pedagogiques",
+      "destination": "/formation-chatgpt-pedagogique",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-seo",
+      "destination": "/formation-chatgpt-seo",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-nice",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-valence",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-distance",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/chat-gpt-formation-professionnelle",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-professionnelle-chatgpt",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-chatgpt",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-entreprise",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-entreprise",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-entreprise",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-par-metier",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-entreprise",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-suisse-romande",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formations-intelligence-artificielle-entreprise",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-pour-entreprise",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-pour-les-appels-doffres",
+      "destination": "/formation-chatgpt-commercial",
+      "permanent": true
+    },
+    {
+      "source": "/conseil-ia",
+      "destination": "/conseil-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/a-propos",
+      "destination": "/centre-formation-ia-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/organisme-de-formation-ia",
+      "destination": "/centre-formation-ia-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/centre-de-formation-ia-et-chatgpt-formations-ia-et-chatgpt",
+      "destination": "/centre-formation-ia-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/demande-inscription",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/formation-sprint-ia-copilot-excel",
+      "destination": "/formation-sprint-ia-excel",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-multi-outils-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-juridique",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-nantes",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-rennes",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-bordeaux",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-toulouse",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-lille",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-strasbourg",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-la-rochelle",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-reims",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-montpellier",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-nice",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-lausanne",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-liege",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-paris",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-lyon",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-marseille",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-geneve",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ai-bruxelles",
+      "destination": "/formation-mistral-ai",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-nantes",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-rennes",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-bordeaux",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-toulouse",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-lille",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-strasbourg",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-la-rochelle",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-reims",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-montpellier",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-nice",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-lausanne",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-liege",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-paris",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-lyon",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-marseille",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-geneve",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-bruxelles",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-nantes",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-rennes",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-bordeaux",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-toulouse",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-lille",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-strasbourg",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-la-rochelle",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-reims",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-montpellier",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-nice",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-lausanne",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-liege",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-paris",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-lyon",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-marseille",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-geneve",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-bruxelles",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-nantes",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-rennes",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-bordeaux",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-toulouse",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-lille",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-strasbourg",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-la-rochelle",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-reims",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-montpellier",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-lausanne",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-chatgpt-liege",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-nantes",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-rennes",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-bordeaux",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-toulouse",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-lille",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-strasbourg",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-la-rochelle",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-reims",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-montpellier",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-nice",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-lausanne",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-claude-ia-liege",
+      "destination": "/formation-claude-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-nantes",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-rennes",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-bordeaux",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-toulouse",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-lille",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-strasbourg",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-la-rochelle",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-reims",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-montpellier",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-nice",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-lausanne",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-liege",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-belgique",
+      "destination": "/formation-ia-bruxelles",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-suisse",
+      "destination": "/formation-ia-geneve",
+      "permanent": true
+    },
+    {
+      "source": "/blog/chatgpt-vs-claude",
+      "destination": "/chatgpt-vs-claude",
+      "permanent": true
+    },
+    {
+      "source": "/blog/copilot-vs-chatgpt",
+      "destination": "/copilot-vs-chatgpt",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meilleure-ia-entreprise-2026",
+      "destination": "/meilleure-ia-entreprise-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossaire-ia",
+      "destination": "/glossaire-ia",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meilleure-ia-pour-coder",
+      "destination": "/meilleure-ia-pour-coder",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meilleur-agent-ia",
+      "destination": "/meilleur-agent-ia",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf|eot)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        }
+      ]
+    }
   ]
 }

@@ -103,31 +103,6 @@ export const TESTIMONIALS = {
     },
   ],
 
-  // ── ChatGPT × Juridique ──────────────────────────────────────────────────
-  'formation-chatgpt-juridique': [
-    {
-      name: 'Sophie Durand',
-      role: 'Avocate associée',
-      company: 'Cabinet droit des affaires, Paris, 8 avocats',
-      initials: 'SD',
-      text: "Au départ je pensais que ChatGPT n'avait pas sa place dans le droit, trop de risques d'erreur. La formation m'a montré comment l'utiliser de façon défendable : premières synthèses de contrats, structuration des mémos, rédaction des clauses standards. Je valide toujours en dernier ressort, mais le volume de travail préparatoire a considérablement fondu.",
-    },
-    {
-      name: 'Philippe Martin',
-      role: 'Directeur des Affaires Juridiques',
-      company: 'Groupe de distribution, 820 magasins, secteur retail',
-      initials: 'PM',
-      text: "Notre service traite des centaines de contrats par an. La formation nous a donné une méthode rigoureuse avec des garde-fous clairs. On a gagné environ 30% de temps sur la revue de contrats standards. Le cas d'usage le plus utile : en 2 minutes je sais si un document de 80 pages mérite une analyse approfondie ou peut être traité rapidement.",
-    },
-    {
-      name: 'Élise Bernard',
-      role: "Juriste d'entreprise",
-      company: 'Foncière immobilière, patrimoine de 2 Mds€',
-      initials: 'EB',
-      text: "Je gère des baux commerciaux et contrats de construction qui font des centaines de pages. ChatGPT ne remplace pas l'analyse juridique, mais il prépare le terrain et repère les clauses inhabituelles à examiner en priorité. Ça réorganise mon travail : je me concentre sur ce qui requiert vraiment mon expertise plutôt que sur la lecture linéaire.",
-    },
-  ],
-
   // ── ChatGPT × Communication ──────────────────────────────────────────────
   'formation-chatgpt-communication': [
     {

@@ -80,6 +80,41 @@ const TOOLS = {
     ),
   },
 
+  'multi-outils': {
+    // Panorama multi-outils : 5 points colorés représentant ChatGPT/Copilot/Gemini/Claude/Mistral
+    render: (size) => (
+      <svg
+        width={size} height={size}
+        viewBox="0 0 24 24"
+        aria-label="Formation multi-outils IA"
+        role="img"
+      >
+        <circle cx="12" cy="4"    r="2.4" fill="#10a37f" />
+        <circle cx="20"  cy="9"   r="2.4" fill="#0078d4" />
+        <circle cx="17" cy="18"   r="2.4" fill="#ea4335" />
+        <circle cx="7"  cy="18"   r="2.4" fill="#d97706" />
+        <circle cx="4"  cy="9"    r="2.4" fill="#fa500a" />
+        <circle cx="12" cy="12"   r="2.2" fill="#6366f1" />
+      </svg>
+    ),
+  },
+
+  'sprint-ia': {
+    // Sprint IA, format court : éclair orange dans un chrono
+    render: (size) => (
+      <svg
+        width={size} height={size}
+        viewBox="0 0 24 24"
+        aria-label="Sprint IA logo"
+        role="img"
+      >
+        <circle cx="12" cy="13" r="8.5" fill="#F97316" />
+        <path d="M12 7.5v-2 M9 5h6" stroke="#F97316" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+        <path d="M12.5 9.5l-3 4.5h2.5l-1 4 3-4.5h-2.5l1-4z" fill="#fff" />
+      </svg>
+    ),
+  },
+
   mistral: {
     // Mistral AI, drapeau stylisé : 5 bandes horizontales dégradées (jaune → orange → rouge)
     render: (size) => (

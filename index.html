@@ -5,57 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Favicons (logo Masteria) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <!-- Favicons (logo Masteria, symbole seul — meilleur rendu en favicon Google) -->
+    <!-- /favicon.ico en premier : Google le priorise pour la SERP, doit exister à la racine -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Thème (barre de statut mobile) -->
-    <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)" />
+    <!-- Thème (barre de statut mobile) — site mono-thème clair, on force la cohérence
+         pour éviter la bande noire Safari sur overscroll bounce en mode sombre système. -->
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="color-scheme" content="light" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <!-- Title & description par défaut (écrasés par react-helmet-async sur chaque page) -->
-    <title>Formation IA entreprise, certifiée Qualiopi, Masteria</title>
-    <meta name="description" content="Centre de formation IA certifié Qualiopi. +500 professionnels formés à ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI. Finançable OPCO. France, Suisse, Belgique." />
+    <!-- title / description / canonical / og:* / twitter:* entièrement gérés par SEOHead (react-helmet-async) pour éviter les doublons au prerender -->
 
-    <!-- Robots & indexation -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <!-- Métadonnées globales non gérées par SEOHead -->
     <meta name="googlebot" content="index, follow" />
     <meta name="author" content="Masteria" />
     <meta name="publisher" content="Masteria" />
     <meta name="geo.region" content="FR-ARA" />
     <meta name="geo.placename" content="Lyon" />
 
-    <!-- Canonical par défaut (écrasé par SEOHead) -->
-    <link rel="canonical" href="https://www.master-ia.fr/" />
+    <!-- title / description / canonical / og:* / twitter:* sont injectés par SEOHead (react-helmet-async) sur chaque route prerenderée -->
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Masteria" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:url" content="https://www.master-ia.fr/" />
-    <meta property="og:title" content="Formation IA entreprise, certifiée Qualiopi, Masteria" />
-    <meta property="og:description" content="Centre de formation IA certifié Qualiopi. +500 professionnels formés. Finançable OPCO. France, Suisse, Belgique." />
-    <meta property="og:image" content="https://www.master-ia.fr/assets/logo-horizontal.png" />
-    <meta property="og:image:alt" content="Masteria, centre de formation IA certifié Qualiopi" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Formation IA entreprise, certifiée Qualiopi, Masteria" />
-    <meta name="twitter:description" content="Centre de formation IA certifié Qualiopi. +500 professionnels formés à ChatGPT, Copilot, Gemini, Claude, Mistral." />
-    <meta name="twitter:image" content="https://www.master-ia.fr/assets/logo-horizontal.png" />
-
-    <!-- Préconnexions & préchargements -->
+    <!-- Préconnexions & chargement non-bloquant des fonts (perf LCP + CLS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+    <!-- Fonts critiques préchargées en WOFF2 (DM Sans 400 paragraphes + Nunito 900 titres) -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g7vN_lA.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM9jo7eTWk.woff2" />
+    <!-- Fonts non-bloquantes : variants réduites de 7 à 4 (gain ~50% download) ;
+         media="print" swap vers "all" après chargement pour ne pas bloquer le rendu. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Nunito:wght@800;900&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all';this.onload=null"
+    />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Nunito:wght@800;900&display=swap" /></noscript>
+
+    <!-- Fallback system fonts size-adjusted (réduit le CLS dû au font-swap) -->
+    <style>
+      /* Nunito fallback : métriques calibrées pour minimiser le reflowing */
+      @font-face {
+        font-family: 'Nunito-fallback';
+        src: local('Arial Bold'), local('Arial');
+        size-adjust: 104%;
+        ascent-override: 92%;
+        descent-override: 23%;
+        line-gap-override: 0%;
+      }
+      /* DM Sans fallback */
+      @font-face {
+        font-family: 'DMSans-fallback';
+        src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+        size-adjust: 100%;
+        ascent-override: 95%;
+        descent-override: 25%;
+        line-gap-override: 0%;
+      }
+      html { font-family: 'DM Sans', 'DMSans-fallback', system-ui, -apple-system, Arial, sans-serif; }
+      h1, h2, h3 { font-family: 'Nunito', 'Nunito-fallback', system-ui, -apple-system, Arial, sans-serif; }
+    </style>
+    <!-- Préchargement logo header (JPEG, chemin critique) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/logo-horizontal@400w.jpg"
+      imagesizes="(max-width: 768px) 120px, 160px"
+      fetchpriority="high"
+    />
 
     <!-- JSON-LD Organization global (visible par les crawlers sans rendu JS) -->
     <script type="application/ld+json">
@@ -107,14 +136,11 @@
         "@type": "EducationalOccupationalCredential",
         "credentialCategory": "Certification Qualiopi"
       },
-      "sameAs": ["https://www.linkedin.com/in/mathias-nizan/"],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "sameAs": [
+        "https://www.linkedin.com/company/masteria-conseil-et-formation-ia/",
+        "https://share.google/AoLHOIoAT9yMocn1s",
+        "https://www.linkedin.com/in/mathias-nizan/"
+      ]
     }
     </script>
   </head>

@@ -4,7 +4,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, Wallet, MapPin, Clock, Rocket, ShieldCheck, Sparkles,
-  ArrowRight, Star, Zap, Quote,
+  ArrowRight, Star, Zap, Quote, ShoppingCart,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
@@ -26,6 +26,8 @@ const METIER_ICONS = {
   'service-client': Headphones,
   informatique: Server,
   pedagogique: GraduationCap,
+  achats: ShoppingCart,
+  transverse: Sparkles,
 }
 
 /* ─── Chiffre animé (anime de 0 à la valeur finale au scroll into view) ─── */
@@ -65,57 +67,9 @@ export default function HomePage() {
   const homeFaq = FAQ_GENERAL
 
   /* ── JSON-LD pour SEO & AI overviews ───────────────────────────── */
-  const jsonLdWebSite = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Masteria',
-    url: 'https://www.master-ia.fr',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://www.master-ia.fr/?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
-  }
-
-  const jsonLdOrganization = {
-    '@context': 'https://schema.org',
-    '@type': ['Organization', 'EducationalOrganization'],
-    name: 'Masteria',
-    url: 'https://www.master-ia.fr',
-    logo: 'https://www.master-ia.fr/assets/logo-horizontal.png',
-    description: "Centre de formation IA certifié Qualiopi. Formations ChatGPT, Microsoft Copilot, Google Gemini et Claude pour les entreprises. Finançable OPCO.",
-    founder: { '@type': 'Person', name: 'Mathias Nizan' },
-    foundingDate: '2022',
-    areaServed: ['France', 'Suisse', 'Belgique'],
-    hasCredential: {
-      '@type': 'EducationalOccupationalCredential',
-      credentialCategory: 'Qualiopi',
-    },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      email: 'mathias.nizan@master-ia.fr',
-      contactType: 'customer service',
-      availableLanguage: 'French',
-    },
-    sameAs: ['https://www.linkedin.com/in/mathias-nizan/'],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '500',
-      bestRating: '5',
-    },
-  }
-
-  const jsonLdFaq = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: homeFaq.map(item => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  }
-
+  // Note: Organization, WebSite, Person et FAQPage sont déjà injectés par SEOHead
+  // (via jsonLdOrg / jsonLdWebsite / jsonLdPerson / faqItems). On garde ici
+  // uniquement ItemList qui est spécifique à la page d'accueil.
   const jsonLdCourseList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -135,35 +89,28 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Formation IA pour entreprises | ChatGPT, Copilot, Gemini, Claude | Masteria, Certifié Qualiopi"
-        description="Centre de formation IA certifié Qualiopi. +500 professionnels formés à ChatGPT, Microsoft Copilot, Google Gemini et Claude. Formations finançables OPCO. Présentiel et distanciel, France, Suisse et Belgique."
+        title="Masteria · Centre de formation et conseil IA pour entreprises"
+        description="Formez vos équipes à ChatGPT, Copilot, Gemini, Claude, Mistral. Certifié Qualiopi, 100 % OPCO. +1 500 pros formés. Devis sous 24 h."
         slug=""
+        faqItems={homeFaq}
+        extraJsonLd={jsonLdCourseList}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCourseList) }} />
 
       {/* ════════════════════════ HERO clair ════════════════════════ */}
       <section style={{
         position: 'relative',
-        background: '#FAFAF7',
+        // Halos décoratifs intégrés en background-image (élimine CLS causé par divs absolus)
+        backgroundColor: '#FAFAF7',
+        backgroundImage: [
+          'radial-gradient(circle 420px at 15% 0%, rgba(37,99,235,0.10), transparent 70%)',
+          'radial-gradient(circle 520px at 95% 100%, rgba(217,119,6,0.08), transparent 70%)',
+        ].join(', '),
+        backgroundRepeat: 'no-repeat',
         color: '#0A0A0A',
         padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px) clamp(72px, 12vw, 120px)',
         overflow: 'hidden',
         borderBottom: '1px solid #E5E7EB',
       }}>
-        {/* Halos décoratifs discrets */}
-        <div aria-hidden style={{
-          position: 'absolute', top: -120, left: '10%', width: 420, height: 420,
-          background: 'radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%)',
-          filter: 'blur(40px)', pointerEvents: 'none',
-        }} />
-        <div aria-hidden style={{
-          position: 'absolute', bottom: -160, right: '5%', width: 520, height: 520,
-          background: 'radial-gradient(circle, rgba(217,119,6,0.08) 0%, transparent 70%)',
-          filter: 'blur(50px)', pointerEvents: 'none',
-        }} />
 
         <div style={{ position: 'relative', maxWidth: 1080, margin: '0 auto', textAlign: 'center' }}>
           <div style={{
@@ -173,7 +120,7 @@ export default function HomePage() {
           }}>
             <Sparkles size={14} color="#D97706" />
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: '#374151' }}>
-              +500 professionnels formés · 98 % de satisfaction
+              +1 500 professionnels formés · 98 % de satisfaction
             </span>
           </div>
 
@@ -188,7 +135,7 @@ export default function HomePage() {
             color: '#0A0A0A',
           }}>
             Formez vos équipes à l'<span style={{
-              background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 45%, #D97706 100%)',
+              background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>intelligence artificielle</span>, concrètement.
@@ -218,7 +165,7 @@ export default function HomePage() {
             >
               Contacter notre équipe <ArrowRight size={16} />
             </Link>
-            <Link to="/formation-ia-par-metier" style={{
+            <Link to="/formation-intelligence-artificielle" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
               background: '#fff', color: '#0A0A0A',
               border: '1px solid #E5E7EB',
@@ -272,7 +219,7 @@ export default function HomePage() {
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 24,
         }}>
           {[
-            { value: 500, prefix: '+',  suffix: '',  label: 'Professionnels formés' },
+            { value: 1500, prefix: '+',  suffix: '',  label: 'Professionnels formés' },
             { value: 98,  prefix: '',   suffix: ' %', label: 'Taux de satisfaction' },
             { value: 6,   prefix: '+',  suffix: ' h', label: 'Gagnées chaque semaine' },
             { value: 100, prefix: '',   suffix: ' %', label: 'Finançable OPCO' },
@@ -449,7 +396,7 @@ export default function HomePage() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: 40 }}>
-            <Link to="/formation-ia-par-metier" style={{
+            <Link to="/formation-intelligence-artificielle" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               color: '#2563EB', fontSize: 15, fontWeight: 700,
               textDecoration: 'none',
@@ -482,10 +429,10 @@ export default function HomePage() {
             gap: 24,
           }}>
             {[
-              { Icon: BadgeCheck, color: '#10B981', title: 'Certifié Qualiopi',         desc: 'Organisme de formation certifié Qualiopi, gage de qualité reconnu par l\'État et condition indispensable au financement OPCO.' },
-              { Icon: Wallet,     color: '#3B82F6', title: 'Finançable à 100 %',        desc: 'Toutes nos formations sont éligibles au financement OPCO. Nous vous accompagnons dans la constitution du dossier.' },
-              { Icon: Rocket,     color: '#F59E0B', title: 'Résultats immédiats',       desc: 'Vos équipes repartent avec une bibliothèque de prompts et des cas d\'usage concrets, applicables dès le lendemain.' },
-              { Icon: ShieldCheck,color: '#8B5CF6', title: 'Éthique & sécurité',        desc: 'Usage responsable de l\'IA : confidentialité RGPD, prévention des hallucinations, gouvernance en entreprise.' },
+              { Icon: BadgeCheck, title: 'Certifié Qualiopi',  desc: 'Organisme de formation certifié Qualiopi, gage de qualité reconnu par l\'État et condition indispensable au financement OPCO.' },
+              { Icon: Wallet,     title: 'Finançable à 100 %', desc: 'Toutes nos formations sont éligibles au financement OPCO. Nous vous accompagnons dans la constitution du dossier.' },
+              { Icon: Rocket,     title: 'Résultats immédiats',desc: 'Vos équipes repartent avec une bibliothèque de prompts et des cas d\'usage concrets, applicables dès le lendemain.' },
+              { Icon: ShieldCheck,title: 'Éthique & sécurité', desc: 'Usage responsable de l\'IA : confidentialité RGPD, prévention des hallucinations, gouvernance en entreprise.' },
             ].map((p, i) => (
               <div key={i} style={{
                 background: '#F9FAFB', borderRadius: 16,
@@ -493,12 +440,13 @@ export default function HomePage() {
                 padding: 28,
               }}>
                 <div style={{
-                  width: 48, height: 48, borderRadius: 12,
-                  background: `${p.color}1A`, border: `1px solid ${p.color}33`,
+                  width: 52, height: 52, borderRadius: 14,
+                  background: '#2563EB',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: 18,
+                  boxShadow: '0 4px 14px -4px rgba(37,99,235,0.45)',
                 }}>
-                  <p.Icon size={22} color={p.color} strokeWidth={2} />
+                  <p.Icon size={24} color="#fff" strokeWidth={2} />
                 </div>
                 <h3 style={{
                   fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800,
@@ -517,18 +465,18 @@ export default function HomePage() {
 
       {/* ════════════════════════ COMMENT ÇA MARCHE ════════════════════════ */}
       <section style={{
-        background: 'linear-gradient(180deg, #0A0A0A 0%, #111 100%)',
-        color: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)',
+        background: '#F5F3EE',
+        color: '#0A0A0A', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)',
       }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 10 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>
               Comment ça marche
             </div>
             <h2 style={{
               fontFamily: 'Nunito, sans-serif',
               fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900,
-              letterSpacing: '-0.02em', color: '#fff', lineHeight: 1.2,
+              letterSpacing: '-0.02em', color: '#0A0A0A', lineHeight: 1.2,
             }}>
               3 étapes pour former vos équipes
             </h2>
@@ -541,14 +489,13 @@ export default function HomePage() {
               { n: '03', title: 'Suivi post-formation',   desc: 'Attestation Qualiopi, bibliothèque de prompts, support questions pendant 3 mois.' },
             ].map((s, i) => (
               <div key={i} style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.10)',
+                background: '#fff',
+                border: '1px solid #E5E7EB',
                 borderRadius: 16, padding: 28,
-                backdropFilter: 'blur(6px)',
               }}>
                 <div style={{
                   fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900,
-                  background: 'linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%)',
+                  background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
                   WebkitBackgroundClip: 'text', backgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   lineHeight: 1, marginBottom: 18,
@@ -557,11 +504,11 @@ export default function HomePage() {
                 </div>
                 <h3 style={{
                   fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800,
-                  color: '#fff', marginBottom: 10,
+                  color: '#0A0A0A', marginBottom: 10,
                 }}>
                   {s.title}
                 </h3>
-                <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
                   {s.desc}
                 </p>
               </div>
@@ -596,13 +543,16 @@ export default function HomePage() {
               boxShadow: '0 20px 50px rgba(0,0,0,0.18)',
               background: '#E5E7EB',
             }}>
-              <img
-                src="/assets/mathias-nizan.jpg"
-                alt="Mathias Nizan, fondateur de Masteria, expert en formation IA"
-                width="400" height="500"
-                loading="lazy" decoding="async"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
+              <picture>
+                <source type="image/webp" srcSet="/assets/mathias-nizan.webp" />
+                <img
+                  src="/assets/mathias-nizan.jpg"
+                  alt="Mathias Nizan, fondateur de Masteria, expert en formation IA"
+                  width="400" height="500"
+                  loading="lazy" decoding="async"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </picture>
             </div>
           </div>
 
@@ -653,13 +603,16 @@ export default function HomePage() {
           gap: 'clamp(20px, 4vw, 40px)',
           textAlign: 'center',
         }}>
-          <img
-            src="/assets/qualiopi-logo.png"
-            alt="Certification Qualiopi, Masteria centre de formation certifié"
-            width="120" height="90"
-            loading="lazy" decoding="async"
-            style={{ height: 90, width: 'auto', flexShrink: 0 }}
-          />
+          <picture>
+            <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
+            <img
+              src="/assets/qualiopi-logo.png"
+              alt="Certification Qualiopi, Masteria centre de formation certifié"
+              width="120" height="90"
+              loading="lazy" decoding="async"
+              style={{ height: 90, width: 'auto', flexShrink: 0 }}
+            />
+          </picture>
           <div style={{ maxWidth: 520, textAlign: 'left' }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#059669', marginBottom: 8 }}>
               Organisme certifié
@@ -720,9 +673,151 @@ export default function HomePage() {
       {/* ════════════════════════ FAQ ════════════════════════ */}
       <FAQSection items={homeFaq} title="Questions fréquentes sur nos formations IA" bg="#fff" />
 
+      {/* ════════════════════════ EXPLORER NOS FORMATIONS (maillage interne SEO) ════════════════════════ */}
+      <section style={{
+        background: '#FAFAF7',
+        padding: 'clamp(56px, 8vw, 88px) clamp(18px, 4vw, 32px)',
+        borderTop: '1px solid #E5E7EB',
+      }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'Nunito, sans-serif',
+            fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 900,
+            letterSpacing: '-0.02em', color: '#0A0A0A',
+            marginBottom: 14, textAlign: 'center', lineHeight: 1.15,
+          }}>
+            Explorer nos formations IA
+          </h2>
+          <p style={{
+            fontSize: 16, color: '#6B7280', lineHeight: 1.6,
+            textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
+          }}>
+            89 programmes structurés par outil, par métier ou par ville. Tous certifiés Qualiopi et finançables par les OPCO.
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: 32,
+          }}>
+            {/* Par outil */}
+            <div>
+              <h3 style={{
+                fontSize: 13, fontWeight: 800, letterSpacing: '0.08em',
+                textTransform: 'uppercase', color: '#2563EB', marginBottom: 18,
+              }}>
+                Par outil IA
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {[
+                  ['Formation ChatGPT', '/formation-chatgpt'],
+                  ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
+                  ['Formation Claude IA', '/formation-claude-ia'],
+                  ['Formation Google Gemini', '/formation-gemini-entreprise'],
+                  ['Formation Mistral AI', '/formation-mistral-ai'],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link to={href} style={{
+                      color: '#0A0A0A', textDecoration: 'none', fontSize: 15, fontWeight: 500,
+                      borderBottom: '1px solid transparent', transition: 'border-color 150ms',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.borderBottomColor = '#0A0A0A'}
+                    onMouseLeave={e => e.currentTarget.style.borderBottomColor = 'transparent'}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Par métier */}
+            <div>
+              <h3 style={{
+                fontSize: 13, fontWeight: 800, letterSpacing: '0.08em',
+                textTransform: 'uppercase', color: '#2563EB', marginBottom: 18,
+              }}>
+                Par métier
+              </h3>
+              <ul style={{
+                listStyle: 'none', padding: 0, margin: 0,
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10,
+              }}>
+                {[
+                  ['Marketing', '/formation-ia-marketing'],
+                  ['RH', '/formation-ia-ressources-humaines'],
+                  ['Commercial', '/formation-ia-commercial'],
+                  ['Finance', '/formation-ia-finance'],
+                  ['Communication', '/formation-ia-communication'],
+                  ['Management', '/formation-ia-management'],
+                  ['Assistante', '/formation-ia-assistante'],
+                  ['SEO', '/formation-ia-seo'],
+                  ['Service client', '/formation-ia-service-client'],
+                  ['Informatique', '/formation-ia-informatique'],
+                  ['Pédagogique', '/formation-ia-pedagogique'],
+                  ['Achats', '/formation-ia-achats'],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link to={href} style={{
+                      color: '#0A0A0A', textDecoration: 'none', fontSize: 14.5, fontWeight: 500,
+                      borderBottom: '1px solid transparent', transition: 'border-color 150ms',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.borderBottomColor = '#0A0A0A'}
+                    onMouseLeave={e => e.currentTarget.style.borderBottomColor = 'transparent'}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Par ville */}
+            <div>
+              <h3 style={{
+                fontSize: 13, fontWeight: 800, letterSpacing: '0.08em',
+                textTransform: 'uppercase', color: '#2563EB', marginBottom: 18,
+              }}>
+                Par ville
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {[
+                  ['Formation IA Paris', '/formation-ia-paris'],
+                  ['Formation IA Lyon', '/formation-ia-lyon'],
+                  ['Formation IA Marseille', '/formation-ia-marseille'],
+                  ['Formation IA Genève', '/formation-ia-geneve'],
+                  ['Formation IA Bruxelles', '/formation-ia-bruxelles'],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link to={href} style={{
+                      color: '#0A0A0A', textDecoration: 'none', fontSize: 15, fontWeight: 500,
+                      borderBottom: '1px solid transparent', transition: 'border-color 150ms',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.borderBottomColor = '#0A0A0A'}
+                    onMouseLeave={e => e.currentTarget.style.borderBottomColor = 'transparent'}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: 48 }}>
+            <Link to="/formation-intelligence-artificielle" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              color: '#2563EB', textDecoration: 'none', fontSize: 15, fontWeight: 700,
+            }}>
+              Voir le catalogue complet (89 formations) <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════════════ CTA FINAL ════════════════════════ */}
       <section style={{
-        background: '#0A0A0A', color: '#fff',
+        background: '#F5F3EE', color: '#0A0A0A',
         padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)', textAlign: 'center',
         position: 'relative', overflow: 'hidden',
       }}>
@@ -735,29 +830,29 @@ export default function HomePage() {
         <div style={{ position: 'relative', maxWidth: 680, margin: '0 auto' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)',
+            background: '#fff', border: '1px solid #E5E7EB',
             borderRadius: 99, padding: '7px 16px', marginBottom: 24,
           }}>
-            <Zap size={13} color="#FCD34D" />
-            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: '#E5E7EB' }}>
+            <Zap size={13} color="#F59E0B" />
+            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: '#374151' }}>
               Réponse sous 24 h ouvrées
             </span>
           </div>
           <h2 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 900,
-            letterSpacing: '-0.02em', color: '#fff',
+            letterSpacing: '-0.02em', color: '#0A0A0A',
             marginBottom: 18, lineHeight: 1.15,
           }}>
             Prêt à former vos équipes à l'IA ?
           </h2>
-          <p style={{ fontSize: 17, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 36 }}>
+          <p style={{ fontSize: 17, color: '#6B7280', lineHeight: 1.7, marginBottom: 36 }}>
             Échangeons 20 minutes sur votre contexte. Nous vous proposons le programme adapté, sans engagement.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 24 }}>
             <Link to="/contact" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
-              background: '#fff', color: '#0A0A0A',
+              background: '#0A0A0A', color: '#fff',
               padding: '16px 32px', borderRadius: 10,
               textDecoration: 'none', fontSize: 16, fontWeight: 800,
             }}>
@@ -765,21 +860,28 @@ export default function HomePage() {
             </Link>
           </div>
           <div style={{
-            display: 'flex', gap: 24, justifyContent: 'center', flexWrap: 'wrap',
-            marginTop: 24, fontSize: 13, color: '#6B7280',
+            display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap',
+            marginTop: 28,
           }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <BadgeCheck size={14} color="#10B981" /> Certifié Qualiopi
-            </span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <Wallet size={14} color="#3B82F6" /> Finançable OPCO
-            </span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <MapPin size={14} color="#F59E0B" /> France · Suisse · Belgique
-            </span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <Clock size={14} color="#A78BFA" /> Réponse sous 24 h
-            </span>
+            {[
+              { Icon: BadgeCheck, label: 'Certifié Qualiopi' },
+              { Icon: Wallet,     label: 'Finançable OPCO' },
+              { Icon: MapPin,     label: 'France · Suisse · Belgique' },
+              { Icon: Clock,      label: 'Réponse sous 24 h' },
+            ].map(({ Icon, label }) => (
+              <span key={label} style={{
+                display: 'inline-flex', alignItems: 'center', gap: 7,
+                background: '#fff',
+                border: '1px solid #E5E7EB',
+                borderRadius: 99,
+                padding: '8px 16px',
+                fontSize: 13, fontWeight: 600, color: '#111827',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+              }}>
+                <Icon size={14} color="#2563EB" strokeWidth={2.5} />
+                {label}
+              </span>
+            ))}
           </div>
         </div>
       </section>

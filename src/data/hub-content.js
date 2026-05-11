@@ -28,24 +28,29 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Fondations et cas d\'usage métier',
+        title: 'Maîtrise de ChatGPT GPT-5 et fonctionnalités enterprise',
         items: [
-          'Comprendre le fonctionnement de ChatGPT : modèles, contexte, limites concrètes',
-          'Maîtriser la structure d\'un prompt efficace : rôle, contexte, instruction, format, contraintes',
-          'Rédiger des emails professionnels, synthèses de réunions et rapports d\'activité en moins de 10 minutes',
-          'Créer un system prompt personnalisé qui encode le ton et les contraintes de votre organisation',
-          'Constituer une première bibliothèque de prompts réutilisables par l\'ensemble de l\'équipe',
+          'Panorama 2026 : différences entre ChatGPT Free, Plus, Team et Enterprise (sécurité, fenêtre de contexte, fonctionnalités exclusives)',
+          'GPT-5 et modèles raisonnement : quand utiliser le mode rapide vs le mode "Thinking" (Extended reasoning) selon la tâche',
+          'Custom GPTs : créer un GPT spécialisé pour votre métier (system prompt, knowledge base, instructions, capacités)',
+          'Projects ChatGPT : organiser vos conversations par dossier persistant avec base documentaire dédiée',
+          'Canvas : édition collaborative de documents et de code avec ChatGPT en temps réel',
+          'Voice Mode avancé : interaction vocale pour briefings rapides, brainstorming, transcription de réunions',
+          'Memory persistante : configurer ChatGPT pour qu\'il se souvienne de vos préférences et de votre contexte d\'entreprise',
         ],
       },
       {
         day: 2,
-        title: 'Cas d\'usage avancés et déploiement opérationnel',
+        title: 'Génération multimédia, agents et automatisation',
         items: [
-          'Analyser et synthétiser des documents longs (contrats, études, rapports) avec des instructions de lecture guidée',
-          'Construire des workflows IA pour automatiser des tâches récurrentes : veille, reporting, préparation de réunions',
-          'Travailler sur des données structurées : extraction d\'informations, reformatage, contrôle de cohérence',
-          'Identifier les limites et les risques : hallucinations, confidentialité des données, vérification des sources',
-          'Définir un plan de déploiement sur 30 jours adapté aux processus réels de chaque participant',
+          'GPT Image 2 (génération native d\'images) : produire visuels marketing, infographies, mockups en respectant votre charte',
+          'Sora 2 (génération vidéo) : créer des capsules vidéo courtes pour communication interne et marketing',
+          'Code Interpreter (Advanced Data Analysis) : analyser fichiers Excel, CSV, PDF avec exécution Python en sandbox',
+          'Connecteurs natifs : intégrer ChatGPT à Gmail, Slack, Drive, Notion, GitHub via App Connectors',
+          'Operator : automatiser des actions web (recherche, formulaires, e-commerce) avec un agent autonome',
+          'Deep Research : production de rapports de veille et études concurrentielles en 5-10 minutes',
+          'API ChatGPT : intégrer GPT-5 dans vos outils internes (cas concrets sans compétence dev avancée)',
+          'Plan d\'action 30 jours : industrialiser ChatGPT dans les rituels de votre équipe avec gouvernance et sécurité',
         ],
       },
     ],
@@ -53,7 +58,7 @@ export const HUB_CONTENT = {
     faq: [
       {
         q: 'Qu\'est-ce qu\'une formation ChatGPT en entreprise ?',
-        a: "Une formation ChatGPT en entreprise apprend à vos collaborateurs à utiliser ChatGPT comme outil de productivité professionnelle, pas comme un moteur de recherche amélioré. Elle couvre la rédaction de prompts efficaces, la gestion du contexte, la production de documents professionnels et l\'intégration dans les flux de travail existants. Chez Masteria, la formation dure 2 jours (14 heures) et s\'appuie sur les cas d\'usage réels de vos équipes, pas sur des exercices génériques. Plus de 500 collaborateurs ont suivi notre programme depuis 2023, avec un taux de satisfaction de 98%.",
+        a: "Une formation ChatGPT en entreprise apprend à vos collaborateurs à utiliser ChatGPT comme outil de productivité professionnelle, pas comme un moteur de recherche amélioré. Elle couvre la rédaction de prompts efficaces, la gestion du contexte, la production de documents professionnels et l\'intégration dans les flux de travail existants. Chez Masteria, la formation dure 2 jours (14 heures) et s\'appuie sur les cas d\'usage réels de vos équipes, pas sur des exercices génériques. Plus de 1 500 collaborateurs ont suivi notre programme depuis 2023, avec un taux de satisfaction de 98%.",
       },
       {
         q: 'La formation ChatGPT est-elle finançable par mon OPCO ?',
@@ -102,24 +107,29 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Copilot dans Outlook, Teams et la communication quotidienne',
+        title: 'Copilot dans M365 : Word, Excel, PowerPoint, Outlook, Teams',
         items: [
-          'Comprendre l\'architecture de Microsoft 365 Copilot : fonctionnement, droits d\'accès, périmètre sécuritaire',
-          'Gérer sa boite email avec Copilot : résumé de fils, rédaction de réponses contextuelles, tri par priorité',
-          'Préparer et animer des réunions Teams plus efficacement : agenda, prise de notes automatique, compte-rendu avec points d\'action',
-          'Générer des présentations PowerPoint structurées depuis un brief ou un document Word existant',
-          'Maîtriser les limites de Copilot : ce qu\'il fait bien, ce qu\'il fait mal, comment contrôler ses sorties',
+          'Architecture M365 Copilot : Microsoft Graph, tenant Microsoft, sécurité et confidentialité dans votre périmètre',
+          'Copilot dans Outlook : tri intelligent de la boîte mail, résumé de fils longs, rédaction contextuelle avec accès au calendrier et aux échanges précédents',
+          'Copilot dans Teams : transcription automatique des réunions, génération de comptes-rendus avec points d\'action, recherche dans l\'historique',
+          'Copilot dans Word : rédaction depuis un brief, application automatique de la charte du tenant, restructuration de documents existants',
+          'Copilot dans PowerPoint : génération de présentations à partir d\'un Word, application de la charte, insertion de visuels via Designer',
+          'Copilot dans Excel : analyse de données avec langage naturel, formules suggérées, Power Query assistée',
+          'Researcher (raisonnement étendu) : synthèses cross-sources sur le tenant (mails, fichiers, Teams, agenda) en quelques minutes',
         ],
       },
       {
         day: 2,
-        title: 'Copilot dans Word, Excel et les flux de travail métier',
+        title: 'Pages, Agents Copilot Studio, Power Automate, intégrations',
         items: [
-          'Rédiger, restructurer et améliorer des documents Word complexes : rapports, propositions commerciales, procédures internes',
-          'Analyser des données Excel avec le langage naturel : formules suggérées, graphiques, détection d\'anomalies',
-          'Construire des prompts efficaces dans le contexte Microsoft 365 : spécificités et bonnes pratiques',
-          'Créer des workflows Copilot personnalisés adaptés aux processus récurrents de l\'équipe',
-          'Définir la politique d\'usage Copilot au sein de l\'organisation : droits, bonnes pratiques, cas à éviter',
+          'Copilot Pages : canvases collaboratifs IA pour brainstorming et co-création en équipe',
+          'Designer (génération d\'images) : produire des visuels alignés sur votre charte directement dans le tenant',
+          'Copilot Studio : construire des agents IA low-code pour automatiser tickets, processus métier, FAQ interne',
+          'Power Automate + Copilot : déclencher des workflows IA automatisés (alertes, déploiements, reporting)',
+          'Microsoft Forms + Copilot : générer des QCM et formulaires depuis un brief, analyser les réponses',
+          'Dynamics 365 + Copilot : exploitation pour les équipes commerciales et service client',
+          'GitHub Copilot (produit séparé) : panorama pour les équipes IT, intégration VS Code/JetBrains',
+          'Plan d\'action 30 jours : politique d\'usage Copilot, gouvernance des données, audit de permissions SharePoint, plan de déploiement à l\'échelle',
         ],
       },
     ],
@@ -176,24 +186,29 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Gemini dans Gmail, Docs et la communication professionnelle',
+        title: 'Gemini 2.5 Pro dans Workspace : Gmail, Docs, Sheets, Slides, Meet',
         items: [
-          'Découvrir l\'écosystème Gemini for Google Workspace : versions, niveaux d\'accès, différences avec Gemini grand public',
-          'Utiliser Gemini dans Gmail : rédaction de mails contextualisés, résumé de conversations, réponses suggérées',
-          'Rédiger et améliorer des documents Google Docs avec Gemini : premiers jets, reformulation, changement de ton',
-          'Préparer des présentations Google Slides depuis un plan ou un document existant',
-          'Identifier les limites et les biais de Gemini dans un contexte professionnel francophone',
+          'Panorama 2026 : Gemini 2.5 Pro vs Flash, fenêtre de contexte 2M tokens (la plus large du marché), différences Free/Workspace Enterprise',
+          'Gemini dans Gmail : tri intelligent, résumé de fils longs, rédaction contextuelle avec accès au calendrier et au Drive',
+          'Gemini dans Google Docs : rédaction depuis un brief, "Help me write", restructuration de documents, traduction native',
+          'Gemini dans Google Sheets : analyse de données par langage naturel, formules suggérées, "Help me organize" pour structurer un dataset',
+          'Gemini dans Google Slides : génération de présentations depuis un Doc, insertion de visuels Imagen 4 alignés sur votre charte',
+          'Gemini dans Google Meet : transcription automatique des réunions, résumés multilingues, points d\'action post-meeting',
+          'Live API : conversations vocales avancées avec Gemini pour briefings rapides et brainstorming',
         ],
       },
       {
         day: 2,
-        title: 'Gemini dans Sheets, Meet et les workflows avancés',
+        title: 'NotebookLM, Imagen 4, Veo 3, Apps Script, Cloud',
         items: [
-          'Analyser et manipuler des données Google Sheets avec le langage naturel : formules, tableaux croisés, visualisations',
-          'Exploiter Gemini dans Google Meet : transcription, résumé automatique, points d\'action post-réunion',
-          'Construire des prompts avancés dans Google Workspace : syntaxe, instructions système, gestion du contexte',
-          'Connecter Gemini à Google Drive pour analyser des documents existants sans ressaisie',
-          'Mettre en place un plan d\'adoption sur 30 jours : cas d\'usage prioritaires, formation des autres membres de l\'équipe',
+          'NotebookLM : charger 50+ sources (PDF, vidéo, sites web) et générer synthèses, FAQ, mind maps, podcasts pédagogiques',
+          'Imagen 4 (génération d\'images) : produire visuels marketing, illustrations pédagogiques, infographies cohérentes',
+          'Veo 3 (génération vidéo) : créer des capsules vidéo de 30-60 secondes pour communication interne et marketing',
+          'Apps Script + Gemini : automatiser Workspace (Gmail, Sheets, Drive) sans quitter votre environnement Google',
+          'Gemini Code Assist : code et complétion intelligente dans VS Code, JetBrains, Cloud Code (panorama pour équipes IT)',
+          'Google Cloud + Gemini : Cloud Functions, BigQuery avec Gemini pour les analyses de données',
+          'Fenêtre de contexte 2M tokens : avaler 100+ documents en une requête pour audits sémantiques et synthèses cross-sources',
+          'Plan d\'action 30 jours : intégrer Gemini dans les rituels d\'équipe avec gouvernance, audit Workspace admin, optimisation Drive',
         ],
       },
     ],
@@ -250,24 +265,29 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Fondations Claude et analyse documentaire',
+        title: 'Claude Opus 4.7 et fonctionnalités enterprise (Projects, Skills, Artifacts)',
         items: [
-          'Comprendre ce qui différencie Claude des autres LLM : architecture, philosophie de conception, forces spécifiques',
-          'Maîtriser la syntaxe de prompting Claude : instructions XML, balises de structure, system prompts avancés',
-          'Analyser des documents longs : contrats, rapports, études, extraction ciblée, résumé hiérarchique, comparaison de versions',
-          'Rédiger des documents professionnels complexes : rapports d\'analyse, notes de synthèse, recommandations structurées',
-          'Gérer les limites de contexte et stratégies de découpage pour les documents très volumineux',
+          'Panorama 2026 : différences Claude Free, Pro, Team, Enterprise (sécurité, fenêtre de contexte 200k vs 1M tokens)',
+          'Claude Opus 4.7 vs Sonnet 4.5 vs Haiku : choisir le bon modèle selon la tâche (analyse profonde, équilibre, rapidité)',
+          'Extended Thinking : activer le raisonnement étendu pour problèmes complexes (juridique, financier, code, stratégie)',
+          'Projects : créer un espace persistant avec base documentaire dédiée (charte, brand voice, FAQ interne, références)',
+          'Skills (lancées fin 2025) : compétences téléchargeables spécialisées (Excel, code, recherche, ingénierie financière)',
+          'Artifacts : édition collaborative de code, visualisations HTML/SVG, schémas, dashboards en temps réel',
+          'Constitutional AI : comprendre l\'alignement Claude pour des sorties prudentes et nuancées sur sujets sensibles',
         ],
       },
       {
         day: 2,
-        title: 'Cas d\'usage avancés et déploiement métier',
+        title: 'Computer Use, MCP, Claude Code, agents autonomes',
         items: [
-          'Construire des workflows d\'analyse multi-documents : croiser plusieurs sources, identifier contradictions, consolider',
-          'Rédiger avec des contraintes fortes : style juridique, normes comptables, ton institutionnel, prompts à haut degré de contrôle',
-          'Exploiter les capacités de raisonnement pas-à-pas de Claude pour des analyses à plusieurs niveaux',
-          'Intégrer Claude via l\'API Anthropic dans des outils internes : cas concrets sans compétence de développement',
-          'Définir les cas d\'usage prioritaires pour son métier et bâtir une bibliothèque de prompts opérationnels',
+          'Computer Use : agent Claude qui prend le contrôle de votre ordinateur pour exécuter des tâches multi-étapes (navigation, formulaires)',
+          'MCP (Model Context Protocol) : standard ouvert pour connecter Claude à vos outils internes (CRM, base de données, API)',
+          'Claude Code en CLI : agent autonome pour développeurs (refactor, debug, génération de tests, code review)',
+          'Sub-agents : déléguer des sous-tâches à plusieurs Claude spécialisés en parallèle (recherche, rédaction, analyse)',
+          'Fenêtre 200k tokens : digérer rapports annuels (300+ pages), contrats longs, codebases entières en une requête',
+          'API Anthropic : intégrer Claude dans vos outils internes (cas concrets sans compétence dev avancée)',
+          'Comparatif Claude / GitHub Copilot / Cursor pour le code : quand utiliser chaque outil selon la tâche',
+          'Plan d\'action 30 jours : industrialiser Claude dans les rituels d\'équipe, gouvernance des données, bibliothèque de Projects et Skills',
         ],
       },
     ],
@@ -324,24 +344,29 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Fondations Mistral et cas d\'usage métier',
+        title: 'Le Chat Pro/Enterprise, Mistral Large 2, Codestral, fonctionnalités souveraines',
         items: [
-          "Comprendre le positionnement de Mistral AI : modèles, offres, différenciation vs ChatGPT, Claude et Gemini",
-          "Prendre en main Le Chat et la Plateforme Mistral : interface, fonctionnalités, paramétrages",
-          "Maîtriser la structure d'un prompt efficace adapté aux forces de Mistral",
-          "Rédiger des contenus professionnels en français : emails, synthèses, rapports, courriers",
-          "Exploiter la qualité du français natif pour les productions institutionnelles",
+          'Panorama 2026 : Le Chat Free, Pro, Enterprise · Mistral Large 2 · Mistral Medium 3 · Codestral · Ministral (small)',
+          'Architecture souveraine : hébergement Scaleway, OVHcloud, Microsoft Azure France, options on-premise via open-weight',
+          'Le Chat Pro : Projects (espaces persistants), web search natif, génération d\'images, Code Interpreter',
+          'Le Chat Enterprise : SSO, RBAC, audit trail, conformité RGPD article 28, contrat de traitement',
+          'Maîtrise du français natif : pourquoi Mistral produit un français supérieur aux modèles US (corpus FR dense)',
+          'Cas d\'usage juridiques et financiers : analyse de contrats, notes de conformité, rapports CSRD/Pilier 3',
+          'Conformité RGPD article 9 : traiter les données de catégorie particulière (santé, vie syndicale) avec Mistral',
         ],
       },
       {
         day: 2,
-        title: 'Usages avancés et souveraineté des données',
+        title: 'API Mistral, Codestral, on-premise, agents et intégrations',
         items: [
-          "Analyser des documents longs en français : contrats, rapports, études sectorielles",
-          "Construire des workflows IA adaptés aux exigences de confidentialité et RGPD",
-          "Comparer Mistral Large, Mixtral et les modèles ouverts pour choisir selon le cas d'usage",
-          "Comprendre les options de déploiement : cloud, cloud privé, on-premise",
-          "Définir un plan de déploiement Mistral adapté à votre gouvernance IA",
+          'API Mistral (La Plateforme) : intégrer Mistral dans vos outils internes, function calling, structured output',
+          'Codestral : modèle spécialisé code (production, debug, refactor) déployable on-premise pour codebases sensibles',
+          'Mistral Embed : créer des bases de connaissances vectorielles internes (RAG) pour vos documents',
+          'Modèles open-weight (Mistral 7B, Mixtral 8x22B, Mistral Small) : déploiement gratuit sur infrastructure GPU interne',
+          'Ministral on-device : modèles légers déployables sur edge / mobile pour cas d\'usage offline',
+          'Comparatif Mistral / ChatGPT / Claude / Gemini : quand choisir Mistral (souveraineté + français + on-premise)',
+          'Architecture cible : choisir entre API publique, cloud privé, on-premise selon vos contraintes réglementaires',
+          'Plan d\'action 30 jours : politique d\'usage, gouvernance données, conformité DORA / CSRD / Pilier 3',
         ],
       },
     ],
@@ -370,6 +395,155 @@ export const HUB_CONTENT = {
       {
         q: "Quels métiers bénéficient le plus de Mistral AI ?",
         a: "Mistral est particulièrement adapté aux équipes qui produisent du contenu en français et/ou qui manipulent des données sensibles. En premier lieu : les juristes et directions juridiques (droit français, contrats en français, confidentialité des dossiers), les équipes RH (documents RH en français, données personnelles), la communication institutionnelle (qualité du français soutenu), les équipes marketing B2B France (copywriting français natif), les directions financières (données confidentielles) et les DSI (souveraineté numérique, déploiement on-premise). Pour les équipes travaillant principalement en anglais ou avec des besoins d'intégration dans l'écosystème Microsoft ou Google, ChatGPT, Copilot ou Gemini peuvent rester plus adaptés.",
+      },
+    ],
+  },
+
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SPRINT IA
+  // ─────────────────────────────────────────────────────────────────────────
+  'sprint-ia': {
+
+    why: [
+      {
+        title: "Acculturer rapidement plusieurs centaines de collaborateurs sans bloquer leur agenda",
+        body: "Les formations IA classiques de 1 ou 2 jours sont précieuses pour faire monter en compétence des équipes ciblées, mais elles deviennent un goulot d'étranglement dès qu'on doit toucher 200, 500 ou 2 000 personnes en quelques mois. Sprint IA répond à ce besoin : 3 heures, ciblé, pratique, animable en visioconférence avec 12 à 100 participants par session, déployable en cascade pour atteindre toute une organisation en 6 à 8 semaines.",
+      },
+      {
+        title: "Couvrir l'obligation de littératie IA prévue par l'AI Act, dès 2026",
+        body: "L'article 4 du règlement européen sur l'intelligence artificielle impose, depuis février 2025, que toute personne utilisant un système d'IA dans un cadre professionnel dispose d'un niveau de connaissances suffisant. Sprint IA Sensibilisation et Sprint IA AI Act, combinés, couvrent cette obligation à l'échelle d'une entreprise, avec une traçabilité Qualiopi et des feuilles d'émargement opposables.",
+      },
+      {
+        title: "Tester un format court avant d'engager un plan de formation à plus grande échelle",
+        body: "Beaucoup de DRH et responsables formation hésitent à engager un budget IA conséquent sans avoir mesuré l'appétence réelle de leurs équipes. Un Sprint IA déployé sur un échantillon de 50 à 100 collaborateurs permet de mesurer le NPS, l'usage réel post-formation et la maturité des cas d'usage. C'est un investissement minimal (à partir de 1 500 € en intra) qui éclaire les décisions suivantes.",
+      },
+    ],
+
+    programme: [
+      {
+        day: 1,
+        title: "Structure type d'un Sprint IA de 3 heures",
+        items: [
+          "1ère heure, fondamentaux : panorama IA générative (ChatGPT, Copilot, Gemini, Claude, Mistral), confidentialité, RGPD et AI Act",
+          "2e heure, manipulation guidée : chaque participant prompte sur un cas réel apporté en amont, avec guide formateur en direct",
+          "3e heure, mise en application : bibliothèque de prompts à emporter, plan d'action 30 jours, Q&A",
+          "Restitution : feuille d'émargement Qualiopi, attestation de présence, kit pédagogique numérique",
+          "Suivi à 30 jours : un mini-sondage NPS et 1 question ouverte sur l'usage réel post-formation",
+        ],
+      },
+      {
+        day: 1,
+        title: "6 déclinaisons disponibles selon le besoin",
+        items: [
+          "Sprint IA Sensibilisation : socle commun pour conventions, séminaires, déploiements grande échelle",
+          "Sprint IA Prompts : méthode CRTF (Contexte, Rôle, Tâche, Format) pour structurer ses prompts",
+          "Sprint IA Excel : tableaux croisés, formules, détection d'anomalies, premier mini-dashboard",
+          "Sprint IA Managers : exemplarité, cartographie d'équipe, objectifs IA dans les EAD",
+          "Sprint IA Veille : combo Feedly + ChatGPT + Perplexity, première synthèse hebdomadaire pendant le Sprint",
+          "Sprint IA AI Act : article 4, classifications de risque, calendrier 2026 et 2027, plan de conformité",
+        ],
+      },
+    ],
+
+    faq: [
+      {
+        q: "Sprint IA ou formation 2 jours, comment choisir ?",
+        a: "Sprint IA cible les besoins d'acculturation à grande échelle, de sensibilisation transverse ou de mise en conformité (AI Act). La formation 2 jours est nécessaire pour faire monter en compétence opérationnelle des équipes ciblées (marketing, finance, RH…) sur des cas d'usage métier complexes. Beaucoup de clients combinent les deux : Sprint pour la base élargie (100 à 500 personnes), formation 2 jours pour les 20 à 30 référents IA internes.",
+      },
+      {
+        q: "Combien de participants par session de Sprint IA ?",
+        a: "12 à 15 participants en intra-entreprise pour conserver une vraie interaction et la manipulation guidée. Format webinar : jusqu'à 50 à 100 participants avec Q&A structuré et démonstrations guidées. Pour les déploiements grande échelle (200 à 2 000 personnes), nous enchaînons 8 à 20 sessions sur 6 à 10 semaines, avec un même formateur ou en duo, et un kit pédagogique unifié.",
+      },
+      {
+        q: "Sprint IA est-il finançable par l'OPCO ?",
+        a: "Oui. Sprint IA est éligible aux financements OPCO comme toutes les formations Masteria, organisme certifié Qualiopi. Tarif inter-entreprises : 760 € HT par participant. Tarif intra : 1 500 € HT par session jusqu'à 12 personnes. Packages dégressifs à partir de 5 sessions (utiles pour les déploiements managériaux ou de conformité AI Act). Notre équipe accompagne le montage du dossier OPCO et fournit toutes les pièces sous 24 h.",
+      },
+      {
+        q: "Peut-on construire un Sprint IA sur mesure ?",
+        a: "Oui, c'est même fréquent pour les grands comptes. À partir d'un Sprint type, nous adaptons les cas d'usage, les exemples, les supports visuels (charte graphique de l'entreprise) et la bibliothèque de prompts livrée. L'animation reste de 3 heures. Pour les besoins très spécifiques (secteur régulé, outil interne, contrainte de souveraineté), un Sprint IA sur mesure peut être conçu en 2 à 3 semaines à partir d'un cadrage gratuit.",
+      },
+      {
+        q: "Comment se déroule concrètement une session ?",
+        a: "Sprint IA est un format alternant théorie courte (15 minutes max) et ateliers pratiques. Les participants sont invités à apporter 1 à 2 cas d'usage réels en amont (les modalités sont précisées dans l'invitation). Pendant la session, ils manipulent ChatGPT et Copilot sur leurs vrais cas, repartent avec une bibliothèque de prompts pré-remplie et un plan d'action 30 jours. Les supports sont remis en numérique en fin de session.",
+      },
+      {
+        q: "Sprint IA AI Act, à qui s'adresse ce format ?",
+        a: "Sprint IA AI Act cible les DSI, DPO, juristes, RH, managers et dirigeants qui doivent piloter la mise en conformité IA Act dans leur périmètre. Aucun prérequis juridique n'est nécessaire : la formation explique les notions clés à partir d'exemples concrets et livre un mini plan d'action 90 jours, 6 mois et 12 mois. Combinable avec Sprint IA Sensibilisation pour couvrir l'obligation de littératie IA (article 4) à l'échelle d'une entreprise.",
+      },
+    ],
+  },
+
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // MULTI-OUTILS
+  // ─────────────────────────────────────────────────────────────────────────
+  'multi-outils': {
+
+    why: [
+      {
+        title: "Comparer les 5 IA sur vos vrais cas d'usage avant d'arbitrer",
+        body: "ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral ne se valent pas selon le contexte : intégration Microsoft 365, respect du RGPD, qualité du français, raisonnement long, écosystème Google. La formation Multi-outils place les 5 IA côte à côte sur les vrais cas d'usage de votre équipe pour vous donner une grille de décision factuelle, pas un comparatif marketing.",
+      },
+      {
+        title: "Faire monter une équipe en compétence sans imposer un outil unique",
+        body: "Toutes les organisations n'ont pas besoin du même outil, et toutes les équipes n'ont pas le même environnement (Microsoft 365, Google Workspace, contraintes de souveraineté). Le format Multi-outils outille chaque participant sur les 2 ou 3 IA les plus pertinentes pour son métier, plutôt que d'imposer un outil unique qui ne couvrirait que 60 % des besoins.",
+      },
+      {
+        title: "Préparer un appel d'offres IA ou un choix de stack interne en connaissance de cause",
+        body: "Avant d'engager 50 000 € à 500 000 € sur une stack IA d'entreprise (licences, intégration, formation), former les décideurs et les utilisateurs clés au comparatif des 5 IA évite des choix coûteux à reverser. La formation Multi-outils est régulièrement utilisée comme étape préalable à un appel d'offres ou à une négociation éditeur.",
+      },
+    ],
+
+    programme: [
+      {
+        day: 1,
+        title: "Panorama et fondamentaux multi-outils",
+        items: [
+          "Comprendre les différences concrètes entre ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral",
+          "Maîtriser une méthode de prompt universelle (CRTF) qui fonctionne sur les 5 outils",
+          "Tester chaque outil sur le même cas d'usage métier et comparer les résultats",
+          "Construire une grille de décision : quel outil pour quel type de tâche dans votre équipe",
+          "Comprendre les enjeux de confidentialité, RGPD et AI Act selon l'outil choisi",
+        ],
+      },
+      {
+        day: 2,
+        title: "Cas d'usage métier et plan de déploiement",
+        items: [
+          "Décliner les cas d'usage métier des participants sur les 2 ou 3 outils les plus pertinents",
+          "Industrialiser les prompts : bibliothèque partagée, system prompts, modèles réutilisables",
+          "Identifier les complémentarités d'outils (ex : Claude pour les documents longs + Copilot pour Excel)",
+          "Construire un plan de déploiement IA sur 30, 60 et 90 jours adapté à votre stack",
+          "Définir un cadre d'usage interne : ce qui est OK, ce qui ne l'est pas, comment escalader un doute",
+        ],
+      },
+    ],
+
+    faq: [
+      {
+        q: "Pourquoi former mon équipe sur 5 outils plutôt que sur un seul ?",
+        a: "Parce que les outils ont des forces complémentaires : Microsoft Copilot est imbattable pour les utilisateurs Microsoft 365, Claude excelle sur les documents longs, Mistral assure la souveraineté européenne, ChatGPT reste la référence générale. Former sur un seul outil limite mécaniquement le périmètre des cas d'usage couverts. La formation Multi-outils permet de choisir le bon outil pour chaque tâche, plutôt que de plier toutes les tâches à un outil unique.",
+      },
+      {
+        q: "La formation Multi-outils est-elle finançable par l'OPCO ?",
+        a: "Oui. La formation Multi-outils est éligible aux financements OPCO comme toutes les formations Masteria, organisme certifié Qualiopi. Le tarif inter-entreprises est de 760 € HT par jour et par participant (1 520 € HT pour les 2 jours). En intra-entreprise, le tarif est de 1 500 € HT par jour pour un groupe jusqu'à 12 personnes. Notre équipe accompagne le montage du dossier OPCO et fournit les pièces nécessaires sous 24 h.",
+      },
+      {
+        q: "Faut-il avoir déjà utilisé un outil IA avant de suivre la formation ?",
+        a: "Non. La formation Multi-outils est conçue pour des participants qui découvrent l'IA générative ou qui ont une expérience inégale d'un outil à l'autre. La première demi-journée pose les fondamentaux communs (prompt, contexte, contraintes, formats) avant d'attaquer le comparatif. Pour les équipes déjà bien outillées sur un seul outil, la formation permet de tester rapidement les 4 autres et de mesurer l'écart.",
+      },
+      {
+        q: "À quoi sert la grille de décision construite pendant la formation ?",
+        a: "La grille de décision permet à chaque participant de savoir quel outil utiliser pour quelle tâche, sans avoir à se reposer la question à chaque fois. Elle articule plusieurs critères : type de tâche (rédaction, analyse, automatisation), volume de données, sensibilité (RGPD, secret professionnel), environnement de travail (Microsoft 365, Google Workspace), budget. Cette grille est partagée à la fin de la formation et peut servir de base à une charte IA d'équipe.",
+      },
+      {
+        q: "Peut-on construire un parcours Multi-outils sur mesure ?",
+        a: "Oui. Le format Multi-outils existe en 12 déclinaisons métier (marketing, RH, finance, commercial, communication, management, achats, assistantes, SEO, service client, informatique, pédagogique). Pour les organisations avec un besoin spécifique (secteur régulé, outil interne, contrainte de stack), nous construisons un parcours sur mesure en intra-entreprise : audit préalable, design pédagogique dédié, livrables adaptés. Cadrage gratuit, devis sous 24 h.",
+      },
+      {
+        q: "Quels outils sont effectivement comparés ?",
+        a: "Les 5 IA génératives leader du marché en 2026 : ChatGPT (OpenAI), Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. La formation couvre les versions grand public et les versions Entreprise lorsqu'elles existent (ChatGPT Enterprise, Copilot pour Microsoft 365, Gemini Workspace, Claude pour Entreprises, Le Chat Pro et Mistral on-premise). Les outils sont testés sur les vrais comptes des participants quand ils en disposent, ou sur des comptes de démonstration sinon.",
       },
     ],
   },

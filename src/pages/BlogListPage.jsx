@@ -21,9 +21,28 @@ export default function BlogListPage() {
     <div>
       <SEOHead
         title="Blog IA en entreprise | Conseils, guides et retours terrain | Masteria"
-        description="Guides pratiques, financement OPCO, retours terrain et méthodes pour déployer l'IA en entreprise. Par Masteria, cabinet de conseil et centre de formation certifié Qualiopi."
+        description="Guides pratiques, financement OPCO, retours terrain et méthodes pour déployer l'IA en entreprise. Par Masteria, certifié Qualiopi."
         slug="blog"
+        breadcrumbs={[
+          { name: 'Accueil', slug: '' },
+          { name: 'Blog', slug: 'blog' },
+        ]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        name: 'Blog Masteria — IA en entreprise',
+        url: 'https://www.master-ia.fr/blog',
+        publisher: { '@type': 'Organization', name: 'Masteria', url: 'https://www.master-ia.fr' },
+        blogPost: BLOG_ARTICLES.filter(a => !a.externalPath).map(a => ({
+          '@type': 'BlogPosting',
+          headline: a.title,
+          url: `https://www.master-ia.fr/blog/${a.slug}`,
+          datePublished: a.datePublished,
+          dateModified: a.dateModified || a.datePublished,
+          author: { '@type': 'Person', name: a.author || 'Mathias Nizan' },
+        })),
+      }) }} />
 
       {/* HERO clair */}
       <section style={{
@@ -87,10 +106,17 @@ export default function BlogListPage() {
 
         {/* Featured */}
         {featured && (
-          <FadeIn style={{ marginBottom: 32 }}>
-            <Link to={`/blog/${featured.slug}`} style={{ textDecoration: 'none' }}>
+          <>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 28px)',
+              fontWeight: 800, color: '#0A0A0A', margin: '0 0 16px',
+            }}>
+              À la une
+            </h2>
+            <FadeIn style={{ marginBottom: 32 }}>
+            <Link to={featured.externalPath || `/blog/${featured.slug}`} style={{ textDecoration: 'none' }}>
               <div style={{
-                background: '#0A0A0A',
+                background: '#F5F3EE',
                 borderRadius: 18,
                 padding: 'clamp(24px, 4vw, 44px)',
                 display: 'grid',
@@ -99,25 +125,26 @@ export default function BlogListPage() {
                 alignItems: 'center',
               }}>
                 <div style={{ minWidth: 0 }}>
-                  <div style={{ display: 'inline-flex', padding: '4px 12px', background: '#1F2937', borderRadius: 999, marginBottom: 14 }}>
-                    <span style={{ fontSize: 10, fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  <div style={{ display: 'inline-flex', padding: '4px 12px', background: '#fff', borderRadius: 999, marginBottom: 14, border: '1px solid #E5E7EB' }}>
+                    <span style={{ fontSize: 10, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                       À la une · {featured.tag}
                     </span>
                   </div>
-                  <h2 style={{
+                  <h3 style={{
                     fontFamily: 'Nunito, sans-serif',
                     fontSize: 'clamp(20px, 2.6vw, 26px)',
                     fontWeight: 800,
-                    color: '#fff',
+                    color: '#0A0A0A',
                     lineHeight: 1.25,
                     marginBottom: 12,
+                    marginTop: 0,
                   }}>
                     {featured.title}
-                  </h2>
+                  </h3>
                   <p style={{
                     fontFamily: 'DM Sans, sans-serif',
                     fontSize: 14,
-                    color: '#9CA3AF',
+                    color: '#6B7280',
                     lineHeight: 1.65,
                     marginBottom: 16,
                   }}>
@@ -132,8 +159,8 @@ export default function BlogListPage() {
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 20px',
-                  background: '#fff',
-                  color: '#0A0A0A',
+                  background: '#0A0A0A',
+                  color: '#fff',
                   borderRadius: 10,
                   fontFamily: 'DM Sans, sans-serif',
                   fontSize: 14,
@@ -146,9 +173,16 @@ export default function BlogListPage() {
               </div>
             </Link>
           </FadeIn>
+          </>
         )}
 
         {/* Grid of other articles */}
+        <h2 style={{
+          fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 28px)',
+          fontWeight: 800, color: '#0A0A0A', margin: '0 0 20px',
+        }}>
+          Tous les articles
+        </h2>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
@@ -157,7 +191,7 @@ export default function BlogListPage() {
         }}>
           {rest.map((a, i) => (
             <FadeIn key={a.slug} delay={i * 60}>
-              <Link to={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
+              <Link to={a.externalPath || `/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div style={{
                   background: '#fff',
                   borderRadius: 14,
@@ -205,7 +239,7 @@ export default function BlogListPage() {
                   }}>
                     {a.excerpt}
                   </p>
-                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#9CA3AF' }}>
+                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#6B7280' }}>
                     {a.date} · {a.readTime}
                   </div>
                 </div>

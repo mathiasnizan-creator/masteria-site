@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
+  Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown,
+  BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
 import { useIsMobile } from '../hooks/useMediaQuery';
@@ -13,7 +14,6 @@ const METIER_ICONS_NAV = {
   'formation-ia-ressources-humaines': Users,
   'formation-ia-finance':             TrendingUp,
   'formation-ia-commercial':          Briefcase,
-  'formation-ia-juridique':           Scale,
   'formation-ia-communication':       Radio,
   'formation-ia-management':          Target,
   'formation-ia-assistante':          CalendarCheck,
@@ -21,6 +21,8 @@ const METIER_ICONS_NAV = {
   'formation-ia-service-client':      Headphones,
   'formation-ia-informatique':        Server,
   'formation-ia-pedagogique':         GraduationCap,
+  'formation-ia-achats':              ShoppingCart,
+  'formation-ia-transverse':          Sparkles,
 };
 
 function useFade() {
@@ -64,11 +66,12 @@ export function SecBtn({ children, onClick, style = {}, type = 'button' }) {
 }
 
 const OUTILS = [
-  { id: 'chatgpt', slug: 'formation-chatgpt-entreprise',  label: 'ChatGPT',           color: '#10a37f', bg: '#d1fae5', desc: 'Productivité et rédaction au quotidien' },
-  { id: 'copilot', slug: 'formation-microsoft-copilot',   label: 'Microsoft Copilot', color: '#0078d4', bg: '#dbeafe', desc: 'IA intégrée à Microsoft 365' },
-  { id: 'gemini',  slug: 'formation-gemini-entreprise',   label: 'Google Gemini',     color: '#8E75B2', bg: '#ede9fe', desc: 'IA intégrée à Google Workspace' },
-  { id: 'claude',  slug: 'formation-claude-entreprise',   label: 'Claude (Anthropic)',color: '#d97706', bg: '#fef3c7', desc: 'Analyse et rédaction de précision' },
-  { id: 'mistral', slug: 'formation-mistral-entreprise',   label: 'Mistral AI',        color: '#fa500a', bg: '#fed7aa', desc: "L'IA française souveraine, RGPD native" },
+  { id: 'chatgpt',      slug: 'formation-chatgpt',                  label: 'ChatGPT',           color: '#10a37f', bg: '#d1fae5', desc: 'Productivité et rédaction au quotidien' },
+  { id: 'copilot',      slug: 'formation-microsoft-copilot',        label: 'Microsoft Copilot', color: '#0078d4', bg: '#dbeafe', desc: 'IA intégrée à Microsoft 365' },
+  { id: 'gemini',       slug: 'formation-gemini-entreprise',        label: 'Google Gemini',     color: '#8E75B2', bg: '#ede9fe', desc: 'IA intégrée à Google Workspace' },
+  { id: 'claude',       slug: 'formation-claude-ia',                label: 'Claude (Anthropic)',color: '#d97706', bg: '#fef3c7', desc: 'Analyse et rédaction de précision' },
+  { id: 'mistral',      slug: 'formation-mistral-ai',               label: 'Mistral AI',        color: '#fa500a', bg: '#fed7aa', desc: "L'IA française souveraine, RGPD native" },
+  { id: 'multi-outils', slug: 'formation-multi-outils',              label: 'Multi-outils',     color: '#6366f1', bg: '#e0e7ff', desc: 'Comparer les 5 IA sur vos cas réels' },
 ]
 
 const METIERS_NAV = [
@@ -76,14 +79,15 @@ const METIERS_NAV = [
   { label: 'Ressources Humaines',     slug: 'formation-ia-ressources-humaines' },
   { label: 'Commercial',              slug: 'formation-ia-commercial' },
   { label: 'Finance',                 slug: 'formation-ia-finance' },
-  { label: 'Juridique',               slug: 'formation-ia-juridique' },
   { label: 'Communication',           slug: 'formation-ia-communication' },
   { label: 'Management',              slug: 'formation-ia-management' },
-  { label: 'Assistante de direction', slug: 'formation-ia-assistante' },
+  { label: 'Assistanat de direction', slug: 'formation-ia-assistante' },
   { label: 'SEO',                     slug: 'formation-ia-seo' },
   { label: 'Service Client',          slug: 'formation-ia-service-client' },
   { label: 'Informatique / DSI',      slug: 'formation-ia-informatique' },
   { label: 'Équipes Pédagogiques',    slug: 'formation-ia-pedagogique' },
+  { label: 'Achats',                  slug: 'formation-ia-achats' },
+  { label: 'Multi-métier',            slug: 'formation-ia-transverse' },
 ]
 
 export function MasteriaHeader() {
@@ -92,8 +96,20 @@ export function MasteriaHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [mobileFormationsOpen, setMobileFormationsOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(104);
   const menuRef = useRef(null);
   const timerRef = useRef(null);
+  const headerRef = useRef(null);
+
+  // Mesure la hauteur réelle du header (nav + bandeau confiance)
+  useEffect(() => {
+    if (!headerRef.current) return;
+    const update = () => setHeaderHeight(headerRef.current.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(headerRef.current);
+    return () => ro.disconnect();
+  }, []);
 
   // Fermer le menu mobile au changement de page
   useEffect(() => {
@@ -117,8 +133,9 @@ export function MasteriaHeader() {
   };
 
   const navLinks = [
-    { label: 'Conseil IA', path: '/conseil-ia' },
-    { label: 'À propos', path: '/a-propos' },
+    { label: 'Conseil IA', path: '/conseil-intelligence-artificielle' },
+    { label: 'Financement', path: '/financement-formation-ia' },
+    { label: 'À propos', path: '/centre-formation-ia-entreprise' },
     { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
   ];
@@ -126,7 +143,7 @@ export function MasteriaHeader() {
   const formationsActive = location.pathname.startsWith('/formation');
 
   return (
-    <header style={{ position: 'sticky', top: 0, background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(10px)', borderBottom: '1px solid #EFEFEF', zIndex: 200 }}>
+    <header ref={headerRef} style={{ position: 'sticky', top: 0, background: '#fff', borderBottom: '1px solid #EFEFEF', zIndex: 200, transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}>
       <div style={{
         maxWidth: 1080, margin: '0 auto',
         padding: isMobile ? '0 18px' : '0 32px',
@@ -134,7 +151,25 @@ export function MasteriaHeader() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="/assets/logo-horizontal.png" alt="Masteria, Centre de formation IA certifié Qualiopi" width="1920" height="1080" fetchpriority="high" decoding="async" style={{ height: isMobile ? 40 : 56, width: 'auto', display: 'block' }} />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/assets/logo-horizontal@400w.webp 400w"
+              sizes="(max-width: 768px) 120px, 160px"
+            />
+            <source
+              type="image/jpeg"
+              srcSet="/assets/logo-horizontal@400w.jpg 400w"
+              sizes="(max-width: 768px) 120px, 160px"
+            />
+            <img
+              src="/assets/logo-horizontal@400w.jpg"
+              alt="Masteria, Centre de formation IA certifié Qualiopi"
+              width="400" height="225"
+              fetchpriority="high" decoding="sync"
+              style={{ height: isMobile ? 40 : 56, width: 'auto', display: 'block' }}
+            />
+          </picture>
         </Link>
 
         {/* ═════════════ NAV DESKTOP ═════════════ */}
@@ -162,13 +197,31 @@ export function MasteriaHeader() {
                 <div style={{
                   position: 'absolute', top: 'calc(100% + 16px)', left: '50%', transform: 'translateX(-50%)',
                   background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
-                  padding: '24px 28px', width: 680, display: 'grid', gridTemplateColumns: '220px 1fr', gap: 28,
+                  padding: '20px 24px 24px', width: 940,
                   zIndex: 300,
                 }}>
                   <div style={{ position: 'absolute', top: -7, left: '50%', transform: 'translateX(-50%)', width: 14, height: 14, background: '#fff', border: '1px solid #EFEFEF', borderRight: 'none', borderBottom: 'none', rotate: '45deg' }} />
 
+                  {/* Bannière "Toutes les formations" */}
+                  <Link to="/formation-intelligence-artificielle" onClick={() => setMenuOpen(false)}
+                    style={{ textDecoration: 'none', borderRadius: 10, padding: '12px 14px', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 12, background: 'linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%)', border: '1px solid #FCD34D', transition: 'transform 120ms' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+                  >
+                    <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Target size={18} color="#d97706" strokeWidth={2.2} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Catalogue complet · 89 formations</div>
+                      <div style={{ fontSize: 12, color: '#92400E' }}>Filtrer par outil et métier pour trouver la formation adaptée</div>
+                    </div>
+                    <span style={{ fontSize: 16, color: '#92400E', fontWeight: 700 }}>→</span>
+                  </Link>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr 280px', gap: 24 }}>
+                  {/* COL 1 — Par outil IA */}
                   <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: 12 }}>Par outil IA</p>
+                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Par outil IA</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                       {OUTILS.map(o => (
                         <Link key={o.slug} to={`/${o.slug}`} onClick={() => setMenuOpen(false)}
@@ -181,28 +234,16 @@ export function MasteriaHeader() {
                           </div>
                           <div>
                             <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#111' }}>{o.label}</div>
-                            <div style={{ fontSize: 11, color: '#9CA3AF' }}>{o.desc}</div>
+                            <div style={{ fontSize: 11, color: '#6B7280' }}>{o.desc}</div>
                           </div>
                         </Link>
                       ))}
-                      <Link to="/formation-ia-par-metier" onClick={() => setMenuOpen(false)}
-                        style={{ textDecoration: 'none', borderRadius: 8, padding: '8px 10px', marginTop: 4, display: 'flex', alignItems: 'center', gap: 10, background: '#F9FAFB', transition: 'background 120ms' }}
-                        onMouseEnter={e => e.currentTarget.style.background = '#F0F0F0'}
-                        onMouseLeave={e => e.currentTarget.style.background = '#F9FAFB'}
-                      >
-                        <div style={{ width: 34, height: 34, borderRadius: 8, background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                          <Target size={16} color="#d97706" strokeWidth={2} />
-                        </div>
-                        <div>
-                          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#111' }}>Toutes les formations</div>
-                          <div style={{ fontSize: 11, color: '#9CA3AF' }}>Par métier, outil ou niveau</div>
-                        </div>
-                      </Link>
                     </div>
                   </div>
 
+                  {/* COL 2 — Par métier */}
                   <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: 12 }}>Par métier</p>
+                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Par métier</p>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px 4px' }}>
                       {METIERS_NAV.map(m => {
                         const Icon = METIER_ICONS_NAV[m.slug];
@@ -218,6 +259,26 @@ export function MasteriaHeader() {
                         );
                       })}
                     </div>
+                  </div>
+
+                  {/* COL 3 — Ateliers Sprint IA */}
+                  <div>
+                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Ateliers · Sprint IA</p>
+                    <Link to="/formation-sprint-ia" onClick={() => setMenuOpen(false)}
+                      style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', padding: '12px 14px', borderRadius: 10, background: 'linear-gradient(135deg, #FFF7ED 0%, #FED7AA 100%)', border: '1px solid #FDBA74', transition: 'transform 120ms' }}
+                      onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+                      onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+                    >
+                      <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <Zap size={18} color="#F97316" strokeWidth={2.4} />
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 800, color: '#7C2D12' }}>Sprints IA · 3 h</div>
+                        <div style={{ fontSize: 11.5, color: '#9A3412' }}>Formats courts pour acculturer une équipe</div>
+                      </div>
+                      <span style={{ fontSize: 16, color: '#9A3412', fontWeight: 700 }}>→</span>
+                    </Link>
+                  </div>
                   </div>
                 </div>
               )}
@@ -239,25 +300,36 @@ export function MasteriaHeader() {
           </nav>
         )}
 
-        {/* ═════════════ BURGER MOBILE ═════════════ */}
+        {/* ═════════════ CTA + BURGER MOBILE ═════════════ */}
         {isMobile && (
-          <button
-            aria-label={mobileNavOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-            onClick={() => setMobileNavOpen(v => !v)}
-            style={{
-              background: 'none', border: 'none', padding: 8, cursor: 'pointer',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}
-          >
-            {mobileNavOpen ? <X size={26} color="#0A0A0A" /> : <Menu size={26} color="#0A0A0A" />}
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <Link to="/contact" style={{
+              fontFamily: 'DM Sans, sans-serif', fontSize: 12.5, fontWeight: 700,
+              background: '#F97316', color: '#fff', borderRadius: 7,
+              padding: '8px 14px', textDecoration: 'none',
+              boxShadow: '0 2px 8px rgba(249,115,22,0.30)',
+              whiteSpace: 'nowrap',
+            }}>
+              Devis
+            </Link>
+            <button
+              aria-label={mobileNavOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              onClick={() => setMobileNavOpen(v => !v)}
+              style={{
+                background: 'none', border: 'none', padding: 6, cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}
+            >
+              {mobileNavOpen ? <X size={26} color="#0A0A0A" /> : <Menu size={26} color="#0A0A0A" />}
+            </button>
+          </div>
         )}
       </div>
 
-      {/* ═════════════ DRAWER MOBILE ═════════════ */}
-      {isMobile && mobileNavOpen && (
+      {/* ═════════════ DRAWER MOBILE (portal hors du header pour éviter le backdrop-filter) ═════════════ */}
+      {isMobile && mobileNavOpen && createPortal(
         <div style={{
-          position: 'fixed', top: 64, left: 0, right: 0, bottom: 0,
+          position: 'fixed', top: headerHeight, left: 0, right: 0, bottom: 0,
           background: '#fff', overflowY: 'auto', zIndex: 199,
           padding: '20px 20px 40px',
         }}>
@@ -276,7 +348,25 @@ export function MasteriaHeader() {
           </button>
           {mobileFormationsOpen && (
             <div style={{ paddingLeft: 4, paddingBottom: 12 }}>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', margin: '16px 0 8px' }}>Par outil IA</div>
+              {/* Catalogue complet (bannière en haut) */}
+              <Link to="/formation-intelligence-artificielle" style={{
+                display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px',
+                textDecoration: 'none',
+                background: 'linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%)',
+                border: '1px solid #FCD34D',
+                borderRadius: 10, margin: '16px 0 8px',
+              }}>
+                <div style={{ width: 34, height: 34, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Target size={17} color="#d97706" strokeWidth={2.2} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#111' }}>Catalogue complet · 89 formations</div>
+                  <div style={{ fontSize: 12, color: '#92400E' }}>Filtrer par outil et métier</div>
+                </div>
+                <span style={{ color: '#92400E', fontWeight: 700 }}>→</span>
+              </Link>
+
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Par outil IA</div>
               {OUTILS.map(o => (
                 <Link key={o.slug} to={`/${o.slug}`} style={{
                   display: 'flex', alignItems: 'center', gap: 12, padding: '10px 8px',
@@ -289,14 +379,24 @@ export function MasteriaHeader() {
                 </Link>
               ))}
 
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9CA3AF', margin: '16px 0 8px' }}>Par métier</div>
-              <Link to="/formation-ia-par-metier" style={{
-                display: 'flex', alignItems: 'center', gap: 10, padding: '10px 8px',
-                textDecoration: 'none', background: '#F9FAFB', borderRadius: 8, marginBottom: 6,
+              <Link to="/formation-sprint-ia" style={{
+                display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px',
+                textDecoration: 'none',
+                background: 'linear-gradient(135deg, #FFF7ED 0%, #FED7AA 100%)',
+                border: '1px solid #FDBA74',
+                borderRadius: 10, margin: '16px 0 8px',
               }}>
-                <Target size={16} color="#d97706" />
-                <span style={{ fontSize: 14, fontWeight: 700, color: '#0A0A0A' }}>Voir toutes les formations métiers</span>
+                <div style={{ width: 34, height: 34, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Zap size={17} color="#F97316" strokeWidth={2.4} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#7C2D12' }}>Sprints IA · 3 h</div>
+                  <div style={{ fontSize: 12, color: '#9A3412' }}>Ateliers courts pour acculturer</div>
+                </div>
+                <span style={{ color: '#9A3412', fontWeight: 700 }}>→</span>
               </Link>
+
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Par métier</div>
               {METIERS_NAV.map(m => {
                 const Icon = METIER_ICONS_NAV[m.slug];
                 return (
@@ -333,36 +433,55 @@ export function MasteriaHeader() {
             Demander un devis
           </Link>
         </div>
-      )}
+      , document.body)}
 
       {/* ═════════════ BANDEAU CONFIANCE ═════════════ */}
+      <style>{`
+        @keyframes shimmer-trust {
+          0%   { transform: translateX(-100%); }
+          100% { transform: translateX(400%); }
+        }
+      `}</style>
       <div style={{
-        background: '#FAFAF7',
-        borderTop: '1px solid #E5E7EB',
-        padding: isMobile ? '8px 12px' : '11px 16px',
+        background: '#EFF6FF',
+        borderTop: '1px solid #DBEAFE',
+        padding: isMobile ? '8px 12px' : '10px 24px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: isMobile ? 14 : 40,
+        gap: isMobile ? 16 : 32,
         flexWrap: 'wrap',
+        position: 'relative',
+        overflow: 'hidden',
       }}>
+        {/* ── Shimmer sweep ── */}
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%)',
+          animation: 'shimmer-trust 3s ease-in-out infinite',
+          pointerEvents: 'none',
+        }} />
+
         {[
-          { Icon: BadgeCheck, label: 'Certifié Qualiopi',          shortLabel: 'Qualiopi',     color: '#059669' },
-          { Icon: Wallet,     label: 'Finançable OPCO',            shortLabel: 'OPCO',          color: '#2563EB' },
-          { Icon: MapPin,     label: 'France · Suisse · Belgique', shortLabel: 'FR · CH · BE', color: '#D97706' },
-        ].map(({ Icon, label, shortLabel, color }, i) => (
+          { Icon: BadgeCheck, label: 'Certifié Qualiopi',          shortLabel: 'Qualiopi' },
+          { Icon: Wallet,     label: 'Finançable OPCO',            shortLabel: 'OPCO' },
+          { Icon: MapPin,     label: 'France · Suisse · Belgique', shortLabel: 'FR · CH · BE' },
+        ].map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
-            display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 8,
+            display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
             fontFamily: 'DM Sans, sans-serif',
-            fontSize: isMobile ? 11 : 12.5, fontWeight: 700, color: '#0A0A0A',
-            letterSpacing: '0.02em',
+            fontSize: isMobile ? 11 : 12, fontWeight: 700, color: '#1E40AF',
+            letterSpacing: '0.03em',
+            position: 'relative',
           }}>
             <span style={{
-              width: isMobile ? 18 : 22, height: isMobile ? 18 : 22, borderRadius: 999,
-              background: `${color}18`, border: `1px solid ${color}40`,
+              width: isMobile ? 17 : 20, height: isMobile ? 17 : 20, borderRadius: 999,
+              background: '#2563EB',
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              flexShrink: 0,
+              boxShadow: '0 2px 6px rgba(37,99,235,0.35)',
             }}>
-              <Icon size={isMobile ? 11 : 13} color={color} strokeWidth={2.5} />
+              <Icon size={isMobile ? 10 : 11} color="#fff" strokeWidth={2.5} />
             </span>
             {isMobile ? shortLabel : label}
           </span>
@@ -375,44 +494,75 @@ export function MasteriaHeader() {
 export function MasteriaFooter() {
   const isMobile = useIsMobile();
   const colHead = { fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#555', marginBottom: 14 };
-  const lStyle = { display: 'block', color: '#9A9A9A', fontSize: 13, padding: '3px 0', textDecoration: 'none', fontFamily: 'DM Sans, sans-serif', transition: 'color 150ms' };
+  const lStyle = { display: 'block', color: '#B5BAC1', fontSize: 13, padding: '3px 0', textDecoration: 'none', fontFamily: 'DM Sans, sans-serif', transition: 'color 150ms' };
   return (
     <footer style={{ background: '#111', padding: isMobile ? '48px 20px 28px' : '56px 32px 32px' }}>
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1fr 1fr',
+          gridTemplateColumns: isMobile ? '1fr' : '1.5fr 1fr 1fr 1fr',
           gap: isMobile ? 28 : 40,
           marginBottom: isMobile ? 32 : 48,
         }}>
           <div>
-            <img src="/assets/logo-horizontal.png" alt="Masteria, Centre de formation IA certifié Qualiopi" width="1920" height="1080" loading="lazy" decoding="async" style={{ filter: 'invert(1)', marginBottom: 14, height: 44, width: 'auto', display: 'block' }} />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="/assets/logo-horizontal@400w.webp 400w, /assets/logo-horizontal@800w.webp 800w"
+                sizes="160px"
+              />
+              <img
+                src="/assets/logo-horizontal@400w.png"
+                srcSet="/assets/logo-horizontal@400w.png 400w, /assets/logo-horizontal@800w.png 800w"
+                sizes="160px"
+                alt="Masteria, Centre de formation IA certifié Qualiopi"
+                width="400" height="225"
+                loading="lazy" decoding="async"
+                style={{ filter: 'invert(1)', marginBottom: 14, height: 44, width: 'auto', display: 'block' }}
+              />
+            </picture>
             <p style={{ fontSize: 13, color: '#888', lineHeight: 1.75, maxWidth: 260 }}>Centre de formation certifié Qualiopi. L'IA au service des hommes, pas l'inverse.</p>
           </div>
           <div>
-            <div style={colHead}>Formations</div>
+            <div style={colHead}>Formations par outil</div>
             {[
-              ['ChatGPT en entreprise', '/formation-chatgpt-entreprise'],
-              ['Microsoft Copilot', '/formation-microsoft-copilot'],
-              ['Google Gemini', '/formation-gemini-entreprise'],
-              ['Formation IA par métier', '/formation-ia-par-metier'],
-              ['Toutes les formations', '/formation-ia-par-metier'],
+              ['Formation ChatGPT', '/formation-chatgpt'],
+              ['Formation Claude IA', '/formation-claude-ia'],
+              ['Formation Mistral AI', '/formation-mistral-ai'],
+              ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
+              ['Formation Google Gemini', '/formation-gemini-entreprise'],
+              ['Toutes les formations IA', '/formation-intelligence-artificielle'],
+            ].map(([l, path]) => (
+              <Link key={l} to={path} style={lStyle}>{l}</Link>
+            ))}
+          </div>
+          <div>
+            <div style={colHead}>Formations par ville</div>
+            {[
+              ['Formation IA Paris', '/formation-ia-paris'],
+              ['Formation IA Lyon', '/formation-ia-lyon'],
+              ['Formation IA Marseille', '/formation-ia-marseille'],
+              ['Formation IA Genève', '/formation-ia-geneve'],
+              ['Formation IA Bruxelles', '/formation-ia-bruxelles'],
             ].map(([l, path]) => (
               <Link key={l} to={path} style={lStyle}>{l}</Link>
             ))}
           </div>
           <div>
             <div style={colHead}>Masteria</div>
-            {[['Conseil IA', '/conseil-ia'], ['À propos', '/a-propos'], ['Blog', '/blog'], ['Contact', '/contact']].map(([l, path]) => (
+            {[
+              ['Conseil IA', '/conseil-intelligence-artificielle'],
+              ['À propos', '/centre-formation-ia-entreprise'],
+              ['Blog', '/blog'],
+              ['Glossaire IA (80 termes)', '/glossaire-ia'],
+              ['Quelle est la meilleure IA ?', '/quelle-est-la-meilleure-ia'],
+              ['Contact', '/contact'],
+            ].map(([l, path]) => (
               <Link key={path} to={path} style={lStyle}>{l}</Link>
             ))}
-          </div>
-          <div>
-            <div style={colHead}>Contact</div>
-            <div style={{ fontSize: 13, color: '#888', lineHeight: 2 }}>
+            <div style={{ marginTop: 16, fontSize: 13, color: '#888', lineHeight: 1.9 }}>
               <div>mathias.nizan@master-ia.fr</div>
               <div>France · Suisse · Belgique</div>
-              <a href="https://master-ia.fr" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', fontSize: 13, display: 'block', marginTop: 10 }}>master-ia.fr →</a>
             </div>
           </div>
         </div>
@@ -440,12 +590,12 @@ export function TrainingCard({ tag, title, desc, price, unit, color, onClick }) 
       style={{ background: '#fff', borderRadius: 12, overflow: 'hidden', boxShadow: h ? '0 8px 32px rgba(0,0,0,0.10)' : '0 2px 12px rgba(0,0,0,0.06)', transform: h ? 'translateY(-3px)' : 'none', transition: 'all 200ms ease', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}>
       <div style={{ height: 5, background: color || '#E8E8E8' }} />
       <div style={{ padding: '20px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 8 }}>{tag}</div>
+        <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 8 }}>{tag}</div>
         <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#111', lineHeight: 1.3, marginBottom: 10, flex: 1 }}>{title}</div>
         <p style={{ fontSize: 13, color: '#717171', lineHeight: 1.55, marginBottom: 16 }}>{desc}</p>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
           <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#111', whiteSpace: 'nowrap' }}>{price}</span>
-          <span style={{ fontSize: 12, color: '#9A9A9A' }}>{unit}</span>
+          <span style={{ fontSize: 12, color: '#6B7280' }}>{unit}</span>
         </div>
       </div>
     </div>
@@ -454,7 +604,7 @@ export function TrainingCard({ tag, title, desc, price, unit, color, onClick }) 
 
 export function StatsBar() {
   const stats = [
-    { num: '+500', label: 'Professionnels formés' },
+    { num: '+1 500', label: 'Professionnels formés' },
     { num: '98%', label: 'Satisfaction' },
     { num: '100%', label: 'Finançable OPCO' },
     { num: '+6h', label: 'Productivité / semaine' },
@@ -471,7 +621,7 @@ export function StatsBar() {
         {stats.map((s, i) => (
           <div key={i} style={{ textAlign: 'center' }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fff', lineHeight: 1 }}>{s.num}</div>
-            <div style={{ fontSize: 12, color: '#9A9A9A', marginTop: 6 }}>{s.label}</div>
+            <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 6 }}>{s.label}</div>
           </div>
         ))}
       </div>

@@ -213,6 +213,14 @@ export default function BlogArticlePage() {
   const navigate = useNavigate()
   const article = getArticleBySlug(slug)
 
+  // Stub article : redirect vers la page standalone
+  if (article?.externalPath) {
+    if (typeof window !== 'undefined') {
+      window.location.replace(article.externalPath)
+    }
+    return null
+  }
+
   if (!article) {
     return (
       <div style={{ padding: 'clamp(64px, 12vw, 120px) clamp(18px, 4vw, 32px)', textAlign: 'center' }}>
@@ -240,11 +248,33 @@ export default function BlogArticlePage() {
   const articleData = {
     headline: article.title,
     author: 'Mathias Nizan',
-    datePublished: isoDate,
-    dateModified: isoDate,
+    datePublished: article.datePublished || isoDate,
+    dateModified: article.dateModified || article.datePublished || isoDate,
     tag: article.tag,
-    image: article.ogImage ? `${SITE_URL}${article.ogImage}` : `${SITE_URL}/assets/logo-horizontal.png`,
+    image: article.ogImage ? `${SITE_URL}${article.ogImage}` : `${SITE_URL}/assets/logo-square.png`,
   }
+
+  // Auto-generate HowTo schema when article contains an ordered list (ol)
+  // → eligible for Google "Things to do" / HowTo rich result
+  const olBlock = article.blocks?.find(b => b.type === 'ol' && Array.isArray(b.items) && b.items.length >= 3)
+  const howToSchema = olBlock ? {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: article.title,
+    description: article.metaDesc || article.excerpt,
+    step: olBlock.items.map((item, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: typeof item === 'string' ? item.split('.')[0].slice(0, 90) : `Étape ${i + 1}`,
+      text: typeof item === 'string' ? item : String(item),
+    })),
+    totalTime: article.readTime ? `PT${parseInt(article.readTime) || 10}M` : 'PT10M',
+    inLanguage: 'fr-FR',
+  } : null
+  const extraSchemas = [
+    ...(article.extraJsonLd || []),
+    ...(howToSchema ? [howToSchema] : []),
+  ]
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -265,9 +295,9 @@ export default function BlogArticlePage() {
         breadcrumbs={breadcrumbs}
         faqItems={article.faq}
       />
-      {article.extraJsonLd && article.extraJsonLd.length > 0 && (
+      {extraSchemas.length > 0 && (
         <Helmet>
-          {article.extraJsonLd.map((schema, i) => (
+          {extraSchemas.map((schema, i) => (
             <script key={`extra-${i}`} type="application/ld+json">{JSON.stringify(schema)}</script>
           ))}
         </Helmet>
@@ -367,14 +397,14 @@ export default function BlogArticlePage() {
 
       {/* CTA */}
       {article.cta && (
-        <section style={{ padding: 'clamp(40px, 5vw, 72px) clamp(20px, 4vw, 32px)', background: '#0A0A0A' }}>
+        <section style={{ padding: 'clamp(40px, 5vw, 72px) clamp(20px, 4vw, 32px)', background: '#F5F3EE' }}>
           <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
             <FadeIn>
               <h2 style={{
                 fontFamily: 'Nunito, sans-serif',
                 fontSize: 'clamp(24px, 3.4vw, 32px)',
                 fontWeight: 800,
-                color: '#fff',
+                color: '#0A0A0A',
                 letterSpacing: '-0.02em',
                 lineHeight: 1.2,
                 marginBottom: 14,
@@ -384,7 +414,7 @@ export default function BlogArticlePage() {
               <p style={{
                 fontFamily: 'DM Sans, sans-serif',
                 fontSize: 'clamp(14px, 1.7vw, 16px)',
-                color: '#9CA3AF',
+                color: '#6B7280',
                 lineHeight: 1.7,
                 marginBottom: 28,
                 maxWidth: 560,
@@ -397,7 +427,7 @@ export default function BlogArticlePage() {
                 {article.cta.buttons.map((btn, i) => (
                   btn.primary
                     ? <PrimaryBtn key={i} onClick={() => navigate(btn.href)}>{btn.label}</PrimaryBtn>
-                    : <SecBtn key={i} onClick={() => navigate(btn.href)} style={{ color: '#fff', borderColor: '#374151' }}>{btn.label}</SecBtn>
+                    : <SecBtn key={i} onClick={() => navigate(btn.href)}>{btn.label}</SecBtn>
                 ))}
               </div>
             </FadeIn>
@@ -409,7 +439,7 @@ export default function BlogArticlePage() {
       {article.internalLinks && article.internalLinks.length > 0 && (
         <section style={{ padding: 'clamp(40px, 5vw, 64px) clamp(20px, 4vw, 32px)', background: '#fff', borderTop: '1px solid #F1F5F9' }}>
           <div style={{ maxWidth: 760, margin: '0 auto' }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: 10 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>
               Aller plus loin
             </div>
             <h2 style={{
@@ -486,7 +516,7 @@ export default function BlogArticlePage() {
               Mathias Nizan
             </div>
             <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#6B7280', lineHeight: 1.6 }}>
-              Fondateur de Masteria, cabinet de conseil et centre de formation IA certifié Qualiopi. +500 professionnels formés.
+              Fondateur de Masteria, cabinet de conseil et centre de formation IA certifié Qualiopi. +1 500 professionnels formés.
             </div>
           </div>
         </div>
@@ -496,7 +526,7 @@ export default function BlogArticlePage() {
       {related.length > 0 && (
         <section style={{ padding: 'clamp(40px, 5vw, 72px) clamp(20px, 4vw, 32px)', background: '#fff', borderTop: '1px solid #F1F5F9' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: 10 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>
               À lire aussi
             </div>
             <h2 style={{
@@ -543,7 +573,7 @@ export default function BlogArticlePage() {
                     }}>
                       {a.title}
                     </h3>
-                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#9CA3AF' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#6B7280' }}>
                       {a.date} · {a.readTime}
                     </div>
                   </div>

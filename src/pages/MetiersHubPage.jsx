@@ -1,22 +1,24 @@
 import { useMemo, useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
 import {
-  Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
+  Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, Wallet, MonitorSmartphone, Building2, Sparkles,
   Filter, RotateCcw, ArrowRight, Check, ChevronRight,
-  Clock, MapPin, ShieldCheck, Zap, Award, UserCheck,
+  Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
-import { MasteriaHeader, MasteriaFooter } from '../components/components'
 import { METIERS, SPOKES, HUBS, getSpokesByMetier } from '../data/seo-pages'
+import { GEO_CITIES, geoIaSlug } from '../data/geo-data'
 import { useIsMobile } from '../hooks/useMediaQuery'
 
 const SITE_URL = 'https://www.master-ia.fr'
 const metiersHub = HUBS.find(h => h.id === 'metiers')
-const TOOL_HUBS = HUBS.filter(h => h.id !== 'metiers')
+const TOOL_HUBS = [
+  ...HUBS.filter(h => h.id !== 'metiers' && h.id !== 'sprint-ia'),
+  ...HUBS.filter(h => h.id === 'sprint-ia').map(h => ({ ...h, tool: 'Ateliers' })),
+]
 
 /* ─────────────────────────────────────────────
  * Métadonnées visuelles
@@ -27,7 +29,6 @@ const METIER_ICONS = {
   rh:                    Users,
   finance:               TrendingUp,
   commercial:            Briefcase,
-  juridique:             Scale,
   communication:         Radio,
   management:            Target,
   assistante:            CalendarCheck,
@@ -35,39 +36,10 @@ const METIER_ICONS = {
   'service-client':      Headphones,
   informatique:          Server,
   pedagogique:           GraduationCap,
+  achats:                ShoppingCart,
+  transverse:            Sparkles,
 }
 
-/* Chaque outil appartient à un écosystème. Sert au filtre "environnement". */
-const TOOL_ECOSYSTEM = {
-  chatgpt:  'agnostique',
-  copilot:  'microsoft',
-  gemini:   'google',
-  claude:   'agnostique',
-  mistral:  'souverain',
-}
-
-const ECOSYSTEMS = [
-  { id: 'tous',       label: 'Peu importe',       desc: 'Afficher toutes les formations' },
-  { id: 'microsoft',  label: 'Microsoft 365',     desc: 'Word, Excel, Teams, Outlook' },
-  { id: 'google',     label: 'Google Workspace',  desc: 'Gmail, Docs, Sheets, Meet' },
-  { id: 'agnostique', label: 'Polyvalent',        desc: 'Utilisable hors suite spécifique' },
-  { id: 'souverain',  label: 'Souverain (UE)',    desc: 'IA française, RGPD, hébergement Europe' },
-]
-
-/* Déduit un niveau indicatif à partir du métier / outil.
-   Utilisé uniquement pour filtrer, pas pour renommer les formations. */
-const getLevel = (spoke) => {
-  if (spoke.metierSlug === 'informatique' || spoke.metierSlug === 'seo') return 'avance'
-  if (spoke.toolSlug === 'claude' || spoke.toolSlug === 'mistral') return 'intermediaire'
-  return 'initiation'
-}
-
-const LEVELS = [
-  { id: 'tous',           label: 'Tous niveaux' },
-  { id: 'initiation',     label: 'Initiation' },
-  { id: 'intermediaire',  label: 'Intermédiaire' },
-  { id: 'avance',         label: 'Avancé' },
-]
 
 /* ─────────────────────────────────────────────
  * FAQ ciblée "formation intelligence artificielle"
@@ -79,7 +51,7 @@ const FAQ_IA = [
   },
   {
     q: "Quelle formation intelligence artificielle choisir pour son équipe ?",
-    a: "Le choix dépend de trois critères : la stack informatique en place (Microsoft 365, Google Workspace ou agnostique), la fonction des apprenants (marketing, RH, finance, commercial, juridique, management, assistantes, etc.) et le niveau de maturité IA de l'entreprise. Les filtres en haut de cette page permettent de croiser ces critères pour identifier la formation IA la plus adaptée. En cas de doute, notre équipe pédagogique propose un entretien gratuit de cadrage.",
+    a: "Le choix dépend de deux critères principaux : l'outil d'IA adapté à votre environnement (ChatGPT, Microsoft Copilot, Google Gemini, Claude ou Mistral AI) et la fonction des apprenants (marketing, RH, finance, commercial, juridique, management, assistantes, etc.). Les filtres en haut de cette page permettent de croiser ces deux critères pour identifier la formation IA la plus adaptée. En cas de doute, notre équipe pédagogique propose un entretien gratuit de cadrage.",
   },
   {
     q: "Les formations Masteria sont-elles certifiées Qualiopi ?",
@@ -111,7 +83,7 @@ const FAQ_IA = [
   },
   {
     q: "Quelles entreprises forment leurs équipes avec Masteria ?",
-    a: "Masteria a formé plus de 500 professionnels dans des organisations de toutes tailles : PME, ETI, grands groupes, collectivités, cabinets de conseil, industries, services publics. Nos formations s'adaptent aux contraintes sectorielles spécifiques : confidentialité renforcée pour la santé et le juridique, souveraineté pour le secteur public, conformité RGPD pour les ressources humaines.",
+    a: "Masteria a formé plus de 1 500 professionnels dans des organisations de toutes tailles : PME, ETI, grands groupes, collectivités, cabinets de conseil, industries, services publics. Nos formations s'adaptent aux contraintes sectorielles spécifiques : confidentialité renforcée pour la santé et le juridique, souveraineté pour le secteur public, conformité RGPD pour les ressources humaines.",
   },
   {
     q: "Comment se déroule une formation intelligence artificielle type ?",
@@ -165,23 +137,17 @@ export default function MetiersHubPage() {
   /* Filtres lus depuis l'URL, modifiables */
   const initialTools     = (searchParams.get('outil')    || '').split(',').filter(Boolean)
   const initialMetiers   = (searchParams.get('metier')   || '').split(',').filter(Boolean)
-  const initialEco       =  searchParams.get('stack')    || 'tous'
-  const initialLevel     =  searchParams.get('niveau')   || 'tous'
 
   const [selectedTools,    setSelectedTools]    = useState(initialTools)
   const [selectedMetiers,  setSelectedMetiers]  = useState(initialMetiers)
-  const [ecosystem,        setEcosystem]        = useState(initialEco)
-  const [level,            setLevel]            = useState(initialLevel)
 
   /* Sync état → URL (shareable / bookmarkable) */
   useEffect(() => {
     const p = {}
     if (selectedTools.length)    p.outil  = selectedTools.join(',')
     if (selectedMetiers.length)  p.metier = selectedMetiers.join(',')
-    if (ecosystem !== 'tous')    p.stack  = ecosystem
-    if (level !== 'tous')        p.niveau = level
     setSearchParams(p, { replace: true })
-  }, [selectedTools, selectedMetiers, ecosystem, level, setSearchParams])
+  }, [selectedTools, selectedMetiers, setSearchParams])
 
   const toggle = (arr, setArr) => (val) => {
     setArr(arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val])
@@ -190,8 +156,6 @@ export default function MetiersHubPage() {
   const resetFilters = () => {
     setSelectedTools([])
     setSelectedMetiers([])
-    setEcosystem('tous')
-    setLevel('tous')
   }
 
   /* Application des filtres */
@@ -206,14 +170,11 @@ export default function MetiersHubPage() {
         if (!matched) return false
       }
 
-      if (ecosystem !== 'tous' && TOOL_ECOSYSTEM[s.toolSlug] !== ecosystem) return false
-      if (level !== 'tous' && getLevel(s) !== level) return false
-
       return true
     })
-  }, [selectedTools, selectedMetiers, ecosystem, level])
+  }, [selectedTools, selectedMetiers])
 
-  const hasActiveFilters = selectedTools.length || selectedMetiers.length || ecosystem !== 'tous' || level !== 'tous'
+  const hasActiveFilters = selectedTools.length || selectedMetiers.length
 
   /* ───── SEO : ItemList JSON-LD pour toutes les formations ───── */
   const itemListJsonLd = {
@@ -242,12 +203,8 @@ export default function MetiersHubPage() {
         slug={metiersHub.slug}
         faqItems={FAQ_IA.slice(0, 8).map(f => ({ q: f.q, a: f.a }))}
         breadcrumbs={breadcrumbs}
+        extraJsonLd={itemListJsonLd}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(itemListJsonLd)}</script>
-      </Helmet>
-
-      <MasteriaHeader />
 
       {/* ═══════════════════════════════════════════════════════════
        * HERO — H1 ciblé "formation intelligence artificielle"
@@ -264,12 +221,12 @@ export default function MetiersHubPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: '#fef3c7', color: '#d97706',
+            background: '#fef3c7', color: '#92400E',
             padding: '6px 16px', borderRadius: 99,
             fontSize: 13, fontWeight: 700, marginBottom: 24,
           }}>
             <Sparkles size={15} strokeWidth={2.2} />
-            <span>Catalogue complet · 61 formations · +500 pros formés</span>
+            <span>Catalogue complet · 89 formations · +1 500 pros formés</span>
           </div>
 
           <h1 style={{
@@ -277,7 +234,7 @@ export default function MetiersHubPage() {
             fontFamily: 'Nunito, sans-serif', marginBottom: 20, lineHeight: 1.08,
             color: '#0A0A0A', letterSpacing: '-0.02em',
           }}>
-            Formation intelligence artificielle pour les entreprises
+            Formation IA pour les entreprises
           </h1>
 
           <p style={{
@@ -285,14 +242,12 @@ export default function MetiersHubPage() {
             maxWidth: 720, margin: '0 auto 18px', lineHeight: 1.65,
           }}>
             Trouvez la formation IA adaptée à votre équipe en croisant
-            <strong style={{ color: '#0A0A0A' }}> outil</strong>,
-            <strong style={{ color: '#0A0A0A' }}> métier</strong>,
-            <strong style={{ color: '#0A0A0A' }}> environnement</strong> et
-            <strong style={{ color: '#0A0A0A' }}> niveau</strong>.
+            <strong style={{ color: '#0A0A0A' }}> outil</strong> et
+            <strong style={{ color: '#0A0A0A' }}> métier</strong>.
             Masteria conçoit depuis 2022 des programmes opérationnels sur ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI.
           </p>
 
-          <p style={{ fontSize: 15, color: '#d97706', fontWeight: 600, margin: '0 auto 36px', maxWidth: 560 }}>
+          <p style={{ fontSize: 15, color: '#92400E', fontWeight: 600, margin: '0 auto 36px', maxWidth: 560 }}>
             {metiersHub.pitch}
           </p>
 
@@ -410,46 +365,6 @@ export default function MetiersHubPage() {
                   </FilterChip>
                 )
               })}
-            </div>
-          </div>
-
-          {/* ── Filtre ENVIRONNEMENT ── */}
-          <div style={{ marginBottom: 24 }}>
-            <div style={labelStyle()}>
-              <Server size={14} strokeWidth={2.4} />
-              Environnement de travail
-            </div>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              {ECOSYSTEMS.map(eco => (
-                <FilterChip
-                  key={eco.id}
-                  active={ecosystem === eco.id}
-                  onClick={() => setEcosystem(eco.id)}
-                  color="#2563EB"
-                >
-                  {eco.label}
-                </FilterChip>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Filtre NIVEAU ── */}
-          <div style={{ marginBottom: 20 }}>
-            <div style={labelStyle()}>
-              <TrendingUp size={14} strokeWidth={2.4} />
-              Niveau
-            </div>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              {LEVELS.map(lvl => (
-                <FilterChip
-                  key={lvl.id}
-                  active={level === lvl.id}
-                  onClick={() => setLevel(lvl.id)}
-                  color="#0A0A0A"
-                >
-                  {lvl.label}
-                </FilterChip>
-              ))}
             </div>
           </div>
 
@@ -610,7 +525,7 @@ export default function MetiersHubPage() {
             gridTemplateColumns: `repeat(auto-fit, minmax(${isMobile ? 180 : 200}px, 1fr))`,
             gap: 16,
           }}>
-            {TOOL_HUBS.map(hub => (
+            {TOOL_HUBS.filter(hub => hub.slug).map(hub => (
               <Link key={hub.id} to={`/${hub.slug}`} style={{ textDecoration: 'none' }}>
                 <div style={{
                   background: '#fff', borderRadius: 12,
@@ -668,7 +583,7 @@ export default function MetiersHubPage() {
               {
                 icon: ShieldCheck, color: '#10a37f',
                 title: 'Organisme certifié Qualiopi',
-                desc: "Formation inscrite au Répertoire Spécifique et finançable à 100 % par les OPCO. Certification renouvelée chaque année par un audit externe.",
+                desc: "Formation inscrite au Répertoire Spécifique et finançable à 100 % par les OPCO. Certification Qualiopi délivrée pour 3 ans, avec audit de mi-parcours après 18 mois.",
               },
               {
                 icon: UserCheck, color: '#2563EB',
@@ -677,8 +592,8 @@ export default function MetiersHubPage() {
               },
               {
                 icon: Award, color: '#d97706',
-                title: '+500 professionnels formés',
-                desc: "98 % de satisfaction. Une moyenne de 6 heures gagnées par semaine par participant mesurée à 30 jours post-formation.",
+                title: '+1 500 professionnels formés',
+                desc: "98 % de satisfaction. Une moyenne de 6 heures gagnées par semaine par participant après la formation.",
               },
               {
                 icon: Zap, color: '#F97316',
@@ -728,8 +643,8 @@ export default function MetiersHubPage() {
        * ═══════════════════════════════════════════════════════════ */}
       <section style={{
         padding: isMobile ? '64px 20px' : '96px 40px',
-        background: '#0A0A0A',
-        color: '#fff',
+        background: '#F5F3EE',
+        color: '#0A0A0A',
       }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{
@@ -739,8 +654,8 @@ export default function MetiersHubPage() {
           }}>
             Notre méthode de formation en intelligence artificielle
           </h2>
-          <p style={{ color: '#D1D5DB', fontSize: 16, lineHeight: 1.75, marginBottom: 28 }}>
-            Une formation IA n'a de valeur que si elle produit un changement mesurable dans le quotidien des apprenants. Notre méthode est construite autour de trois principes : <strong style={{ color: '#fff' }}>apprentissage par la pratique</strong>, <strong style={{ color: '#fff' }}>cas d'usage réels apportés par les participants</strong>, et <strong style={{ color: '#fff' }}>ancrage post-formation</strong> pour éviter la déperdition des acquis.
+          <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.75, marginBottom: 28 }}>
+            Une formation IA n'a de valeur que si elle produit un changement mesurable dans le quotidien des apprenants. Notre méthode est construite autour de trois principes : <strong style={{ color: '#0A0A0A' }}>apprentissage par la pratique</strong>, <strong style={{ color: '#0A0A0A' }}>cas d'usage réels apportés par les participants</strong>, et <strong style={{ color: '#0A0A0A' }}>kit de prompts métier</strong> directement réutilisables après la session.
           </p>
 
           <h3 style={{
@@ -749,7 +664,7 @@ export default function MetiersHubPage() {
           }}>
             1. Cadrage et design pédagogique
           </h3>
-          <p style={{ color: '#D1D5DB', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
             Avant chaque intra-entreprise, un entretien de cadrage permet d'identifier les cas d'usage prioritaires, le niveau de maturité IA des apprenants et les contraintes sectorielles. Le programme est ajusté en conséquence. En inter-entreprises, un questionnaire préalable collecte les attentes et niveaux de chaque stagiaire pour calibrer le contenu.
           </p>
 
@@ -757,10 +672,10 @@ export default function MetiersHubPage() {
             fontSize: 20, fontWeight: 800, fontFamily: 'Nunito, sans-serif',
             marginTop: 32, marginBottom: 14,
           }}>
-            2. Journée de formation en atelier
+            2. Journée(s) de formation en atelier
           </h3>
-          <p style={{ color: '#D1D5DB', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Sept heures d'atelier alternant séquences théoriques courtes (prompt engineering, comparaison d'outils, cadre réglementaire, RGPD) et mises en situation pratiques. Chaque participant travaille sur ses propres dossiers, ses vrais emails, ses vrais tableaux Excel, ses vrais comptes-rendus. L'objectif n'est pas de montrer ce que fait l'IA, c'est d'apprendre à obtenir un résultat concret sur ses tâches réelles.
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
+            Une à plusieurs journées d'atelier (selon le programme) alternant séquences théoriques courtes — prompt engineering, comparaison d'outils, cadre réglementaire, RGPD — et mises en situation pratiques. Chaque participant travaille sur ses propres dossiers, ses vrais emails, ses vrais tableaux Excel, ses vrais comptes-rendus. L'objectif n'est pas de montrer ce que fait l'IA, c'est d'apprendre à obtenir un résultat concret sur ses tâches réelles.
           </p>
 
           <h3 style={{
@@ -769,30 +684,73 @@ export default function MetiersHubPage() {
           }}>
             3. Kit de prompts et ressources
           </h3>
-          <p style={{ color: '#D1D5DB', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
             Chaque stagiaire repart avec un kit pédagogique dédié à son métier : bibliothèque de prompts optimisés, guides de bonnes pratiques, matrices de sélection d'outils, checklists de conformité. Ces ressources sont pensées pour être utilisées immédiatement, pas pour être archivées.
           </p>
 
-          <h3 style={{
-            fontSize: 20, fontWeight: 800, fontFamily: 'Nunito, sans-serif',
-            marginTop: 32, marginBottom: 14,
-          }}>
-            4. Suivi d'ancrage à 30 jours
-          </h3>
-          <p style={{ color: '#D1D5DB', fontSize: 15, lineHeight: 1.75, marginBottom: 28 }}>
-            Trente jours après la formation, un entretien de suivi permet de mesurer l'adoption réelle, de répondre aux questions émergentes et d'ajuster les usages. Cette étape, trop souvent négligée, est décisive pour éviter la déperdition des acquis et garantir le retour sur investissement de la formation.
-          </p>
-
           <div style={{
-            background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+            background: '#fff', border: '1px solid #E5E7EB',
             borderRadius: 12, padding: 24,
+            boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
           }}>
-            <p style={{ margin: 0, color: '#D1D5DB', fontSize: 15, lineHeight: 1.7, fontStyle: 'italic' }}>
+            <p style={{ margin: 0, color: '#374151', fontSize: 15, lineHeight: 1.7, fontStyle: 'italic' }}>
               « Une formation en intelligence artificielle réussie, c'est une formation dont les participants se disent, trois mois plus tard : cela a changé ma façon de travailler. »
             </p>
-            <p style={{ marginTop: 12, color: '#9CA3AF', fontSize: 13, fontWeight: 600 }}>
+            <p style={{ marginTop: 12, color: '#6B7280', fontSize: 13, fontWeight: 600 }}>
               — Mathias Nizan, fondateur de Masteria
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+       * FORMATIONS PAR VILLE — découvrabilité géo
+       * ═══════════════════════════════════════════════════════════ */}
+      <section style={{
+        padding: isMobile ? '56px 20px' : '80px 40px',
+        background: '#F9FAFB',
+        borderTop: '1px solid #E5E7EB',
+      }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={{ marginBottom: 28 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>
+              Formations par ville
+            </div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 32px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.01em', marginBottom: 10 }}>
+              Formation IA dans votre ville
+            </h2>
+            <p style={{ fontSize: 15, color: '#6B7280', maxWidth: 720, lineHeight: 1.65 }}>
+              Pages dédiées avec contenu local : tissu économique, OPCO régional, cas d'usage par secteur, accès et zones desservies. Toutes nos formations sont aussi disponibles en distanciel partout en France, en Suisse et en Belgique.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
+            {GEO_CITIES.map(city => (
+              <Link
+                key={city.slug}
+                to={`/${geoIaSlug(city.slug)}`}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: 12,
+                  background: '#fff', border: '1px solid #E5E7EB',
+                  borderRadius: 10, padding: '16px 18px',
+                  textDecoration: 'none',
+                  transition: 'border-color 150ms, box-shadow 150ms',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#BFDBFE'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(37,99,235,0.1)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none' }}
+              >
+                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <MapPin size={16} color="#1E40AF" strokeWidth={2.5} />
+                </div>
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>
+                    Formation IA {city.name}
+                  </div>
+                  <div style={{ fontSize: 12, color: '#6B7280', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {city.region}
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -875,8 +833,6 @@ export default function MetiersHubPage() {
           </p>
         </div>
       </section>
-
-      <MasteriaFooter />
     </>
   )
 }
@@ -893,5 +849,5 @@ const labelStyle = () => ({
 
 const hintStyle = () => ({
   textTransform: 'none', letterSpacing: 0,
-  color: '#9CA3AF', fontWeight: 500, fontSize: 12,
+  color: '#6B7280', fontWeight: 500, fontSize: 12,
 })

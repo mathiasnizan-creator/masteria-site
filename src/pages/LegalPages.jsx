@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
-import { MasteriaHeader, MasteriaFooter } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
 
 /* ─────────────────────────────────────────────
@@ -69,7 +68,7 @@ export function MentionsLegalesPage() {
     <>
       <SEOHead
         title="Mentions légales | Masteria"
-        description="Mentions légales du site master-ia.fr, éditeur Co-création Digitale, SIRET 91925240300010, centre de formation IA certifié Qualiopi."
+        description="Mentions légales du site master-ia.fr, éditeur Masteria, SIRET 91925240300010, centre de formation IA certifié Qualiopi."
         slug="mentions-legales"
         noindex={false}
         breadcrumbs={[
@@ -77,8 +76,6 @@ export function MentionsLegalesPage() {
           { name: 'Mentions légales', slug: 'mentions-legales' },
         ]}
       />
-      <MasteriaHeader />
-
       <main style={s.page}>
         <div style={s.container}>
           <nav style={s.breadcrumb} aria-label="Fil d'Ariane">
@@ -98,9 +95,7 @@ export function MentionsLegalesPage() {
           <div style={s.card}>
             <div style={{ ...s.keyVal, gridTemplateColumns: isMobile ? '1fr' : '180px 1fr' }}>
               <span style={s.label}>Raison sociale</span>
-              <span style={s.val}>Co-création Digitale</span>
-              <span style={s.label}>Statut juridique</span>
-              <span style={s.val}>Entrepreneur individuel</span>
+              <span style={s.val}>Masteria</span>
               <span style={s.label}>SIRET</span>
               <span style={s.val}>919 252 403 00010</span>
               <span style={s.label}>TVA intracommunautaire</span>
@@ -138,18 +133,18 @@ export function MentionsLegalesPage() {
 
           <h2 style={s.h2}>4. Propriété intellectuelle</h2>
           <p style={s.p}>
-            L'ensemble des éléments présents sur ce site (textes, graphismes, logos, vidéos, icônes, images, photographies, structure générale, interface, code source) sont la propriété exclusive de Co-création Digitale, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
+            L'ensemble des éléments présents sur ce site (textes, graphismes, logos, vidéos, icônes, images, photographies, structure générale, interface, code source) sont la propriété exclusive de Masteria, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
           </p>
           <p style={s.p}>
-            Toute reproduction, représentation, modification, publication, adaptation ou exploitation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de Co-création Digitale, sous peine de constituer une contrefaçon au sens des articles L.335-2 et suivants du Code de la propriété intellectuelle.
+            Toute reproduction, représentation, modification, publication, adaptation ou exploitation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de Masteria, sous peine de constituer une contrefaçon au sens des articles L.335-2 et suivants du Code de la propriété intellectuelle.
           </p>
 
           <h2 style={s.h2}>5. Responsabilité</h2>
           <p style={s.p}>
-            Les informations diffusées sur ce site sont présentées à titre indicatif et n'ont pas un caractère exhaustif. Co-création Digitale s'efforce d'assurer l'exactitude et la mise à jour des informations, mais ne peut être tenue responsable des erreurs, omissions ou résultats obtenus par un mauvais usage de ces informations.
+            Les informations diffusées sur ce site sont présentées à titre indicatif et n'ont pas un caractère exhaustif. Masteria s'efforce d'assurer l'exactitude et la mise à jour des informations, mais ne peut être tenue responsable des erreurs, omissions ou résultats obtenus par un mauvais usage de ces informations.
           </p>
           <p style={s.p}>
-            Le site peut contenir des liens vers d'autres sites internet. Co-création Digitale n'exerce aucun contrôle sur ces sites tiers et décline toute responsabilité quant à leur contenu ou à leur fonctionnement.
+            Le site peut contenir des liens vers d'autres sites internet. Masteria n'exerce aucun contrôle sur ces sites tiers et décline toute responsabilité quant à leur contenu ou à leur fonctionnement.
           </p>
 
           <h2 style={s.h2}>6. Données personnelles</h2>
@@ -176,8 +171,6 @@ export function MentionsLegalesPage() {
           </p>
         </div>
       </main>
-
-      <MasteriaFooter />
     </>
   )
 }
@@ -201,8 +194,6 @@ export function PolitiqueConfidentialitePage() {
           { name: 'Politique de confidentialité', slug: 'politique-de-confidentialite' },
         ]}
       />
-      <MasteriaHeader />
-
       <main style={s.page}>
         <div style={s.container}>
           <nav style={s.breadcrumb} aria-label="Fil d'Ariane">
@@ -222,7 +213,7 @@ export function PolitiqueConfidentialitePage() {
           <div style={s.card}>
             <div style={{ ...s.keyVal, gridTemplateColumns: isMobile ? '1fr' : '180px 1fr' }}>
               <span style={s.label}>Responsable</span>
-              <span style={s.val}>Co-création Digitale (Masteria)</span>
+              <span style={s.val}>Masteria</span>
               <span style={s.label}>SIRET</span>
               <span style={s.val}>919 252 403 00010</span>
               <span style={s.label}>Adresse</span>
@@ -342,8 +333,6 @@ export function PolitiqueConfidentialitePage() {
           </p>
         </div>
       </main>
-
-      <MasteriaFooter />
     </>
   )
 }

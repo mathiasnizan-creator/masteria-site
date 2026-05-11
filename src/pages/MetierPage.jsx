@@ -4,6 +4,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
+  ShoppingCart, Sparkles,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
@@ -24,13 +25,15 @@ const METIER_ICONS = {
   'service-client':    Headphones,
   informatique:        Server,
   pedagogique:         GraduationCap,
+  achats:              ShoppingCart,
+  transverse:          Sparkles,
 }
 
 // ─── Contenu éditorial par métier ────────────────────────────────────────────
 const METIER_CONTENT = {
   marketing: {
-    metaTitle: 'Formation IA Marketing | ChatGPT, Copilot, Gemini | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes marketing à l\'IA : ChatGPT, Copilot, Gemini. Rédaction de contenus, campagnes, reporting. Certifié Qualiopi, finançable OPCO. +500 professionnels formés.',
+    metaTitle: 'Formation IA Marketing pour entreprises | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes marketing à l\'IA : ChatGPT, Copilot, Gemini. Rédaction de contenus, campagnes, reporting. Certifié Qualiopi, finançable OPCO. +1 500 professionnels formés.',
     h1: 'Formation IA pour les équipes Marketing',
     intro: "Les équipes marketing sont parmi les premières à bénéficier de l'IA générative. Créer des contenus, gérer des campagnes, analyser les performances : chaque outil s'intègre dans votre environnement de travail existant et vous fait gagner plusieurs heures par semaine.",
     painPoints: [
@@ -48,8 +51,8 @@ const METIER_CONTENT = {
     ],
   },
   'ressources-humaines': {
-    metaTitle: 'Formation IA Ressources Humaines | ChatGPT, Copilot, Gemini | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes RH à l\'IA : recrutement, onboarding, entretiens annuels, gestion administrative. Certifié Qualiopi, finançable OPCO. +500 professionnels formés.',
+    metaTitle: 'Formation IA Ressources Humaines | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes RH à l\'IA : recrutement, onboarding, entretiens annuels, gestion administrative. Certifié Qualiopi, finançable OPCO. +1 500 professionnels formés.',
     h1: 'Formation IA pour les équipes RH',
     intro: "Recrutement, onboarding, entretiens annuels, communication interne : l'IA transforme toutes les dimensions du métier RH. Chaque formation est adaptée à votre environnement de travail, que vous soyez sur Microsoft 365 ou Google Workspace.",
     painPoints: [
@@ -67,7 +70,7 @@ const METIER_CONTENT = {
     ],
   },
   commercial: {
-    metaTitle: 'Formation IA Commercial & Vente | ChatGPT, Copilot, Gemini | Masteria, Qualiopi',
+    metaTitle: 'Formation IA Commercial et Vente | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes commerciales à l\'IA : prospection, propositions, suivi client. Certifié Qualiopi, finançable OPCO. Résultats mesurables dès la première semaine.',
     h1: 'Formation IA pour les équipes Commerciales',
     intro: "Prospection, propositions commerciales, suivi client, préparation de RDV : l'IA fait gagner plusieurs heures par semaine sur les tâches à faible valeur ajoutée. Vos commerciaux passent plus de temps à vendre, moins à rédiger.",
@@ -86,7 +89,7 @@ const METIER_CONTENT = {
     ],
   },
   finance: {
-    metaTitle: 'Formation IA Finance & Contrôle de Gestion | ChatGPT, Copilot, Gemini | Masteria',
+    metaTitle: 'Formation IA Finance et Contrôle de Gestion | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes finance à l\'IA : reporting, analyse de données, synthèses financières. Certifié Qualiopi, finançable OPCO. Résultats visibles dès la clôture suivante.',
     h1: 'Formation IA pour les équipes Finance',
     intro: "Reporting, commentaires de résultats, tableaux de bord, synthèses financières : l'IA permet aux équipes finance de se concentrer sur l'analyse à valeur ajoutée plutôt que sur la production de documents. Un cycle de clôture plus rapide, des analyses plus approfondies.",
@@ -124,8 +127,8 @@ const METIER_CONTENT = {
     ],
   },
   communication: {
-    metaTitle: 'Formation IA Communication | ChatGPT, Gemini | Masteria, Certifié Qualiopi',
-    metaDesc: 'Formez vos équipes communication à l\'IA : contenus éditoriaux, RP, communication de crise. Certifié Qualiopi, finançable OPCO. Production de contenus ×3 sans perte de qualité.',
+    metaTitle: 'Formation IA Communication pour entreprises | Qualiopi | Masteria',
+    metaDesc: 'Formation intelligence artificielle pour les équipes communication : contenus éditoriaux, relations presse, réseaux sociaux, communication de crise. Certifié Qualiopi, finançable OPCO. Devis sous 24h.',
     h1: 'Formation IA pour les équipes Communication',
     intro: "Contenus éditoriaux, relations presse, communication de crise, communication institutionnelle : l'IA amplifie votre voix sans la dénaturer. La formation vous apprend à encoder votre ligne éditoriale dans les prompts pour produire plus, sans perdre l'authenticité.",
     painPoints: [
@@ -143,7 +146,7 @@ const METIER_CONTENT = {
     ],
   },
   management: {
-    metaTitle: 'Formation IA Management | ChatGPT, Copilot pour managers | Masteria, Qualiopi',
+    metaTitle: 'Formation IA Management pour managers | Qualiopi | Masteria',
     metaDesc: 'Formez vos managers à l\'IA : réunions, reporting, communication d\'équipe, conduite du changement. Certifié Qualiopi, finançable OPCO. Moins de tâches admin, plus de terrain.',
     h1: 'Formation IA pour les Managers',
     intro: "Comptes-rendus de réunion, reporting, communication d'équipe, pilotage de l'activité : l'IA redonne aux managers du temps pour le terrain. Moins d'heures derrière l'écran, plus de présence auprès des équipes.",
@@ -162,10 +165,10 @@ const METIER_CONTENT = {
     ],
   },
   assistante: {
-    metaTitle: 'Formation IA Assistante de Direction | ChatGPT, Copilot | Masteria, Qualiopi',
+    metaTitle: 'Formation IA Assistanat de direction | Qualiopi | Masteria',
     metaDesc: 'Formez vos assistantes de direction à l\'IA : emails, courriers, organisation, comptes-rendus. Certifié Qualiopi, finançable OPCO. Rédiger dans le style de la direction en quelques minutes.',
-    h1: 'Formation IA pour les Assistantes de Direction',
-    intro: "Emails, courriers, comptes-rendus, organisation, gestion de projets transverses : l'IA est l'allié naturel des assistantes de direction qui jonglent avec tout. La formation vous apprend à créer des prompts dans le style de votre direction, pour produire des documents irréprochables en quelques minutes.",
+    h1: 'Formation IA pour les Assistants et assistantes de direction',
+    intro: "Emails, courriers, comptes-rendus, organisation, gestion de projets transverses : l'IA est l'allié naturel des assistants et assistantes de direction qui jonglent avec tout. La formation vous apprend à créer des prompts dans le style de votre direction, pour produire des documents irréprochables en quelques minutes.",
     painPoints: [
       'Synthétiser 50 emails en un brief matinal en 10 minutes',
       'Rédiger dans le style exact de son dirigeant',
@@ -181,7 +184,7 @@ const METIER_CONTENT = {
     ],
   },
   seo: {
-    metaTitle: 'Formation IA pour les équipes SEO | ChatGPT, Gemini, Claude | Masteria, Qualiopi',
+    metaTitle: 'Formation IA pour les équipes SEO | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes SEO à l\'IA : contenu optimisé à grande échelle, recherche sémantique, balises, maillage. Certifié Qualiopi, finançable OPCO. Productivité ×5.',
     h1: 'Formation IA pour les équipes SEO',
     intro: "Le SEO est l'un des domaines où l'IA a le plus d'impact immédiat. Production de contenu optimisé à grande échelle, recherche sémantique accélérée, analyse de la SERP, rédaction de balises et de maillage interne : l'IA multiplie la capacité d'action des équipes SEO sans sacrifier la qualité.",
@@ -200,7 +203,7 @@ const METIER_CONTENT = {
     ],
   },
   'service-client': {
-    metaTitle: 'Formation IA Service Client | ChatGPT, Copilot, Gemini, Claude | Masteria',
+    metaTitle: 'Formation IA Service Client | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes service client à l\'IA : réponses rapides et cohérentes, gestion des escalades, scripts. Certifié Qualiopi, finançable OPCO. Traitement accéléré de 60%.',
     h1: 'Formation IA pour les équipes Service Client',
     intro: "Les équipes service client traitent des volumes considérables de demandes répétitives. L'IA permet de répondre plus vite, avec plus de cohérence, tout en libérant les agents pour les interactions à forte valeur. La formation couvre la rédaction de réponses, la gestion des escalades et l'exploitation des données client.",
@@ -219,7 +222,7 @@ const METIER_CONTENT = {
     ],
   },
   informatique: {
-    metaTitle: 'Formation IA pour les DSI et équipes IT | ChatGPT, Copilot, Claude | Masteria',
+    metaTitle: 'Formation IA pour les DSI et équipes IT | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes IT et DSI à l\'IA : documentation technique, code, logs, gouvernance IA. Certifié Qualiopi, finançable OPCO. Usages pratiques et cadre stratégique.',
     h1: 'Formation IA pour les équipes Informatique / DSI',
     intro: "Les équipes IT sont en première ligne de la transformation IA, à la fois utilisateurs et garants de son déploiement sécurisé. La formation couvre les usages pratiques (documentation, code, analyse de logs) mais aussi le cadrage stratégique : gouvernance des données, choix des outils, sécurité des usages IA en entreprise.",
@@ -238,7 +241,7 @@ const METIER_CONTENT = {
     ],
   },
   pedagogique: {
-    metaTitle: 'Formation IA pour les Équipes Pédagogiques | ChatGPT, Claude | Masteria',
+    metaTitle: 'Formation IA pour les Équipes Pédagogiques | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes pédagogiques à l\'IA : création de modules, individualisation des parcours, évaluations. Certifié Qualiopi, finançable OPCO. Un module en 2h au lieu de 2 jours.',
     h1: 'Formation IA pour les Équipes Pédagogiques',
     intro: "Formateurs, responsables pédagogiques, ingénieurs de formation : l'IA transforme la conception et l'animation des parcours de formation. Créer des modules de formation, personnaliser les contenus selon les apprenants, générer des évaluations pertinentes, tout en gardant la main sur la qualité pédagogique.",
@@ -256,17 +259,57 @@ const METIER_CONTENT = {
       'Analyser des évaluations et identifier les points de blocage récurrents des apprenants',
     ],
   },
+  achats: {
+    metaTitle: 'Formation IA Achats pour les acheteurs | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes Achats à l\'IA : sourcing fournisseurs, analyse d\'offres, négociation, suivi contractuel. Certifié Qualiopi, finançable OPCO. Productivité ×3 sur l\'analyse documentaire.',
+    h1: 'Formation IA pour les équipes Achats',
+    intro: "Sourcing, analyse comparative d\'offres, négociation, suivi de contrats fournisseurs : les Achats sont confrontés à des volumes documentaires considérables où l\'IA fait gagner un temps décisif. La formation couvre le cycle complet, du brief fournisseur à l\'audit contractuel, avec une attention particulière sur la rigueur factuelle et la confidentialité.",
+    painPoints: [
+      'Comparer 10 propositions fournisseurs sur 30 critères en moins d\'une heure',
+      'Détecter les clauses inhabituelles ou désavantageuses dans un contrat',
+      'Synthétiser des cahiers des charges fournisseurs longs et techniques',
+    ],
+    skills: [
+      'Cartographier un panel fournisseurs et identifier les sources alternatives crédibles',
+      'Comparer plusieurs offres techniques et financières sur une grille de critères pondérés',
+      'Rédiger des consultations, RFP et cahiers des charges structurés en quelques minutes',
+      'Analyser un contrat fournisseur et repérer les clauses sensibles ou inhabituelles',
+      'Préparer une négociation : objections probables, contre-arguments, BATNA',
+      'Suivre la performance fournisseurs : synthèses de KPI, alertes contractuelles, tableaux de bord',
+    ],
+  },
+  transverse: {
+    metaTitle: 'Formation IA Tous publics et formats transverses | Masteria',
+    metaDesc: 'Formations IA transverses pour acculturer toutes vos équipes : Sprint IA 3 h, prompts, AI Act flash. Certifié Qualiopi, finançable OPCO. Déploiement à grande échelle.',
+    h1: 'Formations IA transverses, pour toutes vos équipes',
+    intro: "Quand l\'enjeu est de sensibiliser, acculturer ou outiller largement, sans bloquer l\'agenda des collaborateurs, les formats transverses Masteria sont le bon point d\'entrée. Sprint IA 3 h, sensibilisation grand public, prompts efficaces, conformité AI Act : autant de formats prêts à déployer à l\'échelle d\'une convention, d\'un séminaire ou d\'un plan IA d\'entreprise.",
+    painPoints: [
+      'Acculturer 200 à 2 000 collaborateurs sans bloquer leur agenda',
+      'Donner un socle commun à des équipes très hétérogènes',
+      'Couvrir l\'obligation de littératie IA prévue par l\'AI Act (article 4)',
+    ],
+    skills: [
+      'Comprendre ce que l\'IA générative peut faire, et ne peut pas faire, dans un contexte professionnel',
+      'Manipuler ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral en autonomie',
+      'Écrire des prompts structurés (méthode CRTF) reproductibles d\'un outil à l\'autre',
+      'Identifier les usages IA conformes à la confidentialité et au RGPD dans son métier',
+      'Repartir avec une bibliothèque personnelle de prompts adaptés à ses cas d\'usage',
+      'Connaître les obligations clés de l\'AI Act (article 4, calendrier 2026, classifications)',
+    ],
+  },
 }
 
 const TOOL_CONFIG = {
-  chatgpt:  { label: 'ChatGPT',             color: '#10a37f', bg: '#d1fae5', hubSlug: 'formation-chatgpt-entreprise' },
+  'multi-outils': { label: 'Multi-outils IA (panorama)', color: '#6366f1', bg: '#e0e7ff', hubSlug: 'formation-intelligence-artificielle' },
+  chatgpt:  { label: 'ChatGPT',             color: '#10a37f', bg: '#d1fae5', hubSlug: 'formation-chatgpt' },
   copilot:  { label: 'Microsoft Copilot',   color: '#0078d4', bg: '#dbeafe', hubSlug: 'formation-microsoft-copilot' },
   gemini:   { label: 'Google Gemini',       color: '#ea4335', bg: '#fee2e2', hubSlug: 'formation-gemini-entreprise' },
-  claude:   { label: 'Claude (Anthropic)',  color: '#d97706', bg: '#fef3c7', hubSlug: 'formation-claude-entreprise' },
+  claude:   { label: 'Claude (Anthropic)',  color: '#d97706', bg: '#fef3c7', hubSlug: 'formation-claude-ia' },
+  mistral:  { label: 'Mistral AI',          color: '#fa500a', bg: '#fed7aa', hubSlug: 'formation-mistral-ai' },
 }
 
-// Ordre d'affichage des outils
-const TOOL_ORDER = ['chatgpt', 'copilot', 'gemini', 'claude']
+// Ordre d'affichage des outils ("multi-outils" en premier pour mettre en avant le panorama)
+const TOOL_ORDER = ['multi-outils', 'chatgpt', 'copilot', 'gemini', 'claude', 'mistral']
 
 /* ── Composant accordéon FAQ ──────────────────────────────────── */
 function FaqItem({ q, a }) {
@@ -345,23 +388,22 @@ export default function MetierPage() {
     })),
   }
 
-  const jsonLdFaq = faqItems.length ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map(item => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  } : null
+  const breadcrumbs = [
+    { name: 'Accueil', slug: '' },
+    { name: 'Formations par métier', slug: 'formation-intelligence-artificielle' },
+    { name: metierData.label, slug: `formation-ia-${metier}` },
+  ]
 
   return (
     <>
-      <SEOHead title={content.metaTitle} description={content.metaDesc} slug={`formation-ia-${metier}`} />
+      <SEOHead
+        title={content.metaTitle}
+        description={content.metaDesc}
+        slug={`formation-ia-${metier}`}
+        breadcrumbs={breadcrumbs}
+        faqItems={faqItems}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      {jsonLdFaq && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
-      )}
 
       {/* ── HERO clair ── */}
       <section style={{ background: '#FAFAF7', color: '#0A0A0A', padding: '64px 40px 72px', borderBottom: '1px solid #E5E7EB' }}>
@@ -369,10 +411,10 @@ export default function MetierPage() {
           {/* Breadcrumb */}
           <nav style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#6B7280', textDecoration: 'none' }}>Accueil</Link>
-            <span style={{ color: '#D1D5DB' }}>/</span>
-            <Link to="/formation-ia-par-metier" style={{ color: '#6B7280', textDecoration: 'none' }}>Formations par métier</Link>
-            <span style={{ color: '#D1D5DB' }}>/</span>
-            <span style={{ color: '#d97706', fontWeight: 600 }}>{metierData.label}</span>
+            <span style={{ color: '#6B7280' }}>/</span>
+            <Link to="/formation-intelligence-artificielle" style={{ color: '#6B7280', textDecoration: 'none' }}>Formations par métier</Link>
+            <span style={{ color: '#6B7280' }}>/</span>
+            <span style={{ color: '#92400E', fontWeight: 600 }}>{metierData.label}</span>
           </nav>
 
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, flexWrap: 'wrap' }}>
@@ -383,7 +425,7 @@ export default function MetierPage() {
             ) : null })()}
             <div style={{ flex: 1, minWidth: 260 }}>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
-                <span style={{ background: '#fef3c7', color: '#d97706', padding: '5px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700 }}>
+                <span style={{ background: '#fef3c7', color: '#92400E', padding: '5px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700 }}>
                   {spokes.length} formation{spokes.length > 1 ? 's' : ''} disponible{spokes.length > 1 ? 's' : ''}
                 </span>
                 <span style={{ background: '#fff', color: '#6B7280', padding: '5px 12px', borderRadius: 99, fontSize: 12, fontWeight: 600, border: '1px solid #E5E7EB' }}>
@@ -554,16 +596,16 @@ export default function MetierPage() {
       )}
 
       {/* ── STATS + CONFIANCE ── */}
-      <section style={{ background: '#0A0A0A', padding: '56px 40px' }}>
+      <section style={{ background: '#F5F3EE', padding: '56px 40px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap' }}>
           {[
-            { num: '+500', label: 'professionnels formés' },
+            { num: '+1 500', label: 'professionnels formés' },
             { num: '98 %', label: 'taux de satisfaction' },
             { num: '100 %', label: 'finançable OPCO' },
             { num: '2 jours', label: 'de formation intensive' },
           ].map(s => (
             <div key={s.num} style={{ textAlign: 'center' }}>
-              <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 34, fontWeight: 900, color: '#fff', margin: 0, lineHeight: 1 }}>{s.num}</p>
+              <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 34, fontWeight: 900, color: '#0A0A0A', margin: 0, lineHeight: 1 }}>{s.num}</p>
               <p style={{ fontSize: 13, color: '#6B7280', margin: '6px 0 0' }}>{s.label}</p>
             </div>
           ))}
@@ -615,19 +657,19 @@ export default function MetierPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: '#0A0A0A', color: '#fff', padding: '80px 40px', textAlign: 'center' }}>
+      <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 560, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 38px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
             Vous ne savez pas quel outil choisir ?
           </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
+          <p style={{ color: '#4B5563', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
             Dites-nous votre environnement de travail et le profil de vos participants. On vous recommande la formation la plus adaptée sous 24 heures.
           </p>
           <Link to="/contact" style={{ display: 'inline-block', background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 20 }}>
             Contacter notre équipe →
           </Link>
           <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Certifié Qualiopi · Finançable OPCO · +500 professionnels formés · 98 % de satisfaction
+            Certifié Qualiopi · Finançable OPCO · +1 500 professionnels formés · 98 % de satisfaction
           </p>
         </div>
       </section>
@@ -696,7 +738,7 @@ function SpokeCard({ spoke, tc }) {
       <div style={{ padding: '12px 20px 16px', borderTop: '1px solid #F3F4F6', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
         <div>
           <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: '#0A0A0A' }}>760 €</span>
-          <span style={{ fontSize: 12, color: '#9CA3AF' }}> /jour /pers.</span>
+          <span style={{ fontSize: 12, color: '#6B7280' }}> /jour /pers.</span>
         </div>
         <Link to={`/${spoke.slug}`} style={{
           background: hovered ? tc.color : '#0A0A0A',

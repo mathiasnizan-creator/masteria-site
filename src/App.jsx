@@ -1,5 +1,7 @@
-import { useState } from 'react';
-import { Routes, Route, useNavigate, useParams, Link } from 'react-router-dom';
+import { useState, useEffect, lazy, Suspense } from 'react';
+import { Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import {
   Mail, MapPin, Clock, BadgeCheck, Wallet, Users as UsersIcon,
   ArrowRight, Sparkles, Send, CheckCircle2, Calendar, Building2,
@@ -19,16 +21,28 @@ import { useIsMobile } from './hooks/useMediaQuery';
 import { FAQSection, FormatTabs, SidebarFormatPicker, FAQ_GENERAL, FAQ_FORMATIONS, FAQ_CONTACT } from './components/screens2';
 import SEOHead from './components/SEOHead';
 import { HUBS, METIERS } from './data/seo-pages';
-import HubPage from './pages/HubPage';
-import SpokePage from './pages/SpokePage';
-import MetiersHubPage from './pages/MetiersHubPage';
-import MetierPage from './pages/MetierPage';
 import HomePage from './pages/HomePage';
-import ConseilIAPage from './pages/ConseilIAPage';
-import BlogListPage from './pages/BlogListPage';
-import BlogArticlePage from './pages/BlogArticlePage';
-import { MentionsLegalesPage, PolitiqueConfidentialitePage } from './pages/LegalPages';
+// Pages secondaires lazy-loadées pour réduire le bundle initial (perf LCP/TBT)
+const HubPage = lazy(() => import('./pages/HubPage'));
+const SpokePage = lazy(() => import('./pages/SpokePage'));
+const MetiersHubPage = lazy(() => import('./pages/MetiersHubPage'));
+const MetierPage = lazy(() => import('./pages/MetierPage'));
+const ConseilIAPage = lazy(() => import('./pages/ConseilIAPage'));
+const GeoPage = lazy(() => import('./pages/GeoPage'));
+const GeoIAGenericPage = lazy(() => import('./pages/GeoIAGenericPage'));
+const TopicLandingPage = lazy(() => import('./pages/TopicLandingPage'));
+const QualiopiPage = lazy(() => import('./pages/QualiopiPage'));
+const FinancementPage = lazy(() => import('./pages/FinancementPage'));
+const DebutantPage = lazy(() => import('./pages/DebutantPage'));
+const GlossaryPage = lazy(() => import('./pages/GlossaryPage'));
+const ComparisonPage = lazy(() => import('./pages/ComparisonPage'));
+const ComparisonsHubPage = lazy(() => import('./pages/ComparisonsHubPage'));
+const BlogListPage = lazy(() => import('./pages/BlogListPage'));
+const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const MentionsLegalesPage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MentionsLegalesPage })));
+const PolitiqueConfidentialitePage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.PolitiqueConfidentialitePage })));
 import { SPOKES } from './data/seo-pages';
+import { getAllGeoCombinations, GEO_DESTINATIONS, geoIaSlug } from './data/geo-data';
 
 const TRAININGS = [
   { id: 'ia-initiation', tag: 'IA & ChatGPT', title: "Initiation à l'IA pour les professionnels", desc: "Maîtrisez les fondamentaux de l'IA en 1 journée. Aucun prérequis technique.", price: '760 €', unit: '/ pers / jour', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
@@ -62,7 +76,7 @@ function _HomeScreen_DEPRECATED() {
     <>
       <SEOHead
         title="Formation IA pour entreprises | Masteria, Certifié Qualiopi"
-        description="Centre de formation IA certifié Qualiopi. +500 professionnels formés. Formations finançables OPCO. Présentiel et distanciel partout en France."
+        description="Centre de formation IA certifié Qualiopi. +1 500 professionnels formés. Formations finançables OPCO. Présentiel et distanciel partout en France."
         slug=""
       />
       <section style={{ background: '#fff', padding: '88px 32px 72px' }}>
@@ -83,17 +97,17 @@ function _HomeScreen_DEPRECATED() {
               <SecBtn onClick={() => navigate('/contact')}>Demander un devis →</SecBtn>
             </div>
             <div style={{ display: 'flex', gap: 32, marginTop: 40, paddingTop: 32, borderTop: '1px solid #F0F0F0' }}>
-              {[{ num: '+500', label: 'Professionnels formés' }, { num: '98%', label: 'Satisfaction' }, { num: '+6h', label: 'Productivité / semaine' }].map((s, i) => (
+              {[{ num: '+1 500', label: 'Professionnels formés' }, { num: '98%', label: 'Satisfaction' }, { num: '+6h', label: 'Productivité / semaine' }].map((s, i) => (
                 <div key={i}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#111', lineHeight: 1 }}>{s.num}</div>
-                  <div style={{ fontSize: 12, color: '#9A9A9A', marginTop: 3 }}>{s.label}</div>
+                  <div style={{ fontSize: 12, color: '#6B7280', marginTop: 3 }}>{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
           <div style={{ background: '#F5F5F5', borderRadius: 20, padding: '28px', display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div style={{ background: '#fff', borderRadius: 10, padding: '16px 18px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 8 }}>Votre prompt</div>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 8 }}>Votre prompt</div>
               <div style={{ fontSize: 13, color: '#1C1C1C', lineHeight: 1.55 }}>« Rédige un email de relance client professionnel pour notre offre de conseil… »</div>
             </div>
             <div style={{ background: '#1C1C1C', borderRadius: 10, padding: '16px 18px' }}>
@@ -118,7 +132,7 @@ function _HomeScreen_DEPRECATED() {
           <FadeIn>
             <div style={{ marginBottom: 48, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 16 }}>
               <div>
-                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 10 }}>Nos formations</div>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>Nos formations</div>
                 <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 34, fontWeight: 800, color: '#111', lineHeight: 1.2, letterSpacing: '-0.02em' }}>Concrètes, finançables,<br />immédiatement applicables</h2>
               </div>
               <SecBtn onClick={() => navigate('/formations')}>Voir tout le catalogue →</SecBtn>
@@ -137,7 +151,7 @@ function _HomeScreen_DEPRECATED() {
       <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 32px' }}>
           <FadeIn>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 10 }}>Témoignages</div>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>Témoignages</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 800, color: '#111', letterSpacing: '-0.02em', marginBottom: 40 }}>Ce que disent nos apprenants</h2>
           </FadeIn>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -146,7 +160,7 @@ function _HomeScreen_DEPRECATED() {
                 <div style={{ background: '#F8F8F8', borderRadius: 12, padding: '28px 26px' }}>
                   <p style={{ fontSize: 14, lineHeight: 1.75, color: '#2A2A2A', marginBottom: 20, fontStyle: 'italic' }}>« {t.quote} »</p>
                   <div style={{ fontSize: 13, fontWeight: 700, color: '#1C1C1C' }}>{t.name}</div>
-                  <div style={{ fontSize: 12, color: '#9A9A9A', marginTop: 2 }}>{t.role}</div>
+                  <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>{t.role}</div>
                 </div>
               </FadeIn>
             ))}
@@ -157,10 +171,10 @@ function _HomeScreen_DEPRECATED() {
       <section style={{ padding: '80px 32px', background: '#F8F8F8' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
           <FadeIn>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 10 }}>Notre histoire</div>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>Notre histoire</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 800, color: '#111', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: 16 }}>L'IA au service des hommes, pas l'inverse</h2>
             <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.75, marginBottom: 28 }}>Fondé en 2022 par Mathias Nizan, consultant en transformation digitale, Masteria est né d'une conviction : l'IA doit être accessible à tous les professionnels, quel que soit leur niveau technique.</p>
-            <SecBtn onClick={() => navigate('/a-propos')}>Découvrir notre histoire →</SecBtn>
+            <SecBtn onClick={() => navigate('/centre-formation-ia-entreprise')}>Découvrir notre histoire →</SecBtn>
           </FadeIn>
           <FadeIn delay={100}>
             <div style={{ background: '#1C1C1C', borderRadius: 16, padding: '36px' }}>
@@ -197,10 +211,11 @@ function FormationsScreen() {
         title="Toutes nos formations IA | Masteria, Certifié Qualiopi"
         description="Inter-entreprises ou intra, en présentiel ou à distance. Certifiées Qualiopi, finançables via votre OPCO."
         slug="formations"
+        noindex={true}
       />
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
         <div style={{ marginBottom: 48 }}>
-          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 10 }}>Catalogue</div>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>Catalogue</div>
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 42, fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 10 }}>Toutes nos formations</h1>
           <p style={{ fontSize: 16, color: '#717171', maxWidth: 560, lineHeight: 1.65, marginBottom: 28 }}>Inter-entreprises ou intra, en présentiel ou à distance. Certifiées Qualiopi, finançables via votre OPCO.</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -256,9 +271,10 @@ function FormationDetailScreen() {
         description={f.desc}
         slug={`formations/${f.id}`}
         courseData={{ name: f.title, description: f.desc }}
+        noindex={true}
       />
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-        <button onClick={() => navigate('/formations')} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#9A9A9A', background: 'none', border: 'none', cursor: 'pointer', marginBottom: 32, padding: 0, display: 'flex', alignItems: 'center', gap: 6 }}>← Retour aux formations</button>
+        <button onClick={() => navigate('/formations')} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#6B7280', background: 'none', border: 'none', cursor: 'pointer', marginBottom: 32, padding: 0, display: 'flex', alignItems: 'center', gap: 6 }}>← Retour aux formations</button>
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 48, alignItems: 'start' }}>
           <div>
             <div style={{ display: 'inline-flex', padding: '4px 14px', background: f.color, borderRadius: 999, marginBottom: 16 }}>
@@ -274,7 +290,7 @@ function FormationDetailScreen() {
             <div style={{ display: 'flex', borderBottom: '2px solid #F0F0F0', marginBottom: 28 }}>
               {[['programme', 'Programme'], ['objectifs', 'Objectifs']].map(([key, label]) => (
                 <button key={key} onClick={() => setTab(key)}
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: tab === key ? '#111' : '#9A9A9A', background: 'none', border: 'none', borderBottom: tab === key ? '2px solid #111' : '2px solid transparent', marginBottom: -2, padding: '8px 18px 10px', cursor: 'pointer' }}>
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: tab === key ? '#111' : '#6B7280', background: 'none', border: 'none', borderBottom: tab === key ? '2px solid #111' : '2px solid transparent', marginBottom: -2, padding: '8px 18px 10px', cursor: 'pointer' }}>
                   {label}
                 </button>
               ))}
@@ -329,7 +345,11 @@ function AboutScreen() {
       <SEOHead
         title="À propos de Masteria | Cabinet conseil & centre de formation IA"
         description="Masteria, cabinet de conseil et centre de formation IA certifié Qualiopi. Fondé par Mathias Nizan en 2022. Notre mission : rendre l'IA accessible, concrète et éthique pour toutes les entreprises."
-        slug="a-propos"
+        slug="centre-formation-ia-entreprise"
+        breadcrumbs={[
+          { name: 'Accueil', slug: '' },
+          { name: 'À propos', slug: 'centre-formation-ia-entreprise' },
+        ]}
       />
 
       {/* HERO clair */}
@@ -361,7 +381,7 @@ function AboutScreen() {
             marginBottom: 22, color: '#0A0A0A',
           }}>
             Cabinet de conseil <span style={{
-              background: 'linear-gradient(135deg, #2563EB, #7C3AED)',
+              background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
             }}>et centre de formation</span><br />dédié à l'IA en entreprise
@@ -402,7 +422,7 @@ function AboutScreen() {
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
                   Audit, stratégie, gouvernance, accompagnement opérationnel : nous aidons PME, ETI et grands groupes à cadrer leur démarche IA, à prototyper rapidement et à déployer avec méthode.
                 </p>
-                <Link to="/conseil-ia" style={{
+                <Link to="/conseil-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
                   color: '#2563EB', textDecoration: 'none', fontSize: 14, fontWeight: 700,
                 }}>
@@ -425,9 +445,9 @@ function AboutScreen() {
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Centre de formation Qualiopi</h3>
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  Formations ChatGPT, Copilot, Gemini, Claude et programmes par métier. Certifié Qualiopi, finançable à 100 % via votre OPCO. +500 professionnels formés avec 98 % de satisfaction.
+                  Formations ChatGPT, Copilot, Gemini, Claude et programmes par métier. Certifié Qualiopi, finançable à 100 % via votre OPCO. +1 500 professionnels formés avec 98 % de satisfaction.
                 </p>
-                <Link to="/formation-ia-par-metier" style={{
+                <Link to="/formation-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
                   color: '#059669', textDecoration: 'none', fontSize: 14, fontWeight: 700,
                 }}>
@@ -454,7 +474,7 @@ function AboutScreen() {
             </div>
           </FadeIn>
           <FadeIn>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 12 }}>Le mot du fondateur</div>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Le mot du fondateur</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.4vw, 30px)', fontWeight: 800, color: '#111', letterSpacing: '-0.02em', marginBottom: 20, lineHeight: 1.3 }}>
               « L'intelligence artificielle ne remplace pas les humains.<br />Elle <span style={{ color: '#2563EB' }}>décuple leur potentiel</span>. »
             </h2>
@@ -518,17 +538,17 @@ function AboutScreen() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
             {[
               {
-                n: '01', Icon: Compass, color: '#2563EB',
+                n: '01', Icon: Compass,
                 title: 'Nous comprenons',
                 desc: "Audit de vos processus, entretiens avec vos équipes, cartographie des cas d'usage à plus fort ROI. Tout part d'une compréhension profonde de votre contexte.",
               },
               {
-                n: '02', Icon: Target, color: '#8B5CF6',
+                n: '02', Icon: Target,
                 title: 'Nous co-construisons',
                 desc: "Stratégie, gouvernance, prototypes opérationnels : nous produisons avec vous, jamais pour vous. Vos équipes sont parties prenantes à chaque étape.",
               },
               {
-                n: '03', Icon: Rocket, color: '#F59E0B',
+                n: '03', Icon: Rocket,
                 title: 'Nous transférons',
                 desc: "Formations certifiées Qualiopi, bibliothèque de prompts, coaching post-mission : nous faisons en sorte que vous n'ayez plus besoin de nous.",
               },
@@ -537,11 +557,12 @@ function AboutScreen() {
                 <div style={{ background: '#fff', borderRadius: 16, padding: 30, border: '1px solid #E5E7EB', height: '100%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
                     <div style={{
-                      width: 48, height: 48, borderRadius: 12,
-                      background: `${s.color}1A`, border: `1px solid ${s.color}33`,
+                      width: 52, height: 52, borderRadius: 14,
+                      background: '#2563EB',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      boxShadow: '0 4px 14px -4px rgba(37,99,235,0.45)',
                     }}>
-                      <s.Icon size={22} color={s.color} strokeWidth={2} />
+                      <s.Icon size={24} color="#fff" strokeWidth={2} />
                     </div>
                     <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: '#E5E7EB' }}>{s.n}</div>
                   </div>
@@ -565,20 +586,21 @@ function AboutScreen() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 20 }}>
             {[
-              { Icon: Heart,       color: '#EC4899', title: 'Humain d\'abord',     desc: "L'IA est un outil au service des personnes. Nous plaçons systématiquement l'humain au centre de nos interventions." },
-              { Icon: Lightbulb,   color: '#F59E0B', title: 'Accessibilité',       desc: "L'IA doit être comprise par tous, pas seulement par une élite. Nous expliquons, nous démystifions, nous rendons simple." },
-              { Icon: Handshake,   color: '#2563EB', title: 'Concrétude',          desc: "Pas de théorie hors-sol : chaque mission et chaque formation débouche sur des applications immédiatement utiles." },
-              { Icon: ShieldCheck, color: '#059669', title: 'Éthique & sécurité',  desc: "RGPD, confidentialité, prévention des dérives : nous cadrons chaque usage pour une IA maîtrisée et responsable." },
+              { Icon: Heart,       title: 'Humain d\'abord',     desc: "L'IA est un outil au service des personnes. Nous plaçons systématiquement l'humain au centre de nos interventions." },
+              { Icon: Lightbulb,   title: 'Accessibilité',       desc: "L'IA doit être comprise par tous, pas seulement par une élite. Nous expliquons, nous démystifions, nous rendons simple." },
+              { Icon: Handshake,   title: 'Concrétude',          desc: "Pas de théorie hors-sol : chaque mission et chaque formation débouche sur des applications immédiatement utiles." },
+              { Icon: ShieldCheck, title: 'Éthique & sécurité',  desc: "RGPD, confidentialité, prévention des dérives : nous cadrons chaque usage pour une IA maîtrisée et responsable." },
             ].map((v, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div style={{ background: '#F9FAFB', borderRadius: 14, padding: 26, border: '1px solid #E5E7EB', height: '100%' }}>
                   <div style={{
-                    width: 44, height: 44, borderRadius: 10,
-                    background: `${v.color}1A`, border: `1px solid ${v.color}33`,
+                    width: 48, height: 48, borderRadius: 12,
+                    background: '#2563EB',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: 16,
+                    boxShadow: '0 4px 14px -4px rgba(37,99,235,0.45)',
                   }}>
-                    <v.Icon size={20} color={v.color} strokeWidth={2} />
+                    <v.Icon size={22} color="#fff" strokeWidth={2} />
                   </div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{v.title}</h3>
                   <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{v.desc}</p>
@@ -590,11 +612,11 @@ function AboutScreen() {
       </section>
 
       {/* TIMELINE / HISTOIRE */}
-      <section style={{ padding: '96px 32px', background: '#0A0A0A', color: '#fff' }}>
+      <section style={{ padding: '96px 32px', background: '#F5F3EE', color: '#0A0A0A' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 10 }}>Notre histoire</div>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Notre histoire</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
               De l'intuition à une référence de la formation IA
             </h2>
           </div>
@@ -603,21 +625,22 @@ function AboutScreen() {
               { year: '2020', title: 'Le déclic', desc: "Consultant en transformation digitale depuis 10 ans, Mathias Nizan se spécialise sur l'IA générative. Les premiers modèles GPT laissent entrevoir un basculement majeur." },
               { year: '2022', title: 'Naissance de Masteria', desc: "Masteria est fondé sur une conviction : l'IA doit être accessible à tous les professionnels. Les premiers clients grands comptes font confiance au cabinet." },
               { year: '2023', title: 'Certification Qualiopi', desc: "Masteria devient organisme de formation certifié Qualiopi. Toutes les formations sont désormais finançables à 100 % via OPCO." },
-              { year: '2024', title: '+500 professionnels formés', desc: "Masteria accompagne des PME, ETI et grands groupes en France, Suisse et Belgique. 98 % de taux de satisfaction, +6h gagnées par semaine par collaborateur formé." },
+              { year: '2024', title: '+1 500 professionnels formés', desc: "Masteria accompagne des PME, ETI et grands groupes en France, Suisse et Belgique. 98 % de taux de satisfaction, +6h gagnées par semaine par collaborateur formé." },
               { year: '2025', title: 'Cabinet conseil + formation', desc: "Le positionnement hybride se consolide : audit stratégique, accompagnement opérationnel et transfert de compétences par des formations certifiées." },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div style={{
                   display: 'grid', gridTemplateColumns: '90px 1fr', gap: 20,
                   padding: '18px 20px',
-                  background: 'rgba(255,255,255,0.04)',
+                  background: '#fff',
+                  border: '1px solid #E5E7EB',
                   borderLeft: '3px solid #2563EB',
                   borderRadius: '0 10px 10px 0',
                 }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: '#60A5FA' }}>{t.year}</div>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: '#1D4ED8' }}>{t.year}</div>
                   <div>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#fff', marginBottom: 6 }}>{t.title}</div>
-                    <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.7, margin: 0 }}>{t.desc}</p>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 6 }}>{t.title}</div>
+                    <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{t.desc}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -630,7 +653,7 @@ function AboutScreen() {
       <section style={{ padding: '64px 32px', background: '#fff', textAlign: 'center' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9A9A9A', marginBottom: 12 }}>Certifications & labels</div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Certifications & labels</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 800, color: '#111', marginBottom: 32 }}>Une qualité reconnue</h2>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               {['Certifié Qualiopi', 'Finançable OPCO', 'France · Suisse · Belgique'].map((c, i) => (
@@ -657,10 +680,10 @@ function AboutScreen() {
           pointerEvents: 'none',
         }} />
         <div style={{ maxWidth: 620, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, lineHeight: 1.15, marginBottom: 16 }}>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, lineHeight: 1.15, marginBottom: 16, color: '#fff' }}>
             Travaillons ensemble
           </h2>
-          <p style={{ fontSize: 16, color: '#9CA3AF', marginBottom: 32, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 16, color: '#D1D5DB', marginBottom: 32, lineHeight: 1.7 }}>
             Que vous cherchiez un audit stratégique, un accompagnement opérationnel ou un programme de formation pour vos équipes, nous construisons la mission adaptée à vos enjeux.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
@@ -673,7 +696,7 @@ function AboutScreen() {
             }}>
               Contacter notre équipe <ArrowRight size={16} />
             </Link>
-            <Link to="/conseil-ia" style={{
+            <Link to="/conseil-intelligence-artificielle" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: 'rgba(255,255,255,0.08)', color: '#fff',
               padding: '15px 28px', borderRadius: 10,
@@ -692,9 +715,55 @@ function AboutScreen() {
 function ContactScreen() {
   const isMobile = useIsMobile();
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [format, setFormat] = useState('inter');
-  const [selectedTool, setSelectedTool] = useState('');
-  const [selectedMetier, setSelectedMetier] = useState('');
+  const [selectedTools, setSelectedTools] = useState([]);
+  const [selectedMetiers, setSelectedMetiers] = useState([]);
+
+  const toggleTool = (value) => setSelectedTools(prev =>
+    prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]
+  );
+  const toggleMetier = (value) => setSelectedMetiers(prev =>
+    prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]
+  );
+
+  const toolsLabel = (vals) => vals.map(v => {
+    if (v === 'sur-mesure') return 'Sur mesure';
+    if (v === 'ne-sais-pas') return 'À conseiller';
+    const hub = HUBS.find(h => h.slug === v);
+    if (hub?.id === 'sprint-ia') return 'Ateliers (Sprint IA · 3 h)';
+    return hub?.tool || v;
+  });
+  const metiersLabel = (vals) => vals.map(v => METIERS.find(m => m.slug === v)?.label || v);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const data = new FormData(e.target);
+      // Ajouter les sélections dynamiques (pas dans des vrais inputs)
+      data.set('outils_ia', selectedTools.length ? toolsLabel(selectedTools).join(', ') : 'Non précisé');
+      data.set('metiers', selectedMetiers.length ? metiersLabel(selectedMetiers).join(', ') : 'Équipe mixte');
+      data.set('format', format);
+      const res = await fetch('https://formspree.io/f/xzdyjbyn', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setSent(true);
+      } else {
+        const body = await res.json().catch(() => ({}));
+        console.error('Formspree error:', res.status, body);
+        alert(`Erreur ${res.status} : ${body.error || 'envoi impossible'}. Merci de réessayer dans quelques instants.`);
+      }
+    } catch (err) {
+      console.error('Network error:', err);
+      alert("Impossible d'envoyer le formulaire. Vérifiez votre connexion.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const inp = {
     width: '100%', fontFamily: 'DM Sans, sans-serif', fontSize: 14,
@@ -714,6 +783,10 @@ function ContactScreen() {
         title="Contacter notre équipe, Devis formation IA gratuit sous 24h | Masteria"
         description="Contactez Masteria pour un devis formation IA personnalisé. Réponse sous 24h. Formations ChatGPT, Copilot, Gemini, Claude. Certifié Qualiopi, finançable OPCO."
         slug="contact"
+        breadcrumbs={[
+          { name: 'Accueil', slug: '' },
+          { name: 'Contact', slug: 'contact' },
+        ]}
       />
 
       {/* ════════════════════════ HERO clair ════════════════════════ */}
@@ -771,7 +844,7 @@ function ContactScreen() {
               <MapPin size={15} color="#D97706" /> France · Suisse · Belgique
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <UsersIcon size={15} color="#7C3AED" /> +500 professionnels formés
+              <UsersIcon size={15} color="#7C3AED" /> +1 500 professionnels formés
             </span>
           </div>
         </div>
@@ -798,25 +871,24 @@ function ContactScreen() {
                 Nous contacter directement
               </h2>
               {[
-                { Icon: Mail,     color: '#2563EB', label: 'Email',     value: 'mathias.nizan@master-ia.fr', href: 'mailto:mathias.nizan@master-ia.fr' },
-                { Icon: Phone,    color: '#10B981', label: 'Téléphone', value: '06 67 75 41 28', href: 'tel:+33667754128' },
-                { Icon: Linkedin, color: '#0A66C2', label: 'LinkedIn',  value: 'Mathias Nizan', href: 'https://www.linkedin.com/in/mathias-nizan/' },
-                { Icon: MapPin,   color: '#D97706', label: 'Adresse',   value: '17 Rue Richan, 69004 Lyon' },
-                { Icon: Clock,    color: '#059669', label: 'Délai de réponse', value: 'Sous 24 h ouvrées' },
-                { Icon: Calendar, color: '#7C3AED', label: 'Modalités', value: 'Présentiel ou distanciel · France, Suisse, Belgique' },
+                { Icon: Phone,    label: 'Téléphone', value: '06 67 75 41 28', href: 'tel:+33667754128' },
+                { Icon: MapPin,   label: 'Adresse',   value: '17 Rue Richan, 69004 Lyon' },
+                { Icon: Clock,    label: 'Délai de réponse', value: 'Sous 24 h ouvrées' },
+                { Icon: Calendar, label: 'Modalités', value: 'Présentiel ou distanciel · France, Suisse, Belgique' },
               ].map((c, i, arr) => {
                 const content = (
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                     <div style={{
-                      width: 34, height: 34, borderRadius: 8,
-                      background: `${c.color}15`, border: `1px solid ${c.color}33`,
+                      width: 36, height: 36, borderRadius: 9,
+                      background: '#2563EB',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       flexShrink: 0,
+                      boxShadow: '0 4px 12px -4px rgba(37,99,235,0.4)',
                     }}>
-                      <c.Icon size={16} color={c.color} strokeWidth={2} />
+                      <c.Icon size={17} color="#fff" strokeWidth={2} />
                     </div>
                     <div style={{ minWidth: 0 }}>
-                      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9CA3AF', marginBottom: 3 }}>
+                      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 3 }}>
                         {c.label}
                       </div>
                       <div style={{ fontSize: 14, color: '#0A0A0A', fontWeight: 600, wordBreak: 'break-word' }}>
@@ -907,7 +979,7 @@ function ContactScreen() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={e => { e.preventDefault(); setSent(true); }}>
+              <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 24 }}>
                   <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: '#0A0A0A', marginBottom: 6, letterSpacing: '-0.01em' }}>
                     Demande de devis personnalisé
@@ -924,31 +996,31 @@ function ContactScreen() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
                   <div style={grp}>
                     <label style={lbl}>Prénom *</label>
-                    <input style={inp} placeholder="Sophie" required onFocus={focus} onBlur={blur} />
+                    <input name="prenom" style={inp} placeholder="Sophie" required onFocus={focus} onBlur={blur} />
                   </div>
                   <div style={grp}>
                     <label style={lbl}>Nom *</label>
-                    <input style={inp} placeholder="Martin" required onFocus={focus} onBlur={blur} />
+                    <input name="nom" style={inp} placeholder="Martin" required onFocus={focus} onBlur={blur} />
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
                   <div style={grp}>
                     <label style={lbl}>Email professionnel *</label>
-                    <input type="email" style={inp} placeholder="contact@entreprise.fr" required onFocus={focus} onBlur={blur} />
+                    <input name="email" type="email" style={inp} placeholder="contact@entreprise.fr" required onFocus={focus} onBlur={blur} />
                   </div>
                   <div style={grp}>
                     <label style={lbl}>Téléphone</label>
-                    <input type="tel" style={inp} placeholder="+33 6 12 34 56 78" onFocus={focus} onBlur={blur} />
+                    <input name="telephone" type="tel" style={inp} placeholder="+33 6 12 34 56 78" onFocus={focus} onBlur={blur} />
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
                   <div style={grp}>
                     <label style={lbl}>Entreprise *</label>
-                    <input style={inp} placeholder="Nom de votre entreprise" required onFocus={focus} onBlur={blur} />
+                    <input name="entreprise" style={inp} placeholder="Nom de votre entreprise" required onFocus={focus} onBlur={blur} />
                   </div>
                   <div style={grp}>
                     <label style={lbl}>Votre fonction</label>
-                    <input style={inp} placeholder="Ex : DRH, Directeur Marketing…" onFocus={focus} onBlur={blur} />
+                    <input name="fonction" style={inp} placeholder="Ex : DRH, Directeur Marketing…" onFocus={focus} onBlur={blur} />
                   </div>
                 </div>
 
@@ -960,22 +1032,25 @@ function ContactScreen() {
                 {/* Sélecteur 2 axes : OUTIL */}
                 <div style={grp}>
                   <label style={lbl}>
-                    Outil IA <span style={{ fontWeight: 500, color: '#9CA3AF' }}>(1 seul)</span>
+                    Outil(s) IA <span style={{ fontWeight: 500, color: '#6B7280' }}>(plusieurs possibles)</span>
                   </label>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 8 }}>
                     {[
                       ...HUBS.filter(h => h.id !== 'metiers').map(h => ({
-                        value: h.slug, label: h.tool, color: h.color, logo: h.id,
+                        value: h.slug,
+                        label: h.id === 'sprint-ia' ? 'Ateliers (Sprint IA · 3 h)' : h.tool,
+                        color: h.color,
+                        logo: h.id,
                       })),
                       { value: 'sur-mesure', label: 'Sur mesure', color: '#F97316', icon: Sparkles },
                       { value: 'ne-sais-pas', label: 'À conseiller', color: '#6B7280', icon: Lightbulb },
                     ].map(t => {
-                      const active = selectedTool === t.value;
+                      const active = selectedTools.includes(t.value);
                       return (
                         <button
                           key={t.value}
                           type="button"
-                          onClick={() => setSelectedTool(active ? '' : t.value)}
+                          onClick={() => toggleTool(t.value)}
                           style={{
                             background: active ? `${t.color}12` : '#fff',
                             border: `1.5px solid ${active ? t.color : '#E5E7EB'}`,
@@ -1009,23 +1084,23 @@ function ContactScreen() {
                 {/* Sélecteur 2 axes : MÉTIER */}
                 <div style={grp}>
                   <label style={lbl}>
-                    Thématique / Métier{' '}
-                    <span style={{ fontWeight: 500, color: '#9CA3AF' }}>
-                      (optionnel, laisser vide = équipe mixte)
+                    Thématique(s) / Métier(s){' '}
+                    <span style={{ fontWeight: 500, color: '#6B7280' }}>
+                      (plusieurs possibles, laisser vide = équipe mixte)
                     </span>
                   </label>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                     <button
                       type="button"
-                      onClick={() => setSelectedMetier('')}
+                      onClick={() => setSelectedMetiers([])}
                       style={{
-                        background: selectedMetier === '' ? '#0A0A0A' : '#fff',
-                        color: selectedMetier === '' ? '#fff' : '#475569',
-                        border: selectedMetier === '' ? 'none' : '1px solid #E5E7EB',
+                        background: selectedMetiers.length === 0 ? '#0A0A0A' : '#fff',
+                        color: selectedMetiers.length === 0 ? '#fff' : '#475569',
+                        border: selectedMetiers.length === 0 ? 'none' : '1px solid #E5E7EB',
                         borderRadius: 999,
                         padding: '7px 14px',
                         fontSize: 12.5,
-                        fontWeight: selectedMetier === '' ? 700 : 500,
+                        fontWeight: selectedMetiers.length === 0 ? 700 : 500,
                         fontFamily: 'DM Sans, sans-serif',
                         cursor: 'pointer',
                         transition: 'all 150ms',
@@ -1034,12 +1109,12 @@ function ContactScreen() {
                       Équipe mixte
                     </button>
                     {METIERS.map(m => {
-                      const active = selectedMetier === m.slug;
+                      const active = selectedMetiers.includes(m.slug);
                       return (
                         <button
                           key={m.slug}
                           type="button"
-                          onClick={() => setSelectedMetier(active ? '' : m.slug)}
+                          onClick={() => toggleMetier(m.slug)}
                           style={{
                             background: active ? '#0A0A0A' : '#fff',
                             color: active ? '#fff' : '#475569',
@@ -1060,7 +1135,7 @@ function ContactScreen() {
                   </div>
 
                   {/* Récap de la sélection */}
-                  {(selectedTool || selectedMetier) && (
+                  {(selectedTools.length > 0 || selectedMetiers.length > 0) && (
                     <div style={{
                       marginTop: 12,
                       padding: '10px 14px',
@@ -1070,17 +1145,14 @@ function ContactScreen() {
                       fontSize: 13,
                       color: '#374151',
                       fontFamily: 'DM Sans, sans-serif',
+                      lineHeight: 1.5,
                     }}>
-                      <span style={{ color: '#9CA3AF', marginRight: 6 }}>Votre demande :</span>
+                      <span style={{ color: '#6B7280', marginRight: 6 }}>Votre demande :</span>
                       <strong style={{ color: '#0A0A0A' }}>
-                        {selectedTool
-                          ? (
-                              selectedTool === 'sur-mesure' ? 'Formation sur mesure'
-                              : selectedTool === 'ne-sais-pas' ? 'À conseiller'
-                              : `Formation ${HUBS.find(h => h.slug === selectedTool)?.tool || ''}`
-                            )
+                        {selectedTools.length > 0
+                          ? `Formation ${toolsLabel(selectedTools).join(' + ')}`
                           : 'Outil à définir'}
-                        {selectedMetier && ` · pour ${METIERS.find(m => m.slug === selectedMetier)?.label}`}
+                        {selectedMetiers.length > 0 && ` · pour ${metiersLabel(selectedMetiers).join(', ')}`}
                       </strong>
                     </div>
                   )}
@@ -1119,21 +1191,21 @@ function ContactScreen() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
                   <div style={grp}>
                     <label style={lbl}>Nombre de participants</label>
-                    <select style={{ ...inp, appearance: 'none', backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236B7280\' stroke-width=\'2\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 18, paddingRight: 40 }} onFocus={focus} onBlur={blur}>
-                      {['1, 5 personnes', '6, 10 personnes', '11, 20 personnes', '20+ personnes', 'Je ne sais pas encore'].map(n => <option key={n}>{n}</option>)}
+                    <select name="nb_participants" style={{ ...inp, appearance: 'none', backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236B7280\' stroke-width=\'2\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 18, paddingRight: 40 }} onFocus={focus} onBlur={blur}>
+                      {['1–5 personnes', '6–10 personnes', '11–20 personnes', '20+ personnes', 'Je ne sais pas encore'].map(n => <option key={n}>{n}</option>)}
                     </select>
                   </div>
                   <div style={grp}>
                     <label style={lbl}>Délai souhaité</label>
-                    <select style={{ ...inp, appearance: 'none', backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236B7280\' stroke-width=\'2\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 18, paddingRight: 40 }} onFocus={focus} onBlur={blur}>
+                    <select name="delai" style={{ ...inp, appearance: 'none', backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236B7280\' stroke-width=\'2\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 18, paddingRight: 40 }} onFocus={focus} onBlur={blur}>
                       {['Dans le mois', 'Dans les 3 mois', 'Dans les 6 mois', 'Pas de date fixée'].map(n => <option key={n}>{n}</option>)}
                     </select>
                   </div>
                 </div>
 
                 <div style={grp}>
-                  <label style={lbl}>Message <span style={{ fontWeight: 400, color: '#9CA3AF' }}>(optionnel)</span></label>
-                  <textarea style={{ ...inp, resize: 'vertical' }} rows={4} placeholder="Décrivez votre contexte : outils déjà utilisés, objectifs, enjeux métiers spécifiques…" onFocus={focus} onBlur={blur} />
+                  <label style={lbl}>Message <span style={{ fontWeight: 400, color: '#6B7280' }}>(optionnel)</span></label>
+                  <textarea name="message" style={{ ...inp, resize: 'vertical' }} rows={4} placeholder="Décrivez votre contexte : outils déjà utilisés, objectifs, enjeux métiers spécifiques…" onFocus={focus} onBlur={blur} />
                 </div>
 
                 <div style={grp}>
@@ -1143,21 +1215,21 @@ function ContactScreen() {
                   </label>
                 </div>
 
-                <button type="submit" style={{
+                <button type="submit" disabled={loading} style={{
                   width: '100%',
-                  background: 'linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)',
+                  background: loading ? '#93C5FD' : 'linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)',
                   color: '#fff', border: 'none',
                   padding: '16px 28px', borderRadius: 12,
                   fontFamily: 'DM Sans, sans-serif', fontSize: 15, fontWeight: 800,
-                  cursor: 'pointer',
+                  cursor: loading ? 'wait' : 'pointer',
                   display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10,
                   boxShadow: '0 4px 16px rgba(37,99,235,0.3)',
                   transition: 'transform 150ms, box-shadow 150ms',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(37,99,235,0.4)'; }}
+                  onMouseEnter={e => { if (!loading) { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(37,99,235,0.4)'; }}}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,99,235,0.3)'; }}
                 >
-                  Envoyer ma demande <Send size={16} />
+                  {loading ? 'Envoi en cours…' : <><Send size={16} /> Envoyer ma demande</>}
                 </button>
 
                 <div style={{
@@ -1186,7 +1258,7 @@ function ContactScreen() {
 function NotFound() {
   return (
     <div style={{ padding: '120px 32px', textAlign: 'center', fontFamily: 'DM Sans, sans-serif' }}>
-      <SEOHead title="Page introuvable | Masteria" description="Cette page n'existe pas." />
+      <SEOHead title="Page introuvable | Masteria" description="Cette page n'existe pas." noindex={true} />
       <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 48, fontWeight: 900, marginBottom: 16 }}>404</h1>
       <p style={{ color: '#717171', marginBottom: 32 }}>Cette page n'existe pas ou a été déplacée.</p>
       <Link to="/" style={{ color: '#2563EB', fontWeight: 600 }}>Retour à l'accueil →</Link>
@@ -1194,30 +1266,67 @@ function NotFound() {
   );
 }
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    // Si l'URL contient une ancre (#section), laisser le navigateur gérer
+    if (hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname, hash]);
+  return null;
+}
+
 export default function App() {
   return (
     <div>
+      <ScrollToTop />
       <MasteriaHeader />
+      <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/formations" element={<FormationsScreen />} />
         <Route path="/formations/:id" element={<FormationDetailScreen />} />
-        <Route path="/a-propos" element={<AboutScreen />} />
-        <Route path="/conseil-ia" element={<ConseilIAPage />} />
+        <Route path="/centre-formation-ia-entreprise" element={<AboutScreen />} />
+        <Route path="/conseil-intelligence-artificielle" element={<ConseilIAPage />} />
         <Route path="/blog" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
         <Route path="/contact" element={<ContactScreen />} />
         {/* Hub pages */}
-        <Route path="/formation-chatgpt-entreprise" element={<HubPage />} />
+        {/* Hub pages — URLs canoniques */}
+        <Route path="/formation-chatgpt" element={<HubPage />} />
+        <Route path="/formation-claude-ia" element={<HubPage />} />
+        <Route path="/formation-mistral-ai" element={<HubPage />} />
         <Route path="/formation-microsoft-copilot" element={<HubPage />} />
         <Route path="/formation-gemini-entreprise" element={<HubPage />} />
-        <Route path="/formation-claude-entreprise" element={<HubPage />} />
-        <Route path="/formation-mistral-entreprise" element={<HubPage />} />
-        <Route path="/formation-ia-par-metier" element={<MetiersHubPage />} />
+        <Route path="/formation-sprint-ia" element={<HubPage />} />
+        <Route path="/formation-multi-outils" element={<HubPage />} />
+        {/* Pages géo : 4 outils × 8 villes */}
+        {getAllGeoCombinations().map(({ slug }) => (
+          <Route key={slug} path={`/${slug}`} element={<GeoPage />} />
+        ))}
+        {/* Pages géo génériques : /formation-ia-{ville} */}
+        {GEO_DESTINATIONS.map(dest => (
+          <Route key={geoIaSlug(dest.slug)} path={`/${geoIaSlug(dest.slug)}`} element={<GeoIAGenericPage />} />
+        ))}
+        {/* Pages éditoriales transversales (CPF, distanciel, IA générative) */}
+        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative'].map(s => (
+          <Route key={s} path={`/${s}`} element={<TopicLandingPage />} />
+        ))}
+        <Route path="/formation-ia-qualiopi" element={<QualiopiPage />} />
+        <Route path="/financement-formation-ia" element={<FinancementPage />} />
+        <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />
+        <Route path="/formation-ia-debutant" element={<DebutantPage />} />
+        <Route path="/glossaire-ia" element={<GlossaryPage />} />
+        <Route path="/quelle-est-la-meilleure-ia" element={<ComparisonsHubPage />} />
+        <Route path="/chatgpt-vs-claude" element={<ComparisonPage slug="chatgpt-vs-claude" />} />
+        <Route path="/copilot-vs-chatgpt" element={<ComparisonPage slug="copilot-vs-chatgpt" />} />
+        <Route path="/meilleure-ia-entreprise-2026" element={<ComparisonPage slug="meilleure-ia-entreprise-2026" />} />
+        <Route path="/meilleure-ia-pour-coder" element={<ComparisonPage slug="meilleure-ia-pour-coder" />} />
+        <Route path="/meilleur-agent-ia" element={<ComparisonPage slug="meilleur-agent-ia" />} />
         <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
         <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialitePage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
-        {['marketing','ressources-humaines','commercial','finance','juridique','communication','management','assistante','seo','service-client','informatique','pedagogique'].map(m => (
+        {['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','transverse'].map(m => (
           <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
         ))}
         {/* Spoke pages, dynamic via slug */}
@@ -1227,6 +1336,9 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <MasteriaFooter />
+      </Suspense>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }

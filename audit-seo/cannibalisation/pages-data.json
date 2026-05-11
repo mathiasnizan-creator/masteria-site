@@ -1,0 +1,1227 @@
+[
+  {
+    "route": "/",
+    "title": "Formation IA entreprise · Certifié Qualiopi | Masteria",
+    "h1": "Formez vos équipes à l' intelligence artificielle , concrètement.",
+    "canonical": "https://www.master-ia.fr/",
+    "desc": "Formez vos équipes à ChatGPT, Copilot, Gemini, Claude, Mistral. Certifié Qualiopi, 100 % OPCO. +500 pros formés. Devis sous 24 h."
+  },
+  {
+    "route": "/blog",
+    "title": "Blog IA en entreprise | Conseils, guides et retours terrain | Masteria",
+    "h1": "Comprendre l'IA en entreprise, sans jargon",
+    "canonical": "https://www.master-ia.fr/blog",
+    "desc": "Guides pratiques, financement OPCO, retours terrain et méthodes pour déployer l'IA en entreprise. Par Masteria, certifié Qualiopi."
+  },
+  {
+    "route": "/blog/ai-act-formation-ia-obligatoire-entreprise",
+    "title": "AI Act : la formation IA est obligatoire en entreprise | Masteria",
+    "h1": "L'AI Act rend la formation IA obligatoire : ce que ça change pour votre entreprise",
+    "canonical": "https://www.master-ia.fr/blog/ai-act-formation-ia-obligatoire-entreprise",
+    "desc": "Depuis février 2025, l'AI Act oblige toute entreprise utilisant l'IA à former ses équipes. Les sanctions arrivent en août 2026. Voici ce que ça implique concrètement."
+  },
+  {
+    "route": "/blog/ai-act-rh-conformite-recrutement-evaluation",
+    "title": "AI Act RH : conformité recrutement et évaluation (2026)",
+    "h1": "AI Act pour les RH : conformité 2026 sur le recrutement, l'évaluation et la formation",
+    "canonical": "https://www.master-ia.fr/blog/ai-act-rh-conformite-recrutement-evaluation",
+    "desc": "L'AI Act classe les outils IA RH en haut risque. Recrutement, évaluation, formation : ce qui change en 2026 pour les DRH et juristes RH."
+  },
+  {
+    "route": "/blog/automatiser-taches-repetitives-chatgpt",
+    "title": "Automatiser ses tâches avec ChatGPT : guide pratique | Masteria",
+    "h1": "Quelles tâches répétitives vos équipes peuvent déléguer à ChatGPT dès maintenant",
+    "canonical": "https://www.master-ia.fr/blog/automatiser-taches-repetitives-chatgpt",
+    "desc": "Traitement d'e-mails, synthèse de documents, mise en forme de données : voici les tâches répétitives que vos équipes peuvent déléguer à ChatGPT sans compétences techniques."
+  },
+  {
+    "route": "/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir",
+    "title": "ChatGPT, Copilot, Gemini, Claude ou Mistral : lequel choisir ?",
+    "h1": "ChatGPT, Copilot, Gemini, Claude ou Mistral : lequel choisir pour former vos équipes ?",
+    "canonical": "https://www.master-ia.fr/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir",
+    "desc": "ChatGPT, Copilot, Gemini, Claude ou Mistral : la réponse dépend de votre stack, pas des benchmarks. Guide pratique pour choisir l'outil IA adapté à votre organisation."
+  },
+  {
+    "route": "/blog/choisir-cabinet-conseil-ia",
+    "title": "Choisir un cabinet de conseil en IA : critères et pièges | Masteria",
+    "h1": "Comment choisir un cabinet de conseil en IA pour son entreprise",
+    "canonical": "https://www.master-ia.fr/blog/choisir-cabinet-conseil-ia",
+    "desc": "Tous les cabinets de conseil en IA ne proposent pas la même chose. Voici les questions à poser, les red flags à repérer et les critères qui distinguent un bon accompagnement."
+  },
+  {
+    "route": "/blog/custom-gpt-entreprise-creer-assistants-chatgpt",
+    "title": "Custom GPT entreprise : créer ses propres assistants ChatGPT | Masteria",
+    "h1": "Custom GPTs : créer ses propres assistants ChatGPT pour son entreprise",
+    "canonical": "https://www.master-ia.fr/blog/custom-gpt-entreprise-creer-assistants-chatgpt",
+    "desc": "Custom GPTs : comment créer un assistant ChatGPT sur mesure pour votre entreprise. Guide pas-à-pas, cas d'usage métier, sécurité des données et formation."
+  },
+  {
+    "route": "/blog/financer-formation-ia-opco-qualiopi",
+    "title": "Financer une formation IA avec son OPCO | Guide Masteria",
+    "h1": "Financer sa formation IA avec son OPCO : ce qu'il faut savoir avant de se lancer",
+    "canonical": "https://www.master-ia.fr/blog/financer-formation-ia-opco-qualiopi",
+    "desc": "Votre OPCO peut financer 100 % de votre formation IA. Voici ce que garantit Qualiopi, comment monter le dossier et les erreurs qui font refuser les demandes."
+  },
+  {
+    "route": "/blog/formation-analyse-donnees-ia-excel-chatgpt",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-creativite-ia-brainstorming",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-ecrits-pro-ia-redaction",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-ia-assistante-direction-office-manager",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-ia-certifiante-qualiopi-rncp",
+    "title": "Formation IA certifiante : Qualiopi ou RNCP ? La vraie différence | Masteria",
+    "h1": "Formation IA certifiante : Qualiopi vs RNCP, quelle différence ?",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-certifiante-qualiopi-rncp",
+    "desc": "Formation IA certifiante : Qualiopi garantit le financement OPCO, le RNCP permet le CPF. Comprendre la différence pour choisir la formation adaptée à votre situation."
+  },
+  {
+    "route": "/blog/formation-ia-chef-de-projet",
+    "title": "Formation IA chef de projet : compétences et cas d'usage 2025 | Masteria",
+    "h1": "Chef de projet et IA : les compétences à développer en 2025",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-chef-de-projet",
+    "desc": "Formation IA pour les chefs de projet : planification, reporting, gestion des risques, communication avec les équipes. Les cas d'usage IA les plus utiles en gestion de projet."
+  },
+  {
+    "route": "/blog/formation-ia-commerciaux-prospection-relance",
+    "title": "Formation IA commerciaux : prospection, relance, closing | Masteria",
+    "h1": "Formation IA pour les commerciaux : prospection, relance et propositions personnalisées",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-commerciaux-prospection-relance",
+    "desc": "Formation IA pour les commerciaux : 6 cas d'usage chiffrés (prospection, scoring, relance, propositions). Certifié Qualiopi, finançable OPCO. Devis sous 24h."
+  },
+  {
+    "route": "/blog/formation-ia-cpf-eligible-2026",
+    "title": "Formation IA éligible CPF 2026 : guide complet | Masteria",
+    "h1": "Formation IA et CPF : ce qui est éligible en 2026 (et ce qui ne l'est pas)",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-cpf-eligible-2026",
+    "desc": "Formation IA éligible CPF en 2026 : règles RNCP/RS, certifications acceptées, alternative OPCO pour les salariés. Tout ce qui marche vraiment."
+  },
+  {
+    "route": "/blog/formation-ia-direction-achats-procurement",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-ia-dirigeants-ceo-comex",
+    "title": "Formation IA dirigeants CEO COMEX : guide stratégique 2026 | Masteria",
+    "h1": "Formation IA pour dirigeants : ce qu'un CEO ou COMEX doit comprendre en 2026",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-dirigeants-ceo-comex",
+    "desc": "Formation IA pour dirigeants : décodage stratégique, gouvernance, gestion des risques et grilles de décision. Format COMEX, certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/blog/formation-ia-en-ligne-distance",
+    "title": "Formation IA en ligne, à distance ou hybride : guide 2026 | Masteria",
+    "h1": "Formation IA en ligne ou à distance : ce qui marche, ce qui ne marche pas",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-en-ligne-distance",
+    "desc": "Formation IA en ligne ou en classe virtuelle : avantages, limites, taux de complétion. Comment choisir entre 100 % distanciel, présentiel ou hybride."
+  },
+  {
+    "route": "/blog/formation-ia-entreprise-resultats-terrain",
+    "title": "Formation IA entreprise : ce qui change après la formation | Masteria",
+    "h1": "Ce que change vraiment une formation IA en entreprise : retours de terrain",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-entreprise-resultats-terrain",
+    "desc": "Qu'est-ce qui change concrètement après une formation IA en entreprise ? Voici ce que nos participants nous rapportent dans les semaines qui suivent."
+  },
+  {
+    "route": "/blog/formation-ia-finance-analyse-reporting",
+    "title": "Formation IA finance : analyse, reporting, conformité | Masteria",
+    "h1": "Formation IA pour la finance : analyse, reporting et conformité",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-finance-analyse-reporting",
+    "desc": "Formation IA pour les équipes finance et comptabilité : analyse de données, reporting automatisé, due diligence, conformité RGPD. ChatGPT, Copilot, Mistral pour la finance."
+  },
+  {
+    "route": "/blog/formation-ia-generative-chatgpt-midjourney",
+    "title": "Formation IA générative 2026 : texte, image, vidéo | Masteria",
+    "h1": "Formation IA générative : texte, image, vidéo — ce que vos équipes doivent vraiment maîtriser",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-generative-chatgpt-midjourney",
+    "desc": "Formation IA générative pour entreprises : ChatGPT, Midjourney, Sora, Veo, Adobe Firefly. Programme, durée, cas d'usage métier, financement OPCO."
+  },
+  {
+    "route": "/blog/formation-ia-gratuite-comparatif-realite",
+    "title": "Formation IA gratuite : comparatif réel 2026 | Masteria",
+    "h1": "Formation IA gratuite : ce que ça vaut vraiment (Google, Microsoft, OpenAI, France Travail)",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-gratuite-comparatif-realite",
+    "desc": "Formation IA gratuite : comparatif honnête des MOOC Google, Microsoft, OpenAI, France Travail. Ce que vous obtenez vraiment et ce qu'il manque."
+  },
+  {
+    "route": "/blog/formation-ia-lyon",
+    "title": "Formation IA à Lyon : guide pour les entreprises | Masteria",
+    "h1": "Formation IA à Lyon : guide pratique pour les entreprises de la métropole",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-lyon",
+    "desc": "Former ses équipes à l'IA à Lyon : quels outils, quels prestataires, comment financer via son OPCO. Le guide pratique pour les entreprises de la métropole lyonnaise."
+  },
+  {
+    "route": "/blog/formation-ia-marketing-equipes",
+    "title": "Formation IA pour le marketing : cas d'usage concrets | Masteria",
+    "h1": "Ce que les équipes marketing font différemment après une formation IA",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-marketing-equipes",
+    "desc": "Briefs de campagne, création de contenu, analyse de résultats : voici comment les équipes marketing intègrent Gemini et ChatGPT dans leur travail."
+  },
+  {
+    "route": "/blog/formation-ia-paris",
+    "title": "Formation IA Paris : entreprises, OPCO, certifié Qualiopi | Masteria",
+    "h1": "Formation IA à Paris : le guide complet pour les entreprises franciliennes",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-paris",
+    "desc": "Formation intelligence artificielle à Paris pour entreprises : ChatGPT, Copilot, Gemini en présentiel ou distanciel. Certifié Qualiopi, finançable OPCO. Devis 24h."
+  },
+  {
+    "route": "/blog/formation-ia-relation-client-sav",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-ia-ressources-humaines",
+    "title": "Formation IA pour les RH : 8 cas d'usage concrets | Masteria",
+    "h1": "Formation IA pour les RH : 8 cas d'usage concrets à maîtriser",
+    "canonical": "https://www.master-ia.fr/blog/formation-ia-ressources-humaines",
+    "desc": "Formation IA pour les ressources humaines : recrutement, GPEC, onboarding, paie, formation. Les 8 cas d'usage ChatGPT et Copilot les plus rentables pour les équipes RH."
+  },
+  {
+    "route": "/blog/formation-manager-avec-ia",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-piloter-projet-ia-entreprise",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/formation-veille-ia-organiser-entreprise",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/former-ses-equipes-ia-par-ou-commencer",
+    "title": "Former ses équipes à l'IA : guide pour décideurs | Masteria",
+    "h1": "Former ses équipes à l'IA : comment décider par où commencer",
+    "canonical": "https://www.master-ia.fr/blog/former-ses-equipes-ia-par-ou-commencer",
+    "desc": "Quel outil choisir ? Dans quel ordre former ? Comment mesurer les résultats ? Le guide pratique pour les RH et managers qui veulent lancer un plan de formation IA."
+  },
+  {
+    "route": "/blog/geo-referencement-ia-generative-entreprise",
+    "title": "GEO et IA générative : se rendre visible dans ChatGPT (2026)",
+    "h1": "GEO (Generative Engine Optimization) : se rendre visible dans ChatGPT, Perplexity et Gemini",
+    "canonical": "https://www.master-ia.fr/blog/geo-referencement-ia-generative-entreprise",
+    "desc": "Comment être cité par ChatGPT, Perplexity, Gemini et Claude quand vos prospects posent une question dans leur secteur. Le guide GEO complet pour les entreprises."
+  },
+  {
+    "route": "/blog/ia-pour-repondre-appels-doffres",
+    "title": "IA pour les appels d'offres : gagner du temps sans perdre en qualité | Masteria",
+    "h1": "Comment vos équipes peuvent répondre à deux fois plus d'appels d'offres avec l'IA",
+    "canonical": "https://www.master-ia.fr/blog/ia-pour-repondre-appels-doffres",
+    "desc": "Analyser un DCE, structurer un mémoire technique, relire pour la conformité : voici comment l'IA accélère chaque étape de la réponse aux marchés publics."
+  },
+  {
+    "route": "/blog/lever-resistances-equipes-ia",
+    "title": "Résistances IA : lever les craintes des équipes en entreprise | Masteria",
+    "h1": "Comment lever les résistances de vos équipes face à l'IA",
+    "canonical": "https://www.master-ia.fr/blog/lever-resistances-equipes-ia",
+    "desc": "Peur de l'IA, crainte de remplacement, refus d'usage : les 5 résistances classiques en entreprise et la méthode pour les lever durablement, sans contrainte."
+  },
+  {
+    "route": "/blog/meilleure-formation-ia-comment-choisir",
+    "title": "Meilleure formation IA 2025 : guide pour bien choisir | Masteria",
+    "h1": "Meilleure formation IA en 2025 : comment choisir sans se tromper",
+    "canonical": "https://www.master-ia.fr/blog/meilleure-formation-ia-comment-choisir",
+    "desc": "Quels critères pour choisir la meilleure formation IA pour vos équipes ? Qualiopi, format, durée, outil, financement : le guide complet pour décider vite et bien."
+  },
+  {
+    "route": "/blog/microsoft-copilot-entreprise-guide-pratique",
+    "title": "Microsoft Copilot en entreprise : guide pratique 2026 | Masteria",
+    "h1": "Microsoft Copilot en entreprise : le guide pratique Word, Excel, Teams, Outlook",
+    "canonical": "https://www.master-ia.fr/blog/microsoft-copilot-entreprise-guide-pratique",
+    "desc": "Microsoft Copilot dans Word, Excel, Teams, Outlook : cas d'usage concrets, prompts, tarifs et comment former vos équipes. Guide complet certifié Qualiopi."
+  },
+  {
+    "route": "/blog/mistral-ai-souverainete-entreprise",
+    "title": "Mistral AI entreprise : la souveraineté française expliquée | Masteria",
+    "h1": "Mistral AI en entreprise : pourquoi la souveraineté française change la donne pour vos données",
+    "canonical": "https://www.master-ia.fr/blog/mistral-ai-souverainete-entreprise",
+    "desc": "Mistral AI : la première IA générative française, hébergée en Europe. Quels avantages pour les DSI ? Comparatif vs ChatGPT, secteurs cibles, déploiement on-premise."
+  },
+  {
+    "route": "/blog/plan-developpement-competences-ia-drh",
+    "title": "",
+    "h1": "",
+    "canonical": "",
+    "desc": ""
+  },
+  {
+    "route": "/blog/plan-formation-ia-annuel-template",
+    "title": "Plan de formation IA annuel : méthode et modèle 2026 | Masteria",
+    "h1": "Plan de formation IA annuel : la méthode pour les RH et les directions",
+    "canonical": "https://www.master-ia.fr/blog/plan-formation-ia-annuel-template",
+    "desc": "Construire son plan de formation IA annuel : méthode pas-à-pas, KPIs, budget, calendrier et modèle prêt à utiliser pour DRH et directions. Conformité AI Act incluse."
+  },
+  {
+    "route": "/blog/prompt-engineering-guide-entreprise",
+    "title": "Prompt engineering en entreprise : guide pratique 2025 | Masteria",
+    "h1": "Prompt engineering en entreprise : le guide pratique complet",
+    "canonical": "https://www.master-ia.fr/blog/prompt-engineering-guide-entreprise",
+    "desc": "Maîtriser le prompt engineering pour utiliser ChatGPT, Claude, Copilot efficacement en entreprise. Techniques, exemples et erreurs à éviter. Guide pratique par Masteria."
+  },
+  {
+    "route": "/blog/roi-formation-ia-entreprise-mesurer",
+    "title": "ROI formation IA : comment le mesurer en entreprise | Masteria",
+    "h1": "ROI d'une formation IA en entreprise : la méthode pour le mesurer concrètement",
+    "canonical": "https://www.master-ia.fr/blog/roi-formation-ia-entreprise-mesurer",
+    "desc": "ROI d'une formation IA en entreprise : la méthode chiffrée. KPIs concrets, formules de calcul, cas réels et template d'évaluation à 30, 90 et 180 jours."
+  },
+  {
+    "route": "/blog/securite-ia-entreprise-rgpd",
+    "title": "Sécurité IA entreprise : le guide RGPD pour DSI 2026 | Masteria",
+    "h1": "Sécurité et confidentialité de l'IA en entreprise : le guide RGPD pour DSI et dirigeants",
+    "canonical": "https://www.master-ia.fr/blog/securite-ia-entreprise-rgpd",
+    "desc": "Sécurité IA en entreprise : ChatGPT, Copilot et Mistral face au RGPD. Guide pratique pour DSI et DPO sur les données sensibles, le secret professionnel et la conformité."
+  },
+  {
+    "route": "/blog/seo-ia-strategie-content-2026",
+    "title": "SEO et IA : guide stratégique 2026 pour content managers",
+    "h1": "SEO et IA : réinventer sa stratégie content avec ChatGPT, Claude et Gemini",
+    "canonical": "https://www.master-ia.fr/blog/seo-ia-strategie-content-2026",
+    "desc": "Recherche de mots-clés, brief, rédaction, optimisation, maillage interne : comment réinventer son SEO avec ChatGPT, Claude et Gemini en 2026."
+  },
+  {
+    "route": "/blog/sprint-ia-formations-courtes-entreprise",
+    "title": "Sprint IA — formations courtes 3h pour entreprises (2026)",
+    "h1": "Sprint IA : les formations courtes 3h pour acculturer vos équipes rapidement",
+    "canonical": "https://www.master-ia.fr/blog/sprint-ia-formations-courtes-entreprise",
+    "desc": "Sprint IA : sensibilisation, prompts, Copilot Excel, AI Act flash. Formations courtes 3h conçues pour les déploiements à grande échelle. Catalogue Masteria."
+  },
+  {
+    "route": "/centre-formation-ia-entreprise",
+    "title": "À propos de Masteria | Cabinet conseil &amp; centre de formation IA",
+    "h1": "Cabinet de conseil  et centre de formation  dédié à l'IA en entreprise",
+    "canonical": "https://www.master-ia.fr/centre-formation-ia-entreprise",
+    "desc": "Masteria, cabinet de conseil et centre de formation IA certifié Qualiopi. Fondé par Mathias Nizan en 2022. Notre mission : rendre l'IA accessible, concrète et éthique pour toutes les entreprises."
+  },
+  {
+    "route": "/conseil-intelligence-artificielle",
+    "title": "Cabinet de conseil en intelligence artificielle (IA) pour entreprises | Masteria",
+    "h1": "Déployez l'IA dans votre entreprise avec  méthode et impact",
+    "canonical": "https://www.master-ia.fr/conseil-intelligence-artificielle",
+    "desc": "Cabinet de conseil IA spécialisé : audit, stratégie, gouvernance, accompagnement opérationnel et transformation. Pour PME, ETI et grands groupes en France, Suisse et Belgique. Conseil + formation Qual"
+  },
+  {
+    "route": "/contact",
+    "title": "Contacter notre équipe, Devis formation IA gratuit sous 24h | Masteria",
+    "h1": "Parlons de votre projet  formation IA",
+    "canonical": "https://www.master-ia.fr/contact",
+    "desc": "Contactez Masteria pour un devis formation IA personnalisé. Réponse sous 24h. Formations ChatGPT, Copilot, Gemini, Claude. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/financement-formation-ia",
+    "title": "Financer sa formation IA en entreprise | OPCO 100% | Masteria",
+    "h1": "Vos formations IA,   financées à 100 % par votre OPCO",
+    "canonical": "https://www.master-ia.fr/financement-formation-ia",
+    "desc": "Formation IA finançable à 100 % par votre OPCO. Masteria certifié Qualiopi gère votre dossier de A à Z. Tarifs, OPCO compatibles, délais."
+  },
+  {
+    "route": "/formation-chatgpt",
+    "title": "Formation ChatGPT pour les entreprises — Certifié Qualiopi | Masteria",
+    "h1": "Formation ChatGPT pour les entreprises",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt",
+    "desc": "Formation ChatGPT certifiée Qualiopi, finançable OPCO jusqu'à 100 %. Rédaction, analyse, automatisation. Présentiel ou distanciel, partout en France. Devis sous 24h."
+  },
+  {
+    "route": "/formation-chatgpt-assistante",
+    "title": "Formation ChatGPT Assistanat de direction | Masteria",
+    "h1": "Formation ChatGPT pour les Assistants et assistantes de direction",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-assistante",
+    "desc": "Formez vos assistantes à ChatGPT en 2 jours : courriers, comptes-rendus, synthèses, organisation. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-bruxelles",
+    "title": "Formation ChatGPT Bruxelles | Intra-entreprise | Masteria",
+    "h1": "Formation ChatGPT à Bruxelles — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-bruxelles",
+    "desc": "Formation ChatGPT à Bruxelles, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-chatgpt-commercial",
+    "title": "Formation ChatGPT Commercial | Qualiopi | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Commerciales",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-commercial",
+    "desc": "Formez vos équipes commerciales à ChatGPT en 2 jours : prospection, propositions, relances, préparation RDV. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-communication",
+    "title": "Formation ChatGPT Communication | Qualiopi | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Communication",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-communication",
+    "desc": "Formez vos équipes communication à ChatGPT en 2 jours : RP, réseaux sociaux, communication de crise, interne. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-finance",
+    "title": "Formation ChatGPT Finance &amp; Contrôle de gestion | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Finance",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-finance",
+    "desc": "Formez vos équipes finance à ChatGPT en 2 jours : analyse Excel, reporting narratif, synthèses financières. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-geneve",
+    "title": "Formation ChatGPT Genève | Intra-entreprise | Masteria",
+    "h1": "Formation ChatGPT à Genève — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-geneve",
+    "desc": "Formation ChatGPT à Genève, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-chatgpt-informatique",
+    "title": "Formation ChatGPT IT &amp; DSI | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Informatique / DSI",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-informatique",
+    "desc": "Formation ChatGPT pour les équipes informatiques. Génération de code, documentation technique, analyse de logs. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-lyon",
+    "title": "Formation ChatGPT Lyon | Inter &amp; intra | Masteria",
+    "h1": "Formation ChatGPT à Lyon — inter-entreprises et intra",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-lyon",
+    "desc": "Formation ChatGPT à Lyon, en sessions inter-entreprises et intra. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-chatgpt-management",
+    "title": "Formation ChatGPT Management | Qualiopi | Masteria",
+    "h1": "Formation ChatGPT pour les Managers",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-management",
+    "desc": "Formez vos managers à ChatGPT en 2 jours : réunions, objectifs SMART, feedback, reporting direction. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-marketing",
+    "title": "Formation ChatGPT Marketing | Qualiopi | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Marketing",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-marketing",
+    "desc": "Formez vos équipes marketing à ChatGPT en 2 jours : contenus, campagnes, briefs créatifs, reporting. Certifié Qualiopi, finançable OPCO. Devis sous 24h."
+  },
+  {
+    "route": "/formation-chatgpt-marseille",
+    "title": "Formation ChatGPT Marseille | Intra-entreprise | Masteria",
+    "h1": "Formation ChatGPT à Marseille — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-marseille",
+    "desc": "Formation ChatGPT à Marseille, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-chatgpt-paris",
+    "title": "Formation ChatGPT Paris | Intra-entreprise | Masteria",
+    "h1": "Formation ChatGPT à Paris — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-paris",
+    "desc": "Formation ChatGPT à Paris, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-chatgpt-pedagogique",
+    "title": "Formation ChatGPT Pédagogiques | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Pédagogiques",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-pedagogique",
+    "desc": "Formation ChatGPT pour les formateurs et ingénieurs pédagogiques. Conception de modules, évaluations, individualisation. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-ressources-humaines",
+    "title": "Formation ChatGPT RH | Qualiopi | Masteria",
+    "h1": "Formation ChatGPT pour les équipes RH",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-ressources-humaines",
+    "desc": "Formez vos équipes RH à ChatGPT en 2 jours : offres d'emploi, analyse CV, onboarding, communication interne. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-seo",
+    "title": "Formation ChatGPT SEO | Masteria",
+    "h1": "Formation ChatGPT pour les équipes SEO",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-seo",
+    "desc": "Formation ChatGPT pour les équipes SEO. Rédaction de contenus optimisés, recherche sémantique, balises méta. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-chatgpt-service-client",
+    "title": "Formation ChatGPT Service Client | Masteria",
+    "h1": "Formation ChatGPT pour les équipes Service Client",
+    "canonical": "https://www.master-ia.fr/formation-chatgpt-service-client",
+    "desc": "Formation ChatGPT pour les équipes service client. Réponses aux tickets, scripts agents, gestion des escalades. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-assistante",
+    "title": "Formation Claude Assistanat de direction | Masteria",
+    "h1": "Formation Claude pour les Assistants et assistantes de direction",
+    "canonical": "https://www.master-ia.fr/formation-claude-assistante",
+    "desc": "Formation Claude Anthropic pour assistants et assistantes de direction. Courriers complexes, synthèses, organisation. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-commercial",
+    "title": "Formation Claude Commerciales | Masteria",
+    "h1": "Formation Claude pour les équipes Commerciales",
+    "canonical": "https://www.master-ia.fr/formation-claude-commercial",
+    "desc": "Formation Claude Anthropic pour les commerciaux. Propositions longues, argumentaires, analyse prospect. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-communication",
+    "title": "Formation Claude Communication | Masteria",
+    "h1": "Formation Claude pour les équipes Communication",
+    "canonical": "https://www.master-ia.fr/formation-claude-communication",
+    "desc": "Formation Claude Anthropic pour les communicants. Communiqués longs, stratégie éditoriale, gestion de crise. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-finance",
+    "title": "Formation Claude Finance | Masteria",
+    "h1": "Formation Claude pour les équipes Finance",
+    "canonical": "https://www.master-ia.fr/formation-claude-finance",
+    "desc": "Formation Claude Anthropic pour la finance. Analyse de données, rapports financiers, synthèse de documents complexes. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-ia",
+    "title": "Formation Claude IA pour les entreprises — Certifié Qualiopi | Masteria",
+    "h1": "Formation Claude IA — Maîtrisez l'assistant IA d'Anthropic",
+    "canonical": "https://www.master-ia.fr/formation-claude-ia",
+    "desc": "Maîtrisez Claude, l'IA d'Anthropic. Formation présentiel ou distanciel, finançable OPCO jusqu'à 100 %. Rédaction longue, analyse de documents, raisonnement complexe. Devis sous 24h."
+  },
+  {
+    "route": "/formation-claude-ia-bruxelles",
+    "title": "Formation Claude IA Bruxelles | Intra-entreprise | Masteria",
+    "h1": "Formation Claude IA à Bruxelles — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-claude-ia-bruxelles",
+    "desc": "Formation Claude (Anthropic) à Bruxelles, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-claude-ia-geneve",
+    "title": "Formation Claude IA Genève | Intra-entreprise | Masteria",
+    "h1": "Formation Claude IA à Genève — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-claude-ia-geneve",
+    "desc": "Formation Claude (Anthropic) à Genève, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-claude-ia-lyon",
+    "title": "Formation Claude IA Lyon | Inter &amp; intra | Masteria",
+    "h1": "Formation Claude IA à Lyon — inter-entreprises et intra",
+    "canonical": "https://www.master-ia.fr/formation-claude-ia-lyon",
+    "desc": "Formation Claude (Anthropic) à Lyon, en sessions inter-entreprises et intra. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-claude-ia-marseille",
+    "title": "Formation Claude IA Marseille | Intra-entreprise | Masteria",
+    "h1": "Formation Claude IA à Marseille — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-claude-ia-marseille",
+    "desc": "Formation Claude (Anthropic) à Marseille, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-claude-ia-paris",
+    "title": "Formation Claude IA Paris | Intra-entreprise | Masteria",
+    "h1": "Formation Claude IA à Paris — intra-entreprise sur mesure",
+    "canonical": "https://www.master-ia.fr/formation-claude-ia-paris",
+    "desc": "Formation Claude (Anthropic) à Paris, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-claude-informatique",
+    "title": "Formation Claude IT &amp; DSI | Masteria",
+    "h1": "Formation Claude pour les équipes Informatique / DSI",
+    "canonical": "https://www.master-ia.fr/formation-claude-informatique",
+    "desc": "Formation Claude Anthropic pour les DSI. Code complexe, architecture, documentation technique approfondie. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-management",
+    "title": "Formation Claude Managers | Masteria",
+    "h1": "Formation Claude pour les Managers",
+    "canonical": "https://www.master-ia.fr/formation-claude-management",
+    "desc": "Formation Claude Anthropic pour les managers. Rapports de management, analyse RH, communication d'équipe. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-marketing",
+    "title": "Formation Claude Marketing | Masteria",
+    "h1": "Formation Claude pour les équipes Marketing",
+    "canonical": "https://www.master-ia.fr/formation-claude-marketing",
+    "desc": "Formation Claude Anthropic pour les marketeurs. Rédaction longue, stratégie de contenu, analyse de marché. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-pedagogique",
+    "title": "Formation Claude Pédagogiques | Masteria",
+    "h1": "Formation Claude pour les équipes Pédagogiques",
+    "canonical": "https://www.master-ia.fr/formation-claude-pedagogique",
+    "desc": "Formation Claude Anthropic pour les formateurs. Conception avancée de formations, évaluations complexes, individualisation des parcours. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-ressources-humaines",
+    "title": "Formation Claude RH | Masteria",
+    "h1": "Formation Claude pour les équipes RH",
+    "canonical": "https://www.master-ia.fr/formation-claude-ressources-humaines",
+    "desc": "Formation Claude Anthropic pour les RH. Analyse de CV, rédaction RH, politique d'entreprise. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-seo",
+    "title": "Formation Claude SEO | Masteria",
+    "h1": "Formation Claude pour les équipes SEO",
+    "canonical": "https://www.master-ia.fr/formation-claude-seo",
+    "desc": "Formation Claude Anthropic pour les équipes SEO. Contenus longs premium, analyse sémantique approfondie, stratégie de contenu. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-claude-service-client",
+    "title": "Formation Claude Service Client | Masteria",
+    "h1": "Formation Claude pour les équipes Service Client",
+    "canonical": "https://www.master-ia.fr/formation-claude-service-client",
+    "desc": "Formation Claude Anthropic pour le service client. Réponses nuancées, gestion des escalades, analyse verbatims. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-assistante",
+    "title": "Formation Copilot Assistanat de direction | Masteria Qualiopi",
+    "h1": "Formation Microsoft Copilot pour les Assistants et assistantes de direction",
+    "canonical": "https://www.master-ia.fr/formation-copilot-assistante",
+    "desc": "Formation Microsoft Copilot pour les assistants et assistantes de direction. Emails, agendas, comptes-rendus, présentations : gagnez 2h par jour. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-commercial",
+    "title": "Formation Copilot Commercial | Masteria Qualiopi",
+    "h1": "Formation Microsoft Copilot pour les équipes Commerciales",
+    "canonical": "https://www.master-ia.fr/formation-copilot-commercial",
+    "desc": "Formation Copilot pour les équipes commerciales. Propositions dans Word, suivi Outlook, présentations PowerPoint. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-communication",
+    "title": "Formation Copilot Communication | Masteria",
+    "h1": "Formation Microsoft Copilot pour les équipes Communication",
+    "canonical": "https://www.master-ia.fr/formation-copilot-communication",
+    "desc": "Formation Copilot pour les équipes communication. Communiqués dans Word, présentations PowerPoint, emails Outlook. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-finance",
+    "title": "Formation Copilot Finance | Masteria Qualiopi",
+    "h1": "Formation Microsoft Copilot pour les équipes Finance",
+    "canonical": "https://www.master-ia.fr/formation-copilot-finance",
+    "desc": "Formation Copilot pour les équipes finance et contrôle de gestion. Analyse Excel, reporting automatique, synthèse de documents. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-informatique",
+    "title": "Formation Copilot IT &amp; DSI | Masteria",
+    "h1": "Formation Microsoft Copilot pour les équipes Informatique / DSI",
+    "canonical": "https://www.master-ia.fr/formation-copilot-informatique",
+    "desc": "Formation Copilot pour les DSI. Documentation Word, analyse Excel, pilotage de projets IT. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-management",
+    "title": "Formation Copilot Managers | Masteria Qualiopi",
+    "h1": "Formation Microsoft Copilot pour les Managers",
+    "canonical": "https://www.master-ia.fr/formation-copilot-management",
+    "desc": "Formation Copilot pour les managers. Réunions Teams, reporting Excel, communication Outlook, présentations. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-marketing",
+    "title": "Formation Copilot Marketing | Masteria Qualiopi",
+    "h1": "Formation Microsoft Copilot pour les équipes Marketing",
+    "canonical": "https://www.master-ia.fr/formation-copilot-marketing",
+    "desc": "Formation Microsoft Copilot pour les équipes marketing. Contenus Word, présentations PowerPoint, analyse de données. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-pedagogique",
+    "title": "Formation Copilot Pédagogiques | Masteria",
+    "h1": "Formation Microsoft Copilot pour les équipes Pédagogiques",
+    "canonical": "https://www.master-ia.fr/formation-copilot-pedagogique",
+    "desc": "Formation Copilot pour les formateurs. Supports dans PowerPoint, contenus dans Word, suivi Teams. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-rh",
+    "title": "Formation Microsoft Copilot RH | Masteria, Certifié Qualiopi",
+    "h1": "Formation Microsoft Copilot pour les équipes RH",
+    "canonical": "https://www.master-ia.fr/formation-copilot-rh",
+    "desc": "Formation Copilot pour les équipes RH. Offres d'emploi, onboarding, communication interne dans Microsoft 365. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-seo",
+    "title": "Formation Copilot SEO | Masteria",
+    "h1": "Formation Microsoft Copilot pour les équipes SEO",
+    "canonical": "https://www.master-ia.fr/formation-copilot-seo",
+    "desc": "Formation Copilot pour les équipes SEO. Rédaction dans Word, analyse dans Excel, reporting SEO. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-service-client",
+    "title": "Formation Copilot Service Client | Masteria",
+    "h1": "Formation Microsoft Copilot pour les équipes Service Client",
+    "canonical": "https://www.master-ia.fr/formation-copilot-service-client",
+    "desc": "Formation Copilot pour les équipes service client. Réponses Outlook, synthèse Teams, documentation Word. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-copilot-word-excel",
+    "title": "Formation Copilot Word et Excel | Masteria Qualiopi",
+    "h1": "Formation Microsoft Copilot dans Word et Excel",
+    "canonical": "https://www.master-ia.fr/formation-copilot-word-excel",
+    "desc": "Maîtrisez Copilot dans Word et Excel. Rédaction, analyse de données, formules, rapports. Formation pratique certifiée Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-assistante",
+    "title": "Formation Gemini Assistanat de direction | Masteria",
+    "h1": "Formation Google Gemini pour les Assistants et assistantes de direction",
+    "canonical": "https://www.master-ia.fr/formation-gemini-assistante",
+    "desc": "Formation Gemini pour assistants et assistantes de direction. Gmail, Docs, Sheets, Calendar Google. Organisation et rédaction assistées. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-commercial",
+    "title": "Formation Google Gemini Commercial | Masteria, Qualiopi",
+    "h1": "Formation Google Gemini pour les Équipes Commerciales",
+    "canonical": "https://www.master-ia.fr/formation-gemini-commercial",
+    "desc": "Formez vos équipes commerciales à Google Gemini : prospection Gmail, propositions Docs, pipeline Sheets, préparation RDV NotebookLM. Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-communication",
+    "title": "Formation Google Gemini Communication | Masteria, Qualiopi",
+    "h1": "Formation Google Gemini pour les Équipes Communication",
+    "canonical": "https://www.master-ia.fr/formation-gemini-communication",
+    "desc": "Formez vos équipes communication à Google Gemini : RP Docs, réseaux sociaux, communication interne, gestion de crise, veille NotebookLM. Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-entreprise",
+    "title": "Formation Google Gemini en entreprise | Gmail, Docs, Sheets | Certifié Qualiopi | Masteria",
+    "h1": "Formation Google Gemini pour les entreprises",
+    "canonical": "https://www.master-ia.fr/formation-gemini-entreprise",
+    "desc": "Formez vos équipes à Google Gemini dans Gmail, Google Docs, Sheets et Meet. Formation pratique sur votre Workspace, certifiée Qualiopi, finançable OPCO. Devis sous 24h."
+  },
+  {
+    "route": "/formation-gemini-finance",
+    "title": "Formation Google Gemini Finance | Masteria, Qualiopi",
+    "h1": "Formation Google Gemini pour la Finance et le Contrôle de Gestion",
+    "canonical": "https://www.master-ia.fr/formation-gemini-finance",
+    "desc": "Formez vos équipes finance à Google Gemini : analyse Sheets, rapports Docs, synthèse NotebookLM, présentations CODIR Slides. Certifié Qualiopi, 100 % finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-informatique",
+    "title": "Formation Gemini IT &amp; DSI | Masteria",
+    "h1": "Formation Google Gemini pour les équipes Informatique / DSI",
+    "canonical": "https://www.master-ia.fr/formation-gemini-informatique",
+    "desc": "Formation Gemini pour les DSI. Documentation Docs, scripts, pilotage de projets IT dans Google Workspace. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-management",
+    "title": "Formation Gemini Managers | Masteria",
+    "h1": "Formation Google Gemini pour les Managers",
+    "canonical": "https://www.master-ia.fr/formation-gemini-management",
+    "desc": "Formation Gemini pour les managers. Réunions Meet, reporting Sheets, communication Gmail. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-marketing",
+    "title": "Formation Google Gemini Marketing | Masteria",
+    "h1": "Formation Google Gemini pour les équipes Marketing",
+    "canonical": "https://www.master-ia.fr/formation-gemini-marketing",
+    "desc": "Formez vos équipes marketing à Google Gemini : contenus Docs, analyse Sheets, présentations Slides et veille concurrentielle NotebookLM. Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-pedagogique",
+    "title": "Formation Gemini Pédagogiques | Masteria",
+    "h1": "Formation Google Gemini pour les équipes Pédagogiques",
+    "canonical": "https://www.master-ia.fr/formation-gemini-pedagogique",
+    "desc": "Formation Gemini pour les formateurs. Supports dans Slides, contenus dans Docs, suivi dans Classroom. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-rh",
+    "title": "Formation Gemini RH | Masteria",
+    "h1": "Formation Google Gemini pour les équipes RH",
+    "canonical": "https://www.master-ia.fr/formation-gemini-rh",
+    "desc": "Formation Gemini pour les équipes RH. Google Docs, Gmail, Meet, Sheets. Recrutement et onboarding assistés. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-seo",
+    "title": "Formation Gemini SEO | Masteria",
+    "h1": "Formation Google Gemini pour les équipes SEO",
+    "canonical": "https://www.master-ia.fr/formation-gemini-seo",
+    "desc": "Formation Gemini pour les équipes SEO. Rédaction dans Docs, analyse dans Sheets, données Search Console. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-gemini-service-client",
+    "title": "Formation Gemini Service Client | Masteria",
+    "h1": "Formation Google Gemini pour les équipes Service Client",
+    "canonical": "https://www.master-ia.fr/formation-gemini-service-client",
+    "desc": "Formation Gemini pour les équipes service client. Réponses Gmail, synthèse Meet, documentation Docs. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-ia-achats",
+    "title": "Formation IA Achats | ChatGPT, Copilot, Claude pour les acheteurs | Masteria, Qualiopi",
+    "h1": "Formation IA pour les équipes Achats",
+    "canonical": "https://www.master-ia.fr/formation-ia-achats",
+    "desc": "Formez vos équipes Achats à l'IA : sourcing fournisseurs, analyse d'offres, négociation, suivi contractuel. Certifié Qualiopi, finançable OPCO. Productivité ×3 sur l'analyse documentaire."
+  },
+  {
+    "route": "/formation-ia-analyse-donnees",
+    "title": "Formation analyse de données IA Excel + ChatGPT (2 jours) | Masteria",
+    "h1": "Analyser ses données avec l'IA, Excel + ChatGPT",
+    "canonical": "https://www.master-ia.fr/formation-ia-analyse-donnees",
+    "desc": "Formation 2 jours pour analyser des données avec Excel, Copilot et ChatGPT. Tableaux croisés, scripts, dashboards. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-ia-assistante",
+    "title": "Formation IA Assistanat de direction | ChatGPT, Copilot | Masteria, Qualiopi",
+    "h1": "Formation IA pour les Assistants et assistantes de direction",
+    "canonical": "https://www.master-ia.fr/formation-ia-assistante",
+    "desc": "Formez vos assistantes de direction à l'IA : emails, courriers, organisation, comptes-rendus. Certifié Qualiopi, finançable OPCO. Rédiger dans le style de la direction en quelques minutes."
+  },
+  {
+    "route": "/formation-ia-assistante-direction",
+    "title": "Formation IA pour assistante de direction | Masteria",
+    "h1": "Formation IA pour assistantes de direction et office managers",
+    "canonical": "https://www.master-ia.fr/formation-ia-assistante-direction",
+    "desc": "Formation IA dédiée aux assistantes de direction et office managers. 1 jour, ChatGPT, Copilot, automatisations. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-ia-bruxelles",
+    "title": "Formation IA Bruxelles | ChatGPT, Claude, 12 métiers | Masteria",
+    "h1": "Formation IA à Bruxelles — ChatGPT, Claude et 89 programmes par métier",
+    "canonical": "https://www.master-ia.fr/formation-ia-bruxelles",
+    "desc": "Formation intelligence artificielle à Bruxelles pour entreprises. ChatGPT, Claude IA et programmes par métier (marketing, RH, finance, commercial). Certifié Qualiopi, financé jusqu'à 100 % par votre O"
+  },
+  {
+    "route": "/formation-ia-commercial",
+    "title": "Formation IA Commercial &amp; Vente | ChatGPT, Copilot, Gemini | Masteria, Qualiopi",
+    "h1": "Formation IA pour les équipes Commerciales",
+    "canonical": "https://www.master-ia.fr/formation-ia-commercial",
+    "desc": "Formez vos équipes commerciales à l'IA : prospection, propositions, suivi client. Certifié Qualiopi, finançable OPCO. Résultats mesurables dès la première semaine."
+  },
+  {
+    "route": "/formation-ia-communication",
+    "title": "Formation intelligence artificielle Communication | Contenus, RP, réseaux sociaux | Certifié Qualiopi | Masteria",
+    "h1": "Formation IA pour les équipes Communication",
+    "canonical": "https://www.master-ia.fr/formation-ia-communication",
+    "desc": "Formation intelligence artificielle pour les équipes communication : contenus éditoriaux, relations presse, réseaux sociaux, communication de crise. Certifié Qualiopi, finançable OPCO. Devis sous 24h."
+  },
+  {
+    "route": "/formation-ia-creativite",
+    "title": "Formation créativité avec l'IA (1 jour) | Masteria",
+    "h1": "Booster sa créativité avec l'IA",
+    "canonical": "https://www.master-ia.fr/formation-ia-creativite",
+    "desc": "Formation 1 jour pour utiliser l'IA en idéation, brainstorming, naming, copywriting créatif. ChatGPT, Claude. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-ia-debutant",
+    "title": "Formation intelligence artificielle débutant · Sans prérequis · Certifié Qualiopi | Masteria",
+    "h1": "Formation intelligence artificielle débutant",
+    "canonical": "https://www.master-ia.fr/formation-ia-debutant",
+    "desc": "Formation intelligence artificielle pour débutants : ChatGPT, Copilot ou Gemini en 1 journée, sans prérequis technique. Formation IA débutant certifiée Qualiopi, finançable OPCO. Devis sous 24h."
+  },
+  {
+    "route": "/formation-ia-drh-plan-competences",
+    "title": "Formation DRH plan de compétences IA (2 jours) | Masteria",
+    "h1": "Plan de développement des compétences IA pour DRH",
+    "canonical": "https://www.master-ia.fr/formation-ia-drh-plan-competences",
+    "desc": "Formation 2 jours pour DRH : construire un plan de développement compétences IA, cartographie, parcours, financement, mesure. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-ia-ecrits-pro",
+    "title": "Formation écrits professionnels avec l'IA (1 jour) | Masteria",
+    "h1": "Optimiser ses écrits professionnels avec l'IA",
+    "canonical": "https://www.master-ia.fr/formation-ia-ecrits-pro",
+    "desc": "Formation 1 jour pour rédiger plus vite et mieux avec ChatGPT et Copilot : mails, rapports, comptes-rendus, propositions. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-ia-finance",
+    "title": "Formation IA Finance &amp; Contrôle de Gestion | ChatGPT, Copilot, Gemini | Masteria",
+    "h1": "Formation IA pour les équipes Finance",
+    "canonical": "https://www.master-ia.fr/formation-ia-finance",
+    "desc": "Formez vos équipes finance à l'IA : reporting, analyse de données, synthèses financières. Certifié Qualiopi, finançable OPCO. Résultats visibles dès la clôture suivante."
+  },
+  {
+    "route": "/formation-ia-geneve",
+    "title": "Formation IA Genève | ChatGPT, Claude, 12 métiers | Masteria",
+    "h1": "Formation IA à Genève — ChatGPT, Claude et 89 programmes par métier",
+    "canonical": "https://www.master-ia.fr/formation-ia-geneve",
+    "desc": "Formation intelligence artificielle à Genève pour entreprises. ChatGPT, Claude IA et programmes par métier (marketing, RH, finance, commercial). Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO"
+  },
+  {
+    "route": "/formation-ia-informatique",
+    "title": "Formation IA pour les DSI et équipes IT | ChatGPT, Copilot, Claude | Masteria",
+    "h1": "Formation IA pour les équipes Informatique / DSI",
+    "canonical": "https://www.master-ia.fr/formation-ia-informatique",
+    "desc": "Formez vos équipes IT et DSI à l'IA : documentation technique, code, logs, gouvernance IA. Certifié Qualiopi, finançable OPCO. Usages pratiques et cadre stratégique."
+  },
+  {
+    "route": "/formation-ia-lyon",
+    "title": "Formation IA Lyon | ChatGPT, Claude, 12 métiers | Masteria",
+    "h1": "Formation IA à Lyon — ChatGPT, Claude et 89 programmes par métier",
+    "canonical": "https://www.master-ia.fr/formation-ia-lyon",
+    "desc": "Formation intelligence artificielle à Lyon pour entreprises. ChatGPT, Claude IA et programmes par métier (marketing, RH, finance, commercial). Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO."
+  },
+  {
+    "route": "/formation-ia-management",
+    "title": "Formation IA Management | ChatGPT, Copilot pour managers | Masteria, Qualiopi",
+    "h1": "Formation IA pour les Managers",
+    "canonical": "https://www.master-ia.fr/formation-ia-management",
+    "desc": "Formez vos managers à l'IA : réunions, reporting, communication d'équipe, conduite du changement. Certifié Qualiopi, finançable OPCO. Moins de tâches admin, plus de terrain."
+  },
+  {
+    "route": "/formation-ia-managers",
+    "title": "Formation manager avec l'IA (2 jours) | Masteria",
+    "h1": "Manager efficacement avec l'IA",
+    "canonical": "https://www.master-ia.fr/formation-ia-managers",
+    "desc": "Formation 2 jours pour managers : intégrer l'IA dans son équipe, objectifs, qualité, conformité, accompagnement humain. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-ia-marketing",
+    "title": "Formation IA Marketing | ChatGPT, Copilot, Gemini | Masteria, Qualiopi",
+    "h1": "Formation IA pour les équipes Marketing",
+    "canonical": "https://www.master-ia.fr/formation-ia-marketing",
+    "desc": "Formez vos équipes marketing à l'IA : ChatGPT, Copilot, Gemini. Rédaction de contenus, campagnes, reporting. Certifié Qualiopi, finançable OPCO. +500 professionnels formés."
+  },
+  {
+    "route": "/formation-ia-marseille",
+    "title": "Formation IA Marseille | ChatGPT, Claude, 12 métiers | Masteria",
+    "h1": "Formation IA à Marseille — ChatGPT, Claude et 89 programmes par métier",
+    "canonical": "https://www.master-ia.fr/formation-ia-marseille",
+    "desc": "Formation intelligence artificielle à Marseille pour entreprises. ChatGPT, Claude IA et programmes par métier (marketing, RH, finance, commercial). Certifié Qualiopi, financé jusqu'à 100 % par votre O"
+  },
+  {
+    "route": "/formation-ia-paris",
+    "title": "Formation IA Paris | ChatGPT, Claude, 12 métiers | Masteria",
+    "h1": "Formation IA à Paris — ChatGPT, Claude et 89 programmes par métier",
+    "canonical": "https://www.master-ia.fr/formation-ia-paris",
+    "desc": "Formation intelligence artificielle à Paris pour entreprises. ChatGPT, Claude IA et programmes par métier (marketing, RH, finance, commercial). Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO."
+  },
+  {
+    "route": "/formation-ia-pedagogique",
+    "title": "Formation IA pour les Équipes Pédagogiques | ChatGPT, Claude | Masteria",
+    "h1": "Formation IA pour les Équipes Pédagogiques",
+    "canonical": "https://www.master-ia.fr/formation-ia-pedagogique",
+    "desc": "Formez vos équipes pédagogiques à l'IA : création de modules, individualisation des parcours, évaluations. Certifié Qualiopi, finançable OPCO. Un module en 2h au lieu de 2 jours."
+  },
+  {
+    "route": "/formation-ia-piloter-projet",
+    "title": "Formation piloter un projet IA en entreprise (2 jours) | Masteria",
+    "h1": "Piloter un projet IA en entreprise",
+    "canonical": "https://www.master-ia.fr/formation-ia-piloter-projet",
+    "desc": "Formation 2 jours pour piloter un projet IA en entreprise : cadrage, ROI, AI Act, MLOps, conduite du changement. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-ia-qualiopi",
+    "title": "Formation IA Qualiopi | Financement OPCO garanti | Masteria",
+    "h1": "Formation IA Qualiopi : financement OPCO jusqu'à 100 %",
+    "canonical": "https://www.master-ia.fr/formation-ia-qualiopi",
+    "desc": "Masteria est certifié Qualiopi pour toutes ses formations IA (ChatGPT, Copilot, Gemini, Claude, Mistral). Financement OPCO jusqu'à 100 %. Accompagnement complet du dossier. Devis sous 24h."
+  },
+  {
+    "route": "/formation-ia-relation-client-sav",
+    "title": "Formation IA relation client &amp; SAV (2 jours) | Masteria",
+    "h1": "Formation IA pour la relation client et le SAV",
+    "canonical": "https://www.master-ia.fr/formation-ia-relation-client-sav",
+    "desc": "Formation 2 jours pour le service client : chatbots, classification de tickets, copilote conseiller, qualité. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-ia-ressources-humaines",
+    "title": "Formation IA Ressources Humaines | ChatGPT, Copilot, Gemini | Masteria, Qualiopi",
+    "h1": "Formation IA pour les équipes RH",
+    "canonical": "https://www.master-ia.fr/formation-ia-ressources-humaines",
+    "desc": "Formez vos équipes RH à l'IA : recrutement, onboarding, entretiens annuels, gestion administrative. Certifié Qualiopi, finançable OPCO. +500 professionnels formés."
+  },
+  {
+    "route": "/formation-ia-seo",
+    "title": "Formation IA pour les équipes SEO | ChatGPT, Gemini, Claude | Masteria, Qualiopi",
+    "h1": "Formation IA pour les équipes SEO",
+    "canonical": "https://www.master-ia.fr/formation-ia-seo",
+    "desc": "Formez vos équipes SEO à l'IA : contenu optimisé à grande échelle, recherche sémantique, balises, maillage. Certifié Qualiopi, finançable OPCO. Productivité ×5."
+  },
+  {
+    "route": "/formation-ia-service-client",
+    "title": "Formation IA Service Client | ChatGPT, Copilot, Gemini, Claude | Masteria",
+    "h1": "Formation IA pour les équipes Service Client",
+    "canonical": "https://www.master-ia.fr/formation-ia-service-client",
+    "desc": "Formez vos équipes service client à l'IA : réponses rapides et cohérentes, gestion des escalades, scripts. Certifié Qualiopi, finançable OPCO. Traitement accéléré de 60%."
+  },
+  {
+    "route": "/formation-ia-transverse",
+    "title": "Formation IA Tous publics | Sprint IA, sensibilisation, prompts | Masteria, Qualiopi",
+    "h1": "Formations IA transverses, pour toutes vos équipes",
+    "canonical": "https://www.master-ia.fr/formation-ia-transverse",
+    "desc": "Formations IA transverses pour acculturer toutes vos équipes : Sprint IA 3 h, prompts, AI Act flash. Certifié Qualiopi, finançable OPCO. Déploiement à grande échelle."
+  },
+  {
+    "route": "/formation-ia-veille",
+    "title": "Formation veille avec l'IA (1 jour) | Masteria",
+    "h1": "Organiser sa veille avec l'IA",
+    "canonical": "https://www.master-ia.fr/formation-ia-veille",
+    "desc": "Formation 1 jour pour structurer sa veille avec l'IA : Perplexity, ChatGPT, agrégateurs, alertes, synthèses. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-intelligence-artificielle",
+    "title": "Formation IA en entreprise · Catalogue 89 formations · Certifié Qualiopi | Masteria",
+    "h1": "Formation IA pour les entreprises",
+    "canonical": "https://www.master-ia.fr/formation-intelligence-artificielle",
+    "desc": "Catalogue de 89 formations IA certifiées Qualiopi, finançables OPCO. ChatGPT, Copilot, Gemini, Claude, Mistral. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-intelligence-artificielle-cpf",
+    "title": "Formation intelligence artificielle CPF | Alternatives &amp; financement | Masteria",
+    "h1": "Formation intelligence artificielle CPF : nos réponses",
+    "canonical": "https://www.master-ia.fr/formation-intelligence-artificielle-cpf",
+    "desc": "Formation IA CPF : pourquoi nos formations ne sont pas finançables CPF, quelles alternatives (OPCO, plan de développement, financement direct entreprise). Réponses claires et solutions concrètes."
+  },
+  {
+    "route": "/formation-intelligence-artificielle-distanciel",
+    "title": "Formation IA à distance | Visio · Classes virtuelles · Qualiopi | Masteria",
+    "h1": "Formation intelligence artificielle à distance",
+    "canonical": "https://www.master-ia.fr/formation-intelligence-artificielle-distanciel",
+    "desc": "Formation intelligence artificielle 100 % à distance, en visioconférence avec un formateur dédié. Mêmes cas pratiques qu'en présentiel, finançable OPCO, certifié Qualiopi. Devis sous 24h."
+  },
+  {
+    "route": "/formation-intelligence-artificielle-generative",
+    "title": "Formation IA générative en entreprise | ChatGPT, Claude, Gemini, Mistral | Masteria",
+    "h1": "Formation intelligence artificielle générative",
+    "canonical": "https://www.master-ia.fr/formation-intelligence-artificielle-generative",
+    "desc": "Formation IA générative pour vos équipes : maîtriser ChatGPT, Claude, Copilot, Gemini et Mistral pour rédiger, analyser, automatiser. Certifié Qualiopi, finançable OPCO. Devis sous 24h."
+  },
+  {
+    "route": "/formation-microsoft-copilot",
+    "title": "Formation Microsoft Copilot en entreprise | Word, Excel, Teams | Certifié Qualiopi | Masteria",
+    "h1": "Formation Microsoft Copilot pour les entreprises",
+    "canonical": "https://www.master-ia.fr/formation-microsoft-copilot",
+    "desc": "Formez vos équipes à Microsoft Copilot dans Word, Excel, Teams et Outlook. Formation pratique sur mesure, certifiée Qualiopi, finançable OPCO jusqu'à 100 %. Devis sous 24h."
+  },
+  {
+    "route": "/formation-mistral-ai",
+    "title": "Formation Mistral AI — L'IA française pour vos équipes | Masteria",
+    "h1": "Formation Mistral AI — Maîtrisez le LLM français",
+    "canonical": "https://www.master-ia.fr/formation-mistral-ai",
+    "desc": "Formez-vous au LLM souverain Mistral. Cas d'usage professionnels, conformité RGPD, hébergement UE. Certifié Qualiopi, financement OPCO disponible."
+  },
+  {
+    "route": "/formation-mistral-assistante",
+    "title": "Formation Mistral Assistanat de direction | Masteria",
+    "h1": "Formation Mistral AI pour les Assistants et assistantes de direction",
+    "canonical": "https://www.master-ia.fr/formation-mistral-assistante",
+    "desc": "Formation Mistral AI pour assistants et assistantes de direction. Courriers, synthèses, organisation en français soigné. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-commercial",
+    "title": "Formation Mistral Commerciales | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Commerciales",
+    "canonical": "https://www.master-ia.fr/formation-mistral-commercial",
+    "desc": "Formation Mistral AI pour les commerciaux. Prospection en français, propositions, CRM souverain. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-communication",
+    "title": "Formation Mistral Communication | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Communication",
+    "canonical": "https://www.master-ia.fr/formation-mistral-communication",
+    "desc": "Formation Mistral AI pour les communicants. Communiqués, RP, communication de crise en français naturel. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-finance",
+    "title": "Formation Mistral AI Finance | Qualiopi | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Finance",
+    "canonical": "https://www.master-ia.fr/formation-mistral-finance",
+    "desc": "Formez vos équipes finance à Mistral AI (IA souveraine française) en 2 jours : reporting, commentaires de P&amp;L, conformité, analyse de risque. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-informatique",
+    "title": "Formation Mistral IT &amp; DSI | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Informatique / DSI",
+    "canonical": "https://www.master-ia.fr/formation-mistral-informatique",
+    "desc": "Formation Mistral AI pour les DSI. Modèles open source, déploiement on-premise, API souveraine. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-management",
+    "title": "Formation Mistral Managers | Masteria",
+    "h1": "Formation Mistral AI pour les Managers",
+    "canonical": "https://www.master-ia.fr/formation-mistral-management",
+    "desc": "Formation Mistral AI pour les managers. Réunions, reporting, communication d'équipe. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-marketing",
+    "title": "Formation Mistral Marketing | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Marketing",
+    "canonical": "https://www.master-ia.fr/formation-mistral-marketing",
+    "desc": "Formation Mistral AI pour les marketeurs. Contenus en français, campagnes, hébergement souverain. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-pedagogique",
+    "title": "Formation Mistral Pédagogiques | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Pédagogiques",
+    "canonical": "https://www.master-ia.fr/formation-mistral-pedagogique",
+    "desc": "Formation Mistral AI pour les formateurs. Conception de modules, évaluations, parcours en français soigné. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-ressources-humaines",
+    "title": "Formation Mistral RH | Masteria",
+    "h1": "Formation Mistral AI pour les équipes RH",
+    "canonical": "https://www.master-ia.fr/formation-mistral-ressources-humaines",
+    "desc": "Formation Mistral AI pour les RH. Offres, analyse CV, documents RH en IA européenne. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-seo",
+    "title": "Formation Mistral SEO | Masteria",
+    "h1": "Formation Mistral AI pour les équipes SEO",
+    "canonical": "https://www.master-ia.fr/formation-mistral-seo",
+    "desc": "Formation Mistral AI pour les équipes SEO. Rédaction française native, champs lexicaux, maillage. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-mistral-service-client",
+    "title": "Formation Mistral Service Client | Masteria",
+    "h1": "Formation Mistral AI pour les équipes Service Client",
+    "canonical": "https://www.master-ia.fr/formation-mistral-service-client",
+    "desc": "Formation Mistral AI pour les équipes service client. Réponses en français natif, scripts, souveraineté. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils",
+    "title": "Formation Multi-outils IA · ChatGPT, Copilot, Gemini | Masteria",
+    "h1": "Formation Multi-outils IA, comparer les 5 IA sur vos cas réels",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils",
+    "desc": "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels. 2 jours, certifié Qualiopi, finançable OPCO. Devis sous 24 h."
+  },
+  {
+    "route": "/formation-multi-outils-assistante",
+    "title": "Formation IA Assistanat multi-outils | Masteria",
+    "h1": "Formation IA Assistanat de direction &amp; Office Management multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-assistante",
+    "desc": "Formation IA pour assistants et assistantes et office managers sur 2 jours. Comparez 5 outils IA pour productivité, organisation, communication. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-commercial",
+    "title": "Formation IA Commercial multi-outils | Masteria",
+    "h1": "Formation IA Commercial et Vente multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-commercial",
+    "desc": "Formation IA pour les équipes commerciales sur 2 jours. Testez 5 outils IA sur prospection, propositions, suivi client. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-communication",
+    "title": "Formation IA Communication multi-outils | Masteria",
+    "h1": "Formation IA Communication multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-communication",
+    "desc": "Formation IA pour les équipes communication sur 2 jours. Comparez 5 outils IA pour contenus, relations presse, communication interne. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-finance",
+    "title": "Formation IA Finance multi-outils | Masteria",
+    "h1": "Formation IA Finance multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-finance",
+    "desc": "Formation IA finance et comptabilité sur 2 jours. Comparez les 5 IA majeures pour reporting, analyse, synthèse. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-informatique",
+    "title": "Formation IA DSI multi-outils | Masteria",
+    "h1": "Formation IA Informatique et DSI multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-informatique",
+    "desc": "Formation IA pour DSI et équipes IT sur 2 jours. Comparez 5 outils IA pour développement, documentation, support. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-management",
+    "title": "Formation IA Management multi-outils | Masteria",
+    "h1": "Formation IA Management multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-management",
+    "desc": "Formation IA pour managers et direction sur 2 jours. Comparez 5 outils IA pour pilotage, décision, communication d'équipe. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-marketing",
+    "title": "Formation IA Marketing multi-outils | Masteria",
+    "h1": "Formation IA Marketing multi-outils (ChatGPT, Copilot, Gemini, Claude, Mistral)",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-marketing",
+    "desc": "Formation IA marketing multi-outils sur 2 jours. Comparez et maîtrisez ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI pour choisir les outils adaptés. Certifié Qualiopi, finançable OP"
+  },
+  {
+    "route": "/formation-multi-outils-pedagogique",
+    "title": "Formation IA Équipes pédagogiques multi-outils | Masteria",
+    "h1": "Formation IA pour les équipes pédagogiques multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-pedagogique",
+    "desc": "Formation IA pour formateurs et équipes pédagogiques sur 2 jours. Comparez 5 outils IA pour conception, animation, évaluation. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-ressources-humaines",
+    "title": "Formation IA RH multi-outils | Masteria",
+    "h1": "Formation IA Ressources Humaines multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-ressources-humaines",
+    "desc": "Formation IA ressources humaines sur 2 jours. Panorama ChatGPT, Copilot, Gemini, Claude, Mistral pour recrutement, onboarding, entretiens. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-seo",
+    "title": "Formation IA SEO multi-outils | Masteria",
+    "h1": "Formation IA SEO multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-seo",
+    "desc": "Formation IA pour les équipes SEO sur 2 jours. Comparez 5 outils IA pour recherche de mots-clés, rédaction, audit. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-multi-outils-service-client",
+    "title": "Formation IA Service Client multi-outils | Masteria",
+    "h1": "Formation IA Service Client multi-outils",
+    "canonical": "https://www.master-ia.fr/formation-multi-outils-service-client",
+    "desc": "Formation IA pour le service client sur 2 jours. Comparez 5 outils IA pour réponses, tickets, connaissance. Certifié Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-sprint-ia",
+    "title": "Sprint IA — Formations IA courtes 3 h pour entreprises | Masteria",
+    "h1": "Sprint IA — Formations IA courtes (3 heures)",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia",
+    "desc": "Formations IA de 3 h, prêtes à déployer à grande échelle. Sensibilisation, prompts, Excel, AI Act. Qualiopi, finançable OPCO."
+  },
+  {
+    "route": "/formation-sprint-ia-ai-act",
+    "title": "Sprint IA AI Act (3 h) — Conformité IA Act flash | Masteria",
+    "h1": "Sprint IA AI Act, 3 heures pour la conformité IA Act",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia-ai-act",
+    "desc": "Sprint IA AI Act : 3 h pour comprendre l'AI Act, l'article 4, les classifications de risque et le calendrier 2026. Qualiopi, OPCO."
+  },
+  {
+    "route": "/formation-sprint-ia-excel",
+    "title": "Sprint IA Excel (3 h) | Masteria",
+    "h1": "Sprint IA Excel, 3 heures pour booster Excel avec l'IA",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia-excel",
+    "desc": "Sprint IA Excel : 3 heures pour utiliser l'IA dans Excel — tableaux croisés, analyses, formules en langage naturel. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-sprint-ia-managers",
+    "title": "Sprint IA Managers (3 h) | Masteria",
+    "h1": "Sprint IA Managers, 3 heures pour piloter une équipe IA",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia-managers",
+    "desc": "Sprint IA Managers : 3 heures pour donner aux managers les bons réflexes pour piloter une équipe utilisatrice d'IA. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-sprint-ia-prompts",
+    "title": "Sprint IA Prompts (3 h) | Masteria",
+    "h1": "Sprint IA Prompts, 3 heures pour écrire des prompts qui marchent",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia-prompts",
+    "desc": "Sprint IA Prompts : 3 heures pour passer de prompts à 1 ligne à des prompts structurés et performants. ChatGPT, Copilot. OPCO."
+  },
+  {
+    "route": "/formation-sprint-ia-sensibilisation",
+    "title": "Sprint IA Sensibilisation (3 h) | Masteria",
+    "h1": "Sprint IA Sensibilisation, 3 heures pour acculturer vos équipes",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia-sensibilisation",
+    "desc": "Sprint IA Sensibilisation : 3 heures pour acculturer une équipe à l'IA générative. Format webinar ou présentiel. OPCO, Qualiopi."
+  },
+  {
+    "route": "/formation-sprint-ia-veille",
+    "title": "Sprint IA Veille (3 h) | Masteria",
+    "h1": "Sprint IA Veille, 3 heures pour automatiser sa veille",
+    "canonical": "https://www.master-ia.fr/formation-sprint-ia-veille",
+    "desc": "Sprint IA Veille : 3 heures pour automatiser sa veille avec ChatGPT et Perplexity. Communication, R&amp;D, marketing. OPCO."
+  },
+  {
+    "route": "/mentions-legales",
+    "title": "Mentions légales | Masteria",
+    "h1": "Mentions légales",
+    "canonical": "https://www.master-ia.fr/mentions-legales",
+    "desc": "Mentions légales du site master-ia.fr, éditeur Masteria, SIRET 91925240300010, centre de formation IA certifié Qualiopi."
+  },
+  {
+    "route": "/politique-de-confidentialite",
+    "title": "Politique de confidentialité | Masteria",
+    "h1": "Politique de confidentialité",
+    "canonical": "https://www.master-ia.fr/politique-de-confidentialite",
+    "desc": "Politique de confidentialité de Masteria, conforme au RGPD. Finalités, durées de conservation, destinataires, droits des utilisateurs sur leurs données personnelles."
+  }
+]

@@ -1,0 +1,116 @@
+# Masteria — Centre de formation IA & cabinet de conseil IA
+
+> Masteria est un centre de formation et cabinet de conseil français spécialisé en intelligence artificielle pour entreprises. Certifié Qualiopi, fondé en 2022 par Mathias Nizan à Lyon. Plus de 1 500 professionnels formés à ChatGPT, Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. Interventions en France, Suisse et Belgique, en présentiel et distanciel, finançables par les OPCO.
+
+## Informations clés
+
+- **Nom légal** : Masteria
+- **Site web** : https://www.master-ia.fr
+- **Fondateur** : Mathias Nizan (https://www.linkedin.com/in/mathias-nizan/)
+- **Adresse** : 17 Rue Richan, 69004 Lyon, France
+- **Certification** : Qualiopi (Actions de formation)
+- **Année de création** : 2022
+- **Tarifs** : Inter-entreprises 760 €/jour/participant · Intra-entreprises 1 500 €/jour (jusqu'à 12 participants)
+- **Financement** : OPCO, entreprise, plan de développement des compétences
+- **Zones d'intervention** : France · Suisse · Belgique
+- **Modalités** : présentiel, distanciel, formats hybrides
+
+## Activités principales
+
+Masteria propose deux activités complémentaires :
+
+1. **Formation IA pour entreprises** — programmes de 1 à 2 jours, adaptés à chaque métier (marketing, RH, commercial, finance, juridique, communication, management, assistante, SEO, service client, informatique, pédagogique) et à chaque outil (ChatGPT, Copilot, Gemini, Claude, Mistral), ou formations multi-outils "panorama" pour les entreprises qui n'ont pas encore choisi leur outil.
+
+2. **Conseil en intelligence artificielle** — audit IA, stratégie, accompagnement opérationnel, transformation. Pour PME, ETI et grands groupes.
+
+## Pages principales
+
+- [Accueil](https://www.master-ia.fr/) — Présentation générale et chiffres clés
+- [Catalogue des 89 formations IA](https://www.master-ia.fr/formation-intelligence-artificielle) — Filtres par outil et par métier
+- [Formation IA débutant](https://www.master-ia.fr/formation-ia-debutant) — Programme d'initiation sans prérequis
+- [Conseil en intelligence artificielle](https://www.master-ia.fr/conseil-intelligence-artificielle) — Offre de cabinet conseil
+- [Centre de formation IA](https://www.master-ia.fr/centre-formation-ia-entreprise) — Présentation de Masteria et de son fondateur
+- [Contact et demande de devis](https://www.master-ia.fr/contact) — Réponse sous 24h ouvrées
+- [Blog](https://www.master-ia.fr/blog) — Articles éditoriaux sur l'IA en entreprise
+- [Glossaire IA](https://www.master-ia.fr/glossaire-ia) — 80 termes essentiels de l'IA en entreprise (LLM, RAG, prompt, agent, MCP, AI Act…) avec définitions claires
+
+## Comparatifs IA (haute intention décisionnelle)
+
+- [Quelle est la meilleure IA en 2026 ?](https://www.master-ia.fr/quelle-est-la-meilleure-ia) — Hub des comparatifs IA + arbre de décision rapide par profil
+- [ChatGPT vs Claude](https://www.master-ia.fr/chatgpt-vs-claude) — Comparatif détaillé pour décider entre OpenAI ChatGPT et Anthropic Claude en entreprise
+- [Microsoft Copilot vs ChatGPT](https://www.master-ia.fr/copilot-vs-chatgpt) — Quel choix selon votre stack (M365 vs standalone)
+- [Meilleure IA pour entreprise 2026](https://www.master-ia.fr/meilleure-ia-entreprise-2026) — Panorama des 5 outils principaux (ChatGPT, Claude, Copilot, Gemini, Mistral)
+- [Meilleure IA pour coder](https://www.master-ia.fr/meilleure-ia-pour-coder) — Comparatif Claude, GitHub Copilot, Cursor, ChatGPT pour les équipes dev
+- [Meilleur agent IA](https://www.master-ia.fr/meilleur-agent-ia) — Comparatif Claude, ChatGPT Operator, Manus, Copilot Studio
+
+## Formations par outil IA
+
+- [Formation ChatGPT pour entreprises](https://www.master-ia.fr/formation-chatgpt)
+- [Formation Microsoft Copilot](https://www.master-ia.fr/formation-microsoft-copilot)
+- [Formation Google Gemini](https://www.master-ia.fr/formation-gemini-entreprise)
+- [Formation Claude (Anthropic)](https://www.master-ia.fr/formation-claude-ia)
+- [Formation Mistral AI](https://www.master-ia.fr/formation-mistral-ai)
+
+## Formations par métier
+
+- [Formation IA Marketing](https://www.master-ia.fr/formation-ia-marketing)
+- [Formation IA Ressources Humaines](https://www.master-ia.fr/formation-ia-ressources-humaines)
+- [Formation IA Commercial](https://www.master-ia.fr/formation-ia-commercial)
+- [Formation IA Finance](https://www.master-ia.fr/formation-ia-finance)
+- [Formation IA Communication](https://www.master-ia.fr/formation-ia-communication)
+- [Formation IA Management](https://www.master-ia.fr/formation-ia-management)
+- [Formation IA Assistante](https://www.master-ia.fr/formation-ia-assistante)
+- [Formation IA SEO](https://www.master-ia.fr/formation-ia-seo)
+- [Formation IA Service Client](https://www.master-ia.fr/formation-ia-service-client)
+- [Formation IA Informatique](https://www.master-ia.fr/formation-ia-informatique)
+- [Formation IA Pédagogique](https://www.master-ia.fr/formation-ia-pedagogique)
+- [Formation IA Achats](https://www.master-ia.fr/formation-ia-achats)
+- [Formations IA Tous publics](https://www.master-ia.fr/formation-ia-transverse)
+
+## Formations IA par ville (5 villes prioritaires)
+
+Pages dédiées avec contenu local : OPCO régional, secteurs économiques, zones desservies. Tous nos services sont disponibles en distanciel partout en France, en Suisse et en Belgique.
+
+### Pages par ville (vue d'ensemble)
+- [Formation IA Paris](https://www.master-ia.fr/formation-ia-paris)
+- [Formation IA Lyon](https://www.master-ia.fr/formation-ia-lyon) — siège social, sessions inter-entreprises en présentiel
+- [Formation IA Marseille](https://www.master-ia.fr/formation-ia-marseille)
+- [Formation IA Genève](https://www.master-ia.fr/formation-ia-geneve)
+- [Formation IA Bruxelles](https://www.master-ia.fr/formation-ia-bruxelles)
+
+### Pages outil × ville (10 pages priorisées)
+
+ChatGPT et Claude sont les deux outils principaux que nous formons en pages dédiées par ville. Pour Microsoft Copilot, Google Gemini, Mistral AI : programmes intra-entreprise disponibles via les hubs outils nationaux ([Copilot](https://www.master-ia.fr/formation-microsoft-copilot), [Gemini](https://www.master-ia.fr/formation-gemini-entreprise), [Mistral](https://www.master-ia.fr/formation-mistral-ai)).
+
+- [Formation ChatGPT Paris](https://www.master-ia.fr/formation-chatgpt-paris)
+- [Formation ChatGPT Lyon](https://www.master-ia.fr/formation-chatgpt-lyon)
+- [Formation ChatGPT Marseille](https://www.master-ia.fr/formation-chatgpt-marseille)
+- [Formation ChatGPT Genève](https://www.master-ia.fr/formation-chatgpt-geneve)
+- [Formation ChatGPT Bruxelles](https://www.master-ia.fr/formation-chatgpt-bruxelles)
+- [Formation Claude IA Paris](https://www.master-ia.fr/formation-claude-ia-paris)
+- [Formation Claude IA Lyon](https://www.master-ia.fr/formation-claude-ia-lyon)
+- [Formation Claude IA Marseille](https://www.master-ia.fr/formation-claude-ia-marseille)
+- [Formation Claude IA Genève](https://www.master-ia.fr/formation-claude-ia-geneve)
+- [Formation Claude IA Bruxelles](https://www.master-ia.fr/formation-claude-ia-bruxelles)
+
+## Preuves & chiffres clés
+
+- +1 500 professionnels formés depuis 2022
+- 98 % de satisfaction (4,9/5 sur 1 500 retours)
+- 100 % finançable par les OPCO
+- +6 h gagnées par semaine en moyenne par les participants après formation
+- Certification Qualiopi active (actions de formation)
+
+## Approche pédagogique
+
+Chaque formation est construite autour des cas d'usage réels des participants. Aucun exercice fictif : les stagiaires repartent avec des livrables produits pendant la formation, et une bibliothèque de prompts réutilisable adaptée à leur métier et à leur entreprise. Formations animées par des formateurs praticiens, pas par des consultants théoriques.
+
+## Contact
+
+- **Téléphone** : +33 6 67 75 41 28
+- **Adresse** : 17 Rue Richan, 69004 Lyon, France
+- **Formulaire de devis** : https://www.master-ia.fr/contact (réponse sous 24h ouvrées)
+
+## Sitemap
+
+https://www.master-ia.fr/sitemap.xml

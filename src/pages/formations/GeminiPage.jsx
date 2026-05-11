@@ -202,9 +202,9 @@ export default function GeminiPage() {
           {/* Breadcrumb */}
           <nav style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#D1D5DB' }}>/</span>
-            <Link to="/formation-ia-par-metier" style={{ color: '#6B7280' }}>Formations IA</Link>
-            <span style={{ color: '#D1D5DB' }}>/</span>
+            <span style={{ color: '#374151' }}>/</span>
+            <Link to="/formation-intelligence-artificielle" style={{ color: '#6B7280' }}>Formations IA</Link>
+            <span style={{ color: '#374151' }}>/</span>
             <span style={{ color: COLOR, fontWeight: 600 }}>Google Gemini</span>
           </nav>
 
@@ -251,7 +251,7 @@ export default function GeminiPage() {
       {/* CHIFFRES CLÉS */}
       <section style={{ background: '#fff', borderBottom: '1px solid #E5E7EB', padding: '40px', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap' }}>
         {[
-          { num: '+500', label: 'professionnels formés à l\'IA' },
+          { num: '+1 500', label: 'professionnels formés à l\'IA' },
           { num: '98 %', label: 'de taux de satisfaction' },
           { num: '100 %', label: 'finançable via votre OPCO' },
           { num: '+6 h', label: 'gagnées par semaine' },
@@ -410,13 +410,13 @@ export default function GeminiPage() {
                 ))}
               </ul>
             </div>
-            <div style={{ background: '#0A0A0A', borderRadius: 12, padding: 32 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#fff', lineHeight: 1, marginBottom: 4 }}>1 500 €</div>
-              <div style={{ fontSize: 14, color: '#9CA3AF', marginBottom: 16 }}>/ jour (max 12 participants)</div>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${COLOR}` }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: COLOR, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 500 €</div>
+              <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (max 12 participants)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Réservé à votre équipe', '1 ou 2 jours', 'Dans vos locaux ou distanciel', 'OPCO, plan de développement des compétences'].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#D1D5DB', display: 'flex', gap: 8 }}>
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
                     <span style={{ color: COLOR }}>✓</span>{item}
                   </li>
                 ))}
@@ -492,7 +492,7 @@ export default function GeminiPage() {
           </div>
           <p style={{ fontSize: 14, color: '#6B7280' }}>
             Vous utilisez d'autres outils IA ? Masteria forme également vos équipes à{' '}
-            <Link to="/formation-chatgpt-entreprise" style={{ color: '#10a37f', fontWeight: 600 }}>ChatGPT</Link>
+            <Link to="/formation-chatgpt" style={{ color: '#10a37f', fontWeight: 600 }}>ChatGPT</Link>
             {' '}et à{' '}
             <Link to="/formation-microsoft-copilot" style={{ color: '#0078d4', fontWeight: 600 }}>Microsoft Copilot</Link>.
           </p>
@@ -500,19 +500,19 @@ export default function GeminiPage() {
       </section>
 
       {/* CTA FINALE */}
-      <section style={{ background: '#0A0A0A', color: '#fff', padding: '80px 40px', textAlign: 'center' }}>
+      <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 580, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
             Parlons de votre équipe
           </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
+          <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
             Dites-nous combien de personnes vous souhaitez former, leurs métiers et leur niveau actuel avec Gemini. On revient vers vous sous 24 heures avec un programme adapté.
           </p>
           <Link to="/contact" style={{ display: 'inline-block', background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
             Contacter notre équipe →
           </Link>
           <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Formation certifiée Qualiopi · Finançable OPCO · +500 professionnels formés · 98 % de satisfaction
+            Formation certifiée Qualiopi · Finançable OPCO · +1 500 professionnels formés · 98 % de satisfaction
           </p>
         </div>
       </section>
