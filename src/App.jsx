@@ -41,6 +41,7 @@ const BlogListPage = lazy(() => import('./pages/BlogListPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
 const MentionsLegalesPage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MentionsLegalesPage })));
 const PolitiqueConfidentialitePage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.PolitiqueConfidentialitePage })));
+const CompetencesClaudeEET = lazy(() => import('./pages/CompetencesClaudeEET'));
 import { SPOKES } from './data/seo-pages';
 import { getAllGeoCombinations, GEO_DESTINATIONS, geoIaSlug } from './data/geo-data';
 
@@ -1325,6 +1326,7 @@ export default function App() {
         <Route path="/meilleur-agent-ia" element={<ComparisonPage slug="meilleur-agent-ia" />} />
         <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
         <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialitePage />} />
+        <Route path="/competences-claude-eet" element={<CompetencesClaudeEET />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
         {['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','transverse'].map(m => (
           <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
