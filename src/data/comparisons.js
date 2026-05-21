@@ -18,7 +18,7 @@ export const COMPARISONS = {
 
   'chatgpt-vs-claude': {
     slug: 'chatgpt-vs-claude',
-    metaTitle: 'ChatGPT vs Claude : quel modèle IA choisir en entreprise ? (2026) | Masteria',
+    metaTitle: 'ChatGPT vs Claude : quel choisir en 2026 ? | Masteria',
     metaDesc: "Comparatif ChatGPT vs Claude pour entreprises : forces, faiblesses, prix, sécurité, cas d'usage par métier. Recommandations 2026 par les formateurs Masteria.",
     h1: 'ChatGPT vs Claude : quel modèle IA choisir pour votre entreprise ?',
     intro:
@@ -142,28 +142,8 @@ export const COMPARISONS = {
       { metier: 'Service client', recommendation: 'a', why: "Écosystème agents plus mature pour des bots clients en production. Voice Mode pour le téléphone." },
       { metier: 'Direction générale', recommendation: 'tie', why: "Beaucoup de DG utilisent les deux. ChatGPT pour la veille / brainstorming, Claude pour la lecture de mémos longs." },
     ],
-    faq: [
-      {
-        q: "Faut-il choisir l'un ou l'autre, ou les deux ?",
-        a: "En 2026, beaucoup d'entreprises matures équipent leurs équipes des deux outils. Le coût marginal du second abonnement (20-30 €/utilisateur) est négligeable face au gain de complémentarité. Si vous devez choisir un seul outil, basez-vous sur le cas d'usage dominant : marketing/contenu → ChatGPT, code/analyse → Claude.",
-      },
-      {
-        q: "Mes données sont-elles utilisées pour entraîner les modèles ?",
-        a: "Sur les versions Pro/Team/Enterprise des deux outils, **non** : OpenAI et Anthropic s'engagent contractuellement à ne pas utiliser vos conversations pour l'entraînement. Sur les versions gratuites, c'est variable et il faut activer l'opt-out manuellement.",
-      },
-      {
-        q: "Lequel est le meilleur pour le français ?",
-        a: "Les deux sont excellents en français. Claude est parfois perçu comme légèrement plus naturel sur les contenus longs. Pour des cas critiques en langue française avec souveraineté, considérez Mistral AI (français) ou Le Chat Pro.",
-      },
-      {
-        q: "Combien coûte la formation des équipes à ces outils ?",
-        a: "Une formation Masteria de 1 jour pour ChatGPT ou Claude coûte 760 €/jour/participant en inter-entreprises ou 1 500 €/jour pour un groupe jusqu'à 12 personnes en intra. 100 % finançable par les OPCO.",
-      },
-      {
-        q: "Quels sont les risques de sécurité ?",
-        a: "Les deux outils sont conformes aux standards entreprise (SOC 2, ISO 27001, GDPR). Le principal risque vient de l'usage : éviter de copier-coller des données sensibles (codes clients, données médicales, IP) dans des sessions sans accord juridique. Une charte IA interne est indispensable.",
-      },
-    ],
+    // NB : la clé `faq` est définie plus bas (~L266) — version étendue à 9 questions.
+    // L'ancienne FAQ de 5 questions a été supprimée car JS gardait la 2e en écrasant la 1re.
     methodology:
       "Ce comparatif s'appuie sur l'expérience terrain : depuis 2022, Masteria a formé plus de 1 500 professionnels à ChatGPT et Claude dans des contextes très variés — marketing, RH, finance, juridique, code. Les évaluations qui suivent reflètent les retours réels de ces utilisateurs et des formateurs Masteria, pas des benchmarks théoriques. Les versions testées en avril 2026 : **GPT-5** (OpenAI) et **Claude Opus 4.7** (Anthropic), via les abonnements Pro/Team standards.",
     realCases: [
@@ -305,7 +285,7 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   'copilot-vs-chatgpt': {
     slug: 'copilot-vs-chatgpt',
-    metaTitle: 'Microsoft Copilot vs ChatGPT : que choisir en entreprise ? (2026) | Masteria',
+    metaTitle: 'Copilot vs ChatGPT : que choisir en 2026 ? | Masteria',
     metaDesc: "Comparatif Microsoft Copilot vs ChatGPT pour entreprises : intégration M365, sécurité, prix, cas d'usage. Quel choix selon votre stack en 2026.",
     h1: 'Microsoft Copilot vs ChatGPT : quel outil IA pour votre entreprise ?',
     intro:
@@ -422,28 +402,8 @@ export const COMPARISONS = {
       { metier: 'Service client', recommendation: 'b', why: "Plus d'options d'agents, intégrations CRM via API, customisation avancée côté ChatGPT." },
       { metier: 'Sensibilité forte aux données (santé, finance, défense)', recommendation: 'a', why: "Copilot garde tout dans le tenant Microsoft, sous gouvernance interne. Argument décisif." },
     ],
-    faq: [
-      {
-        q: "Si on a déjà M365, Copilot remplace-t-il l'achat de ChatGPT ?",
-        a: "Pas vraiment. Copilot est complémentaire : excellent pour la productivité dans Office, mais limité hors M365. La plupart des entreprises utilisent les deux : Copilot pour le quotidien Office, ChatGPT pour les tâches créatives, le code, les analyses libres.",
-      },
-      {
-        q: "Copilot est-il vraiment plus sécurisé que ChatGPT ?",
-        a: "Pour les entreprises soumises à des contraintes réglementaires fortes (santé, finance, défense), oui : les données ne quittent pas votre tenant Microsoft 365. Pour une PME standard avec ChatGPT Enterprise, les niveaux de sécurité sont comparables (SOC 2, ISO 27001).",
-      },
-      {
-        q: "Faut-il avoir Microsoft 365 pour utiliser Copilot ?",
-        a: "Oui, M365 Copilot s'ajoute en supplément d'une licence M365 Business Standard ou supérieure. Sans M365, Microsoft propose Copilot Free/Pro (équivalent grand public, basé sur GPT-5) mais sans accès aux données entreprise.",
-      },
-      {
-        q: "Quel est le coût total annuel pour 50 collaborateurs ?",
-        a: "**ChatGPT Team** : 50 × 25 € × 12 = 15 000 €/an. **M365 Copilot** : 50 × 30 $ × 12 ≈ 16 800 €/an (+ M365 si pas déjà). **Les deux** : environ 31 800 €/an. À comparer au gain de productivité (en moyenne +6 h/semaine/collaborateur après formation = retour sur investissement < 1 mois).",
-      },
-      {
-        q: "Faut-il former différemment les équipes ?",
-        a: "Oui. ChatGPT = formation \"prompt engineering général\" (1 jour). Copilot = formation \"par application\" (Word, Excel, Outlook, Teams) sur 1-2 jours. Masteria propose les deux, ainsi qu'une formation panorama si vous évaluez encore.",
-      },
-    ],
+    // NB : la clé `faq` est définie plus bas (~L520) — version étendue à 9 questions.
+    // L'ancienne FAQ de 5 questions a été supprimée car JS gardait la 2e en écrasant la 1re.
     methodology:
       "Ce comparatif est basé sur l'expérience terrain de Masteria : déploiement et formation Copilot dans plusieurs ETI françaises depuis 2023, ainsi que des centaines d'utilisateurs ChatGPT formés depuis 2022. Les conclusions reflètent l'usage réel en entreprise, pas les promesses marketing. Versions de référence : **Microsoft 365 Copilot** (mis à jour avril 2026) et **ChatGPT Team** (GPT-5 / GPT-4o).",
     realCases: [
@@ -585,7 +545,7 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   'meilleure-ia-entreprise-2026': {
     slug: 'meilleure-ia-entreprise-2026',
-    metaTitle: "Meilleure IA pour entreprise en 2026 : comparatif des 5 outils incontournables | Masteria",
+    metaTitle: "Meilleure IA entreprise 2026 : comparatif 5 outils | Masteria",
     metaDesc: "Quelle IA choisir pour votre entreprise en 2026 ? Comparatif ChatGPT, Claude, Copilot, Gemini, Mistral : forces, prix, cas d'usage par métier. Le guide de référence.",
     h1: 'Quelle est la meilleure IA pour votre entreprise en 2026 ?',
     intro:
@@ -859,7 +819,7 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   'meilleure-ia-pour-coder': {
     slug: 'meilleure-ia-pour-coder',
-    metaTitle: "Quelle est la meilleure IA pour coder en 2026 ? Comparatif Claude, ChatGPT, GitHub Copilot, Cursor | Masteria",
+    metaTitle: "Meilleure IA pour coder en 2026 : comparatif | Masteria",
     metaDesc: "Comparatif des meilleures IA pour le développement en 2026 : Claude Code, ChatGPT, GitHub Copilot, Cursor. Performance, intégration IDE, prix, cas d'usage par profil dev.",
     h1: 'Quelle est la meilleure IA pour coder en 2026 ?',
     intro:
@@ -939,7 +899,7 @@ export const COMPARISONS = {
           "Tarif équivalent à Copilot Business mais sans avantage tarifaire clair",
           "Demande un changement d'éditeur (vs simple plugin Copilot dans VS Code)",
         ],
-        idealFor: 'Devs en autonomie / freelances, projets full-stack solo, équipes startup tech",',
+        idealFor: 'Devs en autonomie / freelances, projets full-stack solo, équipes startup tech',
       },
       {
         tool: 'chatgpt',
@@ -1104,7 +1064,7 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   'meilleur-agent-ia': {
     slug: 'meilleur-agent-ia',
-    metaTitle: "Quel est le meilleur agent IA en 2026 ? Comparatif Claude, ChatGPT, Manus, Copilot Studio | Masteria",
+    metaTitle: "Meilleur agent IA en 2026 : comparatif | Masteria",
     metaDesc: "Comparatif des meilleurs agents IA pour entreprise en 2026 : Claude Computer Use, ChatGPT Operator, Manus, Microsoft Copilot Studio. Cas d'usage, prix, recommandations.",
     h1: 'Quel est le meilleur agent IA pour votre entreprise en 2026 ?',
     intro:

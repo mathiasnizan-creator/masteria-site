@@ -2,7 +2,10 @@
 # Autoriser toute indexation par les moteurs respectant le protocole
 User-agent: *
 Allow: /
-Disallow: /404
+# Pages noindex internes (privées, hors sitemap)
+Disallow: /competences-claude-eet
+Disallow: /artefacts-claude-entreprise
+Disallow: /securite-claude-entreprise
 
 # Moteurs IA (explicitement autorisés, c'est un site qui parle d'IA)
 User-agent: GPTBot

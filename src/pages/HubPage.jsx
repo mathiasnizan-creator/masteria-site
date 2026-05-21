@@ -91,7 +91,7 @@ export default function HubPage() {
   // "Claude (Anthropic)" → "Claude IA" / "Microsoft Copilot" → "Microsoft 365 Copilot"
   const toolShort = (() => {
     const base = (hub.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()
-    if (hub.id === 'claude-ia') return 'Claude IA'
+    if ((hub.id === 'claude' || hub.id === 'claude-ia')) return 'Claude IA'
     if (hub.id === 'copilot') return 'Microsoft 365 Copilot'
     if (hub.id === 'gemini') return 'Google Gemini'
     if (hub.id === 'mistral') return 'Mistral AI'
@@ -171,7 +171,7 @@ export default function HubPage() {
               sizes="120px"
               alt="Masteria, Centre de formation IA certifié Qualiopi"
               width="400" height="225"
-              loading="lazy" decoding="async"
+              fetchpriority="high" decoding="sync"
               style={{ height: 36, width: 'auto', display: 'block', filter: 'invert(1)' }}
             />
           </picture>
@@ -335,7 +335,7 @@ export default function HubPage() {
               cardTitle = m ? `Sprint IA ${m[1]}` : cardTitle
             }
             // Pour Claude IA, on garde "Claude IA" pas juste "Claude"
-            if (hub.id === 'claude-ia') {
+            if ((hub.id === 'claude' || hub.id === 'claude-ia')) {
               cardTitle = `Formation Claude IA pour les équipes ${spoke.metier}`
             }
             return (

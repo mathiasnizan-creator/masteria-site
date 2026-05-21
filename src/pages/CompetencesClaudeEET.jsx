@@ -52,8 +52,7 @@ const SECTIONS = [
   { id: 'p5',  num: '5', label: 'Administration',     labelLong: 'Administration Enterprise',          Icon: Building2,    accent: '#EDE9FE', tint: '#6D28D9' },
   { id: 'p6',  num: '6', label: 'Partage',            labelLong: 'Partage de compétences',             Icon: Share2,       accent: '#FFE4E6', tint: '#BE123C' },
   { id: 'p7',  num: '7', label: 'Limites',            labelLong: 'Limites & bonnes pratiques',         Icon: Ruler,        accent: '#F1F5F9', tint: '#475569' },
-  { id: 'p8',  num: '8', label: "Cas d'usage",        labelLong: "Cas d'usage Enterprise",             Icon: Briefcase,    accent: '#E8EDF5', tint: C.ink },
-  { id: 'p9',  num: '★', label: 'Process EET',        labelLong: 'Process de création — EET',          Icon: Factory,      accent: '#EFF4FF', tint: C.blue },
+  { id: 'p9',  num: '★', label: 'Formations EET',     labelLong: 'Préparation formations EET',         Icon: Briefcase,    accent: '#EFF4FF', tint: C.blue },
 ]
 
 function H2({ children }) {
@@ -346,8 +345,7 @@ export default function CompetencesClaudeEET() {
             fontSize: 'clamp(15px, 1.6vw, 18px)', color: 'rgba(255,255,255,.74)',
             lineHeight: 1.6, maxWidth: 640, marginBottom: 36,
           }}>
-            Créez, déployez et gérez des compétences personnalisées à l'échelle de votre organisation.
-            De la structure d'un fichier SKILL.md au provisionnement pour 500 collaborateurs.
+            Comprendre, construire et déployer des compétences Claude pour vos équipes. Avec la préparation détaillée des 8 formations EET de juin.
           </p>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 13.5, color: 'rgba(255,255,255,.7)' }}>
@@ -470,14 +468,14 @@ export default function CompetencesClaudeEET() {
               </P>
 
               <Callout>
-                <strong>Exemple concret :</strong> vous demandez à Claude de créer une présentation. Il détecte la compétence PowerPoint, charge ses instructions et génère le fichier selon votre charte graphique — sans que vous ayez précisé une seule règle de mise en forme.
+                <strong>Exemple concret :</strong> vous demandez à Claude de créer une présentation. Il détecte la compétence PowerPoint, charge ses instructions et génère le fichier selon votre charte graphique, sans que vous ayez précisé une seule règle de mise en forme.
               </Callout>
 
               <H3>Ce qu'une compétence peut contenir</H3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, margin: '16px 0' }}>
                 <Card Icon={FileText} title="Instructions">Règles de style, processus à suivre, contraintes de format, vocabulaire interdit.</Card>
                 <Card Icon={Paperclip} title="Fichiers de référence">Templates, exemples de livrables, données métier, guides de marque.</Card>
-                <Card Icon={CodeIcon} title="Scripts exécutables">Python, JavaScript — pour les compétences avancées qui produisent des fichiers.</Card>
+                <Card Icon={CodeIcon} title="Scripts exécutables">Python, JavaScript, pour les compétences avancées qui produisent des fichiers.</Card>
               </div>
 
               <H3>Différence avec les autres outils de personnalisation</H3>
@@ -505,7 +503,7 @@ export default function CompetencesClaudeEET() {
 
               <MethodBox tone="blue" badge="Méthode recommandée" badgeIcon={Sparkles} title="Demander à Claude de créer la compétence pour vous">
                 <P style={{ color: C.textSoft, marginBottom: 16 }}>
-                  C'est la façon la plus rapide. Vous décrivez ce que vous voulez, Claude rédige le <Code>SKILL.md</Code>, crée le ZIP et vous le livre prêt à uploader — tout en une conversation.
+                  C'est la façon la plus rapide. Vous décrivez ce que vous voulez, Claude rédige le <Code>SKILL.md</Code>, crée le ZIP et vous le livre prêt à uploader, le tout en une seule conversation.
                 </P>
                 <PromptBox>
                   « Crée-moi une compétence Claude pour transformer des notes de réunion brutes en compte-rendu structuré. Le format doit inclure : participants, décisions prises avec le responsable, actions à suivre avec échéance. Longueur max 300 mots. Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
@@ -561,7 +559,7 @@ description: Transformer des notes de réunion en compte-rendu structuré.
 
               <H3>Ajouter des fichiers de référence (optionnel)</H3>
               <P>
-                Si votre compétence a besoin de documents supplémentaires — un template Word, un guide de style, des exemples — placez-les dans un sous-dossier et mentionnez-les dans le <Code>SKILL.md</Code>. Claude les chargera uniquement quand c'est utile.
+                Si votre compétence a besoin de documents supplémentaires (un template Word, un guide de style, des exemples), placez-les dans un sous-dossier et mentionnez-les dans le <Code>SKILL.md</Code>. Claude les chargera uniquement quand c'est utile.
               </P>
               <Pre>{`ma-competence/
 ├── SKILL.md
@@ -585,7 +583,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
     └── generer_facture.py`}</Pre>
 
               <Callout>
-                Les scripts ne sont pas obligatoires pour commencer. Commencez par une compétence avec uniquement un <Code>SKILL.md</Code> et des instructions texte — c'est suffisant pour 90 % des usages.
+                Les scripts ne sont pas obligatoires pour commencer. Commencez par une compétence avec uniquement un <Code>SKILL.md</Code> et des instructions texte. C'est suffisant pour 90 % des usages.
               </Callout>
             </SectionShell>
 
@@ -595,9 +593,9 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
                 Créer le ZIP et l'uploader dans Claude.ai.
               </p>
 
-              <H3 style={{ marginTop: 0 }}>Étape 1 — Créer le ZIP</H3>
+              <H3 style={{ marginTop: 0 }}>Étape 1 : créer le ZIP</H3>
               <P>
-                Claude.ai attend un fichier ZIP dont le <strong>dossier est à la racine</strong> — pas les fichiers directement. Voici comment faire selon votre système :
+                Claude.ai attend un fichier ZIP dont le <strong>dossier est à la racine</strong>, pas les fichiers directement. Voici comment faire selon votre système :
               </P>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16, margin: '16px 0' }}>
@@ -656,9 +654,9 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
 
               <Divider />
 
-              <H3>Étape 2 — Le fichier .skill, c'est quoi ?</H3>
+              <H3>Étape 2 : le fichier .skill, c'est quoi ?</H3>
               <P>
-                Quand Claude.ai exporte une compétence, il génère un fichier avec l'extension <Code>.skill</Code>. Ce n'est pas un format spécial — <strong>c'est un ZIP renommé</strong>. Les deux sont interchangeables.
+                Quand Claude.ai exporte une compétence, il génère un fichier avec l'extension <Code>.skill</Code>. Ce n'est pas un format spécial : <strong>c'est un ZIP renommé</strong>. Les deux sont interchangeables.
               </P>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, margin: '16px 0' }}>
@@ -672,7 +670,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
 
               <Divider />
 
-              <H3>Étape 3 — Uploader dans Claude.ai</H3>
+              <H3>Étape 3 : uploader dans Claude.ai</H3>
               <StepList>
                 <Step n={1} title="Aller dans Personnaliser › Compétences">Depuis le menu principal de Claude.ai</Step>
                 <Step n={2} title="Cliquer sur + puis « + Créer une compétence »" />
@@ -688,7 +686,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </p>
 
               <P>
-                Quand vous uploadez des fichiers dans une conversation Claude, ils sont disponibles pour cette conversation uniquement — ils ne modifient pas la compétence stockée dans votre compte. C'est deux choses distinctes.
+                Quand vous uploadez des fichiers dans une conversation Claude, ils sont disponibles pour cette conversation uniquement. Ils ne modifient pas la compétence stockée dans votre compte. C'est deux choses distinctes.
               </P>
               <P>
                 Mais vous pouvez utiliser cette conversation pour <strong>fabriquer ou enrichir une compétence</strong>, puis récupérer le ZIP mis à jour.
@@ -696,7 +694,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
 
               <Divider />
 
-              <H3>Scénario A — Construire une compétence depuis vos documents</H3>
+              <H3>Scénario A : construire une compétence depuis vos documents</H3>
               <P>
                 Vous avez des fichiers qui doivent nourrir la compétence (un catalogue produits, un template Word, des exemples de bons livrables). Uploadez-les dans la conversation et demandez à Claude de construire la compétence autour.
               </P>
@@ -711,7 +709,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </div>
 
               <StepList>
-                <Step n={1} title="Uploadez vos fichiers dans la conversation">Catalogue, templates, exemples de livrables — tout ce qui doit guider Claude</Step>
+                <Step n={1} title="Uploadez vos fichiers dans la conversation">Catalogue, templates, exemples de livrables, tout ce qui doit guider Claude</Step>
                 <Step n={2} title="Demandez à Claude de créer la compétence">Précisez le nom, l'objectif, et ce que vous voulez que Claude fasse avec ces fichiers</Step>
                 <Step n={3} title="Récupérez le ZIP">Claude génère le <Code>SKILL.md</Code>, intègre les fichiers dans le bon dossier, et livre le tout prêt à uploader</Step>
                 <Step n={4} title="Uploadez dans Personnaliser › Compétences">La compétence est active, avec vos fichiers intégrés comme références</Step>
@@ -719,7 +717,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
 
               <Divider />
 
-              <H3>Scénario B — Enrichir une compétence existante</H3>
+              <H3>Scénario B : enrichir une compétence existante</H3>
               <P>
                 Votre compétence existe déjà. Vous voulez lui ajouter un nouveau fichier (un template mis à jour, une nouvelle liste de produits, un exemple supplémentaire).
               </P>
@@ -754,7 +752,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
 
               <Divider />
 
-              <H3>Modifier une compétence — attention aux doublons</H3>
+              <H3>Modifier une compétence : attention aux doublons</H3>
               <Callout kind="warning">
                 <strong>Il n'y a pas d'édition en ligne.</strong> Si vous uploadez une nouvelle version sans supprimer l'ancienne, vous vous retrouvez avec deux compétences en double dans votre liste. Supprimez toujours l'ancienne d'abord.
               </Callout>
@@ -768,7 +766,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </StepList>
 
               <Callout>
-                Vous pouvez aussi demander à Claude de modifier le contenu du <Code>SKILL.md</Code> directement dans la conversation — uploadez votre fichier <Code>.skill</Code> ou <Code>.zip</Code>, demandez les modifications, récupérez le nouveau ZIP.
+                Vous pouvez aussi demander à Claude de modifier le contenu du <Code>SKILL.md</Code> directement dans la conversation : uploadez votre fichier <Code>.skill</Code> ou <Code>.zip</Code>, demandez les modifications, récupérez le nouveau ZIP.
               </Callout>
 
               <Divider />
@@ -798,7 +796,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </StepList>
 
               <Callout Icon={Zap}>
-                Vous pouvez aussi demander à Claude : <em>« Renomme cette compétence en [nouveau nom] et livre-moi le ZIP »</em> en lui uploadant le fichier <Code>.skill</Code> — il s'occupe des deux modifications (YAML + dossier) et vous livre le fichier prêt.
+                Vous pouvez aussi demander à Claude : <em>« Renomme cette compétence en [nouveau nom] et livre-moi le ZIP »</em> en lui uploadant le fichier <Code>.skill</Code>. Il s'occupe des deux modifications (YAML + dossier) et vous livre le fichier prêt.
               </Callout>
             </SectionShell>
 
@@ -828,7 +826,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </StepList>
 
               <Callout kind="success">
-                Les membres peuvent <strong>désactiver</strong> une compétence provisionnée par l'organisation s'ils le souhaitent. Mais ils ne peuvent ni la modifier, ni la supprimer — c'est en lecture seule pour eux.
+                Les membres peuvent <strong>désactiver</strong> une compétence provisionnée par l'organisation s'ils le souhaitent. Mais ils ne peuvent ni la modifier, ni la supprimer : c'est en lecture seule pour eux.
               </Callout>
 
               <H3>Droits : qui peut faire quoi</H3>
@@ -898,7 +896,7 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </div>
 
               <Callout Icon={Info}>
-                <strong>Plan individuel (Pro, Max) :</strong> le partage entre comptes n'est pas disponible. Envoyez le fichier <Code>.zip</Code> ou <Code>.skill</Code> manuellement — votre collègue l'uploade dans son propre compte.
+                <strong>Plan individuel (Pro, Max) :</strong> le partage entre comptes n'est pas disponible. Envoyez le fichier <Code>.zip</Code> ou <Code>.skill</Code> manuellement. Votre collègue l'uploade dans son propre compte.
               </Callout>
 
               <Divider />
@@ -947,260 +945,284 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </div>
             </SectionShell>
 
-            {/* ────── PARTIE 8 ────── */}
+            {/* ────── PARTIE 9 — PRÉPARATION FORMATIONS EET ────── */}
             <SectionShell section={SECTIONS[8]}>
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.6, marginBottom: 24, marginTop: -16 }}>
-                Exemples concrets par métier et fonction.
-              </p>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={PenLine} title="Charte éditoriale" footer={<><TagPill>Communication</TagPill><TagPill>Marketing</TagPill></>}>
-                  Encode le ton de marque, les règles typographiques, le vocabulaire interdit. S'active automatiquement sur tout document destiné à l'externe. Tous les membres produisent des textes cohérents sans briefing répété.
-                </Card>
-                <Card Icon={ClipboardList} title="Compte-rendu de réunion" footer={<><TagPill>Management</TagPill><TagPill>Assistante</TagPill></>}>
-                  L'utilisateur colle ses notes brutes. Claude structure selon le format interne (décisions, actions, responsables, échéances), adapte la longueur. Zéro reformatage manuel.
-                </Card>
-                <Card Icon={BarChart3} title="Génération de rapports" footer={<><TagPill>Finance</TagPill><TagPill>Data</TagPill></>}>
-                  Un script Python prend des données en entrée et génère un Excel ou PDF formaté selon le template d'organisation. Le membre fournit les chiffres, Claude produit le fichier.
-                </Card>
-                <Card Icon={Palette} title="Directives de marque" footer={<><TagPill>Communication</TagPill><TagPill>Design</TagPill></>}>
-                  Couleurs, polices, règles d'usage du logo. S'active sur les demandes de présentations et documents clients. Chaque PowerPoint respecte la charte automatiquement.
-                </Card>
-                <Card Icon={FileCheck} title="Processus d'approbation" footer={<><TagPill>Juridique</TagPill><TagPill>Achats</TagPill></>}>
-                  Encode les étapes de validation interne pour un type de document (brief, contrat, proposition). Claude guide l'utilisateur et vérifie que rien n'est omis.
-                </Card>
-                <Card Icon={Handshake} title="Onboarding RH" footer={<><TagPill>RH</TagPill><TagPill>Management</TagPill></>}>
-                  Produit automatiquement les documents d'accueil, programmes de formation et communications internes selon les templates validés par les RH.
-                </Card>
-              </div>
-            </SectionShell>
-
-            {/* ────── PARTIE 9 — PROCESS EET ────── */}
-            <SectionShell section={SECTIONS[9]}>
-              <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.6, marginBottom: 24, marginTop: -16 }}>
-                Plan de déploiement Claude Enterprise — du sprint formation de juin à l'extension aux 58 collaborateurs en décembre 2026.
+                Ce que Jérémy active avant les formations, puis la configuration détaillée de chaque compétence : un brief Claude prêt à coller, les fichiers à apporter en formation, les prérequis spécifiques.
               </p>
 
               <Callout>
-                EET est passé de 70+ à 58 employés. <strong>L'objectif :</strong> qu'avec 58 personnes assistées par Claude, EET retrouve la performance de 70+. Ce process structure le déploiement en 5 étapes sur 6 mois — uniquement avec les outils natifs Claude.ai (pas d'intégration externe, pour préserver la sécurité et les droits internes).
+                <strong>8 formations, 9 compétences à construire.</strong> Kadi et Patrice portent ensemble deux compétences sur le périmètre Sécurité (CCTP + Devis Navision). Tout reste dans le périmètre Claude.ai natif et des outils internes EET. Pas d'intégration externe, pour préserver la sécurité et les droits d'accès.
               </Callout>
 
               <Divider />
 
-              {/* ───── ÉTAPE 0 ───── */}
-              <H3 style={{ marginTop: 0 }}>Étape 0 — Prérequis propriétaire (Mai 2026, avant le sprint)</H3>
+              {/* ═══════════════════════════════════════════════════ */}
+              {/* PARTIE A — PRÉREQUIS JÉRÉMY                          */}
+              {/* ═══════════════════════════════════════════════════ */}
+              <H3 style={{ marginTop: 0 }}>A. Ce que Jérémy active en amont (mai 2026)</H3>
               <P>
-                Jérémy active le socle technique avant la formation. Sans ces prérequis, plusieurs compétences ne sont pas construisables ou ne se déploient pas.
+                Sans ces prérequis, plusieurs compétences ne sont pas construisables. À faire avant la première formation pour que les référents arrivent avec un environnement opérationnel.
               </P>
+
               <StepList>
-                <Step n={1} title="Activer « Exécution de code et création de fichiers » + « Compétences »">
-                  Paramètres de l'organisation › Capacités. Indispensable pour que les compétences soient visibles dans Personnaliser.
+                <Step n={1} title="Activer les capacités Claude Enterprise au niveau organisation">
+                  <strong>Paramètres › Capacités :</strong> cocher « Exécution de code et création de fichiers » + « Compétences ». Sans ces deux capacités, les compétences ne sont pas visibles dans <Code>Personnaliser</Code> côté collaborateurs.
                 </Step>
-                <Step n={2} title="Activer le partage pair-à-pair uniquement">
-                  Paramètres › Compétences. Le répertoire d'organisation reste fermé pendant le pilote — pour contrôler la qualité avant de publier aux 58.
+                <Step n={2} title="Activer le partage pair-à-pair des compétences (phase pilote)">
+                  <strong>Paramètres › Compétences :</strong> autoriser le partage entre utilisateurs. Le répertoire d'organisation reste fermé jusqu'au provisionnement de septembre, pour contrôler la qualité avant la diffusion aux 58.
                 </Step>
-                <Step n={3} title="Créer le compte dédié eet.fr « voir en tant que »">
-                  Compte technique interne, partagé entre les référents qui en ont besoin (Kadi en priorité). Permet à Claude d'identifier les références et prix spécifiques au client depuis le site interne.
+                <Step n={3} title="Activer les connecteurs web sur les comptes Kadi et Bianca">
+                  <strong>Paramètres › Connecteurs :</strong> activer la recherche web et la navigation. Kadi en a besoin pour se loguer sur eet.fr (compétence Devis Navision). Bianca en a besoin pour la recherche de prospects.
                 </Step>
-                <Step n={4} title="Rediriger les emails 2FA vers une boîte EET dédiée">
-                  Sinon Claude ne peut pas se reconnecter sur eet.fr quand la session expire. Boîte interne, accessible aux référents concernés.
+                <Step n={4} title="Créer le compte technique eet.fr « voir en tant que »">
+                  Compte interne dédié, partagé entre Kadi (priorité 1) et Patrice. Permet à Claude d'identifier les références et les prix spécifiques au client depuis le site interne, via le mode <em>voir en tant que</em> déjà existant dans eet.fr.
                 </Step>
                 <Step n={5} title="Configurer l'export hebdomadaire TARGIT en Excel">
-                  Visites web par client, exportées chaque lundi — même logique que le fichier devis. Nourrit la compétence de Samar. Export manuel ou planifié dans TARGIT, pas d'intégration externe.
+                  Visites web par client, exportées chaque lundi matin, sur la même logique que le fichier devis d'Emmanuelle. Export manuel ou planifié dans TARGIT, déposé dans un dossier interne SharePoint. Indispensable pour la compétence de Samar.
                 </Step>
-                <Step n={6} title="Créer le dépôt interne « Compétences EET »">
-                  SharePoint ou drive d'entreprise — pas de service externe. Chaque ZIP source est versionné (v1.0-juin2026, v1.1, etc.). La version provisionnée à l'organisation est toujours référencée à une version du dépôt.
+                <Step n={6} title="Préparer les exports Navision nécessaires">
+                  Catalogue produits par famille (Arnaud, Pinar), catalogue marques propres avec marges (Pinar), base des 12 500 clients SCPP inactifs (Samar), base clients EET globale pour exclusion (Bianca). Exports ponctuels, à fournir aux référents la veille de leur formation.
+                </Step>
+                <Step n={7} title="Créer le dépôt SharePoint « Compétences EET » versionné">
+                  Drive interne, jamais un service externe. Chaque ZIP source est versionné (<Code>v1.0-juin2026</Code>, <Code>v1.1</Code>, etc.). La version provisionnée à l'organisation est toujours référencée à une version du dépôt, ce qui permet de revenir en arrière si une mise à jour casse l'usage.
                 </Step>
               </StepList>
+
+              <Callout kind="success">
+                <strong>Avantage propriétaire Enterprise :</strong> une fois ces 7 prérequis activés, chaque mise à jour ultérieure d'une compétence d'organisation se propage automatiquement aux 58 collaborateurs. Pas besoin de réuploader 58 fois : un seul upload par Jérémy suffit.
+              </Callout>
 
               <Divider />
 
-              {/* ───── ÉTAPE 1 ───── */}
-              <H3>Étape 1 — Construction (Juin 2026, sprint formation)</H3>
+              {/* ═══════════════════════════════════════════════════ */}
+              {/* PARTIE B — CONFIG PAR FORMATION                      */}
+              {/* ═══════════════════════════════════════════════════ */}
+              <H3>B. Configuration détaillée par formation</H3>
               <P>
-                Chaque référent suit la même méthode en 6 sous-étapes, encadrée par le formateur. Objectif : repartir de la formation avec un ZIP testé sur au moins 3 cas réels du quotidien.
+                Pour chaque référent : le brief unifié à coller dans Claude pendant la formation pour générer le <Code>SKILL.md</Code> et le ZIP, la liste des fichiers à apporter et les prérequis spécifiques. Les formations sont ordonnées dans la séquence de déploiement.
               </P>
-              <StepList>
-                <Step n={1} title="Cartographier le workflow actuel sur 1 page">
-                  Ce qui entre, ce qui sort, les règles tacites. Sans cette étape, la <Code>description</Code> du SKILL.md sera trop vague et Claude ne déclenchera pas la compétence au bon moment.
-                </Step>
-                <Step n={2} title="Brief unifié à Claude (méthode recommandée)">
-                  Le référent colle le template ci-dessous dans une conversation Claude. Claude rédige le <Code>SKILL.md</Code> et assemble le ZIP en quelques minutes.
-                </Step>
-                <Step n={3} title="Upload des fichiers de référence dans la conversation">
-                  Catalogue, exemples de livrables validés, règles métier — uploadés directement dans le chat Claude. Claude les intègre dans le bon sous-dossier du ZIP. Aucun fichier ne sort de Claude.ai.
-                </Step>
-                <Step n={4} title="Test sur 3-5 cas réels du jour J">
-                  Cas vraiment du quotidien — pas des cas inventés. Chronométrer le temps gagné avant / après.
-                </Step>
-                <Step n={5} title="Itération sur la description et les règles">
-                  Si la compétence ne se déclenche pas, réécrire la <Code>description</Code> avec un déclencheur explicite. Si le livrable est faux, durcir les règles dans le SKILL.md.
-                </Step>
-                <Step n={6} title="Récupération du ZIP final + dépôt dans « Compétences EET »">
-                  Stocker la version finale dans le dépôt interne versionné. Tagger : <Code>v1.0-juin2026</Code>.
-                </Step>
-              </StepList>
 
-              <MethodBox tone="blue" badge="Template unifié" badgeIcon={Sparkles} title="Brief à Claude pour générer une compétence EET">
-                <PromptBox>
-                  « Crée-moi une compétence Claude nommée <em>[Nom de la compétence]</em>.<br /><br />
-                  <strong>Quand l'activer :</strong> [situation déclencheuse précise, ex : « quand l'utilisateur partage un fichier Excel de devis du lundi matin »]<br /><br />
-                  <strong>Ce que Claude reçoit en entrée :</strong> [type de fichier ou message client]<br /><br />
-                  <strong>Ce que Claude doit produire :</strong> [livrable précis et format attendu]<br /><br />
-                  <strong>Règles EET obligatoires à intégrer :</strong> marques propres prioritaires (Vivolink, MicroConnect, CoreParts, Capture, Lanview, Ernitec, Sandberg) ; accessoires systématiques sur chaque offre ; substitutions par marché (sites sensibles → Axis / HANWHA, jamais HIKVISION) ; argument One Stop Shop si pertinent.<br /><br />
-                  <strong>Fichiers joints à intégrer dans la compétence :</strong> [liste — catalogue, exemples, base de connaissances]<br /><br />
-                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
-                </PromptBox>
+              <MethodBox tone="ink" badge="Méthode" badgeIcon={Lightbulb} title="Comment se déroule chaque formation">
+                <P style={{ marginTop: 0, fontSize: 14, color: C.textSoft }}>
+                  Chaque référent arrive avec ses fichiers. Pendant la formation : (1) cartographie du workflow actuel sur 1 page ; (2) brief Claude collé dans une conversation, avec upload des fichiers de référence ; (3) Claude génère le <Code>SKILL.md</Code> et assemble le ZIP ; (4) test sur 3 à 5 cas réels du jour ; (5) itérations sur la <Code>description</Code> et les règles ; (6) récupération du ZIP final et dépôt dans <Code>Compétences EET</Code>.
+                </P>
               </MethodBox>
 
+              {/* ─── 1. JÉRÉMY ─── */}
+              <SkillSetup
+                n="1"
+                name="Jérémy Siccardi"
+                role="Directeur Général · première formation, ouvre le sprint"
+                project="Tableau de bord EBITDA & pilotage de la performance"
+                briefName="Pilotage EBITDA EET"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Pilotage EBITDA EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand je partage un fichier chiffres mensuel, un PNL ou que je demande un point d'avancement EBITDA.<br /><br />
+                  <strong>Entrée :</strong> Excel chiffres mensuels (CA et marge par division) + PNL mensuel format EET.<br /><br />
+                  <strong>Sortie attendue :</strong> synthèse structurée en 4 blocs. (1) Évolution des marges par division vs N-1 et vs budget. (2) Alertes automatiques sur les écarts &gt; 5 %. (3) Leviers prioritaires pour atteindre 4 % EBITDA. (4) Suivi cumulé du gap restant (825 000 € au démarrage).<br /><br />
+                  <strong>Règles :</strong> comparaison systématique vs budget annuel et N-1 ; détection automatique des dérives ; priorisation des actions par impact EBITDA estimé ; mise en avant des divisions sous-performantes ; recommandation concrète par alerte (jamais juste un constat).<br /><br />
+                  <strong>Fichiers à intégrer :</strong> budget annuel 2026 par division, historique 12 mois CA et marge, structure type du PNL EET.<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  'Excel chiffres mensuels (3 derniers mois)',
+                  'PNL mensuel format EET',
+                  'Budget annuel 2026 par division',
+                  'Historique 12 mois CA et marge par division',
+                ]}
+                prereqs={<>Aucun spécifique. Jérémy étant l'admin org, les capacités sont déjà activées avant sa propre formation.</>}
+              />
+
+              {/* ─── 2. ARNAUD ─── */}
+              <SkillSetup
+                n="2"
+                name="Arnaud Chaussat"
+                role="Outside Sales · meilleure marge Outside (17 %)"
+                project="Générateur d'offres complètes"
+                briefName="Générateur d'offres EET complètes"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Générateur d'offres EET complètes</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand un commercial colle une demande client (« j'ai besoin de X caméras pour... », « il me faut un système de Y »).<br /><br />
+                  <strong>Entrée :</strong> demande client en langage naturel + type de marché (sensible / standard) + division concernée.<br /><br />
+                  <strong>Sortie attendue :</strong> offre écosystème complète, prête à formuler au client : produit principal, accessoires systématiques, alternatives marques propres, argument One Stop Shop.<br /><br />
+                  <strong>Règles EET obligatoires :</strong> marques propres prioritaires (Vivolink, MicroConnect, CoreParts, Capture, Lanview, Ernitec, Sandberg) ; accessoires obligatoires sur chaque offre (marge 2 à 3× supérieure) ; substitution intelligente (sites sensibles → Axis / HANWHA / Bosch / AVIGILON, jamais HIKVISION) ; cross-sell inter-divisions exploré systématiquement.<br /><br />
+                  <strong>Fichiers à intégrer :</strong> catalogue Navision par famille d'articles, catalogue complet des 7 marques propres, 3 exemples d'offres complètes validées (anonymisées).<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  'Extraction Navision : produits par famille d\'articles',
+                  'Catalogue complet des 7 marques propres avec fiches techniques',
+                  '3 à 5 exemples d\'offres complètes envoyées récemment (anonymisées)',
+                ]}
+                prereqs={<>Aucun spécifique. Compétence purement basée sur catalogue interne, pas d'accès externe nécessaire.</>}
+              />
+
+              {/* ─── 3. EMMANUELLE ─── */}
+              <SkillSetup
+                n="3"
+                name="Emmanuelle Virot"
+                role="Outside Sales"
+                project="Machine à relances devis"
+                briefName="Relances devis hebdomadaires EET"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Relances devis hebdomadaires EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand l'utilisateur partage le fichier Excel des devis du lundi matin.<br /><br />
+                  <strong>Entrée :</strong> Excel des devis en cours (colonnes : client, montant, ancienneté, commercial, division, statut).<br /><br />
+                  <strong>Sortie attendue :</strong> un email par client regroupant tous ses devis en attente, personnalisé selon l'ancienneté et le montant, prêt à envoyer. Les emails sont ordonnés du plus prioritaire au moins prioritaire.<br /><br />
+                  <strong>Règles :</strong> tri par priorité (montant &gt; ancienneté &gt; division) ; regroupement systématique par client (un seul email par client, jamais un par devis) ; ton EET (cordial, structuré, action attendue claire) ; accroche personnalisée selon l'ancienneté (devis &lt; 15 j vs &gt; 30 j) ; signature commerciale du référent du devis.<br /><br />
+                  <strong>Fichiers à intégrer :</strong> 3 exemples d'emails de relance validés (ton, structure, signature), annuaire interne des commerciaux par division.<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  'Fichier Excel devis du lundi (1 exemple récent)',
+                  '3 à 5 emails de relance que tu envoies habituellement (différents niveaux d\'ancienneté)',
+                  'Annuaire interne des commerciaux par division',
+                ]}
+                prereqs={<>Aucun spécifique. Le fichier Excel hebdomadaire des devis est déjà disponible chaque lundi.</>}
+              />
+
+              {/* ─── 4. PINAR ─── */}
+              <SkillSetup
+                n="4"
+                name="Pinar Bingol"
+                role="Outside Sales · spécialiste Private Label (17 % marge)"
+                project="Moteur de substitution et promotion des marques propres"
+                briefName="Substitution marques propres EET"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Substitution marques propres EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand un commercial demande une alternative à une marque concurrente ou un argumentaire de substitution.<br /><br />
+                  <strong>Entrée :</strong> marque + référence concurrente + contexte client (vertical, sensibilité, budget).<br /><br />
+                  <strong>Sortie attendue :</strong> alternative marque propre EET équivalente + tableau comparatif qualité/prix/délai + script de vente (Inside et Outside) + argument de marge pour le commercial.<br /><br />
+                  <strong>Règles :</strong> tableaux comparatifs systématiques ; mise en avant de la marge supérieure (chiffrée si possible) ; jamais de dévalorisation directe de la marque concurrente (équivalence + avantages EET) ; toujours conclure par un argument de marge interne pour motiver le commercial.<br /><br />
+                  <strong>Substitutions clés à encoder :</strong> Vivolink vs Samsung, CoreParts vs HP OEM, Capture vs Logitech, Ernitec vs marques tier 2, Sandberg vs Belkin, MicroConnect vs câbles génériques.<br /><br />
+                  <strong>Fichiers à intégrer :</strong> catalogue exhaustif des 7 marques propres, données de marge par produit, fiches comparatives existantes.<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  'Catalogue exhaustif des 7 marques propres (Vivolink, MicroConnect, CoreParts, Capture, Lanview, Ernitec, Sandberg)',
+                  'Données de marge par produit marque propre (Excel ou export Navision)',
+                  'Fiches comparatives existantes (si disponibles, sinon on les construit en formation)',
+                ]}
+                prereqs={<>Aucun spécifique. Cible : doubler la part marques propres (6,1 % → 12 %, +500 K€ EBITDA).</>}
+              />
+
+              {/* ─── 5. KADI + PATRICE (2 compétences) ─── */}
+              <SkillSetup
+                n="5"
+                name="Kadi Bah + Patrice Perez"
+                role="Outside Sales + Presales Manager Sécurité (20 ans d'expérience) · double compétence"
+                project="Projet 1 : Analyseur CCTP   |   Projet 2 : Générateur de devis Navision (Kadi en autonomie)"
+                briefName="Analyse CCTP EET + Devis Navision EET (2 compétences distinctes)"
+                brief={<>
+                  <strong>Compétence A · Analyse CCTP EET (binôme Kadi + Patrice)</strong><br /><br />
+                  « Crée-moi une compétence Claude nommée <em>Analyse CCTP EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand l'utilisateur upload un CCTP, un DCE ou un dossier de consultation.<br /><br />
+                  <strong>Entrée :</strong> PDF CCTP / dossier complet d'appel d'offres.<br /><br />
+                  <strong>Sortie attendue :</strong> (1) synthèse 1 page (périmètre, contraintes techniques clés, exclusions, dates clés) ; (2) liste structurée des références techniques exigées avec correspondances catalogue EET ; (3) points de vigilance à valider techniquement par Patrice ; (4) structure recommandée de réponse commerciale.<br /><br />
+                  <strong>Règles :</strong> ne jamais inventer une référence (si non trouvée dans le catalogue fourni, demander confirmation) ; signaler les contraintes incompatibles avec l'offre EET ; identifier systématiquement les opportunités cross-division (un CCTP Sécurité contient souvent des opportunités Réseau ou ProAV).<br /><br />
+                  <strong>Fichiers :</strong> 2-3 CCTP archives anonymisés, catalogue Sécurité, glossaire technique EET. »<br /><br />
+                  ─────────────────<br /><br />
+                  <strong>Compétence B · Devis Navision EET (Kadi en autonomie)</strong><br /><br />
+                  « Crée-moi une compétence Claude nommée <em>Devis Navision EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand l'utilisateur colle une demande client en langage naturel et indique un code client EET.<br /><br />
+                  <strong>Entrée :</strong> demande client + code client EET (ex : « il me faut 12 caméras dôme PoE pour un site logistique sensible, client 12345 »).<br /><br />
+                  <strong>Sortie attendue :</strong> (1) fichier Excel au format Navision (références, désignations, quantités, prix spécifiques au client) prêt à copier-coller dans Navision ; (2) alternative marque propre EET systématiquement proposée pour chaque ligne.<br /><br />
+                  <strong>Règles :</strong> utiliser le connecteur web pour se loguer sur <Code>eet.fr</Code> avec le compte technique « voir en tant que » du client ; vérifier le prix spécifique au client (jamais utiliser le prix catalogue) ; jamais inventer une référence ; alternative marque propre obligatoire pour chaque ligne.<br /><br />
+                  <strong>Fichiers :</strong> exemple Excel devis Navision validé (format colonnes exact), liste des champs Navision dans l'ordre, structure d'un devis type. »
+                </>}
+                files={[
+                  '2 à 3 CCTP archives anonymisés (Sécurité + une autre division)',
+                  'Exemple de fichier Excel devis Navision validé (format colonnes attendu)',
+                  'Glossaire technique métier EET (acronymes, normes, équivalences)',
+                  '5 à 10 codes clients représentatifs (à anonymiser pour la formation)',
+                ]}
+                prereqs={<>
+                  <strong>Critique :</strong> compte technique <Code>eet.fr</Code> « voir en tant que » créé par Jérémy, et connecteur web Claude.ai activé sur les comptes Kadi et Patrice (<em>Paramètres › Connecteurs</em>). Sans ces 2 prérequis, la compétence B (Devis Navision) ne fonctionne pas.
+                </>}
+              />
+
+              {/* ─── 6. BIANCA ─── */}
+              <SkillSetup
+                n="6"
+                name="Bianca Zsulestyan"
+                role="SMB · spécialiste accueil nouveaux clients"
+                project="Génération de leads & prospection ciblée"
+                briefName="Prospection ciblée EET"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Prospection ciblée EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> quand l'utilisateur demande une liste de prospects ou un message de prise de contact pour un vertical et une division.<br /><br />
+                  <strong>Entrée :</strong> vertical cible (retail, logistique, éducation, municipalités, hôtellerie...) + division EET concernée + critères (taille, géographie, contexte).<br /><br />
+                  <strong>Sortie attendue :</strong> (1) liste de 10 à 20 prospects pertinents identifiés via recherche web manuelle (connecteur web Claude.ai) ; (2) message de prise de contact personnalisé par profil de prospect ; (3) script d'approche LinkedIn + email à envoyer.<br /><br />
+                  <strong>Règles :</strong> croiser systématiquement avec la base clients EET fournie pour exclure les doublons ; segmentation par profil (taille, vertical, division) ; messages courts (max 80 mots) et concrets, jamais générique ; toujours proposer une porte d'entrée par produit ou service spécifique ; pas d'utilisation d'API LinkedIn, recherches via le connecteur web standard.<br /><br />
+                  <strong>Fichiers à intégrer :</strong> base clients EET (noms d'entreprises uniquement, pour exclusion), 3 messages de prospection validés, liste des verticals et divisions EET avec arguments clés par segment.<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  'Export base clients EET (Navision), noms d\'entreprises uniquement, pour exclusion',
+                  '3 à 5 messages de prospection envoyés récemment (différents verticals)',
+                  'Liste des verticals que tu cibles le plus + arguments par segment',
+                  '(Optionnel) liste de leads déjà identifiés à enrichir',
+                ]}
+                prereqs={<>Connecteur web Claude.ai activé sur le compte Bianca (recherches manuelles, pas d'intégration LinkedIn Sales Navigator pour préserver les droits d'accès et la sécurité).</>}
+              />
+
+              {/* ─── 7. SAMAR ─── */}
+              <SkillSetup
+                n="7"
+                name="Samar Guedouar"
+                role="Inside Sales"
+                project="Réactivation base clients SCPP inactive + enrichissement TARGIT"
+                briefName="Réactivation SCPP EET"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Réactivation SCPP EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> (a) quand l'utilisateur partage l'export des 12 500 clients inactifs ; (b) quand l'utilisateur partage l'export TARGIT hebdomadaire des visites web par client.<br /><br />
+                  <strong>Entrée :</strong> Excel clients SCPP inactifs (Navision) OU Excel visites web (TARGIT).<br /><br />
+                  <strong>Sortie attendue :</strong> (1) segmentation des inactifs par profil / ancienneté / potentiel ; (2) emails de réactivation personnalisés par segment, prêts à envoyer ; (3) emails hyper-ciblés sur les clients SCPP ayant visité une page produit récemment, signal d'intention chaud à exploiter dans la semaine.<br /><br />
+                  <strong>Règles :</strong> prioriser absolument les visiteurs récents (signal chaud, traiter dans les 7 jours) ; segmenter les inactifs par ancienneté (&lt; 18 mois, 18-36 mois, &gt; 36 mois) avec un ton différent par segment ; ton SCPP (relation longue, retour facilité, pas d'agressivité) ; jamais de message générique, toujours référence à un produit ou une commande passée.<br /><br />
+                  <strong>Fichiers à intégrer :</strong> 3 exemples d'emails de réactivation validés (ton SCPP), segments SCPP types avec arguments clés par segment.<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  'Export Excel des 12 500 clients SCPP inactifs (Navision)',
+                  'Premier export TARGIT visites web (configuré par Jérémy en amont)',
+                  '3 emails de réactivation que tu envoies (ton EET SCPP)',
+                ]}
+                prereqs={<>
+                  Export hebdomadaire TARGIT configuré par Jérémy (visites web par client → Excel, déposé chaque lundi dans le dossier SharePoint). Export base clients SCPP inactifs Navision (one-shot, fourni en formation).
+                </>}
+              />
+
+              {/* ─── 8. ANNIE ─── */}
+              <SkillSetup
+                n="8"
+                name="Annie Lafitte"
+                role="Team Leader Inside Sales (8 personnes)"
+                project="Gestionnaire intelligent de la boîte mail"
+                briefName="Gestion mails Inside Sales EET"
+                brief={<>
+                  « Crée-moi une compétence Claude nommée <em>Gestion mails Inside Sales EET</em>.<br /><br />
+                  <strong>Quand l'activer :</strong> (a) quand l'utilisateur colle un lot d'emails à trier ; (b) quand l'utilisateur demande une réponse à une situation récurrente (demande de prix, relance bid, client mécontent, transmission BDM, demande de stock...).<br /><br />
+                  <strong>Entrée :</strong> lot d'emails (collés en texte brut) OU email unique + situation détectée.<br /><br />
+                  <strong>Sortie attendue :</strong> (1) tri Urgent / Important / Standard / À dispatcher avec critères explicites ; (2) brouillon de réponse personnalisé par type de situation, prêt à copier-coller dans la messagerie ; (3) traitement groupé : 15 emails similaires traités en une seule soumission, 15 réponses générées.<br /><br />
+                  <strong>Règles :</strong> bibliothèque de 10 à 15 prompts encodés par situation type récurrente ; ton EET Inside Sales (réactif, structuré, signature commerciale standard) ; priorité absolue aux clients existants ; dispatcher proprement vers BDM de la division concernée, Outside Sales ou Inside Sales selon le sujet.<br /><br />
+                  <strong>Fichiers à intégrer :</strong> 10 à 15 exemples d'emails de chaque situation type avec la réponse attendue (anonymisés), grille de priorisation actuelle de l'équipe, annuaire interne BDM / Outside / Inside par division.<br /><br />
+                  Génère le SKILL.md et livre-moi un ZIP prêt à uploader. »
+                </>}
+                files={[
+                  '10 à 15 exemples d\'emails par situation type avec ta réponse (anonymisés) : demande prix, relance bid, client mécontent, transfert BDM, demande stock',
+                  'Grille de priorisation actuelle de l\'équipe',
+                  'Annuaire interne BDM / Outside / Inside par division',
+                ]}
+                prereqs={<>
+                  <strong>Aucune intégration boîte mail :</strong> processus 100 % manuel (copier-coller des emails dans Claude). Pas d'intégration Gmail / Outlook pour préserver les droits d'accès et la sécurité interne. Le gain de temps vient de la bibliothèque de prompts et du traitement groupé.
+                </>}
+              />
+
               <Divider />
-
-              {/* ───── ÉTAPE 2 ───── */}
-              <H3>Étape 2 — Pilote individuel (Juillet–Août 2026)</H3>
-              <P>
-                Pendant 4 à 6 semaines, chaque référent utilise sa compétence en <strong>compte personnel uniquement</strong> — pas encore partagée à l'organisation. L'objectif est de stabiliser avant de déployer aux 50 autres collaborateurs.
-              </P>
-
-              <H3 style={{ fontSize: 15, marginTop: 16 }}>Critères de succès à valider avant provisionnement</H3>
-              <TableWrap>
-                <table style={tableStyle}>
-                  <thead><tr><Th>Critère</Th><Th>Seuil minimum</Th><Th>Méthode de mesure</Th></tr></thead>
-                  <tbody>
-                    <tr><Td>Déclenchement automatique au bon moment</Td><Td><strong>≥ 90 %</strong> des cas</Td><Td>Journal manuel sur 20 demandes types</Td></tr>
-                    <tr><Td>Livrable utilisable sans retouche majeure</Td><Td><strong>≥ 80 %</strong></Td><Td>Évaluation du référent + 1 collègue témoin</Td></tr>
-                    <tr><Td>Temps gagné mesurable</Td><Td><strong>≥ 50 %</strong></Td><Td>Chronométré sur 5 cas réels avant / après</Td></tr>
-                    <tr><Td>Aucune hallucination sur référence ou prix</Td><Td><strong>100 %</strong></Td><Td>Vérification systématique pendant tout le pilote</Td></tr>
-                  </tbody>
-                </table>
-              </TableWrap>
-
-              <Callout kind="warning">
-                Une compétence qui produit une fausse référence produit ou un prix inventé est <strong>bloquante</strong>. Mieux vaut une compétence qui refuse de répondre qu'une compétence qui hallucine. Les règles du SKILL.md doivent l'expliciter : « Si la référence n'est pas trouvée dans le catalogue fourni, ne pas inventer — demander une précision. »
-              </Callout>
-
-              <Divider />
-
-              {/* ───── ÉTAPE 3 ───── */}
-              <H3>Étape 3 — Provisionnement organisation (Septembre 2026)</H3>
-              <P>
-                Les compétences validées passent du compte personnel du référent à <strong>Compétences de l'organisation</strong>. Jérémy effectue le provisionnement — c'est lui le propriétaire au sens Claude Enterprise.
-              </P>
-
-              <StepList>
-                <Step n={1} title="Préparer la version « org » du ZIP">
-                  Le référent retire les exemples non-anonymisés, ajuste la description pour un public plus large que son seul périmètre. Mise à jour du tag de version.
-                </Step>
-                <Step n={2} title="Jérémy uploade dans Paramètres › Compétences de l'organisation">
-                  Toute l'équipe la voit immédiatement, en <strong>lecture seule</strong>. Les membres peuvent désactiver mais pas modifier ni supprimer.
-                </Step>
-                <Step n={3} title="Le référent désactive sa compétence personnelle équivalente">
-                  Pour éviter les doublons et garantir que tout le monde utilise la même version.
-                </Step>
-                <Step n={4} title="Annonce ciblée aux audiences concernées">
-                  Email + canal interne avec le périmètre exact (Outside Sales, Inside Sales, SMB, BDM, Direction). Pas de notification automatique, pas d'outil externe.
-                </Step>
-              </StepList>
 
               <Callout kind="success">
-                <strong>Avantage propriétaire Enterprise :</strong> chaque mise à jour d'une compétence d'organisation se propage automatiquement aux 58 collaborateurs. Pas besoin de réuploader 58 fois — un seul upload par Jérémy suffit.
-              </Callout>
-
-              <Divider />
-
-              {/* ───── ÉTAPE 4 ───── */}
-              <H3>Étape 4 — Adoption &amp; maintenance (Octobre–Décembre 2026)</H3>
-              <P>
-                Objectif des trois derniers mois : que chaque compétence soit utilisée quotidiennement par sa cible. Le référent reste responsable de sa compétence — il en est le « product owner » interne.
-              </P>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={UsersIcon} title="Buddy system">
-                  Chaque référent parraine 5 à 8 collaborateurs sur sa compétence : démo en réunion d'équipe, premiers prompts faits ensemble, retour terrain consolidé.
-                </Card>
-                <Card Icon={RefreshCw} title="Mise à jour mensuelle des fichiers">
-                  Catalogue, base clients, exemples — le référent met à jour le ZIP en début de mois et le transmet à Jérémy. Une seule mise à jour propage aux 58.
-                </Card>
-                <Card Icon={BarChart3} title="Métriques en showcase CODIR">
-                  Volume traité, temps gagné, marge supplémentaire, taux de marques propres. Chiffres présentés une fois par mois en comité de direction.
-                </Card>
-                <Card Icon={Search} title="Détection des cas non couverts">
-                  Le référent collecte les demandes que sa compétence ne sait pas traiter et les intègre dans la version suivante. Cycle court : 1 itération par mois.
-                </Card>
-              </div>
-
-              <Divider />
-
-              {/* ───── CATALOGUE ───── */}
-              <H3>Catalogue cible — 9 compétences à provisionner aux 58</H3>
-              <P>
-                Les 8 référents portent 9 compétences (Kadi + Patrice en portent 2 sur le périmètre CCTP / devis). Ce tableau sert de feuille de route pour Jérémy : qui pilote quoi, pour qui.
-              </P>
-
-              <TableWrap>
-                <table style={tableStyle}>
-                  <thead><tr><Th>Compétence</Th><Th>Référent (owner interne)</Th><Th>Audience cible</Th></tr></thead>
-                  <tbody>
-                    <tr><Td><strong>Tableau de bord EBITDA</strong></Td><Td>Jérémy Siccardi</Td><Td>Direction, BDM</Td></tr>
-                    <tr><Td><strong>Générateur d'offres complètes</strong></Td><Td>Arnaud Chaussat</Td><Td>Outside Sales (toutes divisions)</Td></tr>
-                    <tr><Td><strong>Machine à relances devis</strong></Td><Td>Emmanuelle Virot</Td><Td>Outside Sales, Inside Sales</Td></tr>
-                    <tr><Td><strong>Moteur marques propres</strong></Td><Td>Pinar Bingol</Td><Td>Tous commerciaux (Outside, Inside, SMB)</Td></tr>
-                    <tr><Td><strong>Analyseur CCTP</strong></Td><Td>Kadi Bah + Patrice Perez</Td><Td>BDM Sécurité, Réseau (Dimitri), POS (Vincent)</Td></tr>
-                    <tr><Td><strong>Générateur de devis Navision</strong></Td><Td>Kadi Bah</Td><Td>Outside Sales, Inside Sales, SMB</Td></tr>
-                    <tr><Td><strong>Génération de leads</strong></Td><Td>Bianca Zsulestyan</Td><Td>SMB, Outside Sales</Td></tr>
-                    <tr><Td><strong>Réactivation SCPP + TARGIT</strong></Td><Td>Samar Guedouar</Td><Td>Inside Sales</Td></tr>
-                    <tr><Td><strong>Gestionnaire de boîte mail</strong></Td><Td>Annie Lafitte</Td><Td>Inside Sales (8 personnes)</Td></tr>
-                  </tbody>
-                </table>
-              </TableWrap>
-
-              <Divider />
-
-              {/* ───── RÈGLES EET ───── */}
-              <H3>Règles EET à encoder dans toute compétence commerciale</H3>
-              <P>
-                Ces 6 règles métier doivent apparaître dans chaque <Code>SKILL.md</Code> commercial. Sans elles, les compétences produisent des offres génériques qui ratent l'avantage concurrentiel d'EET.
-              </P>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={Tag} title="Marques propres prioritaires">
-                  Vivolink, MicroConnect, CoreParts, Capture, Lanview, Ernitec, Sandberg — toujours proposées en premier dans toute offre.
-                </Card>
-                <Card Icon={Package} title="Accessoires obligatoires">
-                  Aucun produit principal sans ses accessoires — marge 2 à 3× supérieure sur les accessoires.
-                </Card>
-                <Card Icon={Target} title="Adaptation au marché">
-                  Sites sensibles ou urbains → Axis, HANWHA, Bosch, AVIGILON. <strong>Jamais HIKVISION.</strong> Standard → toutes marques autorisées.
-                </Card>
-                <Card Icon={RefreshCw} title="Substitution intelligente">
-                  Face à SIDEV → Sharp / Philips. OEM → CoreParts. Milestone → Camtrace. Substitutions intégrées en règle dans le SKILL.md.
-                </Card>
-                <Card Icon={Share2} title="Cross-sell inter-divisions">
-                  Toute offre explore systématiquement les opportunités dans les 4 autres divisions (Sécurité, ProAV, SCPP, POS, Réseau).
-                </Card>
-                <Card Icon={Crown} title="Argument One Stop Shop">
-                  Le seul acteur en France à couvrir les 5 divisions avec service conseil. À rappeler systématiquement — c'est notre différenciant absolu.
-                </Card>
-              </div>
-
-              <Divider />
-
-              {/* ───── CALENDRIER ───── */}
-              <H3>Calendrier de déploiement</H3>
-              <TableWrap>
-                <table style={tableStyle}>
-                  <thead><tr><Th>Phase</Th><Th>Période</Th><Th>Livrable</Th></tr></thead>
-                  <tbody>
-                    <tr><Td><strong>Préparation</strong></Td><Td>Mai 2026</Td><Td>Prérequis Jérémy activés : capacités org, eet.fr, TARGIT, dépôt interne versionné</Td></tr>
-                    <tr><Td><strong>Construction</strong></Td><Td>Juin 2026</Td><Td>9 ZIPs v1 livrés, chacun testé sur ≥ 3 cas réels du quotidien</Td></tr>
-                    <tr><Td><strong>Pilote individuel</strong></Td><Td>Juillet – Août 2026</Td><Td>Chaque référent valide les 4 critères de succès sur sa compétence personnelle</Td></tr>
-                    <tr><Td><strong>Provisionnement org</strong></Td><Td>Septembre 2026</Td><Td>Les 9 compétences disponibles en lecture seule pour les 58 collaborateurs</Td></tr>
-                    <tr><Td><strong>Adoption</strong></Td><Td>Octobre – Décembre 2026</Td><Td>Buddy system actif, mise à jour mensuelle, showcase CODIR mensuel</Td></tr>
-                  </tbody>
-                </table>
-              </TableWrap>
-
-              <Callout kind="success">
-                <strong>Cible 12 mois :</strong> EBITDA 4 % atteint (gap 825 000 €) via marques propres doublées (6,1 % → 12 %, +500 K€), réactivation SCPP (marge 20–44 % sans coût d'acquisition) et upsell inter-divisions automatisé — le tout sans intégration externe, en restant dans le périmètre Claude Enterprise + outils internes EET (Navision, TARGIT, eet.fr, SharePoint).
+                <strong>Sortie du sprint formation :</strong> 9 ZIPs versionnés <Code>v1.0-juin2026</Code> dans le dépôt SharePoint <Code>Compétences EET</Code>, chacun testé sur 3 à 5 cas réels du jour. Les référents repartent avec leur compétence active sur leur compte personnel. Provisionnement org prévu en septembre 2026 après validation pilote.
               </Callout>
             </SectionShell>
 
@@ -1290,6 +1312,100 @@ function TableWrap({ children }) {
 
 function Divider() {
   return <div style={{ height: 1, background: C.border, margin: '28px 0' }} />
+}
+
+function SkillSetup({ n, name, role, project, briefName, brief, files, prereqs }) {
+  return (
+    <article style={{
+      background: '#fff',
+      border: `1px solid ${C.border}`,
+      borderRadius: 16,
+      padding: 'clamp(20px, 3vw, 28px)',
+      marginBottom: 20,
+      boxShadow: '0 1px 3px rgba(0,0,0,.04)',
+    }}>
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 10, flexWrap: 'wrap' }}>
+        <span style={{
+          background: C.blue, color: '#fff', fontFamily: F.head,
+          minWidth: 38, height: 38, borderRadius: 10,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontWeight: 800, fontSize: 16, flexShrink: 0,
+        }}>{n}</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <h3 style={{
+            fontFamily: F.head, fontSize: 'clamp(17px, 2vw, 19px)', fontWeight: 800,
+            margin: 0, color: C.ink, letterSpacing: '-0.01em', lineHeight: 1.3,
+          }}>
+            {name}
+          </h3>
+          <p style={{ margin: '3px 0 0', fontSize: 13.5, color: C.textSoft, lineHeight: 1.5 }}>
+            {role}
+          </p>
+        </div>
+      </div>
+
+      {/* Project title */}
+      <div style={{
+        background: C.blueLight, color: C.blue,
+        padding: '12px 16px', borderRadius: 10,
+        fontWeight: 700, fontSize: 14.5, marginBottom: 16,
+        border: `1px solid ${C.blueBorder}`,
+        display: 'flex', alignItems: 'center', gap: 10,
+      }}>
+        <Target size={16} style={{ flexShrink: 0 }} />
+        <span>{project}</span>
+      </div>
+
+      {/* Brief box */}
+      <MethodBox tone="blue" badge="Brief à coller dans Claude" badgeIcon={Sparkles} title={briefName}>
+        <PromptBox label="Template à coller en formation">
+          {brief}
+        </PromptBox>
+      </MethodBox>
+
+      {/* Files + Prereqs grid */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+        gap: 14,
+        marginTop: 16,
+      }}>
+        <div style={{
+          background: C.bg,
+          padding: '14px 16px',
+          borderRadius: 10,
+          border: `1px solid ${C.border}`,
+        }}>
+          <h4 style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            fontFamily: F.head, fontSize: 12, fontWeight: 800, letterSpacing: '0.05em',
+            textTransform: 'uppercase', color: C.ink, margin: '0 0 10px',
+          }}>
+            <Paperclip size={14} color={C.blue} /> Fichiers à apporter
+          </h4>
+          <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13.5, color: C.text, lineHeight: 1.6 }}>
+            {files.map((f, i) => <li key={i} style={{ marginBottom: 4 }}>{f}</li>)}
+          </ul>
+        </div>
+        <div style={{
+          background: C.bg,
+          padding: '14px 16px',
+          borderRadius: 10,
+          border: `1px solid ${C.border}`,
+        }}>
+          <h4 style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            fontFamily: F.head, fontSize: 12, fontWeight: 800, letterSpacing: '0.05em',
+            textTransform: 'uppercase', color: C.ink, margin: '0 0 10px',
+          }}>
+            <Settings size={14} color={C.blue} /> Prérequis spécifiques
+          </h4>
+          <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.6 }}>{prereqs}</div>
+        </div>
+      </div>
+    </article>
+  )
 }
 
 function RecapCol({ title, items }) {

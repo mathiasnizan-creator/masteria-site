@@ -108,14 +108,10 @@ export default function SEOHead({
       credentialCategory: 'Actions de formation',
       recognizedBy: { '@type': 'Organization', name: 'France Compétences' },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '1500',
-      reviewCount: '1500',
-    },
+    // NOTE — aggregateRating retiré (risque de pénalité manuelle Google "Structured data issue"
+    // car non vérifiable publiquement). À ré-injecter UNIQUEMENT si branché sur une source
+    // vérifiable (Google Reviews API, Trustpilot widget, etc.) avec sameAs/URL pointant
+    // vers la source réelle des avis.
   }
 
   /* ───── JSON-LD WebSite (global + SearchAction) ───── */
@@ -185,15 +181,7 @@ export default function SEOHead({
           credentialCategory: 'Attestation',
           recognizedBy: { '@type': 'Organization', name: 'Masteria (organisme certifié Qualiopi)' },
         },
-        // Note moyenne sur le catalogue Masteria (rich result étoiles)
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          bestRating: '5',
-          worstRating: '1',
-          ratingCount: '1500',
-          reviewCount: '1500',
-        },
+        // aggregateRating retiré (cf. note dans jsonLdOrg) — à brancher sur source vérifiable.
         hasCourseInstance: {
           '@type': 'CourseInstance',
           courseMode: ['Onsite', 'Online', 'Blended'],
@@ -282,18 +270,6 @@ export default function SEOHead({
       }
     : null
 
-  /* ───── JSON-LD Speakable (Google Assistant + SEO vocal) ───── */
-  const jsonLdSpeakable = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `${fullUrl}#speakable`,
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', 'h2', '.intro', '[itemprop=description]'],
-    },
-    url: fullUrl,
-  }
-
   /* ───── JSON-LD FAQPage ───── */
   const jsonLdFaq = faqItems && faqItems.length
     ? {
@@ -321,29 +297,45 @@ export default function SEOHead({
       }
     : null
 
-  /* ───── JSON-LD Article (pour le blog) ───── */
+  /* ───── JSON-LD Article (pour le blog) ─────
+     Article schema enrichi : wordCount, keywords, articleSection, image dimensions,
+     creator/editor (E-E-A-T), isPartOf (rattachement explicite au blog).
+     Tous les signaux que Google attend pour les pages éditoriales. */
   const jsonLdArticle = articleData
     ? {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
+        '@id': `${fullUrl}#article`,
         headline: articleData.headline || title,
         description,
-        image: articleData.image || imageUrl,
+        image: {
+          '@type': 'ImageObject',
+          url: articleData.image || imageUrl,
+          width: 1200,
+          height: 630,
+        },
         datePublished: articleData.datePublished,
         dateModified: articleData.dateModified || articleData.datePublished,
-        author: {
-          '@type': 'Person',
-          name: articleData.author || 'Mathias Nizan',
-          url: 'https://www.linkedin.com/in/mathias-nizan/',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Masteria',
-          logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo-square.png` },
-        },
+        author: { '@id': `${SITE_URL}/#mathias-nizan` },
+        creator: { '@id': `${SITE_URL}/#mathias-nizan` },
+        editor: { '@id': `${SITE_URL}/#mathias-nizan` },
+        publisher: { '@id': `${SITE_URL}/#organization` },
+        sourceOrganization: { '@id': `${SITE_URL}/#organization` },
         mainEntityOfPage: { '@type': 'WebPage', '@id': fullUrl },
+        isPartOf: {
+          '@type': 'Blog',
+          '@id': `${SITE_URL}/blog#blog`,
+          name: 'Blog Masteria',
+          url: `${SITE_URL}/blog`,
+        },
         articleSection: articleData.tag,
+        keywords: Array.isArray(articleData.keywords) ? articleData.keywords.join(', ') : articleData.keywords,
+        wordCount: articleData.wordCount,
+        timeRequired: articleData.timeRequired,
         inLanguage: 'fr-FR',
+        isAccessibleForFree: true,
+        copyrightYear: articleData.datePublished ? articleData.datePublished.slice(0, 4) : undefined,
+        copyrightHolder: { '@id': `${SITE_URL}/#organization` },
       }
     : null
 
@@ -422,7 +414,6 @@ export default function SEOHead({
       {jsonLdFaq && <script type="application/ld+json">{JSON.stringify(jsonLdFaq)}</script>}
       {jsonLdBreadcrumb && <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>}
       {jsonLdArticle && <script type="application/ld+json">{JSON.stringify(jsonLdArticle)}</script>}
-      <script type="application/ld+json">{JSON.stringify(jsonLdSpeakable)}</script>
       {extraJsonLd && (Array.isArray(extraJsonLd) ? extraJsonLd : [extraJsonLd]).map((schema, i) => (
         <script key={`extra-jsonld-${i}`} type="application/ld+json">{JSON.stringify(schema)}</script>
       ))}

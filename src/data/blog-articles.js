@@ -2076,9 +2076,9 @@ export const BLOG_ARTICLES = [
     },
     internalLinks: [
       { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
-      { label: "Formation Copilot Word", href: '/formation-copilot-word' },
-      { label: "Formation Copilot Excel", href: '/formation-copilot-excel' },
-      { label: "Formation Copilot Teams", href: '/formation-copilot-teams' },
+      { label: "Formation Copilot Word & Excel", href: '/formation-copilot-word-excel' },
+      { label: "Copilot vs ChatGPT en entreprise", href: '/copilot-vs-chatgpt' },
+      { label: "Formation Copilot Marketing", href: '/formation-copilot-marketing' },
       { label: "Comparer ChatGPT, Copilot, Gemini, Claude, Mistral", href: '/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir' },
     ],
   },
@@ -2512,11 +2512,11 @@ export const BLOG_ARTICLES = [
       desc: "Une journée de formation pratique sur vos prospects, vos propositions et vos relances réelles. Certifié Qualiopi, finançable OPCO. Devis sous 24h.",
       buttons: [
         { label: "Demander un devis", href: '/contact', primary: true },
-        { label: "Voir la formation Vente", href: '/formation-ia-vente' },
+        { label: "Voir la formation Vente", href: '/formation-ia-commercial' },
       ],
     },
     internalLinks: [
-      { label: "Formation IA pour la vente", href: '/formation-ia-vente' },
+      { label: "Formation IA pour la vente", href: '/formation-ia-commercial' },
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
       { label: "Custom GPTs en entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
@@ -3054,7 +3054,7 @@ export const BLOG_ARTICLES = [
     },
     internalLinks: [
       { label: "Conseil en intelligence artificielle", href: '/conseil-intelligence-artificielle' },
-      { label: "Formation IA en entreprise (catalogue)", href: '/formations-intelligence-artificielle-entreprise' },
+      { label: "Formation IA en entreprise (catalogue)", href: '/formation-intelligence-artificielle' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
       { label: "ROI d'une formation IA", href: '/blog/roi-formation-ia-entreprise-mesurer' },
@@ -3200,7 +3200,7 @@ export const BLOG_ARTICLES = [
       desc: "On regarde ensemble votre OPCO, votre convention collective et vos droits CPF. En 30 minutes, on identifie le meilleur montage financier pour votre projet de formation.",
       buttons: [
         { label: "Demander une analyse de financement", href: '/contact', primary: true },
-        { label: "Voir les formations Masteria", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir les formations Masteria", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3346,7 +3346,7 @@ export const BLOG_ARTICLES = [
       desc: "1 à 2 jours, en présentiel ou distanciel, programme adapté à votre métier (marketing, comm, RH, formation interne). Certifié Qualiopi, finançable OPCO jusqu'à 100 %.",
       buttons: [
         { label: "Demander un programme", href: '/contact', primary: true },
-        { label: "Voir les formations", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir les formations", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3493,7 +3493,7 @@ export const BLOG_ARTICLES = [
       desc: "Classe virtuelle (Zoom, Teams, Meet) en groupes de 8 à 12 personnes, ou format hybride pour les programmes longs. Certifié Qualiopi, finançable OPCO.",
       buttons: [
         { label: "Demander un format adapté", href: '/contact', primary: true },
-        { label: "Voir les formations", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir les formations", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3601,7 +3601,7 @@ export const BLOG_ARTICLES = [
       desc: "Une formation IA appliquée à votre métier, sur 1 ou 2 jours, financée OPCO. Cas d'usage tirés de votre vrai contexte, pas un cours générique sur YouTube.",
       buttons: [
         { label: "Demander un programme", href: '/contact', primary: true },
-        { label: "Voir le catalogue", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir le catalogue", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3690,7 +3690,7 @@ export const BLOG_ARTICLES = [
       desc: "1 jour ou 2 jours en intra : audit de votre visibilité actuelle dans les LLM, levier d'optimisation, plan d'action sur 6 mois. Certifié Qualiopi, finançable OPCO.",
       buttons: [
         { label: "Demander une formation GEO", href: '/contact', primary: true },
-        { label: "Voir le catalogue", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir le catalogue", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3767,7 +3767,7 @@ export const BLOG_ARTICLES = [
       desc: "Programme 2 jours sur mesure : recherche, brief, rédaction hybride, optimisation, GEO. Cas d'usage tirés de votre vrai contenu. Certifié Qualiopi, finançable OPCO.",
       buttons: [
         { label: "Demander un programme content", href: '/contact', primary: true },
-        { label: "Voir les formations", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir les formations", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3854,7 +3854,7 @@ export const BLOG_ARTICLES = [
       desc: "Audit + formation + accompagnement à la mise en conformité. 1 ou 2 jours selon la taille de l'entreprise. Certifié Qualiopi, finançable OPCO.",
       buttons: [
         { label: "Demander un audit AI Act RH", href: '/contact', primary: true },
-        { label: "Voir le catalogue formations", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir le catalogue formations", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -3932,7 +3932,7 @@ export const BLOG_ARTICLES = [
       desc: "3 heures pour acculturer, prompts, Copilot Excel, AI Act flash : on construit la formule adaptée à vos équipes. Distanciel ou présentiel. Certifié Qualiopi, finançable OPCO.",
       buttons: [
         { label: "Demander un Sprint IA", href: '/contact', primary: true },
-        { label: "Voir tout le catalogue", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir tout le catalogue", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [
@@ -4016,13 +4016,13 @@ export const BLOG_ARTICLES = [
       title: "Former vos assistantes à l'IA",
       text: "Programme métier d'1 jour, finançable OPCO, certifié Qualiopi. En présentiel ou distanciel.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Microsoft Copilot, le guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
       { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
     ],
   },
   {
@@ -4089,12 +4089,12 @@ export const BLOG_ARTICLES = [
       title: "Former votre direction Achats à l'IA",
       text: "Programme métier d'1 jour, sur dossiers réels, certifié Qualiopi.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
-      { label: "Formation IA pour les appels d'offres", href: '/formation-ia-pour-les-appels-doffres' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
+      { label: "Formation IA pour les appels d'offres", href: '/blog/ia-pour-repondre-appels-doffres' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
       { label: "Microsoft Copilot, le guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
     ],
   },
@@ -4163,12 +4163,12 @@ export const BLOG_ARTICLES = [
       title: "Transformer votre relation client avec l'IA",
       text: "Programme 2 jours, conçu pour les équipes relation client / SAV. Présentiel ou distanciel.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
     ],
   },
@@ -4240,10 +4240,10 @@ export const BLOG_ARTICLES = [
       title: "Former vos managers à piloter l'IA",
       text: "Formation 2 jours, indispensable pour réussir le déploiement IA dans vos équipes.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
@@ -4322,11 +4322,11 @@ export const BLOG_ARTICLES = [
       title: "Mettre en place une veille IA chez vous",
       text: "Formation 1 jour, méthode opérationnelle, présentiel ou distanciel.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
       { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
       { label: "GEO : référencement IA générative", href: '/blog/geo-referencement-ia-generative-entreprise' },
     ],
@@ -4396,12 +4396,12 @@ export const BLOG_ARTICLES = [
       title: "Former vos équipes à l'analyse de données IA",
       text: "Formation 2 jours, sur cas réels, présentiel ou distanciel.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Microsoft Copilot, le guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
       { label: "Sprint IA Excel", href: '/blog/sprint-ia-formations-courtes-entreprise' },
     ],
   },
@@ -4469,11 +4469,11 @@ export const BLOG_ARTICLES = [
       title: "Booster la créativité de vos équipes",
       text: "Formation 1 jour pour transformer ChatGPT et Claude en partenaires de brainstorming.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
       { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
     ],
@@ -4546,12 +4546,12 @@ export const BLOG_ARTICLES = [
       title: "Former vos équipes à mieux écrire avec l'IA",
       text: "Formation 1 jour, ROI immédiat sur les mails, comptes-rendus et propositions.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Formations IA par métier", href: '/formations-intelligence-artificielle-entreprise' },
+      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Microsoft Copilot, le guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
-      { label: "ChatGPT en entreprise", href: '/blog/chatgpt-entreprise-cas-usage-2026' },
+      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
     ],
   },
@@ -4623,10 +4623,10 @@ export const BLOG_ARTICLES = [
       title: "Former vos chefs de projet IA",
       text: "Formation 2 jours espacées d'un mois, sur projet réel. Présentiel ou distanciel.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
-      { label: "Conseil IA stratégique", href: '/conseil-ia' },
+      { label: "Conseil IA stratégique", href: '/conseil-intelligence-artificielle' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
       { label: "Former ses équipes à l'IA, par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
@@ -4706,13 +4706,13 @@ export const BLOG_ARTICLES = [
       title: "Construire votre plan IA RH",
       text: "Formation 2 jours dédiée aux DRH, avec accompagnement personnalisé.",
       buttonLabel: "Demander un devis",
-      buttonHref: '/demande-inscription',
+      buttonHref: '/contact',
     },
     internalLinks: [
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
       { label: "Former ses équipes à l'IA, par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
-      { label: "Conseil IA stratégique", href: '/conseil-ia' },
+      { label: "Conseil IA stratégique", href: '/conseil-intelligence-artificielle' },
     ],
   },
 ]
@@ -4825,7 +4825,7 @@ export const BLOG_ARTICLES = [
       desc: "2 jours en présentiel ou distanciel, sur n8n, Make, Zapier ou OpenAI Agents selon votre stack. Cas d'usage construits sur vos vrais processus. Financable OPCO.",
       buttons: [
         { label: "Demander un programme", href: '/contact', primary: true },
-        { label: "Voir le catalogue", href: '/formations-intelligence-artificielle-entreprise' },
+        { label: "Voir le catalogue", href: '/formation-intelligence-artificielle' },
       ],
     },
     internalLinks: [

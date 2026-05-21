@@ -57,16 +57,8 @@ export default function ComparisonPage({ slug: propSlug }) {
     isPartOf: { '@id': `${SITE_URL}/quelle-est-la-meilleure-ia#cluster` },
   }
 
-  // JSON-LD Speakable pour le SEO vocal
-  const speakableSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `${SITE_URL}/${data.slug}#speakable`,
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', 'h2', '.intro', '[data-speakable]'],
-    },
-  }
+  // Speakable retiré (cf. audit SEO 2026-05-21) : non supporté hors US/EN
+  // et créait un second @type WebPage qui brouillait l'entité primaire.
 
   // JSON-LD FAQPage
   const faqSchema = data.faq?.length ? {
@@ -89,7 +81,7 @@ export default function ComparisonPage({ slug: propSlug }) {
         slug={data.slug}
         breadcrumbs={breadcrumbs}
         type="article"
-        extraJsonLd={faqSchema ? [articleSchema, faqSchema, speakableSchema] : [articleSchema, speakableSchema]}
+        extraJsonLd={faqSchema ? [articleSchema, faqSchema] : [articleSchema]}
       />
 
       {/* ═════════════ HERO ═════════════ */}
@@ -491,14 +483,16 @@ export default function ComparisonPage({ slug: propSlug }) {
                   </tr>
                 </thead>
                 <tbody>
+                  {/* Rendu dynamique : itère sur data.tools[] et lit row[tool.id].
+                      Évite le bug où les comparatifs spécialisés (meilleure-ia-pour-coder
+                      avec github-copilot/cursor, meilleur-agent-ia avec manus) affichaient
+                      des colonnes vides parce que le template hardcodait chatgpt/claude/copilot/gemini/mistral. */}
                   {data.comparisonTable.map((row, i) => (
                     <tr key={i} style={{ borderTop: '1px solid #F3F4F6' }}>
                       <td style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A' }}>{row.criterion}</td>
-                      <td style={tdStyle}>{row.chatgpt}</td>
-                      <td style={tdStyle}>{row.claude}</td>
-                      <td style={tdStyle}>{row.copilot}</td>
-                      <td style={tdStyle}>{row.gemini}</td>
-                      <td style={tdStyle}>{row.mistral}</td>
+                      {data.tools.map(t => (
+                        <td key={t.id} style={tdStyle}>{row[t.id] ?? '—'}</td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>

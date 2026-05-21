@@ -500,9 +500,11 @@ export function MasteriaFooter() {
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '1.5fr 1fr 1fr 1fr',
-          gap: isMobile ? 28 : 40,
-          marginBottom: isMobile ? 32 : 48,
+          // 5 colonnes desktop : on enrichit le maillage interne avec une colonne "Métiers"
+          // (les ~140 spokes outil×métier étaient en étoile via leurs hubs uniquement → crawl-depth élevé).
+          gridTemplateColumns: isMobile ? '1fr' : '1.4fr 1fr 1fr 1fr 1fr',
+          gap: isMobile ? 28 : 32,
+          marginBottom: isMobile ? 24 : 36,
         }}>
           <div>
             <picture>
@@ -537,6 +539,21 @@ export function MasteriaFooter() {
             ))}
           </div>
           <div>
+            <div style={colHead}>Formations par métier</div>
+            {[
+              ['Marketing', '/formation-ia-marketing'],
+              ['Commercial', '/formation-ia-commercial'],
+              ['Ressources humaines', '/formation-ia-ressources-humaines'],
+              ['Finance', '/formation-ia-finance'],
+              ['Communication', '/formation-ia-communication'],
+              ['Management', '/formation-ia-management'],
+              ['Service client', '/formation-ia-service-client'],
+              ['Tous les métiers', '/formation-intelligence-artificielle'],
+            ].map(([l, path]) => (
+              <Link key={path} to={path} style={lStyle}>{l}</Link>
+            ))}
+          </div>
+          <div>
             <div style={colHead}>Formations par ville</div>
             {[
               ['Formation IA Paris', '/formation-ia-paris'],
@@ -566,6 +583,42 @@ export function MasteriaFooter() {
             </div>
           </div>
         </div>
+
+        {/* Bandeau comparatifs — maillage interne supplémentaire vers les pages comparatives
+            (URLs à forte intention transactionnelle, sous-exploitées par le crawl). */}
+        <div style={{
+          borderTop: '1px solid #222',
+          paddingTop: isMobile ? 20 : 22,
+          paddingBottom: isMobile ? 20 : 22,
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          gap: isMobile ? 10 : 14,
+        }}>
+          <span style={{ ...colHead, marginBottom: 0, color: '#777' }}>Comparatifs IA</span>
+          {[
+            ['ChatGPT vs Claude', '/chatgpt-vs-claude'],
+            ['Copilot vs ChatGPT', '/copilot-vs-chatgpt'],
+            ['Meilleure IA entreprise 2026', '/meilleure-ia-entreprise-2026'],
+            ['Meilleure IA pour coder', '/meilleure-ia-pour-coder'],
+            ['Meilleur agent IA', '/meilleur-agent-ia'],
+          ].map(([l, path]) => (
+            <Link
+              key={path}
+              to={path}
+              style={{
+                fontSize: 12,
+                color: '#B5BAC1',
+                textDecoration: 'none',
+                fontFamily: 'DM Sans, sans-serif',
+                padding: '4px 10px',
+                border: '1px solid #2a2a2a',
+                borderRadius: 999,
+              }}
+            >{l}</Link>
+          ))}
+        </div>
+
         <div style={{ borderTop: '1px solid #222', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
             <span style={{ fontSize: 12, color: '#444' }}>© 2026 Masteria · Fondé par Mathias Nizan</span>

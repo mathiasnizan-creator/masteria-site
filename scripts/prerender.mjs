@@ -28,7 +28,10 @@ const BASE = `http://127.0.0.1:${PORT}`;
 const SITE = 'https://www.master-ia.fr';
 const BATCH_SIZE = 10;          // redémarre le browser toutes les N routes
 const NAV_TIMEOUT = 25000;
-const HELMET_WAIT = 250;        // ms pour laisser react-helmet-async s'appliquer
+const HELMET_WAIT = 800;        // ms pour laisser react-helmet-async s'appliquer
+                                // (augmenté de 250→800 après détection de 10 pages blog prérendues vides)
+const MIN_HTML_SIZE = 20_000;   // octets — sous ce seuil, le prerender est considéré comme échec
+                                // (le shell vide fait ~8 400 octets, une page valide ≥ 30 KB)
 
 // ─────────────────────────────────────────────────────────────────
 // 1) Serveur statique minimaliste avec fallback SPA
@@ -82,9 +85,16 @@ server.on('clientError', (err, socket) => { try { socket.destroy(); } catch {} }
 // 2) Routes depuis sitemap.xml
 // ─────────────────────────────────────────────────────────────────
 const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
-const routes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
+const sitemapRoutes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
   .map(m => m[1].replace(SITE, '').replace(/^\/?/, '/'))
   .map(r => r === '' ? '/' : r);
+
+// Routes privées (noindex, non listées dans sitemap.xml) — on les prerender
+// quand même pour qu'elles renvoient un HTTP 200 et un HTML correct au lieu
+// d'un 404 (Vercel sert filesystem-first sans fallback SPA fiable).
+const PRIVATE_ROUTES = ['/competences-claude-eet', '/artefacts-claude-entreprise', '/securite-claude-entreprise'];
+
+const routes = [...sitemapRoutes, ...PRIVATE_ROUTES];
 
 console.log(`→ ${routes.length} routes à prerender (lots de ${BATCH_SIZE})`);
 
@@ -133,6 +143,16 @@ async function renderOne(browser, route) {
     await page.goto(`${BASE}${route}`, { waitUntil: 'networkidle0', timeout: NAV_TIMEOUT });
     await new Promise(r => setTimeout(r, HELMET_WAIT));
     const html = await page.content();
+
+    // Validation : un prerender « réussi » mais qui renvoie le shell vide
+    // (sans <title> custom ou trop petit) est un échec silencieux qui pollue
+    // l'index Google. On le détecte ici et on le compte en échec.
+    const hasTitle = /<title>[^<]{8,}<\/title>/.test(html);
+    const hasH1 = /<h1[\s>]/.test(html);
+    if (html.length < MIN_HTML_SIZE || !hasTitle || !hasH1) {
+      throw new Error(`empty-shell (size=${html.length}, title=${hasTitle}, h1=${hasH1})`);
+    }
+
     const outDir = route === '/' ? dist : path.join(dist, route);
     fs.mkdirSync(outDir, { recursive: true });
     fs.writeFileSync(path.join(outDir, 'index.html'), html);
@@ -156,21 +176,35 @@ for (let idx = 0; idx < orderedRoutes.length; idx++) {
     const total = Math.ceil(orderedRoutes.length / BATCH_SIZE);
     console.log(`  lot ${lot}/${total} — routes ${idx + 1}-${Math.min(idx + BATCH_SIZE, orderedRoutes.length)}`);
   }
-  try {
-    await renderOne(browser, route);
-    ok++;
-  } catch (e) {
-    const msg = e.message.split('\n')[0];
-    // Si le browser a crashé, on en recrée un seul nouveau
-    if (msg.includes('Connection closed') || msg.includes('detached') || msg.includes('Target closed') || msg.includes('Protocol error')) {
-      console.warn(`    ✗ ${route} — ${msg} [restart browser]`);
-      try { await browser.close(); } catch {}
-      try { browser = await launchBrowser(); } catch (le) { console.warn('    ⚠ browser restart échoué:', le.message.split('\n')[0]); }
-    } else {
-      console.warn(`    ✗ ${route} — ${msg}`);
+  let attempts = 0;
+  let succeeded = false;
+  while (attempts < 2 && !succeeded) {
+    attempts++;
+    try {
+      await renderOne(browser, route);
+      succeeded = true;
+      ok++;
+    } catch (e) {
+      const msg = e.message.split('\n')[0];
+      // Si le browser a crashé, on en recrée un seul nouveau
+      if (msg.includes('Connection closed') || msg.includes('detached') || msg.includes('Target closed') || msg.includes('Protocol error')) {
+        console.warn(`    ✗ ${route} — ${msg} [restart browser]`);
+        try { await browser.close(); } catch {}
+        try { browser = await launchBrowser(); } catch (le) { console.warn('    ⚠ browser restart échoué:', le.message.split('\n')[0]); }
+      } else if (msg.startsWith('empty-shell') && attempts < 2) {
+        // Empty shell : on retry une fois avec un wait plus long (souvent un Helmet lent)
+        console.warn(`    ⟲ ${route} — ${msg} [retry avec wait étendu]`);
+        await new Promise(r => setTimeout(r, 600));
+        continue;
+      } else {
+        console.warn(`    ✗ ${route} — ${msg}`);
+      }
+      if (attempts >= 2 || !msg.startsWith('empty-shell')) {
+        fail++;
+        failures.push({ route, err: e.message });
+        break;
+      }
     }
-    fail++;
-    failures.push({ route, err: e.message });
   }
 }
 

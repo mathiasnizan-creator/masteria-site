@@ -202,7 +202,7 @@ export const GEMINI_SPOKES = [
   },
 
   {
-    slug: 'formation-gemini-ressources-humaines',
+    slug: 'formation-gemini-rh',
     tool: 'Google Gemini',
     toolSlug: 'gemini',
     toolColor: '#ea4335',
@@ -1104,51 +1104,9 @@ export const GEMINI_SPOKES = [
   },
 
   // ── Gemini × RH ─────────────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-rh',
-    metaTitle: 'Formation Gemini RH | Google Workspace | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes RH à Google Gemini en 2 jours : entretiens, communications, suivi dans Workspace. Qualiopi, finançable OPCO.",
-    h1: 'Formation Google Gemini pour les équipes RH',
-    intro: "Pour les équipes RH sur Google Workspace, Gemini s'intègre naturellement à Gmail, Docs, Sheets, Meet pour les tâches RH du quotidien.",
-    audience: [
-      { title: 'DRH et responsables RH sur Workspace', desc: "Vous pilotez la stratégie RH dans un environnement Google. Gemini s'intègre à vos rituels." },
-      { title: 'Talent acquisition et recruteurs', desc: "Vous traitez les dossiers de candidats via Gmail et Drive. Gemini accélère sans changer d'outil." },
-      { title: "HRBP et chargés de développement RH", desc: "Vous produisez communications et fiches RH dans Docs." },
-    ],
-    useCases: [
-      { icon: '📝', title: "Analyse de CVs dans Drive", desc: "Analysez les CVs reçus via Gmail/Drive directement." },
-      { icon: '🎤', title: "Synthèse d'entretiens Meet", desc: "Synthétisez automatiquement les entretiens enregistrés sur Google Meet." },
-      { icon: '📋', title: "Communications RH dans Gmail", desc: "Rédigez communications de réorganisation et changements directement dans Gmail." },
-      { icon: '📊', title: "Suivi RH dans Sheets", desc: "Construisez les tableaux de bord RH (effectifs, KPIs, suivi) avec Gemini natif." },
-      { icon: '📚', title: "Référentiels métiers dans Docs", desc: "Construisez et maintenez les référentiels métiers dans Google Docs." },
-      { icon: '🤝', title: "Onboarding via Workspace", desc: "Construisez les parcours d'onboarding avec accès au Drive de l'entreprise." },
-    ],
-    modules: [
-      { day: 1, title: 'Module 1 · Gemini pour les RH en environnement Workspace', duration: '1h30', description: "Cadrer l'usage de Gemini en RH selon le RGPD.", items: ["Panorama : Gemini dans Gmail/Docs/Sheets/Meet", "Cartographie des données RH par catégorie de sensibilité", "Configurer les références via Drive", "Bonnes pratiques RGPD"], exercise: "Configurer un workflow Gemini RH pour votre organisation." },
-      { day: 1, title: 'Module 2 · Recrutement et analyse de candidatures', duration: '2h', description: "Industrialiser le tri et l'analyse de candidatures.", items: ["Anonymisation des CVs avant traitement IA", "Construction de grilles de scoring objectives", "Préparation de questions d'entretien adaptées", "Synthèse de lots de candidatures dans Sheets"], exercise: "Analyser un lot de CVs anonymisés pour un poste cible." },
-      { day: 1, title: 'Module 3 · Synthèse d\'entretiens Meet et 360°', duration: '2h', description: "Exploiter les transcripts Meet pour les entretiens.", items: ["Activer la transcription automatique des entretiens Meet", "Structurer le compte-rendu d'entretien individuel", "Consolider 15+ feedbacks 360° en rapport individuel", "Préparer les plans de développement"], exercise: "Synthétiser des entretiens fictifs en analyse de tendances." },
-      { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque RH.", items: ["Revue des livrables", "Bibliothèque RH partagée dans Drive", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "5 prompts RH prioritaires." },
-      { day: 2, title: 'Module 5 · Communications RH dans Gmail', duration: '1h30', description: "Rédiger les communications RH directement dans Gmail.", items: ["Annoncer une réorganisation, fusion, changement", "Préparer les kits managers (message + FAQ)", "Calibrer le ton selon les populations", "Diffuser via Workspace (Gmail, Chat)"], exercise: "Construire un kit de communication interne complet." },
-      { day: 2, title: 'Module 6 · Référentiels métiers dans Docs', duration: '2h', description: "Construire et maintenir les référentiels dans Google Docs.", items: ["Structurer un référentiel de compétences", "Générer des fiches métiers détaillées (50+ fiches)", "Construire les grilles d'évaluation associées", "Cartographier les passerelles métiers"], exercise: "Construire 5 fiches métiers détaillées." },
-      { day: 2, title: 'Module 7 · Suivi RH dans Sheets', duration: '2h', description: "Industrialiser le suivi RH dans Google Sheets.", items: ["Importer les données RH dans Sheets", "Construire des tableaux de bord (effectifs, turnover, formation)", "Analyser les variations avec Gemini", "Préparer les rapports mensuels"], exercise: "Construire un tableau de bord RH mensuel." },
-      { day: 2, title: "Module 8 · Plan d'action 30 jours RH", duration: '1h30', description: "Finaliser la bibliothèque et planifier le déploiement.", items: ["Organiser la bibliothèque par processus RH", "Règles de gouvernance des données collaborateurs", "Quick wins activables", "Plan 30 jours"], exercise: "Bibliothèque Gemini RH structurée." },
-    ],
-    objectives: [
-      "Industrialiser l'analyse de candidatures dans Workspace",
-      "Synthétiser les campagnes d'entretiens via Meet",
-      "Rédiger les communications RH directement dans Gmail",
-      "Construire les référentiels métiers dans Google Docs",
-      "Industrialiser le suivi RH dans Google Sheets",
-    ],
-    faq: [
-      { q: "Pourquoi Gemini plutôt que Copilot pour les RH ?", a: "Si votre stack est Google Workspace, Gemini est l'option naturelle. Pour Microsoft 365, Copilot. Pour la souveraineté RGPD, Mistral." },
-      { q: "Les entretiens Meet sont-ils protégés ?", a: "Oui, sur Workspace Enterprise les transcripts restent dans votre domaine et ne sont pas utilisés pour l'entraînement Google." },
-      { q: "Mes données RH sont-elles utilisées par Google ?", a: "Sur Workspace Enterprise avec Gemini Pro, non : engagement contractuel de Google." },
-      { q: "Peut-on travailler sur nos vraies données RH (anonymisées) ?", a: "Oui, c'est la philosophie Masteria." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
-    ],
-    relatedSpokes: ['formation-gemini-management', 'formation-claude-ressources-humaines', 'formation-chatgpt-ressources-humaines'],
-  },
+  // NB : le contenu riche a été remonté vers L204 (ancien slug 'formation-gemini-ressources-humaines',
+  // renommé en '-rh' lors du fix doublon 2026-05-21). Ce stub a été supprimé pour éviter
+  // que JS conserve silencieusement le 2e objet portant le même slug.
 
   // ── Gemini × SEO ────────────────────────────────────────────────────────
   {

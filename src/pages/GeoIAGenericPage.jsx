@@ -105,15 +105,8 @@ export default function GeoIAGenericPage() {
     parentOrganization: { '@id': 'https://www.master-ia.fr/#organization' },
   } : null
 
-  const speakableSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `https://www.master-ia.fr/${slug}#webpage`,
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', '#geo-summary', '#geo-faq'],
-    },
-  }
+  // Speakable retiré (cf. audit SEO 2026-05-21) : non supporté hors US/EN
+  // et créait un second @type WebPage qui brouillait l'entité primaire.
 
   const faqItems = [
     {
@@ -163,7 +156,7 @@ export default function GeoIAGenericPage() {
         courseData={courseData}
         faqItems={faqItems}
         breadcrumbs={breadcrumbs}
-        extraJsonLd={[toolPagesItemList, localBusinessSchema, speakableSchema].filter(Boolean)}
+        extraJsonLd={[toolPagesItemList, localBusinessSchema].filter(Boolean)}
         locale={city.locale}
       />
 

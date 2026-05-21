@@ -62,6 +62,13 @@ for (const r of vercelJson.redirects || []) {
 
 routes.push({ handle: 'filesystem' });
 
+// SPA fallback: any path not matched by a static file is rewritten to
+// index.html so React Router can handle the route client-side. This catches
+// private/unlisted routes that aren't in the sitemap (and therefore aren't
+// prerendered), and also any future route added to App.jsx before its
+// prerendered HTML is generated.
+routes.push({ src: '^/(.*)$', dest: '/index.html' });
+
 // `cleanUrls` from vercel.json is only honored by the source-build pipeline.
 // When deploying with --prebuilt, we must replicate it explicitly so that
 // /foo serves /foo/index.html (or /foo.html) without a trailing slash.

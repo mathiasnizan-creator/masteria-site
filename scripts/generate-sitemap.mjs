@@ -79,7 +79,11 @@ for (const met of multiOutilsMetiers) spokeSet.add(`formation-multi-outils-${met
 const blogMod = await import(pathToFileURL(path.join(root, 'src/data/blog-articles.js')).href);
 const BLOG = blogMod.BLOG_ARTICLES || [];
 const blogEntries = BLOG
-  .filter(a => !a.externalPath) // exclut les stubs (pages standalone exposées dans /blog mais URL ailleurs)
+  // Exclut :
+  //   - les stubs (externalPath) qui redirigent ailleurs → l'URL canonique est la cible
+  //   - les articles sans contenu (pas de blocks) qui rendraient une page vide → soft 404
+  //   - les articles sans intro (souvent un signe d'article jamais finalisé)
+  .filter(a => !a.externalPath && Array.isArray(a.blocks) && a.blocks.length > 0 && a.intro)
   .map(a => ({
     slug: a.slug,
     lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
@@ -87,23 +91,33 @@ const blogEntries = BLOG
 
 // Dates figées par catégorie de page — à mettre à jour lors d'un changement de contenu significatif.
 // Pour les pages très stables on fige la date à la dernière refonte éditoriale.
-const STATIC_LASTMOD = '2026-04-24';   // dernière refonte globale (contraste, SEO géo, llms.txt)
-const HUB_LASTMOD    = '2026-04-24';
-const METIER_LASTMOD = '2026-04-24';
-const GEO_LASTMOD    = '2026-04-24';
-const SPOKE_LASTMOD  = '2026-04-24';
+// Refresh massif lastmod : enrichissement spokes Claude/ChatGPT/Mistral/Copilot/Gemini,
+// nouveaux schemas Course/HowTo/Speakable, fix favicon, ajout sections pluridisciplinaires.
+// Signal de fraîcheur fort pour Google → boost prioritaire de crawl.
+const STATIC_LASTMOD = today;
+const HUB_LASTMOD    = today;
+const METIER_LASTMOD = today;
+const GEO_LASTMOD    = today;
+const SPOKE_LASTMOD  = today;
 
 const urls = [];
+// Pyramide de priorités aplatie pour un domaine jeune au crawl-budget limité :
+// les seules pages priority ≥ 0.9 sont la home et les 7 hubs outils stratégiques.
+// Le reste descend pour que Google concentre son crawl sur les pages à plus fort impact.
 for (const r of staticRoutes) urls.push({ loc: r.path ? `${SITE}/${r.path}` : `${SITE}/`, lastmod: STATIC_LASTMOD, changefreq: r.freq, priority: r.prio });
 for (const s of hubSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: HUB_LASTMOD,    changefreq: 'monthly', priority: 0.9 });
-for (const s of metierSlugs)  urls.push({ loc: `${SITE}/${s}`,          lastmod: METIER_LASTMOD, changefreq: 'monthly', priority: 0.8 });
-for (const s of geoSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.8 });
-for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.85 });
+for (const s of metierSlugs)  urls.push({ loc: `${SITE}/${s}`,          lastmod: METIER_LASTMOD, changefreq: 'monthly', priority: 0.6 });
+for (const s of geoSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.7 });
+for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.7 });
 const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-ia-qualiopi','financement-formation-ia'];
-for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: 0.85 });
-for (const s of [...spokeSet].sort()) urls.push({ loc: `${SITE}/${s}`,  lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
-for (const b of blogEntries)  urls.push({ loc: `${SITE}/blog/${b.slug}`, lastmod: b.lastmod,     changefreq: 'monthly', priority: 0.6 });
+for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: 0.7 });
+for (const s of [...spokeSet].sort()) urls.push({ loc: `${SITE}/${s}`,  lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.5 });
+for (const b of blogEntries)  urls.push({ loc: `${SITE}/blog/${b.slug}`, lastmod: b.lastmod,     changefreq: 'monthly', priority: 0.5 });
 const blogSlugs = blogEntries.map(b => b.slug);
+
+// Tri par priority décroissante : Google crawl en priorité les URL en haut du sitemap.
+// Important pour les sites avec budget de crawl limité (domaine jeune).
+urls.sort((a, b) => b.priority - a.priority);
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -111,7 +125,7 @@ ${urls.map(u => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority.toFixed(1)}</priority>
+    <priority>${u.priority.toFixed(2)}</priority>
   </url>`).join('\n')}
 </urlset>
 `;
