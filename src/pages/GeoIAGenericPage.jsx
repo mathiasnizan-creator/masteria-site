@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import SEOHead from '../components/SEOHead'
+import OfficialSources from '../components/OfficialSources'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
@@ -63,7 +64,7 @@ export default function GeoIAGenericPage() {
   const courseData = {
     name: h1,
     description: metaDesc,
-    price: '760',
+    price: '1980',
     duration: 'PT14H',
     level: 'Tous niveaux',
   }
@@ -130,8 +131,8 @@ export default function GeoIAGenericPage() {
         ? `Pourquoi proposez-vous uniquement de l'intra ${city.nameLoc} ?`
         : `Quels formats de formation sont disponibles ${city.nameLoc} ?`,
       a: isCountry || city.intraOnly
-        ? `Nous concentrons nos sessions inter-entreprises à Lyon, notre siège, où nous animons un calendrier hebdomadaire. Pour ${city.name}, l'intra-entreprise est plus efficace : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour 1 ou 2 personnes seulement, l'inter à Lyon ou le distanciel sont aussi disponibles.`
-        : `${city.nameLoc}, nous proposons des sessions inter-entreprises à notre salle Part-Dieu (vous rejoignez un groupe de 4 à 12 participants) et des formations intra dans vos locaux. Les deux formats sont éligibles au financement OPCO jusqu'à 100 %.`,
+        ? `Nous privilégions l'intra-entreprise à ${city.name} : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour les profils dirigeants ou experts qui souhaitent un format 1-to-1, l'accompagnement individuel sur mesure est disponible en présentiel ou en distanciel.`
+        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants (1 980 €/jour), et accompagnement individuel sur mesure 1-to-1 (1 380 €/jour) en présentiel ou en distanciel. Les deux formats sont éligibles au financement OPCO jusqu'à 100 %.`,
     },
     {
       q: `Combien de temps dure une formation IA ?`,
@@ -575,6 +576,8 @@ export default function GeoIAGenericPage() {
           </div>
         </div>
       </section>
+
+      <OfficialSources />
     </>
   )
 }

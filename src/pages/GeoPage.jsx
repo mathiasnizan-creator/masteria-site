@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import SEOHead from '../components/SEOHead'
+import OfficialSources from '../components/OfficialSources'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
@@ -52,11 +53,11 @@ export default function GeoPage() {
 
   const h1 = isIntraOnly
     ? `Formation ${tool.shortName} ${city.nameLoc} — intra-entreprise sur mesure`
-    : `Formation ${tool.shortName} ${city.nameLoc} — inter-entreprises et intra`
-  const metaTitle = `Formation ${tool.shortName} ${city.name} | ${isIntraOnly ? 'Intra-entreprise' : 'Inter & intra'} | Masteria`
+    : `Formation ${tool.shortName} ${city.nameLoc} — intra ou accompagnement individuel`
+  const metaTitle = `Formation ${tool.shortName} ${city.name} | ${isIntraOnly ? 'Intra-entreprise' : 'Intra & individuel'} | Masteria`
   const metaDesc = isIntraOnly
     ? `Formation ${tool.name} ${city.nameLoc}, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h.`
-    : `Formation ${tool.name} ${city.nameLoc}, en sessions inter-entreprises et intra. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h.`
+    : `Formation ${tool.name} ${city.nameLoc}, en intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h.`
   const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug).slice(0, 5)
   const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug)
 
@@ -69,7 +70,7 @@ export default function GeoPage() {
   const courseData = {
     name: h1,
     description: metaDesc,
-    price: isIntraOnly ? '1500' : '760',
+    price: isIntraOnly ? '1980' : '1980',
     duration: 'PT14H',
     level: 'Professional',
   }
@@ -104,8 +105,9 @@ export default function GeoPage() {
     inLanguage: city.locale || 'fr',
     offers: {
       '@type': 'Offer',
-      price: isIntraOnly ? '1500' : '760',
+      price: isIntraOnly ? '1980' : '1980',
       priceCurrency: 'EUR',
+      priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
       availability: 'https://schema.org/InStock',
       url: `https://www.master-ia.fr/${slug}`,
     },
@@ -225,7 +227,7 @@ export default function GeoPage() {
           <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
             {isIntraOnly
               ? `Masteria forme vos équipes à ${tool.name} directement dans vos locaux ${city.nameLoc}. Programme construit sur vos cas d'usage réels, jusqu'à 12 participants, certifié Qualiopi et financé jusqu'à 100 % par votre OPCO en ${city.region}. Devis personnalisé sous 24 h.`
-              : `La formation ${tool.name} ${city.nameLoc} se décline en sessions inter-entreprises (vous rejoignez un groupe à notre salle Part-Dieu) et en intra dans vos locaux. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis personnalisé sous 24 h.`
+              : `La formation ${tool.name} ${city.nameLoc} se décline en intra-entreprise dans vos locaux (jusqu'à 12 participants) ou en accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis personnalisé sous 24 h.`
             }
           </p>
 
@@ -443,7 +445,7 @@ export default function GeoPage() {
             <FadeIn>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Formats disponibles {city.nameLoc}</div>
               <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.01em' }}>
-                Inter-entreprises ou intra : choisissez le format adapté
+                Intra-entreprise ou accompagnement individuel : choisissez le format adapté
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 28, maxWidth: 720 }}>
                 {city.introPitch}
@@ -452,17 +454,17 @@ export default function GeoPage() {
             <FadeIn delay={80}>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 20 }}>
                 <div style={{ background: '#fff', borderRadius: 14, padding: 28, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Sessions planifiées</div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Inter-entreprises</h3>
-                  <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, marginBottom: 0 }}>
-                    Rejoignez un groupe de 4 à 12 participants dans notre salle Part-Dieu. Calendrier fixe, dates publiées 4 semaines à l'avance. Idéal si vous avez 1 à 2 personnes à former, ou pour confronter votre pratique à celle d'autres entreprises.
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Groupe sur mesure · 1 980 €/jour</div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Intra-entreprise</h3>
+                  <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
+                    Nous venons former votre équipe dans vos locaux lyonnais (ou Grenoble, Saint-Étienne, Annecy). Programme 100 % sur mesure, jusqu'à 12 participants, date selon votre planning. Finançable OPCO.
                   </p>
                 </div>
                 <div style={{ background: '#fff', borderRadius: 14, padding: 28, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Sur mesure</div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Intra-entreprise</h3>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Coaching 1-to-1 · 1 380 €/jour</div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Accompagnement individuel</h3>
                   <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
-                    Nous venons former votre équipe dans vos locaux lyonnais (ou Grenoble, Saint-Étienne, Annecy). Programme 100 % sur mesure, jusqu'à 12 participants, date selon votre planning. À partir de 3 participants, l'intra est souvent plus avantageux.
+                    Coaching personnalisé pour dirigeants, experts métier ou profils stratégiques. Programme co-construit autour de vos enjeux, rythme adapté, suivi entre les sessions. Présentiel à Lyon ou en distanciel.
                   </p>
                 </div>
               </div>
@@ -628,7 +630,7 @@ export default function GeoPage() {
           <p style={{ fontSize: 16, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 28 }}>
             {isIntraOnly
               ? `Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. Financement OPCO en ${city.region} pris en charge par Masteria.`
-              : `Sessions inter-entreprises disponibles ou formation intra dans vos locaux. Devis sous 24 h, financement OPCO inclus.`}
+              : `Formation intra-entreprise dans vos locaux ou accompagnement individuel sur mesure. Devis sous 24 h, financement OPCO inclus.`}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', padding: '15px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, fontFamily: 'DM Sans, sans-serif' }}>
@@ -640,6 +642,8 @@ export default function GeoPage() {
           </div>
         </div>
       </section>
+
+      <OfficialSources tool={tool?.slug} />
     </>
   )
 }

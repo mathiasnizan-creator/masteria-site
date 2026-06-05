@@ -34,6 +34,9 @@ export default function SEOHead({
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
+  // Validité du tarif pour le schema Offer (recalculée à chaque build prerender) —
+  // évite que Google considère le prix comme expiré. Fin de l'année suivante.
+  const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`
 
   /* ───── JSON-LD Person (Mathias Nizan — E-E-A-T réutilisable) ───── */
   const jsonLdPerson = {
@@ -137,7 +140,10 @@ export default function SEOHead({
   /* ───── JSON-LD WebPage (page courante) ───── */
   const jsonLdWebPage = {
     '@context': 'https://schema.org',
-    '@type': type === 'article' ? 'Article' : 'WebPage',
+    // Pages blog : le BlogPosting (jsonLdArticle) porte déjà la sémantique article,
+    // donc la WebPage reste 'WebPage' (évite le doublon Article + BlogPosting).
+    // Pages comparatives (type=article sans articleData) : on garde 'Article'.
+    '@type': (type === 'article' && !articleData) ? 'Article' : 'WebPage',
     '@id': `${fullUrl}#webpage`,
     url: fullUrl,
     name: title,
@@ -199,36 +205,30 @@ export default function SEOHead({
               addressCountry: 'FR',
             },
           },
-          offers: {
-            '@type': 'Offer',
-            '@id': `${fullUrl}#offer`,
-            price: courseData.price || '760',
-            priceCurrency: 'EUR',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: courseData.price || '760',
-              priceCurrency: 'EUR',
-              valueAddedTaxIncluded: false,
-              description: 'Tarif inter-entreprises, par jour et par participant. Intra : 1 500 €/jour pour groupe jusqu\'à 12.',
-            },
-            category: 'Formation professionnelle',
-            availability: 'https://schema.org/InStock',
-            url: fullUrl,
-            seller: { '@id': `${SITE_URL}/#organization` },
-            eligibleRegion: [
-              { '@type': 'Country', name: 'France' },
-              { '@type': 'Country', name: 'Suisse' },
-              { '@type': 'Country', name: 'Belgique' },
-            ],
-          },
         },
+        // Offre unique et canonique (dédupliquée) — portée par le Course, avec priceValidUntil.
         offers: {
           '@type': 'Offer',
-          price: courseData.price || '760',
+          '@id': `${fullUrl}#offer`,
+          price: courseData.price || '1980',
           priceCurrency: 'EUR',
+          priceValidUntil,
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: courseData.price || '1980',
+            priceCurrency: 'EUR',
+            valueAddedTaxIncluded: false,
+            description: 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel sur mesure : 1 380 €/jour.',
+          },
           category: 'Formation professionnelle',
           availability: 'https://schema.org/InStock',
           url: fullUrl,
+          seller: { '@id': `${SITE_URL}/#organization` },
+          eligibleRegion: [
+            { '@type': 'Country', name: 'France' },
+            { '@type': 'Country', name: 'Suisse' },
+            { '@type': 'Country', name: 'Belgique' },
+          ],
         },
         audience: {
           '@type': 'EducationalAudience',
@@ -257,7 +257,7 @@ export default function SEOHead({
         estimatedCost: {
           '@type': 'MonetaryAmount',
           currency: 'EUR',
-          value: courseData.price || '760',
+          value: courseData.price || '1980',
         },
         tool: courseData.tool ? [{ '@type': 'HowToTool', name: courseData.tool }] : undefined,
         step: courseData.modules.map((m, i) => ({

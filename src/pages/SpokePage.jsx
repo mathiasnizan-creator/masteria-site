@@ -6,6 +6,7 @@ import {
   FileSpreadsheet, BadgeCheck, Wallet, MonitorSmartphone, Building2,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import OfficialSources from '../components/OfficialSources'
 import { SPOKES, HUBS } from '../data/seo-pages'
 
 /* ── Icônes par métier (même mapping que HubPage) ── */
@@ -31,7 +32,7 @@ const HERO_BADGES = [
   { icon: BadgeCheck,         label: 'Certifié Qualiopi' },
   { icon: Wallet,             label: 'Finançable OPCO' },
   { icon: MonitorSmartphone,  label: 'Présentiel & distanciel' },
-  { icon: Building2,          label: 'Intra ou inter-entreprises' },
+  { icon: Building2,          label: 'Intra ou accompagnement individuel' },
 ]
 
 function FAQItem({ q, a, color }) {
@@ -150,10 +151,10 @@ export default function SpokePage() {
       ? `Cas d'usage ${spoke.metier.toLowerCase()} concrets, travaillés sur vos propres fichiers pendant la journée.`
       : `6 cas d'usage ${spoke.metier.toLowerCase()} concrets, travaillés sur vos propres fichiers pendant les 2 jours.`
   const heroSentence = is3h
-    ? <>Le <strong>Sprint IA {spoke.metier}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>760 €/participant</strong> en inter ou <strong>1 500 €/session</strong> en intra (jusqu'à 12). Financement OPCO 100&nbsp;%. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
+    ? <>Le <strong>Sprint IA {spoke.metier}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/session</strong> en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
     : isOneDay
-      ? <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>760 €/participant</strong> en inter-entreprises, financement OPCO 100&nbsp;%. Programme 100&nbsp;% opérationnel, opérationnel dès le lundi matin.</>
-      : <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>760 €/jour/participant</strong> en inter-entreprises, financement OPCO 100&nbsp;%. Programme 100&nbsp;% opérationnel, opérationnel dès le lundi matin.</>
+      ? <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/jour</strong> en accompagnement individuel. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
+      : <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/jour</strong> en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
 
   // Modules grouped by day
   const modulesJ1 = spoke.modules?.filter(m => m.day === 1) || []
@@ -169,7 +170,7 @@ export default function SpokePage() {
     level: 'Intermédiaire',
     duration: is3h ? 'PT3H' : isOneDay ? 'PT7H' : 'PT14H',
     timeRequired: is3h ? 'PT3H' : isOneDay ? 'PT7H' : 'PT14H',
-    price: is3h ? '380' : '760',
+    price: is3h ? '1980' : '1980',
     audience: `Professionnels ${spoke.metier}`,
     tool: spoke.tool, // ChatGPT, Claude, Copilot, etc.
     teaches: spoke.objectives, // compétences enseignées
@@ -447,18 +448,18 @@ export default function SpokePage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 24 }}>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTER-ENTREPRISES</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>760 €</div>
-                <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>{is3h ? '/ participant' : '/ jour / participant'}</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 380 €</div>
+                <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>{is3h ? '/ session' : '/ jour'}</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Sprint de 3 heures · session unique' : isOneDay ? '1 journée de 7 h · session unique' : 'Soit 1 520 € pour 2 jours'}</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Sprint de 3 heures · 1-to-1 sur mesure' : isOneDay ? '1 journée de 7 h · coaching 1-to-1' : 'Soit 2 760 € pour 2 jours · 1-to-1'}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {(is3h
-                  ? ['3 heures (présentiel ou distanciel)', 'Groupe de 5 à 12 participants', 'Sessions inter sur calendrier Masteria', 'OPCO, FIF-PL, FIFPL']
+                  ? ['Session de 3 heures · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Finançable OPCO']
                   : isOneDay
-                    ? ['1 journée intensive (7 h)', 'Groupe de 5 à 10 personnes', 'Paris, Lyon, Bordeaux, distanciel', 'OPCO, FIF-PL, FIFPL']
-                    : ['2 jours consécutifs ou espacés', 'Groupe de 5 à 10 personnes', 'Paris, Lyon, Bordeaux, distanciel', 'OPCO, FIF-PL, FIFPL']
+                    ? ['1 journée intensive (7 h) · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Suivi entre les sessions']
+                    : ['2 jours consécutifs ou espacés · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Suivi entre les sessions']
                 ).map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
                     <span style={{ color: c }}>✓</span>{item}
@@ -469,10 +470,10 @@ export default function SpokePage() {
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${c}` }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 500 €</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>{is3h ? '/ session de 3 h' : '/ jour'}</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Jusqu\'à 12 participants · Packages dégressifs dès 5 sessions' : isOneDay ? 'Jusqu\'à 12 participants · 1 journée intensive' : 'Soit 3 000 € pour 2 jours (max 12 participants)'}</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Jusqu\'à 12 participants · Packages dégressifs dès 5 sessions' : isOneDay ? 'Jusqu\'à 12 participants · 1 journée intensive' : 'Soit 3 960 € pour 2 jours (jusqu\'à 12 participants)'}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {(is3h
                   ? ['Réservé à votre équipe', 'Session de 3 h sur mesure (intra)', 'Contenu adapté à votre secteur', 'OPCO, plan de développement des compétences']
@@ -672,6 +673,8 @@ export default function SpokePage() {
           </p>
         </div>
       </section>
+
+      <OfficialSources tool={spoke.tool} />
     </>
   )
 }

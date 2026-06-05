@@ -7,6 +7,7 @@ import {
   ShoppingCart, Sparkles,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import OfficialSources from '../components/OfficialSources'
 import ToolLogo from '../components/ToolLogo'
 import { METIERS, getSpokesByMetier } from '../data/seo-pages'
 import { METIER_FAQ } from '../data/metier-faq'
@@ -451,7 +452,7 @@ export default function MetierPage() {
                   { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
                   { icon: Wallet,            label: 'Finançable OPCO' },
                   { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-                  { icon: Building2,         label: 'Intra ou inter-entreprises' },
+                  { icon: Building2,         label: 'Intra ou accompagnement individuel' },
                 ].map(({ icon: Icon, label }) => (
                   <span
                     key={label}
@@ -531,7 +532,7 @@ export default function MetierPage() {
               Former votre équipe {metierData.label.toLowerCase()} à l'IA&nbsp;?
             </h2>
             <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
-              Devis sous 24h · Certifié Qualiopi · Finançable OPCO · Inter ou intra-entreprises
+              Devis sous 24h · Certifié Qualiopi · Finançable OPCO · Intra ou accompagnement individuel
             </p>
           </div>
           <Link to="/contact" style={{ background: '#fff', color: '#2563EB', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
@@ -673,6 +674,8 @@ export default function MetierPage() {
           </p>
         </div>
       </section>
+
+      <OfficialSources />
     </>
   )
 }
@@ -728,7 +731,7 @@ function SpokeCard({ spoke, tc }) {
         )}
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
-          {['Certifié Qualiopi', 'Finançable OPCO', 'Intra ou inter'].map(badge => (
+          {['Certifié Qualiopi', 'Finançable OPCO', 'Intra ou individuel'].map(badge => (
             <span key={badge} style={{ fontSize: 11, fontWeight: 600, color: '#6B7280', background: '#F3F4F6', padding: '3px 8px', borderRadius: 4 }}>{badge}</span>
           ))}
         </div>
@@ -737,8 +740,8 @@ function SpokeCard({ spoke, tc }) {
       {/* Footer carte */}
       <div style={{ padding: '12px 20px 16px', borderTop: '1px solid #F3F4F6', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
         <div>
-          <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: '#0A0A0A' }}>760 €</span>
-          <span style={{ fontSize: 12, color: '#6B7280' }}> /jour /pers.</span>
+          <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: '#0A0A0A' }}>1 380 €</span>
+          <span style={{ fontSize: 12, color: '#6B7280' }}> /jour (individuel)</span>
         </div>
         <Link to={`/${spoke.slug}`} style={{
           background: hovered ? tc.color : '#0A0A0A',

@@ -52,6 +52,18 @@ for (const entry of vercelJson.headers || []) {
   });
 }
 
+// Domaine canonique : apex (master-ia.fr) -> www en 308 PERMANENT (et non 307),
+// pour consolider le link equity sur le domaine canonique. La valeur de `host`
+// est ancrée (^...$) afin de NE PAS matcher www.master-ia.fr — sinon boucle de
+// redirection. Placé après les headers (continue:true) pour que la réponse de
+// redirection porte aussi les en-têtes de sécurité (HSTS, etc.).
+routes.push({
+  src: '^/(.*)$',
+  has: [{ type: 'host', value: '^master-ia\\.fr$' }],
+  status: 308,
+  headers: { Location: 'https://www.master-ia.fr/$1' },
+});
+
 for (const r of vercelJson.redirects || []) {
   routes.push({
     src: sourceToRegex(r.source),

@@ -7,6 +7,7 @@ import {
   ShoppingCart, Sparkles,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import OfficialSources from '../components/OfficialSources'
 import ToolLogo from '../components/ToolLogo'
 import { HUBS, SPOKES, METIERS } from '../data/seo-pages'
 import { HUB_CONTENT } from '../data/hub-content'
@@ -104,7 +105,7 @@ export default function HubPage() {
     description: hub.metaDesc,
     duration: isSprintHub ? 'PT3H' : 'PT14H',
     timeRequired: isSprintHub ? 'PT3H' : 'PT14H',
-    price: isSprintHub ? '380' : '760',
+    price: isSprintHub ? '1980' : '1980',
     level: 'Intermédiaire',
     tool: hub.tool,
     audience: 'Professionnels en entreprise (B2B)',
@@ -228,7 +229,7 @@ export default function HubPage() {
             { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
             { icon: Wallet,            label: 'Finançable OPCO' },
             { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-            { icon: Building2,         label: 'Intra ou inter-entreprises' },
+            { icon: Building2,         label: 'Intra ou accompagnement individuel' },
           ].map(({ icon: Icon, label }) => (
             <span
               key={label}
@@ -455,7 +456,7 @@ export default function HubPage() {
                   Tarif intra-entreprises
                 </div>
                 <div style={{ fontSize: 36, fontWeight: 900, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', lineHeight: 1 }}>
-                  1 500 €<span style={{ fontSize: 16, color: '#6B7280', fontWeight: 600 }}> / jour</span>
+                  1 980 €<span style={{ fontSize: 16, color: '#6B7280', fontWeight: 600 }}> / jour</span>
                 </div>
                 <div style={{ fontSize: 13, color: '#6B7280', marginTop: 6 }}>
                   Pour un groupe jusqu'à 12 personnes · Finançable OPCO
@@ -497,7 +498,7 @@ export default function HubPage() {
               Envie de former vos équipes à {toolShort} ?
             </h2>
             <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
-              Réponse sous 24h · Programme sur mesure · Inter ou intra-entreprises
+              Réponse sous 24h · Programme sur mesure · Intra ou accompagnement individuel
             </p>
           </div>
           <Link to="/contact" style={{
@@ -703,6 +704,8 @@ export default function HubPage() {
           Contacter notre équipe
         </Link>
       </section>
+
+      <OfficialSources tool={hub.tool} />
     </>
   )
 }

@@ -2,10 +2,10 @@
 # Autoriser toute indexation par les moteurs respectant le protocole
 User-agent: *
 Allow: /
-# Pages noindex internes (privées, hors sitemap)
-Disallow: /competences-claude-eet
-Disallow: /artefacts-claude-entreprise
-Disallow: /securite-claude-entreprise
+# Pages internes privées (hors sitemap) : la désindexation est gérée par la balise
+# meta robots "noindex" présente sur chacune de ces pages. Le crawl reste donc
+# AUTORISÉ — c'est la seule façon pour Google de voir le noindex et de les retirer
+# de l'index. (Un Disallow ici empêcherait Google de lire le noindex.)
 
 # Moteurs IA (explicitement autorisés, c'est un site qui parle d'IA)
 User-agent: GPTBot
