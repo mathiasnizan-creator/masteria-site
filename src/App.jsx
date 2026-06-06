@@ -32,6 +32,7 @@ const GeoPage = lazy(() => import('./pages/GeoPage'));
 const GeoIAGenericPage = lazy(() => import('./pages/GeoIAGenericPage'));
 const TopicLandingPage = lazy(() => import('./pages/TopicLandingPage'));
 const AutomatisationIAPage = lazy(() => import('./pages/AutomatisationIAPage'));
+const GestionDeProjetIAPage = lazy(() => import('./pages/GestionDeProjetIAPage'));
 const QualiopiPage = lazy(() => import('./pages/QualiopiPage'));
 const FinancementPage = lazy(() => import('./pages/FinancementPage'));
 const DebutantPage = lazy(() => import('./pages/DebutantPage'));
@@ -1313,10 +1314,11 @@ export default function App() {
           <Route key={geoIaSlug(dest.slug)} path={`/${geoIaSlug(dest.slug)}`} element={<GeoIAGenericPage />} />
         ))}
         {/* Pages éditoriales transversales (CPF, distanciel, IA générative) */}
-        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-ia-gestion-de-projet'].map(s => (
+        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative'].map(s => (
           <Route key={s} path={`/${s}`} element={<TopicLandingPage />} />
         ))}
         <Route path="/formation-automatisation-ia" element={<AutomatisationIAPage />} />
+        <Route path="/formation-ia-gestion-de-projet" element={<GestionDeProjetIAPage />} />
         <Route path="/formation-ia-qualiopi" element={<QualiopiPage />} />
         <Route path="/financement-formation-ia" element={<FinancementPage />} />
         <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />

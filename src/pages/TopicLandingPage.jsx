@@ -67,40 +67,6 @@ const TOPICS = {
     ],
   },
 
-  'formation-ia-gestion-de-projet': {
-    badge: 'IA pour chefs de projet et PMO',
-    h1: "Formation IA appliquée à la gestion de projet",
-    metaTitle: "Formation IA gestion de projet | Chef de projet & PMO | Masteria",
-    metaDescription: "Formation IA pour chefs de projet et PMO : cadrer, planifier, automatiser le reporting et les CR de COPIL. Qualiopi, finançable OPCO. Devis sous 24h.",
-    intro: "L'IA libère 4 à 7 heures par semaine à vos chefs de projet, PMO et product owners. Cadrage, planning, comptes rendus de COPIL, reporting hebdo, analyse des risques : la production documentaire qui prend la moitié de leur agenda peut être assistée par ChatGPT, Claude, Copilot ou Gemini. Notre formation IA gestion de projet apprend à vos équipes à les intégrer dans leur cycle projet sur vos cas réels.",
-    sections: [
-      {
-        h2: "Quels cas d'usage de l'IA en gestion de projet ?",
-        body: "Les chefs de projet utilisent l'IA d'abord sur les phases à forte production documentaire. Cadrage et cahier des charges : ChatGPT ou Claude rédigent un premier jet d'expression de besoin à partir d'un brief de quelques lignes, puis affinent par itération. Estimation et planning : Copilot et ChatGPT décomposent un livrable en lots, posent les hypothèses d'effort, proposent une trame de planning prête à charger dans MS Project, Asana ou Monday. Comptes rendus de COPIL : 60 minutes de réunion transcrites en 5 minutes de synthèse structurée avec actions, décisions et risques, prête à être circulée. Reporting hebdo : génération automatique du flash projet à partir des données d'avancement. Analyse des risques : première lecture d'un référentiel de risques et propositions de mitigations à challenger par le PMO.",
-      },
-      {
-        h2: "Quel outil IA choisir pour la gestion de projet ?",
-        body: "Le choix dépend de votre environnement de travail. Microsoft Copilot dans M365 est l'option la plus intégrée si vos chefs de projet vivent dans Teams, Outlook, Excel et MS Project : Copilot transcrit les réunions Teams, rédige les CR, génère les analyses Excel d'avancement. ChatGPT reste le plus polyvalent pour le travail hors écosystème Microsoft, avec une excellente qualité de rédaction et la possibilité d'industrialiser vos templates de cadrage dans un GPT personnalisé. Claude prend l'avantage sur les projets à fort volume documentaire (appels d'offres longs, dossiers d'architecture, due diligence, analyse de contrats). Gemini Workspace est le bon choix pour les équipes sur Google Workspace, avec une intégration native dans Gmail, Docs, Sheets et Meet. Mistral Le Chat couvre les besoins de souveraineté des projets sensibles. Notre formation peut être centrée sur un seul outil ou comparer les principaux sur vos cas réels.",
-      },
-      {
-        h2: "Programme type d'une formation IA gestion de projet en 2 jours",
-        body: "La formation Masteria « IA pour la gestion de projet » se déroule en 2 jours (14 heures), en intra-entreprise. Jour 1, fondamentaux et productivité chef de projet : principes de l'IA générative et limites (hallucinations, biais, fuite de données), prompts efficaces, bibliothèque de prompts dédiée à la gestion de projet, automatisation du reporting et des comptes rendus. Jour 2, cadrage, planning et pilotage : rédaction assistée des livrables de cadrage (cahier des charges, plan d'assurance qualité, charte projet), aide à l'estimation et à la construction du planning, analyse des risques, gestion des parties prenantes, sécurité et conformité (AI Act, RGPD, données client). Chaque participant repart avec sa bibliothèque de prompts et un plan de mise en pratique sur ses projets réels.",
-      },
-      {
-        h2: "Pour qui est cette formation ?",
-        body: "La formation s'adresse aux chefs de projet (MOA et MOE), aux PMO, aux product owners, aux scrum masters, aux directeurs de programme et aux managers transverses qui pilotent des projets sans être chefs de projet à plein temps. Aucun prérequis technique ou IA. Le périmètre couvre l'usage opérationnel de l'IA dans le quotidien projet. Pour les organisations qui pilotent le déploiement d'une solution d'IA en entreprise (sélection des cas d'usage, MLOps, AI Act, mesure d'impact), nous proposons un Sprint IA dédié à la conduite de projet IA.",
-      },
-    ],
-    faq: [
-      { q: "À qui s'adresse cette formation IA gestion de projet ?", a: "Aux chefs de projet (MOA, MOE, technique, métier), PMO, product owners, scrum masters, directeurs de programme et managers transverses qui pilotent des projets. Aucun prérequis technique ou IA n'est nécessaire. Les profils qui ne sont pas chefs de projet à plein temps (managers, directeurs d'équipe, consultants) en tirent autant de bénéfice que les profils dédiés." },
-      { q: "Quel gain de temps réel sur la gestion de projet ?", a: "Sur les retours de nos clients, l'IA libère 4 à 7 heures par semaine pour un chef de projet expérimenté. Les postes les plus impactés : comptes rendus de réunion (gain ×4 à ×6), reporting hebdomadaire (gain ×3), rédaction de livrables de cadrage (gain ×2). Sur le cœur du métier (arbitrages, négociation avec les parties prenantes, animation d'équipe), l'IA agit comme un copilote qui rend du temps utile." },
-      { q: "Quel outil IA choisir : ChatGPT, Copilot ou Claude ?", a: "Si vos chefs de projet vivent dans M365 (Teams, Outlook, Excel, MS Project), Microsoft Copilot s'impose par son intégration native : transcription Teams, CR automatiques, analyses Excel. ChatGPT est plus polyvalent et permet d'industrialiser vos templates de cadrage via des GPT personnalisés. Claude est le meilleur sur les projets à fort volume documentaire : appels d'offres, dossiers d'architecture, due diligence. Notre formation peut couvrir un seul outil ou comparer les trois sur vos cas réels." },
-      { q: "Quelle différence avec la formation IA Management ?", a: "La formation IA Management couvre les usages de pilotage et de communication d'équipe (préparation de réunions, feedback, communication interne, prise de décision managériale). La formation IA Gestion de projet est plus opérationnelle sur le cycle projet : cadrage, planning, livrables, reporting, COPIL, risques. Un chef de projet manager peut suivre les deux. Voir aussi notre page formation IA management." },
-      { q: "Cette formation couvre-t-elle la conduite d'un projet d'IA en entreprise ?", a: "Non, ce sont deux sujets distincts. La formation présentée ici apprend à utiliser l'IA générative dans le pilotage de projets classiques. Pour piloter un projet de déploiement d'IA (sélection des cas d'usage, MLOps, AI Act, conduite du changement, mesure d'impact), nous proposons un Sprint IA dédié à la conduite de projet IA, qui combine cadrage stratégique et gouvernance." },
-      { q: "Combien coûte une formation IA gestion de projet ?", a: "1 980 € HT par jour en intra-entreprise jusqu'à 12 participants, 1 380 € HT par jour en accompagnement individuel sur mesure jusqu'à 12 participants. Le format standard est 2 jours (14 heures). Un format 1 jour est possible pour une initiation, et un format 3 jours pour les équipes PMO qui souhaitent un programme avancé incluant la mise en place d'une bibliothèque de prompts mutualisée." },
-    ],
-  },
-
   'formation-intelligence-artificielle-generative': {
     badge: 'IA générative en entreprise',
     h1: "Formation intelligence artificielle générative",
