@@ -52,18 +52,18 @@ Vos équipes maîtrisent Google Gemini et Workspace IA en 1 à 2 jours. Formatio
         "@type": "Offer",
         "price": "1500",
         "priceCurrency": "EUR",
-        "description": "1 500 € / jour pour un groupe jusqu'à 12 participants"
+        "description": "1 980 € / jour pour un groupe jusqu'à 12 participants"
       }
     },
     {
       "@type": "CourseInstance",
       "courseMode": "online",
-      "name": "Formation inter-entreprises",
+      "name": "Formation intra-entreprise ou accompagnement individuel sur mesure",
       "offers": {
         "@type": "Offer",
         "price": "760",
         "priceCurrency": "EUR",
-        "description": "760 € / jour / participant"
+        "description": "1 380 € / jour (accompagnement individuel)"
       }
     }
   ]
@@ -86,7 +86,7 @@ Vos équipes utilisent déjà Gmail, Google Docs et Google Sheets. Cette formati
 - ✅ Certifié Qualiopi
 - ✅ Finançable OPCO
 - ✅ Présentiel & distanciel
-- ✅ Intra ou inter-entreprises
+- ✅ Intra ou intra-entreprise ou accompagnement individuel sur mesure
 
 **CTA principal :** Demander un programme sur mesure →
 **CTA secondaire :** Voir les tarifs
@@ -288,7 +288,7 @@ Un agent IA Gemini, c'est un assistant configuré une fois pour accomplir une s�
 | | Inter-entreprises | Intra-entreprise |
 |---|---|---|
 | **Format** | Groupe de 5 à 10 personnes | Réservé à votre équipe |
-| **Tarif** | 760 € / jour / participant | 1 500 € / jour (max 12 participants) |
+| **Tarif** | 1 380 € / jour (accompagnement individuel) | 1 980 € / jour (max 12 participants) |
 | **Durée** | 1 ou 2 jours | 1 ou 2 jours |
 | **Lieu** | Paris, Lyon, Bordeaux, distanciel | Dans vos locaux ou distanciel |
 | **Financement** | OPCO, FIF-PL, FIFPL | OPCO, plan de développement des compétences |

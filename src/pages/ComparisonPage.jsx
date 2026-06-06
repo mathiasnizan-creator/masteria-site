@@ -796,7 +796,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8,
               fontSize: 13.5, color: '#1E3A8A', lineHeight: 1.6,
             }}>
-              💡 <strong>À retenir :</strong> les abonnements représentent ~5-10 % du coût total. Le ROI vient de la formation (~760 €/personne) et de l'adoption.
+              💡 <strong>À retenir :</strong> les abonnements représentent ~5-10 % du coût total. Le ROI vient de la formation (~165 €/personne pour un intra de 12, soit 1 980 € pour le groupe) et de l'adoption.
               Le retour sur investissement typique est de moins d'1 mois pour les profils cadres formés.
             </div>
           </div>

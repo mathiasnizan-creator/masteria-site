@@ -147,8 +147,8 @@ Les écrits administratifs ont des codes précis : formules de politesse codifi�
 
 | Format | Tarif | Conditions |
 |---|---|---|
-| **Inter-entreprises** | 760 € / jour / participant | Sessions planifiées, groupes mixtes, max 12 participants |
-| **Intra-entreprise** | 1 500 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre secteur et vos documents types |
+| **Inter-entreprises** | 1 380 € / jour (accompagnement individuel) | Sessions planifiées, groupes mixtes, max 12 participants |
+| **Intra-entreprise** | 1 980 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre secteur et vos documents types |
 | **Financement OPCO** | 100% finançable | Tous les OPCO acceptés, dossier pris en charge par Masteria |
 
 **Option intra recommandée pour les collectivités et organismes publics :** La formation peut être entièrement calibrée sur les codes de communication administrative de votre institution — formules codifiées, procédures de validation, systèmes d'information utilisés.

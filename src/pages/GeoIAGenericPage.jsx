@@ -50,9 +50,15 @@ export default function GeoIAGenericPage() {
   }
 
   const isCountry = !!city.isCountry
+  const isFrance = city.countryCode === 'FR'
   const h1 = `Formation IA ${city.nameLoc} — ChatGPT, Claude et 89 programmes par métier`
-  const metaTitle = `Formation IA ${city.name} | ChatGPT, Claude, 12 métiers | Masteria`
-  const metaDesc = `Formation intelligence artificielle ${city.nameLoc} pour entreprises. ChatGPT, Claude IA et programmes par métier (marketing, RH, finance, commercial). Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO.`
+  const metaTitle = `Formation IA ${city.name} | ChatGPT, Claude, 13 métiers | Masteria`
+  // Meta description ≤ ~155 car. (l'argument financement n'est plus tronqué par Google).
+  // Le volet financement est conditionnel : pas d'OPCO hors France (cf. CH / BE).
+  const financePhrase = isFrance
+    ? "Certifié Qualiopi, finançable OPCO jusqu'à 100 %."
+    : 'Certifié Qualiopi, formation finançable.'
+  const metaDesc = `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et 89 programmes par métier. ${financePhrase} Devis sous 24 h.`
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -141,6 +147,18 @@ export default function GeoIAGenericPage() {
     {
       q: `Que reçoivent les participants à l'issue de la formation ?`,
       a: `Chaque participant reçoit : une attestation de formation Qualiopi, une bibliothèque de prompts métier personnalisée, les supports de formation, et un accès à notre espace de ressources en ligne. Un suivi questions/réponses est disponible pendant 1 mois après la formation.`,
+    },
+    {
+      q: `Combien coûte une formation IA ${city.nameLoc} ?`,
+      a: `Le tarif intra-entreprise est de 1 980 € par jour pour un groupe (jusqu'à 12 participants), soit 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) est à 1 380 € par jour. ${isFrance ? "Ces montants sont finançables jusqu'à 100 % par votre OPCO : selon votre prise en charge, le reste à charge peut être nul ou fortement réduit." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
+    },
+    {
+      q: `Peut-on suivre la formation IA à distance depuis ${city.name} ?`,
+      a: `Oui. Tous nos programmes existent en distanciel (classe virtuelle), avec la même pédagogie 100 % pratique qu'en présentiel : cas d'usage réels, exercices guidés et bibliothèque de prompts. Le présentiel ${city.nameLoc} reste idéal pour former une équipe entière, tandis que le distanciel convient aux profils dispersés et aux accompagnements individuels.`,
+    },
+    {
+      q: `Proposez-vous une formation IA pour débutants ${city.nameLoc} ?`,
+      a: `Oui. Aucune de nos formations n'exige de prérequis technique : elles sont conçues pour des professionnels non-développeurs. Pour les équipes qui partent de zéro, nous avons un programme d'initiation dédié qui pose les bases (comprendre l'IA générative, écrire de bons prompts, premiers cas d'usage métier) avant d'aller vers les usages avancés.`,
     },
     ...(city.additionalFAQ || []),
   ]
@@ -396,6 +414,83 @@ export default function GeoIAGenericPage() {
                   <span>{m.label || m.name || m.id}</span>
                 </Link>
               ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── PROGRAMME, DURÉE & TARIFS ── */}
+      <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE' }}>
+        <div style={{ maxWidth: 980, margin: '0 auto' }}>
+          <FadeIn>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Programme &amp; tarifs</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
+              Programme, durée et tarifs de la formation IA {city.nameLoc}
+            </h2>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 28, maxWidth: 760 }}>
+              Un format court et opérationnel : en une journée, vos équipes repartent autonomes sur les cas d'usage IA de leur métier. Voici le déroulé type et les tarifs {city.nameLoc}.
+            </p>
+          </FadeIn>
+          <FadeIn delay={80}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
+              {/* Déroulé type */}
+              <div style={{ background: '#fff', borderRadius: 14, padding: '24px 26px', border: '1px solid #E5E7EB' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Clock size={16} color="#1E40AF" strokeWidth={2.2} />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Déroulé type d'une journée</h3>
+                </div>
+                <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {[
+                    ['Matin', "Fondamentaux de l'IA générative, panorama des 5 outils (ChatGPT, Claude, Copilot, Gemini, Mistral) et méthode de prompting (CRTF, system prompts)."],
+                    ['Après-midi', "Cas d'usage appliqués à votre métier et exercices guidés sur vos vrais documents (anonymisés si besoin)."],
+                    ['Clôture', "Bibliothèque de prompts personnalisée, plan d'action sur 30 jours et bonnes pratiques (RGPD, AI Act, confidentialité)."],
+                  ].map(([t, d]) => (
+                    <li key={t} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>
+                      <CheckCircle2 size={15} color="#2563EB" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 2 }} />
+                      <span><strong style={{ color: '#0A0A0A' }}>{t} —</strong> {d}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '14px 0 0' }}>
+                  Programme indicatif, ajusté à votre niveau et à vos objectifs lors de l'appel de cadrage.
+                </p>
+              </div>
+              {/* Formats & tarifs */}
+              <div style={{ background: '#fff', borderRadius: 14, padding: '24px 26px', border: '1px solid #E5E7EB' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Wallet size={16} color="#1E40AF" strokeWidth={2.2} />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Formats &amp; tarifs</h3>
+                </div>
+                <dl style={{ margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {[
+                    ['Durée', '1 jour (7 h) en standard. Formats 2 à 3 jours ou Sprint IA de 3 h pour la sensibilisation.'],
+                    ['Formats', `Intra-entreprise jusqu'à 12 participants, ou accompagnement individuel sur mesure (1-to-1). Présentiel ${city.nameLoc} ou distanciel.`],
+                    ['Tarif', isFrance
+                      ? 'Intra 1 980 €/jour pour le groupe (≈ 165 €/personne). Accompagnement individuel sur mesure 1 380 €/jour.'
+                      : 'Intra 1 980 €/jour pour le groupe. Accompagnement individuel sur mesure 1 380 €/jour. Facturation adaptée à votre pays.'],
+                    ['Financement', isFrance
+                      ? "Jusqu'à 100 % par votre OPCO. Masteria gère l'intégralité du dossier."
+                      : 'Dispositifs de financement locaux selon votre pays ; nous vous orientons lors du cadrage.'],
+                  ].map(([t, d]) => (
+                    <div key={t} style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                      <dt style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#2563EB' }}>{t}</dt>
+                      <dd style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{d}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 18 }}>
+                  <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#0A0A0A', color: '#fff', padding: '10px 18px', borderRadius: 9, textDecoration: 'none', fontSize: 13.5, fontWeight: 700, fontFamily: 'DM Sans, sans-serif' }}>
+                    Demander un devis <ArrowRight size={14} />
+                  </Link>
+                  <Link to="/financement-formation-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', color: '#374151', border: '1px solid #E5E7EB', padding: '10px 18px', borderRadius: 9, textDecoration: 'none', fontSize: 13.5, fontWeight: 600, fontFamily: 'DM Sans, sans-serif' }}>
+                    Voir le financement
+                  </Link>
+                </div>
+              </div>
             </div>
           </FadeIn>
         </div>

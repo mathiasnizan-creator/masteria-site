@@ -142,12 +142,12 @@ Découvrez la puissance des workflows qui combinent Copilot dans Word et Excel p
 
 ## Tarifs et financement
 
-### Formation inter-entreprises
-**760 € HT / jour / participant**
+### Formation intra-entreprise ou accompagnement individuel sur mesure
+**1 380 € HT / jour (accompagnement individuel)**
 Sessions avec des professionnels de différents secteurs. Format idéal pour les PME souhaitant former un ou deux collaborateurs sans organiser une session intra.
 
 ### Formation intra-entreprise
-**1 500 € HT / jour** — jusqu'à 12 participants
+**1 980 € HT / jour** — jusqu'à 12 participants
 Exercices adaptés à vos fichiers internes, vos templates existants et vos processus documentaires. Format 2 jours consécutifs ou 4 demi-journées selon votre organisation.
 
 ### Financement OPCO

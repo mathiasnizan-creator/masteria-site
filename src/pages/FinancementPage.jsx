@@ -51,7 +51,7 @@ const OPCO_LIST = [
 const FAQ = [
   {
     q: "Concrètement, combien va me coûter la formation IA si l'OPCO prend en charge ?",
-    a: "Si votre OPCO accepte le dossier à 100 %, le reste à charge est de 0 €. Masteria facture directement l'OPCO, vous n'avancez pas la trésorerie. Si la prise en charge est partielle (par exemple 70 %), seul le complément est à la charge de l'entreprise, soit environ 230 € HT par jour et par participant sur un tarif inter de 760 €/j.",
+    a: "Si votre OPCO accepte le dossier à 100 %, le reste à charge est de 0 €. Masteria facture directement l'OPCO, vous n'avancez pas la trésorerie. Si la prise en charge est partielle (par exemple 70 %), seul le complément est à la charge de l'entreprise, soit environ 594 € HT par jour de groupe sur un tarif intra de 1 980 €/jour (414 € HT/jour sur un accompagnement individuel à 1 380 €/jour).",
   },
   {
     q: "Mon entreprise a moins de 11 salariés (TPE) : combien l'OPCO couvre-t-il ?",
@@ -321,19 +321,19 @@ export default function FinancementPage() {
                   <Users size={20} color={BLUE} />
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 19, color: '#0A0A0A', margin: 0 }}>
-                  Inter entreprises
+                  Accompagnement individuel
                 </h3>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
-                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>760 €</span>
-                <span style={{ color: NEUTRAL, fontSize: 14, fontWeight: 600 }}>HT / jour / participant</span>
+                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>1 380 €</span>
+                <span style={{ color: NEUTRAL, fontSize: 14, fontWeight: 600 }}>HT / jour</span>
               </div>
               <p style={{ color: '#4B5563', lineHeight: 1.6, fontSize: 14.5, marginBottom: 16 }}>
-                Vos collaborateurs rejoignent une session ouverte à plusieurs entreprises. Idéal pour
-                former 1 à 4 personnes sans organiser une session dédiée. Distanciel uniquement.
+                Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques.
+                Programme conçu sur mesure, rythme adapté, suivi entre les sessions.
               </p>
               <ul style={{ padding: 0, margin: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {['8 participants max par session', 'Programme catalogue Masteria', 'Distanciel en visioconférence', 'Plusieurs dates par mois'].map(t => (
+                {['1 participant', 'Programme co-construit', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(t => (
                   <li key={t} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, color: '#374151' }}>
                     <CheckCircle size={15} color={BLUE} /> {t}
                   </li>
@@ -365,7 +365,7 @@ export default function FinancementPage() {
                 </h3>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
-                <span style={{ ...TITLE_GRADIENT, fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900 }}>1 500 €</span>
+                <span style={{ ...TITLE_GRADIENT, fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900 }}>1 980 €</span>
                 <span style={{ color: BLUE_DARK, fontSize: 14, fontWeight: 600 }}>HT / jour / groupe</span>
               </div>
               <p style={{ color: '#3F3F46', lineHeight: 1.6, fontSize: 14.5, marginBottom: 16 }}>
@@ -395,8 +395,8 @@ export default function FinancementPage() {
                 </h3>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
-                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>760 €</span>
-                <span style={{ color: NEUTRAL, fontSize: 14, fontWeight: 600 }}>HT / atelier / participant</span>
+                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>1 980 €</span>
+                <span style={{ color: NEUTRAL, fontSize: 14, fontWeight: 600 }}>HT / atelier (groupe)</span>
               </div>
               <p style={{ color: '#4B5563', lineHeight: 1.6, fontSize: 14.5, marginBottom: 16 }}>
                 Format court de 3 h pour acculturer rapidement une équipe ou un séminaire.
@@ -471,7 +471,7 @@ export default function FinancementPage() {
             }}>
               {[
                 { label: 'Format choisi', val: 'Intra entreprise sur 2 jours dans leurs locaux' },
-                { label: 'Tarif Masteria', val: '1 500 € HT × 2 jours = 3 000 € HT' },
+                { label: 'Tarif Masteria', val: '1 980 € HT × 2 jours = 3 960 € HT' },
                 { label: 'Convention collective', val: 'Publicité (idcc 86), OPCO AFDAS' },
                 { label: 'Demande déposée', val: 'Dossier complet envoyé à AFDAS par Masteria' },
                 { label: 'Accord obtenu', val: '12 jours plus tard, prise en charge à 100 %' },

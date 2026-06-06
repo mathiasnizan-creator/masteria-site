@@ -65,8 +65,8 @@ export const GEO_CITIES = [
     metroArea: 'Métropole de Lyon : 1,4 million d\'habitants, deuxième pôle économique français',
     intraOnly: false,
     sectors: "pharma, biotech, finance, industrie, numérique et services B2B",
-    desc: "Deuxième pôle économique de France, Lyon est le siège historique de Masteria. C'est la seule ville où nous organisons des sessions inter-entreprises en présentiel, dans notre salle de formation située dans le quartier de la Part-Dieu, en complément des formations intra dans vos locaux. Lyon est aussi un hub IA reconnu (LabIA, ENS Lyon, Inria Lyon) avec un tissu d'entreprises pharma, industrie et services en pleine accélération sur le sujet.",
-    introPitch: "Lyon est notre base : sessions inter-entreprises disponibles à notre salle Part-Dieu (vous rejoignez un groupe de 4 à 12 participants), ou formation intra dans vos locaux sur mesure. Grenoble, Saint-Étienne, Clermont-Ferrand et Annecy sont également couverts en intra.",
+    desc: "Deuxième pôle économique de France, Lyon est le siège historique de Masteria. Lyon abrite notre siège et concentre une part importante de nos interventions intra-entreprise dans la région, en complément des accompagnements individuels sur mesure réalisés en présentiel ou en distanciel. Lyon est aussi un hub IA reconnu (LabIA, ENS Lyon, Inria Lyon) avec un tissu d'entreprises pharma, industrie et services en pleine accélération sur le sujet.",
+    introPitch: "Lyon est notre base : formations intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure en présentiel à Lyon ou en distanciel. Grenoble, Saint-Étienne, Clermont-Ferrand et Annecy sont également couverts en intra.",
     opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture). Masteria est référencé auprès des OPCO de la région depuis 2022. Délai de traitement moyen : 5 à 10 jours ouvrés.",
     zones: "Lyon (1er au 9e arrondissement), Villeurbanne, Caluire-et-Cuire, Saint-Priest, Bron, Vénissieux, Grenoble, Saint-Étienne, Clermont-Ferrand, Annecy, Chambéry, Valence",
     industriesDeep: [
@@ -93,7 +93,7 @@ export const GEO_CITIES = [
       { name: 'Inria Grenoble Rhône-Alpes', type: 'Centre de recherche IA' },
     ],
     additionalFAQ: [
-      { q: 'Quelle différence entre une session inter et une intra à Lyon ?', a: "L'inter-entreprises se déroule à notre salle Part-Dieu sur des dates planifiées : vous rejoignez un groupe de 4 à 12 participants venus d'horizons variés, ce qui enrichit les échanges. L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin). Pour 3 personnes ou plus, l'intra est souvent plus avantageux financièrement." },
+      { q: 'Quelle différence entre une session inter et une intra à Lyon ?', a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
       { q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?', a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry / Valence. Les modalités sont identiques à celles de Lyon." },
     ],
   },
@@ -138,7 +138,7 @@ export const GEO_CITIES = [
       { name: 'The Camp', type: 'Campus innovation Sud, partenaire formation tech' },
     ],
     additionalFAQ: [
-      { q: 'Pourquoi pas de session inter-entreprises à Marseille ?', a: "Notre salle inter-entreprises est concentrée à Lyon, où nous animons des sessions hebdomadaires. Pour Marseille, l'intra dans vos locaux est plus efficace : programme construit sur vos cas réels, exemples tirés de votre activité, équipe formée ensemble. Pour 3 collaborateurs ou plus, c'est aussi plus économique. Si vous voulez tester avant d'engager une session intra, le distanciel inter depuis Lyon est une option." },
+      { q: 'Quels formats proposez-vous à Marseille ?', a: "Nous privilégions l'intra-entreprise à Marseille : programme construit sur vos cas réels, exemples tirés de votre activité, équipe formée ensemble. Pour les profils dirigeants ou experts souhaitant une approche personnalisée, l'accompagnement individuel sur mesure (1-to-1) est disponible en présentiel à Marseille ou en distanciel." },
       { q: 'Vous formez aussi à Aix-en-Provence et sur la côte ?', a: "Oui. Nous intervenons régulièrement à Aix-en-Provence (banque privée, conseil, étudiants des écoles AMU), à Aubagne (industrie, agroalimentaire), à La Ciotat (chantier naval, tech) et à Cassis. Aucun frais de déplacement supplémentaire dans toute la métropole Aix-Marseille-Provence." },
     ],
   },
@@ -183,7 +183,7 @@ export const GEO_CITIES = [
       { name: 'Fondation pour Genève', type: 'Acteur du rayonnement international' },
     ],
     additionalFAQ: [
-      { q: 'La formation est-elle facturée en EUR ou en CHF ?', a: "Au choix. Masteria propose une facturation en EUR ou en CHF selon votre préférence comptable. Le tarif intra de référence est 1 500 € HT par jour ou environ 1 600 CHF HT (taux indicatif, cours du jour appliqué à la facturation). La TVA suisse (8,1 %) est ajoutée si vous êtes assujetti en Suisse." },
+      { q: 'La formation est-elle facturée en EUR ou en CHF ?', a: "Au choix. Masteria propose une facturation en EUR ou en CHF selon votre préférence comptable. Le tarif intra de référence est 1 980 € HT par jour ou environ 1 600 CHF HT (taux indicatif, cours du jour appliqué à la facturation). La TVA suisse (8,1 %) est ajoutée si vous êtes assujetti en Suisse." },
       { q: 'Comment finance-t-on une formation IA en Suisse ?', a: "Plusieurs voies : 1) le plan de formation de votre entreprise (déductible fiscalement), 2) le Fonds genevois pour la formation et le perfectionnement professionnels (FFPP) pour les entreprises soumises à une CCT genevoise, 3) les budgets formation de votre convention collective sectorielle (banque, finance, IT), 4) pour les organisations internationales, les budgets internes RH et développement professionnel. Nous fournissons toutes les factures et certifications nécessaires." },
       { q: 'Comment respectez-vous la confidentialité bancaire suisse ?', a: "Nos formateurs signent un accord de confidentialité avant chaque mission. Les exemples utilisés en formation sont systématiquement anonymisés (vous fournissez les versions caviardées). Pour les sessions sur cas réels en environnement bancaire, nous travaillons à partir de documents fictifs structurellement équivalents aux vôtres. Aucun document n\'est conservé après la formation." },
     ],
@@ -262,11 +262,11 @@ export const GEO_TOOLS = [
       },
       {
         q: city.intraOnly
-          ? `Pourquoi une formation intra plutôt qu'inter-entreprises pour mes équipes ${city.nameLoc} ?`
+          ? `Pourquoi une formation intra plutôt qu'un accompagnement individuel pour mes équipes ${city.nameLoc} ?`
           : `Quels formats sont disponibles ${city.nameLoc} ?`,
         a: city.intraOnly
-          ? `La formation intra est plus efficace quand vos équipes partagent les mêmes outils et les mêmes défis. Le formateur construit le programme à partir de vos vrais cas d'usage, utilise vos documents réels (anonymisés si nécessaire) et adapte le rythme à votre niveau. À partir de 3 participants, le coût total est aussi souvent inférieur à l'inter-entreprises. Pour 1 ou 2 personnes, nous proposons l'inter à Lyon ou en distanciel.`
-          : `À Lyon : sessions inter-entreprises à notre salle Part-Dieu (vous rejoignez un groupe de 4 à 12 participants) ou formation intra dans vos locaux. Les deux formats incluent les supports, la bibliothèque de prompts et le suivi post-formation pendant 1 mois.`,
+          ? `La formation intra est plus efficace quand vos équipes partagent les mêmes outils et les mêmes défis. Le formateur construit le programme à partir de vos vrais cas d'usage, utilise vos documents réels (anonymisés si nécessaire) et adapte le rythme à votre niveau. À partir de 3 participants, le format intra est très avantageux (1 980 €/jour pour le groupe). Pour 1 personne ou 2 personnes en profil dirigeant/expert, nous proposons l'accompagnement individuel sur mesure (1 380 €/jour) en présentiel ou en distanciel.`
+          : `À Lyon : formation intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Les deux formats incluent les supports, la bibliothèque de prompts et le suivi post-formation pendant 1 mois.`,
       },
       {
         q: `Quels métiers bénéficient le plus d'une formation ChatGPT ${city.nameLoc} ?`,
@@ -302,8 +302,8 @@ export const GEO_TOOLS = [
           ? `Pourquoi proposez-vous uniquement des formations intra ${city.nameLoc} ?`
           : `Quels formats sont disponibles ${city.nameLoc} ?`,
         a: city.intraOnly
-          ? `Nous avons fait le choix de concentrer nos sessions inter-entreprises à Lyon, notre siège, où nous animons un calendrier régulier. Pour ${city.name}, l'intra-entreprise est plus efficace : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour des sessions à 1 ou 2 personnes, nous proposons l'inter à Lyon (présentiel) ou le distanciel.`
-          : `À Lyon, nous proposons des sessions inter-entreprises en présentiel à notre salle Part-Dieu (vous rejoignez un groupe de 4 à 12 participants) et des formations intra dans vos locaux. Les deux formats sont éligibles au financement OPCO et incluent un suivi post-formation pendant 1 mois.`,
+          ? `Nous privilégions l'intra-entreprise à ${city.name} : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour les profils dirigeants ou experts métier, l'accompagnement individuel sur mesure (1-to-1) est disponible en présentiel à ${city.name} ou en distanciel.`
+          : `À Lyon, nous proposons des formations intra-entreprise dans vos locaux (jusqu'à 12 participants) et de l'accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Les deux formats sont éligibles au financement OPCO et incluent un suivi post-formation pendant 1 mois.`,
       },
       {
         q: `Pourquoi choisir Claude plutôt que ChatGPT ${city.nameLoc} ?`,

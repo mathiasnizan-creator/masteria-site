@@ -140,12 +140,12 @@ Transformez vos données et vos briefs en présentations professionnelles pour v
 
 ## Tarifs et financement
 
-### Formation inter-entreprises
-**760 € HT / jour / participant**
+### Formation intra-entreprise ou accompagnement individuel sur mesure
+**1 380 € HT / jour (accompagnement individuel)**
 Sessions planifiées avec d'autres professionnels marketing. Idéal pour les indépendants et les entreprises de moins de 10 personnes.
 
 ### Formation intra-entreprise
-**1 500 € HT / jour** — jusqu'à 12 participants
+**1 980 € HT / jour** — jusqu'à 12 participants
 Programme adapté à vos outils, vos campagnes et vos enjeux marketing spécifiques. Déroulé sur 2 jours consécutifs ou en 4 demi-journées.
 
 ### Financement OPCO

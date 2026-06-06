@@ -147,8 +147,8 @@ Préparer un Q&A pour un DG avant une interview, rédiger des éléments de lang
 
 | Format | Tarif | Conditions |
 |---|---|---|
-| **Inter-entreprises** | 760 € / jour / participant | Sessions planifiées, groupes mixtes, max 12 participants |
-| **Intra-entreprise** | 1 500 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à vos contextes |
+| **Inter-entreprises** | 1 380 € / jour (accompagnement individuel) | Sessions planifiées, groupes mixtes, max 12 participants |
+| **Intra-entreprise** | 1 980 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à vos contextes |
 | **Financement OPCO** | 100% finançable | Tous les OPCO acceptés, dossier pris en charge par Masteria |
 
 **Certification Qualiopi** : Masteria est certifié Qualiopi, ce qui garantit la qualité du processus de formation et ouvre le droit au financement via les fonds de la formation professionnelle.

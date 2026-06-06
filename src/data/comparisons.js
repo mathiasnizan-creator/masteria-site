@@ -215,7 +215,7 @@ export const COMPARISONS = {
       },
       {
         title: "Négliger le coût total (formation + adoption)",
-        desc: "L'abonnement à 25 € représente ~5 % du coût total d'un déploiement IA. La vraie variable c'est la formation (~760 € par utilisateur) et le temps d'adoption. Un outil 30 % moins puissant mais adopté à 90 % bat largement un outil 30 % plus puissant adopté à 30 %.",
+        desc: "L'abonnement à 25 € représente ~5 % du coût total d'un déploiement IA. La vraie variable c'est la formation (~1 380 € par jour en individuel) et le temps d'adoption. Un outil 30 % moins puissant mais adopté à 90 % bat largement un outil 30 % plus puissant adopté à 30 %.",
       },
       {
         title: "Confondre \"je l'ai testé 10 minutes\" et \"je l'ai utilisé pour mon vrai travail\"",
@@ -251,7 +251,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte la formation des équipes à ces outils ?",
-        a: "Une formation Masteria de 1 jour pour ChatGPT ou Claude coûte 760 €/jour/participant en inter-entreprises ou 1 500 €/jour pour un groupe jusqu'à 12 personnes en intra. 100 % finançable par les OPCO.",
+        a: "Une formation Masteria de 1 jour pour ChatGPT ou Claude coûte 1 980 €/jour pour un groupe en intra-entreprise (jusqu'à 12 personnes) ou 1 380 €/jour en accompagnement individuel sur mesure. 100 % finançable par les OPCO.",
       },
       {
         q: "Quels sont les risques de sécurité ?",
@@ -690,7 +690,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte une formation pour comparer les 5 outils ?",
-        a: "Notre formation \"Panorama IA\" sur 2 jours permet aux équipes de tester les 5 outils sur leurs cas d'usage réels avant de choisir. 760 €/jour/participant en inter-entreprises, finançable OPCO. Idéal avant un déploiement à l'échelle.",
+        a: "Notre formation \"Panorama IA\" sur 2 jours permet aux équipes de tester les 5 outils sur leurs cas d'usage réels avant de choisir. 1 980 €/jour en intra-entreprise, 1 380 €/jour en individuel, finançable OPCO. Idéal avant un déploiement à l'échelle.",
       },
       {
         q: "Et l'IA chinoise (DeepSeek, Qwen) ?",
@@ -698,7 +698,7 @@ export const COMPARISONS = {
       },
       {
         q: "Quel est le ROI moyen d'un déploiement IA en entreprise ?",
-        a: "Sur les 1 500 professionnels formés par Masteria, le gain moyen est de **+6 heures par semaine et par collaborateur** après formation. Pour un coût de 760 €/personne (formation) + 25 €/mois (abonnement), le retour sur investissement est typiquement < 1 mois sur les profils cadres.",
+        a: "Sur les 1 500 professionnels formés par Masteria, le gain moyen est de **+6 heures par semaine et par collaborateur** après formation. Pour un coût de ~165 €/personne (intra de 12 à 1 980 €/jour) + 25 €/mois (abonnement), le retour sur investissement est typiquement < 1 mois sur les profils cadres.",
       },
     ],
     methodology:
@@ -1266,7 +1266,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte un agent IA en entreprise ?",
-        a: "Le coût total d'un agent IA en production tourne généralement entre **5 000 et 20 000 €/an** : abonnements (200 €/mois pour ChatGPT Pro, ~200 $/mois par agent Copilot Studio), accompagnement de mise en place (5-15 jours), formation des équipes (760 €/personne). Les agents simples (Custom GPTs) peuvent démarrer à 1 000 €/an.",
+        a: "Le coût total d'un agent IA en production tourne généralement entre **5 000 et 20 000 €/an** : abonnements (200 €/mois pour ChatGPT Pro, ~200 $/mois par agent Copilot Studio), accompagnement de mise en place (5-15 jours), formation des équipes (~165 €/personne pour un intra de 12). Les agents simples (Custom GPTs) peuvent démarrer à 1 000 €/an.",
       },
       {
         q: "Les agents IA sont-ils sûrs en entreprise ?",

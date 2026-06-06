@@ -136,12 +136,12 @@ La formation se conclut sur deux livrables stratégiques pour la durée : la ges
 
 ## Modalités et tarifs
 
-**Format inter-entreprises**
-760 € HT / jour / participant
-Sessions ouvertes, en groupe de 6 à 12 participants. Idéal pour les commerciaux isolés ou les équipes qui souhaitent confronter leurs méthodes à d'autres secteurs.
+**Format accompagnement individuel sur mesure**
+1 380 € HT / jour
+Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme co-construit, rythme adapté.
 
 **Format intra-entreprise**
-1 500 € HT / jour pour un groupe — jusqu'à 12 participants
+1 980 € HT / jour pour un groupe — jusqu'à 12 participants
 La formation est entièrement calibrée sur vos produits, vos marchés, votre cycle de vente. Vos commerciaux travaillent sur leurs vrais prospects et opportunités dès le premier exercice.
 
 **Financement OPCO**

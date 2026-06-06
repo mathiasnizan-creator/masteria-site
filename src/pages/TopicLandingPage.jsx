@@ -31,7 +31,7 @@ const TOPICS = {
       { q: "Puis-je utiliser mon CPF pour suivre une formation Masteria ?", a: "Non, nos formations courtes ne sont pas éligibles CPF car elles ne débouchent pas sur une certification RNCP. En revanche, elles sont finançables OPCO et via le plan de développement des compétences de votre entreprise." },
       { q: "Quelles formations IA sont réellement finançables CPF ?", a: "Les bootcamps longs (3 à 9 mois) en data science, machine learning ou développement IA proposés par des écoles comme Le Wagon, Datascientest ou Simplon sont parfois certifiés RNCP et donc finançables CPF. Ces formations s'adressent aux personnes en reconversion, pas aux salariés cherchant à utiliser ChatGPT au quotidien." },
       { q: "Mon employeur doit-il financer ma formation IA ?", a: "Si la formation est réalisée à la demande de l'employeur (plan de développement des compétences), elle est financée par l'entreprise et son OPCO. Si vous êtes à l'initiative, vous pouvez la proposer à votre RH avec un argumentaire de retour sur investissement." },
-      { q: "Combien coûte une formation IA Masteria ?", a: "760 € HT par participant en inter-entreprises (Lyon uniquement), 1 500 € HT par jour pour le groupe en intra (jusqu'à 12 participants). Une journée pour le programme initiation, deux jours pour la version approfondie multi-outils." },
+      { q: "Combien coûte une formation IA Masteria ?", a: "1 980 € HT par jour pour le groupe en intra-entreprise (jusqu'à 12 participants), 1 380 € HT par jour en accompagnement individuel sur mesure (jusqu'à 12 participants). Une journée pour le programme initiation, deux jours pour la version approfondie multi-outils." },
       { q: "L'OPCO finance-t-il à 100 % ?", a: "La plupart des OPCO prennent en charge entre 50 % et 100 % du coût pédagogique selon votre convention collective et votre taille d'entreprise. Les TPE (moins de 11 salariés) bénéficient souvent d'une prise en charge totale dans la limite des plafonds annuels." },
       { q: "Combien de temps pour obtenir l'accord OPCO ?", a: "Le délai moyen est de 5 à 15 jours ouvrés selon l'OPCO. Nous vous fournissons tous les documents nécessaires (devis, programme détaillé, convention) pour accélérer le traitement." },
     ],
@@ -60,7 +60,7 @@ const TOPICS = {
     faq: [
       { q: "La formation IA à distance est-elle aussi efficace qu'en présentiel ?", a: "Oui, à condition d'avoir un formateur en direct (pas une vidéo enregistrée) et des exercices pratiques sur vos vrais cas d'usage. Notre format synchrone reproduit l'interactivité du présentiel : questions en direct, partage d'écran, feedback individuel sur les prompts produits." },
       { q: "Combien de participants maximum en distanciel ?", a: "12 participants maximum par session pour préserver la qualité des échanges et permettre au formateur de suivre individuellement la production de chacun. Au-delà, nous organisons plusieurs sessions successives." },
-      { q: "Le distanciel est-il moins cher que le présentiel ?", a: "Les tarifs sont identiques (760 € HT par participant en inter, 1 500 € HT par jour en intra), car la qualité pédagogique est la même. L'économie se fait sur les frais de déplacement du formateur, déjà inclus dans nos tarifs présentiel." },
+      { q: "Le distanciel est-il moins cher que le présentiel ?", a: "Les tarifs sont identiques (1 980 € HT par jour en intra-entreprise jusqu'à 12 participants, 1 380 € HT par jour en accompagnement individuel), car la qualité pédagogique est la même. L'économie se fait sur les frais de déplacement du formateur, déjà inclus dans nos tarifs présentiel." },
       { q: "La formation à distance est-elle finançable OPCO ?", a: "Oui, exactement comme le présentiel. Masteria est certifié Qualiopi pour les actions de formation en présentiel et à distance (FOAD). L'OPCO ne fait pas de différence dans la prise en charge." },
       { q: "Peut-on suivre la formation en asynchrone (à son rythme) ?", a: "Non, nous proposons uniquement du synchrone. Les formations asynchrones (vidéos enregistrées) ont un taux de complétion très faible et n'apportent pas l'ancrage opérationnel recherché par nos clients entreprises." },
       { q: "Quelle plateforme de visioconférence utilisez-vous ?", a: "Nous nous adaptons à votre environnement : Zoom, Microsoft Teams, Google Meet ou Webex. Si vous n'avez pas de plateforme, nous proposons une session sur notre instance Zoom Pro." },
@@ -95,6 +95,70 @@ const TOPICS = {
       { q: "Combien de temps pour former une équipe à l'IA générative ?", a: "Une journée suffit pour une initiation solide qui couvre 1 outil et 5 cas d'usage métier. Comptez deux jours pour un programme multi-outils approfondi (3 à 5 outils comparés) avec ateliers de prompt engineering avancé." },
       { q: "Quels métiers gagnent le plus à se former à l'IA générative ?", a: "Tous les métiers tertiaires en bénéficient, mais les gains les plus rapides sont visibles en marketing, communication, RH, juridique, commercial et finance. Selon McKinsey, ces fonctions peuvent gagner 6 à 10 heures par semaine après une formation bien menée." },
     ],
+    related: [
+      { label: "Formation automatisation IA", href: "/formation-automatisation-ia", desc: "Automatiser ses tâches et ses workflows avec l'IA" },
+      { label: "Formation multi-outils IA", href: "/formation-multi-outils", desc: "Comparer et combiner ChatGPT, Copilot, Gemini, Claude, Mistral" },
+      { label: "Formation IA à distance", href: "/formation-intelligence-artificielle-distanciel", desc: "Le même programme en classe virtuelle" },
+    ],
+  },
+
+  'formation-automatisation-ia': {
+    badge: 'Automatisation & agents IA',
+    h1: "Formation automatisation IA",
+    metaTitle: "Formation automatisation IA | Workflows, agents & no-code | Masteria",
+    metaDescription: "Formation automatisation IA : automatisez vos tâches et workflows avec l'IA (agents, Make, Power Automate). Certifié Qualiopi, finançable OPCO.",
+    intro: "L'automatisation par l'intelligence artificielle permet de déléguer les tâches répétitives (saisie, relances, reporting, tri d'emails) à des agents et des workflows intelligents. Notre formation automatisation IA apprend à vos équipes à repérer ces tâches, à les automatiser avec les bons outils et à le faire en sécurité, sans écrire une ligne de code.",
+    courseData: {
+      name: "Formation automatisation IA",
+      description: "Formation professionnelle pour automatiser ses tâches et ses workflows métier avec l'IA : agents, GPTs personnalisés, Make, Zapier, n8n et Power Automate. 1 à 2 jours, sans prérequis technique.",
+      level: 'Tous niveaux',
+      tool: 'Make, Zapier, n8n, Power Automate, GPTs',
+      duration: 'PT14H',
+      price: '1980',
+      teaches: [
+        "Identifier les tâches automatisables à plus fort retour sur investissement",
+        "Construire un workflow d'automatisation IA en no-code",
+        "Concevoir et superviser un agent IA",
+        "Sécuriser et gouverner ses automatisations (RGPD, contrôle humain)",
+      ],
+    },
+    sections: [
+      {
+        h2: "Qu'est-ce que l'automatisation IA ?",
+        body: "L'automatisation IA consiste à confier à l'intelligence artificielle des tâches répétitives qui mobilisaient jusqu'ici du temps humain : trier des emails, relancer des clients, extraire des données d'un document, rédiger un compte-rendu, mettre à jour un CRM. Elle se distingue de l'IA générative, qui produit du contenu à la demande, par sa logique de chaîne : un déclencheur (un email reçu, un formulaire rempli, une heure précise) lance automatiquement une suite d'actions exécutées par l'IA. Elle se distingue aussi de l'automatisation classique, comme les macros ou la RPA, par sa capacité à comprendre le langage naturel, à interpréter un contexte et à décider. On parle d'agents IA lorsque le système enchaîne lui-même plusieurs étapes pour atteindre un objectif. La bonne nouvelle pour les équipes métier : la plupart de ces automatisations se construisent aujourd'hui en no-code, par glisser-déposer, sans aucune compétence de développeur.",
+      },
+      {
+        h2: "Quels outils pour automatiser avec l'IA ?",
+        body: "Quatre familles d'outils couvrent l'essentiel des besoins. Les assistants conversationnels dotés de mémoire et d'actions (ChatGPT et ses GPTs personnalisés, Claude, Gemini) automatisent des tâches rédactionnelles et d'analyse récurrentes. Microsoft Copilot, couplé à Power Automate, automatise les flux au sein de l'écosystème Microsoft 365 (Outlook, Teams, Excel, SharePoint). Les orchestrateurs no-code comme Make, Zapier et n8n connectent vos applications entre elles et y injectent de l'IA à chaque étape : lire un email, le résumer, créer une tâche, notifier une équipe. Enfin, les agents IA exécutent des objectifs plus complexes en autonomie supervisée. Le bon choix dépend de votre environnement logiciel, du niveau de sensibilité de vos données et de la complexité des flux. La formation vous apprend à comparer ces outils et à sélectionner la combinaison adaptée à vos cas d'usage, plutôt qu'à empiler des abonnements.",
+      },
+      {
+        h2: "Quelles tâches automatiser en priorité ?",
+        body: "Toutes les tâches ne se valent pas. Les meilleures candidates à l'automatisation IA sont fréquentes, chronophages, suivent des règles claires et présentent un risque d'erreur limité. En marketing, on automatise la veille, la production et la programmation de contenus. Au commercial, les relances, la qualification des leads et la mise à jour du CRM. En RH, le tri des candidatures et la création de supports d'onboarding. En finance, la consolidation de reportings et le rapprochement de documents. Au service client, le routage des tickets et la rédaction des premières réponses. À l'assistanat et au support administratif, le tri d'emails, la prise de notes de réunion et la génération de documents. La méthode que nous transmettons consiste à cartographier vos tâches selon trois critères, la fréquence, le temps consommé et le niveau de risque, afin d'automatiser d'abord ce qui libère le plus de temps en toute sécurité.",
+      },
+      {
+        h2: "Comment se former à l'automatisation IA ?",
+        body: "Une formation automatisation IA efficace suit une progression en quatre temps. D'abord comprendre les concepts (déclencheurs, actions, agents, limites de l'IA) pour automatiser sans se mettre en danger. Ensuite cartographier ses propres tâches et choisir les premiers cas d'usage. Puis construire un premier workflow de bout en bout sur un cas réel apporté par le participant, par exemple un tri d'emails entrants ou un reporting hebdomadaire. Enfin industrialiser et encadrer, en posant les règles de supervision, de contrôle humain et de conformité. Chez Masteria, la formation se déroule sur une à deux journées, sans aucun prérequis technique, en présentiel ou en distanciel. Chaque participant repart avec ses propres automatisations fonctionnelles et un kit de modèles réutilisables, prêts à l'emploi dès le lendemain.",
+      },
+      {
+        h2: "Automatisation IA et sécurité : garder le contrôle",
+        body: "Automatiser ne signifie pas perdre la main. Une automatisation IA bien conçue conserve un humain dans la boucle sur les décisions sensibles, journalise ses actions et reste auditable. Trois réflexes structurent une démarche responsable : ne jamais faire transiter de données personnelles ou confidentielles par un outil grand public non conforme, privilégier les versions entreprise et les hébergements européens pour les flux sensibles, et prévoir un point de validation humain avant tout envoi externe ou toute action irréversible. Notre formation intègre systématiquement ce volet gouvernance, parce qu'une automatisation que l'on ne maîtrise pas finit par coûter plus cher que la tâche qu'elle remplace. Vous apprenez à documenter vos workflows, à définir qui supervise quoi et à mettre vos automatisations en conformité avec le RGPD et l'AI Act.",
+      },
+    ],
+    faq: [
+      { q: "Faut-il savoir coder pour automatiser avec l'IA ?", a: "Non. La grande majorité des automatisations IA se construisent en no-code, par glisser-déposer, avec des outils comme Make, Zapier, n8n ou Power Automate. La formation est accessible à tous les profils métier, sans aucun prérequis en développement." },
+      { q: "Quelle différence entre IA générative et automatisation IA ?", a: "L'IA générative produit du contenu à la demande (un texte, une image, une analyse) lorsque vous la sollicitez. L'automatisation IA déclenche et enchaîne ces actions toute seule à partir d'un événement, par exemple résumer et classer chaque email entrant sans intervention. Les deux se combinent : l'automatisation orchestre, le modèle génératif exécute." },
+      { q: "Quels outils d'automatisation IA pour une PME ?", a: "Pour une PME, on démarre souvent avec ChatGPT et des GPTs personnalisés pour les tâches rédactionnelles, Make ou Zapier pour connecter les applications, et Power Automate si l'entreprise est déjà équipée de Microsoft 365. La formation vous aide à choisir selon vos outils existants plutôt qu'à multiplier les abonnements." },
+      { q: "L'automatisation IA va-t-elle supprimer des emplois ?", a: "L'automatisation IA prend en charge les tâches répétitives à faible valeur ajoutée et laisse aux équipes l'analyse, la relation et la décision. Les collaborateurs formés redéploient le temps gagné, qui se compte souvent en plusieurs heures par semaine, vers des missions à plus forte valeur." },
+      { q: "Combien de temps pour former une équipe à l'automatisation IA ?", a: "Une journée suffit pour poser les bases et construire ses premiers workflows. Comptez deux jours pour un programme complet couvrant les agents IA, les orchestrateurs no-code et la gouvernance. Le format s'adapte à votre niveau de maturité et à vos cas d'usage." },
+      { q: "La formation automatisation IA est-elle finançable et certifiée Qualiopi ?", a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation finançable par votre OPCO ou via le plan de développement des compétences. Nous accompagnons gratuitement le montage du dossier de prise en charge. Tarif : 1 980 € HT par jour en intra-entreprise jusqu'à 12 participants, 1 380 € HT par jour en accompagnement individuel sur mesure." },
+    ],
+    related: [
+      { label: "Formation multi-outils IA", href: "/formation-multi-outils", desc: "Combiner ChatGPT, Copilot, Gemini, Claude et Mistral" },
+      { label: "Formation IA générative", href: "/formation-intelligence-artificielle-generative", desc: "Maîtriser les modèles qui produisent le contenu" },
+      { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot", desc: "Automatiser avec Power Automate et Microsoft 365" },
+      { label: "Quel est le meilleur agent IA ?", href: "/meilleur-agent-ia", desc: "Comparatif des agents IA pour automatiser des tâches" },
+      { label: "Toutes nos formations IA", href: "/formation-intelligence-artificielle", desc: "Le catalogue complet par outil et par métier" },
+    ],
   },
 }
 
@@ -114,6 +178,7 @@ export default function TopicLandingPage() {
         title={topic.metaTitle}
         description={topic.metaDescription}
         slug={slug}
+        courseData={topic.courseData}
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
           { name: topic.h1, slug },
@@ -241,6 +306,42 @@ export default function TopicLandingPage() {
           ))}
         </div>
       </section>
+
+      {/* POUR ALLER PLUS LOIN — maillage interne contextuel */}
+      {topic.related && topic.related.length > 0 && (
+        <section style={{ padding: '72px 24px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif', fontWeight: 800,
+              fontSize: 'clamp(24px, 3.4vw, 32px)', color: '#0A0A0A',
+              marginBottom: 28, textAlign: 'center',
+            }}>
+              Pour aller plus loin
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+              {topic.related.map((r, i) => (
+                <Link
+                  key={i}
+                  to={r.href}
+                  style={{
+                    display: 'flex', flexDirection: 'column', gap: 6,
+                    background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12,
+                    padding: '20px 22px', textDecoration: 'none',
+                    transition: 'border-color 150ms, box-shadow 150ms',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#BFDBFE'; e.currentTarget.style.boxShadow = '0 2px 10px rgba(37,99,235,0.10)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none' }}
+                >
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16, color: '#0A0A0A' }}>
+                    {r.label} <ArrowRight size={15} color="#1d4ed8" />
+                  </span>
+                  {r.desc && <span style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.5 }}>{r.desc}</span>}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA FINAL */}
       <section style={{ padding: '80px 24px', background: '#0A0A0A', color: '#fff', textAlign: 'center' }}>

@@ -48,22 +48,22 @@ import { SPOKES } from './data/seo-pages';
 import { getAllGeoCombinations, GEO_DESTINATIONS, geoIaSlug } from './data/geo-data';
 
 const TRAININGS = [
-  { id: 'ia-initiation', tag: 'IA & ChatGPT', title: "Initiation à l'IA pour les professionnels", desc: "Maîtrisez les fondamentaux de l'IA en 1 journée. Aucun prérequis technique.", price: '760 €', unit: '/ pers / jour', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
+  { id: 'ia-initiation', tag: 'IA & ChatGPT', title: "Initiation à l'IA pour les professionnels", desc: "Maîtrisez les fondamentaux de l'IA en 1 journée. Aucun prérequis technique.", price: '1 380 €', unit: '/ jour (individuel)', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
     objectives: ["Comprendre ce qu'est l'IA et ses limites", "Utiliser ChatGPT dans votre quotidien professionnel", "Identifier les cas d'usage dans votre secteur", "Adopter une posture éthique face à l'IA"],
     program: [{ title: 'Matin, Les fondamentaux', items: ["Qu'est-ce que l'IA ?", 'Les grands modèles de langage', "ChatGPT & Co : tour d'horizon", 'Démonstrations en direct'] }, { title: 'Après-midi, Mise en pratique', items: ['Premiers prompts', "Cas d'usage par métier", 'Sécurité et confidentialité', "Plan d'action personnel"] }] },
-  { id: 'prompt-engineering', tag: 'Prompt Engineering', title: 'Maîtriser le Prompt Engineering', desc: 'Formulez des prompts précis pour décupler votre productivité au quotidien.', price: '760 €', unit: '/ pers / jour', color: '#FEF3C7', duration: '1 jour', level: 'Intermédiaire',
+  { id: 'prompt-engineering', tag: 'Prompt Engineering', title: 'Maîtriser le Prompt Engineering', desc: 'Formulez des prompts précis pour décupler votre productivité au quotidien.', price: '1 380 €', unit: '/ jour (individuel)', color: '#FEF3C7', duration: '1 jour', level: 'Intermédiaire',
     objectives: ["Comprendre la structure d'un prompt efficace", 'Utiliser les techniques avancées (chain-of-thought, few-shot)', 'Construire des templates réutilisables', 'Automatiser des tâches répétitives'],
     program: [{ title: 'Matin, Théorie & Méthodes', items: ["Anatomie d'un prompt", 'Techniques : zero-shot, few-shot, chain-of-thought', 'Rôles et personas', 'Instructions et contraintes'] }, { title: 'Après-midi, Ateliers pratiques', items: ['Bibliothèque de prompts métier', 'Optimisation itérative', 'Intégration dans votre workflow', 'Templates à emporter'] }] },
-  { id: 'marketing-ia', tag: 'Marketing IA', title: 'IA pour les équipes Marketing', desc: "Contenus, campagnes, analyses : boostez votre marketing avec l'IA.", price: '760 €', unit: '/ pers / jour', color: '#DCFCE7', duration: '1 jour', level: 'Tous niveaux',
+  { id: 'marketing-ia', tag: 'Marketing IA', title: 'IA pour les équipes Marketing', desc: "Contenus, campagnes, analyses : boostez votre marketing avec l'IA.", price: '1 380 €', unit: '/ jour (individuel)', color: '#DCFCE7', duration: '1 jour', level: 'Tous niveaux',
     objectives: ['Produire des contenus 3× plus vite', "Optimiser vos campagnes avec l'IA", 'Analyser la data marketing intelligemment', 'Créer des visuels avec les IA génératives'],
     program: [{ title: 'Matin, Contenu & Copywriting', items: ['Rédaction IA : articles, posts, emails', 'SEO assisté par IA', 'Tone of voice et cohérence de marque', 'Outils : ChatGPT, Jasper, Copy.ai'] }, { title: 'Après-midi, Campagnes & Analytics', items: ['Segmentation et personnalisation', 'A/B testing assisté', 'Reporting automatisé', 'Midjourney & DALL-E pour les visuels'] }] },
-  { id: 'rh-ia', tag: 'Ressources Humaines', title: 'IA appliquée aux RH', desc: "Recrutement, onboarding, formation interne : l'IA au service des RH.", price: '760 €', unit: '/ pers / jour', color: '#F3E8FF', duration: '1 jour', level: 'Tous niveaux',
+  { id: 'rh-ia', tag: 'Ressources Humaines', title: 'IA appliquée aux RH', desc: "Recrutement, onboarding, formation interne : l'IA au service des RH.", price: '1 380 €', unit: '/ jour (individuel)', color: '#F3E8FF', duration: '1 jour', level: 'Tous niveaux',
     objectives: ['Accélérer le sourcing et la présélection', "Améliorer l'expérience candidat", 'Automatiser les tâches administratives', "Déployer l'IA pour la formation interne"],
     program: [{ title: 'Matin, Recrutement & Sourcing', items: ["Rédaction d'offres optimisées", 'Analyse de CV par IA', 'Entretiens assistés', 'Outils RH IA du marché'] }, { title: 'Après-midi, RH opérationnel', items: ['Onboarding personnalisé', "Formation continue avec l'IA", 'Gestion de la performance', 'Aspects légaux et éthiques'] }] },
-  { id: 'appels-offres', tag: "Appels d'offres", title: "Répondre aux appels d'offres avec l'IA", desc: "Gagnez du temps et améliorez vos réponses grâce à l'IA générative.", price: '760 €', unit: '/ pers / jour', color: '#FFE4E6', duration: '1 jour', level: 'Intermédiaire',
+  { id: 'appels-offres', tag: "Appels d'offres", title: "Répondre aux appels d'offres avec l'IA", desc: "Gagnez du temps et améliorez vos réponses grâce à l'IA générative.", price: '1 380 €', unit: '/ jour (individuel)', color: '#FFE4E6', duration: '1 jour', level: 'Intermédiaire',
     objectives: ['Analyser un cahier des charges rapidement', 'Rédiger des réponses percutantes', 'Construire une bibliothèque de réponses types', 'Améliorer votre taux de succès'],
     program: [{ title: 'Matin, Analyse & Stratégie', items: ['Dépouillement de cahier des charges', 'Identification des critères clés', 'Analyse concurrentielle', 'Stratégie de réponse'] }, { title: 'Après-midi, Rédaction assistée', items: ['Structuration de la réponse', 'Prompts spécialisés AO', 'Relecture et optimisation', 'Base de connaissances AO'] }] },
-  { id: 'intra', tag: 'Intra-entreprise', title: 'Formation sur mesure en intra', desc: "Jusqu'à 12 participants, contenu 100% personnalisé, à votre rythme.", price: '1 500 €', unit: '/ jour / groupe', color: '#F0F0F0', duration: 'Sur mesure', level: 'Tous niveaux',
+  { id: 'intra', tag: 'Intra-entreprise', title: 'Formation sur mesure en intra', desc: "Jusqu'à 12 participants, contenu 100% personnalisé, à votre rythme.", price: '1 980 €', unit: '/ jour / groupe', color: '#F0F0F0', duration: 'Sur mesure', level: 'Tous niveaux',
     objectives: ['Programme 100% adapté à votre secteur', "Cas d'usage de votre entreprise", "Jusqu'à 12 participants simultanément", 'Suivi post-formation inclus'],
     program: [{ title: 'Phase 1, Cadrage', items: ['Audit de vos besoins', 'Définition des objectifs pédagogiques', 'Construction du programme', 'Validation avec vos équipes'] }, { title: 'Phase 2, Formation', items: ['Animation présentiel ou distanciel', 'Exercices adaptés à vos outils', 'Supports personnalisés', 'Certification des participants'] }] },
 ];
@@ -212,7 +212,7 @@ function FormationsScreen() {
     <div style={{ padding: '64px 32px 96px' }}>
       <SEOHead
         title="Toutes nos formations IA | Masteria, Certifié Qualiopi"
-        description="Inter-entreprises ou intra, en présentiel ou à distance. Certifiées Qualiopi, finançables via votre OPCO."
+        description="Intra-entreprise ou accompagnement individuel sur mesure, en présentiel ou à distance. Certifiées Qualiopi, finançables via votre OPCO."
         slug="formations"
         noindex={true}
       />
@@ -220,7 +220,7 @@ function FormationsScreen() {
         <div style={{ marginBottom: 48 }}>
           <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>Catalogue</div>
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 42, fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 10 }}>Toutes nos formations</h1>
-          <p style={{ fontSize: 16, color: '#717171', maxWidth: 560, lineHeight: 1.65, marginBottom: 28 }}>Inter-entreprises ou intra, en présentiel ou à distance. Certifiées Qualiopi, finançables via votre OPCO.</p>
+          <p style={{ fontSize: 16, color: '#717171', maxWidth: 560, lineHeight: 1.65, marginBottom: 28 }}>Intra-entreprise ou accompagnement individuel sur mesure, en présentiel ou à distance. Certifiées Qualiopi, finançables via votre OPCO.</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {categories.map(c => (
               <button key={c} onClick={() => setFilter(c)}
@@ -1165,7 +1165,7 @@ function ContactScreen() {
                   <label style={lbl}>Format</label>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 8 }}>
                     {[
-                      { id: 'inter',    title: 'Inter-entreprises', sub: '8 participants max' },
+                      { id: 'individuel',  title: 'Accompagnement individuel', sub: '1 participant · sur mesure' },
                       { id: 'intra',    title: 'Intra-entreprise',  sub: '12 participants max' },
                       { id: 'sur-mesure', title: 'Sur mesure',      sub: 'Programme dédié' },
                     ].map(f => {
@@ -1312,7 +1312,7 @@ export default function App() {
           <Route key={geoIaSlug(dest.slug)} path={`/${geoIaSlug(dest.slug)}`} element={<GeoIAGenericPage />} />
         ))}
         {/* Pages éditoriales transversales (CPF, distanciel, IA générative) */}
-        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative'].map(s => (
+        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-automatisation-ia'].map(s => (
           <Route key={s} path={`/${s}`} element={<TopicLandingPage />} />
         ))}
         <Route path="/formation-ia-qualiopi" element={<QualiopiPage />} />

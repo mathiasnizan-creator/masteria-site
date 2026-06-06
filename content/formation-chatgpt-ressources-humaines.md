@@ -137,12 +137,12 @@ La formation se conclut sur les garde-fous indispensables et l'outillage pour un
 
 ## Modalités et tarifs
 
-**Format inter-entreprises**
-760 € HT / jour / participant
-Sessions ouvertes à tous, en groupe de 6 à 12 participants. Idéal pour les RH isolés dans leur entreprise ou les équipes qui souhaitent confronter leurs pratiques à d'autres secteurs.
+**Format accompagnement individuel sur mesure**
+1 380 € HT / jour
+Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme co-construit, rythme adapté.
 
 **Format intra-entreprise**
-1 500 € HT / jour pour un groupe — jusqu'à 12 participants
+1 980 € HT / jour pour un groupe — jusqu'à 12 participants
 La formation est intégralement adaptée à vos processus RH, vos outils, vos offres de poste réelles. Vos équipes travaillent sur leurs propres documents dès le premier exercice.
 
 **Financement OPCO**

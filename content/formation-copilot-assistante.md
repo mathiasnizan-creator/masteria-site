@@ -147,8 +147,8 @@ Vous coordonnez plusieurs dirigeants ou plusieurs équipes. La gestion de multip
 
 | Format | Tarif | Conditions |
 |---|---|---|
-| **Inter-entreprises** | 760 € / jour / participant | Sessions planifiées, groupes mixtes, max 12 participants |
-| **Intra-entreprise** | 1 500 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre organisation Microsoft |
+| **Inter-entreprises** | 1 380 € / jour (accompagnement individuel) | Sessions planifiées, groupes mixtes, max 12 participants |
+| **Intra-entreprise** | 1 980 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre organisation Microsoft |
 | **Financement OPCO** | 100% finançable | Tous les OPCO acceptés, dossier pris en charge par Masteria |
 
 **Prérequis techniques :** Cette formation requiert une licence Microsoft 365 Copilot active pour chaque participante. Si votre organisation n'a pas encore déployé Copilot, nous pouvons vous accompagner dans l'évaluation préalable. Contactez-nous pour en discuter avant inscription.

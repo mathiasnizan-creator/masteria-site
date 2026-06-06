@@ -14,7 +14,7 @@
 
 const COMMON_FAQ_TAIL = [
   { q: 'La formation est-elle finançable par un OPCO ?', a: 'Oui. Masteria est certifié Qualiopi, et toutes nos formations sont 100 % finançables par les OPCO (OPCO EP, AKTO, Atlas, AFDAS, etc.). Nous vous accompagnons dans le montage du dossier de financement.' },
-  { q: "Combien de participants par session ?", a: 'En intra-entreprise : jusqu\'à 12 participants par groupe (1 500 €/jour pour le groupe complet). En inter-entreprises : sessions de 4 à 8 personnes (760 €/jour/participant).' },
+  { q: "Combien de participants par session ?", a: 'En intra-entreprise : jusqu\'à 12 participants par groupe (1 980 €/jour pour le groupe complet). En accompagnement individuel sur mesure : 1 380 €/jour.' },
   { q: 'La formation est-elle disponible à distance ?', a: 'Oui. Les formations Masteria sont disponibles en présentiel (France, Suisse, Belgique) ou en distanciel via Teams ou Google Meet. Le contenu pédagogique est identique, avec exercices pratiques en direct.' },
 ]
 

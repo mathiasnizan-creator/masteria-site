@@ -140,12 +140,12 @@ La formation se conclut sur la communication juridique à destination des non-ju
 
 ## Modalités et tarifs
 
-**Format inter-entreprises**
-760 € HT / jour / participant
-Sessions ouvertes, en groupe de 6 à 12 participants. Idéal pour les juristes en entreprise isolés dans leur fonction ou les équipes de petites structures.
+**Format accompagnement individuel sur mesure**
+1 380 € HT / jour
+Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme co-construit, rythme adapté.
 
 **Format intra-entreprise**
-1 500 € HT / jour pour un groupe — jusqu'à 12 participants
+1 980 € HT / jour pour un groupe — jusqu'à 12 participants
 La formation est entièrement adaptée à votre secteur juridique, vos types de contrats récurrents, vos cas de veille réglementaire. Vos équipes travaillent sur leurs propres documents dès le premier exercice.
 
 **Financement OPCO**

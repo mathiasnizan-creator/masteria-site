@@ -134,12 +134,12 @@ La formation se conclut sur l'autonomie à long terme : comment intégrer ChatGP
 
 ## Modalités et tarifs
 
-**Format inter-entreprises**
-760 € HT / jour / participant
-Sessions ouvertes à tous, en groupe de 6 à 12 participants. Idéal pour les profils isolés dans leur entreprise ou les équipes qui souhaitent mixer avec d'autres secteurs.
+**Format accompagnement individuel sur mesure**
+1 380 € HT / jour
+Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme co-construit autour de vos enjeux personnels, rythme adapté, suivi entre les sessions.
 
 **Format intra-entreprise**
-1 500 € HT / jour pour un groupe — jusqu'à 12 participants
+1 980 € HT / jour pour un groupe — jusqu'à 12 participants
 La formation est entièrement adaptée à votre secteur, vos outils, vos cas d'usage réels. Vos équipes travaillent sur leurs propres contenus dès le premier exercice.
 
 **Financement OPCO**

@@ -63,7 +63,7 @@ const FAQ_IA = [
   },
   {
     q: "Combien coûte une formation IA en entreprise ?",
-    a: "Nos tarifs dépendent du format. En inter-entreprises, le prix est de 760 € HT par jour et par participant. En intra-entreprises, le tarif est de 1 500 € HT par jour pour un groupe de 12 participants maximum, formation animée dans vos locaux ou en distanciel. Tous ces montants sont éligibles au financement OPCO.",
+    a: "Nos tarifs dépendent du format. En intra-entreprise, le tarif est de 1 980 € HT par jour pour un groupe jusqu'à 12 participants, dans vos locaux ou en distanciel. En accompagnement individuel sur mesure, le tarif est de 1 380 € HT par jour pour un coaching 1-to-1 (1 participant), en présentiel ou en distanciel, avec un programme co-construit sur vos enjeux. Tous ces montants sont éligibles au financement OPCO.",
   },
   {
     q: "Quels outils IA sont enseignés dans vos formations ?",
@@ -71,7 +71,7 @@ const FAQ_IA = [
   },
   {
     q: "Les formations sont-elles dispensées en présentiel ou en distanciel ?",
-    a: "Les deux formats sont possibles. Nous animons les sessions inter-entreprises en distanciel (visioconférence) pour toucher des participants de toute la France. Les sessions intra-entreprises se déroulent au choix en présentiel dans vos locaux (France, Suisse, Belgique) ou en distanciel. Le contenu, le rythme et les exercices sont identiques dans les deux cas.",
+    a: "Les deux formats sont possibles. Nous animons les formations intra-entreprise en présentiel dans vos locaux et en distanciel via visioconférence interactive. Les sessions intra-entreprises se déroulent au choix en présentiel dans vos locaux (France, Suisse, Belgique) ou en distanciel. Le contenu, le rythme et les exercices sont identiques dans les deux cas.",
   },
   {
     q: "Quelle est la durée d'une formation intelligence artificielle chez Masteria ?",
@@ -279,7 +279,7 @@ export default function MetiersHubPage() {
               { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
               { icon: Wallet,            label: 'Finançable OPCO' },
               { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-              { icon: Building2,         label: 'Intra ou inter-entreprises' },
+              { icon: Building2,         label: 'Intra ou accompagnement individuel' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{
                 background: '#fff', color: '#374151',
@@ -665,7 +665,7 @@ export default function MetiersHubPage() {
             1. Cadrage et design pédagogique
           </h3>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Avant chaque intra-entreprise, un entretien de cadrage permet d'identifier les cas d'usage prioritaires, le niveau de maturité IA des apprenants et les contraintes sectorielles. Le programme est ajusté en conséquence. En inter-entreprises, un questionnaire préalable collecte les attentes et niveaux de chaque stagiaire pour calibrer le contenu.
+            Avant chaque intra-entreprise, un entretien de cadrage permet d'identifier les cas d'usage prioritaires, le niveau de maturité IA des apprenants et les contraintes sectorielles. Le programme est ajusté en conséquence. En accompagnement individuel sur mesure, un brief approfondi en amont permet de calibrer le contenu, le rythme et les exercices sur les enjeux concrets du participant.
           </p>
 
           <h3 style={{

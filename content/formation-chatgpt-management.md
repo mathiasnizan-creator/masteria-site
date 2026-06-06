@@ -147,8 +147,8 @@ Prendre un poste de manager pour la première fois, c'est apprendre en marchant.
 
 | Format | Tarif | Conditions |
 |---|---|---|
-| **Inter-entreprises** | 760 € / jour / participant | Sessions planifiées, groupes mixtes, max 12 participants |
-| **Intra-entreprise** | 1 500 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre culture managériale |
+| **Inter-entreprises** | 1 380 € / jour (accompagnement individuel) | Sessions planifiées, groupes mixtes, max 12 participants |
+| **Intra-entreprise** | 1 980 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre culture managériale |
 | **Financement OPCO** | 100% finançable | Tous les OPCO acceptés, dossier pris en charge par Masteria |
 
 **Note intra :** La formation intra-entreprise est particulièrement adaptée pour les équipes de management : le contenu peut être calibré sur votre référentiel managérial, vos processus RH (formulaires d'entretien, templates de reporting) et vos situations réelles. Un brief préalable est systématiquement réalisé avec le commanditaire.

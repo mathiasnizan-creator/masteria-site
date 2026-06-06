@@ -140,12 +140,12 @@ Utilisez Copilot dans Excel pour analyser votre pipeline en temps réel, identif
 
 ## Tarifs et financement
 
-### Formation inter-entreprises
-**760 € HT / jour / participant**
+### Formation intra-entreprise ou accompagnement individuel sur mesure
+**1 380 € HT / jour (accompagnement individuel)**
 Sessions planifiées avec d'autres professionnels commerciaux. Format idéal pour les commerciaux indépendants, les TPE et les PME sans département formation dédié.
 
 ### Formation intra-entreprise
-**1 500 € HT / jour** — jusqu'à 12 participants
+**1 980 € HT / jour** — jusqu'à 12 participants
 Contenus adaptés à vos offres, vos clients types et vos processus commerciaux. Format 2 jours consécutifs ou 4 demi-journées selon votre agenda commercial.
 
 ### Financement OPCO

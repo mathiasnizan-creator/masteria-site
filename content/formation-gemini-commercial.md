@@ -35,7 +35,7 @@ Vos commerciaux passent trop de temps à rédiger des e-mails de prospection, à
 - ✅ Certifié Qualiopi
 - ✅ Finançable OPCO
 - ✅ Présentiel & distanciel
-- ✅ Intra ou inter-entreprises
+- ✅ Intra ou intra-entreprise ou accompagnement individuel sur mesure
 
 **CTA principal :** Demander un programme sur mesure →
 **CTA secondaire :** Voir les tarifs
@@ -173,7 +173,7 @@ Un pipeline commercial bien tenu et une bonne préparation des rendez-vous sont 
 | | Inter-entreprises | Intra-entreprise |
 |---|---|---|
 | **Format** | Groupe de 5 à 10 personnes | Réservé à votre équipe |
-| **Tarif** | 760 € / jour / participant | 1 500 € / jour (max 12 participants) |
+| **Tarif** | 1 380 € / jour (accompagnement individuel) | 1 980 € / jour (max 12 participants) |
 | **Durée** | 1 ou 2 jours | 1 ou 2 jours |
 | **Lieu** | Paris, Lyon, Bordeaux, distanciel | Dans vos locaux ou distanciel |
 | **Financement** | OPCO, FIF-PL, FIFPL | OPCO, plan de développement des compétences |

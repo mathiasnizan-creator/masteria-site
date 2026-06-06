@@ -144,12 +144,12 @@ Découvrez comment Gemini dans Google Meet et NotebookLM transforment vos entret
 
 ## Tarifs et financement
 
-### Formation inter-entreprises
-**760 € HT / jour / participant**
+### Formation intra-entreprise ou accompagnement individuel sur mesure
+**1 380 € HT / jour (accompagnement individuel)**
 Sessions avec des professionnels RH de différents secteurs. Format idéal pour les DRH de PME ou les RH généralistes souhaitant se former sans organiser une session interne.
 
 ### Formation intra-entreprise
-**1 500 € HT / jour** — jusqu'à 12 participants
+**1 980 € HT / jour** — jusqu'à 12 participants
 Programme calé sur vos processus RH, vos documents internes et vos outils Google Workspace. Format 2 jours consécutifs ou 4 demi-journées selon votre organisation.
 
 ### Financement OPCO

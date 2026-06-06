@@ -7,12 +7,12 @@ export const FAQ_GENERAL = [
   { q: "Faut-il des prérequis techniques ?", a: "Non. Nos formations sont conçues pour des professionnels de tous niveaux, sans aucun prérequis technique. La seule condition : utiliser un ordinateur et avoir envie d'apprendre." },
   { q: "Vos formations se déroulent-elles en présentiel ou à distance ?", a: "Les deux. Nous proposons des sessions en présentiel (dans vos locaux ou dans notre salle) et à distance via des outils de visioconférence interactifs. Le format est choisi lors du devis selon vos préférences." },
   { q: "Dans quels pays intervenez-vous ?", a: "Nous intervenons en France (toutes régions), en Suisse et en Belgique. Pour les formations intra-entreprise, nous nous déplaçons dans vos locaux." },
-  { q: "Quel est le délai pour organiser une formation ?", a: "Pour les formations inter-entreprises, les prochaines sessions sont disponibles rapidement. Pour les formations intra ou sur mesure, comptez 2 à 4 semaines pour la phase de cadrage et d'organisation." },
+  { q: "Quel est le délai pour organiser une formation ?", a: "Pour un accompagnement individuel sur mesure, organisable sous 1 à 2 semaines. Pour une formation intra-entreprise, comptez 2 à 4 semaines pour le cadrage et l'organisation." },
 ];
 
 export const FAQ_FORMATIONS = [
   { q: "Quelle est la durée des formations ?", a: "Nos formations durent 2 jours (14h). Pour les formations intra-entreprise sur mesure, la durée peut être adaptée selon vos besoins et votre planning." },
-  { q: "Combien de participants par session ?", a: "En inter-entreprises, les groupes sont limités à 8 participants pour garantir un suivi individualisé. En intra-entreprise, nous pouvons aller jusqu'à 12 participants simultanément." },
+  { q: "Combien de participants par session ?", a: "L'accompagnement individuel est exclusivement 1-to-1 (1 participant). En intra-entreprise, nous pouvons aller jusqu'à 12 participants simultanément." },
   { q: "Reçoit-on une attestation à l'issue de la formation ?", a: "Oui, chaque participant reçoit une attestation de formation certifiée Qualiopi. Ce document est nécessaire pour le remboursement OPCO et peut être joint à votre dossier de compétences." },
   { q: "Peut-on personnaliser le contenu ?", a: "Absolument. Pour les formations intra-entreprise, nous adaptons systématiquement le programme à votre secteur, vos outils et vos cas d'usage spécifiques." },
   { q: "Les formations sont-elles disponibles en e-learning ?", a: "Pas encore. Nous privilégions le format synchrone (présentiel ou classe virtuelle) pour maximiser les échanges et la pratique. Des ressources complémentaires en ligne sont incluses dans chaque formation." },
@@ -53,11 +53,10 @@ export function FAQSection({ items, title = "Questions fréquentes", bg = "#F8F8
 }
 
 export function FormatTabs({ onContact }) {
-  const [active, setActive] = useState('inter');
+  const [active, setActive] = useState('intra');
   const formats = [
-    { key: 'inter', label: 'INTER', fullLabel: 'Inter-entreprises', price: '760 €', unit: '/ pers / jour', desc: "Rejoignez un groupe de professionnels issus de différentes entreprises. Format idéal pour bénéficier de retours d'expériences croisées. Sessions planifiées tout au long de l'année.", details: ['8 participants maximum', 'Sessions au calendrier', 'Mix de secteurs enrichissant', 'Finançable OPCO à 100%'] },
-    { key: 'intra', label: 'INTRA', fullLabel: 'Intra-entreprise', price: '1 500 €', unit: '/ jour / groupe', desc: "Formation réservée à vos équipes, dans vos locaux ou à distance. Contenu adapté à votre secteur et à vos outils internes. Jusqu'à 12 participants simultanément.", details: ['12 participants maximum', 'Dans vos locaux ou distanciel', 'Contenu adapté à votre secteur', 'Finançable OPCO à 100%'] },
-    { key: 'mesure', label: 'SUR MESURE', fullLabel: 'Sur mesure', price: 'Sur devis', unit: '', desc: "Programme entièrement construit autour de vos enjeux. Audit préalable, co-construction pédagogique, suivi post-formation renforcé sur 3 mois.", details: ['Durée et format flexibles', 'Programme co-construit', 'Audit de besoins inclus', 'Suivi 3 mois post-formation'] },
+    { key: 'intra', label: 'INTRA', fullLabel: 'Intra-entreprise', price: '1 980 €', unit: '/ jour / groupe', desc: "Formation réservée à vos équipes, dans vos locaux ou à distance. Contenu construit sur votre secteur, vos outils internes et vos cas réels. Jusqu'à 12 participants.", details: ['Jusqu\'à 12 participants', 'Dans vos locaux ou distanciel', 'Contenu adapté à votre secteur', 'Finançable OPCO à 100%'] },
+    { key: 'individuel', label: 'INDIVIDUEL', fullLabel: 'Accompagnement individuel sur mesure', price: '1 380 €', unit: '/ jour', desc: "Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme conçu autour de vos enjeux personnels, rythme adapté, suivi entre les sessions.", details: ['1 participant', 'En présentiel ou distanciel', 'Programme co-construit', 'Suivi entre les sessions'] },
   ];
   const cur = formats.find(f => f.key === active);
   return (
@@ -108,11 +107,10 @@ export function FormatTabs({ onContact }) {
 }
 
 export function SidebarFormatPicker({ onContact }) {
-  const [active, setActive] = useState('inter');
+  const [active, setActive] = useState('intra');
   const formats = [
-    { key: 'inter', label: 'INTER', price: '760 €', unit: '/ pers / jour', details: ['8 participants max', 'Sessions calendrier', 'Finançable OPCO'] },
-    { key: 'intra', label: 'INTRA', price: '1 500 €', unit: '/ jour / groupe', details: ['12 participants max', 'Dans vos locaux', 'Finançable OPCO'] },
-    { key: 'mesure', label: 'SUR MESURE', price: 'Sur devis', unit: '', details: ['Durée flexible', 'Programme co-construit', 'Suivi 3 mois inclus'] },
+    { key: 'intra', label: 'INTRA', price: '1 980 €', unit: '/ jour / groupe', details: ['Jusqu\'à 12 participants', 'Dans vos locaux', 'Finançable OPCO'] },
+    { key: 'individuel', label: 'INDIVIDUEL', price: '1 380 €', unit: '/ jour', details: ['1 participant', 'Coaching sur mesure', 'Finançable OPCO'] },
   ];
   const cur = formats.find(f => f.key === active);
   return (

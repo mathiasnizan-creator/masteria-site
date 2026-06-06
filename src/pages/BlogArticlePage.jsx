@@ -41,7 +41,7 @@ const TAG_TO_FORMATIONS = {
   'Sprint IA':       [['Sprint IA', '/formation-sprint-ia'], ['Formation ChatGPT', '/formation-chatgpt'], ['Toutes les formations IA', '/formation-intelligence-artificielle']],
   'Data':            [['Formation analyse de données IA', '/formation-ia-analyse-donnees'], ['Formation IA Finance', '/formation-ia-finance'], ['Toutes les formations IA', '/formation-intelligence-artificielle']],
   'GEO / SEO':       [['Formation IA SEO', '/formation-ia-seo'], ['Formation ChatGPT', '/formation-chatgpt'], ['Formation Claude IA', '/formation-claude-ia']],
-  'Productivité':    [['Formation ChatGPT', '/formation-chatgpt'], ['Formation Microsoft Copilot', '/formation-microsoft-copilot'], ['Sprint IA', '/formation-sprint-ia']],
+  'Productivité':    [['Formation automatisation IA', '/formation-automatisation-ia'], ['Formation ChatGPT', '/formation-chatgpt'], ['Formation Microsoft Copilot', '/formation-microsoft-copilot']],
   "Cas d'usage":     [['Formation ChatGPT', '/formation-chatgpt'], ['Formation Microsoft Copilot', '/formation-microsoft-copilot'], ['Toutes les formations IA', '/formation-intelligence-artificielle']],
   'Géographie':      [['Formation IA Lyon', '/formation-ia-lyon'], ['Formation IA Paris', '/formation-ia-paris'], ['Toutes les formations IA', '/formation-intelligence-artificielle']],
   'Retours terrain': [['Toutes les formations IA', '/formation-intelligence-artificielle'], ['Conseil IA', '/conseil-intelligence-artificielle'], ['Sprint IA', '/formation-sprint-ia']],

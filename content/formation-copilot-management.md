@@ -144,12 +144,12 @@ Utilisez Microsoft Loop pour centraliser le suivi de vos projets d'équipe et Co
 
 ## Tarifs et financement
 
-### Formation inter-entreprises
-**760 € HT / jour / participant**
+### Formation intra-entreprise ou accompagnement individuel sur mesure
+**1 380 € HT / jour (accompagnement individuel)**
 Sessions avec des managers d'horizons et de secteurs variés. Format idéal pour les managers de PME et les managers isolés dans de grandes structures.
 
 ### Formation intra-entreprise
-**1 500 € HT / jour** — jusqu'à 12 participants
+**1 980 € HT / jour** — jusqu'à 12 participants
 Programme calé sur votre culture managériale, vos outils de reporting et vos processus internes. Format 2 jours consécutifs ou 4 demi-journées espacées.
 
 ### Financement OPCO

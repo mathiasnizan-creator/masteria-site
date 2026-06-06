@@ -37,7 +37,7 @@ export default function DebutantPage() {
           description: "Formation intelligence artificielle niveau débutant. Une journée pour maîtriser les bases de ChatGPT, Copilot ou Gemini sans prérequis technique.",
           level: 'Débutant',
           duration: 'PT7H',
-          price: '760',
+          price: '1980',
         }}
         breadcrumbs={[
           { name: 'Accueil', slug: '' },

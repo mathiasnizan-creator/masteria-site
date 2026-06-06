@@ -182,8 +182,8 @@ export default function GeminiPage() {
     courseMode: ['onsite', 'online'],
     inLanguage: 'fr',
     hasCourseInstance: [
-      { '@type': 'CourseInstance', courseMode: 'onsite', name: 'Formation intra-entreprise', offers: { '@type': 'Offer', price: '1500', priceCurrency: 'EUR' } },
-      { '@type': 'CourseInstance', courseMode: 'online', name: 'Formation inter-entreprises', offers: { '@type': 'Offer', price: '760', priceCurrency: 'EUR' } },
+      { '@type': 'CourseInstance', courseMode: 'onsite', name: 'Formation intra-entreprise', offers: { '@type': 'Offer', price: '1980', priceCurrency: 'EUR' } },
+      { '@type': 'CourseInstance', courseMode: 'online', name: 'Accompagnement individuel sur mesure', offers: { '@type': 'Offer', price: '1380', priceCurrency: 'EUR' } },
     ],
   }
 
@@ -234,7 +234,7 @@ export default function GeminiPage() {
               { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
               { icon: Wallet,            label: 'Finançable OPCO' },
               { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-              { icon: Building2,         label: 'Intra ou inter-entreprises' },
+              { icon: Building2,         label: 'Intra ou accompagnement individuel' },
             ].map(({ icon: Icon, label }) => (
               <span
                 key={label}
@@ -398,24 +398,24 @@ export default function GeminiPage() {
             Modalités et tarifs
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 32 }}>
-            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTER-ENTREPRISES</div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>760 €</div>
-              <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour / participant</div>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${COLOR}` }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: COLOR, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 980 €</div>
+              <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (jusqu'à 12 participants)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {['Groupe de 5 à 10 personnes', '1 ou 2 jours', 'Paris, Lyon, Bordeaux, distanciel', 'OPCO, FIF-PL, FIFPL'].map(item => (
+                {['Réservé à votre équipe', '1 ou 2 jours', 'Dans vos locaux ou distanciel', 'OPCO, plan de développement des compétences'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
                     <span style={{ color: COLOR }}>✓</span>{item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${COLOR}` }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: COLOR, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 500 €</div>
-              <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (max 12 participants)</div>
+            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 380 €</div>
+              <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (coaching 1-to-1)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {['Réservé à votre équipe', '1 ou 2 jours', 'Dans vos locaux ou distanciel', 'OPCO, plan de développement des compétences'].map(item => (
+                {['Programme sur mesure', 'Rythme adapté', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
                     <span style={{ color: COLOR }}>✓</span>{item}
                   </li>
