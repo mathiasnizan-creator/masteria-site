@@ -9,6 +9,9 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { SPOKES, HUBS } from '../data/seo-pages'
 
+/* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
+const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
+
 /* ── Icônes par métier (même mapping que HubPage) ── */
 const METIER_ICONS = {
   marketing:             Megaphone,
@@ -214,7 +217,9 @@ export default function SpokePage() {
             <span style={{ color: '#374151' }}>/</span>
             {hub && <Link to={`/${hub.slug}`} style={{ color: '#6B7280' }}>{spoke.tool}</Link>}
             {hub && <span style={{ color: '#374151' }}>/</span>}
-            <span style={{ color: c, fontWeight: 600 }}>{spoke.metier}</span>
+            {METIER_HUB_SLUGS.includes(spoke.metierSlug)
+              ? <Link to={`/formation-ia-${spoke.metierSlug}`} style={{ color: c, fontWeight: 600 }}>{spoke.metier}</Link>
+              : <span style={{ color: c, fontWeight: 600 }}>{spoke.metier}</span>}
           </nav>
 
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>

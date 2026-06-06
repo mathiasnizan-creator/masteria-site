@@ -34,9 +34,19 @@ const METIER_ICONS = {
 const METIER_CONTENT = {
   marketing: {
     metaTitle: 'Formation IA Marketing pour entreprises | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes marketing à l\'IA : ChatGPT, Copilot, Gemini. Rédaction de contenus, campagnes, reporting. Certifié Qualiopi, finançable OPCO. +1 500 professionnels formés.',
-    h1: 'Formation IA pour les équipes Marketing',
-    intro: "Les équipes marketing sont parmi les premières à bénéficier de l'IA générative. Créer des contenus, gérer des campagnes, analyser les performances : chaque outil s'intègre dans votre environnement de travail existant et vous fait gagner plusieurs heures par semaine.",
+    metaDesc: 'Formation IA marketing : ChatGPT, Copilot, Gemini appliqués à vos contenus, campagnes et reporting. Certifiée Qualiopi, finançable OPCO. Devis sous 24 h.',
+    h1: "Formation IA Marketing : formez vos équipes à l'intelligence artificielle",
+    intro: "Notre formation IA marketing forme vos équipes à l'intelligence artificielle générative appliquée à leur métier : production de contenus, SEO, réseaux sociaux, emailing, publicité et analyse de performance. En 1 à 2 jours, certifiée Qualiopi et 100 % finançable OPCO, elle transforme ChatGPT, Copilot, Gemini, Claude ou Mistral en assistants opérationnels, avec des livrables produits sur vos propres campagnes et une bibliothèque de prompts adaptée à votre marque.",
+    deepDiveTitle: "L'intelligence artificielle appliquée à chaque fonction marketing",
+    deepDiveIntro: "Une formation IA marketing utile ne se limite pas à « savoir prompter ». Elle montre comment l'intelligence artificielle générative s'intègre concrètement dans chaque mission de votre équipe, avec des cas d'usage testés sur vos propres projets.",
+    deepDive: [
+      { title: 'Contenu & rédaction', text: "Rédigez articles de blog, pages web, livres blancs et newsletters 3× plus vite. L'IA produit des premiers jets structurés, des variantes de titres et des reformulations fidèles à votre ligne éditoriale, que vos équipes affinent au lieu de partir de la page blanche." },
+      { title: 'SEO & GEO', text: "Générez des clusters de mots-clés, des briefs SEO, des balises title et meta, et optimisez vos contenus existants. La formation couvre aussi le GEO, le référencement dans les réponses des IA comme ChatGPT et Perplexity, nouvel enjeu du marketing 2026." },
+      { title: 'Réseaux sociaux', text: "Déclinez un même message en posts LinkedIn, Instagram, X et TikTok, planifiez un calendrier éditorial trimestriel et adaptez le ton à chaque plateforme en quelques minutes." },
+      { title: 'Email & CRM', text: "Rédigez des séquences d'emailing, personnalisez les messages par segment et testez des objets en A/B. L'IA accélère la production tout en gardant la cohérence de marque." },
+      { title: 'Publicité & création', text: "Produisez des variantes d'annonces Google Ads et Meta, des accroches publicitaires et des briefs créatifs pour vos visuels, et testez plus d'angles à budget constant." },
+      { title: 'Analyse & reporting', text: "Transformez un export de données campagne en synthèse claire, faites ressortir les enseignements et générez des recommandations actionnables, sans compétences data avancées." },
+    ],
     painPoints: [
       'Produire 3× plus de contenus sans augmenter les effectifs',
       'Maintenir la cohérence de marque à grande échelle',
@@ -484,6 +494,30 @@ export default function MetierPage() {
           </div>
         </div>
       </section>
+
+      {/* ── IA PAR FONCTION MÉTIER (profondeur éditoriale + couverture sémantique) ── */}
+      {content.deepDive && (
+        <section style={{ background: '#fff', padding: '72px 40px', borderBottom: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 960, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.01em' }}>
+              {content.deepDiveTitle}
+            </h2>
+            {content.deepDiveIntro && (
+              <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, maxWidth: 720, marginBottom: 40 }}>
+                {content.deepDiveIntro}
+              </p>
+            )}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+              {content.deepDive.map((d, i) => (
+                <div key={i} style={{ background: '#FAFAF7', border: '1px solid #E5E7EB', borderRadius: 12, padding: '24px 24px 26px' }}>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{d.title}</h3>
+                  <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{d.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── FORMATIONS PAR OUTIL ── */}
       <section id="formations" style={{ padding: '80px 40px', background: '#fff' }}>
