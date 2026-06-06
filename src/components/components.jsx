@@ -533,6 +533,7 @@ export function MasteriaFooter() {
               ['Formation Mistral AI', '/formation-mistral-ai'],
               ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
               ['Formation Google Gemini', '/formation-gemini-entreprise'],
+              ['Formation automatisation IA', '/formation-automatisation-ia'],
               ['Toutes les formations IA', '/formation-intelligence-artificielle'],
             ].map(([l, path]) => (
               <Link key={l} to={path} style={lStyle}>{l}</Link>

@@ -109,7 +109,7 @@ for (const s of hubSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod:
 for (const s of metierSlugs)  urls.push({ loc: `${SITE}/${s}`,          lastmod: METIER_LASTMOD, changefreq: 'monthly', priority: 0.6 });
 for (const s of geoSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.7 });
 for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.7 });
-const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia'];
+const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-ia-gestion-de-projet','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia'];
 for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: 0.7 });
 for (const s of [...spokeSet].sort()) urls.push({ loc: `${SITE}/${s}`,  lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.5 });
 for (const b of blogEntries)  urls.push({ loc: `${SITE}/blog/${b.slug}`, lastmod: b.lastmod,     changefreq: 'monthly', priority: 0.5 });

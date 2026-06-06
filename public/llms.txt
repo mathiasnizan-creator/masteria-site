@@ -50,6 +50,7 @@ Masteria propose deux activités complémentaires :
 - [Formation Google Gemini](https://www.master-ia.fr/formation-gemini-entreprise)
 - [Formation Claude (Anthropic)](https://www.master-ia.fr/formation-claude-ia)
 - [Formation Mistral AI](https://www.master-ia.fr/formation-mistral-ai)
+- [Formation automatisation IA](https://www.master-ia.fr/formation-automatisation-ia) — Automatiser tâches et workflows avec l'IA : agents, GPTs, Make, Zapier, Power Automate (no-code, 2 jours)
 
 ## Formations par métier
 
