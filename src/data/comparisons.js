@@ -215,7 +215,7 @@ export const COMPARISONS = {
       },
       {
         title: "Négliger le coût total (formation + adoption)",
-        desc: "L'abonnement à 25 € représente ~5 % du coût total d'un déploiement IA. La vraie variable c'est la formation (~1 380 € par jour en individuel) et le temps d'adoption. Un outil 30 % moins puissant mais adopté à 90 % bat largement un outil 30 % plus puissant adopté à 30 %.",
+        desc: "L'abonnement à 25 € représente ~5 % du coût total d'un déploiement IA. La vraie variable c'est la formation (~1 980 € par jour en individuel) et le temps d'adoption. Un outil 30 % moins puissant mais adopté à 90 % bat largement un outil 30 % plus puissant adopté à 30 %.",
       },
       {
         title: "Confondre \"je l'ai testé 10 minutes\" et \"je l'ai utilisé pour mon vrai travail\"",
@@ -251,7 +251,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte la formation des équipes à ces outils ?",
-        a: "Une formation Masteria de 1 jour pour ChatGPT ou Claude coûte 1 980 €/jour pour un groupe en intra-entreprise (jusqu'à 12 personnes) ou 1 380 €/jour en accompagnement individuel sur mesure. 100 % finançable par les OPCO.",
+        a: "Une formation Masteria de 1 jour pour ChatGPT ou Claude coûte 1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. 100 % finançable par les OPCO.",
       },
       {
         q: "Quels sont les risques de sécurité ?",
@@ -690,7 +690,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte une formation pour comparer les 5 outils ?",
-        a: "Notre formation \"Panorama IA\" sur 2 jours permet aux équipes de tester les 5 outils sur leurs cas d'usage réels avant de choisir. 1 980 €/jour en intra-entreprise, 1 380 €/jour en individuel, finançable OPCO. Idéal avant un déploiement à l'échelle.",
+        a: "Notre formation \"Panorama IA\" sur 2 jours permet aux équipes de tester les 5 outils sur leurs cas d'usage réels avant de choisir. 1 980 €/jour en intra-entreprise comme en individuel, finançable OPCO. Idéal avant un déploiement à l'échelle.",
       },
       {
         q: "Et l'IA chinoise (DeepSeek, Qwen) ?",
@@ -1299,6 +1299,388 @@ export const COMPARISONS = {
       { label: 'Formation Claude IA', href: '/formation-claude-ia' },
     ],
   },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // toolA = Mistral AI, toolB = ChatGPT — angle souveraineté
+  // ═══════════════════════════════════════════════════════════════════
+  'mistral-vs-chatgpt': {
+    slug: 'mistral-vs-chatgpt',
+    metaTitle: 'Mistral vs ChatGPT : que choisir en 2026 ? | Masteria',
+    metaDesc: "Comparatif Mistral AI vs ChatGPT pour entreprises : souveraineté, RGPD, hébergement, fonctionnalités, prix. Le guide 2026 par les formateurs Masteria.",
+    h1: 'Mistral AI vs ChatGPT : souveraineté française ou écosystème américain ?',
+    intro:
+      "Le duel le plus demandé par les entreprises françaises en 2026 : **Mistral AI**, le champion français de l'IA générative, face à **ChatGPT** (OpenAI), leader mondial. Derrière la question patriotique se cache un vrai choix structurant : souveraineté des données, hébergement, écosystème, coût total. Comparatif par les formateurs qui déploient les deux outils chez leurs clients.",
+    lastUpdate: 'Juin 2026',
+    readTime: '8 minutes',
+    toolA: {
+      id: 'mistral',
+      name: 'Mistral AI',
+      editor: 'Mistral AI (France)',
+      currentModel: 'Mistral Large / Magistral / Le Chat',
+      country: 'France',
+      pricing: "Le Chat gratuit · Pro ≈ 15 €/mois · Team et Enterprise sur devis · modèles open-weight auto-hébergeables",
+      foundedAI: '2023',
+      color: '#FF7000',
+    },
+    toolB: {
+      id: 'chatgpt',
+      name: 'ChatGPT',
+      editor: 'OpenAI',
+      currentModel: 'GPT-5 / GPT-4o',
+      country: 'États-Unis',
+      pricing: '20 €/mois Plus · 25 €/utilisateur Team · sur devis Enterprise',
+      foundedAI: '2022',
+      color: '#10A37F',
+    },
+    verdict: {
+      title: 'Verdict en 30 secondes',
+      summary:
+        "**Mistral AI** est le choix de la souveraineté : entreprise française, hébergement européen, modèles open-weight déployables dans votre propre infrastructure, excellent rapport qualité-prix. **ChatGPT** garde l'avantage sur la richesse fonctionnelle (multimodalité, GPTs, agents, mémoire) et la profondeur de l'écosystème. Pour les secteurs régulés et le secteur public, Mistral s'impose souvent ; pour la polyvalence maximale au quotidien, ChatGPT reste la référence. Les deux cohabitent de plus en plus dans les mêmes organisations.",
+      recommendA: ['Secteur public & défense', 'Données sensibles (santé, juridique, banque)', 'Exigence RGPD stricte ou hébergement UE', 'Déploiement on-premise / auto-hébergé'],
+      recommendB: ['Polyvalence maximale au quotidien', 'Création multimodale (images, voix, vidéo)', 'Écosystème GPTs, agents et intégrations', 'Équipes déjà acculturées à ChatGPT'],
+    },
+    criteria: [
+      {
+        title: 'Souveraineté et hébergement des données',
+        descriptionA:
+          "C'est l'argument central. Entreprise française, données hébergées en Union européenne, et surtout : les modèles open-weight (licence ouverte) peuvent tourner dans votre propre datacenter ou votre cloud privé. Aucun équivalent chez les acteurs américains.",
+        descriptionB:
+          "Données traitées par OpenAI (États-Unis), avec des options de résidence des données en Europe pour les offres Enterprise. Pas de version auto-hébergeable : tout passe par les serveurs d'OpenAI ou d'Azure. Le Cloud Act américain reste un point de blocage pour certains secteurs.",
+        winner: 'a',
+        winnerText: 'Avantage net Mistral, seul à offrir l\'auto-hébergement',
+      },
+      {
+        title: 'Qualité en français et rédaction',
+        descriptionA:
+          "Excellent en français, entraîné avec une attention particulière à la langue. Sur la rédaction professionnelle courante (emails, notes, synthèses), la différence avec ChatGPT est devenue marginale.",
+        descriptionB:
+          "Excellent également : GPT-5 manie le français avec finesse, y compris sur les registres soutenus. Légère avance sur les tâches rédactionnelles très créatives ou très longues.",
+        winner: 'tie',
+        winnerText: 'Match nul sur le français professionnel courant',
+      },
+      {
+        title: 'Fonctionnalités et écosystème',
+        descriptionA:
+          "Le Chat a bien progressé : recherche web, génération d'images (via Flux), interpréteur de code, agents, connecteurs. L'écosystème reste plus jeune : moins d'intégrations tierces, pas d'équivalent au magasin de GPTs.",
+        descriptionB:
+          "L'écosystème le plus riche du marché : GPTs personnalisés, mémoire persistante, voix avancée, génération d'images et de vidéo (Sora), Deep Research, connecteurs natifs. Chaque besoin a déjà son outil intégré.",
+        winner: 'b',
+        winnerText: 'Avantage ChatGPT sur la richesse fonctionnelle',
+      },
+      {
+        title: 'Performance brute des modèles',
+        descriptionA:
+          "Mistral Large et les modèles de raisonnement (Magistral) tiennent très bien la comparaison sur les tâches d'entreprise courantes. Sur les problèmes de raisonnement les plus difficiles, un écart subsiste avec les meilleurs modèles américains.",
+        descriptionB:
+          "GPT-5 reste dans le trio de tête mondial sur la quasi-totalité des benchmarks. Pour les cas d'usage extrêmes (recherche, analyse très complexe), l'avantage est réel mais rarement décisif pour un usage métier standard.",
+        winner: 'b',
+        winnerText: 'Avantage ChatGPT sur les tâches les plus complexes',
+      },
+      {
+        title: 'Confidentialité et conformité (RGPD, AI Act)',
+        descriptionA:
+          "Position structurellement plus simple : entreprise européenne, soumise nativement au RGPD et à l'AI Act, pas de transfert hors UE à justifier. Argument fort dans les analyses d'impact (AIPD) et les appels d'offres.",
+        descriptionB:
+          "Conformité solide sur le papier (SOC 2, certifications, options Enterprise), mais le transfert de données vers un acteur américain doit être documenté et justifié. Certains DPO l'excluent pour les données les plus sensibles.",
+        winner: 'a',
+        winnerText: 'Avantage Mistral pour les DPO et secteurs régulés',
+      },
+      {
+        title: 'Code et développement',
+        descriptionA:
+          "Bons modèles de code (dont des modèles dédiés open-weight), API claire, et l'atout on-premise pour les codebases ultra-confidentielles. Moins d'outillage agentique clé en main.",
+        descriptionB:
+          "Très bon niveau, écosystème développeur mature (Codex, intégrations IDE). Pour les agents de codage, la référence du marché reste toutefois Claude Code (Anthropic), traité dans notre comparatif dédié.",
+        winner: 'b',
+        winnerText: 'Léger avantage ChatGPT sur l\'outillage développeur',
+      },
+      {
+        title: 'Tarifs et coût total',
+        descriptionA:
+          "Le Chat Pro coûte environ 25 % de moins que ChatGPT Plus, l'API est agressive sur les prix, et les modèles open-weight sont gratuits hors coût d'infrastructure. Le coût de possession peut être très bas à grande échelle.",
+        descriptionB:
+          "Tarification standard du marché (20 €/mois Plus, 25 €/utilisateur Team). Le coût réel vient surtout de l'adoption et de la formation, identiques pour les deux outils.",
+        winner: 'a',
+        winnerText: 'Avantage Mistral sur le coût, surtout à grande échelle',
+      },
+    ],
+    useCases: [
+      { metier: 'Secteur public & parapublic', recommendation: 'a', why: "Souveraineté exigée dans la plupart des appels d'offres. Mistral est devenu le choix par défaut des administrations françaises." },
+      { metier: 'Juridique, santé, banque (données sensibles)', recommendation: 'a', why: "Hébergement UE et option on-premise simplifient drastiquement le dossier conformité." },
+      { metier: 'Marketing & communication', recommendation: 'b', why: "Multimodalité native, GPTs spécialisés et écosystème créatif plus riche." },
+      { metier: 'Industrie & R&D confidentielle', recommendation: 'a', why: "L'auto-hébergement permet de traiter plans, brevets et données process sans qu'aucune donnée ne sorte." },
+      { metier: 'Développement logiciel', recommendation: 'b', why: "Outillage développeur plus mature. Mistral reprend l'avantage si le code ne doit pas quitter l'infrastructure." },
+      { metier: 'Direction générale', recommendation: 'tie', why: "Le bon arbitrage est souvent les deux : ChatGPT pour la polyvalence, Mistral pour les flux sensibles." },
+    ],
+    methodology:
+      "Ce comparatif s'appuie sur les déploiements réels accompagnés par Masteria depuis 2022 auprès de PME, ETI et acteurs publics français, dont plusieurs bascules complètes vers Mistral pour des raisons de souveraineté. Versions évaluées en juin 2026 : **Le Chat Pro / Mistral Large** et **ChatGPT Plus / GPT-5**, complétées par les retours de plus de 1 500 professionnels formés.",
+    realCases: [
+      {
+        scenario: "Répondre à un appel d'offres public avec exigence de souveraineté",
+        feature: "Mistral (hébergement UE, on-premise) · ChatGPT (Enterprise, résidence UE)",
+        prompt: "Notre collectivité exige que les données des usagers ne quittent jamais l'Union européenne et privilégie les solutions souveraines. Quelle architecture IA proposer pour un assistant de réponse aux usagers ?",
+        verdictText: "Mistral gagne sans débat. Entre l'hébergement européen natif et la possibilité de déployer un modèle open-weight dans l'infrastructure de la collectivité, le dossier conformité se construit en quelques pages. Avec ChatGPT, le même dossier exige des analyses de transfert complexes et passe rarement le filtre des acheteurs publics.",
+        winner: 'a',
+      },
+      {
+        scenario: "Produire une campagne multicanal complète avec visuels",
+        feature: "ChatGPT (GPT Image 2, Canvas, GPTs) · Le Chat (génération via Flux)",
+        prompt: "Lance la campagne de notre nouveau service : landing page, séquence de 4 emails, 6 posts LinkedIn, 8 visuels carrés cohérents avec notre charte (bleu nuit, minimaliste), et un script vidéo de 45 secondes.",
+        verdictText: "ChatGPT prend l'avantage. La chaîne créative complète (textes, visuels cohérents, script, itérations dans Canvas) se fait dans un seul outil avec un meilleur contrôle du style visuel. Le Chat produit l'essentiel mais demande plus d'allers-retours sur les visuels et n'a pas d'équivalent à la vidéo générée.",
+        winner: 'b',
+      },
+      {
+        scenario: "Analyser des documents R&D confidentiels sans sortie de données",
+        feature: "Mistral open-weight auto-hébergé · ChatGPT Enterprise",
+        prompt: "Synthétise ces 30 rapports d'essais internes et identifie les 5 pistes d'amélioration process les plus prometteuses. Contrainte absolue : aucune donnée ne doit quitter notre réseau.",
+        verdictText: "Mistral est le seul à répondre à la contrainte telle quelle : un modèle open-weight déployé sur l'infrastructure interne traite les documents sans aucun flux sortant. ChatGPT Enterprise offre des garanties contractuelles solides, mais les données transitent par les serveurs d'OpenAI, ce que la contrainte excluait d'emblée.",
+        winner: 'a',
+      },
+    ],
+    mistakes: [
+      {
+        title: "Croire que souverain signifie moins performant partout",
+        desc: "Sur les tâches d'entreprise courantes (rédaction, synthèse, analyse de documents, code standard), Mistral Large joue dans la même catégorie que les modèles américains. L'écart ne se voit que sur les cas extrêmes, qui représentent une minorité des usages réels d'une PME ou d'une ETI.",
+      },
+      {
+        title: "Comparer Le Chat gratuit à ChatGPT Plus",
+        desc: "L'erreur symétrique du comparatif ChatGPT vs Claude : les versions gratuites sont bridées. Pour un test honnête, comparez Le Chat Pro à ChatGPT Plus, sur vos cas d'usage réels, pendant deux semaines.",
+      },
+      {
+        title: "Choisir la souveraineté par principe sans cartographier ses flux",
+        desc: "Tous vos usages n'ont pas le même niveau de sensibilité. Beaucoup d'organisations gagnent à router les flux sensibles vers Mistral (ou un déploiement interne) et à laisser les usages génériques sur l'outil préféré des équipes. La cartographie précède le choix.",
+      },
+    ],
+    alsoConsidered: [
+      { name: 'Claude (Anthropic)', summary: "Référence sur le code et l'analyse de longs documents. Voir notre [comparatif ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: 'Gemini (Google)', summary: "Pertinent si vous êtes sur Google Workspace. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
+      { name: 'Llama (Meta)', summary: "Alternative open-weight américaine pour l'auto-hébergement, sans interface grand public équivalente au Chat." },
+    ],
+    faq: [
+      {
+        q: "Mistral est-il vraiment 100 % souverain ?",
+        a: "Mistral AI est une entreprise française dont les modèles peuvent être hébergés en UE ou déployés dans votre propre infrastructure : c'est le niveau de souveraineté le plus élevé du marché généraliste. Nuance honnête : la société compte des investisseurs internationaux et propose aussi ses modèles via des clouds américains. La souveraineté effective dépend donc du mode de déploiement que VOUS choisissez.",
+      },
+      {
+        q: "Que signifie open-weight et pourquoi c'est important ?",
+        a: "Un modèle open-weight publie ses poids (le cœur du modèle) sous licence permissive : vous pouvez le télécharger et le faire tourner sur vos serveurs, sans envoyer une seule donnée à l'éditeur. C'est la garantie ultime de confidentialité, et un avantage structurel de Mistral que ni OpenAI ni Anthropic n'offrent.",
+      },
+      {
+        q: "Le Chat peut-il remplacer ChatGPT pour mes équipes au quotidien ?",
+        a: "Pour 80 % des usages bureautiques (rédaction, synthèse, analyse, traduction, brainstorming), oui. Les 20 % restants dépendent de fonctionnalités spécifiques à ChatGPT : GPTs personnalisés, mémoire avancée, génération vidéo, voix. Listez vos usages réels avant de trancher, c'est l'exercice que nous faisons en formation multi-outils.",
+      },
+      {
+        q: "Quel est le meilleur choix au regard du RGPD et de l'AI Act ?",
+        a: "Les deux peuvent être conformes, mais le chemin est plus court avec Mistral : pas de transfert hors UE à documenter, éditeur soumis nativement au droit européen. Pour les traitements de données sensibles, la plupart des DPO que nous formons privilégient Mistral ou un déploiement interne.",
+      },
+      {
+        q: "Peut-on déployer les deux en parallèle ?",
+        a: "C'est une stratégie de plus en plus courante : ChatGPT (ou Claude) pour la polyvalence quotidienne, Mistral pour les flux sensibles et les métiers régulés. Le coût marginal est faible et la formation des équipes couvre les deux logiques de prompt, très proches en pratique.",
+      },
+      {
+        q: "Combien coûte la formation de mes équipes ?",
+        a: "Une journée de formation Mistral AI ou ChatGPT en intra-entreprise coûte 1 980 € (jusqu'à 12 participants), au même tarif en accompagnement individuel. Certifié Qualiopi, finançable OPCO jusqu'à 100 %. Le format multi-outils permet de comparer les deux sur vos cas réels avant de choisir.",
+      },
+    ],
+    relatedLinks: [
+      { label: 'Formation Mistral AI pour entreprises', href: '/formation-mistral-ai' },
+      { label: 'Formation ChatGPT pour entreprises', href: '/formation-chatgpt' },
+      { label: 'Comparatif ChatGPT vs Claude', href: '/chatgpt-vs-claude' },
+      { label: 'Quelle est la meilleure IA en 2026 ?', href: '/quelle-est-la-meilleure-ia' },
+      { label: 'Conseil IA pour entreprises', href: '/conseil-intelligence-artificielle' },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // toolA = Google Gemini, toolB = Microsoft Copilot — angle suite bureautique
+  // ═══════════════════════════════════════════════════════════════════
+  'gemini-vs-copilot': {
+    slug: 'gemini-vs-copilot',
+    metaTitle: 'Gemini vs Copilot : lequel choisir en 2026 ? | Masteria',
+    metaDesc: "Comparatif Google Gemini vs Microsoft Copilot : intégration Workspace ou M365, prix, sécurité, agents. Le guide 2026 pour choisir selon votre suite.",
+    h1: 'Google Gemini vs Microsoft Copilot : le match des suites bureautiques',
+    intro:
+      "En 2026, le choix entre **Gemini** (Google) et **Microsoft Copilot** se joue rarement sur la qualité brute des modèles : il se joue sur votre suite bureautique. Gemini vit dans Google Workspace (Gmail, Docs, Sheets, Meet), Copilot dans Microsoft 365 (Outlook, Word, Excel, Teams). Ce comparatif détaille ce que chacun fait réellement bien, ce qu'il coûte vraiment, et comment décider si vous êtes en environnement mixte.",
+    lastUpdate: 'Juin 2026',
+    readTime: '8 minutes',
+    toolA: {
+      id: 'gemini',
+      name: 'Google Gemini',
+      editor: 'Google',
+      currentModel: 'Gemini 3 / Gemini for Workspace',
+      country: 'États-Unis',
+      pricing: "Inclus dans les plans Workspace Business et Enterprise · Gemini app gratuite · AI Pro/Ultra pour les usages avancés",
+      foundedAI: '2023',
+      color: '#4285F4',
+    },
+    toolB: {
+      id: 'copilot',
+      name: 'Microsoft Copilot',
+      editor: 'Microsoft',
+      currentModel: 'Microsoft 365 Copilot (GPT-5 et modèles OpenAI)',
+      country: 'États-Unis',
+      pricing: "Microsoft 365 Copilot ≈ 30 €/utilisateur/mois en sus de la licence M365 · Copilot Chat inclus",
+      foundedAI: '2023',
+      color: '#0078D4',
+    },
+    verdict: {
+      title: 'Verdict en 30 secondes',
+      summary:
+        "La règle simple tient toujours : **votre suite décide**. Organisation Google Workspace → Gemini, désormais inclus dans la plupart des plans payants, ce qui change l'équation économique. Organisation Microsoft 365 → Copilot, plus cher (≈ 30 €/utilisateur/mois) mais profondément intégré à Outlook, Teams et Excel, avec l'écosystème d'agents le plus mature (Copilot Studio). En environnement mixte, comparez sur 3 cas d'usage réels plutôt que sur les brochures.",
+      recommendA: ['Organisations sur Google Workspace', 'Budget serré (inclus dans les plans)', 'Analyse multimodale et longs contextes', 'Équipes Gmail / Docs / Meet au quotidien'],
+      recommendB: ['Organisations sur Microsoft 365', 'Usage intensif Outlook, Teams, Excel', 'Agents métier avec Copilot Studio', 'Gouvernance IT centralisée Microsoft'],
+    },
+    criteria: [
+      {
+        title: 'Intégration à la suite bureautique',
+        descriptionA:
+          "Natif dans Gmail (rédaction, tri), Docs, Sheets, Slides et Meet (notes automatiques, traduction en direct). Le panneau latéral Gemini traverse toute la suite avec accès à votre Drive.",
+        descriptionB:
+          "Natif dans Outlook, Word, Excel, PowerPoint, Teams et OneNote. La force : Copilot s'appuie sur Microsoft Graph, donc sur l'ensemble de vos mails, fichiers et réunions, avec les permissions existantes.",
+        winner: 'tie',
+        winnerText: 'Match nul : chacun excelle dans sa propre suite',
+      },
+      {
+        title: 'Qualité et capacités des modèles',
+        descriptionA:
+          "Gemini 3 est au niveau des meilleurs modèles mondiaux, avec un atout distinctif : des fenêtres de contexte immenses (jusqu'à plusieurs millions de tokens) idéales pour les très gros corpus, et une multimodalité native remarquable (image, audio, vidéo).",
+        descriptionB:
+          "Copilot s'appuie sur les modèles d'OpenAI (GPT-5) orchestrés par Microsoft, complétés par des modèles maison. Excellent niveau général, mais la valeur vient surtout de l'ancrage dans vos données d'entreprise via Graph.",
+        winner: 'a',
+        winnerText: 'Léger avantage Gemini sur le contexte long et la multimodalité',
+      },
+      {
+        title: 'Tarifs et coût total',
+        descriptionA:
+          "L'argument massue depuis 2025 : Gemini est inclus dans les plans Workspace Business et Enterprise (avec une hausse modérée du prix des plans). À l'échelle d'une organisation, l'écart se chiffre en dizaines de milliers d'euros par an.",
+        descriptionB:
+          "Microsoft 365 Copilot reste un add-on à ≈ 30 €/utilisateur/mois en plus de la licence M365. Copilot Chat (sans accès Graph complet) est inclus, mais la valeur réelle exige la licence complète.",
+        winner: 'a',
+        winnerText: 'Avantage net Gemini : inclus dans Workspace',
+      },
+      {
+        title: 'Agents et automatisation',
+        descriptionA:
+          "Gems (assistants personnalisés), NotebookLM pour les bases documentaires, et Vertex AI / Agentspace côté plateforme. Puissant, mais l'outillage business clé en main est plus récent.",
+        descriptionB:
+          "Copilot Studio est l'atelier d'agents le plus mature du marché bureautique : agents métier connectés à vos données et processus (SharePoint, Dynamics, Power Platform), gouvernance centralisée. Les agents préconstruits (Researcher, Analyst) sont solides.",
+        winner: 'b',
+        winnerText: 'Avantage Copilot sur les agents d\'entreprise',
+      },
+      {
+        title: 'Sécurité, permissions et gouvernance',
+        descriptionA:
+          "Gemini respecte les permissions Drive existantes et n'entraîne pas les modèles sur vos données Workspace. Gouvernance via la console admin, simple et lisible.",
+        descriptionB:
+          "Même principe via Microsoft Graph, avec un piège connu : Copilot révèle les sur-partages existants (fichiers accessibles trop largement). Un audit des permissions AVANT déploiement est indispensable. Outils de gouvernance (Purview) très complets.",
+        winner: 'tie',
+        winnerText: 'Match nul, avec un prérequis d\'audit côté Microsoft',
+      },
+      {
+        title: 'Réunions, mails et quotidien',
+        descriptionA:
+          "Meet : notes automatiques, résumés, traduction en direct multilingue de très bon niveau. Gmail : tri, résumés de fils, rédaction contextuelle.",
+        descriptionB:
+          "Teams : récapitulatifs intelligents, suivi des décisions et actions, Copilot pendant la réunion (« qu'ai-je manqué ? »). Outlook : tri intelligent, brouillons, synthèse de fils interminables.",
+        winner: 'tie',
+        winnerText: 'Équivalents : la qualité dépend de votre suite',
+      },
+      {
+        title: 'Création de contenus et multimodalité',
+        descriptionA:
+          "Génération d'images (Imagen) et de vidéo (Veo) intégrées à l'écosystème, Slides enrichies, analyse d'images et de vidéos en entrée. La chaîne créative la plus complète des deux.",
+        descriptionB:
+          "Génération d'images via Designer dans PowerPoint et Copilot, bonne qualité. Pas d'équivalent vidéo natif dans la suite en 2026.",
+        winner: 'a',
+        winnerText: 'Avantage Gemini sur la création multimodale',
+      },
+    ],
+    useCases: [
+      { metier: 'Organisation 100 % Google Workspace', recommendation: 'a', why: "Gemini est inclus, intégré partout, et le déploiement se fait en quelques clics dans la console admin." },
+      { metier: 'Organisation 100 % Microsoft 365', recommendation: 'b', why: "Copilot exploite Graph (mails, fichiers, réunions) : la valeur vient de cet ancrage, impossible à répliquer." },
+      { metier: 'Finance & analyse (Excel intensif)', recommendation: 'b', why: "Copilot dans Excel (formules, analyses, Python) reste devant l'équivalent Sheets pour les modèles complexes." },
+      { metier: 'Data & gros corpus documentaires', recommendation: 'a', why: "Contexte long de Gemini et NotebookLM excellent pour interroger des centaines de documents." },
+      { metier: 'Service client & processus outillés', recommendation: 'b', why: "Copilot Studio permet de construire des agents connectés au CRM et aux bases internes, gouvernés par l'IT." },
+      { metier: 'Environnement mixte ou migration en cours', recommendation: 'tie', why: "Testez 3 cas d'usage réels sur chaque suite avec un pilote de 2 semaines, puis chiffrez le coût licence complet." },
+    ],
+    methodology:
+      "Ce comparatif s'appuie sur les déploiements Copilot et Gemini accompagnés par Masteria en PME et ETI françaises, sur les deux suites. Versions évaluées en juin 2026 : **Gemini for Workspace (Gemini 3)** et **Microsoft 365 Copilot (GPT-5)**, en conditions réelles d'entreprise, pas en démo éditeur.",
+    realCases: [
+      {
+        scenario: "Synthèse de réunion et suivi des actions",
+        feature: "Gemini dans Meet · Copilot dans Teams",
+        prompt: "Réunion de pilotage de 55 minutes. Produis : décisions prises, actions par responsable avec échéances, points de blocage, et un brouillon de mail de synthèse pour les absents.",
+        verdictText: "Match nul de très haut niveau. Les deux produisent une synthèse fidèle et des actions exploitables. Copilot va un cran plus loin sur le suivi (relances dans Teams, lien avec Planner), Gemini sur la traduction en direct pour les équipes internationales. Le facteur décisif est simplement l'outil de visio que vous utilisez déjà.",
+        winner: 'tie',
+      },
+      {
+        scenario: "Construire une présentation à partir d'un document de référence",
+        feature: "Gemini dans Slides (+ Imagen) · Copilot dans PowerPoint (+ Designer)",
+        prompt: "À partir de cette note stratégique de 12 pages, construis une présentation de 10 slides pour le COMEX : structure claire, un message par slide, visuels sobres cohérents avec notre charte.",
+        verdictText: "Léger avantage Gemini : la génération de visuels (Imagen) intégrée produit des slides plus homogènes visuellement, et le contexte long digère mieux les documents sources volumineux. Copilot + Designer fait très bien le travail dans PowerPoint, avec un rendu parfois plus « corporate classique », ce qui peut être un avantage selon votre culture.",
+        winner: 'a',
+      },
+      {
+        scenario: "Déployer un agent interne de réponse RH (congés, paie, onboarding)",
+        feature: "Copilot Studio · Gems + Vertex AI",
+        prompt: "Construis un agent qui répond aux questions RH des collaborateurs à partir de nos accords d'entreprise et procédures internes (SharePoint), avec escalade vers l'équipe RH quand il n'est pas sûr.",
+        verdictText: "Copilot gagne. Copilot Studio est conçu exactement pour ce cas : connexion SharePoint native, gestion des permissions, canal Teams, supervision et analytics pour l'IT. Côté Google, la solution existe (Gems, Agentspace) mais demande plus d'assemblage pour atteindre le même niveau de gouvernance.",
+        winner: 'b',
+      },
+    ],
+    mistakes: [
+      {
+        title: "Comparer les modèles au lieu de comparer les intégrations",
+        desc: "Gemini 3 vs GPT-5 est un débat de benchmark. Dans la vraie vie, 90 % de la valeur vient de l'intégration à VOS mails, fichiers et réunions. La bonne question : lequel exploite le mieux les données là où elles sont déjà ?",
+      },
+      {
+        title: "Déployer Copilot sans audit des permissions",
+        desc: "Copilot rend visible tout ce que chaque collaborateur peut techniquement voir, y compris les dossiers sur-partagés depuis des années. Sans audit préalable (rapports d'accès, Purview), le déploiement peut virer à l'incident interne.",
+      },
+      {
+        title: "Ignorer le coût total réel",
+        desc: "Copilot ajoute ≈ 360 €/utilisateur/an : sur 200 personnes, 72 000 €/an, à comparer à Gemini inclus dans Workspace. Mais migrer de suite pour économiser l'add-on coûte bien plus cher. Le calcul se fait à périmètre de suite constant, formation comprise.",
+      },
+    ],
+    alsoConsidered: [
+      { name: 'ChatGPT', summary: "Beaucoup d'organisations ajoutent ChatGPT en complément de leur copilote de suite. Voir [Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
+      { name: 'Claude', summary: "Référence pour l'analyse de documents longs et le code. Voir [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: 'Mistral AI', summary: "L'option souveraineté, en complément d'une suite. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+    ],
+    faq: [
+      {
+        q: "Peut-on utiliser Gemini si on est sur Microsoft 365 (et inversement) ?",
+        a: "Oui via les applications web autonomes (gemini.google.com, copilot.microsoft.com), mais vous perdez l'essentiel : l'accès au contexte de votre suite (mails, fichiers, réunions). L'intérêt d'un copilote de suite est précisément cet ancrage. En environnement croisé, un assistant généraliste (ChatGPT, Claude, Mistral) est souvent plus pertinent.",
+      },
+      {
+        q: "Gemini est-il vraiment gratuit avec Workspace ?",
+        a: "Depuis 2025, Gemini est inclus dans les plans Workspace Business et Enterprise, qui ont augmenté de quelques euros par utilisateur. Ce n'est donc pas gratuit au sens strict, mais il n'y a plus d'add-on séparé à 20 €/utilisateur comme auparavant. Les usages très avancés (modèles de pointe, quotas élevés) passent par Google AI Pro/Ultra.",
+      },
+      {
+        q: "Quel est le meilleur pour Excel et l'analyse de données ?",
+        a: "Copilot dans Excel garde l'avantage : formules complexes, analyse avancée avec Python intégré, et la profondeur historique de l'outil. Gemini dans Sheets progresse vite et suffit pour l'analyse courante. Pour la data lourde, les deux écosystèmes basculent vers leurs plateformes (Fabric/Power BI vs BigQuery).",
+      },
+      {
+        q: "Le risque de fuite de données est-il plus élevé avec l'un ou l'autre ?",
+        a: "Les deux respectent les permissions existantes et n'entraînent pas leurs modèles sur vos données d'entreprise. Le risque réel est organisationnel : des permissions internes mal gérées (sur-partage), que Copilot expose davantage car Graph voit tout. Auditez les accès avant de déployer, quelle que soit la suite.",
+      },
+      {
+        q: "Faut-il quand même ajouter ChatGPT ou Claude en plus du copilote de suite ?",
+        a: "Souvent, oui. Les copilotes de suite excellent sur le contexte interne ; les assistants généralistes gardent l'avantage sur le raisonnement pur, la rédaction exigeante et les usages créatifs. Beaucoup de nos clients combinent les deux niveaux, pour un coût marginal limité.",
+      },
+      {
+        q: "Combien coûte la formation des équipes ?",
+        a: "Une journée de formation Gemini ou Copilot en intra-entreprise coûte 1 980 € (jusqu'à 12 participants), au même tarif en accompagnement individuel. Certifié Qualiopi, finançable OPCO. La formation sur VOS données et VOS processus fait toute la différence d'adoption.",
+      },
+    ],
+    relatedLinks: [
+      { label: 'Formation Google Gemini pour entreprises', href: '/formation-gemini-entreprise' },
+      { label: 'Formation Microsoft Copilot', href: '/formation-microsoft-copilot' },
+      { label: 'Comparatif Copilot vs ChatGPT', href: '/copilot-vs-chatgpt' },
+      { label: 'Quelle est la meilleure IA en 2026 ?', href: '/quelle-est-la-meilleure-ia' },
+      { label: 'Conseil IA pour entreprises', href: '/conseil-intelligence-artificielle' },
+    ],
+  },
 }
 
 export const COMPARISON_SLUGS = Object.keys(COMPARISONS)
@@ -1340,5 +1722,19 @@ export const COMPARISONS_INDEX = [
     subtitle: 'Claude, ChatGPT Operator, Manus, Copilot Studio',
     excerpt: "Comparatif des 4 plateformes d'agents IA en 2026 : autonomie, intégrations, gouvernance, cas d'usage entreprise.",
     badge: 'Spécialisé agents',
+  },
+  {
+    slug: 'mistral-vs-chatgpt',
+    title: 'Mistral AI vs ChatGPT',
+    subtitle: 'Souveraineté française ou écosystème américain ?',
+    excerpt: "Hébergement UE, open-weight, RGPD, fonctionnalités, prix : le duel le plus demandé par les entreprises françaises en 2026.",
+    badge: 'Face-à-face',
+  },
+  {
+    slug: 'gemini-vs-copilot',
+    title: 'Google Gemini vs Microsoft Copilot',
+    subtitle: 'Le match des suites bureautiques',
+    excerpt: "Workspace ou Microsoft 365 : intégration, prix réel, sécurité, agents. Comment choisir votre copilote de suite en 2026.",
+    badge: 'Face-à-face',
   },
 ]

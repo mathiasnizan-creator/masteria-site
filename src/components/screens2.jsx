@@ -56,7 +56,7 @@ export function FormatTabs({ onContact }) {
   const [active, setActive] = useState('intra');
   const formats = [
     { key: 'intra', label: 'INTRA', fullLabel: 'Intra-entreprise', price: '1 980 €', unit: '/ jour / groupe', desc: "Formation réservée à vos équipes, dans vos locaux ou à distance. Contenu construit sur votre secteur, vos outils internes et vos cas réels. Jusqu'à 12 participants.", details: ['Jusqu\'à 12 participants', 'Dans vos locaux ou distanciel', 'Contenu adapté à votre secteur', 'Finançable OPCO à 100%'] },
-    { key: 'individuel', label: 'INDIVIDUEL', fullLabel: 'Accompagnement individuel sur mesure', price: '1 380 €', unit: '/ jour', desc: "Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme conçu autour de vos enjeux personnels, rythme adapté, suivi entre les sessions.", details: ['1 participant', 'En présentiel ou distanciel', 'Programme co-construit', 'Suivi entre les sessions'] },
+    { key: 'individuel', label: 'INDIVIDUEL', fullLabel: 'Accompagnement individuel sur mesure', price: '1 980 €', unit: '/ jour', desc: "Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme conçu autour de vos enjeux personnels, rythme adapté, suivi entre les sessions.", details: ['1 participant', 'En présentiel ou distanciel', 'Programme co-construit', 'Suivi entre les sessions'] },
   ];
   const cur = formats.find(f => f.key === active);
   return (
@@ -110,7 +110,7 @@ export function SidebarFormatPicker({ onContact }) {
   const [active, setActive] = useState('intra');
   const formats = [
     { key: 'intra', label: 'INTRA', price: '1 980 €', unit: '/ jour / groupe', details: ['Jusqu\'à 12 participants', 'Dans vos locaux', 'Finançable OPCO'] },
-    { key: 'individuel', label: 'INDIVIDUEL', price: '1 380 €', unit: '/ jour', details: ['1 participant', 'Coaching sur mesure', 'Finançable OPCO'] },
+    { key: 'individuel', label: 'INDIVIDUEL', price: '1 980 €', unit: '/ jour', details: ['1 participant', 'Coaching sur mesure', 'Finançable OPCO'] },
   ];
   const cur = formats.find(f => f.key === active);
   return (

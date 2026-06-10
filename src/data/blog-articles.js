@@ -2143,7 +2143,7 @@ export const BLOG_ARTICLES = [
       {
         type: 'ul',
         items: [
-          "Accompagnement individuel sur mesure : 1 380 €/jour",
+          "Accompagnement individuel sur mesure : 1 980 €/jour",
           "Intra-entreprises (groupe dédié, vos locaux ou les nôtres) : 1 980 €/jour pour le groupe (jusqu'à 12 personnes)",
           "Conseil et audit IA : 1 200 à 1 800 €/jour selon le périmètre",
           "Pris en charge OPCO : la majorité des dossiers Masteria sont financés à 100 % du coût pédagogique",
@@ -2497,7 +2497,7 @@ export const BLOG_ARTICLES = [
       },
 
       { type: 'h2', text: "Comment se déroule une formation IA commerciaux chez Masteria" },
-      { type: 'p', text: "Format : 1 journée (7 heures), en présentiel ou distanciel, par groupes de 6 à 12 commerciaux. Tarif intra-entreprise : 1 980 €/jour pour le groupe. Accompagnement individuel : 1 380 €/jour. Certifié Qualiopi, finançable OPCO." },
+      { type: 'p', text: "Format : 1 journée (7 heures), en présentiel ou distanciel, par groupes de 6 à 12 commerciaux. Tarif intra-entreprise : 1 980 €/jour pour le groupe. Accompagnement individuel : 1 980 €/jour. Certifié Qualiopi, finançable OPCO." },
       { type: 'p', text: "Programme type : matinée fondamentaux (prompt engineering appliqué à la vente, choix d'outil, sécurité données clients) ; après-midi cas pratiques sur vos vrais prospects et propositions, avec création de votre première bibliothèque de prompts métier." },
     ],
     faq: [
@@ -3139,7 +3139,7 @@ export const BLOG_ARTICLES = [
         headers: ['OPCO', 'Secteurs couverts', 'Niveau de prise en charge IA'],
         rows: [
           ['ATLAS', 'Conseil, services financiers, audit, ingénierie', 'Très élevé : forfait jusqu\'à 1 200 €/jour/personne'],
-          ['AKTO', 'Hôtellerie, propreté, sécurité, services à la personne', 'Élevé : 1 380 à 1 980 €/jour selon le format'],
+          ['AKTO', 'Hôtellerie, propreté, sécurité, services à la personne', 'Élevé : 1 980 €/jour quel que soit le format'],
           ['OPCO 2i', 'Industrie (auto, aéro, chimie, métallurgie)', 'Élevé pour formations IA industrie 4.0'],
           ['AFDAS', 'Médias, culture, communication, presse, sport', 'Variable selon convention collective'],
           ['OCAPIAT', 'Agriculture, agroalimentaire', 'Modéré : à étudier au cas par cas'],
@@ -3189,7 +3189,7 @@ export const BLOG_ARTICLES = [
     ],
     faq: [
       { q: "Est-ce que toutes les formations Qualiopi sont éligibles CPF ?", a: "Non. Qualiopi certifie le sérieux de l'organisme de formation. L'éligibilité CPF dépend de l'enregistrement de la certification au RS ou au RNCP par France Compétences. Un organisme Qualiopi peut très bien proposer des formations non éligibles CPF, et c'est même le cas le plus fréquent pour les formations courtes en entreprise." },
-      { q: "Quel est le plafond CPF en 2026 pour une formation IA ?", a: "500 €/an cumulables, plafonnés à 5 000 € (8 000 € pour les salariés peu qualifiés). Concrètement, un salarié de 5 à 10 ans d'ancienneté a typiquement 2 500 à 5 000 € sur son CPF. Une formation IA pro courte coûte 1 380 à 1 980 €/jour, donc 2 jours sont en général finançables. Pour une formation longue RNCP, le CPF couvre rarement la totalité — il faut un abondement employeur ou France Travail." },
+      { q: "Quel est le plafond CPF en 2026 pour une formation IA ?", a: "500 €/an cumulables, plafonnés à 5 000 € (8 000 € pour les salariés peu qualifiés). Concrètement, un salarié de 5 à 10 ans d'ancienneté a typiquement 2 500 à 5 000 € sur son CPF. Une formation IA pro courte coûte 1 980 €/jour : une journée passe sur la plupart des soldes CPF, deux jours (3 960 €) demandent un solde bien alimenté. Pour une formation longue RNCP, le CPF couvre rarement la totalité — il faut un abondement employeur ou France Travail." },
       { q: "Comment savoir si une certification IA est vraiment éligible CPF ?", a: "Allez sur moncompteformation.gouv.fr ou consultez la fiche France Compétences. Si la certification est listée avec un code RS ou RNCP actif (non expiré), elle est éligible. Si l'organisme ne fournit pas le code RS/RNCP exact, c'est qu'elle ne l'est probablement pas — méfiez-vous des mentions vagues du type « possible CPF » ou « éligible sous conditions »." },
       { q: "Peut-on cumuler CPF et OPCO sur la même formation ?", a: "Non, pas directement. Une formation est financée soit par le CPF (droit individuel du salarié), soit par le plan de développement des compétences (OPCO + employeur). Mais on peut articuler les deux dans un parcours : par exemple, financer une formation courte en OPCO puis une certification RNCP plus longue en CPF un an plus tard." },
       { q: "L'employeur peut-il refuser que je mobilise mon CPF pour une formation IA ?", a: "Si la formation est <strong>hors temps de travail</strong>, l'employeur n'a pas son mot à dire — le CPF est un droit individuel. Si vous voulez la faire <strong>sur le temps de travail</strong>, il faut son accord (préavis 60 jours pour formation < 6 mois, 120 jours sinon), et il a un mois pour répondre. Sans réponse, l'accord est tacite." },
@@ -3335,7 +3335,7 @@ export const BLOG_ARTICLES = [
       { type: 'p', text: "À l'inverse, une formation qui essaie de tout couvrir en une journée est souvent superficielle. La règle réaliste : 2 jours minimum pour une vraie maîtrise multimodale, 1 jour si vous restez sur un seul univers (texte ou image)." },
     ],
     faq: [
-      { q: "Une formation IA générative est-elle finançable par l'OPCO ?", a: "Oui. Une formation IA générative de 1 à 2 jours est typiquement prise en charge à 100 % par les OPCO (ATLAS, AKTO, OPCO 2i, AFDAS) pour les salariés en poste. Le forfait OPCO varie de 1 380 à 1 980 €/jour selon le format (individuel ou intra) selon votre convention collective. Masteria monte le dossier OPCO en 5 à 10 jours ouvrés." },
+      { q: "Une formation IA générative est-elle finançable par l'OPCO ?", a: "Oui. Une formation IA générative de 1 à 2 jours est typiquement prise en charge à 100 % par les OPCO (ATLAS, AKTO, OPCO 2i, AFDAS) pour les salariés en poste. Le tarif est de 1 980 €/jour quel que soit le format (individuel ou intra) ; le niveau de prise en charge dépend de votre convention collective. Masteria monte le dossier OPCO en 5 à 10 jours ouvrés." },
       { q: "ChatGPT, Midjourney, Sora : faut-il acheter des licences avant de former l'équipe ?", a: "Pas pour la formation elle-même — Masteria fournit des accès temporaires durant la session. Pour l'usage post-formation, oui : compter 20 à 30 €/utilisateur/mois pour ChatGPT Plus ou Team, 10 à 60 €/utilisateur/mois pour Midjourney, 20 à 200 € pour les outils vidéo selon le volume. La formation aide à arbitrer quels outils méritent la licence et lesquels peuvent rester en version gratuite." },
       { q: "L'IA générative pose-t-elle un problème de droits d'auteur sur les visuels créés ?", a: "Oui, et c'est un vrai sujet. Les images Midjourney sont théoriquement libres pour un usage commercial selon ses CGU, mais la question des données d'entraînement reste juridiquement floue. Pour une communication corporate sensible (rapport annuel, campagne presse), Adobe Firefly est plus sûr car entraîné uniquement sur des images licenciées. Toute formation sérieuse doit couvrir ce point." },
       { q: "Peut-on former des équipes non créatives à l'IA générative image et vidéo ?", a: "Oui, et c'est même recommandé. Un commercial qui sait générer en 5 minutes un visuel pour sa proposition client gagne énormément de temps face à un commercial qui doit attendre 3 jours qu'un graphiste lui en fasse un. La formation IA générative n'est pas réservée aux équipes créatives — elle redistribue la création visuelle dans toute l'organisation." },
@@ -3482,7 +3482,7 @@ export const BLOG_ARTICLES = [
       { type: 'callout', text: "Un format hybride 1 jour présentiel + 1 jour distanciel coûte typiquement 30 % de moins qu'un 2 jours full présentiel pour un groupe multi-sites — sans baisser le taux d'achèvement (qui reste > 90 % avec ces règles)." },
     ],
     faq: [
-      { q: "Une formation IA en ligne est-elle moins chère qu'en présentiel ?", a: "L'écart est plus faible qu'on ne le pense. En intra-entreprise, le coût formateur reste le même : seuls les frais annexes (location de salle, déplacement) disparaissent. Chez Masteria, le tarif est identique en présentiel et en distanciel : 1 980 €/jour pour un groupe jusqu'à 12 participants en intra, 1 380 €/jour en accompagnement individuel sur mesure. Le distanciel reste pratique pour mobiliser des équipes multisites sans surcoût logistique." },
+      { q: "Une formation IA en ligne est-elle moins chère qu'en présentiel ?", a: "L'écart est plus faible qu'on ne le pense. En intra-entreprise, le coût formateur reste le même : seuls les frais annexes (location de salle, déplacement) disparaissent. Chez Masteria, le tarif est identique en présentiel et en distanciel : 1 980 €/jour, pour un groupe jusqu'à 12 participants en intra comme en accompagnement individuel sur mesure. Le distanciel reste pratique pour mobiliser des équipes multisites sans surcoût logistique." },
       { q: "Le distanciel est-il aussi efficace que le présentiel ?", a: "Pour des groupes < 12 personnes, sur des sessions de 3 à 4 h max par jour, avec un formateur expérimenté en distanciel : oui, dans 80 % des cas. Pour des groupes > 20 personnes, des journées de 7 h, ou des publics peu technophiles : non, le présentiel est nettement plus efficace. La règle pratique : plus le groupe est grand et la formation longue, plus le présentiel apporte." },
       { q: "Comment éviter le décrochage en formation IA distancielle ?", a: "Cinq leviers : (1) groupes < 12, (2) sessions courtes (3-4 h max), (3) caméras allumées, (4) 60 % de temps de pratique active sur les outils, (5) un facilitateur ou un référent interne qui suit le projet et fait le lien entre les sessions. Sans ces 5 conditions, le taux de complétion chute à 50-60 %." },
       { q: "L'OPCO finance-t-il les formations IA en ligne ?", a: "Oui, les principaux OPCO (ATLAS, AKTO, OPCO 2i, AFDAS) financent les formations IA en classe virtuelle synchrone exactement comme les formations en présentiel. Ils ne financent en revanche pas les MOOC autonomes ou e-learning purs sans formateur. La présence d'un formateur en direct est le critère distinctif." },
@@ -3679,7 +3679,7 @@ export const BLOG_ARTICLES = [
     ],
     faq: [
       { q: "Le GEO remplace-t-il le SEO ?", a: "Non, le GEO complète le SEO. Tant que Google reste majoritaire dans le trafic web (autour de 70-80 % en 2026), le SEO reste fondamental. Le GEO devient une couche supplémentaire pour capter les 20-30 % de trafic qui transitent désormais par les LLM." },
-      { q: "Combien coûte une formation GEO en entreprise ?", a: "Une formation GEO d'une journée pour un groupe jusqu'à 12 participants coûte 1 980 € en intra-entreprise. L'accompagnement individuel est facturé 1 380 €/jour. Avec un financement OPCO, le coût net pour l'entreprise peut descendre à 0 €." },
+      { q: "Combien coûte une formation GEO en entreprise ?", a: "Une formation GEO d'une journée pour un groupe jusqu'à 12 participants coûte 1 980 € en intra-entreprise. L'accompagnement individuel est facturé 1 980 €/jour. Avec un financement OPCO, le coût net pour l'entreprise peut descendre à 0 €." },
       { q: "Qui doit suivre une formation GEO ?", a: "Les responsables SEO, content managers, responsables marketing digital et dirigeants de communication sont les publics naturels. La formation profite aussi aux relations presse et au marketing produit pour comprendre comment l'entreprise est représentée dans les réponses IA." },
       { q: "Quels outils pour suivre sa visibilité dans ChatGPT ?", a: "Otterly.ai, Profound, Brandindex.ai et Athenahq permettent de suivre vos mentions dans les principaux LLM. À défaut, un suivi manuel hebdomadaire sur 10 à 20 requêtes-clés donne déjà une vision pertinente." },
       { q: "Combien de temps pour voir des résultats GEO ?", a: "Les premières apparitions dans les réponses ChatGPT/Perplexity peuvent venir en 4 à 8 semaines après refonte du contenu. La consolidation prend 3 à 6 mois. C'est plus rapide que le SEO classique en 2026 parce que les LLM réindexent plus vite que Google." },
@@ -3917,7 +3917,7 @@ export const BLOG_ARTICLES = [
       },
 
       { type: 'h2', text: "Coût et financement" },
-      { type: 'p', text: "En intra-entreprise, un Sprint IA coûte 1 980 € HT par session jusqu'à 12 participants (3h). En accompagnement individuel sur mesure, le tarif est de 1 380 € HT par session. Pour les déploiements de plusieurs sessions (acculturation grande échelle), des packages dégressifs sont disponibles à partir de 5 sessions." },
+      { type: 'p', text: "En intra-entreprise, un Sprint IA coûte 1 980 € HT par session jusqu'à 12 participants (3h). En accompagnement individuel sur mesure, le tarif est de 1 980 € HT par session. Pour les déploiements de plusieurs sessions (acculturation grande échelle), des packages dégressifs sont disponibles à partir de 5 sessions." },
       { type: 'p', text: "Le format 3h est éligible OPCO : le financement couvre l'intégralité du coût pédagogique pour les entreprises adhérentes (selon branche et effectif). Mêmes tarifs que les formations longues : Masteria applique un prix unique par participant inter ou par session intra, indépendamment de la durée." },
     ],
     faq: [
@@ -4008,7 +4008,7 @@ export const BLOG_ARTICLES = [
       { q: "Faut-il avoir déjà utilisé ChatGPT ?", a: "Non. La formation part du niveau zéro et est calibrée pour des profils non techniques. À la fin de la journée, chaque participante a créé ses propres prompts adaptés à ses dossiers." },
       { q: "Microsoft Copilot est-il obligatoire ?", a: "Non, mais il est très recommandé. Si l'entreprise utilise Microsoft 365, déployer Copilot sur les postes des assistantes a un retour sur investissement très rapide. Sinon, ChatGPT seul couvre déjà 70 % des cas." },
       { q: "Quelle est la durée idéale ?", a: "1 jour pour les fondamentaux. Nous recommandons un Sprint IA complémentaire (3h) 4 à 6 semaines après pour consolider les usages et résoudre les blocages." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour pour un groupe en intra-entreprise (jusqu'à 12 personnes) ou 1 380 €/jour en accompagnement individuel sur mesure. Finançable à 100 % via OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. Finançable à 100 % via OPCO." },
       { q: "Est-ce que ça remplace l'assistante ?", a: "Non. L'IA automatise les tâches répétitives mais n'a ni jugement, ni relationnel, ni capacité d'arbitrage. Elle libère du temps pour ce qui demande vraiment une assistante humaine : anticipation, sens politique, relations dirigeants." },
       { q: "Y a-t-il un suivi après la formation ?", a: "Oui : accès à une bibliothèque de prompts métier, un canal Slack de questions/réponses pendant 30 jours, et une session de retour d'expérience optionnelle." },
     ],
@@ -4083,7 +4083,7 @@ export const BLOG_ARTICLES = [
       { q: "Peut-on coller des cahiers des charges confidentiels dans ChatGPT ?", a: "Pas dans la version gratuite. Avec ChatGPT Enterprise, Copilot ou Mistral en mode entreprise, vos données ne sont pas réutilisées pour entraîner les modèles. Une partie de la formation est dédiée à ces règles." },
       { q: "Les outils Achats spécialisés (Ivalua, Coupa) ont déjà de l'IA, pourquoi former ?", a: "Parce que 60 à 80 % du travail de l'acheteur se fait hors de ces plateformes : Word, Excel, mails, recherche web. Là où ChatGPT et Copilot apportent le plus de gains immédiats." },
       { q: "Quelle est la durée idéale ?", a: "1 jour pour les acheteurs opérationnels. 2 jours pour les responsables Achats / direction Achats qui doivent aussi piloter le déploiement IA dans leur équipe." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour pour un groupe en intra-entreprise (jusqu'à 12 personnes) ou 1 380 €/jour en accompagnement individuel sur mesure. 100 % finançable via OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. 100 % finançable via OPCO." },
     ],
     cta: {
       title: "Former votre direction Achats à l'IA",
@@ -4155,7 +4155,7 @@ export const BLOG_ARTICLES = [
       { q: "L'IA va-t-elle remplacer les conseillers ?", a: "Non. Les conseillers humains restent indispensables sur les cas complexes, émotionnels et à enjeu. L'IA prend en charge le L1 (questions répétitives) et augmente le conseiller sur le L2/L3 via la suggestion de réponse." },
       { q: "Faut-il un outil spécifique avant de former ?", a: "Pas nécessairement. La formation peut être un préalable au choix de l'outil. Une journée d'audit IA permet de cadrer les besoins et de prioriser les cas d'usage avant tout investissement." },
       { q: "Combien de temps pour voir les résultats ?", a: "Sur un copilote conseiller bien déployé : 4 à 8 semaines pour mesurer le gain de productivité. Sur un chatbot client : 6 à 12 semaines pour atteindre un taux de résolution acceptable (>50 %)." },
-      { q: "Quel coût ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 participants, soit 1 980 € / jour), ou 2 760 € en accompagnement individuel pour 2 jours (1 380 € / jour). 100 % finançable OPCO." },
+      { q: "Quel coût ?", a: "3 960 € pour 2 jours (soit 1 980 € / jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
       { q: "Comment éviter qu'un chatbot raconte n'importe quoi ?", a: "C'est l'objet du Jour 2 : architecture RAG, validation de la base de connaissances, évaluation de la qualité, garde-fous (guardrails). Un chatbot 'lâché' sans cadrage est presque toujours un échec." },
       { q: "Et la formation des superviseurs ?", a: "Elle est intégrée au Jour 2. Un module spécifique aide les superviseurs à manager une équipe augmentée par l'IA : objectifs, contrôle qualité, plan de formation continue." },
     ],
@@ -4234,7 +4234,7 @@ export const BLOG_ARTICLES = [
       { q: "Quelle est la différence avec une formation managériale classique ?", a: "Cette formation se concentre sur la dimension IA : pilotage des usages, objectifs, conformité, accompagnement spécifique. Elle ne remplace pas une formation au management mais la complète." },
       { q: "Et si certains de mes collaborateurs refusent l'IA ?", a: "Le Jour 2 inclut un module sur les 4 profils de résistance au changement et les leviers managériaux pour chacun (rationnel, émotionnel, identitaire, politique)." },
       { q: "Faut-il rendre l'usage de l'IA obligatoire ?", a: "La réponse rapide : non, mais il faut le rendre légitime, sécurisé et soutenu. Imposer crée de la défiance ; cadrer et outiller crée de l'adoption." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 managers, soit 1 980 € / jour). 2 760 € en accompagnement individuel pour 2 jours (1 380 € / jour). 100 % finançable via OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 managers, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable via OPCO." },
     ],
     cta: {
       title: "Former vos managers à piloter l'IA",
@@ -4316,7 +4316,7 @@ export const BLOG_ARTICLES = [
       { q: "Faut-il payer Perplexity ?", a: "La version gratuite suffit pour 80 % des cas. La version Pro (20 €/mois) débloque la recherche approfondie (deep research) et est très rentable pour un veilleur professionnel." },
       { q: "Comment éviter de dépendre d'une seule IA ?", a: "Croisez 2 sources sur les sujets à enjeu : ChatGPT + Perplexity, ou Claude + Perplexity. Vous obtenez des angles différents et limitez les hallucinations." },
       { q: "Est-ce que l'IA peut halluciner sur ma veille ?", a: "Oui, et c'est un vrai risque. La formation enseigne 4 contre-mesures : sources liées explicitement, demande de citation, vérification croisée, retour à la source." },
-      { q: "Combien ça coûte ?", a: "1 980 € / jour en intra-entreprise (jusqu'à 12 personnes) ou 1 380 € / jour en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 € / jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel. 100 % finançable OPCO." },
     ],
     cta: {
       title: "Mettre en place une veille IA chez vous",
@@ -4390,7 +4390,7 @@ export const BLOG_ARTICLES = [
       { q: "Faut-il avoir Microsoft Copilot ?", a: "C'est un gros plus. Le Jour 2 fonctionne aussi sans Copilot (avec ChatGPT seul), mais le Jour 1 perd 30 % de son intérêt sans Copilot dans Excel." },
       { q: "Quelle est la différence avec une formation Power BI ?", a: "Power BI est un outil de dashboarding. Cette formation est plus large : structurer, analyser, raconter, restituer. Power BI peut être un module complémentaire après." },
       { q: "Est-ce qu'on peut analyser des données confidentielles ?", a: "Avec ChatGPT Enterprise / Copilot, oui. Avec ChatGPT gratuit, non. La formation rappelle ces règles le matin du Jour 1." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 personnes, soit 1 980 € / jour). 2 760 € en accompagnement individuel pour 2 jours (1 380 € / jour). 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 personnes, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable OPCO." },
     ],
     cta: {
       title: "Former vos équipes à l'analyse de données IA",
@@ -4462,7 +4462,7 @@ export const BLOG_ARTICLES = [
       { q: "Cette formation est-elle réservée aux créatifs ?", a: "Non. Elle s'adresse à tous ceux qui produisent des idées : marketing, communication, RH, R&D, innovation, dirigeants." },
       { q: "Est-ce que l'IA va voler les idées ?", a: "Non si on utilise les versions Pro / Enterprise. Sur ChatGPT gratuit, ne jamais coller un projet stratégique confidentiel : la formation rappelle ces règles." },
       { q: "Quelle IA est la plus créative ?", a: "Claude (Anthropic) est souvent jugé plus nuancé et plus subtil que ChatGPT pour le brainstorming et le copywriting. ChatGPT reste excellent et plus polyvalent. Mistral progresse vite." },
-      { q: "Combien ça coûte ?", a: "1 980 € / jour en intra-entreprise (jusqu'à 12 personnes) ou 1 380 € / jour en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 € / jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel. 100 % finançable OPCO." },
       { q: "Quelle complémentarité avec une formation copywriting ?", a: "Très forte. Cette formation peut être un module amont (idéation) ou aval (raffinage) d'une formation copywriting plus complète." },
     ],
     cta: {
@@ -4540,7 +4540,7 @@ export const BLOG_ARTICLES = [
       { q: "Comment éviter que mes mails ressemblent à du ChatGPT ?", a: "C'est précisément ce qu'enseigne le matin de la formation : prompts d'imitation de style, intégration de tics personnels, contrôle du registre. À la fin de la journée, vos mails IA sont indétectables." },
       { q: "Faut-il Microsoft Copilot ?", a: "Pas obligatoire. Avec ChatGPT seul, on couvre 80 % des cas. Copilot ajoute la fluidité d'avoir l'IA directement dans Outlook, Word et Teams." },
       { q: "Quelle complémentarité avec une formation à l'écriture professionnelle ?", a: "Cette formation complète une formation rédactionnelle classique : la première donne les bases du bien-écrire, celle-ci donne le levier pour bien-écrire vite avec l'IA." },
-      { q: "Combien ça coûte ?", a: "1 980 € / jour en intra-entreprise (jusqu'à 12 personnes) ou 1 380 € / jour en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 € / jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel. 100 % finançable OPCO." },
     ],
     cta: {
       title: "Former vos équipes à mieux écrire avec l'IA",
@@ -4617,7 +4617,7 @@ export const BLOG_ARTICLES = [
       { q: "Quelle différence avec une formation gestion de projet classique ?", a: "Les projets IA ont des spécificités fortes : qualité de la donnée, AI Act, MLOps, mesure d'impact, conduite du changement très spécifique. Une formation gestion de projet généraliste ne couvre rien de tout cela." },
       { q: "Faut-il déjà avoir un projet IA en cours ?", a: "C'est un plus, pas une obligation. Si oui, la formation devient un accélérateur direct. Sinon, elle prépare au lancement du premier projet." },
       { q: "Et l'AI Act ?", a: "Couvert au Jour 1 : classification des usages, obligations selon le niveau de risque, articulations avec le RGPD. Suffisant pour piloter ; non suffisant pour qualifier juridiquement seul (un juriste reste nécessaire en parallèle)." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours espacés (jusqu'à 12 participants, soit 1 980 € / jour). 2 760 € en accompagnement individuel pour 2 jours (1 380 € / jour). 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours espacés (jusqu'à 12 participants, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable OPCO." },
     ],
     cta: {
       title: "Former vos chefs de projet IA",
@@ -4700,7 +4700,7 @@ export const BLOG_ARTICLES = [
       { q: "Comment financer un plan IA ?", a: "OPCO en majorité (jusqu'à 100 % pour les TPE/PME), CPF (sur les formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
       { q: "Quelle est l'obligation AI Act pour les RH ?", a: "L'article 4 de l'AI Act impose que toute personne utilisant un système d'IA dans son travail dispose d'un niveau de littératie IA suffisant. Cela ne définit pas une formation obligatoire stricto sensu, mais ouvre une responsabilité de l'employeur. La formation détaille les implications pratiques." },
       { q: "Comment mesurer l'impact ?", a: "3 niveaux de mesure : opérationnel (gain de temps, qualité), business (ROI, satisfaction client), stratégique (capacité IA de l'entreprise). Le Jour 2 donne des grilles concrètes par niveau." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 DRH/RRH, soit 1 980 € / jour). 2 760 € en accompagnement individuel pour 2 jours (1 380 € / jour). 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 DRH/RRH, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable OPCO." },
     ],
     cta: {
       title: "Construire votre plan IA RH",

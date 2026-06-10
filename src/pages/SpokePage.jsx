@@ -82,6 +82,10 @@ const TOOL_ANGLES = {
   'Claude': "des cas d'usage Claude (Anthropic) pour l'analyse de documents longs et l'écriture de qualité",
   'Mistral AI': "l'intégration de Mistral AI et Le Chat dans des entreprises françaises attachées à la souveraineté",
   'Multi-outils IA': "la comparaison concrète ChatGPT, Copilot, Gemini, Claude et Mistral sur des cas d'usage réels",
+  'Claude Code': "les déploiements Claude Code en équipe de développement, du terminal au CI, avec les garde-fous d'entreprise",
+  'Prompt Engineering': "les techniques de prompt engineering qui rendent les résultats des IA fiables et reproductibles en entreprise",
+  'IA': "les enjeux stratégiques de l'IA pour les directions générales : investissements, gouvernance, conduite du changement",
+  'AI Act': "la mise en conformité AI Act d'entreprises françaises, de la cartographie des risques au plan de gouvernance",
 }
 
 // Angles spécifiques par métier
@@ -154,10 +158,10 @@ export default function SpokePage() {
       ? `Cas d'usage ${spoke.metier.toLowerCase()} concrets, travaillés sur vos propres fichiers pendant la journée.`
       : `6 cas d'usage ${spoke.metier.toLowerCase()} concrets, travaillés sur vos propres fichiers pendant les 2 jours.`
   const heroSentence = is3h
-    ? <>Le <strong>Sprint IA {spoke.metier}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/session</strong> en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
+    ? <>Le <strong>Sprint IA {spoke.metier}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
     : isOneDay
-      ? <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/jour</strong> en accompagnement individuel. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
-      : <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/jour</strong> en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
+      ? <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
+      : <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
 
   // Modules grouped by day
   const modulesJ1 = spoke.modules?.filter(m => m.day === 1) || []
@@ -336,10 +340,10 @@ export default function SpokePage() {
               {programTitle}
             </h2>
             <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 56 }}>
-              {isSprint ? programIntro : "14h de formation effective. Chaque module alterne démonstration en direct et exercice sur vos vrais fichiers métier."}
+              {isSprint || isOneDay ? programIntro : "14h de formation effective. Chaque module alterne démonstration en direct et exercice sur vos vrais fichiers métier."}
             </p>
 
-            {[{ label: 'Jour 1', modules: modulesJ1 }, { label: 'Jour 2', modules: modulesJ2 }].map(day => (
+            {[{ label: 'Jour 1', modules: modulesJ1 }, { label: 'Jour 2', modules: modulesJ2 }].filter(day => day.modules.length > 0).map(day => (
               <div key={day.label} style={{ marginBottom: 56 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
                   <div style={{ background: c, color: '#fff', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, padding: '6px 18px', borderRadius: 99 }}>{day.label}</div>
@@ -455,10 +459,10 @@ export default function SpokePage() {
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 380 €</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>{is3h ? '/ session' : '/ jour'}</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Sprint de 3 heures · 1-to-1 sur mesure' : isOneDay ? '1 journée de 7 h · coaching 1-to-1' : 'Soit 2 760 € pour 2 jours · 1-to-1'}</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Sprint de 3 heures · 1-to-1 sur mesure' : isOneDay ? '1 journée de 7 h · coaching 1-to-1' : 'Soit 3 960 € pour 2 jours · 1-to-1'}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {(is3h
                   ? ['Session de 3 heures · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Finançable OPCO']

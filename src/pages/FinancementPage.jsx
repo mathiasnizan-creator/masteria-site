@@ -51,7 +51,7 @@ const OPCO_LIST = [
 const FAQ = [
   {
     q: "Concrètement, combien va me coûter la formation IA si l'OPCO prend en charge ?",
-    a: "Si votre OPCO accepte le dossier à 100 %, le reste à charge est de 0 €. Masteria facture directement l'OPCO, vous n'avancez pas la trésorerie. Si la prise en charge est partielle (par exemple 70 %), seul le complément est à la charge de l'entreprise, soit environ 594 € HT par jour de groupe sur un tarif intra de 1 980 €/jour (414 € HT/jour sur un accompagnement individuel à 1 380 €/jour).",
+    a: "Si votre OPCO accepte le dossier à 100 %, le reste à charge est de 0 €. Masteria facture directement l'OPCO, vous n'avancez pas la trésorerie. Si la prise en charge est partielle (par exemple 70 %), seul le complément est à la charge de l'entreprise, soit environ 594 € HT par jour sur un tarif de 1 980 €/jour, en intra comme en accompagnement individuel.",
   },
   {
     q: "Mon entreprise a moins de 11 salariés (TPE) : combien l'OPCO couvre-t-il ?",
@@ -325,7 +325,7 @@ export default function FinancementPage() {
                 </h3>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6 }}>
-                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>1 380 €</span>
+                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>1 980 €</span>
                 <span style={{ color: NEUTRAL, fontSize: 14, fontWeight: 600 }}>HT / jour</span>
               </div>
               <p style={{ color: '#4B5563', lineHeight: 1.6, fontSize: 14.5, marginBottom: 16 }}>

@@ -183,7 +183,7 @@ export default function GeminiPage() {
     inLanguage: 'fr',
     hasCourseInstance: [
       { '@type': 'CourseInstance', courseMode: 'onsite', name: 'Formation intra-entreprise', offers: { '@type': 'Offer', price: '1980', priceCurrency: 'EUR' } },
-      { '@type': 'CourseInstance', courseMode: 'online', name: 'Accompagnement individuel sur mesure', offers: { '@type': 'Offer', price: '1380', priceCurrency: 'EUR' } },
+      { '@type': 'CourseInstance', courseMode: 'online', name: 'Accompagnement individuel sur mesure', offers: { '@type': 'Offer', price: '1980', priceCurrency: 'EUR' } },
     ],
   }
 
@@ -412,7 +412,7 @@ export default function GeminiPage() {
             </div>
             <div style={{ background: '#F9FAFB', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 380 €</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 980 €</div>
               <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (coaching 1-to-1)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Programme sur mesure', 'Rythme adapté', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (

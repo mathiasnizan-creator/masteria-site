@@ -50,19 +50,19 @@ import { SPOKES } from './data/seo-pages';
 import { getAllGeoCombinations, GEO_DESTINATIONS, geoIaSlug } from './data/geo-data';
 
 const TRAININGS = [
-  { id: 'ia-initiation', tag: 'IA & ChatGPT', title: "Initiation à l'IA pour les professionnels", desc: "Maîtrisez les fondamentaux de l'IA en 1 journée. Aucun prérequis technique.", price: '1 380 €', unit: '/ jour (individuel)', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
+  { id: 'ia-initiation', tag: 'IA & ChatGPT', title: "Initiation à l'IA pour les professionnels", desc: "Maîtrisez les fondamentaux de l'IA en 1 journée. Aucun prérequis technique.", price: '1 980 €', unit: '/ jour', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
     objectives: ["Comprendre ce qu'est l'IA et ses limites", "Utiliser ChatGPT dans votre quotidien professionnel", "Identifier les cas d'usage dans votre secteur", "Adopter une posture éthique face à l'IA"],
     program: [{ title: 'Matin, Les fondamentaux', items: ["Qu'est-ce que l'IA ?", 'Les grands modèles de langage', "ChatGPT & Co : tour d'horizon", 'Démonstrations en direct'] }, { title: 'Après-midi, Mise en pratique', items: ['Premiers prompts', "Cas d'usage par métier", 'Sécurité et confidentialité', "Plan d'action personnel"] }] },
-  { id: 'prompt-engineering', tag: 'Prompt Engineering', title: 'Maîtriser le Prompt Engineering', desc: 'Formulez des prompts précis pour décupler votre productivité au quotidien.', price: '1 380 €', unit: '/ jour (individuel)', color: '#FEF3C7', duration: '1 jour', level: 'Intermédiaire',
+  { id: 'prompt-engineering', tag: 'Prompt Engineering', title: 'Maîtriser le Prompt Engineering', desc: 'Formulez des prompts précis pour décupler votre productivité au quotidien.', price: '1 980 €', unit: '/ jour', color: '#FEF3C7', duration: '1 jour', level: 'Intermédiaire',
     objectives: ["Comprendre la structure d'un prompt efficace", 'Utiliser les techniques avancées (chain-of-thought, few-shot)', 'Construire des templates réutilisables', 'Automatiser des tâches répétitives'],
     program: [{ title: 'Matin, Théorie & Méthodes', items: ["Anatomie d'un prompt", 'Techniques : zero-shot, few-shot, chain-of-thought', 'Rôles et personas', 'Instructions et contraintes'] }, { title: 'Après-midi, Ateliers pratiques', items: ['Bibliothèque de prompts métier', 'Optimisation itérative', 'Intégration dans votre workflow', 'Templates à emporter'] }] },
-  { id: 'marketing-ia', tag: 'Marketing IA', title: 'IA pour les équipes Marketing', desc: "Contenus, campagnes, analyses : boostez votre marketing avec l'IA.", price: '1 380 €', unit: '/ jour (individuel)', color: '#DCFCE7', duration: '1 jour', level: 'Tous niveaux',
+  { id: 'marketing-ia', tag: 'Marketing IA', title: 'IA pour les équipes Marketing', desc: "Contenus, campagnes, analyses : boostez votre marketing avec l'IA.", price: '1 980 €', unit: '/ jour', color: '#DCFCE7', duration: '1 jour', level: 'Tous niveaux',
     objectives: ['Produire des contenus 3× plus vite', "Optimiser vos campagnes avec l'IA", 'Analyser la data marketing intelligemment', 'Créer des visuels avec les IA génératives'],
     program: [{ title: 'Matin, Contenu & Copywriting', items: ['Rédaction IA : articles, posts, emails', 'SEO assisté par IA', 'Tone of voice et cohérence de marque', 'Outils : ChatGPT, Jasper, Copy.ai'] }, { title: 'Après-midi, Campagnes & Analytics', items: ['Segmentation et personnalisation', 'A/B testing assisté', 'Reporting automatisé', 'Midjourney & DALL-E pour les visuels'] }] },
-  { id: 'rh-ia', tag: 'Ressources Humaines', title: 'IA appliquée aux RH', desc: "Recrutement, onboarding, formation interne : l'IA au service des RH.", price: '1 380 €', unit: '/ jour (individuel)', color: '#F3E8FF', duration: '1 jour', level: 'Tous niveaux',
+  { id: 'rh-ia', tag: 'Ressources Humaines', title: 'IA appliquée aux RH', desc: "Recrutement, onboarding, formation interne : l'IA au service des RH.", price: '1 980 €', unit: '/ jour', color: '#F3E8FF', duration: '1 jour', level: 'Tous niveaux',
     objectives: ['Accélérer le sourcing et la présélection', "Améliorer l'expérience candidat", 'Automatiser les tâches administratives', "Déployer l'IA pour la formation interne"],
     program: [{ title: 'Matin, Recrutement & Sourcing', items: ["Rédaction d'offres optimisées", 'Analyse de CV par IA', 'Entretiens assistés', 'Outils RH IA du marché'] }, { title: 'Après-midi, RH opérationnel', items: ['Onboarding personnalisé', "Formation continue avec l'IA", 'Gestion de la performance', 'Aspects légaux et éthiques'] }] },
-  { id: 'appels-offres', tag: "Appels d'offres", title: "Répondre aux appels d'offres avec l'IA", desc: "Gagnez du temps et améliorez vos réponses grâce à l'IA générative.", price: '1 380 €', unit: '/ jour (individuel)', color: '#FFE4E6', duration: '1 jour', level: 'Intermédiaire',
+  { id: 'appels-offres', tag: "Appels d'offres", title: "Répondre aux appels d'offres avec l'IA", desc: "Gagnez du temps et améliorez vos réponses grâce à l'IA générative.", price: '1 980 €', unit: '/ jour', color: '#FFE4E6', duration: '1 jour', level: 'Intermédiaire',
     objectives: ['Analyser un cahier des charges rapidement', 'Rédiger des réponses percutantes', 'Construire une bibliothèque de réponses types', 'Améliorer votre taux de succès'],
     program: [{ title: 'Matin, Analyse & Stratégie', items: ['Dépouillement de cahier des charges', 'Identification des critères clés', 'Analyse concurrentielle', 'Stratégie de réponse'] }, { title: 'Après-midi, Rédaction assistée', items: ['Structuration de la réponse', 'Prompts spécialisés AO', 'Relecture et optimisation', 'Base de connaissances AO'] }] },
   { id: 'intra', tag: 'Intra-entreprise', title: 'Formation sur mesure en intra', desc: "Jusqu'à 12 participants, contenu 100% personnalisé, à votre rythme.", price: '1 980 €', unit: '/ jour / groupe', color: '#F0F0F0', duration: 'Sur mesure', level: 'Tous niveaux',
@@ -1330,6 +1330,8 @@ export default function App() {
         <Route path="/meilleure-ia-entreprise-2026" element={<ComparisonPage slug="meilleure-ia-entreprise-2026" />} />
         <Route path="/meilleure-ia-pour-coder" element={<ComparisonPage slug="meilleure-ia-pour-coder" />} />
         <Route path="/meilleur-agent-ia" element={<ComparisonPage slug="meilleur-agent-ia" />} />
+        <Route path="/mistral-vs-chatgpt" element={<ComparisonPage slug="mistral-vs-chatgpt" />} />
+        <Route path="/gemini-vs-copilot" element={<ComparisonPage slug="gemini-vs-copilot" />} />
         <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
         <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialitePage />} />
         <Route path="/competences-claude-eet" element={<CompetencesClaudeEET />} />

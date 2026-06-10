@@ -524,6 +524,7 @@ export function MasteriaFooter() {
               />
             </picture>
             <p style={{ fontSize: 13, color: '#888', lineHeight: 1.75, maxWidth: 260 }}>Centre de formation certifié Qualiopi. L'IA au service des hommes, pas l'inverse.</p>
+            <p style={{ fontSize: 12, color: '#666', lineHeight: 1.6, maxWidth: 260, marginTop: 10 }}>Déclaration d'activité n° 84 69 23218 69 enregistrée auprès du préfet de région Auvergne-Rhône-Alpes</p>
           </div>
           <div>
             <div style={colHead}>Formations par outil</div>
@@ -548,6 +549,8 @@ export function MasteriaFooter() {
               ['Finance', '/formation-ia-finance'],
               ['Communication', '/formation-ia-communication'],
               ['Management', '/formation-ia-management'],
+              ['Gestion de projet', '/formation-ia-gestion-de-projet'],
+              ['Dirigeants & COMEX', '/formation-ia-dirigeants'],
               ['Service client', '/formation-ia-service-client'],
               ['Tous les métiers', '/formation-intelligence-artificielle'],
             ].map(([l, path]) => (

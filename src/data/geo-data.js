@@ -60,6 +60,10 @@ export const GEO_CITIES = [
     country: 'France',
     countryCode: 'FR',
     locale: 'fr-FR',
+    // Lyon est le siège de Masteria : la page vise la requête complète
+    // « formation intelligence artificielle lyon » en plus de « formation ia lyon ».
+    metaTitleOverride: 'Formation intelligence artificielle Lyon | Masteria, Qualiopi',
+    h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et 89 programmes par métier',
     coordinates: { latitude: 45.7640, longitude: 4.8357 },
     population: '522 000 habitants intra-muros',
     metroArea: 'Métropole de Lyon : 1,4 million d\'habitants, deuxième pôle économique français',
@@ -265,7 +269,7 @@ export const GEO_TOOLS = [
           ? `Pourquoi une formation intra plutôt qu'un accompagnement individuel pour mes équipes ${city.nameLoc} ?`
           : `Quels formats sont disponibles ${city.nameLoc} ?`,
         a: city.intraOnly
-          ? `La formation intra est plus efficace quand vos équipes partagent les mêmes outils et les mêmes défis. Le formateur construit le programme à partir de vos vrais cas d'usage, utilise vos documents réels (anonymisés si nécessaire) et adapte le rythme à votre niveau. À partir de 3 participants, le format intra est très avantageux (1 980 €/jour pour le groupe). Pour 1 personne ou 2 personnes en profil dirigeant/expert, nous proposons l'accompagnement individuel sur mesure (1 380 €/jour) en présentiel ou en distanciel.`
+          ? `La formation intra est plus efficace quand vos équipes partagent les mêmes outils et les mêmes défis. Le formateur construit le programme à partir de vos vrais cas d'usage, utilise vos documents réels (anonymisés si nécessaire) et adapte le rythme à votre niveau. À partir de 3 participants, le format intra est très avantageux (1 980 €/jour pour le groupe). Pour 1 personne ou 2 personnes en profil dirigeant/expert, nous proposons l'accompagnement individuel sur mesure (1 980 €/jour) en présentiel ou en distanciel.`
           : `À Lyon : formation intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Les deux formats incluent les supports, la bibliothèque de prompts et le suivi post-formation pendant 1 mois.`,
       },
       {

@@ -64,6 +64,16 @@ routes.push({
   headers: { Location: 'https://www.master-ia.fr/$1' },
 });
 
+// Trailing slash : /page/ -> /page en 308. Le champ `trailingSlash` de vercel.json
+// n'est PAS honoré par le Build Output API en déploiement --prebuilt (vérifié en
+// prod le 2026-06-10) : on le réplique en route explicite. `^/(.+)/$` épargne la
+// racine `/`.
+routes.push({
+  src: '^/(.+)/$',
+  status: 308,
+  headers: { Location: '/$1' },
+});
+
 for (const r of vercelJson.redirects || []) {
   routes.push({
     src: sourceToRegex(r.source),
@@ -74,12 +84,27 @@ for (const r of vercelJson.redirects || []) {
 
 routes.push({ handle: 'filesystem' });
 
-// SPA fallback: any path not matched by a static file is rewritten to
-// index.html so React Router can handle the route client-side. This catches
-// private/unlisted routes that aren't in the sitemap (and therefore aren't
-// prerendered), and also any future route added to App.jsx before its
-// prerendered HTML is generated.
-routes.push({ src: '^/(.*)$', dest: '/index.html' });
+// IMPORTANT (vérifié en prod le 2026-06-10) : avec cleanUrls, les chemins `.html`
+// littéraux renvoient NOT_FOUND (`/404.html` → 404, `/404` → 200). Tout `dest`
+// doit donc viser le chemin SANS extension. C'est pour ça que l'ancien fallback
+// `dest: '/index.html'` n'a jamais fonctionné (/formations était mort en prod).
+
+// Fallback SPA ciblé : les sous-routes du catalogue interne (/formations/:id,
+// noindex, non prérendues) servent le shell SPA propre (/spa, écrit par le
+// prerender) et React Router rend le détail côté client.
+routes.push({ src: '^/formations/.+$', dest: '/spa' });
+
+// Filet de sécurité prerender : si une page légitime des namespaces connus
+// (formation-*, blog/*) manque du filesystem (échec ponctuel de prerender),
+// on sert le shell SPA (200, React rend la bonne page) plutôt qu'une 404 qui
+// tuerait une URL du sitemap. Les URLs fantaisistes hors namespaces restent en 404.
+routes.push({ src: '^/formation-[a-z0-9-]+$', dest: '/spa' });
+routes.push({ src: '^/blog/[a-z0-9-]+$', dest: '/spa' });
+
+// Toute autre URL inconnue : vraie 404 (status 404 + page brandée avec liens de
+// reprise). Surtout PAS de fallback SPA global ici : il servirait la home en 200
+// pour n'importe quelle URL fantôme (soft 404 massif, crawl budget gaspillé).
+routes.push({ src: '^/(.*)$', status: 404, dest: '/404' });
 
 // `cleanUrls` from vercel.json is only honored by the source-build pipeline.
 // When deploying with --prebuilt, we must replicate it explicitly so that

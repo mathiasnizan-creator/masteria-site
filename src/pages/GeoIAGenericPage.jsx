@@ -51,8 +51,10 @@ export default function GeoIAGenericPage() {
 
   const isCountry = !!city.isCountry
   const isFrance = city.countryCode === 'FR'
-  const h1 = `Formation IA ${city.nameLoc} — ChatGPT, Claude et 89 programmes par métier`
-  const metaTitle = `Formation IA ${city.name} | ChatGPT, Claude, 13 métiers | Masteria`
+  // Surcharges par ville (geo-data.js) : permet de viser la requête longue
+  // « formation intelligence artificielle {ville} » sur les villes stratégiques.
+  const h1 = city.h1Override || `Formation IA ${city.nameLoc} — ChatGPT, Claude et 89 programmes par métier`
+  const metaTitle = city.metaTitleOverride || `Formation IA ${city.name} | ChatGPT, Claude, 13 métiers | Masteria`
   // Meta description ≤ ~155 car. (l'argument financement n'est plus tronqué par Google).
   // Le volet financement est conditionnel : pas d'OPCO hors France (cf. CH / BE).
   const financePhrase = isFrance
@@ -138,7 +140,7 @@ export default function GeoIAGenericPage() {
         : `Quels formats de formation sont disponibles ${city.nameLoc} ?`,
       a: isCountry || city.intraOnly
         ? `Nous privilégions l'intra-entreprise à ${city.name} : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour les profils dirigeants ou experts qui souhaitent un format 1-to-1, l'accompagnement individuel sur mesure est disponible en présentiel ou en distanciel.`
-        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants (1 980 €/jour), et accompagnement individuel sur mesure 1-to-1 (1 380 €/jour) en présentiel ou en distanciel. Les deux formats sont éligibles au financement OPCO jusqu'à 100 %.`,
+        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants, et accompagnement individuel sur mesure 1-to-1 en présentiel ou en distanciel, au même tarif de 1 980 €/jour. Les deux formats sont éligibles au financement OPCO jusqu'à 100 %.`,
     },
     {
       q: `Combien de temps dure une formation IA ?`,
@@ -150,7 +152,7 @@ export default function GeoIAGenericPage() {
     },
     {
       q: `Combien coûte une formation IA ${city.nameLoc} ?`,
-      a: `Le tarif intra-entreprise est de 1 980 € par jour pour un groupe (jusqu'à 12 participants), soit 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) est à 1 380 € par jour. ${isFrance ? "Ces montants sont finançables jusqu'à 100 % par votre OPCO : selon votre prise en charge, le reste à charge peut être nul ou fortement réduit." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
+      a: `Le tarif intra-entreprise est de 1 980 € par jour pour un groupe (jusqu'à 12 participants), soit 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) est à 1 980 € par jour. ${isFrance ? "Ces montants sont finançables jusqu'à 100 % par votre OPCO : selon votre prise en charge, le reste à charge peut être nul ou fortement réduit." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
     },
     {
       q: `Peut-on suivre la formation IA à distance depuis ${city.name} ?`,
@@ -470,8 +472,8 @@ export default function GeoIAGenericPage() {
                     ['Durée', '1 jour (7 h) en standard. Formats 2 à 3 jours ou Sprint IA de 3 h pour la sensibilisation.'],
                     ['Formats', `Intra-entreprise jusqu'à 12 participants, ou accompagnement individuel sur mesure (1-to-1). Présentiel ${city.nameLoc} ou distanciel.`],
                     ['Tarif', isFrance
-                      ? 'Intra 1 980 €/jour pour le groupe (≈ 165 €/personne). Accompagnement individuel sur mesure 1 380 €/jour.'
-                      : 'Intra 1 980 €/jour pour le groupe. Accompagnement individuel sur mesure 1 380 €/jour. Facturation adaptée à votre pays.'],
+                      ? 'Intra 1 980 €/jour pour le groupe (≈ 165 €/personne). Accompagnement individuel sur mesure 1 980 €/jour.'
+                      : 'Intra 1 980 €/jour pour le groupe. Accompagnement individuel sur mesure 1 980 €/jour. Facturation adaptée à votre pays.'],
                     ['Financement', isFrance
                       ? "Jusqu'à 100 % par votre OPCO. Masteria gère l'intégralité du dossier."
                       : 'Dispositifs de financement locaux selon votre pays ; nous vous orientons lors du cadrage.'],

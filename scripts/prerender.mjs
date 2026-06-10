@@ -94,7 +94,12 @@ const sitemapRoutes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
 // d'un 404 (Vercel sert filesystem-first sans fallback SPA fiable).
 const PRIVATE_ROUTES = ['/competences-claude-eet', '/artefacts-claude-entreprise', '/securite-claude-entreprise'];
 
-const routes = [...sitemapRoutes, ...PRIVATE_ROUTES];
+// Catalogue interne (noindex, hors sitemap) : prérendu pour qu'un accès direct
+// (nouvel onglet, refresh) renvoie 200 au lieu d'un 404. Les sous-routes
+// /formations/:id passent par le fallback SPA ciblé du config Vercel.
+const EXTRA_ROUTES = ['/formations'];
+
+const routes = [...sitemapRoutes, ...PRIVATE_ROUTES, ...EXTRA_ROUTES];
 
 console.log(`→ ${routes.length} routes à prerender (lots de ${BATCH_SIZE})`);
 
@@ -103,6 +108,10 @@ console.log(`→ ${routes.length} routes à prerender (lots de ${BATCH_SIZE})`);
 // chargent dist/index.html déjà peuplé des tags HomePage → doublons de canonicals/meta.
 const SHELL_PATH = path.join(dist, 'index.html');
 const SHELL_HTML = fs.readFileSync(SHELL_PATH, 'utf8');
+// Copie pérenne du shell SPA propre : servie par Vercel (en /spa, via cleanUrls)
+// comme fallback des routes non prérendues (/formations/:id, filets de sécurité).
+// Nécessaire car dist/index.html sera remplacé par la home prérendue en fin de run.
+fs.writeFileSync(path.join(dist, 'spa.html'), SHELL_HTML);
 // On placera "/" en dernier pour ne pas écraser le shell pendant le run.
 const orderedRoutes = [...routes.filter(r => r !== '/'), '/'];
 

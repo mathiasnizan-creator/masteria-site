@@ -184,7 +184,7 @@ export default function AutomatisationIAPage() {
 
           {/* GEO : réponse directe pour citation LLM */}
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
-            La formation <strong>automatisation IA</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong> en intra-entreprise (jusqu'à 12 participants) ou <strong>1 380 €/jour</strong> en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Vos équipes repartent avec leurs premiers workflows opérationnels.
+            La formation <strong>automatisation IA</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Vos équipes repartent avec leurs premiers workflows opérationnels.
           </p>
 
           <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
@@ -368,10 +368,10 @@ export default function AutomatisationIAPage() {
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 380 €</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>/ jour</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 2 760 € pour 2 jours · 1-to-1</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours · 1-to-1</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['2 jours consécutifs ou espacés · 1-to-1', 'Programme co-construit sur vos automatisations', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>

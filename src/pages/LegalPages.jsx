@@ -98,10 +98,12 @@ export function MentionsLegalesPage() {
               <span style={s.val}>Masteria</span>
               <span style={s.label}>SIRET</span>
               <span style={s.val}>919 252 403 00010</span>
+              <span style={s.label}>Déclaration d'activité</span>
+              <span style={s.val}>84 69 23218 69 (préfet de région Auvergne-Rhône-Alpes)</span>
               <span style={s.label}>TVA intracommunautaire</span>
               <span style={s.val}>FR79 919 252 403</span>
               <span style={s.label}>Siège social</span>
-              <span style={s.val}>11 Rue Barodet, 69004 Lyon, France</span>
+              <span style={s.val}>17 Rue Richan, 69004 Lyon, France</span>
               <span style={s.label}>Directeur de publication</span>
               <span style={s.val}>Mathias Nizan</span>
               <span style={s.label}>Email</span>
@@ -114,6 +116,9 @@ export function MentionsLegalesPage() {
           <h2 style={s.h2}>2. Activité et certification</h2>
           <p style={s.p}>
             Masteria est un organisme de formation professionnelle spécialisé dans l'intelligence artificielle générative, ainsi qu'un cabinet de conseil accompagnant les entreprises dans leur transformation par l'IA. Les formations dispensées sous la marque Masteria sont certifiées <strong>Qualiopi</strong> au titre de la catégorie « actions de formation ».
+          </p>
+          <p style={s.p}>
+            Déclaration d'activité enregistrée sous le numéro <strong>84 69 23218 69</strong> auprès du préfet de la région Auvergne-Rhône-Alpes. Cet enregistrement ne vaut pas agrément de l'État (article L.6352-12 du Code du travail).
           </p>
           <p style={s.p}>
             Les sessions de formation se déroulent dans nos locaux situés au <strong>17 Rue Richan, 69004 Lyon</strong>, en distanciel par visioconférence, ou dans les locaux de nos clients (France, Suisse, Belgique) pour les formats intra-entreprises.
@@ -217,7 +222,7 @@ export function PolitiqueConfidentialitePage() {
               <span style={s.label}>SIRET</span>
               <span style={s.val}>919 252 403 00010</span>
               <span style={s.label}>Adresse</span>
-              <span style={s.val}>11 Rue Barodet, 69004 Lyon, France</span>
+              <span style={s.val}>17 Rue Richan, 69004 Lyon, France</span>
               <span style={s.label}>Contact RGPD</span>
               <span style={s.val}><a href="mailto:mathias.nizan@master-ia.fr" style={s.a}>mathias.nizan@master-ia.fr</a></span>
             </div>

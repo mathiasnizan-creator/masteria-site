@@ -62,7 +62,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'La formation ChatGPT est-elle finançable par mon OPCO ?',
-        a: "Oui. La formation ChatGPT de Masteria est finançable via les OPCO (Opérateurs de Compétences) dans le cadre du Plan de Développement des Compétences de votre entreprise. Masteria est certifié Qualiopi, condition indispensable pour accéder aux financements OPCO. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (soit 3 960 € pour les 2 jours). L'accompagnement individuel sur mesure est facturé 1 380 € par jour. Notre équipe vous accompagne dans la constitution du dossier de prise en charge.",
+        a: "Oui. La formation ChatGPT de Masteria est finançable via les OPCO (Opérateurs de Compétences) dans le cadre du Plan de Développement des Compétences de votre entreprise. Masteria est certifié Qualiopi, condition indispensable pour accéder aux financements OPCO. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (soit 3 960 € pour les 2 jours). L'accompagnement individuel sur mesure est facturé 1 980 € par jour. Notre équipe vous accompagne dans la constitution du dossier de prise en charge.",
       },
       {
         q: 'Faut-il des compétences techniques pour se former à ChatGPT ?',
@@ -78,7 +78,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'La formation ChatGPT est-elle disponible en intra-entreprise ?',
-        a: "Oui. La formation intra-entreprise se déroule dans vos locaux ou en visioconférence, pour un groupe de 4 à 12 participants. Elle est personnalisée en amont : le formateur travaille avec vous sur vos cas d\'usage réels, vos documents types et vos processus métier avant la session. Le tarif est de 1 980 euros par jour pour l\'ensemble du groupe, soit 3 000 euros pour les 2 jours, ce qui revient à 250 euros par personne pour 12 participants. L'accompagnement individuel sur mesure est facturé 1 380 € par jour.",
+        a: "Oui. La formation intra-entreprise se déroule dans vos locaux ou en visioconférence, pour un groupe de 4 à 12 participants. Elle est personnalisée en amont : le formateur travaille avec vous sur vos cas d\'usage réels, vos documents types et vos processus métier avant la session. Le tarif est de 1 980 euros par jour pour l\'ensemble du groupe, soit 3 960 euros pour les 2 jours, ce qui revient à 330 euros par personne pour 12 participants. L'accompagnement individuel sur mesure est facturé 1 980 € par jour.",
       },
     ],
   },
@@ -157,7 +157,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'La formation Microsoft Copilot est-elle finançable par l\'OPCO ?',
-        a: "Oui. Masteria est certifié Qualiopi, ce qui permet la prise en charge de la formation Microsoft Copilot par votre OPCO via le Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours). L'accompagnement individuel sur mesure est facturé 1 380 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu'en distanciel. Nous vous accompagnons dans la demande de financement OPCO.",
+        a: "Oui. Masteria est certifié Qualiopi, ce qui permet la prise en charge de la formation Microsoft Copilot par votre OPCO via le Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours). L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu'en distanciel. Nous vous accompagnons dans la demande de financement OPCO.",
       },
     ],
   },
@@ -236,7 +236,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'La formation Gemini est-elle finançable par l\'OPCO ?',
-        a: "Oui. Masteria est certifié Qualiopi, condition obligatoire pour la prise en charge des formations par les OPCO dans le cadre du Plan de Développement des Compétences. La formation Google Gemini est éligible à ce dispositif. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes. L'accompagnement individuel sur mesure est facturé 1 380 € par jour. La formation est accessible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu\'en distanciel. Notre équipe vous accompagne dans le montage du dossier OPCO.",
+        a: "Oui. Masteria est certifié Qualiopi, condition obligatoire pour la prise en charge des formations par les OPCO dans le cadre du Plan de Développement des Compétences. La formation Google Gemini est éligible à ce dispositif. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes. L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est accessible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu\'en distanciel. Notre équipe vous accompagne dans le montage du dossier OPCO.",
       },
     ],
   },
@@ -307,7 +307,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'La formation Claude est-elle finançable par l\'OPCO ?',
-        a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation Claude finançable via votre OPCO dans le cadre du Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours de 14 h, soit ~330 € par personne pour 12 participants). L'accompagnement individuel sur mesure est facturé 1 380 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu\'en distanciel.",
+        a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation Claude finançable via votre OPCO dans le cadre du Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours de 14 h, soit ~330 € par personne pour 12 participants). L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu\'en distanciel.",
       },
       {
         q: 'Quels métiers bénéficient le plus de Claude ?',
@@ -386,7 +386,7 @@ export const HUB_CONTENT = {
       },
       {
         q: "La formation Mistral AI est-elle finançable par l'OPCO ?",
-        a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation Mistral finançable via votre OPCO dans le cadre du Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours de 14 h, soit ~330 € par personne pour 12 participants). L'accompagnement individuel sur mesure est facturé 1 380 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu'en distanciel.",
+        a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation Mistral finançable via votre OPCO dans le cadre du Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours de 14 h, soit ~330 € par personne pour 12 participants). L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu'en distanciel.",
       },
       {
         q: "Peut-on vraiment déployer Mistral sur nos propres serveurs ?",
@@ -457,7 +457,7 @@ export const HUB_CONTENT = {
       },
       {
         q: "Sprint IA est-il finançable par l'OPCO ?",
-        a: "Oui. Sprint IA est éligible aux financements OPCO comme toutes les formations Masteria, organisme certifié Qualiopi. Tarif intra-entreprise : 1 980 € HT par session jusqu'à 12 personnes. Accompagnement individuel : 1 380 € HT par session. Packages dégressifs à partir de 5 sessions (utiles pour les déploiements managériaux ou de conformité AI Act). Notre équipe accompagne le montage du dossier OPCO et fournit toutes les pièces sous 24 h.",
+        a: "Oui. Sprint IA est éligible aux financements OPCO comme toutes les formations Masteria, organisme certifié Qualiopi. Tarif intra-entreprise : 1 980 € HT par session jusqu'à 12 personnes. Accompagnement individuel : 1 980 € HT par session. Packages dégressifs à partir de 5 sessions (utiles pour les déploiements managériaux ou de conformité AI Act). Notre équipe accompagne le montage du dossier OPCO et fournit toutes les pièces sous 24 h.",
       },
       {
         q: "Peut-on construire un Sprint IA sur mesure ?",
@@ -527,7 +527,7 @@ export const HUB_CONTENT = {
       },
       {
         q: "La formation Multi-outils est-elle finançable par l'OPCO ?",
-        a: "Oui. La formation Multi-outils est éligible aux financements OPCO comme toutes les formations Masteria, organisme certifié Qualiopi. Le tarif en intra-entreprise est de 1 980 € HT par jour pour un groupe jusqu'à 12 personnes. L'accompagnement individuel sur mesure est de 1 380 € HT par jour. Notre équipe accompagne le montage du dossier OPCO et fournit les pièces nécessaires sous 24 h.",
+        a: "Oui. La formation Multi-outils est éligible aux financements OPCO comme toutes les formations Masteria, organisme certifié Qualiopi. Le tarif en intra-entreprise est de 1 980 € HT par jour pour un groupe jusqu'à 12 personnes. L'accompagnement individuel sur mesure est de 1 980 € HT par jour. Notre équipe accompagne le montage du dossier OPCO et fournit les pièces nécessaires sous 24 h.",
       },
       {
         q: "Faut-il avoir déjà utilisé un outil IA avant de suivre la formation ?",

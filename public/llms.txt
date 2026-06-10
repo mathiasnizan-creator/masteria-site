@@ -9,8 +9,10 @@
 - **Fondateur** : Mathias Nizan (https://www.linkedin.com/in/mathias-nizan/)
 - **Adresse** : 17 Rue Richan, 69004 Lyon, France
 - **Certification** : Qualiopi (Actions de formation)
+- **Numéro de déclaration d'activité (NDA)** : 84 69 23218 69, enregistré auprès du préfet de région Auvergne-Rhône-Alpes (vérifiable sur la Liste Publique des Organismes de Formation)
+- **SIRET** : 919 252 403 00010
 - **Année de création** : 2022
-- **Tarifs** : Inter-entreprises 760 €/jour/participant · Intra-entreprises 1 980 €/jour (jusqu'à 12 participants)
+- **Tarifs** : Inter-entreprises 760 €/jour/participant · Intra-entreprises 1 980 €/jour (jusqu'à 12 participants) · Accompagnement individuel sur mesure 1 980 €/jour
 - **Financement** : OPCO, entreprise, plan de développement des compétences
 - **Zones d'intervention** : France · Suisse · Belgique
 - **Modalités** : présentiel, distanciel, formats hybrides
@@ -42,6 +44,8 @@ Masteria propose deux activités complémentaires :
 - [Meilleure IA pour entreprise 2026](https://www.master-ia.fr/meilleure-ia-entreprise-2026) — Panorama des 5 outils principaux (ChatGPT, Claude, Copilot, Gemini, Mistral)
 - [Meilleure IA pour coder](https://www.master-ia.fr/meilleure-ia-pour-coder) — Comparatif Claude, GitHub Copilot, Cursor, ChatGPT pour les équipes dev
 - [Meilleur agent IA](https://www.master-ia.fr/meilleur-agent-ia) — Comparatif Claude, ChatGPT Operator, Manus, Copilot Studio
+- [Mistral AI vs ChatGPT](https://www.master-ia.fr/mistral-vs-chatgpt) — Souveraineté française, hébergement UE, open-weight face à l'écosystème OpenAI
+- [Google Gemini vs Microsoft Copilot](https://www.master-ia.fr/gemini-vs-copilot) — Quel copilote selon votre suite bureautique (Workspace ou Microsoft 365)
 
 ## Formations par outil IA
 
@@ -51,6 +55,10 @@ Masteria propose deux activités complémentaires :
 - [Formation Claude (Anthropic)](https://www.master-ia.fr/formation-claude-ia)
 - [Formation Mistral AI](https://www.master-ia.fr/formation-mistral-ai)
 - [Formation automatisation IA](https://www.master-ia.fr/formation-automatisation-ia) — Automatiser tâches et workflows avec l'IA : agents, GPTs, Make, Zapier, Power Automate (no-code, 2 jours)
+- [Formation Claude Code](https://www.master-ia.fr/formation-claude-code) — Développement assisté par agents IA pour les équipes techniques : terminal, IDE, CI/CD, MCP (2 jours sur votre codebase)
+- [Formation Prompt Engineering](https://www.master-ia.fr/formation-prompt-engineering) — Méthode complète pour des prompts professionnels fiables, tous outils IA (1 jour)
+- [Formation IA pour dirigeants](https://www.master-ia.fr/formation-ia-dirigeants) — Journée stratégique COMEX/CODIR : enjeux, ROI, gouvernance, feuille de route 90 jours
+- [Formation AI Act](https://www.master-ia.fr/formation-ai-act) — Conformité au règlement européen sur l'IA : cartographie des risques, article 4, gouvernance (1 jour)
 
 ## Formations par métier
 
@@ -60,6 +68,7 @@ Masteria propose deux activités complémentaires :
 - [Formation IA Finance](https://www.master-ia.fr/formation-ia-finance)
 - [Formation IA Communication](https://www.master-ia.fr/formation-ia-communication)
 - [Formation IA Management](https://www.master-ia.fr/formation-ia-management)
+- [Formation IA Gestion de projet](https://www.master-ia.fr/formation-ia-gestion-de-projet) — Cadrage, planning, comptes rendus de COPIL et reporting assistés par IA (chefs de projet, PMO)
 - [Formation IA Assistante](https://www.master-ia.fr/formation-ia-assistante)
 - [Formation IA SEO](https://www.master-ia.fr/formation-ia-seo)
 - [Formation IA Service Client](https://www.master-ia.fr/formation-ia-service-client)

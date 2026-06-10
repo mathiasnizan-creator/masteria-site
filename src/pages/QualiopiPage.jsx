@@ -9,7 +9,7 @@ const FAQ = [
   },
   {
     q: "Masteria est-il certifié Qualiopi ?",
-    a: "Oui. Masteria est certifié Qualiopi pour la catégorie « Actions de formation ». La certification a été délivrée par un organisme certificateur accrédité par le COFRAC. Elle couvre toutes nos formations IA : ChatGPT, Microsoft Copilot, Google Gemini, Claude, Mistral AI, ainsi que nos formations multi-outils et nos programmes par métier.",
+    a: "Oui. Masteria est certifié Qualiopi pour la catégorie « Actions de formation ». La certification a été délivrée par un organisme certificateur accrédité par le COFRAC. Son numéro de déclaration d'activité est le 84 69 23218 69 (préfet de région Auvergne-Rhône-Alpes), vérifiable sur la Liste Publique des Organismes de Formation. Elle couvre toutes nos formations IA : ChatGPT, Microsoft Copilot, Google Gemini, Claude, Mistral AI, ainsi que nos formations multi-outils et nos programmes par métier.",
   },
   {
     q: "Pourquoi la certification Qualiopi est-elle indispensable pour financer ma formation IA ?",
@@ -115,7 +115,9 @@ export default function QualiopiPage() {
             Depuis le 1er janvier 2022, la certification Qualiopi est obligatoire pour tout organisme de formation
             souhaitant accéder aux financements publics. Sans elle, impossible d'obtenir une prise en charge OPCO,
             CPF ou France Travail. Masteria a obtenu cette certification dès 2022 et la maintient avec rigueur :
-            audit de renouvellement tous les 3 ans, audit de suivi à 18 mois.
+            audit de renouvellement tous les 3 ans, audit de suivi à 18 mois. Notre déclaration d'activité est
+            enregistrée sous le numéro 84 69 23218 69 auprès du préfet de la région Auvergne-Rhône-Alpes :
+            votre OPCO peut vérifier notre statut en quelques secondes sur la Liste Publique des Organismes de Formation.
           </p>
           <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, marginBottom: 40 }}>
             Concrètement pour vous : chaque formation IA Masteria — ChatGPT, Microsoft Copilot, Google Gemini,

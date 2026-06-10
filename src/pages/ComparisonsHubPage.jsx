@@ -46,7 +46,7 @@ export default function ComparisonsHubPage() {
       {
         '@type': 'Question',
         name: "Comment former mes équipes à choisir entre les outils IA ?",
-        acceptedAnswer: { '@type': 'Answer', text: "Notre formation panorama de 2 jours permet de tester les 5 outils sur les cas d'usage réels de vos équipes avant de décider. 1 980 €/jour en intra-entreprise, 1 380 €/jour en individuel, finançable OPCO. Idéale avant un déploiement à l'échelle." },
+        acceptedAnswer: { '@type': 'Answer', text: "Notre formation panorama de 2 jours permet de tester les 5 outils sur les cas d'usage réels de vos équipes avant de décider. 1 980 €/jour en intra-entreprise comme en individuel, finançable OPCO. Idéale avant un déploiement à l'échelle." },
       },
     ],
   }
@@ -740,7 +740,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Comment former mes équipes à choisir entre les outils IA ?",
-    a: "Notre formation panorama de 2 jours permet de tester les 5 outils sur les cas d'usage réels de vos équipes avant de décider. 1 980 €/jour en intra-entreprise, 1 380 €/jour en individuel, finançable OPCO. Idéale avant un déploiement à l'échelle.",
+    a: "Notre formation panorama de 2 jours permet de tester les 5 outils sur les cas d'usage réels de vos équipes avant de décider. 1 980 €/jour en intra-entreprise comme en individuel, finançable OPCO. Idéale avant un déploiement à l'échelle.",
   },
   {
     q: "Et l'IA chinoise (DeepSeek, Qwen) ?",

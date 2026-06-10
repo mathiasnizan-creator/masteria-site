@@ -63,7 +63,7 @@ const FAQ_IA = [
   },
   {
     q: "Combien coûte une formation IA en entreprise ?",
-    a: "Nos tarifs dépendent du format. En intra-entreprise, le tarif est de 1 980 € HT par jour pour un groupe jusqu'à 12 participants, dans vos locaux ou en distanciel. En accompagnement individuel sur mesure, le tarif est de 1 380 € HT par jour pour un coaching 1-to-1 (1 participant), en présentiel ou en distanciel, avec un programme co-construit sur vos enjeux. Tous ces montants sont éligibles au financement OPCO.",
+    a: "Nos tarifs dépendent du format. En intra-entreprise, le tarif est de 1 980 € HT par jour pour un groupe jusqu'à 12 participants, dans vos locaux ou en distanciel. En accompagnement individuel sur mesure, le tarif est de 1 980 € HT par jour pour un coaching 1-to-1 (1 participant), en présentiel ou en distanciel, avec un programme co-construit sur vos enjeux. Tous ces montants sont éligibles au financement OPCO.",
   },
   {
     q: "Quels outils IA sont enseignés dans vos formations ?",
@@ -234,7 +234,7 @@ export default function MetiersHubPage() {
             fontFamily: 'Nunito, sans-serif', marginBottom: 20, lineHeight: 1.08,
             color: '#0A0A0A', letterSpacing: '-0.02em',
           }}>
-            Formation IA pour les entreprises
+            Formation intelligence artificielle pour les entreprises
           </h1>
 
           <p style={{

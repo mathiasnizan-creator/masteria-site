@@ -61,10 +61,12 @@ export default function GeoPage() {
   const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug).slice(0, 5)
   const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug)
 
+  // Hiérarchie locale : la page outil×ville est rattachée à la page ville
+  // (formation-ia-{ville}), page canonique de l'intention « formation ia {ville} ».
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
-    { name: `Formation ${tool.shortName}`, slug: tool.hubSlug },
-    { name: city.name, slug },
+    { name: `Formation IA ${city.name}`, slug: `formation-ia-${city.slug}` },
+    { name: `Formation ${tool.shortName} ${city.name}`, slug },
   ]
 
   const courseData = {
@@ -461,7 +463,7 @@ export default function GeoPage() {
                   </p>
                 </div>
                 <div style={{ background: '#fff', borderRadius: 14, padding: 28, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Coaching 1-to-1 · 1 380 €/jour</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Coaching 1-to-1 · 1 980 €/jour</div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Accompagnement individuel</h3>
                   <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
                     Coaching personnalisé pour dirigeants, experts métier ou profils stratégiques. Programme co-construit autour de vos enjeux, rythme adapté, suivi entre les sessions. Présentiel à Lyon ou en distanciel.

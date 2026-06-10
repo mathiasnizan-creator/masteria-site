@@ -102,7 +102,9 @@ export default function SEOHead({
     },
     sameAs: [
       'https://www.linkedin.com/company/masteria-conseil-et-formation-ia/',
-      'https://share.google/AoLHOIoAT9yMocn1s',
+      // Entité Knowledge Graph du profil Google Business (URL stable, remplace
+      // l'ancien lien raccourci share.google qui passait par deux redirections).
+      'https://www.google.com/search?kgmid=/g/11ys7st9c3',
       'https://www.linkedin.com/in/mathias-nizan/',
     ],
     hasCredential: {
@@ -218,7 +220,7 @@ export default function SEOHead({
             price: courseData.price || '1980',
             priceCurrency: 'EUR',
             valueAddedTaxIncluded: false,
-            description: 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel sur mesure : 1 380 €/jour.',
+            description: 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel sur mesure : 1 980 €/jour.',
           },
           category: 'Formation professionnelle',
           availability: 'https://schema.org/InStock',
