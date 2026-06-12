@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
-import { BookOpen, Clock } from 'lucide-react'
+import {
+  ArrowRight, BadgeCheck, BookOpen, Check, Clock, ClipboardList,
+  Compass, FileSpreadsheet, Handshake, Headphones, Megaphone,
+  Scale, Sparkles, Users, Workflow,
+} from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 
@@ -8,8 +12,10 @@ import OfficialSources from '../components/OfficialSources'
  * Tête du cluster : « automatisation ia » (880/mois), « ia automatisation »,
  * « automatisation ia entreprise », « automatisation de process entreprise avec ia »,
  * « automatisation projet ia ». Guide long format (3 000+ mots), maillage vers
- * /formation-automatisation-ia, /agence-automatisation-ia et /agents-ia-entreprise.
- * Accent bleu Masteria (#2563EB), pas d'orange.
+ * /formation-automatisation-ia, /agence-automatisation-ia, /agents-ia-entreprise,
+ * /agence-ia et les articles de blog du cluster.
+ * Design premium : icônes lucide (zéro emoji), kickers, tableaux comparatifs,
+ * réponses directes citables sous les H2. Accent bleu Masteria (#2563EB).
  */
 
 const SLUG = 'automatisation-ia'
@@ -22,10 +28,33 @@ const H1 = "Automatisation IA : le guide complet pour automatiser vos processus"
 
 /* ───────── Styles partagés ───────── */
 
-const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 20, lineHeight: 1.25 }
-const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px' }
-const pStyle = { fontSize: 16, color: '#374151', lineHeight: 1.8, margin: '0 0 18px' }
+const sectionPad = 'clamp(64px, 9vw, 110px) 24px'
+const wrap = { maxWidth: 1100, margin: '0 auto' }
+const prose = { maxWidth: 860 }
+
+const kickerStyle = { fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 14 }
+const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 18px', lineHeight: 1.25, letterSpacing: '-0.01em' }
+const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }
+const pStyle = { fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 18px' }
 const aStyle = { color: c, fontWeight: 600 }
+
+const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
+const answerStyle = { ...prose, background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px' }
+
+const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
+const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
+
+function Kicker({ children }) {
+  return <div style={kickerStyle}>{children}</div>
+}
+
+function IconBox({ icon: Icon }) {
+  return (
+    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+      <Icon size={22} strokeWidth={2} style={{ color: c }} />
+    </div>
+  )
+}
 
 /* ───────── Sommaire ───────── */
 
@@ -39,11 +68,50 @@ const SOMMAIRE = [
   { href: '#faq', label: 'Questions fréquentes' },
 ]
 
+/* ───────── Comparatif RPA vs IA (tableau) ───────── */
+
+const TABLE_RPA = [
+  { critere: 'Logique de fonctionnement', rpa: "Exécute des règles fixes, définies à l'avance", ia: 'Interprète le contexte et applique des consignes écrites' },
+  { critere: 'Données traitées', rpa: 'Structurées : tableaux, formulaires, champs normés', ia: 'Non structurées : emails, PDF, conversations' },
+  { critere: 'Cas imprévus', rpa: "S'arrête ou se trompe dès qu'un cas sort du cadre", ia: 'Gérés et arbitrés, sous supervision humaine' },
+  { critere: 'Terrain idéal', rpa: 'Processus stables à très gros volumes', ia: 'Tâches qui demandaient lecture et jugement' },
+  { critere: 'Exemple type', rpa: 'Ressaisie entre deux logiciels au format constant', ia: 'Tri, synthèse et réponse aux emails entrants' },
+]
+
+/* ───────── Quelle famille d'outils pour quel besoin (tableau) ───────── */
+
+const TABLE_FAMILLES = [
+  {
+    famille: 'Assistants IA personnalisés',
+    sub: 'GPTs, Projects, Gems',
+    besoin: 'Tâche individuelle récurrente : rédaction, synthèse, analyse',
+    profil: 'Tout collaborateur, sans compétence technique',
+    budget: "Inclus dans l'abonnement existant",
+    limite: 'Un humain déclenche la tâche à chaque fois',
+  },
+  {
+    famille: 'Plateformes no-code',
+    sub: 'Make, Zapier, n8n, Power Automate',
+    besoin: 'Flux entre applications, déclenché par un événement',
+    profil: 'Profil métier formé une à deux journées',
+    budget: "Quelques euros à quelques dizaines d'euros par mois",
+    limite: 'Demande un processus clarifié en amont',
+  },
+  {
+    famille: 'Agents IA autonomes',
+    sub: 'Objectif confié, étapes décidées par l\'agent',
+    besoin: 'Objectif en plusieurs étapes, décisions intermédiaires',
+    profil: 'Équipe accompagnée, supervision rigoureuse',
+    budget: 'Variable selon les volumes et les outils',
+    limite: 'Supervision exigeante, à réserver aux besoins démontrés',
+  },
+]
+
 /* ───────── Cas d'usage par fonction ───────── */
 
 const FONCTIONS = [
   {
-    icon: '🧾',
+    icon: FileSpreadsheet,
     title: 'Administratif et comptabilité',
     intro: "Souvent la fonction la plus vite rentable : les volumes sont élevés et les règles sont claires.",
     examples: [
@@ -54,7 +122,7 @@ const FONCTIONS = [
     ],
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'Commercial et ventes',
     intro: "L'IA prend la saisie et la préparation, le commercial garde la relation et la négociation.",
     examples: [
@@ -65,7 +133,7 @@ const FONCTIONS = [
     ],
   },
   {
-    icon: '📣',
+    icon: Megaphone,
     title: 'Marketing et communication',
     intro: "La stratégie et la création restent humaines, la déclinaison et le suivi s'automatisent.",
     examples: [
@@ -76,7 +144,7 @@ const FONCTIONS = [
     ],
   },
   {
-    icon: '👥',
+    icon: Users,
     title: 'Ressources humaines',
     intro: "Des gains réels, avec une vigilance forte : le tri automatisé de candidatures figure parmi les usages à haut risque au sens de l'AI Act et impose une validation humaine systématique.",
     examples: [
@@ -87,7 +155,7 @@ const FONCTIONS = [
     ],
   },
   {
-    icon: '🎧',
+    icon: Headphones,
     title: 'Service client',
     intro: "Le partage des rôles est simple : l'IA absorbe le répétitif, le conseiller traite le sensible.",
     examples: [
@@ -98,7 +166,7 @@ const FONCTIONS = [
     ],
   },
   {
-    icon: '📋',
+    icon: ClipboardList,
     title: 'Gestion de projet',
     intro: "La production documentaire du pilotage se prête particulièrement bien à l'automatisation.",
     examples: [
@@ -109,7 +177,7 @@ const FONCTIONS = [
     ],
   },
   {
-    icon: '⚖️',
+    icon: Scale,
     title: 'Juridique et conformité',
     intro: "L'IA prépare le travail, le juriste tranche : aucune automatisation ne doit engager l'entreprise sans relecture.",
     examples: [
@@ -134,7 +202,7 @@ const ETAPES = [
   },
   {
     title: 'Prototyper sur un seul processus',
-    body: "Choisissez un processus, un seul, et construisez un prototype en conditions réelles sur deux à quatre semaines. Mesurez avant et après : temps passé, taux d'erreur, ressenti de l'équipe. Une automatisation qui tourne et fait gagner plusieurs heures par semaine convainc davantage qu'un schéma directeur de quarante pages.",
+    body: "Choisissez un seul processus et construisez un prototype en conditions réelles sur deux à quatre semaines. Mesurez avant et après : temps passé, taux d'erreur, ressenti de l'équipe. Une automatisation qui tourne et fait gagner plusieurs heures par semaine convainc davantage qu'un schéma directeur de quarante pages.",
   },
   {
     title: 'Sécuriser les données et la validation humaine',
@@ -218,6 +286,9 @@ const RELATED = [
   { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "2 jours pour apprendre à construire et superviser ses propres automatisations. Certifié Qualiopi, finançable OPCO." },
   { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Accompagnement', desc: "Masteria cadre et déploie vos automatisations avec vos équipes. Cadrage initial gratuit." },
   { label: 'Les agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Guide', desc: "Ce que les agents IA autonomes savent faire, leurs limites et les conditions d'un déploiement sûr." },
+  { label: 'Agence IA : conseil, déploiement, formation', href: '/agence-ia', tag: 'Agence', desc: "La vue d'ensemble des accompagnements Masteria, de la stratégie à la mise en production." },
+  { label: "Apprendre l'automatisation IA", href: '/blog/apprendre-automatisation-ia', tag: 'Blog', desc: "Par où commencer pour monter en compétence : parcours progressif, outils et premiers projets." },
+  { label: 'Automatisation IA en PME : les processus prioritaires', href: '/blog/automatisation-ia-pme-processus-prioritaires', tag: 'Blog', desc: "Les processus qui rapportent le plus vite quand on démarre, classés par impact et faisabilité." },
 ]
 
 export default function AutomatisationIAGuidePage() {
@@ -237,8 +308,8 @@ export default function AutomatisationIAGuidePage() {
       />
 
       {/* ── HERO ── */}
-      <section style={{ background: '#FAFAF7', color: '#0A0A0A', paddingTop: 60, paddingBottom: 72, paddingLeft: 40, paddingRight: 40, borderBottom: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
             <span style={{ color: '#374151' }}>/</span>
@@ -247,29 +318,33 @@ export default function AutomatisationIAGuidePage() {
 
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
             <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <BookOpen size={16} strokeWidth={2.2} />
+              <BookOpen size={16} strokeWidth={2.2} aria-hidden="true" />
               Guide complet · 2026
             </span>
             <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <Clock size={14} strokeWidth={2.2} />
+              <Clock size={14} strokeWidth={2.2} aria-hidden="true" />
               Lecture : 15 min
+            </span>
+            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              <BadgeCheck size={14} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+              Par Masteria, organisme certifié Qualiopi
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 48px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 48px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 860 }}>
             {H1}
           </h1>
 
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.75, marginBottom: 16, maxWidth: 720, fontWeight: 500 }}>
             Trier les factures, qualifier les demandes entrantes, rédiger les comptes rendus, relancer les impayés : une partie du travail de bureau se répète chaque semaine, presque à l'identique. L'intelligence artificielle sait désormais prendre en charge ces tâches, y compris celles qui demandaient de lire, comprendre et décider.
           </p>
-          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, marginBottom: 36, maxWidth: 720 }}>
+          <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginBottom: 36, maxWidth: 720 }}>
             Ce guide fait le tour du sujet en sept points : la définition et la différence avec l'automatisation classique, ce que l'on peut automatiser fonction par fonction, les familles d'outils, la méthode pour réussir, les erreurs courantes, les budgets à prévoir et les questions que tout le monde se pose.
           </p>
 
           {/* Sommaire */}
-          <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, padding: '24px 28px', maxWidth: 720 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', margin: '0 0 14px' }}>Sommaire</p>
+          <div style={{ ...cardStyle, padding: '26px 30px', maxWidth: 720 }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 14px' }}>Sommaire</p>
             <ol style={{ margin: 0, paddingLeft: 22, display: 'flex', flexDirection: 'column', gap: 8 }}>
               {SOMMAIRE.map(item => (
                 <li key={item.href} style={{ fontSize: 15, color: '#374151' }}>
@@ -282,86 +357,83 @@ export default function AutomatisationIAGuidePage() {
       </section>
 
       {/* ── 1. DÉFINITION ── */}
-      <section id="definition" style={{ padding: '72px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={h2Style}>Qu'est-ce que l'automatisation IA ?</h2>
+      <section id="definition" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Définition</Kicker>
+          <h2 style={{ ...h2Style, ...prose }}>Qu'est-ce que l'automatisation IA ?</h2>
 
           {/* Réponse directe (GEO) */}
-          <p style={{ background: '#EFF6FF', borderLeft: `4px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 28px' }}>
+          <p style={answerStyle}>
             <strong>L'automatisation IA consiste à confier à l'intelligence artificielle des tâches qui exigeaient jusqu'ici un jugement humain : lire un email et décider de la suite, résumer une réunion, qualifier une demande. Là où l'automatisation classique (RPA) exécute des règles fixes, l'IA interprète le contexte et traite les cas imprévus.</strong>
           </p>
 
-          <p style={pStyle}>
-            La différence avec l'automatisation traditionnelle tient à la nature des tâches prises en charge. La RPA (Robotic Process Automation), les macros et les scripts exécutent des scénarios entièrement prévisibles : copier une cellule, remplir un formulaire, déplacer un fichier. Dès qu'une variation apparaît, par exemple une facture dont la mise en page change ou un email ambigu, le robot s'arrête ou se trompe.
-          </p>
-          <p style={pStyle}>
-            L'IA générative ajoute la part de jugement qui manquait. Un modèle de langage peut lire un document qu'il n'a jamais vu, en extraire l'essentiel, reformuler, classer, proposer une décision argumentée. Combinée aux outils d'automatisation, elle permet de traiter des flux entiers de travail intellectuel répétitif : la machine gère les cas standards, l'humain garde les cas sensibles et la validation finale.
-          </p>
-          <p style={pStyle}>
-            Concrètement, une automatisation IA combine trois briques : un déclencheur (un email arrive, un formulaire est soumis, une échéance tombe), un traitement par l'IA (lire, résumer, extraire, rédiger, décider selon des consignes écrites) et une action (mettre à jour le CRM, envoyer une réponse, créer une tâche, alerter un humain).
-          </p>
-
-          {/* Comparatif RPA vs IA */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, margin: '32px 0' }}>
-            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: 26, border: '1px solid #E5E7EB' }}>
-              <h3 style={{ ...h3Style, fontSize: 16 }}>Automatisation classique (RPA, macros)</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {[
-                  'Exécute des règles fixes, définies à l\'avance',
-                  'Travaille sur des données structurées (tableaux, formulaires)',
-                  'S\'arrête ou se trompe dès qu\'un cas sort du cadre',
-                  'Idéale pour les processus stables à très gros volumes',
-                ].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', lineHeight: 1.6, display: 'flex', gap: 10 }}>
-                    <span style={{ color: '#9CA3AF', flexShrink: 0 }}>•</span>{item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: 26, border: `2px solid ${cLight}`, borderLeftColor: c, borderLeftWidth: 4 }}>
-              <h3 style={{ ...h3Style, fontSize: 16 }}>Automatisation IA</h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {[
-                  'Interprète le contexte et applique des consignes écrites',
-                  'Traite des données non structurées (emails, PDF, conversations)',
-                  'Gère les variations et les cas imprévus, sous supervision',
-                  'Idéale pour les tâches qui demandaient lecture et jugement',
-                ].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', lineHeight: 1.6, display: 'flex', gap: 10 }}>
-                    <span style={{ color: c, flexShrink: 0 }}>•</span>{item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div style={prose}>
+            <p style={pStyle}>
+              La différence avec l'automatisation traditionnelle tient à la nature des tâches prises en charge. La RPA (Robotic Process Automation), les macros et les scripts exécutent des scénarios entièrement prévisibles : copier une cellule, remplir un formulaire, déplacer un fichier. Dès qu'une variation apparaît, par exemple une facture dont la mise en page change ou un email ambigu, le robot s'arrête ou se trompe.
+            </p>
+            <p style={pStyle}>
+              L'IA générative ajoute la part de jugement qui manquait. Un modèle de langage peut lire un document qu'il n'a jamais vu, en extraire l'essentiel, reformuler, classer, proposer une décision argumentée. Combinée aux outils d'automatisation, elle permet de traiter des flux entiers de travail intellectuel répétitif : la machine gère les cas standards, l'humain garde les cas sensibles et la validation finale.
+            </p>
+            <p style={pStyle}>
+              Concrètement, une automatisation IA combine trois briques : un déclencheur (un email arrive, un formulaire est soumis, une échéance tombe), un traitement par l'IA (lire, résumer, extraire, rédiger, décider selon des consignes écrites) et une action (mettre à jour le CRM, envoyer une réponse, créer une tâche, alerter un humain).
+            </p>
           </div>
 
-          <p style={{ ...pStyle, marginBottom: 0 }}>
+          {/* Tableau comparatif RPA vs IA */}
+          <div style={{ ...cardStyle, overflowX: 'auto', margin: '32px 0', maxWidth: 860 }}>
+            <table aria-label="Comparatif entre automatisation classique (RPA) et automatisation IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 600 }}>
+              <thead>
+                <tr>
+                  <th scope="col" style={{ ...thStyle, width: '24%' }}>Critère</th>
+                  <th scope="col" style={{ ...thStyle, width: '38%' }}>Automatisation classique (RPA, macros)</th>
+                  <th scope="col" style={{ ...thStyle, width: '38%', color: c }}>Automatisation IA</th>
+                </tr>
+              </thead>
+              <tbody>
+                {TABLE_RPA.map((row, i) => (
+                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                    <th scope="row" style={{ ...tdStyle, textAlign: 'left', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.critere}</th>
+                    <td style={tdStyle}>{row.rpa}</td>
+                    <td style={tdStyle}>{row.ia}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p style={{ ...pStyle, ...prose, marginBottom: 0 }}>
             Les deux approches se complètent, mais pour une PME ou une ETI qui démarre en 2026, l'automatisation IA offre le meilleur rapport effort sur résultat : les outils sont accessibles sans développeur et les cas d'usage couvrent la majorité des tâches de bureau. Pour donner ces réflexes à vos équipes, la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> de Masteria couvre ces fondamentaux en deux jours de pratique.
           </p>
         </div>
       </section>
 
       {/* ── 2. CAS D'USAGE PAR FONCTION ── */}
-      <section id="cas-usage" style={{ padding: '72px 40px', background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={h2Style}>Que peut-on automatiser avec l'IA en 2026 ?</h2>
-          <p style={{ ...pStyle, marginBottom: 36 }}>
-            La réponse courte : toute tâche qui se répète, suit une logique que l'on peut expliquer et tolère une relecture humaine avant action. Voici un panorama par fonction, avec des exemples réalistes tels qu'on les rencontre en PME et en ETI. Aucun de ces cas ne demande de développeur.
+      <section id="cas-usage" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Cas d'usage</Kicker>
+          <h2 style={{ ...h2Style, ...prose }}>Que peut-on automatiser avec l'IA en 2026 ?</h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Toute tâche répétitive qui suit une logique explicable et tolère une relecture humaine peut être automatisée : tri des emails, traitement des factures, comptes rendus, relances, qualification des demandes entrantes, reporting. En 2026, cela couvre une large part du travail administratif d'une PME, sans écrire une ligne de code.</strong>
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
+            Voici un panorama par fonction, avec des exemples réalistes tels qu'on les rencontre en PME et en ETI. Dans nos cadrages, chaque équipe identifie en général dix à quinze tâches candidates dès le premier atelier, et les plus simples se prototypent dans la semaine. Pour savoir lesquelles traiter en premier, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus prioritaires à automatiser en PME</Link> propose une grille de lecture simple.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 330px), 1fr))', gap: 24 }}>
             {FONCTIONS.map(f => (
-              <div key={f.title} style={{ background: '#fff', borderRadius: 12, padding: '28px 30px', border: '1px solid #E5E7EB', borderLeftColor: c, borderLeftWidth: 4 }}>
-                <h3 style={h3Style}>
-                  <span style={{ marginRight: 10 }}>{f.icon}</span>
-                  {f.title}
-                </h3>
-                <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>{f.intro}</p>
+              <div key={f.title} style={{ ...cardStyle, padding: 28 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
+                  <IconBox icon={f.icon} />
+                  <h3 style={{ ...h3Style, margin: 0, fontSize: 18 }}>{f.title}</h3>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 16px' }}>{f.intro}</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {f.examples.map((ex, i) => (
                     <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: '#374151', lineHeight: 1.65 }}>
-                      <span style={{ color: c, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>→</span>
-                      {ex}
+                      <ArrowRight size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
+                      <span>{ex}</span>
                     </li>
                   ))}
                 </ul>
@@ -369,24 +441,35 @@ export default function AutomatisationIAGuidePage() {
             ))}
           </div>
 
-          <p style={{ ...pStyle, marginTop: 32, marginBottom: 0 }}>
+          <p style={{ ...pStyle, ...prose, marginTop: 32, marginBottom: 0 }}>
             Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, dont le cadrage initial est gratuit.
           </p>
         </div>
       </section>
 
       {/* ── 3. LES OUTILS ── */}
-      <section id="outils" style={{ padding: '72px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={h2Style}>Les outils d'automatisation IA : 3 familles à connaître</h2>
-          <p style={{ ...pStyle, marginBottom: 36 }}>
-            Le marché est foisonnant, mais la quasi-totalité des solutions se range dans trois familles. Bien les distinguer évite de payer pour des outils redondants et de complexifier là où un réglage simple suffit.
+      <section id="outils" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Outils</Kicker>
+          <h2 style={{ ...h2Style, ...prose }}>Quels outils pour automatiser avec l'IA ? Les 3 familles à connaître</h2>
+
+          <p style={answerStyle}>
+            <strong>Trois familles d'outils couvrent la quasi-totalité des besoins : les assistants IA personnalisés (GPTs, Projects, Gems) pour les tâches individuelles récurrentes, les plateformes no-code (Make, Zapier, n8n, Power Automate) pour les flux entre applications, et les agents IA autonomes pour les objectifs en plusieurs étapes.</strong>
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 36 }}>
-            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: '28px 30px', border: '1px solid #E5E7EB' }}>
-              <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>Famille 1</div>
-              <h3 style={h3Style}>Les assistants IA et leurs automatisations natives</h3>
+          <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
+            Le marché est foisonnant, mais la quasi-totalité des solutions se range dans ces trois familles. Bien les distinguer évite de payer pour des outils redondants et de complexifier là où un réglage simple suffit.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 44, maxWidth: 860 }}>
+            <div style={{ ...cardStyle, padding: '28px 30px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
+                <IconBox icon={Sparkles} />
+                <div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 2 }}>Famille 1</div>
+                  <h3 style={{ ...h3Style, margin: 0 }}>Les assistants IA et leurs automatisations natives</h3>
+                </div>
+              </div>
               <p style={{ ...pStyle, fontSize: 15 }}>
                 ChatGPT, Claude et Gemini intègrent des fonctions qui automatisent les tâches récurrentes sans aucun outil supplémentaire : les GPTs personnalisés côté ChatGPT, les Projects côté Claude, les Gems côté Gemini. Le principe : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis chaque membre de l'équipe relance la tâche en quelques secondes.
               </p>
@@ -395,9 +478,14 @@ export default function AutomatisationIAGuidePage() {
               </p>
             </div>
 
-            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: '28px 30px', border: '1px solid #E5E7EB' }}>
-              <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>Famille 2</div>
-              <h3 style={h3Style}>Les plateformes d'automatisation no-code</h3>
+            <div style={{ ...cardStyle, padding: '28px 30px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
+                <IconBox icon={Workflow} />
+                <div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 2 }}>Famille 2</div>
+                  <h3 style={{ ...h3Style, margin: 0 }}>Les plateformes d'automatisation no-code</h3>
+                </div>
+              </div>
               <p style={{ ...pStyle, fontSize: 15 }}>
                 Make, Zapier, n8n et Power Automate connectent vos applications entre elles et exécutent des scénarios sans intervention humaine : un événement déclenche le flux (email reçu, formulaire soumis, ligne ajoutée dans un tableur), l'IA traite, l'action s'exécute. Tout se configure visuellement, par glisser-déposer.
               </p>
@@ -406,9 +494,14 @@ export default function AutomatisationIAGuidePage() {
               </p>
             </div>
 
-            <div style={{ background: '#F9FAFB', borderRadius: 12, padding: '28px 30px', border: '1px solid #E5E7EB' }}>
-              <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>Famille 3</div>
-              <h3 style={h3Style}>Les agents IA autonomes</h3>
+            <div style={{ ...cardStyle, padding: '28px 30px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
+                <IconBox icon={Compass} />
+                <div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 2 }}>Famille 3</div>
+                  <h3 style={{ ...h3Style, margin: 0 }}>Les agents IA autonomes</h3>
+                </div>
+              </div>
               <p style={{ ...pStyle, fontSize: 15 }}>
                 Un agent IA reçoit un objectif, le décompose en étapes, utilise des outils (recherche, lecture de fichiers, rédaction, applications connectées) et enchaîne les actions jusqu'au résultat, avec des points de validation humaine. Là où une automatisation suit un chemin tracé, l'agent choisit son chemin.
               </p>
@@ -418,39 +511,62 @@ export default function AutomatisationIAGuidePage() {
             </div>
           </div>
 
-          {/* Quand choisir quoi */}
-          <div style={{ background: '#EFF6FF', border: `1px solid ${cLight}`, borderRadius: 12, padding: '26px 30px' }}>
-            <h3 style={{ ...h3Style, marginBottom: 16 }}>Quand choisir quoi ?</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {[
-                'Une tâche individuelle qui revient souvent (rédaction, analyse, synthèse) : un assistant IA personnalisé suffit.',
-                'Un flux entre plusieurs applications, déclenché par un événement : une plateforme no-code comme Make, Zapier, n8n ou Power Automate.',
-                'Un objectif en plusieurs étapes qui demande des décisions intermédiaires : un agent IA, avec validation humaine aux étapes sensibles.',
-                'Dans le doute : commencez par la famille la plus simple qui couvre le besoin, et montez en complexité quand la valeur est prouvée.',
-              ].map((item, i) => (
-                <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.7 }}>
-                  <span style={{ color: c, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+          {/* Tableau : quelle famille pour quel besoin */}
+          <h3 style={{ ...h3Style, fontSize: 20, marginBottom: 18 }}>Quelle famille d'outils pour quel besoin ?</h3>
+          <div style={{ ...cardStyle, overflowX: 'auto', marginBottom: 20 }}>
+            <table aria-label="Quelle famille d'outils d'automatisation IA pour quel besoin" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 780 }}>
+              <thead>
+                <tr>
+                  <th scope="col" style={{ ...thStyle, width: '22%' }}>Famille</th>
+                  <th scope="col" style={{ ...thStyle, width: '23%' }}>Besoin type</th>
+                  <th scope="col" style={{ ...thStyle, width: '18%' }}>Profil requis</th>
+                  <th scope="col" style={{ ...thStyle, width: '18%' }}>Budget indicatif</th>
+                  <th scope="col" style={{ ...thStyle, width: '19%' }}>Limite principale</th>
+                </tr>
+              </thead>
+              <tbody>
+                {TABLE_FAMILLES.map((row, i) => (
+                  <tr key={row.famille} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                    <th scope="row" style={{ ...tdStyle, textAlign: 'left' }}>
+                      <span style={{ display: 'block', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.famille}</span>
+                      <span style={{ display: 'block', fontSize: 12.5, color: '#6B7280', fontWeight: 500, marginTop: 2 }}>{row.sub}</span>
+                    </th>
+                    <td style={tdStyle}>{row.besoin}</td>
+                    <td style={tdStyle}>{row.profil}</td>
+                    <td style={tdStyle}>{row.budget}</td>
+                    <td style={tdStyle}>{row.limite}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+
+          <p style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 860 }}>
+            <Check size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
+            <span>Dans le doute, commencez par la famille la plus simple qui couvre le besoin, puis montez en complexité quand la valeur est prouvée. Le bon outil est souvent celui que vous payez déjà.</span>
+          </p>
         </div>
       </section>
 
       {/* ── 4. LA MÉTHODE ── */}
-      <section id="methode" style={{ padding: '72px 40px', background: '#F5F3EE' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={h2Style}>La méthode en 5 étapes pour automatiser vos processus</h2>
-          <p style={{ ...pStyle, marginBottom: 36 }}>
-            Les projets d'automatisation IA qui réussissent suivent à peu près tous le même chemin, qu'ils soient menés en interne ou avec un accompagnement. Le voici, étape par étape.
+      <section id="methode" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Méthode</Kicker>
+          <h2 style={{ ...h2Style, ...prose }}>Comment automatiser un processus avec l'IA ? La méthode en 5 étapes</h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Cartographiez les tâches répétitives, scorez leur impact et leur faisabilité, prototypez sur un seul processus, sécurisez les données et la validation humaine, puis déployez en formant les équipes. Cette séquence en cinq étapes fait réussir la grande majorité des projets, menés en interne comme accompagnés.</strong>
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
+            Le détail de chaque étape ci-dessous. Sur le terrain, un premier processus passe du cadrage à la mise en production en quatre à six semaines, et fait gagner plusieurs heures par semaine à l'équipe concernée.
+          </p>
+
+          <div style={{ ...cardStyle, maxWidth: 860 }}>
             {ETAPES.map((etape, i) => (
-              <div key={i} style={{ background: '#fff', borderRadius: 12, padding: '26px 30px', border: '1px solid #E5E7EB', display: 'flex', gap: 20, alignItems: 'flex-start' }}>
-                <div style={{ width: 38, height: 38, background: c, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                  <span style={{ fontSize: 16, color: '#fff', fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{i + 1}</span>
+              <div key={i} style={{ display: 'flex', gap: 20, alignItems: 'flex-start', padding: '26px 30px', borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
+                  <span style={{ fontSize: 17, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{i + 1}</span>
                 </div>
                 <div>
                   <h3 style={{ ...h3Style, fontSize: 17 }}>{etape.title}</h3>
@@ -460,50 +576,58 @@ export default function AutomatisationIAGuidePage() {
             ))}
           </div>
 
-          <p style={{ ...pStyle, marginTop: 28, marginBottom: 0 }}>
-            La cinquième étape mérite d'être anticipée dès le départ : la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> de Masteria est conçue exactement pour cela, avec deux jours de pratique sur les tâches réelles des participants.
+          <p style={{ ...pStyle, ...prose, marginTop: 28, marginBottom: 0 }}>
+            La cinquième étape mérite d'être anticipée dès le départ : la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> de Masteria est conçue exactement pour cela, avec deux jours de pratique sur les tâches réelles des participants. Si vous préférez explorer le sujet en autodidacte avant de vous lancer, notre guide pour <Link to="/blog/apprendre-automatisation-ia" style={aStyle}>apprendre l'automatisation IA</Link> balise un parcours progressif.
           </p>
         </div>
       </section>
 
       {/* ── CTA MILIEU ── */}
-      <section style={{ padding: '48px 40px', background: `linear-gradient(135deg, ${c} 0%, ${c}dd 100%)`, color: '#fff' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
+      <section style={{ padding: 'clamp(48px, 6vw, 64px) 24px', background: c, color: '#fff' }}>
+        <div style={{ ...wrap, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
-            <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
+            <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: '0 0 8px', lineHeight: 1.25, letterSpacing: '-0.01em' }}>
               Deux façons de passer à l'action avec Masteria
             </h2>
-            <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 15, color: cLight, margin: 0, lineHeight: 1.65 }}>
               Former vos équipes à construire leurs automatisations, ou vous faire accompagner de l'audit au déploiement.
             </p>
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Link to="/formation-automatisation-ia" style={{ background: '#fff', color: c, padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
-              Se former en 2 jours →
+            <Link to="/formation-automatisation-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: c, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
+              Se former en 2 jours
+              <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <Link to="/agence-automatisation-ia" style={{ background: 'transparent', color: '#fff', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700, whiteSpace: 'nowrap', border: '1px solid rgba(255,255,255,0.55)' }}>
-              Être accompagné →
+            <Link to="/agence-automatisation-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, whiteSpace: 'nowrap', border: '1px solid rgba(255,255,255,0.55)' }}>
+              Être accompagné
+              <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── 5. LES 6 ERREURS ── */}
-      <section id="erreurs" style={{ padding: '72px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={h2Style}>Les 6 erreurs qui font échouer un projet d'automatisation IA</h2>
-          <p style={{ ...pStyle, marginBottom: 36 }}>
-            Les échecs se ressemblent davantage que les réussites. Ces six erreurs reviennent dans la grande majorité des projets abandonnés, et toutes se préviennent en amont.
+      <section id="erreurs" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Pièges à éviter</Kicker>
+          <h2 style={{ ...h2Style, ...prose }}>Quelles erreurs font échouer un projet d'automatisation IA ?</h2>
+
+          <p style={answerStyle}>
+            <strong>Six erreurs expliquent la plupart des échecs : automatiser un processus bancal, commencer trop large, choisir l'outil avant le besoin, supprimer toute validation humaine, ignorer les données et la conformité, négliger la formation des équipes. Toutes se repèrent et se préviennent au moment du cadrage.</strong>
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+          <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
+            Les échecs se ressemblent davantage que les réussites. Ces six erreurs reviennent dans la grande majorité des projets abandonnés, et chacune a son antidote.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
             {ERREURS.map((err, i) => (
-              <div key={i} style={{ background: '#F9FAFB', borderRadius: 12, padding: '24px 28px', border: '1px solid #E5E7EB' }}>
-                <h3 style={{ ...h3Style, fontSize: 16.5 }}>
-                  <span style={{ color: c, fontFamily: 'Nunito, sans-serif', fontWeight: 900, marginRight: 10 }}>{i + 1}.</span>
-                  {err.title}
-                </h3>
-                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>{err.body}</p>
+              <div key={i} style={{ ...cardStyle, padding: 28 }}>
+                <div aria-hidden="true" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 40, fontWeight: 900, color: cLight, lineHeight: 1, marginBottom: 12 }}>
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 16.5 }}>{err.title}</h3>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>{err.body}</p>
               </div>
             ))}
           </div>
@@ -511,37 +635,43 @@ export default function AutomatisationIAGuidePage() {
       </section>
 
       {/* ── 6. COMBIEN ÇA COÛTE ── */}
-      <section id="cout" style={{ padding: '72px 40px', background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <h2 style={h2Style}>Combien coûte l'automatisation IA ?</h2>
-          <p style={{ ...pStyle, marginBottom: 36 }}>
+      <section id="cout" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Budget</Kicker>
+          <h2 style={{ ...h2Style, ...prose }}>Combien coûte l'automatisation IA ?</h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Pour une PME, comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis établi après cadrage, et 1 980 € HT par jour pour former les équipes, seul poste finançable par votre OPCO.</strong>
+          </p>
+
+          <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
             Les ordres de grandeur ci-dessous valent pour une PME ou une ETI. Trois postes de coût se combinent, et le premier est souvent plus bas que ce que l'on imagine.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 20, marginBottom: 28 }}>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Les outils</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
+            <div style={{ ...cardStyle, padding: 30 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>Les outils</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 16 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>0 à 50 €</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>0 à 50 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 4 }}>/ mois / personne</div>
               </div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                 Les versions gratuites des assistants IA et des plateformes no-code suffisent pour expérimenter. Les abonnements professionnels des assistants tournent autour d'une vingtaine d'euros par mois et par utilisateur, et les plateformes d'automatisation facturent à l'usage : quelques euros à quelques dizaines d'euros par mois aux volumes d'une PME.
               </p>
             </div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>L'accompagnement</div>
+            <div style={{ ...cardStyle, padding: 30 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>L'accompagnement</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 16 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>Sur devis</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>Sur devis</div>
               </div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Le budget dépend du nombre de processus, des outils en place et du niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, le cadrage initial est gratuit et débouche sur une feuille de route chiffrée.
+                Le budget dépend du nombre de processus, des outils en place et du niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, <Link to="/agence-ia" style={aStyle}>agence IA</Link> basée à Lyon, le cadrage initial est gratuit et débouche sur une feuille de route chiffrée.
               </p>
             </div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: `2px solid ${c}` }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>La formation</div>
+            <div style={{ ...cardStyle, padding: 30, border: `2px solid ${c}` }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>La formation</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 16 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 4 }}>/ jour HT</div>
               </div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
@@ -550,22 +680,23 @@ export default function AutomatisationIAGuidePage() {
             </div>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
             Un point d'honnêteté sur le financement : seule la formation est finançable par votre OPCO. Le conseil et le déploiement ne le sont pas, et une offre qui vous promet la prise en charge OPCO d'une prestation de conseil vous expose à un refus de financement. Pour le détail des deux approches, voyez la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> et l'<Link to="/agence-automatisation-ia" style={aStyle}>accompagnement par notre agence</Link>.
           </p>
         </div>
       </section>
 
       {/* ── 7. FAQ ── */}
-      <section id="faq" style={{ padding: '72px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+      <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <Kicker>FAQ</Kicker>
           <h2 style={h2Style}>Automatisation IA : les questions fréquentes</h2>
           <p style={{ ...pStyle, marginBottom: 32 }}>
             Les questions qui reviennent le plus souvent dans nos cadrages et nos formations, avec des réponses directes.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {FAQ.map((item, i) => (
-              <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '24px 28px' }}>
+              <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 16, padding: '24px 28px' }}>
                 <h3 style={{ ...h3Style, fontSize: 17 }}>{item.q}</h3>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
                   <strong style={{ color: '#0A0A0A' }}>{item.strong}</strong>
@@ -578,27 +709,32 @@ export default function AutomatisationIAGuidePage() {
       </section>
 
       {/* ── POUR ALLER PLUS LOIN ── */}
-      <section style={{ padding: '72px 40px', background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Pour aller plus loin</h2>
-          <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32 }}>
-            Se former, se faire accompagner ou creuser le sujet des agents : les trois suites logiques de ce guide.
+          <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
+            Se former, se faire accompagner ou creuser le sujet : les suites logiques de ce guide.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
             {RELATED.map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
-                <div style={{ background: '#fff', borderRadius: 10, padding: 22, border: `2px solid ${c}20`, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
+                <div
+                  style={{ ...cardStyle, padding: 26, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
                   onMouseEnter={e => e.currentTarget.style.borderColor = c}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = `${c}20`}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}
                 >
-                  <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 10 }}>
+                  <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>
                     {rel.tag}
                   </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 6 }}>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>
                     {rel.label}
                   </h3>
-                  <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.6, margin: '0 0 10px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700 }}>En savoir plus →</span>
+                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
+                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    En savoir plus
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </span>
                 </div>
               </Link>
             ))}
@@ -607,18 +743,19 @@ export default function AutomatisationIAGuidePage() {
       </section>
 
       {/* ── CTA FINALE ── */}
-      <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 580, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
+      <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
+        <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
             Par où commencer chez vous ?
           </h2>
-          <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
+          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 560 }}>
             Décrivez-nous les tâches qui consomment le plus de temps dans vos équipes. Nous revenons vers vous sous 24 heures avec un avis honnête : ce qui s'automatise vite, ce qui demande un cadrage, et ce qui ne vaut pas l'effort.
           </p>
-          <Link to="/contact" style={{ display: 'inline-block', background: c, color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
-            Contacter notre équipe →
+          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
+            Contacter notre équipe
+            <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
           </Link>
-          <p style={{ fontSize: 13, color: '#6B7280' }}>
+          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
             Organisme certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction
           </p>
         </div>

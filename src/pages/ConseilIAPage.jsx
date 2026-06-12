@@ -1,18 +1,47 @@
 import { Link } from 'react-router-dom'
 import {
-  Compass, ShieldCheck, Users,
-  Building2, LineChart, Workflow, Sparkles, ArrowRight, CheckCircle2,
-  BrainCircuit, Target, Zap,
+  ArrowRight, BrainCircuit, Building2, Check, CheckCircle2, Clock, Compass,
+  GraduationCap, LineChart, Scale, Search, ShieldCheck, Sparkles, Target,
+  Users, Workflow, Zap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { FAQSection } from '../components/screens2'
+
+/* ───────── Jetons de style (charte cabinet) ───────── */
+
+const BLUE = '#2563EB'
+const BLUE_SOFT = '#DBEAFE'
+const INK = '#0A0A0A'
+const GREY_700 = '#374151'
+const GREY_500 = '#6B7280'
+const BORDER = '#E5E7EB'
+const BG_SOFT = '#F9FAFB'
+const SECTION_PAD = 'clamp(64px, 9vw, 110px) clamp(20px, 4vw, 32px)'
+
+const kickerStyle = {
+  fontSize: 12, fontWeight: 700, letterSpacing: '0.1em',
+  textTransform: 'uppercase', color: BLUE, marginBottom: 14,
+}
+const h2Style = {
+  fontFamily: 'Nunito, sans-serif',
+  fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900,
+  color: INK, lineHeight: 1.15, letterSpacing: '-0.02em',
+  marginBottom: 18,
+}
+const cardStyle = {
+  background: '#fff', border: `1px solid ${BORDER}`, borderRadius: 16,
+  boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 30,
+}
+const iconTileStyle = {
+  width: 44, height: 44, borderRadius: 12, background: BLUE_SOFT,
+  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+}
 
 /* ───────── Données locales ───────── */
 
 const SERVICES = [
   {
     Icon: Compass,
-    color: '#2563EB',
     title: 'Audit IA & diagnostic',
     desc: "Nous cartographions vos processus, identifions les cas d'usage à plus fort ROI et évaluons la maturité IA de vos équipes.",
     deliverables: [
@@ -24,7 +53,6 @@ const SERVICES = [
   },
   {
     Icon: Target,
-    color: '#8B5CF6',
     title: 'Stratégie & gouvernance IA',
     desc: "Nous vous aidons à définir une vision IA alignée sur votre business, à structurer la gouvernance et à cadrer les usages en interne.",
     deliverables: [
@@ -36,7 +64,6 @@ const SERVICES = [
   },
   {
     Icon: Workflow,
-    color: '#059669',
     title: 'Accompagnement opérationnel',
     desc: "Nous travaillons aux côtés de vos équipes pour prototyper, déployer et industrialiser des cas d'usage concrets.",
     deliverables: [
@@ -48,7 +75,6 @@ const SERVICES = [
   },
   {
     Icon: BrainCircuit,
-    color: '#F59E0B',
     title: 'Transformation culturelle',
     desc: "Acculturation, communication interne, plan de formation : nous embarquons l'ensemble de l'organisation dans la dynamique IA.",
     deliverables: [
@@ -57,6 +83,34 @@ const SERVICES = [
       'Programme de formation certifié Qualiopi',
       'Ambassadeurs IA par département',
     ],
+  },
+]
+
+const MISSIONS = [
+  {
+    Icon: Search,
+    strong: 'Audit des usages :',
+    text: "cartographie des processus, des données et des outils déjà en place, mesure de la maturité des équipes, identification des cas d'usage à plus fort retour sur investissement.",
+  },
+  {
+    Icon: Target,
+    strong: 'Stratégie et feuille de route :',
+    text: "définition de l'ambition, priorisation des chantiers et plan d'action séquencé sur 12 mois, avec budget et indicateurs associés.",
+  },
+  {
+    Icon: Workflow,
+    strong: 'Accompagnement au déploiement :',
+    text: "prototypage rapide, choix des outils (ChatGPT, Copilot, Gemini, Claude, Mistral), intégration dans les processus métier et mesure des gains.",
+  },
+  {
+    Icon: Scale,
+    strong: 'Gouvernance et conformité AI Act :',
+    text: "charte d'usage interne, registre des systèmes d'IA, conformité RGPD et classification des risques exigée par le règlement européen.",
+  },
+  {
+    Icon: GraduationCap,
+    strong: 'Formation des équipes :',
+    text: "montée en compétences des collaborateurs, des dirigeants aux équipes métier, pour rendre l'organisation autonome.",
   },
 ]
 
@@ -84,6 +138,33 @@ const METHODO = [
     title: 'Déployer',
     desc: "Industrialisation, formation des équipes, gouvernance et mesure continue du ROI sur 6 à 12 mois.",
     duration: '3 à 12 mois',
+  },
+]
+
+const COMPARATIF = [
+  {
+    critere: 'Spécialisation',
+    cabinet: "100 % dédiée à l'IA : veille continue sur les modèles, méthodes éprouvées en mission, lecture appliquée du RGPD et de l'AI Act.",
+    esn: "L'IA est un sujet parmi d'autres ; les profils sont affectés selon les disponibilités du moment.",
+    freelance: "Souvent pointue, mais limitée au parcours d'une seule personne.",
+  },
+  {
+    critere: 'Transfert de compétence',
+    cabinet: "Structurel : Masteria est aussi organisme de formation certifié Qualiopi, les équipes accompagnées sont formées en continu.",
+    esn: "Rarement contractualisé ; la dépendance au prestataire se prolonge au-delà du projet.",
+    freelance: "Informel, lié à la disponibilité et à la pédagogie de l'intervenant.",
+  },
+  {
+    critere: 'Budget type',
+    cabinet: "Mission cadrée sur devis, jalons et livrables validés ; le volet formation est finançable OPCO (1 980 € HT par jour).",
+    esn: "Engagements longs, équipes nombreuses, coûts de pilotage et de coordination élevés.",
+    freelance: "Tarif journalier attractif, mais cadrage, gouvernance et continuité restent à la charge du client.",
+  },
+  {
+    critere: 'Pour qui',
+    cabinet: "PME, ETI et directions métier qui veulent une trajectoire chiffrée et des équipes autonomes.",
+    esn: "Grands comptes qui cherchent des renforts de capacité sur la durée.",
+    freelance: "Besoin ponctuel, périmètre étroit et déjà bien défini.",
   },
 ]
 
@@ -201,6 +282,14 @@ const serviceJsonLd = {
     '@type': 'Organization',
     name: 'Masteria',
     url: 'https://www.master-ia.fr',
+    foundingDate: '2022',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '17 Rue Richan',
+      addressLocality: 'Lyon',
+      postalCode: '69004',
+      addressCountry: 'FR',
+    },
   },
 }
 
@@ -224,72 +313,65 @@ export default function ConseilIAPage() {
       {/* HERO clair */}
       <section style={{
         position: 'relative',
-        background: '#FAFAF7', color: '#0A0A0A',
-        padding: 'clamp(80px, 12vw, 140px) 32px 100px',
+        background: BG_SOFT, color: INK,
+        padding: 'clamp(72px, 10vw, 130px) clamp(20px, 4vw, 32px) clamp(64px, 9vw, 96px)',
         overflow: 'hidden',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: `1px solid ${BORDER}`,
       }}>
         {/* Halo discret */}
-        <div style={{
+        <div aria-hidden="true" style={{
           position: 'absolute', top: '-20%', left: '50%', transform: 'translateX(-50%)',
           width: 900, height: 900,
-          background: 'radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 60%)',
           pointerEvents: 'none',
         }} />
 
-        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 1, textAlign: 'center' }}>
+        <div style={{ maxWidth: 920, margin: '0 auto', position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: '#DBEAFE', border: '1px solid #BFDBFE',
-            color: '#2563EB',
-            padding: '6px 16px', borderRadius: 99, fontSize: 13, fontWeight: 700,
+            background: BLUE_SOFT, color: BLUE,
+            padding: '7px 16px', borderRadius: 99, fontSize: 13, fontWeight: 700,
             marginBottom: 28,
           }}>
-            <Sparkles size={14} /> Cabinet de conseil IA
+            <Sparkles size={14} aria-hidden="true" /> Cabinet de conseil IA
           </div>
 
           <h1 style={{
             fontFamily: 'Nunito, sans-serif',
-            fontSize: 'clamp(34px, 5.5vw, 64px)', fontWeight: 900,
-            lineHeight: 1.1, letterSpacing: '-0.03em',
-            marginBottom: 24, color: '#0A0A0A',
+            fontSize: 'clamp(34px, 5.5vw, 62px)', fontWeight: 900,
+            lineHeight: 1.1, letterSpacing: '-0.02em',
+            marginBottom: 24, color: INK,
           }}>
             Le cabinet de conseil en{' '}
-            <span style={{
-              background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
-              intelligence artificielle
-            </span>{' '}
+            <span style={{ color: BLUE }}>intelligence artificielle</span>{' '}
             qui forme vos équipes
           </h1>
 
           <p style={{
             fontSize: 'clamp(16px, 1.8vw, 19px)',
-            color: '#4B5563', lineHeight: 1.65,
-            maxWidth: 720, margin: '0 auto 40px',
+            color: GREY_700, lineHeight: 1.7,
+            maxWidth: 740, margin: '0 auto 40px',
           }}>
-            <strong style={{ color: '#1F2937', fontWeight: 700 }}>Masteria est un cabinet de conseil en intelligence artificielle fondé en 2022 à Lyon. Nous aidons PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA, déployer les cas d'usage à fort ROI et former leurs équipes, en France, en Suisse et en Belgique.</strong>{' '}
+            <strong style={{ color: INK, fontWeight: 700 }}>Masteria est un cabinet de conseil en intelligence artificielle fondé en 2022 à Lyon. Nous aidons PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA, déployer les cas d'usage à fort ROI et former leurs équipes, en France, en Suisse et en Belgique.</strong>{' '}
             Le transfert de compétences est garanti par notre centre de formation certifié Qualiopi.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
             <Link to="/contact" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: '#C2410C',
-              color: '#fff', padding: '15px 28px', borderRadius: 10,
+              background: BLUE, color: '#fff',
+              padding: '15px 28px', borderRadius: 12,
               textDecoration: 'none', fontSize: 15, fontWeight: 700,
-              boxShadow: '0 6px 20px rgba(194,65,12,0.35)',
+              boxShadow: '0 4px 14px rgba(37,99,235,0.25)',
             }}>
-              Contacter notre équipe <ArrowRight size={16} />
+              Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <a href="#services" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: '#fff', color: '#0A0A0A',
-              padding: '15px 28px', borderRadius: 10,
+              background: '#fff', color: INK,
+              padding: '15px 28px', borderRadius: 12,
               textDecoration: 'none', fontSize: 15, fontWeight: 600,
-              border: '1px solid #E5E7EB',
+              border: `1px solid ${BORDER}`,
             }}>
               Voir nos services
             </a>
@@ -298,7 +380,7 @@ export default function ConseilIAPage() {
           {/* Mini stats */}
           <div style={{
             marginTop: 56, display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
-            gap: 48, color: '#6B7280',
+            gap: 'clamp(28px, 5vw, 56px)', color: GREY_500,
           }}>
             {[
               ['+1 500', 'professionnels formés'],
@@ -307,7 +389,7 @@ export default function ConseilIAPage() {
               ['FR · CH · BE', 'zones d\'intervention'],
             ].map(([v, l], i) => (
               <div key={i} style={{ textAlign: 'center' }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: '#0A0A0A' }}>{v}</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: INK }}>{v}</div>
                 <div style={{ fontSize: 12, marginTop: 2 }}>{l}</div>
               </div>
             ))}
@@ -315,63 +397,45 @@ export default function ConseilIAPage() {
         </div>
       </section>
 
-      {/* QUE FAIT UN CABINET DE CONSEIL EN IA — réponse directe (featured snippet) */}
-      <section style={{ background: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 820, margin: '0 auto', color: '#1F2937', fontSize: 16, lineHeight: 1.8 }}>
-          <h2 style={{
-            fontFamily: 'Nunito, sans-serif',
-            fontSize: 'clamp(26px, 3.4vw, 38px)', fontWeight: 900,
-            color: '#0A0A0A', lineHeight: 1.2, letterSpacing: '-0.02em',
-            marginBottom: 24,
-          }}>
+      {/* QUE FAIT UN CABINET DE CONSEIL EN IA : réponse directe (featured snippet) */}
+      <section style={{ background: '#fff', padding: SECTION_PAD }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
+          <div style={kickerStyle}>Le rôle du cabinet</div>
+          <h2 style={h2Style}>
             Que fait un cabinet de conseil en IA ?
           </h2>
           <p style={{ marginBottom: 24 }}>
-            <strong>Un cabinet de conseil en IA aide les entreprises à passer de l'intention à l'usage : il audite les processus et les outils, identifie les cas d'usage rentables, définit la stratégie et la feuille de route, encadre le déploiement, structure la gouvernance et forme les équipes pour ancrer les usages dans la durée.</strong>
+            <strong style={{ color: INK }}>Un cabinet de conseil en IA aide les entreprises à passer de l'intention à l'usage : il audite les processus et les outils, identifie les cas d'usage rentables, définit la stratégie et la feuille de route, encadre le déploiement, structure la gouvernance et forme les équipes pour ancrer les usages dans la durée.</strong>
           </p>
-          <p style={{ marginBottom: 18 }}>
+          <p style={{ marginBottom: 22 }}>
             Concrètement, une mission de conseil en intelligence artificielle couvre cinq champs d'intervention :
           </p>
-          <ul style={{ margin: '0 0 24px', paddingLeft: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <li>
-              <strong>Audit des usages :</strong> cartographie des processus, des données et des outils déjà en place, mesure de la maturité des équipes, identification des cas d'usage à plus fort retour sur investissement.
-            </li>
-            <li>
-              <strong>Stratégie et feuille de route :</strong> définition de l'ambition, priorisation des chantiers et plan d'action séquencé sur 12 mois, avec budget et indicateurs associés.
-            </li>
-            <li>
-              <strong>Accompagnement au déploiement :</strong> prototypage rapide, choix des outils (ChatGPT, Copilot, Gemini, Claude, Mistral), intégration dans les processus métier et mesure des gains.
-            </li>
-            <li>
-              <strong>Gouvernance et conformité AI Act :</strong> charte d'usage interne, registre des systèmes d'IA, conformité RGPD et classification des risques exigée par le règlement européen.
-            </li>
-            <li>
-              <strong>Formation des équipes :</strong> montée en compétences des collaborateurs, des dirigeants aux équipes métier, pour rendre l'organisation autonome.
-            </li>
+          <ul style={{ margin: '0 0 26px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {MISSIONS.map((m, i) => (
+              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                <m.Icon size={18} color={BLUE} strokeWidth={2} aria-hidden="true" style={{ flexShrink: 0, marginTop: 4 }} />
+                <span>
+                  <strong style={{ color: INK }}>{m.strong}</strong> {m.text}
+                </span>
+              </li>
+            ))}
           </ul>
           <p style={{ marginBottom: 0 }}>
-            Masteria couvre ces cinq missions avec une particularité : notre statut d'organisme de formation certifié Qualiopi. Pour le volet stratégique, consultez notre offre de <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> ; pour le détail de nos expertises, parcourez <a href="#services" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>nos services</a> ci-dessous.
+            Masteria couvre ces cinq missions avec une particularité : notre statut d'organisme de formation certifié Qualiopi. Pour le volet stratégique, consultez notre offre de <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> ; pour le détail de nos expertises, parcourez <a href="#services" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>nos services</a> ci-dessous.
           </p>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section id="services" style={{ background: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+      <section id="services" style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+        <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>
-              Nos expertises
-            </div>
-            <h2 style={{
-              fontFamily: 'Nunito, sans-serif',
-              fontSize: 'clamp(28px, 3.6vw, 42px)', fontWeight: 900,
-              color: '#0A0A0A', lineHeight: 1.2, letterSpacing: '-0.02em',
-              marginBottom: 16,
-            }}>
+            <div style={kickerStyle}>Nos expertises</div>
+            <h2 style={{ ...h2Style, marginBottom: 16 }}>
               4 pôles pour transformer votre organisation par l'IA
             </h2>
-            <p style={{ fontSize: 16, color: '#6B7280', maxWidth: 640, margin: '0 auto', lineHeight: 1.65 }}>
-              De l'audit stratégique au déploiement opérationnel, nos missions s'articulent autour de 4 expertises complémentaires.
+            <p style={{ fontSize: 16, color: GREY_500, maxWidth: 660, margin: '0 auto', lineHeight: 1.7 }}>
+              De l'audit initial à l'industrialisation, nos missions s'articulent autour de quatre expertises complémentaires, portées par une même équipe et cadencées par des livrables validés en comité de pilotage.
             </p>
           </div>
 
@@ -381,37 +445,27 @@ export default function ConseilIAPage() {
             gap: 24,
           }}>
             {SERVICES.map((s, i) => (
-              <div key={i} style={{
-                background: '#F9FAFB', borderRadius: 16,
-                border: '1px solid #E5E7EB',
-                padding: 30,
-                display: 'flex', flexDirection: 'column',
-              }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: 12,
-                  background: `${s.color}1A`, border: `1px solid ${s.color}33`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 20,
-                }}>
-                  <s.Icon size={24} color={s.color} strokeWidth={2} />
+              <div key={i} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ ...iconTileStyle, marginBottom: 20 }}>
+                  <s.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
                 </div>
                 <h3 style={{
                   fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800,
-                  color: '#0A0A0A', marginBottom: 12, letterSpacing: '-0.01em',
+                  color: INK, marginBottom: 12, letterSpacing: '-0.01em',
                 }}>
                   {s.title}
                 </h3>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, marginBottom: 18 }}>
+                <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, marginBottom: 18 }}>
                   {s.desc}
                 </p>
-                <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 16, marginTop: 'auto' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>
+                <div style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 16, marginTop: 'auto' }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GREY_500, marginBottom: 10 }}>
                     Livrables
                   </div>
-                  <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 7 }}>
                     {s.deliverables.map((d, j) => (
-                      <li key={j} style={{ fontSize: 13, color: '#374151', display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                        <CheckCircle2 size={14} color={s.color} strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 2 }} />
+                      <li key={j} style={{ fontSize: 13, color: GREY_700, display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+                        <Check size={16} color={BLUE} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }} />
                         <span>{d}</span>
                       </li>
                     ))}
@@ -424,61 +478,52 @@ export default function ConseilIAPage() {
       </section>
 
       {/* MÉTHODOLOGIE */}
-      <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>
-              Notre méthodologie
-            </div>
-            <h2 style={{
-              fontFamily: 'Nunito, sans-serif',
-              fontSize: 'clamp(28px, 3.6vw, 42px)', fontWeight: 900,
-              color: '#0A0A0A', lineHeight: 1.2, letterSpacing: '-0.02em',
-              marginBottom: 16,
-            }}>
-              Comprendre · Prioriser · Prototyper · Déployer
+      <section style={{ background: '#fff', padding: SECTION_PAD }}>
+        <div style={{ maxWidth: 920, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div style={kickerStyle}>Notre méthodologie</div>
+            <h2 style={{ ...h2Style, marginBottom: 18 }}>
+              Comment se déroule une mission de conseil IA ?
             </h2>
-            <p style={{ fontSize: 16, color: '#4B5563', maxWidth: 640, margin: '0 auto', lineHeight: 1.65 }}>
-              Une approche éprouvée, qui privilégie la valeur concrète et le transfert de compétences à chaque étape.
+            <p style={{ fontSize: 16, color: GREY_700, maxWidth: 720, margin: '0 auto', lineHeight: 1.7 }}>
+              <strong style={{ color: INK }}>Une mission Masteria suit quatre étapes : comprendre votre organisation, prioriser les cas d'usage selon leur impact et leur faisabilité, prototyper sur des périmètres réels, puis déployer avec formation des équipes et mesure du ROI.</strong>{' '}
+              Chaque étape se conclut par un livrable validé avec votre comité de pilotage, du cadrage initial au bilan à 12 mois.
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-            gap: 20,
-          }}>
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 4vw, 36px)' }}>
             {METHODO.map((m, i) => (
               <div key={i} style={{
-                background: '#fff',
-                border: '1px solid #E5E7EB',
-                borderRadius: 14, padding: 26,
-                position: 'relative',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+                display: 'flex', alignItems: 'flex-start', gap: 'clamp(16px, 3vw, 28px)',
+                padding: '26px 0',
+                borderTop: i === 0 ? 'none' : `1px solid ${BORDER}`,
               }}>
                 <div style={{
-                  fontFamily: 'Nunito, sans-serif', fontSize: 42, fontWeight: 900,
-                  background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
-                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                  lineHeight: 1, marginBottom: 14,
+                  ...iconTileStyle,
+                  fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 900, color: BLUE,
                 }}>
                   {m.n}
                 </div>
-                <h3 style={{
-                  fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800,
-                  color: '#0A0A0A', marginBottom: 10,
-                }}>
-                  {m.title}
-                </h3>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, marginBottom: 14 }}>
-                  {m.desc}
-                </p>
-                <div style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 6,
-                  fontSize: 12, fontWeight: 600, color: '#1D4ED8',
-                  background: '#EFF6FF', padding: '4px 10px', borderRadius: 99,
-                }}>
-                  ⏱ {m.duration}
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
+                    <h3 style={{
+                      fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800,
+                      color: INK, margin: 0, letterSpacing: '-0.01em',
+                    }}>
+                      {m.title}
+                    </h3>
+                    <span style={{
+                      display: 'inline-flex', alignItems: 'center', gap: 6,
+                      fontSize: 12.5, fontWeight: 600, color: GREY_700,
+                      background: BG_SOFT, border: `1px solid ${BORDER}`,
+                      padding: '4px 12px', borderRadius: 99,
+                    }}>
+                      <Clock size={13} color={BLUE} strokeWidth={2.2} aria-hidden="true" /> {m.duration}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, margin: 0 }}>
+                    {m.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -486,44 +531,94 @@ export default function ConseilIAPage() {
         </div>
       </section>
 
+      {/* COMPARATIF cabinet / ESN / freelance */}
+      <section style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={kickerStyle}>Bien choisir son partenaire</div>
+          <h2 style={h2Style}>
+            Cabinet de conseil IA, ESN généraliste ou freelance : que choisir ?
+          </h2>
+          <p style={{ fontSize: 16, color: GREY_700, lineHeight: 1.75, maxWidth: 840, marginBottom: 36 }}>
+            <strong style={{ color: INK }}>Un cabinet de conseil IA spécialisé apporte le cadrage stratégique, la gouvernance et le transfert de compétences ; une ESN généraliste fournit des renforts de capacité sur des projets longs ; un freelance traite un besoin ponctuel et délimité.</strong>{' '}
+            Pour bâtir une trajectoire IA durable et arbitrer les investissements, le cabinet spécialisé reste l'option la plus structurante.
+          </p>
+
+          <div style={{ overflowX: 'auto', background: '#fff', border: `1px solid ${BORDER}`, borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, minWidth: 760 }}>
+              <thead>
+                <tr>
+                  {['Critère', 'Cabinet de conseil IA spécialisé', 'ESN généraliste', 'Freelance IA'].map((h, i) => (
+                    <th key={i} scope="col" style={{
+                      background: BG_SOFT, textAlign: 'left',
+                      padding: '14px 18px', borderBottom: `1px solid ${BORDER}`,
+                      fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 13.5,
+                      color: i === 1 ? BLUE : INK, whiteSpace: 'nowrap',
+                    }}>
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARATIF.map((row, i) => {
+                  const cell = {
+                    padding: '16px 18px',
+                    borderBottom: i === COMPARATIF.length - 1 ? 'none' : `1px solid ${BORDER}`,
+                    color: GREY_700, lineHeight: 1.65, verticalAlign: 'top',
+                  }
+                  return (
+                    <tr key={i}>
+                      <th scope="row" style={{
+                        ...cell, background: BG_SOFT, textAlign: 'left',
+                        fontFamily: 'Nunito, sans-serif', fontWeight: 800,
+                        color: INK, fontSize: 13.5, whiteSpace: 'nowrap',
+                      }}>
+                        {row.critere}
+                      </th>
+                      <td style={{ ...cell, color: GREY_700 }}>{row.cabinet}</td>
+                      <td style={cell}>{row.esn}</td>
+                      <td style={cell}>{row.freelance}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          <p style={{ fontSize: 13.5, color: GREY_500, lineHeight: 1.65, marginTop: 16, marginBottom: 0 }}>
+            Le cabinet spécialisé combine indépendance de conseil et transfert de compétences ; Masteria y ajoute la certification Qualiopi, qui rend le volet formation finançable par votre OPCO.
+          </p>
+        </div>
+      </section>
+
       {/* POUR QUI */}
-      <section style={{ background: '#F9FAFB', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+      <section style={{ background: '#fff', padding: SECTION_PAD }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8B5CF6', marginBottom: 10 }}>
-              Pour qui
-            </div>
-            <h2 style={{
-              fontFamily: 'Nunito, sans-serif',
-              fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900,
-              color: '#0A0A0A', letterSpacing: '-0.02em',
-            }}>
-              Un cabinet pour toutes les organisations
+            <div style={kickerStyle}>Pour qui</div>
+            <h2 style={{ ...h2Style, marginBottom: 18 }}>
+              À qui s'adresse notre cabinet de conseil IA ?
             </h2>
+            <p style={{ fontSize: 16, color: GREY_700, maxWidth: 740, margin: '0 auto', lineHeight: 1.7 }}>
+              <strong style={{ color: INK }}>Masteria accompagne les PME et ETI qui structurent leur démarche IA, les grandes entreprises qui cherchent un partenaire agile pour challenger leurs équipes, et les directions métier qui déploient l'IA sur leur périmètre.</strong>{' '}
+              Les formats sont modulaires, d'une semaine de cadrage à douze mois d'accompagnement.
+            </p>
           </div>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: 20,
+            gap: 24,
           }}>
             {POUR_QUI.map((p, i) => (
-              <div key={i} style={{
-                background: '#fff', borderRadius: 14,
-                border: '1px solid #E5E7EB', padding: 28,
-              }}>
-                <div style={{
-                  width: 48, height: 48, borderRadius: 12,
-                  background: '#EDE9FE', border: '1px solid #DDD6FE',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 18,
-                }}>
-                  <p.Icon size={22} color="#8B5CF6" strokeWidth={2} />
+              <div key={i} style={{ ...cardStyle, padding: 28 }}>
+                <div style={{ ...iconTileStyle, marginBottom: 18 }}>
+                  <p.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: INK, marginBottom: 10, letterSpacing: '-0.01em' }}>
                   {p.title}
                 </h3>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, margin: 0 }}>
                   {p.desc}
                 </p>
               </div>
@@ -533,43 +628,33 @@ export default function ConseilIAPage() {
       </section>
 
       {/* DIFFÉRENCIATEURS */}
-      <section style={{ background: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F59E0B', marginBottom: 10 }}>
-              Notre différence
-            </div>
-            <h2 style={{
-              fontFamily: 'Nunito, sans-serif',
-              fontSize: 'clamp(28px, 3.6vw, 42px)', fontWeight: 900,
-              color: '#0A0A0A', lineHeight: 1.2, letterSpacing: '-0.02em',
-            }}>
+      <section style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+        <div style={{ maxWidth: 1120, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div style={kickerStyle}>Notre différence</div>
+            <h2 style={{ ...h2Style, marginBottom: 18 }}>
               Pourquoi Masteria&nbsp;?
             </h2>
+            <p style={{ fontSize: 16, color: GREY_700, maxWidth: 740, margin: '0 auto', lineHeight: 1.7 }}>
+              <strong style={{ color: INK }}>Masteria combine cabinet de conseil et organisme de formation certifié Qualiopi : chaque mission transfère les compétences aux équipes accompagnées.</strong>{' '}
+              S'y ajoutent des POC livrés en 3 à 6 semaines, un cadrage RGPD et AI Act systématique et des indicateurs de ROI définis dès le lancement.
+            </p>
           </div>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: 20,
+            gap: 24,
           }}>
             {DIFFERENCIATEURS.map((d, i) => (
-              <div key={i} style={{
-                background: '#F9FAFB', borderRadius: 14,
-                border: '1px solid #E5E7EB', padding: 26,
-              }}>
-                <div style={{
-                  width: 44, height: 44, borderRadius: 10,
-                  background: '#FEF3C7', border: '1px solid #FDE68A',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 16,
-                }}>
-                  <d.Icon size={20} color="#F59E0B" strokeWidth={2} />
+              <div key={i} style={{ ...cardStyle, padding: 28 }}>
+                <div style={{ ...iconTileStyle, marginBottom: 16 }}>
+                  <d.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 8, letterSpacing: '-0.01em' }}>
                   {d.title}
                 </h3>
-                <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
+                <p style={{ fontSize: 13.5, color: GREY_700, lineHeight: 1.7, margin: 0 }}>
                   {d.desc}
                 </p>
               </div>
@@ -578,78 +663,77 @@ export default function ConseilIAPage() {
         </div>
       </section>
 
-      {/* CONTENU ÉDITORIAL — densité SEO sur "conseil IA entreprise" */}
-      <section style={{ background: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)', borderTop: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 820, margin: '0 auto', color: '#1F2937', fontSize: 16, lineHeight: 1.8 }}>
-          <h2 style={{
-            fontFamily: 'Nunito, sans-serif',
-            fontSize: 'clamp(26px, 3.4vw, 38px)', fontWeight: 900,
-            color: '#0A0A0A', lineHeight: 1.2, letterSpacing: '-0.02em',
-            marginBottom: 24,
-          }}>
+      {/* CONTENU ÉDITORIAL : densité SEO sur "conseil IA entreprise" */}
+      <section style={{ background: '#fff', padding: SECTION_PAD }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
+          <div style={kickerStyle}>Comprendre l'enjeu</div>
+          <h2 style={h2Style}>
             Pourquoi recourir à un cabinet de conseil en intelligence artificielle ?
           </h2>
           <p style={{ marginBottom: 20 }}>
-            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) place les entreprises devant un constat simple : <strong>l'enjeu principal réside désormais dans la bonne intégration de la technologie aux processus métier</strong>. Un cabinet de conseil en intelligence artificielle apporte une lecture à la fois stratégique, opérationnelle et réglementaire de cette transformation. Indépendant des éditeurs, il objective les choix d'investissement, cadre les usages et garantit un retour mesurable sur les projets engagés.
+            <strong style={{ color: INK }}>Recourir à un cabinet de conseil en intelligence artificielle permet d'objectiver les arbitrages d'investissement, de cadrer les usages (RGPD, AI Act) et de garantir un retour mesurable sur chaque projet engagé. Indépendant des éditeurs, le cabinet sélectionne les outils sans conflit d'intérêt et séquence la trajectoire de déploiement.</strong>
+          </p>
+          <p style={{ marginBottom: 20 }}>
+            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) a déplacé l'enjeu : la technologie est accessible à tous, sa bonne intégration aux processus métier reste à construire. Une mission de conseil apporte cette lecture à la fois stratégique, opérationnelle et réglementaire de la transformation.
           </p>
 
           <h3 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 22, fontWeight: 800,
-            color: '#0A0A0A', marginTop: 32, marginBottom: 14, letterSpacing: '-0.01em',
+            color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
             Cadrer la stratégie IA avant de déployer
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Plus de 70 % des projets d'IA générative engagés en 2024-2025 n'ont pas dépassé le stade du proof of concept (source : enquêtes McKinsey, BCG, Gartner). La cause principale est <strong>organisationnelle et stratégique</strong>, bien avant d'être technique. Sans cadrage initial, les équipes se dispersent sur des cas d'usage à faible valeur, dupliquent des outils et accumulent des coûts d'abonnement sans ROI mesurable. Un audit IA permet de hiérarchiser les cas d'usage selon leur impact business, leur faisabilité technique et leur niveau de risque réglementaire (RGPD, AI Act européen, sécurité des données).
+            Plus de 70 % des projets d'IA générative engagés en 2024-2025 n'ont pas dépassé le stade du proof of concept (source : enquêtes McKinsey, BCG, Gartner). La cause principale est <strong style={{ color: INK }}>organisationnelle et stratégique</strong>, bien avant d'être technique. Sans cadrage initial, les équipes se dispersent sur des cas d'usage à faible valeur, dupliquent des outils et accumulent des coûts d'abonnement sans ROI mesurable. Un audit IA hiérarchise les cas d'usage selon leur impact business, leur faisabilité technique et leur niveau de risque réglementaire (RGPD, AI Act européen, sécurité des données), puis fixe une trajectoire d'investissement que le comité de direction peut arbitrer en connaissance de cause.
           </p>
 
           <h3 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 22, fontWeight: 800,
-            color: '#0A0A0A', marginTop: 32, marginBottom: 14, letterSpacing: '-0.01em',
+            color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
             Gouvernance, RGPD et AI Act : un cadre désormais incontournable
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Depuis l'entrée en application progressive de l'AI Act européen, toute entreprise déployant des systèmes d'IA (y compris des assistants génériques comme ChatGPT Enterprise ou Microsoft Copilot) doit documenter ses usages, classifier ses systèmes par niveau de risque et tracer les flux de données. Notre mission de conseil intègre systématiquement un volet gouvernance : <strong>charte d'usage interne, registre des traitements IA, politique de confidentialité des prompts, procédures de revue humaine</strong>. Cette dimension réglementaire est devenue un préalable à tout déploiement à l'échelle.
+            Depuis l'entrée en application progressive de l'AI Act européen, toute entreprise déployant des systèmes d'IA (y compris des assistants génériques comme ChatGPT Enterprise ou Microsoft Copilot) doit documenter ses usages, classifier ses systèmes par niveau de risque et tracer les flux de données. Notre mission de conseil intègre systématiquement un volet gouvernance : <strong style={{ color: INK }}>charte d'usage interne, registre des traitements IA, politique de confidentialité des prompts, procédures de revue humaine</strong>. Cette dimension réglementaire est devenue un préalable à tout déploiement à l'échelle.
           </p>
 
           <h3 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 22, fontWeight: 800,
-            color: '#0A0A0A', marginTop: 32, marginBottom: 14, letterSpacing: '-0.01em',
+            color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
             Conseil + formation : un modèle hybride pour ancrer les usages
           </h3>
           <p style={{ marginBottom: 20 }}>
-            La singularité de Masteria réside dans l'articulation entre conseil et formation. Là où un cabinet classique remet un rapport et se retire, nous formons les équipes que nous accompagnons. Cette continuité permet d'éviter le piège bien connu du « livrable sans suite » : les recommandations stratégiques se traduisent en compétences réelles, opérables au quotidien. Notre statut d'organisme de formation certifié Qualiopi rend par ailleurs le volet formation de la mission éligible aux financements OPCO ; le conseil pur reste hors du champ de ces financements. Ce montage réduit le coût net pour l'entreprise tout en maximisant l'impact.
+            La singularité de Masteria réside dans l'articulation entre conseil et formation. Un cabinet classique remet son rapport puis se retire. Nous restons pour former les équipes que nous accompagnons, du comité de direction (avec notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link>) jusqu'aux fonctions métier. Cette continuité évite le piège bien connu du « livrable sans suite » : les recommandations stratégiques se traduisent en compétences réelles, opérables au quotidien. Notre statut d'organisme de formation certifié Qualiopi rend par ailleurs le volet formation de la mission éligible aux financements OPCO ; le conseil pur reste hors du champ de ces financements. Ce montage réduit le coût net pour l'entreprise tout en maximisant l'impact.
           </p>
 
           <h3 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 22, fontWeight: 800,
-            color: '#0A0A0A', marginTop: 32, marginBottom: 14, letterSpacing: '-0.01em',
+            color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
             Outils, modèles et stack technique : choisir sans s'enfermer
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Le marché des outils IA évolue à un rythme inédit. Entre les modèles propriétaires (OpenAI, Anthropic, Google, Microsoft) et les modèles ouverts (Mistral, Llama, DeepSeek), entre les solutions souveraines hébergées en Europe et les API généralistes, les arbitrages dépendent de votre stack existante, de votre niveau de sensibilité des données et de votre exposition au risque de dépendance. Nous accompagnons ce choix de manière <strong>agnostique</strong>, en pondérant performance, coût d'usage, conformité RGPD et capacité d'intégration avec vos outils métier (CRM, ERP, suite collaborative).
+            Le marché des outils IA évolue à un rythme inédit. Entre les modèles propriétaires (OpenAI, Anthropic, Google, Microsoft) et les modèles ouverts (Mistral, Llama, DeepSeek), entre les solutions souveraines hébergées en Europe et les API généralistes, les arbitrages dépendent de votre stack existante, de votre niveau de sensibilité des données et de votre exposition au risque de dépendance. Nous accompagnons ce choix de manière <strong style={{ color: INK }}>agnostique</strong>, en pondérant performance, coût d'usage, conformité RGPD et capacité d'intégration avec vos outils métier (CRM, ERP, suite collaborative). Lorsque les arbitrages débouchent sur des développements sur mesure, nous cadrons la réalisation avec notre <Link to="/agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence IA</Link> ; pour les chaînes de traitement répétitives, notre <Link to="/agence-automatisation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence d'automatisation IA</Link> conçoit et déploie les workflows. Le conseil garde la maîtrise d'ouvrage, l'exécution reste alignée sur la feuille de route.
           </p>
 
           <h3 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 22, fontWeight: 800,
-            color: '#0A0A0A', marginTop: 32, marginBottom: 14, letterSpacing: '-0.01em',
+            color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
             Quels résultats attendre d'une mission de conseil IA ?
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Sur les missions menées en 2024-2025, nos clients constatent en moyenne : <strong>6 heures gagnées par semaine et par collaborateur formé</strong> sur des tâches récurrentes (rédaction, synthèse, analyse documentaire, préparation de réunions, traitement d'emails), une réduction de 30 à 50 % du temps de traitement sur certains processus identifiés (réponse aux appels d'offres, comptes-rendus, analyse de contrats), et une montée en autonomie progressive permettant de réduire la dépendance aux prestataires externes pour les usages courants. Ces gains se mesurent dès les 3 premiers mois post-formation, à condition d'avoir cadré les indicateurs en amont.
+            Sur les missions menées en 2024-2025, nos clients constatent en moyenne : <strong style={{ color: INK }}>6 heures gagnées par semaine et par collaborateur formé</strong> sur des tâches récurrentes (rédaction, synthèse, analyse documentaire, préparation de réunions, traitement d'emails), une réduction de 30 à 50 % du temps de traitement sur certains processus identifiés (réponse aux appels d'offres, comptes-rendus, analyse de contrats), et une montée en autonomie progressive permettant de réduire la dépendance aux prestataires externes pour les usages courants. Ces gains se mesurent dès les 3 premiers mois post-formation, à condition d'avoir cadré les indicateurs en amont.
           </p>
 
-          <p style={{ marginBottom: 0, fontStyle: 'italic', color: '#4B5563', borderLeft: '3px solid #2563EB', paddingLeft: 16, marginTop: 32 }}>
-            Vous envisagez un projet IA dans votre organisation ? <Link to="/contact" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Échangeons 30 minutes</Link>{' '}pour cadrer vos enjeux et identifier les premiers cas d'usage à fort impact.
+          <p style={{ marginBottom: 0, fontStyle: 'italic', color: GREY_700, borderLeft: `3px solid ${BLUE}`, paddingLeft: 16, marginTop: 32 }}>
+            Vous envisagez un projet IA dans votre organisation ? <Link to="/contact" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>Échangeons 30 minutes</Link>{' '}pour cadrer vos enjeux et identifier les premiers cas d'usage à fort impact.
           </p>
         </div>
       </section>
@@ -658,42 +742,36 @@ export default function ConseilIAPage() {
       <FAQSection items={FAQ_CONSEIL} title="Questions fréquentes sur nos missions de conseil IA" bg="#F9FAFB" />
 
       {/* CTA FINAL */}
-      <section style={{
-        position: 'relative',
-        background: 'linear-gradient(135deg, #0A0A0A 0%, #1E3A8A 100%)',
-        color: '#fff',
-        padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)',
-        textAlign: 'center',
-        overflow: 'hidden',
-      }}>
+      <section style={{ background: '#fff', padding: SECTION_PAD }}>
         <div style={{
-          position: 'absolute', top: '-30%', left: '50%', transform: 'translateX(-50%)',
-          width: 700, height: 700,
-          background: 'radial-gradient(circle, rgba(96,165,250,0.25) 0%, transparent 60%)',
-          pointerEvents: 'none',
-        }} />
-        <div style={{ maxWidth: 720, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          maxWidth: 1120, margin: '0 auto',
+          background: INK, color: '#fff',
+          borderRadius: 16,
+          padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)',
+          textAlign: 'center',
+        }}>
           <h2 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 900,
             lineHeight: 1.15, letterSpacing: '-0.02em',
-            marginBottom: 18,
-            color: '#fff',
+            marginBottom: 18, color: '#fff',
           }}>
             Parlons de votre projet IA
           </h2>
-          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.7, marginBottom: 36 }}>
+          <p style={{ fontSize: 16, color: '#9CA3AF', lineHeight: 1.7, maxWidth: 640, margin: '0 auto 36px' }}>
             Un premier échange de 30 minutes pour cadrer vos besoins, sans engagement. Nous revenons vers vous sous 24 h ouvrées avec une proposition adaptée.
           </p>
           <Link to="/contact" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: '#fff', color: '#0A0A0A',
-            padding: '16px 32px', borderRadius: 10,
+            background: BLUE, color: '#fff',
+            padding: '16px 32px', borderRadius: 12,
             textDecoration: 'none', fontSize: 15, fontWeight: 800,
-            boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
           }}>
-            Contacter notre équipe <ArrowRight size={16} />
+            Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
           </Link>
+          <p style={{ fontSize: 13, color: '#9CA3AF', marginTop: 24, marginBottom: 0 }}>
+            Cabinet de conseil et organisme de formation certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction
+          </p>
         </div>
       </section>
     </>
