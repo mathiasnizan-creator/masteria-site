@@ -114,7 +114,7 @@ const DIFFERENCIATEURS = [
   {
     Icon: Zap,
     title: 'Vitesse d\'exécution',
-    desc: "Pas de slides de 120 pages : nous livrons des POC fonctionnels en 3 à 6 semaines et transférons les compétences en continu.",
+    desc: "Nous livrons des POC fonctionnels en 3 à 6 semaines et transférons les compétences en continu, sans rapport de 120 pages.",
   },
   {
     Icon: ShieldCheck,
@@ -130,12 +130,24 @@ const DIFFERENCIATEURS = [
 
 const FAQ_CONSEIL = [
   {
-    q: "En quoi Masteria se distingue d'un cabinet de conseil classique ?",
-    a: "Nous sommes à la fois cabinet de conseil et centre de formation certifié Qualiopi. Cela signifie que nous n'intervenons jamais sans transférer les compétences à vos équipes. Chaque mission débouche sur des collaborateurs autonomes, pas sur une dépendance à un prestataire.",
+    q: "Que fait un cabinet de conseil en intelligence artificielle ?",
+    a: "Un cabinet de conseil en intelligence artificielle accompagne les entreprises sur cinq missions : audit des usages et des processus, définition de la stratégie et de la feuille de route, accompagnement au déploiement des outils, mise en place de la gouvernance (RGPD, AI Act) et formation des équipes. Chez Masteria, ces cinq volets sont couverts par une même équipe, du diagnostic initial à l'autonomie complète de vos collaborateurs.",
   },
   {
-    q: "Combien coûte une mission de conseil IA ?",
-    a: "Le tarif dépend du périmètre : nature de la mission (audit, stratégie, accompagnement opérationnel), durée, nombre d'interlocuteurs, niveau de complexité technique et réglementaire. Plutôt que d'afficher un tarif d'appel, nous construisons un devis détaillé après un premier échange gratuit de 30 minutes pour cadrer vos besoins. La plupart de nos missions se tarifent au forfait, parfois à la journée pour des accompagnements ponctuels.",
+    q: "En quoi Masteria se distingue d'un cabinet de conseil classique ?",
+    a: "Nous sommes à la fois cabinet de conseil et centre de formation certifié Qualiopi. Cela signifie que nous n'intervenons jamais sans transférer les compétences à vos équipes. Chaque mission débouche sur des collaborateurs autonomes, sans dépendance durable à un prestataire.",
+  },
+  {
+    q: "Combien coûte un cabinet de conseil en IA ?",
+    a: "Le jour de conseil se chiffre sur devis, selon la nature de la mission (audit, stratégie, accompagnement opérationnel), sa durée, le nombre d'interlocuteurs et la complexité technique et réglementaire. Le premier échange de cadrage de 30 minutes est gratuit. À noter : le conseil pur ne bénéficie d'aucune prise en charge OPCO. Seules les formations sont finançables, au tarif de 1 980 € HT par jour, grâce à notre certification Qualiopi. Associer un volet formation à la mission réduit donc son coût net.",
+  },
+  {
+    q: "Cabinet de conseil IA ou agence IA : quelle différence ?",
+    a: "Une agence IA développe des solutions : elle conçoit, code et livre des produits ou des intégrations sur mesure. Un cabinet de conseil IA intervient en amont et en transverse : il audite l'existant, définit la stratégie, sélectionne les outils de façon indépendante, structure la gouvernance et forme les équipes. Les deux se complètent : le cabinet cadre la trajectoire, puis peut piloter une agence ou un intégrateur pour la réalisation technique.",
+  },
+  {
+    q: "Pourquoi choisir un cabinet spécialisé plutôt qu'un généraliste ?",
+    a: "Un cabinet généraliste traite l'IA comme un sujet parmi d'autres. Un cabinet spécialisé y consacre la totalité de sa veille, de ses méthodes et de ses retours d'expérience : suivi continu des modèles (OpenAI, Anthropic, Google, Mistral), bibliothèques de prompts éprouvées en conditions réelles, lecture fine du RGPD et de l'AI Act appliqués à des cas concrets. Masteria a formé plus de 1 500 professionnels depuis 2022 avec 98 % de satisfaction : cette pratique quotidienne du terrain alimente directement nos recommandations de conseil.",
   },
   {
     q: "Travaillez-vous avec des petites structures ?",
@@ -167,7 +179,7 @@ const FAQ_CONSEIL = [
   },
   {
     q: "Comment mesurez-vous le ROI d'un projet IA ?",
-    a: "Nous mesurons le ROI sur trois dimensions : (1) productivité — temps gagné par collaborateur sur des tâches identifiées, mesuré avant/après ; (2) qualité — réduction des erreurs, satisfaction client, conformité ; (3) capacité — nouveaux usages rendus possibles (par ex. analyse de masse de documents impossible manuellement). Chaque indicateur est défini contradictoirement avec votre comité de pilotage en début de mission.",
+    a: "Nous mesurons le ROI sur trois dimensions : (1) la productivité, soit le temps gagné par collaborateur sur des tâches identifiées, mesuré avant/après ; (2) la qualité, soit la réduction des erreurs, la satisfaction client et la conformité ; (3) la capacité, soit les nouveaux usages rendus possibles (par ex. analyse de masse de documents impossible manuellement). Chaque indicateur est défini contradictoirement avec votre comité de pilotage en début de mission.",
   },
   {
     q: "Combien de temps dure une mission de conseil IA ?",
@@ -198,8 +210,8 @@ export default function ConseilIAPage() {
   return (
     <>
       <SEOHead
-        title="Cabinet de conseil en intelligence artificielle (IA) pour entreprises | Masteria"
-        description="Cabinet de conseil IA spécialisé : audit, stratégie, gouvernance, accompagnement opérationnel et transformation. Pour PME, ETI et grands groupes en France, Suisse et Belgique. Conseil + formation Qualiopi."
+        title="Cabinet de conseil en intelligence artificielle | Masteria"
+        description="Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, accompagnement au déploiement. Cadrage gratuit de 30 minutes."
         slug="conseil-intelligence-artificielle"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -242,14 +254,15 @@ export default function ConseilIAPage() {
             lineHeight: 1.1, letterSpacing: '-0.03em',
             marginBottom: 24, color: '#0A0A0A',
           }}>
-            Déployez l'IA dans votre entreprise avec{' '}
+            Le cabinet de conseil en{' '}
             <span style={{
               background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
             }}>
-              méthode et impact
-            </span>
+              intelligence artificielle
+            </span>{' '}
+            qui forme vos équipes
           </h1>
 
           <p style={{
@@ -257,7 +270,8 @@ export default function ConseilIAPage() {
             color: '#4B5563', lineHeight: 1.65,
             maxWidth: 720, margin: '0 auto 40px',
           }}>
-            Masteria est un cabinet de conseil spécialisé en intelligence artificielle. Nous accompagnons PME, ETI et grands groupes dans l'audit, la stratégie et le déploiement opérationnel de l'IA, avec un transfert de compétences garanti par notre centre de formation certifié Qualiopi.
+            <strong style={{ color: '#1F2937', fontWeight: 700 }}>Masteria est un cabinet de conseil en intelligence artificielle fondé en 2022 à Lyon. Nous aidons PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA, déployer les cas d'usage à fort ROI et former leurs équipes, en France, en Suisse et en Belgique.</strong>{' '}
+            Le transfert de compétences est garanti par notre centre de formation certifié Qualiopi.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
@@ -298,6 +312,46 @@ export default function ConseilIAPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* QUE FAIT UN CABINET DE CONSEIL EN IA — réponse directe (featured snippet) */}
+      <section style={{ background: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 820, margin: '0 auto', color: '#1F2937', fontSize: 16, lineHeight: 1.8 }}>
+          <h2 style={{
+            fontFamily: 'Nunito, sans-serif',
+            fontSize: 'clamp(26px, 3.4vw, 38px)', fontWeight: 900,
+            color: '#0A0A0A', lineHeight: 1.2, letterSpacing: '-0.02em',
+            marginBottom: 24,
+          }}>
+            Que fait un cabinet de conseil en IA ?
+          </h2>
+          <p style={{ marginBottom: 24 }}>
+            <strong>Un cabinet de conseil en IA aide les entreprises à passer de l'intention à l'usage : il audite les processus et les outils, identifie les cas d'usage rentables, définit la stratégie et la feuille de route, encadre le déploiement, structure la gouvernance et forme les équipes pour ancrer les usages dans la durée.</strong>
+          </p>
+          <p style={{ marginBottom: 18 }}>
+            Concrètement, une mission de conseil en intelligence artificielle couvre cinq champs d'intervention :
+          </p>
+          <ul style={{ margin: '0 0 24px', paddingLeft: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <li>
+              <strong>Audit des usages :</strong> cartographie des processus, des données et des outils déjà en place, mesure de la maturité des équipes, identification des cas d'usage à plus fort retour sur investissement.
+            </li>
+            <li>
+              <strong>Stratégie et feuille de route :</strong> définition de l'ambition, priorisation des chantiers et plan d'action séquencé sur 12 mois, avec budget et indicateurs associés.
+            </li>
+            <li>
+              <strong>Accompagnement au déploiement :</strong> prototypage rapide, choix des outils (ChatGPT, Copilot, Gemini, Claude, Mistral), intégration dans les processus métier et mesure des gains.
+            </li>
+            <li>
+              <strong>Gouvernance et conformité AI Act :</strong> charte d'usage interne, registre des systèmes d'IA, conformité RGPD et classification des risques exigée par le règlement européen.
+            </li>
+            <li>
+              <strong>Formation des équipes :</strong> montée en compétences des collaborateurs, des dirigeants aux équipes métier, pour rendre l'organisation autonome.
+            </li>
+          </ul>
+          <p style={{ marginBottom: 0 }}>
+            Masteria couvre ces cinq missions avec une particularité : notre statut d'organisme de formation certifié Qualiopi. Pour le volet stratégique, consultez notre offre de <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> ; pour le détail de nos expertises, parcourez <a href="#services" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>nos services</a> ci-dessous.
+          </p>
         </div>
       </section>
 
@@ -536,7 +590,7 @@ export default function ConseilIAPage() {
             Pourquoi recourir à un cabinet de conseil en intelligence artificielle ?
           </h2>
           <p style={{ marginBottom: 20 }}>
-            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) place les entreprises devant un constat simple : <strong>l'enjeu n'est plus l'accès à la technologie, mais sa bonne intégration dans les processus métier</strong>. Un cabinet de conseil en intelligence artificielle apporte une lecture à la fois stratégique, opérationnelle et réglementaire de cette transformation. Son rôle n'est pas de vendre une solution, mais d'objectiver les choix d'investissement, de cadrer les usages et de garantir un retour mesurable sur les projets engagés.
+            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) place les entreprises devant un constat simple : <strong>l'enjeu principal réside désormais dans la bonne intégration de la technologie aux processus métier</strong>. Un cabinet de conseil en intelligence artificielle apporte une lecture à la fois stratégique, opérationnelle et réglementaire de cette transformation. Indépendant des éditeurs, il objective les choix d'investissement, cadre les usages et garantit un retour mesurable sur les projets engagés.
           </p>
 
           <h3 style={{
@@ -547,7 +601,7 @@ export default function ConseilIAPage() {
             Cadrer la stratégie IA avant de déployer
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Plus de 70 % des projets d'IA générative engagés en 2024-2025 n'ont pas dépassé le stade du proof of concept (source : enquêtes McKinsey, BCG, Gartner). La cause principale n'est pas technique : elle est <strong>organisationnelle et stratégique</strong>. Sans cadrage initial, les équipes se dispersent sur des cas d'usage à faible valeur, dupliquent des outils et accumulent des coûts d'abonnement sans ROI mesurable. Un audit IA permet de hiérarchiser les cas d'usage selon leur impact business, leur faisabilité technique et leur niveau de risque réglementaire (RGPD, AI Act européen, sécurité des données).
+            Plus de 70 % des projets d'IA générative engagés en 2024-2025 n'ont pas dépassé le stade du proof of concept (source : enquêtes McKinsey, BCG, Gartner). La cause principale est <strong>organisationnelle et stratégique</strong>, bien avant d'être technique. Sans cadrage initial, les équipes se dispersent sur des cas d'usage à faible valeur, dupliquent des outils et accumulent des coûts d'abonnement sans ROI mesurable. Un audit IA permet de hiérarchiser les cas d'usage selon leur impact business, leur faisabilité technique et leur niveau de risque réglementaire (RGPD, AI Act européen, sécurité des données).
           </p>
 
           <h3 style={{
@@ -558,7 +612,7 @@ export default function ConseilIAPage() {
             Gouvernance, RGPD et AI Act : un cadre désormais incontournable
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Depuis l'entrée en application progressive de l'AI Act européen, toute entreprise déployant des systèmes d'IA — y compris des assistants génériques comme ChatGPT Enterprise ou Microsoft Copilot — doit documenter ses usages, classifier ses systèmes par niveau de risque et tracer les flux de données. Notre mission de conseil intègre systématiquement un volet gouvernance : <strong>charte d'usage interne, registre des traitements IA, politique de confidentialité des prompts, procédures de revue humaine</strong>. Cette dimension réglementaire n'est plus optionnelle ; elle est devenue un préalable à tout déploiement à l'échelle.
+            Depuis l'entrée en application progressive de l'AI Act européen, toute entreprise déployant des systèmes d'IA (y compris des assistants génériques comme ChatGPT Enterprise ou Microsoft Copilot) doit documenter ses usages, classifier ses systèmes par niveau de risque et tracer les flux de données. Notre mission de conseil intègre systématiquement un volet gouvernance : <strong>charte d'usage interne, registre des traitements IA, politique de confidentialité des prompts, procédures de revue humaine</strong>. Cette dimension réglementaire est devenue un préalable à tout déploiement à l'échelle.
           </p>
 
           <h3 style={{
@@ -569,7 +623,7 @@ export default function ConseilIAPage() {
             Conseil + formation : un modèle hybride pour ancrer les usages
           </h3>
           <p style={{ marginBottom: 20 }}>
-            La singularité de Masteria réside dans l'articulation entre conseil et formation. Là où un cabinet classique remet un rapport et se retire, nous formons les équipes que nous accompagnons. Cette continuité permet d'éviter le piège bien connu du « livrable sans suite » : les recommandations stratégiques se traduisent en compétences réelles, opérables au quotidien. Notre statut d'organisme de formation certifié Qualiopi rend par ailleurs une partie de la mission éligible aux financements OPCO, ce qui réduit le coût net pour l'entreprise tout en maximisant l'impact.
+            La singularité de Masteria réside dans l'articulation entre conseil et formation. Là où un cabinet classique remet un rapport et se retire, nous formons les équipes que nous accompagnons. Cette continuité permet d'éviter le piège bien connu du « livrable sans suite » : les recommandations stratégiques se traduisent en compétences réelles, opérables au quotidien. Notre statut d'organisme de formation certifié Qualiopi rend par ailleurs le volet formation de la mission éligible aux financements OPCO ; le conseil pur reste hors du champ de ces financements. Ce montage réduit le coût net pour l'entreprise tout en maximisant l'impact.
           </p>
 
           <h3 style={{

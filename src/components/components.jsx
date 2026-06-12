@@ -573,6 +573,9 @@ export function MasteriaFooter() {
             <div style={colHead}>Masteria</div>
             {[
               ['Conseil IA', '/conseil-intelligence-artificielle'],
+              ['Agence IA Lyon', '/agence-ia'],
+              ['Automatisation IA (guide)', '/automatisation-ia'],
+              ['Agents IA en entreprise', '/agents-ia-entreprise'],
               ['À propos', '/centre-formation-ia-entreprise'],
               ['Blog', '/blog'],
               ['Glossaire IA (80 termes)', '/glossaire-ia'],

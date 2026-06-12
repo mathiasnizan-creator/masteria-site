@@ -42,6 +42,12 @@ const COMPARISON_FILES = ['src/pages/ComparisonPage.jsx', 'src/data/comparisons.
 const staticRoutes = [
   { path: '',                                    prio: 1.0, freq: 'weekly',  files: ['src/pages/HomePage.jsx'] },
   { path: 'conseil-intelligence-artificielle',   prio: 0.9, freq: 'monthly', files: ['src/pages/ConseilIAPage.jsx'] },
+  { path: 'conseil-strategie-ia',                prio: 0.7, freq: 'monthly', files: ['src/pages/ConseilStrategieIAPage.jsx'] },
+  { path: 'automatisation-ia',                   prio: 0.85, freq: 'monthly', files: ['src/pages/AutomatisationIAGuidePage.jsx'] },
+  { path: 'agence-automatisation-ia',            prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceAutomatisationIAPage.jsx'] },
+  { path: 'agents-ia-entreprise',                prio: 0.8, freq: 'monthly', files: ['src/pages/AgentsIAEntreprisePage.jsx'] },
+  { path: 'agence-ia',                           prio: 0.85, freq: 'monthly', files: ['src/pages/AgenceIAPage.jsx'] },
+  { path: 'meilleure-agence-ia',                 prio: 0.8, freq: 'monthly', files: ['src/pages/MeilleureAgenceIAPage.jsx'] },
   { path: 'centre-formation-ia-entreprise',      prio: 0.7, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'contact',                             prio: 0.8, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'blog',                                prio: 0.8, freq: 'weekly',  files: ['src/pages/BlogListPage.jsx', 'src/data/blog-articles.js'] },

@@ -28,6 +28,12 @@ const SpokePage = lazy(() => import('./pages/SpokePage'));
 const MetiersHubPage = lazy(() => import('./pages/MetiersHubPage'));
 const MetierPage = lazy(() => import('./pages/MetierPage'));
 const ConseilIAPage = lazy(() => import('./pages/ConseilIAPage'));
+const ConseilStrategieIAPage = lazy(() => import('./pages/ConseilStrategieIAPage'));
+const AutomatisationIAGuidePage = lazy(() => import('./pages/AutomatisationIAGuidePage'));
+const AgenceAutomatisationIAPage = lazy(() => import('./pages/AgenceAutomatisationIAPage'));
+const AgentsIAEntreprisePage = lazy(() => import('./pages/AgentsIAEntreprisePage'));
+const AgenceIAPage = lazy(() => import('./pages/AgenceIAPage'));
+const MeilleureAgenceIAPage = lazy(() => import('./pages/MeilleureAgenceIAPage'));
 const GeoPage = lazy(() => import('./pages/GeoPage'));
 const GeoIAGenericPage = lazy(() => import('./pages/GeoIAGenericPage'));
 const TopicLandingPage = lazy(() => import('./pages/TopicLandingPage'));
@@ -1321,6 +1327,13 @@ export default function App() {
         <Route path="/formation-ia-gestion-de-projet" element={<GestionDeProjetIAPage />} />
         <Route path="/formation-ia-qualiopi" element={<QualiopiPage />} />
         <Route path="/financement-formation-ia" element={<FinancementPage />} />
+        {/* Clusters conseil / automatisation / agents / agence (juin 2026) */}
+        <Route path="/conseil-strategie-ia" element={<ConseilStrategieIAPage />} />
+        <Route path="/automatisation-ia" element={<AutomatisationIAGuidePage />} />
+        <Route path="/agence-automatisation-ia" element={<AgenceAutomatisationIAPage />} />
+        <Route path="/agents-ia-entreprise" element={<AgentsIAEntreprisePage />} />
+        <Route path="/agence-ia" element={<AgenceIAPage />} />
+        <Route path="/meilleure-agence-ia" element={<MeilleureAgenceIAPage />} />
         <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />
         <Route path="/formation-ia-debutant" element={<DebutantPage />} />
         <Route path="/glossaire-ia" element={<GlossaryPage />} />
