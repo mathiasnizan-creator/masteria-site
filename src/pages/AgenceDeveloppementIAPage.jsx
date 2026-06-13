@@ -30,7 +30,7 @@ const cDark = '#1d4ed8'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence de développement IA sur mesure | Masteria"
-const META_DESC = "Agence de développement IA : agents, automatisations et applications métier sur mesure. De l'idée au déploiement, avec transfert de compétence. France, Suisse, Belgique."
+const META_DESC = "Agence de développement IA : agents, automatisations et applications métier sur mesure, de l'idée au déploiement. Vous restez propriétaire. Devis gratuit."
 const H1 = "Agence de développement IA : agents, automatisations et applications sur mesure"
 
 /* ───────── Styles partagés ───────── */

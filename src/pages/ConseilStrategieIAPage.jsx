@@ -50,7 +50,7 @@ const iconTileStyle = {
 }
 
 const META_TITLE = "Conseil stratégie IA : audit, feuille de route | Masteria"
-const META_DESC = "Conseil stratégie IA pour PME et ETI : diagnostic de maturité, cas d'usage priorisés par ROI, feuille de route 90 jours, puis développement et déploiement des solutions. De la feuille de route au build. Cadrage gratuit."
+const META_DESC = "Conseil stratégie IA : diagnostic de maturité, cas d'usage priorisés par ROI, feuille de route 90 jours, puis développement des solutions. Cadrage gratuit."
 const H1 = "Conseil stratégie IA : du diagnostic à la feuille de route"
 const DIRECT_ANSWER = "Le conseil stratégie IA consiste à définir où, comment et dans quel ordre déployer l'intelligence artificielle dans une entreprise. Masteria structure la démarche en 4 phases : diagnostic de maturité, priorisation des cas d'usage par ROI, feuille de route à 90 jours et 12 mois, gouvernance et conduite du changement."
 const INTRO = "Outils qui se multiplient, équipes qui s'équipent en ordre dispersé, budgets engagés sans indicateur de retour : les directions générales ont besoin d'un cap avant d'investir davantage. Notre mission de conseil stratégique en intelligence artificielle donne à votre COMEX une vision partagée, des priorités chiffrées et un plan d'exécution réaliste. Et parce qu'une stratégie ne vaut que par sa mise en œuvre, la même équipe développe et déploie ensuite les solutions retenues : de la feuille de route au build, sans rupture."
@@ -204,19 +204,7 @@ const serviceJsonLd = {
   url: `https://www.master-ia.fr/${SLUG}`,
   serviceType: ['Conseil stratégie IA', 'Diagnostic de maturité IA', 'Feuille de route IA', 'Gouvernance IA', "Déploiement et développement de solutions IA"],
   areaServed: ['France', 'Suisse', 'Belgique'],
-  provider: {
-    '@type': 'Organization',
-    name: 'Masteria',
-    url: 'https://www.master-ia.fr',
-    foundingDate: '2022',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '17 Rue Richan',
-      addressLocality: 'Lyon',
-      postalCode: '69004',
-      addressCountry: 'FR',
-    },
-  },
+  provider: { '@id': 'https://www.master-ia.fr/#organization' },
 }
 
 function FAQItem({ q, a }) {
@@ -533,7 +521,7 @@ export default function ConseilStrategieIAPage() {
             La stratégie débouche sur du build, pas seulement sur un rapport
           </h2>
           <p style={{ color: GREY_700, fontSize: 16, marginBottom: 36, maxWidth: 800, lineHeight: 1.75 }}>
-            Une feuille de route ne produit ses effets que si elle est exécutée. Masteria prolonge la mission stratégique par la réalisation, portée par la même équipe : conception et développement des solutions sur mesure par notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link>, automatisation des processus, puis montée en compétences des équipes. Conseil et développement se chiffrent sur devis ; seule la formation associée est finançable OPCO.
+            Une feuille de route ne produit ses effets que si elle est exécutée. Masteria prolonge la mission stratégique par la réalisation, portée par la même équipe : conception et développement des solutions sur mesure par notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link>, automatisation des processus, puis montée en compétences des équipes. En amont, un <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA gratuit</Link> objective votre maturité, et nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> alimentent la phase de priorisation. Conseil et développement se chiffrent sur devis ; seule la formation associée est finançable OPCO.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             <Link to="/agence-developpement-ia" style={{ textDecoration: 'none' }}>

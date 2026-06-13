@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle,
   Plug, Check, Cpu, Server, Lock, KeyRound, ShieldCheck, Workflow,
-  MapPin, Users,
+  MapPin, Users, Wrench,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -239,6 +239,9 @@ export default function SolutionIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Sur quelles briques techniques ?
           </h2>
+          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
+            <strong>Sur quatre briques : une approche multi-LLM (le bon modèle au bon endroit), du RAG pour ancrer les réponses dans vos données avec sources, des connecteurs API et MCP vers vos outils, et des garde-fous avec validation humaine. Hébergement dans l'Union européenne possible selon vos exigences de conformité.</strong>
+          </p>
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
             {solution.techApproach}
           </p>
@@ -378,6 +381,9 @@ export default function SolutionIAPage() {
             </Link>
             <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Cpu size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Agence de développement IA
+            </Link>
+            <Link to="/outils-ia-sur-mesure" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+              <Wrench size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Outils IA par métier
             </Link>
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Check size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Diagnostic IA gratuit

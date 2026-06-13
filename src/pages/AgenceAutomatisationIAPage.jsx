@@ -24,7 +24,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence automatisation IA · Cadrage & déploiement | Masteria"
-const META_DESC = "Agence d'automatisation IA : nous concevons, développons et déployons vos automatisations sur mesure, intégrées à vos outils. Cadrage initial gratuit, vous restez propriétaire du système."
+const META_DESC = "Agence d'automatisation IA : conception, développement et déploiement de vos automatisations sur mesure, intégrées à vos outils. Cadrage initial gratuit."
 const H1 = "L'agence d'automatisation IA qui rend vos équipes autonomes"
 
 /* ───────── Styles partagés ───────── */
@@ -532,7 +532,7 @@ export default function AgenceAutomatisationIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Si votre besoin dépasse l'automatisation (stratégie IA globale, gouvernance, conformité, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> prend le relais. Et pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez notre <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
+            Si votre besoin dépasse l'automatisation (stratégie IA globale, gouvernance, conformité, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> prend le relais. Pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>, et démarrez par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> pour situer vos priorités.
           </p>
         </div>
       </section>

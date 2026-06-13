@@ -25,7 +25,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agents IA en entreprise : guide & 20 cas d'usage | Masteria"
-const META_DESC = "Qu'est-ce qu'un agent IA ? Fonctionnement, 20 cas d'usage concrets par fonction, outils 2026, gouvernance : le guide pour déployer des agents IA en entreprise. Et l'option clé en main : nous développons vos agents IA sur mesure."
+const META_DESC = "Agents IA en entreprise : fonctionnement, 20 cas d'usage par fonction, outils 2026 et gouvernance. Le guide pour déployer, plus l'option sur mesure."
 const H1 = "Agents IA en entreprise : le guide complet et 20 cas d'usage concrets"
 
 const TOC = [
@@ -233,7 +233,7 @@ const USE_CASE_GROUPS = [
       {
         title: '16. Agents de code pour les équipes de développement',
         desc: "À partir d'un ticket, un agent de code comme Claude Code explore la base de code, propose une implémentation, écrit les tests et prépare une pull request qu'un développeur relit avant fusion. Le développeur consacre plus de temps à la conception et à la revue.",
-        link: { to: '/formation-claude-code', label: 'Découvrir la formation Claude Code' },
+        link: { to: '/formation-claude-ia', label: 'Découvrir la formation Claude' },
       },
       {
         title: '17. Support informatique interne',
@@ -315,7 +315,7 @@ const RISKS = [
     icon: Scale,
     title: "Conformité avec l'AI Act",
     desc: "Le règlement européen sur l'IA, entré en application par étapes depuis 2025, impose des obligations graduées selon le risque : transparence pour les systèmes qui interagissent avec des humains, exigences renforcées pour les usages à haut risque comme le recrutement. Cartographier vos agents au regard de ces catégories devient un prérequis.",
-    link: { to: '/formation-ai-act', label: "Préparer vos équipes avec la formation AI Act" },
+    link: { to: '/conseil-strategie-ia', label: "Cadrer la gouvernance de vos agents IA" },
   },
 ]
 
@@ -379,10 +379,10 @@ const NEXT_STEPS = [
     desc: "Des applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage propres.",
   },
   {
-    to: '/formation-claude-code',
-    tag: 'Formation',
-    title: 'Formation Claude Code',
-    desc: "En complément, former vos développeurs et profils techniques aux agents de code, sur vos projets réels.",
+    to: '/solutions-ia',
+    tag: 'Solutions IA',
+    title: "Toutes nos solutions IA",
+    desc: "Du diagnostic au déploiement : la vue d'ensemble de nos accompagnements IA pour entreprises.",
   },
 ]
 
@@ -731,7 +731,7 @@ export default function AgentsIAEntreprisePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#9CA3AF', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
-            Votre besoin dépasse l'agent isolé et appelle un véritable logiciel piloté par l'IA ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour donner les bons réflexes à vos équipes en complément, la <Link to="/formation-claude-code" style={{ color: '#93C5FD', fontWeight: 600 }}>formation Claude Code</Link> les outille sur les agents de code.
+            Votre besoin dépasse l'agent isolé et appelle un véritable logiciel piloté par l'IA ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour donner les bons réflexes à vos équipes en complément, la <Link to="/formation-claude-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>formation Claude</Link> les outille sur les agents de code.
           </p>
         </div>
       </section>
@@ -841,7 +841,7 @@ export default function AgentsIAEntreprisePage() {
 
           <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 8 }}>Avancer avec Masteria</h3>
           <p style={{ ...pStyle, marginBottom: 28 }}>
-            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout. Vos équipes peuvent aussi se former en complément.
+            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA gratuit</Link> identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {NEXT_STEPS.map(item => (

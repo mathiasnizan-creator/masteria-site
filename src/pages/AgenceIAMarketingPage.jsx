@@ -24,7 +24,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence IA marketing : contenu, campagnes & SEO | Masteria"
-const META_DESC = "Agence IA marketing : nous produisons et pilotons pour vous contenu, SEO & GEO, campagnes, social media, emailing et reporting augmentés par l'IA. Done-for-you. France, Suisse, Belgique."
+const META_DESC = "Agence IA marketing : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, emailing et reporting augmentés par l'IA. Done-for-you. FR, CH, BE."
 const H1 = "Agence IA marketing : production de contenu, campagnes et SEO augmentés par l'IA"
 
 /* ───────── Styles partagés ───────── */
@@ -514,7 +514,7 @@ export default function AgenceIAMarketingPage() {
             Pour aller plus loin
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément.
+            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément. Pour cadrer le périmètre avant de démarrer, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> situe vos priorités marketing en une vingtaine de minutes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[

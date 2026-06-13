@@ -278,19 +278,7 @@ const serviceJsonLd = {
   url: 'https://www.master-ia.fr/conseil-intelligence-artificielle',
   serviceType: ['Audit IA', 'Stratégie IA', "Développement de solutions IA sur mesure", 'Accompagnement IA', 'Transformation IA'],
   areaServed: ['France', 'Suisse', 'Belgique'],
-  provider: {
-    '@type': 'Organization',
-    name: 'Masteria',
-    url: 'https://www.master-ia.fr',
-    foundingDate: '2022',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '17 Rue Richan',
-      addressLocality: 'Lyon',
-      postalCode: '69004',
-      addressCountry: 'FR',
-    },
-  },
+  provider: { '@id': 'https://www.master-ia.fr/#organization' },
 }
 
 /* ───────── Composant ───────── */
@@ -300,7 +288,7 @@ export default function ConseilIAPage() {
     <>
       <SEOHead
         title="Cabinet de conseil en intelligence artificielle | Masteria"
-        description="Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, puis conception et développement des solutions sur mesure. Du conseil à la mise en œuvre. Cadrage gratuit de 30 minutes."
+        description="Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, puis développement des solutions sur mesure. Cadrage gratuit."
         slug="conseil-intelligence-artificielle"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -774,6 +762,10 @@ export default function ConseilIAPage() {
           </h3>
           <p style={{ marginBottom: 20 }}>
             Sur les missions menées en 2024-2025, nos clients constatent en moyenne : <strong style={{ color: INK }}>6 heures gagnées par semaine et par collaborateur formé</strong> sur des tâches récurrentes (rédaction, synthèse, analyse documentaire, préparation de réunions, traitement d'emails), une réduction de 30 à 50 % du temps de traitement sur certains processus identifiés (réponse aux appels d'offres, comptes-rendus, analyse de contrats), et une montée en autonomie progressive permettant de réduire la dépendance aux prestataires externes pour les usages courants. Ces gains se mesurent dès les 3 premiers mois post-formation, à condition d'avoir cadré les indicateurs en amont.
+          </p>
+
+          <p style={{ marginBottom: 0 }}>
+            Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité et fait remonter les premiers cas d'usage. Si votre besoin relève d'un métier précis, nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> détaillent les leviers prioritaires. Et pour structurer la décision au niveau direction, notre <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil en stratégie IA</Link> formalise une feuille de route arbitrable en COMEX.
           </p>
 
           <p style={{ marginBottom: 0, fontStyle: 'italic', color: GREY_700, borderLeft: `3px solid ${BLUE}`, paddingLeft: 16, marginTop: 32 }}>

@@ -28,7 +28,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Outils IA sur mesure : applications & copilotes | Masteria"
-const META_DESC = "Outils IA sur mesure : copilotes internes, assistants documentaires et applications métier conçus pour vos processus et vos données. De l'idée à l'outil, code et données qui vous appartiennent."
+const META_DESC = "Outils IA sur mesure : copilotes internes, assistants documentaires et applications métier pour vos processus. Code et données qui vous appartiennent."
 const H1 = "Outils IA sur mesure : applications et copilotes métier conçus pour vous"
 
 /* ───────── Styles partagés ───────── */
@@ -381,7 +381,7 @@ export default function OutilsIASurMesurePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
-            Vous cherchez d'abord un partenaire de réalisation plutôt qu'un type d'outil précis ? Notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> détaille la démarche d'ingénierie, l'équipe et les modalités de collaboration. Pour automatiser des processus existants avec des outils du marché, voyez plutôt notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>.
+            Vous cherchez d'abord un partenaire de réalisation plutôt qu'un type d'outil précis ? Notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> détaille la démarche d'ingénierie, l'équipe et les modalités de collaboration. Pour automatiser des processus existants avec des outils du marché, voyez plutôt notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pas encore sûr du périmètre ? Un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> aide à cadrer le bon outil avant tout développement.
           </p>
         </div>
       </section>
@@ -568,6 +568,7 @@ export default function OutilsIASurMesurePage() {
               { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Automatiser des processus existants avec les outils du marché, vos équipes restent autonomes." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand confier une mission autonome à un agent IA, et avec quels garde-fous." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA en amont du choix d'un outil." },
+              { label: 'Toutes nos solutions IA', href: '/solutions-ia', tag: 'Solutions IA', desc: "Du diagnostic au déploiement : la vue d'ensemble de nos accompagnements IA pour entreprises." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div

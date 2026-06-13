@@ -31,7 +31,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
-const META_DESC = "Diagnostic IA en une journée : cartographie de vos processus automatisables, priorisation impact/effort, feuille de route chiffrée. Un livrable actionnable, sans engagement."
+const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
 const H1 = "Diagnostic IA : votre feuille de route en une journée"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
@@ -547,7 +547,7 @@ export default function DiagnosticIAPage() {
             Pour aller plus loin
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Du cadrage stratégique au développement, explorez la suite logique du diagnostic.
+            Du cadrage stratégique au développement, explorez la suite logique du diagnostic, ou parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA par usage</Link> et l'<Link to="/ia-secteurs" style={aStyle}>IA par secteur d'activité</Link>.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[

@@ -32,7 +32,7 @@ const aStyle = { color: c, fontWeight: 600 }
 const SLUG = 'solutions-ia'
 const META_TITLE = 'Solutions IA sur mesure pour entreprises | Masteria'
 const META_DESC =
-  "Solutions IA sur mesure : copilote interne, assistant documentaire (RAG), agent support, automatisation documentaire, agent commercial, chatbot, intégration LLM/RAG. Code livré au client."
+  "Solutions IA sur mesure : copilote interne, assistant documentaire RAG, agent support, automatisation, chatbot, intégration LLM. Code livré au client."
 const H1 = 'Solutions IA sur mesure pour entreprises'
 
 const ICONS = {
@@ -51,6 +51,14 @@ const HUB_FAQ = [
   {
     q: 'À qui appartient le code des solutions développées ?',
     a: "À vous. Le code développé pour votre projet vous appartient, comme vos données. Nous documentons la solution et transférons la compétence à vos équipes pour qu'elles l'exploitent et la fassent évoluer en autonomie. Vous n'êtes pas enfermé dans un abonnement à une plateforme fermée.",
+  },
+  {
+    q: 'Comment choisir la bonne solution pour mon besoin ?',
+    a: "Partez du résultat attendu : retrouver de l'information mène vers l'assistant documentaire, décharger le support vers l'agent de support, traiter des documents entrants vers l'automatisation. Un même besoin combine souvent plusieurs briques. C'est l'objet du cadrage, gratuit, qui définit le périmètre avant tout chiffrage.",
+  },
+  {
+    q: 'Quelle différence entre une solution sur mesure et un outil IA sur étagère ?',
+    a: "Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est conçue pour votre usage, branchée sur vos données et vos outils, et vous en êtes propriétaire. Pour un outil ou un copilote développé autour d'un métier précis, voyez aussi nos outils IA sur mesure, qui abordent le sujet sous l'angle du poste de travail.",
   },
 ]
 

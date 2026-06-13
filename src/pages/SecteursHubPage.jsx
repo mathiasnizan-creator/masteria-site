@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Landmark, Factory, HeartPulse, Scale, ShoppingCart, Truck,
@@ -29,8 +30,8 @@ const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }
 
-const META_TITLE = "IA par secteur d'activité · conseil & développement | Masteria"
-const META_DESC = "IA par secteur d'activité : banque, industrie, santé, juridique, retail, logistique, immobilier, secteur public, conseil, tourisme, agroalimentaire, tech. Conseil et développement sur mesure pour chaque secteur."
+const META_TITLE = "IA par secteur d'activité · conseil & dev IA | Masteria"
+const META_DESC = "IA par secteur : banque, industrie, santé, juridique, retail, logistique, secteur public, tech et plus. Conseil et dev IA sur mesure. Cadrage gratuit."
 const H1 = "IA par secteur d'activité : conseil et développement sur mesure"
 
 /* Mapping nom d'icône (données) -> composant lucide pour le hub. */
@@ -44,6 +45,53 @@ const APPROACH = [
   { icon: Cpu, title: 'Un développement sur mesure', desc: "Agents, copilotes, intégrations LLM/RAG sur vos données : nous construisons les solutions propres à votre métier, du prototype à la mise en production." },
   { icon: Workflow, title: 'Une autonomie en sortie', desc: "Documentation et transfert systématiques : vous restez propriétaire du code et capable de faire vivre la solution une fois en production." },
 ]
+
+/* FAQ du hub : questions transverses au cluster, dont « combien coûte » (honnête) et différenciation. */
+const HUB_FAQ = [
+  {
+    q: "Comment l'approche IA change-t-elle selon le secteur d'activité ?",
+    a: "La valeur de l'IA et ses garde-fous dépendent du métier : conformité LCB-FT en banque, hébergement HDS en santé, secret professionnel dans le droit, souveraineté dans le public, propriété intellectuelle dans l'industrie. Les cas d'usage et les contraintes diffèrent, c'est pourquoi chaque secteur a sa page dédiée et son cadrage propre.",
+  },
+  {
+    q: "Mon secteur n'a pas de page dédiée : pouvez-vous quand même intervenir ?",
+    a: "Oui. Notre méthode (cadrer, développer, rendre autonome) s'applique à tout secteur B2B, même hors des douze pages publiées. Décrivez votre activité et vos enjeux : nous revenons sous 24 heures avec une première lecture des cas d'usage pertinents et une proposition de cadrage gratuit, sans engagement.",
+  },
+  {
+    q: "Combien coûte un projet IA par secteur d'activité ?",
+    a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration à vos systèmes. Nous travaillons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Le cadrage initial est gratuit et débouche sur un devis ferme.",
+  },
+  {
+    q: "Qu'est-ce qui distingue Masteria d'une ESN ou d'un éditeur généraliste ?",
+    a: "Nous sommes un cabinet spécialisé uniquement sur l'IA, indépendant des éditeurs : nous ne vendons ni licence ni plateforme. Nous cadrons la stratégie, développons les solutions adaptées aux contraintes de votre secteur, documentons et transférons. Vous restez propriétaire du code et autonome, plutôt que captif d'un outil ou d'un abonnement.",
+  },
+  {
+    q: "Faites-vous aussi de la formation en plus du conseil et du développement ?",
+    a: "Oui. Au-delà du conseil et du développement sur mesure, nous formons vos équipes pour qu'elles sachent faire fonctionner et étendre ce qui a été construit, par métier et par outil. Le volet formation est certifié Qualiopi et finançable par votre OPCO en France ; le conseil et le développement, eux, restent des prestations de service non finançables par l'OPCO.",
+  },
+]
+
+function FAQItem({ q, a, color }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div style={{ borderBottom: '1px solid #E5E7EB' }}>
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          width: '100%', textAlign: 'left', background: 'none', border: 'none',
+          padding: '20px 0', cursor: 'pointer', display: 'flex',
+          justifyContent: 'space-between', alignItems: 'center', gap: 16,
+        }}
+        aria-expanded={open}
+      >
+        <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
+        <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
+      </button>
+      {open && (
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
+      )}
+    </div>
+  )
+}
 
 export default function SecteursHubPage() {
   const breadcrumbs = [
@@ -74,6 +122,7 @@ export default function SecteursHubPage() {
         description={META_DESC}
         slug={SLUG}
         breadcrumbs={breadcrumbs}
+        faqItems={HUB_FAQ}
         extraJsonLd={itemListJsonLd}
       />
 
@@ -209,6 +258,25 @@ export default function SecteursHubPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <div style={kickerStyle}>FAQ</div>
+          <h2 style={{ ...h2Style, marginBottom: 32 }}>Questions fréquentes sur l'IA par secteur</h2>
+          <div>
+            {HUB_FAQ.map((item, i) => (
+              <FAQItem key={i} q={item.q} a={item.a} color={c} />
+            ))}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
+            Pour aller plus loin, faites un{' '}
+            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, explorez{' '}
+            <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>toutes nos solutions IA</Link> ou{' '}
+            <Link to="/contact" style={{ color: c, fontWeight: 600 }}>contactez notre équipe</Link>.
+          </p>
         </div>
       </section>
 

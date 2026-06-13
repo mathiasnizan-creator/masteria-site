@@ -29,7 +29,7 @@ export const SOLUTIONS = [
     h1: "Copilote IA interne : un assistant métier connecté à vos données",
     metaTitle: 'Copilote IA interne sur mesure | Masteria',
     metaDesc:
-      "Copilote IA interne connecté à vos données et à vos outils : réponses sourcées, rédaction, actions encadrées. Développement sur mesure, code livré au client. Devis sur cadrage gratuit.",
+      "Copilote IA interne connecté à vos données et outils : réponses sourcées, rédaction, actions encadrées. Sur mesure, code livré. Cadrage gratuit.",
     directAnswer:
       "Un copilote IA interne est un assistant conçu pour un métier précis, branché sur vos données et vos applications. Il répond avec des sources, rédige vos documents et déclenche des actions encadrées. Masteria le développe sur mesure, l'intègre à votre système d'information et vous en transfère le code.",
     whatItIs:
@@ -80,6 +80,10 @@ export const SOLUTIONS = [
         q: 'Nos données restent-elles confidentielles ?',
         a: "Oui. La confidentialité est un critère de conception. Les accès sont cloisonnés selon vos droits internes, les données sensibles peuvent rester dans un périmètre maîtrisé et, selon vos exigences, l'hébergement se fait dans l'Union européenne. Nous ne réutilisons jamais vos données pour entraîner des modèles.",
       },
+      {
+        q: 'En quoi diffère-t-il de ChatGPT ou d\'un assistant générique ?',
+        a: "Un assistant grand public ignore votre contexte et ne se connecte pas à vos systèmes. Un copilote interne est branché sur vos documents, vos bases et vos outils : il répond avec vos sources, applique vos droits d'accès et déclenche des actions encadrées dans vos applications. Vous en êtes propriétaire, au lieu de dépendre d'un abonnement à une plateforme fermée.",
+      },
     ],
     relatedSolutions: ['assistant-documentaire-ia', 'integration-llm-rag', 'agent-commercial-ia'],
   },
@@ -92,7 +96,7 @@ export const SOLUTIONS = [
     h1: "Assistant documentaire IA : interroger votre base documentaire en langage naturel",
     metaTitle: 'Assistant documentaire IA (RAG) sur mesure | Masteria',
     metaDesc:
-      "Assistant documentaire IA en RAG sur votre base : réponses sourcées, recherche en langage naturel dans vos documents. Développement sur mesure, code livré. Cadrage gratuit.",
+      "Assistant documentaire IA (RAG) sur votre base : réponses sourcées, recherche en langage naturel dans vos documents. Code livré. Cadrage gratuit.",
     directAnswer:
       "Un assistant documentaire IA rend votre base documentaire interrogeable en langage naturel. Au lieu de chercher dans des dossiers, vos équipes posent une question et obtiennent une réponse synthétique avec les sources citées. Masteria le construit en RAG sur vos documents, l'intègre à vos outils et vous en livre le code.",
     whatItIs:
@@ -143,6 +147,10 @@ export const SOLUTIONS = [
         q: 'L\'assistant peut-il inventer des réponses ?',
         a: "Le RAG est précisément conçu pour limiter ce risque : les réponses sont générées à partir de passages réels de vos documents et accompagnées des sources, ce qui rend chaque affirmation vérifiable. Sur les sujets sensibles, nous ajoutons des garde-fous et une invitation à vérifier la source. La traçabilité reste le meilleur rempart contre les approximations.",
       },
+      {
+        q: 'En quoi diffère-t-il d\'un moteur de recherche interne ?',
+        a: "Une recherche classique renvoie une liste de documents à ouvrir et à lire. Un assistant documentaire en RAG comprend la question en langage naturel et renvoie une réponse synthétique directement, avec les extraits sources en appui. Vous gagnez le temps de lecture et de recoupement, tout en gardant la possibilité de vérifier chaque affirmation à la source.",
+      },
     ],
     relatedSolutions: ['integration-llm-rag', 'copilote-ia-interne', 'agent-support-client-ia'],
   },
@@ -155,7 +163,7 @@ export const SOLUTIONS = [
     h1: "Agent IA de support client : traiter les demandes de bout en bout",
     metaTitle: 'Agent IA de support client sur mesure | Masteria',
     metaDesc:
-      "Agent IA de support client : qualification, réponses sourcées, escalade humaine sur les cas sensibles. Connecté à votre base et vos outils. Développement sur mesure, code livré.",
+      "Agent IA de support client : qualification, réponses sourcées, escalade humaine sur les cas sensibles. Sur mesure, code livré. Cadrage gratuit.",
     directAnswer:
       "Un agent IA de support client qualifie les demandes, répond à partir de votre base de connaissances et escalade les cas sensibles vers un humain. Branché sur votre outil de ticketing et vos données, il absorbe les demandes répétitives et fait gagner du temps à vos équipes. Masteria le développe sur mesure et vous en livre le code.",
     whatItIs:
@@ -206,6 +214,10 @@ export const SOLUTIONS = [
         q: 'À qui appartient le code de l\'agent ?',
         a: "À vous. Le code et la configuration de l'agent vous appartiennent, comme vos données et l'historique des échanges. Nous documentons la solution et transférons la compétence à vos équipes pour qu'elles supervisent l'agent, enrichissent la base et le fassent évoluer en autonomie.",
       },
+      {
+        q: 'En quoi diffère-t-il d\'un chatbot de support classique ?',
+        a: "Un chatbot à scénarios suit des arbres de décision rigides et bute dès qu'une demande sort du script. Un agent IA comprend la demande en langage naturel, répond à partir de votre base avec sources, exécute des actions dans votre outil de ticketing et escalade proprement vers un humain. Il traite des cas réels de bout en bout, pas seulement des questions prévues d'avance.",
+      },
     ],
     relatedSolutions: ['chatbot-ia-sur-mesure', 'assistant-documentaire-ia', 'automatisation-documentaire-ia'],
   },
@@ -218,7 +230,7 @@ export const SOLUTIONS = [
     h1: "Automatisation du traitement documentaire : de la pièce reçue à la donnée exploitable",
     metaTitle: 'Automatisation documentaire IA sur mesure | Masteria',
     metaDesc:
-      "Automatisation du traitement documentaire par IA : lecture, extraction, classification et routage de vos documents entrants sans ressaisie. Sur mesure, code livré. Cadrage gratuit.",
+      "Automatisation documentaire IA : lecture, extraction, classification et routage de vos documents sans ressaisie. Sur mesure, code livré. Cadrage gratuit.",
     directAnswer:
       "L'automatisation du traitement documentaire fait passer un document reçu (facture, contrat, formulaire, courrier) à une donnée exploitable, sans ressaisie. L'IA lit, extrait les informations clés, classe et route vers le bon système, avec un contrôle humain sur les cas incertains. Masteria développe cette chaîne sur mesure et vous en livre le code.",
     whatItIs:
@@ -266,6 +278,10 @@ export const SOLUTIONS = [
         a: "À vous. Le code, les règles de traitement et la configuration vous appartiennent, comme vos documents et les données extraites. Nous documentons la chaîne et transférons la compétence à vos équipes pour qu'elles ajustent les seuils, ajoutent des types de documents et fassent évoluer la solution en autonomie.",
       },
       {
+        q: 'En quoi diffère-t-elle d\'un OCR classique ?',
+        a: "Un OCR transcrit du texte mais ne comprend ni la nature du document ni le sens des champs, et bute sur les mises en page variées. Une chaîne pilotée par IA générative comprend le contexte, extrait l'information utile même quand le format change, la contrôle et la route vers le bon système. Vous passez d'une simple reconnaissance de texte à un traitement de bout en bout.",
+      },
+      {
         q: 'Que se passe-t-il quand un document est ambigu ?',
         a: "Il est présenté à un humain. La chaîne calcule un score de confiance : les cas clairs sont traités automatiquement, les cas incertains ou à enjeu sont routés vers une interface de validation. Chaque décision est tracée. Vous gardez la main sur ce qui doit rester contrôlé, et le système apprend des corrections.",
       },
@@ -281,7 +297,7 @@ export const SOLUTIONS = [
     h1: "Agent IA commercial : prospection, propositions et CRM augmentés",
     metaTitle: 'Agent IA commercial sur mesure | Masteria',
     metaDesc:
-      "Agent IA commercial : qualification de prospects, préparation de propositions, mise à jour du CRM. Connecté à vos données et vos outils. Développement sur mesure, code livré au client.",
+      "Agent IA commercial : qualification de prospects, propositions, mise à jour du CRM, connecté à vos outils. Sur mesure, code livré. Cadrage gratuit.",
     directAnswer:
       "Un agent IA commercial appuie le cycle de vente : il recherche et qualifie des prospects, prépare des propositions à partir de vos modèles et tient le CRM à jour. Branché sur vos données et vos outils, il décharge les commerciaux des tâches répétitives pour qu'ils se concentrent sur la relation. Masteria le développe sur mesure et vous en livre le code.",
     whatItIs:
@@ -332,6 +348,10 @@ export const SOLUTIONS = [
         q: 'L\'agent envoie-t-il des e-mails tout seul ?',
         a: "Seulement si vous le décidez, et dans un cadre strict. Par défaut, l'agent prépare et propose : les envois sortants sensibles restent sous validation humaine. La prospection est encadrée pour respecter le RGPD et éviter le démarchage de masse. Vous gardez la main sur ce qui part au nom de l'entreprise.",
       },
+      {
+        q: 'En quoi diffère-t-il d\'un outil de prospection sur étagère ?',
+        a: "Un outil générique impose son fonctionnement et ne connaît ni votre catalogue, ni vos modèles, ni vos règles de prix. Un agent sur mesure est branché sur votre CRM et vos contenus réels, prépare des propositions à votre terminologie et s'intègre à votre process de vente. Vous en êtes propriétaire et gardez la validation humaine sur chaque action sortante.",
+      },
     ],
     relatedSolutions: ['copilote-ia-interne', 'chatbot-ia-sur-mesure', 'automatisation-documentaire-ia'],
   },
@@ -344,7 +364,7 @@ export const SOLUTIONS = [
     h1: "Chatbot IA sur mesure : un assistant conversationnel à votre image",
     metaTitle: 'Chatbot IA sur mesure | Masteria',
     metaDesc:
-      "Chatbot IA sur mesure connecté à vos données, intégré à votre site et vos canaux, avec votre ton et vos garde-fous. Développement sur mesure, code livré au client. Cadrage gratuit.",
+      "Chatbot IA sur mesure connecté à vos données, intégré à votre site et vos canaux, avec votre ton. Code livré au client. Cadrage gratuit.",
     directAnswer:
       "Un chatbot IA sur mesure est un assistant conversationnel développé pour votre usage : connecté à vos données, intégré à votre site ou à vos canaux, avec votre ton et vos garde-fous. Il répond, oriente et accompagne vos visiteurs ou vos équipes. Masteria le conçoit, l'intègre et vous en transmet le code, sans abonnement à une plateforme fermée.",
     whatItIs:
@@ -395,6 +415,10 @@ export const SOLUTIONS = [
         q: 'En quoi diffère-t-il d\'un chatbot acheté sur étagère ?',
         a: "Un chatbot sur étagère est générique et limité aux possibilités de sa plateforme. Un chatbot sur mesure est branché sur vos contenus réels, adopte votre ton, respecte vos garde-fous et s'intègre à vos outils. Surtout, vous en êtes propriétaire et maîtrisez son comportement, au lieu de dépendre d'un éditeur tiers.",
       },
+      {
+        q: 'Comment s\'intègre-t-il à notre site ou nos canaux ?',
+        a: "Par un widget web sur votre site, un branchement à votre espace client ou à vos canaux de messagerie, via des composants et des API maintenables. Nous nous adaptons à votre stack et à votre charte, sans vous enfermer dans une plateforme propriétaire. Le code de l'intégration vous revient et vos équipes peuvent le maintenir.",
+      },
     ],
     relatedSolutions: ['agent-support-client-ia', 'copilote-ia-interne', 'integration-llm-rag'],
   },
@@ -407,7 +431,7 @@ export const SOLUTIONS = [
     h1: "Intégration LLM & RAG : brancher l'IA dans vos outils existants",
     metaTitle: 'Intégration LLM & RAG dans vos outils | Masteria',
     metaDesc:
-      "Intégration LLM et RAG dans vos outils existants : API, connecteurs MCP, réponses sourcées sur vos données, sans refonte du SI. Développement sur mesure, code livré au client.",
+      "Intégration LLM & RAG dans vos outils existants : API, connecteurs MCP, réponses sourcées, sans refonte du SI. Sur mesure, code livré. Cadrage gratuit.",
     directAnswer:
       "Intégrer un LLM et du RAG, c'est brancher un modèle de langage et la recherche sur vos données directement dans vos outils existants (CRM, ERP, intranet, applications métier), via API et connecteurs, sans refonte de votre SI. Vos applications gagnent des capacités IA ancrées dans vos contenus. Masteria développe et intègre ces briques, et vous en livre le code.",
     whatItIs:
@@ -457,6 +481,10 @@ export const SOLUTIONS = [
       {
         q: 'À qui appartient le code de l\'intégration ?',
         a: "À vous. Le code des connecteurs et de la couche RAG, ainsi que vos données, vous appartiennent. Nous documentons l'intégration et transférons la compétence à vos équipes techniques pour qu'elles la maintiennent et la fassent évoluer en autonomie, sans dépendance imposée.",
+      },
+      {
+        q: 'Quelle différence avec le développement d\'une application IA séparée ?',
+        a: "Une application séparée crée un nouvel outil à ouvrir en parallèle de vos systèmes. L'intégration LLM et RAG ajoute des capacités IA là où vos équipes travaillent déjà (CRM, ERP, intranet), via API et connecteurs MCP. Vous gardez vos outils et vos habitudes, et l'IA gagne en adoption parce qu'elle vit dans votre environnement existant.",
       },
     ],
     relatedSolutions: ['copilote-ia-interne', 'assistant-documentaire-ia', 'automatisation-documentaire-ia'],

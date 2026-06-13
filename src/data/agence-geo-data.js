@@ -27,7 +27,7 @@ export const AGENCE_GEO_CITIES = [
     locale: 'fr-FR',
     coordinates: { latitude: 45.8992, longitude: 6.1294 },
     metaDesc:
-      "Agence IA à Annecy : Masteria cadre votre stratégie IA et développe vos agents, outils et automatisations sur mesure. Équipe Lyon, proximité Haute-Savoie. Premier cadrage gratuit.",
+      "Agence IA à Annecy : Masteria cadre votre stratégie IA et développe agents, outils et automatisations sur mesure. Proximité Haute-Savoie. Cadrage gratuit.",
     heroSubtitle:
       "Notre métier : aider les PME et ETI de Haute-Savoie à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre système d'information. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes.",
     localEconomy:
@@ -73,7 +73,7 @@ export const AGENCE_GEO_CITIES = [
     locale: 'fr-FR',
     coordinates: { latitude: 48.8566, longitude: 2.3522 },
     metaDesc:
-      "Agence IA à Paris : Masteria cadre votre stratégie IA et développe agents, outils et automatisations sur mesure pour les sièges sociaux, services et scale-ups franciliens. Cadrage gratuit.",
+      "Agence IA à Paris : Masteria cadre votre stratégie et développe agents, outils et automatisations sur mesure pour sièges et scale-ups. Cadrage gratuit.",
     heroSubtitle:
       "Notre métier : aider les directions générales et les équipes métier parisiennes à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre système d'information. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes.",
     localEconomy:
@@ -119,7 +119,7 @@ export const AGENCE_GEO_CITIES = [
     locale: 'fr-CH',
     coordinates: { latitude: 46.2044, longitude: 6.1432 },
     metaDesc:
-      "Agence IA à Genève : Masteria cadre votre stratégie IA et développe agents et automatisations sur mesure pour la finance, le négoce et les organisations du marché romand. Cadrage gratuit.",
+      "Agence IA à Genève : Masteria cadre votre stratégie et développe agents et automatisations sur mesure pour la finance et le négoce. Cadrage gratuit.",
     heroSubtitle:
       "Notre métier : aider les directions et les équipes métier genevoises à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre environnement, avec une attention particulière à la confidentialité et au cadre suisse.",
     localEconomy:
@@ -165,7 +165,7 @@ export const AGENCE_GEO_CITIES = [
     locale: 'fr-FR',
     coordinates: { latitude: 43.2965, longitude: 5.3698 },
     metaDesc:
-      "Agence IA à Marseille : Masteria cadre votre stratégie IA et développe agents, outils et automatisations sur mesure pour le maritime, la logistique, le tourisme et la santé. Cadrage gratuit.",
+      "Agence IA à Marseille : Masteria cadre votre stratégie et développe agents et automatisations sur mesure pour le maritime et le tourisme. Cadrage gratuit.",
     heroSubtitle:
       "Notre métier : aider les directions et les équipes métier marseillaises à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre système d'information. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes.",
     localEconomy:

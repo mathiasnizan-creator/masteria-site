@@ -415,8 +415,15 @@ export default function SecteurIAPage() {
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Stethoscope size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> Faire un diagnostic IA
             </Link>
+            <Link to="/solutions-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+              <Grid3x3 size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> Toutes nos solutions IA
+            </Link>
             <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Layers size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> Agence de développement IA
+            </Link>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: c, border: `1px solid ${c}`, borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 700, color: '#fff', textDecoration: 'none' }}>
+              Demander un cadrage gratuit
+              <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, Wallet, Users, Building2, CheckCircle, XCircle,
   AlertCircle, FileText, Calculator, Shield, Sparkles, TrendingUp,
-  FileCheck, MailCheck, Zap,
+  FileCheck, MailCheck, Zap, Lightbulb, Landmark, Percent, Compass, Info,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -89,6 +89,40 @@ const FAQ = [
     q: "Une formation IA totalement prise en charge, comment ça fonctionne ?",
     a: "Quand l'OPCO prend en charge 100 % du coût pédagogique, vous ne payez rien. C'est notre cas de figure le plus fréquent. À ne pas confondre avec les formations IA gratuites en ligne (MOOC, tutoriels) qui restent généralistes : nos sessions Masteria sont 100 % personnalisées sur vos cas d'usage métier, animées en présentiel ou distanciel par un formateur dédié.",
   },
+  {
+    q: "Le conseil ou le développement IA sur mesure sont-ils finançables par l'OPCO ?",
+    a: "Non. L'OPCO finance uniquement les actions de formation. Le conseil stratégique et le développement IA sur mesure (agent, outil, automatisation) sont des prestations de service, facturées au forfait sur devis. Selon votre profil et votre projet, d'autres dispositifs peuvent parfois s'appliquer (France Num, Bpifrance, crédit d'impôt innovation ou recherche, aides régionales), à étudier au cas par cas et sans garantie d'éligibilité. Nous ne promettons ni prise en charge ni taux : nous vous fournissons un devis détaillé et vous orientons vers les bons interlocuteurs.",
+  },
+  {
+    q: "Combien coûte un projet de conseil ou de développement IA ?",
+    a: "Sur devis. Un projet de conseil ou de développement IA se chiffre au forfait, après cadrage du périmètre, ou en régie selon le besoin. Le coût dépend de la complexité, du nombre de cas d'usage et du niveau d'intégration à votre système d'information. Plutôt que d'avancer un prix à l'aveugle, nous commençons par un diagnostic ou un échange de cadrage gratuit, puis vous remettons une proposition chiffrée. Le cadrage est sans engagement.",
+  },
+]
+
+/* Dispositifs POSSIBLES pour le conseil et le développement IA.
+ * Honnêteté stricte : ce sont des prestations de service (forfait/devis),
+ * NON finançables par l'OPCO. Aucun taux ni prise en charge promis. */
+const DISPOSITIFS_PROJET = [
+  {
+    icon: Compass,
+    name: 'France Num',
+    desc: "Le programme public d'accompagnement à la transformation numérique des TPE et PME. Selon votre profil et votre projet, un diagnostic ou un accompagnement au numérique peut s'y rattacher. À étudier au cas par cas, sans garantie d'éligibilité.",
+  },
+  {
+    icon: Landmark,
+    name: 'Bpifrance',
+    desc: "Aides à l'innovation, prêts et dispositifs de financement de projets technologiques. Un développement IA structurant peut, selon sa nature et sa maturité, entrer dans le périmètre de certains dispositifs Bpifrance. L'éligibilité s'apprécie projet par projet.",
+  },
+  {
+    icon: Percent,
+    name: "Crédit d'impôt innovation et recherche (CII / CIR)",
+    desc: "Pour les développements présentant un caractère innovant ou de R&D, le CII ou le CIR peuvent ouvrir un crédit d'impôt sur les dépenses éligibles. L'appréciation est technique et relève de votre expert-comptable ou d'un conseil spécialisé.",
+  },
+  {
+    icon: Building2,
+    name: 'Aides régionales',
+    desc: "Certaines régions soutiennent la digitalisation et l'innovation des entreprises (subventions, chèques numériques, appels à projets). Les dispositifs varient selon votre territoire et évoluent dans le temps : à vérifier auprès de votre région.",
+  },
 ]
 
 /* ══════════════════════════════════════════════════════════════════
@@ -99,8 +133,8 @@ export default function FinancementPage() {
   return (
     <>
       <SEOHead
-        title="Financer sa formation IA en entreprise | OPCO 100% | Masteria"
-        description="Formation IA finançable à 100 % par votre OPCO. Masteria certifié Qualiopi gère votre dossier de A à Z. Tarifs, OPCO compatibles, délais."
+        title="Financement IA : formation OPCO et projet | Masteria"
+        description="Formation IA finançable à 100 % par votre OPCO (Qualiopi). Conseil et dev IA sur devis : France Num, Bpifrance, CII/CIR à étudier. Devis sous 24 h."
         slug="financement-formation-ia"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -671,6 +705,114 @@ export default function FinancementPage() {
               </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+       * FINANCER UN PROJET DE CONSEIL OU DE DÉVELOPPEMENT IA
+       * ═══════════════════════════════════════════════════════════ */}
+      <section style={{ padding: '80px 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 980, margin: '0 auto' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: BLUE_LIGHT_BG, padding: '6px 14px', borderRadius: 999,
+            fontSize: 12.5, fontWeight: 700, color: BLUE_DARK, marginBottom: 16,
+            border: `1px solid ${BLUE}25`,
+          }}>
+            <Lightbulb size={15} color={BLUE} /> Conseil et développement IA
+          </div>
+          <h2 style={{
+            fontFamily: 'Nunito, sans-serif', fontWeight: 800,
+            fontSize: 'clamp(26px, 3.8vw, 34px)', color: '#0A0A0A',
+            marginBottom: 12, letterSpacing: '-0.01em',
+          }}>
+            Financer un projet de conseil ou de développement IA
+          </h2>
+
+          {/* Réponse directe citable */}
+          <p style={{
+            fontSize: 16.5, color: '#0A0A0A', lineHeight: 1.7, maxWidth: 860,
+            marginBottom: 24, fontWeight: 500,
+            background: '#F9FAFB', border: '1px solid #E5E7EB',
+            borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0',
+            padding: '20px 24px',
+          }}>
+            <strong>
+              Le conseil et le développement IA sur mesure ne sont pas finançables par l'OPCO :
+              seule la formation l'est. Ce sont des prestations de service, facturées au forfait
+              sur devis. Selon votre profil et votre projet, d'autres dispositifs peuvent parfois
+              s'appliquer (France Num, Bpifrance, crédit d'impôt innovation ou recherche, aides
+              régionales), à étudier au cas par cas, sans garantie d'éligibilité.
+            </strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.7, maxWidth: 860, marginBottom: 32 }}>
+            L'OPCO finance des actions de formation, pas des prestations de conseil ni du
+            développement logiciel. Un accompagnement stratégique, la création d'un agent IA ou
+            d'un outil sur mesure relèvent donc d'un budget projet, distinct du budget formation.
+            Les dispositifs ci-dessous existent et peuvent, dans certains cas, soutenir ce type de
+            dépense. Nous les signalons par transparence, sans promettre ni prise en charge ni taux :
+            l'éligibilité dépend de votre situation et se vérifie auprès de chaque organisme.
+          </p>
+
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16,
+            marginBottom: 28,
+          }}>
+            {DISPOSITIFS_PROJET.map(({ icon: Icon, name, desc }) => (
+              <div key={name} style={{
+                background: '#fff', borderRadius: 14, padding: '24px 26px',
+                border: '1px solid #E5E7EB',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
+                  <div style={{
+                    width: 42, height: 42, borderRadius: 10, background: BLUE_LIGHT_BG,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  }}>
+                    <Icon size={21} color={BLUE} strokeWidth={2.2} />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#0A0A0A', margin: 0, lineHeight: 1.25 }}>
+                    {name}
+                  </h3>
+                </div>
+                <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.65, margin: 0 }}>
+                  {desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            padding: '18px 24px', background: '#FAFAF7', borderRadius: 12,
+            border: '1px solid #E5E7EB',
+            display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 28,
+          }}>
+            <Info size={20} color={NEUTRAL} style={{ flexShrink: 0, marginTop: 2 }} />
+            <div style={{ color: '#374151', fontSize: 14, lineHeight: 1.6 }}>
+              Masteria n'instruit pas ces dispositifs et ne garantit aucune éligibilité. Nous
+              fournissons les éléments utiles à votre dossier (devis détaillé, description du projet)
+              et vous orientons vers les bons interlocuteurs. La décision finale appartient à
+              l'organisme financeur et à votre expert-comptable pour les volets fiscaux.
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <Link to="/diagnostic-ia" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 10,
+              background: BLUE, color: '#fff', padding: '14px 26px',
+              borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none',
+            }}>
+              Cadrer mon projet avec un diagnostic IA <ArrowRight size={17} />
+            </Link>
+            <Link to="/contact" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 10,
+              background: '#fff', color: '#0A0A0A', padding: '12px 24px',
+              borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none',
+              border: `2px solid ${BLUE}`,
+            }}>
+              Demander un devis projet
+            </Link>
           </div>
         </div>
       </section>

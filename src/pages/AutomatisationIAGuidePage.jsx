@@ -22,8 +22,8 @@ const SLUG = 'automatisation-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Automatisation IA : le guide complet pour les entreprises"
-const META_DESC = "Définition, exemples par métier, outils, méthode en 5 étapes, erreurs et budgets : le guide complet pour automatiser vos processus avec l'IA. Et l'option clé en main : nous développons vos automatisations sur mesure."
+const META_TITLE = "Automatisation IA : le guide complet | Masteria"
+const META_DESC = "Automatisation IA : définition, exemples par métier, outils, méthode en 5 étapes et budgets pour automatiser vos processus. Cadrage initial gratuit."
 const H1 = "Automatisation IA : le guide complet pour automatiser vos processus"
 
 /* ───────── Styles partagés ───────── */
@@ -468,7 +468,7 @@ export default function AutomatisationIAGuidePage() {
           </div>
 
           <p style={{ ...pStyle, ...prose, marginTop: 32, marginBottom: 0 }}>
-            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, dont le cadrage initial est gratuit.
+            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, dont le cadrage initial est gratuit. Pour situer vos priorités en quelques minutes, commencez par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link>.
           </p>
         </div>
       </section>
@@ -755,7 +755,7 @@ export default function AutomatisationIAGuidePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Un point d'honnêteté sur le financement : seule la formation est finançable par votre OPCO. Le conseil et le déploiement ne le sont pas, et une offre qui vous promet la prise en charge OPCO d'une prestation de conseil vous expose à un refus de financement. Pour le détail des deux approches, voyez la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> et l'<Link to="/agence-automatisation-ia" style={aStyle}>accompagnement par notre agence</Link>.
+            Un point d'honnêteté sur le financement : seule la formation est finançable par votre OPCO. Le conseil et le déploiement ne le sont pas, et une offre qui vous promet la prise en charge OPCO d'une prestation de conseil vous expose à un refus de financement. Pour le détail des deux approches, voyez la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> et l'<Link to="/agence-automatisation-ia" style={aStyle}>accompagnement par notre agence</Link>, ou l'ensemble de nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>.
           </p>
         </div>
       </section>

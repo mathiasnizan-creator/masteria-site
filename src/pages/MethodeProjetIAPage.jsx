@@ -554,7 +554,7 @@ export default function MethodeProjetIAPage() {
             Pour aller plus loin
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Du diagnostic au développement, explorez nos expertises et nos offres.
+            Du diagnostic au développement, explorez nos expertises et nos offres, ou parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA par usage</Link> et l'<Link to="/ia-secteurs" style={aStyle}>IA appliquée à votre secteur</Link>.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[

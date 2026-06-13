@@ -20,7 +20,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Meilleure agence IA : comment choisir en 2026 | Masteria'
-const META_DESC = "Aucun classement officiel ne désigne la meilleure agence IA. Typologie du marché, 8 critères vérifiables, 10 questions à poser et budgets 2026 pour choisir."
+const META_DESC = "Aucun classement officiel ne désigne la meilleure agence IA. Typologie, 8 critères vérifiables, 10 questions et budgets 2026 pour bien choisir."
 const H1 = 'Meilleure agence IA en 2026 : comment choisir (critères et comparatif)'
 
 /* ── Design system local : kickers, titres, cartes, tableaux ── */
@@ -139,6 +139,19 @@ const FAQ = [
   },
 ]
 
+/* ───────── JSON-LD ───────── */
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Masteria, conseil et développement IA',
+  description: META_DESC,
+  url: `https://www.master-ia.fr/${SLUG}`,
+  serviceType: ['Conseil IA', 'Stratégie IA', 'Développement de solutions IA', 'Automatisation IA', 'Formation IA'],
+  areaServed: ['France', 'Suisse', 'Belgique'],
+  provider: { '@id': 'https://www.master-ia.fr/#organization' },
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -191,6 +204,7 @@ export default function MeilleureAgenceIAPage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        extraJsonLd={serviceJsonLd}
       />
 
       {/* ── HERO clair ── */}
@@ -452,7 +466,8 @@ export default function MeilleureAgenceIAPage() {
             </p>
             <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
               Ce profil convient aux PME, aux ETI et aux directions métier qui veulent des résultats mesurables et des équipes autonomes. Pour un développement logiciel lourd ou un programme de transformation mondial, d'autres familles de ce guide seront plus adaptées : nous vous le dirons dès le premier échange. La présentation complète de l'agence se trouve sur la page{' '}
-              <Link to="/agence-ia" style={{ color: c, fontWeight: 600 }}>agence IA à Lyon</Link>.
+              <Link to="/agence-ia" style={{ color: c, fontWeight: 600 }}>agence IA à Lyon</Link>. Pour situer votre besoin avant d'engager une comparaison, notre{' '}
+              <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA gratuit</Link> dégage en quelques minutes la famille d'acteurs et les premiers cas d'usage adaptés à votre contexte.
             </p>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', marginTop: 24, lineHeight: 1.7 }}>

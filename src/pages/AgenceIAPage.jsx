@@ -24,8 +24,8 @@ const SLUG = 'agence-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Agence IA Lyon · Conseil & développement sur mesure | Masteria'
-const META_DESC = "Masteria, agence IA à Lyon : conseil stratégique, développement d'outils et d'agents IA sur mesure, automatisation des processus et formation. France, Suisse, Belgique. Premier cadrage gratuit."
+const META_TITLE = 'Agence IA Lyon · Conseil & dev sur mesure | Masteria'
+const META_DESC = "Agence IA à Lyon : conseil, développement d'agents et d'outils sur mesure, automatisation et formation. France, Suisse, Belgique. Premier cadrage gratuit."
 const H1 = 'Agence IA à Lyon : conseil, automatisation et formation des équipes'
 
 /* ── Design system local : kickers, titres, cartes, pastilles d'icônes ── */
@@ -467,9 +467,13 @@ export default function AgenceIAPage() {
               <FAQItem key={i} q={item.q} a={item.a} color={c} />
             ))}
           </div>
-          <p style={{ fontSize: 14, color: '#6B7280', marginTop: 28 }}>
+          <p style={{ fontSize: 14, color: '#6B7280', marginTop: 28, lineHeight: 1.75 }}>
             Vous comparez plusieurs prestataires ? Lisez notre guide{' '}
-            <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA : comment choisir en 2026</Link>.
+            <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA : comment choisir en 2026</Link>. Pour aller plus loin, découvrez notre{' '}
+            <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>expertise IA par secteur</Link>, nos{' '}
+            <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>solutions IA par cas d'usage</Link> et notre{' '}
+            <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet IA</Link>. Avant tout engagement, le{' '}
+            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre votre besoin et son périmètre.
           </p>
         </div>
       </section>

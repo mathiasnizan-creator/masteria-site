@@ -24,7 +24,7 @@ export const SECTEURS = [
     h1: "IA pour la banque, l'assurance et la finance : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour la banque & assurance · conseil & dev | Masteria',
     metaDesc:
-      "IA pour la banque, l'assurance et la finance : agents de synthèse de dossiers, automatisation conformité LCB-FT, copilotes souscription. Conseil et développement sur mesure, données maîtrisées. France, Suisse, Belgique.",
+      "IA pour la banque et l'assurance : synthèse de dossiers, conformité LCB-FT, copilotes souscription. Conseil et dev sur mesure. Cadrage gratuit.",
     tagline:
       "Synthèse de dossiers, conformité LCB-FT, souscription et relation client, dans un cadre où le secret bancaire et la traçabilité priment.",
     directAnswer:
@@ -82,6 +82,14 @@ export const SECTEURS = [
         q: "Comment se déroule un projet IA dans une banque ou une compagnie d'assurance ?",
         a: "Il commence par un cadrage du périmètre et des contraintes de données, suivi d'un prototype sur un cas prioritaire (par exemple la synthèse de dossiers). Vous jugez la valeur sur un flux réel avant tout déploiement à l'échelle. L'intégration au système d'information, la sécurité et la traçabilité sont traitées dès la conception, puis la solution est transférée à vos équipes.",
       },
+      {
+        q: "Combien coûte un projet IA pour une banque ou un assureur ?",
+        a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration au système d'information. Nous fonctionnons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Le cadrage initial est gratuit et débouche sur un devis ferme.",
+      },
+      {
+        q: "Qu'est-ce qui distingue Masteria d'une grande ESN ou d'un éditeur de solution ?",
+        a: "Nous sommes un cabinet spécialisé uniquement sur l'IA, indépendant des éditeurs, qui cadre la stratégie puis développe les solutions. Pas de licence à vendre ni de plateforme à imposer : nous choisissons le bon modèle pour votre cas, concevons pour le secret bancaire et la traçabilité, documentons et transférons. Vous restez propriétaire du code et autonome, plutôt que captif d'un outil.",
+      },
     ],
     relatedSectors: ['ia-juridique', 'ia-secteur-public', 'ia-services-conseil'],
   },
@@ -94,7 +102,7 @@ export const SECTEURS = [
     h1: "IA pour l'industrie et l'énergie : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour l'industrie & l'énergie · conseil & dev | Masteria",
     metaDesc:
-      "IA pour l'industrie et l'énergie : documentation technique, maintenance, qualité, automatisation des devis et appels d'offres. Conseil et développement sur mesure, possibilité on-premise. France, Suisse, Belgique.",
+      "IA pour l'industrie et l'énergie : documentation technique, maintenance, qualité, appels d'offres. Dev sur mesure, on-premise possible. Cadrage gratuit.",
     tagline:
       "Documentation technique, maintenance, qualité et réponses aux appels d'offres, avec une propriété intellectuelle qui ne quitte pas l'atelier.",
     directAnswer:
@@ -152,6 +160,14 @@ export const SECTEURS = [
         q: "Comment accélérer nos réponses aux appels d'offres avec l'IA ?",
         a: "En outillant le bureau d'études et le commerce : une automatisation assemble un projet de réponse à partir de vos briques techniques et commerciales déjà rédigées, identifie les exigences du cahier des charges et réduit le temps de réassemblage. La réponse finale reste relue et arbitrée par vos experts.",
       },
+      {
+        q: "Combien coûte un projet IA pour un industriel ?",
+        a: "Le budget se définit au cas par cas selon le périmètre, la sensibilité de la propriété intellectuelle et le besoin éventuel de déploiement on-premise. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype sur un cas prioritaire (documentation, maintenance) reste un engagement mesuré ; l'industrialisation est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Pourquoi un cabinet IA plutôt qu'un intégrateur ou un éditeur de GED ?",
+        a: "Parce que nous sommes spécialisés sur l'IA et indépendants des éditeurs : nous ne vendons ni licence ni plateforme, nous concevons la solution adaptée à votre atelier, y compris en réseau isolé ou on-premise. Le code et la documentation vous appartiennent, et votre savoir-faire reste à l'intérieur de l'usine. Vous gagnez un partenaire d'ingénierie, pas une dépendance logicielle.",
+      },
     ],
     relatedSectors: ['ia-logistique-transport', 'ia-agroalimentaire', 'ia-immobilier-btp'],
   },
@@ -164,7 +180,7 @@ export const SECTEURS = [
     h1: "IA pour la santé et la pharma : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour la santé & la pharma · conseil & dev | Masteria',
     metaDesc:
-      "IA pour la santé et la pharma : assistants documentaires sur protocoles, aide à la pharmacovigilance, affaires réglementaires. Conseil et développement sur mesure, hébergement HDS. France, Suisse, Belgique.",
+      "IA pour la santé et la pharma : protocoles, pharmacovigilance, affaires réglementaires. Dev sur mesure, hébergement HDS. Cadrage gratuit.",
     tagline:
       "Assistants documentaires sur protocoles, pharmacovigilance et affaires réglementaires, avec des données de santé hébergées dans un cadre conforme.",
     directAnswer:
@@ -222,6 +238,14 @@ export const SECTEURS = [
         q: "Comment l'IA peut-elle aider la pharmacovigilance et les affaires réglementaires ?",
         a: "En absorbant le travail documentaire répétitif : pré-lecture et pré-codage des cas, repérage des informations manquantes, structuration des dossiers, veille réglementaire sourcée. Les délais réglementaires sont mieux tenus, la traçabilité est préservée, et le jugement final reste celui de vos experts.",
       },
+      {
+        q: "Combien coûte un projet IA en santé ou en pharma ?",
+        a: "Le budget dépend du périmètre, des exigences d'hébergement HDS et du niveau de validation à intégrer. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Un assistant documentaire pilote reste un engagement contenu ; une chaîne de pharmacovigilance ou de réglementaire est plus conséquente. Le cadrage initial est gratuit et débouche sur un devis ferme, sans prix sur étagère.",
+      },
+      {
+        q: "En quoi votre approche diffère-t-elle d'un éditeur de logiciel santé ?",
+        a: "Nous sommes un cabinet spécialisé IA, indépendant des éditeurs : nous ne vendons pas de licence, nous concevons une solution conforme aux données de santé et à vos processus qualité, dans un hébergement HDS. La validation humaine est intégrée par conception, le code vous appartient, et vous restez autonome. Vous obtenez une solution sur mesure, pas un produit standard à adapter de force.",
+      },
     ],
     relatedSectors: ['ia-juridique', 'ia-secteur-public', 'ia-agroalimentaire'],
   },
@@ -234,7 +258,7 @@ export const SECTEURS = [
     h1: "IA pour le juridique et les professions du droit : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour le juridique & le droit · conseil & dev | Masteria',
     metaDesc:
-      "IA pour le juridique : analyse de contrats, recherche jurisprudentielle, rédaction d'actes, due diligence. Conseil et développement sur mesure, secret professionnel préservé. France, Suisse, Belgique.",
+      "IA pour le juridique : analyse de contrats, recherche jurisprudentielle, rédaction d'actes. Dev sur mesure, secret professionnel préservé. Cadrage gratuit.",
     tagline:
       "Analyse de contrats, recherche jurisprudentielle et rédaction assistée, dans le respect strict du secret professionnel.",
     directAnswer:
@@ -292,6 +316,14 @@ export const SECTEURS = [
         q: "Quels gains concrets pour un cabinet ou une direction juridique ?",
         a: "Du temps repris sur le travail préparatoire : comparaison de contrats, première synthèse de dossiers volumineux, recherche documentaire, brouillons d'actes. Ce temps libéré se reporte sur l'analyse à forte valeur. La première étape est un cadrage et un prototype sur un cas prioritaire pour mesurer le gain avant tout déploiement.",
       },
+      {
+        q: "Combien coûte un projet IA pour un cabinet ou une direction juridique ?",
+        a: "Le budget se définit selon le périmètre, le niveau de confidentialité exigé et le volume de documents à traiter. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil d'analyse de contrats pilote reste un engagement mesuré ; un copilote branché sur toute votre base est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme, sans tarif sur étagère.",
+      },
+      {
+        q: "Pourquoi vous plutôt qu'un outil de legaltech sur le marché ?",
+        a: "Une legaltech impose son produit et son hébergement ; nous concevons une solution sur mesure, ancrée dans vos dossiers et vos modèles, qui respecte le secret professionnel par construction. Indépendants des éditeurs, nous ancrons les réponses dans vos sources avec citation, documentons et transférons. Le code vous appartient et le juriste garde la main, sans dépendance à un abonnement externe.",
+      },
     ],
     relatedSectors: ['ia-banque-assurance', 'ia-services-conseil', 'ia-secteur-public'],
   },
@@ -304,7 +336,7 @@ export const SECTEURS = [
     h1: "IA pour le retail et l'e-commerce : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour le retail & l'e-commerce · conseil & dev | Masteria",
     metaDesc:
-      "IA pour le retail et l'e-commerce : génération de fiches produits, support client, merchandising, contenus multilingues. Conseil et développement sur mesure. France, Suisse, Belgique.",
+      "IA pour le retail et l'e-commerce : fiches produits, support client, contenus multilingues. Dev sur mesure sur votre catalogue. Cadrage gratuit.",
     tagline:
       "Fiches produits à l'échelle, support client, merchandising et contenus multilingues, branchés sur votre catalogue et votre PIM.",
     directAnswer:
@@ -362,6 +394,14 @@ export const SECTEURS = [
         q: "Faut-il connecter l'IA à notre catalogue et notre CRM ?",
         a: "C'est ce qui fait la différence. Une IA branchée sur votre PIM, votre plateforme e-commerce et votre CRM travaille sur vos données réelles : fiches à jour, support cohérent, recommandations pertinentes. Nous construisons les connecteurs nécessaires pour que les outils exploitent l'existant sans ressaisie et dans le respect du RGPD.",
       },
+      {
+        q: "Combien coûte un projet IA pour le retail ou l'e-commerce ?",
+        a: "Le budget dépend du périmètre, du nombre de connecteurs (PIM, e-commerce, CRM) et du volume éditorial à industrialiser. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil d'enrichissement de fiches pilote reste un engagement contenu ; une chaîne complète multilingue est plus large. Le cadrage initial est gratuit et débouche sur un devis ferme.",
+      },
+      {
+        q: "Pourquoi du sur-mesure plutôt qu'un plugin IA du marché ?",
+        a: "Un plugin générique travaille à côté de vos données ; nous branchons l'IA directement sur votre PIM, votre catalogue et votre CRM, en tenant votre ton de marque et le RGPD. Indépendants des éditeurs, nous choisissons le bon modèle selon le coût et le cas, documentons et transférons. Vous gardez la main sur la marque et les données, sans abonnement à un outil que vous ne maîtrisez pas.",
+      },
     ],
     relatedSectors: ['ia-logistique-transport', 'ia-tourisme-hotellerie', 'ia-tech-saas'],
   },
@@ -374,7 +414,7 @@ export const SECTEURS = [
     h1: "IA pour la logistique et le transport : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour la logistique & transport · conseil & dev | Masteria',
     metaDesc:
-      "IA pour la logistique et le transport : optimisation des tournées, suivi des expéditions, traitement documentaire douanier, support transporteurs. Conseil et développement sur mesure. France, Suisse, Belgique.",
+      "IA pour la logistique et le transport : tournées, suivi des expéditions, traitement douanier. Dev sur mesure sur TMS/WMS. Cadrage gratuit.",
     tagline:
       "Optimisation des tournées, suivi des expéditions et traitement documentaire, branchés sur votre TMS et votre WMS.",
     directAnswer:
@@ -432,6 +472,14 @@ export const SECTEURS = [
         q: "Comment soulager le suivi des expéditions et le service client ?",
         a: "En automatisant les réponses de statut à partir de vos données de suivi et en alertant sur les expéditions à risque. Le service client transport est désengorgé des demandes répétitives, avec un passage à l'humain sur les cas sensibles. Le tout reste branché sur vos systèmes pour garantir la justesse des informations.",
       },
+      {
+        q: "Combien coûte un projet IA en logistique ou en transport ?",
+        a: "Le budget se définit selon le périmètre, le nombre de systèmes à connecter (TMS, WMS, télématique) et le volume documentaire à traiter. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Une automatisation documentaire pilote reste un engagement mesuré ; une couche d'exploitation complète est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Pourquoi vous plutôt qu'un module IA de notre TMS ?",
+        a: "Un module embarqué reste limité au périmètre de l'éditeur ; nous construisons une couche sur mesure qui relie vos systèmes (TMS, WMS, e-mails, documents) et traite ce qui crée de la valeur chez vous. Indépendants des éditeurs, nous concevons pour la fiabilité et l'intégration, documentons et transférons. Vous gardez la propriété du code et l'autonomie, sans attendre la roadmap d'un fournisseur.",
+      },
     ],
     relatedSectors: ['ia-industrie', 'ia-retail-ecommerce', 'ia-agroalimentaire'],
   },
@@ -444,7 +492,7 @@ export const SECTEURS = [
     h1: "IA pour l'immobilier et le BTP : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour l'immobilier & le BTP · conseil & dev | Masteria",
     metaDesc:
-      "IA pour l'immobilier et le BTP : rédaction d'annonces, analyse de baux et de marchés, réponses aux appels d'offres, suivi de chantier documentaire. Conseil et développement sur mesure. France, Suisse, Belgique.",
+      "IA pour l'immobilier et le BTP : annonces, analyse de baux, marchés (DCE/CCTP), suivi de chantier. Conseil et dev sur mesure. Cadrage gratuit.",
     tagline:
       "Annonces et mandats, analyse de baux et de DCE, réponses aux marchés et suivi documentaire de chantier.",
     directAnswer:
@@ -502,6 +550,14 @@ export const SECTEURS = [
         q: "Peut-on faire analyser des baux et contrats par l'IA en toute sécurité ?",
         a: "L'IA prépare l'analyse (repérage des clauses sensibles, écarts par rapport à votre standard, synthèse) avec des réponses renvoyant aux passages d'origine. La validation et l'engagement restent du ressort du gestionnaire ou du juriste. Les données restent dans un périmètre maîtrisé et conforme au RGPD.",
       },
+      {
+        q: "Combien coûte un projet IA pour l'immobilier ou le BTP ?",
+        a: "Le budget dépend du périmètre, des outils métier à connecter (transaction, gestion locative, GED de chantier) et du volume documentaire. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil de rédaction d'annonces pilote reste un engagement contenu ; une chaîne de réponse aux marchés est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Qu'apportez-vous de plus qu'un logiciel métier avec une option IA ?",
+        a: "Un logiciel métier ajoute une fonction IA limitée à son périmètre ; nous concevons une solution sur mesure branchée sur vos données et vos référentiels, qui couvre vos cas réels (annonces, baux, DCE, chantier). Indépendants des éditeurs, nous gardons la validation humaine sur les actes contractuels, documentons et transférons. Le code vous appartient, sans dépendance à un abonnement externe.",
+      },
     ],
     relatedSectors: ['ia-industrie', 'ia-juridique', 'ia-secteur-public'],
   },
@@ -514,7 +570,7 @@ export const SECTEURS = [
     h1: "IA pour le secteur public et les collectivités : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour le secteur public · conseil & dev | Masteria',
     metaDesc:
-      "IA pour le secteur public et les collectivités : traitement des demandes usagers, aide à la rédaction administrative, recherche réglementaire, souveraineté des données. Conseil et développement sur mesure. France.",
+      "IA pour le secteur public : demandes usagers, rédaction administrative, recherche réglementaire, souveraineté des données. Dev sur mesure. Cadrage gratuit.",
     tagline:
       "Demandes usagers, rédaction administrative et recherche réglementaire, dans un cadre de souveraineté et de commande publique.",
     directAnswer:
@@ -572,6 +628,14 @@ export const SECTEURS = [
         q: "L'IA peut-elle traiter les demandes des usagers sans déshumaniser le service ?",
         a: "L'objectif est d'outiller, pas de remplacer l'agent. L'IA oriente les demandes, propose une première réponse à partir des contenus officiels et transmet au bon service les cas qui nécessitent un humain. Les agents se recentrent sur les situations à forte valeur, et l'usager obtient une orientation plus rapide et plus fiable.",
       },
+      {
+        q: "Combien coûte un projet IA pour une collectivité ou un établissement public ?",
+        a: "Le budget se définit selon le périmètre, les exigences de souveraineté et l'intégration au système d'information. Nous travaillons au forfait, dans le cadre de la commande publique, avec périmètre et livrables écrits avant signature. Un assistant aux usagers pilote reste un engagement mesuré ; un déploiement multi-services est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Pourquoi un cabinet spécialisé plutôt qu'un grand prestataire généraliste ?",
+        a: "Parce que nous sommes spécialisés uniquement sur l'IA et indépendants des éditeurs : nous concevons une solution souveraine, transparente et explicable, hébergée sous votre contrôle, sans confier vos données à un outil grand public. Le code vous appartient, la traçabilité est intégrée, et vos agents restent autonomes. Vous obtenez du sur-mesure conforme à la commande publique, pas une plateforme imposée.",
+      },
     ],
     relatedSectors: ['ia-juridique', 'ia-sante-pharma', 'ia-services-conseil'],
   },
@@ -584,7 +648,7 @@ export const SECTEURS = [
     h1: "IA pour les services et cabinets de conseil : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour les services & le conseil · conseil & dev | Masteria',
     metaDesc:
-      "IA pour les services et cabinets de conseil : production de livrables, synthèse documentaire, propositions commerciales, capitalisation du savoir. Conseil et développement sur mesure. France, Suisse, Belgique.",
+      "IA pour les services et cabinets de conseil : livrables, synthèse documentaire, propositions, savoir du cabinet. Dev sur mesure. Cadrage gratuit.",
     tagline:
       "Production de livrables, synthèse documentaire et propositions commerciales, branchées sur le savoir du cabinet.",
     directAnswer:
@@ -642,6 +706,14 @@ export const SECTEURS = [
         q: "Peut-on outiller l'avant-vente et les propositions commerciales ?",
         a: "Oui. Une automatisation assemble un projet de proposition à partir de vos références, méthodologies et éléments de chiffrage, adapté au contexte du prospect. Le temps de réassemblage baisse nettement, et vos associés se concentrent sur la stratégie de réponse et la relation, pas sur la mise en forme.",
       },
+      {
+        q: "Combien coûte un projet IA pour un cabinet de conseil ?",
+        a: "Le budget dépend du périmètre, du volume de matière à capitaliser et du niveau de cloisonnement par client exigé. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote pilote sur un type de livrable reste un engagement contenu ; un socle de savoir branché sur toutes vos missions est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Vous êtes vous-mêmes un cabinet : pourquoi vous confier ce sujet ?",
+        a: "Justement parce que nous connaissons la production intellectuelle et la confidentialité client de l'intérieur, et que nous sommes spécialisés uniquement sur l'IA. Nous concevons une solution sur mesure qui cloisonne les données par mission, indépendante des éditeurs, documentée et transférée. Vous restez propriétaire du code et autonome, sans exposer la matière sensible de vos clients à un outil tiers.",
+      },
     ],
     relatedSectors: ['ia-juridique', 'ia-banque-assurance', 'ia-tech-saas'],
   },
@@ -654,7 +726,7 @@ export const SECTEURS = [
     h1: "IA pour le tourisme et l'hôtellerie : agents, automatisations et outils sur mesure",
     metaTitle: "IA tourisme & hôtellerie · conseil & dev | Masteria",
     metaDesc:
-      "IA pour le tourisme et l'hôtellerie : relation client multilingue, gestion des avis, contenus et offres, support réservation. Conseil et développement sur mesure. France, Suisse, Belgique.",
+      "IA pour le tourisme et l'hôtellerie : relation client multilingue, avis, contenus, réservation. Dev sur mesure sur PMS. Cadrage gratuit.",
     tagline:
       "Relation client multilingue, gestion des avis et production de contenus, branchées sur votre PMS et vos canaux de distribution.",
     directAnswer:
@@ -712,6 +784,14 @@ export const SECTEURS = [
         q: "Faut-il connecter l'IA à notre PMS et nos canaux de distribution ?",
         a: "C'est ce qui rend les outils réellement utiles. Une IA branchée sur votre PMS, votre moteur de réservation et votre CRM travaille sur des données à jour : disponibilités, réservations, préférences. Nous construisons les connecteurs nécessaires, dans le respect du RGPD, pour que les outils servent l'exploitation sans ressaisie.",
       },
+      {
+        q: "Combien coûte un projet IA pour un hôtel ou un acteur du tourisme ?",
+        a: "Le budget se définit selon le périmètre, le nombre de langues et de canaux, et les systèmes à connecter (PMS, moteur de réservation, CRM). Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un assistant de relation client pilote reste un engagement contenu ; une chaîne multicanal complète est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Pourquoi du sur-mesure plutôt qu'un chatbot hôtelier du marché ?",
+        a: "Un chatbot standard répond à côté de vos données et impose son ton ; nous branchons l'IA sur votre PMS et vos informations réelles, en tenant votre ton de marque et le passage à l'humain. Indépendants des éditeurs, nous concevons pour la qualité de la relation et le RGPD, documentons et transférons. Vous gardez la main sur l'hospitalité et les données, sans abonnement à un outil fermé.",
+      },
     ],
     relatedSectors: ['ia-retail-ecommerce', 'ia-services-conseil', 'ia-secteur-public'],
   },
@@ -724,7 +804,7 @@ export const SECTEURS = [
     h1: "IA pour l'agroalimentaire : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour l'agroalimentaire · conseil & dev | Masteria",
     metaDesc:
-      "IA pour l'agroalimentaire : qualité et conformité réglementaire, traçabilité documentaire, fiches techniques et étiquetage, R&D produit. Conseil et développement sur mesure. France, Suisse, Belgique.",
+      "IA pour l'agroalimentaire : qualité et conformité (HACCP, INCO), traçabilité, fiches techniques, R&D. Dev sur mesure. Cadrage gratuit.",
     tagline:
       "Qualité, conformité réglementaire, traçabilité et fiches techniques, branchées sur vos référentiels produit.",
     directAnswer:
@@ -782,6 +862,14 @@ export const SECTEURS = [
         q: "Nos formulations restent-elles confidentielles ?",
         a: "Oui. Nous concevons les solutions pour que vos formulations et données produit restent sous votre contrôle, dans votre périmètre ou en hébergement souverain, sans alimenter de modèle public. Le niveau de confidentialité et le mode de déploiement (jusqu'à on-premise si nécessaire) sont définis dès le cadrage selon la sensibilité de vos actifs.",
       },
+      {
+        q: "Combien coûte un projet IA pour un industriel de l'agroalimentaire ?",
+        a: "Le budget dépend du périmètre, de la sensibilité des formulations et du niveau de validation réglementaire à intégrer. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote qualité pilote reste un engagement contenu ; une chaîne complète conformité et fiches techniques est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Qu'apportez-vous de plus qu'un module qualité avec une option IA ?",
+        a: "Un module qualité ajoute une fonction limitée à son périmètre ; nous concevons une solution sur mesure branchée sur vos référentiels (HACCP, IFS/BRC, INCO) et vos données produit, qui prépare et contrôle tout en laissant la validation à vos responsables. Indépendants des éditeurs, nous gardons vos formulations sous votre contrôle, documentons et transférons. Le code vous appartient.",
+      },
     ],
     relatedSectors: ['ia-industrie', 'ia-retail-ecommerce', 'ia-logistique-transport'],
   },
@@ -794,7 +882,7 @@ export const SECTEURS = [
     h1: "IA pour la tech et les éditeurs SaaS : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour la tech & le SaaS · conseil & dev | Masteria',
     metaDesc:
-      "IA pour la tech et les éditeurs SaaS : fonctionnalités IA dans le produit, support technique, documentation, copilotes internes. Conseil et développement sur mesure, intégrations LLM/RAG. France, Suisse, Belgique.",
+      "IA pour la tech et le SaaS : fonctionnalités IA produit, support technique, documentation, copilotes internes. Dev sur mesure, LLM/RAG. Cadrage gratuit.",
     tagline:
       "Fonctionnalités IA dans le produit, support technique et documentation, avec une intégration LLM/RAG soignée.",
     directAnswer:
@@ -851,6 +939,14 @@ export const SECTEURS = [
       {
         q: "Pouvez-vous renforcer nos équipes plutôt que livrer une boîte noire ?",
         a: "Oui. Nous pouvons travailler en renfort de vos équipes produit et engineering, y compris en détachant des développeurs IA dans vos équipes, et nous documentons et transférons systématiquement. À la fin de la mission, vous êtes propriétaire du code et autonome pour faire évoluer la fonctionnalité, avec ou sans nous.",
+      },
+      {
+        q: "Combien coûte un projet IA pour un éditeur SaaS ?",
+        a: "Le budget dépend du périmètre, de la complexité de la fonctionnalité et du niveau de renfort attendu (build complet ou appui à vos équipes). Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype de fonctionnalité IA reste un engagement contenu ; un build avec garde-fous et évaluation en production est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Faut-il développer en interne, acheter une brique IA ou vous confier le build ?",
+        a: "Cela dépend de votre maturité et de l'enjeu produit. Nous aidons à trancher dès le cadrage, sans dépendance à un fournisseur unique : parfois une brique du marché suffit, parfois le sur-mesure s'impose. Indépendants multi-LLM, nous concevons pour le coût, la latence et la qualité, documentons et transférons, pour que vous gardiez la maîtrise plutôt qu'une boîte noire.",
       },
     ],
     relatedSectors: ['ia-services-conseil', 'ia-retail-ecommerce', 'ia-banque-assurance'],

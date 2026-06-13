@@ -109,7 +109,7 @@ export default function AgenceGeoPage() {
 
   const isFR = city.countryCode === 'FR'
 
-  const metaTitle = `Agence IA ${city.name} · Conseil & développement sur mesure | Masteria`
+  const metaTitle = `Agence IA ${city.name} · Conseil & dev sur mesure | Masteria`
   const h1 = `Agence IA ${city.nameLoc} : conseil, développement et automatisation sur mesure`
 
   const otherCities = AGENCE_GEO_CITIES.filter(x => x.slug !== city.slug)
@@ -122,19 +122,23 @@ export default function AgenceGeoPage() {
 
   /* ── FAQ : locales + communes (les communes adaptées au cadre du pays) ── */
   const commonFaq = [
+    isFR
+      ? {
+          q: `Combien coûte une agence IA ${city.nameLoc} ?`,
+          a: "Les budgets dépendent de la mission. Ordres de grandeur constatés sur le marché français : 5 000 à 30 000 € pour un audit ou un cadrage stratégique, 15 000 à 80 000 € pour le développement d'un outil ou d'un agent sur mesure, 5 000 à 50 000 € pour l'automatisation d'un périmètre de processus. Chez Masteria, le premier échange de cadrage est gratuit et chaque proposition est forfaitaire. À noter : le conseil et le développement sur mesure ne sont pas finançables par l'OPCO ; seule la formation l'est.",
+        }
+      : {
+          q: `Combien coûte une agence IA ${city.nameLoc} et comment se passe la facturation ?`,
+          a: "Les budgets dépendent du périmètre : ordres de grandeur de marché, l'équivalent de quelques milliers à plusieurs dizaines de milliers de francs selon qu'il s'agit d'un cadrage, du développement d'un agent ou de l'automatisation d'un processus. Masteria facture selon le cadre suisse, en CHF ou en EUR selon votre préférence, avec la TVA suisse si vous y êtes assujetti. Il n'existe pas de dispositif de type OPCO en Suisse : chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature. Le premier cadrage est gratuit.",
+        },
+    {
+      q: `Pourquoi choisir Masteria plutôt qu'une autre agence IA ${city.nameLoc} ?`,
+      a: "Masteria est une agence spécialisée uniquement sur l'IA depuis 2022, là où une ESN généraliste répartit son expertise sur des dizaines de technologies. Notre cœur d'offre couple conseil stratégique et développement sur mesure sous un même toit : nous cadrons, nous développons les agents et automatisations, puis nous documentons et formons vos équipes pour qu'elles restent autonomes. Chaque proposition est forfaitaire, avec un interlocuteur stable du cadrage à la passation.",
+    },
     {
       q: `Quelle différence entre une agence IA et un cabinet de conseil IA ${city.nameLoc} ?`,
       a: "Dans l'usage courant, une agence IA conçoit et déploie des solutions : développements sur mesure, agents, automatisations, intégrations d'outils. Un cabinet de conseil IA intervient plutôt en amont, sur la stratégie, le cadrage et la gouvernance. La frontière est devenue poreuse. Masteria assume ce double positionnement : cabinet de conseil pour la stratégie et la feuille de route, agence pour le développement d'agents et d'outils sur mesure et l'automatisation des processus.",
     },
-    isFR
-      ? {
-          q: 'Combien coûte une mission avec une agence IA ?',
-          a: "Les budgets dépendent de la mission. Ordres de grandeur constatés sur le marché français : 5 000 à 30 000 € pour un audit ou un cadrage stratégique, 15 000 à 80 000 € pour le développement d'un outil ou d'un agent sur mesure, 5 000 à 50 000 € pour l'automatisation d'un périmètre de processus. Chez Masteria, le premier échange de cadrage est gratuit et chaque proposition est forfaitaire. À noter : le conseil et le développement sur mesure ne sont pas finançables par l'OPCO ; seule la formation l'est.",
-        }
-      : {
-          q: 'Comment se déroule la facturation pour une mission en Suisse ?',
-          a: "Masteria facture selon le cadre suisse, en CHF ou en EUR selon votre préférence, avec la TVA suisse appliquée si vous y êtes assujetti. Le conseil et le développement sur mesure sont des prestations de service : il n'existe pas de dispositif de type OPCO en Suisse. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.",
-        },
     {
       q: `Combien de temps pour démarrer une mission ${city.nameLoc} ?`,
       a: "Le premier échange de cadrage a lieu sous 24 heures après votre message, en visio ou par téléphone, sans engagement. Vous recevez ensuite une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire. Une fois la proposition validée, la mission démarre rapidement : un cadrage et un premier déploiement courent généralement sur quelques semaines, pas sur des mois.",
@@ -149,6 +153,7 @@ export default function AgenceGeoPage() {
     '@id': `${SITE}/${city.slug}#service`,
     name: `Masteria — agence IA ${city.nameLoc}`,
     description: city.metaDesc,
+    serviceType: "Conseil et développement IA sur mesure",
     url: `${SITE}/${city.slug}`,
     image: `${SITE}/assets/logo-square.png`,
     telephone: '+33667754128',
@@ -435,7 +440,7 @@ export default function AgenceGeoPage() {
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 16 }}>
             Notre agence IA dans d'autres villes
           </h3>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             <Link to="/agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }}>
               <Building2 size={13} aria-hidden="true" /> Agence IA Lyon (siège)
             </Link>
@@ -448,6 +453,18 @@ export default function AgenceGeoPage() {
               <Globe size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Comparatif meilleure agence IA
             </Link>
           </div>
+
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 12 }}>
+            Explorer nos expertises et notre méthode
+          </h3>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            {`Pour comprendre comment nous adaptons l'IA à votre activité ${city.nameLoc}, parcourez notre `}
+            <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>expertise IA par secteur</Link> et notre panorama de{' '}
+            <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>solutions IA par cas d'usage</Link>. Le déroulé d'une mission, du cadrage au transfert, est détaillé dans notre{' '}
+            <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet IA</Link>. Et si vous hésitez sur le périmètre, le{' '}
+            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> est l'offre d'entrée qui cadre le besoin avant tout développement. Une question précise ?{' '}
+            <Link to="/contact" style={{ color: c, fontWeight: 600 }}>Contactez notre équipe</Link>.
+          </p>
         </div>
       </section>
 
