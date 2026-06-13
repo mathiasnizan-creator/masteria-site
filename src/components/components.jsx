@@ -219,7 +219,7 @@ export function MasteriaHeader() {
               src="/assets/logo-horizontal@400w.jpg"
               alt="Masteria, Centre de formation IA certifié Qualiopi"
               width="400" height="225"
-              fetchpriority="high" decoding="sync"
+              fetchPriority="high" decoding="sync"
               style={{ height: isMobile ? 40 : 56, width: 'auto', display: 'block' }}
             />
           </picture>
@@ -248,12 +248,11 @@ export function MasteriaHeader() {
 
               {menuOpen && (
                 <div style={{
-                  position: 'absolute', top: 'calc(100% + 16px)', left: 0, transform: 'none',
+                  position: 'fixed', top: 84, left: '50%', transform: 'translateX(-50%)',
                   background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
                   padding: '20px 24px 24px', width: 940, maxWidth: 'calc(100vw - 32px)',
                   zIndex: 300,
                 }}>
-                  <div style={{ position: 'absolute', top: -7, left: 40, transform: 'none', width: 14, height: 14, background: '#fff', border: '1px solid #EFEFEF', borderRight: 'none', borderBottom: 'none', rotate: '45deg' }} />
 
                   {/* Bannière "Toutes les formations" */}
                   <Link to="/formation-intelligence-artificielle" onClick={() => setMenuOpen(false)}
@@ -356,12 +355,11 @@ export function MasteriaHeader() {
 
               {conseilOpen && (
                 <div style={{
-                  position: 'absolute', top: 'calc(100% + 16px)', right: 0, left: 'auto', transform: 'none',
+                  position: 'fixed', top: 84, left: '50%', transform: 'translateX(-50%)',
                   background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
                   padding: '20px 24px 24px', width: 880, maxWidth: 'calc(100vw - 32px)',
                   zIndex: 300,
                 }}>
-                  <div style={{ position: 'absolute', top: -7, right: 40, left: 'auto', transform: 'none', width: 14, height: 14, background: '#fff', border: '1px solid #EFEFEF', borderRight: 'none', borderBottom: 'none', rotate: '45deg' }} />
 
                   {/* Bannière "Agence IA" */}
                   <Link to="/agence-ia" onClick={() => setConseilOpen(false)}

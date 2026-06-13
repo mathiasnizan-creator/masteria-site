@@ -172,7 +172,7 @@ export default function HubPage() {
               sizes="120px"
               alt="Masteria, Centre de formation IA certifié Qualiopi"
               width="400" height="225"
-              fetchpriority="high" decoding="sync"
+              fetchPriority="high" decoding="sync"
               style={{ height: 36, width: 'auto', display: 'block', filter: 'invert(1)' }}
             />
           </picture>

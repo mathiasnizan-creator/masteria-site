@@ -179,7 +179,7 @@ export default function SecteurIAPage() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
             <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
               <SectorGlyph name={secteur.icon} size={16} color={c} />
-              IA pour {secteur.nameShort}
+              IA pour {secteur.nameWithArticle}
             </span>
             <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
               Conseil · Développement sur mesure · Automatisation
@@ -215,7 +215,7 @@ export default function SecteurIAPage() {
       <section id="offres" style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={WRAP}>
           <div style={kickerStyle}>Nos expertises</div>
-          <h2 style={h2Style}>Ce que nous faisons pour {secteur.nameShort}</h2>
+          <h2 style={h2Style}>Ce que nous faisons pour {secteur.nameWithArticle}</h2>
           <p style={answerStyle}>
             <strong style={{ color: '#0A0A0A' }}>Masteria couvre trois expertises de cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'agents et d'outils sur mesure, et l'automatisation des processus.</strong>{' '}
             Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
@@ -261,7 +261,7 @@ export default function SecteurIAPage() {
       <section id="secteur" style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={WRAP}>
           <div style={kickerStyle}>Enjeux du secteur</div>
-          <h2 style={h2Style}>L'IA dans {secteur.nameShort} : où se crée la valeur ?</h2>
+          <h2 style={h2Style}>L'IA dans {secteur.nameWithArticle} : où se crée la valeur ?</h2>
           <p style={answerStyle}>{secteur.context}</p>
 
           {/* Douleurs propres au secteur */}
@@ -281,7 +281,7 @@ export default function SecteurIAPage() {
 
           {/* Prestations concrètes propres au secteur */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '48px 0 20px', letterSpacing: '-0.01em' }}>
-            Des prestations concrètes pour {secteur.nameShort}
+            Des prestations concrètes pour {secteur.nameWithArticle}
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             {secteur.useCases.map((uc, i) => (
@@ -367,7 +367,7 @@ export default function SecteurIAPage() {
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={kickerStyle}>FAQ</div>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>Questions fréquentes — IA pour {secteur.nameShort}</h2>
+          <h2 style={{ ...h2Style, marginBottom: 32 }}>Questions fréquentes — IA pour {secteur.nameWithArticle}</h2>
           <div>
             {secteur.faq.map((item, i) => (
               <FAQItem key={i} q={item.q} a={item.a} color={c} />
@@ -397,7 +397,7 @@ export default function SecteurIAPage() {
                     <SectorGlyph name={rel.icon} size={22} color={c} />
                   </div>
                   <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>
-                    IA pour {rel.nameShort}
+                    IA pour {rel.nameWithArticle}
                   </h4>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: '0 0 12px' }}>{rel.tagline}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
@@ -434,7 +434,7 @@ export default function SecteurIAPage() {
         <div style={{ ...WRAP, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div style={{ ...kickerStyle, color: cLight }}>Premier échange gratuit</div>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Parlons de votre projet IA pour {secteur.nameShort}
+            Parlons de votre projet IA pour {secteur.nameWithArticle}
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
             Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, contraintes de données. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit et sans engagement.
@@ -444,7 +444,7 @@ export default function SecteurIAPage() {
             <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
           </Link>
           <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-            {`IA pour ${secteur.name} · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022`}
+            {`IA pour ${secteur.nameWithArticle} · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022`}
           </p>
         </div>
       </section>
