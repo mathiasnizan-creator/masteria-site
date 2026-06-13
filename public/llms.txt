@@ -57,6 +57,21 @@ Masteria propose deux activités complémentaires :
 - [Agence IA à Genève](https://www.master-ia.fr/agence-ia-geneve) — Conseil et développement IA pour la Suisse romande
 - [Agence IA à Marseille](https://www.master-ia.fr/agence-ia-marseille) — Conseil et développement IA pour Marseille et la région PACA
 
+## Expertise par secteur (conseil & développement IA sur mesure)
+
+- [IA par secteur d'activité](https://www.master-ia.fr/ia-secteurs) — Hub : conseil et développement IA adaptés à chaque secteur
+- [IA banque, assurance & finance](https://www.master-ia.fr/ia-banque-assurance) · [IA industrie & énergie](https://www.master-ia.fr/ia-industrie) · [IA santé & pharma](https://www.master-ia.fr/ia-sante-pharma) · [IA juridique](https://www.master-ia.fr/ia-juridique) · [IA retail & e-commerce](https://www.master-ia.fr/ia-retail-ecommerce) · [IA logistique & transport](https://www.master-ia.fr/ia-logistique-transport) · [IA immobilier & BTP](https://www.master-ia.fr/ia-immobilier-btp) · [IA secteur public](https://www.master-ia.fr/ia-secteur-public) · [IA services & conseil](https://www.master-ia.fr/ia-services-conseil) · [IA tourisme & hôtellerie](https://www.master-ia.fr/ia-tourisme-hotellerie) · [IA agroalimentaire](https://www.master-ia.fr/ia-agroalimentaire) · [IA tech & SaaS](https://www.master-ia.fr/ia-tech-saas)
+
+## Solutions IA sur mesure (types de livrables)
+
+- [Solutions IA sur mesure](https://www.master-ia.fr/solutions-ia) — Hub des solutions développées sur mesure
+- [Copilote IA interne](https://www.master-ia.fr/copilote-ia-interne) · [Assistant documentaire IA (RAG)](https://www.master-ia.fr/assistant-documentaire-ia) · [Agent IA de support client](https://www.master-ia.fr/agent-support-client-ia) · [Automatisation du traitement documentaire](https://www.master-ia.fr/automatisation-documentaire-ia) · [Agent IA commercial](https://www.master-ia.fr/agent-commercial-ia) · [Chatbot IA sur mesure](https://www.master-ia.fr/chatbot-ia-sur-mesure) · [Intégration LLM & RAG](https://www.master-ia.fr/integration-llm-rag)
+
+## Engagement et offre d'entrée
+
+- [Diagnostic IA](https://www.master-ia.fr/diagnostic-ia) — Offre d'entrée : audit et feuille de route priorisée en une journée
+- [Méthode et modèles d'engagement](https://www.master-ia.fr/methode-projet-ia) — Forfait au projet, régie (développeurs détachés sur site), accompagnement conseil ; le code appartient au client
+
 ## Conseil, agence et guides experts
 
 - [Cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/conseil-intelligence-artificielle) — Audit des usages, stratégie, accompagnement au déploiement, gouvernance

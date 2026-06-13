@@ -4,6 +4,7 @@ import {
   ArrowRight, Bot, Workflow, LayoutDashboard, Database, Plug, MonitorSmartphone,
   Target, FlaskConical, Code2, GraduationCap, Server,
   Cpu, Boxes, Check, MapPin, FileText, Lock, KeyRound,
+  Package, Users,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -129,6 +130,25 @@ const ETAPES = [
     num: '05',
     title: 'Transfert aux équipes',
     desc: "Nous formons vos équipes à utiliser, surveiller et faire évoluer la solution. À la fin de la mission, vous êtes propriétaire du code et capable de le faire vivre, avec ou sans nous.",
+  },
+]
+
+/* ───────── Modèles d'engagement (forfait / régie) ───────── */
+
+const ENGAGEMENTS = [
+  {
+    icon: Package,
+    tag: 'Forfait au projet',
+    title: 'Développement au forfait, du cadrage au déploiement',
+    desc: "Le mode par défaut : nous prenons en charge la conception et le développement de la solution sur un périmètre défini, avec des livrables et un prix fixés à l'avance. Vous suivez l'avancement par points réguliers et vous récupérez le code, documenté et transféré à vos équipes.",
+    points: ['Périmètre et budget fixés au cadrage', 'Livrables et points de décision à chaque étape', 'Transfert de compétence en fin de mission'],
+  },
+  {
+    icon: Users,
+    tag: 'Régie · équipe dédiée',
+    title: 'Un ou plusieurs développeurs IA détachés dans vos équipes',
+    desc: "Au-delà du forfait, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, pour les environnements sensibles ou une montée en charge. Le développeur travaille au sein de votre organisation, sous votre pilotage, tout en gardant l'appui méthodologique du cabinet.",
+    points: ['Renfort sur site ou à distance', 'Adapté aux environnements sensibles', 'Montée en charge sur un programme IA en cours'],
   },
 ]
 
@@ -364,7 +384,7 @@ export default function AgenceDeveloppementIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Selon le besoin, ces livrables se rejoignent : un projet peut combiner une <Link to="/agence-automatisation-ia" style={aStyle}>automatisation de vos processus</Link> et un <Link to="/agents-ia-entreprise" style={aStyle}>agent IA pour votre entreprise</Link>, ou prendre la forme d'un <Link to="/outils-ia-sur-mesure" style={aStyle}>outil IA sur mesure</Link> dédié à un métier.
+            Selon le besoin, ces livrables se rejoignent : un projet peut combiner une <Link to="/agence-automatisation-ia" style={aStyle}>automatisation de vos processus</Link> et un <Link to="/agents-ia-entreprise" style={aStyle}>agent IA pour votre entreprise</Link>, ou prendre la forme d'un <Link to="/outils-ia-sur-mesure" style={aStyle}>outil IA sur mesure</Link> dédié à un métier. Pour une vue par cas d'usage, parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA types</Link>.
           </p>
         </div>
       </section>
@@ -408,15 +428,60 @@ export default function AgenceDeveloppementIAPage() {
         </div>
       </section>
 
-      {/* ── NOTRE APPROCHE TECHNIQUE ── */}
+      {/* ── MODÈLES D'ENGAGEMENT (FORFAIT / RÉGIE) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Modèles d'engagement</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Deux façons de travailler avec nous
+          </h2>
+
+          <p style={answerStyle}>
+            <strong>Vous pouvez nous confier le projet au forfait, du cadrage au déploiement, ou nous faire intervenir en régie. Au-delà du forfait, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, pour les environnements sensibles ou une montée en charge.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
+            Le mode d'engagement se décide au cadrage, selon la sensibilité de votre environnement, votre rythme et la place que vos équipes veulent tenir dans le projet. Les deux modèles partagent la même exigence : du code structuré, documenté et transférable, jamais une boîte noire.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24, marginBottom: 32 }}>
+            {ENGAGEMENTS.map(card => (
+              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
+                  <IconTile icon={card.icon} />
+                  <span style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, letterSpacing: '0.02em' }}>
+                    {card.tag}
+                  </span>
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 10 }}>{card.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>{card.desc}</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {card.points.map(pt => (
+                    <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13.5, color: '#374151', lineHeight: 1.55 }}>
+                      <Check size={16} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Pour le détail du déroulé, des livrables et de la gouvernance de chaque mission, voyez notre <Link to="/methode-projet-ia" style={aStyle}>méthode de projet IA</Link>. Vous hésitez encore sur le périmètre ? Notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> est l'offre d'entrée qui cadre le besoin avant tout développement.
+          </p>
+        </div>
+      </section>
+
+      {/* ── NOTRE APPROCHE TECHNIQUE ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Approche technique</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Sur quelle stack développons-nous ?
           </h2>
 
-          <p style={answerStyle}>
+          <p style={{ ...answerStyle, background: '#fff' }}>
             <strong>Nous travaillons en multi-LLM (Claude, GPT, Mistral), avec du RAG pour ancrer les réponses dans vos données, des agents et des connecteurs MCP, du no-code quand il suffit et du code quand la robustesse l'exige. La sécurité et la confidentialité sont des critères de conception, et un hébergement dans l'Union européenne est possible.</strong>
           </p>
 
@@ -469,7 +534,7 @@ export default function AgenceDeveloppementIAPage() {
       </section>
 
       {/* ── POURQUOI UNE AGENCE SPÉCIALISÉE IA ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Pourquoi une agence spécialisée</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
@@ -492,15 +557,15 @@ export default function AgenceDeveloppementIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            Si votre besoin commence en amont du développement (stratégie IA, gouvernance, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> intervient en premier. Pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez notre <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
+            Si votre besoin commence en amont du développement (stratégie IA, gouvernance, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> intervient en premier. Notre lecture des enjeux propres à votre activité s'appuie sur notre <Link to="/ia-secteurs" style={aStyle}>expertise IA par secteur</Link>. Pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez notre <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
           </p>
         </div>
       </section>
 
       {/* ── ON FORME VOS ÉQUIPES (bloc secondaire) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ ...cardStyle, background: '#fff', padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
@@ -522,14 +587,14 @@ export default function AgenceDeveloppementIAPage() {
       </section>
 
       {/* ── BUDGET & DEVIS ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Budget & devis</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Quel budget pour un projet de développement IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
+          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
             <strong>Le développement IA sur mesure se chiffre au forfait, sur devis, selon le périmètre du projet. Nous ne publions pas de prix type : un prototype, un agent connecté ou une application métier complète n'engagent pas le même travail. Le devis est établi après un cadrage qui fixe le périmètre, les données et le critère de réussite.</strong>
           </p>
 
@@ -556,7 +621,7 @@ export default function AgenceDeveloppementIAPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
           <Kicker>FAQ</Kicker>
           <h2 style={{ ...h2Style, marginBottom: 32 }}>
@@ -571,7 +636,7 @@ export default function AgenceDeveloppementIAPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
@@ -582,6 +647,10 @@ export default function AgenceDeveloppementIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Le point de départ : un diagnostic qui cadre le besoin et le périmètre avant tout développement." },
+              { label: 'Méthode de projet IA', href: '/methode-projet-ia', tag: 'Méthode', desc: "Le déroulé détaillé d'une mission, les livrables et nos modèles d'engagement, dont la régie." },
+              { label: 'Solutions IA types', href: '/solutions-ia', tag: 'Solutions', desc: "Un panorama de nos solutions IA par cas d'usage, des agents aux applications métier." },
+              { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Notre lecture des enjeux et cas d'usage IA propres à chaque secteur d'activité." },
               { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Cadrage, prototypage et déploiement de vos automatisations IA, avec vos équipes." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand et comment déployer des agents IA, avec les garde-fous que cela exige." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },

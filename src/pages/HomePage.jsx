@@ -237,6 +237,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ════════════════════════ DEUX FAÇONS D'AVANCER (formation / projet) ════════════════════════ */}
+      <section style={{ background: '#F9FAFB', padding: 'clamp(48px, 8vw, 80px) clamp(18px, 4vw, 32px)', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 40 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Deux façons d'avancer avec nous</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 36px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', margin: 0 }}>Former vos équipes, ou nous confier le projet</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+            {[
+              { Icon: GraduationCap, title: 'Former vos équipes', desc: "Montez vos collaborateurs en compétences sur ChatGPT, Claude, Copilot, Gemini et Mistral. 89 programmes par outil et par métier, certifiés Qualiopi et finançables OPCO.", cta: 'Voir les formations', to: '/formation-intelligence-artificielle' },
+              { Icon: Rocket, title: 'Déléguer un projet IA', desc: "Conseil, automatisations et développement d'outils, d'agents et d'applications sur mesure. Du cadrage au déploiement, avec transfert aux équipes. Développeurs détachables sur site.", cta: 'Conseil & développement', to: '/agence-developpement-ia' },
+            ].map((p, i) => (
+              <Link key={i} to={p.to}
+                style={{ display: 'flex', flexDirection: 'column', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 28, textDecoration: 'none', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', transition: 'border-color 0.2s, transform 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#2563EB'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.transform = 'none'; }}
+              >
+                <div style={{ width: 44, height: 44, background: '#DBEAFE', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <p.Icon size={22} color="#2563EB" strokeWidth={2} aria-hidden="true" />
+                </div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em' }}>{p.title}</div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.65, margin: '0 0 18px' }}>{p.desc}</p>
+                <span style={{ marginTop: 'auto', display: 'inline-flex', alignItems: 'center', gap: 7, color: '#2563EB', fontWeight: 700, fontSize: 14 }}>{p.cta} <ArrowRight size={16} aria-hidden="true" /></span>
+              </Link>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 22 }}>
+            <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: '#6B7280', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+              Vous hésitez par où commencer ? Démarrez par un <span style={{ color: '#2563EB', fontWeight: 700, marginLeft: 4 }}>diagnostic IA</span> <ArrowRight size={15} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════════════ FORMATIONS PAR OUTIL ════════════════════════ */}
       <section style={{ background: '#fff', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
@@ -403,6 +437,45 @@ export default function HomePage() {
             }}>
               Explorer toutes les formations métier <ArrowRight size={16} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════ CONSEIL & DÉVELOPPEMENT SUR MESURE ════════════════════════ */}
+      <section style={{ background: '#F9FAFB', padding: 'clamp(56px, 10vw, 96px) clamp(18px, 4vw, 32px)', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 18 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Conseil &amp; développement sur mesure</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', margin: '0 0 16px', lineHeight: 1.15 }}>On ne fait pas que former : on conçoit et on construit votre IA</h2>
+          </div>
+          <p style={{ maxWidth: 760, margin: '0 auto 44px', textAlign: 'center', fontSize: 17, color: '#374151', lineHeight: 1.7 }}>
+            <strong style={{ color: '#0A0A0A' }}>Au-delà de la formation, Masteria est un cabinet de conseil et une agence de développement IA : nous cadrons votre stratégie, puis nous concevons et développons les agents, automatisations et outils sur mesure qui s'intègrent à votre environnement.</strong> Du diagnostic au déploiement, avec transfert aux équipes. Nous pouvons aussi détacher des développeurs IA chez vous, sur site ou à distance.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 18 }}>
+            {[
+              { Icon: Target,    title: 'Conseil & stratégie',     desc: "Audit des usages, feuille de route, gouvernance et conformité (AI Act).", to: '/conseil-intelligence-artificielle' },
+              { Icon: Rocket,    title: 'Développement sur mesure', desc: "Agents, copilotes, applications et intégrations LLM/RAG sur vos données.", to: '/agence-developpement-ia' },
+              { Icon: Zap,       title: 'Automatisation',          desc: "Workflows et automatisations métier, du no-code au développement.", to: '/agence-automatisation-ia' },
+              { Icon: Briefcase, title: 'Expertise par secteur',   desc: "Banque, industrie, santé, juridique, public et plus, avec leurs contraintes.", to: '/ia-secteurs' },
+              { Icon: Sparkles,  title: 'Solutions sur mesure',    desc: "Copilotes internes, assistants RAG, agents support, automatisation documentaire.", to: '/solutions-ia' },
+              { Icon: Users,     title: 'Développeurs sur site',   desc: "Régie : nous détachons des développeurs IA dans vos équipes si besoin.", to: '/methode-projet-ia' },
+            ].map((o, i) => (
+              <Link key={i} to={o.to}
+                style={{ display: 'flex', flexDirection: 'column', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 24, textDecoration: 'none', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', transition: 'border-color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB'}
+                onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}
+              >
+                <div style={{ width: 44, height: 44, background: '#DBEAFE', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
+                  <o.Icon size={22} color="#2563EB" strokeWidth={2} aria-hidden="true" />
+                </div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 6, letterSpacing: '-0.01em' }}>{o.title}</div>
+                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.6, margin: 0 }}>{o.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginTop: 40 }}>
+            <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none' }}>Démarrer par un diagnostic IA <ArrowRight size={17} aria-hidden="true" /></Link>
+            <Link to="/agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none', border: '1px solid #E5E7EB' }}>Découvrir l'agence IA</Link>
           </div>
         </div>
       </section>

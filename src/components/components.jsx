@@ -96,22 +96,26 @@ const CONSEIL_COLS = [
   {
     head: 'Conseil & stratégie',
     items: [
+      { label: 'Diagnostic IA',         desc: 'Audit + feuille de route en 1 journée', slug: 'diagnostic-ia',                Icon: Search },
       { label: 'Cabinet de conseil IA', desc: 'Cadrage, gouvernance et trajectoire IA', slug: 'conseil-intelligence-artificielle', Icon: Lightbulb },
       { label: 'Conseil stratégie IA',  desc: 'Feuille de route et priorisation des cas', slug: 'conseil-strategie-ia',            Icon: Compass },
+      { label: 'Méthode & engagement',  desc: 'Forfait, régie, développeurs sur site',  slug: 'methode-projet-ia',            Icon: Users },
     ],
   },
   {
     head: 'Développement sur mesure',
     items: [
       { label: 'Agence développement IA', desc: 'Conception et intégration sur mesure', slug: 'agence-developpement-ia', Icon: Code2 },
+      { label: 'Solutions IA sur mesure', desc: 'Copilotes, agents, RAG, automatisations', slug: 'solutions-ia',         Icon: Sparkles },
       { label: 'Outils IA sur mesure',    desc: 'Applications et copilotes métier',     slug: 'outils-ia-sur-mesure',  Icon: Wrench },
       { label: 'Agence automatisation IA',desc: 'Workflows et automatisations métier',   slug: 'agence-automatisation-ia', Icon: Workflow },
       { label: 'Agents IA en entreprise', desc: 'Agents autonomes et copilotes',         slug: 'agents-ia-entreprise',  Icon: Bot },
     ],
   },
   {
-    head: 'Agence & repères',
+    head: 'Secteurs & repères',
     items: [
+      { label: 'IA par secteur',          desc: 'Banque, industrie, santé, juridique…', slug: 'ia-secteurs',          Icon: Briefcase },
       { label: 'Agence IA Lyon',          desc: 'Équipe basée à Lyon, France entière', slug: 'agence-ia',           Icon: Building2 },
       { label: 'Agence IA marketing',     desc: 'IA appliquée au marketing et au growth', slug: 'agence-ia-marketing', Icon: Megaphone },
       { label: 'Automatisation IA · guide', desc: 'Comprendre et cadrer vos automatisations', slug: 'automatisation-ia', Icon: Workflow },
@@ -640,7 +644,7 @@ export function MasteriaHeader() {
         ]
           // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
           // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).
-          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|outils|automatisation-ia|agents-ia)/.test(location.pathname))
+          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia)/.test(location.pathname))
           .map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
             display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
@@ -747,13 +751,15 @@ export function MasteriaFooter() {
           <div>
             <div style={colHead}>Conseil &amp; développement</div>
             {[
+              ['Diagnostic IA', '/diagnostic-ia'],
               ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
               ['Agence développement IA', '/agence-developpement-ia'],
+              ['Solutions IA sur mesure', '/solutions-ia'],
+              ['IA par secteur', '/ia-secteurs'],
               ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
+              ['Méthode & engagement', '/methode-projet-ia'],
               ['Agence IA Lyon', '/agence-ia'],
               ['Agence IA marketing', '/agence-ia-marketing'],
-              ['Automatisation IA', '/automatisation-ia'],
-              ['Agents IA', '/agents-ia-entreprise'],
               ['Agence IA Paris', '/agence-ia-paris'],
               ['Agence IA Annecy', '/agence-ia-annecy'],
               ['Agence IA Genève', '/agence-ia-geneve'],

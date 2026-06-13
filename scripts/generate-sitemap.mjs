@@ -160,6 +160,19 @@ for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod:
 const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-ia-gestion-de-projet','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia'];
 for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: TOPIC_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 for (const s of boostedSlugs) urls.push({ loc: `${SITE}/${s}`,          lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
+// Cluster « IA par secteur » : hub + 12 secteurs (conseil/dev high-ticket).
+const SECTEUR_LASTMOD = gitLastMod(['src/data/secteur-ia-data.js', 'src/pages/SecteurIAPage.jsx', 'src/pages/SecteursHubPage.jsx']);
+const secteurSlugs = ['ia-banque-assurance','ia-industrie','ia-sante-pharma','ia-juridique','ia-retail-ecommerce','ia-logistique-transport','ia-immobilier-btp','ia-secteur-public','ia-services-conseil','ia-tourisme-hotellerie','ia-agroalimentaire','ia-tech-saas'];
+urls.push({ loc: `${SITE}/ia-secteurs`, lastmod: SECTEUR_LASTMOD, changefreq: 'monthly', priority: 0.8 });
+for (const s of secteurSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SECTEUR_LASTMOD, changefreq: 'monthly', priority: 0.7 });
+// Cluster « solutions IA sur mesure » : hub + 7 solutions.
+const SOLUTION_LASTMOD = gitLastMod(['src/data/solution-ia-data.js', 'src/pages/SolutionIAPage.jsx', 'src/pages/SolutionsHubPage.jsx']);
+const solutionSlugs = ['copilote-ia-interne','assistant-documentaire-ia','agent-support-client-ia','automatisation-documentaire-ia','agent-commercial-ia','chatbot-ia-sur-mesure','integration-llm-rag'];
+urls.push({ loc: `${SITE}/solutions-ia`, lastmod: SOLUTION_LASTMOD, changefreq: 'monthly', priority: 0.8 });
+for (const s of solutionSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SOLUTION_LASTMOD, changefreq: 'monthly', priority: 0.7 });
+// Offres de conversion high-ticket.
+urls.push({ loc: `${SITE}/diagnostic-ia`, lastmod: gitLastMod(['src/pages/DiagnosticIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });
 for (const s of [...spokeSet].sort()) urls.push({ loc: `${SITE}/${s}`,  lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.5 });
 for (const b of blogEntries)  urls.push({ loc: `${SITE}/blog/${b.slug}`, lastmod: b.lastmod,     changefreq: 'monthly', priority: 0.5 });
 const blogSlugs = blogEntries.map(b => b.slug);

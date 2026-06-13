@@ -38,6 +38,14 @@ const AgenceDeveloppementIAPage = lazy(() => import('./pages/AgenceDeveloppement
 const AgenceGeoPage = lazy(() => import('./pages/AgenceGeoPage'));
 const AgenceIAMarketingPage = lazy(() => import('./pages/AgenceIAMarketingPage'));
 const OutilsIASurMesurePage = lazy(() => import('./pages/OutilsIASurMesurePage'));
+const SecteursHubPage = lazy(() => import('./pages/SecteursHubPage'));
+const SecteurIAPage = lazy(() => import('./pages/SecteurIAPage'));
+const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
+const SolutionIAPage = lazy(() => import('./pages/SolutionIAPage'));
+const DiagnosticIAPage = lazy(() => import('./pages/DiagnosticIAPage'));
+const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
+const SECTEUR_SLUGS = ['ia-banque-assurance','ia-industrie','ia-sante-pharma','ia-juridique','ia-retail-ecommerce','ia-logistique-transport','ia-immobilier-btp','ia-secteur-public','ia-services-conseil','ia-tourisme-hotellerie','ia-agroalimentaire','ia-tech-saas'];
+const SOLUTION_SLUGS = ['copilote-ia-interne','assistant-documentaire-ia','agent-support-client-ia','automatisation-documentaire-ia','agent-commercial-ia','chatbot-ia-sur-mesure','integration-llm-rag'];
 const GeoPage = lazy(() => import('./pages/GeoPage'));
 const GeoIAGenericPage = lazy(() => import('./pages/GeoIAGenericPage'));
 const TopicLandingPage = lazy(() => import('./pages/TopicLandingPage'));
@@ -1492,6 +1500,17 @@ export default function App() {
         <Route path="/agence-ia-paris" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-geneve" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-marseille" element={<AgenceGeoPage />} />
+        {/* Cluster secteurs + solutions + offres (juin 2026) */}
+        <Route path="/ia-secteurs" element={<SecteursHubPage />} />
+        {SECTEUR_SLUGS.map(s => (
+          <Route key={s} path={`/${s}`} element={<SecteurIAPage />} />
+        ))}
+        <Route path="/solutions-ia" element={<SolutionsHubPage />} />
+        {SOLUTION_SLUGS.map(s => (
+          <Route key={s} path={`/${s}`} element={<SolutionIAPage />} />
+        ))}
+        <Route path="/diagnostic-ia" element={<DiagnosticIAPage />} />
+        <Route path="/methode-projet-ia" element={<MethodeProjetIAPage />} />
         <Route path="/outils-ia-sur-mesure" element={<OutilsIASurMesurePage />} />
         <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />
         <Route path="/formation-ia-debutant" element={<DebutantPage />} />
