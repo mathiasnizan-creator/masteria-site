@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, BookOpen, Check, Clock, ClipboardList,
-  Compass, FileSpreadsheet, Handshake, Headphones, Megaphone,
-  Scale, Sparkles, Users, Workflow,
+  Compass, Cog, FileSpreadsheet, GitBranch, Handshake, Headphones, Megaphone,
+  Plug, Scale, Sparkles, Users, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -23,7 +23,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Automatisation IA : le guide complet pour les entreprises"
-const META_DESC = "Définition, exemples par métier, outils, méthode en 5 étapes, erreurs et budgets : le guide complet pour automatiser vos processus avec l'IA."
+const META_DESC = "Définition, exemples par métier, outils, méthode en 5 étapes, erreurs et budgets : le guide complet pour automatiser vos processus avec l'IA. Et l'option clé en main : nous développons vos automatisations sur mesure."
 const H1 = "Automatisation IA : le guide complet pour automatiser vos processus"
 
 /* ───────── Styles partagés ───────── */
@@ -63,6 +63,7 @@ const SOMMAIRE = [
   { href: '#cas-usage', label: 'Que peut-on automatiser en 2026 ?' },
   { href: '#outils', label: 'Les outils : 3 familles' },
   { href: '#methode', label: 'La méthode en 5 étapes' },
+  { href: '#sur-mesure', label: 'Le faire développer sur mesure' },
   { href: '#erreurs', label: 'Les 6 erreurs à éviter' },
   { href: '#cout', label: 'Combien ça coûte' },
   { href: '#faq', label: 'Questions fréquentes' },
@@ -214,6 +215,31 @@ const ETAPES = [
   },
 ]
 
+/* ───────── Développement sur mesure (service dominant) ───────── */
+
+const BUILD_STEPS = [
+  {
+    icon: Compass,
+    title: 'Cadrage et architecture',
+    desc: "Nous cartographions vos processus, identifions les automatisations à plus fort rendement et concevons l'architecture cible : déclencheurs, traitements IA, points de contrôle, intégrations à votre système d'information.",
+  },
+  {
+    icon: Cog,
+    title: 'Développement sur mesure',
+    desc: "Nos équipes construisent les automatisations : workflows orchestrés, assistants spécialisés, agents connectés à vos outils via API et MCP. Vous gardez la propriété du code et des configurations.",
+  },
+  {
+    icon: Plug,
+    title: 'Intégration à vos outils',
+    desc: "Nous raccordons les automatisations à votre existant (CRM, ERP, messagerie, outils métier) et posons les garde-fous : validation humaine sur les actions sensibles, traçabilité, conformité RGPD.",
+  },
+  {
+    icon: GitBranch,
+    title: 'Déploiement et maintien',
+    desc: "Mise en production progressive, mesure des gains réels, documentation complète et passation. Vos automatisations tournent en conditions réelles, supervisées et faites pour durer.",
+  },
+]
+
 /* ───────── Les 6 erreurs ───────── */
 
 const ERREURS = [
@@ -283,11 +309,11 @@ const faqItems = FAQ.map(f => ({ q: f.q, a: `${f.strong} ${f.rest}` }))
 /* ───────── Pour aller plus loin ───────── */
 
 const RELATED = [
-  { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "2 jours pour apprendre à construire et superviser ses propres automatisations. Certifié Qualiopi, finançable OPCO." },
-  { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Accompagnement', desc: "Masteria cadre et déploie vos automatisations avec vos équipes. Cadrage initial gratuit." },
+  { label: "Agence de développement IA", href: '/agence-developpement-ia', tag: 'Sur mesure', desc: "Nous concevons et développons vos automatisations et vos solutions IA de bout en bout, jusqu'à la mise en production." },
+  { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Service', desc: "Masteria cadre, construit et déploie vos automatisations. Cadrage initial gratuit, vous restez propriétaire du système." },
+  { label: "Outils IA sur mesure", href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Au-delà du flux : des applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage propres." },
   { label: 'Les agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Guide', desc: "Ce que les agents IA autonomes savent faire, leurs limites et les conditions d'un déploiement sûr." },
-  { label: 'Agence IA : conseil, déploiement, formation', href: '/agence-ia', tag: 'Agence', desc: "La vue d'ensemble des accompagnements Masteria, de la stratégie à la mise en production." },
-  { label: "Apprendre l'automatisation IA", href: '/blog/apprendre-automatisation-ia', tag: 'Blog', desc: "Par où commencer pour monter en compétence : parcours progressif, outils et premiers projets." },
+  { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "En complément du déploiement, 2 jours pour rendre vos équipes autonomes. Certifié Qualiopi, finançable OPCO." },
   { label: 'Automatisation IA en PME : les processus prioritaires', href: '/blog/automatisation-ia-pme-processus-prioritaires', tag: 'Blog', desc: "Les processus qui rapportent le plus vite quand on démarre, classés par impact et faisabilité." },
 ]
 
@@ -577,7 +603,55 @@ export default function AutomatisationIAGuidePage() {
           </div>
 
           <p style={{ ...pStyle, ...prose, marginTop: 28, marginBottom: 0 }}>
-            La cinquième étape mérite d'être anticipée dès le départ : la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> de Masteria est conçue exactement pour cela, avec deux jours de pratique sur les tâches réelles des participants. Si vous préférez explorer le sujet en autodidacte avant de vous lancer, notre guide pour <Link to="/blog/apprendre-automatisation-ia" style={aStyle}>apprendre l'automatisation IA</Link> balise un parcours progressif.
+            Cette méthode demande du temps et des mains. La plupart des organisations préfèrent confier la construction à une équipe qui la mène tous les jours, plutôt que d'apprendre sur le tas en mobilisant leurs collaborateurs. C'est précisément ce que nous faisons : nous développons vos automatisations sur mesure et vous les livrons en production.
+          </p>
+        </div>
+      </section>
+
+      {/* ── DÉVELOPPEMENT SUR MESURE (service dominant) ── */}
+      <section id="sur-mesure" style={{ padding: sectionPad, background: '#0A0A0A', color: '#fff' }}>
+        <div style={wrap}>
+          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#93C5FD', marginBottom: 14 }}>
+            L'option clé en main
+          </div>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
+            Faire développer vos automatisations IA sur mesure
+          </h2>
+
+          <p style={{ background: 'rgba(37,99,235,0.16)', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#fff', margin: '0 0 28px', maxWidth: 860 }}>
+            <strong>Plutôt que de monter vos automatisations en interne, vous nous confiez la construction de bout en bout : nous concevons l'architecture, développons les workflows, assistants et agents adaptés à vos processus, les intégrons à vos outils via API et MCP, puis les déployons en production. Vous récupérez un système qui tourne, documenté et supervisé.</strong>
+          </p>
+
+          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
+            Le guide ci-dessus décrit ce qu'il est possible de faire et comment. Le passage à l'échelle, lui, repose sur de l'ingénierie : connecter des outils, fiabiliser les traitements, gérer les cas limites, poser les garde-fous. C'est un travail de conception et de développement que nous prenons en charge pour vous, processus par processus.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20, marginBottom: 44 }}>
+            {BUILD_STEPS.map((step, i) => (
+              <div key={i} style={{ background: '#161616', border: '1px solid #262626', borderRadius: 16, padding: 26 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <step.icon size={22} strokeWidth={2} style={{ color: '#93C5FD' }} />
+                </div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: '#93C5FD', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#fff', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{step.title}</h3>
+                <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+              Discutons de votre projet
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '15px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, border: '1px solid rgba(255,255,255,0.3)' }}>
+              Notre agence de développement IA
+              <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
+            </Link>
+          </div>
+
+          <p style={{ fontSize: 14.5, color: '#9CA3AF', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
+            Besoin d'un outil interne complet plutôt que d'un simple flux ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour donner les bons réflexes à vos équipes en complément du déploiement, la <Link to="/formation-automatisation-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>formation automatisation IA</Link> reste disponible.
           </p>
         </div>
       </section>
@@ -587,19 +661,19 @@ export default function AutomatisationIAGuidePage() {
         <div style={{ ...wrap, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
             <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: '0 0 8px', lineHeight: 1.25, letterSpacing: '-0.01em' }}>
-              Deux façons de passer à l'action avec Masteria
+              On construit vos automatisations pour vous
             </h2>
             <p style={{ fontSize: 15, color: cLight, margin: 0, lineHeight: 1.65 }}>
-              Former vos équipes à construire leurs automatisations, ou vous faire accompagner de l'audit au déploiement.
+              Confiez-nous le développement et le déploiement de bout en bout. Vos équipes peuvent aussi se former en complément.
             </p>
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Link to="/formation-automatisation-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: c, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
-              Se former en 2 jours
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: c, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
+              Discutons de votre projet
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <Link to="/agence-automatisation-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, whiteSpace: 'nowrap', border: '1px solid rgba(255,255,255,0.55)' }}>
-              Être accompagné
+              Notre agence d'automatisation
               <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
             </Link>
           </div>
@@ -660,12 +734,12 @@ export default function AutomatisationIAGuidePage() {
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 30 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>L'accompagnement</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 10 }}>Le développement</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 16 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>Sur devis</div>
               </div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Le budget dépend du nombre de processus, des outils en place et du niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, <Link to="/agence-ia" style={aStyle}>agence IA</Link> basée à Lyon, le cadrage initial est gratuit et débouche sur une feuille de route chiffrée.
+                Faire concevoir et développer vos automatisations sur mesure se chiffre selon le nombre de processus, les intégrations à votre système d'information et le niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, le cadrage initial est gratuit et débouche sur une <Link to="/agence-developpement-ia" style={aStyle}>feuille de route de développement</Link> chiffrée.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 30, border: `2px solid ${c}` }}>
@@ -714,7 +788,7 @@ export default function AutomatisationIAGuidePage() {
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Pour aller plus loin</h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Se former, se faire accompagner ou creuser le sujet : les suites logiques de ce guide.
+            Faire construire vos automatisations, explorer un développement sur mesure ou former vos équipes en complément : les suites logiques de ce guide.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
             {RELATED.map(rel => (

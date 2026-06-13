@@ -47,6 +47,11 @@ Masteria propose deux activités complémentaires :
 - [Mistral AI vs ChatGPT](https://www.master-ia.fr/mistral-vs-chatgpt) — Souveraineté française, hébergement UE, open-weight face à l'écosystème OpenAI
 - [Google Gemini vs Microsoft Copilot](https://www.master-ia.fr/gemini-vs-copilot) — Quel copilote selon votre suite bureautique (Workspace ou Microsoft 365)
 
+## Développement et solutions IA sur mesure
+
+- [Agence de développement IA](https://www.master-ia.fr/agence-developpement-ia) — Conception et développement sur mesure : agents IA, automatisations, applications métier, intégrations LLM/RAG, API et MCP, de l'idée au déploiement avec transfert aux équipes
+- [Outils IA sur mesure](https://www.master-ia.fr/outils-ia-sur-mesure) — Applications et copilotes métier conçus sur les processus et données du client (copilote interne, assistant documentaire RAG, automatisation métier, application web IA)
+
 ## Conseil, agence et guides experts
 
 - [Cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/conseil-intelligence-artificielle) — Audit des usages, stratégie, accompagnement au déploiement, gouvernance

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BadgeCheck, Bot, Brain, Briefcase, Cloud, Eye, Headphones,
-  LayoutGrid, Lock, MapPin, Megaphone, MessageSquare, RefreshCw, Scale,
+  ArrowRight, BadgeCheck, Bot, Brain, Briefcase, Cloud, Cog, Compass, Eye, Headphones,
+  LayoutGrid, Lock, MapPin, Megaphone, MessageSquare, Plug, RefreshCw, Rocket, Scale,
   ScrollText, Server, ShieldCheck, Sparkles, Target, TrendingUp, UserCheck,
   Users, Workflow, Zap,
 } from 'lucide-react'
@@ -25,13 +25,14 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agents IA en entreprise : guide & 20 cas d'usage | Masteria"
-const META_DESC = "Qu'est-ce qu'un agent IA ? Fonctionnement, 20 cas d'usage concrets par fonction, outils 2026, gouvernance : le guide pour déployer des agents IA en entreprise."
+const META_DESC = "Qu'est-ce qu'un agent IA ? Fonctionnement, 20 cas d'usage concrets par fonction, outils 2026, gouvernance : le guide pour déployer des agents IA en entreprise. Et l'option clé en main : nous développons vos agents IA sur mesure."
 const H1 = "Agents IA en entreprise : le guide complet et 20 cas d'usage concrets"
 
 const TOC = [
   { href: '#definition', label: "Qu'est-ce qu'un agent IA ?" },
   { href: '#fonctionnement', label: 'Comment fonctionne un agent IA ?' },
   { href: '#cas-usage', label: "20 cas d'usage par fonction" },
+  { href: '#sur-mesure', label: 'Faire développer vos agents sur mesure' },
   { href: '#outils', label: 'Quels outils en 2026 ?' },
   { href: '#risques', label: 'Risques et gouvernance' },
   { href: '#commencer', label: 'Par où commencer ?' },
@@ -341,24 +342,47 @@ const START_STEPS = [
   },
 ]
 
+const BUILD_STEPS = [
+  {
+    icon: Compass,
+    title: 'Cadrage',
+    desc: "Nous choisissons le processus pilote, définissons l'objectif de l'agent, son périmètre d'action et les points de validation humaine. L'architecture est posée avant la première ligne de configuration.",
+  },
+  {
+    icon: Cog,
+    title: 'Build de l\'agent',
+    desc: "Nos équipes construisent l'agent : moteur de raisonnement, consignes, outils, garde-fous. Du sur mesure aligné sur vos règles métier, pas un assistant générique.",
+  },
+  {
+    icon: Plug,
+    title: 'Intégration MCP et API',
+    desc: "Nous connectons l'agent à vos logiciels (CRM, ERP, helpdesk, fichiers) via le standard MCP et vos API, avec droits limités au strict nécessaire et traçabilité complète.",
+  },
+  {
+    icon: Rocket,
+    title: 'Déploiement supervisé',
+    desc: "Mise en production progressive en mode supervisé, mesure du taux d'erreurs et d'escalade, documentation et passation. L'autonomie de l'agent s'élargit à mesure de sa fiabilité démontrée.",
+  },
+]
+
 const NEXT_STEPS = [
+  {
+    to: '/agence-developpement-ia',
+    tag: 'Sur mesure',
+    title: 'Agence de développement IA',
+    desc: "Nous concevons, développons et intégrons vos agents et solutions IA de bout en bout, jusqu'à la production.",
+  },
+  {
+    to: '/outils-ia-sur-mesure',
+    tag: 'Sur mesure',
+    title: 'Outils IA sur mesure',
+    desc: "Des applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage propres.",
+  },
   {
     to: '/formation-claude-code',
     tag: 'Formation',
     title: 'Formation Claude Code',
-    desc: "Former vos développeurs et profils techniques aux agents de code, sur vos projets réels.",
-  },
-  {
-    to: '/conseil-intelligence-artificielle',
-    tag: 'Conseil',
-    title: 'Conseil en intelligence artificielle',
-    desc: "Cadrer votre feuille de route agents : processus pilotes, choix des outils, gouvernance.",
-  },
-  {
-    to: '/automatisation-ia',
-    tag: 'Guide',
-    title: "Guide de l'automatisation IA",
-    desc: "Comprendre comment workflows et agents se combinent pour automatiser vos processus.",
+    desc: "En complément, former vos développeurs et profils techniques aux agents de code, sur vos projets réels.",
   },
 ]
 
@@ -391,7 +415,7 @@ const FAQ = [
   {
     q: 'Quelles compétences faut-il en interne pour déployer des agents IA ?',
     aStrong: "Trois profils suffisent pour démarrer : un expert du processus métier concerné, une personne formée au paramétrage et au pilotage des agents, et un référent qui supervise les résultats et la conformité.",
-    aRest: "Aucun de ces rôles n'exige un data scientist. La connaissance fine du processus pèse plus lourd que la technique : un agent mal cadré sur un processus flou échouera quel que soit l'outil. La formation des équipes en place couvre l'essentiel du besoin ; le développement sur mesure ne devient nécessaire que pour les intégrations complexes.",
+    aRest: "Aucun de ces rôles n'exige un data scientist. La connaissance fine du processus pèse plus lourd que la technique : un agent mal cadré sur un processus flou échouera quel que soit l'outil. Beaucoup d'entreprises préfèrent confier le développement et l'intégration à une équipe spécialisée, puis garder en interne le pilotage métier et la supervision. Masteria développe l'agent sur mesure et forme vos référents en complément.",
   },
 ]
 
@@ -662,6 +686,56 @@ export default function AgentsIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── ON DÉVELOPPE VOS AGENTS POUR VOUS (service dominant) ── */}
+      <section id="sur-mesure" style={{ padding: sectionPad, background: '#0A0A0A', color: '#fff' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#93C5FD', marginBottom: 14 }}>
+            Nous le construisons pour vous
+          </div>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
+            On développe vos agents IA sur mesure
+          </h2>
+
+          <div style={{ background: 'rgba(37,99,235,0.16)', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', margin: '0 0 28px', maxWidth: 860 }}>
+            <p style={{ fontSize: 16.5, lineHeight: 1.7, margin: 0, color: '#fff' }}>
+              <strong>Plutôt que d'outiller vous-même vos agents, vous nous confiez la construction de bout en bout : cadrage du processus, développement de l'agent, intégration à vos logiciels via MCP et API, puis déploiement supervisé. Vous récupérez un agent qui agit dans vos outils, encadré par des garde-fous, et dont vous gardez la propriété.</strong>
+            </p>
+          </div>
+
+          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
+            Les 20 cas d'usage ci-dessus décrivent ce qu'un agent peut faire. Les rendre réels suppose de l'ingénierie : connecter vos systèmes, fiabiliser le raisonnement, borner les actions, journaliser, cartographier les usages au regard de l'AI Act. C'est ce travail que nous prenons en charge, agent par agent.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
+            {BUILD_STEPS.map((step, i) => (
+              <div key={i} style={{ background: '#161616', border: '1px solid #262626', borderRadius: 16, padding: 26 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <step.icon size={22} strokeWidth={2} style={{ color: '#93C5FD' }} aria-hidden="true" />
+                </div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: '#93C5FD', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
+                <h3 style={{ ...h3Style, color: '#fff', fontSize: 16.5 }}>{step.title}</h3>
+                <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+              Discutons de votre projet
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '15px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 700, border: '1px solid rgba(255,255,255,0.3)' }}>
+              Notre agence de développement IA
+              <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
+            </Link>
+          </div>
+
+          <p style={{ fontSize: 14.5, color: '#9CA3AF', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
+            Votre besoin dépasse l'agent isolé et appelle un véritable logiciel piloté par l'IA ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour donner les bons réflexes à vos équipes en complément, la <Link to="/formation-claude-code" style={{ color: '#93C5FD', fontWeight: 600 }}>formation Claude Code</Link> les outille sur les agents de code.
+          </p>
+        </div>
+      </section>
+
       {/* ── CTA MILIEU ── */}
       <section style={{ padding: '56px 24px', background: c }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
@@ -765,9 +839,9 @@ export default function AgentsIAEntreprisePage() {
             ))}
           </div>
 
-          <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 8 }}>Trois façons d'avancer avec Masteria</h3>
+          <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 8 }}>Avancer avec Masteria</h3>
           <p style={{ ...pStyle, marginBottom: 28 }}>
-            Masteria, organisme de formation IA certifié Qualiopi fondé en 2022 à Lyon, a formé plus de 1 500 professionnels avec 98 % de satisfaction, en France, en Suisse et en Belgique. Sur les agents, nous intervenons en formation comme en cadrage. Pour les projets qui demandent du conseil ou de l'intégration, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> prend le relais.
+            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout. Vos équipes peuvent aussi se former en complément.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {NEXT_STEPS.map(item => (

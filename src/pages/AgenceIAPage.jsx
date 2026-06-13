@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BadgeCheck, Building2, Check, Compass, Factory, FlaskConical,
+  ArrowRight, BadgeCheck, Building2, Check, Compass, Cpu, Factory, FlaskConical,
   Globe, GraduationCap, Handshake, Landmark, MapPin, MonitorSmartphone,
   Radar, Rocket, Target, Workflow,
 } from 'lucide-react'
@@ -12,8 +12,10 @@ import OfficialSources from '../components/OfficialSources'
  * Page « Agence IA » ancrée à Lyon : cible « agence ia lyon » (210/mois, KD 17,
  * la priorité, Masteria est à Lyon), « agence ia » (1 600/mois, KD 59, tête de
  * cluster), « agence ia france », « agence spécialisée en ia », « agence conseil
- * ia entreprise ». Positionnement honnête : cabinet/agence IA lyonnais qui réunit
- * conseil, automatisation et formation Qualiopi, interventions France/CH/BE.
+ * ia entreprise ». Positionnement high-ticket : cabinet/agence IA lyonnais dont
+ * le cœur d'offre est le conseil et le développement d'outils & agents sur
+ * mesure ; l'automatisation prolonge le build et la formation reste une offre
+ * secondaire mais visible. Interventions France/CH/BE.
  * Design premium cabinet : kickers, icônes lucide (zéro emoji), cartes radius 16,
  * CTA final sombre. Accent bleu Masteria (#2563EB), pas d'orange.
  */
@@ -22,8 +24,8 @@ const SLUG = 'agence-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Agence IA Lyon · Conseil & automatisation | Masteria'
-const META_DESC = "Masteria, agence IA à Lyon : conseil, automatisation des processus et formation certifiée Qualiopi. France, Suisse, Belgique. Premier cadrage gratuit."
+const META_TITLE = 'Agence IA Lyon · Conseil & développement sur mesure | Masteria'
+const META_DESC = "Masteria, agence IA à Lyon : conseil stratégique, développement d'outils et d'agents IA sur mesure, automatisation des processus et formation. France, Suisse, Belgique. Premier cadrage gratuit."
 const H1 = 'Agence IA à Lyon : conseil, automatisation et formation des équipes'
 
 /* ── Design system local : kickers, titres, cartes, pastilles d'icônes ── */
@@ -52,6 +54,14 @@ const OFFERS = [
     points: ['Audit IA et cadrage stratégique', 'Feuille de route priorisée', 'Gouvernance, RGPD et AI Act'],
   },
   {
+    icon: Cpu,
+    title: "Développement d'outils et d'agents sur mesure",
+    href: '/agence-developpement-ia',
+    cta: 'Découvrir le développement sur mesure',
+    desc: "Conception et développement de solutions IA propres à votre métier : agents autonomes branchés sur votre SI, copilotes internes, interfaces et intégrations sur mesure. Du cadrage fonctionnel à la mise en production, avec une équipe qui code et documente.",
+    points: ['Agents et copilotes IA sur mesure', 'Intégrations à votre SI (CRM, ERP, API)', 'Du prototype à la mise en production'],
+  },
+  {
     icon: Workflow,
     title: 'Automatisation des processus',
     href: '/agence-automatisation-ia',
@@ -61,10 +71,10 @@ const OFFERS = [
   },
   {
     icon: GraduationCap,
-    title: 'Formation IA certifiée Qualiopi',
+    title: 'Formation IA des équipes',
     href: '/formation-intelligence-artificielle',
     cta: 'Découvrir les formations IA',
-    desc: "Des programmes par métier et par outil (ChatGPT, Claude, Copilot, Gemini), en intra-entreprise ou en accompagnement individuel, en présentiel comme en distanciel. La certification Qualiopi ouvre droit à une prise en charge par votre OPCO.",
+    desc: "Pour ancrer durablement les usages, des programmes par métier et par outil (ChatGPT, Claude, Copilot, Gemini), en intra-entreprise ou en accompagnement individuel, en présentiel comme en distanciel. Volet certifié Qualiopi, finançable par votre OPCO.",
     points: ['Programmes par métier et par outil', 'Intra-entreprise ou individuel', 'Finançable OPCO (Qualiopi)'],
   },
 ]
@@ -78,7 +88,7 @@ const LYON_SECTORS = [
 
 const FIRST_STEPS = [
   { num: '1', title: 'Vous décrivez votre besoin', desc: "Quelques lignes suffisent via le formulaire de contact : votre contexte, vos processus, vos objectifs. Nous revenons vers vous sous 24 h." },
-  { num: '2', title: 'Échange de cadrage gratuit', desc: "En visio ou par téléphone, sans engagement. Nous qualifions ensemble le besoin dominant : stratégie, automatisation, formation, ou une combinaison des trois." },
+  { num: '2', title: 'Échange de cadrage gratuit', desc: "En visio ou par téléphone, sans engagement. Nous qualifions ensemble le besoin dominant : stratégie, développement sur mesure, automatisation, formation, ou une combinaison." },
   { num: '3', title: 'Proposition écrite', desc: "Périmètre, livrables, calendrier, budget forfaitaire et conditions de déplacement. Vous savez exactement ce que vous achetez avant de signer." },
   { num: '4', title: 'Démarrage de la mission', desc: "Avec un objectif constant : transférer la compétence à vos équipes au fil de la mission, documentation et ateliers de passation à l'appui." },
 ]
@@ -86,7 +96,7 @@ const FIRST_STEPS = [
 const SPECIALIST_POINTS = [
   { icon: Target, title: 'Une seule discipline', desc: "Masteria travaille uniquement sur l'IA. Une ESN généraliste répartit son expertise sur des dizaines de technologies et staffe souvent ses consultants IA selon les disponibilités du moment." },
   { icon: Radar, title: 'Une veille en continu', desc: "Modèles, outils, tarifs, réglementation : l'écosystème IA bouge chaque mois. Nos recommandations sont réévaluées en permanence, indépendamment des éditeurs." },
-  { icon: GraduationCap, title: "L'autonomie comme livrable", desc: "Le modèle économique de la régie repose sur la durée des missions. Le nôtre repose sur la formation : nous documentons, nous formons et nous partons quand vos équipes sont autonomes." },
+  { icon: GraduationCap, title: "L'autonomie comme livrable", desc: "Le modèle économique de la régie repose sur la durée des missions. Le nôtre repose sur la solution livrée et la passation : nous concevons, nous développons, nous documentons et nous formons vos équipes pour qu'elles restent autonomes une fois l'outil en production." },
   { icon: Handshake, title: 'Des circuits courts', desc: "Un interlocuteur stable du cadrage à la passation, des décisions prises en quelques jours et un programme ajusté à votre réalité plutôt qu'à un catalogue." },
 ]
 
@@ -97,7 +107,7 @@ const FAQ = [
   },
   {
     q: 'Combien coûte une agence IA ?',
-    a: "Les budgets dépendent de la mission. Ordres de grandeur constatés sur le marché français : 5 000 à 30 000 € pour un audit ou un cadrage stratégique, 5 000 à 50 000 € pour l'automatisation d'un périmètre de processus, 1 000 à 2 500 € par jour de formation intra-entreprise. Chez Masteria, le premier échange de cadrage est gratuit et chaque proposition est forfaitaire. Point utile pour votre budget : les formations sont finançables par votre OPCO grâce à notre certification Qualiopi, le conseil pur ne l'est pas.",
+    a: "Les budgets dépendent de la mission. Ordres de grandeur constatés sur le marché français : 5 000 à 30 000 € pour un audit ou un cadrage stratégique, 15 000 à 80 000 € pour le développement d'un outil ou d'un agent sur mesure, 5 000 à 50 000 € pour l'automatisation d'un périmètre de processus, 1 000 à 2 500 € par jour de formation intra-entreprise. Chez Masteria, le premier échange de cadrage est gratuit et chaque proposition est forfaitaire. À noter : le conseil et le développement sur mesure ne sont pas finançables par l'OPCO ; seule la formation l'est, grâce à notre certification Qualiopi.",
   },
   {
     q: 'Agence IA ou recrutement interne ?',
@@ -109,7 +119,7 @@ const FAQ = [
   },
   {
     q: 'Quelle différence entre une agence IA et un cabinet de conseil IA ?',
-    a: "Dans l'usage courant, une agence IA conçoit et déploie des solutions : automatisations, agents, intégrations d'outils. Un cabinet de conseil IA intervient plutôt en amont : stratégie, cadrage, gouvernance, choix d'outils. La frontière est devenue poreuse et de nombreuses structures combinent les deux. Masteria assume ce double positionnement : cabinet de conseil pour la stratégie et la feuille de route, agence pour l'automatisation des processus, organisme de formation certifié Qualiopi pour la montée en compétence des équipes.",
+    a: "Dans l'usage courant, une agence IA conçoit et déploie des solutions : développements sur mesure, agents, automatisations, intégrations d'outils. Un cabinet de conseil IA intervient plutôt en amont : stratégie, cadrage, gouvernance, choix d'outils. La frontière est devenue poreuse et de nombreuses structures combinent les deux. Masteria assume ce double positionnement : cabinet de conseil pour la stratégie et la feuille de route, agence pour le développement d'outils et d'agents sur mesure et l'automatisation des processus, organisme de formation pour la montée en compétence des équipes.",
   },
   {
     q: 'Travaillez-vous avec les PME ?',
@@ -145,6 +155,8 @@ const LOCAL_BUSINESS_JSONLD = {
   ],
   knowsAbout: [
     'Intelligence artificielle générative',
+    'Conseil et stratégie IA',
+    "Développement d'outils et d'agents IA sur mesure",
     'Automatisation des processus',
     'Agents IA',
     "Formation professionnelle à l'IA",
@@ -212,7 +224,7 @@ export default function AgenceIAPage() {
               Agence IA · Lyon
             </span>
             <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Conseil · Automatisation · Formation
+              Conseil · Développement sur mesure · Formation
             </span>
           </div>
 
@@ -223,12 +235,12 @@ export default function AgenceIAPage() {
           {/* GEO : réponse directe pour citation LLM */}
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680 }}>
             <strong>
-              Masteria est une agence IA basée à Lyon (Croix-Rousse), fondée en 2022 et certifiée Qualiopi. Elle réunit trois expertises : le conseil en stratégie IA, l'automatisation des processus et la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
+              Masteria est une agence IA basée à Lyon (Croix-Rousse), fondée en 2022. Son cœur d'offre : le conseil en stratégie IA et le développement d'outils et d'agents sur mesure, prolongés par l'automatisation des processus et, en appui, la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
             </strong>
           </p>
 
           <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
-            Notre métier : aider les directions générales et les équipes métier à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, nous automatisons vos processus sur vos outils existants et nous formons vos collaborateurs. Notre différence vient de notre ADN d'organisme de formation : à la fin de chaque mission, vos équipes savent faire fonctionner, corriger et étendre ce qui a été construit.
+            Notre métier : aider les directions générales et les équipes métier à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les solutions sur mesure qui s'intègrent à vos outils : agents, copilotes, automatisations. La formation prolonge la mise en œuvre, pour qu'à la fin vos équipes sachent faire fonctionner, corriger et étendre ce qui a été construit.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
@@ -237,7 +249,7 @@ export default function AgenceIAPage() {
               <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#offres" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Voir nos trois offres
+              Voir nos offres
             </a>
           </div>
 
@@ -276,11 +288,11 @@ export default function AgenceIAPage() {
           <div style={kickerStyle}>Nos expertises</div>
           <h2 style={h2Style}>Que fait une agence IA comme Masteria ?</h2>
           <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Masteria réunit trois expertises : le conseil en stratégie et gouvernance IA, l'automatisation des processus et la formation certifiée Qualiopi.</strong>{' '}
-            Les trois se combinent dans une même trajectoire : un cadrage stratégique débouche sur un chantier d'automatisation, consolidé par la formation des équipes qui en héritent.
+            <strong style={{ color: '#0A0A0A' }}>Masteria couvre quatre expertises, avec le conseil et le développement sur mesure en cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'outils et d'agents sur mesure, l'automatisation des processus et la formation des équipes.</strong>{' '}
+            Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
           </p>
           <p style={mutedStyle}>
-            Trois offres, une seule logique : vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
+            Quatre offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24, marginBottom: 32 }}>
             {OFFERS.map(({ icon: Icon, title, href, cta, desc, points }) => (
@@ -307,10 +319,12 @@ export default function AgenceIAPage() {
           </div>
           <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
             <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-              <strong style={{ color: '#0A0A0A' }}>La différence Masteria : vos équipes finissent autonomes.</strong>{' '}
-              Masteria est d'abord un organisme de formation. Le transfert de compétence est intégré à chaque mission de conseil et d'automatisation : documentation, ateliers de passation, formation des utilisateurs. Pour explorer les cas d'usage concrets (relances, comptes rendus, reporting, support), consultez la page{' '}
-              <Link to="/automatisation-ia" style={{ color: c, fontWeight: 600 }}>automatisation IA</Link> ; pour le déploiement d'assistants autonomes branchés sur votre SI, la page{' '}
-              <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>.
+              <strong style={{ color: '#0A0A0A' }}>Du conseil à la solution livrée, sous un même toit.</strong>{' '}
+              Nous ne nous arrêtons pas à la recommandation : nous concevons et développons les outils et les agents qui en découlent. Pour le détail de cette capacité de build, consultez notre{' '}
+              <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link> et nos{' '}
+              <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link> ; pour les chaînes de traitement répétitives, la page{' '}
+              <Link to="/automatisation-ia" style={{ color: c, fontWeight: 600 }}>automatisation IA</Link> ; pour les assistants branchés sur votre SI, la page{' '}
+              <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes sur ce qui a été construit.
             </p>
           </div>
         </div>
@@ -392,7 +406,7 @@ export default function AgenceIAPage() {
           <h2 style={h2Style}>Comment se passe un premier échange ?</h2>
           <p style={answerStyle}>
             <strong style={{ color: '#0A0A0A' }}>Le premier échange est un cadrage gratuit et sans engagement, en visio ou par téléphone, avec une réponse sous 24 heures.</strong>{' '}
-            Il qualifie votre besoin dominant avant tout chiffrage : stratégie, automatisation, formation ou une combinaison des trois. Vous recevez ensuite une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire.
+            Il qualifie votre besoin dominant avant tout chiffrage : stratégie, développement sur mesure, automatisation, formation ou une combinaison. Vous recevez ensuite une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire.
           </p>
           <p style={mutedStyle}>
             Quatre étapes séparent votre premier message du démarrage de la mission.
@@ -475,7 +489,7 @@ export default function AgenceIAPage() {
             <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
           </Link>
           <p style={{ fontSize: 13, color: '#9CA3AF', margin: 0 }}>
-            Agence IA à Lyon · Conseil, automatisation, formation · Certifié Qualiopi · France, Suisse, Belgique
+            Agence IA à Lyon · Conseil, développement sur mesure, automatisation, formation · France, Suisse, Belgique
           </p>
         </div>
       </section>

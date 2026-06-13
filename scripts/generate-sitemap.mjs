@@ -48,6 +48,8 @@ const staticRoutes = [
   { path: 'agents-ia-entreprise',                prio: 0.8, freq: 'monthly', files: ['src/pages/AgentsIAEntreprisePage.jsx'] },
   { path: 'agence-ia',                           prio: 0.85, freq: 'monthly', files: ['src/pages/AgenceIAPage.jsx'] },
   { path: 'meilleure-agence-ia',                 prio: 0.8, freq: 'monthly', files: ['src/pages/MeilleureAgenceIAPage.jsx'] },
+  { path: 'agence-developpement-ia',             prio: 0.85, freq: 'monthly', files: ['src/pages/AgenceDeveloppementIAPage.jsx'] },
+  { path: 'outils-ia-sur-mesure',                prio: 0.8, freq: 'monthly', files: ['src/pages/OutilsIASurMesurePage.jsx'] },
   { path: 'centre-formation-ia-entreprise',      prio: 0.7, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'contact',                             prio: 0.8, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'blog',                                prio: 0.8, freq: 'weekly',  files: ['src/pages/BlogListPage.jsx', 'src/data/blog-articles.js'] },

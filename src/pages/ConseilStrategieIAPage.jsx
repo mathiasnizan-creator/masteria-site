@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BarChart3, BadgeCheck, Building2, Check, Clock, Compass,
+  ArrowRight, BarChart3, BadgeCheck, Building2, Check, Clock, Compass, Cpu,
   GraduationCap, LineChart, MonitorSmartphone, Route, Scale, Target,
   Users, Workflow,
 } from 'lucide-react'
@@ -50,10 +50,10 @@ const iconTileStyle = {
 }
 
 const META_TITLE = "Conseil stratégie IA : audit, feuille de route | Masteria"
-const META_DESC = "Conseil stratégie IA pour PME et ETI : diagnostic de maturité, cas d'usage priorisés par ROI, feuille de route 90 jours et gouvernance. Cadrage gratuit."
+const META_DESC = "Conseil stratégie IA pour PME et ETI : diagnostic de maturité, cas d'usage priorisés par ROI, feuille de route 90 jours, puis développement et déploiement des solutions. De la feuille de route au build. Cadrage gratuit."
 const H1 = "Conseil stratégie IA : du diagnostic à la feuille de route"
 const DIRECT_ANSWER = "Le conseil stratégie IA consiste à définir où, comment et dans quel ordre déployer l'intelligence artificielle dans une entreprise. Masteria structure la démarche en 4 phases : diagnostic de maturité, priorisation des cas d'usage par ROI, feuille de route à 90 jours et 12 mois, gouvernance et conduite du changement."
-const INTRO = "Outils qui se multiplient, équipes qui s'équipent en ordre dispersé, budgets engagés sans indicateur de retour : les directions générales ont besoin d'un cap avant d'investir davantage. Notre mission de conseil stratégique en intelligence artificielle donne à votre COMEX une vision partagée, des priorités chiffrées et un plan d'exécution réaliste."
+const INTRO = "Outils qui se multiplient, équipes qui s'équipent en ordre dispersé, budgets engagés sans indicateur de retour : les directions générales ont besoin d'un cap avant d'investir davantage. Notre mission de conseil stratégique en intelligence artificielle donne à votre COMEX une vision partagée, des priorités chiffrées et un plan d'exécution réaliste. Et parce qu'une stratégie ne vaut que par sa mise en œuvre, la même équipe développe et déploie ensuite les solutions retenues : de la feuille de route au build, sans rupture."
 
 const HERO_BADGES = [
   { icon: Compass,           label: 'Cadrage gratuit de 30 minutes' },
@@ -202,7 +202,7 @@ const serviceJsonLd = {
   name: 'Masteria, Conseil stratégie IA',
   description: META_DESC,
   url: `https://www.master-ia.fr/${SLUG}`,
-  serviceType: ['Conseil stratégie IA', 'Diagnostic de maturité IA', 'Feuille de route IA', 'Gouvernance IA'],
+  serviceType: ['Conseil stratégie IA', 'Diagnostic de maturité IA', 'Feuille de route IA', 'Gouvernance IA', "Déploiement et développement de solutions IA"],
   areaServed: ['France', 'Suisse', 'Belgique'],
   provider: {
     '@type': 'Organization',
@@ -443,8 +443,11 @@ export default function ConseilStrategieIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 20, marginBottom: 0, maxWidth: 800 }}>
-            Pour préparer les arbitrages de la phase de cadrage, beaucoup de nos clients programment en amont notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link>, certifiée Qualiopi et finançable OPCO : comprendre les capacités réelles des modèles rend les décisions de priorisation plus rapides et mieux argumentées.
+          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 20, marginBottom: 14, maxWidth: 800 }}>
+            <strong style={{ color: INK }}>En aval, la feuille de route appelle une mise en œuvre.</strong> Une fois les chantiers prioritaires arbitrés, la même équipe passe au build : notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> conçoit et développe les solutions sur mesure, de l'agent métier à l'intégration au SI. La stratégie ne s'arrête pas au document : elle se déploie.
+          </p>
+          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 0, marginBottom: 0, maxWidth: 800 }}>
+            Pour préparer les arbitrages de la phase de cadrage, beaucoup de nos clients programment en amont notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link>, certifiée Qualiopi et finançable OPCO : comprendre les capacités réelles des modèles rend les décisions de priorisation plus rapides et mieux argumentées. Pour la montée en compétences des équipes métier, l'ensemble de nos parcours est détaillé sur la page <Link to="/formation-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation intelligence artificielle</Link>.
           </p>
         </div>
       </section>
@@ -525,14 +528,34 @@ export default function ConseilStrategieIAPage() {
       {/* ── DISPOSITIF COMPLET (maillage interne) ── */}
       <section style={{ padding: SECTION_PAD, background: BG_SOFT, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Un dispositif complet</div>
+          <div style={kickerStyle}>De la feuille de route au déploiement</div>
           <h2 style={h2Style}>
-            Stratégie, conseil, formation : un dispositif complet
+            La stratégie débouche sur du build, pas seulement sur un rapport
           </h2>
           <p style={{ color: GREY_700, fontSize: 16, marginBottom: 36, maxWidth: 800, lineHeight: 1.75 }}>
-            Une stratégie produit ses effets quand elle s'accompagne d'une exécution outillée et d'équipes formées. Masteria articule la mission stratégique avec ses autres offres, portées par la même équipe : de la conception de solutions sur mesure par notre <Link to="/agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence IA</Link> à la montée en compétences certifiée Qualiopi.
+            Une feuille de route ne produit ses effets que si elle est exécutée. Masteria prolonge la mission stratégique par la réalisation, portée par la même équipe : conception et développement des solutions sur mesure par notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link>, automatisation des processus, puis montée en compétences des équipes. Conseil et développement se chiffrent sur devis ; seule la formation associée est finançable OPCO.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+            <Link to="/agence-developpement-ia" style={{ textDecoration: 'none' }}>
+              <div
+                style={{ ...cardStyle, height: '100%', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = BLUE }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER }}
+              >
+                <div style={{ ...iconTileStyle, marginBottom: 16 }}>
+                  <Cpu size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+                </div>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: INK, marginBottom: 8, letterSpacing: '-0.01em' }}>
+                  Agence de développement IA
+                </h3>
+                <p style={{ fontSize: 14, color: GREY_500, lineHeight: 1.7, margin: '0 0 14px' }}>
+                  Le débouché opérationnel de la feuille de route : conception et développement des solutions sur mesure (agents, copilotes, intégrations au SI), du prototype à la mise en production.
+                </p>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, color: BLUE, fontWeight: 700 }}>
+                  Découvrir le développement IA <ArrowRight size={14} aria-hidden="true" />
+                </span>
+              </div>
+            </Link>
             <Link to="/conseil-intelligence-artificielle" style={{ textDecoration: 'none' }}>
               <div
                 style={{ ...cardStyle, height: '100%', boxSizing: 'border-box', transition: 'border-color 0.2s' }}

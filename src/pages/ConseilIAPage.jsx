@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BrainCircuit, Building2, Check, CheckCircle2, Clock, Compass,
-  GraduationCap, LineChart, Scale, Search, ShieldCheck, Sparkles, Target,
+  ArrowRight, Boxes, BrainCircuit, Building2, Check, CheckCircle2, Clock, Compass,
+  Cpu, GraduationCap, LineChart, Scale, Search, ShieldCheck, Sparkles, Target,
   Users, Workflow, Zap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
@@ -189,8 +189,8 @@ const POUR_QUI = [
 const DIFFERENCIATEURS = [
   {
     Icon: Sparkles,
-    title: 'Conseil + formation',
-    desc: "Nous sommes les seuls à combiner cabinet de conseil et organisme de formation certifié Qualiopi. Les équipes que nous accompagnons sont aussi celles que nous formons.",
+    title: 'Conseil + développement',
+    desc: "Nous ne nous arrêtons pas à la recommandation : nous concevons et développons les solutions sur mesure qui en découlent, puis nous formons les équipes qui les utilisent. Du cadrage à la production, une seule équipe.",
   },
   {
     Icon: Zap,
@@ -216,7 +216,7 @@ const FAQ_CONSEIL = [
   },
   {
     q: "En quoi Masteria se distingue d'un cabinet de conseil classique ?",
-    a: "Nous sommes à la fois cabinet de conseil et centre de formation certifié Qualiopi. Cela signifie que nous n'intervenons jamais sans transférer les compétences à vos équipes. Chaque mission débouche sur des collaborateurs autonomes, sans dépendance durable à un prestataire.",
+    a: "Un cabinet classique remet ses recommandations puis se retire. Masteria prolonge le conseil par la mise en œuvre : nous concevons et développons les solutions sur mesure qui découlent de la feuille de route, puis nous formons les équipes qui les utilisent. Du cadrage à la production, une seule équipe, sans passer la main à un intégrateur tiers.",
   },
   {
     q: "Combien coûte un cabinet de conseil en IA ?",
@@ -224,7 +224,7 @@ const FAQ_CONSEIL = [
   },
   {
     q: "Cabinet de conseil IA ou agence IA : quelle différence ?",
-    a: "Une agence IA développe des solutions : elle conçoit, code et livre des produits ou des intégrations sur mesure. Un cabinet de conseil IA intervient en amont et en transverse : il audite l'existant, définit la stratégie, sélectionne les outils de façon indépendante, structure la gouvernance et forme les équipes. Les deux se complètent : le cabinet cadre la trajectoire, puis peut piloter une agence ou un intégrateur pour la réalisation technique.",
+    a: "Une agence IA développe des solutions : elle conçoit, code et livre des produits ou des intégrations sur mesure. Un cabinet de conseil IA intervient en amont et en transverse : il audite l'existant, définit la stratégie, sélectionne les outils de façon indépendante, structure la gouvernance et forme les équipes. Masteria réunit les deux : le conseil cadre la trajectoire, puis notre agence de développement IA assure elle-même la réalisation technique, sans rupture entre la recommandation et la solution livrée.",
   },
   {
     q: "Pourquoi choisir un cabinet spécialisé plutôt qu'un généraliste ?",
@@ -274,9 +274,9 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Masteria, Cabinet de conseil IA',
-  description: "Cabinet de conseil spécialisé en intelligence artificielle pour entreprises. Audit, stratégie, accompagnement et transformation.",
+  description: "Cabinet de conseil spécialisé en intelligence artificielle pour entreprises. Audit, stratégie, développement de solutions sur mesure et transformation.",
   url: 'https://www.master-ia.fr/conseil-intelligence-artificielle',
-  serviceType: ['Audit IA', 'Stratégie IA', 'Accompagnement IA', 'Transformation IA'],
+  serviceType: ['Audit IA', 'Stratégie IA', "Développement de solutions IA sur mesure", 'Accompagnement IA', 'Transformation IA'],
   areaServed: ['France', 'Suisse', 'Belgique'],
   provider: {
     '@type': 'Organization',
@@ -300,7 +300,7 @@ export default function ConseilIAPage() {
     <>
       <SEOHead
         title="Cabinet de conseil en intelligence artificielle | Masteria"
-        description="Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, accompagnement au déploiement. Cadrage gratuit de 30 minutes."
+        description="Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, puis conception et développement des solutions sur mesure. Du conseil à la mise en œuvre. Cadrage gratuit de 30 minutes."
         slug="conseil-intelligence-artificielle"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -352,8 +352,8 @@ export default function ConseilIAPage() {
             color: GREY_700, lineHeight: 1.7,
             maxWidth: 740, margin: '0 auto 40px',
           }}>
-            <strong style={{ color: INK, fontWeight: 700 }}>Masteria est un cabinet de conseil en intelligence artificielle fondé en 2022 à Lyon. Nous aidons PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA, déployer les cas d'usage à fort ROI et former leurs équipes, en France, en Suisse et en Belgique.</strong>{' '}
-            Le transfert de compétences est garanti par notre centre de formation certifié Qualiopi.
+            <strong style={{ color: INK, fontWeight: 700 }}>Masteria est un cabinet de conseil en intelligence artificielle fondé en 2022 à Lyon. Nous aidons PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA et déployer les cas d'usage à fort ROI, en France, en Suisse et en Belgique.</strong>{' '}
+            Notre singularité : nous ne nous arrêtons pas au rapport. Nous concevons et développons les solutions sur mesure qui en découlent, et nous formons les équipes qui les utilisent.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
@@ -421,7 +421,51 @@ export default function ConseilIAPage() {
             ))}
           </ul>
           <p style={{ marginBottom: 0 }}>
-            Masteria couvre ces cinq missions avec une particularité : notre statut d'organisme de formation certifié Qualiopi. Pour le volet stratégique, consultez notre offre de <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> ; pour le détail de nos expertises, parcourez <a href="#services" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>nos services</a> ci-dessous.
+            Masteria couvre ces cinq missions avec une particularité : nous prolongeons le conseil par la mise en œuvre, en concevant et en développant nous-mêmes les solutions retenues. Pour le volet stratégique, consultez notre offre de <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> ; pour le passage à la réalisation, notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> ; pour le détail de nos expertises, parcourez <a href="#services" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>nos services</a> ci-dessous.
+          </p>
+        </div>
+      </section>
+
+      {/* PASSER DU CONSEIL À LA SOLUTION : pont vers le développement sur mesure */}
+      <section style={{ background: INK, color: '#fff', padding: SECTION_PAD }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={{ ...kickerStyle, color: BLUE_SOFT }}>Du conseil à la mise en œuvre</div>
+          <h2 style={{ ...h2Style, color: '#fff', marginBottom: 16 }}>
+            Passer du conseil à la solution
+          </h2>
+          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.75, maxWidth: 820, marginBottom: 36 }}>
+            <strong style={{ color: '#fff' }}>Un cabinet de conseil classique remet ses recommandations puis se retire. Masteria conçoit ET développe les solutions qui en découlent.</strong>{' '}
+            Une fois la feuille de route arbitrée, la même équipe passe à la réalisation : agents autonomes, copilotes internes, intégrations à votre SI, automatisations métier. Le conseil garde la maîtrise d'ouvrage, l'exécution reste alignée sur la trajectoire validée.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 36 }}>
+            {[
+              { Icon: Cpu, title: 'Agence de développement IA', desc: "Conception et développement de solutions IA sur mesure, du cadrage fonctionnel à la mise en production, avec une équipe qui code et documente.", href: '/agence-developpement-ia', cta: 'Découvrir le développement IA' },
+              { Icon: Boxes, title: 'Outils IA sur mesure', desc: "Copilotes internes, assistants documentaires, agents branchés sur vos données : des outils propres à votre métier, taillés pour vos processus.", href: '/outils-ia-sur-mesure', cta: 'Voir les outils sur mesure' },
+              { Icon: Workflow, title: 'Automatisation des processus', desc: "Workflows et chaînes de traitement répétitives (documents, emails, reporting) conçus et déployés sur vos outils existants.", href: '/agence-automatisation-ia', cta: "Découvrir l'automatisation" },
+            ].map((b, i) => (
+              <Link key={i} to={b.href} style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 16, padding: 28, height: '100%', boxSizing: 'border-box',
+                  display: 'flex', flexDirection: 'column', transition: 'border-color 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)' }}
+                >
+                  <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
+                    <b.Icon size={22} color="#fff" strokeWidth={2} aria-hidden="true" />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#fff', marginBottom: 10, letterSpacing: '-0.01em' }}>{b.title}</h3>
+                  <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.7, margin: '0 0 16px' }}>{b.desc}</p>
+                  <span style={{ marginTop: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, color: '#fff', fontWeight: 700 }}>
+                    {b.cta} <ArrowRight size={14} aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <p style={{ fontSize: 13.5, color: '#9CA3AF', lineHeight: 1.65, margin: 0, maxWidth: 820 }}>
+            Conseil et développement sur mesure sont des prestations sur devis, non finançables par l'OPCO. Seule la formation associée, certifiée Qualiopi, l'est.
           </p>
         </div>
       </section>
@@ -636,8 +680,8 @@ export default function ConseilIAPage() {
               Pourquoi Masteria&nbsp;?
             </h2>
             <p style={{ fontSize: 16, color: GREY_700, maxWidth: 740, margin: '0 auto', lineHeight: 1.7 }}>
-              <strong style={{ color: INK }}>Masteria combine cabinet de conseil et organisme de formation certifié Qualiopi : chaque mission transfère les compétences aux équipes accompagnées.</strong>{' '}
-              S'y ajoutent des POC livrés en 3 à 6 semaines, un cadrage RGPD et AI Act systématique et des indicateurs de ROI définis dès le lancement.
+              <strong style={{ color: INK }}>Masteria réunit le conseil, le développement sur mesure et la formation : chaque mission peut aller de la stratégie jusqu'à la solution en production, sans passer la main à un tiers.</strong>{' '}
+              S'y ajoutent des prototypes livrés en 3 à 6 semaines, un cadrage RGPD et AI Act systématique et des indicateurs de ROI définis dès le lancement.
             </p>
           </div>
 
@@ -704,10 +748,10 @@ export default function ConseilIAPage() {
             fontSize: 22, fontWeight: 800,
             color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
-            Conseil + formation : un modèle hybride pour ancrer les usages
+            Conseil, développement et formation : un modèle intégré pour ancrer les usages
           </h3>
           <p style={{ marginBottom: 20 }}>
-            La singularité de Masteria réside dans l'articulation entre conseil et formation. Un cabinet classique remet son rapport puis se retire. Nous restons pour former les équipes que nous accompagnons, du comité de direction (avec notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link>) jusqu'aux fonctions métier. Cette continuité évite le piège bien connu du « livrable sans suite » : les recommandations stratégiques se traduisent en compétences réelles, opérables au quotidien. Notre statut d'organisme de formation certifié Qualiopi rend par ailleurs le volet formation de la mission éligible aux financements OPCO ; le conseil pur reste hors du champ de ces financements. Ce montage réduit le coût net pour l'entreprise tout en maximisant l'impact.
+            La singularité de Masteria réside dans la continuité entre le conseil, la réalisation et la formation. Un cabinet classique remet son rapport puis se retire. Nous restons pour <strong style={{ color: INK }}>concevoir et développer les solutions retenues</strong>, via notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link>, puis pour former les équipes qui les utilisent, du comité de direction (avec notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link>) jusqu'aux fonctions métier. Cette continuité évite le piège bien connu du « livrable sans suite » : les recommandations stratégiques deviennent des outils en production et des compétences réelles, opérables au quotidien. Le conseil et le développement se chiffrent sur devis ; seul le volet formation, certifié Qualiopi, est éligible aux financements OPCO.
           </p>
 
           <h3 style={{
@@ -718,7 +762,7 @@ export default function ConseilIAPage() {
             Outils, modèles et stack technique : choisir sans s'enfermer
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Le marché des outils IA évolue à un rythme inédit. Entre les modèles propriétaires (OpenAI, Anthropic, Google, Microsoft) et les modèles ouverts (Mistral, Llama, DeepSeek), entre les solutions souveraines hébergées en Europe et les API généralistes, les arbitrages dépendent de votre stack existante, de votre niveau de sensibilité des données et de votre exposition au risque de dépendance. Nous accompagnons ce choix de manière <strong style={{ color: INK }}>agnostique</strong>, en pondérant performance, coût d'usage, conformité RGPD et capacité d'intégration avec vos outils métier (CRM, ERP, suite collaborative). Lorsque les arbitrages débouchent sur des développements sur mesure, nous cadrons la réalisation avec notre <Link to="/agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence IA</Link> ; pour les chaînes de traitement répétitives, notre <Link to="/agence-automatisation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence d'automatisation IA</Link> conçoit et déploie les workflows. Le conseil garde la maîtrise d'ouvrage, l'exécution reste alignée sur la feuille de route.
+            Le marché des outils IA évolue à un rythme inédit. Entre les modèles propriétaires (OpenAI, Anthropic, Google, Microsoft) et les modèles ouverts (Mistral, Llama, DeepSeek), entre les solutions souveraines hébergées en Europe et les API généralistes, les arbitrages dépendent de votre stack existante, de votre niveau de sensibilité des données et de votre exposition au risque de dépendance. Nous accompagnons ce choix de manière <strong style={{ color: INK }}>agnostique</strong>, en pondérant performance, coût d'usage, conformité RGPD et capacité d'intégration avec vos outils métier (CRM, ERP, suite collaborative). Lorsque les arbitrages débouchent sur des développements sur mesure, la même équipe passe à la réalisation : notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> conçoit et code les <Link to="/outils-ia-sur-mesure" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>outils IA sur mesure</Link> ; pour les chaînes de traitement répétitives, notre <Link to="/agence-automatisation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence d'automatisation IA</Link> déploie les workflows. Le conseil garde la maîtrise d'ouvrage, l'exécution reste alignée sur la feuille de route.
           </p>
 
           <h3 style={{
@@ -740,6 +784,34 @@ export default function ConseilIAPage() {
 
       {/* FAQ */}
       <FAQSection items={FAQ_CONSEIL} title="Questions fréquentes sur nos missions de conseil IA" bg="#F9FAFB" />
+
+      {/* FORMATION : offre secondaire, pour ancrer les usages */}
+      <section style={{ background: '#fff', padding: '56px clamp(20px, 4vw, 32px)' }}>
+        <div style={{
+          maxWidth: 1120, margin: '0 auto',
+          background: BG_SOFT, border: `1px solid ${BORDER}`, borderRadius: 16,
+          padding: 'clamp(28px, 4vw, 40px)',
+          display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24,
+        }}>
+          <div style={{ flex: '1 1 420px' }}>
+            <div style={kickerStyle}>Pour ancrer les usages</div>
+            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)', marginBottom: 10 }}>
+              Et la formation des équipes ?
+            </h2>
+            <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: 0, maxWidth: 680 }}>
+              Une fois la solution déployée, nos programmes de formation rendent vos équipes autonomes sur les outils mis en place. Volet certifié Qualiopi et finançable OPCO, en complément du conseil et du développement.
+            </p>
+          </div>
+          <Link to="/formation-intelligence-artificielle" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: '#fff', color: INK, border: `1px solid ${BORDER}`,
+            padding: '14px 24px', borderRadius: 12,
+            textDecoration: 'none', fontSize: 14.5, fontWeight: 700, whiteSpace: 'nowrap',
+          }}>
+            Voir les formations IA <ArrowRight size={15} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
 
       {/* CTA FINAL */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>
