@@ -113,7 +113,7 @@ const CONSEIL_COLS = [
     ],
   },
   {
-    head: 'Secteurs & repères',
+    head: 'Secteurs & guides',
     items: [
       { label: 'IA par secteur',          desc: 'Banque, industrie, santé, juridique…', slug: 'ia-secteurs',          Icon: Briefcase },
       { label: 'Agence IA Lyon',          desc: 'Équipe basée à Lyon, France entière', slug: 'agence-ia',           Icon: Building2 },
