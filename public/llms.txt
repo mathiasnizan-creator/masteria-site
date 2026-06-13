@@ -51,6 +51,11 @@ Masteria propose deux activités complémentaires :
 
 - [Agence de développement IA](https://www.master-ia.fr/agence-developpement-ia) — Conception et développement sur mesure : agents IA, automatisations, applications métier, intégrations LLM/RAG, API et MCP, de l'idée au déploiement avec transfert aux équipes
 - [Outils IA sur mesure](https://www.master-ia.fr/outils-ia-sur-mesure) — Applications et copilotes métier conçus sur les processus et données du client (copilote interne, assistant documentaire RAG, automatisation métier, application web IA)
+- [Agence IA marketing](https://www.master-ia.fr/agence-ia-marketing) — Prestation done-for-you : production de contenu, SEO/GEO, campagnes et reporting pilotés par IA (distinct de la formation marketing)
+- [Agence IA à Annecy](https://www.master-ia.fr/agence-ia-annecy) — Conseil et développement IA pour la Haute-Savoie (équipe Lyon, interventions présentiel + distanciel)
+- [Agence IA à Paris](https://www.master-ia.fr/agence-ia-paris) — Conseil et développement IA, interventions à Paris et en Île-de-France
+- [Agence IA à Genève](https://www.master-ia.fr/agence-ia-geneve) — Conseil et développement IA pour la Suisse romande
+- [Agence IA à Marseille](https://www.master-ia.fr/agence-ia-marseille) — Conseil et développement IA pour Marseille et la région PACA
 
 ## Conseil, agence et guides experts
 

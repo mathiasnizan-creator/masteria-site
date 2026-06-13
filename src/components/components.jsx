@@ -5,6 +5,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
+  Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
 import { useIsMobile } from '../hooks/useMediaQuery';
@@ -90,15 +91,48 @@ const METIERS_NAV = [
   { label: 'Multi-métier',            slug: 'formation-ia-transverse' },
 ]
 
+// ── Données méga-menu "Conseil & Développement" ──
+const CONSEIL_COLS = [
+  {
+    head: 'Conseil & stratégie',
+    items: [
+      { label: 'Cabinet de conseil IA', desc: 'Cadrage, gouvernance et trajectoire IA', slug: 'conseil-intelligence-artificielle', Icon: Lightbulb },
+      { label: 'Conseil stratégie IA',  desc: 'Feuille de route et priorisation des cas', slug: 'conseil-strategie-ia',            Icon: Compass },
+    ],
+  },
+  {
+    head: 'Développement sur mesure',
+    items: [
+      { label: 'Agence développement IA', desc: 'Conception et intégration sur mesure', slug: 'agence-developpement-ia', Icon: Code2 },
+      { label: 'Outils IA sur mesure',    desc: 'Applications et copilotes métier',     slug: 'outils-ia-sur-mesure',  Icon: Wrench },
+      { label: 'Agence automatisation IA',desc: 'Workflows et automatisations métier',   slug: 'agence-automatisation-ia', Icon: Workflow },
+      { label: 'Agents IA en entreprise', desc: 'Agents autonomes et copilotes',         slug: 'agents-ia-entreprise',  Icon: Bot },
+    ],
+  },
+  {
+    head: 'Agence & repères',
+    items: [
+      { label: 'Agence IA Lyon',          desc: 'Équipe basée à Lyon, France entière', slug: 'agence-ia',           Icon: Building2 },
+      { label: 'Agence IA marketing',     desc: 'IA appliquée au marketing et au growth', slug: 'agence-ia-marketing', Icon: Megaphone },
+      { label: 'Automatisation IA · guide', desc: 'Comprendre et cadrer vos automatisations', slug: 'automatisation-ia', Icon: Workflow },
+      { label: 'Meilleure agence IA',     desc: 'Critères et repères de sélection',     slug: 'meilleure-agence-ia', Icon: Award },
+    ],
+  },
+]
+
 export function MasteriaHeader() {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [conseilOpen, setConseilOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [mobileFormationsOpen, setMobileFormationsOpen] = useState(false);
+  const [mobileConseilOpen, setMobileConseilOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(104);
   const menuRef = useRef(null);
+  const conseilRef = useRef(null);
   const timerRef = useRef(null);
+  const conseilTimerRef = useRef(null);
   const headerRef = useRef(null);
 
   // Mesure la hauteur réelle du header (nav + bandeau confiance)
@@ -115,6 +149,7 @@ export function MasteriaHeader() {
   useEffect(() => {
     setMobileNavOpen(false);
     setMobileFormationsOpen(false);
+    setMobileConseilOpen(false);
   }, [location.pathname]);
 
   // Bloquer le scroll body quand le drawer est ouvert
@@ -132,8 +167,15 @@ export function MasteriaHeader() {
     timerRef.current = setTimeout(() => setMenuOpen(false), 120);
   };
 
+  const handleConseilEnter = () => {
+    clearTimeout(conseilTimerRef.current);
+    setConseilOpen(true);
+  };
+  const handleConseilLeave = () => {
+    conseilTimerRef.current = setTimeout(() => setConseilOpen(false), 120);
+  };
+
   const navLinks = [
-    { label: 'Conseil IA', path: '/conseil-intelligence-artificielle' },
     { label: 'Financement', path: '/financement-formation-ia' },
     { label: 'À propos', path: '/centre-formation-ia-entreprise' },
     { label: 'Blog', path: '/blog' },
@@ -141,6 +183,13 @@ export function MasteriaHeader() {
   ];
 
   const formationsActive = location.pathname.startsWith('/formation');
+  const CONSEIL_PATHS = [
+    '/conseil-intelligence-artificielle', '/conseil-strategie-ia',
+    '/agence-developpement-ia', '/outils-ia-sur-mesure', '/agence-automatisation-ia',
+    '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing',
+    '/automatisation-ia', '/meilleure-agence-ia',
+  ];
+  const conseilActive = CONSEIL_PATHS.includes(location.pathname);
 
   return (
     <header ref={headerRef} style={{ position: 'sticky', top: 0, background: '#fff', borderBottom: '1px solid #EFEFEF', zIndex: 200, transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}>
@@ -284,6 +333,76 @@ export function MasteriaHeader() {
               )}
             </div>
 
+            {/* ── Conseil & Développement + méga-menu ── */}
+            <div ref={conseilRef} onMouseEnter={handleConseilEnter} onMouseLeave={handleConseilLeave} style={{ position: 'relative' }}>
+              <button
+                style={{
+                  fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500, background: 'none', border: 'none',
+                  cursor: 'pointer', padding: '4px 0', display: 'flex', alignItems: 'center', gap: 5,
+                  color: conseilActive ? '#111' : '#717171',
+                  borderBottom: conseilActive ? '2px solid #111' : '2px solid transparent',
+                  transition: 'all 150ms',
+                }}
+              >
+                Conseil &amp; Développement
+                <svg width="11" height="7" viewBox="0 0 11 7" fill="none" style={{ transform: conseilOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms', marginTop: 1 }}>
+                  <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {conseilOpen && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 16px)', left: '50%', transform: 'translateX(-50%)',
+                  background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
+                  padding: '20px 24px 24px', width: 880,
+                  zIndex: 300,
+                }}>
+                  <div style={{ position: 'absolute', top: -7, left: '50%', transform: 'translateX(-50%)', width: 14, height: 14, background: '#fff', border: '1px solid #EFEFEF', borderRight: 'none', borderBottom: 'none', rotate: '45deg' }} />
+
+                  {/* Bannière "Agence IA" */}
+                  <Link to="/agence-ia" onClick={() => setConseilOpen(false)}
+                    style={{ textDecoration: 'none', borderRadius: 10, padding: '12px 14px', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 12, background: '#DBEAFE', border: '1px solid #BFDBFE', transition: 'transform 120ms' }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+                  >
+                    <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Sparkles size={18} color="#2563EB" strokeWidth={2.2} />
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Agence IA · conseil, développement &amp; automatisation</div>
+                      <div style={{ fontSize: 12, color: '#1E40AF' }}>Du cadrage stratégique à la mise en production de vos outils IA</div>
+                    </div>
+                    <span style={{ fontSize: 16, color: '#1E40AF', fontWeight: 700 }}>→</span>
+                  </Link>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24 }}>
+                    {CONSEIL_COLS.map(col => (
+                      <div key={col.head}>
+                        <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 12 }}>{col.head}</p>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                          {col.items.map(it => (
+                            <Link key={it.slug} to={`/${it.slug}`} onClick={() => setConseilOpen(false)}
+                              style={{ textDecoration: 'none', borderRadius: 8, padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 10, transition: 'background 120ms' }}
+                              onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
+                              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                            >
+                              <div style={{ width: 34, height: 34, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                <it.Icon size={18} color="#2563EB" strokeWidth={2.2} />
+                              </div>
+                              <div>
+                                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#111' }}>{it.label}</div>
+                                <div style={{ fontSize: 11, color: '#6B7280' }}>{it.desc}</div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             {navLinks.map(item => {
               const active = location.pathname === item.path;
               return (
@@ -412,6 +531,58 @@ export function MasteriaHeader() {
             </div>
           )}
 
+          {/* Conseil & Développement accordion */}
+          <button
+            onClick={() => setMobileConseilOpen(v => !v)}
+            style={{
+              width: '100%', background: 'none', border: 'none', padding: '16px 0',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              fontFamily: 'DM Sans, sans-serif', fontSize: 17, fontWeight: 700,
+              color: '#0A0A0A', cursor: 'pointer', borderBottom: '1px solid #F3F4F6',
+            }}
+          >
+            Conseil &amp; Développement
+            <ChevronDown size={20} style={{ transform: mobileConseilOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
+          </button>
+          {mobileConseilOpen && (
+            <div style={{ paddingLeft: 4, paddingBottom: 12 }}>
+              {/* Bannière Agence IA */}
+              <Link to="/agence-ia" style={{
+                display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px',
+                textDecoration: 'none',
+                background: '#DBEAFE',
+                border: '1px solid #BFDBFE',
+                borderRadius: 10, margin: '16px 0 8px',
+              }}>
+                <div style={{ width: 34, height: 34, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Sparkles size={17} color="#2563EB" strokeWidth={2.2} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#111' }}>Agence IA · conseil &amp; dev</div>
+                  <div style={{ fontSize: 12, color: '#1E40AF' }}>Du cadrage à la mise en production</div>
+                </div>
+                <span style={{ color: '#1E40AF', fontWeight: 700 }}>→</span>
+              </Link>
+
+              {CONSEIL_COLS.map(col => (
+                <div key={col.head}>
+                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', margin: '16px 0 8px' }}>{col.head}</div>
+                  {col.items.map(it => (
+                    <Link key={it.slug} to={`/${it.slug}`} style={{
+                      display: 'flex', alignItems: 'center', gap: 12, padding: '10px 8px',
+                      textDecoration: 'none', borderRadius: 8,
+                    }}>
+                      <div style={{ width: 32, height: 32, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <it.Icon size={17} color="#2563EB" strokeWidth={2.2} />
+                      </div>
+                      <span style={{ fontSize: 15, fontWeight: 600, color: '#0A0A0A' }}>{it.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+
           {navLinks.map(item => (
             <Link key={item.path} to={item.path} style={{
               display: 'block', padding: '16px 0',
@@ -466,7 +637,11 @@ export function MasteriaHeader() {
           { Icon: BadgeCheck, label: 'Certifié Qualiopi',          shortLabel: 'Qualiopi' },
           { Icon: Wallet,     label: 'Finançable OPCO',            shortLabel: 'OPCO' },
           { Icon: MapPin,     label: 'France · Suisse · Belgique', shortLabel: 'FR · CH · BE' },
-        ].map(({ Icon, label, shortLabel }, i) => (
+        ]
+          // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
+          // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).
+          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|outils|automatisation-ia|agents-ia)/.test(location.pathname))
+          .map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
             display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
             fontFamily: 'DM Sans, sans-serif',
@@ -500,9 +675,9 @@ export function MasteriaFooter() {
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
         <div style={{
           display: 'grid',
-          // 5 colonnes desktop : on enrichit le maillage interne avec une colonne "Métiers"
-          // (les ~140 spokes outil×métier étaient en étoile via leurs hubs uniquement → crawl-depth élevé).
-          gridTemplateColumns: isMobile ? '1fr' : '1.4fr 1fr 1fr 1fr 1fr',
+          // 6 colonnes desktop : on enrichit le maillage interne avec une colonne "Métiers"
+          // et une colonne "Conseil & développement" (pages conseil/dev/agence exposées ici).
+          gridTemplateColumns: isMobile ? '1fr' : '1.4fr 1fr 1fr 1fr 1fr 1fr',
           gap: isMobile ? 28 : 32,
           marginBottom: isMobile ? 24 : 36,
         }}>
@@ -570,18 +745,31 @@ export function MasteriaFooter() {
             ))}
           </div>
           <div>
-            <div style={colHead}>Masteria</div>
+            <div style={colHead}>Conseil &amp; développement</div>
             {[
-              ['Conseil IA', '/conseil-intelligence-artificielle'],
-              ['Développement IA sur mesure', '/agence-developpement-ia'],
+              ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
+              ['Agence développement IA', '/agence-developpement-ia'],
               ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
               ['Agence IA Lyon', '/agence-ia'],
+              ['Agence IA marketing', '/agence-ia-marketing'],
               ['Automatisation IA', '/automatisation-ia'],
-              ['Agents IA en entreprise', '/agents-ia-entreprise'],
+              ['Agents IA', '/agents-ia-entreprise'],
+              ['Agence IA Paris', '/agence-ia-paris'],
+              ['Agence IA Annecy', '/agence-ia-annecy'],
+              ['Agence IA Genève', '/agence-ia-geneve'],
+              ['Agence IA Marseille', '/agence-ia-marseille'],
+            ].map(([l, path]) => (
+              <Link key={path} to={path} style={lStyle}>{l}</Link>
+            ))}
+          </div>
+          <div>
+            <div style={colHead}>Masteria</div>
+            {[
               ['À propos', '/centre-formation-ia-entreprise'],
               ['Blog', '/blog'],
               ['Glossaire IA (80 termes)', '/glossaire-ia'],
               ['Quelle est la meilleure IA ?', '/quelle-est-la-meilleure-ia'],
+              ['Meilleure agence IA', '/meilleure-agence-ia'],
               ['Contact', '/contact'],
             ].map(([l, path]) => (
               <Link key={path} to={path} style={lStyle}>{l}</Link>

@@ -35,6 +35,8 @@ const AgentsIAEntreprisePage = lazy(() => import('./pages/AgentsIAEntreprisePage
 const AgenceIAPage = lazy(() => import('./pages/AgenceIAPage'));
 const MeilleureAgenceIAPage = lazy(() => import('./pages/MeilleureAgenceIAPage'));
 const AgenceDeveloppementIAPage = lazy(() => import('./pages/AgenceDeveloppementIAPage'));
+const AgenceGeoPage = lazy(() => import('./pages/AgenceGeoPage'));
+const AgenceIAMarketingPage = lazy(() => import('./pages/AgenceIAMarketingPage'));
 const OutilsIASurMesurePage = lazy(() => import('./pages/OutilsIASurMesurePage'));
 const GeoPage = lazy(() => import('./pages/GeoPage'));
 const GeoIAGenericPage = lazy(() => import('./pages/GeoIAGenericPage'));
@@ -729,9 +731,23 @@ function ContactScreen() {
   const isMobile = useIsMobile();
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [demandeType, setDemandeType] = useState('formation'); // 'formation' | 'projet'
   const [format, setFormat] = useState('inter');
   const [selectedTools, setSelectedTools] = useState([]);
   const [selectedMetiers, setSelectedMetiers] = useState([]);
+  const [selectedBesoins, setSelectedBesoins] = useState([]);
+
+  const toggleBesoin = (value) => setSelectedBesoins(prev =>
+    prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]
+  );
+  const BESOINS = [
+    { value: 'conseil-audit', label: 'Conseil / audit IA', Icon: Compass },
+    { value: 'automatisation', label: 'Automatisation de processus', Icon: Zap },
+    { value: 'outil-application', label: "Développement d'outil ou d'application", Icon: Rocket },
+    { value: 'agent-ia', label: "Développement d'agent IA", Icon: Target },
+    { value: 'a-definir', label: 'Je ne sais pas encore', Icon: Lightbulb },
+  ];
+  const besoinsLabel = (vals) => vals.map(v => BESOINS.find(b => b.value === v)?.label || v);
 
   const toggleTool = (value) => setSelectedTools(prev =>
     prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]
@@ -754,10 +770,16 @@ function ContactScreen() {
     setLoading(true);
     try {
       const data = new FormData(e.target);
-      // Ajouter les sélections dynamiques (pas dans des vrais inputs)
-      data.set('outils_ia', selectedTools.length ? toolsLabel(selectedTools).join(', ') : 'Non précisé');
-      data.set('metiers', selectedMetiers.length ? metiersLabel(selectedMetiers).join(', ') : 'Équipe mixte');
-      data.set('format', format);
+      // Type de demande (onglet actif) en champ caché transmis à Formspree
+      data.set('type_demande', demandeType === 'projet' ? 'Conseil & projet sur mesure' : 'Formation');
+      if (demandeType === 'formation') {
+        // Ajouter les sélections dynamiques (pas dans des vrais inputs)
+        data.set('outils_ia', selectedTools.length ? toolsLabel(selectedTools).join(', ') : 'Non précisé');
+        data.set('metiers', selectedMetiers.length ? metiersLabel(selectedMetiers).join(', ') : 'Équipe mixte');
+        data.set('format', format);
+      } else {
+        data.set('besoin', selectedBesoins.length ? besoinsLabel(selectedBesoins).join(', ') : 'À cadrer ensemble');
+      }
       const res = await fetch('https://formspree.io/f/xzdyjbyn', {
         method: 'POST',
         body: data,
@@ -793,8 +815,8 @@ function ContactScreen() {
   return (
     <>
       <SEOHead
-        title="Contacter notre équipe, Devis formation IA gratuit sous 24h | Masteria"
-        description="Contactez Masteria pour un devis formation IA personnalisé. Réponse sous 24h. Formations ChatGPT, Copilot, Gemini, Claude. Certifié Qualiopi, finançable OPCO."
+        title="Contact & devis : formation, conseil ou projet IA sur mesure | Masteria"
+        description="Contactez Masteria pour un devis : formation IA, conseil et audit, ou développement sur mesure (automatisations, outils, agents IA). Réponse sous 24 h. France, Suisse, Belgique."
         slug="contact"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -832,16 +854,16 @@ function ContactScreen() {
             color: '#0A0A0A',
           }}>
             Parlons de votre projet <span style={{
-              background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
+              background: 'linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-            }}>formation IA</span>
+            }}>IA</span>
           </h1>
           <p style={{
             fontSize: 17, color: '#4B5563', lineHeight: 1.65,
-            maxWidth: 620, margin: '0 auto',
+            maxWidth: 640, margin: '0 auto',
           }}>
-            Dites-nous combien de personnes former et sur quel outil. Nous revenons vers vous sous 24 h avec un programme et un devis adaptés à vos équipes.
+            Formation de vos équipes, conseil et audit, ou développement sur mesure (automatisations, outils, agents IA). Décrivez votre besoin : nous revenons vers vous sous 24 h avec une proposition et un devis adaptés.
           </p>
           <div style={{
             display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap',
@@ -850,9 +872,11 @@ function ContactScreen() {
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <BadgeCheck size={15} color="#059669" /> Certifié Qualiopi
             </span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <Wallet size={15} color="#2563EB" /> Finançable OPCO
-            </span>
+            {demandeType === 'formation' && (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <Wallet size={15} color="#2563EB" /> Finançable OPCO
+              </span>
+            )}
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <MapPin size={15} color="#D97706" /> France · Suisse · Belgique
             </span>
@@ -993,13 +1017,56 @@ function ContactScreen() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: 24 }}>
+                <div style={{ marginBottom: 20 }}>
                   <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: '#0A0A0A', marginBottom: 6, letterSpacing: '-0.01em' }}>
                     Demande de devis personnalisé
                   </h2>
                   <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.5 }}>
                     Quelques informations suffisent, nous nous chargeons du reste.
                   </p>
+                </div>
+
+                {/* Sélecteur d'onglet : Formation / Conseil & projet sur mesure */}
+                <div style={{
+                  display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6,
+                  background: '#F3F4F6', border: '1px solid #E5E7EB',
+                  borderRadius: 12, padding: 5, marginBottom: 24,
+                }}>
+                  {[
+                    { id: 'formation', label: 'Formation', sub: 'Monter vos équipes en compétences', Icon: GraduationCap },
+                    { id: 'projet', label: 'Conseil & projet sur mesure', sub: 'Audit, automatisation, outil, agent IA', Icon: Compass },
+                  ].map(t => {
+                    const active = demandeType === t.id;
+                    return (
+                      <button
+                        key={t.id}
+                        type="button"
+                        onClick={() => setDemandeType(t.id)}
+                        aria-pressed={active}
+                        style={{
+                          background: active ? '#fff' : 'transparent',
+                          border: active ? '1.5px solid #2563EB' : '1.5px solid transparent',
+                          borderRadius: 9, padding: '11px 14px',
+                          cursor: 'pointer', textAlign: 'left',
+                          fontFamily: 'DM Sans, sans-serif',
+                          boxShadow: active ? '0 2px 8px rgba(37,99,235,0.10)' : 'none',
+                          transition: 'all 150ms',
+                        }}
+                      >
+                        <span style={{
+                          display: 'inline-flex', alignItems: 'center', gap: 8,
+                          fontSize: 13.5, fontWeight: 800,
+                          color: active ? '#2563EB' : '#374151',
+                        }}>
+                          <t.Icon size={16} color={active ? '#2563EB' : '#6B7280'} strokeWidth={2.2} />
+                          {t.label}
+                        </span>
+                        <span style={{ display: 'block', fontSize: 11.5, color: '#6B7280', marginTop: 3, lineHeight: 1.35 }}>
+                          {t.sub}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {/* Étape 1 : identité */}
@@ -1037,7 +1104,9 @@ function ContactScreen() {
                   </div>
                 </div>
 
-                {/* Étape 2 : projet */}
+                {/* Étape 2 — FORMATION : visible sur l'onglet Formation */}
+                {demandeType === 'formation' && (
+                <>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginTop: 12, marginBottom: 14 }}>
                   2 · Votre projet de formation
                 </div>
@@ -1215,6 +1284,87 @@ function ContactScreen() {
                     </select>
                   </div>
                 </div>
+                </>
+                )}
+
+                {/* Étape 2 — CONSEIL & PROJET SUR MESURE : visible sur l'onglet Projet */}
+                {demandeType === 'projet' && (
+                <>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginTop: 12, marginBottom: 14 }}>
+                  2 · Votre besoin
+                </div>
+
+                {/* Type de besoin (choix multiples) */}
+                <div style={grp}>
+                  <label style={lbl}>
+                    Type de besoin{' '}
+                    <span style={{ fontWeight: 500, color: '#6B7280' }}>(plusieurs possibles)</span>
+                  </label>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 8 }}>
+                    {BESOINS.map(b => {
+                      const active = selectedBesoins.includes(b.value);
+                      return (
+                        <button
+                          key={b.value}
+                          type="button"
+                          onClick={() => toggleBesoin(b.value)}
+                          aria-pressed={active}
+                          style={{
+                            background: active ? '#DBEAFE' : '#fff',
+                            border: `1.5px solid ${active ? '#2563EB' : '#E5E7EB'}`,
+                            borderRadius: 10, padding: '11px 14px',
+                            cursor: 'pointer', textAlign: 'left',
+                            fontFamily: 'DM Sans, sans-serif',
+                            fontSize: 13, fontWeight: active ? 800 : 600,
+                            color: active ? '#2563EB' : '#0A0A0A',
+                            display: 'flex', alignItems: 'center', gap: 10,
+                            transition: 'all 150ms',
+                          }}
+                        >
+                          <span style={{
+                            width: 24, height: 24, flexShrink: 0,
+                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                          }}>
+                            <b.Icon size={18} color={active ? '#2563EB' : '#6B7280'} strokeWidth={2} />
+                          </span>
+                          <span style={{ minWidth: 0 }}>{b.label}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Description du projet */}
+                <div style={grp}>
+                  <label style={lbl}>Description du projet *</label>
+                  <textarea
+                    name="description_projet"
+                    style={{ ...inp, resize: 'vertical' }}
+                    rows={4}
+                    placeholder="Contexte, objectif visé, processus ou outils concernés, systèmes en place (CRM, ERP, données), contraintes éventuelles…"
+                    required={demandeType === 'projet'}
+                    onFocus={focus}
+                    onBlur={blur}
+                  />
+                </div>
+
+                {/* Budget + échéance */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
+                  <div style={grp}>
+                    <label style={lbl}>Budget indicatif <span style={{ fontWeight: 400, color: '#6B7280' }}>(optionnel)</span></label>
+                    <select name="budget" defaultValue="À définir" style={{ ...inp, appearance: 'none', backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236B7280\' stroke-width=\'2\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 18, paddingRight: 40 }} onFocus={focus} onBlur={blur}>
+                      {['Moins de 10 k€', '10 – 30 k€', '30 – 80 k€', 'Plus de 80 k€', 'À définir'].map(n => <option key={n}>{n}</option>)}
+                    </select>
+                  </div>
+                  <div style={grp}>
+                    <label style={lbl}>Échéance <span style={{ fontWeight: 400, color: '#6B7280' }}>(optionnel)</span></label>
+                    <select name="echeance" defaultValue="Pas de date fixée" style={{ ...inp, appearance: 'none', backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%236B7280\' stroke-width=\'2\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: 18, paddingRight: 40 }} onFocus={focus} onBlur={blur}>
+                      {['Dès que possible', 'Sous 1 à 3 mois', 'Sous 3 à 6 mois', 'Pas de date fixée'].map(n => <option key={n}>{n}</option>)}
+                    </select>
+                  </div>
+                </div>
+                </>
+                )}
 
                 <div style={grp}>
                   <label style={lbl}>Message <span style={{ fontWeight: 400, color: '#6B7280' }}>(optionnel)</span></label>
@@ -1337,6 +1487,11 @@ export default function App() {
         <Route path="/agence-ia" element={<AgenceIAPage />} />
         <Route path="/meilleure-agence-ia" element={<MeilleureAgenceIAPage />} />
         <Route path="/agence-developpement-ia" element={<AgenceDeveloppementIAPage />} />
+        <Route path="/agence-ia-marketing" element={<AgenceIAMarketingPage />} />
+        <Route path="/agence-ia-annecy" element={<AgenceGeoPage />} />
+        <Route path="/agence-ia-paris" element={<AgenceGeoPage />} />
+        <Route path="/agence-ia-geneve" element={<AgenceGeoPage />} />
+        <Route path="/agence-ia-marseille" element={<AgenceGeoPage />} />
         <Route path="/outils-ia-sur-mesure" element={<OutilsIASurMesurePage />} />
         <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />
         <Route path="/formation-ia-debutant" element={<DebutantPage />} />
