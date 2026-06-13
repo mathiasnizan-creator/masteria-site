@@ -7,7 +7,7 @@ import {
   PenLine, ClipboardList, BarChart3, Palette, FileCheck, Handshake,
   Tag, RefreshCw,
   Lightbulb, AlertTriangle, CheckCircle2, XCircle, Zap, Info, Sparkles,
-  Clock, Users as UsersIcon, ShieldCheck, Monitor,
+  Clock, Users as UsersIcon, ShieldCheck, Monitor, Star,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -388,7 +388,7 @@ export default function CompetencesClaudeEET() {
                   color: isActive ? C.blue : C.textMuted,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 11, fontWeight: 800, flexShrink: 0,
-                }}>{s.num}</span>
+                }}>{s.num === '★' ? <Star size={12} color={isActive ? C.blue : C.textMuted} fill={isActive ? C.blue : C.textMuted} /> : s.num}</span>
                 {s.label}
               </a>
             )
@@ -429,7 +429,7 @@ export default function CompetencesClaudeEET() {
                     color: isActive ? '#fff' : C.textMuted,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 10.5, fontWeight: 800, flexShrink: 0,
-                  }}>{s.num}</span>
+                  }}>{s.num === '★' ? <Star size={11} color={isActive ? '#fff' : C.textMuted} fill={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
                   {s.labelLong}
                 </a>
               )

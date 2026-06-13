@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Workflow, BadgeCheck, Wallet, MonitorSmartphone, Building2,
+  Workflow, BadgeCheck, Wallet, MonitorSmartphone, Building2, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import Pictogram from '../components/Pictogram'
 
 /*
  * Page formation « automatisation IA » — réplique la structure des pages
@@ -38,12 +39,12 @@ const AUDIENCE = [
 ]
 
 const USE_CASES = [
-  { icon: '📥', title: "Tri et réponses d'emails", desc: "Classez, résumez et préparez automatiquement les réponses aux emails entrants selon des règles claires." },
-  { icon: '🔁', title: "Connexion de vos applications", desc: "Reliez vos outils entre eux avec Make, Zapier ou n8n et injectez de l'IA à chaque étape du flux." },
-  { icon: '🤖', title: "Création d'un agent IA", desc: "Concevez un GPT personnalisé ou un agent qui enchaîne plusieurs étapes pour atteindre un objectif." },
-  { icon: '📊', title: "Reporting industrialisé", desc: "Transformez des données brutes en rapport commenté, généré et diffusé automatiquement chaque semaine." },
-  { icon: '🧩', title: "Automatisation Microsoft 365", desc: "Automatisez vos flux Outlook, Teams, Excel et SharePoint avec Copilot et Power Automate." },
-  { icon: '🛡️', title: "Supervision et conformité", desc: "Gardez un contrôle humain sur les décisions sensibles et mettez vos automatisations en conformité RGPD." },
+  { icon: '\uD83D\uDCE5', title: "Tri et réponses d'emails", desc: "Classez, résumez et préparez automatiquement les réponses aux emails entrants selon des règles claires." },
+  { icon: '\uD83D\uDD01', title: "Connexion de vos applications", desc: "Reliez vos outils entre eux avec Make, Zapier ou n8n et injectez de l'IA à chaque étape du flux." },
+  { icon: '\uD83E\uDD16', title: "Création d'un agent IA", desc: "Concevez un GPT personnalisé ou un agent qui enchaîne plusieurs étapes pour atteindre un objectif." },
+  { icon: '\uD83D\uDCCA', title: "Reporting industrialisé", desc: "Transformez des données brutes en rapport commenté, généré et diffusé automatiquement chaque semaine." },
+  { icon: '\uD83E\uDDE9', title: "Automatisation Microsoft 365", desc: "Automatisez vos flux Outlook, Teams, Excel et SharePoint avec Copilot et Power Automate." },
+  { icon: '\uD83D\uDEE1\uFE0F', title: "Supervision et conformité", desc: "Gardez un contrôle humain sur les décisions sensibles et mettez vos automatisations en conformité RGPD." },
 ]
 
 const MODULES = [
@@ -91,10 +92,10 @@ const TRAINER = {
 }
 
 const WHY_MASTERIA = [
-  { icon: '🎯', title: "Spécialisés à 100 % sur l'IA", desc: "Masteria ne fait que ça. Chaque formateur automatise au quotidien dans des contextes professionnels réels. La différence se sent dans les cas choisis et les pièges anticipés." },
-  { icon: '📁', title: 'On travaille sur vos tâches', desc: "Zéro cas fictif. Chaque participant automatise ses propres tâches répétitives. Ce qu'on construit en formation tourne encore le lendemain au bureau." },
-  { icon: '🛡️', title: 'Automatisation sous contrôle', desc: "Nous intégrons systématiquement la supervision, la traçabilité et la conformité RGPD. Une automatisation maîtrisée, pas une boîte noire." },
-  { icon: '💳', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO. Masteria prend en charge le montage du dossier de A à Z." },
+  { icon: '\uD83C\uDFAF', title: "Spécialisés à 100 % sur l'IA", desc: "Masteria ne fait que ça. Chaque formateur automatise au quotidien dans des contextes professionnels réels. La différence se sent dans les cas choisis et les pièges anticipés." },
+  { icon: '\uD83D\uDCC1', title: 'On travaille sur vos tâches', desc: "Zéro cas fictif. Chaque participant automatise ses propres tâches répétitives. Ce qu'on construit en formation tourne encore le lendemain au bureau." },
+  { icon: '\uD83D\uDEE1\uFE0F', title: 'Automatisation sous contrôle', desc: "Nous intégrons systématiquement la supervision, la traçabilité et la conformité RGPD. Une automatisation maîtrisée, pas une boîte noire." },
+  { icon: '\uD83D\uDCB3', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO. Masteria prend en charge le montage du dossier de A à Z." },
 ]
 
 function FAQItem({ q, a, color }) {
@@ -261,7 +262,7 @@ export default function AutomatisationIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
             {USE_CASES.map((uc, i) => (
               <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 30, marginBottom: 12 }}>{uc.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={uc.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{uc.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{uc.desc}</p>
               </div>
@@ -349,7 +350,7 @@ export default function AutomatisationIAPage() {
             {OBJECTIVES.map((obj, i) => (
               <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
                 <div style={{ width: 26, height: 26, background: c, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                  <span style={{ fontSize: 12, color: '#fff', fontWeight: 700 }}>✓</span>
+                  <Check size={14} color="#fff" strokeWidth={3} aria-hidden="true" />
                 </div>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}>{obj}</p>
               </div>
@@ -374,8 +375,8 @@ export default function AutomatisationIAPage() {
               <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours · 1-to-1</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['2 jours consécutifs ou espacés · 1-to-1', 'Programme co-construit sur vos automatisations', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: c }}>✓</span>{item}
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                    <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -389,8 +390,8 @@ export default function AutomatisationIAPage() {
               <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours (jusqu'à 12 participants)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Réservé à votre équipe', '2 jours sur mesure, dans vos locaux', 'Automatisations construites sur vos outils', 'OPCO, plan de développement des compétences'].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: c }}>✓</span>{item}
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                    <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -442,7 +443,7 @@ export default function AutomatisationIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
             {WHY_MASTERIA.map(card => (
               <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 28, marginBottom: 12 }}>{card.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={card.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{card.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>{card.desc}</p>
               </div>

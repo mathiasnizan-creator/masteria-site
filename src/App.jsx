@@ -6,7 +6,7 @@ import {
   Mail, MapPin, Clock, BadgeCheck, Wallet, Users as UsersIcon,
   ArrowRight, Sparkles, Send, CheckCircle2, Calendar, Building2,
   Compass, GraduationCap, Handshake, Target, ShieldCheck, Heart,
-  Lightbulb, Rocket, Phone,
+  Lightbulb, Rocket, Phone, Zap, Check,
 } from 'lucide-react';
 
 // LinkedIn SVG (pas d'icône officielle dans lucide-react)
@@ -129,8 +129,8 @@ function _HomeScreen_DEPRECATED() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: 10 }}>
-              <div style={{ flex: 1, background: '#fff', borderRadius: 8, padding: '10px 14px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', fontSize: 12, color: '#4A4A4A', fontWeight: 500 }}>⚡ Temps gagné : 40 min</div>
-              <div style={{ flex: 1, background: '#DCFCE7', borderRadius: 8, padding: '10px 14px', fontSize: 12, color: '#16A34A', fontWeight: 700 }}>✓ Résultat validé</div>
+              <div style={{ flex: 1, background: '#fff', borderRadius: 8, padding: '10px 14px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', fontSize: 12, color: '#4A4A4A', fontWeight: 500 }}><Zap size={14} color="#2563EB" strokeWidth={2.5} style={{ verticalAlign: 'middle', marginRight: 4, flexShrink: 0 }} />Temps gagné : 40 min</div>
+              <div style={{ flex: 1, background: '#DCFCE7', borderRadius: 8, padding: '10px 14px', fontSize: 12, color: '#16A34A', fontWeight: 700 }}><Check size={14} color="#16A34A" strokeWidth={3} style={{ verticalAlign: 'middle', marginRight: 4, flexShrink: 0 }} />Résultat validé</div>
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ function FormationsScreen() {
         <FadeIn>
           <div style={{ background: '#F8F8F8', borderRadius: 14, padding: '24px 28px', display: 'flex', gap: 18, alignItems: 'center' }}>
             <div style={{ width: 42, height: 42, background: '#1C1C1C', borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <span style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}>✓</span>
+              <span style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}><Check size={16} color="#fff" strokeWidth={3} /></span>
             </div>
             <div>
               <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#111', marginBottom: 4 }}>100% finançable via votre OPCO</div>

@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Check, X, Minus, Trophy, Clock, Calendar, BadgeCheck, Wallet, MapPin } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import Pictogram from '../components/Pictogram'
 import { COMPARISONS } from '../data/comparisons'
 
 const SITE_URL = 'https://www.master-ia.fr'
@@ -231,8 +232,9 @@ export default function ComparisonPage({ slug: propSlug }) {
               display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20,
             }}>
               <div style={{ padding: 24, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: data.toolA.color, marginBottom: 12 }}>
-                  ✓ Choisir {data.toolA.name} si...
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: data.toolA.color, marginBottom: 12 }}>
+                  <Pictogram emoji="\u{2705}" size={15} color={data.toolA.color} />
+                  Choisir {data.toolA.name} si...
                 </div>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {data.verdict.recommendA?.map(r => (
@@ -244,8 +246,9 @@ export default function ComparisonPage({ slug: propSlug }) {
                 </ul>
               </div>
               <div style={{ padding: 24, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: data.toolB.color, marginBottom: 12 }}>
-                  ✓ Choisir {data.toolB.name} si...
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: data.toolB.color, marginBottom: 12 }}>
+                  <Pictogram emoji="\u{2705}" size={15} color={data.toolB.color} />
+                  Choisir {data.toolB.name} si...
                 </div>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {data.verdict.recommendB?.map(r => (
@@ -318,7 +321,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                     {i + 1}. {c.title}
                   </h3>
                   <div style={{
-                    display: 'inline-block',
+                    display: 'inline-flex', alignItems: 'center', gap: 6,
                     fontSize: 12, fontWeight: 700,
                     color: c.winner === 'a' ? data.toolA.color
                          : c.winner === 'b' ? data.toolB.color
@@ -328,7 +331,14 @@ export default function ComparisonPage({ slug: propSlug }) {
                               : '#F3F4F6',
                     padding: '4px 12px', borderRadius: 99, marginBottom: 20,
                   }}>
-                    {c.winner === 'tie' ? '🤝 ' : '🏆 '}{c.winnerText}
+                    <Pictogram
+                      emoji={c.winner === 'tie' ? '\u{1F91D}' : '\u{1F3C6}'}
+                      size={16}
+                      color={c.winner === 'a' ? data.toolA.color
+                           : c.winner === 'b' ? data.toolB.color
+                           : '#6B7280'}
+                    />
+                    {c.winnerText}
                   </div>
 
                   <div style={{
@@ -411,8 +421,9 @@ export default function ComparisonPage({ slug: propSlug }) {
                       gap: 20, marginBottom: 20,
                     }}>
                       <div>
-                        <div style={{ fontSize: 13, fontWeight: 800, color: '#10B981', marginBottom: 10 }}>
-                          ✓ Points forts
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 800, color: '#10B981', marginBottom: 10 }}>
+                          <Pictogram emoji="\u{2705}" size={15} color="#10B981" />
+                          Points forts
                         </div>
                         <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                           {tool.pros.map((p, j) => (
@@ -424,8 +435,9 @@ export default function ComparisonPage({ slug: propSlug }) {
                         </ul>
                       </div>
                       <div>
-                        <div style={{ fontSize: 13, fontWeight: 800, color: '#EF4444', marginBottom: 10 }}>
-                          ✗ Points faibles
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 800, color: '#EF4444', marginBottom: 10 }}>
+                          <Pictogram emoji="\u{274C}" size={15} color="#EF4444" />
+                          Points faibles
                         </div>
                         <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                           {tool.cons.map((p, j) => (
@@ -600,9 +612,10 @@ export default function ComparisonPage({ slug: propSlug }) {
                           fontSize: 12.5, color: '#4338CA',
                           background: '#EEF2FF',
                           padding: '5px 10px', borderRadius: 6,
-                          display: 'inline-block', fontWeight: 600,
+                          display: 'inline-flex', alignItems: 'center', gap: 6, fontWeight: 600,
                         }}>
-                          ⚙ {c.feature}
+                          <Pictogram emoji="\u{2699}" size={14} color="#4338CA" />
+                          {c.feature}
                         </div>
                       )}
                     </div>
@@ -634,13 +647,14 @@ export default function ComparisonPage({ slug: propSlug }) {
                       borderRadius: 10,
                     }}>
                       <div style={{
-                        display: 'inline-block',
+                        display: 'inline-flex', alignItems: 'center', gap: 6,
                         fontSize: 12, fontWeight: 800, color: winnerTool.color,
                         background: `${winnerTool.color}15`,
                         padding: '4px 12px', borderRadius: 99,
                         marginBottom: 10,
                       }}>
-                        {c.winner === 'tie' ? '🤝 ' : '🏆 '}Verdict : {winnerTool.name}
+                        <Pictogram emoji={c.winner === 'tie' ? '\u{1F91D}' : '\u{1F3C6}'} size={16} color={winnerTool.color} />
+                        Verdict : {winnerTool.name}
                       </div>
                       <p
                         style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}
@@ -796,7 +810,10 @@ export default function ComparisonPage({ slug: propSlug }) {
               background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8,
               fontSize: 13.5, color: '#1E3A8A', lineHeight: 1.6,
             }}>
-              💡 <strong>À retenir :</strong> les abonnements représentent ~5-10 % du coût total. Le ROI vient de la formation (~165 €/personne pour un intra de 12, soit 1 980 € pour le groupe) et de l'adoption.
+              <span style={{ display: 'inline-flex', verticalAlign: 'text-bottom', marginRight: 6 }}>
+                <Pictogram emoji="\u{1F4A1}" size={15} color="#1E3A8A" />
+              </span>
+              <strong>À retenir :</strong> les abonnements représentent ~5-10 % du coût total. Le ROI vient de la formation (~165 €/personne pour un intra de 12, soit 1 980 € pour le groupe) et de l'adoption.
               Le retour sur investissement typique est de moins d'1 mois pour les profils cadres formés.
             </div>
           </div>
@@ -839,9 +856,9 @@ export default function ComparisonPage({ slug: propSlug }) {
                     display: 'flex', alignItems: 'flex-start', gap: 14,
                   }}>
                     <div style={{
-                      flexShrink: 0, fontSize: 22, lineHeight: 1, marginTop: 2,
+                      flexShrink: 0, lineHeight: 1, marginTop: 2,
                     }}>
-                      ⚠️
+                      <Pictogram emoji="\u{26A0}" size={22} color="#DC2626" />
                     </div>
                     <div style={{ flex: 1 }}>
                       <h3 style={{

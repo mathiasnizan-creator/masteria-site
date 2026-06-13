@@ -4,7 +4,7 @@ import {
   Globe, Server, Database, FileText, Eye, Building2,
   Users as UsersIcon, Crown, Settings, AlertTriangle, CheckCircle2, XCircle,
   Info, Sparkles, Clock, ArrowDown, Trash2, RefreshCw,
-  Search, Hash, Tag, KeyRound, ShieldAlert, BadgeCheck,
+  Search, Hash, Tag, KeyRound, ShieldAlert, BadgeCheck, Star, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -119,8 +119,8 @@ function SectionShell({ section, children }) {
         <div>
           <div style={{
             fontSize: 11, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase',
-            color: tint, marginBottom: 2,
-          }}>Partie {num}</div>
+            color: tint, marginBottom: 2, display: 'inline-flex', alignItems: 'center', gap: 5,
+          }}>{num === '★' ? <><Star size={12} color={tint} fill={tint} style={{ flexShrink: 0 }} />Bonus</> : `Partie ${num}`}</div>
           <h2 style={{
             fontFamily: F.head, fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800,
             color: C.ink, letterSpacing: '-0.02em', margin: 0, lineHeight: 1.2,
@@ -322,7 +322,7 @@ export default function SecuriteClaudeEntreprise() {
                   color: isActive ? C.blue : C.textMuted,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 11, fontWeight: 800, flexShrink: 0,
-                }}>{s.num}</span>
+                }}>{s.num === '★' ? <Star size={12} color={isActive ? C.blue : C.textMuted} fill={isActive ? C.blue : C.textMuted} /> : s.num}</span>
                 {s.label}
               </a>
             )
@@ -363,7 +363,7 @@ export default function SecuriteClaudeEntreprise() {
                     color: isActive ? '#fff' : C.textMuted,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 10.5, fontWeight: 800, flexShrink: 0,
-                  }}>{s.num}</span>
+                  }}>{s.num === '★' ? <Star size={11} color={isActive ? '#fff' : C.textMuted} fill={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
                   {s.labelLong}
                 </a>
               )
@@ -486,10 +486,10 @@ export default function SecuriteClaudeEntreprise() {
                   <div>
                     <div style={{ fontSize: 11.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>Avec ZDR</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 13.5, color: 'rgba(255,255,255,.85)' }}>
-                      <span><span style={{ color: '#5EEAD4', marginRight: 6 }}>✓</span>Traitement en mémoire uniquement</span>
-                      <span><span style={{ color: '#5EEAD4', marginRight: 6 }}>✓</span>Zéro trace après la réponse</span>
-                      <span><span style={{ color: '#5EEAD4', marginRight: 6 }}>✓</span>Garantie contractuelle écrite</span>
-                      <span><span style={{ color: '#5EEAD4', marginRight: 6 }}>✓</span>Simplifie la conformité RGPD</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center' }}><Check size={14} color="#5EEAD4" strokeWidth={3} style={{ marginRight: 6, flexShrink: 0 }} />Traitement en mémoire uniquement</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center' }}><Check size={14} color="#5EEAD4" strokeWidth={3} style={{ marginRight: 6, flexShrink: 0 }} />Zéro trace après la réponse</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center' }}><Check size={14} color="#5EEAD4" strokeWidth={3} style={{ marginRight: 6, flexShrink: 0 }} />Garantie contractuelle écrite</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center' }}><Check size={14} color="#5EEAD4" strokeWidth={3} style={{ marginRight: 6, flexShrink: 0 }} />Simplifie la conformité RGPD</span>
                     </div>
                   </div>
                 </div>

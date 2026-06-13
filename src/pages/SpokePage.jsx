@@ -4,9 +4,11 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   FileSpreadsheet, BadgeCheck, Wallet, MonitorSmartphone, Building2,
+  Check, Star,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import Pictogram from '../components/Pictogram'
 import { SPOKES, HUBS } from '../data/seo-pages'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
@@ -60,11 +62,13 @@ function FAQItem({ q, a, color }) {
   )
 }
 
+/* Les clés `icon` sont des emojis (clé de correspondance Pictogram → icône lucide),
+   écrites en échappement Unicode pour ne laisser aucun glyphe brut dans le source. */
 const WHY_MASTERIA = [
-  { icon: '🎯', title: 'Spécialisés à 100 % sur l\'IA', desc: "Masteria ne fait que ça. Chaque formateur pratique l'IA au quotidien dans des contextes professionnels réels. La différence se sent dans les exemples choisis, les pièges anticipés et les raccourcis partagés." },
-  { icon: '📁', title: 'On travaille sur vos fichiers', desc: "Zéro cas fictif. Chaque exercice s'appuie sur les documents réels de vos participants. Ce que vos équipes apprennent le matin, elles le réutilisent l'après-midi sur leurs vrais sujets." },
-  { icon: '👥', title: 'Programme construit pour votre métier', desc: "Les cas d'usage, les exercices et les prompts sont sélectionnés autour des vraies missions de votre fonction. C'est ce qui explique nos 98 % de satisfaction post-formation." },
-  { icon: '💳', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Masteria prend en charge le montage du dossier. Dans la majorité des cas, la formation ne coûte rien à l'entreprise." },
+  { icon: '\uD83C\uDFAF', title: 'Spécialisés à 100 % sur l\'IA', desc: "Masteria ne fait que ça. Chaque formateur pratique l'IA au quotidien dans des contextes professionnels réels. La différence se sent dans les exemples choisis, les pièges anticipés et les raccourcis partagés." },
+  { icon: '\uD83D\uDCC1', title: 'On travaille sur vos fichiers', desc: "Zéro cas fictif. Chaque exercice s'appuie sur les documents réels de vos participants. Ce que vos équipes apprennent le matin, elles le réutilisent l'après-midi sur leurs vrais sujets." },
+  { icon: '\uD83D\uDC65', title: 'Programme construit pour votre métier', desc: "Les cas d'usage, les exercices et les prompts sont sélectionnés autour des vraies missions de votre fonction. C'est ce qui explique nos 98 % de satisfaction post-formation." },
+  { icon: '\uD83D\uDCB3', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Masteria prend en charge le montage du dossier. Dans la majorité des cas, la formation ne coûte rien à l'entreprise." },
 ]
 
 const TRAINER = {
@@ -322,7 +326,7 @@ export default function SpokePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
               {spoke.useCases.map((uc, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontSize: 30, marginBottom: 12 }}>{uc.icon}</div>
+                  <div style={{ marginBottom: 12 }}><Pictogram emoji={uc.icon} tile size={26} /></div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{uc.title}</h3>
                   <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{uc.desc}</p>
                 </div>
@@ -440,7 +444,7 @@ export default function SpokePage() {
             {objectives.map((obj, i) => (
               <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
                 <div style={{ width: 26, height: 26, background: c, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                  <span style={{ fontSize: 12, color: '#fff', fontWeight: 700 }}>✓</span>
+                  <Check size={14} color="#fff" strokeWidth={3} aria-hidden="true" />
                 </div>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}>{obj}</p>
               </div>
@@ -470,8 +474,8 @@ export default function SpokePage() {
                     ? ['1 journée intensive (7 h) · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Suivi entre les sessions']
                     : ['2 jours consécutifs ou espacés · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Suivi entre les sessions']
                 ).map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: c }}>✓</span>{item}
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                    <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -490,8 +494,8 @@ export default function SpokePage() {
                     ? ['Réservé à votre équipe', '1 journée sur mesure, dans vos locaux', 'Contenu adapté à votre secteur', 'OPCO, plan de développement des compétences']
                     : ['Réservé à votre équipe', '2 jours sur mesure, dans vos locaux', 'Contenu adapté à votre secteur', 'OPCO, plan de développement des compétences']
                 ).map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: c }}>✓</span>{item}
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                    <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -543,7 +547,7 @@ export default function SpokePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
             {WHY_MASTERIA.map(card => (
               <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 28, marginBottom: 12 }}>{card.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={card.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{card.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>{card.desc}</p>
               </div>
@@ -576,7 +580,7 @@ export default function SpokePage() {
                   {/* Étoiles */}
                   <div style={{ display: 'flex', gap: 3 }}>
                     {[1,2,3,4,5].map(s => (
-                      <span key={s} style={{ color: '#FBBF24', fontSize: 14 }}>★</span>
+                      <Star key={s} size={14} color="#FBBF24" fill="#FBBF24" aria-hidden="true" />
                     ))}
                   </div>
                   {/* Texte */}
@@ -605,7 +609,7 @@ export default function SpokePage() {
             </div>
             <div style={{ marginTop: 40, textAlign: 'center' }}>
               <p style={{ fontSize: 14, color: '#6B7280' }}>
-                Formation certifiée Qualiopi · <span style={{ color: '#FBBF24' }}>★★★★★</span> <span style={{ color: '#6B7280' }}>98 % de satisfaction (500+ participants formés)</span>
+                Formation certifiée Qualiopi · <span style={{ display: 'inline-flex', gap: 2, verticalAlign: 'middle' }}>{[1,2,3,4,5].map(s => <Star key={s} size={13} color="#FBBF24" fill="#FBBF24" aria-hidden="true" />)}</span> <span style={{ color: '#6B7280' }}>98 % de satisfaction (500+ participants formés)</span>
               </p>
             </div>
           </div>

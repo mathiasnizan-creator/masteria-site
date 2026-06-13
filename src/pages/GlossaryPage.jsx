@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Search, BookOpen, BadgeCheck, Wallet, MapPin } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import Pictogram from '../components/Pictogram'
 import { GLOSSARY_TERMS, GLOSSARY_CATEGORIES, TOTAL_TERMS } from '../data/glossary-terms'
 
 const SITE_URL = 'https://www.master-ia.fr'
@@ -158,7 +159,7 @@ export default function GlossaryPage() {
         }}>
           <CategoryTab
             label="Tous"
-            emoji="📚"
+            emoji={'\u{1F4DA}'}
             active={activeCategory === 'all'}
             onClick={() => setActiveCategory('all')}
           />
@@ -213,7 +214,7 @@ export default function GlossaryPage() {
                   marginBottom: 8, paddingTop: 20,
                   display: 'flex', alignItems: 'center', gap: 12,
                 }}>
-                  <span style={{ fontSize: 28 }}>{cat.emoji}</span>
+                  <Pictogram emoji={cat.emoji} tile size={24} />
                   {cat.label}
                 </h2>
                 <p style={{
@@ -356,7 +357,7 @@ function CategoryTab({ label, emoji, active, onClick }) {
         transition: 'all 150ms',
       }}
     >
-      <span>{emoji}</span>
+      <Pictogram emoji={emoji} size={15} color={active ? '#fff' : '#374151'} />
       {label}
     </button>
   )

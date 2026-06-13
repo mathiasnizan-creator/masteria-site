@@ -4,10 +4,11 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
-  ShoppingCart, Sparkles,
+  ShoppingCart, Sparkles, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import { stripLeadingEmoji } from '../components/Pictogram'
 import ToolLogo from '../components/ToolLogo'
 import { METIERS, getSpokesByMetier } from '../data/seo-pages'
 import { METIER_FAQ } from '../data/metier-faq'
@@ -487,7 +488,7 @@ export default function MetierPage() {
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', flex: 1 }}>
             {content.painPoints.map((p, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ color: '#10B981', fontSize: 13, fontWeight: 700, flexShrink: 0 }}>✓</span>
+                <Check size={15} color="#10B981" strokeWidth={2.75} aria-hidden="true" style={{ flexShrink: 0 }} />
                 <span style={{ fontSize: 13, color: '#374151', fontWeight: 500 }}>{p}</span>
               </div>
             ))}
@@ -588,7 +589,7 @@ export default function MetierPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 14 }}>
               {content.skills.map((skill, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', border: '1px solid #E5E7EB', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <span style={{ color: '#10B981', fontWeight: 900, fontSize: 14, flexShrink: 0, marginTop: 1 }}>✓</span>
+                  <Check size={16} color="#10B981" strokeWidth={2.75} aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }} />
                   <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.55, fontWeight: 500 }}>{skill}</span>
                 </div>
               ))}
@@ -718,8 +719,9 @@ export default function MetierPage() {
 function SpokeCard({ spoke, tc }) {
   const [hovered, setHovered] = useState(false)
 
-  // Extraire 3 cas d'usage, toujours convertir en string (useCases et useCasesRaw peuvent être des objets)
-  const toStr = u => (typeof u === 'string' ? u : (u?.title || u?.desc || ''))
+  // Extraire 3 cas d'usage, toujours convertir en string (useCases et useCasesRaw peuvent être des objets).
+  // stripLeadingEmoji retire un éventuel emoji en tête de chaîne (rendu via pictogramme ailleurs, jamais en glyphe brut).
+  const toStr = u => stripLeadingEmoji(typeof u === 'string' ? u : (u?.title || u?.desc || ''))
   const rawUC = (spoke.useCasesRaw || []).slice(0, 3).map(toStr).filter(Boolean)
   const objUC = (spoke.useCases || []).slice(0, 3).map(toStr).filter(Boolean)
   const displayUC = rawUC.length ? rawUC : objUC

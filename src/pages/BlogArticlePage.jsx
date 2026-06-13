@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, Clock, Calendar, BookOpen, ChevronDown, ChevronUp, Share2, Check, RefreshCw } from 'lucide-react'
+import { ArrowRight, Clock, Calendar, BookOpen, ChevronDown, ChevronUp, Share2, Check, RefreshCw, Star } from 'lucide-react'
 import { FadeIn, PrimaryBtn, SecBtn } from '../components/components'
 import { FAQSection } from '../components/screens2'
 import SEOHead from '../components/SEOHead'
@@ -1142,14 +1142,15 @@ export default function BlogArticlePage() {
               {[
                 { label: 'Qualiopi', color: '#2563EB', bg: '#EFF6FF', border: '#BFDBFE' },
                 { label: '+1500 formés', color: '#F97316', bg: '#FFF7ED', border: '#FED7AA' },
-                { label: '★ 4,9/5', color: '#16A34A', bg: '#F0FDF4', border: '#BBF7D0' },
+                { label: '4,9/5', star: true, color: '#16A34A', bg: '#F0FDF4', border: '#BBF7D0' },
               ].map(b => (
                 <span key={b.label} style={{
                   fontSize: 11, fontWeight: 700,
                   padding: '3px 9px', borderRadius: 99,
                   color: b.color, background: b.bg, border: `1px solid ${b.border}`,
                   fontFamily: 'DM Sans, sans-serif',
-                }}>{b.label}</span>
+                  display: 'inline-flex', alignItems: 'center', gap: 3,
+                }}>{b.star && <Star size={14} color="#2563EB" fill="#2563EB" style={{ flexShrink: 0 }} />}{b.label}</span>
               ))}
             </div>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>

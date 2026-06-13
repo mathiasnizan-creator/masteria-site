@@ -7,7 +7,7 @@ import {
   Lock, Users as UsersIcon, Building2, Crown, ShieldCheck, Clock,
   AlertTriangle, CheckCircle2, XCircle, Info, Zap, Tag,
   PenLine, FlaskConical, Trash2, Search, Briefcase, Monitor,
-  GitBranch, Wand2, Calendar, MessageSquare, Server, Hash,
+  GitBranch, Wand2, Calendar, MessageSquare, Server, Hash, Star,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -132,8 +132,8 @@ function SectionShell({ section, children }) {
         <div>
           <div style={{
             fontSize: 11, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase',
-            color: tint, marginBottom: 2,
-          }}>Partie {num}</div>
+            color: tint, marginBottom: 2, display: 'inline-flex', alignItems: 'center', gap: 5,
+          }}>{num === '★' ? <><Star size={12} color={tint} fill={tint} style={{ flexShrink: 0 }} />Bonus</> : `Partie ${num}`}</div>
           <h2 style={{
             fontFamily: F.head, fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800,
             color: C.ink, letterSpacing: '-0.02em', margin: 0, lineHeight: 1.2,
@@ -360,7 +360,7 @@ export default function ArtefactsClaudeEntreprise() {
                   color: isActive ? C.blue : C.textMuted,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 11, fontWeight: 800, flexShrink: 0,
-                }}>{s.num}</span>
+                }}>{s.num === '★' ? <Star size={12} color={isActive ? C.blue : C.textMuted} fill={isActive ? C.blue : C.textMuted} /> : s.num}</span>
                 {s.label}
               </a>
             )
@@ -401,7 +401,7 @@ export default function ArtefactsClaudeEntreprise() {
                     color: isActive ? '#fff' : C.textMuted,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 10.5, fontWeight: 800, flexShrink: 0,
-                  }}>{s.num}</span>
+                  }}>{s.num === '★' ? <Star size={11} color={isActive ? '#fff' : C.textMuted} fill={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
                   {s.labelLong}
                 </a>
               )

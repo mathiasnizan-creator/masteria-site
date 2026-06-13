@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { BadgeCheck, Wallet, MonitorSmartphone, Building2 } from 'lucide-react'
+import { BadgeCheck, Wallet, MonitorSmartphone, Building2, Check } from 'lucide-react'
 import SEOHead from '../../components/SEOHead'
+import Pictogram from '../../components/Pictogram'
 
 const COLOR = '#ea4335'
 const COLOR_LIGHT = '#fee2e2'
@@ -209,7 +210,7 @@ export default function GeminiPage() {
           </nav>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: COLOR_LIGHT, color: COLOR, padding: '6px 16px', borderRadius: 99, fontSize: 13, fontWeight: 700, marginBottom: 24 }}>
-            💎 Google Gemini
+            <Pictogram emoji="💎" size={15} color={COLOR} /> Google Gemini
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
@@ -306,7 +307,7 @@ export default function GeminiPage() {
               },
             ].map(c => (
               <div key={c.title} style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 32, marginBottom: 12 }}>{c.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={c.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>{c.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>{c.desc}</p>
               </div>
@@ -382,7 +383,7 @@ export default function GeminiPage() {
             ].map((obj, i) => (
               <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
                 <div style={{ width: 26, height: 26, background: COLOR, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                  <span style={{ fontSize: 12, color: '#fff', fontWeight: 700 }}>✓</span>
+                  <Check size={14} color="#fff" strokeWidth={3} />
                 </div>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}>{obj}</p>
               </div>
@@ -405,7 +406,7 @@ export default function GeminiPage() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Réservé à votre équipe', '1 ou 2 jours', 'Dans vos locaux ou distanciel', 'OPCO, plan de développement des compétences'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: COLOR }}>✓</span>{item}
+                    <Check size={15} color={COLOR} strokeWidth={3} style={{ flexShrink: 0, marginTop: 2 }} />{item}
                   </li>
                 ))}
               </ul>
@@ -417,7 +418,7 @@ export default function GeminiPage() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Programme sur mesure', 'Rythme adapté', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: COLOR }}>✓</span>{item}
+                    <Check size={15} color={COLOR} strokeWidth={3} style={{ flexShrink: 0, marginTop: 2 }} />{item}
                   </li>
                 ))}
               </ul>
@@ -443,7 +444,7 @@ export default function GeminiPage() {
               { icon: '💳', title: 'Le financement ne doit pas être un obstacle', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Selon votre secteur, vous pouvez couvrir l'intégralité du coût. On s'occupe du dossier avec vous." },
             ].map(c => (
               <div key={c.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 28, marginBottom: 12 }}>{c.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={c.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{c.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>{c.desc}</p>
               </div>

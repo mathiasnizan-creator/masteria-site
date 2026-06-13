@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ClipboardList, BadgeCheck, Wallet, MonitorSmartphone, Building2,
+  ClipboardList, BadgeCheck, Wallet, MonitorSmartphone, Building2, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import Pictogram from '../components/Pictogram'
 
 /*
  * Page formation « IA gestion de projet » — réplique la structure des pages
@@ -39,12 +40,12 @@ const AUDIENCE = [
 ]
 
 const USE_CASES = [
-  { icon: '📝', title: "Cadrage et cahier des charges", desc: "Transformez un brief de quelques lignes en expression de besoin structurée, puis itérez avec ChatGPT ou Claude pour affiner le périmètre." },
-  { icon: '📅', title: "Estimation et planning", desc: "Décomposez un livrable en lots avec les bonnes hypothèses d'effort, générez une trame chargeable dans MS Project, Asana ou Jira." },
-  { icon: '🎙️', title: "Comptes rendus de COPIL", desc: "60 minutes de réunion transcrites en 5 minutes de synthèse structurée : actions, décisions, risques, prête à circuler." },
-  { icon: '📊', title: "Reporting hebdo de projet", desc: "Générez automatiquement le flash projet à partir de vos données d'avancement et de votre matrice de risques." },
-  { icon: '⚠️', title: "Analyse des risques", desc: "Première lecture d'un référentiel de risques par l'IA, propositions de mitigations à challenger par le PMO." },
-  { icon: '💬', title: "Communication parties prenantes", desc: "Adaptez le ton et le niveau de détail au sponsor, à la MOE et aux partenaires sans tout réécrire trois fois." },
+  { icon: '\uD83D\uDCDD', title: "Cadrage et cahier des charges", desc: "Transformez un brief de quelques lignes en expression de besoin structurée, puis itérez avec ChatGPT ou Claude pour affiner le périmètre." },
+  { icon: '\uD83D\uDCC5', title: "Estimation et planning", desc: "Décomposez un livrable en lots avec les bonnes hypothèses d'effort, générez une trame chargeable dans MS Project, Asana ou Jira." },
+  { icon: '\uD83C\uDF99\uFE0F', title: "Comptes rendus de COPIL", desc: "60 minutes de réunion transcrites en 5 minutes de synthèse structurée : actions, décisions, risques, prête à circuler." },
+  { icon: '\uD83D\uDCCA', title: "Reporting hebdo de projet", desc: "Générez automatiquement le flash projet à partir de vos données d'avancement et de votre matrice de risques." },
+  { icon: '\u26A0\uFE0F', title: "Analyse des risques", desc: "Première lecture d'un référentiel de risques par l'IA, propositions de mitigations à challenger par le PMO." },
+  { icon: '\uD83D\uDCAC', title: "Communication parties prenantes", desc: "Adaptez le ton et le niveau de détail au sponsor, à la MOE et aux partenaires sans tout réécrire trois fois." },
 ]
 
 const MODULES = [
@@ -92,10 +93,10 @@ const TRAINER = {
 }
 
 const WHY_MASTERIA = [
-  { icon: '🎯', title: "Spécialisés à 100 % sur l'IA", desc: "Masteria ne fait que ça. Chaque formateur utilise l'IA au quotidien dans des contextes professionnels réels, y compris en pilotage de projet." },
-  { icon: '📁', title: 'On travaille sur vos projets', desc: "Zéro cas fictif. Chaque participant produit ses propres livrables projet avec assistance IA. Ce qu'on construit en formation sert encore le lendemain." },
-  { icon: '⏱️', title: 'Gain de temps mesurable', desc: "On chronomètre la production d'un CR ou d'un cadrage avant et après formation. Les retours clients montrent 4 à 7 heures gagnées par semaine pour un chef de projet expérimenté." },
-  { icon: '💳', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO. Masteria prend en charge le montage du dossier de A à Z." },
+  { icon: '\uD83C\uDFAF', title: "Spécialisés à 100 % sur l'IA", desc: "Masteria ne fait que ça. Chaque formateur utilise l'IA au quotidien dans des contextes professionnels réels, y compris en pilotage de projet." },
+  { icon: '\uD83D\uDCC1', title: 'On travaille sur vos projets', desc: "Zéro cas fictif. Chaque participant produit ses propres livrables projet avec assistance IA. Ce qu'on construit en formation sert encore le lendemain." },
+  { icon: '\u23F1\uFE0F', title: 'Gain de temps mesurable', desc: "On chronomètre la production d'un CR ou d'un cadrage avant et après formation. Les retours clients montrent 4 à 7 heures gagnées par semaine pour un chef de projet expérimenté." },
+  { icon: '\uD83D\uDCB3', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO. Masteria prend en charge le montage du dossier de A à Z." },
 ]
 
 function FAQItem({ q, a, color }) {
@@ -262,7 +263,7 @@ export default function GestionDeProjetIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
             {USE_CASES.map((uc, i) => (
               <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 30, marginBottom: 12 }}>{uc.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={uc.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{uc.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{uc.desc}</p>
               </div>
@@ -350,7 +351,7 @@ export default function GestionDeProjetIAPage() {
             {OBJECTIVES.map((obj, i) => (
               <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
                 <div style={{ width: 26, height: 26, background: c, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                  <span style={{ fontSize: 12, color: '#fff', fontWeight: 700 }}>✓</span>
+                  <Check size={14} color="#fff" strokeWidth={3} aria-hidden="true" />
                 </div>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}>{obj}</p>
               </div>
@@ -375,8 +376,8 @@ export default function GestionDeProjetIAPage() {
               <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours · 1-to-1</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['2 jours consécutifs ou espacés · 1-to-1', 'Programme co-construit sur vos projets', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: c }}>✓</span>{item}
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                    <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -390,8 +391,8 @@ export default function GestionDeProjetIAPage() {
               <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours (jusqu'à 12 participants)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Réservé à votre équipe projet', '2 jours sur mesure, dans vos locaux', "Bibliothèque de prompts construite sur vos projets", 'OPCO, plan de développement des compétences'].map(item => (
-                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
-                    <span style={{ color: c }}>✓</span>{item}
+                  <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                    <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -443,7 +444,7 @@ export default function GestionDeProjetIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
             {WHY_MASTERIA.map(card => (
               <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ fontSize: 28, marginBottom: 12 }}>{card.icon}</div>
+                <div style={{ marginBottom: 12 }}><Pictogram emoji={card.icon} tile size={26} /></div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{card.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>{card.desc}</p>
               </div>

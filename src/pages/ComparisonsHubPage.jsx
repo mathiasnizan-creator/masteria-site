@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Trophy, BadgeCheck, Wallet, MapPin, Check } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import Pictogram from '../components/Pictogram'
 import { COMPARISONS, COMPARISONS_INDEX } from '../data/comparisons'
 
 const SITE_URL = 'https://www.master-ia.fr'
@@ -463,7 +464,9 @@ export default function ComparisonsHubPage() {
                 padding: '20px 24px',
                 display: 'flex', alignItems: 'flex-start', gap: 14,
               }}>
-                <div style={{ fontSize: 22, lineHeight: 1, marginTop: 2, flexShrink: 0 }}>⚠️</div>
+                <div style={{ lineHeight: 1, marginTop: 2, flexShrink: 0 }}>
+                  <Pictogram emoji={'\u{26A0}'} size={22} color="#DC2626" />
+                </div>
                 <div style={{ flex: 1 }}>
                   <h3 style={{
                     fontFamily: 'Nunito, sans-serif',

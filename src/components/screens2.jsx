@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Check } from 'lucide-react';
 import { FadeIn, PrimaryBtn } from './components';
 
 export const FAQ_GENERAL = [
@@ -82,7 +83,7 @@ export function FormatTabs({ onContact }) {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
               {cur.details.map((d, i) => (
                 <li key={i} style={{ fontSize: 14, color: '#2A2A2A', display: 'flex', gap: 10, alignItems: 'center' }}>
-                  <span style={{ width: 20, height: 20, background: '#DBEAFE', borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, color: '#2563EB', fontWeight: 800, flexShrink: 0 }}>✓</span>
+                  <span style={{ width: 20, height: 20, background: '#DBEAFE', borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, color: '#2563EB', fontWeight: 800, flexShrink: 0 }}><Check size={12} color="#2563EB" strokeWidth={3} /></span>
                   {d}
                 </li>
               ))}
@@ -94,7 +95,7 @@ export function FormatTabs({ onContact }) {
               <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#111' }}>{cur.price}</span>
               {cur.unit && <span style={{ fontSize: 13, color: '#4B5563' }}>{cur.unit}</span>}
             </div>
-            <div style={{ fontSize: 12, color: '#16A34A', fontWeight: 600, marginBottom: 24 }}>✓ Finançable OPCO</div>
+            <div style={{ fontSize: 12, color: '#16A34A', fontWeight: 600, marginBottom: 24, display: 'flex', alignItems: 'center' }}><Check size={14} color="#16A34A" strokeWidth={3} style={{ marginRight: 4, flexShrink: 0 }} />Finançable OPCO</div>
             <PrimaryBtn onClick={onContact} style={{ width: '100%', display: 'block', textAlign: 'center' }}>
               Contacter notre équipe
             </PrimaryBtn>
@@ -130,7 +131,7 @@ export function SidebarFormatPicker({ onContact }) {
       </div>
       {cur.details.map((d, i) => (
         <div key={i} style={{ fontSize: 12, color: '#4A4A4A', padding: '4px 0', display: 'flex', gap: 7, alignItems: 'center' }}>
-          <span style={{ width: 16, height: 16, background: '#DBEAFE', borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9, color: '#2563EB', fontWeight: 800, flexShrink: 0 }}>✓</span>
+          <span style={{ width: 16, height: 16, background: '#DBEAFE', borderRadius: 999, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9, color: '#2563EB', fontWeight: 800, flexShrink: 0 }}><Check size={10} color="#2563EB" strokeWidth={3} /></span>
           {d}
         </div>
       ))}

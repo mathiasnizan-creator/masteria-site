@@ -554,11 +554,11 @@ export const COMPARISONS = {
     readTime: '12 minutes',
     isPanorama: true,
     tools: [
-      { id: 'chatgpt', name: 'ChatGPT', editor: 'OpenAI', country: '🇺🇸 États-Unis', strengths: 'Polyvalent, écosystème mature', priceMonthly: '20-25 €', color: '#10A37F' },
-      { id: 'claude', name: 'Claude', editor: 'Anthropic', country: '🇺🇸 États-Unis', strengths: 'Code, analyse, longs documents', priceMonthly: '20-30 €', color: '#D97706' },
-      { id: 'copilot', name: 'Microsoft Copilot', editor: 'Microsoft', country: '🇺🇸 États-Unis', strengths: 'Intégration M365, sécurité', priceMonthly: '30 $', color: '#0078D4' },
-      { id: 'gemini', name: 'Google Gemini', editor: 'Google', country: '🇺🇸 États-Unis', strengths: 'Intégration Workspace, multimodal', priceMonthly: '20-30 €', color: '#4285F4' },
-      { id: 'mistral', name: 'Mistral AI (Le Chat)', editor: 'Mistral AI', country: '🇫🇷 France', strengths: 'Souveraineté, open-weight', priceMonthly: '15-25 €', color: '#FA500F' },
+      { id: 'chatgpt', name: 'ChatGPT', editor: 'OpenAI', country: 'États-Unis', strengths: 'Polyvalent, écosystème mature', priceMonthly: '20-25 €', color: '#10A37F' },
+      { id: 'claude', name: 'Claude', editor: 'Anthropic', country: 'États-Unis', strengths: 'Code, analyse, longs documents', priceMonthly: '20-30 €', color: '#D97706' },
+      { id: 'copilot', name: 'Microsoft Copilot', editor: 'Microsoft', country: 'États-Unis', strengths: 'Intégration M365, sécurité', priceMonthly: '30 $', color: '#0078D4' },
+      { id: 'gemini', name: 'Google Gemini', editor: 'Google', country: 'États-Unis', strengths: 'Intégration Workspace, multimodal', priceMonthly: '20-30 €', color: '#4285F4' },
+      { id: 'mistral', name: 'Mistral AI (Le Chat)', editor: 'Mistral AI', country: 'France', strengths: 'Souveraineté, open-weight', priceMonthly: '15-25 €', color: '#FA500F' },
     ],
     verdict: {
       title: 'Verdict express : 5 profils, 5 recommandations',
@@ -576,7 +576,7 @@ export const COMPARISONS = {
       {
         tool: 'chatgpt',
         title: 'ChatGPT (OpenAI)',
-        position: '🏆 Le leader du marché',
+        position: 'Le leader du marché',
         pros: [
           "Écosystème le plus mature : GPTs personnalisés, agents, plugins, App Connectors",
           "Multimodal complet : GPT Image 2, Voice Mode, Sora 2 vidéo",
@@ -593,7 +593,7 @@ export const COMPARISONS = {
       {
         tool: 'claude',
         title: 'Claude (Anthropic)',
-        position: '🥈 Le challenger qui monte',
+        position: 'Le challenger qui monte',
         pros: [
           "Référence en code complexe et en raisonnement",
           "Fenêtre de contexte de 200k tokens (jusqu'à 1M en Enterprise)",
@@ -610,7 +610,7 @@ export const COMPARISONS = {
       {
         tool: 'copilot',
         title: 'Microsoft 365 Copilot',
-        position: '🏢 Le choix entreprise par défaut',
+        position: 'Le choix entreprise par défaut',
         pros: [
           "Intégré nativement à Word, Excel, Outlook, Teams, PowerPoint",
           "Données dans votre tenant Microsoft (sécurité maximale)",
@@ -627,7 +627,7 @@ export const COMPARISONS = {
       {
         tool: 'gemini',
         title: 'Google Gemini',
-        position: '☁️ Le pendant Google de Copilot',
+        position: 'Le pendant Google de Copilot',
         pros: [
           "Intégré à Gmail, Docs, Sheets, Slides, Drive",
           "Fenêtre de contexte massive (jusqu'à 2M tokens)",
@@ -644,7 +644,7 @@ export const COMPARISONS = {
       {
         tool: 'mistral',
         title: 'Mistral AI (Le Chat)',
-        position: '🇫🇷 La carte souveraineté',
+        position: 'La carte souveraineté',
         pros: [
           "Hébergement européen (France) — argument souveraineté décisif",
           "Modèles open-weight disponibles pour le self-hosting",
@@ -669,11 +669,11 @@ export const COMPARISONS = {
     comparisonTable: [
       { criterion: 'Prix mensuel par utilisateur', chatgpt: '20-25 €', claude: '20-30 €', copilot: '30 $ + M365', gemini: '20-30 €', mistral: '15-25 €' },
       { criterion: "Fenêtre de contexte", chatgpt: '128k tokens', claude: '200k tokens', copilot: 'M365 Graph', gemini: '2M tokens', mistral: '128k tokens' },
-      { criterion: "Génération d'images", chatgpt: '✅ GPT Image 2', claude: '❌', copilot: '⚠️ Designer', gemini: '✅ Imagen 4', mistral: '❌' },
-      { criterion: 'Voix bidirectionnelle', chatgpt: '✅ Voice Mode', claude: '⚠️ limité', copilot: '✅ Teams', gemini: '✅ Live', mistral: '❌' },
-      { criterion: 'Hébergement Europe', chatgpt: '⚠️ option', claude: '⚠️ option', copilot: '✅ tenant EU', gemini: '⚠️ option', mistral: '✅ par défaut' },
-      { criterion: 'Open source / self-host', chatgpt: '❌', claude: '❌', copilot: '❌', gemini: '⚠️ Gemma', mistral: '✅ Open-weight' },
-      { criterion: 'Adoption en France', chatgpt: '🥇 Très large', claude: '🥈 En forte croissance', copilot: '🥇 Très large (B2B)', gemini: '🥉 Moyenne', mistral: '🥈 Croissante' },
+      { criterion: "Génération d'images", chatgpt: 'Oui, GPT Image 2', claude: 'Non', copilot: 'Partiel, Designer', gemini: 'Oui, Imagen 4', mistral: 'Non' },
+      { criterion: 'Voix bidirectionnelle', chatgpt: 'Oui, Voice Mode', claude: 'Partiel, limité', copilot: 'Oui, Teams', gemini: 'Oui, Live', mistral: 'Non' },
+      { criterion: 'Hébergement Europe', chatgpt: 'Partiel, en option', claude: 'Partiel, en option', copilot: 'Oui, tenant EU', gemini: 'Partiel, en option', mistral: 'Oui, par défaut' },
+      { criterion: 'Open source / self-host', chatgpt: 'Non', claude: 'Non', copilot: 'Non', gemini: 'Partiel, Gemma', mistral: 'Oui, open-weight' },
+      { criterion: 'Adoption en France', chatgpt: 'Très large', claude: 'En forte croissance', copilot: 'Très large (B2B)', gemini: 'Moyenne', mistral: 'Croissante' },
     ],
     faq: [
       {
@@ -828,10 +828,10 @@ export const COMPARISONS = {
     readTime: '10 minutes',
     isPanorama: true,
     tools: [
-      { id: 'claude', name: 'Claude Code', editor: 'Anthropic', country: '🇺🇸 États-Unis', strengths: 'Référence raisonnement code, contexte 200k', priceMonthly: '20-30 €', color: '#D97706' },
-      { id: 'github-copilot', name: 'GitHub Copilot', editor: 'Microsoft / OpenAI', country: '🇺🇸 États-Unis', strengths: 'Intégration IDE native (VS Code, JetBrains)', priceMonthly: '10-19 €', color: '#24292F' },
-      { id: 'cursor', name: 'Cursor', editor: 'Cursor (Anysphere)', country: '🇺🇸 États-Unis', strengths: 'Éditeur agentique, mode "Composer" full-projet', priceMonthly: '20 €', color: '#000000' },
-      { id: 'chatgpt', name: 'ChatGPT', editor: 'OpenAI', country: '🇺🇸 États-Unis', strengths: 'Polyvalence, Canvas, Code Interpreter', priceMonthly: '20-25 €', color: '#10A37F' },
+      { id: 'claude', name: 'Claude Code', editor: 'Anthropic', country: 'États-Unis', strengths: 'Référence raisonnement code, contexte 200k', priceMonthly: '20-30 €', color: '#D97706' },
+      { id: 'github-copilot', name: 'GitHub Copilot', editor: 'Microsoft / OpenAI', country: 'États-Unis', strengths: 'Intégration IDE native (VS Code, JetBrains)', priceMonthly: '10-19 €', color: '#24292F' },
+      { id: 'cursor', name: 'Cursor', editor: 'Cursor (Anysphere)', country: 'États-Unis', strengths: 'Éditeur agentique, mode "Composer" full-projet', priceMonthly: '20 €', color: '#000000' },
+      { id: 'chatgpt', name: 'ChatGPT', editor: 'OpenAI', country: 'États-Unis', strengths: 'Polyvalence, Canvas, Code Interpreter', priceMonthly: '20-25 €', color: '#10A37F' },
     ],
     verdict: {
       title: 'Verdict express : 4 outils, 4 profils',
@@ -849,7 +849,7 @@ export const COMPARISONS = {
       {
         tool: 'claude',
         title: 'Claude Code (Anthropic)',
-        position: '🏆 La référence raisonnement 2026',
+        position: 'La référence raisonnement 2026',
         pros: [
           "Le meilleur sur le code complexe : refactoring de larges codebases, architecture, design patterns",
           "Fenêtre de 200 000 tokens : digère un projet entier en une seule requête",
@@ -867,7 +867,7 @@ export const COMPARISONS = {
       {
         tool: 'github-copilot',
         title: 'GitHub Copilot',
-        position: '🏢 Le standard quotidien des dev',
+        position: 'Le standard quotidien des dev',
         pros: [
           "Intégration native dans VS Code, Visual Studio, JetBrains, Neovim, Eclipse",
           "Complétion de code instantanée pendant la frappe (le plus rapide)",
@@ -886,7 +886,7 @@ export const COMPARISONS = {
       {
         tool: 'cursor',
         title: 'Cursor',
-        position: '⚡ L\'éditeur agentique qui monte',
+        position: 'L\'éditeur agentique qui monte',
         pros: [
           "Éditeur fork de VS Code spécialement conçu pour l'IA (compatibilité totale extensions)",
           "Mode Composer : agent qui modifie plusieurs fichiers en une commande naturelle",
@@ -904,7 +904,7 @@ export const COMPARISONS = {
       {
         tool: 'chatgpt',
         title: 'ChatGPT (OpenAI)',
-        position: '🛠 Le polyvalent code + non-code',
+        position: 'Le polyvalent code + non-code',
         pros: [
           "Canvas : édition collaborative de code dans l'interface",
           "Code Interpreter : exécution réelle de Python pour analyse de données",
@@ -929,12 +929,12 @@ export const COMPARISONS = {
     ],
     comparisonTable: [
       { criterion: 'Prix par dev/mois', chatgpt: '20-25 €', claude: '20-30 €', 'github-copilot': '10-19 €', cursor: '20 €', mistral: '—' },
-      { criterion: 'Intégration IDE', chatgpt: '⚠️ extension', claude: '⚠️ via Cursor / extensions', 'github-copilot': '✅ native VS Code, JetBrains', cursor: '✅ éditeur dédié', mistral: '—' },
+      { criterion: 'Intégration IDE', chatgpt: 'Partiel, extension', claude: 'Partiel, via Cursor / extensions', 'github-copilot': 'Oui, native VS Code, JetBrains', cursor: 'Oui, éditeur dédié', mistral: '—' },
       { criterion: 'Fenêtre de contexte', chatgpt: '128k tokens', claude: '200k tokens', 'github-copilot': "selon modèle choisi", cursor: 'repo entier indexé', mistral: '—' },
-      { criterion: 'Mode agentique multi-fichiers', chatgpt: '⚠️ Canvas limité', claude: '✅ Claude Code CLI', 'github-copilot': '✅ Workspace', cursor: '✅ Composer', mistral: '—' },
+      { criterion: 'Mode agentique multi-fichiers', chatgpt: 'Partiel, Canvas limité', claude: 'Oui, Claude Code CLI', 'github-copilot': 'Oui, Workspace', cursor: 'Oui, Composer', mistral: '—' },
       { criterion: 'Modèles sous-jacents', chatgpt: 'GPT-5, o-series', claude: 'Claude Opus 4.7, Sonnet 4.5', 'github-copilot': 'GPT-5, Claude, Gemini (au choix)', cursor: 'Claude, GPT-5, Gemini (au choix)', mistral: '—' },
-      { criterion: 'Tests & code review', chatgpt: '✅ via GPTs', claude: '✅ excellent', 'github-copilot': '✅ natif GitHub', cursor: '⚠️ via prompts', mistral: '—' },
-      { criterion: 'Adoption en France', chatgpt: '🥇 Très large', claude: '🥈 En forte croissance dev seniors', 'github-copilot': '🥇 Très large (B2B)', cursor: '🥉 Croissante chez les freelances', mistral: '—' },
+      { criterion: 'Tests & code review', chatgpt: 'Oui, via GPTs', claude: 'Oui, excellent', 'github-copilot': 'Oui, natif GitHub', cursor: 'Partiel, via prompts', mistral: '—' },
+      { criterion: 'Adoption en France', chatgpt: 'Très large', claude: 'En forte croissance (dev seniors)', 'github-copilot': 'Très large (B2B)', cursor: 'Croissante chez les freelances', mistral: '—' },
     ],
     methodology:
       "Ce comparatif s'appuie sur l'expérience terrain des formateurs Masteria, dont plusieurs sont eux-mêmes développeurs et utilisent ces outils au quotidien. Évaluation menée en mai 2026 sur **Claude Opus 4.7 / Sonnet 4.5**, **GitHub Copilot** (avec choix de modèle GPT-5 / Claude Sonnet 4.5), **Cursor** (avec Composer), **ChatGPT GPT-5 Pro** (avec Canvas + Code Interpreter). Cas d'usage testés : refactoring TypeScript, debug Python, génération de tests Jest, conception d'API REST, code review, génération de migrations SQL.",
@@ -1073,10 +1073,10 @@ export const COMPARISONS = {
     readTime: '9 minutes',
     isPanorama: true,
     tools: [
-      { id: 'claude', name: 'Claude (Computer Use)', editor: 'Anthropic', country: '🇺🇸 États-Unis', strengths: 'Agent autonome universel, MCP, Computer Use', priceMonthly: '20-30 €', color: '#D97706' },
-      { id: 'chatgpt', name: 'ChatGPT Operator', editor: 'OpenAI', country: '🇺🇸 États-Unis', strengths: 'Navigation web, intégrations Connecteurs', priceMonthly: '200 €/mois (Pro)', color: '#10A37F' },
-      { id: 'manus', name: 'Manus', editor: 'Manus (Singapour)', country: '🇸🇬 Singapour', strengths: 'Agent généraliste autonome multi-tâches', priceMonthly: '25-50 €', color: '#7C3AED' },
-      { id: 'copilot', name: 'Microsoft Copilot Studio', editor: 'Microsoft', country: '🇺🇸 États-Unis', strengths: 'Agents low-code dans tenant Microsoft', priceMonthly: 'inclus M365 + 200 $/agent', color: '#0078D4' },
+      { id: 'claude', name: 'Claude (Computer Use)', editor: 'Anthropic', country: 'États-Unis', strengths: 'Agent autonome universel, MCP, Computer Use', priceMonthly: '20-30 €', color: '#D97706' },
+      { id: 'chatgpt', name: 'ChatGPT Operator', editor: 'OpenAI', country: 'États-Unis', strengths: 'Navigation web, intégrations Connecteurs', priceMonthly: '200 €/mois (Pro)', color: '#10A37F' },
+      { id: 'manus', name: 'Manus', editor: 'Manus (Singapour)', country: 'Singapour', strengths: 'Agent généraliste autonome multi-tâches', priceMonthly: '25-50 €', color: '#7C3AED' },
+      { id: 'copilot', name: 'Microsoft Copilot Studio', editor: 'Microsoft', country: 'États-Unis', strengths: 'Agents low-code dans tenant Microsoft', priceMonthly: 'inclus M365 + 200 $/agent', color: '#0078D4' },
     ],
     verdict: {
       title: 'Verdict express : 4 agents, 4 cas d\'usage',
@@ -1094,7 +1094,7 @@ export const COMPARISONS = {
       {
         tool: 'claude',
         title: 'Claude (Computer Use + MCP + Skills)',
-        position: '🏆 L\'agent le plus polyvalent',
+        position: 'L\'agent le plus polyvalent',
         pros: [
           "Computer Use : Claude prend le contrôle de votre ordinateur (souris/clavier) pour exécuter des tâches",
           "MCP (Model Context Protocol) : standard ouvert pour connecter Claude à des outils tiers",
@@ -1112,7 +1112,7 @@ export const COMPARISONS = {
       {
         tool: 'chatgpt',
         title: 'ChatGPT Operator',
-        position: '🌐 Le spécialiste des actions web',
+        position: 'Le spécialiste des actions web',
         pros: [
           "Navigation web autonome avancée : Operator comprend les interfaces complexes",
           "Custom GPTs : marché de 3M+ agents pré-configurés",
@@ -1130,7 +1130,7 @@ export const COMPARISONS = {
       {
         tool: 'manus',
         title: 'Manus',
-        position: '🚀 L\'agent autonome qui fait le buzz',
+        position: 'L\'agent autonome qui fait le buzz',
         pros: [
           "Réalisation de tâches multi-étapes en autonomie (recherche → synthèse → livrable)",
           "Très impressionnant sur les tâches type \"trouve-moi un appartement à louer à Lyon avec ces critères et compare 5 options\"",
@@ -1148,7 +1148,7 @@ export const COMPARISONS = {
       {
         tool: 'copilot',
         title: 'Microsoft Copilot Studio',
-        position: '🏢 Le choix entreprise par défaut',
+        position: 'Le choix entreprise par défaut',
         pros: [
           "Plateforme low-code : monter un agent sans coder",
           "Intégration native avec Microsoft Graph (Outlook, Teams, SharePoint, Power Platform)",
@@ -1174,12 +1174,12 @@ export const COMPARISONS = {
     ],
     comparisonTable: [
       { criterion: 'Prix par utilisateur/mois', chatgpt: '200 € (Pro)', claude: '20-30 €', 'manus': '25-50 €', copilot: '~200 $/agent', mistral: '—' },
-      { criterion: 'Niveau d\'autonomie', chatgpt: '✅ Opérator avancé', claude: '✅ Computer Use', 'manus': '✅✅ Très autonome', copilot: '⚠️ Workflow guidé', mistral: '—' },
-      { criterion: 'Intégration M365 / Office', chatgpt: '⚠️ via connecteurs', claude: '⚠️ via MCP', 'manus': '⚠️ basique', copilot: '✅ native', mistral: '—' },
-      { criterion: 'Standard MCP supporté', chatgpt: '✅ depuis 2025', claude: '✅ natif', 'manus': '⚠️ partiel', copilot: '⚠️ via Connectors', mistral: '⚠️ partiel' },
-      { criterion: 'Conformité enterprise', chatgpt: '✅ SOC 2, ISO', claude: '✅ SOC 2, ISO', 'manus': '⚠️ moins mature', copilot: '✅ SOC 2, ISO, HIPAA', mistral: '—' },
-      { criterion: 'Gouvernance données', chatgpt: '⚠️ Cloud OpenAI', claude: '⚠️ Cloud Anthropic', 'manus': '⚠️ Cloud Manus', copilot: '✅ Tenant client', mistral: '—' },
-      { criterion: 'Adoption B2B France', chatgpt: '🥇 Très large', claude: '🥈 Croissance forte', 'manus': '🥉 Émergente', copilot: '🥇 Très large', mistral: '—' },
+      { criterion: 'Niveau d\'autonomie', chatgpt: 'Oui, Operator avancé', claude: 'Oui, Computer Use', 'manus': 'Oui, très autonome', copilot: 'Partiel, workflow guidé', mistral: '—' },
+      { criterion: 'Intégration M365 / Office', chatgpt: 'Partiel, via connecteurs', claude: 'Partiel, via MCP', 'manus': 'Partiel, basique', copilot: 'Oui, native', mistral: '—' },
+      { criterion: 'Standard MCP supporté', chatgpt: 'Oui, depuis 2025', claude: 'Oui, natif', 'manus': 'Partiel', copilot: 'Partiel, via Connectors', mistral: 'Partiel' },
+      { criterion: 'Conformité enterprise', chatgpt: 'Oui, SOC 2, ISO', claude: 'Oui, SOC 2, ISO', 'manus': 'Partiel, moins mature', copilot: 'Oui, SOC 2, ISO, HIPAA', mistral: '—' },
+      { criterion: 'Gouvernance données', chatgpt: 'Partiel, Cloud OpenAI', claude: 'Partiel, Cloud Anthropic', 'manus': 'Partiel, Cloud Manus', copilot: 'Oui, tenant client', mistral: '—' },
+      { criterion: 'Adoption B2B France', chatgpt: 'Très large', claude: 'Croissance forte', 'manus': 'Émergente', copilot: 'Très large', mistral: '—' },
     ],
     methodology:
       "Ce comparatif s'appuie sur les déploiements d'agents IA accompagnés par Masteria depuis 2024 (cabinet de conseil + centre de formation Qualiopi). Les 4 plateformes ont été testées en mai 2026 sur les cas d'usage les plus fréquents en entreprise : qualification de prospects, traitement automatique de mails, génération de rapports, automatisation de processus métier. Versions de référence : **Claude Opus 4.7 + Computer Use**, **ChatGPT Pro + Operator (avril 2026)**, **Manus 2.0**, **Microsoft Copilot Studio (build 2026)**.",
@@ -1692,7 +1692,7 @@ export const COMPARISONS_INDEX = [
     title: 'Meilleure IA pour entreprise en 2026',
     subtitle: 'Panorama complet : ChatGPT, Claude, Copilot, Gemini, Mistral',
     excerpt: "Le guide de référence pour choisir entre les 5 outils IA principaux en 2026. Décision selon stack, métier, budget, souveraineté.",
-    badge: '⭐ Le guide complet',
+    badge: 'Le guide complet',
     isHero: true,
   },
   {

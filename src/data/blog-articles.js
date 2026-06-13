@@ -1441,7 +1441,7 @@ export const BLOG_ARTICLES = [
       },
     ],
     cta: {
-      title: "Aller plus loin sur ChatGPT en entreprise 🚀",
+      title: "Aller plus loin sur ChatGPT en entreprise",
       desc: "Notre formation ChatGPT en entreprise approfondit tous ces cas d'usage sur vos propres documents. Les participants repartent avec une bibliothèque de prompts personnalisée et un accompagnement à 30 jours.",
       buttons: [
         { label: "Découvrir la formation ChatGPT", href: '/formation-chatgpt', primary: true },
@@ -1567,11 +1567,11 @@ export const BLOG_ARTICLES = [
         type: 'table',
         headers: ['Objectif', 'Qualiopi', 'RNCP'],
         rows: [
-          ['Former une équipe à ChatGPT / Copilot', '✅ Idéal', '❌ Trop long, inadapté'],
-          ['Financement OPCO ou plan de compétences', '✅ Indispensable', '✅ Possible'],
-          ['Financement CPF individuel', '❌ Non éligible', '✅ Éligible'],
-          ['Reconversion en data scientist / dev IA', '⚠️ Insuffisant', '✅ Recommandé'],
-          ['Attestation de formation remise en fin de stage', '✅ Oui', '✅ Oui (+ titre officiel)'],
+          ['Former une équipe à ChatGPT / Copilot', 'Idéal', 'Trop long, inadapté'],
+          ['Financement OPCO ou plan de compétences', 'Indispensable', 'Possible'],
+          ['Financement CPF individuel', 'Non éligible', 'Éligible'],
+          ['Reconversion en data scientist / dev IA', 'Insuffisant', 'Recommandé'],
+          ['Attestation de formation remise en fin de stage', 'Oui', 'Oui (+ titre officiel)'],
           ['Durée typique', '1 à 3 jours', '3 à 12 mois'],
         ],
       },
@@ -3956,7 +3956,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Mails, comptes-rendus, agenda, notes de frais, synthèses, présentations : l'assistante de direction est le métier qui gagne le plus à intégrer l'IA. Voici ce que change une formation d'une journée bien construite.",
     intro: "Une assistante de direction passe en moyenne 60 % de son temps sur des tâches à faible valeur ajoutée, mais hautement chronophages : tri d'e-mails, prise de notes, mise en forme de documents, recherche d'informations, planification. C'est précisément le terrain où ChatGPT, Microsoft Copilot et quelques automatisations bien choisies peuvent libérer 5 à 7 heures par semaine. Cette formation d'1 jour est conçue spécifiquement pour ce métier.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-assistante-direction' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour assistante de direction →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-assistante-direction' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour assistante de direction →</a>" },
       { type: 'p', text: "L'objectif n'est pas de transformer les assistantes en data scientists, mais de leur donner une boîte à outils IA opérationnelle qu'elles utiliseront chaque jour dès le lendemain de la formation." },
 
       { type: 'h2', text: "Pourquoi une formation dédiée à ce métier ?" },
@@ -4038,7 +4038,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Sourcing fournisseurs, analyse de propositions, préparation de négociation, suivi des SLA : la fonction Achats est un terrain de jeu idéal pour l'IA générative.",
     intro: "Les directions Achats subissent une pression croissante : réduction des coûts, conformité (CSRD, devoir de vigilance), résilience des chaînes d'approvisionnement, RSE. Dans ce contexte, l'IA générative permet de gagner 30 à 50 % de temps sur les tâches d'analyse documentaire, de comparaison fournisseurs et de préparation de négociation. Voici à quoi ressemble une formation IA conçue spécifiquement pour les acheteurs.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-achats' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour la direction Achats →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-achats' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour la direction Achats →</a>" },
       { type: 'h2', text: "5 cas d'usage prioritaires en Achats" },
       {
         type: 'table',
@@ -4111,7 +4111,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Le service client est l'une des fonctions les plus transformées par l'IA générative : chatbots, copilote conseiller, classification automatique, analyse de satisfaction. Voici un programme de formation 2 jours.",
     intro: "Selon McKinsey (2024), 65 % des centres de relation client ont déployé au moins un cas d'usage IA générative. Mais la majorité des projets échouent par manque de formation des conseillers et des managers. Cette formation de 2 jours vise à transformer les équipes relation client / SAV en utilisateurs experts d'IA, capables de superviser, prompter et améliorer les outils en place.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-relation-client-sav' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour la relation client et le SAV →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-relation-client-sav' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour la relation client et le SAV →</a>" },
       { type: 'h2', text: "5 cas d'usage IA en relation client / SAV" },
       {
         type: 'table',
@@ -4185,7 +4185,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Le manager est aujourd'hui le maillon faible des projets IA en entreprise. Sans lui, les outils sont déployés mais peu utilisés. Voici un programme de 2 jours conçu pour transformer les managers en pilotes d'équipe augmentée.",
     intro: "Les directions IT, Data ou Innovation déploient des outils. Les RH organisent les formations. Mais c'est le manager qui décide, jour après jour, si l'IA est utilisée ou rangée au placard. Et la majorité des managers, en 2026, n'ont jamais été formés ni à l'IA, ni au pilotage d'une équipe augmentée. Cette formation comble ce manque.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-managers' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Manager avec l'IA →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-managers' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Manager avec l'IA →</a>" },
       { type: 'h2', text: "Pourquoi former spécifiquement les managers ?" },
       { type: 'p', text: "Sans manager formé, l'IA reste un gadget. Une étude PwC (2025) montre que les équipes dont le manager utilise lui-même l'IA quotidiennement adoptent les outils 3,4 fois plus vite que les autres. Le rôle du manager est triple : exemplarité, cadrage et accompagnement." },
 
@@ -4262,7 +4262,7 @@ export const BLOG_ARTICLES = [
     excerpt: "La veille est le métier dans lequel l'IA générative apporte le plus de gains immédiats. Voici une formation d'1 jour pour structurer une veille intelligente, automatisée et exploitable.",
     intro: "Tout le monde fait de la veille. Peu de gens la font bien. Et presque personne ne la fait avec l'IA en 2026, alors que c'est probablement le cas d'usage le plus rentable de ChatGPT et Perplexity en entreprise. Cette formation d'1 jour donne une méthode complète pour mettre en place une veille IA qui produit, chaque semaine, une synthèse exploitable pour le management.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-veille' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Veille avec l'IA →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-veille' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Veille avec l'IA →</a>" },
       { type: 'h2', text: "Pourquoi (presque) tout le monde rate sa veille" },
       { type: 'ul', items: [
         "Trop de sources, lues superficiellement",
@@ -4344,7 +4344,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Pas besoin d'être data scientist pour analyser des données en 2026. Avec Excel, Copilot et ChatGPT, n'importe quel cadre peut produire une analyse propre, visuelle et exploitable.",
     intro: "L'analyse de données reste, dans la plupart des PME et ETI, un goulot d'étranglement : on a les données, on n'a pas le temps. Avec ChatGPT et Microsoft Copilot dans Excel, ce goulot s'effondre : un cadre formé peut, en 2 heures, produire un tableau croisé, une analyse de tendance et un graphique exploitable. Cette formation de 2 jours est conçue pour des profils non-data.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-analyse-donnees' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Analyse de données IA Excel + ChatGPT →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-analyse-donnees' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Analyse de données IA Excel + ChatGPT →</a>" },
       { type: 'h2', text: "Programme 2 jours" },
       { type: 'h3', text: "Jour 1 — Excel + Copilot pour les non-experts" },
       { type: 'ul', items: [
@@ -4418,7 +4418,7 @@ export const BLOG_ARTICLES = [
     excerpt: "L'IA générative ne tue pas la créativité, elle la décuple. Encore faut-il savoir l'utiliser comme un partenaire de brainstorming et non comme une machine à idées plates.",
     intro: "Beaucoup d'équipes utilisent ChatGPT pour générer des idées et obtiennent... des idées banales. Le problème n'est pas l'IA : c'est la manière de la prompter. Cette formation d'1 jour donne 6 méthodes éprouvées pour transformer ChatGPT et Claude en partenaires d'idéation, de naming, de campagnes, de copywriting, de scénarios.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-creativite' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Créativité avec l'IA →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-creativite' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Créativité avec l'IA →</a>" },
       { type: 'h2', text: "Pourquoi vos brainstormings IA sont plats" },
       { type: 'ul', items: [
         "Vous demandez '10 idées pour…' sans contexte → l'IA tape dans la moyenne",
@@ -4491,7 +4491,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Mails, comptes-rendus, rapports, propositions, notes : 30 à 50 % du temps des cadres se passe à l'écrit. L'IA générative permet de diviser ce temps par deux, sans perdre en qualité.",
     intro: "Cette formation d'1 jour s'adresse aux cadres et collaborateurs qui passent une part importante de leur temps à écrire (mails, rapports, comptes-rendus, propositions commerciales, notes internes). Objectif : rédiger 2x plus vite, avec plus de clarté, sans tomber dans le ChatGPT-style générique reconnaissable à 100 mètres.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-ecrits-pro' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Écrits professionnels avec l'IA →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-ecrits-pro' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Écrits professionnels avec l'IA →</a>" },
       { type: 'h2', text: "Le piège du ChatGPT-style" },
       { type: 'p', text: "Les textes 100 % ChatGPT sont aujourd'hui détectés instantanément par les lecteurs : phrases lisses, vocabulaire prévisible, structures stéréotypées. La formation enseigne comment éviter ce piège en gardant son ton, son vocabulaire métier et ses tics de style — tout en gagnant un temps fou." },
 
@@ -4568,7 +4568,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Selon Gartner, 70 % des projets IA n'atteignent pas leur ROI prévu. Cette formation de 2 jours donne la méthode pour faire partie des 30 % qui réussissent.",
     intro: "Lancer un projet IA, c'est jongler avec le métier, la data, l'IT, la conformité, le RH et le financement. Aucun chef de projet n'a appris ça dans son cursus. Cette formation 2 jours donne le cadre méthodologique complet : du cas d'usage au déploiement à grande échelle, en passant par la conduite du changement et la conformité AI Act.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-piloter-projet' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Piloter un projet IA en entreprise →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-piloter-projet' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Piloter un projet IA en entreprise →</a>" },
       { type: 'h2', text: "Les 6 phases d'un projet IA" },
       {
         type: 'table',
@@ -4645,7 +4645,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Le DRH est en première ligne sur la transformation IA des entreprises. Pourtant peu sont armés pour bâtir un vrai plan de développement des compétences IA, financé, mesurable et acceptable.",
     intro: "Cette formation de 2 jours, dédiée aux DRH, RRH et responsables formation, donne une méthode complète pour construire un plan de développement des compétences IA aligné sur la stratégie business, finançable par les OPCO, et accepté par les managers et les collaborateurs. Elle intègre les évolutions de l'AI Act, les obligations de formation et les meilleures pratiques observées en 2026.",
     blocks: [
-      { type: 'callout', italic: false, title: '📋 Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-drh-plan-competences' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation DRH — Plan de développement des compétences IA →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-drh-plan-competences' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation DRH — Plan de développement des compétences IA →</a>" },
       { type: 'h2', text: "Pourquoi les DRH sont en difficulté sur l'IA" },
       { type: 'ul', items: [
         "Pression du Comex pour 'former tout le monde à l'IA'",

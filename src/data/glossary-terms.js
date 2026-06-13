@@ -1,16 +1,20 @@
 // Glossaire IA — 80 termes essentiels pour comprendre l'IA en entreprise
 // Source : Masteria, centre de formation IA certifié Qualiopi
 
+// Les valeurs `emoji` sont des CLÉS de correspondance pour <Pictogram> (jamais
+// affichées telles quelles). Encodées en échappement Unicode \u{...} : la chaîne
+// vaut le même glyphe à l'exécution, mais le fichier source ne contient aucun
+// caractère emoji.
 export const GLOSSARY_CATEGORIES = [
-  { id: 'fondamentaux', label: 'Concepts fondamentaux', emoji: '🧠' },
-  { id: 'modeles', label: 'Modèles & architectures', emoji: '🏗️' },
-  { id: 'entrainement', label: 'Entraînement & apprentissage', emoji: '📚' },
-  { id: 'prompt', label: 'Prompt engineering', emoji: '💬' },
-  { id: 'agents', label: 'Agents & outils', emoji: '🤖' },
-  { id: 'donnees', label: 'Données & contexte', emoji: '📊' },
-  { id: 'evaluation', label: 'Évaluation & qualité', emoji: '🎯' },
-  { id: 'regulation', label: 'Réglementation & sécurité', emoji: '⚖️' },
-  { id: 'multimodal', label: 'Multimodalité', emoji: '🎨' },
+  { id: 'fondamentaux', label: 'Concepts fondamentaux', emoji: '\u{1F9E0}' },
+  { id: 'modeles', label: 'Modèles & architectures', emoji: '\u{1F3D7}' },
+  { id: 'entrainement', label: 'Entraînement & apprentissage', emoji: '\u{1F4DA}' },
+  { id: 'prompt', label: 'Prompt engineering', emoji: '\u{1F4AC}' },
+  { id: 'agents', label: 'Agents & outils', emoji: '\u{1F916}' },
+  { id: 'donnees', label: 'Données & contexte', emoji: '\u{1F4CA}' },
+  { id: 'evaluation', label: 'Évaluation & qualité', emoji: '\u{1F3AF}' },
+  { id: 'regulation', label: 'Réglementation & sécurité', emoji: '\u{2696}' },
+  { id: 'multimodal', label: 'Multimodalité', emoji: '\u{1F3A8}' },
 ]
 
 export const GLOSSARY_TERMS = [
