@@ -19,7 +19,7 @@ export const MISTRAL_SPOKES = [
   {
     slug: 'formation-mistral-finance',
     metaTitle: 'Formation Mistral AI Finance | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes finance à Mistral AI (IA souveraine française) en 2 jours : reporting, commentaires de P&L, conformité, analyse de risque. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formez vos équipes finance à Mistral AI (IA souveraine française) en 2 jours : reporting, commentaires de P&L, conformité, risque. Qualiopi, OPCO.",
     h1: 'Formation Mistral AI pour les équipes Finance',
     intro: "Les directions financières manipulent des données parmi les plus sensibles de l'entreprise : résultats non publiés, prévisions, dossiers de crédit, pièces M&A. Mistral AI est le seul LLM généraliste de premier rang hébergé en Europe, avec des options de déploiement on-premise, cloud souverain et API sans transfert hors UE. En 2 jours, vos équipes finance apprennent à déléguer la mise en forme, l'analyse et la rédaction financière à une IA qui reste dans le périmètre réglementaire de l'entreprise.",
     audience: [
@@ -67,8 +67,8 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Ressources Humaines ──────────────────────────────────────
   {
     slug: 'formation-mistral-ressources-humaines',
-    metaTitle: 'Formation Mistral AI RH | Souveraineté & RGPD | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes RH à Mistral AI (IA souveraine française) en 2 jours : analyse de CVs, entretiens, communications RH sensibles, conformité RGPD. Qualiopi, OPCO.",
+    metaTitle: 'Formation Mistral AI RH | Souveraineté, RGPD | Masteria',
+    metaDesc: "Formez vos équipes RH à Mistral AI (IA souveraine) en 2 jours : analyse de CVs, entretiens, communications RH sensibles, RGPD. Qualiopi, OPCO.",
     h1: 'Formation Mistral AI pour les équipes RH',
     intro: "Les équipes RH manipulent les données les plus sensibles de l'entreprise : CVs, entretiens, paie, dossiers disciplinaires, données médicales. Le RGPD impose une localisation européenne stricte de ces données, en particulier les données de catégorie particulière (santé, opinions, vie syndicale). Mistral AI est le seul LLM de premier rang permettant de traiter ces données dans un cadre conforme à la CNIL et à l'EDPB. En 2 jours, vos équipes RH apprennent à utiliser Mistral pour leurs productions courantes sans risque de transfert hors UE.",
     audience: [
@@ -116,8 +116,8 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Marketing ──────────────────────────────────────────────────
   {
     slug: 'formation-mistral-marketing',
-    metaTitle: 'Formation Mistral AI Marketing | Souveraineté française | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes marketing à Mistral AI (IA française) en 2 jours : contenus en français natif, analyse de verbatims, hébergement souverain. Qualiopi, finançable OPCO.",
+    metaTitle: 'Formation Mistral AI Marketing | IA souveraine | Masteria',
+    metaDesc: "Formez vos équipes marketing à Mistral AI (IA française) en 2 jours : contenus en français natif, analyse de verbatims, hébergement souverain. Qualiopi.",
     h1: 'Formation Mistral AI pour les équipes Marketing',
     intro: "Pour les marques françaises et européennes qui veulent une qualité linguistique native et un hébergement souverain, Mistral AI est le LLM de choix. Cette formation de 2 jours apprend à vos équipes marketing à exploiter Mistral pour leurs productions quotidiennes : contenus, analyses, briefs, communications — en restant dans le périmètre RGPD européen et en bénéficiant d'un français natif sans tournures calquées.",
     audience: [
@@ -164,7 +164,7 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Commercial ────────────────────────────────────────────────
   {
     slug: 'formation-mistral-commercial',
-    metaTitle: 'Formation Mistral AI Commercial | IA souveraine | Qualiopi | Masteria',
+    metaTitle: 'Formation Mistral AI Commercial | IA souveraine | Masteria',
     metaDesc: "Formez vos commerciaux à Mistral AI (IA française) en 2 jours : prospection, propositions, RFP, données clients en France. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les équipes Commerciales',
     intro: "Les forces de vente B2B traitent des données prospects et clients qui sont parmi les plus stratégiques de l'entreprise : pipeline, deals en cours, propositions, conditions tarifaires. Mistral AI permet de garder ces données dans le périmètre européen tout en bénéficiant d'une IA puissante en français natif. Cette formation de 2 jours est dédiée aux équipes commerciales qui veulent industrialiser leur production sans transférer leurs données hors UE.",
@@ -212,8 +212,8 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Communication ─────────────────────────────────────────────
   {
     slug: 'formation-mistral-communication',
-    metaTitle: 'Formation Mistral AI Communication | Souveraineté française | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes communication à Mistral AI en 2 jours : discours, com de crise, tribunes en français natif, données souveraines. Qualiopi, finançable OPCO.",
+    metaTitle: 'Formation Mistral AI Communication | souveraine | Masteria',
+    metaDesc: "Formez vos équipes com à Mistral AI en 2 jours : discours, com de crise, tribunes en français natif, données souveraines. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les équipes Communication',
     intro: "Les équipes communication produisent les contenus les plus visibles de l'entreprise : discours dirigeants, tribunes, communications de crise, prises de parole médias. Pour ces livrables où le français doit être impeccable et la confidentialité totale, Mistral est le LLM de référence. Cette formation de 2 jours apprend à exploiter la qualité linguistique native de Mistral et son hébergement souverain pour vos productions communication les plus sensibles.",
     audience: [
@@ -260,7 +260,7 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Management ────────────────────────────────────────────────
   {
     slug: 'formation-mistral-management',
-    metaTitle: 'Formation Mistral AI Management | IA souveraine | Qualiopi | Masteria',
+    metaTitle: 'Formation Mistral AI Management | IA souveraine | Masteria',
     metaDesc: "Formez vos managers à Mistral AI (IA française souveraine) en 2 jours : décision, synthèse, board pack, plans confidentiels. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les Managers et Dirigeants',
     intro: "Les managers et dirigeants manipulent les informations les plus stratégiques de l'entreprise : board packs, dossiers M&A, plans de transformation, synthèses de crise. Pour ces livrables où la confidentialité est absolue et le français impeccable, Mistral AI est l'option de choix : hébergement européen, qualité du français native, déploiements on-premise possibles.",
@@ -308,8 +308,8 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Assistante ────────────────────────────────────────────────
   {
     slug: 'formation-mistral-assistante',
-    metaTitle: 'Formation Mistral AI Assistante | Souveraineté française | Qualiopi | Masteria',
-    metaDesc: "Formez les assistantes à Mistral AI (IA française) en 2 jours : briefings, comptes-rendus, communications dirigeants en français natif. Qualiopi, finançable OPCO.",
+    metaTitle: 'Formation Mistral AI Assistante | IA souveraine | Masteria',
+    metaDesc: "Formez les assistantes à Mistral AI (IA française) en 2 jours : briefings, comptes-rendus, communications dirigeants en français natif. Qualiopi, OPCO.",
     h1: 'Formation Mistral AI pour les Assistantes de direction',
     intro: "Les assistantes de direction sont les premières à manipuler les informations stratégiques de leurs dirigeants : agendas, briefings, communications, comptes-rendus de réunion confidentiels. Mistral AI offre la combinaison idéale pour ce métier : qualité du français natif et hébergement souverain. Cette formation de 2 jours apprend à exploiter ces deux atouts au quotidien.",
     audience: [
@@ -356,7 +356,7 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × SEO ───────────────────────────────────────────────────────
   {
     slug: 'formation-mistral-seo',
-    metaTitle: 'Formation Mistral AI SEO | Français natif | Qualiopi | Masteria',
+    metaTitle: 'Formation Mistral AI SEO | Français natif | Masteria',
     metaDesc: "Formez vos équipes SEO à Mistral AI en 2 jours : contenus en français natif, audit, refonte éditoriale, IA Search francophone. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les équipes SEO et Acquisition',
     intro: "Pour les sites en français qui veulent un SEO de qualité avec une rédaction native, Mistral est l'outil idéal. Sa qualité de français supérieure et son hébergement européen en font un atout pour les équipes SEO travaillant pour le marché francophone. Cette formation de 2 jours apprend à exploiter Mistral pour la production SEO française tout en respectant les contraintes RGPD.",
@@ -404,7 +404,7 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Service Client ────────────────────────────────────────────
   {
     slug: 'formation-mistral-service-client',
-    metaTitle: 'Formation Mistral AI Service Client | RGPD | Qualiopi | Masteria',
+    metaTitle: 'Formation Mistral AI Service Client | RGPD | Masteria',
     metaDesc: "Formez vos équipes service client à Mistral AI en 2 jours : verbatims, réponses en français natif, RGPD natif. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les équipes Service Client',
     intro: "Le service client manipule au quotidien des données personnelles de clients (verbatims, plaintes, données de réclamation, dossiers de litige). Pour ces données soumises au RGPD, Mistral AI offre la solution la plus simple : tout reste en Europe par défaut. Cette formation de 2 jours apprend à exploiter Mistral pour les usages quotidiens du service client en respectant naturellement le RGPD.",
@@ -452,7 +452,7 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Informatique ──────────────────────────────────────────────
   {
     slug: 'formation-mistral-informatique',
-    metaTitle: 'Formation Mistral AI Informatique | Codestral | On-premise | Qualiopi | Masteria',
+    metaTitle: 'Formation Mistral AI Informatique | Codestral | Masteria',
     metaDesc: "Formez vos équipes IT à Mistral AI en 2 jours : Codestral, déploiement on-premise, code souverain, sécurité. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les équipes Informatique & DSI',
     intro: "Pour les équipes IT qui veulent un LLM puissant en France ou en self-hosted, Mistral AI propose une combinaison unique : Codestral pour le code, modèles open-weight déployables on-premise, hébergement européen pour le SaaS. Cette formation de 2 jours est dédiée aux équipes IT qui veulent exploiter Mistral pour le développement, l'automatisation et l'analyse — tout en gardant la souveraineté sur leur code.",
@@ -500,7 +500,7 @@ export const MISTRAL_SPOKES = [
   // ── Mistral × Pédagogique ───────────────────────────────────────────────
   {
     slug: 'formation-mistral-pedagogique',
-    metaTitle: 'Formation Mistral AI Pédagogique | Français natif | Qualiopi | Masteria',
+    metaTitle: 'Formation Mistral AI Pédagogique | IA souveraine | Masteria',
     metaDesc: "Formez vos équipes formation à Mistral AI en 2 jours : programmes en français natif, supports souverains, secteur public. Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les équipes Pédagogiques',
     intro: "Pour les équipes pédagogiques qui produisent en français pour des publics français, Mistral est l'outil idéal : qualité linguistique native, hébergement européen, conformité avec les contraintes du secteur public et de l'éducation. Cette formation de 2 jours apprend à concevoir des programmes et supports pédagogiques en exploitant les forces de Mistral.",

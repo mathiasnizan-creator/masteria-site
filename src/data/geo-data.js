@@ -62,7 +62,7 @@ export const GEO_CITIES = [
     locale: 'fr-FR',
     // Lyon est le siège de Masteria : la page vise la requête complète
     // « formation intelligence artificielle lyon » en plus de « formation ia lyon ».
-    metaTitleOverride: 'Formation intelligence artificielle Lyon | Masteria, Qualiopi',
+    metaTitleOverride: 'Formation intelligence artificielle Lyon | Masteria',
     h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et 89 programmes par métier',
     coordinates: { latitude: 45.7640, longitude: 4.8357 },
     population: '522 000 habitants intra-muros',

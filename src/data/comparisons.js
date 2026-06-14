@@ -19,7 +19,7 @@ export const COMPARISONS = {
   'chatgpt-vs-claude': {
     slug: 'chatgpt-vs-claude',
     metaTitle: 'ChatGPT vs Claude : quel choisir en 2026 ? | Masteria',
-    metaDesc: "Comparatif ChatGPT vs Claude pour entreprises : forces, faiblesses, prix, sécurité, cas d'usage par métier. Recommandations 2026 par les formateurs Masteria.",
+    metaDesc: "Comparatif ChatGPT vs Claude pour entreprises : forces, faiblesses, prix, sécurité, cas d'usage par métier. Recommandations 2026 par Masteria.",
     h1: 'ChatGPT vs Claude : quel modèle IA choisir pour votre entreprise ?',
     intro:
       "Deux des modèles IA les plus puissants du marché s'affrontent en 2026 : **ChatGPT** (OpenAI), pionnier de la révolution IA grand public, et **Claude** (Anthropic), challenger plébiscité pour la qualité de ses raisonnements et de son code. Lequel choisir pour votre entreprise ? Voici un comparatif structuré, par les formateurs qui les utilisent au quotidien.",
@@ -545,8 +545,8 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   'meilleure-ia-entreprise-2026': {
     slug: 'meilleure-ia-entreprise-2026',
-    metaTitle: "Meilleure IA entreprise 2026 : comparatif 5 outils | Masteria",
-    metaDesc: "Quelle IA choisir pour votre entreprise en 2026 ? Comparatif ChatGPT, Claude, Copilot, Gemini, Mistral : forces, prix, cas d'usage par métier. Le guide de référence.",
+    metaTitle: "Meilleure IA entreprise 2026 : comparatif 5 IA | Masteria",
+    metaDesc: "Quelle IA choisir en entreprise en 2026 ? Comparatif ChatGPT, Claude, Copilot, Gemini, Mistral : forces, prix, cas d'usage par métier.",
     h1: 'Quelle est la meilleure IA pour votre entreprise en 2026 ?',
     intro:
       "Vous voulez équiper vos équipes d'un outil IA mais vous hésitez entre **ChatGPT**, **Claude**, **Microsoft Copilot**, **Google Gemini** et **Mistral AI** ? Ce guide vous donne les critères objectifs pour choisir, basé sur 1 500 professionnels formés par Masteria depuis 2022. Spoiler : la meilleure IA dépend de votre stack, de votre métier et de votre budget — voici comment trancher.",
@@ -820,7 +820,7 @@ export const COMPARISONS = {
   'meilleure-ia-pour-coder': {
     slug: 'meilleure-ia-pour-coder',
     metaTitle: "Meilleure IA pour coder en 2026 : comparatif | Masteria",
-    metaDesc: "Comparatif des meilleures IA pour le développement en 2026 : Claude Code, ChatGPT, GitHub Copilot, Cursor. Performance, intégration IDE, prix, cas d'usage par profil dev.",
+    metaDesc: "Comparatif des meilleures IA pour le développement en 2026 : Claude Code, ChatGPT, GitHub Copilot, Cursor. Intégration IDE, prix, cas d'usage.",
     h1: 'Quelle est la meilleure IA pour coder en 2026 ?',
     intro:
       "Si vous êtes développeur ou que vous équipez une équipe technique en 2026, le choix de l'IA de codage devient stratégique. **Claude** s'est imposé comme la référence en raisonnement code, **GitHub Copilot** reste le standard intégré aux IDE, **Cursor** révolutionne l'expérience d'éditeur agentique, et **ChatGPT** garde un avantage sur les tâches généralistes. Ce guide compare les 4 outils les plus utilisés en entreprise tech.",
@@ -1065,7 +1065,7 @@ export const COMPARISONS = {
   'meilleur-agent-ia': {
     slug: 'meilleur-agent-ia',
     metaTitle: "Meilleur agent IA en 2026 : comparatif | Masteria",
-    metaDesc: "Comparatif des meilleurs agents IA pour entreprise en 2026 : Claude Computer Use, ChatGPT Operator, Manus, Microsoft Copilot Studio. Cas d'usage, prix, recommandations.",
+    metaDesc: "Comparatif des meilleurs agents IA pour entreprise en 2026 : Claude Computer Use, ChatGPT Operator, Manus, Copilot Studio. Cas d'usage, prix.",
     h1: 'Quel est le meilleur agent IA pour votre entreprise en 2026 ?',
     intro:
       "Les agents IA — ces systèmes capables d'effectuer des tâches en autonomie sur plusieurs étapes — sont passés en 2025-2026 du stade prototype au déploiement en entreprise. **Claude avec Computer Use**, **ChatGPT Operator**, **Manus**, **Microsoft Copilot Studio** : 4 plateformes dominantes, 4 logiques différentes. Voici comment choisir le bon agent selon votre cas d'usage.",

@@ -34,7 +34,7 @@ const METIER_ICONS = {
 // ─── Contenu éditorial par métier ────────────────────────────────────────────
 const METIER_CONTENT = {
   marketing: {
-    metaTitle: 'Formation IA Marketing pour entreprises | Qualiopi | Masteria',
+    metaTitle: 'Formation IA Marketing | Qualiopi | Masteria',
     metaDesc: 'Formation IA marketing : ChatGPT, Copilot, Gemini appliqués à vos contenus, campagnes et reporting. Certifiée Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: "Formation IA Marketing : formez vos équipes à l'intelligence artificielle",
     intro: "Notre formation IA marketing forme vos équipes à l'intelligence artificielle générative appliquée à leur métier : production de contenus, SEO, réseaux sociaux, emailing, publicité et analyse de performance. En 1 à 2 jours, certifiée Qualiopi et 100 % finançable OPCO, elle transforme ChatGPT, Copilot, Gemini, Claude ou Mistral en assistants opérationnels, avec des livrables produits sur vos propres campagnes et une bibliothèque de prompts adaptée à votre marque.",
@@ -64,7 +64,7 @@ const METIER_CONTENT = {
   },
   'ressources-humaines': {
     metaTitle: 'Formation IA Ressources Humaines | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes RH à l\'IA : recrutement, onboarding, entretiens annuels, gestion administrative. Certifié Qualiopi, finançable OPCO. +1 500 professionnels formés.',
+    metaDesc: 'Formez vos équipes RH à l\'IA : recrutement, onboarding, entretiens, gestion administrative. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les équipes RH',
     intro: "Recrutement, onboarding, entretiens annuels, communication interne : l'IA transforme toutes les dimensions du métier RH. Chaque formation est adaptée à votre environnement de travail, que vous soyez sur Microsoft 365 ou Google Workspace.",
     painPoints: [
@@ -83,7 +83,7 @@ const METIER_CONTENT = {
   },
   commercial: {
     metaTitle: 'Formation IA Commercial et Vente | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes commerciales à l\'IA : prospection, propositions, suivi client. Certifié Qualiopi, finançable OPCO. Résultats mesurables dès la première semaine.',
+    metaDesc: 'Formez vos équipes commerciales à l\'IA : prospection, propositions, suivi client. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les équipes Commerciales',
     intro: "Prospection, propositions commerciales, suivi client, préparation de RDV : l'IA fait gagner plusieurs heures par semaine sur les tâches à faible valeur ajoutée. Vos commerciaux passent plus de temps à vendre, moins à rédiger.",
     painPoints: [
@@ -101,8 +101,8 @@ const METIER_CONTENT = {
     ],
   },
   finance: {
-    metaTitle: 'Formation IA Finance et Contrôle de Gestion | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes finance à l\'IA : reporting, analyse de données, synthèses financières. Certifié Qualiopi, finançable OPCO. Résultats visibles dès la clôture suivante.',
+    metaTitle: 'Formation IA Finance et gestion | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes finance à l\'IA : reporting, analyse de données, synthèses financières. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les équipes Finance',
     intro: "Reporting, commentaires de résultats, tableaux de bord, synthèses financières : l'IA permet aux équipes finance de se concentrer sur l'analyse à valeur ajoutée plutôt que sur la production de documents. Un cycle de clôture plus rapide, des analyses plus approfondies.",
     painPoints: [
@@ -120,8 +120,8 @@ const METIER_CONTENT = {
     ],
   },
   juridique: {
-    metaTitle: 'Formation IA Juridique | ChatGPT, Claude pour les juristes | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes juridiques à l\'IA : analyse de contrats, synthèses, rédaction de clauses. Claude et ChatGPT pour les juristes. Certifié Qualiopi, finançable OPCO.',
+    metaTitle: 'Formation IA Juridique pour juristes | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes juridiques à l\'IA : analyse de contrats, synthèses, rédaction de clauses. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les équipes Juridiques',
     intro: "Revue de contrats, synthèses de documents légaux, rédaction de clauses, analyse de risques : l'IA aide les équipes juridiques à traiter plus de dossiers sans sacrifier la rigueur. La formation insiste sur un cadre d'utilisation sécurisé et défendable.",
     painPoints: [
@@ -139,8 +139,8 @@ const METIER_CONTENT = {
     ],
   },
   communication: {
-    metaTitle: 'Formation IA Communication pour entreprises | Qualiopi | Masteria',
-    metaDesc: 'Formation intelligence artificielle pour les équipes communication : contenus éditoriaux, relations presse, réseaux sociaux, communication de crise. Certifié Qualiopi, finançable OPCO. Devis sous 24h.',
+    metaTitle: 'Formation IA Communication | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes communication à l\'IA : contenus éditoriaux, relations presse, réseaux sociaux, gestion de crise. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation IA pour les équipes Communication',
     intro: "Contenus éditoriaux, relations presse, communication de crise, communication institutionnelle : l'IA amplifie votre voix sans la dénaturer. La formation vous apprend à encoder votre ligne éditoriale dans les prompts pour produire plus, sans perdre l'authenticité.",
     painPoints: [
@@ -159,7 +159,7 @@ const METIER_CONTENT = {
   },
   management: {
     metaTitle: 'Formation IA Management pour managers | Qualiopi | Masteria',
-    metaDesc: 'Formez vos managers à l\'IA : réunions, reporting, communication d\'équipe, conduite du changement. Certifié Qualiopi, finançable OPCO. Moins de tâches admin, plus de terrain.',
+    metaDesc: 'Formez vos managers à l\'IA : réunions, reporting, communication d\'équipe, conduite du changement. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les Managers',
     intro: "Comptes-rendus de réunion, reporting, communication d'équipe, pilotage de l'activité : l'IA redonne aux managers du temps pour le terrain. Moins d'heures derrière l'écran, plus de présence auprès des équipes.",
     painPoints: [
@@ -178,7 +178,7 @@ const METIER_CONTENT = {
   },
   assistante: {
     metaTitle: 'Formation IA Assistanat de direction | Qualiopi | Masteria',
-    metaDesc: 'Formez vos assistantes de direction à l\'IA : emails, courriers, organisation, comptes-rendus. Certifié Qualiopi, finançable OPCO. Rédiger dans le style de la direction en quelques minutes.',
+    metaDesc: 'Formez vos assistantes de direction à l\'IA : emails, courriers, organisation, comptes-rendus. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les Assistants et assistantes de direction',
     intro: "Emails, courriers, comptes-rendus, organisation, gestion de projets transverses : l'IA est l'allié naturel des assistants et assistantes de direction qui jonglent avec tout. La formation vous apprend à créer des prompts dans le style de votre direction, pour produire des documents irréprochables en quelques minutes.",
     painPoints: [
@@ -197,7 +197,7 @@ const METIER_CONTENT = {
   },
   seo: {
     metaTitle: 'Formation IA pour les équipes SEO | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes SEO à l\'IA : contenu optimisé à grande échelle, recherche sémantique, balises, maillage. Certifié Qualiopi, finançable OPCO. Productivité ×5.',
+    metaDesc: 'Formez vos équipes SEO à l\'IA : contenu optimisé à grande échelle, recherche sémantique, balises, maillage. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation IA pour les équipes SEO',
     intro: "Le SEO est l'un des domaines où l'IA a le plus d'impact immédiat. Production de contenu optimisé à grande échelle, recherche sémantique accélérée, analyse de la SERP, rédaction de balises et de maillage interne : l'IA multiplie la capacité d'action des équipes SEO sans sacrifier la qualité.",
     painPoints: [
@@ -216,7 +216,7 @@ const METIER_CONTENT = {
   },
   'service-client': {
     metaTitle: 'Formation IA Service Client | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes service client à l\'IA : réponses rapides et cohérentes, gestion des escalades, scripts. Certifié Qualiopi, finançable OPCO. Traitement accéléré de 60%.',
+    metaDesc: 'Formez vos équipes service client à l\'IA : réponses rapides et cohérentes, gestion des escalades, scripts. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation IA pour les équipes Service Client',
     intro: "Les équipes service client traitent des volumes considérables de demandes répétitives. L'IA permet de répondre plus vite, avec plus de cohérence, tout en libérant les agents pour les interactions à forte valeur. La formation couvre la rédaction de réponses, la gestion des escalades et l'exploitation des données client.",
     painPoints: [
@@ -234,8 +234,8 @@ const METIER_CONTENT = {
     ],
   },
   informatique: {
-    metaTitle: 'Formation IA pour les DSI et équipes IT | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes IT et DSI à l\'IA : documentation technique, code, logs, gouvernance IA. Certifié Qualiopi, finançable OPCO. Usages pratiques et cadre stratégique.',
+    metaTitle: 'Formation IA pour DSI et équipes IT | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes IT et DSI à l\'IA : documentation technique, code, logs, gouvernance IA. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les équipes Informatique / DSI',
     intro: "Les équipes IT sont en première ligne de la transformation IA, à la fois utilisateurs et garants de son déploiement sécurisé. La formation couvre les usages pratiques (documentation, code, analyse de logs) mais aussi le cadrage stratégique : gouvernance des données, choix des outils, sécurité des usages IA en entreprise.",
     painPoints: [
@@ -253,8 +253,8 @@ const METIER_CONTENT = {
     ],
   },
   pedagogique: {
-    metaTitle: 'Formation IA pour les Équipes Pédagogiques | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes pédagogiques à l\'IA : création de modules, individualisation des parcours, évaluations. Certifié Qualiopi, finançable OPCO. Un module en 2h au lieu de 2 jours.',
+    metaTitle: 'Formation IA équipes pédagogiques | Qualiopi | Masteria',
+    metaDesc: 'Formez vos équipes pédagogiques à l\'IA : création de modules, individualisation des parcours, évaluations. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation IA pour les Équipes Pédagogiques',
     intro: "Formateurs, responsables pédagogiques, ingénieurs de formation : l'IA transforme la conception et l'animation des parcours de formation. Créer des modules de formation, personnaliser les contenus selon les apprenants, générer des évaluations pertinentes, tout en gardant la main sur la qualité pédagogique.",
     painPoints: [
@@ -273,7 +273,7 @@ const METIER_CONTENT = {
   },
   achats: {
     metaTitle: 'Formation IA Achats pour les acheteurs | Qualiopi | Masteria',
-    metaDesc: 'Formez vos équipes Achats à l\'IA : sourcing fournisseurs, analyse d\'offres, négociation, suivi contractuel. Certifié Qualiopi, finançable OPCO. Productivité ×3 sur l\'analyse documentaire.',
+    metaDesc: 'Formez vos équipes Achats à l\'IA : sourcing, analyse d\'offres, négociation, suivi contractuel. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: 'Formation IA pour les équipes Achats',
     intro: "Sourcing, analyse comparative d\'offres, négociation, suivi de contrats fournisseurs : les Achats sont confrontés à des volumes documentaires considérables où l\'IA fait gagner un temps décisif. La formation couvre le cycle complet, du brief fournisseur à l\'audit contractuel, avec une attention particulière sur la rigueur factuelle et la confidentialité.",
     painPoints: [
@@ -292,7 +292,7 @@ const METIER_CONTENT = {
   },
   transverse: {
     metaTitle: 'Formation IA Tous publics et formats transverses | Masteria',
-    metaDesc: 'Formations IA transverses pour acculturer toutes vos équipes : Sprint IA 3 h, prompts, AI Act flash. Certifié Qualiopi, finançable OPCO. Déploiement à grande échelle.',
+    metaDesc: 'Formations IA transverses pour acculturer toutes vos équipes : Sprint IA 3 h, prompts, AI Act flash. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formations IA transverses, pour toutes vos équipes',
     intro: "Quand l\'enjeu est de sensibiliser, acculturer ou outiller largement, sans bloquer l\'agenda des collaborateurs, les formats transverses Masteria sont le bon point d\'entrée. Sprint IA 3 h, sensibilisation grand public, prompts efficaces, conformité AI Act : autant de formats prêts à déployer à l\'échelle d\'une convention, d\'un séminaire ou d\'un plan IA d\'entreprise.",
     painPoints: [

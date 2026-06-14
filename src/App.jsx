@@ -366,8 +366,8 @@ function AboutScreen() {
   return (
     <div>
       <SEOHead
-        title="À propos de Masteria | Cabinet conseil & centre de formation IA"
-        description="Masteria, cabinet de conseil et centre de formation IA certifié Qualiopi. Fondé par Mathias Nizan en 2022. Notre mission : rendre l'IA accessible, concrète et éthique pour toutes les entreprises."
+        title="À propos de Masteria | Conseil & formation IA"
+        description="Masteria, cabinet de conseil et centre de formation IA certifié Qualiopi. Fondé par Mathias Nizan en 2022. L'IA accessible, concrète et éthique."
         slug="centre-formation-ia-entreprise"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -823,8 +823,8 @@ function ContactScreen() {
   return (
     <>
       <SEOHead
-        title="Contact & devis : formation, conseil ou projet IA sur mesure | Masteria"
-        description="Contactez Masteria pour un devis : formation IA, conseil et audit, ou développement sur mesure (automatisations, outils, agents IA). Réponse sous 24 h. France, Suisse, Belgique."
+        title="Contact & devis : formation ou projet IA | Masteria"
+        description="Contactez Masteria pour un devis : formation IA, conseil et audit, ou développement sur mesure. Réponse sous 24 h. France, Suisse, Belgique."
         slug="contact"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },

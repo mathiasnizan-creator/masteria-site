@@ -10,7 +10,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: true,
     metaTitle: 'Formation Google Gemini Marketing | Masteria',
-    metaDesc: 'Formez vos équipes marketing à Google Gemini : contenus Docs, analyse Sheets, présentations Slides et veille concurrentielle NotebookLM. Qualiopi, finançable OPCO.',
+    metaDesc: 'Formez vos équipes marketing à Google Gemini : contenus Docs, analyse Sheets, présentations Slides, veille NotebookLM. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour les équipes Marketing',
     intro: 'Vos équipes marketing passent des heures à produire des contenus, consolider des données de campagnes et préparer des reportings dans Google Workspace. Un article de blog qui prenait 3 heures se produit en 45 minutes avec Gemini dans Docs. Une analyse de campagnes qui monopolisait une matinée dans Sheets se transforme en 30 minutes de travail orienté recommandations. Cette formation de 2 jours transforme vos outils Google quotidiens en moteurs de productivité marketing, sur vos vraies campagnes et vos vrais contenus.',
     audience: [
@@ -212,7 +212,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: false,
     metaTitle: 'Formation Google Gemini pour les RH | Masteria',
-    metaDesc: 'Formez vos équipes RH à Google Gemini : offres d\'emploi Docs, pipeline Sheets, communications Gmail, comptes-rendus Meet et onboarding NotebookLM. Qualiopi, finançable OPCO.',
+    metaDesc: 'Formez vos équipes RH à Google Gemini : offres Docs, pipeline Sheets, communications Gmail, comptes-rendus Meet, onboarding. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour les Ressources Humaines',
     intro: 'Les équipes RH perdent des dizaines d\'heures chaque semaine sur des tâches rédactionnelles et documentaires indispensables mais chronophages : offres d\'emploi, fiches de poste, emails de candidats, comptes-rendus d\'entretiens, documents d\'onboarding. Une offre d\'emploi optimisée qui prenait 1h30 se produit en 20 minutes avec Gemini dans Docs. Le compte-rendu d\'entretien structuré est disponible 5 minutes après la fin de la réunion Meet. Cette formation de 2 jours couvre l\'intégralité du cycle RH avec Gemini, sur vos propres processus et vos propres documents.',
     audience: [
@@ -414,7 +414,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: false,
     metaTitle: 'Formation Google Gemini Finance | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes finance à Google Gemini : analyse Sheets, rapports Docs, synthèse NotebookLM, présentations CODIR Slides. Certifié Qualiopi, 100 % finançable OPCO.',
+    metaDesc: 'Formez vos équipes finance à Google Gemini : analyse Sheets, rapports Docs, synthèse NotebookLM, présentations CODIR. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour la Finance et le Contrôle de Gestion',
     intro: 'Dans les directions financières et les équipes contrôle de gestion, la charge de travail répétitive est massive. Consolidation de tableaux, reformatage de données, rédaction de commentaires de résultats, mise en page de rapports mensuels : ces tâches consomment entre 30 et 50 % du temps disponible. Pourtant, elles sont précisément celles que Gemini sait prendre en charge directement dans vos outils Google Workspace. Un rapport de gestion qui prenait 3 heures se produit en 45 minutes. Une présentation CODIR se construit en 30 minutes depuis votre tableau de bord Sheets.',
     audience: [
@@ -616,7 +616,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: false,
     metaTitle: 'Formation Google Gemini Commercial | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes commerciales à Google Gemini : prospection Gmail, propositions Docs, pipeline Sheets, préparation RDV NotebookLM. Qualiopi, finançable OPCO.',
+    metaDesc: 'Formez vos équipes commerciales à Google Gemini : prospection Gmail, propositions Docs, pipeline Sheets, prépa RDV. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour les Équipes Commerciales',
     intro: 'Un commercial passe en moyenne 30 % de son temps sur des tâches administratives et rédactionnelles : emails de suivi, comptes-rendus de rendez-vous, propositions commerciales, préparation de réunions. C\'est du temps perdu sur le terrain. Gemini prend en charge la majeure partie de ces tâches en quelques secondes, directement dans Gmail, Google Docs et Google Sheets. Cette formation de 2 jours apprend à vos commerciaux à prospecter plus intelligemment, proposer plus vite et préparer chaque rendez-vous comme s\'ils avaient un assistant dédié.',
     audience: [
@@ -818,7 +818,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: false,
     metaTitle: 'Formation Google Gemini Communication | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes communication à Google Gemini : RP Docs, réseaux sociaux, communication interne, gestion de crise, veille NotebookLM. Qualiopi, finançable OPCO.',
+    metaDesc: 'Formez vos équipes com à Google Gemini : RP Docs, réseaux sociaux, communication interne, gestion de crise, veille. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour les Équipes Communication',
     intro: 'Les équipes communication jonglent en permanence entre des registres différents, des audiences variées et des délais serrés. Communiqués de presse, contenus réseaux sociaux, messages de crise, communication interne sensible : chaque livrable demande un ton différent, une précision rédactionnelle élevée et un délai souvent court. La plupart des professionnels qui testent Gemini seuls obtiennent des textes génériques, sans voix, sans angle. Ce n\'est pas un problème d\'outil, c\'est un problème de méthode. Cette formation de 2 jours apprend à utiliser Gemini comme un assistant qui connaît votre organisation, votre ton et vos audiences.',
     audience: [
@@ -1012,7 +1012,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × Management ─────────────────────────────────────────────────
   {
     slug: 'formation-gemini-management',
-    metaTitle: 'Formation Gemini Management | Workspace + NotebookLM | Qualiopi | Masteria',
+    metaTitle: 'Formation Gemini Management | Workspace, IA | Masteria',
     metaDesc: "Formez vos managers à Google Gemini en 2 jours : Workspace, NotebookLM, board packs, plans dans Docs/Slides. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les Managers et Dirigeants',
     intro: "Pour les managers et dirigeants travaillant sous Google Workspace, Gemini est l'outil naturel d'industrialisation : intégré nativement à Gmail, Docs, Sheets, Slides, Drive. Avec NotebookLM, vous pouvez transformer vos sources internes en synthèses stratégiques. La fenêtre de 2M tokens permet d'avaler des dossiers très longs.",
@@ -1059,7 +1059,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × Assistante ─────────────────────────────────────────────────
   {
     slug: 'formation-gemini-assistante',
-    metaTitle: 'Formation Gemini Assistante | Workspace + Calendar | Qualiopi | Masteria',
+    metaTitle: 'Formation Gemini Assistante | Gmail, Docs, Meet | Masteria',
     metaDesc: "Formez les assistantes à Google Gemini en 2 jours : Gmail, Docs, Calendar, Meet, NotebookLM. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les Assistantes de direction',
     intro: "Les assistantes de direction sur Google Workspace bénéficient d'une intégration native exceptionnelle avec Gemini : Gmail, Calendar, Docs, Meet, Drive sont tous accessibles directement.",
@@ -1111,7 +1111,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × SEO ────────────────────────────────────────────────────────
   {
     slug: 'formation-gemini-seo',
-    metaTitle: 'Formation Gemini SEO | Workspace + 2M tokens | Qualiopi | Masteria',
+    metaTitle: 'Formation Gemini SEO | Workspace, NotebookLM | Masteria',
     metaDesc: "Formez vos équipes SEO à Google Gemini en 2 jours : audits, articles, SGE/AI Overviews, intégration Workspace. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes SEO',
     intro: "Pour les équipes SEO, Gemini est doublement stratégique : c'est l'IA de Google (donc directement en lien avec les SGE / AI Overviews qui transforment le SEO en 2026), et la fenêtre 2M tokens permet d'avaler des sites entiers pour des audits sémantiques.",
@@ -1158,7 +1158,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × Service Client ─────────────────────────────────────────────
   {
     slug: 'formation-gemini-service-client',
-    metaTitle: 'Formation Gemini Service Client | Workspace | Qualiopi | Masteria',
+    metaTitle: 'Formation Gemini Service Client | Workspace | Masteria',
     metaDesc: "Formez vos équipes service client à Google Gemini en 2 jours : Gmail, Meet, NotebookLM, analyse multilingue. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes Service Client',
     intro: "Pour les équipes service client sur Google Workspace, Gemini permet de traiter rapidement les demandes (Gmail), animer les sessions support (Meet), et analyser les feedbacks à grande échelle (NotebookLM, fenêtre 2M tokens).",
@@ -1205,7 +1205,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × Informatique ───────────────────────────────────────────────
   {
     slug: 'formation-gemini-informatique',
-    metaTitle: 'Formation Gemini Informatique | Code, Cloud, Workspace | Qualiopi | Masteria',
+    metaTitle: 'Formation Gemini Informatique | Code, Cloud | Masteria',
     metaDesc: "Formez vos équipes IT à Google Gemini en 2 jours : code, Google Cloud, Workspace admin, automatisation. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes Informatique & DSI',
     intro: "Gemini est particulièrement pertinent pour les équipes IT travaillant sur Google Cloud, Workspace ou avec une stack Google.",
@@ -1252,7 +1252,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × Pédagogique ────────────────────────────────────────────────
   {
     slug: 'formation-gemini-pedagogique',
-    metaTitle: 'Formation Gemini Pédagogique | Workspace + Imagen 4 | Qualiopi | Masteria',
+    metaTitle: 'Formation Gemini Pédagogique | Workspace, Imagen | Masteria',
     metaDesc: "Formez vos équipes formation à Google Gemini en 2 jours : Docs, Slides, Forms, Imagen 4, NotebookLM. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes Pédagogiques',
     intro: "Pour les équipes formation sur Google Workspace, Gemini s'intègre nativement à Docs, Slides, Forms, Meet pour la production et l'animation pédagogique.",

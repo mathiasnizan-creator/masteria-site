@@ -58,8 +58,8 @@ export default function GlossaryPage() {
   return (
     <>
       <SEOHead
-        title="Glossaire IA : 80 définitions pour comprendre l'intelligence artificielle | Masteria"
-        description={`${TOTAL_TERMS} termes essentiels de l'IA expliqués clairement : LLM, RAG, prompt engineering, agent IA, MCP, fine-tuning, AI Act... Glossaire de référence pour décideurs et équipes formation IA.`}
+        title={`Glossaire IA : ${TOTAL_TERMS} définitions essentielles | Masteria`}
+        description={`${TOTAL_TERMS} termes essentiels de l'IA expliqués clairement : LLM, RAG, prompt, agent, MCP, fine-tuning, AI Act... Glossaire de référence pour vos équipes.`}
         slug="glossaire-ia"
         breadcrumbs={breadcrumbs}
         extraJsonLd={jsonLdGlossary}

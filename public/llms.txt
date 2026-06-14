@@ -34,7 +34,7 @@ Masteria propose deux activités complémentaires :
 - [Centre de formation IA](https://www.master-ia.fr/centre-formation-ia-entreprise) — Présentation de Masteria et de son fondateur
 - [Contact et demande de devis](https://www.master-ia.fr/contact) — Réponse sous 24h ouvrées
 - [Blog](https://www.master-ia.fr/blog) — Articles éditoriaux sur l'IA en entreprise
-- [Glossaire IA](https://www.master-ia.fr/glossaire-ia) — 80 termes essentiels de l'IA en entreprise (LLM, RAG, prompt, agent, MCP, AI Act…) avec définitions claires
+- [Glossaire IA](https://www.master-ia.fr/glossaire-ia) — 83 termes essentiels de l'IA en entreprise (LLM, RAG, prompt, agent, MCP, AI Act…) avec définitions claires
 
 ## Comparatifs IA (haute intention décisionnelle)
 

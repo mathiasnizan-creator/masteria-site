@@ -106,8 +106,8 @@ const METIERS_SPEC = {
     metier: 'Marketing',
     metierSlug: 'marketing',
     h1: "Panorama IA Marketing 2 jours : ChatGPT, Copilot, Gemini, Claude, Mistral",
-    metaTitle: "Panorama IA Marketing 2 jours · ChatGPT, Copilot, Gemini, Claude, Mistral | Masteria",
-    metaDesc: "Formation IA marketing multi-outils sur 2 jours. Comparez et maîtrisez ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI pour choisir les outils adaptés. Certifié Qualiopi, finançable OPCO.",
+    metaTitle: "Panorama IA Marketing 2 jours · 5 outils comparés | Masteria",
+    metaDesc: "Formation IA marketing multi-outils sur 2 jours. Comparez ChatGPT, Copilot, Gemini, Claude et Mistral pour choisir les bons outils. Qualiopi, OPCO.",
     intro: "Vous hésitez entre ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI pour votre équipe marketing ? Cette formation transversale de 2 jours vous apprend à utiliser les 5 outils majeurs en comparaison directe sur vos propres cas d'usage marketing : production de contenus, campagnes, reporting, veille. Vous repartez avec un choix d'outil éclairé et une bibliothèque de prompts réutilisables.",
     useCases: [
       { icon: '✍️', title: 'Contenus & éditorial', desc: "Tester chaque outil sur posts, articles, newsletters pour identifier celui qui respecte le mieux votre ton." },
@@ -160,7 +160,7 @@ const METIERS_SPEC = {
     metierSlug: 'ressources-humaines',
     h1: "Panorama IA Ressources Humaines 2 jours : 5 outils comparés",
     metaTitle: "Panorama IA RH 2 jours · 5 outils comparés | Masteria",
-    metaDesc: "Formation IA ressources humaines sur 2 jours. Panorama ChatGPT, Copilot, Gemini, Claude, Mistral pour recrutement, onboarding, entretiens. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation IA RH sur 2 jours. Panorama ChatGPT, Copilot, Gemini, Claude, Mistral pour recrutement, onboarding, entretiens. Qualiopi, finançable OPCO.",
     intro: "Vos équipes RH manipulent des données sensibles (CV, évaluations, dossiers salariés). Avant de choisir un outil IA, il faut arbitrer entre productivité, confidentialité et intégration au SIRH. Cette formation 2 jours vous fait tester les 5 IA majeures sur vos vrais cas RH et vous aide à choisir la stack la plus adaptée à vos contraintes.",
     useCases: [
       { icon: '📝', title: 'Offres et fiches de poste', desc: "Comparer la qualité rédactionnelle des 5 outils sur des offres différenciantes." },
@@ -263,7 +263,7 @@ const METIERS_SPEC = {
     metier: 'Commercial',
     metierSlug: 'commercial',
     h1: "Panorama IA Commercial et Vente 2 jours : 5 outils comparés",
-    metaTitle: "Panorama IA Commercial 2 jours · 5 outils comparés | Masteria",
+    metaTitle: "Panorama IA Commercial · 5 outils comparés | Masteria",
     metaDesc: "Formation IA pour les équipes commerciales sur 2 jours. Testez 5 outils IA sur prospection, propositions, suivi client. Certifié Qualiopi, finançable OPCO.",
     intro: "Prospection, propositions commerciales, CRM, préparation de RDV : chaque étape du cycle de vente peut être optimisée avec l'IA. Mais l'outil optimal varie selon la tâche. Cette formation 2 jours compare les 5 IA majeures pour que vos commerciaux choisissent en connaissance de cause.",
     useCases: [
@@ -315,8 +315,8 @@ const METIERS_SPEC = {
     metier: 'Communication',
     metierSlug: 'communication',
     h1: "Panorama IA Communication 2 jours : 5 outils comparés",
-    metaTitle: "Panorama IA Communication 2 jours · 5 outils comparés | Masteria",
-    metaDesc: "Formation IA pour les équipes communication sur 2 jours. Comparez 5 outils IA pour contenus, relations presse, communication interne. Certifié Qualiopi, finançable OPCO.",
+    metaTitle: "Panorama IA Communication · 5 outils comparés | Masteria",
+    metaDesc: "Formation IA pour les équipes communication sur 2 jours. Comparez 5 outils IA pour contenus, relations presse, com interne. Qualiopi, OPCO.",
     intro: "La communication couvre une immense diversité de livrables : posts, communiqués, discours, contenus internes, relations presse. Chaque outil IA a ses forces selon le type de contenu. Cette formation 2 jours vous aide à choisir et à combiner les 5 IA majeures pour tous vos besoins communication.",
     useCases: [
       { icon: '📰', title: 'Relations presse', desc: "Rédiger communiqués et dossiers presse adaptés à chaque média." },
@@ -367,8 +367,8 @@ const METIERS_SPEC = {
     metier: 'Management',
     metierSlug: 'management',
     h1: "Panorama IA Management 2 jours : 5 outils comparés",
-    metaTitle: "Panorama IA Management 2 jours · 5 outils comparés | Masteria",
-    metaDesc: "Formation IA pour managers et direction sur 2 jours. Comparez 5 outils IA pour pilotage, décision, communication d'équipe. Certifié Qualiopi, finançable OPCO.",
+    metaTitle: "Panorama IA Management · 5 outils comparés | Masteria",
+    metaDesc: "Formation IA pour managers et direction sur 2 jours. Comparez 5 outils IA pour pilotage, décision, communication d'équipe. Qualiopi, OPCO.",
     intro: "Les managers jonglent entre pilotage d'équipe, prise de décision, communication et reporting. L'IA transforme chacune de ces dimensions, mais pas avec le même outil pour chaque tâche. Cette formation 2 jours vous aide à construire votre propre stack IA de manager.",
     useCases: [
       { icon: '📋', title: 'Pilotage & reporting', desc: "Tableaux de bord narratifs et synthèses de comité." },
@@ -419,8 +419,8 @@ const METIERS_SPEC = {
     metier: 'Assistanat de direction',
     metierSlug: 'assistante',
     h1: "Panorama IA Assistanat de direction 2 jours : 5 outils comparés",
-    metaTitle: "Panorama IA Assistanat 2 jours · 5 outils comparés | Masteria",
-    metaDesc: "Formation IA pour assistants et assistantes et office managers sur 2 jours. Comparez 5 outils IA pour productivité, organisation, communication. Certifié Qualiopi, finançable OPCO.",
+    metaTitle: "Panorama IA Assistanat · 5 outils comparés | Masteria",
+    metaDesc: "Formation IA pour assistants et office managers sur 2 jours. Comparez 5 outils IA pour productivité, organisation, communication. Qualiopi, OPCO.",
     intro: "Les assistants et assistantes et office managers jonglent entre dizaines de tâches variées : mails, agendas, comptes-rendus, déplacements, communications, présentations. L'IA peut transformer ce quotidien, à condition de choisir le bon outil pour chaque usage. Cette formation 2 jours vous apprend à construire votre propre stack IA.",
     useCases: [
       { icon: '📧', title: 'Gestion des mails', desc: "Tri, réponse, synthèse avec Copilot dans Outlook ou Gemini dans Gmail." },
@@ -523,7 +523,7 @@ const METIERS_SPEC = {
     metier: 'Service Client',
     metierSlug: 'service-client',
     h1: "Panorama IA Service Client 2 jours : 5 outils comparés",
-    metaTitle: "Panorama IA Service Client 2 jours · 5 outils comparés | Masteria",
+    metaTitle: "Panorama IA Service Client · 5 outils comparés | Masteria",
     metaDesc: "Formation IA pour le service client sur 2 jours. Comparez 5 outils IA pour réponses, tickets, connaissance. Certifié Qualiopi, finançable OPCO.",
     intro: "Le service client vit une transformation majeure avec l'IA : réponses automatisées, synthèse de tickets, bases de connaissance. Mais chaque outil n'offre pas les mêmes garanties (ton, précision, confidentialité). Cette formation 2 jours compare les 5 IA majeures pour votre relation client.",
     useCases: [
@@ -627,8 +627,8 @@ const METIERS_SPEC = {
     metier: 'Équipes pédagogiques',
     metierSlug: 'pedagogique',
     h1: "Panorama IA Équipes pédagogiques 2 jours : 5 outils comparés",
-    metaTitle: "Panorama IA Pédagogique 2 jours · 5 outils comparés | Masteria",
-    metaDesc: "Formation IA pour formateurs et équipes pédagogiques sur 2 jours. Comparez 5 outils IA pour conception, animation, évaluation. Certifié Qualiopi, finançable OPCO.",
+    metaTitle: "Panorama IA Pédagogique · 5 outils comparés | Masteria",
+    metaDesc: "Formation IA pour formateurs et équipes pédagogiques sur 2 jours. Comparez 5 outils IA pour conception, animation, évaluation. Qualiopi, OPCO.",
     intro: "Les équipes pédagogiques peuvent transformer leur métier avec l'IA : conception de supports, scénarios pédagogiques, évaluations, personnalisation. Mais tous les outils ne se valent pas sur les tâches pédagogiques. Cette formation 2 jours compare les 5 IA majeures pour votre activité formation.",
     useCases: [
       { icon: '📚', title: 'Conception de supports', desc: "Créer supports et slides adaptés à votre audience." },

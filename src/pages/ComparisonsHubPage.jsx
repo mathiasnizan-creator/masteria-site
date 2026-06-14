@@ -60,8 +60,8 @@ export default function ComparisonsHubPage() {
   return (
     <>
       <SEOHead
-        title="Quelle est la meilleure IA en 2026 ? Le guide pour entreprises | Masteria"
-        description="Quelle est la meilleure IA en 2026 ? Réponse selon votre profil : ChatGPT, Claude, Copilot, Gemini ou Mistral. Arbre de décision + tous nos comparatifs détaillés."
+        title="Quelle est la meilleure IA en 2026 ? | Masteria"
+        description="Quelle est la meilleure IA en 2026 ? Réponse selon votre profil : ChatGPT, Claude, Copilot, Gemini ou Mistral. Arbre de décision + comparatifs."
         slug="quelle-est-la-meilleure-ia"
         breadcrumbs={breadcrumbs}
         extraJsonLd={[itemListSchema, faqSchema]}

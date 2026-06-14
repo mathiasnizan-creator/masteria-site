@@ -408,7 +408,7 @@ export default function BlogListPage() {
   return (
     <div>
       <SEOHead
-        title="Blog IA en entreprise : formations, financement OPCO et retours terrain | Masteria"
+        title="Blog IA en entreprise : guides et financement | Masteria"
         description="Guides pratiques, comparatifs des outils IA, financement OPCO et retours terrain pour déployer l'IA dans vos équipes. Par Masteria, certifié Qualiopi."
         slug="blog"
         breadcrumbs={[

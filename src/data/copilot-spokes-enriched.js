@@ -10,7 +10,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Marketing',
     metaTitle: 'Formation Copilot Marketing | Masteria Qualiopi',
     metaDescription:
-      'Utilisez Microsoft 365 Copilot pour créer contenus, analyses et campagnes marketing en moitié moins de temps. Formation 2 jours, certifiée Qualiopi, finançable OPCO.',
+      'Microsoft 365 Copilot pour créer contenus, analyses et campagnes marketing en moitié moins de temps. Formation 2 jours, Qualiopi, OPCO.',
     priority: true,
     color: '#2563EB',
     audience: [
@@ -396,7 +396,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Commercial',
     metaTitle: 'Formation Copilot Commercial | Masteria Qualiopi',
     metaDescription:
-      'Accélérez votre cycle de vente avec Microsoft 365 Copilot : propositions, relances, préparations de rendez-vous. Formation 2 jours, certifiée Qualiopi, finançable OPCO.',
+      'Accélérez votre cycle de vente avec Microsoft 365 Copilot : propositions, relances, prépa RDV. Formation 2 jours, Qualiopi, OPCO.',
     priority: true,
     color: '#059669',
     audience: [
@@ -589,7 +589,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Word & Excel',
     metaTitle: 'Formation Copilot Word et Excel | Masteria Qualiopi',
     metaDescription:
-      'Maîtrisez Microsoft 365 Copilot dans Word et Excel pour rédiger, analyser et synthétiser 3× plus vite. Formation 2 jours, certifiée Qualiopi, finançable OPCO.',
+      'Microsoft 365 Copilot dans Word et Excel pour rédiger, analyser et synthétiser 3× plus vite. Formation 2 jours, certifiée Qualiopi, OPCO.',
     priority: false,
     color: '#DC2626',
     audience: [
@@ -782,7 +782,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Management',
     metaTitle: 'Formation Copilot Managers | Masteria Qualiopi',
     metaDescription:
-      'Utilisez Microsoft 365 Copilot pour piloter votre équipe, préparer vos comités et gagner du temps sur la communication managériale. Formation 2 jours, certifiée Qualiopi.',
+      'Microsoft 365 Copilot pour piloter votre équipe, préparer vos comités et gagner du temps sur la communication. Formation 2 jours, Qualiopi.',
     priority: false,
     color: '#D97706',
     audience: [
@@ -975,7 +975,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Finance',
     metaTitle: 'Formation Copilot Finance | Masteria Qualiopi',
     metaDescription:
-      'Utilisez Microsoft 365 Copilot pour accélérer vos analyses financières, reportings et budgets. Formation 2 jours pour les équipes finance, certifiée Qualiopi, finançable OPCO.',
+      'Microsoft 365 Copilot pour accélérer analyses financières, reportings et budgets. Formation 2 jours équipes finance, Qualiopi, OPCO.',
     priority: true,
     color: '#0891B2',
     audience: [
@@ -1166,9 +1166,9 @@ export const COPILOT_SPOKES = [
     slug: 'formation-copilot-assistante',
     title: 'Formation Microsoft Copilot pour les Assistants et assistantes de direction',
     shortTitle: 'Copilot Assistanat',
-    metaTitle: 'Formation Copilot Assistanat de direction | Masteria Qualiopi',
+    metaTitle: 'Formation Copilot Assistanat | Masteria Qualiopi',
     metaDescription:
-      'Maîtrisez Microsoft 365 Copilot pour les assistants et assistantes de direction : gestion des emails, organisation, rédaction et suivi de projets. Formation 2 jours, certifiée Qualiopi.',
+      'Microsoft 365 Copilot pour les assistants de direction : emails, organisation, rédaction, suivi de projets. Formation 2 jours, Qualiopi.',
     priority: false,
     color: '#BE185D',
     audience: [
@@ -1354,8 +1354,8 @@ export const COPILOT_SPOKES = [
   // ── Copilot × Communication ─────────────────────────────────────────────
   {
     slug: 'formation-copilot-communication',
-    metaTitle: 'Formation Copilot Communication | M365 + Researcher | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes communication à Microsoft 365 Copilot en 2 jours : Researcher, Pages, Designer, communications nuancées dans le tenant. Qualiopi, finançable OPCO.",
+    metaTitle: 'Formation Copilot Communication | M365 | Masteria',
+    metaDesc: "Formez vos équipes com à Microsoft 365 Copilot en 2 jours : Researcher, Pages, Designer, communications dans le tenant. Qualiopi, OPCO.",
     h1: 'Formation Microsoft 365 Copilot pour les équipes Communication',
     intro: "Les équipes communication produisent en permanence des supports, communiqués, présentations, mails dirigeants. Microsoft 365 Copilot est l'outil le plus naturel pour ces livrables quand votre stack est Microsoft : il travaille directement dans Word, PowerPoint, Outlook, accède au tenant pour contextualiser, et Researcher synthétise les sources internes en quelques minutes.",
     audience: [
@@ -1448,7 +1448,7 @@ export const COPILOT_SPOKES = [
   // ── Copilot × Service Client ────────────────────────────────────────────
   {
     slug: 'formation-copilot-service-client',
-    metaTitle: 'Formation Copilot Service Client | Dynamics + Teams | Qualiopi | Masteria',
+    metaTitle: 'Formation Copilot Service Client | Dynamics 365 | Masteria',
     metaDesc: "Formez vos équipes service client à Microsoft 365 Copilot en 2 jours : Dynamics 365, Teams, Outlook, agents Copilot Studio. Qualiopi, OPCO.",
     h1: 'Formation Microsoft 365 Copilot pour les équipes Service Client',
     intro: "Microsoft 365 Copilot est particulièrement pertinent pour les équipes service client qui utilisent Dynamics 365, Teams, Outlook au quotidien. Avec Copilot Studio, vous pouvez aussi construire des agents de SAV qui restent dans votre tenant Microsoft.",
@@ -1495,7 +1495,7 @@ export const COPILOT_SPOKES = [
   // ── Copilot × Informatique ──────────────────────────────────────────────
   {
     slug: 'formation-copilot-informatique',
-    metaTitle: 'Formation Copilot Informatique | DSI + GitHub Copilot | Qualiopi | Masteria',
+    metaTitle: 'Formation Copilot Informatique | GitHub Copilot | Masteria',
     metaDesc: "Formez vos équipes IT à Microsoft 365 Copilot et GitHub Copilot en 2 jours : code, infrastructure, automatisation, agents Copilot Studio. Qualiopi, OPCO.",
     h1: 'Formation Microsoft Copilot pour les équipes Informatique & DSI',
     intro: "Microsoft propose deux Copilots distincts pour l'IT : M365 Copilot pour la productivité bureautique, GitHub Copilot pour le développement. Cette formation couvre les deux et apprend à les exploiter en complémentarité.",
@@ -1542,7 +1542,7 @@ export const COPILOT_SPOKES = [
   // ── Copilot × Pédagogique ───────────────────────────────────────────────
   {
     slug: 'formation-copilot-pedagogique',
-    metaTitle: 'Formation Copilot Pédagogique | M365 + Teams | Qualiopi | Masteria',
+    metaTitle: 'Formation Copilot Pédagogique | M365, Teams | Masteria',
     metaDesc: "Formez vos équipes formation à Microsoft 365 Copilot en 2 jours : programmes Word, supports PowerPoint, suivi Excel, Teams. Qualiopi, finançable OPCO.",
     h1: 'Formation Microsoft 365 Copilot pour les équipes Pédagogiques',
     intro: "Pour les équipes formation qui produisent en environnement Microsoft 365 (programmes dans Word, supports PowerPoint, suivi Excel, animation Teams), Copilot est l'outil naturel d'industrialisation.",

@@ -130,7 +130,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-microsoft-copilot',
     priority: true,
     metaTitle: 'Formation Copilot Finance | Masteria',
-    metaDesc: 'Formation Copilot pour les équipes finance et contrôle de gestion. Analyse Excel, reporting automatique, synthèse de documents. Certifié Qualiopi, finançable OPCO.',
+    metaDesc: 'Formation Copilot pour les équipes finance et contrôle de gestion : analyse Excel, reporting, synthèse de documents. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation Microsoft Copilot pour les équipes Finance',
     intro: "Les équipes finance passent une part importante de leur temps dans Excel, Word et PowerPoint. Microsoft Copilot s'intègre directement dans ces outils pour automatiser l'analyse de données, générer des rapports, synthétiser des documents complexes et préparer des présentations. Une révolution pour le contrôle de gestion, la trésorerie et la comptabilité.",
     useCases: [
@@ -181,7 +181,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-microsoft-copilot',
     priority: true,
     metaTitle: 'Formation Copilot Assistanat de direction | Masteria',
-    metaDesc: "Formation Microsoft Copilot pour les assistants et assistantes de direction. Emails, agendas, comptes-rendus, présentations : gagnez 2h par jour. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation Microsoft Copilot pour les assistants de direction : emails, agendas, comptes-rendus. Gagnez 2h par jour. Certifié Qualiopi, finançable OPCO.",
     h1: 'Formation Microsoft Copilot pour les Assistants et assistantes de direction',
     intro: "Les assistants et assistantes de direction sont au cœur de l'organisation : gestion d'agenda, rédaction de courriers, préparation de réunions, coordination des équipes. Microsoft Copilot, intégré dans Outlook, Word, Teams et PowerPoint, automatise une grande partie de ces tâches répétitives, permettant de se concentrer sur les missions à forte valeur ajoutée.",
     useCases: [
@@ -332,7 +332,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-chatgpt',
     priority: false,
     metaTitle: 'Formation ChatGPT Communication | Masteria',
-    metaDesc: "Formation ChatGPT pour les équipes communication. Communiqués de presse, contenus réseaux sociaux, communication de crise. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation ChatGPT pour les équipes communication : communiqués, réseaux sociaux, communication de crise. Certifié Qualiopi, finançable OPCO.",
     h1: 'Formation ChatGPT pour les équipes Communication',
     intro: "Les équipes communication gèrent un flux constant de productions : communiqués de presse, contenus réseaux sociaux, communications internes, gestion de crise, relations médias. ChatGPT peut transformer leur façon de travailler en automatisant la production de contenu tout en préservant la cohérence de marque.",
     useCases: [
@@ -432,7 +432,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-chatgpt',
     priority: false,
     metaTitle: "Formation ChatGPT Assistanat de direction | Masteria",
-    metaDesc: "Formation ChatGPT pour les assistants et assistantes de direction. Emails, courriers, comptes-rendus, organisation : gagnez 2h par jour. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation ChatGPT pour les assistants de direction : emails, courriers, comptes-rendus. Gagnez 2h par jour. Certifié Qualiopi, finançable OPCO.",
     h1: "Formation ChatGPT pour les Assistants et assistantes de direction",
     intro: "Les assistants et assistantes de direction jonglent avec des tâches variées et des volumes élevés de communication. ChatGPT peut automatiser la rédaction de courriers, la synthèse de documents et la préparation de réunions, pour se concentrer sur la coordination, la relation et les missions à forte valeur ajoutée.",
     useCases: [
@@ -1070,7 +1070,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: false,
     metaTitle: 'Formation Gemini Assistanat de direction | Masteria',
-    metaDesc: "Formation Gemini pour assistants et assistantes de direction. Gmail, Docs, Sheets, Calendar Google. Organisation et rédaction assistées. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation Gemini pour assistants de direction : Gmail, Docs, Sheets, Calendar. Organisation et rédaction assistées. Certifié Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les Assistants et assistantes de direction',
     intro: "Les assistants et assistantes de direction sur Google Workspace gèrent une charge de communication et d'organisation considérable. Gemini dans Gmail, Docs et Sheets vous aide à traiter les emails plus vite, rédiger des documents de qualité professionnelle et organiser l'agenda de la direction, tout en restant dans vos outils habituels.",
     useCases: [
@@ -1994,7 +1994,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-mistral-ai',
     priority: false,
     metaTitle: 'Formation Mistral Assistanat de direction | Masteria',
-    metaDesc: "Formation Mistral AI pour assistants et assistantes de direction. Courriers, synthèses, organisation en français soigné. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation Mistral AI pour assistants de direction : courriers, synthèses, organisation en français soigné. Certifié Qualiopi, finançable OPCO.",
     h1: 'Formation Mistral AI pour les Assistants et assistantes de direction',
     intro: "Les assistants et assistantes de direction rédigent les documents qui portent la signature de la direction : courriers officiels, notes de synthèse, comptes-rendus de comités. Mistral AI offre une qualité de français institutionnel qui convient parfaitement à ces productions, tout en garantissant la confidentialité des dossiers de direction grâce à son hébergement européen.",
     useCases: [
@@ -2132,7 +2132,7 @@ const BASE_SPOKES = [
     tool: 'Claude (Anthropic)', toolSlug: 'claude', toolColor: '#d97706', toolColorLight: '#fef3c7',
     metier: 'SEO', metierSlug: 'seo', hubSlug: 'formation-claude-ia', priority: false,
     metaTitle: 'Formation Claude SEO | Masteria',
-    metaDesc: 'Formation Claude Anthropic pour les équipes SEO. Contenus longs premium, analyse sémantique approfondie, stratégie de contenu. Certifié Qualiopi, finançable OPCO.',
+    metaDesc: 'Formation Claude Anthropic pour les équipes SEO : contenus longs premium, analyse sémantique, stratégie de contenu. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation Claude pour les équipes SEO',
     intro: "Pour les équipes SEO qui misent sur des contenus longs et approfondis, Claude est l'outil de référence. Sa capacité à produire des guides de 3 000 à 10 000 mots sans perte de cohérence, à analyser des corpus de contenus concurrents et à structurer des stratégies éditoriales complexes en fait un allié pour le SEO de qualité.",
     useCases: [
@@ -2450,7 +2450,7 @@ const BASE_SPOKES = [
     tool: 'ChatGPT', toolSlug: 'chatgpt', toolColor: '#10a37f', toolColorLight: '#d1fae5',
     metier: 'Équipes Pédagogiques', metierSlug: 'pedagogique', hubSlug: 'formation-chatgpt', priority: false,
     metaTitle: 'Formation ChatGPT Pédagogiques | Masteria',
-    metaDesc: 'Formation ChatGPT pour les formateurs et ingénieurs pédagogiques. Conception de modules, évaluations, individualisation. Certifié Qualiopi, finançable OPCO.',
+    metaDesc: 'Formation ChatGPT pour formateurs et ingénieurs pédagogiques : conception de modules, évaluations, individualisation. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation ChatGPT pour les équipes Pédagogiques',
     intro: "Formateurs, responsables pédagogiques, ingénieurs de formation : l'IA transforme la conception et l'animation des parcours. ChatGPT permet de créer des modules de formation complets en quelques heures, de générer des évaluations pertinentes et d'individualiser les parcours selon les profils apprenants.",
     useCases: [
@@ -2525,7 +2525,7 @@ const BASE_SPOKES = [
     tool: 'Claude (Anthropic)', toolSlug: 'claude', toolColor: '#d97706', toolColorLight: '#fef3c7',
     metier: 'Équipes Pédagogiques', metierSlug: 'pedagogique', hubSlug: 'formation-claude-ia', priority: false,
     metaTitle: 'Formation Claude Pédagogiques | Masteria',
-    metaDesc: 'Formation Claude Anthropic pour les formateurs. Conception avancée de formations, évaluations complexes, individualisation des parcours. Certifié Qualiopi, finançable OPCO.',
+    metaDesc: 'Formation Claude Anthropic pour formateurs : conception avancée, évaluations complexes, individualisation des parcours. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation Claude pour les équipes Pédagogiques',
     intro: "Pour les ingénieurs pédagogiques qui conçoivent des formations complexes, Claude est l'outil de référence. Sa capacité à structurer de longs programmes, à produire des contenus d'apprentissage de qualité professionnelle et à raisonner sur les approches pédagogiques en fait un partenaire de conception exceptionnel.",
     useCases: [
@@ -2737,7 +2737,7 @@ const BASE_SPOKES = [
     slug: 'formation-ia-analyse-donnees',
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Finance', metierSlug: 'finance', hubSlug: 'formation-intelligence-artificielle', priority: false,
-    metaTitle: "Formation analyse de données IA Excel + ChatGPT (2 jours) | Masteria",
+    metaTitle: "Formation analyse de données IA : Excel + ChatGPT | Masteria",
     metaDesc: "Formation 2 jours pour analyser des données avec Excel, Copilot et ChatGPT. Tableaux croisés, scripts, dashboards. OPCO, Qualiopi.",
     h1: "Analyser ses données avec l'IA, Excel + ChatGPT",
     intro: "Pas besoin d'être data scientist pour analyser des données en 2026. Avec Excel, Copilot et ChatGPT, n'importe quel cadre peut produire un tableau croisé, une analyse de tendance et un graphique exploitable en 2 heures. Cette formation 2 jours est conçue pour des profils non-data : contrôle de gestion, marketing, RH, commercial.",
@@ -2800,7 +2800,7 @@ const BASE_SPOKES = [
     duration: '1j',
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Communication', metierSlug: 'communication', hubSlug: 'formation-intelligence-artificielle', priority: false,
-    metaTitle: "Formation écrits professionnels avec l'IA (1 jour) | Masteria",
+    metaTitle: "Formation écrits professionnels avec l'IA | Masteria",
     metaDesc: "Formation 1 jour pour rédiger plus vite et mieux avec ChatGPT et Copilot : mails, rapports, comptes-rendus, propositions. OPCO, Qualiopi.",
     h1: "Optimiser ses écrits professionnels avec l'IA",
     intro: "30 à 50 % du temps des cadres se passe à l'écrit. L'IA générative permet de diviser ce temps par deux, sans perdre en qualité — à condition d'éviter le « ChatGPT-style » lisse et générique reconnaissable à 100 mètres. Cette formation 1 jour apprend à garder son ton tout en gagnant un temps fou sur mails, comptes-rendus, rapports et propositions.",
@@ -2830,7 +2830,7 @@ const BASE_SPOKES = [
     slug: 'formation-ia-piloter-projet',
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Informatique / DSI', metierSlug: 'informatique', hubSlug: 'formation-intelligence-artificielle', priority: true,
-    metaTitle: "Formation piloter un projet IA en entreprise (2 jours) | Masteria",
+    metaTitle: "Formation piloter un projet IA en entreprise | Masteria",
     metaDesc: "Formation 2 jours pour piloter un projet IA en entreprise : cadrage, ROI, AI Act, MLOps, conduite du changement. OPCO, Qualiopi.",
     h1: "Piloter un projet IA en entreprise",
     intro: "Selon Gartner, 70 % des projets IA n'atteignent pas leur ROI prévu. Cette formation 2 jours donne la méthode pour faire partie des 30 % qui réussissent : cadrage, faisabilité, POC, industrialisation, conduite du changement, mesure d'impact. Conçue pour des chefs de projet, des PMO et des responsables transformation, pas pour des data scientists.",
@@ -3084,7 +3084,7 @@ const BASE_SPOKES = [
     hubSlug: 'formation-claude-ia',
     priority: true,
     metaTitle: 'Formation Claude Code · Qualiopi · OPCO | Masteria',
-    metaDesc: "Formez vos développeurs à Claude Code, l'agent de codage d'Anthropic : refactoring, tests, CI/CD, MCP. 2 jours pratiques sur votre codebase. Qualiopi, OPCO.",
+    metaDesc: "Formez vos développeurs à Claude Code, l'agent de codage d'Anthropic : refactoring, tests, CI/CD, MCP. 2 jours sur votre codebase. Qualiopi, OPCO.",
     h1: 'Formation Claude Code : le développement assisté par agents IA',
     intro: "Claude Code est l'outil de développement agentique d'Anthropic : un agent qui lit votre codebase, modifie plusieurs fichiers, exécute les tests et prépare les pull requests, depuis le terminal, l'IDE ou le CI. Cette formation de 2 jours, construite sur votre propre code, apprend à vos développeurs à déléguer des tâches d'ingénierie complètes sans perdre le contrôle : conventions d'équipe, permissions, revue systématique.",
     audience: [
@@ -3191,7 +3191,7 @@ const BASE_SPOKES = [
     priority: true,
     duration: '1j',
     metaTitle: 'Formation IA dirigeants : COMEX & CODIR | Masteria',
-    metaDesc: "Formation IA pour dirigeants, COMEX et CODIR : enjeux stratégiques, ROI, gouvernance, AI Act, feuille de route 90 jours. 1 jour, confidentiel. Qualiopi, OPCO.",
+    metaDesc: "Formation IA pour dirigeants, COMEX et CODIR : enjeux stratégiques, ROI, gouvernance, AI Act, feuille de route 90 jours. Confidentiel. Qualiopi, OPCO.",
     h1: 'Formation IA pour dirigeants : décider et piloter à l\'ère de l\'IA générative',
     intro: "Une journée conçue pour les comités de direction : comprendre ce que l'IA générative change réellement pour votre activité, arbitrer les investissements, cadrer les risques et repartir avec une feuille de route à 90 jours. Format confidentiel en intra, exemples adaptés à votre secteur, zéro jargon technique. Animée par le fondateur de Masteria, qui forme des COMEX de PME, ETI et groupes depuis 2022.",
     audience: [
@@ -3241,7 +3241,7 @@ const BASE_SPOKES = [
     priority: true,
     duration: '1j',
     metaTitle: 'Formation AI Act : conformité IA · Qualiopi | Masteria',
-    metaDesc: "Formation AI Act 1 jour : obligations réelles, cartographie des risques, article 4, plan de conformité et gouvernance IA. Certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation AI Act 1 jour : obligations réelles, cartographie des risques, article 4, plan de conformité et gouvernance IA. Qualiopi, finançable OPCO.",
     h1: 'Formation AI Act : mettez votre entreprise en conformité avec le règlement européen',
     intro: "Le règlement européen sur l'IA s'applique par paliers depuis février 2025 : pratiques interdites, obligation de maîtrise de l'IA pour les collaborateurs (article 4), puis obligations renforcées sur les systèmes à haut risque en 2026 et 2027. Cette formation d'1 jour transforme le texte en plan de conformité opérationnel : cartographie de vos usages, obligations réelles selon votre rôle, gouvernance, registre et formation des équipes.",
     audience: [

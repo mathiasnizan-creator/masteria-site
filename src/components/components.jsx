@@ -771,7 +771,7 @@ export function MasteriaFooter() {
             {[
               ['À propos', '/centre-formation-ia-entreprise'],
               ['Blog', '/blog'],
-              ['Glossaire IA (80 termes)', '/glossaire-ia'],
+              ['Glossaire IA (83 termes)', '/glossaire-ia'],
               ['Quelle est la meilleure IA ?', '/quelle-est-la-meilleure-ia'],
               ['Meilleure agence IA', '/meilleure-agence-ia'],
               ['Contact', '/contact'],

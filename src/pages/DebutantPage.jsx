@@ -29,8 +29,8 @@ export default function DebutantPage() {
   return (
     <>
       <SEOHead
-        title="Formation intelligence artificielle débutant · Sans prérequis · Certifié Qualiopi | Masteria"
-        description="Formation intelligence artificielle pour débutants : ChatGPT, Copilot ou Gemini en 1 journée, sans prérequis technique. Formation IA débutant certifiée Qualiopi, finançable OPCO. Devis sous 24h."
+        title="Formation IA débutant · sans prérequis · Qualiopi | Masteria"
+        description="Formation IA pour débutants : ChatGPT, Copilot ou Gemini en 1 journée, sans prérequis. Certifiée Qualiopi, finançable OPCO. Devis sous 24 h."
         slug="formation-ia-debutant"
         courseData={{
           name: "Formation IA débutant pour entreprises",

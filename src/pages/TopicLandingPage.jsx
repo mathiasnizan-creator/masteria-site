@@ -10,8 +10,8 @@ const TOPICS = {
   'formation-intelligence-artificielle-cpf': {
     badge: 'CPF & financement formation IA',
     h1: "Formation intelligence artificielle CPF : nos réponses",
-    metaTitle: "Formation intelligence artificielle CPF | Alternatives & financement | Masteria",
-    metaDescription: "Formation IA CPF : pourquoi nos formations ne sont pas finançables CPF, quelles alternatives (OPCO, plan de développement, financement direct entreprise). Réponses claires et solutions concrètes.",
+    metaTitle: "Formation intelligence artificielle CPF | Masteria",
+    metaDescription: "Formation IA et CPF : pourquoi nos formations ne sont pas éligibles CPF et quelles alternatives (OPCO, plan de développement, financement entreprise).",
     intro: "Vous cherchez une formation intelligence artificielle finançable par votre Compte Personnel de Formation ? Voici une explication claire de ce que permet — et ne permet pas — le CPF pour l'IA, et les alternatives de financement les plus adaptées aux salariés et aux entreprises.",
     sections: [
       {
@@ -40,8 +40,8 @@ const TOPICS = {
   'formation-intelligence-artificielle-distanciel': {
     badge: 'À distance & en ligne',
     h1: "Formation intelligence artificielle à distance",
-    metaTitle: "Formation IA à distance | Visio · Classes virtuelles · Qualiopi | Masteria",
-    metaDescription: "Formation intelligence artificielle 100 % à distance, en visioconférence avec un formateur dédié. Mêmes cas pratiques qu'en présentiel, finançable OPCO, certifié Qualiopi. Devis sous 24h.",
+    metaTitle: "Formation IA à distance | Visio · Qualiopi | Masteria",
+    metaDescription: "Formation IA 100 % à distance en visio avec formateur dédié. Mêmes cas pratiques qu'en présentiel, finançable OPCO, certifié Qualiopi. Devis sous 24h.",
     intro: "Vos équipes sont réparties sur plusieurs sites ou en télétravail ? Notre formation IA en distanciel reproduit l'efficacité du présentiel grâce à des classes virtuelles animées par un formateur dédié, avec exercices pratiques sur vos vrais cas d'usage.",
     sections: [
       {
@@ -70,8 +70,8 @@ const TOPICS = {
   'formation-intelligence-artificielle-generative': {
     badge: 'IA générative en entreprise',
     h1: "Formation intelligence artificielle générative",
-    metaTitle: "Formation IA générative en entreprise | ChatGPT, Claude, Gemini, Mistral | Masteria",
-    metaDescription: "Formation IA générative pour vos équipes : maîtriser ChatGPT, Claude, Copilot, Gemini et Mistral pour rédiger, analyser, automatiser. Certifié Qualiopi, finançable OPCO. Devis sous 24h.",
+    metaTitle: "Formation IA générative en entreprise | Masteria",
+    metaDescription: "Formation IA générative pour vos équipes : ChatGPT, Claude, Copilot, Gemini, Mistral pour rédiger, analyser, automatiser. Qualiopi, OPCO. Devis sous 24h.",
     intro: "L'IA générative — ChatGPT, Claude, Gemini, Copilot, Mistral — transforme les méthodes de travail dans tous les métiers. Notre formation IA générative apprend à vos équipes à utiliser ces outils efficacement, en sécurité et avec un vrai retour sur investissement opérationnel.",
     sections: [
       {
