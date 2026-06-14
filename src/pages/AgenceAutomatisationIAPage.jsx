@@ -193,6 +193,22 @@ const FAQ = [
     q: "Avec quels outils travaillez-vous ?",
     a: "Make, Zapier, n8n et Power Automate pour les workflows, ainsi que les assistants IA du marché (ChatGPT, Claude, Gemini, Copilot) et leurs automatisations natives. Nous partons toujours de votre existant : si vos équipes vivent dans Microsoft 365, Power Automate s'impose souvent ; si la confidentialité exige un hébergement maîtrisé, n8n est un bon candidat. L'outil découle du besoin, jamais l'inverse.",
   },
+  {
+    q: "Proposez-vous du conseil en automatisation IA, ou seulement du développement ?",
+    a: "Les deux. Le cadrage initial gratuit est déjà une mission de conseil : nous auditons vos processus, priorisons les automatisations à plus fort rendement et vous remettons une feuille de route, que vous poursuiviez avec nous ou non. Le conseil en automatisation IA se prolonge naturellement par le développement, mais vous restez libre de vous arrêter au plan.",
+  },
+  {
+    q: "Pouvez-vous automatiser les process métier de mon entreprise ?",
+    a: "Oui. Nous automatisons les process d'entreprise avec l'IA fonction par fonction : finance, RH, service client, commercial, administratif. La démarche part de vos outils existants, sans refonte de votre système d'information, et chaque process automatisé conserve une validation humaine sur les actions sensibles (paiement, envoi externe, décision affectant une personne).",
+  },
+  {
+    q: "Combien de temps dure une mission d'automatisation IA ?",
+    a: "Le cadrage initial se mène en quelques jours. Un premier prototype tourne en deux à quatre semaines. Le développement et l'intégration complète d'un ou plusieurs process s'étalent ensuite selon le périmètre retenu, fixé après le cadrage. Nous avançons par paliers, avec un livrable concret à chaque étape pour que vous décidiez de la suite.",
+  },
+  {
+    q: "Comment choisir son agence d'automatisation IA ?",
+    a: "Vérifiez trois points. L'agence va-t-elle jusqu'à la mise en production ou s'arrête-t-elle au prototype ? Restez-vous propriétaire du code et de la documentation ? Le financement annoncé est-il honnête, sachant que le développement n'est pas éligible OPCO et que seule la formation l'est ? Un cadrage gratuit et une feuille de route qui vous appartient sont de bons signaux de sérieux.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -204,8 +220,17 @@ const serviceJsonLd = {
   description: "Conception, développement et déploiement d'automatisations IA sur mesure : audit des processus, architecture, construction des workflows, assistants et agents, intégration aux outils (Make, Zapier, n8n, Power Automate, API, MCP) et mise en production.",
   url: 'https://www.master-ia.fr/agence-automatisation-ia',
   serviceType: 'Automatisation par intelligence artificielle',
-  areaServed: ['France', 'Suisse', 'Belgique'],
+  category: "Automatisation de processus d'entreprise par IA",
+  areaServed: [
+    { '@type': 'Country', name: 'France' },
+    { '@type': 'Country', name: 'Suisse' },
+    { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'City', name: 'Lyon' },
+  ],
+  audience: { '@type': 'BusinessAudience', name: 'PME, ETI et grands comptes' },
+  serviceOutput: "Automatisations IA en production, documentées, supervisées et dont le client garde la propriété",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
+  brand: { '@id': 'https://www.master-ia.fr/#organization' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: "Prestations d'automatisation IA",
@@ -455,7 +480,7 @@ export default function AgenceAutomatisationIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
-            Pour prioriser dans votre contexte, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité dans une PME</Link> donne des repères concrets. Et quand un scénario fixe ne suffit plus, nous évaluons avec vous l'opportunité d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, avec les garde-fous qu'ils exigent.
+            Pour prioriser dans votre contexte, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité dans une PME</Link> donne des repères concrets. Selon votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent ces automatisations métier par métier. Et quand un scénario fixe ne suffit plus, nous évaluons avec vous l'opportunité d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, avec les garde-fous qu'ils exigent.
           </p>
         </div>
       </section>

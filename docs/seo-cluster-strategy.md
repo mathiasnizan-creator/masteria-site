@@ -99,7 +99,7 @@ en offre secondaire. Capacité mise en avant : **régie / déploiement de dével
 | agence ia nantes | 50 | 14 | — | (géo Nantes) | ⬜ |
 | agence ia seo | 50 | 23 | — | /agence-seo-ia | ✅ |
 | agence spécialisée en ia | 50 | n/a | — | /agence-ia | ✅ |
-| agence web ia | 50 | 61 | 2,36 | (web dev) → /agence-developpement-ia | 🟡 |
+| agence web ia | 50 | 61 | 2,36 | (web dev) → /agence-developpement-ia | 🟡 (KD61 ; renforcé FAQ « agence dev vs agence web » + offre schema « Interfaces web IA ») |
 | agences ia recommandées en france | 50 | n/a | — | /meilleure-agence-ia | ✅ |
 | comparatif agences ia | 50 | n/a | — | /meilleure-agence-ia | ✅ |
 | agence ia marketing suisse | 40 | n/a | — | /agence-ia-marketing (CH) | ✅ |
@@ -155,6 +155,32 @@ en offre secondaire. Capacité mise en avant : **régie / déploiement de dével
 > présence honnête « équipe Lyon ») et synchroniser les slugs (App.jsx + generate-sitemap.mjs).
 
 ---
+
+## 3 bis. Enrichissements SEO/GEO appliqués (2026-06-14)
+
+Passe d'enrichissement sur les 2 pages du cluster Développement (sans rien inventer, posture capacité maintenue) :
+- **`/agence-developpement-ia`** : 2 FAQ définitionnelles ajoutées en tête (« Qu'est-ce qu'une agence de développement IA ? », « différence agence dev IA vs agence web » → vise `agence web ia`/`web dev ia`) ; `hasOfferCatalog` passé à 6 offres (+ « Interfaces web IA (web dev IA) ») ; `mainEntityOfPage` ajouté au Service JSON-LD. FounderNote (E-E-A-T) déjà présent.
+- **`/outils-ia-sur-mesure`** : ajout du bloc **FounderNote** (E-E-A-T) qui manquait ; **maillage exact-match** vers les pages solution (cartes cliquables → `/copilote-ia-interne`, `/assistant-documentaire-ia`, `/automatisation-documentaire-ia`, `/agents-ia-entreprise` ; liens texte → `/chatbot-ia-sur-mesure`, `/integration-llm-rag`) ; 3 FAQ définitionnelles (« Qu'est-ce qu'un outil IA sur mesure ? », « sur mesure vs SaaS » → `application/logiciel ia sur mesure`, « copilote IA interne ? » → `copilote interne entreprise`) ; Service JSON-LD enrichi (`hasOfferCatalog` 6 offres, `areaServed` en objets Country, `mainEntityOfPage`).
+- **Bloc « En bref »** (synthèse citable GEO, `<dl>` sémantique) ajouté en fin de hero des 2 pages, même pattern que `/diagnostic-ia` et `/methode-projet-ia` (const `EN_BREF` + carte `cardStyle`) : 6 faits honnêtes par page (outils/prestations, démarche/engagement, propriété, confidentialité, zone, délai).
+- Schémas validés en preview (FAQPage 9 et 8 questions, 0 erreur de parsing, catalogues OK, blocs En bref rendus). Build `vite build` OK. **Pas encore prérendu/déployé** (flux prébuild CLI, cf. [[project_masteria_site_seo]]).
+
+## 3 ter. Enrichissements SEO/GEO cluster Automatisation (2026-06-14)
+
+Passe d'enrichissement sur les 3 pages du cluster Automatisation (posture capacité, aucun chiffre/cas inventé, OPCO réservé à la formation) :
+- **`/automatisation-ia`** (pilier, `AutomatisationIAGuidePage.jsx`) : schema **`TechArticle`** ajouté via `extraJsonLd` (`author` → `#mathias-nizan`, `publisher` → `#organization`, `datePublished` 2026-06-12 / `dateModified` 2026-06-14, `about`, `keywords`) ; badge visible **« Mis à jour en juin 2026 »** (fraîcheur) ; bloc citable **« L'essentiel en 5 points »** en fin de hero (GEO) ; **+4 FAQ** (secteurs, durée d'un 1er process, Make/Zapier/n8n, ROI) ; lien interne vers `/ia-secteurs`.
+- **`/agence-automatisation-ia`** (`AgenceAutomatisationIAPage.jsx`) : **+4 FAQ** (conseil automatisation IA → `conseil automatisation ia` 🟡 ; « automatiser les process métier » → `automatisation de process entreprise avec ia` ; durée mission ; comment choisir une agence) ; **Service JSON-LD enrichi** (`areaServed` en objets Country/City + Lyon, `audience` BusinessAudience, `serviceOutput`, `category`, `brand`) ; lien interne vers `/ia-secteurs`.
+- **`/agents-ia-entreprise`** (`AgentsIAEntreprisePage.jsx`) : schema **`TechArticle`** ajouté (en plus de l'`ItemList` des 20 cas ; `extraJsonLd` passé en tableau) ; badge **« Mis à jour en juin 2026 »** ; **+3 FAQ** ciblant le long-tail 🟡 (`création d'agents`, `gagner du temps`, `data commerciales`).
+- Tout validé en preview (HMR port 3100) : H1, JSON-LD (`TechArticle` présent, `Service.areaServed` = FR/CH/BE/Lyon, FAQPage), 0 erreur console. Build `vite build` OK (884 ms). **Pas encore prérendu/déployé** (flux prébuild CLI, cf. [[project_masteria_site_seo]]).
+
+## 3 quater. Enrichissements SEO/GEO cluster Agence + géo (2026-06-14)
+
+Passe d'enrichissement sur les 8 pages du cluster Agence demandées par Mathias (intégrité maintenue : aucune stat/cas/prix inventé, honnêteté OPCO, anti-tics IA, bleu `#2563EB` only) :
+- **4 pages géo** (`agence-geo-data.js` + template `AgenceGeoPage.jsx`) : nouveau bloc **« En bref »** citable (`<dl>/<dt>/<dd>` sémantique, 4 `keyFacts` par ville : offre, présence honnête depuis Lyon, secteurs, cadre) ; **3ᵉ FAQ locale unique par ville** (anti-doorway : industrie/mécatronique Annecy, **cabinet de conseil en IA Paris** → gap #4, marché romand multilingue Genève, région Sud élargie Marseille) ; **+1 FAQ commune** (mission 100 % distancielle) → 8 FAQ/page géo.
+- **`/agence-ia`** : +2 FAQ (`agence IA française`/`agence ia france`, `agence conseil ia entreprise`) + schema **`DefinedTermSet`** (agence IA, cabinet conseil IA, transfert de compétence) via `extraJsonLd` en tableau.
+- **`/meilleure-agence-ia`** : +2 FAQ (`comparatif agences ia`, `agences ia recommandées en france`, `agence ia 2026`), sans palmarès nominatif.
+- **`/agence-ia-marketing`** : capture la variante **`agence marketing ia` (170/mois > `agence ia marketing` 70)** via +2 FAQ + tissage visible dans le hero.
+- **`/agence-seo-ia`** : +2 FAQ (`référencement ia` + `agence référencement ia lyon` 40, délai de résultats honnête) + tissage visible + schema **`DefinedTermSet`** (SEO / SEO augmenté / GEO / AEO).
+- Validé : `vite build` 0 erreur, contenu présent dans les bundles `dist/` (grep), bloc « En bref » rendu OK en preview, 0 erreur console. Prérendu + déployé prod via flux prébuild CLI le 2026-06-14.
 
 ## 4. Notes méthode (pour exécuter)
 - Pages cluster = template + data : secteurs (`secteur-ia-data.js`), solutions (`solution-ia-data.js`), géo agence (`agence-geo-data.js`). Optimiser data + template ensemble.

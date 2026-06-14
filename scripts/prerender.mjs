@@ -26,7 +26,9 @@ const dist = path.join(root, 'dist');
 const PORT = 4195;
 const BASE = `http://127.0.0.1:${PORT}`;
 const SITE = 'https://www.master-ia.fr';
-const BATCH_SIZE = 10;          // redémarre le browser toutes les N routes
+const BATCH_SIZE = 10;          // taille d'un lot (affichage de progression)
+const RECYCLE_EVERY = 10;       // recycle le browser toutes les N routes pour plafonner
+                                // la mémoire de Chromium et éviter l'OOM (SIGKILL) sur les longs runs
 const NAV_TIMEOUT = 25000;
 const HELMET_WAIT = 800;        // ms pour laisser react-helmet-async s'appliquer
                                 // (augmenté de 250→800 après détection de 10 pages blog prérendues vides)
@@ -184,6 +186,22 @@ for (let idx = 0; idx < orderedRoutes.length; idx++) {
     const lot = Math.floor(idx / BATCH_SIZE) + 1;
     const total = Math.ceil(orderedRoutes.length / BATCH_SIZE);
     console.log(`  lot ${lot}/${total} — routes ${idx + 1}-${Math.min(idx + BATCH_SIZE, orderedRoutes.length)}`);
+  }
+  // Recyclage périodique du navigateur : plafonne la mémoire de Chromium et
+  // évite que l'OS tue le process (SIGKILL/OOM) au milieu d'un long run.
+  // On ferme PUIS on attend que l'OS récupère la RAM avant de relancer, pour
+  // ne jamais avoir deux instances Chrome simultanées (le pic qui déclenche l'OOM).
+  if (idx > 0 && idx % RECYCLE_EVERY === 0) {
+    console.log(`    ↻ recyclage du navigateur (route ${idx}) pour libérer la mémoire`);
+    try { await browser.close(); } catch {}
+    await new Promise(r => setTimeout(r, 2000));
+    try {
+      browser = await launchBrowser();
+    } catch (le) {
+      console.warn(`    ⚠ relance du navigateur échouée (${le.message.split('\n')[0]}) — nouvelle tentative dans 4 s`);
+      await new Promise(r => setTimeout(r, 4000));
+      browser = await launchBrowser();
+    }
   }
   let attempts = 0;
   let succeeded = false;

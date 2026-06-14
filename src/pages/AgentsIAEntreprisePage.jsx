@@ -276,6 +276,32 @@ const useCaseItemList = {
   })),
 }
 
+/* Données de fraîcheur + schema TechArticle (E-E-A-T, GEO) */
+const PUBLISHED = '2026-06-12'
+const UPDATED = '2026-06-14'
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  '@id': `https://www.master-ia.fr/${SLUG}#article`,
+  headline: H1,
+  description: META_DESC,
+  inLanguage: 'fr-FR',
+  datePublished: PUBLISHED,
+  dateModified: UPDATED,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.master-ia.fr/${SLUG}` },
+  about: [
+    "Agents IA",
+    "IA agentique en entreprise",
+    "Automatisation par l'intelligence artificielle",
+    "Model Context Protocol (MCP)",
+  ],
+  keywords: "agent ia entreprise, agents ia d'entreprise, agent ia pour entreprise, ia agentique entreprise, cas d'usage agents ia, gouvernance agents ia, mcp",
+  isAccessibleForFree: true,
+}
+
 const TOOLS = [
   {
     icon: Sparkles,
@@ -431,6 +457,21 @@ const FAQ = [
     aStrong: "Trois profils suffisent pour démarrer : un expert du processus métier concerné, une personne formée au paramétrage et au pilotage des agents, et un référent qui supervise les résultats et la conformité.",
     aRest: "Aucun de ces rôles n'exige un data scientist. La connaissance fine du processus pèse plus lourd que la technique : un agent mal cadré sur un processus flou échouera quel que soit l'outil. Beaucoup d'entreprises préfèrent confier le développement et l'intégration à une équipe spécialisée, puis garder en interne le pilotage métier et la supervision. Masteria développe l'agent sur mesure et forme vos référents en complément.",
   },
+  {
+    q: "Comment créer un agent IA pour son entreprise ?",
+    aStrong: "Créer un agent IA repose sur quatre briques : un objectif clair et borné, un modèle de langage comme moteur de raisonnement, des connecteurs vers vos logiciels (souvent via le standard MCP) et des règles de supervision.",
+    aRest: "On part d'un processus pilote bien documenté, on configure l'agent avec un périmètre d'action minimal et une validation humaine, puis on élargit à mesure de la fiabilité mesurée. Beaucoup d'entreprises confient la création et l'intégration à une équipe spécialisée et gardent en interne le pilotage métier. Masteria développe l'agent sur mesure et forme vos référents en complément.",
+  },
+  {
+    q: "Les agents IA font-ils vraiment gagner du temps ?",
+    aStrong: "Oui, sur des tâches fréquentes et répétitives : l'agent prend en charge la collecte, la préparation et la première exécution, pendant que l'humain valide et arbitre.",
+    aRest: "Le gain dépend du volume traité, de la qualité des données et du niveau de supervision retenu. Il se mesure avant et après sur le temps passé, le taux de reprises et le volume traité à effectif constant. Nous n'avançons aucun pourcentage générique : un pilote en conditions réelles sur quelques semaines objective le gain propre à votre contexte.",
+  },
+  {
+    q: "Un agent IA peut-il exploiter mes données commerciales ?",
+    aStrong: "Oui : connecté à votre CRM et à vos outils commerciaux, un agent peut lire, enrichir et mettre à jour vos données pour qualifier des leads, préparer des rendez-vous ou relancer des devis.",
+    aRest: "Cet accès se borne au strict nécessaire : droits limités, cloisonnement entre agents, journalisation de chaque action et cadre contractuel sur l'usage des données par l'éditeur du modèle. Les données commerciales sensibles appellent les mêmes exigences RGPD qu'avec tout sous-traitant logiciel, à cadrer avant le premier test.",
+  },
 ]
 
 /* ── Briques UI ── */
@@ -503,7 +544,7 @@ export default function AgentsIAEntreprisePage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
-        extraJsonLd={useCaseItemList}
+        extraJsonLd={[useCaseItemList, articleJsonLd]}
       />
 
       {/* ── HERO ── */}
@@ -521,6 +562,10 @@ export default function AgentsIAEntreprisePage() {
             </span>
             <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
               Lecture : 15 min
+            </span>
+            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              <RefreshCw size={13} strokeWidth={2.2} aria-hidden="true" />
+              Mis à jour en juin 2026
             </span>
           </div>
 

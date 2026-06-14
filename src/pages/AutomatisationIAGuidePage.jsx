@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, BookOpen, Check, Clock, ClipboardList,
   Compass, Cog, FileSpreadsheet, GitBranch, Handshake, Headphones, Megaphone,
-  Plug, Scale, Sparkles, Users, Workflow,
+  Plug, RefreshCw, Scale, Sparkles, Users, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -302,6 +302,26 @@ const FAQ = [
     strong: "Une automatisation IA suit un scénario défini à l'avance. Un agent IA reçoit un objectif et décide lui-même des étapes pour l'atteindre.",
     rest: "L'agent gère des situations plus ouvertes, au prix d'une supervision plus exigeante. Dans la pratique, on commence par des automatisations à scénario et on introduit des agents quand le besoin de flexibilité est démontré.",
   },
+  {
+    q: "Quels secteurs profitent le plus de l'automatisation IA ?",
+    strong: "Tout secteur où le travail administratif se répète en tire parti : services, industrie, santé, juridique, immobilier, retail, secteur public.",
+    rest: "Les fonctions support (finance, RH, service client, commercial) se ressemblent d'un secteur à l'autre, et c'est là qu'apparaissent les premiers gains. Les spécificités métier se traitent ensuite, processus par processus, une fois les cas transverses rentabilisés.",
+  },
+  {
+    q: "Combien de temps faut-il pour automatiser un premier processus ?",
+    strong: "Comptez quatre à six semaines entre le cadrage et la mise en production d'un premier processus, pour un gain de plusieurs heures par semaine sur l'équipe concernée.",
+    rest: "Les cas simples comme le tri d'emails ou les comptes rendus se prototypent en quelques jours. Les processus reliés à plusieurs outils demandent davantage d'intégration. Démarrer sur un seul processus reste la voie la plus rapide vers un résultat visible.",
+  },
+  {
+    q: "Make, Zapier ou n8n : quel outil d'automatisation IA choisir ?",
+    strong: "Make et Zapier sont les plus accessibles pour démarrer, n8n s'auto-héberge quand la confidentialité prime, et Power Automate s'impose dans un environnement Microsoft 365.",
+    rest: "Le bon outil dépend de votre existant et du niveau de maîtrise des données souhaité, pas d'un classement absolu. On part des applications que vous payez déjà avant d'en ajouter de nouvelles.",
+  },
+  {
+    q: "Comment mesurer le retour sur investissement d'une automatisation IA ?",
+    strong: "Mesurez trois indicateurs avant et après : le temps passé sur la tâche, le taux d'erreurs ou de reprises, et le volume traité à effectif constant.",
+    rest: "Un prototype en conditions réelles sur deux à quatre semaines suffit à objectiver le gain. Le retour vient surtout du temps redéployé vers des tâches à plus forte valeur, au-delà de la seule baisse des coûts directs.",
+  },
 ]
 
 const faqItems = FAQ.map(f => ({ q: f.q, a: `${f.strong} ${f.rest}` }))
@@ -317,6 +337,43 @@ const RELATED = [
   { label: 'Automatisation IA en PME : les processus prioritaires', href: '/blog/automatisation-ia-pme-processus-prioritaires', tag: 'Blog', desc: "Les processus qui rapportent le plus vite quand on démarre, classés par impact et faisabilité." },
 ]
 
+/* ───────── L'essentiel (résumé citable, GEO) ───────── */
+
+const ESSENTIEL = [
+  "L'automatisation IA confie à l'intelligence artificielle des tâches qui demandaient un jugement humain (lire, trier, rédiger, décider), là où la RPA classique n'exécute que des règles fixes.",
+  "On automatise en priorité le tri d'emails, le traitement des factures, les comptes rendus, les relances, la qualification des demandes entrantes et le reporting.",
+  "Trois familles d'outils suffisent : les assistants IA (GPTs, Projects, Gems), les plateformes no-code (Make, Zapier, n8n, Power Automate) et les agents IA autonomes.",
+  "La méthode tient en cinq étapes : cartographier, scorer impact et faisabilité, prototyper sur un seul processus, sécuriser données et validation humaine, déployer et former.",
+  "Côté budget : 0 à 50 € par mois et par personne pour les outils, un développement sur devis, et 1 980 € HT par jour pour former les équipes, seul poste finançable par l'OPCO.",
+]
+
+/* ───────── Données de fraîcheur + schema TechArticle (E-E-A-T, GEO) ───────── */
+
+const PUBLISHED = '2026-06-12'
+const UPDATED = '2026-06-14'
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  '@id': `https://www.master-ia.fr/${SLUG}#article`,
+  headline: H1,
+  description: META_DESC,
+  inLanguage: 'fr-FR',
+  datePublished: PUBLISHED,
+  dateModified: UPDATED,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.master-ia.fr/${SLUG}` },
+  about: [
+    "Automatisation IA",
+    "Automatisation des processus par l'intelligence artificielle",
+    "Workflows no-code",
+    "Agents IA",
+  ],
+  keywords: "automatisation ia, ia automatisation, automatisation ia entreprise, automatisation de process entreprise avec ia, automatisation projet ia, agents ia, workflow no-code, make, zapier, n8n, power automate",
+  isAccessibleForFree: true,
+}
+
 export default function AutomatisationIAGuidePage() {
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -331,6 +388,7 @@ export default function AutomatisationIAGuidePage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
+        extraJsonLd={articleJsonLd}
       />
 
       {/* ── HERO ── */}
@@ -355,6 +413,10 @@ export default function AutomatisationIAGuidePage() {
               <BadgeCheck size={14} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
               Par Masteria, organisme certifié Qualiopi
             </span>
+            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              <RefreshCw size={13} strokeWidth={2.2} aria-hidden="true" />
+              Mis à jour en juin 2026
+            </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 48px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 860 }}>
@@ -367,6 +429,19 @@ export default function AutomatisationIAGuidePage() {
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginBottom: 36, maxWidth: 720 }}>
             Ce guide fait le tour du sujet en sept points : la définition et la différence avec l'automatisation classique, ce que l'on peut automatiser fonction par fonction, les familles d'outils, la méthode pour réussir, les erreurs courantes, les budgets à prévoir et les questions que tout le monde se pose.
           </p>
+
+          {/* L'essentiel (résumé citable GEO) */}
+          <div style={{ ...cardStyle, padding: '26px 30px', maxWidth: 720, marginBottom: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 16px' }}>L'essentiel en 5 points</p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {ESSENTIEL.map((point, i) => (
+                <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.6 }}>
+                  <Check size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Sommaire */}
           <div style={{ ...cardStyle, padding: '26px 30px', maxWidth: 720 }}>
@@ -468,7 +543,7 @@ export default function AutomatisationIAGuidePage() {
           </div>
 
           <p style={{ ...pStyle, ...prose, marginTop: 32, marginBottom: 0 }}>
-            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, dont le cadrage initial est gratuit. Pour situer vos priorités en quelques minutes, commencez par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link>.
+            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour les usages propres à votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent l'automatisation métier par métier. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, dont le cadrage initial est gratuit. Pour situer vos priorités en quelques minutes, commencez par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link>.
           </p>
         </div>
       </section>
