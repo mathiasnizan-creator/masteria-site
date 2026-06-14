@@ -1,135 +1,15 @@
 // Hub & Spoke SEO architecture, Masteria
 // Hub pages → Spoke pages (tool × métier)
-import { CHATGPT_SPOKES } from './chatgpt-spokes-enriched'
-import { COPILOT_SPOKES } from './copilot-spokes-enriched'
-import { GEMINI_SPOKES } from './gemini-spokes-enriched'
-import { CLAUDE_SPOKES } from './claude-spokes-enriched'
-import { MISTRAL_SPOKES } from './mistral-spokes-enriched'
-import { MULTI_OUTILS_SPOKES } from './multi-outils-spokes'
-import { TESTIMONIALS } from './testimonials'
+import { CHATGPT_SPOKES } from './chatgpt-spokes-enriched.js'
+import { COPILOT_SPOKES } from './copilot-spokes-enriched.js'
+import { GEMINI_SPOKES } from './gemini-spokes-enriched.js'
+import { CLAUDE_SPOKES } from './claude-spokes-enriched.js'
+import { MISTRAL_SPOKES } from './mistral-spokes-enriched.js'
+import { MULTI_OUTILS_SPOKES } from './multi-outils-spokes.js'
+import { TESTIMONIALS } from './testimonials.js'
 
-export const HUBS = [
-  {
-    id: 'chatgpt',
-    slug: 'formation-chatgpt',
-    tool: 'ChatGPT',
-    emoji: '🤖',
-    color: '#10a37f',
-    colorLight: '#d1fae5',
-    searchVolume: '~2 400 rech/mois',
-    metaTitle: 'Formation ChatGPT entreprise · Qualiopi · OPCO | Masteria',
-    metaDesc: 'Formation ChatGPT pour entreprises : 2 jours, certifiée Qualiopi, 100% finançable OPCO. 12 spécialisations métier. ★4,9/5 sur 1500 avis. Présentiel ou distanciel. Devis 24h.',
-    h1: 'Formation ChatGPT pour entreprises',
-    intro: "ChatGPT (GPT-5, GPT-4o) est l'outil IA le plus utilisé en entreprise française, mais 80 % des utilisateurs n'en exploitent qu'une fraction. Nos formations ChatGPT en 2 jours montent vos équipes en compétences avec des cas d'usage concrets, adaptés à 12 métiers spécifiques (marketing, RH, finance, commercial, communication, management, etc.). Certifié Qualiopi, 100 % finançable OPCO. Plus de 1 500 professionnels formés depuis 2022 avec 4,9/5 de satisfaction.",
-    pitch: "De la rédaction de contenus à l'analyse de données, ChatGPT peut multiplier la productivité de vos équipes par 3. À condition de maîtriser les bonnes techniques.",
-    spokes: ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante'],
-  },
-  {
-    id: 'copilot',
-    slug: 'formation-microsoft-copilot',
-    tool: 'Microsoft Copilot',
-    emoji: '🔵',
-    color: '#0078d4',
-    colorLight: '#dbeafe',
-    searchVolume: '~1 600 rech/mois',
-    metaTitle: 'Formation Microsoft 365 Copilot · Qualiopi · OPCO | Masteria',
-    metaDesc: 'Formation Microsoft 365 Copilot pour entreprises : Word, Excel, PowerPoint, Outlook, Teams, Copilot Studio. 12 programmes métier, certifié Qualiopi, finançable OPCO. ★4,9/5.',
-    h1: 'Formation Microsoft 365 Copilot pour entreprises',
-    intro: "Microsoft 365 Copilot est intégré nativement à toute la suite Microsoft 365 : Word, Excel, PowerPoint, Outlook, Teams, OneDrive, SharePoint. Avec Copilot Studio et les agents IA, vous transformez votre tenant Microsoft en plateforme d'automatisation IA. Nos formations Copilot en 2 jours apprennent à vos équipes à exploiter ces capacités sans changer d'environnement de travail. 12 programmes adaptés par métier (marketing, RH, finance, commercial, IT, etc.). Certifié Qualiopi, 100 % finançable OPCO.",
-    pitch: "Copilot rédige, analyse, résume et génère, directement dans les outils que vos équipes utilisent déjà au quotidien.",
-    spokes: ['marketing', 'rh', 'finance', 'commercial', 'communication', 'word-excel', 'management', 'assistante'],
-  },
-  {
-    id: 'gemini',
-    slug: 'formation-gemini-entreprise',
-    tool: 'Google Gemini',
-    emoji: '💎',
-    color: '#ea4335',
-    colorLight: '#fee2e2',
-    searchVolume: '~900 rech/mois',
-    metaTitle: 'Formation Google Gemini · Workspace · Qualiopi · OPCO | Masteria',
-    metaDesc: 'Formation Google Gemini pour entreprises Workspace : Gmail, Docs, Sheets, Slides, Meet, NotebookLM, Imagen 4, Veo 3. 12 programmes métier, Qualiopi, finançable OPCO. ★4,9/5.',
-    h1: 'Formation Google Gemini pour entreprises',
-    intro: "Google Gemini 2.5 Pro est intégré nativement dans Google Workspace : Gmail, Docs, Sheets, Slides, Meet, Drive. Avec NotebookLM pour les analyses multi-sources, Imagen 4 pour les visuels, Veo 3 pour la vidéo, Gemini transforme votre Workspace en plateforme IA complète. Sa fenêtre de 2 millions de tokens (la plus large du marché en 2026) permet d'avaler des dossiers entiers en une requête. Nos formations Gemini en 2 jours montent vos équipes en compétences sur 12 métiers (marketing, RH, finance, IT, etc.). Certifié Qualiopi, 100 % finançable OPCO.",
-    pitch: "Gemini dans Workspace transforme chaque application Google en assistant intelligent, rédigez, analysez et créez sans quitter vos outils.",
-    spokes: ['marketing', 'rh', 'finance', 'commercial', 'communication', 'management', 'assistante'],
-  },
-  {
-    id: 'claude',
-    slug: 'formation-claude-ia',
-    tool: 'Claude (Anthropic)',
-    emoji: '🟠',
-    color: '#d97706',
-    colorLight: '#fef3c7',
-    searchVolume: '~1 100 rech/mois',
-    metaTitle: "Formation Claude IA · Anthropic · Qualiopi · OPCO | Masteria",
-    metaDesc: "Formation Claude IA (Anthropic) pour entreprises : Claude Opus 4.7, Sonnet 4.5, Skills, Projects, Code. 11 programmes métier, certifié Qualiopi, finançable OPCO. ★4,9/5.",
-    h1: "Formation Claude IA pour entreprises",
-    intro: "Claude (Anthropic) est devenu en 2026 la référence des IA pour les analyses longues, la rédaction nuancée et le code complexe. Avec sa fenêtre de 200 000 tokens (jusqu'à 1M en Enterprise), Claude Opus 4.7 et Claude Sonnet 4.5 ingèrent des rapports entiers, des contrats de 600 pages, des codebases complètes. Les fonctionnalités Projects (espaces persistants), Skills (compétences téléchargeables) et Artifacts (visualisations) en font l'outil de référence pour les équipes juridiques, financières, techniques et stratégiques. Nos formations Claude IA en 2 jours couvrent 11 métiers (marketing, RH, finance, juridique, code, etc.). Certifié Qualiopi, 100 % finançable OPCO.",
-    pitch: "Claude analyse des documents entiers, rédige des textes longs de qualité professionnelle et raisonne sur des problèmes complexes, avec une fiabilité remarquable.",
-    spokes: ['marketing', 'rh', 'commercial', 'finance', 'communication', 'management', 'assistante'],
-  },
-  {
-    id: 'mistral',
-    slug: 'formation-mistral-ai',
-    tool: 'Mistral AI',
-    emoji: '🟧',
-    color: '#fa500a',
-    colorLight: '#fed7aa',
-    searchVolume: '~340 rech/mois',
-    metaTitle: "Formation Mistral AI · IA souveraine · Qualiopi | Masteria",
-    metaDesc: "Formation Mistral AI pour entreprises : IA française, hébergement UE, conformité RGPD native, on-premise possible. 11 programmes métier, certifié Qualiopi, finançable OPCO.",
-    h1: "Formation Mistral AI pour entreprises",
-    intro: "Mistral AI est le seul LLM de premier rang français et européen. Pour les entreprises soumises à des contraintes RGPD fortes (banque, santé, secteur public, défense, juridique), Mistral est souvent le seul choix conforme : hébergement Europe par défaut, modèles open-weight déployables on-premise, conformité native avec les exigences CNIL et EDPB. Mistral Large 2, Codestral, Le Chat Pro rivalisent en performances avec les leaders américains. Nos formations Mistral en 2 jours couvrent 11 métiers (marketing, RH, finance, juridique, code, etc.) avec un focus souveraineté. Certifié Qualiopi, 100 % finançable OPCO.",
-    pitch: "Mistral AI combine la puissance des grands modèles avec une conformité européenne native : RGPD, hébergement UE, option on-premise. La solution souveraine pour vos équipes.",
-    spokes: ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante'],
-  },
-  {
-    id: 'sprint-ia',
-    slug: 'formation-sprint-ia',
-    tool: 'Sprint IA',
-    emoji: '⚡',
-    color: '#F97316',
-    colorLight: '#FED7AA',
-    searchVolume: 'Format propriétaire, ~600 rech/mois',
-    metaTitle: "Sprint IA — Formations IA courtes 3 h pour entreprises | Masteria",
-    metaDesc: "Formations IA de 3 h, prêtes à déployer à grande échelle. Sensibilisation, prompts, Excel, AI Act. Qualiopi, finançable OPCO.",
-    h1: "Sprint IA — Formations IA courtes (3 heures)",
-    intro: "Sprint IA est le format court signé Masteria : 3 heures, ciblé, pratique, conçu pour acculturer rapidement plusieurs centaines de collaborateurs sans bloquer leur agenda. Six déclinaisons disponibles : sensibilisation, prompts efficaces, IA & Excel, managers & IA, veille avec l'IA, AI Act flash. Format adapté aux conventions, communautés métier, déploiements grande échelle, ou primo-acculturation IA d'une équipe.",
-    pitch: "6 formats Sprint IA de 3 h, prêts à déployer à 12, 50 ou 500 collaborateurs. Packages dégressifs à partir de 5 sessions.",
-    spokes: ['sensibilisation', 'prompts', 'excel', 'managers', 'veille', 'ai-act'],
-  },
-  {
-    id: 'multi-outils',
-    slug: 'formation-multi-outils',
-    tool: 'Multi-outils IA',
-    emoji: '🧩',
-    color: '#6366f1',
-    colorLight: '#e0e7ff',
-    searchVolume: 'Format propriétaire, ~1 800 rech/mois',
-    metaTitle: "Formation Multi-outils IA · ChatGPT, Copilot, Gemini | Masteria",
-    metaDesc: "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels. 2 jours, certifié Qualiopi, finançable OPCO. Devis sous 24 h.",
-    h1: "Formation Multi-outils IA, comparer les 5 IA sur vos cas réels",
-    intro: "Le format Multi-outils s'adresse aux entreprises qui n'ont pas encore arbitré entre ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral. Plutôt que d'imposer un outil, la formation place les 5 IA côte à côte sur les vrais cas d'usage de vos équipes : rédaction, analyse de documents, automatisation, gestion de projet. Chaque participant repart avec une grille de décision claire et la maîtrise opérationnelle des 2 ou 3 outils les plus pertinents pour son métier.",
-    pitch: "12 parcours Multi-outils déclinés par métier (marketing, RH, finance, commercial…) sur 2 jours. Idéal avant un appel d'offres IA ou un choix de stack interne.",
-    spokes: ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'achats', 'service-client', 'informatique', 'pedagogique', 'seo'],
-  },
-  {
-    id: 'metiers',
-    slug: 'formation-intelligence-artificielle',
-    tool: 'IA par métier',
-    emoji: '👔',
-    color: '#d97706',
-    colorLight: '#fef3c7',
-    searchVolume: 'Hub transversal, ~12 000 rech/mois',
-    metaTitle: "Formation intelligence artificielle : 89 programmes | Masteria",
-    metaDesc: "Formation intelligence artificielle pour entreprises : 89 programmes par outil (ChatGPT, Copilot, Gemini, Claude, Mistral) et par métier. Qualiopi, OPCO.",
-    h1: "Formation intelligence artificielle pour les entreprises",
-    intro: "La formation IA en entreprise est devenue incontournable pour toutes les organisations qui veulent améliorer leur productivité, moderniser leurs métiers et sécuriser leurs usages. Masteria propose des formations intelligence artificielle concrètes, certifiées Qualiopi et finançables OPCO, adaptées à chaque outil (ChatGPT, Microsoft Copilot, Google Gemini, Claude, Mistral, Sprint IA) et à chaque métier : marketing, RH, finance, commercial, communication, management, achats, assistantes de direction. Sélectionnez vos critères ci-dessous pour trouver la formation IA adaptée à votre équipe.",
-    pitch: "89 formations intelligence artificielle au catalogue, filtrables en temps réel selon votre stack et vos enjeux métier.",
-    spokes: [],
-  },
-];
+import { HUBS, METIERS } from './catalog-meta.js'
+export { HUBS, METIERS }
 
 // ─── SPOKE PAGES DATA ────────────────────────────────────────────────────────
 // Base spokes, enriched data (modules, audience, objectives, FAQ) is merged below from *-enriched files.
@@ -3446,18 +3326,3 @@ export function getSpokesByMetier(metierSlug) {
   return SPOKES.filter(s => norm(s.metierSlug) === norm(metierSlug))
 }
 
-export const METIERS = [
-  { slug: 'marketing',           label: 'Marketing',                desc: 'Contenus, campagnes, analyse de performance' },
-  { slug: 'ressources-humaines', label: 'Ressources Humaines',      desc: 'Recrutement, onboarding, communication interne' },
-  { slug: 'finance',             label: 'Finance',                  desc: 'Analyse de données, reporting, synthèse' },
-  { slug: 'commercial',          label: 'Commercial',               desc: 'Prospection, propositions, suivi client' },
-  { slug: 'communication',       label: 'Communication',            desc: 'RP, contenus, communication de crise' },
-  { slug: 'management',          label: 'Management',               desc: 'Réunions, reporting, communication d\'équipe' },
-  { slug: 'assistante',          label: 'Assistants et assistantes de direction', desc: 'Emails, courriers, organisation, comptes-rendus' },
-  { slug: 'seo',                 label: 'SEO',                      desc: 'Rédaction optimisée, recherche de mots-clés, maillage' },
-  { slug: 'service-client',      label: 'Service Client',           desc: 'Réponses, tickets, scripts, satisfaction client' },
-  { slug: 'informatique',        label: 'Informatique / DSI',       desc: 'Documentation, code, gouvernance IA, sécurité' },
-  { slug: 'pedagogique',         label: 'Équipes Pédagogiques',     desc: 'Conception de formations, évaluation, individualisation' },
-  { slug: 'achats',              label: 'Achats',                   desc: 'Sourcing, analyse d\'offres, négociation, suivi fournisseurs' },
-  { slug: 'transverse',          label: 'Tous publics',             desc: 'Formats courts pour acculturer ou outiller largement' },
-];

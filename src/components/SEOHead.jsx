@@ -248,29 +248,9 @@ export default function SEOHead({
       }
     : null
 
-  /* ───── JSON-LD HowTo (modules de formation = étapes) ───── */
-  const jsonLdHowTo = courseData?.modules && courseData.modules.length
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'HowTo',
-        name: `Comment se déroule la ${courseData.name} ?`,
-        description: `Programme structuré sur ${Math.ceil((courseData.modules.length) / 4)} jours en ${courseData.modules.length} modules pratiques.`,
-        totalTime: courseData.timeRequired || 'PT14H',
-        estimatedCost: {
-          '@type': 'MonetaryAmount',
-          currency: 'EUR',
-          value: courseData.price || '1980',
-        },
-        tool: courseData.tool ? [{ '@type': 'HowToTool', name: courseData.tool }] : undefined,
-        step: courseData.modules.map((m, i) => ({
-          '@type': 'HowToStep',
-          position: i + 1,
-          name: m.title,
-          text: m.description || m.title,
-          url: `${fullUrl}#module-${i + 1}`,
-        })),
-      }
-    : null
+  /* JSON-LD HowTo retiré (2026-06-14) : Google a supprimé les rich results HowTo
+     en septembre 2023. Le balisage n'apportait plus aucun bénéfice et alourdissait
+     le HTML. Le programme reste décrit par le schema Course (hasCourseInstance). */
 
   /* ───── JSON-LD FAQPage ───── */
   const jsonLdFaq = faqItems && faqItems.length
@@ -412,7 +392,6 @@ export default function SEOHead({
       <script type="application/ld+json">{JSON.stringify(jsonLdWebsite)}</script>
       <script type="application/ld+json">{JSON.stringify(jsonLdWebPage)}</script>
       {jsonLdCourse && <script type="application/ld+json">{JSON.stringify(jsonLdCourse)}</script>}
-      {jsonLdHowTo && <script type="application/ld+json">{JSON.stringify(jsonLdHowTo)}</script>}
       {jsonLdFaq && <script type="application/ld+json">{JSON.stringify(jsonLdFaq)}</script>}
       {jsonLdBreadcrumb && <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>}
       {jsonLdArticle && <script type="application/ld+json">{JSON.stringify(jsonLdArticle)}</script>}

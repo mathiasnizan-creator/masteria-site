@@ -11,7 +11,7 @@ import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
 import { GEO_DESTINATIONS, GEO_CITIES, GEO_TOOLS, geoSlug, geoIaSlug } from '../data/geo-data'
-import { METIERS } from '../data/seo-pages'
+import { METIERS } from '../data/catalog-meta'
 
 // ToolLogo attend 'chatgpt' ou 'claude' — notre slug est 'claude-ia' (URL friendly)
 const toolLogoSlug = (slug) => slug === 'claude-ia' ? 'claude' : slug

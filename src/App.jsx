@@ -20,7 +20,7 @@ import { ToolLogo } from './components/ToolLogo';
 import { useIsMobile } from './hooks/useMediaQuery';
 import { FAQSection, FormatTabs, SidebarFormatPicker, FAQ_GENERAL, FAQ_FORMATIONS, FAQ_CONTACT } from './components/screens2';
 import SEOHead from './components/SEOHead';
-import { HUBS, METIERS } from './data/seo-pages';
+import { HUBS, METIERS } from './data/catalog-meta';
 import HomePage from './pages/HomePage';
 // Pages secondaires lazy-loadées pour réduire le bundle initial (perf LCP/TBT)
 const HubPage = lazy(() => import('./pages/HubPage'));
@@ -64,7 +64,7 @@ const PolitiqueConfidentialitePage = lazy(() => import('./pages/LegalPages').the
 const CompetencesClaudeEET = lazy(() => import('./pages/CompetencesClaudeEET'));
 const ArtefactsClaudeEntreprise = lazy(() => import('./pages/ArtefactsClaudeEntreprise'));
 const SecuriteClaudeEntreprise = lazy(() => import('./pages/SecuriteClaudeEntreprise'));
-import { SPOKES } from './data/seo-pages';
+import { SPOKE_SLUGS } from './data/spoke-slugs';
 import { getAllGeoCombinations, GEO_DESTINATIONS, geoIaSlug } from './data/geo-data';
 
 const TRAININGS = [
@@ -1533,8 +1533,8 @@ export default function App() {
           <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
         ))}
         {/* Spoke pages, dynamic via slug */}
-        {SPOKES.map(spoke => (
-          <Route key={spoke.slug} path={`/${spoke.slug}`} element={<SpokePage />} />
+        {SPOKE_SLUGS.map(slug => (
+          <Route key={slug} path={`/${slug}`} element={<SpokePage />} />
         ))}
         <Route path="*" element={<NotFound />} />
       </Routes>

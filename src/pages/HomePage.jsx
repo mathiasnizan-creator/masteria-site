@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
-import { HUBS, METIERS } from '../data/seo-pages'
+import { HUBS, METIERS } from '../data/catalog-meta'
 import { FAQSection, FAQ_GENERAL } from '../components/screens2'
 
 const TOOL_HUBS = HUBS.filter(h => h.id !== 'metiers')

@@ -194,3 +194,19 @@ ${urls.map(u => `  <url>
 fs.writeFileSync(path.join(root, 'public/sitemap.xml'), xml);
 console.log(`✅ ${urls.length} URLs → public/sitemap.xml`);
 console.log(`   ${staticRoutes.length} statiques, ${hubSlugs.length} hubs, ${metierSlugs.length} métiers, ${geoSlugs.length} géo, ${spokeSet.size} spokes, ${blogSlugs.length} articles`);
+
+// ─────────────────────────────────────────────────────────────────
+// Liste légère des slugs de spokes pour le routage (App.jsx).
+// Perf : évite que App.jsx (chargé sur CHAQUE page) importe tout le dataset
+// SPOKES enrichi (~490 kB) juste pour générer les <Route>. La page SpokePage,
+// elle, charge le dataset complet en chunk lazy uniquement quand on l'ouvre.
+// Source exacte = SPOKES (import dynamique), donc toujours synchro avec les pages.
+const seoMod = await import(pathToFileURL(path.join(root, 'src/data/seo-pages.js')).href);
+const spokeSlugList = seoMod.SPOKES.map(s => s.slug);
+fs.writeFileSync(
+  path.join(root, 'src/data/spoke-slugs.js'),
+  `// Généré par scripts/generate-sitemap.mjs — NE PAS éditer à la main.\n` +
+  `// Liste des slugs de spokes pour le routage léger (cf. App.jsx).\n` +
+  `export const SPOKE_SLUGS = ${JSON.stringify(spokeSlugList, null, 0).replace(/","/g, "', '").replace(/^\["/, "['").replace(/"\]$/, "']")};\n`
+);
+console.log(`   + src/data/spoke-slugs.js (${spokeSlugList.length} slugs, routage léger)`);
