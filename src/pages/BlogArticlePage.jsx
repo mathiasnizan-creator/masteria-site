@@ -577,24 +577,10 @@ export default function BlogArticlePage() {
     && articleData.datePublished !== articleData.dateModified
   const relatedFormations = TAG_TO_FORMATIONS[article.tag] || DEFAULT_FORMATIONS
 
-  const olBlock = article.blocks?.find(b => b.type === 'ol' && Array.isArray(b.items) && b.items.length >= 3)
-  const howToSchema = olBlock ? {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: article.title,
-    description: article.metaDesc || article.excerpt,
-    step: olBlock.items.map((item, i) => ({
-      '@type': 'HowToStep',
-      position: i + 1,
-      name: typeof item === 'string' ? item.split('.')[0].slice(0, 90) : `Étape ${i + 1}`,
-      text: typeof item === 'string' ? item : String(item),
-    })),
-    totalTime: article.readTime ? `PT${parseInt(article.readTime) || 10}M` : 'PT10M',
-    inLanguage: 'fr-FR',
-  } : null
+  // Schema HowTo retiré (2026-06-14) : Google a supprimé les rich results HowTo
+  // en sept. 2023. Le BlogPosting (via SEOHead) suffit pour les articles.
   const extraSchemas = [
     ...(article.extraJsonLd || []),
-    ...(howToSchema ? [howToSchema] : []),
   ]
 
   const breadcrumbs = [
