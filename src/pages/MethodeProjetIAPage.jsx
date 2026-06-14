@@ -125,7 +125,7 @@ const MODELES = [
       'Pour les environnements sensibles ou la montée en charge',
       'Vous pilotez, nous apportons l\'expertise IA',
     ],
-    highlight: true,
+    highlight: false,
   },
   {
     icon: Compass,
@@ -413,11 +413,6 @@ export default function MethodeProjetIAPage() {
                   position: 'relative',
                 }}
               >
-                {modele.highlight && (
-                  <span style={{ position: 'absolute', top: -12, left: 30, background: c, color: '#fff', fontSize: 11.5, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: 99 }}>
-                    Axe fort
-                  </span>
-                )}
                 <div style={{ marginBottom: 16 }}>
                   <IconTile icon={modele.icon} />
                 </div>
@@ -438,7 +433,7 @@ export default function MethodeProjetIAPage() {
         </div>
       </section>
 
-      {/* ── ZOOM RÉGIE / DÉVELOPPEURS SUR SITE (axe fort) ── */}
+      {/* ── ZOOM RÉGIE / DÉVELOPPEURS SUR SITE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, background: '#0A0A0A', padding: 'clamp(32px, 5vw, 56px)', borderColor: '#0A0A0A' }}>
