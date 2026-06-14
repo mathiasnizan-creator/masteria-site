@@ -201,6 +201,14 @@ const FAQ = [
     q: "Intervenez-vous à Lyon et à distance ?",
     a: "Les deux. Masteria est un cabinet spécialisé sur l'intelligence artificielle basé à Lyon, et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le travail de SEO et de GEO se mène très bien à distance, par points réguliers ; les phases de cadrage ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
   },
+  {
+    q: "Proposez-vous du référencement IA à Lyon ?",
+    a: "Oui. Masteria est une agence de référencement IA basée à Lyon : nous accompagnons les entreprises de la métropole lyonnaise et de la région Auvergne-Rhône-Alpes sur le référencement naturel augmenté par l'IA et sur le GEO, en présentiel pour les temps de cadrage et en distanciel pour la production et le suivi. Le référencement IA ne se limite pas à une zone : nous travaillons aussi dans toute la France, en Suisse et en Belgique, la visibilité dans Google comme dans les moteurs de réponse n'ayant pas de frontière géographique.",
+  },
+  {
+    q: "Combien de temps pour voir des résultats en SEO IA ?",
+    a: "Le SEO et le GEO sont des leviers de fond, pas des interrupteurs : les premiers effets sur la visibilité apparaissent généralement en quelques semaines pour la partie technique et les contenus à faible concurrence, et se consolident sur plusieurs mois pour les requêtes disputées. La visibilité dans les réponses des IA peut évoluer plus vite sur des sujets de niche bien traités. Nous mesurons le point de départ dès l'audit, puis suivons les positions, le trafic et les citations IA à intervalle régulier. Aucune agence sérieuse ne garantit un classement ni un délai ferme.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -229,6 +237,37 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatisations SEO', description: "Surveillance des positions et des citations IA, reporting et workflows de production." } },
     ],
   },
+}
+
+/* DefinedTermSet : définitions citables (GEO) de SEO, SEO augmenté, GEO et AEO.
+   Reprend en données structurées le comparatif déjà présent sur la page. */
+const DEFINITIONS_JSONLD = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': 'https://www.master-ia.fr/agence-seo-ia#glossaire',
+  name: 'Glossaire — SEO, SEO augmenté par l\'IA, GEO et AEO',
+  hasDefinedTerm: [
+    {
+      '@type': 'DefinedTerm',
+      name: 'SEO (Search Engine Optimization)',
+      description: "Référencement naturel : ensemble des techniques visant à positionner un site dans les résultats des moteurs de recherche classiques comme Google, via le contenu, la technique et la popularité.",
+    },
+    {
+      '@type': 'DefinedTerm',
+      name: "SEO augmenté par l'IA",
+      description: "Pratique du référencement naturel accélérée par l'intelligence artificielle : production de contenu, briefs, clusters sémantiques et audits techniques réalisés plus vite et à plus grande échelle, avec relecture humaine.",
+    },
+    {
+      '@type': 'DefinedTerm',
+      name: 'GEO (Generative Engine Optimization)',
+      description: "Optimisation pour les moteurs génératifs : ensemble des techniques visant à être cité dans les réponses générées par les IA (ChatGPT, Perplexity, Google AI Overviews, Gemini), via des entités claires, des données structurées et un contenu citable faisant autorité.",
+    },
+    {
+      '@type': 'DefinedTerm',
+      name: 'AEO (Answer Engine Optimization)',
+      description: "Optimisation pour les moteurs de réponse, synonyme proche du GEO : structurer le contenu pour répondre directement aux questions et maximiser les chances d'être sélectionné comme source par une IA conversationnelle.",
+    },
+  ],
 }
 
 /* ───────── Composants ───────── */
@@ -270,7 +309,7 @@ export default function AgenceSeoIAPage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        extraJsonLd={[serviceJsonLd, DEFINITIONS_JSONLD]}
       />
 
       {/* ── HERO clair ── */}
@@ -302,7 +341,7 @@ export default function AgenceSeoIAPage() {
           </p>
 
           <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 780 }}>
-            Vos clients ne cherchent plus seulement sur Google : ils posent leurs questions à des IA qui répondent directement. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon, nous travaillons les deux terrains à la fois, le référencement classique et la visibilité dans les réponses génératives, avec une lecture interne du fonctionnement des modèles.
+            Vos clients ne cherchent plus seulement sur Google : ils posent leurs questions à des IA qui répondent directement. Notre approche du référencement IA travaille les deux terrains à la fois. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon, nous combinons le référencement naturel classique et la visibilité dans les réponses génératives, avec une lecture interne du fonctionnement des modèles.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>

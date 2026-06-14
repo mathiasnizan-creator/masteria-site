@@ -143,6 +143,10 @@ export default function AgenceGeoPage() {
       q: `Combien de temps pour démarrer une mission ${city.nameLoc} ?`,
       a: "Le premier échange de cadrage a lieu sous 24 heures après votre message, en visio ou par téléphone, sans engagement. Vous recevez ensuite une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire. Une fois la proposition validée, la mission démarre rapidement : un cadrage et un premier déploiement courent généralement sur quelques semaines, pas sur des mois.",
     },
+    {
+      q: `Peut-on mener toute la mission à distance ${city.nameLoc} ?`,
+      a: `Oui. La présence sur site ${city.nameLoc} se concentre sur les phases qui en bénéficient vraiment : ateliers de cadrage, observation des processus, passation. Le développement des agents et des outils, les itérations et le suivi se conduisent en distanciel, avec les mêmes contenus et les mêmes livrables. Certaines missions se mènent intégralement à distance quand le contexte s'y prête, par points réguliers en visio. Vous gardez un interlocuteur stable du cadrage à la passation, quel que soit le format.`,
+    },
   ]
   const faqItems = [...city.localFaq, ...commonFaq]
 
@@ -256,6 +260,24 @@ export default function AgenceGeoPage() {
           </div>
         </div>
       </section>
+
+      {/* ── EN BREF (faits citables GEO, <dl> sémantique) ── */}
+      {city.keyFacts && city.keyFacts.length > 0 && (
+        <section style={{ background: '#fff', padding: 'clamp(40px, 6vw, 64px) 24px', borderBottom: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+            <div style={kickerStyle}>En bref</div>
+            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)', marginBottom: 24 }}>{`Agence IA ${city.nameLoc} : l'essentiel`}</h2>
+            <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 0, margin: 0, border: '1px solid #E5E7EB', borderRadius: 16, overflow: 'hidden' }}>
+              {city.keyFacts.map((fact, i) => (
+                <div key={fact.label} style={{ padding: '20px 24px', borderBottom: '1px solid #E5E7EB', borderRight: '1px solid #E5E7EB', background: i % 2 === 0 ? '#fff' : '#F9FAFB' }}>
+                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>{fact.label}</dt>
+                  <dd style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       {/* ── LES 3 OFFRES ── */}
       <section id="offres" style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>

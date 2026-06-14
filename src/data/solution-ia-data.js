@@ -22,6 +22,17 @@
 export const SOLUTIONS = [
   {
     slug: 'copilote-ia-interne',
+    goal: "Donner à un métier un assistant connecté à vos données et vos outils",
+    budgetRange: 'Dès ~15 000 € · 100 000 €+ à grande échelle',
+    timeline: 'Prototype sur un premier périmètre en quelques semaines, puis déploiement par paliers',
+    offTheShelfLabel: 'Assistant générique (ChatGPT, Copilot grand public)',
+    alsoKnownAs: ['copilote IA', "copilote d'entreprise", 'assistant IA interne', 'assistant métier IA'],
+    keyTakeaways: [
+      "Branché sur vos documents, vos bases et vos outils : il répond avec vos sources et applique vos droits d'accès.",
+      "Pensé pour l'usage quotidien d'un métier (commercial, RH, juridique, support), pas pour la démonstration.",
+      "Développé sur mesure, intégré à votre SI par RAG et connecteurs API/MCP, avec garde-fous et validation humaine.",
+      "Le code vous est livré : vous restez propriétaire et autonome, sans abonnement à une plateforme fermée.",
+    ],
     name: 'Copilote IA interne',
     icon: 'Bot',
     cardSummary:
@@ -70,7 +81,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un copilote IA interne sur mesure ?',
-        a: "Le développement se chiffre au forfait, après cadrage. Sur le marché, un copilote interne connecté à vos données représente généralement un budget de l'ordre de 15 000 à 60 000 € selon le périmètre, le nombre de sources à connecter et le niveau d'intégration. Un prototype ciblé démarre plus bas. Chez Masteria, le premier échange de cadrage est gratuit et le devis est établi une fois le périmètre défini.",
+        a: "Le développement se chiffre au forfait, après cadrage. Un copilote en production se situe le plus souvent entre 15 000 et 60 000 € selon le périmètre, le nombre de sources à connecter et le niveau d'intégration ; un prototype ciblé démarre plus bas, et un déploiement à l'échelle (plusieurs métiers, intégrations multiples, équipe en régie) dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le premier échange de cadrage est gratuit et le devis est établi une fois le périmètre défini.",
       },
       {
         q: 'À qui appartient le code du copilote ?',
@@ -89,6 +100,17 @@ export const SOLUTIONS = [
   },
   {
     slug: 'assistant-documentaire-ia',
+    goal: "Retrouver vite une information fiable dans un fonds documentaire volumineux",
+    budgetRange: 'Dès ~12 000 € · 100 000 €+ à grande échelle',
+    timeline: 'Prototype sur un corpus restreint en quelques semaines, puis indexation complète',
+    offTheShelfLabel: 'Moteur de recherche interne classique',
+    alsoKnownAs: ['recherche documentaire IA', 'RAG documentaire', 'base de connaissances IA', 'GED augmentée par IA'],
+    keyTakeaways: [
+      "Vos documents deviennent interrogeables en langage naturel : une question, une réponse synthétique avec les sources citées.",
+      "Construit en RAG : chaque réponse est traçable jusqu'au document d'origine, ce qui limite les approximations.",
+      "Gère vos formats réels (PDF, bureautique, exports métier) et respecte vos droits d'accès à la récupération.",
+      "Code et index livrés : vos équipes ajoutent des sources et font évoluer l'assistant en autonomie.",
+    ],
     name: 'Assistant documentaire IA',
     icon: 'Database',
     cardSummary:
@@ -137,7 +159,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un assistant documentaire IA ?',
-        a: "Le budget se chiffre au forfait après cadrage. Sur le marché, un assistant documentaire en RAG se situe couramment entre 12 000 et 50 000 € selon le volume de documents, la diversité des formats, les droits d'accès à gérer et le niveau d'intégration. Un prototype sur un corpus restreint démarre plus bas. Chez Masteria, le cadrage initial est gratuit et le devis suit la définition du périmètre.",
+        a: "Le budget se chiffre au forfait après cadrage. Un assistant documentaire en RAG se situe le plus souvent entre 12 000 et 50 000 € selon le volume de documents, la diversité des formats, les droits d'accès à gérer et le niveau d'intégration ; un prototype sur un corpus restreint démarre plus bas, et une couverture large à gros volume dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands déploiements. Chez Masteria, le cadrage initial est gratuit et le devis suit la définition du périmètre.",
       },
       {
         q: 'À qui appartient la solution et l\'index ?',
@@ -156,6 +178,17 @@ export const SOLUTIONS = [
   },
   {
     slug: 'agent-support-client-ia',
+    goal: "Décharger le support des demandes répétitives, avec escalade humaine",
+    budgetRange: 'Dès ~15 000 € · 100 000 €+ à grande échelle',
+    timeline: 'Prototype sur les demandes les plus fréquentes, puis mise en production progressive',
+    offTheShelfLabel: 'Chatbot de support à scénarios',
+    alsoKnownAs: ['agent IA service client', 'IA pour le SAV', 'automatisation du support client', 'agent conversationnel de support'],
+    keyTakeaways: [
+      "L'agent qualifie la demande, répond à partir de votre base de connaissances et agit dans votre outil de ticketing.",
+      "Sur les cas sensibles ou complexes, il passe la main à un conseiller avec un résumé du contexte.",
+      "Objectif : absorber le premier niveau et les demandes répétitives, pas remplacer la relation humaine.",
+      "Chaque interaction est tracée ; le code et la configuration vous sont livrés.",
+    ],
     name: 'Agent IA de support client',
     icon: 'MessagesSquare',
     cardSummary:
@@ -204,7 +237,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un agent IA de support client ?',
-        a: "Le développement se chiffre au forfait après cadrage. Sur le marché, un agent de support connecté à votre base et à votre outil de ticketing se situe couramment entre 15 000 et 70 000 € selon le nombre de canaux, la complexité des demandes et le niveau d'intégration. Un prototype sur les demandes les plus fréquentes démarre plus bas. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le développement se chiffre au forfait après cadrage. Un agent de support connecté à votre base et à votre outil de ticketing se situe le plus souvent entre 15 000 et 70 000 € selon le nombre de canaux, la complexité des demandes et le niveau d'intégration ; un prototype sur les demandes les plus fréquentes démarre plus bas, et un déploiement multi-canaux à fort volume dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
       },
       {
         q: 'L\'agent remplace-t-il mes conseillers ?',
@@ -223,6 +256,17 @@ export const SOLUTIONS = [
   },
   {
     slug: 'automatisation-documentaire-ia',
+    goal: "Traiter automatiquement les documents entrants, sans ressaisie",
+    budgetRange: 'Dès ~12 000 € · 100 000 €+ à grande échelle',
+    timeline: 'Prototype sur un flux prioritaire (ex. factures fournisseurs), puis extension',
+    offTheShelfLabel: 'OCR classique',
+    alsoKnownAs: ['traitement automatique de documents', 'extraction de données par IA', 'IDP (intelligent document processing)', 'lecture automatique de factures'],
+    keyTakeaways: [
+      "La chaîne lit, extrait, classe et route vos documents (factures, contrats, formulaires) vers vos systèmes, sans ressaisie.",
+      "L'IA générative comprend des mises en page variées là où l'OCR classique bute.",
+      "Un score de confiance arbitre : cas clairs automatisés, cas incertains validés par un humain, chaque décision tracée.",
+      "Code et règles de traitement livrés : vous ajoutez de nouveaux types de documents en autonomie.",
+    ],
     name: 'Automatisation du traitement documentaire',
     icon: 'Files',
     cardSummary:
@@ -271,7 +315,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte une automatisation du traitement documentaire ?',
-        a: "Le budget se chiffre au forfait après cadrage. Sur le marché, une chaîne de traitement documentaire se situe couramment entre 12 000 et 60 000 € selon le nombre de types de documents, les volumes, les systèmes à connecter et le niveau de contrôle requis. Un prototype sur un seul flux démarre plus bas. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre défini.",
+        a: "Le budget se chiffre au forfait après cadrage. Une chaîne de traitement documentaire se situe le plus souvent entre 12 000 et 60 000 € selon le nombre de types de documents, les volumes, les systèmes à connecter et le niveau de contrôle requis ; un prototype sur un seul flux démarre plus bas, et un traitement multi-flux à gros volume relié à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands déploiements. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre défini.",
       },
       {
         q: 'À qui appartient le code de la chaîne ?',
@@ -290,6 +334,17 @@ export const SOLUTIONS = [
   },
   {
     slug: 'agent-commercial-ia',
+    goal: "Rendre du temps de vente aux commerciaux et fiabiliser le CRM",
+    budgetRange: 'Dès ~15 000 € · 100 000 €+ à grande échelle',
+    timeline: 'Prototype sur une étape du cycle (propositions ou CRM), puis élargissement',
+    offTheShelfLabel: 'Outil de prospection sur étagère',
+    alsoKnownAs: ['IA pour la vente', 'IA de prospection', 'assistant commercial IA', 'IA connectée au CRM'],
+    keyTakeaways: [
+      "L'agent qualifie les prospects, prépare des propositions à vos modèles et tient le CRM à jour.",
+      "Il prépare et propose ; les envois sortants sensibles restent sous validation humaine, dans le respect du RGPD.",
+      "Branché sur votre CRM et vos contenus réels, il s'intègre à votre process de vente plutôt que d'imposer le sien.",
+      "Code et données vous appartiennent ; vos équipes font évoluer l'agent en autonomie.",
+    ],
     name: 'Agent IA commercial',
     icon: 'Briefcase',
     cardSummary:
@@ -338,7 +393,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un agent IA commercial sur mesure ?',
-        a: "Le développement se chiffre au forfait après cadrage. Sur le marché, un agent commercial connecté à votre CRM et à vos modèles se situe couramment entre 15 000 et 70 000 € selon le périmètre (prospection, propositions, CRM), le nombre d'outils à connecter et le niveau d'intégration. Un prototype sur une seule étape démarre plus bas. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le développement se chiffre au forfait après cadrage. Un agent commercial connecté à votre CRM et à vos modèles se situe le plus souvent entre 15 000 et 70 000 € selon le périmètre (prospection, propositions, CRM), le nombre d'outils à connecter et le niveau d'intégration ; un prototype sur une seule étape démarre plus bas, et un déploiement large relié à plusieurs outils dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
       },
       {
         q: 'À qui appartient le code et les données ?',
@@ -357,6 +412,17 @@ export const SOLUTIONS = [
   },
   {
     slug: 'chatbot-ia-sur-mesure',
+    goal: "Répondre et orienter vos visiteurs ou clients sur votre site et vos canaux",
+    budgetRange: 'Dès ~8 000 € · 100 000 €+ à grande échelle',
+    timeline: 'Prototype sur les cas prioritaires, puis intégration au site et aux canaux',
+    offTheShelfLabel: 'Chatbot SaaS sur étagère',
+    alsoKnownAs: ['chatbot IA entreprise', 'agent conversationnel IA', 'chatbot intelligent', 'assistant virtuel sur mesure'],
+    keyTakeaways: [
+      "Un chatbot conçu pour votre usage : branché sur vos contenus, à votre ton, avec vos garde-fous.",
+      "Construit en RAG : il répond à partir de vos sources réelles et escalade vers un humain hors de son périmètre.",
+      "S'intègre à votre site, votre espace client ou vos canaux via des composants et des API maintenables.",
+      "Vous en êtes propriétaire : le code vous revient, sans enfermement dans une plateforme fermée.",
+    ],
     name: 'Chatbot IA sur mesure',
     icon: 'MessageCircle',
     cardSummary:
@@ -405,7 +471,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un chatbot IA sur mesure ?',
-        a: "Le développement se chiffre au forfait après cadrage. Sur le marché, un chatbot IA sur mesure connecté à vos données se situe couramment entre 8 000 et 40 000 € selon le périmètre, le nombre de sources, les intégrations et les garde-fous. Un chatbot d'accueil simple démarre plus bas qu'un assistant relié à plusieurs outils. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le développement se chiffre au forfait après cadrage. Un chatbot connecté à vos données se situe le plus souvent entre 8 000 et 40 000 € selon le périmètre, le nombre de sources, les intégrations et les garde-fous ; un chatbot d'accueil simple démarre plus bas, et un assistant conversationnel à fort volume relié à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands projets. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
       },
       {
         q: 'À qui appartient le chatbot et son code ?',
@@ -424,6 +490,17 @@ export const SOLUTIONS = [
   },
   {
     slug: 'integration-llm-rag',
+    goal: "Ajouter des capacités IA dans vos outils existants, sans refonte du SI",
+    budgetRange: 'Dès ~10 000 € · 100 000 €+ à grande échelle',
+    timeline: "Prototype sur un premier point d'intégration, puis industrialisation",
+    offTheShelfLabel: 'Application IA séparée',
+    alsoKnownAs: ['intégration LLM', 'RAG entreprise', 'intégration IA dans le SI', 'API LLM et connecteurs MCP'],
+    keyTakeaways: [
+      "On branche un LLM et une couche RAG sur vos outils (CRM, ERP, intranet, GED) via API et connecteurs MCP.",
+      "Vos applications gagnent des fonctions IA ancrées dans vos données, sans remplacer votre système d'information.",
+      "Intégration robuste de production : authentification, droits d'accès, gestion des erreurs, maîtrise des coûts d'appel.",
+      "Code des connecteurs livré : vos équipes techniques maintiennent et font évoluer l'intégration.",
+    ],
     name: 'Intégration LLM & RAG',
     icon: 'Plug',
     cardSummary:
@@ -472,7 +549,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte une intégration LLM et RAG ?',
-        a: "Le budget se chiffre au forfait après cadrage. Sur le marché, une intégration LLM/RAG dans des outils existants se situe couramment entre 10 000 et 60 000 € selon le nombre de points d'intégration, la complexité des connecteurs, les volumes de données et les exigences de sécurité. Un premier cas d'intégration démarre plus bas. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le budget se chiffre au forfait après cadrage. Une intégration LLM/RAG dans des outils existants se situe le plus souvent entre 10 000 et 60 000 € selon le nombre de points d'intégration, la complexité des connecteurs, les volumes de données et les exigences de sécurité ; un premier cas d'intégration démarre plus bas, et une intégration étendue à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands programmes. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
       },
       {
         q: 'Faut-il refondre notre système d\'information ?',

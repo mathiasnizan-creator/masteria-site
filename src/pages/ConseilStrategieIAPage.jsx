@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BarChart3, BadgeCheck, Building2, Check, Clock, Compass, Cpu,
   GraduationCap, LineChart, MonitorSmartphone, Route, Scale, Target,
-  Users, Workflow,
+  Users, Workflow, BookOpen, ExternalLink, ShieldCheck,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import FounderNote from '../components/FounderNote'
 
 /*
  * Page service « Conseil stratégie IA » : modèle structurel des pages dédiées
@@ -192,6 +193,86 @@ const FAQ = [
     q: "Faut-il former son COMEX avant de lancer la stratégie IA ?",
     a: "Une acculturation préalable du COMEX accélère nettement la démarche : les arbitrages de la phase de priorisation supposent de comprendre les capacités et les limites réelles des modèles. Masteria propose une formation IA dédiée aux dirigeants, souvent programmée en amont ou en parallèle du diagnostic de maturité. Les deux formats se combinent dans un même dispositif, avec un seul interlocuteur.",
   },
+  {
+    q: "Par où commencer une stratégie IA ?",
+    a: "Par un diagnostic de maturité. Avant de fixer des priorités, il faut un état des lieux objectif : quels usages existent déjà, quelle est la qualité des données, quelles compétences sont en place, quels risques réglementaires pèsent. Ce diagnostic, mené en 2 à 3 semaines, sert de socle aux arbitrages. Chez Masteria, un premier échange de cadrage gratuit de 30 minutes permet de situer votre point de départ avant tout engagement.",
+  },
+  {
+    q: "Quels sont les risques d'une stratégie IA mal cadrée, ou de son absence ?",
+    a: "Sans cadre stratégique, les initiatives se dispersent : multiplication des licences et des outils en doublon, pilotes qui n'aboutissent jamais, budgets engagés sans indicateur de retour, usages non conformes au RGPD ou à l'AI Act. Gartner anticipe qu'au moins 30 % des projets d'IA générative seront abandonnés après la preuve de concept d'ici fin 2025, le plus souvent pour des raisons organisationnelles avant d'être techniques. Une stratégie formalisée concentre l'investissement sur les cas d'usage à valeur réelle et fixe les garde-fous en amont.",
+  },
+  {
+    q: "Comment mesure-t-on le ROI d'une stratégie IA ?",
+    a: "Sur trois dimensions, définies avant le lancement avec votre comité de pilotage : la productivité (temps gagné par collaborateur sur des tâches identifiées, mesuré avant et après), la qualité (réduction des erreurs, conformité, satisfaction) et la capacité (nouveaux usages rendus possibles). La feuille de route fixe les indicateurs cible pour chaque chantier prioritaire ; le suivi trimestriel compare les gains réels aux objectifs. Sans indicateurs posés en amont, le retour reste impossible à objectiver.",
+  },
+  {
+    q: "Une PME a-t-elle vraiment besoin d'une stratégie IA ?",
+    a: "Oui, à une échelle adaptée. Une PME n'a pas besoin d'un plan de transformation à plusieurs années, mais d'un cap clair sur 2 ou 3 cas d'usage prioritaires, d'un budget maîtrisé et de quelques règles de gouvernance. La démarche est plus courte et plus légère que pour un grand groupe, mais elle évite le même piège : équiper les équipes en ordre dispersé sans jamais mesurer le retour. Une feuille de route 90 jours suffit souvent à enclencher la dynamique.",
+  },
+  {
+    q: "Qui doit porter la stratégie IA dans l'entreprise ?",
+    a: "Le sponsor est la direction générale ou le COMEX, qui arbitre les investissements et donne le cap. L'exécution est confiée à un référent IA ou à la direction de la transformation, en lien avec la DSI pour les questions d'architecture, de sécurité et de données. Le rôle du conseil est d'outiller ces instances : base de décision chiffrée, feuille de route séquencée et schéma de gouvernance partagé, pour que la stratégie ne dépende pas d'une seule personne.",
+  },
+  {
+    q: "Stratégie IA et AI Act : qu'est-ce qui est obligatoire ?",
+    a: "L'AI Act européen (règlement 2024/1689), entré en vigueur le 1er août 2024, impose un cadre par niveau de risque : interdiction de certains usages depuis février 2025, obligations renforcées pour les systèmes à haut risque applicables à partir d'août 2026. Toute entreprise déployant des systèmes d'IA doit documenter ses usages, les classer par niveau de risque et tracer les flux de données, en complément du RGPD. C'est pourquoi la gouvernance et la conformité font partie intégrante de la feuille de route, et non d'un volet traité après coup.",
+  },
+]
+
+/* ───────── Repères chiffrés (faits sourcés, citables) ───────── */
+
+const MARKET_STATS = [
+  {
+    Icon: BarChart3,
+    stat: '≥ 30 %',
+    label: "des projets d'IA générative abandonnés après la preuve de concept d'ici fin 2025",
+    source: 'Gartner, 2024',
+  },
+  {
+    Icon: Scale,
+    stat: '1ᵉʳ août 2024',
+    label: "entrée en vigueur de l'AI Act européen (règlement 2024/1689), qui impose une gouvernance par niveau de risque",
+    source: 'Commission européenne',
+  },
+  {
+    Icon: ShieldCheck,
+    stat: '25 mai 2018',
+    label: "application du RGPD, socle de conformité de tout traitement de données par un système d'IA",
+    source: 'CNIL',
+  },
+]
+
+/* ───────── Définitions clés (ancrage d'entités pour la recherche générative) ───────── */
+
+const GLOSSARY = [
+  {
+    term: 'Stratégie IA',
+    def: "Cadre de référence qui fixe l'ambition, les cas d'usage prioritaires, le budget, le calendrier et la gouvernance du déploiement de l'intelligence artificielle dans une organisation.",
+  },
+  {
+    term: 'Diagnostic de maturité IA',
+    def: "État des lieux objectif, fonction par fonction, des usages, des données, des compétences et des risques en place. Point de départ de toute stratégie.",
+  },
+  {
+    term: 'Feuille de route IA',
+    def: "Plan d'exécution séquencé à deux horizons : gains rapides à 90 jours pour créer la dynamique, trajectoire à 12 mois pour structurer l'investissement.",
+  },
+  {
+    term: 'Gouvernance IA',
+    def: "Ensemble des règles, comités et documents (charte d'usage, registre des systèmes, conformité RGPD et AI Act) qui sécurisent le déploiement de l'IA dans la durée.",
+  },
+  {
+    term: 'Priorisation par ROI',
+    def: "Méthode d'arbitrage des cas d'usage selon trois critères croisés : impact business, faisabilité technique et niveau de risque réglementaire.",
+  },
+]
+
+/* ───────── Sources de référence (liens d'autorité, suivis) ───────── */
+
+const REFERENCES = [
+  { label: "AI Act — texte officiel (EUR-Lex, règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+  { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
+  { label: "Intelligence artificielle — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -608,6 +689,67 @@ export default function ConseilStrategieIAPage() {
         </div>
       </section>
 
+      {/* ── CONTEXTE 2026 : éditorial + repères chiffrés sourcés (SEO + GEO) ── */}
+      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
+          <div style={kickerStyle}>Contexte 2026</div>
+          <h2 style={h2Style}>
+            Pourquoi formaliser une stratégie IA maintenant ?
+          </h2>
+          <p style={{ marginBottom: 20 }}>
+            <strong style={{ color: INK }}>La technologie est devenue accessible à toutes les entreprises ; sa bonne intégration aux processus métier reste à construire. C'est ce décalage qui rend la stratégie décisive : sans cap, les organisations s'équipent en ordre dispersé et engagent des budgets sans retour mesurable.</strong>
+          </p>
+          <p style={{ marginBottom: 20 }}>
+            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) a déplacé la difficulté. Le frein n'est plus l'accès aux outils mais la capacité à choisir les bons cas d'usage, à préparer les données, à cadrer les usages au regard du RGPD et de l'AI Act, et à embarquer les équipes. Les entreprises qui formalisent ce cadre avant d'investir évitent la dispersion des licences, les doublons d'outils et les pilotes sans lendemain.
+          </p>
+
+          {/* Repères chiffrés sourcés — citables par les moteurs de réponse */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '32px 0 28px' }}>
+            {MARKET_STATS.map((s, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                <div style={{ ...iconTileStyle, marginBottom: 14 }}>
+                  <s.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+                </div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: INK, lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
+                <p style={{ fontSize: 13.5, color: GREY_700, lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
+                <p style={{ fontSize: 12, color: GREY_500, margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ marginBottom: 0 }}>
+            Une stratégie IA bien menée transforme ces contraintes en avantage : elle priorise les chantiers à plus fort ROI, intègre la conformité dès la conception et prépare l'organisation au déploiement à l'échelle. Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité ; pour le périmètre conseil complet (audit, accompagnement, transformation), consultez notre <Link to="/conseil-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>.
+          </p>
+
+          {/* Définitions clés — ancrage d'entités */}
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '44px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <BookOpen size={20} color={BLUE} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+          </h3>
+          <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
+            {GLOSSARY.map((g, i) => (
+              <div key={i} style={{ borderLeft: `3px solid ${BLUE_SOFT}`, paddingLeft: 16 }}>
+                <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: INK, marginBottom: 4 }}>{g.term}</dt>
+                <dd style={{ margin: 0, fontSize: 14.5, color: GREY_700, lineHeight: 1.65 }}>{g.def}</dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* Sources de référence — liens d'autorité suivis */}
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '44px 0 16px' }}>
+            Sources de référence
+          </h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
+            {REFERENCES.map((r, i) => (
+              <li key={i}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: BLUE, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
@@ -622,6 +764,9 @@ export default function ConseilStrategieIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote bg="#fff" quote="Une stratégie IA ne vaut que par sa mise en œuvre. Nous restons jusqu'à ce que la feuille de route devienne des solutions en production." />
 
       {/* ── CTA FINALE ── */}
       <section style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}` }}>

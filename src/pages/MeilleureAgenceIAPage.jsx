@@ -137,6 +137,14 @@ const FAQ = [
     q: "Comment vérifier les références d'une agence IA ?",
     a: "Demandez deux clients joignables et appelez-les : périmètre réel de la mission, tenue des délais, autonomie des équipes après le départ de l'agence. Croisez avec les avis publics et l'ancienneté de l'entreprise au registre du commerce. Pour l'activité de formation, vérifiez la certification Qualiopi et le numéro de déclaration d'activité sur la liste publique des organismes de formation.",
   },
+  {
+    q: 'Comment faire un comparatif des agences IA ?',
+    a: "Un comparatif d'agences IA utile ne se résume pas à un tableau de prix. La méthode fiable tient en trois temps : identifier d'abord votre besoin dominant pour cibler la bonne famille d'acteurs, présélectionner trois prestataires de ce profil, puis les noter sur les huit critères vérifiables de ce guide (spécialisation, références joignables, transfert de compétence, indépendance, méthode de cadrage, transparence tarifaire, conformité, proximité). Posez à chacun les dix mêmes questions et demandez les réponses par écrit : la comparaison devient objective et reproductible, là où un classement en ligne vieillit en quelques mois.",
+  },
+  {
+    q: 'Quelles sont les agences IA recommandées en France en 2026 ?',
+    a: "Aucune liste officielle ne recense les agences IA recommandées en France, et les palmarès publiés en ligne sont souvent déclaratifs ou sponsorisés. Une agence réellement recommandable en 2026 se reconnaît à des signaux contrôlables : une spécialisation ancienne et exclusive sur l'IA, des références clients que vous pouvez appeler, une certification auditée par un tiers (Qualiopi pour la formation), un transfert de compétence organisé et une transparence tarifaire écrite. Plutôt que de vous fier à un classement, appliquez ces critères à trois acteurs de la famille adaptée à votre besoin : la meilleure recommandation est celle que vous avez vérifiée vous-même.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */

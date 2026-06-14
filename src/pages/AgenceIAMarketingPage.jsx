@@ -169,6 +169,14 @@ const FAQ = [
     q: "Combien coûte une agence IA marketing ?",
     a: "Le budget dépend du périmètre : canaux pris en charge, volume de production, niveau de pilotage et automatisations à mettre en place. Nous chiffrons sur devis après le cadrage initial, une fois ces éléments clarifiés. La prestation n'est pas finançable par votre OPCO : seule une formation l'est, et nous ne promettons jamais l'inverse. Si vous préférez former vos équipes, la voie finançable est détaillée sur la page formation IA marketing.",
   },
+  {
+    q: "Agence marketing IA ou agence IA marketing : est-ce la même chose ?",
+    a: "Oui, les deux expressions désignent la même réalité : un prestataire qui produit et pilote vos actions marketing en s'appuyant sur l'intelligence artificielle. « Agence marketing IA » et « agence IA marketing » sont des variantes du même besoin, l'ordre des mots ne change rien à la prestation. Chez Masteria, il s'agit dans les deux cas d'une prestation clé en main : contenu, SEO et GEO, campagnes, social media, emailing et reporting augmentés par l'IA, avec relecture humaine sur chaque livrable.",
+  },
+  {
+    q: "Quels résultats attendre d'une agence marketing IA ?",
+    a: "Le gain le plus immédiat est la capacité de production : davantage de contenus et de campagnes à qualité tenue, sans grossir l'équipe. Viennent ensuite la cohérence de marque sur l'ensemble des canaux et un pilotage par les données plutôt que par intuition. Nous ne promettons pas de chiffre de performance à l'aveugle : les indicateurs de succès (trafic, visibilité, engagement, conversions selon vos objectifs) sont définis avec vous au cadrage, mesurés en continu et commentés dans un reporting régulier.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -264,7 +272,7 @@ export default function AgenceIAMarketingPage() {
           </p>
 
           <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 740 }}>
-            L'IA générative démultiplie la capacité de production marketing, à condition de savoir quel modèle utiliser, comment encoder votre marque dans les prompts et où placer le contrôle humain. Nous prenons en charge cette ingénierie éditoriale de bout en bout et livrons des contenus et campagnes prêts à publier. Masteria travaille sur l'IA depuis 2022 et a accompagné plus de 1 500 professionnels.
+            L'IA générative démultiplie la capacité de production marketing, à condition de savoir quel modèle utiliser, comment encoder votre marque dans les prompts et où placer le contrôle humain. En tant qu'agence marketing IA, nous prenons en charge cette ingénierie éditoriale de bout en bout et livrons des contenus et campagnes prêts à publier. Masteria travaille sur l'IA depuis 2022 et a accompagné plus de 1 500 professionnels.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>

@@ -69,6 +69,17 @@ const HERO_BADGES = [
   { icon: MapPin,   label: 'Lyon · France · Suisse · Belgique' },
 ]
 
+/* ───────── En bref (synthèse citable — GEO) ───────── */
+
+const EN_BREF = [
+  { label: 'Prestations', value: "Agents IA, automatisations de processus, applications et copilotes métier, intégrations LLM/RAG, connecteurs et API" },
+  { label: 'Engagement', value: "Forfait au projet ou régie : un ou plusieurs développeurs IA détachés dans vos équipes, sur site ou à distance" },
+  { label: 'Stack', value: "Multi-LLM (Claude, GPT, Mistral), RAG, agents et connecteurs MCP ; no-code quand il suffit, code quand la robustesse l'exige" },
+  { label: 'Propriété', value: "Code et données au client, transfert de compétence aux équipes en fin de mission" },
+  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel ponctuel" },
+  { label: 'Démarrage', value: "Réponse sous 24 h, cadrage puis devis au forfait" },
+]
+
 /* ───────── Ce que nous développons (6 cartes) ───────── */
 
 const LIVRABLES = [
@@ -206,6 +217,14 @@ const WHY = [
 
 const FAQ = [
   {
+    q: "Qu'est-ce qu'une agence de développement IA ?",
+    a: "Une agence de développement IA conçoit et développe des solutions sur mesure fondées sur l'intelligence artificielle : agents, automatisations de processus, applications et copilotes métier, intégrations LLM/RAG. Elle se distingue d'une agence web ou d'une ESN généraliste par sa spécialisation sur les modèles, leurs limites et leurs garde-fous. Masteria couvre le cycle complet, du cadrage au déploiement, puis transfère le code et la compétence à vos équipes pour que vous restiez propriétaire et autonome.",
+  },
+  {
+    q: "Quelle différence entre une agence de développement IA et une agence web ?",
+    a: "Une agence web construit des sites et des applications web classiques ; une agence de développement IA part des modèles d'intelligence artificielle et des données pour bâtir des solutions qui raisonnent, recherchent ou décident. Le web dev ia (interfaces, portails, applications dans le navigateur) n'est qu'une partie du travail : l'essentiel se joue dans le choix des modèles, le RAG, les agents et leurs garde-fous, et l'intégration aux données métier. Masteria maîtrise les deux volets, la logique IA et l'interface web, parce qu'une solution n'a de valeur que si elle est adoptée au quotidien.",
+  },
+  {
     q: "Combien coûte le développement d'une solution IA sur mesure ?",
     a: "Le développement sur mesure se chiffre au forfait, projet par projet, après un cadrage. Le budget dépend du périmètre : un prototype sur un cas unique, un agent outillé connecté à vos systèmes ou une application métier complète ne représentent pas le même engagement. Nous établissons un devis détaillé une fois le périmètre et le critère de réussite définis, sans forfait vendu à l'aveugle.",
   },
@@ -241,6 +260,7 @@ const serviceJsonLd = {
   url: 'https://www.master-ia.fr/agence-developpement-ia',
   serviceType: 'Développement de solutions IA',
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
+  mainEntityOfPage: 'https://www.master-ia.fr/agence-developpement-ia',
   areaServed: [
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
@@ -255,6 +275,7 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Applications & copilotes métier', description: "Outils internes et copilotes dédiés à un métier, connectés à vos données." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Intégrations LLM / RAG', description: "Réponses sourcées ancrées dans vos documents et vos bases." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Connecteurs & API (MCP, CRM, ERP)', description: "Liaison de vos systèmes pour faire circuler les informations sans ressaisie." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interfaces web IA (web dev IA)', description: "Interfaces, portails et assistants accessibles depuis le navigateur, reliés à vos modèles et à vos données." } },
     ],
   },
 }
@@ -352,6 +373,19 @@ export default function AgenceDeveloppementIAPage() {
                 {label}
               </span>
             ))}
+          </div>
+
+          {/* En bref — synthèse citable (GEO) */}
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', marginTop: 36, maxWidth: 820 }}>
+            <Kicker>En bref</Kicker>
+            <dl style={{ margin: 0 }}>
+              {EN_BREF.map((row, i) => (
+                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>

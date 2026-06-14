@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 
 /*
  * Page offre « outils IA sur mesure » (slug /outils-ia-sur-mesure).
@@ -66,6 +67,17 @@ const HERO_BADGES = [
   { icon: Building2,  label: 'Spécialisés IA depuis 2022' },
 ]
 
+/* ───────── En bref (synthèse citable — GEO) ───────── */
+
+const EN_BREF = [
+  { label: 'Outils', value: "Copilote interne, assistant documentaire (RAG), application web IA, automatisation métier, agent spécialisé" },
+  { label: 'Démarche', value: "De l'idée à l'outil : cadrage, maquette et POC, développement, mise en service, évolutions" },
+  { label: 'Propriété', value: "Code source et données au client, aucun enfermement chez un éditeur" },
+  { label: 'Confidentialité', value: "Données non utilisées pour entraîner des modèles tiers · hébergement UE possible" },
+  { label: 'Maintenance', value: "TMA (corrections, évolutions, montée de version des modèles) ou transfert à vos équipes" },
+  { label: 'Délai', value: "Premier prototype en quelques semaines · France, Suisse, Belgique" },
+]
+
 /* ───────── 1. Quels outils IA construit-on ? (6 cartes IconBox) ───────── */
 
 const OUTILS = [
@@ -73,11 +85,15 @@ const OUTILS = [
     icon: Bot,
     title: 'Copilote interne',
     desc: "Un assistant IA branché sur vos données et vos règles métier : il répond aux questions de vos équipes, rédige avec votre langage et déclenche les bonnes actions, sans recopier des informations dans un outil grand public.",
+    href: '/copilote-ia-interne',
+    linkLabel: 'Voir le copilote IA interne',
   },
   {
     icon: FileSearch,
     title: 'Assistant documentaire (RAG)',
     desc: "Une recherche en langage naturel dans vos documents, contrats, procédures et bases de connaissances. Chaque réponse cite sa source, ce qui rend l'outil vérifiable et fiable au quotidien.",
+    href: '/assistant-documentaire-ia',
+    linkLabel: "Voir l'assistant documentaire IA",
   },
   {
     icon: BarChart3,
@@ -88,6 +104,8 @@ const OUTILS = [
     icon: Workflow,
     title: 'Automatisation métier',
     desc: "Un outil qui prend en charge un processus de bout en bout : réception, traitement, contrôle puis restitution, avec une validation humaine sur les décisions sensibles et une traçabilité complète.",
+    href: '/automatisation-documentaire-ia',
+    linkLabel: "Voir l'automatisation documentaire IA",
   },
   {
     icon: Globe,
@@ -98,6 +116,8 @@ const OUTILS = [
     icon: Sparkles,
     title: 'Agent spécialisé',
     desc: "Un agent IA cadré sur une mission précise, capable d'enchaîner plusieurs étapes pour atteindre un objectif, avec les garde-fous qu'exige toute autonomie confiée à une machine.",
+    href: '/agents-ia-entreprise',
+    linkLabel: 'Voir les agents IA en entreprise',
   },
 ]
 
@@ -200,6 +220,18 @@ const PROPRIETE = [
 
 const FAQ = [
   {
+    q: "Qu'est-ce qu'un outil IA sur mesure ?",
+    a: "Un outil IA sur mesure est une application développée spécifiquement pour une entreprise, autour de ses processus et de ses données, plutôt qu'un logiciel standard du marché. Il peut prendre la forme d'un copilote interne, d'un assistant documentaire, d'une application web ou d'un agent spécialisé. Chez Masteria, ces outils s'appuient sur un ou plusieurs grands modèles de langage (LLM), s'intègrent à votre système d'information existant, et leur code comme leurs données restent votre propriété.",
+  },
+  {
+    q: "Quelle différence entre un outil IA sur mesure et un logiciel SaaS du marché ?",
+    a: "Un logiciel SaaS est conçu pour le plus grand nombre : vous adaptez votre fonctionnement à l'outil, vos données transitent par l'éditeur et vous dépendez de sa feuille de route et de ses tarifs. Une application IA sur mesure épouse au contraire vos processus, garde la maîtrise de vos données (hébergement dans l'Union européenne possible) et reste évolutive parce que vous en possédez le socle. Le SaaS suffit quand le besoin est standard ; le sur mesure se justifie dès que l'adéquation au besoin, la confidentialité ou l'évolutivité deviennent décisives.",
+  },
+  {
+    q: "Peut-on développer un copilote IA interne sur mesure pour nos équipes ?",
+    a: "Oui. Le copilote IA interne est l'un des outils que nous développons le plus souvent : un assistant branché sur vos données et vos règles métier, qui répond aux questions de vos collaborateurs, rédige avec votre langage et déclenche les bonnes actions, sans recopier d'informations dans un outil grand public. Les accès sont cloisonnés par rôle et les traitements tracés. C'est l'équivalent privé et maîtrisé d'un assistant IA, conçu pour votre organisation.",
+  },
+  {
     q: "Combien coûte un outil IA sur mesure ?",
     a: "Le budget dépend du périmètre : un copilote documentaire branché sur quelques sources n'a pas le coût d'une application métier complète avec gestion des accès et intégrations. Nous chiffrons sur devis après un cadrage, et nous commençons souvent par un prototype à coût maîtrisé pour valider la valeur avant d'engager le développement complet. Le développement sur mesure n'est pas finançable par un OPCO ; seul un éventuel volet de formation à l'usage de l'outil peut l'être.",
   },
@@ -234,8 +266,25 @@ const serviceJsonLd = {
   description: "Conception d'outils IA sur mesure : copilotes internes, assistants documentaires (RAG), applications web IA, automatisations métier et agents spécialisés, adaptés aux processus et aux données du client. De l'idée à l'outil, code et données propriété du client, hébergement UE possible, maintenance et évolutions.",
   url: 'https://www.master-ia.fr/outils-ia-sur-mesure',
   serviceType: "Développement d'outils IA sur mesure",
-  areaServed: ['France', 'Suisse', 'Belgique'],
+  areaServed: [
+    { '@type': 'Country', name: 'France' },
+    { '@type': 'Country', name: 'Suisse' },
+    { '@type': 'Country', name: 'Belgique' },
+  ],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
+  mainEntityOfPage: 'https://www.master-ia.fr/outils-ia-sur-mesure',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: "Types d'outils IA développés sur mesure",
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Copilote IA interne', description: "Assistant IA branché sur vos données et vos règles métier, accès cloisonnés par rôle." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Assistant documentaire IA (RAG)', description: "Recherche en langage naturel dans vos documents, avec réponses sourcées." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Outil d'analyse et de reporting IA", description: "Synthèse de vos données, tableaux de bord commentés et rapports générés à la demande." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatisation métier IA', description: "Prise en charge d'un processus de bout en bout, avec validation humaine et traçabilité." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Application web IA dédiée', description: "Interface propre à votre besoin, gestion des accès et des rôles." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Agent IA spécialisé', description: "Agent cadré sur une mission précise, avec garde-fous." } },
+    ],
+  },
 }
 
 /* ───────── Composants ───────── */
@@ -349,6 +398,19 @@ export default function OutilsIASurMesurePage() {
               </span>
             ))}
           </div>
+
+          {/* En bref — synthèse citable (GEO) */}
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', marginTop: 36, maxWidth: 820 }}>
+            <Kicker>En bref</Kicker>
+            <dl style={{ margin: 0 }}>
+              {EN_BREF.map((row, i) => (
+                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -370,18 +432,24 @@ export default function OutilsIASurMesurePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
             {OUTILS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
+              <div key={i} style={{ ...cardStyle, padding: 28, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ marginBottom: 16 }}>
                   <IconBox icon={item.icon} />
                 </div>
                 <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                {item.href && (
+                  <Link to={item.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, marginTop: 16 }}>
+                    {item.linkLabel}
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                )}
               </div>
             ))}
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
-            Vous cherchez d'abord un partenaire de réalisation plutôt qu'un type d'outil précis ? Notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> détaille la démarche d'ingénierie, l'équipe et les modalités de collaboration. Pour automatiser des processus existants avec des outils du marché, voyez plutôt notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pas encore sûr du périmètre ? Un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> aide à cadrer le bon outil avant tout développement.
+            Certains de ces outils ont leur page dédiée, avec cas d'usage et exemples : <Link to="/chatbot-ia-sur-mesure" style={aStyle}>chatbot IA sur mesure</Link> et <Link to="/integration-llm-rag" style={aStyle}>intégration LLM / RAG</Link>. Vous cherchez d'abord un partenaire de réalisation plutôt qu'un type d'outil précis ? Notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> détaille la démarche d'ingénierie, l'équipe et les modalités de collaboration. Pour automatiser des processus existants avec des outils du marché, voyez plutôt notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pas encore sûr du périmètre ? Un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> aide à cadrer le bon outil avant tout développement.
           </p>
         </div>
       </section>
@@ -593,6 +661,9 @@ export default function OutilsIASurMesurePage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote />
 
       {/* ── CTA FINALE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>

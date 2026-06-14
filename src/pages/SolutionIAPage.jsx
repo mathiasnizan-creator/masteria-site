@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle,
   Plug, Check, Cpu, Server, Lock, KeyRound, ShieldCheck, Workflow,
-  MapPin, Users, Wrench,
+  MapPin, Users, Wrench, Clock, Coins, X, FileCode2, Sparkles, Tag,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -45,6 +45,15 @@ const ICONS = {
 /* Piliers d'approche technique communs (illustrés par des icônes lucide). */
 const STACK_ICONS = [Cpu, Database, Plug, Lock, Server]
 
+/* Lignes du comparatif « sur étagère vs sur mesure » (génériques, valables pour les 7 solutions). */
+const COMPARISON_ROWS = [
+  { aspect: 'Connexion à vos données et outils', off: 'Limitée ou absente', custom: 'Branchée sur vos sources (RAG) et vos outils via API et MCP' },
+  { aspect: 'Adaptation à votre métier', off: 'Générique, comportement imposé', custom: 'Votre périmètre, votre ton et vos garde-fous' },
+  { aspect: 'Propriété du code', off: "Dépendance à l'éditeur", custom: 'Code livré : vous êtes propriétaire' },
+  { aspect: 'Évolutivité', off: 'Bornée aux options de la plateforme', custom: 'Évolue avec vos besoins, sans plafond fonctionnel' },
+  { aspect: 'Confidentialité et hébergement', off: 'Selon les règles du fournisseur', custom: 'Cloisonnement et hébergement UE possibles' },
+]
+
 function IconTile({ icon: Icon }) {
   return (
     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -69,9 +78,10 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
+      {/* Réponse TOUJOURS présente dans le DOM (repliée en CSS) : crawlable + citable par les LLM (GEO). */}
+      <div style={{ maxHeight: open ? 800 : 0, overflow: 'hidden', transition: 'max-height 0.3s ease' }}>
         <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      </div>
     </div>
   )
 }
@@ -101,7 +111,17 @@ export default function SolutionIAPage() {
     { name: solution.name, slug: solution.slug },
   ]
 
-  /* ── JSON-LD Service (serviceType = type de livrable) ── */
+  // Plancher tarifaire numérique extrait du budgetRange ("Dès ~15 000 € · …") pour le JSON-LD.
+  const priceFrom = (solution.budgetRange?.match(/(\d[\d\s]*)\s*€/) || [])[1]?.replace(/\s/g, '')
+
+  // Mots-clés spécifiques à la solution (synonymes inclus) — remplace les keywords formation par défaut.
+  const pageKeywords = [
+    solution.name,
+    ...(solution.alsoKnownAs || []),
+    'solution IA sur mesure', 'développement IA', 'IA pour entreprise', 'Masteria',
+  ].join(', ')
+
+  /* ── JSON-LD Service enrichi (serviceType = type de livrable) ── */
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': ['Service', 'ProfessionalService'],
@@ -110,13 +130,45 @@ export default function SolutionIAPage() {
     description: solution.metaDesc,
     url: `https://www.master-ia.fr/${solution.slug}`,
     serviceType: solution.name,
+    category: 'Développement de solutions IA sur mesure',
     provider: { '@id': 'https://www.master-ia.fr/#organization' },
+    brand: { '@id': 'https://www.master-ia.fr/#organization' },
     areaServed: [
       { '@type': 'Country', name: 'France' },
       { '@type': 'Country', name: 'Suisse' },
       { '@type': 'Country', name: 'Belgique' },
     ],
+    audience: { '@type': 'BusinessAudience', name: 'PME, ETI et grands groupes' },
+    serviceOutput: {
+      '@type': 'Thing',
+      name: `${solution.name} : application sur mesure, code source livré au client`,
+    },
+    termsOfService: 'https://www.master-ia.fr/methode-projet-ia',
     isPartOf: { '@id': 'https://www.master-ia.fr/solutions-ia#itemlist' },
+    // Fourchette à plancher bas (prototype) et plafond OUVERT : les grands projets dépassent 100 000 €.
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      ...(priceFrom ? { lowPrice: priceFrom } : {}),
+      availability: 'https://schema.org/InStock',
+      url: `https://www.master-ia.fr/${solution.slug}`,
+      seller: { '@id': 'https://www.master-ia.fr/#organization' },
+      description:
+        "Développement au forfait, sur devis après cadrage. Fourchette indicative : un prototype démarre plus bas, un déploiement à l'échelle ou en régie dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros.",
+      eligibleRegion: [
+        { '@type': 'Country', name: 'France' },
+        { '@type': 'Country', name: 'Suisse' },
+        { '@type': 'Country', name: 'Belgique' },
+      ],
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: "Modèles d'engagement",
+      itemListElement: [
+        { '@type': 'Offer', name: 'Forfait au projet', description: 'Périmètre et livrables définis, prix ferme après cadrage.' },
+        { '@type': 'Offer', name: 'Régie / équipe dédiée', description: 'Un ou plusieurs développeurs IA détachés dans vos équipes, sur site ou à distance.' },
+      ],
+    },
   }
 
   return (
@@ -125,6 +177,7 @@ export default function SolutionIAPage() {
         title={solution.metaTitle}
         description={solution.metaDesc}
         slug={solution.slug}
+        keywords={pageKeywords}
         breadcrumbs={breadcrumbs}
         faqItems={solution.faq}
         extraJsonLd={serviceJsonLd}
@@ -183,6 +236,24 @@ export default function SolutionIAPage() {
               </span>
             ))}
           </div>
+
+          {/* Faits-clés citables (GEO) : budget, délai, livrable, propriété */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 14, marginTop: 28 }}>
+            {[
+              { icon: Coins, label: 'Budget indicatif', value: solution.budgetRange },
+              { icon: Clock, label: 'Mise en route', value: solution.timeline },
+              { icon: FileCode2, label: 'Livrable', value: 'Code source livré et documenté' },
+              { icon: KeyRound, label: 'Propriété', value: 'Vous, le client' },
+            ].map(({ icon: Icon, label, value }) => (
+              <div key={label} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, padding: '16px 18px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+                  <Icon size={16} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#6B7280' }}>{label}</span>
+                </div>
+                <p style={{ margin: 0, fontSize: 14, fontWeight: 600, color: '#0A0A0A', lineHeight: 1.5 }}>{value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -193,9 +264,35 @@ export default function SolutionIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             {`${solution.name} : de quoi parle-t-on ?`}
           </h2>
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
             {solution.whatItIs}
           </p>
+
+          {/* À retenir : points citables (GEO / featured snippet) */}
+          {solution.keyTakeaways && solution.keyTakeaways.length > 0 && (
+            <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '24px 28px', maxWidth: 880, marginBottom: 24 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+                <Sparkles size={18} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A' }}>À retenir</span>
+              </div>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {solution.keyTakeaways.map((t, i) => (
+                  <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                    <Check size={18} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                    <span style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Aussi appelé : synonymes / requêtes proches (couverture sémantique SEO) */}
+          {solution.alsoKnownAs && solution.alsoKnownAs.length > 0 && (
+            <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0, maxWidth: 880, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8 }}>
+              <Tag size={14} strokeWidth={2.2} style={{ color: '#9CA3AF' }} aria-hidden="true" />
+              <span><strong style={{ color: '#374151', fontWeight: 700 }}>Aussi appelé :</strong> {solution.alsoKnownAs.join(', ')}.</span>
+            </p>
+          )}
         </div>
       </section>
 
@@ -297,6 +394,39 @@ export default function SolutionIAPage() {
               ))}
             </p>
           )}
+        </div>
+      </section>
+
+      {/* ── COMPARATIF : SUR ÉTAGÈRE VS SUR MESURE (GEO snippet) ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <div style={kickerStyle}>Comparatif</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            {`${solution.offTheShelfLabel} ou ${solution.name.replace(/\s+sur mesure$/i, '')} sur mesure ?`}
+          </h2>
+          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
+            <strong>Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est branchée sur vos données et vos outils, adopte votre métier et vous en êtes propriétaire : le code vous est livré.</strong>
+          </p>
+          <div style={{ ...cardStyle, overflowX: 'auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', minWidth: 560, background: '#F9FAFB', borderBottom: '1px solid #E5E7EB' }}>
+              <div style={{ padding: '14px 16px', fontSize: 12, fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Critère</div>
+              <div style={{ padding: '14px 16px', fontSize: 13, fontWeight: 700, color: '#6B7280' }}>{solution.offTheShelfLabel}</div>
+              <div style={{ padding: '14px 16px', fontSize: 13, fontWeight: 800, color: c }}>Sur mesure (Masteria)</div>
+            </div>
+            {COMPARISON_ROWS.map((row, i) => (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', minWidth: 560, borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
+                <div style={{ padding: '16px', fontSize: 14, fontWeight: 700, color: '#0A0A0A' }}>{row.aspect}</div>
+                <div style={{ padding: '16px', fontSize: 13.5, color: '#6B7280', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                  <X size={16} strokeWidth={2.4} style={{ color: '#9CA3AF', flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                  <span>{row.off}</span>
+                </div>
+                <div style={{ padding: '16px', fontSize: 13.5, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start', background: '#F9FBFF' }}>
+                  <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                  <span>{row.custom}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

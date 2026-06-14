@@ -36,6 +36,12 @@ export const AGENCE_GEO_CITIES = [
       "Les PME industrielles et les ETI familiales de Haute-Savoie traitent quotidiennement de gros volumes documentaires : cahiers des charges, documentation technique, qualité, achats, devis. Ces processus se prêtent particulièrement à l'automatisation et aux agents IA branchés sur l'ERP. Dans la banque privée et le tourisme, la relation client et la production éditoriale multilingue ouvrent d'autres gisements. Une agence IA aide à choisir où investir, dans quel ordre, puis à construire les outils plutôt qu'à se contenter d'une recommandation.",
     presence:
       "L'équipe Masteria est basée à Lyon (Croix-Rousse). Annecy est à environ 1 h 30 de route, ce qui permet des ateliers de cadrage et des points d'avancement en présentiel sans logistique lourde. Nous intervenons sur site à Annecy et dans le bassin annécien pour les phases clés (cadrage, observation des processus, passation), et en distanciel pour le développement, les itérations et le suivi. Aucune agence physique à Annecy : nous travaillons depuis Lyon avec une présence terrain ponctuelle assumée.",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil IA, développement d'agents et d'outils, automatisation des processus sur mesure" },
+      { label: 'Présence à Annecy', value: 'Équipe basée à Lyon (≈ 1 h 30) : présentiel ponctuel pour le cadrage, distanciel pour le développement' },
+      { label: 'Secteurs accompagnés', value: 'Mécatronique et industrie, outdoor et sport, banque privée, tourisme alpin' },
+      { label: 'Premier échange', value: 'Cadrage gratuit, réponse sous 24 h, proposition forfaitaire écrite' },
+    ],
     useCasesLocal: [
       {
         sector: 'Mécatronique et industrie',
@@ -58,6 +64,10 @@ export const AGENCE_GEO_CITIES = [
       {
         q: 'Travaillez-vous avec les PME et ETI de Haute-Savoie ?',
         a: "Oui. Nos offres sont dimensionnées pour les PME et les ETI du bassin annécien : cadrage gratuit, missions forfaitaires courtes et priorité aux cas d'usage à retour rapide. Les secteurs mécatronique, outdoor, banque privée et tourisme de la région présentent des processus documentaires et de relation client très adaptés à l'IA générative et à l'automatisation.",
+      },
+      {
+        q: "Accompagnez-vous l'industrie et la mécatronique du bassin annécien ?",
+        a: "Oui, c'est un de nos terrains naturels en Haute-Savoie. Les PME industrielles et les acteurs du cluster mécatronique manipulent de gros volumes de documentation technique, de cahiers des charges et de réponses aux appels d'offres : autant de processus où un agent IA branché sur l'ERP et des automatisations sur mesure font gagner un temps mesurable. Nous cadrons d'abord les cas d'usage à plus fort impact, puis nous construisons les outils correspondants plutôt que de nous arrêter à une recommandation.",
       },
     ],
   },
@@ -82,6 +92,12 @@ export const AGENCE_GEO_CITIES = [
       "Dans les sièges sociaux et les services financiers, les fonctions support croulent sous les processus répétitifs à fort enjeu de fiabilité : reporting, conformité, traitement de dossiers, relation client. Dans le conseil, les médias et le retail, la production de contenus et l'analyse documentaire sont des gisements directs. Les scale-ups, elles, cherchent à accélérer support, documentation produit et onboarding sans grossir les effectifs au même rythme. Une agence IA aide à prioriser ces chantiers par impact, puis à développer les agents et automatisations correspondants.",
     presence:
       "L'équipe Masteria est basée à Lyon (Croix-Rousse), à 2 heures de Paris en TGV. Nous intervenons en présentiel ponctuel à Paris et en proche couronne pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi continu. Nous n'avons pas d'agence physique à Paris : la présence terrain est ponctuelle et planifiée, le reste de la mission se conduit à distance avec les mêmes livrables.",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil et stratégie IA, agents et outils sur mesure, automatisation des processus" },
+      { label: 'Présence à Paris', value: 'Équipe basée à Lyon (2 h en TGV) : présentiel ponctuel pour cadrage et comités, distanciel pour le développement' },
+      { label: 'Secteurs accompagnés', value: 'Sièges sociaux et services financiers, conseil et médias, retail et luxe, tech et scale-ups' },
+      { label: 'Conseil & gouvernance', value: 'Cadrage stratégique, gouvernance des données, conformité RGPD et AI Act au niveau direction' },
+    ],
     useCasesLocal: [
       {
         sector: 'Sièges sociaux et services financiers',
@@ -104,6 +120,10 @@ export const AGENCE_GEO_CITIES = [
       {
         q: 'Travaillez-vous avec les entreprises et scale-ups parisiennes ?',
         a: "Oui. Nous accompagnons aussi bien des directions de grands groupes franciliens pour des cadrages stratégiques que des PME, ETI et scale-ups pour des développements sur mesure et des automatisations ciblées. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.",
+      },
+      {
+        q: 'Faites-vous office de cabinet de conseil en IA à Paris ?',
+        a: "Oui. Au-delà du développement, Masteria assume un rôle de cabinet de conseil en intelligence artificielle pour les entreprises parisiennes : audit de maturité, cartographie des cas d'usage, feuille de route priorisée, gouvernance des données et conformité RGPD et AI Act. La différence avec un cabinet de conseil classique : nous ne nous arrêtons pas à la recommandation, nous concevons et développons ensuite les agents et automatisations qui en découlent, puis nous formons vos équipes pour qu'elles restent autonomes.",
       },
     ],
   },
@@ -128,6 +148,12 @@ export const AGENCE_GEO_CITIES = [
       "La banque privée et le négoce manipulent des volumes documentaires considérables sous fortes contraintes de confidentialité et de conformité : reporting client, due diligence, suivi opérationnel, reporting de marché. Les organisations internationales produisent et traduisent en continu des rapports multilingues. Ces usages se prêtent aux agents IA et aux automatisations, à condition de respecter le secret professionnel et un cadre de gouvernance strict. Une agence IA aide à cadrer ces sujets sensibles, puis à développer des outils conçus pour rester sous contrôle.",
     presence:
       "L'équipe Masteria est basée à Lyon, à moins de 2 heures de Genève en train direct. La proximité permet des ateliers de cadrage et des points d'avancement en présentiel sur le bassin lémanique, complétés par du distanciel pour le développement et le suivi. Nous n'avons pas d'agence physique à Genève : nous intervenons depuis Lyon avec une présence terrain ponctuelle, et facturons selon le cadre suisse (en CHF ou en EUR selon votre préférence).",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil IA, développement d'agents et d'automatisations sous contrainte de confidentialité" },
+      { label: 'Présence à Genève', value: 'Équipe basée à Lyon (< 2 h en train direct) : présentiel ponctuel sur le bassin lémanique, distanciel pour le développement' },
+      { label: 'Secteurs accompagnés', value: 'Banque privée et gestion de fortune, négoce de matières premières, organisations internationales, pharma-arômes' },
+      { label: 'Cadre suisse', value: 'Facturation en CHF ou EUR, pas de dispositif OPCO, confidentialité cadrée dès le départ' },
+    ],
     useCasesLocal: [
       {
         sector: 'Banque privée et gestion de fortune',
@@ -150,6 +176,10 @@ export const AGENCE_GEO_CITIES = [
       {
         q: 'Comment respectez-vous la confidentialité dans un environnement bancaire genevois ?',
         a: "La confidentialité est cadrée dès le départ : accord de confidentialité signé avant la mission, travail à partir de données anonymisées ou structurellement équivalentes, et conception des agents et automatisations pour rester sous votre contrôle (gouvernance, traçabilité, périmètre d'accès aux données). Cette exigence est intégrée au cadrage, pas ajoutée après coup.",
+      },
+      {
+        q: 'Travaillez-vous en français pour le marché romand ?',
+        a: "Oui. Toutes nos missions et nos formations se mènent en français pour vos équipes de Suisse romande, à Genève comme à Lausanne ou Nyon. Nous concevons aussi des outils et des agents multilingues quand le contexte l'exige, notamment pour les organisations internationales et le négoce, où la production et la traduction de documents en plusieurs langues sont quotidiennes. Le cadre reste suisse : facturation en CHF ou EUR, sans dispositif de financement de type OPCO.",
       },
     ],
   },
@@ -174,6 +204,12 @@ export const AGENCE_GEO_CITIES = [
       "Dans le maritime et la logistique, le suivi des flux, la communication client multilingue et la conformité douanière reposent sur des processus répétitifs et documentaires, idéaux pour l'automatisation et les agents IA. Le tourisme et l'hôtellerie ont besoin de production éditoriale multilingue et de support client à grande échelle. La santé et la biotech manipulent des volumes documentaires réglementaires importants. Une agence IA aide à repérer ces gisements, à les prioriser par impact, puis à développer les outils correspondants.",
     presence:
       "L'équipe Masteria est basée à Lyon (Croix-Rousse), à un peu plus de 3 heures de Marseille en TGV direct. Nous intervenons en présentiel ponctuel à Marseille et dans la métropole pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi. Nous n'avons pas d'agence physique à Marseille : la présence terrain est ponctuelle et planifiée, le reste de la mission se conduit à distance avec les mêmes livrables.",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil IA, développement d'agents et d'outils, automatisation des processus sur mesure" },
+      { label: 'Présence à Marseille', value: 'Équipe basée à Lyon (≈ 3 h en TGV direct) : présentiel ponctuel pour cadrage et passation, distanciel pour le développement' },
+      { label: 'Secteurs accompagnés', value: 'Maritime et logistique portuaire, tourisme et hôtellerie, santé et biotech, industrie et aérospatial' },
+      { label: 'Premier échange', value: 'Cadrage gratuit, réponse sous 24 h, proposition forfaitaire écrite' },
+    ],
     useCasesLocal: [
       {
         sector: 'Maritime et logistique',
@@ -196,6 +232,10 @@ export const AGENCE_GEO_CITIES = [
       {
         q: 'Travaillez-vous avec les entreprises de la région Sud ?',
         a: "Oui. Nous accompagnons les PME, ETI et directions de la métropole Aix-Marseille-Provence, avec une attention aux spécificités régionales : maritime et logistique, tourisme, santé, industrie. Cadrage gratuit, missions forfaitaires et priorité aux cas d'usage à retour rapide. Tout existe aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
+      },
+      {
+        q: 'Intervenez-vous au-delà de Marseille, ailleurs en région Sud ?',
+        a: "Oui. Au-delà de Marseille et de la métropole Aix-Marseille-Provence, nous accompagnons les entreprises de la région Sud (Provence-Alpes-Côte d'Azur), notamment sur l'axe Aix-en-Provence, Toulon et l'arc méditerranéen. Le présentiel ponctuel se planifie selon les phases clés de la mission ; le développement, les itérations et le suivi se conduisent en distanciel, avec les mêmes livrables qu'en présentiel.",
       },
     ],
   },

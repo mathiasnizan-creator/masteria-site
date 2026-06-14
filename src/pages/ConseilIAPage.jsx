@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Boxes, BrainCircuit, Building2, Check, CheckCircle2, Clock, Compass,
   Cpu, GraduationCap, LineChart, Scale, Search, ShieldCheck, Sparkles, Target,
-  Users, Workflow, Zap,
+  Users, Workflow, Zap, BookOpen, ExternalLink, BarChart3,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { FAQSection } from '../components/screens2'
@@ -267,6 +267,70 @@ const FAQ_CONSEIL = [
     q: "Combien de temps dure une mission de conseil IA ?",
     a: "Les durées varient selon le périmètre : audit IA initial entre 2 et 4 semaines, mission de stratégie entre 4 et 8 semaines, accompagnement opérationnel entre 3 et 12 mois. Nous privilégions des sprints courts (2 à 6 semaines) avec livrables intermédiaires plutôt que des missions au long cours non séquencées.",
   },
+  {
+    q: "Quand faut-il faire appel à un cabinet de conseil en IA ?",
+    a: "Trois signaux justifient l'appel à un cabinet : les équipes s'équipent en outils IA en ordre dispersé sans cap commun, des budgets sont engagés sans indicateur de retour, ou des pilotes prometteurs ne passent jamais à l'échelle. C'est aussi pertinent en amont d'un investissement important, pour objectiver les arbitrages, ou face à une échéance de conformité (RGPD, AI Act). Dans tous les cas, mieux vaut cadrer avant de déployer : un diagnostic initial évite des mois d'efforts dispersés.",
+  },
+  {
+    q: "Faut-il préparer ses données avant de lancer un projet d'IA ?",
+    a: "Souvent, oui. La donnée est le carburant de l'IA : un agent, un RAG ou un modèle d'analyse ne tient ses promesses que si les données sont fiables, accessibles et gouvernées. La plupart des projets d'IA qui échouent butent sur la donnée avant de buter sur la technologie. Nous ne recommandons pas pour autant un grand chantier data préalable : il vaut mieux partir d'un cas d'usage prioritaire et ne préparer que les données qu'il exige. C'est l'objet de notre conseil data & IA, qui cadre le socle data au service d'usages concrets.",
+  },
+]
+
+/* ───────── Repères chiffrés (faits sourcés, citables) ───────── */
+
+const MARKET_STATS = [
+  {
+    Icon: BarChart3,
+    stat: '≥ 30 %',
+    label: "des projets d'IA générative abandonnés après la preuve de concept d'ici fin 2025, surtout pour des raisons organisationnelles",
+    source: 'Gartner, 2024',
+  },
+  {
+    Icon: Scale,
+    stat: '1ᵉʳ août 2024',
+    label: "entrée en vigueur de l'AI Act européen (règlement 2024/1689) : gouvernance des usages d'IA par niveau de risque",
+    source: 'Commission européenne',
+  },
+  {
+    Icon: ShieldCheck,
+    stat: '25 mai 2018',
+    label: "application du RGPD, cadre de conformité de tout traitement de données par un système d'IA",
+    source: 'CNIL',
+  },
+]
+
+/* ───────── Définitions clés (ancrage d'entités pour la recherche générative) ───────── */
+
+const GLOSSARY = [
+  {
+    term: 'Cabinet de conseil en IA',
+    def: "Partenaire externe qui aide une entreprise à passer de l'intention à l'usage : audit des processus, stratégie et feuille de route, accompagnement au déploiement, gouvernance et formation des équipes.",
+  },
+  {
+    term: 'Audit IA',
+    def: "État des lieux des processus, outils, données et compétences, débouchant sur une cartographie des cas d'usage prioritaires classés par impact et faisabilité.",
+  },
+  {
+    term: 'Gouvernance IA',
+    def: "Règles et instances (charte d'usage, registre des systèmes, conformité RGPD et AI Act, revue humaine) qui encadrent un déploiement maîtrisé de l'IA en interne.",
+  },
+  {
+    term: 'AI Act',
+    def: "Règlement européen 2024/1689 sur l'intelligence artificielle, qui classe les systèmes par niveau de risque et impose documentation, traçabilité et garde-fous.",
+  },
+  {
+    term: 'ROI IA',
+    def: "Retour sur investissement d'un projet d'IA, mesuré sur trois axes : productivité (temps gagné), qualité (erreurs, conformité) et capacité (usages nouveaux rendus possibles).",
+  },
+]
+
+/* ───────── Sources de référence (liens d'autorité, suivis) ───────── */
+
+const REFERENCES = [
+  { label: "AI Act — texte officiel (EUR-Lex, règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+  { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
+  { label: "Intelligence artificielle — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -799,6 +863,61 @@ export default function ConseilIAPage() {
           <p style={{ marginBottom: 0, fontStyle: 'italic', color: GREY_700, borderLeft: `3px solid ${BLUE}`, paddingLeft: 16, marginTop: 32 }}>
             Vous envisagez un projet IA dans votre organisation ? <Link to="/contact" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>Échangeons 30 minutes</Link>{' '}pour cadrer vos enjeux et identifier les premiers cas d'usage à fort impact.
           </p>
+        </div>
+      </section>
+
+      {/* REPÈRES, DÉFINITIONS & SOURCES (SEO + GEO) */}
+      <section style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <div style={kickerStyle}>Repères du marché</div>
+          <h2 style={h2Style}>
+            L'IA en entreprise en 2026 : ce que disent les chiffres
+          </h2>
+          <p style={{ fontSize: 16, color: GREY_700, lineHeight: 1.75, maxWidth: 820, marginBottom: 32 }}>
+            <strong style={{ color: INK }}>La technologie est accessible à toutes les entreprises ; c'est son intégration aux processus et sa conformité qui font la différence.</strong>{' '}
+            Trois repères vérifiables cadrent l'enjeu et expliquent pourquoi le conseil et la gouvernance sont devenus déterminants.
+          </p>
+
+          {/* Repères chiffrés sourcés */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginBottom: 40 }}>
+            {MARKET_STATS.map((s, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                <div style={{ ...iconTileStyle, marginBottom: 14 }}>
+                  <s.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+                </div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: INK, lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
+                <p style={{ fontSize: 13.5, color: GREY_700, lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
+                <p style={{ fontSize: 12, color: GREY_500, margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Définitions clés */}
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '0 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <BookOpen size={20} color={BLUE} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+          </h3>
+          <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
+            {GLOSSARY.map((g, i) => (
+              <div key={i} style={{ borderLeft: `3px solid ${BLUE_SOFT}`, paddingLeft: 16 }}>
+                <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: INK, marginBottom: 4 }}>{g.term}</dt>
+                <dd style={{ margin: 0, fontSize: 14.5, color: GREY_700, lineHeight: 1.65 }}>{g.def}</dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* Sources de référence */}
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '44px 0 16px' }}>
+            Sources de référence
+          </h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
+            {REFERENCES.map((r, i) => (
+              <li key={i}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: BLUE, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Database, ShieldCheck, Sparkles, Search, BarChart3, Network,
   Workflow, Cpu, Server, Lock, FileText, Target, Layers, Gauge, Check,
-  MapPin, GraduationCap,
+  MapPin, GraduationCap, BookOpen, ExternalLink, Scale,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -197,6 +197,78 @@ const FAQ = [
     q: "Intervenez-vous à Lyon et à distance ?",
     a: "Les deux. Masteria est un cabinet spécialisé sur l'intelligence artificielle basé à Lyon, et intervient dans toute la France ainsi qu'en Suisse et en Belgique. L'essentiel du travail data se mène à distance ; les phases de cadrage, d'ateliers de gouvernance ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
   },
+  {
+    q: "Qu'est-ce que le RAG et pourquoi a-t-il besoin de données préparées ?",
+    a: "Le RAG (retrieval-augmented generation, ou génération augmentée par la recherche) est une technique qui branche un modèle de langage sur vos propres documents et bases : au lieu de répondre depuis sa connaissance générale, le modèle va d'abord retrouver les passages pertinents dans vos données, puis formule une réponse sourcée. Sa fiabilité dépend directement de la qualité des données indexées. Des documents mal structurés, des doublons ou des contenus obsolètes produisent des réponses approximatives. Préparer et structurer les données en amont est donc la condition d'un RAG réellement fiable.",
+  },
+  {
+    q: "Combien de temps prend la préparation des données pour un projet IA ?",
+    a: "Cela dépend de l'état de départ et du périmètre du cas d'usage. Un socle déjà propre et bien gouverné peut être rendu exploitable en quelques semaines ; des données dispersées en silos, hétérogènes ou non documentées demandent davantage. La préparation des données reste l'étape la plus chronophage d'un projet d'IA : selon les enquêtes du secteur (Anaconda, State of Data Science), les équipes data y consacrent près de la moitié de leur temps. Notre approche par cas d'usage limite ce coût en ne préparant que les données réellement nécessaires au premier usage à valeur.",
+  },
+  {
+    q: "Faut-il anonymiser les données avant de les utiliser avec l'IA ?",
+    a: "Tout dépend de la sensibilité des données et du cas d'usage. Les données personnelles relèvent du RGPD : leur traitement par un système d'IA suppose une base légale, une minimisation et, selon les cas, une anonymisation ou une pseudonymisation. Nous cartographions les données sensibles dès le cadrage, posons les règles d'accès et de cloisonnement, et privilégions, lorsque c'est requis, un hébergement dans l'Union européenne. L'objectif est un socle exploitable par l'IA sans créer de risque réglementaire ni de fuite de données.",
+  },
+  {
+    q: "Conseil data & IA ou ESN data : quelle différence ?",
+    a: "Une ESN data fournit des compétences techniques (ingénieurs data, data scientists) pour construire des entrepôts, des pipelines ou des tableaux de bord, souvent indépendamment de l'usage final. Un cabinet de conseil data & IA part de l'inverse : du cas d'usage IA visé, pour ne préparer que les données qu'il exige et éviter les grands chantiers sans débouché. Masteria réunit les deux logiques : nous cadrons le socle data en fonction de l'IA, puis développons nous-mêmes les solutions qui s'appuient dessus, sans passer la main à un intégrateur tiers.",
+  },
+]
+
+/* ───────── Repères chiffrés (faits sourcés, citables) ───────── */
+
+const MARKET_STATS = [
+  {
+    icon: Layers,
+    stat: '≈ 50 %',
+    label: "du temps des équipes data consacré à préparer et nettoyer les données avant tout usage",
+    source: 'Anaconda, State of Data Science',
+  },
+  {
+    icon: Scale,
+    stat: '1ᵉʳ août 2024',
+    label: "entrée en vigueur de l'AI Act européen (règlement 2024/1689) : usages des données par l'IA documentés et classés par risque",
+    source: 'Commission européenne',
+  },
+  {
+    icon: ShieldCheck,
+    stat: '25 mai 2018',
+    label: "application du RGPD, socle de conformité de tout traitement de données personnelles par un système d'IA",
+    source: 'CNIL',
+  },
+]
+
+/* ───────── Définitions clés (ancrage d'entités pour la recherche générative) ───────── */
+
+const GLOSSARY = [
+  {
+    term: 'RAG (retrieval-augmented generation)',
+    def: "Technique qui branche un modèle de langage sur vos documents et bases : il retrouve les passages pertinents dans vos données, puis formule une réponse sourcée plutôt qu'une connaissance générale et approximative.",
+  },
+  {
+    term: 'Gouvernance des données',
+    def: "Ensemble des règles qui rendent les données fiables et traçables : catalogue, propriété et responsabilités, règles de qualité, conformité RGPD et AI Act.",
+  },
+  {
+    term: 'Préparation des données',
+    def: "Nettoyage, structuration, déduplication et mise en forme des contenus et bases pour qu'un modèle puisse les exploiter. L'étape qui sépare une démonstration d'un usage fiable.",
+  },
+  {
+    term: 'Qualité des données',
+    def: "Niveau de complétude, de cohérence, de fraîcheur et d'homogénéité des données. Un modèle ne vaut que les données auxquelles il accède.",
+  },
+  {
+    term: 'Vectorisation (embeddings)',
+    def: "Conversion de textes ou documents en représentations numériques permettant à l'IA de retrouver les contenus par sens et non par mots-clés exacts. Brique technique du RAG.",
+  },
+]
+
+/* ───────── Sources de référence (liens d'autorité, suivis) ───────── */
+
+const REFERENCES = [
+  { label: "AI Act — texte officiel (EUR-Lex, règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+  { label: "IA et données personnelles — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -487,6 +559,65 @@ export default function ConseilDataIAPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── CONTEXTE & REPÈRES : éditorial + stats sourcées + définitions (SEO + GEO) ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <Kicker>Contexte & repères</Kicker>
+          <h2 style={h2Style}>
+            Pourquoi la donnée décide du sort des projets d'IA
+          </h2>
+
+          <p style={answerStyle}>
+            <strong>La plupart des projets d'IA qui échouent butent sur la donnée bien avant de buter sur la technologie. Un agent branché sur des données incomplètes, un RAG nourri de documents mal structurés ou une analyse fondée sur des chiffres incohérents produisent des résultats peu fiables, quelle que soit la qualité du modèle.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
+            C'est pourquoi nous traitons la donnée comme un préalable, pas comme un sujet annexe. Préparer le socle data en amont, le gouverner et le mettre en conformité (RGPD, AI Act) est la façon la plus sûre de fiabiliser un projet d'IA et d'en sécuriser le passage à l'échelle.
+          </p>
+
+          {/* Repères chiffrés sourcés — citables par les moteurs de réponse */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '0 0 32px' }}>
+            {MARKET_STATS.map((s, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                <div style={{ marginBottom: 14 }}>
+                  <IconTile icon={s.icon} />
+                </div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
+                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
+                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Définitions clés — ancrage d'entités */}
+          <h3 style={{ ...h3Style, fontSize: 20, margin: '8px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+          </h3>
+          <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
+            {GLOSSARY.map((g, i) => (
+              <div key={i} style={{ borderLeft: `3px solid ${cLight}`, paddingLeft: 16 }}>
+                <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>{g.term}</dt>
+                <dd style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.65 }}>{g.def}</dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* Sources de référence — liens d'autorité suivis */}
+          <h3 style={{ ...h3Style, fontSize: 20, margin: '44px 0 16px' }}>
+            Sources de référence
+          </h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
+            {REFERENCES.map((r, i) => (
+              <li key={i}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

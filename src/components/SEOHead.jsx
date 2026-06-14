@@ -31,6 +31,7 @@ export default function SEOHead({
   noindex = false,
   extraJsonLd,
   locale,           // ex: 'fr-CH' ou 'fr-BE' — ajoute un hreflang supplémentaire pour le SEO international
+  keywords,         // mots-clés spécifiques à la page (fallback : keywords formation par défaut)
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
@@ -377,7 +378,7 @@ export default function SEOHead({
       <meta name="twitter:creator" content="@mathias_nizan" />
 
       {/* Keywords (utile pour Bing/Yandex + meilleure pertinence sémantique) */}
-      <meta name="keywords" content="formation IA entreprise, formation ChatGPT, formation Claude IA, formation Microsoft Copilot, formation Google Gemini, formation Mistral AI, IA en entreprise, certifié Qualiopi, finançable OPCO, Lyon" />
+      <meta name="keywords" content={keywords || "formation IA entreprise, formation ChatGPT, formation Claude IA, formation Microsoft Copilot, formation Google Gemini, formation Mistral AI, IA en entreprise, certifié Qualiopi, finançable OPCO, Lyon"} />
 
       {/* Pragma : pas de cache pour navigation entre pages prerendées */}
       <meta httpEquiv="content-language" content="fr-FR" />

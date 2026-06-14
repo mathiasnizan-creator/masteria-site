@@ -45,6 +45,8 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
+const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
+const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
@@ -63,6 +65,52 @@ const HERO_BADGES = [
   { icon: ServerCog, label: 'Régie · développeurs sur site' },
   { icon: Compass, label: 'Accompagnement conseil' },
   { icon: KeyRound, label: 'Code propriété client' },
+]
+
+/* ───────── En bref (synthèse citable — GEO) ───────── */
+
+const EN_BREF = [
+  { label: 'Méthode', value: "5 étapes (cadrage, prototype/POC, développement, déploiement, transfert), un livrable à chacune" },
+  { label: 'Engagement', value: "Forfait au projet · régie (développeurs IA détachés, sur site ou à distance) · accompagnement conseil" },
+  { label: 'Facturation', value: "Au forfait, au temps passé (régie) ou mixte selon le périmètre" },
+  { label: 'Propriété', value: "Le code développé appartient au client" },
+  { label: "Modèles d'IA", value: "Multi-LLM (Claude, GPT, Gemini, Mistral, Copilot), indépendants des éditeurs" },
+  { label: 'Modalité', value: "Sur site ou à distance · Lyon, France, Suisse, Belgique" },
+]
+
+/* ───────── Forfait vs régie vs conseil (tableau de décision citable — GEO) ───────── */
+
+const DECISION = [
+  {
+    critere: 'Ce qui est fixé',
+    forfait: "Périmètre, prix et délai, définis avant de démarrer",
+    regie: "Un cadre de collaboration ; le périmètre évolue avec vos priorités",
+    conseil: "Des objectifs de cadrage, de gouvernance ou d'architecture",
+  },
+  {
+    critere: 'Facturation',
+    forfait: "Prix global fixé au projet",
+    regie: "Au temps passé (taux journalier), selon le profil et la durée",
+    conseil: "Au forfait ou au temps, selon le périmètre",
+  },
+  {
+    critere: 'Idéal pour',
+    forfait: "Un POC ou un projet bien cadré dont vous maîtrisez le coût",
+    regie: "Un environnement sensible ou une montée en charge",
+    conseil: "Un besoin en amont du build (stratégie, gouvernance)",
+  },
+  {
+    critere: 'Vous gardez la main sur',
+    forfait: "Le résultat attendu et le budget",
+    regie: "Le pilotage, les priorités et la gouvernance au quotidien",
+    conseil: "La décision finale, éclairée par un partenaire spécialisé",
+  },
+  {
+    critere: 'Propriété du code',
+    forfait: "Au client",
+    regie: "Au client",
+    conseil: "Au client (livrables et préconisations)",
+  },
 ]
 
 /* ───────── La méthode projet (timeline 5 étapes avec livrable) ───────── */
@@ -214,6 +262,26 @@ const FAQ = [
     q: "Comment garantissez-vous la confidentialité et la conformité ?",
     a: "Par des engagements écrits de confidentialité, un cloisonnement des accès et une journalisation des traitements. Pour les environnements sensibles, la régie sur site permet de travailler sans que les données ne quittent votre SI, et un hébergement dans l'Union européenne reste possible. Côté conformité, nous intégrons le RGPD dès la conception et lisons les obligations de l'AI Act selon le niveau de risque de l'usage. La gouvernance n'est pas un sujet traité après coup : elle fait partie du cadrage.",
   },
+  {
+    q: "Qu'est-ce que la régie IA ?",
+    a: "La régie consiste à détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, intégrés à vos rituels et à vos outils, et facturés au temps passé. À la différence du forfait, où le périmètre et le prix sont fixés à l'avance, la régie offre de la souplesse : le travail s'ajuste à vos priorités au fil de l'eau. Vous gardez la main sur le pilotage et la gouvernance ; nous apportons l'expertise IA au quotidien. Ce mode convient particulièrement aux environnements sensibles, où les données ne doivent pas sortir de votre système d'information, et aux phases de montée en charge.",
+  },
+  {
+    q: "Travaillez-vous avec des PME ou seulement des grands groupes ?",
+    a: "Les deux. La méthode et les modèles d'engagement s'adaptent à la taille de l'organisation et à l'ampleur du projet. Une PME démarre souvent par un projet cadré au forfait sur un cas précis ; une ETI ou un grand groupe mobilise plutôt la régie pour un renfort durable ou l'accompagnement conseil sur une trajectoire à l'échelle. Le point commun reste le même : un périmètre clair, des livrables concrets et un code qui vous appartient.",
+  },
+  {
+    q: "Que se passe-t-il après le déploiement ? Assurez-vous la maintenance ?",
+    a: "Oui, selon la formule qui vous convient. Une fois la solution en production, nous transférons la compétence à vos équipes pour qu'elles puissent l'exploiter en autonomie, documentation et formation à l'appui. Si vous préférez nous confier le suivi, nous proposons un accompagnement de maintenance et d'évolution, au forfait ou en régie. Comme le code vous appartient, vous restez libre d'assurer le run en interne, avec nous ou avec un autre prestataire.",
+  },
+  {
+    q: "Quels modèles d'IA utilisez-vous pour développer les solutions ?",
+    a: "Nous sommes indépendants des éditeurs et travaillons en multi-LLM : Claude (Anthropic), GPT (OpenAI), Gemini (Google), Mistral et Microsoft Copilot, ainsi que des modèles open source quand le contexte l'exige. Le choix du modèle dépend de votre cas d'usage et de vos contraintes de coût, de performance et de confidentialité, jamais d'un contrat d'exclusivité. Pour les environnements sensibles, nous privilégions les options qui gardent vos données dans l'Union européenne ou dans votre système d'information.",
+  },
+  {
+    q: "Combien de temps dure un projet IA, du cadrage au déploiement ?",
+    a: "Cela dépend du périmètre. Un prototype ou un POC sur un cas unique se mène souvent en quelques semaines. Un développement complet jusqu'à la mise en production s'étale sur plusieurs semaines à quelques mois selon la complexité, les intégrations à votre système d'information et les exigences de conformité. Notre méthode en étapes, avec un livrable et un point de décision à chacune, vous permet d'avancer par paliers maîtrisés plutôt que de vous engager à l'aveugle sur un projet long.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -222,9 +290,11 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
   name: "Méthode et modèles d'engagement IA — Masteria",
+  alternateName: "Modèles d'engagement IA : forfait, régie, conseil",
   description: "Méthode projet IA de bout en bout (cadrage, prototype, développement, déploiement, transfert) et trois modèles d'engagement : forfait au projet, régie avec développeurs sur site, accompagnement conseil. Propriété du code au client, gouvernance et conformité (RGPD, AI Act).",
   url: 'https://www.master-ia.fr/methode-projet-ia',
   serviceType: "Développement et conseil IA — modèles d'engagement",
+  category: "Développement de solutions IA sur mesure",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   areaServed: [
     { '@type': 'Country', name: 'France' },
@@ -240,6 +310,21 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Accompagnement conseil', description: "Cadrage, gouvernance et choix d'architecture, en amont du développement." } },
     ],
   },
+}
+
+/* Méthode en 5 étapes décrite en ItemList (séquence citable — GEO ; HowTo
+   volontairement évité, Google ayant retiré les rich results HowTo en 2023). */
+const methodeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: "Méthode projet IA Masteria — 5 étapes",
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  itemListElement: ETAPES.map((step, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: step.title,
+    description: step.desc,
+  })),
 }
 
 /* ───────── Composants ───────── */
@@ -281,7 +366,7 @@ export default function MethodeProjetIAPage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        extraJsonLd={[serviceJsonLd, methodeJsonLd]}
       />
 
       {/* ── HERO clair ── */}
@@ -336,6 +421,19 @@ export default function MethodeProjetIAPage() {
                 {label}
               </span>
             ))}
+          </div>
+
+          {/* En bref — synthèse citable (GEO) */}
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', marginTop: 36, maxWidth: 760 }}>
+            <div style={kickerStyle}>En bref</div>
+            <dl style={{ margin: 0 }}>
+              {EN_BREF.map((row, i) => (
+                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                  <dt style={{ flex: '0 0 104px', fontWeight: 800, fontSize: 13.5, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
@@ -429,6 +527,41 @@ export default function MethodeProjetIAPage() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Forfait vs régie vs conseil — tableau de décision citable (GEO) */}
+          <div style={{ marginTop: 'clamp(48px, 7vw, 80px)', paddingTop: 'clamp(40px, 6vw, 64px)', borderTop: '1px solid #E5E7EB' }}>
+            <Kicker>Comment choisir</Kicker>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>
+              Forfait, régie ou conseil : comment choisir ?
+            </h2>
+
+            <p style={{ ...answerStyle, background: '#fff' }}>
+              <strong>Choisissez le forfait pour un projet cadré dont vous voulez maîtriser le coût total, la régie pour intégrer des développeurs IA à vos équipes dans un environnement sensible ou une montée en charge, et l'accompagnement conseil quand le besoin se situe en amont du développement. Dans les trois cas, le code développé vous appartient, et les modèles se combinent.</strong>
+            </p>
+
+            <div style={{ ...cardStyle, overflowX: 'auto' }}>
+              <table aria-label="Comparatif entre forfait au projet, régie et accompagnement conseil" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ ...thStyle, width: '22%' }}>Critère</th>
+                    <th scope="col" style={{ ...thStyle, width: '26%' }}>Forfait au projet</th>
+                    <th scope="col" style={{ ...thStyle, width: '26%', color: c }}>Régie · développeurs détachés</th>
+                    <th scope="col" style={{ ...thStyle, width: '26%' }}>Accompagnement conseil</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DECISION.map((row, i) => (
+                    <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                      <th scope="row" style={{ ...tdStyle, textAlign: 'left', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.critere}</th>
+                      <td style={tdStyle}>{row.forfait}</td>
+                      <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.regie}</td>
+                      <td style={tdStyle}>{row.conseil}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

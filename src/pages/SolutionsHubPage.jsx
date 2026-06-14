@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle,
-  Plug, Check, Cpu, KeyRound, Users, Workflow, Wrench,
+  Plug, Check, Cpu, KeyRound, Users, Workflow, Wrench, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -46,7 +46,7 @@ const HUB_FAQ = [
   },
   {
     q: 'Combien coûte une solution IA sur mesure ?',
-    a: "Le développement se chiffre au forfait, sur devis, après un cadrage. Selon le type de livrable et le périmètre, les budgets de marché vont couramment de 8 000 € pour un chatbot ou un prototype ciblé à 70 000 € et plus pour un agent ou une automatisation reliés à plusieurs systèmes. Chez Masteria, le premier échange de cadrage est gratuit et le devis suit la définition du périmètre.",
+    a: "Le développement se chiffre au forfait, sur devis, après un cadrage. Selon le type de livrable et le périmètre, comptez de l'ordre de 8 000 € pour un chatbot ou un prototype ciblé, de 15 000 à 70 000 € pour une solution en production reliée à vos données et à vos outils, et au-delà de 100 000 € pour un déploiement à l'échelle ou en régie, jusqu'à plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le premier échange de cadrage est gratuit et le devis suit la définition du périmètre.",
   },
   {
     q: 'À qui appartient le code des solutions développées ?',
@@ -62,17 +62,32 @@ const HUB_FAQ = [
   },
 ]
 
+const PAGE_KEYWORDS = [
+  'solutions IA sur mesure', 'solution IA entreprise', 'développement IA sur mesure',
+  'copilote IA', 'assistant documentaire IA', 'RAG entreprise', 'agent IA support client',
+  'agent IA commercial', 'chatbot IA sur mesure', 'intégration LLM', 'Masteria',
+].join(', ')
+
 const itemListJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   '@id': `${SITE}/${SLUG}#itemlist`,
   name: 'Solutions IA sur mesure — Masteria',
   description: META_DESC,
+  numberOfItems: SOLUTIONS.length,
+  itemListOrder: 'https://schema.org/ItemListUnordered',
   itemListElement: SOLUTIONS.map((s, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    name: s.name,
     url: `${SITE}/${s.slug}`,
+    item: {
+      '@type': 'Service',
+      name: s.name,
+      description: s.cardSummary,
+      url: `${SITE}/${s.slug}`,
+      serviceType: s.name,
+      provider: { '@id': `${SITE}/#organization` },
+    },
   })),
 }
 
@@ -88,6 +103,7 @@ export default function SolutionsHubPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={PAGE_KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={HUB_FAQ}
         extraJsonLd={itemListJsonLd}
@@ -191,10 +207,47 @@ export default function SolutionsHubPage() {
         </div>
       </section>
 
-      {/* ── DÉVELOPPEURS EN RÉGIE ── */}
+      {/* ── MATRICE DE DÉCISION : OBJECTIF → SOLUTION (GEO + maillage) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <div style={{ ...cardStyle, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={kickerStyle}>Quelle solution pour quel objectif</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Partez de votre objectif, trouvez la solution
+          </h2>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 32px', maxWidth: 880 }}>
+            Le plus simple est de partir du résultat attendu. À chaque objectif courant correspond une famille de solution ; un même besoin en combine souvent plusieurs.
+          </p>
+          <div style={{ ...cardStyle, overflowX: 'auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', minWidth: 460, borderBottom: '1px solid #E5E7EB' }}>
+              <div style={{ padding: '14px 18px', fontSize: 12, fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Votre objectif</div>
+              <div style={{ padding: '14px 18px', fontSize: 12, fontWeight: 700, color: c, textTransform: 'uppercase', letterSpacing: '0.04em' }}>La solution adaptée</div>
+            </div>
+            {SOLUTIONS.map((s, i) => (
+              <Link
+                key={s.slug}
+                to={`/${s.slug}`}
+                style={{ textDecoration: 'none', display: 'grid', gridTemplateColumns: '1.4fr 1fr', minWidth: 460, borderTop: i === 0 ? 'none' : '1px solid #F3F4F6', background: '#fff' }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#F9FBFF' }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#fff' }}
+              >
+                <div style={{ padding: '16px 18px', fontSize: 14.5, color: '#0A0A0A', fontWeight: 600, display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                  <Target size={17} strokeWidth={2.2} style={{ color: '#9CA3AF', flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                  <span>{s.goal}</span>
+                </div>
+                <div style={{ padding: '16px 18px', fontSize: 14, color: c, fontWeight: 700, display: 'flex', gap: 6, alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>{s.name}</span>
+                  <ArrowRight size={15} strokeWidth={2.4} style={{ flexShrink: 0 }} aria-hidden="true" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DÉVELOPPEURS EN RÉGIE ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <Users size={28} strokeWidth={2} style={{ color: c }} />
             </div>
@@ -216,7 +269,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* ── MAILLAGE / RESSOURCES ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={kickerStyle}>Pour aller plus loin</div>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
@@ -256,7 +309,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
           <div style={kickerStyle}>FAQ</div>
           <h2 style={{ ...h2Style, marginBottom: 24 }}>
@@ -272,7 +325,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
-      <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
+      <section style={{ background: '#F9FAFB', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
         <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div style={{ ...kickerStyle, color: cLight }}>Premier échange gratuit</div>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>

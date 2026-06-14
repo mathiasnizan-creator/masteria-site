@@ -46,6 +46,8 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
+const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
+const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
@@ -64,6 +66,52 @@ const HERO_BADGES = [
   { icon: FileText, label: 'Feuille de route livrée' },
   { icon: ShieldCheck, label: 'Sans engagement de suite' },
   { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+]
+
+/* ───────── En bref (synthèse citable — GEO) ───────── */
+
+const EN_BREF = [
+  { label: 'Format', value: "Une journée de travail, préparation et restitution incluses" },
+  { label: 'Livrable', value: "Feuille de route IA priorisée, estimations de budget et de délai, quick wins" },
+  { label: 'Engagement', value: "Faible, sans suite obligatoire ; le livrable vous appartient" },
+  { label: 'Pour qui', value: "COMEX, DSI et directions métier · PME, ETI et grands groupes" },
+  { label: 'Modalité', value: "Sur site ou à distance · Lyon, France, Suisse, Belgique" },
+  { label: 'Et après', value: "Enchaînement possible sur POC, développement sur mesure ou régie" },
+]
+
+/* ───────── Diagnostic vs audit vs POC (tableau citable — GEO) ───────── */
+
+const COMPARATIF = [
+  {
+    critere: 'Objectif',
+    diagnostic: "Cadrer les usages et prioriser les cas d'usage IA",
+    audit: "Évaluer en profondeur la maturité, les données et l'existant",
+    poc: "Prouver la valeur d'un cas d'usage précis en conditions réelles",
+  },
+  {
+    critere: 'Durée',
+    diagnostic: "Une journée (préparation et restitution incluses)",
+    audit: "De quelques jours à quelques semaines",
+    poc: "Quelques semaines de développement",
+  },
+  {
+    critere: 'Livrable',
+    diagnostic: "Feuille de route priorisée, estimations, quick wins",
+    audit: "Rapport détaillé de maturité et plan de transformation",
+    poc: "Prototype fonctionnel testé sur un vrai flux",
+  },
+  {
+    critere: 'Engagement',
+    diagnostic: "Faible : une journée, sans suite obligatoire",
+    audit: "Moyen : mission de conseil cadrée",
+    poc: "Projet de développement engagé sur un cas",
+  },
+  {
+    critere: 'Quand le choisir',
+    diagnostic: "Vous voulez savoir par où commencer",
+    audit: "Vous voulez une vision exhaustive avant d'industrialiser",
+    poc: "Un cas est déjà identifié, vous voulez le valider",
+  },
 ]
 
 /* ───────── Ce que couvre le diagnostic (4 cartes) ───────── */
@@ -202,6 +250,22 @@ const FAQ = [
     q: "Le diagnostic se fait-il sur site ou à distance ?",
     a: "Les deux sont possibles. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'en Suisse et en Belgique. La journée de diagnostic peut se tenir sur site, ce qui facilite les ateliers et l'implication des équipes, ou en distanciel en visio. La préparation et la restitution se conduisent très bien à distance dans tous les cas.",
   },
+  {
+    q: "Quelle est la différence entre un diagnostic IA et un audit IA ?",
+    a: "Le diagnostic IA est une intervention courte, d'une journée, qui cadre vos usages et priorise les cas d'usage à plus forte valeur pour savoir par où commencer. L'audit IA va plus loin : il évalue en détail votre maturité, vos données, vos outils et votre organisation, sur plusieurs jours ou semaines, et débouche sur un rapport complet et un plan de transformation. Le diagnostic est le point d'entrée le plus rapide et le moins engageant ; l'audit convient quand vous voulez une vision exhaustive avant d'industrialiser. Les deux se complètent : un diagnostic peut précéder un audit ciblé sur les cas retenus.",
+  },
+  {
+    q: "Le diagnostic IA convient-il à une PME ?",
+    a: "Oui. Le diagnostic est dimensionné selon votre taille et votre périmètre. Une PME y trouve une lecture claire de ce que l'IA peut lui apporter sans lancer un grand chantier, avec des quick wins activables rapidement. Une ETI ou un grand groupe l'utilise plutôt pour cadrer un périmètre précis avant d'industrialiser. Dans tous les cas, le livrable reste le même : une feuille de route priorisée et exploitable en interne.",
+  },
+  {
+    q: "Faut-il déjà utiliser l'IA pour faire un diagnostic ?",
+    a: "Non. Le diagnostic s'adresse autant aux organisations qui débutent qu'à celles qui ont déjà quelques usages en place. Si vous partez de zéro, il identifie les premiers cas d'usage et les quick wins. Si vous avez déjà expérimenté, il met de l'ordre dans les initiatives, priorise et corrige la trajectoire. Aucun prérequis technique n'est nécessaire pour y participer.",
+  },
+  {
+    q: "Combien de temps faut-il entre la demande et la restitution du livrable ?",
+    a: "Comptez le plus souvent de une à trois semaines entre le premier échange de cadrage et la restitution, selon vos disponibilités et celles de vos équipes. La journée de diagnostic se planifie à une date convenue ensemble ; la préparation en amont et la formalisation du livrable en aval s'organisent autour. Après votre demande, nous revenons vers vous sous 24 heures pour fixer le périmètre et la date.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -210,9 +274,11 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
   name: 'Diagnostic IA — Masteria',
+  alternateName: 'Diagnostic intelligence artificielle',
   description: "Diagnostic IA productisé en une journée : cadrage des usages, cartographie des processus automatisables, priorisation impact/effort. Livrable : feuille de route priorisée, estimations de budget et de délai, quick wins. Offre d'entrée à faible engagement, sans suite obligatoire.",
   url: 'https://www.master-ia.fr/diagnostic-ia',
   serviceType: "Diagnostic et feuille de route IA",
+  category: "Conseil en intelligence artificielle",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   areaServed: [
     { '@type': 'Country', name: 'France' },
@@ -232,6 +298,21 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Feuille de route priorisée', description: "Trajectoire chiffrée avec estimations de budget et de délai et quick wins activables." } },
     ],
   },
+}
+
+/* Déroulé du diagnostic en ItemList (séquence citable — GEO ; HowTo volontairement
+   évité, Google ayant retiré les rich results HowTo en 2023). */
+const processJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: "Déroulé du diagnostic IA Masteria",
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  itemListElement: DEROULE.map((step, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${step.phase} — ${step.title}`,
+    description: step.desc,
+  })),
 }
 
 /* ───────── Composants ───────── */
@@ -273,7 +354,7 @@ export default function DiagnosticIAPage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        extraJsonLd={[serviceJsonLd, processJsonLd]}
       />
 
       {/* ── HERO clair ── */}
@@ -329,6 +410,19 @@ export default function DiagnosticIAPage() {
               </span>
             ))}
           </div>
+
+          {/* En bref — synthèse citable (GEO) */}
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', marginTop: 36, maxWidth: 760 }}>
+            <div style={kickerStyle}>En bref</div>
+            <dl style={{ margin: 0 }}>
+              {EN_BREF.map((row, i) => (
+                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                  <dt style={{ flex: '0 0 92px', fontWeight: 800, fontSize: 13.5, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -363,6 +457,41 @@ export default function DiagnosticIAPage() {
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
             Le diagnostic s'inscrit dans une logique plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link>. Quand un cas est prêt, il enchaîne naturellement sur le <Link to="/agence-developpement-ia" style={aStyle}>développement sur mesure</Link>.
           </p>
+
+          {/* Diagnostic vs audit vs POC — tableau citable (GEO) */}
+          <div style={{ marginTop: 'clamp(48px, 7vw, 80px)', paddingTop: 'clamp(40px, 6vw, 64px)', borderTop: '1px solid #E5E7EB' }}>
+            <Kicker>Diagnostic, audit ou POC</Kicker>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>
+              Diagnostic, audit ou POC : quelle différence ?
+            </h2>
+
+            <p style={answerStyle}>
+              <strong>Le diagnostic IA, l'audit IA et le POC répondent à trois besoins distincts. Le diagnostic cadre et priorise vos usages en une journée. L'audit évalue en profondeur votre maturité et vos données. Le POC prouve la valeur d'un cas précis en conditions réelles. Pour un premier pas, le diagnostic est le point d'entrée le plus rapide et le moins engageant.</strong>
+            </p>
+
+            <div style={{ ...cardStyle, overflowX: 'auto' }}>
+              <table aria-label="Comparatif entre diagnostic IA, audit IA complet et POC" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ ...thStyle, width: '20%' }}>Critère</th>
+                    <th scope="col" style={{ ...thStyle, width: '28%', color: c }}>Diagnostic IA</th>
+                    <th scope="col" style={{ ...thStyle, width: '26%' }}>Audit IA complet</th>
+                    <th scope="col" style={{ ...thStyle, width: '26%' }}>POC / preuve de concept</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARATIF.map((row, i) => (
+                    <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                      <th scope="row" style={{ ...tdStyle, textAlign: 'left', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.critere}</th>
+                      <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.diagnostic}</td>
+                      <td style={tdStyle}>{row.audit}</td>
+                      <td style={tdStyle}>{row.poc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 

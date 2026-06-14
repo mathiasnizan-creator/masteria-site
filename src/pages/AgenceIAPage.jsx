@@ -153,6 +153,14 @@ const FAQ = [
     q: 'Agence IA ou freelance IA : que choisir ?',
     a: "Un freelance IA convient à un besoin ponctuel, bien cadré et porté par une seule compétence. Une agence apporte une combinaison de profils (stratégie, développement, conformité, formation), un interlocuteur stable et une méthode éprouvée, ce qu'un projet IA transverse exige souvent. Pour un cadrage stratégique, un développement intégré à votre système d'information ou un déploiement qui doit rendre vos équipes autonomes, l'agence sécurise mieux le résultat. Pour une tâche isolée et délimitée, un freelance peut suffire.",
   },
+  {
+    q: 'Êtes-vous une agence IA française ?',
+    a: "Oui. Masteria est une agence IA française, fondée à Lyon en 2022, avec une équipe basée en France. Nous intervenons dans toute la France en présentiel et en distanciel, ainsi qu'en Suisse et en Belgique. Vos données peuvent être traitées dans l'Union européenne selon le besoin, et nos contrats relèvent du droit français. Pour les équipes situées hors de France, nous adaptons le cadre (facturation, financement) au pays concerné, sans promettre de dispositif qui n'existe pas localement.",
+  },
+  {
+    q: "Accompagnez-vous les entreprises sur l'ensemble du projet, du conseil au développement ?",
+    a: "Oui, c'est notre différence en tant qu'agence conseil IA pour entreprise : nous couvrons toute la chaîne sous un même toit. Nous cadrons la stratégie et la gouvernance, puis nous concevons et développons les agents, outils et automatisations, et enfin nous formons vos équipes pour qu'elles restent autonomes. Vous gardez un interlocuteur unique du premier cadrage jusqu'à la passation, au lieu de coordonner un cabinet de conseil, un studio de développement et un organisme de formation séparés.",
+  },
 ]
 
 const LOCAL_BUSINESS_JSONLD = {
@@ -197,6 +205,32 @@ const LOCAL_BUSINESS_JSONLD = {
   parentOrganization: { '@id': 'https://www.master-ia.fr/#organization' },
 }
 
+/* DefinedTermSet : définitions citables (GEO) des entités centrales de la page.
+   Reprend en données structurées ce que la page explique déjà en prose. */
+const DEFINITIONS_JSONLD = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': 'https://www.master-ia.fr/agence-ia#glossaire',
+  name: 'Glossaire — agence IA, cabinet de conseil IA, automatisation',
+  hasDefinedTerm: [
+    {
+      '@type': 'DefinedTerm',
+      name: 'Agence IA',
+      description: "Prestataire qui conçoit et déploie des solutions d'intelligence artificielle pour les entreprises : développements sur mesure, agents, automatisations et intégrations d'outils, souvent accompagnés de conseil stratégique et de formation.",
+    },
+    {
+      '@type': 'DefinedTerm',
+      name: 'Cabinet de conseil IA',
+      description: "Structure qui intervient en amont d'un projet IA : audit de maturité, stratégie, cartographie des cas d'usage, gouvernance des données et choix d'outils. La frontière avec l'agence IA est devenue poreuse, beaucoup de structures combinant conseil et développement.",
+    },
+    {
+      '@type': 'DefinedTerm',
+      name: 'Transfert de compétence',
+      description: "Démarche par laquelle un prestataire IA documente et forme les équipes du client pour qu'elles sachent faire fonctionner, corriger et étendre les outils livrés, au lieu d'installer une dépendance durable.",
+    },
+  ],
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -233,7 +267,7 @@ export default function AgenceIAPage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={LOCAL_BUSINESS_JSONLD}
+        extraJsonLd={[LOCAL_BUSINESS_JSONLD, DEFINITIONS_JSONLD]}
       />
 
       {/* ── HERO clair ── */}
