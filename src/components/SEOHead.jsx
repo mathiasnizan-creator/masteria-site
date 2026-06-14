@@ -58,8 +58,18 @@ export default function SEOHead({
       'Intelligence artificielle générative',
       'ChatGPT', 'Microsoft Copilot', 'Google Gemini', 'Claude (Anthropic)', 'Mistral AI',
       'Prompt engineering', 'Formation professionnelle IA', 'Transformation par l\'IA',
+      'Conseil en stratégie IA', 'Développement de solutions IA sur mesure',
+      'Agents IA', 'Automatisation des processus par IA', 'RAG (retrieval-augmented generation)',
+      'Gouvernance et conformité IA (RGPD, AI Act)',
     ],
-    description: "Fondateur de Masteria, centre de formation IA certifié Qualiopi. Forme PME, ETI et grands groupes à ChatGPT, Copilot, Gemini, Claude et Mistral AI depuis 2022.",
+    // Citation presse vérifiable (E-E-A-T) : Mathias Nizan cité par Les Échos.
+    subjectOf: {
+      '@type': 'NewsArticle',
+      headline: "ChatGPT, Claude, Copilot, Gemini, Mistral : comment choisir l'IA la plus adaptée à son métier",
+      url: 'https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741',
+      publisher: { '@type': 'NewsMediaOrganization', name: 'Les Échos', url: 'https://www.lesechos.fr' },
+    },
+    description: "Fondateur de Masteria, cabinet de conseil et développement IA et centre de formation certifié Qualiopi. Accompagne PME, ETI et grands groupes sur la stratégie, le développement de solutions IA sur mesure et la formation, depuis 2022. Cité par Les Échos.",
   }
 
   /* ───── JSON-LD Organization (référence globale) ───── */

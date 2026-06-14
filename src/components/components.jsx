@@ -121,7 +121,6 @@ const CONSEIL_COLS = [
       { label: 'Agence IA marketing',     desc: 'IA appliquée au marketing et au growth', slug: 'agence-ia-marketing', Icon: Megaphone },
       { label: 'Agence SEO IA',           desc: 'Référencement Google et visibilité dans les IA', slug: 'agence-seo-ia', Icon: Search },
       { label: 'Automatisation IA · guide', desc: 'Comprendre et cadrer vos automatisations', slug: 'automatisation-ia', Icon: Workflow },
-      { label: 'Meilleure agence IA',     desc: 'Critères et repères de sélection',     slug: 'meilleure-agence-ia', Icon: Award },
     ],
   },
 ]

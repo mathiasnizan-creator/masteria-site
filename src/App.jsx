@@ -1455,6 +1455,7 @@ export default function App() {
       <ScrollToTop />
       <MasteriaHeader />
       <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+      <main id="contenu">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/formations" element={<FormationsScreen />} />
@@ -1542,6 +1543,7 @@ export default function App() {
         ))}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </main>
       <MasteriaFooter />
       </Suspense>
       <Analytics />
