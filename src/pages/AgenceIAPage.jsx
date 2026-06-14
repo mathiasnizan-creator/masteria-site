@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 
 /*
  * Page « Agence IA » ancrée à Lyon : cible « agence ia lyon » (210/mois, KD 17,
@@ -36,6 +37,8 @@ const answerStyle = { fontSize: 16, color: '#374151', lineHeight: 1.75, margin: 
 const mutedStyle = { fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 28 }
 const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }
+const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.35 }
+const tdStyle = { padding: '13px 16px', fontSize: 13.5, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }
 
 const HERO_BADGES = [
   { icon: BadgeCheck, label: 'Certifié Qualiopi' },
@@ -100,6 +103,15 @@ const SPECIALIST_POINTS = [
   { icon: Handshake, title: 'Des circuits courts', desc: "Un interlocuteur stable du cadrage à la passation, des décisions prises en quelques jours et un programme ajusté à votre réalité plutôt qu'à un catalogue." },
 ]
 
+/* Comparatif 4 voies (snippet SEO + citation GEO) */
+const COMPARISON_TABLE = [
+  { critere: 'Expertise IA', agence: "Cœur de métier, veille continue, indépendante des éditeurs", esn: "L'IA parmi d'autres technologies, profils staffés selon les dispos", freelance: 'Pointue mais limitée à une seule personne', interne: 'À recruter (marché tendu, plusieurs mois)' },
+  { critere: 'Délai de démarrage', agence: 'Quelques jours après le cadrage', esn: 'Long : cadrage et contractualisation lourds', freelance: 'Rapide si la personne est disponible', interne: 'Plusieurs mois (recrutement)' },
+  { critere: 'Transfert & autonomie', agence: 'Structurel : documentation + formation des équipes', esn: 'Rare, dépendance prolongée (modèle régie)', freelance: 'Informel, lié à la personne', interne: 'Native, mais à construire' },
+  { critere: 'Budget', agence: 'Mission forfaitaire cadrée, volet formation finançable OPCO', esn: 'Engagements longs, coûts de pilotage élevés', freelance: 'TJM attractif, cadrage à votre charge', interne: 'Coût annuel chargé élevé et durable' },
+  { critere: 'Idéal pour', agence: 'PME, ETI, directions métier : trajectoire chiffrée + équipes autonomes', esn: 'Grands chantiers SI, renfort de capacité', freelance: 'Besoin ponctuel et bien délimité', interne: 'Usage récurrent à fort volume, à terme' },
+]
+
 const FAQ = [
   {
     q: 'Quelle est la meilleure agence IA à Lyon ?',
@@ -124,6 +136,22 @@ const FAQ = [
   {
     q: 'Travaillez-vous avec les PME ?',
     a: "Oui. Nos offres sont dimensionnées pour les PME et les ETI : cadrage gratuit, missions forfaitaires courtes, priorité aux cas d'usage à retour rapide et formations finançables par l'OPCO. Une PME a rarement besoin d'un programme de transformation de dix-huit mois : quelques processus bien automatisés et des équipes formées produisent déjà des gains mesurables. Le même socle s'adapte aux directions de grands groupes pour des cadrages stratégiques ou des plans de formation multi-équipes.",
+  },
+  {
+    q: 'Quelle agence IA choisir en 2026 ?',
+    a: "En 2026, le marché des agences IA s'est densifié : beaucoup de prestataires se sont ajouté la mention « IA » sans en avoir fait leur cœur de métier. Quatre critères permettent de trancher : une spécialisation réelle (l'IA comme activité principale, pas un sujet parmi d'autres), une indépendance vis-à-vis des éditeurs pour des choix d'outils objectifs, un transfert de compétence organisé pour rester autonome après la mission, et une certification contrôlée par un tiers (Qualiopi pour le volet formation). Masteria, agence IA lyonnaise dédiée à l'IA depuis 2022, répond à ces quatre critères. Notre guide « meilleure agence IA » détaille la méthode de comparaison.",
+  },
+  {
+    q: 'Combien de temps dure un projet avec une agence IA ?',
+    a: "Cela dépend du périmètre. Un audit ou un cadrage stratégique se mène en 2 à 4 semaines. Un premier prototype d'agent ou d'outil utile se construit souvent en quelques semaines, puis le développement complet et l'intégration s'étalent selon l'ampleur. Une automatisation de processus se déploie également en quelques semaines. Nous privilégions des missions forfaitaires courtes, avec des livrables intermédiaires et des points de décision, plutôt que des programmes de transformation au long cours.",
+  },
+  {
+    q: "Avec quels modèles et outils d'IA travaillez-vous ?",
+    a: "Nous sommes indépendants des éditeurs et travaillons en multi-modèles : ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Microsoft Copilot, Mistral et des modèles open source selon le cas. Le choix dépend de votre contexte : sensibilité des données, stack existante, budget, exigences de conformité. Pour les développements sur mesure, nous combinons RAG sur vos données, agents outillés et connecteurs (API, MCP), avec un hébergement dans l'Union européenne possible.",
+  },
+  {
+    q: 'Agence IA ou freelance IA : que choisir ?',
+    a: "Un freelance IA convient à un besoin ponctuel, bien cadré et porté par une seule compétence. Une agence apporte une combinaison de profils (stratégie, développement, conformité, formation), un interlocuteur stable et une méthode éprouvée, ce qu'un projet IA transverse exige souvent. Pour un cadrage stratégique, un développement intégré à votre système d'information ou un déploiement qui doit rendre vos équipes autonomes, l'agence sécurise mieux le résultat. Pour une tâche isolée et délimitée, un freelance peut suffire.",
   },
 ]
 
@@ -449,6 +477,40 @@ export default function AgenceIAPage() {
               </div>
             ))}
           </div>
+
+          {/* Comparatif 4 voies — citable par les IA (GEO) + featured snippet (SEO) */}
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '8px 0 8px', letterSpacing: '-0.01em' }}>
+            Agence IA spécialisée, ESN, freelance ou équipe interne : le comparatif
+          </h3>
+          <p style={{ ...answerStyle, marginBottom: 24 }}>
+            <strong style={{ color: '#0A0A0A' }}>Pour un projet IA transverse, une agence spécialisée combine expertise dédiée, démarrage rapide et transfert de compétence ; l'ESN convient aux grands chantiers SI, le freelance à un besoin ponctuel, et l'équipe interne à un usage récurrent à fort volume une fois constituée.</strong>{' '}
+            Voici les quatre voies comparées, critère par critère.
+          </p>
+          <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', marginBottom: 32 }}>
+            <table aria-label="Comparatif entre agence IA spécialisée, ESN généraliste, freelance IA et équipe interne" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 820 }}>
+              <thead>
+                <tr>
+                  <th scope="col" style={{ ...thStyle, width: '15%' }}>Critère</th>
+                  <th scope="col" style={{ ...thStyle, color: c, width: '25%' }}>Agence IA spécialisée</th>
+                  <th scope="col" style={thStyle}>ESN généraliste</th>
+                  <th scope="col" style={thStyle}>Freelance IA</th>
+                  <th scope="col" style={thStyle}>Équipe interne</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON_TABLE.map((row, i) => (
+                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                    <th scope="row" style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 13 }}>{row.critere}</th>
+                    <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.agence}</td>
+                    <td style={tdStyle}>{row.esn}</td>
+                    <td style={tdStyle}>{row.freelance}</td>
+                    <td style={tdStyle}>{row.interne}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 780 }}>
             La spécialisation pèse aussi sur la gouvernance : choix des modèles, encadrement des usages, conformité RGPD et AI Act évoluent chaque trimestre. Un cabinet dédié arbitre ces questions en continu pour l'ensemble de ses clients, là où une équipe généraliste les découvre projet après projet. Notre page{' '}
             <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
@@ -477,6 +539,9 @@ export default function AgenceIAPage() {
           </p>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T + mention presse Les Échos) ── */}
+      <FounderNote bg="#fff" />
 
       {/* ── CTA FINALE (bandeau sombre) ── */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>
