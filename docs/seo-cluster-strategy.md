@@ -46,16 +46,16 @@ en offre secondaire. Capacité mise en avant : **régie / déploiement de dével
 | conseil intelligence artificielle paris 16 | 70 | 52 | — | (géo Paris, fort KD) | ⬜ |
 | agence conseil ia | 70 | 50 | — | /agence-ia, /conseil | 🟡 |
 | cabinet de conseil en ia pour entreprise | 70 | 43 | — | /conseil-intelligence-artificielle | ✅ |
-| conseil en données et ia | 70 | 36 | — | (data+IA) | ⬜ |
+| conseil en données et ia | 70 | 36 | — | /conseil-data-ia | ✅ |
 | conseil solutions ia | 70 | 31 | — | /solutions-ia | 🟡 |
 | outils ia pour le conseil | 70 | 17 | — | (angle métier conseil) | ⬜ |
 | agence conseil intelligence artificielle | 50 | 57 | — | /agence-ia | 🟡 |
 | agence conseil ia entreprise | 50 | 29 | — | /agence-ia | 🟡 |
-| cabinet de conseil en data et ia | 50 | 29 | — | (data+IA) | ⬜ |
+| cabinet de conseil en data et ia | 50 | 29 | — | /conseil-data-ia | ✅ |
 | cabinet de conseil en ia | 50 | 44 | 4,77 | /conseil-intelligence-artificielle | ✅ |
 | cabinet de conseil en ia paris | 50 | n/a | — | (géo Paris) | ⬜ |
 | classement agences de conseil en ia | 50 | n/a | — | /meilleure-agence-ia | ✅ |
-| conseil data & ia | 50 | 12 | — | (data+IA, KD faible) | ⬜ |
+| conseil data & ia | 50 | 12 | — | /conseil-data-ia | ✅ |
 | conseil stratégie intelligence artificielle | 40 | n/a | — | /conseil-strategie-ia | ✅ |
 | variants ESG/durabilité + IA | 30-50 | n/a | — | (hors scope actuel) | ⬜ |
 
@@ -85,25 +85,25 @@ en offre secondaire. Capacité mise en avant : **régie / déploiement de dével
 |---|---:|---:|---:|---|---|
 | agence ia | 1600 | 59 | 0,42 | /agence-ia | ✅ (objectif LT) |
 | agence ia 2026 | 390 | n/a | — | /agence-ia | 🟡 |
-| agence seo ia | 320 | 14 | 9,00 | (SEO/référencement IA) | ⬜ |
+| agence seo ia | 320 | 14 | 9,00 | /agence-seo-ia | ✅ |
 | agence ia cholet | 260 | 14 | — | (géo Cholet) | ⬜ |
 | agence ia lyon | 210 | 17 | 3,17 | /agence-ia (Lyon) | ✅ |
 | agence marketing ia | 170 | 28 | 2,30 | /agence-ia-marketing | ✅ |
 | meilleure agence ia | 170 | 20 | 1,77 | /meilleure-agence-ia | ✅ |
 | agence ia paris | 110 | 27 | 78,17 | /agence-ia-paris | ✅ (CPC énorme) |
-| agences seo ia | 110 | 14 | — | (SEO IA) | ⬜ |
+| agences seo ia | 110 | 14 | — | /agence-seo-ia | ✅ |
 | agence ia annecy | 70 | 6 | — | /agence-ia-annecy | ✅ (KD le + faible) |
 | agence ia marketing | 70 | 17 | — | /agence-ia-marketing | ✅ |
 | agence ia france | 50 | 39 | 3,59 | /agence-ia | ✅ |
 | agence ia marseille | 50 | n/a | 4,00 | /agence-ia-marseille | ✅ |
 | agence ia nantes | 50 | 14 | — | (géo Nantes) | ⬜ |
-| agence ia seo | 50 | 23 | — | (SEO IA) | ⬜ |
+| agence ia seo | 50 | 23 | — | /agence-seo-ia | ✅ |
 | agence spécialisée en ia | 50 | n/a | — | /agence-ia | ✅ |
 | agence web ia | 50 | 61 | 2,36 | (web dev) → /agence-developpement-ia | 🟡 |
 | agences ia recommandées en france | 50 | n/a | — | /meilleure-agence-ia | ✅ |
 | comparatif agences ia | 50 | n/a | — | /meilleure-agence-ia | ✅ |
 | agence ia marketing suisse | 40 | n/a | — | /agence-ia-marketing (CH) | ✅ |
-| agence référencement ia lyon | 40 | n/a | — | (réf. IA Lyon) | ⬜ |
+| agence référencement ia lyon | 40 | n/a | — | /agence-seo-ia | ✅ |
 | autres géo (carcassonne KD3, dijon KD1, lille, narbonne, strasbourg, toulouse) | 50 | 1-14 | — | (géo longue traîne, KD très faibles) | ⬜ |
 
 ### 2.4 Développement IA
@@ -145,8 +145,8 @@ en offre secondaire. Capacité mise en avant : **régie / déploiement de dével
 
 ## 3. Gaps prioritaires (non couverts, par ratio volume/KD)
 
-1. **SEO / référencement IA** : `agence seo ia` 320 (KD14, CPC 9 !), `agences seo ia` 110, `agence ia seo` 50, `agence référencement ia lyon` 40. Cluster commercial fort + CPC élevé, **non couvert**. → page `/agence-seo-ia` ou `/referencement-ia` (GEO/AEO + SEO augmenté par IA).
-2. **Data + IA** : `conseil en données et ia` 70 (KD36), `cabinet de conseil en data et ia` 50, `conseil data & ia` 50 (KD12). → angle « conseil data & IA ».
+1. ✅ **SEO / référencement IA** : `agence seo ia` 320 (KD14, CPC 9 !), `agences seo ia` 110, `agence ia seo` 50, `agence référencement ia lyon` 40. **COUVERT le 2026-06-14** par `/agence-seo-ia` (AgenceSeoIAPage.jsx, positionnement double : SEO augmenté par l'IA + GEO/AEO ; câblée App.jsx + sitemap staticRoutes + footer + méga-menu header). Reste à suivre les positions une fois indexée.
+2. ✅ **Data + IA** : `conseil en données et ia` 70 (KD36), `cabinet de conseil en data et ia` 50, `conseil data & ia` 50 (KD12). **COUVERT le 2026-06-14** par `/conseil-data-ia` (ConseilDataIAPage.jsx, angle « la donnée carburant de l'IA » : audit, gouvernance, préparation, RAG ; câblée App.jsx + sitemap + footer + méga-menu header colonne Conseil).
 3. **Géo agence supplémentaires** (KD très faibles) : `agence ia nantes` 50 (KD14), `agence ia cholet` 260 (KD14), + carcassonne/dijon/lille (KD 1-14). Attention doorway : n'ouvrir que là où présence/intervention crédible.
 4. **Géo conseil Paris** : `conseil intelligence artificielle paris 16` 70 (KD52), `cabinet de conseil en ia paris` 50. → renforcer /agence-ia-paris sur l'angle conseil.
 5. **Listicle agents** : `« 15 cas concrets agents ia entreprises »` 140 → structurer /agents-ia-entreprise avec un bloc « N cas d'usage » explicite (déjà 20 cas, optimiser le format pour matcher la requête).

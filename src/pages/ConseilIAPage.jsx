@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { FAQSection } from '../components/screens2'
+import FounderNote from '../components/FounderNote'
 
 /* ───────── Jetons de style (charte cabinet) ───────── */
 
@@ -509,6 +510,33 @@ export default function ConseilIAPage() {
         </div>
       </section>
 
+      {/* CTA DIAGNOSTIC : pont vers l'offre d'entrée productisée */}
+      <section style={{ background: '#fff', padding: 'clamp(40px, 6vw, 64px) clamp(20px, 4vw, 32px)' }}>
+        <div style={{
+          maxWidth: 1120, margin: '0 auto',
+          background: BLUE_SOFT, border: '1px solid #BFDBFE', borderRadius: 16,
+          padding: 'clamp(24px, 4vw, 40px)',
+          display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24,
+        }}>
+          <div style={{ flex: '1 1 440px' }}>
+            <div style={kickerStyle}>Par où commencer</div>
+            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)', marginBottom: 10 }}>
+              Commencez par un diagnostic IA
+            </h2>
+            <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: 0, maxWidth: 700 }}>
+              En une journée, nous évaluons votre maturité IA, identifions les premiers cas d'usage à fort ROI et posons une feuille de route. Le cadrage initial est gratuit et sans engagement.
+            </p>
+          </div>
+          <Link to="/diagnostic-ia" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: BLUE, color: '#fff', padding: '14px 26px', borderRadius: 12,
+            textDecoration: 'none', fontSize: 15, fontWeight: 700, whiteSpace: 'nowrap',
+          }}>
+            Découvrir le diagnostic IA <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       {/* MÉTHODOLOGIE */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>
         <div style={{ maxWidth: 920, margin: '0 auto' }}>
@@ -804,6 +832,9 @@ export default function ConseilIAPage() {
           </Link>
         </div>
       </section>
+
+      {/* LE FONDATEUR — preuve sociale E-E-A-T */}
+      <FounderNote bg="#fff" />
 
       {/* CTA FINAL */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>

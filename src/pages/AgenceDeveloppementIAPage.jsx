@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 
 /*
  * Page pilier « agence de développement IA » (slug /agence-developpement-ia).
@@ -679,6 +680,9 @@ export default function AgenceDeveloppementIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote />
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>

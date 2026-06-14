@@ -29,6 +29,7 @@ const MetiersHubPage = lazy(() => import('./pages/MetiersHubPage'));
 const MetierPage = lazy(() => import('./pages/MetierPage'));
 const ConseilIAPage = lazy(() => import('./pages/ConseilIAPage'));
 const ConseilStrategieIAPage = lazy(() => import('./pages/ConseilStrategieIAPage'));
+const ConseilDataIAPage = lazy(() => import('./pages/ConseilDataIAPage'));
 const AutomatisationIAGuidePage = lazy(() => import('./pages/AutomatisationIAGuidePage'));
 const AgenceAutomatisationIAPage = lazy(() => import('./pages/AgenceAutomatisationIAPage'));
 const AgentsIAEntreprisePage = lazy(() => import('./pages/AgentsIAEntreprisePage'));
@@ -37,6 +38,7 @@ const MeilleureAgenceIAPage = lazy(() => import('./pages/MeilleureAgenceIAPage')
 const AgenceDeveloppementIAPage = lazy(() => import('./pages/AgenceDeveloppementIAPage'));
 const AgenceGeoPage = lazy(() => import('./pages/AgenceGeoPage'));
 const AgenceIAMarketingPage = lazy(() => import('./pages/AgenceIAMarketingPage'));
+const AgenceSeoIAPage = lazy(() => import('./pages/AgenceSeoIAPage'));
 const OutilsIASurMesurePage = lazy(() => import('./pages/OutilsIASurMesurePage'));
 const SecteursHubPage = lazy(() => import('./pages/SecteursHubPage'));
 const SecteurIAPage = lazy(() => import('./pages/SecteurIAPage'));
@@ -1489,6 +1491,7 @@ export default function App() {
         <Route path="/financement-formation-ia" element={<FinancementPage />} />
         {/* Clusters conseil / automatisation / agents / agence (juin 2026) */}
         <Route path="/conseil-strategie-ia" element={<ConseilStrategieIAPage />} />
+        <Route path="/conseil-data-ia" element={<ConseilDataIAPage />} />
         <Route path="/automatisation-ia" element={<AutomatisationIAGuidePage />} />
         <Route path="/agence-automatisation-ia" element={<AgenceAutomatisationIAPage />} />
         <Route path="/agents-ia-entreprise" element={<AgentsIAEntreprisePage />} />
@@ -1496,6 +1499,7 @@ export default function App() {
         <Route path="/meilleure-agence-ia" element={<MeilleureAgenceIAPage />} />
         <Route path="/agence-developpement-ia" element={<AgenceDeveloppementIAPage />} />
         <Route path="/agence-ia-marketing" element={<AgenceIAMarketingPage />} />
+        <Route path="/agence-seo-ia" element={<AgenceSeoIAPage />} />
         <Route path="/agence-ia-annecy" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-paris" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-geneve" element={<AgenceGeoPage />} />

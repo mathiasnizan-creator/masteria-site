@@ -262,6 +262,20 @@ const USE_CASE_GROUPS = [
   },
 ]
 
+/* ItemList JSON-LD : les 20 cas d'usage, pour le format listicle (rich results + citation GEO). */
+const useCaseItemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: "20 cas d'usage concrets des agents IA en entreprise",
+  description: "Vingt cas d'usage des agents IA en entreprise, classés par fonction : commercial, marketing, RH, finance, service client, IT et développement, direction.",
+  numberOfItems: 20,
+  itemListElement: USE_CASE_GROUPS.flatMap(g => g.cases).map((uc, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: uc.title.replace(/^\d+\.\s*/, ''),
+  })),
+}
+
 const TOOLS = [
   {
     icon: Sparkles,
@@ -489,6 +503,7 @@ export default function AgentsIAEntreprisePage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
+        extraJsonLd={useCaseItemList}
       />
 
       {/* ── HERO ── */}
@@ -659,6 +674,19 @@ export default function AgentsIAEntreprisePage() {
           <p style={pStyle}>
             Les 20 cas qui suivent sont classés par fonction. Chacun suppose un agent connecté aux outils concernés et supervisé par l'équipe métier. Aucun chiffre de gain n'est avancé : les résultats dépendent du volume traité, de la qualité des données et du niveau de supervision retenu.
           </p>
+
+          {/* Aperçu scannable des 20 cas (listicle) */}
+          <div style={{ ...cardStyle, padding: '24px 28px', margin: '8px 0 0', background: '#F9FAFB' }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 16px' }}>Les 20 cas en un coup d'œil</p>
+            <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 330px), 1fr))', gap: '10px 28px' }}>
+              {USE_CASE_GROUPS.flatMap(g => g.cases).map(uc => (
+                <li key={uc.title} style={{ fontSize: 14, color: '#374151', lineHeight: 1.5, display: 'flex', gap: 10 }}>
+                  <span style={{ color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif', flexShrink: 0, minWidth: 22 }}>{uc.title.match(/^\d+/)?.[0]}</span>
+                  <span>{uc.title.replace(/^\d+\.\s*/, '')}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
 
           {USE_CASE_GROUPS.map(group => (
             <div key={group.id} style={{ marginTop: 52 }}>

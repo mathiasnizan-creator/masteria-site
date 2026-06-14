@@ -5,7 +5,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
-  Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award,
+  Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award, Database, Cpu, Boxes,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
 import { useIsMobile } from '../hooks/useMediaQuery';
@@ -99,6 +99,7 @@ const CONSEIL_COLS = [
       { label: 'Diagnostic IA',         desc: 'Audit + feuille de route en 1 journée', slug: 'diagnostic-ia',                Icon: Search },
       { label: 'Cabinet de conseil IA', desc: 'Cadrage, gouvernance et trajectoire IA', slug: 'conseil-intelligence-artificielle', Icon: Lightbulb },
       { label: 'Conseil stratégie IA',  desc: 'Feuille de route et priorisation des cas', slug: 'conseil-strategie-ia',            Icon: Compass },
+      { label: 'Conseil data & IA',     desc: 'Données prêtes pour vos projets IA',      slug: 'conseil-data-ia',              Icon: Database },
       { label: 'Méthode & engagement',  desc: 'Forfait, régie, développeurs sur site',  slug: 'methode-projet-ia',            Icon: Users },
     ],
   },
@@ -106,7 +107,7 @@ const CONSEIL_COLS = [
     head: 'Développement sur mesure',
     items: [
       { label: 'Agence développement IA', desc: 'Conception et intégration sur mesure', slug: 'agence-developpement-ia', Icon: Code2 },
-      { label: 'Solutions IA sur mesure', desc: 'Copilotes, agents, RAG, automatisations', slug: 'solutions-ia',         Icon: Sparkles },
+      { label: 'Solutions IA sur mesure', desc: 'Copilotes, agents, RAG, automatisations', slug: 'solutions-ia',         Icon: Boxes },
       { label: 'Outils IA sur mesure',    desc: 'Applications et copilotes métier',     slug: 'outils-ia-sur-mesure',  Icon: Wrench },
       { label: 'Agence automatisation IA',desc: 'Workflows et automatisations métier',   slug: 'agence-automatisation-ia', Icon: Workflow },
       { label: 'Agents IA en entreprise', desc: 'Agents autonomes et copilotes',         slug: 'agents-ia-entreprise',  Icon: Bot },
@@ -118,6 +119,7 @@ const CONSEIL_COLS = [
       { label: 'IA par secteur',          desc: 'Banque, industrie, santé, juridique…', slug: 'ia-secteurs',          Icon: Briefcase },
       { label: 'Agence IA Lyon',          desc: 'Équipe basée à Lyon, France entière', slug: 'agence-ia',           Icon: Building2 },
       { label: 'Agence IA marketing',     desc: 'IA appliquée au marketing et au growth', slug: 'agence-ia-marketing', Icon: Megaphone },
+      { label: 'Agence SEO IA',           desc: 'Référencement Google et visibilité dans les IA', slug: 'agence-seo-ia', Icon: Search },
       { label: 'Automatisation IA · guide', desc: 'Comprendre et cadrer vos automatisations', slug: 'automatisation-ia', Icon: Workflow },
       { label: 'Meilleure agence IA',     desc: 'Critères et repères de sélection',     slug: 'meilleure-agence-ia', Icon: Award },
     ],
@@ -368,7 +370,7 @@ export function MasteriaHeader() {
                     onMouseLeave={e => e.currentTarget.style.transform = 'none'}
                   >
                     <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Sparkles size={18} color="#2563EB" strokeWidth={2.2} />
+                      <Cpu size={18} color="#2563EB" strokeWidth={2.2} />
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Agence IA · conseil, développement &amp; automatisation</div>
@@ -557,7 +559,7 @@ export function MasteriaHeader() {
                 borderRadius: 10, margin: '16px 0 8px',
               }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Sparkles size={17} color="#2563EB" strokeWidth={2.2} />
+                  <Cpu size={17} color="#2563EB" strokeWidth={2.2} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 14, fontWeight: 800, color: '#111' }}>Agence IA · conseil &amp; dev</div>
@@ -751,13 +753,18 @@ export function MasteriaFooter() {
             {[
               ['Diagnostic IA', '/diagnostic-ia'],
               ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
+              ['Conseil stratégie IA', '/conseil-strategie-ia'],
+              ['Conseil data & IA', '/conseil-data-ia'],
               ['Agence développement IA', '/agence-developpement-ia'],
               ['Solutions IA sur mesure', '/solutions-ia'],
+              ['Agents IA en entreprise', '/agents-ia-entreprise'],
+              ['Agence automatisation IA', '/agence-automatisation-ia'],
               ['IA par secteur', '/ia-secteurs'],
               ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
               ['Méthode & engagement', '/methode-projet-ia'],
               ['Agence IA Lyon', '/agence-ia'],
               ['Agence IA marketing', '/agence-ia-marketing'],
+              ['Agence SEO IA', '/agence-seo-ia'],
               ['Agence IA Paris', '/agence-ia-paris'],
               ['Agence IA Annecy', '/agence-ia-annecy'],
               ['Agence IA Genève', '/agence-ia-geneve'],
