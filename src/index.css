@@ -23,3 +23,36 @@ body.no-scroll { overflow: hidden; }
 input, textarea, select, button { font-family: inherit; font-size: 16px; }
 p { text-wrap: pretty; }
 h1, h2, h3 { text-wrap: balance; }
+
+/* ───── Polish UX premium (focus, sélection, scrollbar, transitions) ───── */
+/* Les ancres ne passent plus sous le header sticky (~122px) lors du smooth-scroll */
+html { scroll-padding-top: 134px; scrollbar-width: thin; scrollbar-color: #CBD5E1 transparent; }
+
+/* Sélection de texte à l'accent de marque */
+::selection { background: #DBEAFE; color: #1d4ed8; }
+
+/* Transitions douces sur les éléments interactifs (sensation haut de gamme) */
+a, button { transition: color .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .2s ease, transform .18s ease; }
+
+/* Focus clavier soigné et accessible (pas de cerne à la souris) */
+:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; border-radius: 4px; }
+:focus:not(:focus-visible) { outline: none; }
+
+/* Barre de défilement discrète (souris) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
+
+/* ───── Cluster conseil/dev : cartes premium + fondu au scroll (appliqués via JS) ───── */
+.u-lift { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease !important; }
+.u-lift:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -12px rgba(15, 23, 42, 0.20) !important; }
+.u-reveal { opacity: 0; transform: translateY(26px); }
+.u-reveal.is-revealed { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.22, 1, .36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .u-reveal { opacity: 1 !important; transform: none !important; }
+  .u-lift { transition: none !important; }
+  .u-lift:hover { transform: none; }
+}

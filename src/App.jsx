@@ -1449,10 +1449,77 @@ function ScrollToTop() {
   return null;
 }
 
+/* Amélioration UX du cluster conseil/dev — CÔTÉ CLIENT uniquement (n'altère pas le HTML
+ * prérendu ni le SEO) : élévation premium des cartes au survol + apparition en fondu des
+ * sections au scroll. Appliqué via le DOM pour couvrir toutes les pages du cluster sans
+ * toucher à leurs styles inline. Respecte prefers-reduced-motion. */
+function ClusterUX() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const slug = pathname.replace(/^\//, '');
+    const isCluster =
+      /^\/(conseil|agence|outils-ia|automatisation-ia|agents-ia|diagnostic-ia|methode-projet-ia|ia-|solutions-ia)/.test(pathname)
+      || SOLUTION_SLUGS.includes(slug);
+    if (!isCluster) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let onScroll;
+    const reveal = () => {
+      const vh = window.innerHeight;
+      document.querySelectorAll('main section.u-reveal:not(.is-revealed)').forEach((sec) => {
+        if (sec.getBoundingClientRect().top < vh * 0.9) sec.classList.add('is-revealed');
+      });
+    };
+    const apply = () => {
+      const main = document.querySelector('main');
+      if (!main || main.querySelectorAll('section').length < 2) return false;
+      // (a) Cartes : élévation premium au survol (enfants des grilles, coins arrondis + bordure/ombre)
+      main.querySelectorAll('div').forEach((el) => {
+        const cs = getComputedStyle(el);
+        if (cs.display !== 'grid') return;
+        if (cs.gridTemplateColumns.split(' ').filter(Boolean).length < 2) return;
+        for (const child of el.children) {
+          const card = child.tagName === 'A' ? child.firstElementChild : child;
+          if (!card || card.nodeType !== 1 || card.classList.contains('u-lift')) continue;
+          const ccs = getComputedStyle(card);
+          const rounded = parseInt(ccs.borderTopLeftRadius, 10) >= 12;
+          const edged = parseFloat(ccs.borderTopWidth) >= 1 || ccs.boxShadow !== 'none';
+          if (rounded && edged) card.classList.add('u-lift');
+        }
+      });
+      // (b) Fondu au scroll : marque les sections sous la ligne de flottaison, révèle au scroll.
+      // Listener de scroll (et non IntersectionObserver) : fiable, et aucune section révélable
+      // ne reste cachée (celles non révélées sont toujours hors-écran).
+      if (!reduce) {
+        const vh = window.innerHeight;
+        main.querySelectorAll('section').forEach((sec) => {
+          if (sec.getBoundingClientRect().top > vh * 0.92) sec.classList.add('u-reveal');
+        });
+        reveal();
+        onScroll = () => reveal();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        // Filets : révèle aussi peu après le montage (mise en page tardive)
+        setTimeout(reveal, 400);
+        setTimeout(reveal, 1200);
+      }
+      return true;
+    };
+    let tries = 0, timer;
+    const tick = () => { if (!apply() && tries++ < 25) timer = setTimeout(tick, 80); };
+    timer = setTimeout(tick, 50);
+    return () => {
+      clearTimeout(timer);
+      if (onScroll) { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); }
+    };
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <div>
       <ScrollToTop />
+      <ClusterUX />
       <MasteriaHeader />
       <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
       <main id="contenu">

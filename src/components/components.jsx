@@ -323,7 +323,7 @@ export function MasteriaHeader() {
                       onMouseLeave={e => e.currentTarget.style.transform = 'none'}
                     >
                       <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        <Zap size={18} color="#F97316" strokeWidth={2.4} />
+                        <Zap size={18} color="#2563EB" strokeWidth={2.4} />
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 800, color: '#7C2D12' }}>Sprints IA · 3 h</div>
@@ -416,7 +416,7 @@ export function MasteriaHeader() {
               );
             })}
 
-            <Link to="/contact" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, background: '#F97316', color: '#fff', borderRadius: 7, padding: '9px 18px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(249,115,22,0.30)' }}>
+            <Link to="/contact" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, background: '#2563EB', color: '#fff', borderRadius: 7, padding: '9px 18px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(37,99,235,0.30)' }}>
               Demander un devis
             </Link>
           </nav>
@@ -427,9 +427,9 @@ export function MasteriaHeader() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <Link to="/contact" style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 12.5, fontWeight: 700,
-              background: '#F97316', color: '#fff', borderRadius: 7,
+              background: '#2563EB', color: '#fff', borderRadius: 7,
               padding: '8px 14px', textDecoration: 'none',
-              boxShadow: '0 2px 8px rgba(249,115,22,0.30)',
+              boxShadow: '0 2px 8px rgba(37,99,235,0.30)',
               whiteSpace: 'nowrap',
             }}>
               Devis
@@ -509,7 +509,7 @@ export function MasteriaHeader() {
                 borderRadius: 10, margin: '16px 0 8px',
               }}>
                 <div style={{ width: 34, height: 34, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Zap size={17} color="#F97316" strokeWidth={2.4} />
+                  <Zap size={17} color="#2563EB" strokeWidth={2.4} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 14, fontWeight: 800, color: '#7C2D12' }}>Sprints IA · 3 h</div>
@@ -600,9 +600,9 @@ export function MasteriaHeader() {
           <Link to="/contact" style={{
             display: 'block', marginTop: 24, textAlign: 'center',
             fontFamily: 'DM Sans, sans-serif', fontSize: 15, fontWeight: 700,
-            background: '#F97316', color: '#fff', borderRadius: 10,
+            background: '#2563EB', color: '#fff', borderRadius: 10,
             padding: '16px 22px', textDecoration: 'none',
-            boxShadow: '0 6px 18px rgba(249,115,22,0.30)',
+            boxShadow: '0 6px 18px rgba(37,99,235,0.30)',
           }}>
             Demander un devis
           </Link>
