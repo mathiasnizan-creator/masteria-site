@@ -58,14 +58,14 @@ function FaqItem({ q, a }) {
           }}
         />
       </button>
-      {open && (
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
         <p style={{
           fontSize: 15, color: '#374151', lineHeight: 1.75,
-          paddingBottom: 20, marginTop: -4,
+          padding: '0 0 20px', marginTop: -4,
         }}>
           {a}
         </p>
-      )}
+      </div>
     </div>
   )
 }
