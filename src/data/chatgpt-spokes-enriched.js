@@ -70,11 +70,11 @@ export const CHATGPT_SPOKES = [
     metaTitle: 'Formation ChatGPT RH | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes RH à ChatGPT en 2 jours : offres d\'emploi, analyse CV, onboarding, communication interne. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation ChatGPT pour les équipes RH',
-    intro: "Les équipes RH passent une part disproportionnée de leur temps sur des tâches rédactionnelles, offres d\'emploi, fiches de poste, livrets d\'accueil, communications internes. En 2 jours, vos collaborateurs apprennent à utiliser ChatGPT sur leurs propres documents RH et gagnent en moyenne 6h par semaine sur ces tâches.",
+    intro: "Les équipes RH passent une part disproportionnée de leur temps sur des tâches rédactionnelles, offres d'emploi, fiches de poste, livrets d'accueil, communications internes. En 2 jours, vos collaborateurs apprennent à utiliser ChatGPT sur leurs propres documents RH et gagnent en moyenne 6h par semaine sur ces tâches.",
     audience: [
-      { title: 'Responsables RH et DRH', desc: "Vous pilotez la stratégie RH et cherchez à libérer votre équipe des tâches à faible valeur. Cette formation vous montre comment déployer ChatGPT sur les processus à plus fort volume pour améliorer l\'expérience candidat et collaborateur." },
+      { title: 'Responsables RH et DRH', desc: "Vous pilotez la stratégie RH et cherchez à libérer votre équipe des tâches à faible valeur. Cette formation vous montre comment déployer ChatGPT sur les processus à plus fort volume pour améliorer l'expérience candidat et collaborateur." },
       { title: 'Chargés de recrutement et talent acquisition', desc: "Vous gérez des pipelines de candidatures, rédigez les offres et conduisez les entretiens. ChatGPT devient votre copilote pour rédiger plus vite, analyser plus efficacement et préparer des entretiens structurés." },
-      { title: 'HRBP, chargés de développement RH et office managers', desc: "Vous produisez des fiches de poste, des supports d\'onboarding, des communications internes. Cette formation vous donne des méthodes pour automatiser ces productions rédactionnelles et garantir la cohérence des documents RH." },
+      { title: 'HRBP, chargés de développement RH et office managers', desc: "Vous produisez des fiches de poste, des supports d'onboarding, des communications internes. Cette formation vous donne des méthodes pour automatiser ces productions rédactionnelles et garantir la cohérence des documents RH." },
     ],
     useCases: [
       { icon: '📝', title: 'Rédaction d\'offres d\'emploi', desc: 'Rédigez des offres attractives et optimisées pour les jobboards en 5 minutes.' },
@@ -126,9 +126,9 @@ export const CHATGPT_SPOKES = [
     metaTitle: 'Formation ChatGPT Commercial | Qualiopi | Masteria',
     metaDesc: 'Formez vos équipes commerciales à ChatGPT en 2 jours : prospection, propositions, relances, préparation RDV. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation ChatGPT pour les équipes Commerciales',
-    intro: "Les équipes commerciales passent jusqu\'à 40% de leur temps sur des tâches non-commerciales : rédiger des emails, préparer des propositions, saisir des comptes-rendus. En 2 jours, vos commerciaux apprennent à déléguer ces tâches à ChatGPT et à se concentrer sur ce qui génère vraiment du chiffre.",
+    intro: "Les équipes commerciales passent jusqu'à 40% de leur temps sur des tâches non-commerciales : rédiger des emails, préparer des propositions, saisir des comptes-rendus. En 2 jours, vos commerciaux apprennent à déléguer ces tâches à ChatGPT et à se concentrer sur ce qui génère vraiment du chiffre.",
     audience: [
-      { title: 'Directeurs et responsables commerciaux', desc: "Vous pilotez la performance de l\'équipe et cherchez à réduire le temps administratif pour libérer du temps de vente. Cette formation vous permet de structurer un workflow IA qui s\'intègre dans vos processus commerciaux existants." },
+      { title: 'Directeurs et responsables commerciaux', desc: "Vous pilotez la performance de l'équipe et cherchez à réduire le temps administratif pour libérer du temps de vente. Cette formation vous permet de structurer un workflow IA qui s'intègre dans vos processus commerciaux existants." },
       { title: 'Commerciaux terrain et sédentaires', desc: "Vous êtes en première ligne pour prospecter, relancer et closer. ChatGPT devient votre copilote rédactionnel : emails de prospection, préparation de RDV, comptes-rendus, produits en une fraction du temps habituel." },
       { title: 'Business developers et chargés de comptes', desc: "Vous gérez des cycles de vente complexes avec de nombreux interlocuteurs. ChatGPT vous aide à personnaliser votre approche à grande échelle et à produire des propositions commerciales de qualité plus rapidement." },
     ],
@@ -185,7 +185,7 @@ export const CHATGPT_SPOKES = [
     audience: [
       { title: 'Directeurs financiers et DAF', desc: "Vous devez produire régulièrement des synthèses et présentations pour les comités de direction et les actionnaires. Cette formation vous montre comment ChatGPT accélère la production de narratifs financiers sans sacrifier la précision." },
       { title: 'Contrôleurs de gestion et analystes financiers', desc: "Vous passez des heures à commenter des écarts, rédiger des rapports et synthétiser des données. ChatGPT devient votre assistant rédactionnel pour produire des analyses de qualité professionnelle en beaucoup moins de temps." },
-      { title: 'Comptables et responsables trésorerie', desc: "Vous produisez des réconciliations, des synthèses de trésorerie et des communications avec les banques et partenaires financiers. Cette formation couvre les cas d\'usage spécifiques à la comptabilité et à la trésorerie." },
+      { title: 'Comptables et responsables trésorerie', desc: "Vous produisez des réconciliations, des synthèses de trésorerie et des communications avec les banques et partenaires financiers. Cette formation couvre les cas d'usage spécifiques à la comptabilité et à la trésorerie." },
     ],
     useCases: [
       { icon: '📊', title: 'Analyse de données & Excel', desc: 'Interprétez des tableaux complexes, identifiez des anomalies et rédigez des commentaires en langage naturel.' },
@@ -346,10 +346,10 @@ export const CHATGPT_SPOKES = [
     metaTitle: 'Formation ChatGPT Assistanat de direction | Masteria',
     metaDesc: 'Formez vos assistantes à ChatGPT en 2 jours : courriers, comptes-rendus, synthèses, organisation. Certifié Qualiopi, finançable OPCO.',
     h1: 'Formation ChatGPT pour les Assistants et assistantes de direction',
-    intro: "Les assistants et assistantes de direction et les secrétaires de haut niveau sont au carrefour de toutes les informations de l\'entreprise. ChatGPT peut transformer leur quotidien : rédiger des courriers officiels en 5 minutes, synthétiser un document de 50 pages en 2 minutes, structurer un compte-rendu depuis des notes brutes. En 2 jours, elles maîtrisent ces outils sur leurs propres dossiers.",
+    intro: "Les assistants et assistantes de direction et les secrétaires de haut niveau sont au carrefour de toutes les informations de l'entreprise. ChatGPT peut transformer leur quotidien : rédiger des courriers officiels en 5 minutes, synthétiser un document de 50 pages en 2 minutes, structurer un compte-rendu depuis des notes brutes. En 2 jours, elles maîtrisent ces outils sur leurs propres dossiers.",
     audience: [
       { title: 'Assistants et assistantes de direction et secrétaires de direction', desc: "Vous assistez un ou plusieurs dirigeants et gérez une grande variété de tâches rédactionnelles et organisationnelles. Cette formation vous donne les outils pour traiter ces tâches deux fois plus vite avec la même qualité professionnelle." },
-      { title: 'Office managers et responsables administratifs', desc: "Vous gérez l\'organisation administrative d\'une structure et produisez régulièrement des documents formels, des comptes-rendus et des communications. ChatGPT devient votre assistant rédactionnel permanent." },
+      { title: 'Office managers et responsables administratifs', desc: "Vous gérez l'organisation administrative d'une structure et produisez régulièrement des documents formels, des comptes-rendus et des communications. ChatGPT devient votre assistant rédactionnel permanent." },
       { title: 'Assistants polyvalents et assistantes polyvalentes en PME', desc: "Vous assumez de nombreuses responsabilités en parallèle, accueil, administratif, rédactionnel, coordination. Cette formation vous permet de traiter le volume administratif plus efficacement pour vous concentrer sur la relation et la coordination." },
     ],
     useCases: [

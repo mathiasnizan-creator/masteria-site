@@ -28,7 +28,6 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
 
 const SLUG = 'agence-developpement-ia'
 const c = '#2563EB'
-const cDark = '#1d4ed8'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence de développement IA sur mesure | Masteria"
@@ -46,9 +45,6 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
-
-const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
-const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
@@ -56,8 +56,6 @@ function AnimatedNumber({ value, suffix = '', prefix = '', duration = 1400 }) {
 }
 
 export default function HomePage() {
-  const navigate = useNavigate()
-
   const testimonials = [
     { name: 'Sophie M.',  role: 'DRH, PME industrielle',      quote: "En 2 jours, mon équipe a compris comment l'IA peut transformer notre quotidien RH. Concret et immédiatement applicable." },
     { name: 'Laurent B.', role: 'Directeur Marketing',         quote: "Masteria a adapté la formation à nos enjeux. Nos campagnes sont maintenant 3× plus rapides à produire." },

@@ -222,6 +222,7 @@ function NoIcon()  { return <XCircle      size={16} color="#DC2626"   style={{ v
 
 function useActiveSection(ids) {
   const [active, setActive] = useState(ids[0])
+  const idsKey = ids.join('|')
   useEffect(() => {
     const els = ids.map(id => document.getElementById(id)).filter(Boolean)
     if (!els.length) return
@@ -230,7 +231,8 @@ function useActiveSection(ids) {
     }, { rootMargin: '-25% 0px -60% 0px' })
     els.forEach(el => obs.observe(el))
     return () => obs.disconnect()
-  }, [ids.join('|')])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idsKey])
   return active
 }
 

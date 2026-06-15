@@ -107,7 +107,7 @@ const TARIFS = [
   {
     icon: Workflow,
     livrable: 'Automatisation de process',
-    desc: "Orchestration d\'un flux métier répétitif, du déclencheur au résultat.",
+    desc: "Orchestration d'un flux métier répétitif, du déclencheur au résultat.",
     fourchette: 'À partir de quelques milliers d\'euros',
     facteurs: 'Nombre d\'étapes, fiabilité attendue et outils à connecter',
   },
@@ -133,27 +133,27 @@ const FACTEURS = [
   {
     icon: Layers,
     title: 'Complexité fonctionnelle',
-    desc: "Un outil sur un cas simple ne représente pas le même travail qu\'un agent multi-tâches ou une application métier complète. Plus la logique est riche, plus le développement et les tests pèsent dans le budget.",
+    desc: "Un outil sur un cas simple ne représente pas le même travail qu'un agent multi-tâches ou une application métier complète. Plus la logique est riche, plus le développement et les tests pèsent dans le budget.",
   },
   {
     icon: GitBranch,
     title: 'Intégrations au système d\'information',
-    desc: "Chaque connexion à un CRM, un ERP ou un outil interne ajoute du développement et de la coordination. Une solution autonome coûte moins qu\'une solution profondément intégrée à votre SI.",
+    desc: "Chaque connexion à un CRM, un ERP ou un outil interne ajoute du développement et de la coordination. Une solution autonome coûte moins qu'une solution profondément intégrée à votre SI.",
   },
   {
     icon: Database,
     title: 'Volume et qualité des données',
-    desc: "Le RAG et l\'ancrage dans vos contenus dépendent du volume documentaire et de la propreté des données. Des données dispersées ou à nettoyer demandent un travail de préparation qui pèse sur le coût.",
+    desc: "Le RAG et l'ancrage dans vos contenus dépendent du volume documentaire et de la propreté des données. Des données dispersées ou à nettoyer demandent un travail de préparation qui pèse sur le coût.",
   },
   {
     icon: Gauge,
     title: 'Niveau d\'autonomie de l\'IA',
-    desc: "Un assistant qui suggère coûte moins qu\'un agent qui décide et agit. Plus l\'IA prend d\'initiatives, plus il faut de garde-fous, de validation humaine et de traçabilité, donc d\'ingénierie.",
+    desc: "Un assistant qui suggère coûte moins qu'un agent qui décide et agit. Plus l'IA prend d'initiatives, plus il faut de garde-fous, de validation humaine et de traçabilité, donc d'ingénierie.",
   },
   {
     icon: ShieldCheck,
     title: 'Run, maintenance et conformité',
-    desc: "Au-delà du build, comptez le run : hébergement, supervision, évolutions et coûts d\'usage des modèles. Les exigences de sécurité et de conformité (RGPD, AI Act) influent aussi sur le budget.",
+    desc: "Au-delà du build, comptez le run : hébergement, supervision, évolutions et coûts d'usage des modèles. Les exigences de sécurité et de conformité (RGPD, AI Act) influent aussi sur le budget.",
   },
 ]
 
@@ -171,14 +171,14 @@ const MODELES = [
     icon: Users,
     tag: 'Régie · TJM',
     title: 'Des développeurs IA au temps passé',
-    desc: "Quand le périmètre évolue ou que l\'environnement est sensible, nous détachons un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, facturés au taux journalier (TJM). Le TJM se définit selon le profil et la durée de la mission. Vous pilotez, nous apportons l\'expertise.",
+    desc: "Quand le périmètre évolue ou que l'environnement est sensible, nous détachons un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, facturés au taux journalier (TJM). Le TJM se définit selon le profil et la durée de la mission. Vous pilotez, nous apportons l'expertise.",
     points: ['Facturation au TJM, selon profil et durée', 'Renfort sur site ou à distance', 'Pour les environnements sensibles ou la montée en charge'],
   },
   {
     icon: Compass,
     tag: 'Accompagnement conseil',
     title: 'En amont du développement',
-    desc: "Quand le besoin se situe avant le build (cadrage, choix d\'architecture, gouvernance), nous intervenons en conseil, au forfait ou au temps passé. Cette étape sécurise le budget : elle évite de développer la mauvaise solution ou de surdimensionner le projet.",
+    desc: "Quand le besoin se situe avant le build (cadrage, choix d'architecture, gouvernance), nous intervenons en conseil, au forfait ou au temps passé. Cette étape sécurise le budget : elle évite de développer la mauvaise solution ou de surdimensionner le projet.",
     points: ['Cadrage et choix d\'architecture', 'Au forfait ou au temps passé', 'Sécurise le budget avant le build'],
   },
 ]
@@ -194,12 +194,12 @@ const INCLUS = [
   {
     icon: KeyRound,
     title: 'La propriété du code',
-    desc: "Le code développé vous appartient. Pas de licence captive ni de dépendance imposée : vous pouvez l\'exploiter et le faire évoluer avec vos équipes ou un autre prestataire.",
+    desc: "Le code développé vous appartient. Pas de licence captive ni de dépendance imposée : vous pouvez l'exploiter et le faire évoluer avec vos équipes ou un autre prestataire.",
   },
   {
     icon: Check,
     title: 'La documentation et le transfert',
-    desc: "À la livraison, la solution est documentée et vos équipes sont formées à l\'utiliser, la surveiller et la faire évoluer. L\'autonomie fait partie du livrable.",
+    desc: "À la livraison, la solution est documentée et vos équipes sont formées à l'utiliser, la surveiller et la faire évoluer. L'autonomie fait partie du livrable.",
   },
   {
     icon: ShieldCheck,
@@ -647,8 +647,8 @@ export default function PrixProjetIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
             {[
               { icon: Compass, title: 'Un cadrage d\'abord', desc: "Nous délimitons le périmètre et le critère de réussite avant tout chiffrage, pour un devis fondé sur votre cas et non sur une grille générique." },
-              { icon: Calculator, title: 'Une fourchette, puis un devis', desc: "Nous posons d\'abord un ordre de grandeur, puis un devis détaillé au forfait une fois le périmètre validé. Vous savez ce que vous engagez avant de démarrer." },
-              { icon: Cpu, title: 'Pas de prix inventés', desc: "Le budget dépend de la complexité, des intégrations et du niveau d\'autonomie. Nous préférons un devis honnête à un tarif générique qui ne correspondrait pas à votre besoin." },
+              { icon: Calculator, title: 'Une fourchette, puis un devis', desc: "Nous posons d'abord un ordre de grandeur, puis un devis détaillé au forfait une fois le périmètre validé. Vous savez ce que vous engagez avant de démarrer." },
+              { icon: Cpu, title: 'Pas de prix inventés', desc: "Le budget dépend de la complexité, des intégrations et du niveau d'autonomie. Nous préférons un devis honnête à un tarif générique qui ne correspondrait pas à votre besoin." },
             ].map(card => (
               <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
                 <div style={{ marginBottom: 16 }}>

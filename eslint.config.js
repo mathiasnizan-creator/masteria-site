@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', '.vercel', 'public']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
@@ -24,6 +24,12 @@ export default defineConfig([
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^[A-Z_]' }],
+      // Règles advisory/DX conservées en warning (n'échouent pas le lint) :
+      // - only-export-components : optimisation du Fast Refresh en dev uniquement, sans impact prod.
+      // - set-state-in-effect : règle React Compiler qui se déclenche sur des patterns légitimes
+      //   (re-sync SSR de useMediaQuery, reset de progression de lecture, fermeture des drawers au changement de route).
+      'react-refresh/only-export-components': 'warn',
+      'react-hooks/set-state-in-effect': 'warn',
     },
   },
 ])

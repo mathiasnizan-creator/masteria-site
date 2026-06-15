@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
-import { METIERS, SPOKES, HUBS, getSpokesByMetier } from '../data/seo-pages'
+import { METIERS, SPOKES, HUBS } from '../data/seo-pages'
 import { GEO_CITIES, geoIaSlug } from '../data/geo-data'
 import { useIsMobile } from '../hooks/useMediaQuery'
 
@@ -420,7 +420,6 @@ export default function MetiersHubPage() {
               gap: 20,
             }}>
               {filteredSpokes.map(s => {
-                const hub = HUBS.find(h => h.id === s.toolSlug)
                 const MetierIcon = METIER_ICONS[s.metierSlug]
                 return (
                   <Link

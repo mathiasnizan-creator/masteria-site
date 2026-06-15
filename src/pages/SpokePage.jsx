@@ -140,7 +140,6 @@ export default function SpokePage() {
   const is3h = durationKey === '3h'
 
   const durationBadge = is3h ? '3 heures' : isOneDay ? '1 jour · 7h' : '2 jours · 14h'
-  const sessionLabel = is3h ? 'le Sprint' : isOneDay ? 'la journée' : 'les 2 jours'
   const programTitle = is3h
     ? 'Programme du Sprint IA — 3 heures intensives'
     : isOneDay

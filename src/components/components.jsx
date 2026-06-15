@@ -156,9 +156,9 @@ export function MasteriaHeader() {
 
   // Fermer le menu mobile au changement de page
   useEffect(() => {
-    setMobileNavOpen(false);
-    setMobileFormationsOpen(false);
-    setMobileConseilOpen(false);
+    setMobileNavOpen(v => (v ? false : v));
+    setMobileFormationsOpen(v => (v ? false : v));
+    setMobileConseilOpen(v => (v ? false : v));
   }, [location.pathname]);
 
   // Bloquer le scroll body quand le drawer est ouvert

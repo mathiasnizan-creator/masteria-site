@@ -72,7 +72,8 @@ export function emojiToIcon(raw) {
 export function stripLeadingEmoji(str) {
   if (str == null) return str
   return String(str)
-    .replace(/^(?:[\p{Extended_Pictographic}←-⇿⬀-⯿️✅✓✔✖☑★⭐⚠]\s*)+/u, '')
+    // eslint-disable-next-line no-misleading-character-class -- le sélecteur de variante U+FE0F est volontairement inclus pour retirer les emojis à variante en tête de chaîne
+    .replace(/^(?:[\p{Extended_Pictographic}←-⇿⬀-⯿\uFE0F✅✓✔✖☑★⭐⚠]\s*)+/u, '')
     .trim()
 }
 
@@ -89,6 +90,7 @@ export default function Pictogram({
   ...rest
 }) {
   const Icon = emojiToIcon(emoji) || Sparkles
+  // eslint-disable-next-line react-hooks/static-components -- sélection dynamique d'un composant lucide existant selon la prop emoji, pas une définition de composant au render
   const glyph = <Icon size={size} color={color} strokeWidth={strokeWidth} aria-hidden="true" {...rest} />
   if (!tile) return glyph
   return (

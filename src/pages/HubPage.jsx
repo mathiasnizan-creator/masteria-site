@@ -111,7 +111,7 @@ export default function HubPage() {
     audience: 'Professionnels en entreprise (B2B)',
     teaches: hubContent?.programme?.flatMap(p => p.items) || undefined,
     modules: hubContent?.programme?.flatMap((p, dayIdx) =>
-      (p.items || []).map((item, i) => ({
+      (p.items || []).map((item) => ({
         day: p.day || dayIdx + 1,
         title: item.split(':')[0]?.trim() || item.slice(0, 60),
         description: item,

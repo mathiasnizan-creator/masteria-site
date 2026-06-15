@@ -120,7 +120,6 @@ export default function AgenceGeoPage() {
   const isFR = city.countryCode === 'FR'
 
   const metaTitle = `Agence IA ${city.name} · Conseil & dev sur mesure | Masteria`
-  const h1 = `Agence IA ${city.nameLoc} : conseil, développement et automatisation sur mesure`
 
   const otherCities = AGENCE_GEO_CITIES.filter(x => x.slug !== city.slug)
 

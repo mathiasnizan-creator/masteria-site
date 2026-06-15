@@ -479,7 +479,7 @@ function ShareButton({ url, title }) {
 
   const handleShare = async () => {
     if (navigator.share) {
-      try { await navigator.share({ title, url }) } catch {}
+      try { await navigator.share({ title, url }) } catch { /* partage annulé par l'utilisateur, no-op */ }
     } else {
       await navigator.clipboard.writeText(url)
       setCopied(true)
@@ -1183,7 +1183,7 @@ export default function BlogArticlePage() {
               gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
               gap: 18,
             }}>
-              {related.map((a, i) => {
+              {related.map((a) => {
                 const c = getTagColor(a.tag)
                 return (
                   <Link key={a.slug} to={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>

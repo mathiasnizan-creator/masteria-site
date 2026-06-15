@@ -111,8 +111,9 @@ function CategoryCard({ category, count, isActive, onClick }) {
 
 function ArticleCard({ a, index }) {
   const [hovered, setHovered] = useState(false)
+  const [newCutoff] = useState(() => Date.now() - 45 * 24 * 60 * 60 * 1000)
   const c = getTagColor(a.tag)
-  const isNew = a.datePublished && new Date(a.datePublished) > new Date(Date.now() - 45 * 24 * 60 * 60 * 1000)
+  const isNew = a.datePublished && new Date(a.datePublished).getTime() > newCutoff
 
   return (
     <FadeIn delay={Math.min(index * 35, 240)}>
@@ -388,13 +389,6 @@ export default function BlogListPage() {
   }
 
   const activeCats = META_CATEGORIES.filter(c => activeCategories.has(c.id))
-  const filteredTotal = useMemo(() => {
-    if (activeCategories.size === 0) return BLOG_ARTICLES.length
-    return BLOG_ARTICLES.filter(a => {
-      const cat = getCategoryForTag(a.tag)
-      return cat && activeCategories.has(cat.id)
-    }).length
-  }, [activeCategories])
 
   /* Suggestions de catégorie quand 0 résultat */
   const suggestions = useMemo(() => {
