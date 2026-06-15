@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, LayoutGrid, Megaphone, Briefcase, Headphones, Users, Calculator,
   Scale, Cog, Server, Workflow, Bot, Database, FileSearch, PenLine, Network,
-  Compass, ListChecks, Sparkles, Target, ShieldCheck, RefreshCw,
+  Compass, ListChecks, Sparkles, Target, ShieldCheck, RefreshCw, TrendingUp,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -19,9 +19,11 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * /assistant-documentaire-ia, /integration-llm-rag, /diagnostic-ia).
  * Mots-clés : cas d'usage ia entreprise, exemples ia entreprise, applications ia en entreprise,
  * cas concrets ia entreprise, cas d'usage intelligence artificielle entreprise,
- * exemples d'utilisation de l'ia en entreprise, 15 cas concrets agents ia.
+ * exemples d'utilisation de l'ia en entreprise, cas d'usage agents ia.
+ * Chaque cas est orienté GAIN CONCRET pour l'équipe (ligne « Ce que l'équipe y gagne »).
  * Intégrité stricte : aucun cas client nominatif, aucun chiffre de résultat inventé.
- * On décrit la CAPACITÉ (« permet de… », « automatise… »), jamais « le client X a gagné Y % ».
+ * On décrit la CAPACITÉ et le gain qualitatif (« moins de ressaisie », « du temps rendu sur… »),
+ * jamais « le client X a gagné Y % ».
  * Seule stat citée : Gartner (≥ 30 % des projets GenAI abandonnés après POC d'ici fin 2025).
  * Design premium : hero sombre #0A0F1E, rythme (ancre sombre + éditorial asymétrique +
  * familles de cartes), icônes lucide (zéro emoji), accent bleu unique #2563EB, zéro orange.
@@ -33,10 +35,10 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Cas d'usage de l'IA en entreprise | Masteria"
-const META_DESC = "Cas d'usage de l'IA en entreprise : 20 exemples concrets par fonction (marketing, commercial, RH, finance) et par type de solution. Le panorama pilier."
+const META_DESC = "Cas d'usage de l'IA en entreprise : 30 exemples concrets par fonction (marketing, commercial, RH, finance) et par type de solution, avec le gain concret pour chaque équipe."
 
 const H1_LINE1 = "Cas d'usage de l'IA en entreprise"
-const H1_LINE2 = "exemples concrets par fonction et par métier"
+const H1_LINE2 = "exemples concrets et gains réels par métier"
 
 const KEYWORDS = "cas d'usage ia entreprise, exemples ia entreprise, applications ia en entreprise, cas concrets ia entreprise, cas d'usage intelligence artificielle entreprise, exemples d'utilisation de l'ia en entreprise, cas d'usage agents ia"
 
@@ -48,7 +50,6 @@ const UPDATED = '2026-06-15'
 const TOC = [
   { href: '#par-fonction', label: 'Cas par fonction' },
   { href: '#par-type', label: 'Cas par type de solution' },
-  { href: '#grille', label: 'Les 20 cas en un coup d\'œil' },
   { href: '#du-cas-a-la-mise-en-oeuvre', label: 'Du cas à la mise en œuvre' },
   { href: '#choisir', label: 'Par où commencer' },
   { href: '#faq', label: 'Questions fréquentes' },
@@ -57,15 +58,16 @@ const TOC = [
 /* ───────── En bref (synthèse citable — GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Cas couverts', value: "20 cas d'usage concrets de l'IA en entreprise, décrits par la capacité, sans chiffre de résultat inventé" },
+  { label: 'Cas couverts', value: "30 cas d'usage concrets de l'IA en entreprise, décrits par la capacité et le gain concret pour l'équipe, sans chiffre de résultat inventé" },
   { label: 'Fonctions', value: "Marketing, commercial, support et relation client, RH, finance et compta, juridique, opérations, IT" },
-  { label: 'Types de solution', value: "Automatisation de process, agents autonomes, copilotes internes, analyse documentaire, génération de contenu, RAG" },
+  { label: 'Types de solution', value: "Automatisation de process, agents autonomes, copilotes internes, génération de contenu, analyse documentaire, RAG, connecteurs" },
+  { label: 'Gain pour l\'équipe', value: "Moins de ressaisie et de tâches répétitives, plus de temps sur ce qui demande du jugement humain" },
   { label: 'Du cas à l\'usage', value: "Un cas d'usage devient utile par un pilote cadré sur un processus réel, mesuré avant d'être étendu" },
   { label: 'Posture', value: "Panorama informationnel, neutre sur les outils ; renvoie vers les solutions adaptées à chaque cas" },
   { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel ponctuel" },
 ]
 
-/* ───────── Cas d'usage par FONCTION (8 fonctions, 16 cas) ───────── */
+/* ───────── Cas d'usage par FONCTION (8 fonctions, 24 cas) ───────── */
 
 const FUNCTION_GROUPS = [
   {
@@ -74,12 +76,19 @@ const FUNCTION_GROUPS = [
     label: 'Marketing et communication',
     cases: [
       {
-        title: '1. Production et déclinaison de contenus',
+        title: 'Production et déclinaison de contenus',
         desc: "L'IA générative produit des brouillons d'articles, de posts et de newsletters à partir d'un brief, puis décline un contenu pilier sur plusieurs canaux dans le respect d'une charte éditoriale. Les équipes relisent et arbitrent avant publication.",
+        gain: "L'équipe part d'un brouillon solide plutôt que de la page blanche et concentre son temps sur l'angle et la relecture.",
       },
       {
-        title: '2. Veille concurrentielle et de marché',
+        title: 'Veille concurrentielle et de marché',
         desc: "Un agent surveille les sites, communiqués et publications désignés, puis livre une synthèse sourcée des changements détectés à fréquence fixe. Le marketing décide de ce qui mérite une réaction plutôt que de scruter les sources à la main.",
+        gain: "Fini les heures à surveiller les concurrents : l'équipe reçoit une synthèse prête et tranche sur l'essentiel.",
+      },
+      {
+        title: 'Personnalisation des campagnes et segmentation',
+        desc: "À partir des données du CRM et des comportements observés, l'IA propose des segments, adapte le message à chaque audience et génère les variantes d'objet et d'accroche à tester. Le marketing valide avant lancement.",
+        gain: "Des campagnes vraiment ciblées sans le travail manuel de découpage des listes et de réécriture pour chaque segment.",
       },
     ],
   },
@@ -89,12 +98,19 @@ const FUNCTION_GROUPS = [
     label: 'Commercial et avant-vente',
     cases: [
       {
-        title: '3. Qualification des leads entrants',
+        title: 'Qualification des leads entrants',
         desc: "L'IA lit chaque demande entrante, recherche l'entreprise, applique une grille de qualification et prépare une fiche documentée dans le CRM. Le commercial reçoit un lead scoré avec un brouillon de première réponse à valider.",
+        gain: "Le commercial concentre son énergie sur les leads à fort potentiel au lieu du tri et de la recherche d'informations.",
       },
       {
-        title: '4. Préparation des rendez-vous commerciaux',
+        title: 'Préparation des rendez-vous commerciaux',
         desc: "Avant un rendez-vous, l'IA compile l'historique du compte, les actualités du prospect et les échanges passés en une fiche de préparation d'une page. Le commercial arrive informé sans avoir passé sa soirée à rassembler le contexte.",
+        gain: "Le commercial arrive préparé sans y passer sa soirée ; le contexte est déjà rassemblé et mis en forme.",
+      },
+      {
+        title: 'Compte rendu et relances après rendez-vous',
+        desc: "Après un échange ou un appel, l'IA rédige le compte rendu, met à jour le CRM et prépare les e-mails de relance avec les prochaines étapes. Le commercial corrige et envoie.",
+        gain: "Plus de notes qui traînent ni de relances oubliées : le suivi se fait pendant que l'affaire est encore chaude.",
       },
     ],
   },
@@ -104,12 +120,19 @@ const FUNCTION_GROUPS = [
     label: 'Support et relation client',
     cases: [
       {
-        title: '5. Réponse de niveau 1 et routage des tickets',
+        title: 'Réponse de niveau 1 et routage des tickets',
         desc: "L'IA répond aux questions courantes à partir de la base de connaissances, consulte le statut réel d'une commande et route les demandes complexes vers la bonne équipe avec un résumé. Le conseiller démarre chaque dossier avec l'essentiel sous les yeux.",
+        gain: "Les conseillers se concentrent sur les échanges qui demandent un humain ; les demandes simples sont traitées sans attente.",
       },
       {
-        title: '6. Synthèse de la voix du client',
+        title: 'Synthèse de la voix du client',
         desc: "L'IA agrège tickets, avis et verbatims d'enquêtes, repère les motifs récurrents et produit un rapport d'irritants priorisé. Les équipes produit et qualité travaillent sur des signaux consolidés plutôt que sur des cas isolés.",
+        gain: "Les équipes produit et qualité agissent sur des irritants consolidés au lieu de réagir cas par cas.",
+      },
+      {
+        title: 'Assistance en temps réel au conseiller',
+        desc: "Pendant un échange, l'IA suggère au conseiller la réponse adaptée, l'article de base de connaissances pertinent et la procédure à suivre, en s'appuyant sur l'historique du dossier. Le conseiller reste maître de ce qu'il envoie.",
+        gain: "Un conseiller qui débute répond avec le niveau d'un expert ; moins de mises en attente et d'escalades inutiles.",
       },
     ],
   },
@@ -119,12 +142,19 @@ const FUNCTION_GROUPS = [
     label: 'Ressources humaines',
     cases: [
       {
-        title: '7. Premier niveau de réponse RH',
+        title: 'Premier niveau de réponse RH',
         desc: "Congés, mutuelle, notes de frais, attestations : l'IA répond aux questions récurrentes en s'appuyant sur les accords et politiques internes, et transfère à l'équipe RH dès qu'un cas sort du cadre prévu.",
+        gain: "L'équipe RH cesse de répondre dix fois à la même question et garde du temps pour l'accompagnement humain.",
       },
       {
-        title: "8. Accompagnement de l'onboarding",
+        title: "Accompagnement de l'onboarding",
         desc: "L'IA répond aux questions pratiques des nouveaux arrivants à partir de la documentation interne et suit la check-list d'intégration. Les RH gardent les sujets humains, l'outil prend en charge la logistique répétitive.",
+        gain: "Le nouvel arrivant est autonome plus vite ; les RH se réservent les moments qui comptent vraiment.",
+      },
+      {
+        title: 'Tri et présélection des candidatures',
+        desc: "L'IA lit les candidatures, les rapproche des critères du poste et prépare une synthèse comparée des profils en signalant ce qui mérite un second regard. Le recruteur décide qui rencontrer.",
+        gain: "Le recruteur consacre son temps aux entretiens et à l'évaluation humaine plutôt qu'au tri de centaines de CV.",
       },
     ],
   },
@@ -134,12 +164,19 @@ const FUNCTION_GROUPS = [
     label: 'Finance et comptabilité',
     cases: [
       {
-        title: '9. Traitement des factures fournisseurs',
+        title: 'Traitement des factures fournisseurs',
         desc: "L'IA extrait les données des factures reçues, les rapproche des bons de commande, prépare l'imputation et signale toute anomalie (montant inhabituel, doublon, fournisseur inconnu) à un humain avant validation.",
+        gain: "La comptabilité valide au lieu de ressaisir ; les anomalies remontent avant le paiement, pas après.",
       },
       {
-        title: '10. Préparation du reporting de gestion',
+        title: 'Préparation du reporting de gestion',
         desc: "L'IA rassemble les chiffres dans les outils comptables, construit les tableaux convenus et rédige un premier commentaire de gestion. Le responsable financier contrôle, corrige et garde la main sur l'analyse.",
+        gain: "Le responsable financier passe à l'analyse plus tôt, sans la corvée de consolidation des chiffres.",
+      },
+      {
+        title: 'Suivi des paiements et relance des impayés',
+        desc: "L'IA suit les échéances, repère les retards et prépare des relances adaptées au profil et à l'ancienneté de la créance, du rappel courtois à la mise en demeure. La finance garde la main sur le ton et l'envoi.",
+        gain: "Des relances régulières et personnalisées sans charge manuelle, pour une trésorerie suivie de près.",
       },
     ],
   },
@@ -149,12 +186,19 @@ const FUNCTION_GROUPS = [
     label: 'Juridique et conformité',
     cases: [
       {
-        title: '11. Revue et synthèse de contrats',
+        title: 'Revue et synthèse de contrats',
         desc: "L'IA lit un contrat, en extrait les clauses clés (durée, résiliation, responsabilité, pénalités) et signale les écarts par rapport à une trame de référence. Le juriste se concentre sur l'analyse de risque plutôt que sur la lecture exhaustive.",
+        gain: "Le juriste se concentre sur le risque réel au lieu de relire chaque clause de bout en bout.",
       },
       {
-        title: '12. Réponse aux questions de conformité internes',
+        title: 'Réponse aux questions de conformité internes',
         desc: "Interrogée sur les politiques internes, le RGPD ou les procédures, l'IA répond en citant les documents sources et oriente vers le référent quand le cas dépasse le cadre documenté. La connaissance interne devient interrogeable.",
+        gain: "Les équipes trouvent elles-mêmes la règle applicable ; le juriste n'est sollicité que sur les vrais arbitrages.",
+      },
+      {
+        title: 'Veille réglementaire',
+        desc: "Un agent surveille les évolutions de la réglementation et des normes applicables à votre activité, puis livre une synthèse des changements et de leur impact possible. Le référent décide des actions à mener.",
+        gain: "Plus de texte important manqué : la veille devient continue sans monopoliser un juriste.",
       },
     ],
   },
@@ -164,12 +208,19 @@ const FUNCTION_GROUPS = [
     label: 'Opérations et production',
     cases: [
       {
-        title: '13. Rédaction et mise à jour des procédures',
+        title: 'Rédaction et mise à jour des procédures',
         desc: "L'IA transforme des notes et des échanges en modes opératoires structurés, et compare régulièrement la documentation à la réalité du terrain pour proposer les corrections. Les équipes valident au fil de l'eau.",
+        gain: "Les modes opératoires restent à jour sans chantier documentaire ; le terrain valide au fil de l'eau.",
       },
       {
-        title: '14. Aide à la planification et au suivi',
+        title: 'Aide à la planification et au suivi',
         desc: "L'IA consolide les informations dispersées (plannings, comptes rendus, tableaux), repère les écarts et prépare un point de situation. Le pilote d'activité arbitre sur une vue déjà mise en forme.",
+        gain: "Le pilote d'activité arbitre sur une vue déjà consolidée au lieu de rassembler l'information à la main.",
+      },
+      {
+        title: "Comptes rendus de réunion et plans d'action",
+        desc: "À partir d'un enregistrement ou de notes, l'IA produit un compte rendu structuré, extrait les décisions et les actions avec leurs responsables, et prépare le suivi. Les participants valident.",
+        gain: "Plus personne ne sacrifie l'écoute pour prendre des notes ; les actions sont tracées et rien ne se perd.",
       },
     ],
   },
@@ -179,46 +230,76 @@ const FUNCTION_GROUPS = [
     label: 'IT et développement',
     cases: [
       {
-        title: '15. Agents de code pour les équipes de développement',
+        title: 'Agents de code pour les équipes de développement',
         desc: "À partir d'un ticket, un agent de code explore la base, propose une implémentation, écrit les tests et prépare une pull request qu'un développeur relit avant fusion. Le développeur consacre plus de temps à la conception et à la revue.",
+        gain: "Le développeur consacre son temps à la conception et à la revue plutôt qu'au code répétitif.",
         link: { to: '/agents-ia-entreprise', label: 'En savoir plus sur les agents IA' },
       },
       {
-        title: '16. Support informatique interne de niveau 1',
+        title: 'Support informatique interne de niveau 1',
         desc: "Réinitialisations de mot de passe, demandes d'accès, diagnostics standards : l'IA traite les sollicitations courantes selon les procédures et escalade aux techniciens avec un diagnostic déjà documenté.",
+        gain: "Les techniciens se concentrent sur les vrais incidents ; les demandes courantes avancent sans file d'attente.",
+      },
+      {
+        title: 'Documentation technique et revue de code',
+        desc: "L'IA documente le code existant, rédige commentaires et guides, et signale en revue les écarts de style, les failles courantes et les cas de test manquants. L'équipe garde la décision finale.",
+        gain: "Une base de code mieux documentée et relue sans alourdir la charge des développeurs.",
       },
     ],
   },
 ]
 
-/* ───────── Cas d'usage par TYPE de solution (4 types, 4 cas) ───────── */
+/* ───────── Cas d'usage par TYPE de solution (6 types) ───────── */
 
 const TYPE_CASES = [
   {
     icon: Workflow,
-    title: '17. Automatisation de process bout en bout',
+    title: 'Automatisation de process bout en bout',
     desc: "Orchestration des flux répétitifs, du déclencheur au résultat : extraire une donnée, la transformer, la déposer dans le bon outil sans ressaisie. L'IA gère les étapes qui demandent du jugement, le reste suit des règles fixes.",
+    gain: "Les équipes sont déchargées de la ressaisie et du copier-coller entre outils.",
     link: { to: '/automatisation-ia', label: "Guide de l'automatisation IA" },
   },
   {
     icon: Bot,
-    title: '18. Agents autonomes et copilotes internes',
+    title: 'Agents autonomes et copilotes internes',
     desc: "Un agent reçoit un objectif et choisit lui-même la séquence d'actions dans vos logiciels ; un copilote interne assiste un métier précis à partir de vos données. Tous deux fonctionnent sous supervision humaine sur les actions sensibles.",
+    gain: "Chaque métier dispose d'un assistant qui agit dans ses outils, sous supervision sur les actions sensibles.",
     link: { to: '/copilote-ia-interne', label: 'Découvrir le copilote IA interne' },
   },
   {
+    icon: PenLine,
+    title: 'Génération et personnalisation de contenu',
+    desc: "À partir d'un brief et de votre charte, l'IA rédige et adapte vos contenus — e-mails, fiches produit, descriptions, supports — et les décline par audience ou par canal. Les équipes relisent et arbitrent avant diffusion.",
+    gain: "Les équipes produisent plus, et plus vite, sans sacrifier la cohérence de ton.",
+    link: { to: '/ia-generative-entreprise', label: "L'IA générative en entreprise" },
+  },
+  {
     icon: FileSearch,
-    title: '19. Analyse et synthèse documentaire',
+    title: 'Analyse et synthèse documentaire',
     desc: "L'IA lit des volumes de documents (rapports, contrats, comptes rendus, e-mails), en extrait l'essentiel et répond à des questions précises en citant ses sources. La masse documentaire cesse d'être un angle mort.",
+    gain: "La masse documentaire devient exploitable : l'information utile se trouve en quelques secondes.",
     link: { to: '/assistant-documentaire-ia', label: "Assistant documentaire IA" },
   },
   {
     icon: Database,
-    title: '20. RAG sur votre base de connaissances interne',
+    title: 'RAG sur votre base de connaissances interne',
     desc: "Le RAG (retrieval-augmented generation) ancre les réponses de l'IA dans vos propres contenus et documents, avec des sources citables. L'outil répond à partir de votre réalité métier, pas d'une connaissance générale.",
+    gain: "Vos collaborateurs interrogent la connaissance de l'entreprise et obtiennent des réponses sourcées, pas génériques.",
     link: { to: '/integration-llm-rag', label: 'Intégration LLM et RAG' },
   },
+  {
+    icon: Network,
+    title: 'Connecteurs et intégrations',
+    desc: "L'IA se branche à vos outils existants — CRM, ERP, messagerie, espace documentaire — pour lire et écrire la donnée là où elle vit, sans changer vos logiciels. Les usages s'installent dans le flux de travail réel.",
+    gain: "Pas de double saisie ni de nouvel outil à adopter : l'IA agit dans l'environnement déjà en place.",
+    link: { to: '/agence-automatisation-ia', label: 'Mettre en œuvre vos intégrations' },
+  },
 ]
+
+/* Numérotation continue : cas par fonction (1…), puis cas par type de solution. */
+let _caseNum = 0
+FUNCTION_GROUPS.forEach(g => g.cases.forEach(uc => { uc.num = ++_caseNum }))
+TYPE_CASES.forEach(uc => { uc.num = ++_caseNum })
 
 /* ───────── Familles de solution (pictos de tête de section TYPE) ───────── */
 
@@ -273,7 +354,12 @@ const FAQ = [
   {
     q: "Quels sont les cas d'usage de l'IA en entreprise ?",
     aStrong: "Les cas d'usage les plus matures de l'IA en entreprise couvrent la production et la déclinaison de contenus, la qualification de leads, le support client de niveau 1, le traitement des factures, l'analyse documentaire et les agents de code.",
-    aRest: "Au-delà de ces exemples, l'IA s'applique à presque toutes les fonctions : marketing, commercial, support et relation client, RH, finance et comptabilité, juridique, opérations et IT. Leur point commun reste un processus fréquent et documenté, où l'IA prépare le travail et où un humain valide les actions sensibles. Ce panorama en détaille vingt, par fonction et par type de solution.",
+    aRest: "Au-delà de ces exemples, l'IA s'applique à presque toutes les fonctions : marketing, commercial, support et relation client, RH, finance et comptabilité, juridique, opérations et IT. Leur point commun reste un processus fréquent et documenté, où l'IA prépare le travail et où un humain valide les actions sensibles. Ce panorama en détaille trente, par fonction et par type de solution, avec le gain concret pour l'équipe à chaque fois.",
+  },
+  {
+    q: "Quel est le gain réel de l'IA pour les équipes ?",
+    aStrong: "Le gain le plus tangible de l'IA pour les équipes, c'est du temps libéré sur les tâches répétitives et à faible valeur : ressaisie, recherche d'informations, premiers brouillons, tri de demandes — au profit du travail qui demande du jugement et de la relation humaine.",
+    aRest: "Concrètement, l'IA prépare et l'humain décide : le commercial part d'une fiche déjà documentée, le comptable valide au lieu de ressaisir, le conseiller répond plus vite avec le bon contexte. L'ampleur du gain dépend du volume, de la qualité des données et du niveau de supervision. Nous n'avançons aucun pourcentage générique : un pilote mesuré objective le gain propre à votre contexte avant toute extension.",
   },
   {
     q: "Par où commencer pour appliquer l'IA dans son entreprise ?",
@@ -310,13 +396,13 @@ const ALL_CASES = [...ALL_FUNCTION_CASES, ...TYPE_CASES]
 const useCaseItemList = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "20 cas d'usage de l'IA en entreprise",
-  description: "Vingt cas d'usage concrets de l'intelligence artificielle en entreprise, classés par fonction (marketing, commercial, support, RH, finance, juridique, opérations, IT) et par type de solution (automatisation, agents, copilotes, analyse documentaire, RAG).",
-  numberOfItems: 20,
+  name: `${ALL_CASES.length} cas d'usage de l'IA en entreprise`,
+  description: "Cas d'usage concrets de l'intelligence artificielle en entreprise, classés par fonction (marketing, commercial, support, RH, finance, juridique, opérations, IT) et par type de solution (automatisation, agents, copilotes, génération de contenu, analyse documentaire, RAG, connecteurs), avec le gain concret pour l'équipe.",
+  numberOfItems: ALL_CASES.length,
   itemListElement: ALL_CASES.map((uc, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    name: uc.title.replace(/^\d+\.\s*/, ''),
+    name: uc.title,
   })),
 }
 
@@ -368,6 +454,19 @@ function IconTile({ icon: Icon }) {
   return (
     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
       <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+    </div>
+  )
+}
+
+/* GainLine : ce que l'équipe gagne concrètement (gain qualitatif, jamais chiffré). */
+function GainLine({ text, dark = false }) {
+  return (
+    <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px dashed ${dark ? '#22304D' : '#E5E7EB'}` }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11.5, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: dark ? '#60A5FA' : c, marginBottom: 5 }}>
+        <TrendingUp size={13} strokeWidth={2.4} aria-hidden="true" />
+        <span>Ce que l'équipe y gagne</span>
+      </div>
+      <p style={{ fontSize: 13.5, color: dark ? '#9FB0C9' : '#475569', lineHeight: 1.6, margin: 0 }}>{text}</p>
     </div>
   )
 }
@@ -466,11 +565,11 @@ export default function CasUsageIAEntreprisePage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Vingt <strong style={{ color: '#fff', fontWeight: 700 }}>cas d'usage concrets de l'IA en entreprise</strong>, classés par fonction et par type de solution, pour repérer où l'intelligence artificielle apporte une vraie valeur dans votre activité.
+            Trente <strong style={{ color: '#fff', fontWeight: 700 }}>cas d'usage concrets de l'IA en entreprise</strong>, classés par fonction et par type de solution, avec pour chacun <strong style={{ color: '#fff', fontWeight: 700 }}>ce que vos équipes y gagnent concrètement</strong> : du temps rendu sur les tâches répétitives, au profit de ce qui demande du jugement.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Ce panorama réunit des exemples d'utilisation de l'IA en entreprise, du marketing à l'IT, et les classe aussi par type de solution : automatisation de process, agents autonomes, copilotes internes, analyse documentaire et RAG. Chaque cas décrit une capacité, sans chiffre de résultat inventé.
+            Ce panorama réunit des exemples d'utilisation de l'IA en entreprise, du marketing à l'IT, et les classe aussi par type de solution : automatisation de process, agents autonomes, copilotes internes, génération de contenu, analyse documentaire, RAG et connecteurs. Chaque cas décrit une capacité et le gain pour l'équipe, sans chiffre de résultat inventé.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -520,7 +619,7 @@ export default function CasUsageIAEntreprisePage() {
           <Kicker>Cas d'usage par fonction</Kicker>
           <h2 style={h2Style}>Quels cas d'usage de l'IA selon la fonction ?</h2>
           <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>L'IA en entreprise s'applique à presque toutes les fonctions : marketing, commercial, support et relation client, RH, finance et comptabilité, juridique, opérations et IT.</strong> Voici, fonction par fonction, des exemples concrets d'applications de l'IA en entreprise. Chacun décrit une capacité, jamais un résultat chiffré : le gain réel dépend de votre volume, de vos données et du niveau de supervision retenu.
+            <strong style={{ color: '#0A0A0A' }}>L'IA en entreprise s'applique à presque toutes les fonctions : marketing, commercial, support et relation client, RH, finance et comptabilité, juridique, opérations et IT.</strong> Voici, fonction par fonction, des exemples concrets d'applications de l'IA en entreprise. Chacun décrit une capacité et ce que l'équipe y gagne concrètement, jamais un résultat chiffré : l'ampleur du gain dépend de votre volume, de vos données et du niveau de supervision retenu.
           </p>
 
           {FUNCTION_GROUPS.map(group => (
@@ -532,9 +631,10 @@ export default function CasUsageIAEntreprisePage() {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
                 {group.cases.map(uc => (
-                  <div key={uc.title} style={{ ...cardStyle, padding: '24px 26px' }}>
-                    <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{uc.title}</h4>
+                  <div key={uc.title} style={{ ...cardStyle, padding: '24px 26px', display: 'flex', flexDirection: 'column' }}>
+                    <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{uc.num}. {uc.title}</h4>
                     <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{uc.desc}</p>
+                    {uc.gain && <GainLine text={uc.gain} />}
                     {uc.link && (
                       <Link to={uc.link.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 14, fontSize: 14, color: c, fontWeight: 700, textDecoration: 'none' }}>
                         {uc.link.label}
@@ -561,7 +661,7 @@ export default function CasUsageIAEntreprisePage() {
 
           <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', margin: '0 0 28px', maxWidth: 860 }}>
             <p style={{ fontSize: 16.5, lineHeight: 1.7, margin: 0, color: '#E2E8F0' }}>
-              <strong style={{ color: '#fff' }}>Au-delà des fonctions, les cas d'usage de l'IA en entreprise se rangent par type de solution : automatisation de process, agents autonomes et copilotes internes, analyse et synthèse documentaire, génération de contenu, et RAG sur votre base de connaissances interne.</strong> Cette lecture aide à choisir la brique technique adaptée à chaque cas.
+              <strong style={{ color: '#fff' }}>Au-delà des fonctions, les cas d'usage de l'IA en entreprise se rangent par type de solution : automatisation de process, agents autonomes et copilotes internes, génération de contenu, analyse et synthèse documentaire, RAG sur votre base de connaissances interne, et connecteurs vers vos outils.</strong> Cette lecture aide à choisir la brique technique adaptée à chaque cas.
             </p>
           </div>
 
@@ -583,41 +683,19 @@ export default function CasUsageIAEntreprisePage() {
             {TYPE_CASES.map(uc => {
               const Icon = uc.icon
               return (
-                <div key={uc.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28 }}>
+                <div key={uc.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28, display: 'flex', flexDirection: 'column' }}>
                   <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                     <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                   </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{uc.title}</h3>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{uc.num}. {uc.title}</h3>
                   <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{uc.desc}</p>
+                  {uc.gain && <GainLine text={uc.gain} dark />}
                   {uc.link && (
                     <Link to={uc.link.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 14, fontSize: 14, color: '#93C5FD', fontWeight: 700, textDecoration: 'none' }}>
                       {uc.link.label}
                       <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
                     </Link>
                   )}
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── GRILLE : LES 20 CAS EN UN COUP D'ŒIL (famille « grille de cas ») ── */}
-      <section id="grille" style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={wrap}>
-          <Kicker>Vue d'ensemble</Kicker>
-          <h2 style={h2Style}>Les 20 cas d'usage en un coup d'œil</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Voici la liste complète des vingt cas concrets d'utilisation de l'IA en entreprise réunis dans ce panorama.</strong> Elle reprend aussi bien les cas par fonction que les cas lus par type de solution, dont les cas d'usage d'agents IA.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '10px 24px' }}>
-            {ALL_CASES.map(uc => {
-              const num = uc.title.match(/^\d+/)?.[0]
-              const label = uc.title.replace(/^\d+\.\s*/, '')
-              return (
-                <div key={uc.title} style={{ ...cardStyle, padding: '14px 18px', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 8, background: cLight, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif', fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{num}</span>
-                  <span style={{ fontSize: 14.5, color: '#0A0A0A', fontWeight: 600, lineHeight: 1.5 }}>{label}</span>
                 </div>
               )
             })}
