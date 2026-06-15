@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page de conversion high-ticket — offre d'entrée productisée « Diagnostic IA »
@@ -32,7 +33,6 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
 const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
-const H1 = "Diagnostic IA : votre feuille de route en une journée"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
 
@@ -46,8 +46,6 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
-const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
-const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
@@ -333,14 +331,23 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function DiagnosticIAPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Diagnostic IA', slug: SLUG },
@@ -357,68 +364,78 @@ export default function DiagnosticIAPage() {
         extraJsonLd={[serviceJsonLd, processJsonLd]}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={wrap}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Diagnostic IA</span>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Diagnostic IA</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Compass size={16} strokeWidth={2.2} aria-hidden="true" />
-              Offre d'entrée · Diagnostic IA
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Compass size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Une journée · Un livrable
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              Offre d'entrée · Diagnostic IA
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 50px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 920 }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Diagnostic IA :
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>votre feuille de route en une journée</span>
           </h1>
 
-          {/* GEO : réponse directe pour citation LLM */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 760, fontWeight: 500 }}>
-            <strong>Le Diagnostic IA de Masteria est une journée de travail qui cadre vos usages, cartographie vos processus automatisables et les priorise par impact et par effort. Vous repartez avec un livrable concret : une feuille de route priorisée, des estimations de budget et de délai et des quick wins activables, sans engagement de suite.</strong>
+          {/* GEO : réponse directe citable — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Le Diagnostic IA de Masteria est une journée de travail qui cadre vos usages, cartographie vos processus automatisables et les priorise par impact et par effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>livrable concret</strong> : une feuille de route priorisée, des estimations de budget et de délai et des quick wins activables, sans engagement de suite.
           </p>
 
-          <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 760 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             C'est l'étape qui dé-risque votre premier pas vers l'IA. Plutôt que de lancer un projet sur une intuition, vous obtenez une lecture lucide de ce qui mérite d'être fait, dans quel ordre et avec quel budget. Une offre productisée à faible engagement, conçue par un cabinet spécialisé sur l'intelligence artificielle depuis 2022.
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Demander un diagnostic
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#livrable" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <a href="#livrable" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir le livrable
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* chips de réassurance */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: 40 }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO) */}
-          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', marginTop: 36, maxWidth: 760 }}>
-            <div style={kickerStyle}>En bref</div>
+          {/* En bref — synthèse citable (GEO), carte sombre */}
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
-                  <dt style={{ flex: '0 0 92px', fontWeight: 800, fontSize: 13.5, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{row.value}</dd>
+                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                  <dt style={{ flex: '0 0 92px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
                 </div>
               ))}
             </dl>
@@ -426,71 +443,80 @@ export default function DiagnosticIAPage() {
         </div>
       </section>
 
-      {/* ── CE QU'EST LE DIAGNOSTIC ── */}
+      {/* ── CE QU'EST LE DIAGNOSTIC (éditorial asymétrique) ── */}
       <section id="diagnostic" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ce que c'est</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Qu'est-ce que le Diagnostic IA de Masteria ?
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Ce que c'est</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Qu'est-ce que le Diagnostic IA de Masteria ?
+              </h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong>Le Diagnostic IA est une intervention d'une journée qui cadre vos usages, cartographie vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. Il couvre quatre dimensions.
+              </p>
+            </div>
+
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+                {COUVERTURE.map((item, i) => (
+                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                    <div style={{ marginBottom: 14 }}>
+                      <IconTile icon={item.icon} />
+                    </div>
+                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                Le diagnostic s'inscrit dans une logique plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link>. Quand un cas est prêt, il enchaîne naturellement sur le <Link to="/agence-developpement-ia" style={aStyle}>développement sur mesure</Link>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DIAGNOSTIC VS AUDIT VS POC (ancre sombre — pivot, tableau citable GEO) ── */}
+      <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Diagnostic, audit ou POC</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
+            Diagnostic, audit ou POC : quelle différence ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le Diagnostic IA est une intervention d'une journée qui cadre vos usages, cartographie vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+            <strong style={{ color: '#fff' }}>Le diagnostic IA, l'audit IA et le POC répondent à trois besoins distincts. Le diagnostic cadre et priorise vos usages en une journée. L'audit évalue en profondeur votre maturité et vos données. Le POC prouve la valeur d'un cas précis en conditions réelles. Pour un premier pas, le diagnostic est le point d'entrée le plus rapide et le moins engageant.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. Il couvre quatre dimensions.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {COUVERTURE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Le diagnostic s'inscrit dans une logique plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link>. Quand un cas est prêt, il enchaîne naturellement sur le <Link to="/agence-developpement-ia" style={aStyle}>développement sur mesure</Link>.
-          </p>
-
-          {/* Diagnostic vs audit vs POC — tableau citable (GEO) */}
-          <div style={{ marginTop: 'clamp(48px, 7vw, 80px)', paddingTop: 'clamp(40px, 6vw, 64px)', borderTop: '1px solid #E5E7EB' }}>
-            <Kicker>Diagnostic, audit ou POC</Kicker>
-            <h2 style={{ ...h2Style, maxWidth: 880 }}>
-              Diagnostic, audit ou POC : quelle différence ?
-            </h2>
-
-            <p style={answerStyle}>
-              <strong>Le diagnostic IA, l'audit IA et le POC répondent à trois besoins distincts. Le diagnostic cadre et priorise vos usages en une journée. L'audit évalue en profondeur votre maturité et vos données. Le POC prouve la valeur d'un cas précis en conditions réelles. Pour un premier pas, le diagnostic est le point d'entrée le plus rapide et le moins engageant.</strong>
-            </p>
-
-            <div style={{ ...cardStyle, overflowX: 'auto' }}>
-              <table aria-label="Comparatif entre diagnostic IA, audit IA complet et POC" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
-                <thead>
-                  <tr>
-                    <th scope="col" style={{ ...thStyle, width: '20%' }}>Critère</th>
-                    <th scope="col" style={{ ...thStyle, width: '28%', color: c }}>Diagnostic IA</th>
-                    <th scope="col" style={{ ...thStyle, width: '26%' }}>Audit IA complet</th>
-                    <th scope="col" style={{ ...thStyle, width: '26%' }}>POC / preuve de concept</th>
+          <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
+            <table aria-label="Comparatif entre diagnostic IA, audit IA complet et POC" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
+              <thead>
+                <tr>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '20%' }}>Critère</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '28%' }}>Diagnostic IA</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Audit IA complet</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>POC / preuve de concept</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARATIF.map((row, i) => (
+                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                    <th scope="row" style={{ padding: '14px 18px', fontSize: 14, color: '#F8FAFC', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5 }}>{row.critere}</th>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#fff', fontWeight: 500, lineHeight: 1.65, verticalAlign: 'top', background: 'rgba(37,99,235,0.10)' }}>{row.diagnostic}</td>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.audit}</td>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.poc}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {COMPARATIF.map((row, i) => (
-                    <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
-                      <th scope="row" style={{ ...tdStyle, textAlign: 'left', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.critere}</th>
-                      <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.diagnostic}</td>
-                      <td style={tdStyle}>{row.audit}</td>
-                      <td style={tdStyle}>{row.poc}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -538,15 +564,18 @@ export default function DiagnosticIAPage() {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {POUR_QUI.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
+            {POUR_QUI.map(card => {
+              const Icon = card.icon
+              return (
+                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
                 </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -563,20 +592,20 @@ export default function DiagnosticIAPage() {
             <strong>Le diagnostic se déroule en trois temps : avant, une préparation et une collecte d'éléments pour arriver cadrés ; pendant, une journée d'ateliers avec vos équipes ; après, la formalisation et la restitution du livrable. Vous ne perdez pas votre journée en mise en contexte, le travail est utile de bout en bout.</strong>
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 0, marginTop: 12 }}>
+          <div style={{ position: 'relative', marginTop: 12 }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {DEROULE.map((step, i) => (
               <div
                 key={step.num}
                 style={{
-                  display: 'flex', gap: 20, alignItems: 'flex-start',
-                  padding: '24px 0',
-                  borderTop: i === 0 ? 'none' : '1px solid #E5E7EB',
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === DEROULE.length - 1 ? '18px 0 0' : '18px 0'),
                 }}
               >
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
                   <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>{step.phase}</div>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
                   <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 760 }}>{step.desc}</p>
@@ -653,17 +682,28 @@ export default function DiagnosticIAPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <Kicker>FAQ</Kicker>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>
-            Diagnostic IA : les questions fréquentes
-          </h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} color={c} />
-            ))}
+        <div style={wrap}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>FAQ</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>
+                Diagnostic IA : les questions fréquentes
+              </h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} color={c} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -683,6 +723,9 @@ export default function DiagnosticIAPage() {
               { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cadrage stratégique dans lequel s'inscrit le diagnostic, à l'échelle de l'entreprise." },
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand un cas est prêt : conception et développement de la solution, de l'idée au déploiement." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Déployer des agents IA sur les cas prioritaires que le diagnostic fait remonter." },
+              { label: 'Cas d\'usage de l\'IA en entreprise', href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Les cas d'usage de l'IA en entreprise que le diagnostic aide à identifier et à prioriser." },
+              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'Génératif', desc: "Cadrer l'IA générative en entreprise : ce qu'elle permet et où elle crée vraiment de la valeur." },
+              { label: 'Prix d\'un projet IA', href: '/prix-projet-ia', tag: 'Budget', desc: "Après le diagnostic vient le chiffrage : les ordres de grandeur du prix d'un projet IA." },
               { label: 'Méthode & modèles d\'engagement', href: '/methode-projet-ia', tag: 'Méthode', desc: "Comment nous travaillons après le diagnostic : forfait, régie ou accompagnement conseil." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
@@ -709,23 +752,28 @@ export default function DiagnosticIAPage() {
         </div>
       </section>
 
-      {/* ── CTA FINALE SOMBRE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
-        <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <div style={{ ...kickerStyle, color: cLight }}>Offre d'entrée</div>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Commencez par un diagnostic
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-            Décrivez-nous votre contexte et les processus que vous voulez examiner. Nous revenons vers vous sous 24 heures pour cadrer le périmètre du diagnostic et convenir d'une date. Vous repartez de la journée avec une feuille de route claire, que vous donniez suite ou non.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-            Demander un diagnostic IA
-            <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-            Réponse sous 24 h · Faible engagement · Livrable actionnable · Lyon, France, Suisse, Belgique
-          </p>
+        <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Offre d'entrée</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
+              Commencez par un diagnostic
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
+              Décrivez-nous votre contexte et les processus que vous voulez examiner. Nous revenons vers vous sous 24 heures pour cadrer le périmètre du diagnostic et convenir d'une date. Vous repartez de la journée avec une feuille de route claire, que vous donniez suite ou non.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Demander un diagnostic IA
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+              Réponse sous 24 h · Faible engagement · Livrable actionnable · Lyon, France, Suisse, Belgique
+            </p>
+          </div>
         </div>
       </section>
 

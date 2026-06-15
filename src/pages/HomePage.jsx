@@ -449,7 +449,7 @@ export default function HomePage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.6vw, 40px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', margin: '0 0 16px', lineHeight: 1.15 }}>On ne fait pas que former : on conçoit et on construit votre IA</h2>
           </div>
           <p style={{ maxWidth: 760, margin: '0 auto 44px', textAlign: 'center', fontSize: 17, color: '#374151', lineHeight: 1.7 }}>
-            <strong style={{ color: '#0A0A0A' }}>Au-delà de la formation, Masteria est un cabinet de conseil et une agence de développement IA : nous cadrons votre stratégie, puis nous concevons et développons les agents, automatisations et outils sur mesure qui s'intègrent à votre environnement.</strong> Du diagnostic au déploiement, avec transfert aux équipes. Nous pouvons aussi détacher des développeurs IA chez vous, sur site ou à distance.
+            <strong style={{ color: '#0A0A0A' }}>Au-delà de la formation, Masteria est un cabinet de conseil et une agence de développement IA : nous cadrons votre stratégie, puis nous concevons et développons les agents, automatisations et outils sur mesure qui s'intègrent à votre environnement.</strong> Du diagnostic au déploiement, avec transfert aux équipes. Nous pouvons aussi détacher des développeurs IA chez vous, sur site ou à distance. Pour aller plus loin, explorez les leviers de l'<Link to="/ia-generative-entreprise" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>IA générative en entreprise</Link> et nos <Link to="/cas-usage-ia-entreprise" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA en entreprise</Link>.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 18 }}>
             {[
@@ -477,6 +477,9 @@ export default function HomePage() {
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none' }}>Démarrer par un diagnostic IA <ArrowRight size={17} aria-hidden="true" /></Link>
             <Link to="/agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none', border: '1px solid #E5E7EB' }}>Découvrir l'agence IA</Link>
           </div>
+          <p style={{ textAlign: 'center', fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: '22px auto 0', maxWidth: 600 }}>
+            Question de budget ? Découvrez à quoi correspond le <Link to="/prix-projet-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> avant de nous solliciter.
+          </p>
         </div>
       </section>
 

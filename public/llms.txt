@@ -77,6 +77,10 @@ Masteria propose deux activités complémentaires :
 - [Cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/conseil-intelligence-artificielle) — Audit des usages, stratégie, accompagnement au déploiement, gouvernance
 - [Conseil stratégie IA](https://www.master-ia.fr/conseil-strategie-ia) — Diagnostic de maturité, priorisation des cas d'usage, feuille de route 90 jours/12 mois
 - [Conseil data & IA](https://www.master-ia.fr/conseil-data-ia) — Audit, gouvernance et préparation des données pour des projets d'IA fiables (RAG, agents, analytics)
+- [Gouvernance de l'IA & conformité AI Act](https://www.master-ia.fr/gouvernance-ia) — Cadrage, classification des risques, registre des usages, politique et comité IA, mise en conformité AI Act et RGPD
+- [IA générative en entreprise](https://www.master-ia.fr/ia-generative-entreprise) — Cas d'usage, déploiement du POC à la production, garde-fous RGPD et AI Act, choix des modèles
+- [Cas d'usage de l'IA en entreprise](https://www.master-ia.fr/cas-usage-ia-entreprise) — 20 exemples concrets par fonction (marketing, commercial, RH, finance, juridique) et par type de solution
+- [Prix d'un projet IA](https://www.master-ia.fr/prix-projet-ia) — Fourchettes de prix par livrable (chatbot, agent, application sur mesure), forfait ou régie, ce qui fait varier le coût
 - [Agence IA à Lyon](https://www.master-ia.fr/agence-ia) — Conseil, automatisation et formation ; siège à Lyon, interventions France, Suisse, Belgique
 - [Agence d'automatisation IA](https://www.master-ia.fr/agence-automatisation-ia) — Cadrage et déploiement d'automatisations avec vos équipes, qui finissent autonomes
 - [Automatisation IA : le guide complet](https://www.master-ia.fr/automatisation-ia) — Définition, cas d'usage par fonction, outils 2026, méthode en 5 étapes, coûts

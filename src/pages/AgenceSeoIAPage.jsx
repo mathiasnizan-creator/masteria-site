@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Search, Bot, Sparkles, Cpu, Database, Network, Workflow,
-  BarChart3, Target, Gauge, FileText, Globe, MessageSquare, Layers,
-  Check, MapPin, GraduationCap,
+  ArrowRight, Search, Bot, Cpu, Network, Workflow,
+  BarChart3, Target, Gauge, Globe, MapPin, GraduationCap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page pilier « agence SEO IA » (slug /agence-seo-ia). Comble un gap du cluster
@@ -34,7 +34,6 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence SEO IA : référencement et visibilité IA | Masteria"
 const META_DESC = "Agence SEO IA à Lyon : référencement Google augmenté par l'IA et optimisation GEO pour être cité dans ChatGPT, Perplexity et les AI Overviews de Google."
-const H1 = "Agence SEO IA : être visible sur Google et dans les réponses des IA"
 
 /* ───────── Styles partagés ───────── */
 
@@ -48,9 +47,6 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
-
-const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
-const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
@@ -288,14 +284,23 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function AgenceSeoIAPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (prestations / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Agence SEO IA', slug: SLUG },
@@ -312,55 +317,65 @@ export default function AgenceSeoIAPage() {
         extraJsonLd={[serviceJsonLd, DEFINITIONS_JSONLD]}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={wrap}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Agence SEO IA</span>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence SEO IA</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Search size={16} strokeWidth={2.2} aria-hidden="true" />
-              SEO & référencement génératif
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Search size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Google et moteurs de réponse IA
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              SEO & référencement génératif
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 50px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 920 }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Agence SEO IA :
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>être visible sur Google et dans les réponses des IA</span>
           </h1>
 
-          {/* GEO : réponse directe citable */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 780, fontWeight: 500 }}>
-            <strong>Une agence SEO IA combine le référencement naturel et l'intelligence artificielle pour vous rendre visible à la fois sur Google et dans les réponses des IA (ChatGPT, Perplexity, Google AI Overviews, Gemini). Masteria met son expertise des modèles au service de votre visibilité : SEO accéléré par l'IA, et GEO pour être cité par les moteurs de réponse.</strong>
+          {/* GEO : réponse directe citable — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Une agence SEO IA combine le référencement naturel et l'intelligence artificielle pour vous rendre visible à la fois sur Google et dans les réponses des IA (ChatGPT, Perplexity, Google AI Overviews, Gemini). <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria met son expertise des modèles au service de votre visibilité</strong> : SEO accéléré par l'IA, et GEO pour être cité par les moteurs de réponse.
           </p>
 
-          <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 780 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Vos clients ne cherchent plus seulement sur Google : ils posent leurs questions à des IA qui répondent directement. Notre approche du référencement IA travaille les deux terrains à la fois. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon, nous combinons le référencement naturel classique et la visibilité dans les réponses génératives, avec une lecture interne du fonctionnement des modèles.
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)' }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Auditer votre visibilité IA
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#prestations" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Ce que nous faisons
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* tags de compétences */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: 40 }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
@@ -368,72 +383,75 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      {/* ── CE QUE FAIT UNE AGENCE SEO IA ── */}
+      {/* ── CE QUE FAIT UNE AGENCE SEO IA (éditorial asymétrique) ── */}
       <section id="prestations" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Nos prestations</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Que fait une agence SEO IA ?
-          </h2>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Nos prestations</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Que fait une agence SEO IA ?
+              </h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong>Une agence SEO IA travaille votre visibilité sur deux fronts : le SEO augmenté par l'IA (contenu, audits techniques et clusters produits plus vite et à plus grande échelle) et le GEO, l'optimisation pour être cité dans les réponses des IA. Masteria couvre l'audit, le contenu, la technique, l'architecture sémantique et les automatisations de suivi.</strong>
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Six familles de prestations reviennent dans la plupart des missions. Elles se combinent selon votre maturité : certains partent d'un audit, d'autres d'un besoin de contenu, d'autres encore de la visibilité dans les IA.
+              </p>
+            </div>
 
-          <p style={answerStyle}>
-            <strong>Une agence SEO IA travaille votre visibilité sur deux fronts : le SEO augmenté par l'IA (contenu, audits techniques et clusters produits plus vite et à plus grande échelle) et le GEO, l'optimisation pour être cité dans les réponses des IA. Masteria couvre l'audit, le contenu, la technique, l'architecture sémantique et les automatisations de suivi.</strong>
-          </p>
-
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Six familles de prestations reviennent dans la plupart des missions. Elles se combinent selon votre maturité : certains partent d'un audit, d'autres d'un besoin de contenu, d'autres encore de la visibilité dans les IA.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {LIVRABLES.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+                {LIVRABLES.map((item, i) => (
+                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                    <div style={{ marginBottom: 14 }}>
+                      <IconTile icon={item.icon} />
+                    </div>
+                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
+              </p>
+            </div>
           </div>
-
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
-          </p>
         </div>
       </section>
 
-      {/* ── MÉTHODE (timeline 5 étapes) ── */}
+      {/* ── MÉTHODE (timeline à rail, rail étroit) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={wrap}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Méthode</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+          <h2 style={h2Style}>
             Comment se déroule une mission de SEO IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
+          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
             <strong>Une mission suit cinq étapes : audit de votre visibilité sur Google et dans les IA, stratégie d'entités et de contenu, production outillée par l'IA et relue par des humains, optimisation technique et maillage, puis mesure des positions et des citations IA. Vous décidez à chaque étape, sur des éléments concrets.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 44, lineHeight: 1.7, maxWidth: 880 }}>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Le même chemin pour chaque mission : mesurer le point de départ, cadrer la stratégie, produire, optimiser la technique, puis itérer sur les données réelles. Pas de garantie de classement promise à l'aveugle, des progrès mesurés.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {ETAPES.map((step, i) => (
               <div
                 key={step.num}
                 style={{
-                  display: 'flex', gap: 20, alignItems: 'flex-start',
-                  padding: '24px 0',
-                  borderTop: i === 0 ? 'none' : '1px solid #E5E7EB',
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === ETAPES.length - 1 ? '18px 0 0' : '18px 0'),
                 }}
               >
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
                   <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 760 }}>{step.desc}</p>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -441,39 +459,43 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      {/* ── SEO vs SEO augmenté vs GEO ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={wrap}>
-          <Kicker>SEO, SEO augmenté & GEO</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+      {/* ── SEO vs SEO augmenté vs GEO (ancre sombre — pivot) ── */}
+      <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>SEO, SEO augmenté &amp; GEO</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Référencement classique, SEO augmenté par l'IA et GEO : que choisir ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le SEO classique vise un bon classement sur Google. Le SEO augmenté par l'IA fait la même chose plus vite et à plus grande échelle. Le GEO vise une autre surface : être cité dans les réponses générées par les IA. Les trois se complètent, et c'est leur combinaison qui sécurise votre visibilité quand les usages de recherche se partagent entre Google et les IA.</strong>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+            <strong style={{ color: '#fff' }}>Le SEO classique vise un bon classement sur Google. Le SEO augmenté par l'IA fait la même chose plus vite et à plus grande échelle. Le GEO vise une autre surface : être cité dans les réponses générées par les IA. Les trois se complètent, et c'est leur combinaison qui sécurise votre visibilité quand les usages de recherche se partagent entre Google et les IA.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
+          <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Voici la lecture des trois approches, critère par critère, pour situer celle qui correspond à votre besoin.
           </p>
 
-          <div style={{ ...cardStyle, overflowX: 'auto' }}>
+          <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif entre SEO classique, SEO augmenté par l'IA et GEO" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
               <thead>
                 <tr>
-                  <th scope="col" style={{ ...thStyle, width: '22%' }}>Critère</th>
-                  <th scope="col" style={{ ...thStyle, width: '26%' }}>SEO classique</th>
-                  <th scope="col" style={{ ...thStyle, width: '26%', color: c }}>SEO augmenté par l'IA</th>
-                  <th scope="col" style={{ ...thStyle, width: '26%' }}>GEO / référencement génératif</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '22%' }}>Critère</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>SEO classique</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>SEO augmenté par l'IA</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>GEO / référencement génératif</th>
                 </tr>
               </thead>
               <tbody>
                 {TABLE.map((row, i) => (
-                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
-                    <th scope="row" style={{ ...tdStyle, textAlign: 'left', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.critere}</th>
-                    <td style={tdStyle}>{row.classique}</td>
-                    <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.augmente}</td>
-                    <td style={tdStyle}>{row.geo}</td>
+                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                    <th scope="row" style={{ padding: '14px 18px', fontSize: 14, color: '#F8FAFC', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5 }}>{row.critere}</th>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.classique}</td>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#fff', fontWeight: 500, lineHeight: 1.65, verticalAlign: 'top', background: 'rgba(37,99,235,0.10)' }}>{row.augmente}</td>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.geo}</td>
                   </tr>
                 ))}
               </tbody>
@@ -494,12 +516,9 @@ export default function AgenceSeoIAPage() {
             <strong>Parce que la visibilité se joue désormais autant dans les réponses des IA que sur Google, et que cela demande de comprendre de l'intérieur comment les modèles sélectionnent et citent une source. Masteria est spécialisée sur l'IA depuis 2022 : nous appliquons cette expertise au référencement et nous construisons les automatisations qui le font tenir.</strong>
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '32px 0' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, margin: '32px 0' }}>
             {WHY.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                </div>
+              <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
                 <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
               </div>
@@ -514,7 +533,7 @@ export default function AgenceSeoIAPage() {
       {/* ── FORMATION (bloc secondaire) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
@@ -535,17 +554,28 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <Kicker>FAQ</Kicker>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>
-            Agence SEO IA : les questions fréquentes
-          </h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} color={c} />
-            ))}
+        <div style={wrap}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>FAQ</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>
+                Agence SEO IA : les questions fréquentes
+              </h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} color={c} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -570,6 +600,8 @@ export default function AgenceSeoIAPage() {
               { label: 'Agence IA Lyon', href: '/agence-ia', tag: 'Agence', desc: "Notre agence IA basée à Lyon : conseil, développement et formation, en France et au-delà." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
               { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Notre lecture des enjeux et cas d'usage IA propres à chaque secteur d'activité." },
+              { label: "IA générative en entreprise", href: '/ia-generative-entreprise', tag: 'IA générative', desc: "Les modèles génératifs qui alimentent la production de contenu et la visibilité dans les moteurs de réponse." },
+              { label: "Cas d'usage de l'IA en entreprise", href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Un panorama des usages concrets de l'IA en entreprise, au-delà du seul référencement." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -598,22 +630,27 @@ export default function AgenceSeoIAPage() {
       {/* ── LE FONDATEUR (E-E-A-T) ── */}
       <FounderNote />
 
-      {/* ── CTA FINALE SOMBRE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
-        <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Parlons de votre visibilité dans l'IA
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-            Décrivez-nous votre marché et vos objectifs de visibilité. Nous revenons vers vous sous 24 heures avec une première lecture de votre présence sur Google et dans les IA, et une proposition de cadrage. Aucune garantie de classement promise, des leviers concrets et mesurables.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-            Auditer votre visibilité IA
-            <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-            Réponse sous 24 h · SEO + GEO · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
-          </p>
+        <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
+              Parlons de votre visibilité dans l'IA
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
+              Décrivez-nous votre marché et vos objectifs de visibilité. Nous revenons vers vous sous 24 heures avec une première lecture de votre présence sur Google et dans les IA, et une proposition de cadrage. Aucune garantie de classement promise, des leviers concrets et mesurables.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Auditer votre visibilité IA
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+              Réponse sous 24 h · SEO + GEO · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+            </p>
+          </div>
         </div>
       </section>
 

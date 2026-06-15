@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Check, Cog, Compass, FileText, Key,
-  Mail, MapPin, PenLine, Plug, Receipt, RefreshCw, Rocket, Target, Users, Workflow,
+  Mail, MapPin, PenLine, Plug, Receipt, RefreshCw, Rocket, Target, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page offre « agence d'automatisation IA » (slug /agence-automatisation-ia).
@@ -25,7 +26,6 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence automatisation IA · Cadrage & déploiement | Masteria"
 const META_DESC = "Agence d'automatisation IA : conception, développement et déploiement de vos automatisations sur mesure, intégrées à vos outils. Cadrage initial gratuit."
-const H1 = "L'agence d'automatisation IA qui rend vos équipes autonomes"
 
 /* ───────── Styles partagés ───────── */
 
@@ -275,14 +275,23 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function AgenceAutomatisationIAPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (sections cas fréquents / pourquoi / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Agence automatisation IA', slug: SLUG },
@@ -299,55 +308,70 @@ export default function AgenceAutomatisationIAPage() {
         extraJsonLd={serviceJsonLd}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={wrap}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Agence automatisation IA</span>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence automatisation IA</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Workflow size={16} strokeWidth={2.2} aria-hidden="true" />
-              Accompagnement opérationnel
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', marginBottom: 26 }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 11 }}>
+              <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Workflow size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              </span>
+              <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+                Accompagnement opérationnel
+              </span>
             </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 14px' }}>
               Cadrage initial gratuit
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 50px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 860 }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            L'agence d'automatisation IA
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>qui rend vos équipes autonomes</span>
           </h1>
 
-          {/* GEO : réponse directe pour citation LLM */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 700, fontWeight: 500 }}>
-            <strong>Masteria conçoit, développe et déploie vos automatisations IA sur mesure : audit des processus, architecture, construction des workflows, assistants et agents, intégration à vos outils (Make, Zapier, n8n, Power Automate, API, MCP) et mise en production. Vous récupérez un système qui tourne et dont vous gardez la propriété. Le cadrage initial est gratuit.</strong>
+          {/* GEO : réponse directe citable — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Masteria conçoit, développe et déploie vos automatisations IA sur mesure : audit des processus, architecture, construction des workflows, assistants et agents, intégration à vos outils (Make, Zapier, n8n, Power Automate, API, MCP) et mise en production. Vous récupérez un <strong style={{ color: '#fff', fontWeight: 700 }}>système qui tourne et dont vous gardez la propriété</strong>. Le cadrage initial est gratuit.
           </p>
 
-          <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 700 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Le no-code seul ne suffit pas à fiabiliser un processus qui compte : il faut concevoir l'architecture, raccorder vos outils, gérer les cas limites et poser les garde-fous. Nous prenons en charge cette ingénierie de bout en bout et vous livrons des automatisations en production, documentées et supervisées. Masteria travaille sur l'IA depuis 2022 et a accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique.
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Discutons de votre projet
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#methode" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <a href="#methode" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir la méthode
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* tags de compétences */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
@@ -372,41 +396,48 @@ export default function AgenceAutomatisationIAPage() {
         </div>
       </section>
 
-      {/* ── MÉTHODE EN 4 TEMPS ── */}
+      {/* ── MÉTHODE EN 4 TEMPS (timeline à rail) ── */}
       <section id="methode" style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={wrap}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Méthode</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
             Comment se déroule une mission d'automatisation IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
+          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
             <strong>Chaque mission suit quatre temps : un audit des processus et la conception de l'architecture, avec cadrage initial gratuit ; un prototypage de deux à quatre semaines sur un ou deux cas réels ; le développement et l'intégration des automatisations à vos outils ; puis la mise en production, avec passation à vos équipes pour qu'elles gardent la main.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 12, lineHeight: 1.7, maxWidth: 860 }}>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 12, lineHeight: 1.7 }}>
             Le même chemin pour chaque mission : comprendre, prouver, déployer, transmettre. Chaque temps produit un livrable concret et vous décidez de continuer ou non à chaque étape.
           </p>
-          <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 44, lineHeight: 1.7, maxWidth: 860 }}>
+          <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 44, lineHeight: 1.7 }}>
             Vous découvrez le sujet ? Notre <Link to="/automatisation-ia" style={aStyle}>guide complet de l'automatisation IA</Link> pose les bases : définition, cas d'usage par fonction, outils et budgets.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            {METHODE.map(step => (
-              <div key={step.num} style={{ ...cardStyle, padding: '28px 30px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 14, flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                    <div aria-hidden="true" style={{ width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ fontSize: 16, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                    </div>
-                    <h3 style={h3Style}>{step.title}</h3>
-                  </div>
-                  <span style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{step.badge}</span>
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
+            {METHODE.map((step, i) => (
+              <div
+                key={step.num}
+                style={{
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === METHODE.length - 1 ? '18px 0 0' : '18px 0'),
+                }}
+              >
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                  <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
                 </div>
-                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>{step.desc}</p>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 10, padding: '12px 16px' }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', display: 'block', marginBottom: 4 }}>CE QUE VOUS OBTENEZ</span>
-                  <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{step.livrable}</span>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, marginBottom: 8, flexWrap: 'wrap' }}>
+                    <h3 style={{ ...h3Style, fontSize: 17 }}>{step.title}</h3>
+                    <span style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{step.badge}</span>
+                  </div>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', maxWidth: 700 }}>{step.desc}</p>
+                  <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10, padding: '12px 16px' }}>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', display: 'block', marginBottom: 4 }}>CE QUE VOUS OBTENEZ</span>
+                    <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{step.livrable}</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -458,62 +489,76 @@ export default function AgenceAutomatisationIAPage() {
         </div>
       </section>
 
-      {/* ── CE QU'ON AUTOMATISE LE PLUS SOUVENT ── */}
+      {/* ── CE QU'ON AUTOMATISE LE PLUS SOUVENT (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Cas fréquents</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Ce que nous automatisons le plus souvent
-          </h2>
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 860 }}>
-            Six familles de processus reviennent dans la majorité des missions. Chaque déploiement part de vos outils existants, sans refonte de votre système d'information, et chaque flux mis en production fait gagner plusieurs heures par semaine à l'équipe concernée.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
-            {AUTOMATISATIONS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconBox icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Cas fréquents</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Ce que nous automatisons le plus souvent
+              </h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Six familles de processus reviennent dans la majorité des missions. Chaque déploiement part de vos outils existants, sans refonte de votre système d'information, et chaque flux mis en production fait gagner plusieurs heures par semaine à l'équipe concernée.
+              </p>
+            </div>
+
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+                {AUTOMATISATIONS.map((item, i) => (
+                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                    <div style={{ marginBottom: 14 }}>
+                      <IconBox icon={item.icon} />
+                    </div>
+                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                Pour prioriser dans votre contexte, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité dans une PME</Link> donne des repères concrets. Pour des exemples détaillés au-delà de ces six familles, parcourez nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link>. Selon votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent ces automatisations métier par métier. Et quand un scénario fixe ne suffit plus, nous évaluons avec vous l'opportunité d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, avec les garde-fous qu'ils exigent.
+              </p>
+            </div>
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
-            Pour prioriser dans votre contexte, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité dans une PME</Link> donne des repères concrets. Selon votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent ces automatisations métier par métier. Et quand un scénario fixe ne suffit plus, nous évaluons avec vous l'opportunité d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, avec les garde-fous qu'ils exigent.
-          </p>
         </div>
       </section>
 
-      {/* ── ON LE CONSTRUIT POUR VOUS (service dominant) ── */}
-      <section style={{ padding: sectionPad, background: '#0A0A0A', color: '#fff' }}>
-        <div style={wrap}>
-          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#93C5FD', marginBottom: 14 }}>
+      {/* ── ON LE CONSTRUIT POUR VOUS (ancre sombre — pivot service) ── */}
+      <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', color: '#fff', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>
             Nous le construisons pour vous
           </div>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
             Confiez-nous le développement de vos automatisations
           </h2>
 
-          <p style={{ background: 'rgba(37,99,235,0.16)', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#fff', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong>Vous n'avez pas à monter vos automatisations vous-même. Nous concevons l'architecture, développons les workflows, assistants et agents adaptés à vos processus, les intégrons à vos outils via API et MCP, puis les déployons en production. Vous récupérez un système qui tourne, documenté et supervisé, dont vous gardez la propriété.</strong>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
+            <strong style={{ color: '#fff' }}>Vous n'avez pas à monter vos automatisations vous-même. Nous concevons l'architecture, développons les workflows, assistants et agents adaptés à vos processus, les intégrons à vos outils via API et MCP, puis les déployons en production. Vous récupérez un système qui tourne, documenté et supervisé, dont vous gardez la propriété.</strong>
           </p>
 
-          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
+          <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
             C'est notre offre principale : un développement sur mesure, mené par une équipe spécialisée sur l'IA depuis 2022. Vous décrivez le résultat attendu, nous prenons en charge l'ingénierie de bout en bout.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
-            {BUILD_STEPS.map((step, i) => (
-              <div key={i} style={{ background: '#161616', border: '1px solid #262626', borderRadius: 16, padding: 26 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                  <step.icon size={22} strokeWidth={2} style={{ color: '#93C5FD' }} />
+            {BUILD_STEPS.map((step, i) => {
+              const Icon = step.icon
+              return (
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
+                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
+                  </div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: '#60A5FA', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{step.title}</h3>
+                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: '#93C5FD', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
-                <h3 style={{ ...h3Style, color: '#fff', fontSize: 16.5, marginBottom: 8 }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -527,38 +572,40 @@ export default function AgenceAutomatisationIAPage() {
             </Link>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#9CA3AF', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
-            Votre besoin va au-delà du flux et appelle un véritable logiciel ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>, pensés pour vos cas d'usage propres.
+          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
+            Votre besoin va au-delà du flux et appelle un véritable logiciel ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link>, pensés pour vos cas d'usage propres.
           </p>
         </div>
       </section>
 
-      {/* ── POURQUOI MASTERIA ── */}
+      {/* ── POURQUOI MASTERIA (éditorial asymétrique, cartes à filet supérieur) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Pourquoi Masteria</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Pourquoi choisir Masteria comme agence d'automatisation IA ?
-          </h2>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Pourquoi Masteria</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Pourquoi choisir Masteria comme agence d'automatisation IA ?
+              </h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
+                <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, plutôt que de s'arrêter aux recommandations. Spécialisés sur l'IA depuis 2022, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique, et vous restez propriétaire du système livré.</strong>
+              </p>
+            </div>
 
-          <p style={answerStyle}>
-            <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, plutôt que de s'arrêter aux recommandations. Spécialisés sur l'IA depuis 2022, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique, et vous restez propriétaire du système livré.</strong>
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '32px 0' }}>
-            {WHY_MASTERIA.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconBox icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+                {WHY_MASTERIA.map(card => (
+                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
+                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                Si votre besoin dépasse l'automatisation (stratégie IA globale, gouvernance, conformité, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> prend le relais. Pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>, et démarrez par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> pour situer vos priorités.
+              </p>
+            </div>
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Si votre besoin dépasse l'automatisation (stratégie IA globale, gouvernance, conformité, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> prend le relais. Pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>, et démarrez par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> pour situer vos priorités.
-          </p>
         </div>
       </section>
 
@@ -616,22 +663,33 @@ export default function AgenceAutomatisationIAPage() {
             </div>
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Un point d'honnêteté sur le financement : le développement et l'intégration ne sont pas finançables par votre OPCO. Seule la formation l'est, grâce à notre certification Qualiopi, et un prestataire qui vous promet l'inverse vous expose à un refus de prise en charge. Si vous souhaitez former vos équipes en complément du déploiement, le détail figure sur la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link>.
+            Pour situer le budget d'une mission avant le cadrage, notre repère sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link> détaille les fourchettes selon le périmètre. Un point d'honnêteté sur le financement : le développement et l'intégration ne sont pas finançables par votre OPCO. Seule la formation l'est, grâce à notre certification Qualiopi, et un prestataire qui vous promet l'inverse vous expose à un refus de prise en charge. Si vous souhaitez former vos équipes en complément du déploiement, le détail figure sur la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>FAQ</Kicker>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>
-            Agence d'automatisation IA : les questions fréquentes
-          </h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} color={c} />
-            ))}
+        <div style={wrap}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>FAQ</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>
+                Agence d'automatisation IA : les questions fréquentes
+              </h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} color={c} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -677,22 +735,27 @@ export default function AgenceAutomatisationIAPage() {
         </div>
       </section>
 
-      {/* ── CTA FINALE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
-        <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Parlons de vos processus
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 580 }}>
-            Décrivez-nous les tâches qui consomment le plus de temps dans vos équipes. Nous revenons vers vous sous 24 heures avec un créneau pour le cadrage gratuit : analyse de vos processus, feuille de route priorisée, chiffrage. Vous repartez avec un plan, avec ou sans nous.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-            Demander un cadrage gratuit
-            <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-            Réponse sous 24 h · Certifié Qualiopi · +1 500 professionnels formés · Lyon, France, Suisse, Belgique
-          </p>
+        <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
+              Parlons de vos processus
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 580 }}>
+              Décrivez-nous les tâches qui consomment le plus de temps dans vos équipes. Nous revenons vers vous sous 24 heures avec un créneau pour le cadrage gratuit : analyse de vos processus, feuille de route priorisée, chiffrage. Vous repartez avec un plan, avec ou sans nous.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Demander un cadrage gratuit
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+              Réponse sous 24 h · Certifié Qualiopi · +1 500 professionnels formés · Lyon, France, Suisse, Belgique
+            </p>
+          </div>
         </div>
       </section>
 

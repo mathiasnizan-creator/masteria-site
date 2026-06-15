@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page offre « agence IA marketing » (slug /agence-ia-marketing).
@@ -25,7 +26,6 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence IA marketing : contenu, campagnes & SEO | Masteria"
 const META_DESC = "Agence IA marketing : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, emailing et reporting augmentés par l'IA. Done-for-you. FR, CH, BE."
-const H1 = "Agence IA marketing : production de contenu, campagnes et SEO augmentés par l'IA"
 
 /* ───────── Styles partagés ───────── */
 
@@ -219,14 +219,23 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function AgenceIAMarketingPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (sections « périmètre » / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Agence IA marketing', slug: SLUG },
@@ -243,55 +252,70 @@ export default function AgenceIAMarketingPage() {
         extraJsonLd={serviceJsonLd}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={wrap}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Agence IA marketing</span>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence IA marketing</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Layers size={16} strokeWidth={2.2} aria-hidden="true" />
-              Prestation clé en main
-            </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 26 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11 }}>
+              <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Layers size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              </span>
+              <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+                Prestation clé en main
+              </span>
+            </div>
+            <span style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
               Done-for-you, pas une formation
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 50px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 900 }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Agence IA marketing
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>production de contenu, campagnes et SEO augmentés par l'IA</span>
           </h1>
 
-          {/* GEO : réponse directe pour citation LLM */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 740, fontWeight: 500 }}>
-            <strong>Masteria est une agence IA marketing qui produit et pilote vos actions à votre place : contenu, SEO et GEO, campagnes et publicité, social media, emailing et reporting, augmentés par l'intelligence artificielle. C'est une prestation clé en main, multi-LLM, avec relecture humaine sur chaque livrable. Vous cadrez et validez, nous exécutons. Interventions en France, Suisse romande et Belgique.</strong>
+          {/* GEO : réponse directe pour citation LLM — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Masteria est une agence IA marketing qui produit et pilote vos actions à votre place : contenu, SEO et GEO, campagnes et publicité, social media, emailing et reporting, augmentés par l'intelligence artificielle. C'est une prestation clé en main, multi-LLM, avec <strong style={{ color: '#fff', fontWeight: 700 }}>relecture humaine sur chaque livrable</strong>. Vous cadrez et validez, nous exécutons. Interventions en France, Suisse romande et Belgique.
           </p>
 
-          <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 740 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             L'IA générative démultiplie la capacité de production marketing, à condition de savoir quel modèle utiliser, comment encoder votre marque dans les prompts et où placer le contrôle humain. En tant qu'agence marketing IA, nous prenons en charge cette ingénierie éditoriale de bout en bout et livrons des contenus et campagnes prêts à publier. Masteria travaille sur l'IA depuis 2022 et a accompagné plus de 1 500 professionnels.
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Discutons de votre marketing
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#prestations" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Ce qu'on prend en charge
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* tags de compétences */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
@@ -316,68 +340,81 @@ export default function AgenceIAMarketingPage() {
         </div>
       </section>
 
-      {/* ── CE QU'ON PREND EN CHARGE (6 cartes) ── */}
+      {/* ── CE QU'ON PREND EN CHARGE (éditorial asymétrique) ── */}
       <section id="prestations" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Périmètre</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Que prend en charge une agence IA marketing ?
-          </h2>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Périmètre</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Que prend en charge une agence IA marketing ?
+              </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Nous couvrons six familles de prestations, toutes augmentées par l'IA : la production de contenu, le SEO et le GEO, les campagnes et la publicité, le social media, l'emailing et le CRM, le reporting et l'analyse. Vous choisissez le périmètre, nous produisons et pilotons, vos équipes ne portent pas la charge quotidienne.</strong>
-          </p>
+              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong>Nous couvrons six familles de prestations, toutes augmentées par l'IA : la production de contenu, le SEO et le GEO, les campagnes et la publicité, le social media, l'emailing et le CRM, le reporting et l'analyse. Vous choisissez le périmètre, nous produisons et pilotons, vos équipes ne portent pas la charge quotidienne.</strong>
+              </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 860 }}>
-            Le périmètre se construit avec vous : vous pouvez nous confier l'ensemble du dispositif ou un canal précis. Chaque livrable reste relu par un consultant et fidèle à votre marque.
-          </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Le périmètre se construit avec vous : vous pouvez nous confier l'ensemble du dispositif ou un canal précis. Chaque livrable reste relu par un consultant et fidèle à votre marque.
+              </p>
+            </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {PRESTATIONS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconBox icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+                {PRESTATIONS.map((item, i) => (
+                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                    <div style={{ marginBottom: 14 }}>
+                      <IconBox icon={item.icon} />
+                    </div>
+                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── COMMENT ON TRAVAILLE (4 temps) ── */}
+      {/* ── COMMENT ON TRAVAILLE (timeline à rail, rail étroit) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={wrap}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Méthode</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 860 }}>
+          <h2 style={h2Style}>
             Comment se déroule une mission d'agence IA marketing ?
           </h2>
 
-          <p style={answerStyle}>
+          <p style={{ ...answerStyle, maxWidth: 'none' }}>
             <strong>Chaque mission suit quatre temps : un cadrage de vos objectifs et de votre ligne éditoriale, la mise en place des outils et automatisations qui servent de socle de production, la production des contenus et campagnes à cadence régulière avec relecture humaine, puis le pilotage par les résultats avec un reporting commenté.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 44, lineHeight: 1.7, maxWidth: 860 }}>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Le même chemin pour chaque mission : cadrer, outiller, produire, piloter. Chaque temps produit un livrable concret et vous gardez la validation à chaque étape.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            {METHODE.map(step => (
-              <div key={step.num} style={{ ...cardStyle, padding: '28px 30px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 14, flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                    <div aria-hidden="true" style={{ width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ fontSize: 16, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                    </div>
-                    <h3 style={h3Style}>{step.title}</h3>
-                  </div>
-                  <span style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{step.badge}</span>
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
+            {METHODE.map((step, i) => (
+              <div
+                key={step.num}
+                style={{
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === METHODE.length - 1 ? '18px 0 0' : '18px 0'),
+                }}
+              >
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                  <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
                 </div>
-                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>{step.desc}</p>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 10, padding: '12px 16px' }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', display: 'block', marginBottom: 4 }}>CE QUE VOUS OBTENEZ</span>
-                  <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{step.livrable}</span>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8, flexWrap: 'wrap' }}>
+                    <h3 style={{ ...h3Style, fontSize: 17 }}>{step.title}</h3>
+                    <span style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{step.badge}</span>
+                  </div>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', maxWidth: 700 }}>{step.desc}</p>
+                  <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 10, padding: '12px 16px', maxWidth: 700 }}>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', display: 'block', marginBottom: 4 }}>CE QUE VOUS OBTENEZ</span>
+                    <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{step.livrable}</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -385,38 +422,43 @@ export default function AgenceIAMarketingPage() {
         </div>
       </section>
 
-      {/* ── OUTILS & APPROCHE ── */}
-      <section style={{ padding: sectionPad, background: '#0A0A0A', color: '#fff' }}>
-        <div style={wrap}>
-          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#93C5FD', marginBottom: 14 }}>
-            Outils et approche
-          </div>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
+      {/* ── OUTILS & APPROCHE (ancre sombre — pivot) ── */}
+      <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Outils et approche</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 860 }}>
             Multi-LLM et automatisations sur mesure, pas un gabarit générique
           </h2>
 
-          <p style={{ background: 'rgba(37,99,235,0.16)', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#fff', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong>Nous travaillons en multi-LLM (ChatGPT, Claude, Gemini, Copilot, Mistral) en choisissant le bon modèle pour chaque usage, et nous construisons des automatisations sur mesure pour raccorder votre CRM, votre CMS et vos planificateurs. L'IA accélère la production, le consultant arbitre, et le dispositif s'ajuste selon les résultats mesurés.</strong>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
+            <strong style={{ color: '#fff' }}>Nous travaillons en multi-LLM (ChatGPT, Claude, Gemini, Copilot, Mistral) en choisissant le bon modèle pour chaque usage, et nous construisons des automatisations sur mesure pour raccorder votre CRM, votre CMS et vos planificateurs. L'IA accélère la production, le consultant arbitre, et le dispositif s'ajuste selon les résultats mesurés.</strong>
           </p>
 
-          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
+          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
             Aucun outil n'est imposé par principe : le besoin commande le choix du modèle et de l'automatisation. Cette ingénierie est notre cœur de métier depuis 2022.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
-            {OUTILS.map((item, i) => (
-              <div key={i} style={{ background: '#161616', border: '1px solid #262626', borderRadius: 16, padding: 26 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                  <item.icon size={22} strokeWidth={2} style={{ color: '#93C5FD' }} />
+            {OUTILS.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
+                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{item.title}</h3>
+                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
                 </div>
-                <h3 style={{ ...h3Style, color: '#fff', fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#9CA3AF', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
-            Les workflows qui font circuler vos contenus relèvent de notre <Link to="/agence-automatisation-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>agence d'automatisation IA</Link>. Quand le besoin va au-delà du flux et appelle un véritable logiciel, nous concevons des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link> adaptés à vos cas d'usage marketing.
+          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
+            Les workflows qui font circuler vos contenus relèvent de notre <Link to="/agence-automatisation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence d'automatisation IA</Link>. Quand le besoin va au-delà du flux et appelle un véritable logiciel, nous concevons des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link> adaptés à vos cas d'usage marketing. Le rédactionnel, la création visuelle et la déclinaison de campagnes reposent sur l'<Link to="/ia-generative-entreprise" style={{ color: '#60A5FA', fontWeight: 600 }}>IA générative en entreprise</Link>, dont nous maîtrisons les modèles et les garde-fous.
           </p>
         </div>
       </section>
@@ -484,10 +526,7 @@ export default function AgenceIAMarketingPage() {
               { icon: Workflow, title: 'Du contenu aux automatisations', desc: "Nous ne livrons pas que des textes : nous mettons en place les workflows et intégrations qui font tourner votre dispositif marketing de bout en bout." },
               { icon: MapPin, title: 'France, Suisse romande et Belgique', desc: "Basés à Lyon, nous intervenons à distance pour la production et le pilotage, et en présentiel ponctuel pour les temps de cadrage qui le justifient." },
             ].map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconBox icon={card.icon} />
-                </div>
+              <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
                 <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
               </div>
@@ -499,17 +538,28 @@ export default function AgenceIAMarketingPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>FAQ</Kicker>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>
-            Agence IA marketing : les questions fréquentes
-          </h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} color={c} />
-            ))}
+        <div style={wrap}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>FAQ</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>
+                Agence IA marketing : les questions fréquentes
+              </h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} color={c} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -529,6 +579,7 @@ export default function AgenceIAMarketingPage() {
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Sur mesure', desc: "Conception et développement de bout en bout de vos solutions IA, jusqu'à la production." },
               { label: 'Agence d\'automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Workflows, assistants et agents qui font circuler vos contenus et synchronisent vos outils." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage marketing." },
+              { label: "Cas d'usage de l'IA en marketing", href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Des exemples concrets côté marketing : contenu, SEO, campagnes et reporting augmentés par l'IA." },
               { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Formation', desc: "Préférez-vous former vos équipes ? Montée en compétence certifiée Qualiopi, finançable OPCO." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
@@ -555,22 +606,27 @@ export default function AgenceIAMarketingPage() {
         </div>
       </section>
 
-      {/* ── CTA FINALE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
-        <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Confiez-nous votre marketing IA
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-            Décrivez-nous vos objectifs et les canaux à prendre en charge. Nous revenons vers vous sous 24 heures avec un créneau de cadrage : périmètre, dispositif de production et indicateurs de suivi. Vous validez, nous produisons et pilotons.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-            Discutons de votre projet
-            <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-            Réponse sous 24 h · Multi-LLM · Relecture humaine · France, Suisse romande, Belgique
-          </p>
+        <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
+              Confiez-nous votre marketing IA
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
+              Décrivez-nous vos objectifs et les canaux à prendre en charge. Nous revenons vers vous sous 24 heures avec un créneau de cadrage : périmètre, dispositif de production et indicateurs de suivi. Vous validez, nous produisons et pilotons.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Discutons de votre projet
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+              Réponse sous 24 h · Multi-LLM · Relecture humaine · France, Suisse romande, Belgique
+            </p>
+          </div>
         </div>
       </section>
 

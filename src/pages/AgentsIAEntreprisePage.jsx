@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BadgeCheck, Bot, Brain, Briefcase, Cloud, Cog, Compass, Eye, Headphones,
-  LayoutGrid, Lock, MapPin, Megaphone, MessageSquare, Plug, RefreshCw, Rocket, Scale,
+  ArrowRight, Bot, Brain, Briefcase, Cloud, Cog, Compass, Eye, Headphones,
+  LayoutGrid, Lock, Megaphone, MessageSquare, Plug, RefreshCw, Rocket, Scale,
   ScrollText, Server, ShieldCheck, Sparkles, Target, TrendingUp, UserCheck,
   Users, Workflow, Zap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page pilier « Agents IA en entreprise » : guide complet + 20 cas d'usage.
@@ -507,11 +508,11 @@ function FAQItem({ q, aStrong, aRest, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>
           <strong style={{ color: '#0A0A0A' }}>{aStrong}</strong> {aRest}
         </p>
-      )}
+      </div>
     </div>
   )
 }
@@ -525,10 +526,17 @@ const pStyle = { fontSize: 16, color: '#374151', lineHeight: 1.75, marginBottom:
 const answerStyle = { fontSize: 16.5, color: '#374151', lineHeight: 1.7, margin: '0 0 24px', maxWidth: 780 }
 const linkStyle = { color: c, fontWeight: 600 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
-const thStyle = { background: '#F9FAFB', padding: '14px 18px', textAlign: 'left', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB' }
-const tdStyle = { padding: '14px 18px', fontSize: 14, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }
 
 export default function AgentsIAEntreprisePage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (fonctionnement / risques / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Agents IA en entreprise', slug: SLUG },
@@ -547,51 +555,62 @@ export default function AgentsIAEntreprisePage() {
         extraJsonLd={[useCaseItemList, articleJsonLd]}
       />
 
-      {/* ── HERO ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 6vw, 72px) 24px clamp(48px, 6vw, 68px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Agents IA en entreprise</span>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agents IA en entreprise</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: '#1d4ed8', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700 }}>
-              Guide 2026
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Bot size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Lecture : 15 min
-            </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <RefreshCw size={13} strokeWidth={2.2} aria-hidden="true" />
-              Mis à jour en juin 2026
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              Guide agents IA
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 50px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 880 }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Agents IA en entreprise :
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>le guide complet et 20 cas d'usage concrets</span>
           </h1>
 
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 24, maxWidth: 780, fontWeight: 500 }}>
-            Les agents IA exécutent des tâches complètes dans vos logiciels : qualifier un lead, traiter une facture, résoudre un ticket, corriger du code. Ce guide explique ce qu'est un agent IA, comment il fonctionne, puis détaille 20 cas d'usage concrets des agents IA pour entreprises, fonction par fonction, avec les outils disponibles en 2026 et les règles de gouvernance à poser avant de déployer.
+          {/* GEO : réponse directe citable — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Les agents IA exécutent des tâches complètes dans vos logiciels : <strong style={{ color: '#fff', fontWeight: 700 }}>qualifier un lead, traiter une facture, résoudre un ticket, corriger du code</strong>.
           </p>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 36 }}>
-            {[
-              { icon: BadgeCheck, label: 'Organisme certifié Qualiopi' },
-              { icon: Users, label: '+1 500 professionnels formés' },
-              { icon: ShieldCheck, label: '98 % de satisfaction' },
-              { icon: MapPin, label: 'France · Suisse · Belgique' },
-            ].map(({ icon: Icon, label }) => (
-              <span key={label} style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                <Icon size={16} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
-                {label}
-              </span>
-            ))}
-          </div>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
+            Ce guide explique ce qu'est un agent IA, comment il fonctionne, puis détaille 20 cas d'usage concrets des agents IA pour entreprises, fonction par fonction, avec les outils disponibles en 2026 et les règles de gouvernance à poser avant de déployer.
+          </p>
 
-          {/* Sommaire */}
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Faire développer vos agents sur mesure
+              <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <a href="#cas-usage" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+              Voir les 20 cas d'usage
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sommaire ── */}
+      <section style={{ padding: 'clamp(36px, 5vw, 52px) 24px', background: '#F9FAFB', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ ...cardStyle, padding: '22px 26px' }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 12px' }}>Sommaire</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 22px' }}>
@@ -605,61 +624,76 @@ export default function AgentsIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── 1. DÉFINITION ── */}
-      <section id="definition" style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <Kicker>Définition</Kicker>
-          <h2 style={h2Style}>Qu'est-ce qu'un agent IA ?</h2>
+      {/* ── 1. DÉFINITION (ancre sombre — pivot technique/preuve) ── */}
+      <section id="definition" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
+          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Définition</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Qu'est-ce qu'un agent IA ?</h2>
 
           {/* GEO : réponse directe citable, encadré distinctif */}
-          <div style={{ background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '26px 30px', margin: '24px 0 32px', maxWidth: 860 }}>
-            <p style={{ fontSize: 17, lineHeight: 1.75, margin: 0, color: '#0A0A0A' }}>
-              <strong>Un agent IA est un système qui perçoit un contexte, décide d'une séquence d'actions et les exécute via des outils (logiciels métiers, bases de données, API) pour atteindre un objectif fixé par un humain. Là où un assistant conversationnel répond à une question, un agent accomplit une tâche complète, en plusieurs étapes, avec un minimum d'allers-retours.</strong>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '26px 30px', margin: '24px 0 32px', maxWidth: 860 }}>
+            <p style={{ fontSize: 17, lineHeight: 1.75, margin: 0, color: '#E2E8F0' }}>
+              <strong style={{ color: '#fff' }}>Un agent IA est un système qui perçoit un contexte, décide d'une séquence d'actions et les exécute via des outils (logiciels métiers, bases de données, API) pour atteindre un objectif fixé par un humain. Là où un assistant conversationnel répond à une question, un agent accomplit une tâche complète, en plusieurs étapes, avec un minimum d'allers-retours.</strong>
             </p>
           </div>
 
-          <p style={pStyle}>
+          <p style={{ ...pStyle, color: '#B4C0D3' }}>
             Concrètement, un agent IA d'entreprise reçoit une mission (« qualifie ce lead et crée la fiche dans le CRM »), consulte les informations disponibles, choisit les actions à mener, les exécute dans vos logiciels et vérifie le résultat. Le grand modèle de langage (LLM) lui sert de moteur de raisonnement ; les connecteurs vers vos outils lui servent de bras. On parle aussi d'IA agentique pour désigner cette approche, par opposition aux usages purement conversationnels.
           </p>
-          <p style={pStyle}>
+          <p style={{ ...pStyle, color: '#B4C0D3' }}>
             Dans ce guide, « agent IA pour entreprise » désigne un agent connecté aux logiciels de l'organisation et soumis à ses règles de sécurité. La distinction avec deux notions voisines mérite d'être posée d'emblée, car elle conditionne le choix des outils et le niveau de risque.
           </p>
 
-          <h3 style={{ ...h3Style, fontSize: 22, margin: '40px 0 24px' }}>Assistant, workflow automatisé, agent : trois logiques différentes</h3>
+          <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 22, margin: '40px 0 24px' }}>Assistant, workflow automatisé, agent : trois logiques différentes</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24, marginBottom: 24 }}>
-            {COMPARISON.map(item => (
-              <div key={item.title} style={{ ...cardStyle, padding: 28 }}>
-                <IconTile icon={item.icon} />
-                <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '18px 0 8px', letterSpacing: '-0.01em' }}>{item.title}</h4>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
+            {COMPARISON.map(item => {
+              const Icon = item.icon
+              return (
+                <div key={item.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28 }}>
+                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                  </div>
+                  <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#F8FAFC', margin: '18px 0 8px', letterSpacing: '-0.01em' }}>{item.title}</h4>
+                  <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                </div>
+              )
+            })}
           </div>
 
           {/* Snippet magnet : tableau comparatif */}
-          <h3 style={{ ...h3Style, fontSize: 22, margin: '48px 0 12px' }}>Assistant IA vs Agent IA vs Workflow automatisé : le comparatif</h3>
-          <p style={{ ...pStyle, marginBottom: 24 }}>
+          <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 22, margin: '48px 0 12px' }}>Assistant IA vs Agent IA vs Workflow automatisé : le comparatif</h3>
+          <p style={{ ...pStyle, color: '#B4C0D3', marginBottom: 24 }}>
             Le tableau résume les différences qui comptent au moment de choisir une approche : qui déclenche, qui décide, qui contrôle.
           </p>
-          <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', marginBottom: 32 }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
+          <div style={{ overflowX: 'auto', border: '1px solid #1E293B', borderRadius: 16, marginBottom: 32 }}>
+            <table aria-label="Comparatif entre un assistant IA, un agent IA et un workflow automatisé" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
               <thead>
                 <tr>
-                  <th scope="col" style={thStyle}>Critère</th>
-                  {TABLE_COLS.map(col => (
-                    <th key={col} scope="col" style={{ ...thStyle, color: col === 'Agent IA' ? c : '#0A0A0A' }}>{col}</th>
-                  ))}
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', padding: '14px 18px', textAlign: 'left', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, color: '#E2E8F0', borderBottom: '1px solid #1E293B' }}>Critère</th>
+                  {TABLE_COLS.map(col => {
+                    const highlight = col === 'Agent IA'
+                    return (
+                      <th key={col} scope="col" style={{ background: highlight ? 'rgba(37,99,235,0.12)' : 'rgba(255,255,255,0.05)', padding: '14px 18px', textAlign: 'left', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, color: highlight ? '#60A5FA' : '#E2E8F0', borderBottom: '1px solid #1E293B' }}>{col}</th>
+                    )
+                  })}
                 </tr>
               </thead>
               <tbody>
                 {TABLE_ROWS.map((row, i) => {
-                  const border = i < TABLE_ROWS.length - 1 ? '1px solid #E5E7EB' : 'none'
+                  const border = i < TABLE_ROWS.length - 1 ? '1px solid #1E293B' : 'none'
                   return (
                     <tr key={row.label}>
-                      <th scope="row" style={{ ...thStyle, fontSize: 13.5, fontWeight: 700, borderBottom: border, verticalAlign: 'top', whiteSpace: 'nowrap' }}>{row.label}</th>
-                      {row.cells.map((cell, j) => (
-                        <td key={j} style={{ ...tdStyle, borderBottom: border }}>{cell}</td>
-                      ))}
+                      <th scope="row" style={{ padding: '14px 18px', textAlign: 'left', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 700, color: '#F8FAFC', borderBottom: border, verticalAlign: 'top', whiteSpace: 'nowrap' }}>{row.label}</th>
+                      {row.cells.map((cell, j) => {
+                        const highlight = TABLE_COLS[j] === 'Agent IA'
+                        return (
+                          <td key={j} style={{ padding: '14px 18px', fontSize: 14, lineHeight: 1.6, verticalAlign: 'top', borderBottom: border, color: highlight ? '#fff' : '#B4C0D3', fontWeight: highlight ? 500 : 400, background: highlight ? 'rgba(37,99,235,0.10)' : 'transparent' }}>{cell}</td>
+                        )
+                      })}
                     </tr>
                   )
                 })}
@@ -667,44 +701,50 @@ export default function AgentsIAEntreprisePage() {
             </table>
           </div>
 
-          <p style={{ ...pStyle, marginBottom: 0 }}>
-            Dans la pratique, les trois approches se combinent. Beaucoup de déploiements 2026 insèrent un agent dans un workflow : l'orchestration encadre le processus, l'agent gère les étapes qui demandent du jugement. Notre <Link to="/automatisation-ia" style={linkStyle}>guide de l'automatisation IA</Link> détaille cette combinaison, et les définitions complètes figurent dans le glossaire, aux entrées <Link to="/glossaire-ia#agent-ia" style={linkStyle}>agent IA</Link> et <Link to="/glossaire-ia#workflow-ia" style={linkStyle}>workflow IA</Link>.
+          <p style={{ ...pStyle, color: '#B4C0D3', marginBottom: 0 }}>
+            Dans la pratique, les trois approches se combinent. Beaucoup de déploiements 2026 insèrent un agent dans un workflow : l'orchestration encadre le processus, l'agent gère les étapes qui demandent du jugement. Notre <Link to="/automatisation-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>guide de l'automatisation IA</Link> détaille cette combinaison, et les définitions complètes figurent dans le glossaire, aux entrées <Link to="/glossaire-ia#agent-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>agent IA</Link> et <Link to="/glossaire-ia#workflow-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>workflow IA</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── 2. FONCTIONNEMENT ── */}
+      {/* ── 2. FONCTIONNEMENT (éditorial asymétrique) ── */}
       <section id="fonctionnement" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <Kicker>Fonctionnement</Kicker>
-          <h2 style={h2Style}>Comment fonctionne un agent IA ?</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Un agent IA fonctionne en boucle : il perçoit un contexte, décide d'une action grâce à un modèle de langage, l'exécute via des outils connectés, puis vérifie le résultat avant de poursuivre.</strong> La boucle se répète jusqu'à l'objectif atteint ou jusqu'au point de contrôle humain prévu par votre gouvernance.
-          </p>
-          <p style={pStyle}>
-            Tous les agents du marché, quel que soit l'éditeur, reposent sur cette même mécanique. La comprendre suffit pour cadrer un projet, dialoguer avec un intégrateur et repérer les promesses excessives.
-          </p>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Fonctionnement</Kicker>
+              <h2 style={h2Style}>Comment fonctionne un agent IA ?</h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong style={{ color: '#0A0A0A' }}>Un agent IA fonctionne en boucle : il perçoit un contexte, décide d'une action grâce à un modèle de langage, l'exécute via des outils connectés, puis vérifie le résultat avant de poursuivre.</strong> La boucle se répète jusqu'à l'objectif atteint ou jusqu'au point de contrôle humain prévu par votre gouvernance.
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Tous les agents du marché, quel que soit l'éditeur, reposent sur cette même mécanique. La comprendre suffit pour cadrer un projet, dialoguer avec un intégrateur et repérer les promesses excessives.
+              </p>
+            </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24, margin: '32px 0 56px' }}>
-            {LOOP_STEPS.map(step => (
-              <div key={step.num} style={{ ...cardStyle, padding: 28 }}>
-                <IconTile icon={step.icon} />
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: c, margin: '18px 0 4px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Étape {step.num}</div>
-                <h3 style={{ ...h3Style, fontSize: 17 }}>{step.title}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20, marginBottom: 44 }}>
+                {LOOP_STEPS.map(step => (
+                  <div key={step.num} style={{ ...cardStyle, padding: 26 }}>
+                    <IconTile icon={step.icon} />
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: c, margin: '18px 0 4px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Étape {step.num}</div>
+                    <h3 style={{ ...h3Style, fontSize: 17 }}>{step.title}</h3>
+                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <h3 style={{ ...h3Style, fontSize: 20, marginBottom: 12 }}>L'accès aux outils : le rôle du standard MCP</h3>
+              <p style={{ ...pStyle, maxWidth: 'none' }}>
+                Pour agir, un agent doit se connecter à vos logiciels. Cette connexion passe par ce que les éditeurs appellent le <Link to="/glossaire-ia#function-calling" style={linkStyle}>function calling ou tool use</Link> : le modèle demande l'exécution d'une fonction précise, avec des paramètres structurés, et reçoit le résultat en retour. Le <Link to="/glossaire-ia#mcp" style={linkStyle}>Model Context Protocol (MCP)</Link>, protocole ouvert lancé par Anthropic fin 2024, standardise cette connexion entre les modèles et les systèmes externes : bases de données, API, fichiers. Son adoption large en a fait un standard de fait : un connecteur MCP développé une fois peut servir à plusieurs agents, quel que soit le modèle qui les anime.
+              </p>
+
+              <h3 style={{ ...h3Style, fontSize: 20, marginBottom: 12 }}>La supervision humaine</h3>
+              <p style={{ ...pStyle, maxWidth: 'none', marginBottom: 0 }}>
+                Un agent d'entreprise sérieux fonctionne avec des points de contrôle humains, ce que la littérature appelle le <Link to="/glossaire-ia#humain-dans-la-boucle" style={linkStyle}>human-in-the-loop</Link>. Trois niveaux existent : l'humain valide chaque action (le mode le plus prudent), l'humain valide uniquement les actions sensibles (envoi externe, paiement, suppression), ou l'humain contrôle a posteriori sur échantillon. La plupart des déploiements 2026 restent supervisés : l'autonomie se gagne progressivement, à mesure que la fiabilité est démontrée sur le terrain.
+              </p>
+            </div>
           </div>
-
-          <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 16 }}>L'accès aux outils : le rôle du standard MCP</h3>
-          <p style={pStyle}>
-            Pour agir, un agent doit se connecter à vos logiciels. Cette connexion passe par ce que les éditeurs appellent le <Link to="/glossaire-ia#function-calling" style={linkStyle}>function calling ou tool use</Link> : le modèle demande l'exécution d'une fonction précise, avec des paramètres structurés, et reçoit le résultat en retour. Le <Link to="/glossaire-ia#mcp" style={linkStyle}>Model Context Protocol (MCP)</Link>, protocole ouvert lancé par Anthropic fin 2024, standardise cette connexion entre les modèles et les systèmes externes : bases de données, API, fichiers. Son adoption large en a fait un standard de fait : un connecteur MCP développé une fois peut servir à plusieurs agents, quel que soit le modèle qui les anime.
-          </p>
-
-          <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 16 }}>La supervision humaine</h3>
-          <p style={{ ...pStyle, marginBottom: 0 }}>
-            Un agent d'entreprise sérieux fonctionne avec des points de contrôle humains, ce que la littérature appelle le <Link to="/glossaire-ia#humain-dans-la-boucle" style={linkStyle}>human-in-the-loop</Link>. Trois niveaux existent : l'humain valide chaque action (le mode le plus prudent), l'humain valide uniquement les actions sensibles (envoi externe, paiement, suppression), ou l'humain contrôle a posteriori sur échantillon. La plupart des déploiements 2026 restent supervisés : l'autonomie se gagne progressivement, à mesure que la fiabilité est démontrée sur le terrain.
-          </p>
         </div>
       </section>
 
@@ -717,7 +757,7 @@ export default function AgentsIAEntreprisePage() {
             <strong style={{ color: '#0A0A0A' }}>Les cas d'usage les plus matures des agents IA en entreprise concernent la qualification de leads, le traitement des factures fournisseurs, le support client de niveau 1, les agents de code et la veille.</strong> Leur point commun : des processus fréquents et documentés, où l'agent prépare le travail et où un humain valide les actions sensibles.
           </p>
           <p style={pStyle}>
-            Les 20 cas qui suivent sont classés par fonction. Chacun suppose un agent connecté aux outils concernés et supervisé par l'équipe métier. Aucun chiffre de gain n'est avancé : les résultats dépendent du volume traité, de la qualité des données et du niveau de supervision retenu.
+            Les 20 cas qui suivent sont classés par fonction. Chacun suppose un agent connecté aux outils concernés et supervisé par l'équipe métier. Aucun chiffre de gain n'est avancé : les résultats dépendent du volume traité, de la qualité des données et du niveau de supervision retenu. Pour élargir le regard au-delà des seuls agents, notre panorama des <Link to="/cas-usage-ia-entreprise" style={linkStyle}>cas d'usage de l'IA en entreprise</Link> couvre aussi les usages conversationnels et l'automatisation.
           </p>
 
           {/* Aperçu scannable des 20 cas (listicle) */}
@@ -759,37 +799,44 @@ export default function AgentsIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── ON DÉVELOPPE VOS AGENTS POUR VOUS (service dominant) ── */}
-      <section id="sur-mesure" style={{ padding: sectionPad, background: '#0A0A0A', color: '#fff' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#93C5FD', marginBottom: 14 }}>
+      {/* ── ON DÉVELOPPE VOS AGENTS POUR VOUS (service dominant, sombre harmonisé) ── */}
+      <section id="sur-mesure" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', color: '#fff', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
+          <div style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>
             Nous le construisons pour vous
           </div>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
             On développe vos agents IA sur mesure
           </h2>
 
-          <div style={{ background: 'rgba(37,99,235,0.16)', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', margin: '0 0 28px', maxWidth: 860 }}>
-            <p style={{ fontSize: 16.5, lineHeight: 1.7, margin: 0, color: '#fff' }}>
-              <strong>Plutôt que d'outiller vous-même vos agents, vous nous confiez la construction de bout en bout : cadrage du processus, développement de l'agent, intégration à vos logiciels via MCP et API, puis déploiement supervisé. Vous récupérez un agent qui agit dans vos outils, encadré par des garde-fous, et dont vous gardez la propriété.</strong>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', margin: '0 0 28px', maxWidth: 860 }}>
+            <p style={{ fontSize: 16.5, lineHeight: 1.7, margin: 0, color: '#E2E8F0' }}>
+              <strong style={{ color: '#fff' }}>Plutôt que d'outiller vous-même vos agents, vous nous confiez la construction de bout en bout : cadrage du processus, développement de l'agent, intégration à vos logiciels via MCP et API, puis déploiement supervisé. Vous récupérez un agent qui agit dans vos outils, encadré par des garde-fous, et dont vous gardez la propriété.</strong>
             </p>
           </div>
 
-          <p style={{ fontSize: 16, color: '#D1D5DB', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
-            Les 20 cas d'usage ci-dessus décrivent ce qu'un agent peut faire. Les rendre réels suppose de l'ingénierie : connecter vos systèmes, fiabiliser le raisonnement, borner les actions, journaliser, cartographier les usages au regard de l'AI Act. C'est ce travail que nous prenons en charge, agent par agent.
+          <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
+            Les 20 cas d'usage ci-dessus décrivent ce qu'un agent peut faire. Les rendre réels suppose de l'ingénierie : connecter vos systèmes, fiabiliser le raisonnement, borner les actions, journaliser, cartographier les usages au regard de l'AI Act. C'est ce travail que nous prenons en charge, agent par agent. Pour situer le budget, nous détaillons par ailleurs le <Link to="/prix-projet-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>prix d'un agent IA</Link>, poste par poste.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
-            {BUILD_STEPS.map((step, i) => (
-              <div key={i} style={{ background: '#161616', border: '1px solid #262626', borderRadius: 16, padding: 26 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                  <step.icon size={22} strokeWidth={2} style={{ color: '#93C5FD' }} aria-hidden="true" />
+            {BUILD_STEPS.map((step, i) => {
+              const Icon = step.icon
+              return (
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
+                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                  </div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: '#60A5FA', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
+                  <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 16.5 }}>{step.title}</h3>
+                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: '#93C5FD', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
-                <h3 style={{ ...h3Style, color: '#fff', fontSize: 16.5 }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#9CA3AF', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -803,7 +850,7 @@ export default function AgentsIAEntreprisePage() {
             </Link>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#9CA3AF', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
+          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
             Votre besoin dépasse l'agent isolé et appelle un véritable logiciel piloté par l'IA ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour donner les bons réflexes à vos équipes en complément, la <Link to="/formation-claude-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>formation Claude</Link> les outille sur les agents de code.
           </p>
         </div>
@@ -857,34 +904,38 @@ export default function AgentsIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── 5. RISQUES ET GOUVERNANCE ── */}
+      {/* ── 5. RISQUES ET GOUVERNANCE (éditorial asymétrique) ── */}
       <section id="risques" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <Kicker>Risques et gouvernance</Kicker>
-          <h2 style={h2Style}>Comment maîtriser les risques des agents IA en entreprise ?</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>La maîtrise des risques repose sur cinq garde-fous : des droits d'accès limités au strict nécessaire, une validation humaine sur les actions sensibles, une protection des données conforme au RGPD, une journalisation complète des actions et une cartographie des usages au regard de l'AI Act.</strong> Appliqués dès le pilote, ces garde-fous transforment un risque opérationnel en outil contrôlé.
-          </p>
-          <p style={pStyle}>
-            Donner des capacités d'action à un système d'IA crée des risques nouveaux par rapport à un simple assistant : une erreur ne reste plus dans une fenêtre de conversation, elle se propage dans vos systèmes. Les cinq chantiers ci-dessous permettent de les maîtriser.
-          </p>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Risques et gouvernance</Kicker>
+              <h2 style={h2Style}>Comment maîtriser les risques des agents IA en entreprise ?</h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong style={{ color: '#0A0A0A' }}>La maîtrise des risques repose sur cinq garde-fous : des droits d'accès limités au strict nécessaire, une validation humaine sur les actions sensibles, une protection des données conforme au RGPD, une journalisation complète des actions et une cartographie des usages au regard de l'AI Act.</strong> Appliqués dès le pilote, ces garde-fous transforment un risque opérationnel en outil contrôlé.
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Donner des capacités d'action à un système d'IA crée des risques nouveaux par rapport à un simple assistant : une erreur ne reste plus dans une fenêtre de conversation, elle se propage dans vos systèmes. Les cinq chantiers ci-dessous permettent de les maîtriser, et le cadre d'ensemble relève de la <Link to="/gouvernance-ia" style={linkStyle}>gouvernance des agents IA et de l'AI Act</Link>.
+              </p>
+            </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 32 }}>
-            {RISKS.map(risk => (
-              <div key={risk.title} style={{ ...cardStyle, padding: '26px 30px', display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-                <IconTile icon={risk.icon} />
-                <div style={{ flex: '1 1 320px' }}>
-                  <h3 style={{ ...h3Style, fontSize: 17 }}>{risk.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{risk.desc}</p>
-                  {risk.link && (
-                    <Link to={risk.link.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 14, color: c, fontWeight: 700, textDecoration: 'none' }}>
-                      {risk.link.label}
-                      <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
-                    </Link>
-                  )}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {RISKS.map(risk => (
+                <div key={risk.title} style={{ ...cardStyle, padding: '26px 30px', display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                  <IconTile icon={risk.icon} />
+                  <div style={{ flex: '1 1 280px' }}>
+                    <h3 style={{ ...h3Style, fontSize: 17 }}>{risk.title}</h3>
+                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{risk.desc}</p>
+                    {risk.link && (
+                      <Link to={risk.link.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 14, color: c, fontWeight: 700, textDecoration: 'none' }}>
+                        {risk.link.label}
+                        <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -898,15 +949,22 @@ export default function AgentsIAEntreprisePage() {
             <strong style={{ color: '#0A0A0A' }}>Commencez par un processus pilote fréquent, documenté et à faible risque, déployez un agent supervisé avec validation humaine, mesurez pendant plusieurs semaines, puis étendez le périmètre par paliers.</strong> L'autonomie accordée à l'agent suit la fiabilité démontrée sur le terrain, jamais l'inverse. Quatre étapes structurent la démarche.
           </p>
 
-          <div style={{ ...cardStyle, padding: '8px 32px', margin: '32px 0 56px', maxWidth: 860 }}>
+          <div style={{ position: 'relative', maxWidth: 820, margin: '32px 0 56px' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {START_STEPS.map((step, i) => (
-              <div key={step.num} style={{ display: 'flex', gap: 22, alignItems: 'flex-start', padding: '26px 0', borderBottom: i < START_STEPS.length - 1 ? '1px solid #E5E7EB' : 'none' }}>
-                <div style={{ width: 44, height: 44, background: cLight, color: '#1d4ed8', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 17, flexShrink: 0 }}>
-                  {step.num}
+              <div
+                key={step.num}
+                style={{
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === START_STEPS.length - 1 ? '18px 0 0' : '18px 0'),
+                }}
+              >
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, color: '#1d4ed8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15, color: c }}>{step.num}</span>
                 </div>
-                <div>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 6 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -940,36 +998,52 @@ export default function AgentsIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── 7. FAQ ── */}
+      {/* ── 7. FAQ (éditorial asymétrique) ── */}
       <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <Kicker>FAQ</Kicker>
-          <h2 style={h2Style}>Questions fréquentes sur les agents IA en entreprise</h2>
-          <div style={{ marginTop: 24, maxWidth: 860 }}>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} aStrong={item.aStrong} aRest={item.aRest} color={c} />
-            ))}
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>FAQ</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur les agents IA en entreprise</h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ ...linkStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} aStrong={item.aStrong} aRest={item.aRest} color={c} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── CTA FINALE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 6vw, 72px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 16px', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-              Déployez vos premiers agents IA
-            </h2>
-            <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 560 }}>
-              Décrivez-nous le processus qui consomme le plus de temps dans vos équipes. On revient vers vous sous 24 heures avec un avis honnête : agent, workflow, ou simple formation des équipes.
-            </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 28 }}>
-              Contacter notre équipe
-              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
-            <p style={{ fontSize: 13, color: '#9CA3AF', margin: 0 }}>
-              Organisme certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction · France, Suisse, Belgique
-            </p>
+          <div style={{ position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 6vw, 72px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+            <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+            <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+            <div style={{ position: 'relative' }}>
+              <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 38px)', fontWeight: 900, color: '#fff', margin: '0 0 16px', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                Déployez vos premiers agents IA
+              </h2>
+              <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 560 }}>
+                Décrivez-nous le processus qui consomme le plus de temps dans vos équipes. On revient vers vous sous 24 heures avec un avis honnête : agent, workflow, ou simple formation des équipes.
+              </p>
+              <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 28 }}>
+                Contacter notre équipe
+                <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+              <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+                Organisme certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction · France, Suisse, Belgique
+              </p>
+            </div>
           </div>
         </div>
       </section>

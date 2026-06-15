@@ -100,6 +100,7 @@ const CONSEIL_COLS = [
       { label: 'Cabinet de conseil IA', desc: 'Cadrage, gouvernance et trajectoire IA', slug: 'conseil-intelligence-artificielle', Icon: Lightbulb },
       { label: 'Conseil stratégie IA',  desc: 'Feuille de route et priorisation des cas', slug: 'conseil-strategie-ia',            Icon: Compass },
       { label: 'Conseil data & IA',     desc: 'Données prêtes pour vos projets IA',      slug: 'conseil-data-ia',              Icon: Database },
+      { label: 'Gouvernance & AI Act',  desc: 'Conformité et cadrage de vos usages IA',  slug: 'gouvernance-ia',               Icon: BadgeCheck },
       { label: 'Méthode & engagement',  desc: 'Forfait, régie, développeurs sur site',  slug: 'methode-projet-ia',            Icon: Users },
     ],
   },
@@ -111,12 +112,15 @@ const CONSEIL_COLS = [
       { label: 'Outils IA sur mesure',    desc: 'Applications et copilotes métier',     slug: 'outils-ia-sur-mesure',  Icon: Wrench },
       { label: 'Agence automatisation IA',desc: 'Workflows et automatisations métier',   slug: 'agence-automatisation-ia', Icon: Workflow },
       { label: 'Agents IA en entreprise', desc: 'Agents autonomes et copilotes',         slug: 'agents-ia-entreprise',  Icon: Bot },
+      { label: 'Prix d\'un projet IA',     desc: 'Fourchettes de prix et modèles de coût', slug: 'prix-projet-ia',       Icon: Wallet },
     ],
   },
   {
     head: 'Secteurs & guides',
     items: [
       { label: 'IA par secteur',          desc: 'Banque, industrie, santé, juridique…', slug: 'ia-secteurs',          Icon: Briefcase },
+      { label: 'IA générative en entreprise', desc: 'Du cas d\'usage au déploiement',    slug: 'ia-generative-entreprise', Icon: Sparkles },
+      { label: 'Cas d\'usage de l\'IA',    desc: '20 exemples concrets par fonction',    slug: 'cas-usage-ia-entreprise', Icon: Target },
       { label: 'Agence IA Lyon',          desc: 'Équipe basée à Lyon, France entière', slug: 'agence-ia',           Icon: Building2 },
       { label: 'Agence IA marketing',     desc: 'IA appliquée au marketing et au growth', slug: 'agence-ia-marketing', Icon: Megaphone },
       { label: 'Agence SEO IA',           desc: 'Référencement Google et visibilité dans les IA', slug: 'agence-seo-ia', Icon: Search },
@@ -193,6 +197,7 @@ export function MasteriaHeader() {
     '/agence-developpement-ia', '/outils-ia-sur-mesure', '/agence-automatisation-ia',
     '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing',
     '/automatisation-ia', '/meilleure-agence-ia',
+    '/gouvernance-ia', '/prix-projet-ia', '/ia-generative-entreprise', '/cas-usage-ia-entreprise',
   ];
   const conseilActive = CONSEIL_PATHS.includes(location.pathname);
 
@@ -643,7 +648,7 @@ export function MasteriaHeader() {
         ]
           // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
           // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).
-          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia)/.test(location.pathname))
+          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia)/.test(location.pathname))
           .map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
             display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
@@ -754,6 +759,10 @@ export function MasteriaFooter() {
               ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
               ['Conseil stratégie IA', '/conseil-strategie-ia'],
               ['Conseil data & IA', '/conseil-data-ia'],
+              ['Gouvernance & AI Act', '/gouvernance-ia'],
+              ['IA générative en entreprise', '/ia-generative-entreprise'],
+              ['Cas d\'usage de l\'IA', '/cas-usage-ia-entreprise'],
+              ['Prix d\'un projet IA', '/prix-projet-ia'],
               ['Agence développement IA', '/agence-developpement-ia'],
               ['Solutions IA sur mesure', '/solutions-ia'],
               ['Agents IA en entreprise', '/agents-ia-entreprise'],

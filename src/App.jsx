@@ -46,6 +46,10 @@ const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
 const SolutionIAPage = lazy(() => import('./pages/SolutionIAPage'));
 const DiagnosticIAPage = lazy(() => import('./pages/DiagnosticIAPage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
+const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
+const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
+const CasUsageIAEntreprisePage = lazy(() => import('./pages/CasUsageIAEntreprisePage'));
+const IAGenerativeEntreprisePage = lazy(() => import('./pages/IAGenerativeEntreprisePage'));
 const SECTEUR_SLUGS = ['ia-banque-assurance','ia-industrie','ia-sante-pharma','ia-juridique','ia-retail-ecommerce','ia-logistique-transport','ia-immobilier-btp','ia-secteur-public','ia-services-conseil','ia-tourisme-hotellerie','ia-agroalimentaire','ia-tech-saas'];
 const SOLUTION_SLUGS = ['copilote-ia-interne','assistant-documentaire-ia','agent-support-client-ia','automatisation-documentaire-ia','agent-commercial-ia','chatbot-ia-sur-mesure','integration-llm-rag'];
 const GeoPage = lazy(() => import('./pages/GeoPage'));
@@ -1583,6 +1587,10 @@ export default function App() {
         ))}
         <Route path="/diagnostic-ia" element={<DiagnosticIAPage />} />
         <Route path="/methode-projet-ia" element={<MethodeProjetIAPage />} />
+        <Route path="/prix-projet-ia" element={<PrixProjetIAPage />} />
+        <Route path="/gouvernance-ia" element={<GouvernanceIAPage />} />
+        <Route path="/cas-usage-ia-entreprise" element={<CasUsageIAEntreprisePage />} />
+        <Route path="/ia-generative-entreprise" element={<IAGenerativeEntreprisePage />} />
         <Route path="/outils-ia-sur-mesure" element={<OutilsIASurMesurePage />} />
         <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />
         <Route path="/formation-ia-debutant" element={<DebutantPage />} />

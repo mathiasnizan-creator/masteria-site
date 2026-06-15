@@ -20,7 +20,9 @@
 | Agence | `/agence-ia` (Lyon) | `/meilleure-agence-ia`, `/agence-ia-marketing`, géo : `/agence-ia-{paris,annecy,geneve,marseille}` |
 | Secteurs | `/ia-secteurs` (hub) | 12 pages `/ia-{banque-assurance,industrie,sante-pharma,juridique,retail-ecommerce,logistique-transport,immobilier-btp,secteur-public,services-conseil,tourisme-hotellerie,agroalimentaire,tech-saas}` |
 | Solutions | `/solutions-ia` (hub) | `/copilote-ia-interne`, `/assistant-documentaire-ia`, `/agent-support-client-ia`, `/automatisation-documentaire-ia`, `/agent-commercial-ia`, `/chatbot-ia-sur-mesure`, `/integration-llm-rag` |
-| Conversion | — | `/diagnostic-ia`, `/methode-projet-ia` |
+| Conversion | — | `/diagnostic-ia`, `/methode-projet-ia`, `/prix-projet-ia` |
+| Gouvernance | — | `/gouvernance-ia` |
+| Piliers info | — | `/cas-usage-ia-entreprise`, `/ia-generative-entreprise` |
 | Formations (cluster lié) | — | `/formation-claude-code`, `/formation-prompt-engineering`, `/formation-ia-dirigeants`, `/formation-ai-act` |
 
 Positionnement : **high-ticket** (conseil + développement sur mesure) en cœur, formation
@@ -181,6 +183,21 @@ Passe d'enrichissement sur les 8 pages du cluster Agence demandées par Mathias 
 - **`/agence-ia-marketing`** : capture la variante **`agence marketing ia` (170/mois > `agence ia marketing` 70)** via +2 FAQ + tissage visible dans le hero.
 - **`/agence-seo-ia`** : +2 FAQ (`référencement ia` + `agence référencement ia lyon` 40, délai de résultats honnête) + tissage visible + schema **`DefinedTermSet`** (SEO / SEO augmenté / GEO / AEO).
 - Validé : `vite build` 0 erreur, contenu présent dans les bundles `dist/` (grep), bloc « En bref » rendu OK en preview, 0 erreur console. Prérendu + déployé prod via flux prébuild CLI le 2026-06-14.
+
+## 3 quinquies. Sprint 4 nouvelles pages — territoires non possédés (2026-06-15)
+
+4 pages créées (4 agents builders en parallèle, fichiers disjoints ; câblage App.jsx + sitemap + méga-menu + footer + `CONSEIL_PATHS` + regex badge OPCO + llms.txt fait par le main). Objectif : occuper des **intentions non encore possédées** par le cluster, donc **zéro cannibalisation** avec les pages existantes. Toutes au design hero sombre + rythme, FAQ rendue dans le DOM (fix GEO), accent `#2563EB` only, zéro OPCO, posture capacité (aucun prix/cas/chiffre inventé). Build OK, rendu + JSON-LD + FAQ-in-DOM vérifiés en preview (port 3100, 0 erreur console). Sitemap = 234 routes.
+
+| Page | Slug | Composant | Intention possédée | Mots-clés cibles | Volume Semrush | JSON-LD |
+|---|---|---|---|---|---|---|
+| Prix projet IA | `/prix-projet-ia` | `PrixProjetIAPage.jsx` | **Achat/budget** (personne ne la possédait ; FAQ « combien coûte » dispersées → page canonique) | coût développement ia, prix agent ia, tarif chatbot ia, combien coûte un projet ia, tjm développeur ia | ⬜ à confirmer | Service/ProfessionalService (AggregateOffer lowPrice sans highPrice) + FAQPage |
+| Gouvernance IA | `/gouvernance-ia` | `GouvernanceIAPage.jsx` | **Conformité/AI Act** (conseil, distinct de `/formation-ai-act`) | gouvernance ia, conformité ia, ai act entreprise, mise en conformité ia | ⬜ à confirmer | Service + DefinedTermSet + FAQPage ; patron « Repères » (EUR-Lex 2024/1689, CE, CNIL) |
+| IA générative entreprise | `/ia-generative-entreprise` | `IAGenerativeEntreprisePage.jsx` | **Head term générative** (tête « IA générative », pas « agence/conseil » → pas de collision) | ia générative entreprise, ia générative en entreprise, déploiement ia générative | **140 / KD 24** et **110 / KD 25** (confirmé) | Service + DefinedTermSet + FAQPage |
+| Cas d'usage IA entreprise | `/cas-usage-ia-entreprise` | `CasUsageIAEntreprisePage.jsx` | **Pilier info top-funnel** (maille vers money pages ; pas de tête commerciale) | cas d'usage ia entreprise, exemples ia entreprise, 15 cas concrets agents ia | ⬜ à confirmer | ItemList (20 cas) + TechArticle + FAQPage |
+
+NON DÉPLOYÉ : Mathias commit/déploie lui-même (flux prébuild CLI, hazards prerender multi-sessions). Volumes des 3 pages ⬜ à valider sur Semrush (la page IA générative a ses volumes confirmés) ; ajuster priorité sitemap/profondeur si besoin.
+
+**Maillage interne complet (2026-06-15, workflow `maillage-cluster-ia` : 23 fichiers, un agent par fichier + vérif adversariale).** Liens CONTEXTUELS en corps de page (≠ les liens nav méga-menu/footer déjà sitewide), ancres keyword-rich, convention propre à chaque page respectée (inline `<Link to>` ou entrée dans le bloc « Pour aller plus loin » selon la page). Couverture entrante mesurée (grep source, hors nav) : `/prix-projet-ia` ← 16 fichiers (méthode/diagnostic/agence-dev/outils/agents/automatisation×2/agence-ia/meilleure-agence/solutions hub+template/secteurs templ./home/conseil×3) ; `/cas-usage-ia-entreprise` ← 17 (agents/auto/solutions hub+template/secteurs hub+template/diagnostic/agence-dev·seo·marketing/home/outils) ; `/ia-generative-entreprise` ← 15 (conseil×3/agence-ia·seo·marketing/solutions hub/secteurs hub+template/diagnostic/home) ; `/gouvernance-ia` ← 8 (conseil-data lien fort/conseil-strategie/conseil-hub/agents/agence-ia). Les templates `SolutionIAPage`/`SecteurIAPage` multiplient (7 et 12 pages live). Les 4 nouvelles pages se cross-linkent : prix↔gen↔cas bidirectionnels, gouvernance → gen+cas. Vérifié en rendu : `<a href>` contextuels présents, esbuild 0 erreur sur les 23 fichiers, build prod OK. ⚠️ ConseilData : le lien `/ia-generative-entreprise` est posé via une carte data (`href:` dans le tableau « Pour aller plus loin ») rendue en `<Link to={rel.href}>`, pas un literal `to="/ia-generative-entreprise"` (grep naïf le rate, mais navigable).
 
 ## 4. Notes méthode (pour exécuter)
 - Pages cluster = template + data : secteurs (`secteur-ia-data.js`), solutions (`solution-ia-data.js`), géo agence (`agence-geo-data.js`). Optimiser data + template ensemble.

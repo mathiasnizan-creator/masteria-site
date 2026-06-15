@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import FounderNote from '../components/FounderNote'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page service « Conseil stratégie IA » : modèle structurel des pages dédiées
@@ -49,11 +50,15 @@ const iconTileStyle = {
   width: 44, height: 44, borderRadius: 12, background: BLUE_SOFT,
   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
 }
+// Réponse-directe encadrée (citable GEO) — pour les blocs éditoriaux
+const answerStyle = {
+  background: BG_SOFT, border: `1px solid ${BORDER}`, borderLeft: `3px solid ${BLUE}`,
+  borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7,
+  color: INK, margin: '0 0 28px', maxWidth: 880,
+}
 
 const META_TITLE = "Conseil stratégie IA : audit, feuille de route | Masteria"
 const META_DESC = "Conseil stratégie IA : diagnostic de maturité, cas d'usage priorisés par ROI, feuille de route 90 jours, puis développement des solutions. Cadrage gratuit."
-const H1 = "Conseil stratégie IA : du diagnostic à la feuille de route"
-const DIRECT_ANSWER = "Le conseil stratégie IA consiste à définir où, comment et dans quel ordre déployer l'intelligence artificielle dans une entreprise. Masteria structure la démarche en 4 phases : diagnostic de maturité, priorisation des cas d'usage par ROI, feuille de route à 90 jours et 12 mois, gouvernance et conduite du changement."
 const INTRO = "Outils qui se multiplient, équipes qui s'équipent en ordre dispersé, budgets engagés sans indicateur de retour : les directions générales ont besoin d'un cap avant d'investir davantage. Notre mission de conseil stratégique en intelligence artificielle donne à votre COMEX une vision partagée, des priorités chiffrées et un plan d'exécution réaliste. Et parce qu'une stratégie ne vaut que par sa mise en œuvre, la même équipe développe et déploie ensuite les solutions retenues : de la feuille de route au build, sans rupture."
 
 const HERO_BADGES = [
@@ -303,14 +308,23 @@ function FAQItem({ q, a }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: INK, fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color: BLUE, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function ConseilStrategieIAPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (Définition / Pour qui / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Conseil IA', slug: 'conseil-intelligence-artificielle' },
@@ -328,57 +342,68 @@ export default function ConseilStrategieIAPage() {
         extraJsonLd={serviceJsonLd}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: BG_SOFT, color: INK, padding: 'clamp(48px, 7vw, 72px) clamp(20px, 4vw, 40px) clamp(64px, 9vw, 88px)', borderBottom: `1px solid ${BORDER}` }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: BLUE }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: GREY_500, display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: GREY_500 }}>Accueil</Link>
-            <span style={{ color: GREY_700 }}>/</span>
-            <Link to="/conseil-intelligence-artificielle" style={{ color: GREY_500 }}>Conseil IA</Link>
-            <span style={{ color: GREY_700 }}>/</span>
-            <span style={{ color: BLUE, fontWeight: 600 }}>Conseil stratégie IA</span>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/conseil-intelligence-artificielle" style={{ color: '#5B6679' }}>Conseil IA</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Conseil stratégie IA</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: BLUE_SOFT, color: BLUE, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Target size={16} strokeWidth={2.2} aria-hidden="true" />
-              Conseil stratégie IA
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Target size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ background: '#fff', color: GREY_500, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: `1px solid ${BORDER}` }}>
-              Mission de 4 à 8 semaines
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              Conseil stratégie IA
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: INK, letterSpacing: '-0.02em' }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Conseil stratégie IA
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>du diagnostic à la feuille de route</span>
           </h1>
 
-          {/* GEO : réponse directe pour citation LLM et featured snippet */}
-          <p style={{ fontSize: 17, color: INK, lineHeight: 1.7, marginBottom: 20, maxWidth: 680 }}>
-            <strong>{DIRECT_ANSWER}</strong>
+          {/* GEO : réponse directe pour citation LLM et featured snippet — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
+            Le conseil stratégie IA consiste à définir où, comment et dans quel ordre déployer l'intelligence artificielle dans une entreprise. Masteria structure la démarche en <strong style={{ color: '#fff', fontWeight: 700 }}>4 phases</strong> : diagnostic de maturité, priorisation des cas d'usage par ROI, feuille de route à 90 jours et 12 mois, gouvernance et conduite du changement.
           </p>
 
-          <p style={{ fontSize: 17, color: GREY_700, lineHeight: 1.75, marginBottom: 40, maxWidth: 680 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             {INTRO}
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 14px rgba(37,99,235,0.25)' }}>
-              Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Contacter notre équipe
+              <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#methode" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: INK, padding: '14px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: `1px solid ${BORDER}` }}>
+            <a href="#methode" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Découvrir la méthode
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* chips */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: GREY_700, padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: `1px solid ${BORDER}`, display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} aria-hidden="true" style={{ color: BLUE }} />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
@@ -401,22 +426,28 @@ export default function ConseilStrategieIAPage() {
         ))}
       </section>
 
-      {/* ── QU'EST-CE QU'UNE STRATÉGIE IA ── */}
+      {/* ── QU'EST-CE QU'UNE STRATÉGIE IA (éditorial asymétrique) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto', color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
-          <div style={kickerStyle}>Définition</div>
-          <h2 style={h2Style}>
-            Qu'est-ce qu'une stratégie IA d'entreprise ?
-          </h2>
-          <p style={{ marginBottom: 24 }}>
-            <strong style={{ color: INK }}>Une stratégie IA d'entreprise est le cadre de référence qui fixe l'ambition, les cas d'usage prioritaires, le budget, le calendrier et la gouvernance du déploiement de l'intelligence artificielle. Elle répond à quatre questions : pourquoi investir, sur quels processus, avec quels outils et quels garde-fous, selon quel séquencement.</strong>
-          </p>
-          <p style={{ marginBottom: 20 }}>
-            Le sujet dépasse largement le choix d'un outil. Une stratégie IA aligne trois dimensions : la valeur (quels processus transformer en priorité, pour quel gain mesurable), les moyens (budget, compétences, architecture technique, qualité des données) et le cadre (RGPD, AI Act, sécurité, acceptabilité en interne). Les entreprises qui formalisent ce cadre avant d'investir évitent la dispersion des licences, les doublons d'outils et les pilotes sans lendemain.
-          </p>
-          <p style={{ marginBottom: 0 }}>
-            La démarche s'inscrit dans la continuité du conseil en transformation numérique et intelligence artificielle : la stratégie IA en constitue aujourd'hui le volet le plus structurant, car elle touche simultanément les processus, les données et les compétences de toutes les directions. Elle forme aussi le premier temps des missions de notre <Link to="/conseil-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>, qui couvre l'audit des usages, l'accompagnement opérationnel et la transformation culturelle.
-          </p>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <div style={kickerStyle}>Définition</div>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Qu'est-ce qu'une stratégie IA d'entreprise ?
+              </h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
+                <strong style={{ color: INK }}>Une stratégie IA d'entreprise est le cadre de référence qui fixe l'ambition, les cas d'usage prioritaires, le budget, le calendrier et la gouvernance du déploiement de l'intelligence artificielle. Elle répond à quatre questions : pourquoi investir, sur quels processus, avec quels outils et quels garde-fous, selon quel séquencement.</strong>
+              </p>
+            </div>
+            <div style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
+              <p style={{ margin: '0 0 20px' }}>
+                Le sujet dépasse largement le choix d'un outil. Une stratégie IA aligne trois dimensions : la valeur (quels processus transformer en priorité, pour quel gain mesurable), les moyens (budget, compétences, architecture technique, qualité des données) et le cadre (RGPD, AI Act, sécurité, acceptabilité en interne). Les entreprises qui formalisent ce cadre avant d'investir évitent la dispersion des licences, les doublons d'outils et les pilotes sans lendemain.
+              </p>
+              <p style={{ margin: 0 }}>
+                La démarche s'inscrit dans la continuité du conseil en transformation numérique et intelligence artificielle : la stratégie IA en constitue aujourd'hui le volet le plus structurant, car elle touche simultanément les processus, les données et les compétences de toutes les directions. La priorisation porte en grande partie sur les usages de l'<Link to="/ia-generative-entreprise" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>IA générative en entreprise</Link>, dont il faut trier les cas d'usage selon leur valeur réelle. Cette démarche forme aussi le premier temps des missions de notre <Link to="/conseil-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>, qui couvre l'audit des usages, l'accompagnement opérationnel et la transformation culturelle.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -432,20 +463,22 @@ export default function ConseilStrategieIAPage() {
             Chaque phase se conclut par un livrable validé avec votre comité de direction.
           </p>
 
-          <div style={{ ...cardStyle, padding: 'clamp(20px, 4vw, 36px)' }}>
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: BORDER }} />
             {PHASES.map((phase, i) => (
               <div key={i} style={{
-                display: 'flex', alignItems: 'flex-start', gap: 'clamp(16px, 3vw, 28px)',
-                padding: '28px 0',
-                borderTop: i === 0 ? 'none' : `1px solid ${BORDER}`,
+                display: 'flex', alignItems: 'flex-start', gap: 20, position: 'relative',
+                padding: i === 0 ? '0 0 18px' : (i === PHASES.length - 1 ? '18px 0 0' : '18px 0'),
               }}>
                 <div style={{
-                  ...iconTileStyle,
-                  fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 900, color: BLUE,
+                  width: 44, height: 44, borderRadius: 99, background: BLUE_SOFT,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  position: 'relative', zIndex: 1,
+                  fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: BLUE,
                 }}>
                   {phase.n}
                 </div>
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap', marginBottom: 10 }}>
                     <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: 0, letterSpacing: '-0.01em' }}>
                       {phase.title}
@@ -513,7 +546,7 @@ export default function ConseilStrategieIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 20, marginBottom: 14, maxWidth: 800 }}>
-            <strong style={{ color: INK }}>En aval, la feuille de route appelle une mise en œuvre.</strong> Une fois les chantiers prioritaires arbitrés, la même équipe passe au build : notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> conçoit et développe les solutions sur mesure, de l'agent métier à l'intégration au SI. La stratégie ne s'arrête pas au document : elle se déploie.
+            <strong style={{ color: INK }}>En aval, la feuille de route appelle une mise en œuvre.</strong> Une fois les chantiers prioritaires arbitrés, la même équipe passe au build : notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> conçoit et développe les solutions sur mesure, de l'agent métier à l'intégration au SI. Cet arbitrage entre ambition stratégique et enveloppe disponible s'appuie sur des repères de coûts : nos fourchettes pour <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>budgéter un projet IA</Link> aident à dimensionner chaque chantier dès la priorisation. La stratégie ne s'arrête pas au document : elle se déploie.
           </p>
           <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 0, marginBottom: 0, maxWidth: 800 }}>
             Pour préparer les arbitrages de la phase de cadrage, beaucoup de nos clients programment en amont notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link>, certifiée Qualiopi et finançable OPCO : comprendre les capacités réelles des modèles rend les décisions de priorisation plus rapides et mieux argumentées. Pour la montée en compétences des équipes métier, l'ensemble de nos parcours est détaillé sur la page <Link to="/formation-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation intelligence artificielle</Link>.
@@ -521,27 +554,31 @@ export default function ConseilStrategieIAPage() {
         </div>
       </section>
 
-      {/* ── POUR QUI ── */}
+      {/* ── POUR QUI (éditorial asymétrique) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Pour qui</div>
-          <h2 style={h2Style}>
-            À qui s'adresse ce conseil stratégie IA ?
-          </h2>
-          <p style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75, marginBottom: 40, maxWidth: 800 }}>
-            <strong style={{ color: INK }}>La mission s'adresse aux instances qui décident et financent la trajectoire IA : directions générales et COMEX de PME-ETI, directions de la transformation, DSI et directions du numérique.</strong>{' '}
-            Elle leur fournit une base d'arbitrage chiffrée, une feuille de route séquencée et un schéma de gouvernance conforme au RGPD et à l'AI Act.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
-            {POUR_QUI.map((p, i) => (
-              <div key={i} style={cardStyle}>
-                <div style={{ ...iconTileStyle, marginBottom: 18 }}>
-                  <p.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <div style={kickerStyle}>Pour qui</div>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                À qui s'adresse ce conseil stratégie IA ?
+              </h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
+                <strong style={{ color: INK }}>La mission s'adresse aux instances qui décident et financent la trajectoire IA : directions générales et COMEX de PME-ETI, directions de la transformation, DSI et directions du numérique.</strong>{' '}
+                Elle leur fournit une base d'arbitrage chiffrée, une feuille de route séquencée et un schéma de gouvernance conforme au RGPD et à l'AI Act.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+              {POUR_QUI.map((p, i) => (
+                <div key={i} style={cardStyle}>
+                  <div style={{ ...iconTileStyle, marginBottom: 18 }}>
+                    <p.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 10, letterSpacing: '-0.01em' }}>{p.title}</h3>
+                  <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 10, letterSpacing: '-0.01em' }}>{p.title}</h3>
-                <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -550,7 +587,7 @@ export default function ConseilStrategieIAPage() {
       <section style={{ padding: '56px clamp(20px, 4vw, 40px)', background: BG_SOFT, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
         <div style={{
           maxWidth: 1080, margin: '0 auto',
-          background: '#fff', border: `1px solid ${BORDER}`, borderRadius: 16,
+          background: '#fff', border: `1px solid ${BORDER}`, borderLeft: `4px solid ${BLUE}`, borderRadius: 16,
           boxShadow: '0 1px 2px rgba(0,0,0,0.04)',
           padding: 'clamp(28px, 4vw, 40px)',
           display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24,
@@ -582,7 +619,7 @@ export default function ConseilStrategieIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
             {LIVRABLES.map((l, i) => (
-              <div key={i} style={cardStyle}>
+              <div key={i} style={{ ...cardStyle, borderTop: `3px solid ${BLUE}` }}>
                 <div style={{ ...iconTileStyle, marginBottom: 16 }}>
                   <l.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
                 </div>
@@ -689,15 +726,19 @@ export default function ConseilStrategieIAPage() {
         </div>
       </section>
 
-      {/* ── CONTEXTE 2026 : éditorial + repères chiffrés sourcés (SEO + GEO) ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto', color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
-          <div style={kickerStyle}>Contexte 2026</div>
-          <h2 style={h2Style}>
+      {/* ── CONTEXTE 2026 : éditorial + repères chiffrés sourcés (ancre sombre — preuve) ── */}
+      <section style={{ position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: BLUE }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 880, margin: '0 auto', position: 'relative', color: '#B4C0D3', fontSize: 16, lineHeight: 1.75 }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Contexte 2026</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>
             Pourquoi formaliser une stratégie IA maintenant ?
           </h2>
-          <p style={{ marginBottom: 20 }}>
-            <strong style={{ color: INK }}>La technologie est devenue accessible à toutes les entreprises ; sa bonne intégration aux processus métier reste à construire. C'est ce décalage qui rend la stratégie décisive : sans cap, les organisations s'équipent en ordre dispersé et engagent des budgets sans retour mesurable.</strong>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 24px' }}>
+            <strong style={{ color: '#fff' }}>La technologie est devenue accessible à toutes les entreprises ; sa bonne intégration aux processus métier reste à construire. C'est ce décalage qui rend la stratégie décisive : sans cap, les organisations s'équipent en ordre dispersé et engagent des budgets sans retour mesurable.</strong>
           </p>
           <p style={{ marginBottom: 20 }}>
             La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) a déplacé la difficulté. Le frein n'est plus l'accès aux outils mais la capacité à choisir les bons cas d'usage, à préparer les données, à cadrer les usages au regard du RGPD et de l'AI Act, et à embarquer les équipes. Les entreprises qui formalisent ce cadre avant d'investir évitent la dispersion des licences, les doublons d'outils et les pilotes sans lendemain.
@@ -706,42 +747,42 @@ export default function ConseilStrategieIAPage() {
           {/* Repères chiffrés sourcés — citables par les moteurs de réponse */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '32px 0 28px' }}>
             {MARKET_STATS.map((s, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ ...iconTileStyle, marginBottom: 14 }}>
-                  <s.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
+                  <s.Icon size={22} color="#60A5FA" strokeWidth={2} aria-hidden="true" />
                 </div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: INK, lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
-                <p style={{ fontSize: 13.5, color: GREY_700, lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
-                <p style={{ fontSize: 12, color: GREY_500, margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#F8FAFC', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
+                <p style={{ fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
+                <p style={{ fontSize: 12, color: '#8092AB', margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
               </div>
             ))}
           </div>
 
           <p style={{ marginBottom: 0 }}>
-            Une stratégie IA bien menée transforme ces contraintes en avantage : elle priorise les chantiers à plus fort ROI, intègre la conformité dès la conception et prépare l'organisation au déploiement à l'échelle. Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité ; pour le périmètre conseil complet (audit, accompagnement, transformation), consultez notre <Link to="/conseil-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>.
+            Une stratégie IA bien menée transforme ces contraintes en avantage : elle priorise les chantiers à plus fort ROI, intègre la conformité dès la conception et prépare l'organisation au déploiement à l'échelle. Une fois la trajectoire fixée, la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>gouvernance de l'IA</Link> en prolonge le cadre dans la durée : comité de pilotage, charte d'usage et conformité RGPD et AI Act. Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité ; pour le périmètre conseil complet (audit, accompagnement, transformation), consultez notre <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>.
           </p>
 
           {/* Définitions clés — ancrage d'entités */}
-          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '44px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <BookOpen size={20} color={BLUE} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.01em', margin: '44px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <BookOpen size={20} color="#60A5FA" strokeWidth={2.2} aria-hidden="true" /> Définitions clés
           </h3>
           <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
             {GLOSSARY.map((g, i) => (
-              <div key={i} style={{ borderLeft: `3px solid ${BLUE_SOFT}`, paddingLeft: 16 }}>
-                <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: INK, marginBottom: 4 }}>{g.term}</dt>
-                <dd style={{ margin: 0, fontSize: 14.5, color: GREY_700, lineHeight: 1.65 }}>{g.def}</dd>
+              <div key={i} style={{ borderLeft: `3px solid ${BLUE}`, paddingLeft: 16 }}>
+                <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#F8FAFC', marginBottom: 4 }}>{g.term}</dt>
+                <dd style={{ margin: 0, fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65 }}>{g.def}</dd>
               </div>
             ))}
           </dl>
 
           {/* Sources de référence — liens d'autorité suivis */}
-          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '44px 0 16px' }}>
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.01em', margin: '44px 0 16px' }}>
             Sources de référence
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
             {REFERENCES.map((r, i) => (
               <li key={i}>
-                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: BLUE, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: '#60A5FA', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
                   <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
                 </a>
               </li>
@@ -750,17 +791,28 @@ export default function ConseilStrategieIAPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
-        <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <div style={kickerStyle}>FAQ</div>
-          <h2 style={{ ...h2Style, marginBottom: 36 }}>
-            Questions fréquentes sur le conseil stratégie IA
-          </h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} />
-            ))}
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <div style={kickerStyle}>FAQ</div>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>
+                Questions fréquentes sur le conseil stratégie IA
+              </h2>
+              <p style={{ color: GREY_700, fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -768,27 +820,33 @@ export default function ConseilStrategieIAPage() {
       {/* ── LE FONDATEUR (E-E-A-T) ── */}
       <FounderNote bg="#fff" quote="Une stratégie IA ne vaut que par sa mise en œuvre. Nous restons jusqu'à ce que la feuille de route devienne des solutions en production." />
 
-      {/* ── CTA FINALE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}` }}>
         <div style={{
+          position: 'relative', overflow: 'hidden',
           maxWidth: 1080, margin: '0 auto',
-          background: INK, color: '#fff',
+          background: '#0A0F1E', color: '#fff',
           borderRadius: 16,
           padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)',
           textAlign: 'center',
         }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 42px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.15, letterSpacing: '-0.02em', color: '#fff' }}>
-            Parlons de votre stratégie IA
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
-            Décrivez-nous votre organisation, vos premiers usages et vos échéances. Nous revenons vers vous sous 24 heures avec une proposition de cadrage, après un premier échange gratuit de 30 minutes.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800 }}>
-            Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#9CA3AF', marginTop: 24, marginBottom: 0 }}>
-            Cabinet de conseil et organisme de formation certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction
-          </p>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: BLUE }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 42px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.15, letterSpacing: '-0.02em', color: '#fff' }}>
+              Parlons de votre stratégie IA
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
+              Décrivez-nous votre organisation, vos premiers usages et vos échéances. Nous revenons vers vous sous 24 heures avec une proposition de cadrage, après un premier échange gratuit de 30 minutes.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800 }}>
+              Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', marginTop: 24, marginBottom: 0 }}>
+              Cabinet de conseil et organisme de formation certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction
+            </p>
+          </div>
         </div>
       </section>
     </>

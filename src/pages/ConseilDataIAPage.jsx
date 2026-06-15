@@ -8,6 +8,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page pilier « conseil data & IA » (slug /conseil-data-ia). Comble un gap du
@@ -34,7 +35,6 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Conseil data & IA : préparer vos données à l'IA | Masteria"
 const META_DESC = "Conseil data & IA pour entreprises : audit, gouvernance et qualité de vos données pour des projets d'IA fiables (RAG, agents, analytics). Cadrage gratuit."
-const H1 = "Conseil data & IA : des données prêtes pour l'intelligence artificielle"
 
 /* ───────── Styles partagés ───────── */
 
@@ -48,9 +48,6 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
-
-const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }
-const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHeight: 1.65, verticalAlign: 'top' }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
@@ -317,14 +314,23 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function ConseilDataIAPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (sections Prestations / Pourquoi / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Conseil data & IA', slug: SLUG },
@@ -341,55 +347,65 @@ export default function ConseilDataIAPage() {
         extraJsonLd={serviceJsonLd}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 7vw, 72px) 24px clamp(56px, 8vw, 80px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={wrap}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Conseil data & IA</span>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Conseil data & IA</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Database size={16} strokeWidth={2.2} aria-hidden="true" />
-              Conseil data & intelligence artificielle
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Database size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              De la donnée au cas d'usage IA
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              Conseil data & intelligence artificielle
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 50px)', fontWeight: 900, lineHeight: 1.12, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em', maxWidth: 920 }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Conseil data & IA :
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>des données prêtes pour l'intelligence artificielle</span>
           </h1>
 
-          {/* GEO : réponse directe citable */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 780, fontWeight: 500 }}>
-            <strong>Le conseil data & IA aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse reste une démonstration. Masteria cadre votre socle data, puis développe les solutions IA qui s'appuient dessus.</strong>
+          {/* GEO : réponse directe citable — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Le conseil data & IA aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse reste une démonstration. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria cadre votre socle data, puis développe les solutions IA qui s'appuient dessus.</strong>
           </p>
 
-          <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, marginBottom: 40, maxWidth: 780 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             La donnée est le carburant de l'IA, et c'est presque toujours là que les projets butent. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon, nous relions chaque chantier data à un cas d'usage IA précis : nous préparons les données utiles, posons la gouvernance, puis construisons les solutions qui les exploitent.
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)' }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Cadrer votre projet data & IA
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#prestations" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Ce que nous faisons
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* tags de compétences */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: 40 }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
@@ -397,72 +413,75 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── PRESTATIONS ── */}
+      {/* ── PRESTATIONS (éditorial asymétrique) ── */}
       <section id="prestations" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Nos prestations</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Que couvre une mission de conseil data & IA ?
-          </h2>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Nos prestations</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Que couvre une mission de conseil data & IA ?
+              </h2>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong>Une mission de conseil data & IA couvre l'audit de votre patrimoine de données, la gouvernance et la qualité, la préparation des données pour l'IA, le RAG, l'analytics augmenté et l'architecture des flux. L'objectif est constant : rendre vos données fiables, accessibles et réellement exploitables par vos solutions d'intelligence artificielle.</strong>
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Six familles de prestations reviennent dans la plupart des missions. Elles se combinent selon votre maturité : certains partent d'un audit, d'autres d'un besoin de gouvernance, d'autres encore d'un cas d'usage IA déjà identifié mais bloqué par la donnée.
+              </p>
+            </div>
 
-          <p style={answerStyle}>
-            <strong>Une mission de conseil data & IA couvre l'audit de votre patrimoine de données, la gouvernance et la qualité, la préparation des données pour l'IA, le RAG, l'analytics augmenté et l'architecture des flux. L'objectif est constant : rendre vos données fiables, accessibles et réellement exploitables par vos solutions d'intelligence artificielle.</strong>
-          </p>
-
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Six familles de prestations reviennent dans la plupart des missions. Elles se combinent selon votre maturité : certains partent d'un audit, d'autres d'un besoin de gouvernance, d'autres encore d'un cas d'usage IA déjà identifié mais bloqué par la donnée.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {LIVRABLES.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+                {LIVRABLES.map((item, i) => (
+                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                    <div style={{ marginBottom: 14 }}>
+                      <IconTile icon={item.icon} />
+                    </div>
+                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                Une fois le socle préparé, l'exploitation passe par nos solutions : l'<Link to="/assistant-documentaire-ia" style={aStyle}>assistant documentaire IA</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration LLM / RAG</Link> interrogent vos données en langage naturel, et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> construit les outils qui s'appuient dessus.
+              </p>
+            </div>
           </div>
-
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Une fois le socle préparé, l'exploitation passe par nos solutions : l'<Link to="/assistant-documentaire-ia" style={aStyle}>assistant documentaire IA</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration LLM / RAG</Link> interrogent vos données en langage naturel, et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> construit les outils qui s'appuient dessus.
-          </p>
         </div>
       </section>
 
-      {/* ── MÉTHODE (timeline 5 étapes) ── */}
+      {/* ── MÉTHODE (timeline à rail, rail étroit) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={wrap}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Méthode</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Comment se déroule une mission data & IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
+          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
             <strong>Une mission suit cinq étapes : audit du patrimoine de données, cartographie et priorisation des chantiers, mise en place de la gouvernance et de la qualité, préparation et mise à disposition des données pour l'IA, puis exploitation et mesure des résultats. Chaque étape est reliée à un cas d'usage IA concret.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 44, lineHeight: 1.7, maxWidth: 880 }}>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Nous partons du cas d'usage, pas de la donnée pour elle-même : c'est ce qui évite les grands chantiers data sans débouché et concentre l'investissement là où il débloque de la valeur.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {ETAPES.map((step, i) => (
               <div
                 key={step.num}
                 style={{
-                  display: 'flex', gap: 20, alignItems: 'flex-start',
-                  padding: '24px 0',
-                  borderTop: i === 0 ? 'none' : '1px solid #E5E7EB',
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === ETAPES.length - 1 ? '18px 0 0' : '18px 0'),
                 }}
               >
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
                   <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 760 }}>{step.desc}</p>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -470,37 +489,41 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── DONNÉES BRUTES vs PRÊTES POUR L'IA ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={wrap}>
-          <Kicker>Pourquoi la donnée d'abord</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+      {/* ── DONNÉES BRUTES vs PRÊTES POUR L'IA (ancre sombre — pivot) ── */}
+      <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ ...wrap, position: 'relative' }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Pourquoi la donnée d'abord</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Données laissées en l'état ou cadrées pour l'IA : quelle différence ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Un projet d'IA réussit ou échoue d'abord sur la donnée. Des données dispersées, incomplètes ou mal gouvernées produisent des résultats peu fiables, quel que soit le modèle. Des données nettoyées, accessibles et gouvernées permettent à un RAG, à un agent ou à une analyse de tenir leurs promesses.</strong>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+            <strong style={{ color: '#fff' }}>Un projet d'IA réussit ou échoue d'abord sur la donnée. Des données dispersées, incomplètes ou mal gouvernées produisent des résultats peu fiables, quel que soit le modèle. Des données nettoyées, accessibles et gouvernées permettent à un RAG, à un agent ou à une analyse de tenir leurs promesses.</strong>
           </p>
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
+          <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Le tableau résume ce qui change, critère par critère, entre des données laissées en l'état et un socle data cadré pour l'IA.
           </p>
 
-          <div style={{ ...cardStyle, overflowX: 'auto' }}>
+          <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif entre données laissées en l'état et données cadrées pour l'IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
               <thead>
                 <tr>
-                  <th scope="col" style={{ ...thStyle, width: '24%' }}>Critère</th>
-                  <th scope="col" style={{ ...thStyle, width: '38%' }}>Données laissées en l'état</th>
-                  <th scope="col" style={{ ...thStyle, width: '38%', color: c }}>Données cadrées pour l'IA</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '24%' }}>Critère</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '38%' }}>Données laissées en l'état</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '38%' }}>Données cadrées pour l'IA</th>
                 </tr>
               </thead>
               <tbody>
                 {TABLE.map((row, i) => (
-                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
-                    <th scope="row" style={{ ...tdStyle, textAlign: 'left', fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 14 }}>{row.critere}</th>
-                    <td style={tdStyle}>{row.sans}</td>
-                    <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.avec}</td>
+                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                    <th scope="row" style={{ padding: '14px 18px', fontSize: 14, color: '#F8FAFC', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5 }}>{row.critere}</th>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.sans}</td>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#fff', fontWeight: 500, lineHeight: 1.65, verticalAlign: 'top', background: 'rgba(37,99,235,0.10)' }}>{row.avec}</td>
                   </tr>
                 ))}
               </tbody>
@@ -509,39 +532,41 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── POURQUOI UN CABINET IA POUR LA DATA ── */}
+      {/* ── POURQUOI UN CABINET IA POUR LA DATA (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Pourquoi Masteria</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Pourquoi confier votre data à un cabinet IA plutôt qu'à une ESN data ?
-          </h2>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Pourquoi Masteria</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Pourquoi confier votre data à un cabinet IA plutôt qu'à une ESN data ?
+              </h2>
+              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
+                <strong>Parce que nous relions chaque chantier data à un cas d'usage IA concret, et que nous ne nous arrêtons pas au diagnostic : nous préparons les données puis développons les solutions qui s'appuient dessus. Spécialisés sur l'IA depuis 2022, nous savons précisément quelles données préparer, et comment, pour qu'un modèle les exploite.</strong>
+              </p>
+            </div>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Parce que nous relions chaque chantier data à un cas d'usage IA concret, et que nous ne nous arrêtons pas au diagnostic : nous préparons les données puis développons les solutions qui s'appuient dessus. Spécialisés sur l'IA depuis 2022, nous savons précisément quelles données préparer, et comment, pour qu'un modèle les exploite.</strong>
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '32px 0' }}>
-            {WHY.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+                {WHY.map(card => (
+                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
+                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                La data n'est qu'un volet de la transformation : pour la stratégie d'ensemble, voyez notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et pour situer votre point de départ, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link>. La gouvernance des données prolonge directement celle des systèmes d'IA : nos repères sur la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA et l'AI Act</Link> complètent le socle data décrit ici.
+              </p>
+            </div>
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            La data n'est qu'un volet de la transformation : pour la stratégie d'ensemble, voyez notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et pour situer votre point de départ, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link>.
-          </p>
         </div>
       </section>
 
       {/* ── FORMATION (bloc secondaire) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
@@ -621,17 +646,28 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <Kicker>FAQ</Kicker>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>
-            Conseil data & IA : les questions fréquentes
-          </h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} color={c} />
-            ))}
+        <div style={wrap}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>FAQ</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>
+                Conseil data & IA : les questions fréquentes
+              </h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              {FAQ.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} color={c} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -649,6 +685,7 @@ export default function ConseilDataIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
               { label: 'Intégration LLM / RAG', href: '/integration-llm-rag', tag: 'RAG', desc: "Rendre vos données interrogeables par un modèle, avec des réponses sourcées." },
+              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'GenAI', desc: "Ce que vos données fiabilisées rendent possible : assistants et contenus générés ancrés dans votre réalité." },
               { label: 'Assistant documentaire IA', href: '/assistant-documentaire-ia', tag: 'Solution', desc: "Interroger votre base documentaire en langage naturel, une fois le socle data prêt." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Conception et développement des solutions IA qui s'appuient sur vos données." },
@@ -684,22 +721,27 @@ export default function ConseilDataIAPage() {
       {/* ── LE FONDATEUR (E-E-A-T) ── */}
       <FounderNote />
 
-      {/* ── CTA FINALE SOMBRE ── */}
+      {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
-        <div style={{ ...wrap, background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Parlons de vos données et de vos projets IA
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-            Décrivez-nous le cas d'usage IA que vous visez et l'état de vos données. Nous revenons vers vous sous 24 heures avec une première lecture de votre socle data et une proposition de cadrage. Le travail data se juge à ce qu'il rend possible côté IA.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-            Cadrer votre projet data & IA
-            <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-            Réponse sous 24 h · Audit, gouvernance, RAG · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
-          </p>
+        <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
+              Parlons de vos données et de vos projets IA
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
+              Décrivez-nous le cas d'usage IA que vous visez et l'état de vos données. Nous revenons vers vous sous 24 heures avec une première lecture de votre socle data et une proposition de cadrage. Le travail data se juge à ce qu'il rend possible côté IA.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Cadrer votre projet data & IA
+              <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+              Réponse sous 24 h · Audit, gouvernance, RAG · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+            </p>
+          </div>
         </div>
       </section>
 

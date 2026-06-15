@@ -8,6 +8,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page « Agence IA » ancrée à Lyon : cible « agence ia lyon » (210/mois, KD 17,
@@ -27,7 +28,6 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = 'Agence IA Lyon · Conseil & dev sur mesure | Masteria'
 const META_DESC = "Agence IA à Lyon : conseil, développement d'agents et d'outils sur mesure, automatisation et formation. France, Suisse, Belgique. Premier cadrage gratuit."
-const H1 = 'Agence IA à Lyon : conseil, automatisation et formation des équipes'
 
 /* ── Design system local : kickers, titres, cartes, pastilles d'icônes ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -37,8 +37,6 @@ const answerStyle = { fontSize: 16, color: '#374151', lineHeight: 1.75, margin: 
 const mutedStyle = { fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 28 }
 const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }
-const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.35 }
-const tdStyle = { padding: '13px 16px', fontSize: 13.5, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }
 
 const HERO_BADGES = [
   { icon: BadgeCheck, label: 'Certifié Qualiopi' },
@@ -246,14 +244,23 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
-      {open && (
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
-      )}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+      </div>
     </div>
   )
 }
 
 export default function AgenceIAPage() {
+  const isDesktop = useIsDesktop()
+  // Patron éditorial asymétrique réutilisable (sections Offres / Ancrage / FAQ)
+  const editorialGrid = isDesktop
+    ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
+    : {}
+  const editorialAside = isDesktop
+    ? { position: 'sticky', top: 130, alignSelf: 'start' }
+    : { marginBottom: 32 }
+
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Agence IA', slug: SLUG },
@@ -270,58 +277,66 @@ export default function AgenceIAPage() {
         extraJsonLd={[LOCAL_BUSINESS_JSONLD, DEFINITIONS_JSONLD]}
       />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#F9FAFB', color: '#0A0A0A', padding: 'clamp(48px, 6vw, 64px) 24px clamp(64px, 8vw, 88px)', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+      {/* ── HERO sombre premium ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 6vw, 64px) 24px clamp(64px, 8vw, 88px)', overflow: 'hidden' }}>
+        {/* filet d'accent en haut */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        {/* trame de points */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        {/* halo d'accent */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280' }}>Accueil</Link>
-            <span style={{ color: '#374151' }}>/</span>
-            <span style={{ color: c, fontWeight: 600 }}>Agence IA</span>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence IA</span>
           </nav>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, alignItems: 'center' }}>
-            <span style={{ background: cLight, color: c, padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <MapPin size={16} strokeWidth={2.2} aria-hidden="true" />
-              Agence IA · Lyon
+          {/* eyebrow : picto en tuile + label */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <MapPin size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Conseil · Développement sur mesure · Formation
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              Agence IA · Lyon
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
-            {H1}
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+            Agence IA à Lyon
+            <br />
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>conseil, automatisation et formation des équipes</span>
           </h1>
 
-          {/* GEO : réponse directe pour citation LLM */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680 }}>
-            <strong>
-              Masteria est une agence IA basée à Lyon (Croix-Rousse), fondée en 2022. Son cœur d'offre : le conseil en stratégie IA et le développement d'outils et d'agents sur mesure, prolongés par l'automatisation des processus et, en appui, la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
-            </strong>
+          {/* GEO : réponse directe pour citation LLM — accroche */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Masteria est une agence IA basée à Lyon (Croix-Rousse), fondée en 2022. Son cœur d'offre : le <strong style={{ color: '#fff', fontWeight: 700 }}>conseil en stratégie IA et le développement d'outils et d'agents sur mesure</strong>, prolongés par l'automatisation des processus et, en appui, la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
           </p>
 
-          <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Notre métier : aider les directions générales et les équipes métier à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les solutions sur mesure qui s'intègrent à vos outils : agents, copilotes, automatisations. La formation prolonge la mise en œuvre, pour qu'à la fin vos équipes sachent faire fonctionner, corriger et étendre ce qui a été construit.
           </p>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link to="/contact" style={{ background: c, color: '#fff', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Demander un cadrage gratuit
-              <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
+              <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <a href="#offres" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+            <a href="#offres" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir nos offres
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+          {/* chips */}
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
             {HERO_BADGES.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
               >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
               </span>
             ))}
@@ -344,68 +359,79 @@ export default function AgenceIAPage() {
         ))}
       </section>
 
-      {/* ── LES 3 OFFRES ── */}
+      {/* ── LES 3 OFFRES (éditorial asymétrique) ── */}
       <section id="offres" style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Nos expertises</div>
-          <h2 style={h2Style}>Que fait une agence IA comme Masteria ?</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Masteria couvre quatre expertises, avec le conseil et le développement sur mesure en cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'outils et d'agents sur mesure, l'automatisation des processus et la formation des équipes.</strong>{' '}
-            Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
-          </p>
-          <p style={mutedStyle}>
-            Quatre offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24, marginBottom: 32 }}>
-            {OFFERS.map(({ icon: Icon, title, href, cta, desc, points }) => (
-              <div key={href} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ ...iconBoxStyle, marginBottom: 18 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginBottom: 10, letterSpacing: '-0.01em' }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 16 }}>{desc}</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  {points.map(pt => (
-                    <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-                      <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-                <Link to={href} style={{ marginTop: 'auto', color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  {cta}
-                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <div style={kickerStyle}>Nos expertises</div>
+              <h2 style={h2Style}>Que fait une agence IA comme Masteria ?</h2>
+              <p style={{ ...answerStyle, maxWidth: 'none' }}>
+                <strong style={{ color: '#0A0A0A' }}>Masteria couvre quatre expertises, avec le conseil et le développement sur mesure en cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'outils et d'agents sur mesure, l'automatisation des processus et la formation des équipes.</strong>{' '}
+                Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
+              </p>
+              <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
+                Quatre offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
+              </p>
+            </div>
+
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 24 }}>
+                {OFFERS.map(({ icon: Icon, title, href, cta, desc, points }) => (
+                  <div key={href} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ ...iconBoxStyle, marginBottom: 18 }}>
+                      <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+                    </div>
+                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginBottom: 10, letterSpacing: '-0.01em' }}>{title}</h3>
+                    <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 16 }}>{desc}</p>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      {points.map(pt => (
+                        <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                          <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link to={href} style={{ marginTop: 'auto', color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                      {cta}
+                      <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                    </Link>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
-            <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-              <strong style={{ color: '#0A0A0A' }}>Du conseil à la solution livrée, sous un même toit.</strong>{' '}
-              Nous ne nous arrêtons pas à la recommandation : nous concevons et développons les outils et les agents qui en découlent. Pour le détail de cette capacité de build, consultez notre{' '}
-              <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link> et nos{' '}
-              <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link> ; pour les chaînes de traitement répétitives, la page{' '}
-              <Link to="/automatisation-ia" style={{ color: c, fontWeight: 600 }}>automatisation IA</Link> ; pour les assistants branchés sur votre SI, la page{' '}
-              <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes sur ce qui a été construit.
-            </p>
+              <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                  <strong style={{ color: '#0A0A0A' }}>Du conseil à la solution livrée, sous un même toit.</strong>{' '}
+                  Nous ne nous arrêtons pas à la recommandation : nous concevons et développons les outils et les agents qui en découlent. Pour le détail de cette capacité de build, consultez notre{' '}
+                  <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link> et nos{' '}
+                  <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link> ; pour les chaînes de traitement répétitives, la page{' '}
+                  <Link to="/automatisation-ia" style={{ color: c, fontWeight: 600 }}>automatisation IA</Link> ; pour les assistants branchés sur votre SI, la page{' '}
+                  <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes sur ce qui a été construit.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── ANCRAGE LYONNAIS ── */}
+      {/* ── ANCRAGE LYONNAIS (éditorial asymétrique) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Ancrage local</div>
-          <h2 style={h2Style}>Pourquoi travailler avec une agence IA basée à Lyon ?</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA installée au 17 Rue Richan, sur le plateau de la Croix-Rousse (Lyon 4e).</strong>{' '}
-            La proximité accélère ce qui se joue sur le terrain : ateliers de cadrage, observation des processus, conduite du changement. Nous intervenons en présentiel dans toute la métropole lyonnaise et en région Auvergne-Rhône-Alpes.
-          </p>
-          <p style={mutedStyle}>
-            Le tissu économique régional s'y prête : la métropole concentre des sièges industriels, des acteurs de la santé et de la finance, des scale-ups et un réseau dense d'ETI. Quatre secteurs y produisent des gains particulièrement rapides.
-          </p>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <div style={kickerStyle}>Ancrage local</div>
+              <h2 style={h2Style}>Pourquoi travailler avec une agence IA basée à Lyon ?</h2>
+              <p style={{ ...answerStyle, maxWidth: 'none' }}>
+                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA installée au 17 Rue Richan, sur le plateau de la Croix-Rousse (Lyon 4e).</strong>{' '}
+                La proximité accélère ce qui se joue sur le terrain : ateliers de cadrage, observation des processus, conduite du changement. Nous intervenons en présentiel dans toute la métropole lyonnaise et en région Auvergne-Rhône-Alpes.
+              </p>
+              <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
+                Le tissu économique régional s'y prête : la métropole concentre des sièges industriels, des acteurs de la santé et de la finance, des scale-ups et un réseau dense d'ETI. Quatre secteurs y produisent des gains particulièrement rapides.
+              </p>
+            </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 48 }}>
+            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 48 }}>
             <div style={{ ...cardStyle, display: 'flex', gap: 18, alignItems: 'flex-start' }}>
               <div style={iconBoxStyle}>
                 <MapPin size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
@@ -433,7 +459,7 @@ export default function AgenceIAPage() {
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', marginBottom: 20, letterSpacing: '-0.01em' }}>
             Des secteurs régionaux où l'IA produit des gains rapides
           </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 20, marginBottom: 40 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20, marginBottom: 40 }}>
             {LYON_SECTORS.map(({ icon: Icon, title, desc }) => (
               <div key={title} style={{ ...cardStyle, padding: 24 }}>
                 <div style={{ ...iconBoxStyle, marginBottom: 14 }}>
@@ -458,12 +484,14 @@ export default function AgenceIAPage() {
               </p>
             </div>
           </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── PREMIER ÉCHANGE ── */}
+      {/* ── PREMIER ÉCHANGE (timeline à rail, rail étroit) ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <div style={kickerStyle}>Premier contact</div>
           <h2 style={h2Style}>Comment se passe un premier échange ?</h2>
           <p style={answerStyle}>
@@ -473,127 +501,162 @@ export default function AgenceIAPage() {
           <p style={mutedStyle}>
             Quatre étapes séparent votre premier message du démarrage de la mission.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 20 }}>
-            {FIRST_STEPS.map(step => (
-              <div key={step.num} style={{ ...cardStyle, padding: 26 }}>
-                <div style={{ width: 36, height: 36, background: cLight, color: c, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 16 }}>
-                  {step.num}
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
+            {FIRST_STEPS.map((step, i) => (
+              <div
+                key={step.num}
+                style={{
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === FIRST_STEPS.length - 1 ? '18px 0 0' : '18px 0'),
+                }}
+              >
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                  <span style={{ fontSize: 16, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '14px 0 0', letterSpacing: '-0.01em' }}>{step.title}</h3>
-                <div style={{ height: 1, background: '#E5E7EB', margin: '14px 0' }} aria-hidden="true" />
-                <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{step.title}</h3>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── AGENCE SPÉCIALISÉE VS ESN ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Spécialisation</div>
-          <h2 style={h2Style}>Pourquoi une agence spécialisée IA plutôt qu'une ESN généraliste ?</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Une agence spécialisée IA consacre l'intégralité de sa veille, de ses méthodes et de ses références à une seule discipline.</strong>{' '}
+      {/* ── AGENCE SPÉCIALISÉE VS ESN (ancre sombre — pivot preuve) ── */}
+      <section style={{ position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+
+        <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Spécialisation</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Pourquoi une agence spécialisée IA plutôt qu'une ESN généraliste ?</h2>
+          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+            <strong style={{ color: '#fff' }}>Une agence spécialisée IA consacre l'intégralité de sa veille, de ses méthodes et de ses références à une seule discipline.</strong>{' '}
             Une ESN généraliste reste pertinente pour un grand chantier d'intégration SI ou un renfort en régie. Pour cadrer une stratégie, automatiser des processus métier et rendre les équipes autonomes, la spécialisation avance plus vite, avec des budgets plus serrés.
           </p>
-          <p style={mutedStyle}>
+          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '0 0 40px', maxWidth: 880 }}>
             Beaucoup d'entreprises confient leurs projets IA à leur prestataire informatique habituel. Cela fonctionne pour l'intégration technique. Pour la stratégie, les usages métier et l'adoption par les équipes, la spécialisation change les résultats.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 32 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 56 }}>
             {SPECIALIST_POINTS.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ ...iconBoxStyle, marginBottom: 14 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+              <div key={title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{desc}</p>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
+                <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
 
           {/* Comparatif 4 voies — citable par les IA (GEO) + featured snippet (SEO) */}
-          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '8px 0 8px', letterSpacing: '-0.01em' }}>
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>
             Agence IA spécialisée, ESN, freelance ou équipe interne : le comparatif
           </h3>
-          <p style={{ ...answerStyle, marginBottom: 24 }}>
-            <strong style={{ color: '#0A0A0A' }}>Pour un projet IA transverse, une agence spécialisée combine expertise dédiée, démarrage rapide et transfert de compétence ; l'ESN convient aux grands chantiers SI, le freelance à un besoin ponctuel, et l'équipe interne à un usage récurrent à fort volume une fois constituée.</strong>{' '}
+          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '0 0 24px', maxWidth: 880 }}>
+            <strong style={{ color: '#fff' }}>Pour un projet IA transverse, une agence spécialisée combine expertise dédiée, démarrage rapide et transfert de compétence ; l'ESN convient aux grands chantiers SI, le freelance à un besoin ponctuel, et l'équipe interne à un usage récurrent à fort volume une fois constituée.</strong>{' '}
             Voici les quatre voies comparées, critère par critère.
           </p>
-          <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff', boxShadow: '0 1px 2px rgba(0,0,0,0.04)', marginBottom: 32 }}>
+          <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto', marginBottom: 32 }}>
             <table aria-label="Comparatif entre agence IA spécialisée, ESN généraliste, freelance IA et équipe interne" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 820 }}>
               <thead>
                 <tr>
-                  <th scope="col" style={{ ...thStyle, width: '15%' }}>Critère</th>
-                  <th scope="col" style={{ ...thStyle, color: c, width: '25%' }}>Agence IA spécialisée</th>
-                  <th scope="col" style={thStyle}>ESN généraliste</th>
-                  <th scope="col" style={thStyle}>Freelance IA</th>
-                  <th scope="col" style={thStyle}>Équipe interne</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.35, width: '15%' }}>Critère</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.35, width: '25%' }}>Agence IA spécialisée</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.35 }}>ESN généraliste</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.35 }}>Freelance IA</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '13px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.35 }}>Équipe interne</th>
                 </tr>
               </thead>
               <tbody>
                 {COMPARISON_TABLE.map((row, i) => (
-                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
-                    <th scope="row" style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', fontSize: 13 }}>{row.critere}</th>
-                    <td style={{ ...tdStyle, color: '#0A0A0A', fontWeight: 500 }}>{row.agence}</td>
-                    <td style={tdStyle}>{row.esn}</td>
-                    <td style={tdStyle}>{row.freelance}</td>
-                    <td style={tdStyle}>{row.interne}</td>
+                  <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                    <th scope="row" style={{ padding: '13px 16px', fontSize: 13, color: '#F8FAFC', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.6 }}>{row.critere}</th>
+                    <td style={{ padding: '13px 16px', fontSize: 13.5, color: '#fff', fontWeight: 500, lineHeight: 1.6, verticalAlign: 'top', background: 'rgba(37,99,235,0.10)' }}>{row.agence}</td>
+                    <td style={{ padding: '13px 16px', fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6, verticalAlign: 'top' }}>{row.esn}</td>
+                    <td style={{ padding: '13px 16px', fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6, verticalAlign: 'top' }}>{row.freelance}</td>
+                    <td style={{ padding: '13px 16px', fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6, verticalAlign: 'top' }}>{row.interne}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 780 }}>
+          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             La spécialisation pèse aussi sur la gouvernance : choix des modèles, encadrement des usages, conformité RGPD et AI Act évoluent chaque trimestre. Un cabinet dédié arbitre ces questions en continu pour l'ensemble de ses clients, là où une équipe généraliste les découvre projet après projet. Notre page{' '}
-            <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
-            détaille cette approche du cadrage, de la gouvernance et de la trajectoire.
+            <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
+            détaille cette approche du cadrage et de la trajectoire, et notre page{' '}
+            <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>gouvernance de l'IA</Link>{' '}
+            précise comment nous encadrons les usages et la conformité dans la durée.
           </p>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <div style={kickerStyle}>FAQ</div>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>Questions fréquentes sur notre agence IA</h2>
-          <div>
-            {FAQ.map((item, i) => (
-              <FAQItem key={i} q={item.q} a={item.a} color={c} />
-            ))}
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <div style={kickerStyle}>FAQ</div>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur notre agence IA</h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
+                Vous ne trouvez pas votre réponse ici ?
+              </p>
+              <Link to="/contact" style={{ color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                Posez-nous votre question
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            </div>
+            <div>
+              <div>
+                {FAQ.map((item, i) => (
+                  <FAQItem key={i} q={item.q} a={item.a} color={c} />
+                ))}
+              </div>
+              <p style={{ fontSize: 14, color: '#6B7280', marginTop: 28, lineHeight: 1.75 }}>
+                Vous comparez plusieurs prestataires ? Lisez notre guide{' '}
+                <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA : comment choisir en 2026</Link>. Pour aller plus loin, découvrez notre{' '}
+                <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>expertise IA par secteur</Link>, nos{' '}
+                <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>solutions IA par cas d'usage</Link> et notre{' '}
+                <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet IA</Link>. Pour comprendre les usages que nous déployons, notre page{' '}
+                <Link to="/ia-generative-entreprise" style={{ color: c, fontWeight: 600 }}>IA générative en entreprise</Link> pose le cadre, illustrée par nos{' '}
+                <Link to="/cas-usage-ia-entreprise" style={{ color: c, fontWeight: 600 }}>cas d'usage de l'IA en entreprise</Link> ; côté budget, le{' '}
+                <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link> donne les ordres de grandeur par type de mission. Avant tout engagement, le{' '}
+                <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre votre besoin et son périmètre.
+              </p>
+            </div>
           </div>
-          <p style={{ fontSize: 14, color: '#6B7280', marginTop: 28, lineHeight: 1.75 }}>
-            Vous comparez plusieurs prestataires ? Lisez notre guide{' '}
-            <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA : comment choisir en 2026</Link>. Pour aller plus loin, découvrez notre{' '}
-            <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>expertise IA par secteur</Link>, nos{' '}
-            <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>solutions IA par cas d'usage</Link> et notre{' '}
-            <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet IA</Link>. Avant tout engagement, le{' '}
-            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre votre besoin et son périmètre.
-          </p>
         </div>
       </section>
 
       {/* ── LE FONDATEUR (E-E-A-T + mention presse Les Échos) ── */}
       <FounderNote bg="#fff" />
 
-      {/* ── CTA FINALE (bandeau sombre) ── */}
+      {/* ── CTA FINALE (bandeau sombre, charte #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto', background: '#0A0A0A', borderRadius: 16, padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
-          <div style={{ ...kickerStyle, color: cLight }}>Premier échange gratuit</div>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-            Parlons de votre projet IA
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
-            Décrivez votre contexte en quelques lignes : processus chronophages, équipes à former, stratégie à cadrer. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit et sans engagement.
-          </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
-            Contacter notre équipe
-            <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
-          </Link>
-          <p style={{ fontSize: 13, color: '#9CA3AF', margin: 0 }}>
-            Agence IA à Lyon · Conseil, développement sur mesure, automatisation, formation · France, Suisse, Belgique
-          </p>
+        <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Premier échange gratuit</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
+              Parlons de votre projet IA
+            </h2>
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
+              Décrivez votre contexte en quelques lignes : processus chronophages, équipes à former, stratégie à cadrer. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit et sans engagement.
+            </p>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
+              Contacter notre équipe
+              <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+              Agence IA à Lyon · Conseil, développement sur mesure, automatisation, formation · France, Suisse, Belgique
+            </p>
+          </div>
         </div>
       </section>
 
