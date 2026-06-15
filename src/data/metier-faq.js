@@ -186,6 +186,14 @@ export const METIER_FAQ = {
       q: "Quel outil IA est le plus adapté aux managers ?",
       a: "Microsoft Copilot for Microsoft 365 est l'outil le plus pertinent pour la majorité des managers car il s'intègre directement dans leur environnement de travail : résumés de threads Outlook, comptes rendus automatiques de Teams, génération de slides PowerPoint et analyses dans Excel. Pour les managers souhaitant aller au-delà, ChatGPT et Claude offrent une plus grande flexibilité créative pour préparer des discours, des plans de développement individuels ou des communications complexes. Google Gemini est adapté aux managers dans des environnements Google Workspace. Notre formation couvre ces quatre outils sur 2 jours.",
     },
+    {
+      q: "Faut-il rendre l'usage de l'IA obligatoire dans son équipe ?",
+      a: "Non, l'obligation est rarement le bon levier. Imposer un outil crée surtout de la défiance et des usages de façade, où chacun coche la case sans rien changer à sa façon de travailler. Le rôle du manager est de rendre l'usage légitime, sécurisé et soutenu. Légitime, en montrant l'exemple et en valorisant les gains concrets observés dans l'équipe. Sécurisé, en posant un cadre clair sur les données et la conformité, pour que personne n'ait peur de mal faire. Soutenu, en formant, en répondant aux questions et en laissant du temps pour expérimenter. C'est ce trio cadrer, outiller, accompagner qui produit une adoption réelle, alors que la contrainte se contente de produire de la résistance silencieuse.",
+    },
+    {
+      q: "Comment gérer les collaborateurs qui refusent l'IA ?",
+      a: "Le refus n'a pas une seule cause, il en a quatre, et chacune appelle une réponse différente. Le profil rationnel doute de l'utilité ou de la fiabilité : on le convainc avec des cas chiffrés et des démonstrations sur ses propres tâches. Le profil émotionnel a peur, de l'erreur ou de sa place : on le rassure par un cadre clair et un droit à l'essai sans enjeu. Le profil identitaire sent son métier menacé : on lui montre que l'IA déplace les tâches sans effacer son expertise. Le profil politique défend une position ou un statut : on travaille la reconnaissance et les intérêts en jeu. Le manager apprend à identifier la nature du blocage avant de répondre, plutôt que de répéter le même argument à tout le monde.",
+    },
   ],
 
   assistante: [
@@ -212,6 +220,14 @@ export const METIER_FAQ = {
     {
       q: "L'IA peut-elle générer des compte-rendus depuis des notes de réunion ?",
       a: "Oui, c'est l'un des cas d'usage les plus immédiats et les plus économiques en temps pour les assistants et assistantes de direction. En collant des notes brutes de réunion, même incomplètes ou sous forme télégraphique, dans ChatGPT, Claude ou Microsoft Copilot, l'assistante obtient en moins de deux minutes un compte rendu structuré avec introduction, points abordés, décisions actées, actions à mener et responsables désignés. Microsoft Copilot peut même transcrire automatiquement les réunions Teams et en extraire le résumé sans intervention manuelle. Notre formation couvre les deux approches et apprend à paramétrer des templates de compte rendu réutilisables.",
+    },
+    {
+      q: "Microsoft Copilot est-il obligatoire pour suivre la formation ?",
+      a: "Non, Copilot n'est pas un prérequis. Il est très recommandé si votre entreprise travaille déjà sur Microsoft 365, car il se branche directement sur Outlook, Teams et Excel : tri de mails, génération de comptes-rendus depuis un enregistrement Teams, tableaux de reporting. Si vous n'avez pas Copilot, ChatGPT seul couvre déjà environ 70 % des cas d'usage du métier, notamment la rédaction de mails dirigeants, les synthèses et la recherche de prestataires. La formation s'adapte à votre environnement réel : nous travaillons avec les outils dont vous disposez, et nous vous montrons ce que Copilot apporterait en plus si la question d'un déploiement se pose ensuite. Vous repartez opérationnel quel que soit votre socle logiciel.",
+    },
+    {
+      q: "Faut-il déjà savoir utiliser ChatGPT pour participer ?",
+      a: "Non, aucun niveau préalable n'est demandé. La formation part de zéro : nous expliquons comment fonctionne un assistant IA, comment formuler une demande claire et comment obtenir un résultat fiable du premier coup. Chaque participante et participant travaille sur ses propres cas, ses propres mails et ses propres réunions, pas sur des exemples théoriques. À la fin de la journée, vous repartez avec une bibliothèque de prompts personnels, calés sur le style de votre direction et sur vos tâches récurrentes. L'objectif n'est pas de vous rendre expert de l'outil, mais de vous faire gagner concrètement 5 à 7 heures par semaine dès la semaine suivante. C'est cette autonomie immédiate qui structure tout le programme.",
     },
   ],
 
@@ -266,6 +282,14 @@ export const METIER_FAQ = {
     {
       q: "L'IA risque-t-elle de déshumaniser le service client ?",
       a: "C'est le risque principal mal géré, mais pas une fatalité. L'IA déshumanise le service client lorsqu'elle est déployée comme substitut à l'empathie humaine plutôt que comme amplificateur de capacité. Utilisée correctement, elle libère les conseillers des tâches répétitives pour leur permettre de se concentrer sur les interactions complexes qui nécessitent écoute, jugement et créativité relationnelle. Masteria aborde ce sujet de front dans sa formation : comment positionner l'IA comme outil de soutien et non de remplacement, comment maintenir une expérience client authentique et comment impliquer les équipes dans la définition des usages pour éviter les résistances.",
+    },
+    {
+      q: "Comment éviter qu'un chatbot raconte n'importe quoi à un client ?",
+      a: "Un chatbot lâché sans cadrage finit presque toujours par inventer des réponses, c'est la première cause d'échec des projets. La parade tient en quatre points. D'abord une architecture RAG : le bot ne répond plus de mémoire, il puise dans vos sources réelles et cite ce qu'il trouve. Ensuite la validation de la base documentaire, car une source fausse ou périmée produit une réponse fausse. Puis une évaluation qualité régulière, avec des jeux de questions tests et un suivi du taux de bonnes réponses. Enfin des garde-fous : périmètre de sujets autorisés, escalade automatique vers un conseiller dès que la confiance baisse, réponses interdites sur les cas sensibles. La formation montre comment installer ces quatre couches et mesurer la fiabilité dans la durée.",
+    },
+    {
+      q: "Faut-il déjà avoir un outil IA en place avant de former les équipes ?",
+      a: "Pas nécessairement. La formation peut très bien précéder le choix de l'outil, et c'est souvent plus sain. Des équipes formées posent les bonnes questions aux éditeurs, évaluent les démos avec un regard critique et évitent d'acheter une solution qui ne colle pas à leurs flux. Pour ceux qui partent de zéro, une journée d'audit IA cadre les cas d'usage prioritaires, mesure les volumes par motif et identifie où le gain sera réel avant tout investissement. À l'inverse, si un copilote ou un chatbot est déjà déployé, la formation porte directement sur sa supervision et son amélioration. Dans les deux cas, l'objectif reste le même : des conseillers et des managers capables de piloter l'IA, pas de la subir.",
     },
   ],
 
