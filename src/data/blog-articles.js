@@ -552,6 +552,7 @@ export const BLOG_ARTICLES = [
    * ───────────────────────────────────────────────────────────── */
   {
     slug: 'formation-ia-lyon',
+    externalPath: '/formation-ia-lyon',
     tag: 'Guide pratique',
     title: "Formation IA à Lyon : guide pratique pour les entreprises de la métropole",
     metaTitle: "Formation IA Lyon : le guide pratique 2026 | Masteria",
@@ -1612,6 +1613,7 @@ export const BLOG_ARTICLES = [
    * ───────────────────────────────────────────────────────────── */
   {
     slug: 'formation-ia-ressources-humaines',
+    externalPath: '/formation-ia-ressources-humaines',
     tag: 'Métier',
     title: "Formation IA pour les RH : 8 cas d'usage concrets à maîtriser",
     metaTitle: "Formation IA pour les RH : 8 cas d'usage concrets | Masteria",
@@ -1704,6 +1706,7 @@ export const BLOG_ARTICLES = [
    * ───────────────────────────────────────────────────────────── */
   {
     slug: 'formation-ia-finance-analyse-reporting',
+    externalPath: '/formation-ia-finance',
     tag: 'Métier',
     title: "Formation IA pour la finance : analyse, reporting et conformité",
     metaTitle: "Formation IA finance : analyse et reporting | Masteria",
@@ -2088,6 +2091,7 @@ export const BLOG_ARTICLES = [
    * ───────────────────────────────────────────────────────────── */
   {
     slug: 'formation-ia-paris',
+    externalPath: '/formation-ia-paris',
     tag: 'Géographie',
     title: "Formation IA à Paris : le guide complet pour les entreprises franciliennes",
     metaTitle: "Formation IA Paris : guide entreprises 2026 | Masteria",
@@ -2443,6 +2447,7 @@ export const BLOG_ARTICLES = [
    * ───────────────────────────────────────────────────────────── */
   {
     slug: 'formation-ia-commerciaux-prospection-relance',
+    externalPath: '/formation-ia-commercial',
     tag: 'Métier',
     title: "Formation IA pour les commerciaux : prospection, relance et propositions personnalisées",
     metaTitle: "Formation IA commerciaux : prospection, closing | Masteria",
@@ -2971,6 +2976,7 @@ export const BLOG_ARTICLES = [
    * ───────────────────────────────────────────────────────────── */
   {
     slug: 'formation-ia-dirigeants-ceo-comex',
+    externalPath: '/formation-ia-dirigeants',
     tag: 'Métier',
     title: "Formation IA pour dirigeants : ce qu'un CEO ou COMEX doit comprendre en 2026",
     metaTitle: "Formation IA dirigeants CEO COMEX : le guide | Masteria",
@@ -3945,6 +3951,7 @@ export const BLOG_ARTICLES = [
   },
   {
     slug: 'formation-ia-assistante-direction-office-manager',
+    externalPath: '/formation-ia-assistante',
     tag: 'Métiers',
     title: "Formation IA pour assistante de direction et office manager : 1 jour pour gagner 6h par semaine",
     metaTitle: "Formation IA assistante de direction 2026 | Masteria",
@@ -3956,7 +3963,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Mails, comptes-rendus, agenda, notes de frais, synthèses, présentations : l'assistante de direction est le métier qui gagne le plus à intégrer l'IA. Voici ce que change une formation d'une journée bien construite.",
     intro: "Une assistante de direction passe en moyenne 60 % de son temps sur des tâches à faible valeur ajoutée, mais hautement chronophages : tri d'e-mails, prise de notes, mise en forme de documents, recherche d'informations, planification. C'est précisément le terrain où ChatGPT, Microsoft Copilot et quelques automatisations bien choisies peuvent libérer 5 à 7 heures par semaine. Cette formation d'1 jour est conçue spécifiquement pour ce métier.",
     blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-assistante-direction' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour assistante de direction →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-assistante' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour assistante de direction →</a>" },
       { type: 'p', text: "L'objectif n'est pas de transformer les assistantes en data scientists, mais de leur donner une boîte à outils IA opérationnelle qu'elles utiliseront chaque jour dès le lendemain de la formation." },
 
       { type: 'h2', text: "Pourquoi une formation dédiée à ce métier ?" },
@@ -4027,6 +4034,7 @@ export const BLOG_ARTICLES = [
   },
   {
     slug: 'formation-ia-direction-achats-procurement',
+    externalPath: '/formation-ia-achats',
     tag: 'Métiers',
     title: "Formation IA pour la direction Achats : sourcing, négociation, suivi fournisseurs",
     metaTitle: "Formation IA Achats / Procurement 2026 | Masteria",
@@ -4100,6 +4108,7 @@ export const BLOG_ARTICLES = [
   },
   {
     slug: 'formation-ia-relation-client-sav',
+    externalPath: '/formation-ia-service-client',
     tag: 'Métiers',
     title: "Formation IA pour la relation client et le SAV : 2 jours pour transformer le service client",
     metaTitle: "Formation IA relation client & SAV 2026 | Masteria",
@@ -4111,7 +4120,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Le service client est l'une des fonctions les plus transformées par l'IA générative : chatbots, copilote conseiller, classification automatique, analyse de satisfaction. Voici un programme de formation 2 jours.",
     intro: "Selon McKinsey (2024), 65 % des centres de relation client ont déployé au moins un cas d'usage IA générative. Mais la majorité des projets échouent par manque de formation des conseillers et des managers. Cette formation de 2 jours vise à transformer les équipes relation client / SAV en utilisateurs experts d'IA, capables de superviser, prompter et améliorer les outils en place.",
     blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-relation-client-sav' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour la relation client et le SAV →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-service-client' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation IA pour la relation client et le SAV →</a>" },
       { type: 'h2', text: "5 cas d'usage IA en relation client / SAV" },
       {
         type: 'table',
@@ -4185,7 +4194,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Le manager est aujourd'hui le maillon faible des projets IA en entreprise. Sans lui, les outils sont déployés mais peu utilisés. Voici un programme de 2 jours conçu pour transformer les managers en pilotes d'équipe augmentée.",
     intro: "Les directions IT, Data ou Innovation déploient des outils. Les RH organisent les formations. Mais c'est le manager qui décide, jour après jour, si l'IA est utilisée ou rangée au placard. Et la majorité des managers, en 2026, n'ont jamais été formés ni à l'IA, ni au pilotage d'une équipe augmentée. Cette formation comble ce manque.",
     blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-managers' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Manager avec l'IA →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-management' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Manager avec l'IA →</a>" },
       { type: 'h2', text: "Pourquoi former spécifiquement les managers ?" },
       { type: 'p', text: "Sans manager formé, l'IA reste un gadget. Une étude PwC (2025) montre que les équipes dont le manager utilise lui-même l'IA quotidiennement adoptent les outils 3,4 fois plus vite que les autres. Le rôle du manager est triple : exemplarité, cadrage et accompagnement." },
 
@@ -4557,6 +4566,7 @@ export const BLOG_ARTICLES = [
   },
   {
     slug: 'formation-piloter-projet-ia-entreprise',
+    externalPath: '/formation-ia-gestion-de-projet',
     tag: 'Pilotage',
     title: "Piloter un projet IA en entreprise : formation 2 jours pour chefs de projet et responsables transformation",
     metaTitle: "Formation piloter un projet IA – 2 jours | Masteria",
@@ -4568,7 +4578,7 @@ export const BLOG_ARTICLES = [
     excerpt: "Selon Gartner, 70 % des projets IA n'atteignent pas leur ROI prévu. Cette formation de 2 jours donne la méthode pour faire partie des 30 % qui réussissent.",
     intro: "Lancer un projet IA, c'est jongler avec le métier, la data, l'IT, la conformité, le RH et le financement. Aucun chef de projet n'a appris ça dans son cursus. Cette formation 2 jours donne le cadre méthodologique complet : du cas d'usage au déploiement à grande échelle, en passant par la conduite du changement et la conformité AI Act.",
     blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-piloter-projet' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Piloter un projet IA en entreprise →</a>" },
+      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-gestion-de-projet' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Piloter un projet IA en entreprise →</a>" },
       { type: 'h2', text: "Les 6 phases d'un projet IA" },
       {
         type: 'table',
@@ -4634,6 +4644,7 @@ export const BLOG_ARTICLES = [
   },
   {
     slug: 'plan-developpement-competences-ia-drh',
+    externalPath: '/formation-ia-drh-plan-competences',
     tag: 'RH',
     title: "Plan de développement des compétences IA pour DRH : formation 2 jours",
     metaTitle: "Formation DRH : plan de développement IA | Masteria",

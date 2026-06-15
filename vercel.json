@@ -3,6 +3,81 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/formation-ia-piloter-projet",
+      "destination": "/formation-ia-gestion-de-projet",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-managers",
+      "destination": "/formation-ia-management",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-assistante-direction",
+      "destination": "/formation-ia-assistante",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-relation-client-sav",
+      "destination": "/formation-ia-service-client",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-relation-client-sav",
+      "destination": "/formation-ia-service-client",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-ressources-humaines",
+      "destination": "/formation-ia-ressources-humaines",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-lyon",
+      "destination": "/formation-ia-lyon",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-paris",
+      "destination": "/formation-ia-paris",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-finance-analyse-reporting",
+      "destination": "/formation-ia-finance",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-commerciaux-prospection-relance",
+      "destination": "/formation-ia-commercial",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-dirigeants-ceo-comex",
+      "destination": "/formation-ia-dirigeants",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-assistante-direction-office-manager",
+      "destination": "/formation-ia-assistante",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-direction-achats-procurement",
+      "destination": "/formation-ia-achats",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-piloter-projet-ia-entreprise",
+      "destination": "/formation-ia-gestion-de-projet",
+      "permanent": true
+    },
+    {
+      "source": "/blog/plan-developpement-competences-ia-drh",
+      "destination": "/formation-ia-drh-plan-competences",
+      "permanent": true
+    },
+    {
       "source": "/formation-ia-et-chatgpt-pour-la-direction-generale",
       "destination": "/formation-chatgpt-management",
       "permanent": true

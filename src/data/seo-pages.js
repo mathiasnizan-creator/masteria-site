@@ -2577,37 +2577,6 @@ const BASE_SPOKES = [
   // ── Multi-outils × Métiers (10 nouvelles fiches, avril 2026) ────────────
   // ═════════════════════════════════════════════════════════════════════════
 
-  // ── Multi-outils × Assistante de direction ──────────────────────────────
-  {
-    slug: 'formation-ia-assistante-direction',
-    duration: '1j',
-    tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
-    metier: 'Assistanat de direction', metierSlug: 'assistante', hubSlug: 'formation-intelligence-artificielle', priority: true,
-    metaTitle: 'Formation IA pour assistante de direction | Masteria',
-    metaDesc: "Formation IA dédiée aux assistantes de direction et office managers. 1 jour, ChatGPT, Copilot, automatisations. Certifié Qualiopi, finançable OPCO.",
-    h1: "Formation IA pour assistantes de direction et office managers",
-    intro: "Mails, comptes-rendus, agenda, notes de frais, comités de direction, recherches : l'assistante de direction est le métier qui gagne le plus à intégrer l'IA. Cette formation d'1 jour leur donne une boîte à outils opérationnelle (ChatGPT et Microsoft Copilot) directement utilisable dès le lendemain. Objectif réaliste : 5 à 7 heures gagnées par semaine, sur les tâches répétitives à faible valeur ajoutée.",
-    useCases: [
-      { icon: '✉️', title: 'Tri et rédaction de mails', desc: "Préparer des réponses, trier la boîte, rédiger des mails dirigeants en quelques secondes." },
-      { icon: '🗒️', title: 'Comptes-rendus de réunion', desc: "Transformer un enregistrement Teams en CR structuré avec décisions et actions." },
-      { icon: '📅', title: "Préparation d'agenda", desc: "Anticiper les réunions, préparer les briefs avant rendez-vous, gérer les conflits." },
-      { icon: '📊', title: 'Notes de frais et reporting', desc: "Synthèses Excel + Copilot pour les notes de frais et tableaux récurrents." },
-      { icon: '🎯', title: 'Préparation de COMEX', desc: "De la collecte d\'inputs à la synthèse finale : un comité prêt en 2 heures." },
-      { icon: '🔎', title: 'Recherche fournisseurs', desc: "Voyages, événements, prestataires : trouver et qualifier en 30 minutes." },
-    ],
-    program: [
-      { title: 'Matin, ChatGPT et Copilot pour assistantes', items: ['Bases du prompt : rôle, contexte, format', 'ChatGPT pour rédiger, reformuler, synthétiser', 'Microsoft Copilot dans Outlook, Word, Excel, PowerPoint, Teams', 'Confidentialité : ce qui peut / ne peut pas être collé dans une IA'] },
-      { title: 'Après-midi, Cas pratiques', items: ['Construire un comité de direction de A à Z', 'Transformer un enregistrement Teams en compte-rendu', 'Automatiser un suivi de notes de frais', 'Créer un mémo dirigeant en 10 minutes'] },
-    ],
-    faq: [
-      { q: "Faut-il déjà avoir utilisé ChatGPT ?", a: "Non. La formation part du niveau zéro. À la fin de la journée, chaque participante a créé ses propres prompts adaptés à ses dossiers." },
-      { q: "Microsoft Copilot est-il obligatoire ?", a: "Non, mais très recommandé si l'entreprise utilise Microsoft 365. Sinon, ChatGPT seul couvre déjà 70 % des cas." },
-      { q: "Quelle est la durée ?", a: "1 jour de formation. Nous recommandons un Sprint IA complémentaire de 3h, 4 à 6 semaines après, pour consolider les usages." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. 100 % finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-copilot-assistante', 'formation-multi-outils-assistante', 'formation-ia-managers'],
-  },
-
   // ── Multi-outils × Achats ───────────────────────────────────────────────
   {
     slug: 'formation-ia-achats',
@@ -2637,68 +2606,6 @@ const BASE_SPOKES = [
       { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
     ],
     relatedSpokes: ['formation-ia-ecrits-pro', 'formation-ia-analyse-donnees'],
-  },
-
-  // ── Multi-outils × Service Client (relation client / SAV) ───────────────
-  {
-    slug: 'formation-ia-relation-client-sav',
-    tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
-    metier: 'Service Client', metierSlug: 'service-client', hubSlug: 'formation-intelligence-artificielle', priority: true,
-    metaTitle: 'Formation IA relation client & SAV (2 jours) | Masteria',
-    metaDesc: "Formation 2 jours pour le service client : chatbots, classification de tickets, copilote conseiller, qualité. Certifié Qualiopi, finançable OPCO.",
-    h1: "Formation IA pour la relation client et le SAV",
-    intro: "Selon McKinsey, 65 % des centres de relation client ont déployé un cas d'usage IA générative en 2025. La majorité échouent par manque de formation des conseillers et des managers. Cette formation 2 jours transforme les équipes en utilisateurs experts, capables de superviser, prompter et améliorer les outils IA en place (chatbot, copilote conseiller, classification automatique).",
-    useCases: [
-      { icon: '💬', title: 'Copilote conseiller', desc: "Suggestions de réponse, contrôle qualité, escalade : 25 à 40 % de temps gagné." },
-      { icon: '🎯', title: 'Classification de tickets', desc: "Tri automatique, priorisation des cas urgents, routage intelligent." },
-      { icon: '🤖', title: 'Chatbot RAG', desc: "Réponse automatique aux FAQ : 30 à 50 % de tickets en moins quand bien fait." },
-      { icon: '📊', title: 'Analyse de verbatim', desc: "Tendances, irritants, signaux faibles détectés en temps réel." },
-      { icon: '✅', title: 'Qualité IA & garde-fous', desc: "Mesurer le taux d'escalade, la conformité, la satisfaction client." },
-      { icon: '📚', title: 'Base de connaissances', desc: "Construire et maintenir un référentiel exploitable par RAG." },
-    ],
-    program: [
-      { title: 'Jour 1, Fondamentaux et copilote conseiller', items: ["Panorama de l'IA générative pour le service client", 'Bases du prompt engineering pour conseillers', 'Travailler avec un copilote : suggestions, contrôle, escalade', 'Confidentialité, RGPD et AI Act dans la relation client'] },
-      { title: 'Jour 2, Pilotage et amélioration continue', items: ['Construire et maintenir une base de connaissances pour RAG', "Analyser les verbatim et identifier les irritants", 'Mesurer la qualité IA : KPIs, conformité, satisfaction', "Plan d'action 90 jours pour le manager du service client"] },
-    ],
-    faq: [
-      { q: "L'IA va-t-elle remplacer les conseillers ?", a: "Non. Les conseillers restent indispensables sur les cas complexes et émotionnels. L'IA prend le L1 (questions répétitives) et augmente le conseiller sur le L2/L3." },
-      { q: "Faut-il un outil avant de former ?", a: "Pas nécessairement. La formation peut être un préalable au choix de l'outil. Une journée d'audit IA permet de cadrer les cas d'usage avant tout investissement." },
-      { q: "Combien de temps pour voir les résultats ?", a: "Sur un copilote conseiller bien déployé : 4 à 8 semaines. Sur un chatbot client : 6 à 12 semaines pour un taux de résolution >50 %." },
-      { q: "Comment éviter qu'un chatbot raconte n'importe quoi ?", a: "C'est l'objet du Jour 2 : architecture RAG, validation de la base, évaluation qualité, garde-fous. Un chatbot lâché sans cadrage est presque toujours un échec." },
-      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-multi-outils-service-client', 'formation-chatgpt-service-client', 'formation-ia-managers'],
-  },
-
-  // ── Multi-outils × Management (Manager avec l'IA) ───────────────────────
-  {
-    slug: 'formation-ia-managers',
-    tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
-    metier: 'Management', metierSlug: 'management', hubSlug: 'formation-intelligence-artificielle', priority: true,
-    metaTitle: "Formation manager avec l'IA (2 jours) | Masteria",
-    metaDesc: "Formation 2 jours pour managers : intégrer l'IA dans son équipe, objectifs, qualité, conformité, accompagnement humain. OPCO, Qualiopi.",
-    h1: "Manager efficacement avec l'IA",
-    intro: "Le manager est le maillon décisif des projets IA. Sans lui, les outils sont déployés mais peu utilisés. Cette formation 2 jours transforme les managers en pilotes d'équipe augmentée : exemplarité, cadrage, accompagnement, conformité. Selon PwC (2025), les équipes dont le manager utilise l'IA quotidiennement adoptent les outils 3,4 fois plus vite.",
-    useCases: [
-      { icon: '👤', title: 'Manager utilisateur', desc: "ChatGPT et Copilot dans le quotidien du manager : synthèses, points, arbitrages." },
-      { icon: '🎯', title: "Pilotage d'équipe augmentée", desc: "Cartographie des usages, objectifs IA, mesure du gain de temps." },
-      { icon: '🛡️', title: 'Conformité', desc: "RGPD, AI Act, propriété intellectuelle, secret professionnel." },
-      { icon: '🗣️', title: 'Conduite du changement', desc: "4 profils de résistance et leviers managériaux pour chacun." },
-      { icon: '✍️', title: 'Communication managériale', desc: "Préparer un entretien, écrire un feedback difficile, structurer un message." },
-      { icon: '📅', title: 'Rituels IA', desc: "Animer un point IA mensuel : ce qui marche, ce qui bloque." },
-    ],
-    program: [
-      { title: "Jour 1, Le manager utilisateur d'IA", items: ['Maîtriser ChatGPT et Copilot dans son quotidien de manager', 'Synthèses, comptes-rendus, points préparés en 5 minutes', 'Aide à la décision : structurer un arbitrage avec l\'IA', 'Préparer un entretien individuel ou un feedback difficile'] },
-      { title: "Jour 2, Le manager pilote d'équipe augmentée", items: ['Cartographier les usages IA pertinents dans son équipe', 'Fixer des objectifs IA réalistes (et les mesurer)', 'Animer un point IA mensuel', 'Conformité : RGPD, AI Act, PI, secret pro', 'Accompagner la résistance au changement : 4 profils types'] },
-    ],
-    faq: [
-      { q: "Faut-il déjà être à l'aise avec l'IA ?", a: "Non. Le Jour 1 est calibré pour des managers débutants : à 17h chacun est utilisateur autonome de ChatGPT et Copilot." },
-      { q: "Différence avec une formation managériale classique ?", a: "Cette formation se concentre sur la dimension IA : pilotage des usages, objectifs, conformité, accompagnement spécifique. Elle complète une formation au management classique." },
-      { q: "Faut-il rendre l'usage obligatoire ?", a: "Non, mais il faut le rendre légitime, sécurisé et soutenu. Imposer crée de la défiance ; cadrer et outiller crée de l'adoption." },
-      { q: "Et si certains refusent l'IA ?", a: "Le Jour 2 inclut un module sur les 4 profils de résistance (rationnel, émotionnel, identitaire, politique) et les leviers à activer pour chacun." },
-      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 managers) comme en accompagnement individuel. 100 % finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-multi-outils-management', 'formation-chatgpt-management', 'formation-ia-piloter-projet'],
   },
 
   // ── Multi-outils × Veille (transversal / Marketing) ─────────────────────
@@ -2825,37 +2732,6 @@ const BASE_SPOKES = [
     relatedSpokes: ['formation-multi-outils-communication', 'formation-ia-creativite', 'formation-sprint-ia-prompts'],
   },
 
-  // ── Multi-outils × Piloter un projet IA (Informatique / DSI) ────────────
-  {
-    slug: 'formation-ia-piloter-projet',
-    tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
-    metier: 'Informatique / DSI', metierSlug: 'informatique', hubSlug: 'formation-intelligence-artificielle', priority: true,
-    metaTitle: "Formation piloter un projet IA en entreprise | Masteria",
-    metaDesc: "Formation 2 jours pour piloter un projet IA en entreprise : cadrage, ROI, AI Act, MLOps, conduite du changement. OPCO, Qualiopi.",
-    h1: "Piloter un projet IA en entreprise",
-    intro: "Selon Gartner, 70 % des projets IA n'atteignent pas leur ROI prévu. Cette formation 2 jours donne la méthode pour faire partie des 30 % qui réussissent : cadrage, faisabilité, POC, industrialisation, conduite du changement, mesure d'impact. Conçue pour des chefs de projet, des PMO et des responsables transformation, pas pour des data scientists.",
-    useCases: [
-      { icon: '🎯', title: "Cadrage de cas d'usage", desc: "Identifier, prioriser, calculer un ROI réaliste." },
-      { icon: '🔬', title: "Faisabilité & POC", desc: "Critères de sortie clairs, données qualifiées, architecture choisie." },
-      { icon: '🏗️', title: 'Industrialisation', desc: "Du POC au produit : sécurité, MLOps light, gouvernance." },
-      { icon: '📜', title: 'AI Act & RGPD', desc: "Classification des usages, obligations selon le niveau de risque." },
-      { icon: '🚀', title: 'Conduite du changement', desc: "Sponsor, communication, formation, accompagnement managérial." },
-      { icon: '📈', title: 'Mesure ROI', desc: "Dashboards, KPIs, ROI réel — pas seulement promis." },
-    ],
-    program: [
-      { title: 'Jour 1, Cadrage et faisabilité', items: ["Identifier et prioriser les cas d'usage", 'Calculer un ROI réaliste (gains, coûts, risques)', 'Cartographier les données et leur qualité', 'Choisir l\'architecture : IA générative, RAG, fine-tuning', 'Conformité : AI Act, RGPD, propriété intellectuelle'] },
-      { title: 'Jour 2 (J+30), Industrialisation et change', items: ['Du POC au produit : critères de passage à l\'échelle', 'MLOps light : versioning, monitoring, gouvernance', 'Conduire le changement : sponsor, communication, formation', 'Mesurer l\'impact réel (gain de temps, qualité, ROI)', "Plan de continuité et amélioration continue"] },
-    ],
-    faq: [
-      { q: "Faut-il être technique ?", a: "Non. La formation s'adresse à des chefs de projet, pas à des data scientists. La partie technique reste compréhensible pour un profil non-tech." },
-      { q: "Différence avec une formation gestion de projet classique ?", a: "Les projets IA ont des spécificités fortes (qualité de la donnée, AI Act, MLOps, mesure d'impact, conduite du changement spécifique) qu'une formation gestion de projet généraliste ne couvre pas." },
-      { q: "Faut-il déjà avoir un projet en cours ?", a: "C'est un plus, pas une obligation. Si oui, la formation devient un accélérateur direct. Sinon, elle prépare au lancement du premier projet." },
-      { q: "Pourquoi 2 jours espacés d'un mois ?", a: "Entre J1 et J2, chaque participant travaille sur un projet réel et le partage en J+30. Cela transforme la formation en un véritable accélérateur de projet." },
-      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours espacés (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-multi-outils-informatique', 'formation-ia-managers', 'formation-ia-drh-plan-competences'],
-  },
-
   // ── Multi-outils × Plan compétences DRH (RH) ────────────────────────────
   {
     slug: 'formation-ia-drh-plan-competences',
@@ -2884,7 +2760,7 @@ const BASE_SPOKES = [
       { q: "Comment mesurer l'impact ?", a: "3 niveaux : opérationnel (gain de temps, qualité), business (ROI, satisfaction), stratégique (capacité IA de l'entreprise). Le Jour 2 fournit des grilles concrètes." },
       { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 DRH/RRH) comme en accompagnement individuel. 100 % finançable OPCO." },
     ],
-    relatedSpokes: ['formation-multi-outils-ressources-humaines', 'formation-ia-managers', 'formation-ia-piloter-projet'],
+    relatedSpokes: ['formation-multi-outils-ressources-humaines'],
   },
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -3008,7 +2884,7 @@ const BASE_SPOKES = [
       { q: "Combien de managers par session ?", a: "12 à 15 maximum pour conserver l'interaction. Pour des déploiements à 100+ managers, on enchaîne 8 à 10 sessions sur 3 à 4 semaines." },
       { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements managériaux. 100 % finançable OPCO." },
     ],
-    relatedSpokes: ['formation-ia-managers', 'formation-multi-outils-management'],
+    relatedSpokes: ['formation-multi-outils-management'],
   },
 
   // ── Sprint IA × Veille ──────────────────────────────────────────────────
