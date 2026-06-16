@@ -268,6 +268,9 @@ export default function SEOHead({
     ? {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
+        '@id': `${fullUrl}#faqpage`,
+        inLanguage: 'fr-FR',
+        isPartOf: { '@id': `${fullUrl}#webpage` },
         mainEntity: faqItems.map(item => ({
           '@type': 'Question',
           name: item.q,

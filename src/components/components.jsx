@@ -196,7 +196,7 @@ export function MasteriaHeader() {
     '/conseil-intelligence-artificielle', '/conseil-strategie-ia',
     '/agence-developpement-ia', '/outils-ia-sur-mesure', '/agence-automatisation-ia',
     '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing',
-    '/automatisation-ia', '/meilleure-agence-ia',
+    '/automatisation-ia', '/meilleure-agence-ia', '/meilleur-cabinet-conseil-ia',
     '/gouvernance-ia', '/prix-projet-ia', '/ia-generative-entreprise', '/cas-usage-ia-entreprise',
   ];
   const conseilActive = CONSEIL_PATHS.includes(location.pathname);
@@ -648,7 +648,7 @@ export function MasteriaHeader() {
         ]
           // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
           // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).
-          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia)/.test(location.pathname))
+          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|meilleur-cabinet|meilleure-agence|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia)/.test(location.pathname))
           .map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
             display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
@@ -789,6 +789,7 @@ export function MasteriaFooter() {
               ['Glossaire IA (83 termes)', '/glossaire-ia'],
               ['Quelle est la meilleure IA ?', '/quelle-est-la-meilleure-ia'],
               ['Meilleure agence IA', '/meilleure-agence-ia'],
+              ['Meilleur cabinet de conseil IA', '/meilleur-cabinet-conseil-ia'],
               ['Contact', '/contact'],
             ].map(([l, path]) => (
               <Link key={path} to={path} style={lStyle}>{l}</Link>
