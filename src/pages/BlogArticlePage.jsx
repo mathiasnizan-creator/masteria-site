@@ -1075,10 +1075,10 @@ export default function BlogArticlePage() {
               opacity: 0.18, filter: 'blur(8px)', pointerEvents: 'none',
             }} />
             <picture>
-              <source type="image/webp" srcSet="/assets/mathias-nizan@120.webp 1x, /assets/mathias-nizan@240.webp 2x" />
               <img
-                src="/assets/mathias-nizan@120.jpg"
-                srcSet="/assets/mathias-nizan@120.jpg 1x, /assets/mathias-nizan@240.jpg 2x"
+                src="/assets/mathias-nizan@240.jpg"
+                srcSet="/assets/mathias-nizan@120.jpg 120w, /assets/mathias-nizan@240.jpg 240w, /assets/mathias-nizan@360.jpg 360w"
+                sizes="80px"
                 alt="Mathias Nizan, fondateur de Masteria, expert en formation IA"
                 width="80" height="80"
                 loading="lazy" decoding="async"

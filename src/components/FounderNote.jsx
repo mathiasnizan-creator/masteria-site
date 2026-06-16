@@ -80,17 +80,15 @@ export default function FounderNote({ quote = DEFAULT_QUOTE, bg = '#F9FAFB' }) {
           display: 'flex', gap: 'clamp(24px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap',
         }}>
           <div style={{ flexShrink: 0 }}>
-            <picture>
-              <source type="image/webp" srcSet="/assets/mathias-nizan@120.webp 1x, /assets/mathias-nizan@240.webp 2x" />
-              <img
-                src="/assets/mathias-nizan@120.jpg"
-                srcSet="/assets/mathias-nizan@120.jpg 1x, /assets/mathias-nizan@240.jpg 2x"
-                alt="Mathias Nizan, fondateur de Masteria"
-                width="104" height="104"
-                loading="lazy" decoding="async"
-                style={{ width: 104, height: 104, borderRadius: '50%', objectFit: 'cover', display: 'block' }}
-              />
-            </picture>
+            <img
+              src="/assets/mathias-nizan@240.jpg"
+              srcSet="/assets/mathias-nizan@120.jpg 120w, /assets/mathias-nizan@240.jpg 240w, /assets/mathias-nizan@360.jpg 360w"
+              sizes="104px"
+              alt="Mathias Nizan, fondateur de Masteria"
+              width="104" height="104"
+              loading="lazy" decoding="async"
+              style={{ width: 104, height: 104, borderRadius: '50%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
           <div style={{ flex: 1, minWidth: 280 }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.6vw, 26px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
