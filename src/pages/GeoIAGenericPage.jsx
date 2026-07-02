@@ -28,7 +28,10 @@ function FaqItem({ q, a }) {
         <span style={{ fontSize: 15, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.4 }}>{q}</span>
         <ChevronDown size={18} strokeWidth={2} style={{ flexShrink: 0, color: '#6B7280', marginTop: 2, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
       </button>
-      {open && <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, marginTop: -4 }}>{a}</p>}
+      {/* Réponse toujours dans le DOM (repli CSS) : citable par les moteurs génératifs (GEO) */}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, marginTop: -4 }}>{a}</p>
+      </div>
     </div>
   )
 }
@@ -68,13 +71,37 @@ export default function GeoIAGenericPage() {
     { name: city.name, slug },
   ]
 
-  // Course schema (catalogue de la ville)
+  // Course schema (catalogue de la ville) — lieu localisé pour la ville courante
   const courseData = {
     name: h1,
     description: metaDesc,
     price: '1980',
     duration: 'PT14H',
     level: 'Tous niveaux',
+    locationName: `Masteria — formation IA ${city.nameLoc} (présentiel) ou distanciel`,
+  }
+
+  // Meta keywords localisés (le fallback SEOHead liste des mots-clés formation génériques)
+  const cityLower = city.name.toLowerCase()
+  const keywords = `formation ia ${cityLower}, formation intelligence artificielle ${cityLower}, formation ia ${city.nameLoc.toLowerCase()}, formation chatgpt ${cityLower}, formation claude ${cityLower}, formation ia entreprise ${cityLower}, organisme formation ia ${cityLower}${isFrance ? ', certifié qualiopi, finançable opco' : ', certifié qualiopi'}`
+
+  // E-E-A-T : auteur identifié + fraîcheur datée (Article JSON-LD + byline visible)
+  const PUBLISHED = '2026-05-11'
+  const MODIFIED = '2026-07-02'
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `https://www.master-ia.fr/${slug}#article`,
+    headline: h1,
+    description: metaDesc,
+    author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+    editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+    publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    inLanguage: 'fr-FR',
+    mainEntityOfPage: { '@id': `https://www.master-ia.fr/${slug}#webpage` },
+    about: [`Formation intelligence artificielle ${city.nameLoc}`, 'Formation IA entreprise', city.region],
   }
 
   // ItemList JSON-LD : les 2 pages outil × ville priorisées (uniquement si la ville existe dans GEO_CITIES)
@@ -177,7 +204,10 @@ export default function GeoIAGenericPage() {
         courseData={courseData}
         faqItems={faqItems}
         breadcrumbs={breadcrumbs}
-        extraJsonLd={[toolPagesItemList, localBusinessSchema].filter(Boolean)}
+        keywords={keywords}
+        datePublished={PUBLISHED}
+        dateModified={MODIFIED}
+        extraJsonLd={[toolPagesItemList, localBusinessSchema, articleJsonLd].filter(Boolean)}
         locale={city.locale}
       />
 
@@ -214,10 +244,15 @@ export default function GeoIAGenericPage() {
             fontFamily: 'Nunito, sans-serif',
             fontSize: isMobile ? 26 : 'clamp(28px, 3.5vw, 44px)',
             fontWeight: 900, letterSpacing: '-0.02em',
-            color: '#0A0A0A', lineHeight: 1.15, marginBottom: 20,
+            color: '#0A0A0A', lineHeight: 1.15, marginBottom: 12,
           }}>
             {h1}
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           <p style={{ fontSize: isMobile ? 15 : 17, color: '#4B5563', lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
             {city.desc}
@@ -259,6 +294,26 @@ export default function GeoIAGenericPage() {
             }}>
               Voir tout le catalogue
             </Link>
+          </div>
+
+          {/* En bref — synthèse citable (GEO) */}
+          <div style={{ background: '#fff', border: '1px solid #DBEAFE', borderRadius: 14, padding: isMobile ? '16px 18px' : '20px 26px', marginTop: 32, maxWidth: 760 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 12 }}>En bref</div>
+            <dl style={{ margin: 0 }}>
+              {[
+                { label: 'Formats', value: `Intra-entreprise dans vos locaux ${city.nameLoc} (jusqu'à 12 participants), accompagnement individuel sur mesure, distanciel` },
+                { label: 'Tarif', value: '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
+                { label: 'Financement', value: isFrance ? `Certifié Qualiopi, finançable OPCO jusqu'à 100 % (${city.region})` : 'Certifié Qualiopi · dispositifs de financement selon votre pays, orientation lors du cadrage' },
+                { label: 'Outils', value: 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI' },
+                { label: 'Métiers', value: '13 fonctions couvertes, 89 programmes au catalogue' },
+                { label: 'Zone', value: city.zones },
+              ].map((row, i) => (
+                <div key={row.label} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #EFF6FF' }}>
+                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>

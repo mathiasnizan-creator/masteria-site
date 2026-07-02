@@ -214,7 +214,7 @@ export default function SEOHead({
           inLanguage: 'fr-FR',
           location: {
             '@type': 'Place',
-            name: 'Masteria — présentiel France/Suisse/Belgique ou distanciel',
+            name: courseData.locationName || 'Masteria — présentiel France/Suisse/Belgique ou distanciel',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '17 Rue Richan',

@@ -651,7 +651,8 @@ export default function AgenceIAPage() {
                 <Link to="/ia-generative-entreprise" style={{ color: c, fontWeight: 600 }}>IA générative en entreprise</Link> pose le cadre, illustrée par nos{' '}
                 <Link to="/cas-usage-ia-entreprise" style={{ color: c, fontWeight: 600 }}>cas d'usage de l'IA en entreprise</Link> ; côté budget, le{' '}
                 <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link> donne les ordres de grandeur par type de mission. Avant tout engagement, le{' '}
-                <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre votre besoin et son périmètre.
+                <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre votre besoin et son périmètre. Et pour former vos équipes près de chez nous, notre{' '}
+                <Link to="/formation-ia-lyon" style={{ color: c, fontWeight: 600 }}>formation IA à Lyon</Link> se déroule dans vos locaux, partout dans la métropole.
               </p>
             </div>
           </div>

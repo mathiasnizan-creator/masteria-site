@@ -90,7 +90,7 @@ export const GEO_CITIES = [
       'OPCO 2i (industrie) et ATLAS (services financiers) couvrent 80 % des financements formation IA Masteria à Lyon.',
       'Masteria a son siège social et sa salle de formation au 17 Rue Richan, dans le 4ème arrondissement de Lyon (Croix-Rousse).',
     ],
-    transportAccess: "Notre salle de formation Part-Dieu est accessible en 5 min depuis la gare TGV Lyon Part-Dieu (métro B, tram T1 / T3 / T4). Pour les sessions intra, nous nous déplaçons dans tout l'agglomération lyonnaise et en région : Grenoble (1 h 15 en TER), Saint-Étienne (45 min), Clermont-Ferrand (1 h 30 en TER ou autoroute), Annecy (1 h 45). Aucun frais de déplacement supplémentaire dans la métropole de Lyon.",
+    transportAccess: "Notre siège est à la Croix-Rousse (Lyon 4e) et les formations intra se déroulent dans vos locaux, partout dans la métropole : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne. Depuis la gare TGV Lyon Part-Dieu (métro B, tram T1 / T3 / T4), l'ensemble de l'agglomération est accessible en quelques minutes. En région, nous intervenons à Grenoble (1 h 15 en TER), Saint-Étienne (45 min), Clermont-Ferrand (1 h 30 en TER ou autoroute) et Annecy (1 h 45). Aucun frais de déplacement supplémentaire dans la métropole de Lyon.",
     localExperts: [
       { name: 'Lyonbiopôle', type: 'Pôle de compétitivité santé et bio-industries' },
       { name: 'ENS Lyon — LabIA', type: 'Recherche IA appliquée' },
@@ -99,6 +99,8 @@ export const GEO_CITIES = [
     additionalFAQ: [
       { q: 'Quelle différence entre une session inter et une intra à Lyon ?', a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
       { q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?', a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry / Valence. Les modalités sont identiques à celles de Lyon." },
+      { q: 'Où se déroulent les formations IA à Lyon ?', a: "Dans vos locaux, partout dans la métropole de Lyon : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de l'agglomération. Le siège de Masteria est à la Croix-Rousse (Lyon 4e). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace : c'est celui que nous recommandons. Le distanciel reste disponible pour les équipes dispersées." },
+      { q: 'Pourquoi choisir un organisme de formation IA lyonnais ?', a: "La proximité change le déroulé : cadrage en présentiel dans vos locaux, connaissance du tissu économique régional (pharma, industrie, banque, numérique) et des OPCO qui financent en Auvergne-Rhône-Alpes, interventions de suivi faciles à planifier. Masteria est fondé et basé à Lyon depuis 2022 ; une partie de nos références vient de la métropole, ce qui donne des cas d'usage directement comparables aux vôtres." },
     ],
   },
   {
