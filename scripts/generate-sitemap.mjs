@@ -91,7 +91,7 @@ const metierSlugs = [
 // Spokes (ChatGPT, Copilot, Gemini, Claude, Mistral, Sprint IA, Multi-outils Métier)
 const src = fs.readFileSync(path.join(root, 'src/data/seo-pages.js'), 'utf8');
 const spokeSet = new Set();
-const spokeRe = /slug:\s*['"](formation-(?:chatgpt|copilot|gemini|claude|mistral|sprint-ia|ia|prompt|ai)-[a-z0-9-]+)['"]/g;
+const spokeRe = /slug:\s*['"](formation-(?:chatgpt|copilot|gemini|claude|mistral|sprint-ia|ia|prompt|ai|vibe|gouvernance)-[a-z0-9-]+)['"]/g;
 let m;
 while ((m = spokeRe.exec(src)) !== null) {
   // Exclure hubs et routes "formation-ia-{metier}" déjà listées en métiers
@@ -102,7 +102,7 @@ while ((m = spokeRe.exec(src)) !== null) {
 
 // Pages formation transversales stratégiques : retirées du lot spokes (0.5)
 // et poussées à 0.7 (requêtes commerciales à fort volume).
-const boostedSlugs = ['formation-claude-code', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act'];
+const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia'];
 for (const s of boostedSlugs) spokeSet.delete(s);
 
 // Pages géo : 2 outils × 5 villes = 10 pages outil×ville (stratégie ciblée)

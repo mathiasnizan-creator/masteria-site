@@ -32,6 +32,8 @@ export default function SEOHead({
   extraJsonLd,
   locale,           // ex: 'fr-CH' ou 'fr-BE' — ajoute un hreflang supplémentaire pour le SEO international
   keywords,         // mots-clés spécifiques à la page (fallback : keywords formation par défaut)
+  datePublished,    // ISO 'YYYY-MM-DD' — signal de fraîcheur (SEO + GEO). Émis sur la WebPage si fourni.
+  dateModified,     // ISO 'YYYY-MM-DD' — dernière mise à jour. Fallback : datePublished.
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
@@ -165,6 +167,10 @@ export default function SEOHead({
     isPartOf: { '@id': `${SITE_URL}/#website` },
     publisher: { '@id': `${SITE_URL}/#organization` },
     primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
+    // Signal de fraîcheur (émis uniquement si la page fournit une date) — favorise
+    // le crawl de re-fraîcheur (SEO) et la citation par les moteurs génératifs (GEO).
+    datePublished: datePublished || undefined,
+    dateModified: dateModified || datePublished || undefined,
   }
 
   /* ───── JSON-LD Course (enrichi : aggregateRating, teaches, timeRequired, hasCredential) ───── */

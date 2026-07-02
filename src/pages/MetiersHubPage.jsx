@@ -241,7 +241,7 @@ export default function MetiersHubPage() {
             fontSize: 'clamp(16px, 2vw, 19px)', color: '#4B5563',
             maxWidth: 720, margin: '0 auto 18px', lineHeight: 1.65,
           }}>
-            Trouvez la formation IA adaptée à votre équipe en croisant
+            Trouvez la formation IA pour votre entreprise en croisant
             <strong style={{ color: '#0A0A0A' }}> outil</strong> et
             <strong style={{ color: '#0A0A0A' }}> métier</strong>.
             Masteria conçoit depuis 2022 des programmes opérationnels sur ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI.

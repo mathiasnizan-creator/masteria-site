@@ -14,7 +14,9 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * Page pilier « gouvernance de l'IA » (slug /gouvernance-ia). Cible le vent porteur
  * AI Act : « gouvernance ia », « gouvernance de l'intelligence artificielle »,
  * « conformité ia », « ai act entreprise », « mise en conformité ia »,
- * « gouvernance de l'ia », « politique ia entreprise », « comité ia ».
+ * « gouvernance de l'ia », « politique ia entreprise », « comité ia »,
+ * « gouvernance de l'ia en entreprise », « gouvernance des données pour l'ia »,
+ * « mise en œuvre de la gouvernance de l'ia », « calendrier ai act ».
  *
  * POSITIONNEMENT : CONSEIL et accompagnement en gouvernance / conformité IA.
  * DISTINCT de /formation-ai-act (qui est de la formation finançable). Ici, c'est du
@@ -37,8 +39,11 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Gouvernance de l'IA & conformité AI Act | Masteria"
-const META_DESC = "Gouvernance de l'IA et mise en conformité AI Act pour entreprises : audit, registre des usages, politique IA, comité de gouvernance. Cadrage gratuit."
-const KEYWORDS = "gouvernance ia, gouvernance de l'intelligence artificielle, conformité ia, ai act entreprise, mise en conformité ia, gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia"
+const META_DESC = "Gouvernance de l'IA en entreprise : mise en conformité AI Act, audit, registre des usages, politique IA, comité, gouvernance des données. Cadrage gratuit."
+const KEYWORDS = "gouvernance ia, gouvernance de l'intelligence artificielle, conformité ia, conformité ia entreprise, ai act entreprise, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia, calendrier ai act"
+
+const SITE = 'https://www.master-ia.fr'
+const FULL_URL = `${SITE}/${SLUG}`
 
 /* ───────── Styles partagés ───────── */
 
@@ -75,7 +80,7 @@ const HERO_BADGES = [
 /* ───────── En bref (synthèse citable — GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Cadre couvert', value: "AI Act (Règlement UE 2024/1689) et RGPD : classification des risques, obligations applicables, conformité des traitements de données" },
+  { label: 'Cadre couvert', value: "AI Act (Règlement UE 2024/1689) et RGPD : classification des risques, obligations applicables, gouvernance des données pour l'IA et conformité des traitements" },
   { label: 'Livrables', value: "Audit de conformité, cartographie et registre des usages IA, politique et charte IA, dispositif de comité de gouvernance, plan de mise en conformité" },
   { label: 'Ce que nous faisons', value: "Conseil et accompagnement : cadrage, audit, mise en place du dispositif et supervision humaine, pas une formation" },
   { label: 'Posture', value: "Capacité et méthode : nous décrivons l'accompagnement, sans cas client ni résultat inventé" },
@@ -113,8 +118,8 @@ const PILIERS = [
   },
   {
     icon: ShieldCheck,
-    title: 'Conformité des données (RGPD)',
-    desc: "La gouvernance IA s'appuie sur un socle data conforme : base légale des traitements, minimisation, cloisonnement des données sensibles. Nous relions le dispositif IA à votre conformité RGPD, en lien avec notre conseil data & IA.",
+    title: "Gouvernance des données pour l'IA",
+    desc: "La gouvernance IA s'appuie sur un socle data conforme : base légale des traitements au sens du RGPD, qualité des données mobilisées, minimisation, cloisonnement des données sensibles. Nous relions le dispositif IA à votre conformité RGPD, en lien avec notre conseil data & IA.",
   },
 ]
 
@@ -170,6 +175,41 @@ const RISK_TABLE = [
     niveau: 'Risque minimal',
     statut: "Pas d'obligation spécifique",
     desc: "La grande majorité des usages courants (filtres, assistants bureautiques simples). Aucune obligation particulière au titre de l'AI Act, mais la gouvernance interne et le RGPD continuent de s'appliquer.",
+  },
+]
+
+/* ───────── Calendrier d'application de l'AI Act (paliers — GEO citable) ───────── */
+
+const CALENDRIER = [
+  { date: '1ᵉʳ août 2024', desc: "Entrée en vigueur du Règlement (UE) 2024/1689." },
+  { date: '2 février 2025', desc: "Interdiction des pratiques à risque inacceptable et obligation de littératie IA des équipes (article 4)." },
+  { date: '2 août 2025', desc: "Obligations applicables aux modèles d'IA à usage général (GPAI) et mise en place de la gouvernance européenne." },
+  { date: '2 août 2026', desc: "Application générale du règlement, dont l'essentiel des obligations des systèmes à haut risque." },
+  { date: '2 août 2027', desc: "Échéance pour les systèmes à haut risque intégrés à des produits déjà couverts par une réglementation européenne (annexe I)." },
+]
+
+/* ───────── Gouvernance des données pour l'IA (4 dimensions) ───────── */
+
+const DATA_GOUV = [
+  {
+    icon: Scale,
+    title: 'Base légale et finalités',
+    desc: "Utiliser un outil d'IA sur des données personnelles reste un traitement au sens du RGPD : chaque usage repose sur une base légale et une finalité déclarée. Nous vérifions ce socle pour chacun des systèmes recensés au registre.",
+  },
+  {
+    icon: Gauge,
+    title: 'Qualité et cycle de vie des données',
+    desc: "La fiabilité d'un système d'IA dépend des données qui l'alimentent : origine, fraîcheur, représentativité. La gouvernance des données pour l'IA documente ce cycle de vie, des sources jusqu'aux sorties du modèle.",
+  },
+  {
+    icon: Lock,
+    title: 'Minimisation et cloisonnement',
+    desc: "Les données sensibles restent hors des prompts et des outils non validés. Le dispositif définit ce qui peut circuler vers quel outil, avec quels périmètres d'accès et quelles règles d'anonymisation ou de pseudonymisation.",
+  },
+  {
+    icon: Workflow,
+    title: 'Traçabilité des flux vers les fournisseurs',
+    desc: "Savoir quelles données sortent de l'organisation, vers quels fournisseurs d'IA, sous quel contrat et quel hébergement. Cette cartographie des flux alimente le registre des usages et les analyses d'impact.",
   },
 ]
 
@@ -232,6 +272,18 @@ const FAQ = [
     a: "Les deux répondent à des besoins différents et complémentaires. La gouvernance de l'IA est une prestation de conseil : nous auditons, cadrons et mettons en place le dispositif (registre, politique, comité, plan de conformité) pour l'organisation. La formation AI Act, elle, vise la montée en compétences de vos équipes sur le règlement et ses implications ; c'est une action de formation, distincte du conseil et finançable. En pratique, beaucoup d'organisations combinent les deux : le conseil installe le dispositif, la formation rend les équipes autonomes pour le faire vivre.",
   },
   {
+    q: "Qu'est-ce que la gouvernance des données pour l'IA ?",
+    a: "La gouvernance des données pour l'IA désigne les règles et les processus qui encadrent les données mobilisées par vos systèmes d'IA : base légale et finalité des traitements au sens du RGPD, qualité et cycle de vie des données, minimisation, cloisonnement des données sensibles et traçabilité des flux vers les fournisseurs d'IA. C'est le volet data de la gouvernance IA : le registre des usages documente, pour chaque système, quelles données il consomme et sous quelles garanties. Chez Masteria, ce volet est traité lors de l'audit de conformité et se prolonge par notre conseil data & IA.",
+  },
+  {
+    q: "Quel est le calendrier d'application de l'AI Act ?",
+    a: "L'AI Act est entré en vigueur le 1ᵉʳ août 2024 et s'applique par paliers. Depuis le 2 février 2025, les pratiques à risque inacceptable sont interdites et l'obligation de littératie IA s'applique aux organisations qui déploient de l'IA. Depuis le 2 août 2025, les obligations des modèles d'IA à usage général (GPAI) sont en place. Le 2 août 2026 marque l'application générale du règlement, dont l'essentiel des obligations pour les systèmes à haut risque. Le 2 août 2027 concerne les systèmes à haut risque intégrés à des produits déjà couverts par une réglementation européenne. Ce calendrier fixe l'ordre des chantiers : cartographier et classer vos usages d'abord, pour savoir quelles échéances s'appliquent à vous.",
+  },
+  {
+    q: "La gouvernance de l'IA concerne-t-elle aussi le secteur public ?",
+    a: "Oui. L'AI Act s'applique aux administrations, collectivités, établissements publics et hôpitaux qui déploient des systèmes d'IA, au même titre qu'aux entreprises privées. Le secteur public est même particulièrement exposé : beaucoup de ses usages touchent des domaines que le règlement classe à haut risque (accès aux services essentiels, éducation, santé, emploi public) et la transparence attendue vis-à-vis des citoyens y est plus forte. Registre des usages, supervision humaine et gouvernance des données s'y appliquent pleinement. L'accompagnement s'adapte à ce cadre : périmètre, instances existantes, contraintes de l'achat public.",
+  },
+  {
     q: "Combien de temps pour mettre en place un dispositif de gouvernance IA ?",
     a: "Cela dépend de la taille de l'organisation, du nombre d'usages d'IA déjà en place et de votre niveau de départ en matière de conformité. Un audit et une première cartographie des usages se mènent généralement en quelques semaines ; la mise en place complète du dispositif (politique, registre, comité, plan de conformité) s'étale ensuite selon le périmètre. La gouvernance n'est pas un livrable ponctuel mais un dispositif qui vit : le rythme de revue se cale sur l'évolution de vos usages et l'application progressive de l'AI Act. Nous proposons un cadrage avant tout chiffrage, pour adapter l'effort à votre réalité.",
   },
@@ -245,18 +297,21 @@ const MARKET_STATS = [
     stat: '1ᵉʳ août 2024',
     label: "entrée en vigueur de l'AI Act européen (Règlement UE 2024/1689), première réglementation transversale de l'IA, en application par paliers",
     source: 'EUR-Lex, Règlement (UE) 2024/1689',
+    sourceUrl: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689',
   },
   {
     icon: ShieldCheck,
     stat: '25 mai 2018',
     label: "application du RGPD, socle de conformité de tout traitement de données personnelles, y compris par un système d'IA",
     source: 'CNIL',
+    sourceUrl: 'https://www.cnil.fr/fr/intelligence-artificielle',
   },
   {
     icon: AlertTriangle,
     stat: '≥ 30 %',
     label: "des projets d'IA générative pourraient être abandonnés après le POC d'ici fin 2025, faute de cadrage et de valeur démontrée",
-    source: 'Gartner',
+    source: 'Gartner, juillet 2024',
+    sourceUrl: 'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025',
   },
 ]
 
@@ -283,6 +338,14 @@ const GLOSSARY = [
     term: 'Registre des usages IA',
     def: "Inventaire vivant des systèmes et usages d'IA de l'organisation, avec leurs finalités, propriétaires, données mobilisées et niveau de risque. Socle opérationnel de la gouvernance.",
   },
+  {
+    term: "Gouvernance des données pour l'IA",
+    def: "Règles et processus qui encadrent les données mobilisées par les systèmes d'IA : base légale des traitements, qualité et cycle de vie, minimisation, cloisonnement des données sensibles et traçabilité des flux vers les fournisseurs. Volet data de la gouvernance IA, au croisement du RGPD et de l'AI Act.",
+  },
+  {
+    term: 'Comité de gouvernance IA',
+    def: "Instance interne qui pilote la gouvernance de l'IA dans la durée : validation des nouveaux usages, arbitrage des risques, suivi du registre et du plan de conformité. Sa composition croise directions métier, juridique, données et systèmes d'information.",
+  },
 ]
 
 /* ───────── Sources de référence (liens d'autorité, suivis) ───────── */
@@ -299,7 +362,7 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
   name: "Gouvernance de l'IA & mise en conformité AI Act — Masteria",
-  description: "Conseil et accompagnement en gouvernance de l'intelligence artificielle et mise en conformité AI Act pour les entreprises : audit de conformité, registre et cartographie des usages IA, politique et charte IA, comité de gouvernance, supervision humaine et conformité des données (RGPD).",
+  description: "Conseil et accompagnement en gouvernance de l'intelligence artificielle et mise en conformité AI Act pour les entreprises : audit de conformité, registre et cartographie des usages IA, politique et charte IA, comité de gouvernance, supervision humaine et gouvernance des données pour l'IA (RGPD).",
   url: 'https://www.master-ia.fr/gouvernance-ia',
   serviceType: "Gouvernance et conformité de l'intelligence artificielle",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -318,8 +381,26 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Politique & charte IA internes', description: "Rédaction des règles d'usage, de confidentialité et de responsabilité encadrant l'IA dans l'organisation." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comité de gouvernance IA', description: "Constitution de l'instance de pilotage : composition, rôles, validation des usages et arbitrage." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Supervision humaine & traçabilité', description: "Points de contrôle humain, journalisation et documentation exigés par l'AI Act." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Gouvernance des données pour l'IA", description: "Base légale des traitements, qualité et cycle de vie des données, minimisation, cloisonnement des données sensibles et traçabilité des flux vers les fournisseurs d'IA." } },
     ],
   },
+}
+
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `${FULL_URL}#article`,
+  headline: "Gouvernance de l'IA en entreprise : cadrer, sécuriser et mettre en conformité vos usages",
+  description: META_DESC,
+  author: { '@id': `${SITE}/#mathias-nizan` },
+  editor: { '@id': `${SITE}/#mathias-nizan` },
+  publisher: { '@id': `${SITE}/#organization` },
+  datePublished: '2026-06-15',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
+  about: ["Gouvernance de l'intelligence artificielle", 'Conformité AI Act', "Gouvernance des données pour l'IA", 'RGPD'],
 }
 
 const definedTermSetJsonLd = {
@@ -382,7 +463,9 @@ export default function GouvernanceIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={[serviceJsonLd, definedTermSetJsonLd]}
+        datePublished="2026-06-15"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, definedTermSetJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -395,10 +478,10 @@ export default function GouvernanceIAPage() {
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Gouvernance de l'IA</span>
+            <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>Gouvernance de l'IA</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}
@@ -411,11 +494,16 @@ export default function GouvernanceIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Gouvernance de l'IA
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>cadrer, sécuriser et mettre en conformité vos usages</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -423,7 +511,7 @@ export default function GouvernanceIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Avec l'AI Act, la gouvernance de l'intelligence artificielle devient un sujet de direction. Cabinet spécialisé sur l'IA depuis 2022, fondé à Lyon, nous accompagnons la mise en conformité IA : audit, registre des usages, politique et charte, comité de gouvernance. Un dispositif proportionné, pas une usine à gaz.
+            Avec l'AI Act, la gouvernance de l'intelligence artificielle devient un sujet de direction. Cabinet spécialisé sur l'IA depuis 2022, fondé à Lyon, nous accompagnons la conformité IA en entreprise : audit, registre des usages, politique et charte, comité de gouvernance. Un dispositif proportionné, pas une usine à gaz.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -471,10 +559,10 @@ export default function GouvernanceIAPage() {
             <div style={editorialAside}>
               <Kicker>Ce que nous accompagnons</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Que recouvre la gouvernance de l'IA ?
+                Que recouvre la gouvernance de l'IA en entreprise ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>La gouvernance de l'IA recouvre l'audit de conformité, le registre et la cartographie des usages, la politique et la charte IA, le comité de gouvernance, la supervision humaine et la traçabilité, ainsi que la conformité des données (RGPD). L'objectif est constant : sécuriser et fiabiliser les usages d'IA tout en respectant l'AI Act.</strong>
+                <strong>La gouvernance de l'IA en entreprise recouvre l'audit de conformité, le registre et la cartographie des usages, la politique et la charte IA, le comité de gouvernance, la supervision humaine et la traçabilité, ainsi que la gouvernance des données pour l'IA (RGPD). L'objectif est constant : sécuriser et fiabiliser les usages d'IA tout en respectant l'AI Act.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Six piliers structurent un dispositif de gouvernance. Ils se combinent selon votre maturité : certaines organisations partent d'un audit, d'autres d'un besoin de politique IA, d'autres encore d'un comité à constituer face à la multiplication des usages.
@@ -540,11 +628,11 @@ export default function GouvernanceIAPage() {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Méthode</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Comment se déroule une mise en conformité IA ?
+            Comment se déroule la mise en œuvre de la gouvernance de l'IA ?
           </h2>
 
           <p style={answerStyle}>
-            <strong>Une mission suit cinq étapes : cadrage et périmètre, audit et classification des risques selon l'AI Act, construction du registre des usages, mise en place du dispositif (politique, charte, comité, supervision), puis plan de mise en conformité et suivi. Chaque étape produit un livrable concret et un point de décision.</strong>
+            <strong>La mise en œuvre de la gouvernance de l'IA suit cinq étapes : cadrage et périmètre, audit et classification des risques selon l'AI Act, construction du registre des usages, mise en place du dispositif (politique, charte, comité, supervision), puis plan de mise en conformité et suivi. Chaque étape produit un livrable concret et un point de décision.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
@@ -617,6 +705,56 @@ export default function GouvernanceIAPage() {
 
           <p style={{ color: '#94A3B8', fontSize: 13.5, lineHeight: 1.7, margin: '18px 0 0', maxWidth: 880 }}>
             Synthèse indicative des catégories de l'AI Act. La classification précise d'un usage donné dépend de sa finalité et de son contexte ; elle s'établit au cas par cas lors de l'audit, en s'appuyant sur le texte officiel du Règlement (UE) 2024/1689.
+          </p>
+
+          {/* Calendrier d'application par paliers — donne les échéances concrètes (GEO citable) */}
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#F8FAFC', margin: '52px 0 10px', letterSpacing: '-0.01em' }}>
+            Le calendrier d'application de l'AI Act
+          </h3>
+          <p style={{ color: '#B4C0D3', fontSize: 15, margin: '0 0 22px', lineHeight: 1.7, maxWidth: 880 }}>
+            Le règlement s'applique par paliers et chaque échéance ouvre des chantiers à mener en amont. La cartographie et la classification de vos usages déterminent les échéances qui vous concernent.
+          </p>
+          <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflow: 'hidden' }}>
+            {CALENDRIER.map((row, i) => (
+              <div key={row.date} style={{ display: 'flex', gap: 18, flexWrap: 'wrap', padding: '15px 20px', background: 'rgba(255,255,255,0.03)', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                <span style={{ flex: '0 0 130px', fontFamily: 'Nunito, sans-serif', fontSize: 14.5, fontWeight: 800, color: '#60A5FA' }}>{row.date}</span>
+                <span style={{ flex: 1, minWidth: 240, fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.6 }}>{row.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── GOUVERNANCE DES DONNÉES POUR L'IA ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Gouvernance des données</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Qu'est-ce que la gouvernance des données pour l'IA ?
+          </h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>La gouvernance des données pour l'IA organise la façon dont les données alimentent vos systèmes d'IA : base légale et finalités des traitements, qualité et cycle de vie, minimisation et cloisonnement des données sensibles, traçabilité des flux vers les fournisseurs. C'est le volet data de la gouvernance IA, au croisement du RGPD et de l'AI Act.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 880 }}>
+            Gouverner l'IA commence par gouverner les données qu'elle consomme. Un copilote bureautique branché sur la messagerie, un agent connecté au CRM ou un modèle affiné sur des documents internes posent d'abord des questions de données : lesquelles, pour quoi faire, avec quelles garanties. Quatre dimensions structurent ce volet.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
+            {DATA_GOUV.map(card => (
+              <div key={card.title} style={{ ...cardStyle, padding: 24 }}>
+                <div style={{ marginBottom: 14 }}>
+                  <IconTile icon={card.icon} />
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+            Ce volet data est traité lors de l'audit de conformité, puis inscrit au registre des usages. Pour aller plus loin sur la qualité, l'architecture et la conformité de vos données, voyez notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link> ; sur la sécurité des données face aux outils d'IA générative, notre page <Link to="/securite-claude-entreprise" style={aStyle}>sécurité de Claude en entreprise</Link> détaille un cas concret.
           </p>
         </div>
       </section>
@@ -691,7 +829,9 @@ export default function GouvernanceIAPage() {
                 </div>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
                 <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
-                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
+                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>
+                  Source : <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.source}</a>
+                </p>
               </div>
             ))}
           </div>
@@ -738,12 +878,18 @@ export default function GouvernanceIAPage() {
                 Le conseil installe le dispositif, la formation rend vos équipes autonomes
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La gouvernance de l'IA décrite sur cette page est un accompagnement de conseil. Pour que vos équipes maîtrisent le règlement et ses implications au quotidien, le volet montée en compétences passe par notre formation AI Act, distincte du conseil. Elle, est une action de formation certifiée Qualiopi et finançable par votre OPCO en France. Le conseil et l'accompagnement, eux, restent des prestations de service non finançables par l'OPCO.
+                La gouvernance de l'IA décrite sur cette page est un accompagnement de conseil. Pour la montée en compétences, deux formations certifiées Qualiopi et finançables OPCO le complètent : la formation AI Act, qui donne à vos équipes la maîtrise du règlement et de ses obligations, et la formation gouvernance IA, qui apprend à construire et faire vivre le dispositif (registre, charte, comité) en autonomie. Le conseil et l'accompagnement, eux, restent des prestations de service non finançables par l'OPCO.
               </p>
-              <Link to="/formation-ai-act" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Découvrir la formation AI Act
-                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-              </Link>
+              <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+                <Link to="/formation-ai-act" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                  Découvrir la formation AI Act
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+                <Link to="/formation-gouvernance-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                  Découvrir la formation gouvernance IA
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -788,6 +934,7 @@ export default function GouvernanceIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
               { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "La montée en compétences de vos équipes sur le règlement, distincte du conseil et finançable." },
+              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Formation', desc: "Une journée pour apprendre à construire registre, charte et comité IA en autonomie, finançable OPCO." },
               { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Conseil', desc: "Le socle data conforme sur lequel s'appuie la gouvernance : audit, qualité, RGPD." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, gouvernance et conformité comprises." },

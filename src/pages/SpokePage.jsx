@@ -90,6 +90,7 @@ const TOOL_ANGLES = {
   'Prompt Engineering': "les techniques de prompt engineering qui rendent les résultats des IA fiables et reproductibles en entreprise",
   'IA': "les enjeux stratégiques de l'IA pour les directions générales : investissements, gouvernance, conduite du changement",
   'AI Act': "la mise en conformité AI Act d'entreprises françaises, de la cartographie des risques au plan de gouvernance",
+  'Gouvernance IA': "la mise en place de dispositifs de gouvernance IA en entreprise : registre des usages, charte, comité et gouvernance des données",
 }
 
 // Angles spécifiques par métier
@@ -106,11 +107,17 @@ const METIER_ANGLES = {
   'service-client': "le service client : tri de tickets, réponses personnalisées, synthèses de verbatims, automatisation",
   'informatique': "les besoins IT : rédaction de documentation, aide au code, rédaction de spécifications, veille technique",
   'pedagogique': "les métiers pédagogiques : conception de supports, quiz, synthèses, préparation de cours",
+  'transverse': "les enjeux transverses de conformité, de gouvernance et de pilotage des usages IA, du DPO à la direction générale",
+}
+
+// Minuscule le libellé métier en préservant les sigles (DPO, DSI, RH, SEO…)
+function lowerMetier(metier) {
+  return metier.split(' ').map(w => (/^[A-Z]{2,}[,;.]?$/.test(w) ? w : w.toLowerCase())).join(' ')
 }
 
 function buildTrainerBio(spoke) {
   const toolAngle = TOOL_ANGLES[spoke.tool] || `des projets ${spoke.tool} en entreprise`
-  const metierAngle = METIER_ANGLES[spoke.metierSlug] || `les missions des équipes ${spoke.metier.toLowerCase()}`
+  const metierAngle = METIER_ANGLES[spoke.metierSlug] || `les missions des équipes ${lowerMetier(spoke.metier)}`
   return `Mathias Nizan a fondé Masteria en 2022 après 10 ans passés à accompagner des entreprises sur leurs enjeux digitaux. Spécialisé sur ${spoke.tool}, il maîtrise ${toolAngle}. Pour concevoir le programme de cette formation ${spoke.tool} × ${spoke.metier}, il s'est entouré d'experts métier qui connaissent ${metierAngle}. Sa conviction : l'IA ne remplace pas les humains, elle décuple leur potentiel.`
 }
 
@@ -158,8 +165,8 @@ export default function SpokePage() {
   const useCasesIntro = is3h
     ? "Cas d'usage concrets, manipulés en direct pendant les 3 heures du Sprint."
     : isOneDay
-      ? `Cas d'usage ${spoke.metier.toLowerCase()} concrets, travaillés sur vos propres fichiers pendant la journée.`
-      : `6 cas d'usage ${spoke.metier.toLowerCase()} concrets, travaillés sur vos propres fichiers pendant les 2 jours.`
+      ? `Cas d'usage ${lowerMetier(spoke.metier)} concrets, travaillés sur vos propres fichiers pendant la journée.`
+      : `6 cas d'usage ${lowerMetier(spoke.metier)} concrets, travaillés sur vos propres fichiers pendant les 2 jours.`
   const heroSentence = is3h
     ? <>Le <strong>Sprint IA {spoke.metier}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
     : isOneDay
@@ -197,10 +204,10 @@ export default function SpokePage() {
   ]
 
   const objectives = spoke.objectives || [
-    `Utilise ${spoke.tool} seul dans ses tâches ${spoke.metier.toLowerCase()} au quotidien`,
+    `Utilise ${spoke.tool} seul dans ses tâches ${lowerMetier(spoke.metier)} au quotidien`,
     `Formule des demandes précises adaptées à son métier et obtient des résultats utilisables immédiatement`,
     `Gagne en moyenne 1 h 30 par jour sur les tâches de rédaction, d'analyse et de synthèse`,
-    `Construit une bibliothèque de prompts ${spoke.metier.toLowerCase()} réutilisables par toute l'équipe`,
+    `Construit une bibliothèque de prompts ${lowerMetier(spoke.metier)} réutilisables par toute l'équipe`,
     `Utilise l'IA de façon sécurisée et conforme aux bonnes pratiques RGPD`,
   ]
 
@@ -213,6 +220,8 @@ export default function SpokePage() {
         courseData={courseData}
         breadcrumbs={breadcrumbs}
         faqItems={spoke.faq}
+        datePublished={spoke.datePublished}
+        dateModified={spoke.updatedAt || spoke.datePublished}
       />
 
       {/* ── HERO clair ── */}
@@ -237,6 +246,11 @@ export default function SpokePage() {
             <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
               {durationBadge}
             </span>
+            {spoke.updatedLabel && (
+              <span style={{ background: '#fff', color: '#6B7280', padding: '6px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB' }}>
+                {spoke.updatedLabel}
+              </span>
+            )}
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
@@ -298,7 +312,7 @@ export default function SpokePage() {
               À qui s'adresse cette formation ?
             </h2>
             <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
-              Cette formation est conçue pour les professionnels {spoke.metier.toLowerCase()} qui veulent des résultats concrets, pas une initiation théorique.
+              Cette formation est conçue pour les professionnels {lowerMetier(spoke.metier)} qui veulent des résultats concrets, pas une initiation théorique.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
               {spoke.audience.map((profile, i) => (
@@ -421,7 +435,7 @@ export default function SpokePage() {
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
             <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
-              Prêt à former votre équipe {spoke.metier.toLowerCase()}&nbsp;?
+              Prêt à former votre équipe {lowerMetier(spoke.metier)}&nbsp;?
             </h2>
             <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
               Réponse sous 24h · Programme adapté à votre contexte · Finançable OPCO
@@ -672,7 +686,7 @@ export default function SpokePage() {
       <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 580, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
-            Parlons de votre équipe {spoke.metier.toLowerCase()}
+            Parlons de votre équipe {lowerMetier(spoke.metier)}
           </h2>
           <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
             Dites-nous combien de personnes vous souhaitez former et leur niveau actuel. On revient vers vous sous 24 heures avec {is3h ? 'un Sprint IA adapté à vos équipes' : isOneDay ? 'un programme adapté sur 1 journée' : 'un programme adapté sur 2 jours'}.
