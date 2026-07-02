@@ -25,7 +25,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Meilleure agence IA : comment choisir en 2026 | Masteria'
-const META_DESC = "Meilleure agence IA : comment choisir celle qui met votre projet en production. Le paysage des acteurs, la propriété du code, les questions à poser et les budgets 2026."
+const META_DESC = "Meilleure agence IA : comment choisir celle qui met votre projet en production. Propriété du code, paysage des acteurs et budgets 2026."
 const KEYWORDS = 'meilleure agence ia, agence ia 2026, agence intelligence artificielle, agence developpement ia, comparatif agences ia, agence ia france, agence ia lyon, agence automatisation ia'
 
 /* ── Design system local (aligné sur les pages money) ── */

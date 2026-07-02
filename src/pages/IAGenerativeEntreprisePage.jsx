@@ -288,7 +288,24 @@ const definedTermSetJsonLd = {
   })),
 }
 
-const extraJsonLd = [serviceJsonLd, definedTermSetJsonLd]
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/ia-generative-entreprise#article',
+  headline: "IA générative en entreprise : du cas d'usage au déploiement maîtrisé",
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-15',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/ia-generative-entreprise#webpage' },
+  about: ['IA générative', "Déploiement de l'IA en entreprise", 'RGPD', 'AI Act'],
+}
+
+const extraJsonLd = [serviceJsonLd, definedTermSetJsonLd, articleJsonLd]
 
 /* ───────── Composants ───────── */
 
@@ -339,6 +356,8 @@ export default function IAGenerativeEntreprisePage() {
         slug={SLUG}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        datePublished="2026-06-15"
+        dateModified="2026-07-02"
         extraJsonLd={extraJsonLd}
         keywords="ia générative entreprise, ia générative en entreprise, déploiement ia générative, intégration ia générative, ia générative pour les entreprises, solutions ia générative entreprise, mettre en place l'ia générative, RGPD, AI Act"
       />
@@ -366,11 +385,16 @@ export default function IAGenerativeEntreprisePage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             IA générative en entreprise
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>du cas d'usage au déploiement maîtrisé</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -594,7 +618,7 @@ export default function IAGenerativeEntreprisePage() {
                 Côté conformité, deux cadres se cumulent. Le RGPD, appliqué depuis le 25 mai 2018, encadre tout traitement de données personnelles par un système d'IA. L'AI Act, règlement européen 2024/1689 entré en vigueur le 1ᵉʳ août 2024, classe les systèmes par niveau de risque et impose documentation, traçabilité et garde-fous. Concrètement, l'entreprise doit savoir quels usages d'IA elle déploie, sur quelles données, et le tracer.
               </p>
               <p style={{ marginBottom: 0 }}>
-                Une charte d'usage interne, un registre des systèmes d'IA et des procédures de revue humaine transforment ces obligations en cadre opérationnel. C'est l'objet de notre offre de <Link to="/gouvernance-ia" style={aStyle}>gouvernance IA</Link>, qui structure un déploiement maîtrisé plutôt que de freiner l'usage.
+                Une charte d'usage interne, un registre des systèmes d'IA et des procédures de revue humaine transforment ces obligations en cadre opérationnel. C'est l'objet de notre offre de <Link to="/gouvernance-ia" style={aStyle}>gouvernance IA</Link>, qui structure un déploiement maîtrisé de l'IA générative.
               </p>
             </div>
           </div>

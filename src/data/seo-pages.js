@@ -3280,7 +3280,7 @@ const BASE_SPOKES = [
     datePublished: '2026-07-02',
     keywords: "formation ia pour responsable qse, formation ia qse, formation ia hse, ia qse, ia qualité sécurité environnement, ia veille réglementaire hse, ia document unique, formation intelligence artificielle qse, certifié qualiopi, finançable opco",
     metaTitle: 'Formation IA pour responsable QSE / HSE | Masteria',
-    metaDesc: "Formation IA pour responsable QSE : veille réglementaire, document unique, procédures, analyses d'accidents, audits. 1 jour, certifié Qualiopi, finançable OPCO.",
+    metaDesc: "Formation IA pour responsable QSE : veille réglementaire, document unique, analyses d'accidents, audits. 1 jour, certifié Qualiopi, finançable OPCO.",
     h1: 'Formation IA pour responsables QSE / HSE',
     intro: "Veille réglementaire, document unique, procédures, analyses d'accidents, audits internes, reporting : le quotidien QSE repose sur des écrits normés et de l'analyse documentaire, le terrain où l'IA générative fait gagner le plus de temps. Cette formation d'1 jour donne aux responsables QSE et HSE une méthode et des prompts métier éprouvés, avec les règles de confidentialité qui s'imposent sur les données de santé et de sécurité.",
     useCases: [

@@ -78,6 +78,9 @@ Masteria propose deux activités complémentaires :
 - [Conseil stratégie IA](https://www.master-ia.fr/conseil-strategie-ia) — Diagnostic de maturité, priorisation des cas d'usage, feuille de route 90 jours/12 mois
 - [Conseil data & IA](https://www.master-ia.fr/conseil-data-ia) — Audit, gouvernance et préparation des données pour des projets d'IA fiables (RAG, agents, analytics)
 - [Gouvernance de l'IA & conformité AI Act](https://www.master-ia.fr/gouvernance-ia) — Cadrage, classification des risques, registre des usages, politique et comité IA, mise en conformité AI Act et RGPD
+- [Charte IA d'entreprise](https://www.master-ia.fr/charte-ia-entreprise) — Contenu type d'une charte d'utilisation de l'IA en 8 rubriques, avec exemples de formulation, méthode de rédaction en 5 étapes et erreurs à éviter
+- [IA responsable](https://www.master-ia.fr/ia-responsable) — Les 6 principes (transparence, supervision humaine, équité, données, robustesse, traçabilité) traduits en pratiques vérifiables et référentiels : AI Act, RGPD, ISO/IEC 42001
+- [IA et RGPD](https://www.master-ia.fr/ia-et-rgpd) — Principes RGPD appliqués à l'IA, AIPD, et garanties à vérifier outil par outil (offres entreprise, DPA, non-entraînement, hébergement)
 - [IA générative en entreprise](https://www.master-ia.fr/ia-generative-entreprise) — Cas d'usage, déploiement du POC à la production, garde-fous RGPD et AI Act, choix des modèles
 - [Cas d'usage de l'IA en entreprise](https://www.master-ia.fr/cas-usage-ia-entreprise) — 30 exemples concrets par fonction (marketing, commercial, RH, finance, juridique) et par type de solution, avec le gain concret pour chaque équipe
 - [Prix d'un projet IA](https://www.master-ia.fr/prix-projet-ia) — Fourchettes de prix par livrable (chatbot, agent, application sur mesure), forfait ou régie, ce qui fait varier le coût
@@ -100,7 +103,9 @@ Masteria propose deux activités complémentaires :
 - [Formation Vibe Coding](https://www.master-ia.fr/formation-vibe-coding) — Formation vibe coding pour profils non-développeurs (product, marketing, ops, fondateurs) : créer une application en décrivant son besoin en langage naturel à l'IA, avec Lovable, Bolt.new, Cursor, v0 et Replit. 2 jours, prototype/MVP/outil interne construit en séance, sécurité et RGPD, certifiée Qualiopi, finançable OPCO (présentiel ou distanciel, France/Suisse/Belgique)
 - [Formation Prompt Engineering](https://www.master-ia.fr/formation-prompt-engineering) — Méthode complète pour des prompts professionnels fiables, tous outils IA (1 jour)
 - [Formation IA pour dirigeants](https://www.master-ia.fr/formation-ia-dirigeants) — Journée stratégique COMEX/CODIR : enjeux, ROI, gouvernance, feuille de route 90 jours
-- [Formation AI Act](https://www.master-ia.fr/formation-ai-act) — Conformité au règlement européen sur l'IA : cartographie des risques, article 4, gouvernance (1 jour)
+- [Formation AI Act](https://www.master-ia.fr/formation-ai-act) — Conformité au règlement européen sur l'IA (IA Act) : cartographie des risques, article 4, gouvernance (1 jour)
+- [Formation gouvernance IA](https://www.master-ia.fr/formation-gouvernance-ia) — Construire et faire vivre le dispositif : registre des usages, charte, comité de gouvernance, gouvernance des données (1 jour, DPO/DSI/direction)
+- [Formation IA pour responsables QSE](https://www.master-ia.fr/formation-ia-qse) — Veille réglementaire HSE, document unique, analyses d'accidents, audits ISO avec l'IA (1 jour, multi-outils)
 
 ## Formations par métier
 

@@ -26,6 +26,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence automatisation IA · Cadrage & déploiement | Masteria"
 const META_DESC = "Agence d'automatisation IA : conception, développement et déploiement de vos automatisations sur mesure, intégrées à vos outils. Cadrage initial gratuit."
+const KEYWORDS = "agence automatisation ia, automatisation ia, automatisation intelligente, automatiser avec l'ia, workflows ia, agence rpa ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -258,6 +259,28 @@ const serviceJsonLd = {
   },
 }
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/agence-automatisation-ia#article',
+  headline: "L'agence d'automatisation IA qui rend vos équipes autonomes",
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-12',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-automatisation-ia#webpage' },
+  about: [
+    "Automatisation par intelligence artificielle",
+    "Workflows automatisés avec l'IA",
+    'Agents IA en entreprise',
+    "Intégration d'applications via API et MCP",
+  ],
+}
+
 /* ───────── Composants ───────── */
 
 function FAQItem({ q, a, color }) {
@@ -294,6 +317,7 @@ export default function AgenceAutomatisationIAPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Agence IA', slug: 'agence-ia' },
     { name: 'Agence automatisation IA', slug: SLUG },
   ]
 
@@ -303,9 +327,12 @@ export default function AgenceAutomatisationIAPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        datePublished="2026-06-12"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -318,10 +345,12 @@ export default function AgenceAutomatisationIAPage() {
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence automatisation IA</span>
+            <Link to="/agence-ia" style={{ color: '#94A3B8' }}>Agence IA</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>Agence automatisation IA</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}
@@ -339,11 +368,16 @@ export default function AgenceAutomatisationIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             L'agence d'automatisation IA
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>qui rend vos équipes autonomes</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -588,7 +622,7 @@ export default function AgenceAutomatisationIAPage() {
                 Pourquoi choisir Masteria comme agence d'automatisation IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, plutôt que de s'arrêter aux recommandations. Spécialisés sur l'IA depuis 2022, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique, et vous restez propriétaire du système livré.</strong>
+                <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, là où beaucoup de prestataires s'arrêtent aux recommandations. Spécialisés sur l'IA depuis 2022, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique, et vous restez propriétaire du système livré.</strong>
               </p>
             </div>
 

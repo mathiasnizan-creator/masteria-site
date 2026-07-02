@@ -32,6 +32,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence de développement IA sur mesure | Masteria"
 const META_DESC = "Agence de développement IA : agents, automatisations et applications métier sur mesure, de l'idée au déploiement. Vous restez propriétaire. Devis gratuit."
+const KEYWORDS = "agence développement ia, développement ia, développement intelligence artificielle, développeur ia, application ia sur mesure, société développement ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -205,7 +206,7 @@ const TABLE_VOIES = [
 const WHY = [
   { icon: Target, title: "Spécialistes de l'IA, pas généralistes", desc: "Masteria travaille sur l'intelligence artificielle depuis 2022. Les modèles, leurs limites, le RAG, les agents et leurs garde-fous sont notre quotidien, là où une ESN ou une agence web généraliste découvre le sujet en cours de route." },
   { icon: FlaskConical, title: 'Du prototype avant l\'engagement', desc: "Nous prouvons la valeur sur un cas réel avant de développer en grand. Vous décidez sur des faits, pas sur une promesse, et vous évitez les projets qui s'enlisent." },
-  { icon: KeyRound, title: 'Propriété et autonomie', desc: "Le code et les données vous appartiennent. Nous documentons et transférons pour que vos équipes fassent vivre la solution, plutôt que d'installer une dépendance permanente." },
+  { icon: KeyRound, title: 'Propriété et autonomie', desc: "Le code et les données vous appartiennent. Nous documentons et transférons pour que vos équipes fassent vivre la solution et restent autonomes dans la durée." },
   { icon: Cpu, title: 'Indépendance technologique', desc: "Multi-LLM par principe : nous recommandons le modèle adapté à votre cas et à votre budget, sans contrat d'exclusivité avec un éditeur qui orienterait nos choix." },
 ]
 
@@ -276,6 +277,23 @@ const serviceJsonLd = {
   },
 }
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/agence-developpement-ia#article',
+  headline: 'Agence de développement IA : agents, automatisations & applications sur mesure',
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-13',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-developpement-ia#webpage' },
+  about: ['Développement IA sur mesure', 'Agents IA', 'Retrieval-augmented generation (RAG)', 'Automatisation des processus métier'],
+}
+
 /* ───────── Composants ───────── */
 
 function FAQItem({ q, a, color }) {
@@ -313,6 +331,7 @@ export default function AgenceDeveloppementIAPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Agence IA', slug: 'agence-ia' },
     { name: 'Agence de développement IA', slug: SLUG },
   ]
 
@@ -322,9 +341,12 @@ export default function AgenceDeveloppementIAPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        datePublished="2026-06-13"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -337,10 +359,12 @@ export default function AgenceDeveloppementIAPage() {
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence de développement IA</span>
+            <Link to="/agence-ia" style={{ color: '#94A3B8' }}>Agence IA</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>Agence de développement IA</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}
@@ -353,11 +377,16 @@ export default function AgenceDeveloppementIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Agence de développement IA
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>agents, automatisations &amp; applications sur mesure</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

@@ -25,6 +25,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Automatisation IA : le guide complet | Masteria"
 const META_DESC = "Automatisation IA : définition, exemples par métier, outils, méthode en 5 étapes et budgets pour automatiser vos processus. Cadrage initial gratuit."
+const KEYWORDS = "automatisation ia, automatisation intelligence artificielle, automatisation des processus ia, automatiser processus, ia automatisation, outils automatisation ia"
 const H1 = "Automatisation IA : le guide complet pour automatiser vos processus"
 
 const SOMMAIRE = [
@@ -344,14 +345,15 @@ const RELATED = [
   { label: 'Automatisation IA en PME : les processus prioritaires', href: '/blog/automatisation-ia-pme-processus-prioritaires', tag: 'Blog', desc: "Les processus qui rapportent le plus vite quand on démarre, classés par impact et faisabilité." },
 ]
 
-/* ───────── Données de fraîcheur + schema TechArticle (E-E-A-T, GEO) ───────── */
+/* ───────── Données de fraîcheur + schema Article (E-E-A-T, GEO) ───────── */
 
 const PUBLISHED = '2026-06-12'
-const UPDATED = '2026-06-14'
+const UPDATED = '2026-07-02'
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'TechArticle',
+  '@type': 'Article',
   '@id': `https://www.master-ia.fr/${SLUG}#article`,
   headline: H1,
   description: META_DESC,
@@ -359,8 +361,9 @@ const articleJsonLd = {
   datePublished: PUBLISHED,
   dateModified: UPDATED,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.master-ia.fr/${SLUG}` },
+  mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
   about: [
     "Automatisation IA",
     "Automatisation des processus par l'intelligence artificielle",
@@ -392,9 +395,12 @@ export default function AutomatisationIAGuidePage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
-        extraJsonLd={articleJsonLd}
+        datePublished={PUBLISHED}
+        dateModified={UPDATED}
+        extraJsonLd={[articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -423,11 +429,16 @@ export default function AutomatisationIAGuidePage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Automatisation IA :
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>le guide complet pour automatiser vos processus</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

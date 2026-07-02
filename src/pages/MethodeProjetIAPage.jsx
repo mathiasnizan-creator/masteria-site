@@ -32,6 +32,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Méthode et modèles d'engagement IA | Masteria"
 const META_DESC = "Méthode projet IA de bout en bout et trois modèles d'engagement, dont la régie avec développeurs sur site. Code propriété client, gouvernance, sécurité."
+const KEYWORDS = "méthode projet ia, projet ia, conduite de projet ia, méthodologie projet ia, cadrage projet ia, poc ia, mvp ia"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
 
@@ -278,7 +279,7 @@ const FAQ = [
   },
   {
     q: "Combien de temps dure un projet IA, du cadrage au déploiement ?",
-    a: "Cela dépend du périmètre. Un prototype ou un POC sur un cas unique se mène souvent en quelques semaines. Un développement complet jusqu'à la mise en production s'étale sur plusieurs semaines à quelques mois selon la complexité, les intégrations à votre système d'information et les exigences de conformité. Notre méthode en étapes, avec un livrable et un point de décision à chacune, vous permet d'avancer par paliers maîtrisés plutôt que de vous engager à l'aveugle sur un projet long.",
+    a: "Cela dépend du périmètre. Un prototype ou un POC sur un cas unique se mène souvent en quelques semaines. Un développement complet jusqu'à la mise en production s'étale sur plusieurs semaines à quelques mois selon la complexité, les intégrations à votre système d'information et les exigences de conformité. Notre méthode en étapes, avec un livrable et un point de décision à chacune, vous permet d'avancer par paliers maîtrisés : vous validez chaque étape avant d'engager la suivante.",
   },
 ]
 
@@ -308,6 +309,23 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Accompagnement conseil', description: "Cadrage, gouvernance et choix d'architecture, en amont du développement." } },
     ],
   },
+}
+
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/methode-projet-ia#article',
+  headline: "Notre méthode et nos modèles d'engagement",
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-13',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/methode-projet-ia#webpage' },
+  about: ["Conduite de projet d'intelligence artificielle", 'Preuve de concept (POC)', 'Régie informatique', 'Développement de solutions IA'],
 }
 
 /* Méthode en 5 étapes décrite en ItemList (séquence citable — GEO ; HowTo
@@ -362,6 +380,7 @@ export default function MethodeProjetIAPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Conseil en intelligence artificielle', slug: 'conseil-intelligence-artificielle' },
     { name: 'Méthode & modèles d\'engagement', slug: SLUG },
   ]
 
@@ -371,9 +390,12 @@ export default function MethodeProjetIAPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={[serviceJsonLd, methodeJsonLd]}
+        datePublished="2026-06-13"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, methodeJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -387,7 +409,9 @@ export default function MethodeProjetIAPage() {
 
         <div style={{ ...wrap, position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/conseil-intelligence-artificielle" style={{ color: '#94A3B8' }}>Conseil en intelligence artificielle</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span style={{ color: '#93C5FD', fontWeight: 600 }}>Méthode & modèles d'engagement</span>
           </nav>
@@ -402,10 +426,15 @@ export default function MethodeProjetIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Notre méthode et nos{' '}
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>modèles d'engagement</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

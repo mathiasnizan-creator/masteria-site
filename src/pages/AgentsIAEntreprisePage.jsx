@@ -28,6 +28,7 @@ const cLight = '#DBEAFE'
 const META_TITLE = "Agents IA en entreprise : guide & 20 cas d'usage | Masteria"
 const META_DESC = "Agents IA en entreprise : fonctionnement, 20 cas d'usage par fonction, outils 2026 et gouvernance. Le guide pour déployer, plus l'option sur mesure."
 const H1 = "Agents IA en entreprise : le guide complet et 20 cas d'usage concrets"
+const KEYWORDS = "agents ia, agent ia, agents ia en entreprise, agent ia entreprise, agent intelligence artificielle, déployer un agent ia, agents autonomes"
 
 const TOC = [
   { href: '#definition', label: "Qu'est-ce qu'un agent IA ?" },
@@ -279,7 +280,7 @@ const useCaseItemList = {
 
 /* Données de fraîcheur + schema TechArticle (E-E-A-T, GEO) */
 const PUBLISHED = '2026-06-12'
-const UPDATED = '2026-06-14'
+const UPDATED = '2026-07-02'
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -291,8 +292,9 @@ const articleJsonLd = {
   datePublished: PUBLISHED,
   dateModified: UPDATED,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.master-ia.fr/${SLUG}` },
+  mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
   about: [
     "Agents IA",
     "IA agentique en entreprise",
@@ -550,8 +552,11 @@ export default function AgentsIAEntreprisePage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
+        datePublished={PUBLISHED}
+        dateModified={UPDATED}
         extraJsonLd={[useCaseItemList, articleJsonLd]}
       />
 
@@ -581,11 +586,16 @@ export default function AgentsIAEntreprisePage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Agents IA en entreprise :
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>le guide complet et 20 cas d'usage concrets</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

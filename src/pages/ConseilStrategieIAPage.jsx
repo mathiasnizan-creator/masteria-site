@@ -59,6 +59,7 @@ const answerStyle = {
 
 const META_TITLE = "Conseil stratégie IA : audit, feuille de route | Masteria"
 const META_DESC = "Conseil stratégie IA : diagnostic de maturité, cas d'usage priorisés par ROI, feuille de route 90 jours, puis développement des solutions. Cadrage gratuit."
+const KEYWORDS = "conseil stratégie ia, stratégie ia entreprise, stratégie intelligence artificielle, feuille de route ia, schéma directeur ia, diagnostic maturité ia"
 const INTRO = "Outils qui se multiplient, équipes qui s'équipent en ordre dispersé, budgets engagés sans indicateur de retour : les directions générales ont besoin d'un cap avant d'investir davantage. Notre mission de conseil stratégique en intelligence artificielle donne à votre COMEX une vision partagée, des priorités chiffrées et un plan d'exécution réaliste. Et parce qu'une stratégie ne vaut que par sa mise en œuvre, la même équipe développe et déploie ensuite les solutions retenues : de la feuille de route au build, sans rupture."
 
 const HERO_BADGES = [
@@ -293,6 +294,23 @@ const serviceJsonLd = {
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
 }
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `https://www.master-ia.fr/${SLUG}#article`,
+  headline: 'Conseil stratégie IA : du diagnostic à la feuille de route',
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-12',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
+  about: ["Stratégie IA d'entreprise", 'Diagnostic de maturité IA', 'Feuille de route IA', 'Gouvernance IA'],
+}
+
 function FAQItem({ q, a }) {
   const [open, setOpen] = useState(false)
   return (
@@ -337,9 +355,12 @@ export default function ConseilStrategieIAPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        datePublished="2026-06-12"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -371,11 +392,16 @@ export default function ConseilStrategieIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Conseil stratégie IA
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>du diagnostic à la feuille de route</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe pour citation LLM et featured snippet — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>

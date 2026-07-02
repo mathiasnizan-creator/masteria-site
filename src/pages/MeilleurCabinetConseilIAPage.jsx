@@ -25,7 +25,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Meilleur cabinet de conseil en IA : comment choisir | Masteria'
-const META_DESC = "Meilleur cabinet de conseil en intelligence artificielle : les 3 compétences à exiger (stratégie, technique, formation), le paysage des acteurs et les honoraires 2026."
+const META_DESC = "Meilleur cabinet de conseil en intelligence artificielle : les 3 compétences à exiger, le paysage des acteurs et les honoraires 2026."
 const KEYWORDS = 'meilleur cabinet de conseil en intelligence artificielle, meilleur cabinet conseil ia, cabinet conseil intelligence artificielle, cabinet de conseil en ia, conseil en ia entreprise, consultant ia, cabinet conseil ia lyon, conseil strategie ia'
 
 /* ── Design system local (aligné sur les pages money) ── */

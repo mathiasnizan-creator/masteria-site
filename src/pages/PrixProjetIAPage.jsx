@@ -233,7 +233,7 @@ const FAQ = [
   },
   {
     q: "Quel est le TJM d'un développeur IA ?",
-    a: "Le TJM (taux journalier moyen) d'un développeur IA dépend du profil, de la séniorité, de la durée de la mission et du mode d'intervention (sur site ou à distance). Plutôt que d'afficher un tarif unique qui serait trompeur, nous calons le TJM sur le profil dont vous avez besoin et la durée de l'engagement, et nous le précisons dans la proposition de régie. Ce mode de facturation au temps passé s'oppose au forfait, où c'est le prix global du projet qui est fixé à l'avance plutôt que le coût d'une journée.",
+    a: "Le TJM (taux journalier moyen) d'un développeur IA dépend du profil, de la séniorité, de la durée de la mission et du mode d'intervention (sur site ou à distance). Un tarif unique affiché serait trompeur : nous calons le TJM sur le profil dont vous avez besoin et la durée de l'engagement, et nous le précisons dans la proposition de régie. Ce mode de facturation au temps passé s'oppose au forfait, où c'est le prix global du projet qui est fixé à l'avance plutôt que le coût d'une journée.",
   },
   {
     q: "Pourquoi ne donnez-vous pas un prix fixe affiché ?",
@@ -302,6 +302,23 @@ const serviceJsonLd = {
   },
 }
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/prix-projet-ia#article',
+  headline: "Combien coûte un projet IA ? Prix d'un développement IA sur mesure",
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-15',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/prix-projet-ia#webpage' },
+  about: ["Prix d'un projet d'intelligence artificielle", 'Coût de développement IA', 'Taux journalier moyen (TJM) développeur IA', 'Facturation au forfait et en régie'],
+}
+
 /* ───────── Composants ───────── */
 
 function FAQItem({ q, a, color }) {
@@ -340,6 +357,7 @@ export default function PrixProjetIAPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Conseil en intelligence artificielle', slug: 'conseil-intelligence-artificielle' },
     { name: 'Prix d\'un projet IA', slug: SLUG },
   ]
 
@@ -352,7 +370,9 @@ export default function PrixProjetIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={[serviceJsonLd]}
+        datePublished="2026-06-15"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -368,6 +388,8 @@ export default function PrixProjetIAPage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/conseil-intelligence-artificielle" style={{ color: '#94A3B8' }}>Conseil en intelligence artificielle</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
             <span style={{ color: '#93C5FD', fontWeight: 600 }}>Prix d'un projet IA</span>
           </nav>
 
@@ -381,11 +403,16 @@ export default function PrixProjetIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Combien coûte un projet IA ?
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>Prix d'un développement IA sur mesure</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -621,7 +648,7 @@ export default function PrixProjetIAPage() {
                 Combien de temps, et quel lien avec le budget ?
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Un prototype ou un premier outil utile se construit souvent en quelques semaines ; un développement complet jusqu'à la mise en production s'étale sur plusieurs semaines à quelques mois selon la complexité et les intégrations. Le délai et le budget vont de pair : démarrer par un POC à faible coût permet de prouver la valeur avant d'engager un budget plus important, par paliers maîtrisés plutôt qu'à l'aveugle.
+                Un prototype ou un premier outil utile se construit souvent en quelques semaines ; un développement complet jusqu'à la mise en production s'étale sur plusieurs semaines à quelques mois selon la complexité et les intégrations. Le délai et le budget vont de pair : démarrer par un POC à faible coût permet de prouver la valeur avant d'engager un budget plus important, par paliers maîtrisés.
               </p>
               <Link to="/methode-projet-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Voir notre méthode étape par étape
@@ -641,7 +668,7 @@ export default function PrixProjetIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>Nous ne vendons pas de forfait à l'aveugle. Le devis est établi après un cadrage qui fixe le périmètre, les données et le critère de réussite. Vous obtenez un prix fondé sur votre besoin réel, des fourchettes honnêtes plutôt qu'un tarif d'appel, et un budget clair avant de vous engager.</strong>
+            <strong>Nous ne vendons pas de forfait à l'aveugle. Le devis est établi après un cadrage qui fixe le périmètre, les données et le critère de réussite. Vous obtenez un prix fondé sur votre besoin réel, des fourchettes honnêtes et un budget clair avant de vous engager.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>

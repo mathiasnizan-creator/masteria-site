@@ -334,6 +334,11 @@ const REFERENCES = [
   { label: "Intelligence artificielle — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
+/* ───────── Meta ───────── */
+
+const META_DESC = "Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, puis développement des solutions sur mesure. Cadrage gratuit."
+const KEYWORDS = "conseil en intelligence artificielle, conseil ia, cabinet conseil ia, cabinet de conseil en intelligence artificielle, consultant ia, accompagnement ia entreprise, conseil en ia, stratégie ia"
+
 /* ───────── JSON-LD ───────── */
 
 const serviceJsonLd = {
@@ -345,6 +350,23 @@ const serviceJsonLd = {
   serviceType: ['Audit IA', 'Stratégie IA', "Développement de solutions IA sur mesure", 'Accompagnement IA', 'Transformation IA'],
   areaServed: ['France', 'Suisse', 'Belgique'],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
+}
+
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/conseil-intelligence-artificielle#article',
+  headline: "Le cabinet de conseil en intelligence artificielle qui forme vos équipes",
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-04-21',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-intelligence-artificielle#webpage' },
+  about: ['Conseil en intelligence artificielle', 'Audit IA', 'Stratégie IA', "Gouvernance de l'IA"],
 }
 
 /* ───────── Composant ───────── */
@@ -369,14 +391,17 @@ export default function ConseilIAPage() {
     <>
       <SEOHead
         title="Cabinet de conseil en intelligence artificielle | Masteria"
-        description="Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, puis développement des solutions sur mesure. Cadrage gratuit."
+        description={META_DESC}
         slug="conseil-intelligence-artificielle"
+        keywords={KEYWORDS}
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
           { name: 'Conseil IA', slug: 'conseil-intelligence-artificielle' },
         ]}
         faqItems={FAQ_CONSEIL}
-        extraJsonLd={serviceJsonLd}
+        datePublished="2026-04-21"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -405,11 +430,16 @@ export default function ConseilIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Le cabinet de conseil en
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>intelligence artificielle qui forme vos équipes</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
@@ -795,7 +825,7 @@ export default function ConseilIAPage() {
 
             <div style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
           <p style={{ marginTop: 0, marginBottom: 20 }}>
-            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) a déplacé l'enjeu : la technologie est accessible à tous, sa bonne intégration aux processus métier reste à construire. Une mission de conseil apporte cette lecture à la fois stratégique, opérationnelle et réglementaire de la transformation, jusqu'à <Link to="/ia-generative-entreprise" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>déployer l'IA générative en entreprise</Link> sur des cas d'usage à fort impact.
+            La généralisation des modèles de langage (ChatGPT, Claude, Gemini, Mistral, Microsoft Copilot) a déplacé l'enjeu : la technologie est accessible à tous, sa bonne intégration aux processus métier reste à construire. Une mission de conseil apporte cette lecture stratégique, opérationnelle et réglementaire de la transformation, jusqu'à <Link to="/ia-generative-entreprise" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>déployer l'IA générative en entreprise</Link> sur des cas d'usage à fort impact.
           </p>
 
           <h3 style={{

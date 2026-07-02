@@ -28,6 +28,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = 'Agence IA Lyon · Conseil & dev sur mesure | Masteria'
 const META_DESC = "Agence IA à Lyon : conseil, développement d'agents et d'outils sur mesure, automatisation et formation. France, Suisse, Belgique. Premier cadrage gratuit."
+const KEYWORDS = "agence ia, agence intelligence artificielle, agence ia lyon, agence ia france, prestataire ia, société spécialisée ia"
 
 /* ── Design system local : kickers, titres, cartes, pastilles d'icônes ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -229,6 +230,23 @@ const DEFINITIONS_JSONLD = {
   ],
 }
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/agence-ia#article',
+  headline: 'Agence IA à Lyon : conseil, automatisation et formation des équipes',
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-12',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-ia#webpage' },
+  about: ['Agence IA', 'Conseil en intelligence artificielle', "Développement d'agents IA sur mesure", 'Automatisation des processus'],
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -272,9 +290,12 @@ export default function AgenceIAPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={[LOCAL_BUSINESS_JSONLD, DEFINITIONS_JSONLD]}
+        datePublished="2026-06-12"
+        dateModified="2026-07-02"
+        extraJsonLd={[LOCAL_BUSINESS_JSONLD, DEFINITIONS_JSONLD, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -304,11 +325,16 @@ export default function AgenceIAPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Agence IA à Lyon
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>conseil, automatisation et formation des équipes</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

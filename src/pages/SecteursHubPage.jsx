@@ -33,6 +33,24 @@ const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 
 
 const META_TITLE = "IA par secteur d'activité · conseil & dev IA | Masteria"
 const META_DESC = "IA par secteur : banque, industrie, santé, juridique, retail, logistique, secteur public, tech et plus. Conseil et dev IA sur mesure. Cadrage gratuit."
+const KEYWORDS = "ia par secteur, intelligence artificielle par secteur, ia secteur d'activité, ia banque, ia industrie, ia santé, cas d'usage ia secteur"
+
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `${SITE}/${SLUG}#article`,
+  headline: "IA par secteur d'activité : conseil et développement sur mesure",
+  description: META_DESC,
+  author: { '@id': `${SITE}/#mathias-nizan` },
+  editor: { '@id': `${SITE}/#mathias-nizan` },
+  publisher: { '@id': `${SITE}/#organization` },
+  datePublished: '2026-06-13',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': `${SITE}/${SLUG}#webpage` },
+  about: ["Intelligence artificielle par secteur d'activité", 'IA dans la banque et la finance', "IA dans l'industrie", 'IA dans la santé'],
+}
 
 /* Mapping nom d'icône (données) -> composant lucide pour le hub. */
 const ICONS = {
@@ -62,7 +80,7 @@ const HUB_FAQ = [
   },
   {
     q: "Qu'est-ce qui distingue Masteria d'une ESN ou d'un éditeur généraliste ?",
-    a: "Nous sommes un cabinet spécialisé uniquement sur l'IA, indépendant des éditeurs : nous ne vendons ni licence ni plateforme. Nous cadrons la stratégie, développons les solutions adaptées aux contraintes de votre secteur, documentons et transférons. Vous restez propriétaire du code et autonome, plutôt que captif d'un outil ou d'un abonnement.",
+    a: "Nous sommes un cabinet spécialisé uniquement sur l'IA, indépendant des éditeurs : nous ne vendons ni licence ni plateforme. Nous cadrons la stratégie, développons les solutions adaptées aux contraintes de votre secteur, documentons et transférons. Vous restez propriétaire du code et autonome : aucune dépendance à un outil ou à un abonnement.",
   },
   {
     q: "Faites-vous aussi de la formation en plus du conseil et du développement ?",
@@ -130,9 +148,12 @@ export default function SecteursHubPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={HUB_FAQ}
-        extraJsonLd={itemListJsonLd}
+        datePublished="2026-06-13"
+        dateModified="2026-07-02"
+        extraJsonLd={[itemListJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -161,11 +182,16 @@ export default function SecteursHubPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             IA par secteur d'activité
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>conseil et développement sur mesure</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -289,7 +315,7 @@ export default function SecteursHubPage() {
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
             {[
-              "Des cas d'usage concrets et déjà identifiés pour votre métier, plutôt qu'une promesse générique.",
+              "Des cas d'usage concrets et déjà identifiés pour votre métier, directement actionnables.",
               "Les bonnes contraintes intégrées dès le départ : secret bancaire, hébergement HDS, secret professionnel, souveraineté, propriété intellectuelle.",
               "Un vocabulaire et des livrables qui parlent à vos équipes métier, ce qui accélère l'adoption.",
             ].map((pt, i) => (

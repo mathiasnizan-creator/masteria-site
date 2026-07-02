@@ -101,6 +101,23 @@ const itemListJsonLd = {
   })),
 }
 
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `${SITE}/${SLUG}#article`,
+  headline: H1,
+  description: META_DESC,
+  author: { '@id': `${SITE}/#mathias-nizan` },
+  editor: { '@id': `${SITE}/#mathias-nizan` },
+  publisher: { '@id': `${SITE}/#organization` },
+  datePublished: '2026-06-13',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': `${SITE}/${SLUG}#webpage` },
+  about: ['Solutions IA sur mesure', 'Développement IA en entreprise', 'RAG (retrieval-augmented generation)', 'Intégration de LLM'],
+}
+
 export default function SolutionsHubPage() {
   const isDesktop = useIsDesktop()
   // Patron éditorial asymétrique réutilisable (grille 7 solutions + FAQ)
@@ -125,7 +142,9 @@ export default function SolutionsHubPage() {
         keywords={PAGE_KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={HUB_FAQ}
-        extraJsonLd={itemListJsonLd}
+        datePublished="2026-06-13"
+        dateModified="2026-07-02"
+        extraJsonLd={[itemListJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -154,11 +173,16 @@ export default function SolutionsHubPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Solutions IA sur mesure
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>pour entreprises</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

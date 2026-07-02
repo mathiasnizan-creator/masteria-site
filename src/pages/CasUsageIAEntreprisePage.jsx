@@ -35,15 +35,15 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Cas d'usage de l'IA en entreprise | Masteria"
-const META_DESC = "Cas d'usage de l'IA en entreprise : 30 exemples concrets par fonction (marketing, commercial, RH, finance) et par type de solution, avec le gain concret pour chaque équipe."
+const META_DESC = "Cas d'usage de l'IA en entreprise : 30 exemples concrets par fonction (marketing, commercial, RH, finance) et par solution, avec le gain pour chaque équipe."
 
 const H1_LINE1 = "Cas d'usage de l'IA en entreprise"
 const H1_LINE2 = "exemples concrets et gains réels par métier"
 
 const KEYWORDS = "cas d'usage ia entreprise, exemples ia entreprise, applications ia en entreprise, cas concrets ia entreprise, cas d'usage intelligence artificielle entreprise, exemples d'utilisation de l'ia en entreprise, cas d'usage agents ia"
 
-const PUBLISHED = '2026-06-10'
-const UPDATED = '2026-06-15'
+const PUBLISHED = '2026-06-15'
+const UPDATED = '2026-07-02'
 
 /* ───────── Sommaire (TOC ancré) ───────── */
 
@@ -364,7 +364,7 @@ const FAQ = [
   {
     q: "Par où commencer pour appliquer l'IA dans son entreprise ?",
     aStrong: "Commencez par un cas fréquent, documenté et à faible risque, transformez-le en pilote borné avec validation humaine, mesurez pendant plusieurs semaines, puis étendez par paliers.",
-    aRest: "Le bon premier cas n'est pas le plus spectaculaire, mais le plus mesurable : tri de demandes, préparation de reporting, qualification de leads. La connaissance fine du processus pèse plus lourd que la technique. Un diagnostic permet d'identifier le cas à plus forte valeur avant tout déploiement.",
+    aRest: "Le bon premier cas est le plus mesurable, même s'il paraît moins spectaculaire : tri de demandes, préparation de reporting, qualification de leads. La connaissance fine du processus pèse plus lourd que la technique. Un diagnostic permet d'identifier le cas à plus forte valeur avant tout déploiement.",
   },
   {
     q: "Quels cas d'usage de l'IA pour une PME ?",
@@ -408,7 +408,7 @@ const useCaseItemList = {
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'TechArticle',
+  '@type': 'Article',
   '@id': `https://www.master-ia.fr/${SLUG}#article`,
   headline: `${H1_LINE1} : ${H1_LINE2}`,
   description: META_DESC,
@@ -416,8 +416,9 @@ const articleJsonLd = {
   datePublished: PUBLISHED,
   dateModified: UPDATED,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.master-ia.fr/${SLUG}` },
+  mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
   about: [
     "Cas d'usage de l'intelligence artificielle en entreprise",
     "Applications de l'IA par fonction",
@@ -525,6 +526,8 @@ export default function CasUsageIAEntreprisePage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
+        datePublished={PUBLISHED}
+        dateModified={UPDATED}
         extraJsonLd={[useCaseItemList, articleJsonLd]}
       />
 
@@ -553,7 +556,7 @@ export default function CasUsageIAEntreprisePage() {
             </div>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 13px' }}>
               <Sparkles size={13} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
-              Mis à jour en juin 2026
+              Mis à jour en juillet 2026
             </span>
           </div>
 
@@ -743,7 +746,7 @@ export default function CasUsageIAEntreprisePage() {
           <Kicker>Par où commencer</Kicker>
           <h2 style={h2Style}>Quel cas d'usage choisir en premier ?</h2>
           <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Le meilleur premier cas n'est pas le plus spectaculaire, mais le plus fréquent, le plus documenté et le moins risqué en cas d'erreur.</strong> Il rend la valeur visible vite et sert de modèle pour répliquer la démarche sur d'autres cas.
+            <strong style={{ color: '#0A0A0A' }}>Le meilleur premier cas est le plus fréquent, le plus documenté et le moins risqué en cas d'erreur, même s'il paraît moins spectaculaire.</strong> Il rend la valeur visible vite et sert de modèle pour répliquer la démarche sur d'autres cas.
           </p>
           <p style={pStyle}>
             Pour aller plus loin sur un type de cas précis, ou pour voir comment ces usages se déclinent dans votre secteur, ces ressources prolongent ce panorama.

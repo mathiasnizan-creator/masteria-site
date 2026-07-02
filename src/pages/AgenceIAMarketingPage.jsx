@@ -26,6 +26,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence IA marketing : contenu, campagnes & SEO | Masteria"
 const META_DESC = "Agence IA marketing : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, emailing et reporting augmentés par l'IA. Done-for-you. FR, CH, BE."
+const KEYWORDS = "agence ia marketing, ia marketing, marketing ia, agence marketing intelligence artificielle, ia pour le marketing"
 
 /* ───────── Styles partagés ───────── */
 
@@ -175,7 +176,7 @@ const FAQ = [
   },
   {
     q: "Quels résultats attendre d'une agence marketing IA ?",
-    a: "Le gain le plus immédiat est la capacité de production : davantage de contenus et de campagnes à qualité tenue, sans grossir l'équipe. Viennent ensuite la cohérence de marque sur l'ensemble des canaux et un pilotage par les données plutôt que par intuition. Nous ne promettons pas de chiffre de performance à l'aveugle : les indicateurs de succès (trafic, visibilité, engagement, conversions selon vos objectifs) sont définis avec vous au cadrage, mesurés en continu et commentés dans un reporting régulier.",
+    a: "Le gain le plus immédiat est la capacité de production : davantage de contenus et de campagnes à qualité tenue, sans grossir l'équipe. Viennent ensuite la cohérence de marque sur l'ensemble des canaux et un pilotage fondé sur les données mesurées. Nous ne promettons pas de chiffre de performance à l'aveugle : les indicateurs de succès (trafic, visibilité, engagement, conversions selon vos objectifs) sont définis avec vous au cadrage, mesurés en continu et commentés dans un reporting régulier.",
   },
 ]
 
@@ -199,6 +200,23 @@ const serviceJsonLd = {
       { '@type': 'Offer', name: 'Campagnes, social media, emailing et reporting', description: "Conception, déclinaison et pilotage des campagnes, du social media, de l'emailing et du reporting." },
     ],
   },
+}
+
+/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': 'https://www.master-ia.fr/agence-ia-marketing#article',
+  headline: "Agence IA marketing : production de contenu, campagnes et SEO augmentés par l'IA",
+  description: META_DESC,
+  author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+  publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+  datePublished: '2026-06-13',
+  dateModified: '2026-07-02',
+  inLanguage: 'fr-FR',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-ia-marketing#webpage' },
+  about: ["Marketing augmenté par l'IA", 'SEO et GEO', 'IA générative', 'Marketing automation'],
 }
 
 /* ───────── Composants ───────── */
@@ -238,6 +256,7 @@ export default function AgenceIAMarketingPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Agence IA', slug: 'agence-ia' },
     { name: 'Agence IA marketing', slug: SLUG },
   ]
 
@@ -247,9 +266,12 @@ export default function AgenceIAMarketingPage() {
         title={META_TITLE}
         description={META_DESC}
         slug={SLUG}
+        keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        extraJsonLd={serviceJsonLd}
+        datePublished="2026-06-13"
+        dateModified="2026-07-02"
+        extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -264,6 +286,8 @@ export default function AgenceIAMarketingPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/agence-ia" style={{ color: '#94A3B8' }}>Agence IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence IA marketing</span>
           </nav>
@@ -283,11 +307,16 @@ export default function AgenceIAMarketingPage() {
             </span>
           </div>
 
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 28, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Agence IA marketing
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>production de contenu, campagnes et SEO augmentés par l'IA</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
