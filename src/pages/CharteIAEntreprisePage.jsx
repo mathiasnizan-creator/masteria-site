@@ -39,7 +39,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Charte IA d'entreprise : exemples et méthode | Masteria"
 const META_DESC = "Charte IA entreprise : les 8 rubriques d'une charte d'utilisation de l'IA, des exemples de formulation et la méthode pour la rédiger et la faire adopter."
-const KEYWORDS = "charte ia, charte utilisation ia, charte ia entreprise, charte d'utilisation de l'ia, charte éthique ia, politique ia entreprise, exemple charte ia, rédiger une charte ia, charte ia d'entreprise, littératie ia, article 4 ai act"
+const KEYWORDS = "charte ia, charte utilisation ia, charte ia entreprise, charte d'utilisation de l'ia, charte éthique ia, politique ia entreprise, exemple charte ia, exemple de charte ia, modèle charte ia, rédiger une charte ia, charte ia d'entreprise, littératie ia, article 4 ai act"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
@@ -276,6 +276,10 @@ const FAQ = [
     q: 'Faut-il faire signer la charte IA aux salariés ?',
     a: "La signature individuelle ou l'accusé de lecture donnent une valeur probante à la diffusion : l'entreprise peut montrer que chaque collaborateur a eu connaissance des règles, ce qui compte pour la littératie IA de l'article 4 de l'AI Act comme en cas d'incident. Pour rendre la charte opposable en matière disciplinaire, la voie classique passe par le règlement intérieur, avec sa procédure propre (consultation du CSE comprise) ; votre conseil juridique tranchera selon votre contexte. Une signature recueillie en silence produit peu d'effet sur les usages ; une présentation en équipe, avec des cas concrets, change les pratiques.",
   },
+  {
+    q: 'Où trouver un exemple de charte IA ?',
+    a: "Le tableau de cette page fournit un exemple de charte IA rubrique par rubrique : chacune des huit rubriques y est accompagnée d'une formulation concrète, à recopier et à adapter à vos outils et à vos métiers. Un modèle de charte IA générique trouvé en ligne peut servir de point de comparaison pour vérifier que rien n'a été oublié ; le document qui fonctionne se rédige à partir des usages réels de vos équipes, avec vos cas limites et votre circuit de validation. Les cinq étapes de la méthode décrite plus haut couvrent ce chemin, du recensement des usages à la diffusion.",
+  },
 ]
 
 /* ───────── Glossaire (DefinedTermSet, ancrage d'entités) ───────── */
@@ -366,6 +370,7 @@ export default function CharteIAEntreprisePage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: "Gouvernance de l'IA", slug: 'gouvernance-ia' },
     { name: "Charte IA d'entreprise", slug: SLUG },
   ]
 
@@ -395,6 +400,8 @@ export default function CharteIAEntreprisePage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/gouvernance-ia" style={{ color: '#94A3B8' }}>Gouvernance de l'IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>Charte IA d'entreprise</span>
           </nav>
@@ -674,6 +681,24 @@ export default function CharteIAEntreprisePage() {
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Une charte IA qui évite ces quatre pièges devient le point d'entrée naturel de la gouvernance : le registre des usages, le comité IA et la supervision humaine s'y raccordent. Notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> décrit ce dispositif complet.
           </p>
+
+          {/* Sources de référence — liens d'autorité suivis (SEO + GEO) */}
+          <h3 style={{ ...h3Style, fontSize: 20, margin: '44px 0 16px' }}>
+            Sources de référence
+          </h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
+            {[
+              { label: "AI Act — texte officiel, dont l'article 4 sur la littératie IA (EUR-Lex, Règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+              { label: 'Intelligence artificielle et RGPD — recommandations de la CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+              { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
+            ].map((r, i) => (
+              <li key={i}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

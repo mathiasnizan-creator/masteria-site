@@ -39,7 +39,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "IA et RGPD : conformité des usages et outils IA | Masteria"
 const META_DESC = "IA et RGPD : principes à respecter, AIPD, outils IA conformes en offre entreprise (DPA, paramétrage), méthode de mise en conformité et repères CNIL."
-const KEYWORDS = "ia et rgpd, ia rgpd, rgpd et ia, rgpd ia, outil ia conforme rgpd, outils ia conformes rgpd, cnil ia, aipd ia, rgpd intelligence artificielle, dpa intelligence artificielle, conformité rgpd ia, chatgpt rgpd, copilot rgpd, gemini rgpd, claude rgpd, mistral rgpd"
+const KEYWORDS = "ia et rgpd, ia rgpd, rgpd et ia, rgpd ia, intelligence artificielle et rgpd, outil ia conforme rgpd, outils ia conformes rgpd, cnil ia, aipd ia, rgpd intelligence artificielle, dpa intelligence artificielle, conformité rgpd ia, chatgpt rgpd, copilot rgpd, gemini rgpd, claude rgpd, mistral rgpd"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
@@ -339,6 +339,7 @@ export default function IAEtRGPDPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: "Gouvernance de l'IA", slug: 'gouvernance-ia' },
     { name: 'IA et RGPD', slug: SLUG },
   ]
 
@@ -368,6 +369,8 @@ export default function IAEtRGPDPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/gouvernance-ia" style={{ color: '#94A3B8' }}>Gouvernance de l'IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>IA et RGPD</span>
           </nav>
@@ -399,7 +402,7 @@ export default function IAEtRGPDPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Copilotes bureautiques, assistants IA, agents connectés au CRM : chaque usage fait circuler des données, parfois personnelles, vers un fournisseur. Cette page pose les principes du RGPD appliqués à l'IA, compare les garanties des cinq grands outils en offre entreprise et détaille la méthode de mise en conformité, avec les repères publiés par la CNIL.
+            Copilotes bureautiques, assistants IA, agents connectés au CRM : chaque usage fait circuler des données, parfois personnelles, vers un fournisseur. Cette page traite l'intelligence artificielle et le RGPD sous l'angle opérationnel : les principes appliqués à vos usages, ce qui rend les outils IA conformes au RGPD en offre entreprise, et la méthode de mise en conformité, avec les repères publiés par la CNIL.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -635,6 +638,24 @@ export default function IAEtRGPDPage() {
               </div>
             ))}
           </dl>
+
+          {/* Sources de référence : liens d'autorité suivis (SEO + GEO) */}
+          <h3 style={{ ...h3Style, fontSize: 20, margin: '44px 0 16px' }}>
+            Sources de référence
+          </h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
+            {[
+              { label: 'Intelligence artificielle et RGPD — recommandations de la CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+              { label: 'RGPD — texte officiel (EUR-Lex, Règlement 2016/679)', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679' },
+              { label: 'AI Act — texte officiel (EUR-Lex, Règlement 2024/1689)', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+            ].map((r, i) => (
+              <li key={i}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

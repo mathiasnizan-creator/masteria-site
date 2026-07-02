@@ -741,7 +741,7 @@ export default function AgentsIAEntreprisePage() {
 
               <h3 style={{ ...h3Style, fontSize: 20, marginBottom: 12 }}>La supervision humaine</h3>
               <p style={{ ...pStyle, maxWidth: 'none', marginBottom: 0 }}>
-                Un agent d'entreprise sérieux fonctionne avec des points de contrôle humains, ce que la littérature appelle le <Link to="/glossaire-ia#humain-dans-la-boucle" style={linkStyle}>human-in-the-loop</Link>. Trois niveaux existent : l'humain valide chaque action (le mode le plus prudent), l'humain valide uniquement les actions sensibles (envoi externe, paiement, suppression), ou l'humain contrôle a posteriori sur échantillon. La plupart des déploiements 2026 restent supervisés : l'autonomie se gagne progressivement, à mesure que la fiabilité est démontrée sur le terrain.
+                Un agent d'entreprise sérieux fonctionne avec des points de contrôle humains, ce que la littérature appelle le <Link to="/glossaire-ia#humain-dans-la-boucle" style={linkStyle}>human-in-the-loop</Link>. Trois niveaux existent : l'humain valide chaque action (le mode le plus prudent), l'humain valide uniquement les actions sensibles (envoi externe, paiement, suppression), ou l'humain contrôle a posteriori sur échantillon. La plupart des déploiements 2026 restent supervisés : l'autonomie se gagne progressivement, à mesure que la fiabilité est démontrée sur le terrain. La supervision humaine est aussi l'un des six principes de l'<Link to="/ia-responsable" style={linkStyle}>IA responsable</Link>, avec l'équité, la transparence et la traçabilité.
               </p>
             </div>
           </div>

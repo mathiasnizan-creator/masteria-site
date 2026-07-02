@@ -789,6 +789,7 @@ export default function IAGenerativeEntreprisePage() {
               { label: 'Solutions IA types', href: '/solutions-ia', tag: 'Solutions', desc: "Un panorama de nos solutions IA par cas d'usage, des agents aux applications métier." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand et comment déployer des agents IA, avec les garde-fous que cela exige." },
               { label: 'Gouvernance IA', href: '/gouvernance-ia', tag: 'Conformité', desc: "Charte d'usage, RGPD, AI Act et validation humaine pour un déploiement maîtrisé." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Guide', desc: "Les 8 rubriques d'une charte d'utilisation de l'IA, avec des exemples de formulation." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Le point de départ : un diagnostic qui cadre le besoin avant tout déploiement." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
             ].map(rel => (

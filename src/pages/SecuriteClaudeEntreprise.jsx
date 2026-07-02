@@ -396,7 +396,7 @@ export default function SecuriteClaudeEntreprise() {
               </p>
 
               <Callout>
-                <strong>Team vs Enterprise en un mot :</strong> sur les deux plans, vos conversations sont sous Conditions Commerciales et aucune n'alimente l'entraînement des modèles. Enterprise ajoute les outils de gouvernance avancés (ZDR, SCIM, logs d'audit SIEM, DPA formel). Pour une équipe sans contraintes réglementaires spécifiques, Team est une bonne base.
+                <strong>Team vs Enterprise en un mot :</strong> sur les deux plans, vos conversations sont sous Conditions Commerciales et aucune n'alimente l'entraînement des modèles. Enterprise ajoute les outils de gouvernance avancés (ZDR, SCIM, logs d'audit SIEM, DPA formel). Pour une équipe sans contraintes réglementaires spécifiques, Team est une bonne base. Pour situer Claude parmi les autres outils au regard du règlement, voyez notre guide <a href="/ia-et-rgpd" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: 2 }}>IA et RGPD</a>.
               </Callout>
 
               <div style={{ overflowX: 'auto', margin: '20px 0', borderRadius: 12, border: `1px solid ${C.border}` }}>

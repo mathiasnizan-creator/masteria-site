@@ -221,6 +221,7 @@ export default function SpokePage() {
         courseData={courseData}
         breadcrumbs={breadcrumbs}
         faqItems={spoke.faq}
+        keywords={spoke.keywords}
         datePublished={spoke.datePublished}
         dateModified={spoke.updatedAt || spoke.datePublished}
       />

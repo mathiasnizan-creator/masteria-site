@@ -38,7 +38,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = 'IA responsable : principes, pratiques et ISO 42001 | Masteria'
 const META_DESC = "IA responsable : définition, 6 principes, différence avec l'IA éthique, ISO/IEC 42001, AI Act et méthode en 5 étapes pour passer des principes à la pratique."
-const KEYWORDS = "ia responsable, ia éthique et responsable, ia éthique entreprise, principes ia responsable, iso 42001, iso/iec 42001, démarche ia responsable, ia responsable en entreprise, ia digne de confiance, supervision humaine, explicabilité de l'ia, ia responsable définition"
+const KEYWORDS = "ia responsable, intelligence artificielle responsable, ia éthique et responsable, ia éthique entreprise, principes ia responsable, iso 42001, iso/iec 42001, démarche ia responsable, ia responsable en entreprise, ia digne de confiance, supervision humaine, explicabilité de l'ia, ia responsable définition"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
@@ -216,7 +216,7 @@ const BUSINESS = [
 const FAQ = [
   {
     q: "Qu'est-ce que l'IA responsable ?",
-    a: "L'IA responsable désigne l'ensemble des principes et des pratiques qui garantissent qu'un système d'intelligence artificielle est transparent, supervisé par l'humain, équitable, sûr et respectueux des données personnelles. Six principes la structurent : transparence et explicabilité, supervision humaine, équité et gestion des biais, protection des données et vie privée, robustesse et sécurité, responsabilité et traçabilité. Une démarche d'IA responsable les traduit en processus concrets : registre des usages, points de contrôle humain, indicateurs mesurés, revues régulières. Le critère décisif reste la vérifiabilité : chaque principe affiché doit pouvoir être audité.",
+    a: "L'IA responsable, ou intelligence artificielle responsable, désigne l'ensemble des principes et des pratiques qui garantissent qu'un système d'intelligence artificielle est transparent, supervisé par l'humain, équitable, sûr et respectueux des données personnelles. Six principes la structurent : transparence et explicabilité, supervision humaine, équité et gestion des biais, protection des données et vie privée, robustesse et sécurité, responsabilité et traçabilité. Une démarche d'IA responsable les traduit en processus concrets : registre des usages, points de contrôle humain, indicateurs mesurés, revues régulières. Le critère décisif reste la vérifiabilité : chaque principe affiché doit pouvoir être audité.",
   },
   {
     q: "Quelle différence entre IA éthique et IA responsable ?",
@@ -340,6 +340,7 @@ export default function IAResponsablePage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: "Gouvernance de l'IA", slug: 'gouvernance-ia' },
     { name: 'IA responsable', slug: SLUG },
   ]
 
@@ -369,6 +370,8 @@ export default function IAResponsablePage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/gouvernance-ia" style={{ color: '#94A3B8' }}>Gouvernance de l'IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>IA responsable</span>
           </nav>
@@ -718,6 +721,26 @@ export default function IAResponsablePage() {
                   </span>
                 </div>
               </Link>
+            ))}
+          </div>
+
+          {/* Repères chiffrés sourcés — citables par les moteurs de réponse (GEO) */}
+          <h3 style={{ ...h3Style, fontSize: 20, margin: '52px 0 16px' }}>
+            Trois repères pour situer l'intelligence artificielle responsable
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '0 0 12px' }}>
+            {[
+              { stat: '7 exigences', label: "posées par les lignes directrices européennes pour une IA digne de confiance (2019), socle des principes de l'IA responsable", source: 'Groupe d\'experts de haut niveau, Commission européenne', url: 'https://digital-strategy.ec.europa.eu/fr/library/ethics-guidelines-trustworthy-ai' },
+              { stat: 'Décembre 2023', label: "publication d'ISO/IEC 42001, première norme certifiable de système de management de l'intelligence artificielle", source: 'ISO', url: 'https://www.iso.org/fr/standard/81230.html' },
+              { stat: '1ᵉʳ août 2024', label: "entrée en vigueur de l'AI Act (Règlement UE 2024/1689), qui transforme plusieurs principes de l'IA responsable en obligations", source: 'EUR-Lex', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+            ].map((s, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
+                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
+                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>
+                  Source : <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.source}</a>
+                </p>
+              </div>
             ))}
           </div>
 
