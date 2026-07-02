@@ -129,6 +129,29 @@ export default function AgenceGeoPage() {
     { name: city.name, slug: city.slug },
   ]
 
+  // Meta keywords localisés (le fallback SEOHead liste des mots-clés formation)
+  const cityLower = city.name.toLowerCase()
+  const keywords = `agence ia ${cityLower}, agence intelligence artificielle ${cityLower}, agence ia ${city.nameLoc.toLowerCase()}, conseil ia ${cityLower}, développement ia ${cityLower}, agents ia ${cityLower}, automatisation ia ${cityLower}, prestataire ia ${cityLower}`
+
+  // E-E-A-T : byline visible + Article JSON-LD (auteur identifié, fraîcheur datée)
+  const PUBLISHED = '2026-06-12'
+  const MODIFIED = '2026-07-02'
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${SITE}/${city.slug}#article`,
+    headline: `Agence IA ${city.nameLoc} : conseil, développement et automatisation sur mesure`,
+    description: city.metaDesc,
+    author: { '@id': `${SITE}/#mathias-nizan` },
+    editor: { '@id': `${SITE}/#mathias-nizan` },
+    publisher: { '@id': `${SITE}/#organization` },
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    inLanguage: 'fr-FR',
+    mainEntityOfPage: { '@id': `${SITE}/${city.slug}#webpage` },
+    about: [`Agence IA ${city.nameLoc}`, 'Conseil et développement IA sur mesure', city.regionLong || city.region],
+  }
+
   /* ── FAQ : locales + communes (les communes adaptées au cadre du pays) ── */
   const commonFaq = [
     isFR
@@ -204,7 +227,10 @@ export default function AgenceGeoPage() {
         slug={city.slug}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
-        extraJsonLd={professionalServiceJsonLd}
+        keywords={keywords}
+        datePublished={PUBLISHED}
+        dateModified={MODIFIED}
+        extraJsonLd={[professionalServiceJsonLd, articleJsonLd]}
         locale={city.locale}
       />
 
@@ -241,6 +267,11 @@ export default function AgenceGeoPage() {
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>conseil, développement et automatisation sur mesure</span>
           </h1>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 24px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+          </p>
 
           {/* GEO : réponse directe en gras (citable LLM) — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
