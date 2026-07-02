@@ -61,6 +61,7 @@ const staticRoutes = [
   { path: 'outils-ia-sur-mesure',                prio: 0.8, freq: 'monthly', files: ['src/pages/OutilsIASurMesurePage.jsx'] },
   { path: 'agence-ia-marketing',                 prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceIAMarketingPage.jsx'] },
   { path: 'agence-seo-ia',                       prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceSeoIAPage.jsx'] },
+  { path: 'agence-ia-lyon',                      prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-annecy',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-paris',                     prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-geneve',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },

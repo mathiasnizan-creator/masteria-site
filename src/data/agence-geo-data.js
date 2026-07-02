@@ -16,6 +16,62 @@
 
 export const AGENCE_GEO_CITIES = [
   {
+    slug: 'agence-ia-lyon',
+    citySlug: 'lyon',
+    name: 'Lyon',
+    nameLoc: 'à Lyon',
+    region: 'Métropole de Lyon',
+    regionLong: 'Métropole de Lyon et Auvergne-Rhône-Alpes',
+    country: 'France',
+    countryCode: 'FR',
+    locale: 'fr-FR',
+    coordinates: { latitude: 45.7640, longitude: 4.8357 },
+    metaDesc:
+      "Agence IA à Lyon : conseil et gouvernance, agents IA et outils sur mesure, automatisation, formation des équipes. Siège à la Croix-Rousse. Cadrage gratuit.",
+    heroSubtitle:
+      "Lyon est notre ville : Masteria y a son siège, sur le plateau de la Croix-Rousse. Nous cadrons votre stratégie et votre gouvernance IA, nous créons les agents, outils et automatisations qui s'intègrent à votre système d'information, et la formation rend vos équipes autonomes. Le tout en circuit court : vos locaux sont à quelques minutes des nôtres.",
+    localEconomy:
+      "Deuxième pôle économique français, la métropole de Lyon concentre des filières où les volumes documentaires et les processus normés dominent : la santé et les biotechs autour de Lyonbiopôle (Sanofi Pasteur, BioMérieux, Boiron), l'industrie et l'énergie (Renault Trucks, SEB, Framatome), la banque et l'assurance (Crédit Agricole Centre-Est, Apicil, April) et un tissu numérique dense, des ETI logicielles aux scale-ups. L'écosystème IA s'appuie sur l'ENS Lyon et les équipes Inria de la région.",
+    whyHere:
+      "Les secteurs lyonnais réglementés (pharma, banque, assurance) cumulent documentation réglementaire, dossiers qualité et exigences de conformité : un terrain naturel pour les agents IA supervisés et la gouvernance AI Act. L'industrie et les services y ajoutent les devis, appels d'offres et fonctions support à automatiser. Une agence IA locale cadre ces cas d'usage sur le terrain, construit les outils et forme les équipes qui les font vivre.",
+    presence:
+      "C'est la seule ville où la question ne se pose pas : le siège de Masteria est au 17 Rue Richan, à la Croix-Rousse (Lyon 4e), organisme enregistré sous le NDA 84 69 23218 69. Ateliers de cadrage, observation des processus, points d'avancement et passations se font en présentiel dans vos locaux, partout dans la métropole : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne. La région suit sans logistique lourde : Saint-Étienne, Grenoble, Annecy, Clermont-Ferrand, Valence.",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil et stratégie IA, gouvernance et conformité (AI Act, RGPD), création d'agents IA et d'outils sur mesure, automatisation, formation des équipes" },
+      { label: 'Présence à Lyon', value: 'Siège au 17 Rue Richan, Croix-Rousse (Lyon 4e) : présentiel naturel dans toute la métropole, sans frais de déplacement' },
+      { label: 'Secteurs accompagnés', value: 'Pharma et biotech, banque et assurance, industrie, numérique et services B2B' },
+      { label: 'Premier échange', value: 'Cadrage gratuit, réponse sous 24 h, proposition forfaitaire écrite' },
+    ],
+    useCasesLocal: [
+      {
+        sector: 'Pharma, biotech et qualité',
+        usage: "Pour un laboratoire ou un façonnier de la métropole, un agent qui prépare la documentation réglementaire et les dossiers qualité à partir des sources internes, avec supervision humaine et traçabilité, et une gouvernance IA alignée sur l'AI Act.",
+      },
+      {
+        sector: 'Industrie et fonctions support',
+        usage: "Pour une ETI industrielle de la région, l'automatisation des devis et des réponses aux appels d'offres récurrents, un agent de documentation technique branché sur l'ERP, et la formation des équipes support qui reprennent la main.",
+      },
+      {
+        sector: 'Banque, assurance et services',
+        usage: "Pour un acteur financier ou un cabinet de services lyonnais, un copilote interne pour la conformité et la relation client, des automatisations de reporting, et une charte IA qui cadre les usages des équipes.",
+      },
+    ],
+    localFaq: [
+      {
+        q: 'Où est basée votre agence IA à Lyon ?',
+        a: "Au 17 Rue Richan, sur le plateau de la Croix-Rousse (Lyon 4e). C'est le siège réel de Masteria, vérifiable au registre : les ateliers de cadrage et les points d'avancement se tiennent dans vos locaux ou chez nous, selon votre préférence. Cette proximité change le rythme d'une mission : une décision se prend en quelques jours, une observation de processus se planifie sans logistique.",
+      },
+      {
+        q: 'Intervenez-vous dans toute la métropole de Lyon ?',
+        a: "Oui, sans frais de déplacement : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de la métropole. En région Auvergne-Rhône-Alpes, nous intervenons aussi en présentiel à Saint-Étienne, Grenoble, Annecy, Clermont-Ferrand et Valence pour les phases clés, avec le développement et le suivi en distanciel.",
+      },
+      {
+        q: 'Proposez-vous aussi la gouvernance IA et la formation des équipes à Lyon ?',
+        a: "Oui, c'est le cœur du modèle : le conseil cadre la stratégie et la gouvernance (audit AI Act et RGPD, registre des usages, charte, comité), le développement crée les agents et outils sur mesure, et la formation rend vos équipes autonomes. Le volet formation est certifié Qualiopi et finançable par votre OPCO ; le conseil et le développement restent des prestations de service. Beaucoup de missions lyonnaises combinent les trois, avec un interlocuteur unique.",
+      },
+    ],
+  },
+  {
     slug: 'agence-ia-annecy',
     citySlug: 'annecy',
     name: 'Annecy',

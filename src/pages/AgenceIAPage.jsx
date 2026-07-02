@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, Building2, Check, Compass, Cpu, Factory, FlaskConical,
   Globe, GraduationCap, Handshake, Landmark, MapPin, MonitorSmartphone,
-  Radar, Rocket, Target, Workflow,
+  Radar, Rocket, ShieldCheck, Target, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -11,10 +11,12 @@ import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page « Agence IA » ancrée à Lyon : cible « agence ia lyon » (210/mois, KD 17,
- * la priorité, Masteria est à Lyon), « agence ia » (1 600/mois, KD 59, tête de
- * cluster), « agence ia france », « agence spécialisée en ia », « agence conseil
- * ia entreprise ». Positionnement high-ticket : cabinet/agence IA lyonnais dont
+ * Page « Agence IA » NATIONALE (depuis juillet 2026) : cible « agence ia »
+ * (1 600/mois, KD 59, tête de cluster), « agence ia france », « agence
+ * spécialisée en ia », « agence conseil ia entreprise ». La requête locale
+ * « agence ia lyon » (210/mois, KD 17) est portée par /agence-ia-lyon
+ * (template AgenceGeoPage + agence-geo-data.js), qui assume le siège réel.
+ * Positionnement high-ticket : cabinet/agence IA française dont
  * le cœur d'offre est le conseil et le développement d'outils & agents sur
  * mesure ; l'automatisation prolonge le build et la formation reste une offre
  * secondaire mais visible. Interventions France/CH/BE.
@@ -26,9 +28,9 @@ const SLUG = 'agence-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Agence IA Lyon · Conseil & dev sur mesure | Masteria'
-const META_DESC = "Agence IA à Lyon : conseil, développement d'agents et d'outils sur mesure, automatisation et formation. France, Suisse, Belgique. Premier cadrage gratuit."
-const KEYWORDS = "agence ia, agence intelligence artificielle, agence ia lyon, agence ia france, prestataire ia, société spécialisée ia"
+const META_TITLE = 'Agence IA : conseil, agents sur mesure & formation | Masteria'
+const META_DESC = "Agence IA : conseil et gouvernance, création d'agents IA sur mesure, automatisation, formation des équipes. Fondée à Lyon, intervient en France, Suisse, Belgique."
+const KEYWORDS = "agence ia, agence intelligence artificielle, agence ia france, agence ia française, prestataire ia, société spécialisée ia, agence agents ia, agence conseil ia"
 
 /* ── Design system local : kickers, titres, cartes, pastilles d'icônes ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -72,6 +74,14 @@ const OFFERS = [
     points: ['Cadrage des processus prioritaires', 'Workflows et agents IA sur mesure', 'Documentation et passation'],
   },
   {
+    icon: ShieldCheck,
+    title: 'Gouvernance et conformité IA',
+    href: '/gouvernance-ia',
+    cta: 'Découvrir la gouvernance IA',
+    desc: "Audit de conformité AI Act et RGPD, registre des usages, charte et politique IA, comité de gouvernance, supervision humaine. Le cadre qui sécurise vos usages et vos déploiements, proportionné à votre taille.",
+    points: ['Audit de conformité AI Act et RGPD', 'Registre des usages, charte, comité', 'Gouvernance des données'],
+  },
+  {
     icon: GraduationCap,
     title: 'Formation IA des équipes',
     href: '/formation-intelligence-artificielle',
@@ -113,8 +123,8 @@ const COMPARISON_TABLE = [
 
 const FAQ = [
   {
-    q: 'Quelle est la meilleure agence IA à Lyon ?',
-    a: "Aucun classement officiel ne désigne la meilleure agence IA à Lyon. Pour comparer sérieusement, quatre critères font la différence : la part de l'IA dans l'activité du prestataire, des références vérifiables, un transfert de compétence organisé et une certification contrôlée par un organisme tiers. Masteria coche ces quatre cases : agence lyonnaise fondée en 2022, dédiée à l'IA, certifiée Qualiopi, plus de 1 500 professionnels formés et 98 % de satisfaction. Notre guide « meilleure agence IA » détaille la méthode complète pour départager plusieurs prestataires.",
+    q: 'Comment reconnaître la meilleure agence IA pour votre projet ?',
+    a: "Aucun classement officiel ne désigne la meilleure agence IA. Pour comparer sérieusement, quatre critères font la différence : la part de l'IA dans l'activité du prestataire, des références vérifiables, un transfert de compétence organisé et une certification contrôlée par un organisme tiers. Masteria coche ces quatre cases : agence fondée à Lyon en 2022, dédiée à l'IA, certifiée Qualiopi, plus de 1 500 professionnels formés et 98 % de satisfaction. Notre guide « meilleure agence IA » détaille la méthode complète pour départager plusieurs prestataires.",
   },
   {
     q: 'Combien coûte une agence IA ?',
@@ -125,7 +135,7 @@ const FAQ = [
     a: "Les deux approches se complètent. Recruter un profil IA expérimenté prend plusieurs mois sur un marché tendu, pour un coût annuel chargé souvent supérieur à celui d'une mission d'agence complète. L'agence apporte immédiatement des méthodes éprouvées et une vision transverse des outils. La trajectoire la plus efficace pour une PME ou une ETI : confier le cadrage et les premiers déploiements à une agence, puis internaliser progressivement grâce à la formation. Ce schéma correspond au modèle Masteria, où chaque mission intègre un transfert de compétence.",
   },
   {
-    q: 'Intervenez-vous en dehors de Lyon ?',
+    q: 'Où intervenez-vous ?',
     a: "Oui. Le siège de Masteria est à Lyon (Croix-Rousse) et nos consultants interviennent en présentiel dans toute la France, ainsi qu'en Suisse et en Belgique. Les frais de déplacement éventuels figurent en clair dans la proposition commerciale. Toutes nos missions de conseil, d'automatisation et de formation existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
   },
   {
@@ -138,7 +148,7 @@ const FAQ = [
   },
   {
     q: 'Quelle agence IA choisir en 2026 ?',
-    a: "En 2026, le marché des agences IA s'est densifié : beaucoup de prestataires se sont ajouté la mention « IA » sans en avoir fait leur cœur de métier. Quatre critères permettent de trancher : une spécialisation réelle (l'IA comme activité principale, pas un sujet parmi d'autres), une indépendance vis-à-vis des éditeurs pour des choix d'outils objectifs, un transfert de compétence organisé pour rester autonome après la mission, et une certification contrôlée par un tiers (Qualiopi pour le volet formation). Masteria, agence IA lyonnaise dédiée à l'IA depuis 2022, répond à ces quatre critères. Notre guide « meilleure agence IA » détaille la méthode de comparaison.",
+    a: "En 2026, le marché des agences IA s'est densifié : beaucoup de prestataires se sont ajouté la mention « IA » sans en avoir fait leur cœur de métier. Quatre critères permettent de trancher : une spécialisation réelle (l'IA comme activité principale, pas un sujet parmi d'autres), une indépendance vis-à-vis des éditeurs pour des choix d'outils objectifs, un transfert de compétence organisé pour rester autonome après la mission, et une certification contrôlée par un tiers (Qualiopi pour le volet formation). Masteria, agence IA française fondée à Lyon et dédiée à l'IA depuis 2022, répond à ces quatre critères. Notre guide « meilleure agence IA » détaille la méthode de comparaison.",
   },
   {
     q: 'Combien de temps dure un projet avec une agence IA ?',
@@ -235,7 +245,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/agence-ia#article',
-  headline: 'Agence IA à Lyon : conseil, automatisation et formation des équipes',
+  headline: 'Agence IA : conseil, gouvernance, agents sur mesure et formation des équipes',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
@@ -321,14 +331,14 @@ export default function AgenceIAPage() {
               <MapPin size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Agence IA · Lyon
+              Agence IA · France · Suisse · Belgique
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
-            Agence IA à Lyon
+            Agence IA
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>conseil, automatisation et formation des équipes</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>conseil, gouvernance, agents sur mesure et formation des équipes</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
@@ -338,7 +348,7 @@ export default function AgenceIAPage() {
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence IA basée à Lyon (Croix-Rousse), fondée en 2022. Son cœur d'offre : le <strong style={{ color: '#fff', fontWeight: 700 }}>conseil en stratégie IA et le développement d'outils et d'agents sur mesure</strong>, prolongés par l'automatisation des processus et, en appui, la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
+            Masteria est une agence IA française fondée à Lyon en 2022. Son cœur d'offre : le <strong style={{ color: '#fff', fontWeight: 700 }}>conseil en stratégie et gouvernance IA et la création d'agents et d'outils sur mesure</strong>, prolongés par l'automatisation des processus et la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -445,14 +455,14 @@ export default function AgenceIAPage() {
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>Ancrage local</div>
-              <h2 style={h2Style}>Pourquoi travailler avec une agence IA basée à Lyon ?</h2>
+              <div style={kickerStyle}>Ancrage terrain</div>
+              <h2 style={h2Style}>Une agence IA française, présente sur le terrain</h2>
               <p style={{ ...answerStyle, maxWidth: 'none' }}>
-                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA installée au 17 Rue Richan, sur le plateau de la Croix-Rousse (Lyon 4e).</strong>{' '}
-                La proximité accélère ce qui se joue sur le terrain : ateliers de cadrage, observation des processus, conduite du changement. Nous intervenons en présentiel dans toute la métropole lyonnaise et en région Auvergne-Rhône-Alpes.
+                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA au siège réel et vérifiable, au 17 Rue Richan à Lyon (Croix-Rousse), avec des interventions en présentiel dans toute la France, en Suisse et en Belgique.</strong>{' '}
+                La présence sur le terrain accélère ce qui se joue dans vos locaux : ateliers de cadrage, observation des processus, conduite du changement.
               </p>
               <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
-                Le tissu économique régional s'y prête : la métropole concentre des sièges industriels, des acteurs de la santé et de la finance, des scale-ups et un réseau dense d'ETI. Quatre secteurs y produisent des gains particulièrement rapides.
+                Nos pages locales détaillent le modèle d'intervention ville par ville : <Link to="/agence-ia-lyon" style={{ color: c, fontWeight: 600 }}>Lyon</Link>, <Link to="/agence-ia-paris" style={{ color: c, fontWeight: 600 }}>Paris</Link>, <Link to="/agence-ia-marseille" style={{ color: c, fontWeight: 600 }}>Marseille</Link>, <Link to="/agence-ia-annecy" style={{ color: c, fontWeight: 600 }}>Annecy</Link> et <Link to="/agence-ia-geneve" style={{ color: c, fontWeight: 600 }}>Genève</Link>. Quatre secteurs produisent des gains particulièrement rapides.
               </p>
             </div>
 
@@ -474,16 +484,16 @@ export default function AgenceIAPage() {
                 <Building2 size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
               </div>
               <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Interventions dans la métropole et la région</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Interventions France, Suisse et Belgique</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
-                  Part-Dieu, Confluence, Gerland et Villeurbanne pour la métropole, puis Saint-Étienne, Grenoble, Annecy, Clermont-Ferrand et Valence pour les missions régionales en présentiel.
+                  Présentiel pour les phases clés (cadrage, observation des processus, passation) partout en France, en Suisse romande et en Belgique francophone ; distanciel pour le développement, les itérations et le suivi.
                 </p>
               </div>
             </div>
           </div>
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', marginBottom: 20, letterSpacing: '-0.01em' }}>
-            Des secteurs régionaux où l'IA produit des gains rapides
+            Des secteurs où l'IA produit des gains rapides
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20, marginBottom: 40 }}>
             {LYON_SECTORS.map(({ icon: Icon, title, desc }) => (
@@ -681,7 +691,7 @@ export default function AgenceIAPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Agence IA à Lyon · Conseil, développement sur mesure, automatisation, formation · France, Suisse, Belgique
+              Agence IA · Conseil, gouvernance, agents sur mesure, automatisation, formation · France, Suisse, Belgique
             </p>
           </div>
         </div>

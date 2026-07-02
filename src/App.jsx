@@ -1441,6 +1441,7 @@ export default function App() {
         <Route path="/agence-developpement-ia" element={<AgenceDeveloppementIAPage />} />
         <Route path="/agence-ia-marketing" element={<AgenceIAMarketingPage />} />
         <Route path="/agence-seo-ia" element={<AgenceSeoIAPage />} />
+        <Route path="/agence-ia-lyon" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-annecy" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-paris" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-geneve" element={<AgenceGeoPage />} />
