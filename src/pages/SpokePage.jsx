@@ -108,6 +108,7 @@ const METIER_ANGLES = {
   'informatique': "les besoins IT : rédaction de documentation, aide au code, rédaction de spécifications, veille technique",
   'pedagogique': "les métiers pédagogiques : conception de supports, quiz, synthèses, préparation de cours",
   'transverse': "les enjeux transverses de conformité, de gouvernance et de pilotage des usages IA, du DPO à la direction générale",
+  'qse': "le quotidien QSE : veille réglementaire HSE, document unique, procédures, analyses d'accidents, audits internes et reporting",
 }
 
 // Minuscule le libellé métier en préservant les sigles (DPO, DSI, RH, SEO…)

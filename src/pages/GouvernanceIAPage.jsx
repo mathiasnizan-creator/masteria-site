@@ -40,7 +40,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Gouvernance de l'IA & conformité AI Act | Masteria"
 const META_DESC = "Gouvernance de l'IA en entreprise : mise en conformité AI Act, audit, registre des usages, politique IA, comité, gouvernance des données. Cadrage gratuit."
-const KEYWORDS = "gouvernance ia, gouvernance de l'intelligence artificielle, conformité ia, conformité ia entreprise, ai act entreprise, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia, calendrier ai act"
+const KEYWORDS = "gouvernance ia, gouvernance de l'intelligence artificielle, conformité ia, conformité ia entreprise, ai act entreprise, ia act, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia, calendrier ai act, calendrier ia act"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
@@ -257,7 +257,7 @@ const FAQ = [
   },
   {
     q: "L'AI Act s'applique-t-il à mon entreprise ?",
-    a: "L'AI Act, le Règlement (UE) 2024/1689, encadre la mise sur le marché et l'usage des systèmes d'IA dans l'Union européenne. Il concerne aussi bien les fournisseurs que les organisations qui déploient de l'IA, y compris en utilisant des outils tiers. Entré en vigueur le 1ᵉʳ août 2024, il s'applique par paliers. Les obligations dépendent du niveau de risque de chaque usage : interdit, haut risque, risque limité ou risque minimal. La première étape consiste donc à cartographier et classer vos usages pour savoir précisément ce qui s'applique à vous. C'est l'objet de notre audit de conformité.",
+    a: "L'AI Act (souvent écrit « IA Act » en français), le Règlement (UE) 2024/1689, encadre la mise sur le marché et l'usage des systèmes d'IA dans l'Union européenne. Il concerne aussi bien les fournisseurs que les organisations qui déploient de l'IA, y compris en utilisant des outils tiers. Entré en vigueur le 1ᵉʳ août 2024, il s'applique par paliers. Les obligations dépendent du niveau de risque de chaque usage : interdit, haut risque, risque limité ou risque minimal. La première étape consiste donc à cartographier et classer vos usages pour savoir précisément ce qui s'applique à vous. C'est l'objet de notre audit de conformité.",
   },
   {
     q: "Quelle différence entre gouvernance IA et conformité IA ?",
@@ -936,6 +936,9 @@ export default function GouvernanceIAPage() {
               { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "La montée en compétences de vos équipes sur le règlement, distincte du conseil et finançable." },
               { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Formation', desc: "Une journée pour apprendre à construire registre, charte et comité IA en autonomie, finançable OPCO." },
               { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Conseil', desc: "Le socle data conforme sur lequel s'appuie la gouvernance : audit, qualité, RGPD." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Guide', desc: "Ce que doit contenir une charte IA, rubrique par rubrique, avec des exemples de formulation." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Les principes RGPD appliqués à l'IA et les garanties à vérifier avant de choisir un outil." },
+              { label: 'IA responsable', href: '/ia-responsable', tag: 'Guide', desc: "Passer des principes à la pratique : supervision, biais, transparence, ISO/IEC 42001." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, gouvernance et conformité comprises." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Le développement de solutions IA, conçues avec garde-fous, supervision et traçabilité." },

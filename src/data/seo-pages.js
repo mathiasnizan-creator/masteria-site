@@ -3182,7 +3182,7 @@ const BASE_SPOKES = [
     metaTitle: 'Formation AI Act : conformité IA · Qualiopi | Masteria',
     metaDesc: "Formation AI Act 1 jour : obligations réelles, cartographie des risques, article 4, plan de conformité et gouvernance IA. Qualiopi, finançable OPCO.",
     h1: 'Formation AI Act : mettez votre entreprise en conformité avec le règlement européen',
-    intro: "Le règlement européen sur l'IA s'applique par paliers depuis février 2025 : pratiques interdites, obligation de maîtrise de l'IA pour les collaborateurs (article 4), puis obligations renforcées sur les systèmes à haut risque en 2026 et 2027. Cette formation d'1 jour transforme le texte en plan de conformité opérationnel : cartographie de vos usages, obligations réelles selon votre rôle, gouvernance, registre et formation des équipes.",
+    intro: "Le règlement européen sur l'IA (AI Act, souvent écrit « IA Act ») s'applique par paliers depuis février 2025 : pratiques interdites, obligation de maîtrise de l'IA pour les collaborateurs (article 4), puis obligations renforcées sur les systèmes à haut risque en 2026 et 2027. Cette formation d'1 jour transforme le texte en plan de conformité opérationnel : cartographie de vos usages, obligations réelles selon votre rôle, gouvernance, registre et formation des équipes.",
     audience: [
       { title: 'DPO, juristes et responsables conformité', desc: "Vous devez articuler AI Act et RGPD sans doubler les dispositifs. La formation détaille les obligations par rôle (fournisseur, déployeur) et la construction d'un dossier de conformité unifié." },
       { title: 'DSI et responsables IA', desc: "Vous tenez l'inventaire des systèmes et outils IA, officiels ou non. Vous apprenez à cartographier, classifier par niveau de risque et documenter sans paralyser les usages." },
@@ -3267,6 +3267,38 @@ const BASE_SPOKES = [
       { q: 'Quel lien avec votre offre de conseil en gouvernance IA ?', a: "La formation rend votre équipe autonome pour construire et faire vivre le dispositif. Le conseil en gouvernance IA, décrit sur notre page dédiée, va plus loin : nous auditons, cadrons et installons le dispositif avec vous. Beaucoup d'organisations combinent les deux : le conseil pour poser le socle, la formation pour transférer la maîtrise aux équipes. À noter : la formation est finançable OPCO, le conseil ne l'est pas." },
     ],
     relatedSpokes: ['formation-ai-act', 'formation-ia-dirigeants', 'formation-sprint-ia-ai-act'],
+  },
+
+  // ── IA × QSE ─────────────────────────────────────────────────────────────
+  {
+    slug: 'formation-ia-qse',
+    duration: '1j',
+    tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
+    metier: 'QSE', metierSlug: 'qse', hubSlug: 'formation-intelligence-artificielle', priority: true,
+    datePublished: '2026-07-02',
+    metaTitle: 'Formation IA pour responsable QSE / HSE | Masteria',
+    metaDesc: "Formation IA pour responsable QSE : veille réglementaire, document unique, procédures, analyses d'accidents, audits. 1 jour, certifié Qualiopi, finançable OPCO.",
+    h1: 'Formation IA pour responsables QSE / HSE',
+    intro: "Veille réglementaire, document unique, procédures, analyses d'accidents, audits internes, reporting : le quotidien QSE repose sur des écrits normés et de l'analyse documentaire, le terrain où l'IA générative fait gagner le plus de temps. Cette formation d'1 jour donne aux responsables QSE et HSE une méthode et des prompts métier éprouvés, avec les règles de confidentialité qui s'imposent sur les données de santé et de sécurité.",
+    useCases: [
+      { icon: '📜', title: 'Veille réglementaire HSE', desc: "Suivre les évolutions du code du travail, des régimes ICPE et des normes ISO, et produire une synthèse d'impact pour votre site." },
+      { icon: '🗂️', title: 'Document unique & risques', desc: 'Préparer et mettre à jour le DUERP : formulations, cotations, plans d\'action associés.' },
+      { icon: '📝', title: 'Procédures & modes opératoires', desc: 'Rédiger ou réviser une procédure claire à partir de notes terrain et de photos d\'atelier.' },
+      { icon: '🔎', title: "Analyses d'accidents", desc: "Structurer un arbre des causes et rédiger le compte rendu d'analyse d'un accident ou presqu'accident." },
+      { icon: '✅', title: 'Audits & non-conformités', desc: "Préparer les grilles d'audit interne et formuler des fiches de non-conformité exploitables." },
+      { icon: '📊', title: 'Reporting QSE & CSRD', desc: 'Transformer les données sécurité et environnement en synthèses lisibles pour la direction.' },
+    ],
+    program: [
+      { title: 'Matin, Boîte à outils IA pour la QSE', items: ["Cartographier ses tâches QSE : où l'IA aide vraiment", 'ChatGPT, Copilot, Gemini, Claude, Mistral : qui fait quoi pour la qualité, la sécurité et l\'environnement', "Confidentialité : données de santé, d'accidents et d'audit, les règles avant de commencer", 'Construire ses prompts métier QSE : procédures, veille, analyses'] },
+      { title: 'Après-midi, Cas pratiques sur vos documents', items: ['Produire une synthèse de veille réglementaire ciblée sur votre secteur', 'Mettre à jour une section du document unique à partir de notes terrain', "Analyser un presqu'accident : arbre des causes et compte rendu", "Préparer un audit interne : grille, questions, fiche de non-conformité"] },
+    ],
+    faq: [
+      { q: "Peut-on utiliser l'IA sur des données d'accidents du travail ?", a: "Avec des précautions strictes : les données de santé sont des données sensibles au sens du RGPD. La formation pose les règles : anonymisation avant tout traitement, offre entreprise avec accord de traitement des données, jamais de données nominatives dans un outil grand public. Les cas pratiques travaillent sur des données anonymisées." },
+      { q: 'La formation couvre-t-elle les normes ISO 9001, 14001 et 45001 ?', a: "Oui, les cas pratiques s'appuient sur les processus de ces référentiels : préparation d'audits internes, revues de direction, gestion des non-conformités et des actions correctives. L'IA accélère la préparation documentaire, l'auditeur garde la main sur l'évaluation." },
+      { q: 'Quels outils sont utilisés pendant la journée ?', a: "La formation suit notre méthode multi-outils : ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI sont comparés sur vos cas QSE, puis la journée se concentre sur les outils disponibles dans votre environnement. Vous repartez avec des critères de choix clairs." },
+      { q: 'Combien ça coûte ?', a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+    ],
+    relatedSpokes: ['formation-ia-achats', 'formation-ia-analyse-donnees', 'formation-ia-ecrits-pro'],
   },
 
 ]

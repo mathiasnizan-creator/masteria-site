@@ -142,5 +142,6 @@ export const METIERS = [
   { slug: 'informatique',        label: 'Informatique / DSI',       desc: 'Documentation, code, gouvernance IA, sécurité' },
   { slug: 'pedagogique',         label: 'Équipes Pédagogiques',     desc: 'Conception de formations, évaluation, individualisation' },
   { slug: 'achats',              label: 'Achats',                   desc: 'Sourcing, analyse d\'offres, négociation, suivi fournisseurs' },
+  { slug: 'qse',                 label: 'QSE / HSE',                desc: 'Veille réglementaire, document unique, procédures, audits' },
   { slug: 'transverse',          label: 'Tous publics',             desc: 'Formats courts pour acculturer ou outiller largement' },
 ];
