@@ -716,6 +716,7 @@ export default function OutilsIASurMesurePage() {
               { label: "Prix d'une application IA sur mesure", href: '/prix-projet-ia', tag: 'Budget', desc: "Les fourchettes de prix d'un projet IA sur mesure, du prototype à l'application complète." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA en amont du choix d'un outil." },
               { label: 'Toutes nos solutions IA', href: '/solutions-ia', tag: 'Solutions IA', desc: "Du diagnostic au déploiement : la vue d'ensemble de nos accompagnements IA pour entreprises." },
+              { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Formation', desc: "Créer soi-même un prototype ou un outil interne en décrivant son besoin à l'IA, avec Lovable, Bolt ou Cursor." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div

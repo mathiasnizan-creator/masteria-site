@@ -758,6 +758,7 @@ export default function AgenceDeveloppementIAPage() {
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand et comment déployer des agents IA, avec les garde-fous que cela exige." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
+              { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Formation', desc: "Former vos profils produit et métier à créer une application en décrivant leur besoin à l'IA." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div

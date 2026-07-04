@@ -610,6 +610,8 @@ export default function AgenceIAMarketingPage() {
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage marketing." },
               { label: "Cas d'usage de l'IA en marketing", href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Des exemples concrets côté marketing : contenu, SEO, campagnes et reporting augmentés par l'IA." },
               { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Formation', desc: "Préférez-vous former vos équipes ? Montée en compétence certifiée Qualiopi, finançable OPCO." },
+              { label: 'Formation multi-outils marketing', href: '/formation-multi-outils-marketing', tag: 'Formation', desc: "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas marketing pour choisir le bon outil." },
+              { label: 'Formation ChatGPT marketing', href: '/formation-chatgpt-marketing', tag: 'Formation', desc: "Maîtriser ChatGPT pour la production de contenus, les campagnes et l'analyse marketing." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
