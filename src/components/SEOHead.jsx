@@ -132,7 +132,13 @@ export default function SEOHead({
     // vers la source réelle des avis.
   }
 
-  /* ───── JSON-LD WebSite (global + SearchAction) ───── */
+  /* ───── JSON-LD WebSite (global) ─────
+     SearchAction retiré (2026-07-02) : le sitelinks search box a été déprécié
+     par Google en novembre 2024 (plus aucun rich result). Son urlTemplate
+     `?q={search_term_string}` était exploré littéralement par Googlebot, ce qui
+     générait deux URLs fantômes dans Search Console ("Autre page avec balise
+     canonique correcte", statut bénin mais bruyant). Le retrait supprime la
+     source sans perte de fonctionnalité. */
   const jsonLdWebsite = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -142,14 +148,6 @@ export default function SEOHead({
     description: "Centre de formation IA certifié Qualiopi et cabinet de conseil.",
     inLanguage: 'fr-FR',
     publisher: { '@id': `${SITE_URL}/#organization` },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/formation-intelligence-artificielle?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   }
 
   /* ───── JSON-LD WebPage (page courante) ───── */
