@@ -736,6 +736,56 @@
       "source": "/blog/meilleur-agent-ia",
       "destination": "/meilleur-agent-ia",
       "permanent": true
+    },
+    {
+      "source": "/formation-copilot-word",
+      "destination": "/formation-copilot-word-excel",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-excel",
+      "destination": "/formation-copilot-word-excel",
+      "permanent": true
+    },
+    {
+      "source": "/formation-copilot-teams",
+      "destination": "/formation-microsoft-copilot",
+      "permanent": true
+    },
+    {
+      "source": "/formation-prompt-chatgpt",
+      "destination": "/formation-prompt-engineering",
+      "permanent": true
+    },
+    {
+      "source": "/formation-initiation-ia-et-chatgpt",
+      "destination": "/formation-ia-debutant",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia-et-chatgpt-pour-la-formation",
+      "destination": "/formation-chatgpt-pedagogique",
+      "permanent": true
+    },
+    {
+      "source": "/formation-intelligence-artificielle-montpellier",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/formations-metiers",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
+      "source": "/comparatifs-ia",
+      "destination": "/quelle-est-la-meilleure-ia",
+      "permanent": true
+    },
+    {
+      "source": "/quisommesnous",
+      "destination": "/centre-formation-ia-entreprise",
+      "permanent": true
     }
   ],
   "headers": [
