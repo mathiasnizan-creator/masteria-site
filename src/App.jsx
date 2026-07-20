@@ -69,6 +69,8 @@ const ComparisonPage = lazy(() => import('./pages/ComparisonPage'));
 const ComparisonsHubPage = lazy(() => import('./pages/ComparisonsHubPage'));
 const BlogListPage = lazy(() => import('./pages/BlogListPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const VeillePage = lazy(() => import('./pages/VeillePage'));
+const VeilleEditionPage = lazy(() => import('./pages/VeilleEditionPage'));
 const MentionsLegalesPage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MentionsLegalesPage })));
 const PolitiqueConfidentialitePage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.PolitiqueConfidentialitePage })));
 const CompetencesClaudeEET = lazy(() => import('./pages/CompetencesClaudeEET'));
@@ -1403,6 +1405,8 @@ export default function App() {
         <Route path="/conseil-intelligence-artificielle" element={<ConseilIAPage />} />
         <Route path="/blog" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
+        <Route path="/veille" element={<VeillePage />} />
+        <Route path="/veille/:date" element={<VeilleEditionPage />} />
         <Route path="/contact" element={<ContactScreen />} />
         {/* Hub pages */}
         {/* Hub pages — URLs canoniques */}

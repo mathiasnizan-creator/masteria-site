@@ -188,6 +188,27 @@ for (const s of [...spokeSet].sort()) urls.push({ loc: `${SITE}/${s}`,  lastmod:
 for (const b of blogEntries)  urls.push({ loc: `${SITE}/blog/${b.slug}`, lastmod: b.lastmod,     changefreq: 'monthly', priority: 0.5 });
 const blogSlugs = blogEntries.map(b => b.slug);
 
+// ─── Veille IA ───
+// Les éditions ne sont pas dans le bundle : elles vivent en JSON dans
+// public/veille-data/ pour qu'une publication quotidienne ne change pas le
+// hash des assets et n'invalide pas les pages déjà prérendues. Le sitemap les
+// énumère donc depuis l'index de ce dossier, pas depuis un module importé.
+// Le lastmod vient de la date de l'édition, qui est sa date de publication.
+let veilleEditions = [];
+try {
+  const idx = JSON.parse(fs.readFileSync(path.join(root, 'public/veille-data/index.json'), 'utf8'));
+  veilleEditions = (idx.editions || []).filter(e => /^\d{4}-\d{2}-\d{2}$/.test(e.date || ''));
+} catch {
+  // Pas encore d'édition publiée : la rubrique n'entre pas au sitemap.
+}
+if (veilleEditions.length) {
+  const derniere = veilleEditions[0].date;
+  urls.push({ loc: `${SITE}/veille`, lastmod: derniere, changefreq: 'daily', priority: 0.8 });
+  for (const e of veilleEditions) {
+    urls.push({ loc: `${SITE}/veille/${e.date}`, lastmod: e.date, changefreq: 'yearly', priority: 0.5 });
+  }
+}
+
 // Tri par priority décroissante : Google crawl en priorité les URL en haut du sitemap.
 // Important pour les sites avec budget de crawl limité (domaine jeune).
 urls.sort((a, b) => b.priority - a.priority);
@@ -204,7 +225,7 @@ ${urls.map(u => `  <url>
 `;
 fs.writeFileSync(path.join(root, 'public/sitemap.xml'), xml);
 console.log(`✅ ${urls.length} URLs → public/sitemap.xml`);
-console.log(`   ${staticRoutes.length} statiques, ${hubSlugs.length} hubs, ${metierSlugs.length} métiers, ${geoSlugs.length} géo, ${spokeSet.size} spokes, ${blogSlugs.length} articles`);
+console.log(`   ${staticRoutes.length} statiques, ${hubSlugs.length} hubs, ${metierSlugs.length} métiers, ${geoSlugs.length} géo, ${spokeSet.size} spokes, ${blogSlugs.length} articles, ${veilleEditions.length} éditions de veille`);
 
 // ─────────────────────────────────────────────────────────────────
 // Liste légère des slugs de spokes pour le routage (App.jsx).

@@ -56,3 +56,24 @@ a, button { transition: color .18s ease, background-color .18s ease, border-colo
   .u-lift { transition: none !important; }
   .u-lift:hover { transform: none; }
 }
+
+/* ───── Veille IA : corps d'édition, HTML généré par publish.py ─────
+   Les éditions sont écrites en markdown puis converties. Le style vit ici
+   plutôt qu'en inline, le HTML étant injecté d'un bloc. */
+.veille-corps { color: #334155; font-size: 17px; line-height: 1.72; }
+.veille-corps h2 {
+  font-size: 22px; font-weight: 700; color: #0F172A;
+  margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #E2E8F0;
+}
+.veille-corps h3 { font-size: 18px; font-weight: 700; color: #0F172A; margin: 28px 0 10px; }
+.veille-corps p { margin: 0 0 16px; }
+.veille-corps ul, .veille-corps ol { margin: 0 0 16px; padding-left: 22px; }
+.veille-corps li { margin-bottom: 8px; }
+.veille-corps a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+.veille-corps a:hover { color: #1d4ed8; }
+.veille-corps strong { color: #0F172A; font-weight: 650; }
+.veille-corps > :first-child { margin-top: 0; }
+/* Dans l'encart d'analyse, les titres de section n'ont pas lieu d'être. */
+.veille-corps blockquote {
+  margin: 0 0 16px; padding-left: 16px; border-left: 3px solid #CBD5E1; color: #475569;
+}
