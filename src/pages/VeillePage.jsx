@@ -196,6 +196,7 @@ export default function VeillePage() {
         breadcrumbs={[{ name: 'Accueil', slug: '' }, { name: 'Veille IA', slug: 'veille' }]}
         datePublished={meta ? meta.premiereDate : undefined}
         dateModified={meta ? meta.derniereDate : undefined}
+        ogImage={ok && ed.ogImage ? `${SITE}${ed.ogImage}` : undefined}
         extraJsonLd={jsonLd}
       />
 

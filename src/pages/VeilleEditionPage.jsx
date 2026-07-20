@@ -212,8 +212,8 @@ export default function VeilleEditionPage() {
     headline: edition.titreEditorial,
     alternativeHeadline: edition.titre,
     description: edition.chapeau,
-    datePublished: `${date}T08:30:00+02:00`,
-    dateModified: `${date}T08:30:00+02:00`,
+    datePublished: edition.publieLe || `${date}T08:30:00+02:00`,
+    dateModified: edition.publieLe || `${date}T08:30:00+02:00`,
     inLanguage: 'fr-FR',
     isAccessibleForFree: true,
     wordCount: edition.nbSignes ? Math.round(edition.nbSignes / 6) : undefined,
@@ -225,6 +225,12 @@ export default function VeilleEditionPage() {
     mainEntityOfPage: { '@id': `${SITE}/veille/${date}#webpage` },
     isPartOf: { '@type': 'CollectionPage', '@id': `${SITE}/veille#collection`, name: 'Veille IA Masteria', url: `${SITE}/veille` },
     articleSection: (edition.zones || []).map(z => z.libelle),
+    image: edition.ogImage ? [`${SITE}${edition.ogImage}`] : undefined,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      // La thèse est nullable : ne déclarer que les sélecteurs réellement rendus.
+      cssSelector: ['.veille-chapeau', ...(analyse && analyse.these ? ['.veille-these'] : [])],
+    },
     citation: toutesSources.map(s => ({ '@type': 'WebPage', name: s.nom, url: s.url })),
     hasPart: tousItems.filter(i => i.titre).map(i => ({
       '@type': 'NewsArticle', headline: i.titre, url: `${SITE}/veille/${date}#${i.id}`,
@@ -251,7 +257,8 @@ export default function VeilleEditionPage() {
         datePublished={date}
         dateModified={date}
         noindex={etat === 'introuvable'}
-        articleMeta={ok ? { publishedTime: `${date}T08:30:00+02:00`, author: "L'équipe éditoriale Masteria", section: 'Veille IA' } : undefined}
+        articleMeta={ok ? { publishedTime: edition.publieLe || `${date}T08:30:00+02:00`, author: "L'équipe éditoriale Masteria", section: 'Veille IA' } : undefined}
+        ogImage={ok && edition.ogImage ? `${SITE}${edition.ogImage}` : undefined}
         extraJsonLd={newsArticleJsonLd}
       />
 
@@ -289,11 +296,11 @@ export default function VeilleEditionPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par l'équipe éditoriale Masteria, sous la direction de <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Publiée le <time dateTime={date}>{lisible}</time> à 8h30
+            Par l'équipe éditoriale Masteria, sous la direction de <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Publiée le <time dateTime={date}>{lisible}</time>{ok && edition.publieLeAffiche ? ` à ${edition.publieLeAffiche}` : ''}
           </p>
 
           {ok && (
-            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p className="veille-chapeau" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
               {edition.chapeau}
             </p>
           )}
@@ -527,7 +534,7 @@ export default function VeilleEditionPage() {
             <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>{analyse.titre}</h2>
 
             {analyse.these && (
-              <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+              <p className="veille-these" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
                 <strong style={{ color: '#fff' }}>{analyse.these}</strong>
               </p>
             )}

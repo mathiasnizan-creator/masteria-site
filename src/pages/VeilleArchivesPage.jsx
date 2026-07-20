@@ -61,10 +61,42 @@ export default function VeilleArchivesPage() {
   const isDesktop = useIsDesktop()
   const [data, setData] = useState(null)
   const [etat, setEtat] = useState('chargement')
-  const [q, setQ] = useState('')
-  const [zonesActives, setZonesActives] = useState([])
-  const [mois, setMois] = useState('tous')
+  // Les filtres vivent aussi dans l'URL : une recherche se partage par lien,
+  // et l'action de recherche déclarée au JSON-LD pointe sur ?q=. Le prérendu
+  // charge la page sans paramètre, donc avec la liste complète.
+  const paramsInitiaux = () => {
+    if (typeof window === 'undefined') return { q: '', zones: [], mois: 'tous' }
+    const p = new URLSearchParams(window.location.search)
+    const zonesConnues = (p.get('zones') || '').split(',').filter(z => ZONES_FILTRE.includes(z))
+    const m = p.get('mois') || 'tous'
+    return {
+      q: p.get('q') || '',
+      zones: zonesConnues,
+      mois: /^\d{4}-\d{2}$/.test(m) ? m : 'tous',
+    }
+  }
+  const [q, setQ] = useState(() => paramsInitiaux().q)
+  const [zonesActives, setZonesActives] = useState(() => paramsInitiaux().zones)
+  const [mois, setMois] = useState(() => paramsInitiaux().mois)
   const champRecherche = useRef(null)
+
+  // L'URL suit les filtres sans passer par le routeur : replaceState ne
+  // déclenche ni navigation ni rechargement, et l'historique reste propre.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    // Partir des paramètres existants : un lien de campagne (utm_*) ou un
+    // hash ne doivent pas être balayés par la synchronisation des filtres.
+    const p = new URLSearchParams(window.location.search)
+    if (q.trim()) p.set('q', q.trim()); else p.delete('q')
+    if (zonesActives.length) p.set('zones', zonesActives.join(',')); else p.delete('zones')
+    if (mois !== 'tous') p.set('mois', mois); else p.delete('mois')
+    const suffixe = p.toString()
+    const cible = (suffixe ? `${window.location.pathname}?${suffixe}` : window.location.pathname)
+      + window.location.hash
+    if (cible !== window.location.pathname + window.location.search + window.location.hash) {
+      window.history.replaceState(window.history.state, '', cible)
+    }
+  }, [q, zonesActives, mois])
 
   useEffect(() => {
     let actif = true
@@ -138,6 +170,9 @@ export default function VeilleArchivesPage() {
       author: { '@id': `${SITE}/#organization` },
       editor: { '@id': `${SITE}/#mathias-nizan` },
       publisher: { '@id': `${SITE}/#organization` },
+      // Pas de SearchAction : Googlebot explore l'urlTemplate littéralement
+      // et crée une URL fantôme en Search Console, motif déjà purgé du site
+      // le 2026-07-02 (voir SEOHead). Les URL ?q= restent partageables.
     },
     {
       '@context': 'https://schema.org', '@type': 'ItemList',

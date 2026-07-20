@@ -6,12 +6,12 @@
     <atom:link href="https://www.master-ia.fr/veille.xml" rel="self" type="application/rss+xml" />
     <description>L'actualité de l'intelligence artificielle, commentée et analysée chaque matin ouvré par Masteria.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Mon, 20 Jul 2026 08:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 22:12:03 +0200</lastBuildDate>
     <item>
       <title>Kimi K3 sature, Paris cadre les agents</title>
       <link>https://www.master-ia.fr/veille/2026-07-20</link>
       <guid isPermaLink="true">https://www.master-ia.fr/veille/2026-07-20</guid>
-      <pubDate>Mon, 20 Jul 2026 08:30:00 +0200</pubDate>
+      <pubDate>Mon, 20 Jul 2026 22:12:03 +0200</pubDate>
       <description><![CDATA[<p>Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, la demande ayant saturé sa capacité de calcul. À Paris, la CNIL et l&#x27;Autorité de la concurrence ont publié le même jour deux mises en garde sur les agents autonomes.</p><ul><li>En tête d&#x27;affiche : Kimi K3 secoue les marchés quatre jours après sa sortie</li><li>Europe et France : La CNIL publie une note exploratoire sur l&#x27;IA agentique</li><li>Europe et France : L&#x27;Autorité de la concurrence alerte sur les agents d&#x27;achat</li><li>Europe et France : La Commission européenne précise les obligations de transparence de l&#x27;AI Act</li><li>International : Les modèles de langage discriminent davantage que les recruteurs humains</li><li>International : Teleperformance veut équiper ses 500 000 salariés d&#x27;ici 2027</li><li>International : Une plainte d&#x27;Apple pèse sur les projets matériels d&#x27;OpenAI</li><li>Chine et Asie : Alibaba positionne Qwen3.8 juste derrière Claude Fable 5</li><li>Chine et Asie : Rapidus s&#x27;associe à Cadence sur la conception de puces assistée par agents</li><li>Recherche et publications : SkillCorpus consolide l&#x27;écosystème des compétences pour agents</li><li>Recherche et publications : VarRate compresse le cache KV sans réentraînement</li><li>En bref : France Travail envisage d&#x27;utiliser l&#x27;IA pour profiler des millions de demandeurs d&#x27;emploi.</li><li>En bref : Un piratage mené par IA a conduit Hugging Face à revoir ses…</li><li>En bref : L&#x27;Union européenne veut ouvrir Android et iOS aux assistants d&#x27;IA concurrents, ce…</li></ul>]]></description>
     </item>
   </channel>

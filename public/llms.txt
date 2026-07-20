@@ -175,3 +175,8 @@ Chaque formation est construite autour des cas d'usage réels des participants. 
 ## Sitemap
 
 https://www.master-ia.fr/sitemap.xml
+
+<!-- veille:editions:debut -->
+## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [20 juillet 2026 : Kimi K3 sature, Paris cadre les agents](https://www.master-ia.fr/veille/2026-07-20)
+<!-- veille:editions:fin -->
