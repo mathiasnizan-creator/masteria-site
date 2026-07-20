@@ -13,7 +13,7 @@
  * source, repassez par un build complet.
  *
  * Usage :
- *   node scripts/prerender-routes.mjs /veille /veille/2026-07-20
+ *   node scripts/prerender-routes.mjs /veille-ia /veille-ia/2026-07-20
  *   node scripts/prerender-routes.mjs --veille          (toutes les routes veille du sitemap)
  *   PRERENDER_PORT=4500 node scripts/prerender-routes.mjs /veille
  */
@@ -53,12 +53,12 @@ if (args.includes('--veille')) {
   const sitemap = fs.readFileSync(sitemapPath, 'utf8');
   const veille = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map(m => m[1].replace(SITE, ''))
-    .filter(r => r === '/veille' || r.startsWith('/veille/'));
+    .filter(r => r === '/veille-ia' || r.startsWith('/veille-ia/'));
   routes = [...new Set([...routes, ...veille])];
 }
 
 if (!routes.length) {
-  console.error('Aucune route. Usage : node scripts/prerender-routes.mjs /veille [/veille/2026-07-20] | --veille');
+  console.error('Aucune route. Usage : node scripts/prerender-routes.mjs /veille-ia [/veille-ia/2026-07-20] | --veille');
   process.exit(1);
 }
 
@@ -160,7 +160,7 @@ async function renderOne(route) {
     // pied et les blocs JSON-LD franchissent à eux seuls le seuil de 20 Ko,
     // et le contrôle ne verrait rien. On attend donc le verrou posé par le
     // composant, puis on refuse tout état autre que « ok ».
-    const estVeille = route === '/veille' || route.startsWith('/veille/');
+    const estVeille = route === '/veille-ia' || route.startsWith('/veille-ia/');
     if (estVeille) {
       await page.waitForSelector('[data-veille-pret="1"]', { timeout: 8000 });
     }

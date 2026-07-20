@@ -164,7 +164,7 @@ export default function VeilleEditionPage() {
   // Rejoue le défilement vers l'ancre une fois les données arrivées. Au moment
   // du changement de route, la cible n'existe pas encore dans le DOM (elle
   // vient du fetch), donc le navigateur ne défile pas. Couvre les liens
-  // profonds du fil de /veille et de la recherche des archives, ainsi que le
+  // profonds du fil de /veille-ia et de la recherche des archives, ainsi que le
   // chargement direct d'une URL à ancre. scrollIntoView respecte les
   // scrollMarginTop posés sur les cibles.
   useEffect(() => {
@@ -208,7 +208,7 @@ export default function VeilleEditionPage() {
   const newsArticleJsonLd = ok ? {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${SITE}/veille/${date}#article`,
+    '@id': `${SITE}/veille-ia/${date}#article`,
     headline: edition.titreEditorial,
     alternativeHeadline: edition.titre,
     description: edition.chapeau,
@@ -222,8 +222,8 @@ export default function VeilleEditionPage() {
     author: { '@id': `${SITE}/#organization` },
     editor: { '@id': `${SITE}/#mathias-nizan` },
     publisher: { '@id': `${SITE}/#organization` },
-    mainEntityOfPage: { '@id': `${SITE}/veille/${date}#webpage` },
-    isPartOf: { '@type': 'CollectionPage', '@id': `${SITE}/veille#collection`, name: 'Veille IA Masteria', url: `${SITE}/veille` },
+    mainEntityOfPage: { '@id': `${SITE}/veille-ia/${date}#webpage` },
+    isPartOf: { '@type': 'CollectionPage', '@id': `${SITE}/veille-ia#collection`, name: 'Veille IA Masteria', url: `${SITE}/veille-ia` },
     articleSection: (edition.zones || []).map(z => z.libelle),
     image: edition.ogImage ? [`${SITE}${edition.ogImage}`] : undefined,
     speakable: {
@@ -233,7 +233,7 @@ export default function VeilleEditionPage() {
     },
     citation: toutesSources.map(s => ({ '@type': 'WebPage', name: s.nom, url: s.url })),
     hasPart: tousItems.filter(i => i.titre).map(i => ({
-      '@type': 'NewsArticle', headline: i.titre, url: `${SITE}/veille/${date}#${i.id}`,
+      '@type': 'NewsArticle', headline: i.titre, url: `${SITE}/veille-ia/${date}#${i.id}`,
     })),
   } : undefined
 
@@ -248,11 +248,11 @@ export default function VeilleEditionPage() {
           : `Veille IA du ${lisible} | Masteria`}
         description={ok ? edition.chapeau.slice(0, 158)
           : `L'actualité de l'intelligence artificielle du ${lisible}, commentée et analysée par Masteria.`}
-        slug={`veille/${date}`}
+        slug={`veille-ia/${date}`}
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
-          { name: 'Veille IA', slug: 'veille' },
-          { name: lisible || 'Édition', slug: `veille/${date}` },
+          { name: 'Veille IA', slug: 'veille-ia' },
+          { name: lisible || 'Édition', slug: `veille-ia/${date}` },
         ]}
         datePublished={date}
         dateModified={date}
@@ -272,7 +272,7 @@ export default function VeilleEditionPage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <Link to="/veille" style={{ color: '#94A3B8' }}>Veille IA</Link>
+            <Link to="/veille-ia" style={{ color: '#94A3B8' }}>Veille IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>{lisible}</span>
           </nav>
@@ -320,11 +320,11 @@ export default function VeilleEditionPage() {
                 <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
               </a>
               {edition.precedente ? (
-                <Link to={`/veille/${edition.precedente.date}`} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+                <Link to={`/veille-ia/${edition.precedente.date}`} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
                   Édition du {edition.precedente.dateLongue.replace(/^\w+\s/, '').replace(/\s\d{4}$/, '')}
                 </Link>
               ) : (
-                <Link to="/veille" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+                <Link to="/veille-ia" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
                   Toutes les éditions
                 </Link>
               )}
@@ -382,7 +382,7 @@ export default function VeilleEditionPage() {
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
                 Elle a peut-être été retirée, ou l'adresse comporte une erreur.
               </p>
-              <Link to="/veille" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700 }}>
+              <Link to="/veille-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700 }}>
                 Voir les éditions publiées
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -620,7 +620,7 @@ export default function VeilleEditionPage() {
                 edition.precedente && { v: edition.precedente, tag: 'Édition précédente', Icon: ArrowLeft },
                 edition.suivante && { v: edition.suivante, tag: 'Édition suivante', Icon: ArrowRight },
               ].filter(Boolean).map(({ v, tag, Icon }) => (
-                <Link key={v.date} to={`/veille/${v.date}`} className="u-lift"
+                <Link key={v.date} to={`/veille-ia/${v.date}`} className="u-lift"
                   style={{ ...cardStyle, padding: 26, textDecoration: 'none', display: 'block', height: '100%', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = c }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E7EB' }}>
@@ -635,7 +635,7 @@ export default function VeilleEditionPage() {
             </div>
             )}
             <div style={{ textAlign: 'center', marginTop: 28 }}>
-              <Link to="/veille" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
+              <Link to="/veille-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
                 Toutes les éditions de la veille
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>

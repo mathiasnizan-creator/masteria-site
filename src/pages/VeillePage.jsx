@@ -158,8 +158,8 @@ export default function VeillePage() {
   const jsonLd = [
     {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
-      '@id': `${SITE}/veille#collection`,
-      name: 'Veille IA Masteria', url: `${SITE}/veille`,
+      '@id': `${SITE}/veille-ia#collection`,
+      name: 'Veille IA Masteria', url: `${SITE}/veille-ia`,
       inLanguage: 'fr-FR', isAccessibleForFree: true,
       author: { '@id': `${SITE}/#organization` },
       editor: { '@id': `${SITE}/#mathias-nizan` },
@@ -167,12 +167,12 @@ export default function VeillePage() {
     },
     ...(recentes.length ? [{
       '@context': 'https://schema.org', '@type': 'ItemList',
-      '@id': `${SITE}/veille#editions`,
+      '@id': `${SITE}/veille-ia#editions`,
       itemListOrder: 'https://schema.org/ItemListOrderDescending',
       numberOfItems: recentes.length,
       itemListElement: recentes.slice(0, 20).map((e, i) => ({
         '@type': 'ListItem', position: i + 1,
-        name: e.titreEditorial, url: `${SITE}/veille/${e.date}`,
+        name: e.titreEditorial, url: `${SITE}/veille-ia/${e.date}`,
       })),
     }] : []),
   ]
@@ -191,9 +191,9 @@ export default function VeillePage() {
         title="Veille IA : l'actualité de l'intelligence artificielle analysée | Masteria"
         description={ok ? ed.chapeau.slice(0, 158)
           : "Chaque matin ouvré, dix à quatorze actualités IA vérifiées et sourcées, puis une analyse signée Masteria. Europe, international, Chine et Asie."}
-        slug="veille"
+        slug="veille-ia"
         keywords="veille ia, actualité intelligence artificielle, actualité ia, ai act, veille technologique ia, analyse ia"
-        breadcrumbs={[{ name: 'Accueil', slug: '' }, { name: 'Veille IA', slug: 'veille' }]}
+        breadcrumbs={[{ name: 'Accueil', slug: '' }, { name: 'Veille IA', slug: 'veille-ia' }]}
         datePublished={meta ? meta.premiereDate : undefined}
         dateModified={meta ? meta.derniereDate : undefined}
         ogImage={ok && ed.ogImage ? `${SITE}${ed.ogImage}` : undefined}
@@ -251,18 +251,18 @@ export default function VeillePage() {
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             {ok ? (
-              <Link to={`/veille/${ed.date}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              <Link to={`/veille-ia/${ed.date}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
                 Lire l'édition du {ed.dateAffichee.replace(/\s\d{4}$/, '')}
                 <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             ) : (
-              <a href="#archives" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              <a href="#publications" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
                 Voir les éditions
                 <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
               </a>
             )}
             {ok && recentes.length > 1 && (
-              <a href="#archives" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+              <a href="#publications" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
                 Les éditions précédentes
               </a>
             )}
@@ -370,7 +370,7 @@ export default function VeillePage() {
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
                 Chaque actualité porte sa source. Le texte complet et l'analyse sont dans l'édition du jour.
               </p>
-              <Link to={`/veille/${ed.date}`} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
+              <Link to={`/veille-ia/${ed.date}`} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
                 Ouvrir l'édition complète
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -398,7 +398,7 @@ export default function VeillePage() {
                           gap: 14, alignItems: 'baseline',
                           padding: '12px 0', borderTop: j === 0 ? 'none' : '1px solid #E5E7EB',
                         }}>
-                          <Link to={`/veille/${ed.date}#${it.id}`} className="veille-lien-fil"
+                          <Link to={`/veille-ia/${ed.date}#${it.id}`} className="veille-lien-fil"
                             style={{ fontSize: 15.5, fontWeight: 600, color: '#0A0A0A', lineHeight: 1.5, textDecoration: 'none' }}>
                             {it.titre || premiersMots(it.texteHtml, 12)}
                           </Link>
@@ -451,7 +451,7 @@ export default function VeillePage() {
               </div>
             </div>
 
-            <Link to={`/veille/${ed.date}#analyse`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700, marginTop: 26 }}>
+            <Link to={`/veille-ia/${ed.date}#analyse`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700, marginTop: 26 }}>
               Lire l'analyse complète
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -461,9 +461,9 @@ export default function VeillePage() {
 
       {/* ── 5. LES ÉDITIONS PRÉCÉDENTES (famille F-ARCHIVE) ── */}
       {ok && recentes.length > 1 && (
-        <section id="archives" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 140 }}>
+        <section id="publications" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 140 }}>
           <div style={wrap}>
-            <Kicker>Archives</Kicker>
+            <Kicker>Toutes les publications</Kicker>
             <h2 style={h2Style}>Les éditions précédentes</h2>
             <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, maxWidth: 720, marginBottom: 32 }}>
               Chaque édition reste en ligne avec ses sources et son analyse. Elles sont classées par leur titre du jour.
@@ -477,7 +477,7 @@ export default function VeillePage() {
                     <span style={{ fontSize: 12.5, color: '#6B7280' }}>{g.items.length} édition{g.items.length > 1 ? 's' : ''}</span>
                   </div>
                   {g.items.map(e => (
-                    <Link key={e.date} to={`/veille/${e.date}`} style={{ textDecoration: 'none', display: 'block' }}>
+                    <Link key={e.date} to={`/veille-ia/${e.date}`} style={{ textDecoration: 'none', display: 'block' }}>
                       <div className="veille-ligne-archive" style={{
                         display: 'grid',
                         gridTemplateColumns: isDesktop ? '150px 1fr auto' : '1fr',
@@ -497,8 +497,8 @@ export default function VeillePage() {
 
             <p style={{ fontSize: 14, color: '#6B7280', marginTop: 20 }}>
               {meta.totalEditions} éditions publiées, {meta.totalItems} actualités traitées depuis le {meta.premiereDateAffichee}.{' '}
-              <Link to="/veille/archives" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-                Rechercher dans toutes les archives
+              <Link to="/veille-ia/publications" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+                Voir toutes les publications de veille
                 <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </p>
@@ -536,6 +536,8 @@ export default function VeillePage() {
               Flux RSS
               <Rss size={14} strokeWidth={2.2} aria-hidden="true" />
             </a>
+            {' '}Notre méthode et nos sources sont détaillées dans{' '}
+            <Link to="/veille-ia/a-propos" style={aStyle}>la politique éditoriale</Link>.
           </p>
         </div>
       </section>

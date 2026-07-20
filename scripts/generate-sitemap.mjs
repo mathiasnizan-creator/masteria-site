@@ -203,11 +203,13 @@ try {
 }
 if (veilleEditions.length) {
   const derniere = veilleEditions[0].date;
-  urls.push({ loc: `${SITE}/veille`, lastmod: derniere, changefreq: 'daily', priority: 0.8 });
-  // La page d'archives change à chaque publication : sa liste s'allonge.
-  urls.push({ loc: `${SITE}/veille/archives`, lastmod: derniere, changefreq: 'daily', priority: 0.6 });
+  urls.push({ loc: `${SITE}/veille-ia`, lastmod: derniere, changefreq: 'daily', priority: 0.8 });
+  // Page À propos / politique éditoriale, statique.
+  urls.push({ loc: `${SITE}/veille-ia/a-propos`, lastmod: gitLastMod(['src/pages/VeilleAProposPage.jsx']), changefreq: 'monthly', priority: 0.5 });
+  // La page des publications change à chaque édition : sa liste s'allonge.
+  urls.push({ loc: `${SITE}/veille-ia/publications`, lastmod: derniere, changefreq: 'daily', priority: 0.6 });
   for (const e of veilleEditions) {
-    urls.push({ loc: `${SITE}/veille/${e.date}`, lastmod: e.date, changefreq: 'yearly', priority: 0.5 });
+    urls.push({ loc: `${SITE}/veille-ia/${e.date}`, lastmod: e.date, changefreq: 'yearly', priority: 0.5 });
   }
 }
 

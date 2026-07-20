@@ -74,7 +74,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   </div>
   <div class="bas">
     <div class="compteurs">${esc(compteurs || '')}</div>
-    <div class="site">master-ia.fr/veille</div>
+    <div class="site">master-ia.fr/veille-ia</div>
   </div>
 </body></html>`;
 

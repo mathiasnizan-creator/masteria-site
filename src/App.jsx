@@ -70,7 +70,8 @@ const ComparisonsHubPage = lazy(() => import('./pages/ComparisonsHubPage'));
 const BlogListPage = lazy(() => import('./pages/BlogListPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
 const VeillePage = lazy(() => import('./pages/VeillePage'));
-const VeilleArchivesPage = lazy(() => import('./pages/VeilleArchivesPage'));
+const VeillePublicationsPage = lazy(() => import('./pages/VeillePublicationsPage'));
+const VeilleAProposPage = lazy(() => import('./pages/VeilleAProposPage'));
 const VeilleEditionPage = lazy(() => import('./pages/VeilleEditionPage'));
 const MentionsLegalesPage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MentionsLegalesPage })));
 const PolitiqueConfidentialitePage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.PolitiqueConfidentialitePage })));
@@ -1406,10 +1407,11 @@ export default function App() {
         <Route path="/conseil-intelligence-artificielle" element={<ConseilIAPage />} />
         <Route path="/blog" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
-        <Route path="/veille" element={<VeillePage />} />
-        {/* Le segment statique doit primer sur le paramètre :date. */}
-        <Route path="/veille/archives" element={<VeilleArchivesPage />} />
-        <Route path="/veille/:date" element={<VeilleEditionPage />} />
+        <Route path="/veille-ia" element={<VeillePage />} />
+        {/* Les segments statiques doivent primer sur le paramètre :date. */}
+        <Route path="/veille-ia/publications" element={<VeillePublicationsPage />} />
+        <Route path="/veille-ia/a-propos" element={<VeilleAProposPage />} />
+        <Route path="/veille-ia/:date" element={<VeilleEditionPage />} />
         <Route path="/contact" element={<ContactScreen />} />
         {/* Hub pages */}
         {/* Hub pages — URLs canoniques */}

@@ -87,7 +87,7 @@ a, button { transition: color .18s ease, background-color .18s ease, border-colo
 .veille-source:hover,
 .veille-source:focus-visible { border-color: #2563EB; color: #2563EB; }
 
-/* Titre d'actualité dans le fil de /veille */
+/* Titre d'actualité dans le fil de /veille-ia */
 .veille-lien-fil:hover,
 .veille-lien-fil:focus-visible { color: #2563EB; }
 

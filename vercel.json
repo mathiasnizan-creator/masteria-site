@@ -3,6 +3,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/veille/archives",
+      "destination": "/veille-ia/publications",
+      "permanent": true
+    },
+    {
+      "source": "/veille/(.*)",
+      "destination": "/veille-ia/$1",
+      "permanent": true
+    },
+    {
+      "source": "/veille",
+      "destination": "/veille-ia",
+      "permanent": true
+    },
+    {
       "source": "/formation-ia-piloter-projet",
       "destination": "/formation-ia-gestion-de-projet",
       "permanent": true

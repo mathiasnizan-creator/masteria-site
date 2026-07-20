@@ -223,7 +223,7 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/veille</loc>
+    <loc>https://www.master-ia.fr/veille-ia</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
@@ -673,7 +673,7 @@
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/veille/archives</loc>
+    <loc>https://www.master-ia.fr/veille-ia/publications</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
@@ -1363,7 +1363,13 @@
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/veille/2026-07-20</loc>
+    <loc>https://www.master-ia.fr/veille-ia/a-propos</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-07-20</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>

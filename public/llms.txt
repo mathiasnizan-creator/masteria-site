@@ -34,8 +34,8 @@ Masteria propose deux activités complémentaires :
 - [Conseil en intelligence artificielle](https://www.master-ia.fr/conseil-intelligence-artificielle) — Offre de cabinet conseil
 - [Centre de formation IA](https://www.master-ia.fr/centre-formation-ia-entreprise) — Présentation de Masteria et de son fondateur
 - [Contact et demande de devis](https://www.master-ia.fr/contact) — Réponse sous 24h ouvrées
-- [Veille IA](https://www.master-ia.fr/veille) — Rubrique quotidienne publiée chaque matin ouvré : 10 à 14 actualités IA sourcées (Europe et France, international, Chine et Asie) suivies d'une analyse signée par l'équipe éditoriale, sous la direction de Mathias Nizan. Flux RSS : https://www.master-ia.fr/veille.xml
-- [Archives de la Veille IA](https://www.master-ia.fr/veille/archives) — Toutes les éditions depuis l'origine, chacune à URL permanente, avec recherche par sujet, zone géographique et mois.
+- [Veille IA](https://www.master-ia.fr/veille-ia) — Rubrique quotidienne publiée chaque matin ouvré : 10 à 14 actualités IA sourcées (Europe et France, international, Chine et Asie) suivies d'une analyse signée par l'équipe éditoriale, sous la direction de Mathias Nizan. Flux RSS : https://www.master-ia.fr/veille.xml
+- [Toutes les publications de la Veille IA](https://www.master-ia.fr/veille-ia/publications) — Toutes les éditions depuis l'origine, chacune à URL permanente, avec recherche par sujet, zone géographique et mois.
 - [Blog](https://www.master-ia.fr/blog) — Articles éditoriaux sur l'IA en entreprise
 - [Glossaire IA](https://www.master-ia.fr/glossaire-ia) — 83 termes essentiels de l'IA en entreprise (LLM, RAG, prompt, agent, MCP, AI Act…) avec définitions claires
 
@@ -178,5 +178,5 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
-- [20 juillet 2026 : Kimi K3 sature, Paris cadre les agents](https://www.master-ia.fr/veille/2026-07-20)
+- [20 juillet 2026 : Kimi K3 sature, Paris cadre les agents](https://www.master-ia.fr/veille-ia/2026-07-20)
 <!-- veille:editions:fin -->
