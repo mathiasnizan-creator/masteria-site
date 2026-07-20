@@ -243,7 +243,7 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous à distance ou hors de Lyon ?",
-    a: "Les deux. Masteria est basée à Lyon, au 17 Rue Richan, et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le développement et le suivi se font très bien à distance, en visio et par points réguliers ; les phases de cadrage ou de transfert peuvent se tenir sur site selon vos préférences.",
+    a: "Les deux. Masteria est basée à Lyon, au 17 rue d'Algérie, et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le développement et le suivi se font très bien à distance, en visio et par points réguliers ; les phases de cadrage ou de transfert peuvent se tenir sur site selon vos préférences.",
   },
 ]
 

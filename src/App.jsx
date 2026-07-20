@@ -793,7 +793,7 @@ function ContactScreen() {
               </h2>
               {[
                 { Icon: Phone,    label: 'Téléphone', value: '06 67 75 41 28', href: 'tel:+33667754128' },
-                { Icon: MapPin,   label: 'Adresse',   value: '17 Rue Richan, 69004 Lyon' },
+                { Icon: MapPin,   label: 'Adresse',   value: "17 rue d'Algérie, 69001 Lyon" },
                 { Icon: Clock,    label: 'Délai de réponse', value: 'Sous 24 h ouvrées' },
                 { Icon: Calendar, label: 'Modalités', value: 'Présentiel ou distanciel · France, Suisse, Belgique' },
               ].map((c, i, arr) => {

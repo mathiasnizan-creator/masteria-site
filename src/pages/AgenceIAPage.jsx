@@ -136,7 +136,7 @@ const FAQ = [
   },
   {
     q: 'Où intervenez-vous ?',
-    a: "Oui. Le siège de Masteria est à Lyon (Croix-Rousse) et nos consultants interviennent en présentiel dans toute la France, ainsi qu'en Suisse et en Belgique. Les frais de déplacement éventuels figurent en clair dans la proposition commerciale. Toutes nos missions de conseil, d'automatisation et de formation existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
+    a: "Oui. Les bureaux de Masteria sont à Lyon (presqu'île) et nos consultants interviennent en présentiel dans toute la France, ainsi qu'en Suisse et en Belgique. Les frais de déplacement éventuels figurent en clair dans la proposition commerciale. Toutes nos missions de conseil, d'automatisation et de formation existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
   },
   {
     q: 'Quelle différence entre une agence IA et un cabinet de conseil IA ?',
@@ -185,8 +185,8 @@ const LOCAL_BUSINESS_JSONLD = {
   foundingDate: '2022',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '17 Rue Richan',
-    postalCode: '69004',
+    streetAddress: "17 rue d'Algérie",
+    postalCode: '69001',
     addressLocality: 'Lyon',
     addressRegion: 'Auvergne-Rhône-Alpes',
     addressCountry: 'FR',
@@ -458,7 +458,7 @@ export default function AgenceIAPage() {
               <div style={kickerStyle}>Ancrage terrain</div>
               <h2 style={h2Style}>Une agence IA française, présente sur le terrain</h2>
               <p style={{ ...answerStyle, maxWidth: 'none' }}>
-                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA au siège réel et vérifiable, au 17 Rue Richan à Lyon (Croix-Rousse), avec des interventions en présentiel dans toute la France, en Suisse et en Belgique.</strong>{' '}
+                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA aux bureaux bien réels, au 17 rue d'Algérie à Lyon (presqu'île), avec des interventions en présentiel dans toute la France, en Suisse et en Belgique.</strong>{' '}
                 La présence sur le terrain accélère ce qui se joue dans vos locaux : ateliers de cadrage, observation des processus, conduite du changement.
               </p>
               <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
@@ -473,9 +473,9 @@ export default function AgenceIAPage() {
                 <MapPin size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
               </div>
               <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Masteria · 17 Rue Richan, 69004 Lyon</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Masteria · 17 rue d'Algérie, 69001 Lyon</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
-                  Siège sur le plateau de la Croix-Rousse (Lyon 4e). Organisme de formation enregistré sous le NDA 84 69 23218 69 auprès de la préfecture Auvergne-Rhône-Alpes.
+                  Bureaux en presqu'île (Lyon 1er). Organisme de formation enregistré sous le NDA 84 69 23218 69 auprès de la préfecture Auvergne-Rhône-Alpes.
                 </p>
               </div>
             </div>

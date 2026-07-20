@@ -27,18 +27,18 @@ export const AGENCE_GEO_CITIES = [
     locale: 'fr-FR',
     coordinates: { latitude: 45.7640, longitude: 4.8357 },
     metaDesc:
-      "Agence IA à Lyon : conseil et gouvernance, agents IA et outils sur mesure, automatisation, formation des équipes. Siège à la Croix-Rousse. Cadrage gratuit.",
+      "Agence IA à Lyon : conseil et gouvernance, agents IA et outils sur mesure, automatisation, formation des équipes. Bureaux en presqu'île (Lyon 1er). Cadrage gratuit.",
     heroSubtitle:
-      "Lyon est notre ville : Masteria y a son siège, sur le plateau de la Croix-Rousse. Nous cadrons votre stratégie et votre gouvernance IA, nous créons les agents, outils et automatisations qui s'intègrent à votre système d'information, et la formation rend vos équipes autonomes. Le tout en circuit court : vos locaux sont à quelques minutes des nôtres.",
+      "Lyon est notre ville : Masteria y a ses bureaux, en presqu'île (Lyon 1er). Nous cadrons votre stratégie et votre gouvernance IA, nous créons les agents, outils et automatisations qui s'intègrent à votre système d'information, et la formation rend vos équipes autonomes. Le tout en circuit court : vos locaux sont à quelques minutes des nôtres.",
     localEconomy:
       "Deuxième pôle économique français, la métropole de Lyon concentre des filières où les volumes documentaires et les processus normés dominent : la santé et les biotechs autour de Lyonbiopôle (Sanofi Pasteur, BioMérieux, Boiron), l'industrie et l'énergie (Renault Trucks, SEB, Framatome), la banque et l'assurance (Crédit Agricole Centre-Est, Apicil, April) et un tissu numérique dense, des ETI logicielles aux scale-ups. L'écosystème IA s'appuie sur l'ENS Lyon et les équipes Inria de la région.",
     whyHere:
       "Les secteurs lyonnais réglementés (pharma, banque, assurance) cumulent documentation réglementaire, dossiers qualité et exigences de conformité : un terrain naturel pour les agents IA supervisés et la gouvernance AI Act. L'industrie et les services y ajoutent les devis, appels d'offres et fonctions support à automatiser. Une agence IA locale cadre ces cas d'usage sur le terrain, construit les outils et forme les équipes qui les font vivre.",
     presence:
-      "C'est la seule ville où la question ne se pose pas : le siège de Masteria est au 17 Rue Richan, à la Croix-Rousse (Lyon 4e), organisme enregistré sous le NDA 84 69 23218 69. Ateliers de cadrage, observation des processus, points d'avancement et passations se font en présentiel dans vos locaux, partout dans la métropole : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne. La région suit sans logistique lourde : Saint-Étienne, Grenoble, Annecy, Clermont-Ferrand, Valence.",
+      "C'est la seule ville où la question ne se pose pas : les bureaux de Masteria sont au 17 rue d'Algérie, en presqu'île (Lyon 1er), organisme enregistré sous le NDA 84 69 23218 69. Ateliers de cadrage, observation des processus, points d'avancement et passations se font en présentiel dans vos locaux, partout dans la métropole : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne. La région suit sans logistique lourde : Saint-Étienne, Grenoble, Annecy, Clermont-Ferrand, Valence.",
     keyFacts: [
       { label: 'Offre', value: "Conseil et stratégie IA, gouvernance et conformité (AI Act, RGPD), création d'agents IA et d'outils sur mesure, automatisation, formation des équipes" },
-      { label: 'Présence à Lyon', value: 'Siège au 17 Rue Richan, Croix-Rousse (Lyon 4e) : présentiel naturel dans toute la métropole, sans frais de déplacement' },
+      { label: 'Présence à Lyon', value: "Bureaux au 17 rue d'Algérie, presqu'île (Lyon 1er) : présentiel naturel dans toute la métropole, sans frais de déplacement" },
       { label: 'Secteurs accompagnés', value: 'Pharma et biotech, banque et assurance, industrie, numérique et services B2B' },
       { label: 'Premier échange', value: 'Cadrage gratuit, réponse sous 24 h, proposition forfaitaire écrite' },
     ],
@@ -59,7 +59,7 @@ export const AGENCE_GEO_CITIES = [
     localFaq: [
       {
         q: 'Où est basée votre agence IA à Lyon ?',
-        a: "Au 17 Rue Richan, sur le plateau de la Croix-Rousse (Lyon 4e). C'est le siège réel de Masteria, vérifiable au registre : les ateliers de cadrage et les points d'avancement se tiennent dans vos locaux ou chez nous, selon votre préférence. Cette proximité change le rythme d'une mission : une décision se prend en quelques jours, une observation de processus se planifie sans logistique.",
+        a: "Au 17 rue d'Algérie, en presqu'île (Lyon 1er). Les ateliers de cadrage et les points d'avancement se tiennent dans vos locaux ou dans nos bureaux, selon votre préférence. Cette proximité change le rythme d'une mission : une décision se prend en quelques jours, une observation de processus se planifie sans logistique.",
       },
       {
         q: 'Intervenez-vous dans toute la métropole de Lyon ?',
@@ -91,7 +91,7 @@ export const AGENCE_GEO_CITIES = [
     whyHere:
       "Les PME industrielles et les ETI familiales de Haute-Savoie traitent quotidiennement de gros volumes documentaires : cahiers des charges, documentation technique, qualité, achats, devis. Ces processus se prêtent particulièrement à l'automatisation et aux agents IA branchés sur l'ERP. Dans la banque privée et le tourisme, la relation client et la production éditoriale multilingue ouvrent d'autres gisements. Une agence IA aide à choisir où investir, dans quel ordre, puis à construire les outils plutôt qu'à se contenter d'une recommandation.",
     presence:
-      "L'équipe Masteria est basée à Lyon (Croix-Rousse). Annecy est à environ 1 h 30 de route, ce qui permet des ateliers de cadrage et des points d'avancement en présentiel sans logistique lourde. Nous intervenons sur site à Annecy et dans le bassin annécien pour les phases clés (cadrage, observation des processus, passation), et en distanciel pour le développement, les itérations et le suivi. Aucune agence physique à Annecy : nous travaillons depuis Lyon avec une présence terrain ponctuelle assumée.",
+      "L'équipe Masteria est basée à Lyon (presqu'île). Annecy est à environ 1 h 30 de route, ce qui permet des ateliers de cadrage et des points d'avancement en présentiel sans logistique lourde. Nous intervenons sur site à Annecy et dans le bassin annécien pour les phases clés (cadrage, observation des processus, passation), et en distanciel pour le développement, les itérations et le suivi. Aucune agence physique à Annecy : nous travaillons depuis Lyon avec une présence terrain ponctuelle assumée.",
     keyFacts: [
       { label: 'Offre', value: "Conseil IA, développement d'agents et d'outils, automatisation des processus sur mesure" },
       { label: 'Présence à Annecy', value: 'Équipe basée à Lyon (≈ 1 h 30) : présentiel ponctuel pour le cadrage, distanciel pour le développement' },
@@ -147,7 +147,7 @@ export const AGENCE_GEO_CITIES = [
     whyHere:
       "Dans les sièges sociaux et les services financiers, les fonctions support croulent sous les processus répétitifs à fort enjeu de fiabilité : reporting, conformité, traitement de dossiers, relation client. Dans le conseil, les médias et le retail, la production de contenus et l'analyse documentaire sont des gisements directs. Les scale-ups, elles, cherchent à accélérer support, documentation produit et onboarding sans grossir les effectifs au même rythme. Une agence IA aide à prioriser ces chantiers par impact, puis à développer les agents et automatisations correspondants.",
     presence:
-      "L'équipe Masteria est basée à Lyon (Croix-Rousse), à 2 heures de Paris en TGV. Nous intervenons en présentiel ponctuel à Paris et en proche couronne pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi continu. Nous n'avons pas d'agence physique à Paris : la présence terrain est ponctuelle et planifiée, le reste de la mission se conduit à distance avec les mêmes livrables.",
+      "L'équipe Masteria est basée à Lyon (presqu'île), à 2 heures de Paris en TGV. Nous intervenons en présentiel ponctuel à Paris et en proche couronne pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi continu. Nous n'avons pas d'agence physique à Paris : la présence terrain est ponctuelle et planifiée, le reste de la mission se conduit à distance avec les mêmes livrables.",
     keyFacts: [
       { label: 'Offre', value: "Conseil et stratégie IA, agents et outils sur mesure, automatisation des processus" },
       { label: 'Présence à Paris', value: 'Équipe basée à Lyon (2 h en TGV) : présentiel ponctuel pour cadrage et comités, distanciel pour le développement' },
@@ -259,7 +259,7 @@ export const AGENCE_GEO_CITIES = [
     whyHere:
       "Dans le maritime et la logistique, le suivi des flux, la communication client multilingue et la conformité douanière reposent sur des processus répétitifs et documentaires, idéaux pour l'automatisation et les agents IA. Le tourisme et l'hôtellerie ont besoin de production éditoriale multilingue et de support client à grande échelle. La santé et la biotech manipulent des volumes documentaires réglementaires importants. Une agence IA aide à repérer ces gisements, à les prioriser par impact, puis à développer les outils correspondants.",
     presence:
-      "L'équipe Masteria est basée à Lyon (Croix-Rousse), à un peu plus de 3 heures de Marseille en TGV direct. Nous intervenons en présentiel ponctuel à Marseille et dans la métropole pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi. Nous n'avons pas d'agence physique à Marseille : la présence terrain est ponctuelle et planifiée, le reste de la mission se conduit à distance avec les mêmes livrables.",
+      "L'équipe Masteria est basée à Lyon (presqu'île), à un peu plus de 3 heures de Marseille en TGV direct. Nous intervenons en présentiel ponctuel à Marseille et dans la métropole pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi. Nous n'avons pas d'agence physique à Marseille : la présence terrain est ponctuelle et planifiée, le reste de la mission se conduit à distance avec les mêmes livrables.",
     keyFacts: [
       { label: 'Offre', value: "Conseil IA, développement d'agents et d'outils, automatisation des processus sur mesure" },
       { label: 'Présence à Marseille', value: 'Équipe basée à Lyon (≈ 3 h en TGV direct) : présentiel ponctuel pour cadrage et passation, distanciel pour le développement' },
