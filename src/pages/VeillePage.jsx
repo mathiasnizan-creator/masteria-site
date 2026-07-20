@@ -52,13 +52,6 @@ const ordonner = sections => [...sections].sort(
 
 function Kicker({ children }) { return <div style={kickerStyle}>{children}</div> }
 
-const ETAPES = [
-  { num: '01', title: 'Collecte', desc: "Les flux sont interrogés à 5h30 sur une fenêtre de vingt-quatre heures. Les doublons sont fusionnés et la source la plus fiable est conservée." },
-  { num: '02', title: 'Sélection', desc: "Dix à quatorze actualités sont retenues, réparties entre l'Europe et la France, l'international, la Chine et l'Asie. La priorité va à ce qui n'a pas encore été traité en français." },
-  { num: '03', title: 'Rédaction', desc: "Chaque actualité est résumée en quelques phrases et reliée à sa source. L'analyse du jour est écrite après la sélection, jamais avant." },
-  { num: '04', title: 'Relecture', desc: "Une relecture humaine et un contrôle de style automatisé précèdent la publication à 8h30." },
-]
-
 const RESSOURCES = [
   { tag: 'Formation', titre: 'Former vos équipes à l\'IA', desc: "Programmes intra sur ChatGPT, Claude, Copilot, Gemini et Mistral, finançables par votre OPCO.", href: '/formations' },
   { tag: 'Conseil', titre: 'Cadrer votre stratégie IA', desc: "Diagnostic, priorisation des cas d'usage et feuille de route pour dirigeants.", href: '/conseil-intelligence-artificielle' },
@@ -427,47 +420,7 @@ export default function VeillePage() {
         </section>
       )}
 
-      {/* ── 4. COMMENT UNE ÉDITION EST FABRIQUÉE (statique, tous états) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <Kicker>Méthode</Kicker>
-          <h2 style={h2Style}>Comment une édition est fabriquée</h2>
-          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            {/* SYNC feeds.yaml : seul chiffre en dur de la rubrique. */}
-            <strong>
-              Trente-huit flux sont dépouillés chaque matin ouvré. Dix à quatorze actualités sont retenues,
-              chacune reliée à sa source d'origine, puis une analyse signée est écrite après la sélection.
-              Une édition qui échoue au contrôle de style ne sort pas.
-            </strong>
-          </p>
-
-          <div style={{ position: 'relative' }}>
-            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
-            {ETAPES.map((step, i) => (
-              <div key={step.num} style={{ display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative', padding: i === 0 ? '0 0 18px' : (i === ETAPES.length - 1 ? '18px 0 0' : '18px 0') }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
-                  <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                </div>
-                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
-                  <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, marginTop: 28 }}>
-            Le flux RSS reprend chaque édition, son chapeau et la liste de ses actualités. Il se branche sur
-            Feedly, sur un connecteur Slack ou Teams, ou sur une automatisation maison.{' '}
-            <a href="/veille.xml" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-              Flux RSS
-              <Rss size={14} strokeWidth={2.2} aria-hidden="true" />
-            </a>
-          </p>
-        </div>
-      </section>
-
-      {/* ── 5. L'ANALYSE DU JOUR (ancre sombre unique) ── */}
+      {/* ── 4. L'ANALYSE DU JOUR (ancre sombre unique) ── */}
       {ok && ed.analyse && (
         <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
@@ -505,7 +458,7 @@ export default function VeillePage() {
         </section>
       )}
 
-      {/* ── 6. LES ÉDITIONS PRÉCÉDENTES (famille F-ARCHIVE) ── */}
+      {/* ── 5. LES ÉDITIONS PRÉCÉDENTES (famille F-ARCHIVE) ── */}
       {ok && recentes.length > 1 && (
         <section id="archives" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 140 }}>
           <div style={wrap}>
@@ -548,7 +501,7 @@ export default function VeillePage() {
         </section>
       )}
 
-      {/* ── 7. ALLER PLUS LOIN (famille F7) ── */}
+      {/* ── 6. ALLER PLUS LOIN (famille F7) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Aller plus loin</Kicker>
@@ -572,13 +525,19 @@ export default function VeillePage() {
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, marginTop: 28 }}>
             La régulation suivie dans cette veille est celle que nous appliquons dans nos projets. Voir{' '}
             <Link to="/agents-ia-entreprise" style={aStyle}>les agents IA en entreprise</Link>.
+            {' '}La rubrique se suit aussi par flux, sur Feedly, un connecteur Slack ou Teams, ou une
+            automatisation maison :{' '}
+            <a href="/veille.xml" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+              Flux RSS
+              <Rss size={14} strokeWidth={2.2} aria-hidden="true" />
+            </a>
           </p>
         </div>
       </section>
 
       <FounderNote bg="#F9FAFB" />
 
-      {/* ── 9. CTA FINALE ── */}
+      {/* ── 8. CTA FINALE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
