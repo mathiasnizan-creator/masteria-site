@@ -95,3 +95,7 @@ a, button { transition: color .18s ease, background-color .18s ease, border-colo
 .veille-ligne-archive { transition: background-color .18s ease; }
 .veille-ligne-archive:hover,
 a:focus-visible > .veille-ligne-archive { background: #F9FAFB; }
+
+/* Pill de filtre des archives : retour au survol, sans toucher à l'état actif */
+.veille-pill { transition: border-color .18s ease; }
+.veille-pill:hover { border-color: #2563EB !important; }

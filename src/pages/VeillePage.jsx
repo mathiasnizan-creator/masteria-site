@@ -485,7 +485,7 @@ export default function VeillePage() {
                         <time dateTime={e.date} style={{ fontSize: 13, fontWeight: 600, color: '#6B7280' }}>{e.dateCourte}</time>
                         <span style={{ fontSize: 15.5, fontWeight: 700, color: '#0A0A0A' }}>{e.titreEditorial}</span>
                         {isDesktop && (
-                          <span style={{ fontSize: 12.5, color: '#94A3B8' }}>{e.nbItems} actualités · {e.tempsLecture} min</span>
+                          <span style={{ fontSize: 12.5, color: '#6B7280' }}>{e.nbItems} actualités · {e.tempsLecture} min</span>
                         )}
                       </div>
                     </Link>
@@ -495,7 +495,11 @@ export default function VeillePage() {
             </div>
 
             <p style={{ fontSize: 14, color: '#6B7280', marginTop: 20 }}>
-              {meta.totalEditions} éditions publiées, {meta.totalItems} actualités traitées depuis le {meta.premiereDateAffichee}.
+              {meta.totalEditions} éditions publiées, {meta.totalItems} actualités traitées depuis le {meta.premiereDateAffichee}.{' '}
+              <Link to="/veille/archives" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+                Rechercher dans toutes les archives
+                <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
             </p>
           </div>
         </section>

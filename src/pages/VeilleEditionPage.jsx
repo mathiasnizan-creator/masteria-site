@@ -161,6 +161,24 @@ export default function VeilleEditionPage() {
     return () => { actif = false }
   }, [date])
 
+  // Rejoue le défilement vers l'ancre une fois les données arrivées. Au moment
+  // du changement de route, la cible n'existe pas encore dans le DOM (elle
+  // vient du fetch), donc le navigateur ne défile pas. Couvre les liens
+  // profonds du fil de /veille et de la recherche des archives, ainsi que le
+  // chargement direct d'une URL à ancre. scrollIntoView respecte les
+  // scrollMarginTop posés sur les cibles.
+  useEffect(() => {
+    if (etat !== 'ok') return
+    const id = decodeURIComponent((window.location.hash || '').slice(1))
+    if (!id) return
+    // Appel direct : l'effet s'exécute une fois le DOM installé, et
+    // requestAnimationFrame peut ne jamais se déclencher dans une vue
+    // considérée comme masquée. Instantané et non lisse : on arrive d'une
+    // autre page, animer un défilement de dix mille pixels serait pénible.
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' })
+  }, [etat])
+
   const lisible = dateLisible(date)
   const ok = etat === 'ok' && edition
   const sections = ok ? ordonner(edition.sections || []) : []

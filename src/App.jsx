@@ -70,6 +70,7 @@ const ComparisonsHubPage = lazy(() => import('./pages/ComparisonsHubPage'));
 const BlogListPage = lazy(() => import('./pages/BlogListPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
 const VeillePage = lazy(() => import('./pages/VeillePage'));
+const VeilleArchivesPage = lazy(() => import('./pages/VeilleArchivesPage'));
 const VeilleEditionPage = lazy(() => import('./pages/VeilleEditionPage'));
 const MentionsLegalesPage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MentionsLegalesPage })));
 const PolitiqueConfidentialitePage = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.PolitiqueConfidentialitePage })));
@@ -1406,6 +1407,8 @@ export default function App() {
         <Route path="/blog" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
         <Route path="/veille" element={<VeillePage />} />
+        {/* Le segment statique doit primer sur le paramètre :date. */}
+        <Route path="/veille/archives" element={<VeilleArchivesPage />} />
         <Route path="/veille/:date" element={<VeilleEditionPage />} />
         <Route path="/contact" element={<ContactScreen />} />
         {/* Hub pages */}

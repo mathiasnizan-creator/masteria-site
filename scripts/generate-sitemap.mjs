@@ -204,6 +204,8 @@ try {
 if (veilleEditions.length) {
   const derniere = veilleEditions[0].date;
   urls.push({ loc: `${SITE}/veille`, lastmod: derniere, changefreq: 'daily', priority: 0.8 });
+  // La page d'archives change à chaque publication : sa liste s'allonge.
+  urls.push({ loc: `${SITE}/veille/archives`, lastmod: derniere, changefreq: 'daily', priority: 0.6 });
   for (const e of veilleEditions) {
     urls.push({ loc: `${SITE}/veille/${e.date}`, lastmod: e.date, changefreq: 'yearly', priority: 0.5 });
   }

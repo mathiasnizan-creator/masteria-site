@@ -1,0 +1,134 @@
+{
+  "schema": 2,
+  "meta": {
+    "premiereDate": "2026-07-20",
+    "premiereDateAffichee": "20 juillet 2026",
+    "derniereDate": "2026-07-20",
+    "totalEditions": 1,
+    "totalItems": 14,
+    "totalSources": 16
+  },
+  "editions": [
+    {
+      "date": "2026-07-20",
+      "dateCourte": "lun. 20 juil.",
+      "dateAffichee": "20 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
+      "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, la demande ayant saturé sa capacité de calcul. À Paris, la CNIL et l'Autorité de la concurrence ont publié le même jour deux mises en garde sur les agents autonomes.",
+      "nbItems": 14,
+      "nbSources": 16,
+      "tempsLecture": 4,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Next.ink",
+        "South China Morning Post",
+        "Bloomberg",
+        "CNIL",
+        "Siècle Digital",
+        "Commission européenne",
+        "MIT Technology Review",
+        "TechCrunch",
+        "Nikkei Asia",
+        "arXiv",
+        "Clubic",
+        "Numerama",
+        "ZDNet France"
+      ],
+      "items": [
+        {
+          "t": "Kimi K3 secoue les marchés quatre jours après sa sortie",
+          "z": "une",
+          "id": "kimi-k3-secoue-les-marches-quatre-jours-apres-sa-sortie"
+        },
+        {
+          "t": "La CNIL publie une note exploratoire sur l'IA agentique",
+          "z": "europe",
+          "id": "la-cnil-publie-une-note-exploratoire-sur-l-ia-agentique"
+        },
+        {
+          "t": "L'Autorité de la concurrence alerte sur les agents d'achat",
+          "z": "europe",
+          "id": "l-autorite-de-la-concurrence-alerte-sur-les-agents-d-achat"
+        },
+        {
+          "t": "La Commission européenne précise les obligations de transparence de l'AI Act",
+          "z": "europe",
+          "id": "la-commission-europeenne-precise-les-obligations-de"
+        },
+        {
+          "t": "Les modèles de langage discriminent davantage que les recruteurs humains",
+          "z": "international",
+          "id": "les-modeles-de-langage-discriminent-davantage-que-les"
+        },
+        {
+          "t": "Teleperformance veut équiper ses 500 000 salariés d'ici 2027",
+          "z": "international",
+          "id": "teleperformance-veut-equiper-ses-500-000-salaries-d-ici-2027"
+        },
+        {
+          "t": "Une plainte d'Apple pèse sur les projets matériels d'OpenAI",
+          "z": "international",
+          "id": "une-plainte-d-apple-pese-sur-les-projets-materiels-d-openai"
+        },
+        {
+          "t": "Alibaba positionne Qwen3.8 juste derrière Claude Fable 5",
+          "z": "chine",
+          "id": "alibaba-positionne-qwen3-8-juste-derriere-claude-fable-5"
+        },
+        {
+          "t": "Rapidus s'associe à Cadence sur la conception de puces assistée par agents",
+          "z": "chine",
+          "id": "rapidus-s-associe-a-cadence-sur-la-conception-de-puces"
+        },
+        {
+          "t": "SkillCorpus consolide l'écosystème des compétences pour agents",
+          "z": "recherche",
+          "id": "skillcorpus-consolide-l-ecosysteme-des-competences-pour"
+        },
+        {
+          "t": "VarRate compresse le cache KV sans réentraînement",
+          "z": "recherche",
+          "id": "varrate-compresse-le-cache-kv-sans-reentrainement"
+        },
+        {
+          "t": "France Travail envisage d'utiliser l'IA pour profiler des millions de demandeurs d'emploi.",
+          "z": "bref",
+          "id": "france-travail-envisage-d-utiliser-l-ia-pour-profiler-des"
+        },
+        {
+          "t": "Un piratage mené par IA a conduit Hugging Face à revoir ses…",
+          "z": "bref",
+          "id": "un-piratage-mene-par-ia-a-conduit-hugging"
+        },
+        {
+          "t": "L'Union européenne veut ouvrir Android et iOS aux assistants d'IA concurrents, ce…",
+          "z": "bref",
+          "id": "l-union-europeenne-veut-ouvrir-android-et-ios-aux"
+        }
+      ]
+    }
+  ]
+}
