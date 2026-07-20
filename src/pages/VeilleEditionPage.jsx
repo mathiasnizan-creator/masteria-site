@@ -200,7 +200,9 @@ export default function VeilleEditionPage() {
     isAccessibleForFree: true,
     wordCount: edition.nbSignes ? Math.round(edition.nbSignes / 6) : undefined,
     timeRequired: `PT${edition.tempsLecture}M`,
-    author: { '@id': `${SITE}/#mathias-nizan` },
+    // L'analyse engage la rédaction, la direction éditoriale reste nominative.
+    author: { '@id': `${SITE}/#organization` },
+    editor: { '@id': `${SITE}/#mathias-nizan` },
     publisher: { '@id': `${SITE}/#organization` },
     mainEntityOfPage: { '@id': `${SITE}/veille/${date}#webpage` },
     isPartOf: { '@type': 'CollectionPage', '@id': `${SITE}/veille#collection`, name: 'Veille IA Masteria', url: `${SITE}/veille` },
@@ -231,7 +233,7 @@ export default function VeilleEditionPage() {
         datePublished={date}
         dateModified={date}
         noindex={etat === 'introuvable'}
-        articleMeta={ok ? { publishedTime: `${date}T08:30:00+02:00`, author: 'Mathias Nizan', section: 'Veille IA' } : undefined}
+        articleMeta={ok ? { publishedTime: `${date}T08:30:00+02:00`, author: "L'équipe éditoriale Masteria", section: 'Veille IA' } : undefined}
         extraJsonLd={newsArticleJsonLd}
       />
 
@@ -269,7 +271,7 @@ export default function VeilleEditionPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publiée le <time dateTime={date}>{lisible}</time> à 8h30
+            Par l'équipe éditoriale Masteria, sous la direction de <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Publiée le <time dateTime={date}>{lisible}</time> à 8h30
           </p>
 
           {ok && (
@@ -556,8 +558,8 @@ export default function VeilleEditionPage() {
             <p style={{ ...answerStyle, background: '#fff' }}>
               <strong>
                 {edition.nbArticlesCollectes
-                  ? `${edition.nbFluxConsultes} flux ont été dépouillés le matin du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} actualités collectées, ${edition.nbItems} retenues, chacune reliée à sa source. L'analyse est écrite par Mathias Nizan et publiée avec l'édition.`
-                  : `${edition.nbItems} actualités ont été retenues le ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, chacune reliée à sa source. L'analyse est écrite par Mathias Nizan et publiée avec l'édition.`}
+                  ? `${edition.nbFluxConsultes} flux ont été dépouillés le matin du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} actualités collectées, ${edition.nbItems} retenues, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`
+                  : `${edition.nbItems} actualités ont été retenues le ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`}
               </strong>
             </p>
             {edition.sourcesDuJour && edition.sourcesDuJour.length > 0 && (

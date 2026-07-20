@@ -168,7 +168,8 @@ export default function VeillePage() {
       '@id': `${SITE}/veille#collection`,
       name: 'Veille IA Masteria', url: `${SITE}/veille`,
       inLanguage: 'fr-FR', isAccessibleForFree: true,
-      author: { '@id': `${SITE}/#mathias-nizan` },
+      author: { '@id': `${SITE}/#organization` },
+      editor: { '@id': `${SITE}/#mathias-nizan` },
       publisher: { '@id': `${SITE}/#organization` },
     },
     ...(recentes.length ? [{
@@ -237,7 +238,7 @@ export default function VeillePage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria
+            Par l'équipe éditoriale Masteria, sous la direction de <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>
             {ok && <> · Publiée le <time dateTime={ed.date}>{ed.dateAffichee}</time>{relatif ? ` · ${relatif}` : ''}</>}
           </p>
 
@@ -294,12 +295,12 @@ export default function VeillePage() {
               {(ok ? [
                 ['Au sommaire', [ed.une ? ed.une.zoneLibelle : null, ...sections.map(s => s.titre)].filter(Boolean).join(' · ')],
                 ['Sources du jour', (ed.sourcesDuJour || []).join(' · ')],
-                ['Analyse', 'Signée Mathias Nizan, publiée avec chaque édition'],
+                ['Analyse', "Signée par l'équipe éditoriale, publiée avec chaque édition"],
                 ['Cadence', retard ? `Dernière édition : ${ed.dateLongue.replace(/\s\d{4}$/, '')}` : 'Publiée les jours ouvrés, vers 8h30'],
                 ['Corpus', `${meta.totalItems} actualités traitées depuis le ${meta.premiereDateAffichee}`],
               ] : [
                 ['Format', '10 à 14 actualités liées à leur source, puis une analyse signée'],
-                ['Analyse', 'Signée Mathias Nizan, publiée avec chaque édition'],
+                ['Analyse', "Signée par l'équipe éditoriale, publiée avec chaque édition"],
                 ['Cadence', 'Publiée les jours ouvrés, vers 8h30'],
               ]).filter(([, v]) => v).map(([label, valeur], i) => (
                 <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
