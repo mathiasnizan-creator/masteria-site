@@ -799,6 +799,25 @@
       ]
     },
     {
+      "source": "/veille.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=1800, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/veille-data/latest.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/veille-data/(\\d{4}-\\d{2}-\\d{2})\\.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf|eot)",
       "headers": [
         {

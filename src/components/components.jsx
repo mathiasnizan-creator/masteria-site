@@ -185,6 +185,7 @@ export function MasteriaHeader() {
   };
 
   const navLinks = [
+    { label: 'Veille IA', path: '/veille' },
     { label: 'Financement', path: '/financement-formation-ia' },
     { label: 'À propos', path: '/centre-formation-ia-entreprise' },
     { label: 'Blog', path: '/blog' },
@@ -785,6 +786,7 @@ export function MasteriaFooter() {
             <div style={colHead}>Masteria</div>
             {[
               ['À propos', '/centre-formation-ia-entreprise'],
+              ['Veille IA quotidienne', '/veille'],
               ['Blog', '/blog'],
               ['Glossaire IA (83 termes)', '/glossaire-ia'],
               ['Quelle est la meilleure IA ?', '/quelle-est-la-meilleure-ia'],

@@ -1,9 +1,291 @@
 {
+  "schema": 2,
   "date": "2026-07-20",
   "dateAffichee": "20 juillet 2026",
+  "dateLongue": "lundi 20 juillet 2026",
+  "dateCourte": "lun. 20 juil.",
+  "jourSemaine": "lundi",
   "titre": "Veille IA du lundi 20 juillet 2026",
+  "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
   "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, la demande ayant saturé sa capacité de calcul. À Paris, la CNIL et l'Autorité de la concurrence ont publié le même jour deux mises en garde sur les agents autonomes.",
-  "corpsHtml": "<h2>En tête d'affiche</h2>\n<p><strong>Kimi K3 secoue les marchés quatre jours après sa sortie.</strong> Moonshot AI a suspendu les nouvelles inscriptions à son modèle, la demande ayant approché les limites de sa capacité de calcul en quarante-huit heures. Ce modèle open source, annoncé à 2 800 milliards de paramètres, a fait reculer Nvidia et les grandes valeurs technologiques. Les marchés y voient un écho du choc DeepSeek R1 de janvier 2025, séance où Nvidia avait perdu près de 600 milliards de dollars de capitalisation. Bloomberg avance une lecture distincte du précédent : l'enjeu de Kimi K3 tiendrait à la mémoire davantage qu'à la puissance de calcul. Pour un acheteur européen, la question opérationnelle porte sur la capacité de Moonshot à servir ses utilisateurs hors de Chine, que la suspension des inscriptions laisse en suspens. <a href=\"https://next.ink/248051/kimi-k3-ce-quil-faut-savoir-du-modele-open-source-de-2-800-milliards-de-parametres/\" target=\"_blank\" rel=\"noopener noreferrer\">Next.ink</a> · <a href=\"https://www.scmp.com/tech/article/3361172/kimi-k3-developer-suspends-new-subscriptions-amid-compute-constraints\" target=\"_blank\" rel=\"noopener noreferrer\">South China Morning Post</a> · <a href=\"https://www.bloomberg.com/news/articles/2026-07-20/moonshot-s-kimi-k3-may-be-more-about-memory-than-compute\" target=\"_blank\" rel=\"noopener noreferrer\">Bloomberg</a></p>\n<h2>Europe et France</h2>\n<p><strong>La CNIL publie une note exploratoire sur l'IA agentique.</strong> Rédigée avec le Conseil de l'IA et du Numérique, elle porte sur les systèmes capables d'agir sur leur environnement à la place de leur utilisateur. Le régulateur s'intéresse à la délégation de tâches et aux interactions hyperpersonnalisées qu'elle suppose, deux points qui touchent au traitement des données personnelles. <a href=\"https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note\" target=\"_blank\" rel=\"noopener noreferrer\">CNIL</a></p>\n<p><strong>L'Autorité de la concurrence alerte sur les agents d'achat.</strong> Elle décrit un scénario où un agent compare les prix, lit les avis, passe commande et paie à la place du consommateur. Sa mise en garde porte sur la position que prendraient ces intermédiaires entre les marchands et leurs clients. <a href=\"https://siecledigital.fr/2026/07/20/lautorite-de-la-concurrence-alerte-sur-les-risques-des-agents-ia-pour-nos-achats-en-ligne/\" target=\"_blank\" rel=\"noopener noreferrer\">Siècle Digital</a></p>\n<p><strong>La Commission européenne précise les obligations de transparence de l'AI Act.</strong> Ces lignes directrices délimitent le champ de l'article 50, qui s'applique aux fournisseurs comme aux déployeurs de systèmes d'IA. Les organisations qui intègrent un modèle tiers dans leurs outils sont donc concernées au même titre que ceux qui l'ont entraîné. <a href=\"https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems\" target=\"_blank\" rel=\"noopener noreferrer\">Commission européenne</a></p>\n<h2>International</h2>\n<p><strong>Les modèles de langage discriminent davantage que les recruteurs humains.</strong> Une recherche relayée par la MIT Technology Review conclut que les modèles forment des biais plus marqués que les humains lors du tri de candidatures. Les chercheurs savaient déjà que ces systèmes héritent des biais de leurs données d'entraînement. <a href=\"https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/\" target=\"_blank\" rel=\"noopener noreferrer\">MIT Technology Review</a></p>\n<p><strong>Teleperformance veut équiper ses 500 000 salariés d'ici 2027.</strong> Le prestataire français de services externalisés prévoit d'intégrer l'IA au flux de travail de l'ensemble de ses effectifs, dans un secteur que cette même technologie déstabilise. <a href=\"https://www.bloomberg.com/news/articles/2026-07-19/teleperformance-wants-entire-bpo-staff-to-be-ai-enabled-by-2027\" target=\"_blank\" rel=\"noopener noreferrer\">Bloomberg</a></p>\n<p><strong>Une plainte d'Apple pèse sur les projets matériels d'OpenAI.</strong> La procédure intervient alors qu'OpenAI prépare une entrée dans le matériel et une introduction en bourse. <a href=\"https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>\n<h2>Chine et Asie</h2>\n<p><strong>Alibaba positionne Qwen3.8 juste derrière Claude Fable 5.</strong> Le groupe a présenté Qwen3.8-Max-Preview, version d'aperçu du modèle le plus puissant de sa famille, qu'il déclare second derrière le modèle d'Anthropic. <a href=\"https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5\" target=\"_blank\" rel=\"noopener noreferrer\">South China Morning Post</a></p>\n<p><strong>Rapidus s'associe à Cadence sur la conception de puces assistée par agents.</strong> Le fondeur japonais travaillera avec l'éditeur américain sur des outils de conception pilotés par des agents d'IA. <a href=\"https://asia.nikkei.com/business/tech/semiconductors/japan-s-rapidus-partners-with-cadence-on-ai-agent-chip-design-tools\" target=\"_blank\" rel=\"noopener noreferrer\">Nikkei Asia</a></p>\n<h2>Recherche et publications</h2>\n<p><strong>SkillCorpus consolide l'écosystème des compétences pour agents.</strong> Les auteurs rassemblent et évaluent les compétences ouvertes disponibles pour des agents fondés sur des modèles de langage, dans des conditions d'usage réel. Un travail utile à qui outille des agents en entreprise. <a href=\"https://arxiv.org/abs/2607.15557\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a></p>\n<p><strong>VarRate compresse le cache KV sans réentraînement.</strong> La méthode ajuste le taux de compression du cache selon le contexte, pour les modèles à contexte long. Le sujet rejoint la lecture que Bloomberg fait de Kimi K3 sur le poids de la mémoire. <a href=\"https://arxiv.org/abs/2607.15498\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a></p>\n<h2>En bref</h2>\n<p>France Travail envisage d'utiliser l'IA pour profiler des millions de demandeurs d'emploi. <a href=\"https://www.clubic.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Clubic</a></p>\n<p>Un piratage mené par IA a conduit Hugging Face à revoir ses défenses, cas que Numerama présente comme une leçon pratique. <a href=\"https://www.numerama.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Numerama</a></p>\n<p>L'Union européenne veut ouvrir Android et iOS aux assistants d'IA concurrents, ce que Google et Apple contestent. <a href=\"https://www.zdnet.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">ZDNet France</a></p>",
-  "analyseHtml": "<p>Deux autorités françaises ont publié sur les agents autonomes le même jour. La CNIL s'inquiète des données personnelles que suppose une délégation de tâches hyperpersonnalisée. L'Autorité de la concurrence s'inquiète du pouvoir d'intermédiation que prendrait un agent capable de choisir un produit et de payer à votre place. Les deux notes ne se citent pas et ne relèvent pas du même mandat. Leur simultanéité dit quelque chose.</p>\n<p>Nous observons que le sujet agentique a quitté le terrain de la démonstration technique pour entrer dans celui du droit applicable. Ce déplacement change le calendrier des entreprises françaises. Une organisation qui teste aujourd'hui un agent capable d'agir sur ses systèmes, de passer une commande ou de répondre à un client, construit un dispositif que deux régulateurs regardent déjà. Les questions qu'ils posent porteront sur la base légale du traitement, sur la traçabilité des décisions prises sans intervention humaine, et sur la dépendance créée envers un intermédiaire.</p>\n<p>Nous en tirons une recommandation de méthode. Documentez dès le prototype ce qu'un agent décide seul, ce qu'il exécute et ce qu'il transmet à un tiers. Cette cartographie coûte peu à établir en phase d'essai. Elle coûte cher à reconstituer après coup, quand le dispositif tourne en production et que le régulateur demande à voir. La même exigence vaut pour les obligations de transparence de l'article 50 de l'AI Act, dont la Commission a précisé le champ ce matin : elles s'appliquent aussi à qui déploie un modèle tiers, pas seulement à qui l'entraîne.</p>\n<p>Le calendrier joue en votre faveur pour quelques mois. Les organisations qui traitent la question maintenant auront un avantage sur celles qui découvriront l'exigence documentaire une fois leurs agents installés.</p>\n<p>L'équipe éditoriale Masteria</p>",
-  "nbItems": 14
+  "une": {
+    "titre": "Kimi K3 secoue les marchés quatre jours après sa sortie",
+    "texteHtml": "<p>Moonshot AI a suspendu les nouvelles inscriptions à son modèle, la demande ayant approché les limites de sa capacité de calcul en quarante-huit heures. Ce modèle open source, annoncé à 2 800 milliards de paramètres, a fait reculer Nvidia et les grandes valeurs technologiques. Les marchés y voient un écho du choc DeepSeek R1 de janvier 2025, séance où Nvidia avait perdu près de 600 milliards de dollars de capitalisation. Bloomberg avance une lecture distincte du précédent : l'enjeu de Kimi K3 tiendrait à la mémoire davantage qu'à la puissance de calcul. Pour un acheteur européen, la question opérationnelle porte sur la capacité de Moonshot à servir ses utilisateurs hors de Chine, que la suspension des inscriptions laisse en suspens.</p>",
+    "sources": [
+      {
+        "nom": "Next.ink",
+        "url": "https://next.ink/248051/kimi-k3-ce-quil-faut-savoir-du-modele-open-source-de-2-800-milliards-de-parametres/"
+      },
+      {
+        "nom": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/article/3361172/kimi-k3-developer-suspends-new-subscriptions-amid-compute-constraints"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-20/moonshot-s-kimi-k3-may-be-more-about-memory-than-compute"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "kimi-k3-secoue-les-marches-quatre-jours-apres-sa-sortie"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La CNIL publie une note exploratoire sur l'IA agentique",
+          "texteHtml": "<p>Rédigée avec le Conseil de l'IA et du Numérique, elle porte sur les systèmes capables d'agir sur leur environnement à la place de leur utilisateur. Le régulateur s'intéresse à la délégation de tâches et aux interactions hyperpersonnalisées qu'elle suppose, deux points qui touchent au traitement des données personnelles.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note"
+            }
+          ],
+          "rang": 2,
+          "id": "la-cnil-publie-une-note-exploratoire-sur-l-ia-agentique"
+        },
+        {
+          "titre": "L'Autorité de la concurrence alerte sur les agents d'achat",
+          "texteHtml": "<p>Elle décrit un scénario où un agent compare les prix, lit les avis, passe commande et paie à la place du consommateur. Sa mise en garde porte sur la position que prendraient ces intermédiaires entre les marchands et leurs clients.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/07/20/lautorite-de-la-concurrence-alerte-sur-les-risques-des-agents-ia-pour-nos-achats-en-ligne/"
+            }
+          ],
+          "rang": 3,
+          "id": "l-autorite-de-la-concurrence-alerte-sur-les-agents-d-achat"
+        },
+        {
+          "titre": "La Commission européenne précise les obligations de transparence de l'AI Act",
+          "texteHtml": "<p>Ces lignes directrices délimitent le champ de l'article 50, qui s'applique aux fournisseurs comme aux déployeurs de systèmes d'IA. Les organisations qui intègrent un modèle tiers dans leurs outils sont donc concernées au même titre que ceux qui l'ont entraîné.</p>",
+          "sources": [
+            {
+              "nom": "Commission européenne",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
+            }
+          ],
+          "rang": 4,
+          "id": "la-commission-europeenne-precise-les-obligations-de"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les modèles de langage discriminent davantage que les recruteurs humains",
+          "texteHtml": "<p>Une recherche relayée par la MIT Technology Review conclut que les modèles forment des biais plus marqués que les humains lors du tri de candidatures. Les chercheurs savaient déjà que ces systèmes héritent des biais de leurs données d'entraînement.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/"
+            }
+          ],
+          "rang": 5,
+          "id": "les-modeles-de-langage-discriminent-davantage-que-les"
+        },
+        {
+          "titre": "Teleperformance veut équiper ses 500 000 salariés d'ici 2027",
+          "texteHtml": "<p>Le prestataire français de services externalisés prévoit d'intégrer l'IA au flux de travail de l'ensemble de ses effectifs, dans un secteur que cette même technologie déstabilise.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-19/teleperformance-wants-entire-bpo-staff-to-be-ai-enabled-by-2027"
+            }
+          ],
+          "rang": 6,
+          "id": "teleperformance-veut-equiper-ses-500-000-salaries-d-ici-2027"
+        },
+        {
+          "titre": "Une plainte d'Apple pèse sur les projets matériels d'OpenAI",
+          "texteHtml": "<p>La procédure intervient alors qu'OpenAI prépare une entrée dans le matériel et une introduction en bourse.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/"
+            }
+          ],
+          "rang": 7,
+          "id": "une-plainte-d-apple-pese-sur-les-projets-materiels-d-openai"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Alibaba positionne Qwen3.8 juste derrière Claude Fable 5",
+          "texteHtml": "<p>Le groupe a présenté Qwen3.8-Max-Preview, version d'aperçu du modèle le plus puissant de sa famille, qu'il déclare second derrière le modèle d'Anthropic.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5"
+            }
+          ],
+          "rang": 8,
+          "id": "alibaba-positionne-qwen3-8-juste-derriere-claude-fable-5"
+        },
+        {
+          "titre": "Rapidus s'associe à Cadence sur la conception de puces assistée par agents",
+          "texteHtml": "<p>Le fondeur japonais travaillera avec l'éditeur américain sur des outils de conception pilotés par des agents d'IA.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/tech/semiconductors/japan-s-rapidus-partners-with-cadence-on-ai-agent-chip-design-tools"
+            }
+          ],
+          "rang": 9,
+          "id": "rapidus-s-associe-a-cadence-sur-la-conception-de-puces"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "SkillCorpus consolide l'écosystème des compétences pour agents",
+          "texteHtml": "<p>Les auteurs rassemblent et évaluent les compétences ouvertes disponibles pour des agents fondés sur des modèles de langage, dans des conditions d'usage réel. Un travail utile à qui outille des agents en entreprise.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.15557"
+            }
+          ],
+          "rang": 10,
+          "id": "skillcorpus-consolide-l-ecosysteme-des-competences-pour"
+        },
+        {
+          "titre": "VarRate compresse le cache KV sans réentraînement",
+          "texteHtml": "<p>La méthode ajuste le taux de compression du cache selon le contexte, pour les modèles à contexte long. Le sujet rejoint la lecture que Bloomberg fait de Kimi K3 sur le poids de la mémoire.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.15498"
+            }
+          ],
+          "rang": 11,
+          "id": "varrate-compresse-le-cache-kv-sans-reentrainement"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<p>France Travail envisage d'utiliser l'IA pour profiler des millions de demandeurs d'emploi.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/"
+            }
+          ],
+          "rang": 12,
+          "id": "france-travail-envisage-d-utiliser-l-ia-pour-profiler-des"
+        },
+        {
+          "titre": null,
+          "texteHtml": "<p>Un piratage mené par IA a conduit Hugging Face à revoir ses défenses, cas que Numerama présente comme une leçon pratique.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/"
+            }
+          ],
+          "rang": 13,
+          "id": "un-piratage-mene-par-ia-a-conduit-hugging"
+        },
+        {
+          "titre": null,
+          "texteHtml": "<p>L'Union européenne veut ouvrir Android et iOS aux assistants d'IA concurrents, ce que Google et Apple contestent.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet France",
+              "url": "https://www.zdnet.fr/"
+            }
+          ],
+          "rang": 14,
+          "id": "l-union-europeenne-veut-ouvrir-android-et-ios-aux"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le sujet agentique est passé au droit applicable",
+    "these": "Deux régulateurs français regardent déjà les agents que les entreprises prototypent aujourd'hui.",
+    "html": "<p>Deux autorités françaises ont publié sur les agents autonomes le même jour. La CNIL s'inquiète des données personnelles que suppose une délégation de tâches hyperpersonnalisée. L'Autorité de la concurrence s'inquiète du pouvoir d'intermédiation que prendrait un agent capable de choisir un produit et de payer à votre place. Les deux notes ne se citent pas et ne relèvent pas du même mandat. Leur simultanéité dit quelque chose.</p>\n<p>Nous observons que le sujet agentique a quitté le terrain de la démonstration technique pour entrer dans celui du droit applicable. Ce déplacement change le calendrier des entreprises françaises. Une organisation qui teste aujourd'hui un agent capable d'agir sur ses systèmes, de passer une commande ou de répondre à un client, construit un dispositif que deux régulateurs regardent déjà. Les questions qu'ils posent porteront sur la base légale du traitement, sur la traçabilité des décisions prises sans intervention humaine, et sur la dépendance créée envers un intermédiaire.</p>\n<p>Nous en tirons une recommandation de méthode. Documentez dès le prototype ce qu'un agent décide seul, ce qu'il exécute et ce qu'il transmet à un tiers. Cette cartographie coûte peu à établir en phase d'essai. Elle coûte cher à reconstituer après coup, quand le dispositif tourne en production et que le régulateur demande à voir. La même exigence vaut pour les obligations de transparence de l'article 50 de l'AI Act, dont la Commission a précisé le champ ce matin : elles s'appliquent aussi à qui déploie un modèle tiers, pas seulement à qui l'entraîne.</p>\n<p>Le calendrier joue en votre faveur pour quelques mois. Les organisations qui traitent la question maintenant auront un avantage sur celles qui découvriront l'exigence documentaire une fois leurs agents installés.</p>",
+    "htmlExtrait": "<p>Deux autorités françaises ont publié sur les agents autonomes le même jour. La CNIL s'inquiète des données personnelles que suppose une délégation de tâches hyperpersonnalisée. L'Autorité de la concurrence s'inquiète du pouvoir d'intermédiation que prendrait un agent capable de choisir un produit et de payer à votre place. Les deux notes ne se citent pas et ne relèvent pas du même mandat. Leur simultanéité dit quelque chose.</p>\n<p>Nous observons que le sujet agentique a quitté le terrain de la démonstration technique pour entrer dans celui du droit applicable. Ce déplacement change le calendrier des entreprises françaises. Une organisation qui teste aujourd'hui un agent capable d'agir sur ses systèmes, de passer une commande ou de répondre à un client, construit un dispositif que deux régulateurs regardent déjà. Les questions qu'ils posent porteront sur la base légale du traitement, sur la traçabilité des décisions prises sans intervention humaine, et sur la dépendance créée envers un intermédiaire.</p>",
+    "itemsCites": [
+      2,
+      3,
+      4
+    ],
+    "auteur": "Mathias Nizan",
+    "auteurRole": "Fondateur de Masteria"
+  },
+  "precedente": null,
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 16,
+  "nbSignes": 4854,
+  "tempsLecture": 4,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Next.ink",
+    "South China Morning Post",
+    "Bloomberg",
+    "CNIL",
+    "Siècle Digital",
+    "Commission européenne",
+    "MIT Technology Review",
+    "TechCrunch",
+    "Nikkei Asia",
+    "arXiv"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 106
 }

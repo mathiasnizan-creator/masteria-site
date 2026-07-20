@@ -154,8 +154,26 @@ async function renderOne(route) {
       req.continue();
     });
     await page.goto(`${BASE}${route}`, { waitUntil: 'networkidle0', timeout: NAV_TIMEOUT });
-    await new Promise(r => setTimeout(r, HELMET_WAIT));
+
+    // Les pages de veille chargent leur contenu après le rendu initial. Une
+    // attente fixe laisserait passer une page vide : le hero, l'en-tête, le
+    // pied et les blocs JSON-LD franchissent à eux seuls le seuil de 20 Ko,
+    // et le contrôle ne verrait rien. On attend donc le verrou posé par le
+    // composant, puis on refuse tout état autre que « ok ».
+    const estVeille = route === '/veille' || route.startsWith('/veille/');
+    if (estVeille) {
+      await page.waitForSelector('[data-veille-pret="1"]', { timeout: 8000 });
+    }
+    await new Promise(r => setTimeout(r, estVeille ? 400 : HELMET_WAIT));
     const html = await page.content();
+
+    if (estVeille) {
+      const m = /data-veille-etat="([a-z]+)"/.exec(html);
+      const etat = m ? m[1] : 'inconnu';
+      if (etat !== 'ok') {
+        throw new Error(`données non chargées (état « ${etat} »)`);
+      }
+    }
 
     const hasTitle = /<title>[^<]{8,}<\/title>/.test(html);
     const hasH1 = /<h1[\s>]/.test(html);

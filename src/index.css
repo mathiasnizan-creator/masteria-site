@@ -57,23 +57,41 @@ a, button { transition: color .18s ease, background-color .18s ease, border-colo
   .u-lift:hover { transform: none; }
 }
 
-/* ───── Veille IA : corps d'édition, HTML généré par publish.py ─────
-   Les éditions sont écrites en markdown puis converties. Le style vit ici
-   plutôt qu'en inline, le HTML étant injecté d'un bloc. */
-.veille-corps { color: #334155; font-size: 17px; line-height: 1.72; }
-.veille-corps h2 {
-  font-size: 22px; font-weight: 700; color: #0F172A;
-  margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #E2E8F0;
-}
-.veille-corps h3 { font-size: 18px; font-weight: 700; color: #0F172A; margin: 28px 0 10px; }
-.veille-corps p { margin: 0 0 16px; }
-.veille-corps ul, .veille-corps ol { margin: 0 0 16px; padding-left: 22px; }
-.veille-corps li { margin-bottom: 8px; }
-.veille-corps a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
-.veille-corps a:hover { color: #1d4ed8; }
-.veille-corps strong { color: #0F172A; font-weight: 650; }
-.veille-corps > :first-child { margin-top: 0; }
-/* Dans l'encart d'analyse, les titres de section n'ont pas lieu d'être. */
-.veille-corps blockquote {
-  margin: 0 0 16px; padding-left: 16px; border-left: 3px solid #CBD5E1; color: #475569;
-}
+/* ───── Veille IA : prose injectée depuis les JSON d'édition ─────
+   Aucune règle de titre : depuis le schéma 2, publish.py n'injecte plus de
+   <h2>/<h3>, ils sont posés par le JSX à partir des champs structurés.
+   Jetons alignés sur le design system : #374151, #0A0A0A, #E5E7EB, #B4C0D3. */
+
+/* Texte d'une actualité, sur fond clair */
+.veille-texte { color: #374151; font-size: 15.5px; line-height: 1.72; }
+.veille-texte p { margin: 0 0 14px; }
+.veille-texte > :last-child { margin-bottom: 0; }
+.veille-texte a { color: #2563EB; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.veille-texte a:hover { color: #1D4ED8; }
+.veille-texte strong { color: #0A0A0A; font-weight: 700; }
+.veille-texte em { font-style: italic; }
+.veille-texte code { font-size: 0.92em; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 4px; padding: 1px 5px; }
+
+/* Variante de la une : même couleur, une taille au-dessus */
+.veille-texte--une { font-size: 16.5px; line-height: 1.75; }
+.veille-texte--une p { margin: 0 0 16px; }
+
+/* Analyse Masteria, toujours sur fond #0A0F1E */
+.veille-analyse { color: #B4C0D3; font-size: 15.5px; line-height: 1.8; }
+.veille-analyse p { margin: 0 0 18px; }
+.veille-analyse > :last-child { margin-bottom: 0; }
+.veille-analyse strong { color: #F8FAFC; font-weight: 700; }
+.veille-analyse a { color: #60A5FA; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Pastille de source : survol ET focus en CSS, le clavier étant couvert. */
+.veille-source:hover,
+.veille-source:focus-visible { border-color: #2563EB; color: #2563EB; }
+
+/* Titre d'actualité dans le fil de /veille */
+.veille-lien-fil:hover,
+.veille-lien-fil:focus-visible { color: #2563EB; }
+
+/* Ligne de registre de l'archive */
+.veille-ligne-archive { transition: background-color .18s ease; }
+.veille-ligne-archive:hover,
+a:focus-visible > .veille-ligne-archive { background: #F9FAFB; }

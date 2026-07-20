@@ -34,6 +34,8 @@ export default function SEOHead({
   keywords,         // mots-clés spécifiques à la page (fallback : keywords formation par défaut)
   datePublished,    // ISO 'YYYY-MM-DD' — signal de fraîcheur (SEO + GEO). Émis sur la WebPage si fourni.
   dateModified,     // ISO 'YYYY-MM-DD' — dernière mise à jour. Fallback : datePublished.
+  articleMeta,      // { publishedTime, modifiedTime, author, section } — balises OG d'article
+                    // seules, sans le BlogPosting de articleData (qui rattache en dur au /blog)
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
@@ -95,8 +97,8 @@ export default function SEOHead({
     founder: { '@id': `${SITE_URL}/#mathias-nizan` },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '17 Rue Richan',
-      postalCode: '69004',
+      streetAddress: "17 rue d'Algérie",
+      postalCode: '69001',
       addressLocality: 'Lyon',
       addressCountry: 'FR',
     },
@@ -215,8 +217,8 @@ export default function SEOHead({
             name: courseData.locationName || 'Masteria — présentiel France/Suisse/Belgique ou distanciel',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '17 Rue Richan',
-              postalCode: '69004',
+              streetAddress: "17 rue d'Algérie",
+              postalCode: '69001',
               addressLocality: 'Lyon',
               addressRegion: 'Auvergne-Rhône-Alpes',
               addressCountry: 'FR',
@@ -402,6 +404,20 @@ export default function SEOHead({
       )}
       {articleData && articleData.tag && (
         <meta property="article:section" content={articleData.tag} />
+      )}
+
+      {/* Balises Open Graph d'article SANS le BlogPosting de articleData, qui
+          rattache en dur au /blog. Utilisé par la Veille IA, qui porte son
+          propre NewsArticle via extraJsonLd. */}
+      {articleMeta && articleMeta.publishedTime && (
+        <meta property="article:published_time" content={articleMeta.publishedTime} />
+      )}
+      {articleMeta && (
+        <meta property="article:modified_time" content={articleMeta.modifiedTime || articleMeta.publishedTime} />
+      )}
+      {articleMeta && <meta property="article:author" content={articleMeta.author || 'Mathias Nizan'} />}
+      {articleMeta && articleMeta.section && (
+        <meta property="article:section" content={articleMeta.section} />
       )}
 
       {/* JSON-LD */}

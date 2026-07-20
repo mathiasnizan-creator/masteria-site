@@ -1,11 +1,24 @@
 {
+  "schema": 2,
+  "meta": {
+    "premiereDate": "2026-07-20",
+    "premiereDateAffichee": "20 juillet 2026",
+    "derniereDate": "2026-07-20",
+    "totalEditions": 1,
+    "totalItems": 14,
+    "totalSources": 16
+  },
   "editions": [
     {
       "date": "2026-07-20",
       "dateAffichee": "20 juillet 2026",
-      "titre": "Veille IA du lundi 20 juillet 2026",
-      "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, la demande ayant saturé sa capacité de calcul. À Paris, la CNIL et l'Autorité de la concurrence ont publié le même jour deux mises en garde sur les agents autonomes.",
-      "nbItems": 14
+      "dateCourte": "lun. 20 juil.",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
+      "nbItems": 14,
+      "nbSources": 16,
+      "tempsLecture": 4
     }
   ]
 }
