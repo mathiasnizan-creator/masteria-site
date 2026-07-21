@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import VeilleNav from '../components/VeilleNav'
 
 /**
  * VeillePage — la une du matin, pas un index d'éditions.
@@ -199,6 +200,8 @@ export default function VeillePage() {
         ogImage={ok && ed.ogImage ? `${SITE}${ed.ogImage}` : undefined}
         extraJsonLd={jsonLd}
       />
+
+      <VeilleNav active={"une"} />
 
       {/* ── 1. HERO SOMBRE ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>

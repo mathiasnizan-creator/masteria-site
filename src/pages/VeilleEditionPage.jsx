@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import VeilleNav from '../components/VeilleNav'
 
 /**
  * VeilleEditionPage — une édition quotidienne de la Veille IA.
@@ -261,6 +262,8 @@ export default function VeilleEditionPage() {
         ogImage={ok && edition.ogImage ? `${SITE}${edition.ogImage}` : undefined}
         extraJsonLd={newsArticleJsonLd}
       />
+
+      <VeilleNav active={null} />
 
       {/* ── 1. HERO SOMBRE ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>

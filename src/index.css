@@ -99,3 +99,8 @@ a:focus-visible > .veille-ligne-archive { background: #F9FAFB; }
 /* Pill de filtre des archives : retour au survol, sans toucher à l'état actif */
 .veille-pill { transition: border-color .18s ease; }
 .veille-pill:hover { border-color: #2563EB !important; }
+
+/* Onglets de la sous-navigation Veille IA : survol et focus clavier */
+.veille-onglet { transition: color .16s ease, border-color .16s ease; }
+.veille-onglet:hover,
+.veille-onglet:focus-visible { color: #2563EB; }

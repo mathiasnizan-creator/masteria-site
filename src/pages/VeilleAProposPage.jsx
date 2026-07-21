@@ -4,6 +4,7 @@ import {
   Globe, Compass, FlaskConical, Mail,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import VeilleNav from '../components/VeilleNav'
 
 /**
  * VeilleAProposPage — politique éditoriale de la Veille IA.
@@ -93,6 +94,8 @@ export default function VeilleAProposPage() {
         ]}
         extraJsonLd={jsonLd}
       />
+
+      <VeilleNav active={"apropos"} />
 
       {/* ── 1. HERO SOMBRE ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(44px, 6vw, 64px) 24px clamp(44px, 6vw, 64px)', overflow: 'hidden' }}>

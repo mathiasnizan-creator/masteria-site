@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import VeilleNav from '../components/VeilleNav'
 
 /**
  * VeillePublicationsPage — toutes les publications de la Veille IA, avec recherche.
@@ -204,6 +205,8 @@ export default function VeillePublicationsPage() {
         dateModified={meta ? meta.derniereDate : undefined}
         extraJsonLd={jsonLd}
       />
+
+      <VeilleNav active={"publications"} />
 
       {/* ── 1. HERO SOMBRE (compact) ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(44px, 6vw, 64px) 24px clamp(44px, 6vw, 64px)', overflow: 'hidden' }}>
