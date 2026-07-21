@@ -108,6 +108,17 @@ function premiersMots(html, n) {
   return mots.slice(0, n).join(' ') + (mots.length > n ? '…' : '')
 }
 
+// Meta / og / twitter description : on coupe sur une frontière de mot avec une
+// ellipse, jamais en plein milieu d'un mot (une coupe brute abîmait chaque
+// carte de partage social, ex. « …le patron de Se » pour « SenseTime »).
+function descriptionMeta(texte, max = 160) {
+  const t = (texte || '').trim()
+  if (t.length <= max) return t
+  const coupe = t.slice(0, max)
+  const i = coupe.lastIndexOf(' ')
+  return (i > 40 ? coupe.slice(0, i) : coupe).replace(/[\s.,;:!?…]+$/, '') + '…'
+}
+
 // Phrase de répartition, générée depuis zones[]. Accord au singulier et au
 // pluriel, zones absentes omises.
 function phraseRepartition(ed) {
@@ -247,8 +258,9 @@ export default function VeilleEditionPage() {
         title={ok
           ? `Veille IA du ${edition.dateAffichee} : ${edition.titreEditorial} | Masteria`.slice(0, 95)
           : `Veille IA du ${lisible} | Masteria`}
-        description={ok ? edition.chapeau.slice(0, 158)
+        description={ok ? descriptionMeta(edition.chapeau)
           : `L'actualité de l'intelligence artificielle du ${lisible}, commentée et analysée par Masteria.`}
+        type="article"
         slug={`veille-ia/${date}`}
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
