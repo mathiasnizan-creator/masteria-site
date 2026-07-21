@@ -6,7 +6,7 @@
     "derniereDate": "2026-07-21",
     "totalEditions": 2,
     "totalItems": 28,
-    "totalSources": 37
+    "totalSources": 40
   },
   "editions": [
     {
@@ -15,10 +15,10 @@
       "dateCourte": "mar. 21 juil.",
       "mois": "2026-07",
       "moisAffiche": "Juillet 2026",
-      "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
+      "titreEditorial": "Washington vise les poids ouverts, la dette rattrape l'IA",
       "nbItems": 14,
-      "nbSources": 21,
-      "tempsLecture": 6
+      "nbSources": 22,
+      "tempsLecture": 8
     },
     {
       "date": "2026-07-20",
@@ -26,10 +26,10 @@
       "dateCourte": "lun. 20 juil.",
       "mois": "2026-07",
       "moisAffiche": "Juillet 2026",
-      "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
+      "titreEditorial": "Kimi K3 sature, l'article 50 arrive",
       "nbItems": 14,
-      "nbSources": 16,
-      "tempsLecture": 4
+      "nbSources": 18,
+      "tempsLecture": 7
     }
   ]
 }

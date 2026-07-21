@@ -6,11 +6,11 @@
   "dateCourte": "mar. 21 juil.",
   "jourSemaine": "mardi",
   "titre": "Veille IA du mardi 21 juillet 2026",
-  "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
-  "chapeau": "La Maison-Blanche prépare des restrictions sur les modèles ouverts étrangers, six jours avant la publication des poids de Kimi K3. À Shanghai, le patron de SenseTime annonce la fin de l'économie du token.",
+  "titreEditorial": "Washington vise les poids ouverts, la dette rattrape l'IA",
+  "chapeau": "L'administration Trump étudie des restrictions sur les modèles à poids ouverts étrangers, six jours avant la publication des poids de Kimi K3. Bruxelles sanctionne AliExpress de 550 millions d'euros au titre du DSA, pendant que le coût de protection de la dette d'Oracle atteint son plus haut niveau depuis près de dix-huit ans.",
   "une": {
-    "titre": "Washington prépare sa riposte avant l'ouverture des poids de Kimi K3",
-    "texteHtml": "<p>Moonshot AI publiera les poids complets de son modèle le 27 juillet, et l'administration Trump étudie déjà plusieurs pistes pour restreindre l'accès aux modèles open source étrangers, selon Axios. Le camp américain se divise sur la réponse. Samedi 18 et dimanche 19 juillet, des conseillers et anciens conseillers de Donald Trump sur l'IA, David Sacks parmi eux, ont pris à partie publiquement les principaux laboratoires du pays. Ben Thompson soutient dans Stratechery que les laboratoires de frontière tiendront le choc et que l'urgence consiste à faire naître des modèles ouverts américains. Pour une entreprise européenne, la question porte sur le canal d'accès. Un modèle téléchargé et exécuté sur une infrastructure européenne relève d'un régime différent du même modèle consommé chez un hébergeur américain, et une restriction décidée à Washington frapperait le second canal en premier.</p>",
+    "titre": "Washington prépare des restrictions sur les modèles ouverts avant l'ouverture des poids de Kimi K3",
+    "texteHtml": "<p>Moonshot AI publiera les poids complets de son modèle le 27 juillet. Selon Axios, repris par ZDNet, l'administration Trump examine plusieurs pistes de durcissement contre l'IA chinoise, dont une limitation de l'accès aux modèles open source étrangers. Le camp américain se divise sur la réponse : samedi 18 et dimanche 19 juillet, plusieurs conseillers et anciens conseillers de Donald Trump sur l'IA, dont David Sacks, ont pris à partie publiquement les principaux laboratoires du pays. Ben Thompson soutient dans Stratechery que les laboratoires de frontière encaisseront le choc et que l'urgence porte sur la naissance d'alternatives ouvertes américaines ; TechCrunch relève que le débat sur l'interdiction des modèles chinois expose la difficulté à transformer l'IA en activité rentable. Pour une entreprise européenne, la question tient au canal d'accès. Un modèle téléchargé et exécuté sur une infrastructure européenne relève d'un régime distinct du même modèle consommé chez un hébergeur américain, et une mesure décidée à Washington frapperait ce second canal en premier.</p>",
     "sources": [
       {
         "nom": "ZDNet France",
@@ -27,12 +27,16 @@
       {
         "nom": "Stratechery",
         "url": "https://stratechery.com/2026/whos-afraid-of-chinese-models/"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/"
       }
     ],
     "rang": 1,
     "zone": "une",
     "zoneLibelle": "En tête d'affiche",
-    "id": "washington-prepare-sa-riposte-avant-l-ouverture-des-poids"
+    "id": "washington-prepare-des-restrictions-sur-les-modeles-ouverts"
   },
   "sections": [
     {
@@ -42,20 +46,32 @@
       "format": "detaille",
       "items": [
         {
+          "titre": "Bruxelles inflige 550 millions d'euros à AliExpress au titre du DSA",
+          "texteHtml": "<p>La Commission européenne a sanctionné lundi 20 juillet la plateforme de commerce en ligne pour manquement à son obligation d'évaluer et d'atténuer les risques de diffusion de produits illégaux, dangereux ou contrefaits, et lui ordonne de prendre des mesures correctives. La décision relève du règlement sur les services numériques. Elle donne un ordre de grandeur aux directions juridiques qui chiffrent aujourd'hui leur exposition aux autres régimes de sanction européens, AI Act compris.</p>",
+          "sources": [
+            {
+              "nom": "Commission européenne",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+            }
+          ],
+          "rang": 2,
+          "id": "bruxelles-inflige-550-millions-d-euros-a-aliexpress-au"
+        },
+        {
           "titre": "Le CEPD réclame une base juridique pour les échanges entre régulateurs",
-          "texteHtml": "<p>Réuni à Dublin les 16 et 17 juillet, le Comité européen de la protection des données a plaidé pour un cadre clair autorisant le partage d'informations entre autorités aux compétences distinctes. La demande vise une difficulté quotidienne : un même dossier d'IA relève à la fois du RGPD et de l'AI Act, appliqués par des régulateurs qui ne disposent pas aujourd'hui d'un fondement solide pour se transmettre leurs pièces.</p>",
+          "texteHtml": "<p>Réuni à Dublin les 16 et 17 juillet, le Comité européen de la protection des données a plaidé pour un cadre clair autorisant le partage d'informations entre autorités aux compétences distinctes. La demande vise une gêne quotidienne : un même dossier d'IA relève du RGPD et de l'AI Act, appliqués par des régulateurs qui manquent aujourd'hui d'un fondement solide pour se transmettre leurs pièces.</p>",
           "sources": [
             {
               "nom": "CNIL",
               "url": "https://www.cnil.fr/fr/cepd-base-juridique-interreglementaire"
             }
           ],
-          "rang": 2,
+          "rang": 3,
           "id": "le-cepd-reclame-une-base-juridique-pour-les-echanges-entre"
         },
         {
           "titre": "France Travail teste un algorithme de profilage des demandeurs d'emploi",
-          "texteHtml": "<p>La Quadrature du Net a obtenu un document interne et l'a transmis à Radio France, ce qui a rendu l'outil public ; l'opérateur n'avait rien annoncé. L'algorithme examine le dossier d'un inscrit pour signaler ceux dont la recherche d'emploi paraît insuffisante. Sept mille dossiers ont servi de test et le dispositif viserait plus de six millions d'inscrits.</p>",
+          "texteHtml": "<p>La Quadrature du Net a obtenu un document interne, un support de présentation de trente minutes, et l'a transmis à Radio France ; l'opérateur n'avait rien annoncé. L'outil passe en revue le dossier d'un inscrit pour signaler ceux dont la recherche d'emploi paraît insuffisante. Sept mille dossiers ont servi de test, le dispositif viserait plus de six millions d'inscrits. L'association dénonce une massification des contrôles et le glissement d'une décision politique vers un outil présenté comme technique.</p>",
           "sources": [
             {
               "nom": "Next.ink",
@@ -70,32 +86,20 @@
               "url": "https://www.clubic.com/actualite-621985-france-travail-veut-utiliser-l-ia-pour-profiler-des-millions-de-demandeurs-d-emploi.html"
             }
           ],
-          "rang": 3,
+          "rang": 4,
           "id": "france-travail-teste-un-algorithme-de-profilage-des"
         },
         {
-          "titre": "La Banque des règlements internationaux décrit un secteur en surinvestissement",
-          "texteHtml": "<p>Le rapport de l'institution bâloise, banque des banques centrales, estime la course à l'investissement dans l'IA déjà excessive. Il envisage un passage de l'« explosion » à l'« effondrement », d'autant plus brutal que la construction des centres de données repose sur de la dette.</p>",
+          "titre": "La Banque des règlements internationaux décrit un secteur déjà surinvesti",
+          "texteHtml": "<p>Le rapport de l'institution bâloise, banque des banques centrales, détaille les conséquences possibles de la course à l'investissement dans l'IA. Il envisage un passage de l'« explosion » à l'« effondrement », d'autant plus brutal que la construction des centres de données repose sur de la dette.</p>",
           "sources": [
             {
               "nom": "Next.ink",
               "url": "https://next.ink/248064/le-surinvestissement-dans-lia-pourrait-passer-dune-explosion-a-un-effondrement/"
             }
           ],
-          "rang": 4,
-          "id": "la-banque-des-reglements-internationaux-decrit-un-secteur"
-        },
-        {
-          "titre": "Pékin suspend ses exportations d'hélium et expose l'industrie européenne",
-          "texteHtml": "<p>Ce gaz refroidit les aimants des appareils d'imagerie médicale et intervient dans la fabrication des semi-conducteurs, sans substitut connu. La Tribune décrit une crise d'approvisionnement mondiale et l'urgence pour l'Europe de trouver d'autres fournisseurs. Les hôpitaux et les fondeurs partagent ici la même dépendance.</p>",
-          "sources": [
-            {
-              "nom": "La Tribune",
-              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/10052323342891/tensions-sur-lhelium-pourquoi-la-decision-de-pekin-menace-lindustrie-et-la-sante-en-europe"
-            }
-          ],
           "rang": 5,
-          "id": "pekin-suspend-ses-exportations-d-helium-et-expose-l"
+          "id": "la-banque-des-reglements-internationaux-decrit-un-secteur"
         }
       ]
     },
@@ -106,48 +110,44 @@
       "format": "detaille",
       "items": [
         {
-          "titre": "OpenAI publie ses enseignements sur les modèles à horizon long",
-          "texteHtml": "<p>Le laboratoire détaille les risques propres aux modèles qui exécutent des tâches sur de longues durées, les défaillances rencontrées en production et les garde-fous ajoutés au fil des déploiements. Le document tombe au moment où les entreprises passent leurs premiers agents en exploitation réelle.</p>",
-          "sources": [
-            {
-              "nom": "OpenAI",
-              "url": "https://openai.com/index/safety-alignment-long-horizon-models"
-            }
-          ],
-          "rang": 6,
-          "id": "openai-publie-ses-enseignements-sur-les-modeles-a-horizon"
-        },
-        {
-          "titre": "Le règlement de 1,5 milliard de dollars d'Anthropic sur le droit d'auteur est approuvé",
-          "texteHtml": "<p>L'homologation définitive clôt cette procédure. Elle laisse entière la question de l'entraînement sur des œuvres protégées, que d'autres affaires continuent de poser devant les tribunaux américains.</p>",
+          "titre": "Le règlement de 1,5 milliard de dollars d'Anthropic sur le droit d'auteur est homologué",
+          "texteHtml": "<p>L'approbation définitive clôt la procédure engagée par des auteurs contre le laboratoire, sur le montant le plus élevé jamais accepté dans un litige de droit d'auteur lié à l'IA. TechCrunch souligne que cette homologation règle une affaire sans trancher la question de fond, l'entraînement d'un modèle sur des œuvres protégées, que d'autres contentieux continuent de porter devant les tribunaux américains. Le précédent posé est économique : un laboratoire a préféré payer 1,5 milliard de dollars plutôt que faire juger la licéité de son corpus d'entraînement.</p>",
           "sources": [
             {
               "nom": "TechCrunch",
               "url": "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/"
             }
           ],
-          "rang": 7,
+          "rang": 6,
           "id": "le-reglement-de-1-5-milliard-de-dollars-d-anthropic-sur-le"
         },
         {
-          "titre": "Google travaillerait sur une puce taillée pour Gemini",
-          "texteHtml": "<p>L'information vient de The Information et Google ne l'a pas confirmée : Alphabet développerait un composant serveur destiné à exécuter Gemini avec un meilleur rendement énergétique. ZDNet indique que cette puce, nommée « Frozen v2 », s'ajouterait aux TPU maison plutôt que de les remplacer. L'action Alphabet a monté après la publication.</p>",
+          "titre": "Sony poursuit Udio pour plus de 30 000 titres",
+          "texteHtml": "<p>Sony Music Entertainment a déposé lundi 20 juillet devant un tribunal de New York une nouvelle plainte contre le générateur de musique Udio, accusé d'avoir porté atteinte au droit d'auteur sur plus de 30 000 enregistrements de son catalogue. La liste va de « Hound Dog » d'Elvis Presley à « Say My Name » de Beyoncé et « As It Was » de Harry Styles ; The Verge en a publié le détail. La maison de disques avait déjà engagé une première procédure contre le même service. Une direction juridique qui évalue un outil de génération musicale dispose là d'un inventaire précis du répertoire qu'un ayant droit considère comme absorbé sans autorisation.</p>",
           "sources": [
             {
-              "nom": "TechCrunch",
-              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/"
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/968375/sony-udio-lawsuit-songs-ai-copyright"
+            }
+          ],
+          "rang": 7,
+          "id": "sony-poursuit-udio-pour-plus-de-30-000-titres"
+        },
+        {
+          "titre": "Le risque de crédit d'Oracle au plus haut depuis près de dix-huit ans",
+          "texteHtml": "<p>Le coût de protection de la dette d'Oracle contre un défaut a atteint lundi 20 juillet un sommet pluriannuel, et les obligations déjà émises par le groupe ont reculé. Les investisseurs doutent du rendement des investissements engagés dans l'IA, financés par l'emprunt. Le bureau de trading d'UBS défend la lecture inverse : la correction sur les valeurs de momentum toucherait à sa fin, et le moment serait venu de reconstituer des positions sur l'IA et les semi-conducteurs. Oracle compte comme fournisseur de capacité cloud pour des entreprises européennes, et le prix de sa dette mesure ce que le marché pense de sa capacité à tenir ses engagements de construction.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst"
             },
             {
               "nom": "Bloomberg",
-              "url": "https://www.bloomberg.com/news/articles/2026-07-20/google-plans-new-chip-to-boost-ai-efficiency-information-says"
-            },
-            {
-              "nom": "ZDNet France",
-              "url": "https://www.zdnet.fr/actualites/avec-frozen-v2-google-veut-graver-gemini-directement-dans-le-silicium-498828.htm"
+              "url": "https://www.bloomberg.com/news/articles/2026-07-20/ubs-trading-desk-says-buy-momentum-stocks-as-selloff-nears-end"
             }
           ],
           "rang": 8,
-          "id": "google-travaillerait-sur-une-puce-taillee-pour-gemini"
+          "id": "le-risque-de-credit-d-oracle-au-plus-haut-depuis-pres-de"
         }
       ]
     },
@@ -158,20 +158,24 @@
       "format": "detaille",
       "items": [
         {
-          "titre": "SenseTime annonce le passage de l'économie du token à l'économie de la tâche",
-          "texteHtml": "<p>Xu Li, son directeur général, déclare au South China Morning Post que le prix des tokens baissera comme celui de la donnée télécom il y a vingt ans. Une fois les modèles et la puissance de calcul devenus des infrastructures de base, la valeur commerciale se déplacerait vers la tâche accomplie. Le groupe chinois construit sa stratégie sur ce basculement.</p>",
+          "titre": "SenseTime annonce la fin de l'économie du token",
+          "texteHtml": "<p>Xu Li, directeur général du groupe chinois, déclare au South China Morning Post que la commercialisation de l'IA passera d'une « économie du token » à une « économie de la tâche ». « Le prix des tokens baissera inévitablement, comme le coût de la donnée télécom il y a vingt ans », dit-il. Une fois les modèles de fondation et la puissance de calcul devenus des infrastructures de base, la valeur commerciale se déplacerait vers la tâche accomplie, et SenseTime bâtit son offre sur ce pari. La déclaration tombe à la clôture de la World Artificial Intelligence Conference, achevée lundi à Shanghai, où Wang Xiaogang, cofondateur du groupe, a décrit le manque de données et de « cerveau » qui freine les fabricants chinois de robots.</p>",
           "sources": [
             {
               "nom": "South China Morning Post",
               "url": "https://www.scmp.com/tech/big-tech/article/3361242/no-longer-token-economy-sensetime-bets-task-economy-token-prices-set-drop"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/article/3361243/chinese-robot-makers-lament-if-we-only-had-better-brain-and-more-data"
             }
           ],
           "rang": 9,
-          "id": "sensetime-annonce-le-passage-de-l-economie-du-token-a-l"
+          "id": "sensetime-annonce-la-fin-de-l-economie-du-token"
         },
         {
           "titre": "Z.AI achève un centre de données équipé uniquement de puces chinoises",
-          "texteHtml": "<p>L'installation, destinée à l'entraînement de modèles, ne contient aucun composant Nvidia, dont l'exportation vers la Chine reste sous restriction américaine. Pékin dispose ainsi d'une démonstration grandeur nature de sa capacité à entraîner sans silicium américain.</p>",
+          "texteHtml": "<p>L'installation, destinée à l'entraînement de modèles, ne contient aucun composant Nvidia, dont les puces les plus performantes restent soumises à restriction d'exportation vers la Chine. Bloomberg y voit une étape importante de l'effort mené par Pékin pour remplacer le silicium américain. Le rendement réel de cette installation reste la question ouverte, faute de mesure d'entraînement publiée. Un acheteur européen y gagne une information indirecte : la capacité chinoise à servir des modèles ouverts hors des chaînes d'approvisionnement américaines progresse.</p>",
           "sources": [
             {
               "nom": "Bloomberg",
@@ -191,7 +195,7 @@
       "items": [
         {
           "titre": "PlanFlip attaque les systèmes multi-agents par leur planificateur",
-          "texteHtml": "<p>Les auteurs montrent qu'une injection unique dans le contexte du planificateur corrompt d'un seul coup toutes les sous-tâches transmises aux agents d'exécution et de contrôle, un effet qu'ils nomment amplification en cascade. Quatre variantes sont décrites : substitution d'objectif, inversion de priorité, pollution du contexte, confusion des rôles. Une architecture qui filtre les entrées des exécutants sans filtrer celles du planificateur protège la mauvaise porte.</p>",
+          "texteHtml": "<p>Les auteurs désignent la phase de planification comme surface d'attaque : une injection unique dans le contexte du planificateur corrompt d'un seul coup toutes les sous-tâches transmises aux agents d'exécution et de contrôle, effet qu'ils nomment amplification en cascade. Quatre variantes sont décrites : substitution d'objectif, inversion de priorité, pollution du contexte, confusion des rôles. Une architecture qui filtre les entrées des exécutants sans filtrer celles du planificateur garde la mauvaise porte.</p>",
           "sources": [
             {
               "nom": "arXiv",
@@ -200,6 +204,18 @@
           ],
           "rang": 11,
           "id": "planflip-attaque-les-systemes-multi-agents-par-leur"
+        },
+        {
+          "titre": "Un modèle arrête sa réponse avant de produire son raisonnement",
+          "texteHtml": "<p>L'équipe reprend une question piège : « Je veux laver ma voiture. La station de lavage est à 100 mètres. Dois-je marcher ou conduire ? » Seule la conduite fonctionne, puisque la voiture doit se rendre à la station, et les modèles recommandent pourtant la marche. Sur Qwen3-8B, en 210 exécutions réparties sur cinq consignes système, l'engagement erroné survient dans 85 à 100 % des tirages selon la condition. Les auteurs ajoutent des indices au niveau des activations qui situent la décision avant la production de la chaîne de raisonnement. Une trace de raisonnement lisible ne prouve donc pas que la décision en découle, ce qui limite la valeur d'audit des journaux d'agents fondés sur ces traces.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.16451"
+            }
+          ],
+          "rang": 12,
+          "id": "un-modele-arrete-sa-reponse-avant-de-produire-son"
         }
       ]
     },
@@ -211,53 +227,41 @@
       "items": [
         {
           "titre": null,
-          "texteHtml": "<p>Le coût de protection de la dette d'Oracle contre un défaut a atteint son plus haut niveau depuis près de dix-huit ans, les investisseurs doutant du rendement de ses investissements en IA.</p>",
+          "texteHtml": "<p>Pékin a suspendu ses exportations d'hélium, gaz sans substitut connu pour refroidir les aimants des appareils d'imagerie médicale et pour la fabrication des semi-conducteurs, ce qui place hôpitaux et fondeurs européens devant la même pénurie.</p>",
           "sources": [
             {
-              "nom": "Bloomberg",
-              "url": "https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst"
-            }
-          ],
-          "rang": 12,
-          "id": "le-cout-de-protection-de-la-dette-d-oracle"
-        },
-        {
-          "titre": null,
-          "texteHtml": "<p>La direction du Center for AI Standards and Innovation se retrouve vacante après une nouvelle démission, la troisième rotation du poste depuis le départ de David Sacks.</p>",
-          "sources": [
-            {
-              "nom": "TechCrunch",
-              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/"
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/10052323342891/tensions-sur-lhelium-pourquoi-la-decision-de-pekin-menace-lindustrie-et-la-sante-en-europe"
             }
           ],
           "rang": 13,
-          "id": "la-direction-du-center-for-ai-standards-and"
+          "id": "pekin-a-suspendu-ses-exportations-d-helium-gaz-sans"
         },
         {
           "titre": null,
-          "texteHtml": "<p>GigaAI, société chinoise de modèles du monde, discute d'une introduction en bourse à Hong Kong dès cette année, dans une vague d'entrées en bourse de laboratoires chinois.</p>",
+          "texteHtml": "<p>Les dettes hors bilan de cinq géants américains de la technologie atteignent 1 650 milliards de dollars, gonflées par des montages de financement opaques adossés à l'IA.</p>",
           "sources": [
             {
-              "nom": "Bloomberg",
-              "url": "https://www.bloomberg.com/news/articles/2026-07-21/china-s-gigaai-seeks-2026-hong-kong-ipo-in-first-for-world-model"
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding"
             }
           ],
           "rang": 14,
-          "id": "gigaai-societe-chinoise-de-modeles-du-monde-discute"
+          "id": "les-dettes-hors-bilan-de-cinq-geants-americains"
         }
       ]
     }
   ],
   "analyse": {
-    "titre": "Le prix du token compte plus que le vainqueur des modèles",
-    "these": "La chute annoncée du prix des tokens pèse plus lourd, pour un acheteur français, que la riposte préparée à Washington.",
-    "html": "<p>Le bruit du jour vient de Washington. La Maison-Blanche cherche un moyen de bloquer les modèles ouverts chinois, les conseillers du président s'invectivent en public, et l'ouverture des poids de Kimi K3 le 27 juillet occupera les commentateurs jusqu'à la fin du mois. Nous pensons qu'une phrase prononcée à Shanghai pèse plus lourd pour un décideur français.</p>\n<p>Xu Li, patron de SenseTime, présente la baisse du prix des tokens comme une certitude et la compare à celle de la donnée télécom des années 2000. Rapprochez cette déclaration de deux autres éléments du jour. La Banque des règlements internationaux décrit un secteur en surinvestissement, financé par de la dette. Le coût de protection de la dette d'Oracle atteint son plus haut niveau depuis près de dix-huit ans. Trois signaux, une même mécanique : des capitaux empruntés pour bâtir des capacités dont le prix de vente unitaire va baisser.</p>\n<p>Nous en tirons une conséquence budgétaire. Le poste « inférence » de vos plans 2027 et 2028 est surestimé si vous l'avez calculé sur les tarifs de 2026. Les engagements pluriannuels de volume, que les fournisseurs proposent aujourd'hui avec des remises confortables, transfèrent ce risque de baisse sur l'acheteur. Une organisation qui réserve trois ans de capacité ce trimestre paiera en 2029 un tarif que le marché aura oublié.</p>\n<p>Trois mesures suivent de cette lecture. Négociez des clauses de révision tarifaire annuelle plutôt que des remises de volume. Séparez dans vos architectures la couche modèle de la couche tâche, pour changer de fournisseur sans réécrire vos agents. Mesurez le coût par tâche accomplie plutôt que le coût par million de tokens : c'est l'unité sur laquelle vos fournisseurs factureront demain, et la seule qui garde du sens quand le prix unitaire s'effondre.</p>\n<p>Le sort des poids ouverts se décidera à Washington, sans vous. Les contrats que vous signez ce trimestre engagent votre budget pour trois exercices. La seconde question mérite au moins le temps que vous accordez à la première.</p>",
-    "htmlExtrait": "<p>Le bruit du jour vient de Washington. La Maison-Blanche cherche un moyen de bloquer les modèles ouverts chinois, les conseillers du président s'invectivent en public, et l'ouverture des poids de Kimi K3 le 27 juillet occupera les commentateurs jusqu'à la fin du mois. Nous pensons qu'une phrase prononcée à Shanghai pèse plus lourd pour un décideur français.</p>\n<p>Xu Li, patron de SenseTime, présente la baisse du prix des tokens comme une certitude et la compare à celle de la donnée télécom des années 2000. Rapprochez cette déclaration de deux autres éléments du jour. La Banque des règlements internationaux décrit un secteur en surinvestissement, financé par de la dette. Le coût de protection de la dette d'Oracle atteint son plus haut niveau depuis près de dix-huit ans. Trois signaux, une même mécanique : des capitaux empruntés pour bâtir des capacités dont le prix de vente unitaire va baisser.</p>",
+    "titre": "L'infrastructure se paie à crédit, son produit va baisser de prix",
+    "these": "Les fournisseurs américains financent par la dette une capacité dont le prix unitaire va chuter, ce qui fait de leur solidité financière un critère d'achat.",
+    "html": "<p>Cinq géants américains de la technologie portent 1 650 milliards de dollars de dettes que leurs bilans ne montrent pas, selon Nikkei Asia. Le même jour, le coût de protection de la dette d'Oracle contre un défaut atteint un sommet inédit depuis près de dix-huit ans, et la Banque des règlements internationaux juge le secteur déjà surinvesti en pointant l'emprunt qui finance les centres de données. Nous lisons ces trois éléments avec un quatrième, prononcé à Shanghai : Xu Li, patron de SenseTime, annonce que le prix des tokens baissera comme celui de la donnée télécom des années 2000.</p>\n<p>Le rapprochement donne une mécanique. La capacité d'inférence se construit à crédit, sur des montages que les marchés obligataires commencent à sanctionner, et le prix de vente unitaire de ce qu'elle produit va baisser. Les acteurs chinois montent en capacité par une autre voie : Moonshot AI et GigaAI préparent des introductions en bourse à Hong Kong, Z.AI vient d'achever un centre de données entièrement équipé de puces nationales. Deux structures de capital, une seule trajectoire de prix.</p>\n<p>Nous en tirons une conséquence d'achat que peu de directions ont intégrée. La solidité financière d'un fournisseur d'IA devient un critère de sélection au même rang que la latence ou la qualité des réponses. Un fournisseur qui restructure sa dette en 2028 augmente ses tarifs, ferme des régions, retire des modèles du catalogue et raccourcit ses préavis de dépréciation. Votre agent de production s'arrête alors sur un modèle retiré, un vendredi soir, sans que le contrat vous donne le moindre recours.</p>\n<p>Trois mesures suivent. Exigez de vos fournisseurs de modèles les garanties contractuelles que vous demandez à un hébergeur : préavis de dépréciation chiffré en mois, réversibilité des données, engagement de continuité. Écartez les engagements pluriannuels de volume payés d'avance, qui vous transfèrent le risque de baisse des prix pendant que le fournisseur encaisse la trésorerie dont il a besoin. Gardez un second fournisseur testé en conditions réelles, avec un basculement déjà répété au moins une fois.</p>\n<p>La course aux meilleurs modèles se tranchera sans vous. La question de savoir qui sera encore là pour honorer votre contrat en 2029 se prépare ce trimestre, dans les clauses que vous signez.</p>",
+    "htmlExtrait": "<p>Cinq géants américains de la technologie portent 1 650 milliards de dollars de dettes que leurs bilans ne montrent pas, selon Nikkei Asia. Le même jour, le coût de protection de la dette d'Oracle contre un défaut atteint un sommet inédit depuis près de dix-huit ans, et la Banque des règlements internationaux juge le secteur déjà surinvesti en pointant l'emprunt qui finance les centres de données. Nous lisons ces trois éléments avec un quatrième, prononcé à Shanghai : Xu Li, patron de SenseTime, annonce que le prix des tokens baissera comme celui de la donnée télécom des années 2000.</p>\n<p>Le rapprochement donne une mécanique. La capacité d'inférence se construit à crédit, sur des montages que les marchés obligataires commencent à sanctionner, et le prix de vente unitaire de ce qu'elle produit va baisser. Les acteurs chinois montent en capacité par une autre voie : Moonshot AI et GigaAI préparent des introductions en bourse à Hong Kong, Z.AI vient d'achever un centre de données entièrement équipé de puces nationales. Deux structures de capital, une seule trajectoire de prix.</p>",
     "itemsCites": [
-      1,
-      4,
+      5,
+      8,
       9,
-      12
+      14
     ],
     "auteur": "L'équipe éditoriale Masteria",
     "auteurRole": "Sous la direction de Mathias Nizan"
@@ -265,14 +269,14 @@
   "precedente": {
     "date": "2026-07-20",
     "dateLongue": "lundi 20 juillet 2026",
-    "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
+    "titreEditorial": "Kimi K3 sature, l'article 50 arrive",
     "nbItems": 14
   },
   "suivante": null,
   "nbItems": 14,
-  "nbSources": 21,
-  "nbSignes": 6732,
-  "tempsLecture": 6,
+  "nbSources": 22,
+  "nbSignes": 9850,
+  "tempsLecture": 8,
   "zones": [
     {
       "cle": "europe",
@@ -292,12 +296,12 @@
     {
       "cle": "recherche",
       "libelle": "Recherche et publications",
-      "nb": 1
+      "nb": 2
     },
     {
       "cle": "bref",
       "libelle": "En bref",
-      "nb": 3
+      "nb": 2
     }
   ],
   "sourcesDuJour": [
@@ -305,12 +309,12 @@
     "Next.ink",
     "MIT Technology Review",
     "Stratechery",
+    "TechCrunch",
+    "Commission européenne",
     "CNIL",
     "Siècle Digital",
     "Clubic",
-    "La Tribune",
-    "OpenAI",
-    "TechCrunch"
+    "The Verge"
   ],
   "nbFluxConsultes": 38,
   "nbArticlesCollectes": 129,

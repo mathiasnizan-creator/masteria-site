@@ -6,7 +6,7 @@
     "derniereDate": "2026-07-21",
     "totalEditions": 2,
     "totalItems": 28,
-    "totalSources": 37
+    "totalSources": 40
   },
   "editions": [
     {
@@ -15,11 +15,11 @@
       "dateAffichee": "21 juillet 2026",
       "mois": "2026-07",
       "moisAffiche": "Juillet 2026",
-      "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
-      "chapeau": "La Maison-Blanche prépare des restrictions sur les modèles ouverts étrangers, six jours avant la publication des poids de Kimi K3. À Shanghai, le patron de SenseTime annonce la fin de l'économie du token.",
+      "titreEditorial": "Washington vise les poids ouverts, la dette rattrape l'IA",
+      "chapeau": "L'administration Trump étudie des restrictions sur les modèles à poids ouverts étrangers, six jours avant la publication des poids de Kimi K3. Bruxelles sanctionne AliExpress de 550 millions d'euros au titre du DSA, pendant que le coût de protection de la dette d'Oracle atteint son plus haut niveau depuis près de dix-huit ans.",
       "nbItems": 14,
-      "nbSources": 21,
-      "tempsLecture": 6,
+      "nbSources": 22,
+      "tempsLecture": 8,
       "zones": [
         {
           "cle": "europe",
@@ -35,11 +35,11 @@
         },
         {
           "cle": "recherche",
-          "nb": 1
+          "nb": 2
         },
         {
           "cle": "bref",
-          "nb": 3
+          "nb": 2
         }
       ],
       "sources": [
@@ -47,21 +47,28 @@
         "Next.ink",
         "MIT Technology Review",
         "Stratechery",
+        "TechCrunch",
+        "Commission européenne",
         "CNIL",
         "Siècle Digital",
         "Clubic",
-        "La Tribune",
-        "OpenAI",
-        "TechCrunch",
+        "The Verge",
         "Bloomberg",
         "South China Morning Post",
-        "arXiv"
+        "arXiv",
+        "La Tribune",
+        "Nikkei Asia"
       ],
       "items": [
         {
-          "t": "Washington prépare sa riposte avant l'ouverture des poids de Kimi K3",
+          "t": "Washington prépare des restrictions sur les modèles ouverts avant l'ouverture des poids de Kimi K3",
           "z": "une",
-          "id": "washington-prepare-sa-riposte-avant-l-ouverture-des-poids"
+          "id": "washington-prepare-des-restrictions-sur-les-modeles-ouverts"
+        },
+        {
+          "t": "Bruxelles inflige 550 millions d'euros à AliExpress au titre du DSA",
+          "z": "europe",
+          "id": "bruxelles-inflige-550-millions-d-euros-a-aliexpress-au"
         },
         {
           "t": "Le CEPD réclame une base juridique pour les échanges entre régulateurs",
@@ -74,34 +81,29 @@
           "id": "france-travail-teste-un-algorithme-de-profilage-des"
         },
         {
-          "t": "La Banque des règlements internationaux décrit un secteur en surinvestissement",
+          "t": "La Banque des règlements internationaux décrit un secteur déjà surinvesti",
           "z": "europe",
           "id": "la-banque-des-reglements-internationaux-decrit-un-secteur"
         },
         {
-          "t": "Pékin suspend ses exportations d'hélium et expose l'industrie européenne",
-          "z": "europe",
-          "id": "pekin-suspend-ses-exportations-d-helium-et-expose-l"
-        },
-        {
-          "t": "OpenAI publie ses enseignements sur les modèles à horizon long",
-          "z": "international",
-          "id": "openai-publie-ses-enseignements-sur-les-modeles-a-horizon"
-        },
-        {
-          "t": "Le règlement de 1,5 milliard de dollars d'Anthropic sur le droit d'auteur est approuvé",
+          "t": "Le règlement de 1,5 milliard de dollars d'Anthropic sur le droit d'auteur est homologué",
           "z": "international",
           "id": "le-reglement-de-1-5-milliard-de-dollars-d-anthropic-sur-le"
         },
         {
-          "t": "Google travaillerait sur une puce taillée pour Gemini",
+          "t": "Sony poursuit Udio pour plus de 30 000 titres",
           "z": "international",
-          "id": "google-travaillerait-sur-une-puce-taillee-pour-gemini"
+          "id": "sony-poursuit-udio-pour-plus-de-30-000-titres"
         },
         {
-          "t": "SenseTime annonce le passage de l'économie du token à l'économie de la tâche",
+          "t": "Le risque de crédit d'Oracle au plus haut depuis près de dix-huit ans",
+          "z": "international",
+          "id": "le-risque-de-credit-d-oracle-au-plus-haut-depuis-pres-de"
+        },
+        {
+          "t": "SenseTime annonce la fin de l'économie du token",
           "z": "chine",
-          "id": "sensetime-annonce-le-passage-de-l-economie-du-token-a-l"
+          "id": "sensetime-annonce-la-fin-de-l-economie-du-token"
         },
         {
           "t": "Z.AI achève un centre de données équipé uniquement de puces chinoises",
@@ -114,19 +116,19 @@
           "id": "planflip-attaque-les-systemes-multi-agents-par-leur"
         },
         {
-          "t": "Le coût de protection de la dette d'Oracle contre un défaut a…",
-          "z": "bref",
-          "id": "le-cout-de-protection-de-la-dette-d-oracle"
+          "t": "Un modèle arrête sa réponse avant de produire son raisonnement",
+          "z": "recherche",
+          "id": "un-modele-arrete-sa-reponse-avant-de-produire-son"
         },
         {
-          "t": "La direction du Center for AI Standards and Innovation se retrouve vacante…",
+          "t": "Pékin a suspendu ses exportations d'hélium, gaz sans substitut connu pour refroidir…",
           "z": "bref",
-          "id": "la-direction-du-center-for-ai-standards-and"
+          "id": "pekin-a-suspendu-ses-exportations-d-helium-gaz-sans"
         },
         {
-          "t": "GigaAI, société chinoise de modèles du monde, discute d'une introduction en bourse…",
+          "t": "Les dettes hors bilan de cinq géants américains de la technologie atteignent…",
           "z": "bref",
-          "id": "gigaai-societe-chinoise-de-modeles-du-monde-discute"
+          "id": "les-dettes-hors-bilan-de-cinq-geants-americains"
         }
       ]
     },
@@ -136,11 +138,11 @@
       "dateAffichee": "20 juillet 2026",
       "mois": "2026-07",
       "moisAffiche": "Juillet 2026",
-      "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
-      "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, la demande ayant saturé sa capacité de calcul. À Paris, la CNIL et l'Autorité de la concurrence ont publié le même jour deux mises en garde sur les agents autonomes.",
+      "titreEditorial": "Kimi K3 sature, l'article 50 arrive",
+      "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, ses cartes graphiques saturées par la demande, et les valeurs des semi-conducteurs ont décroché. Bruxelles publie ses lignes directrices sur l'article 50 de l'AI Act, dont les obligations de transparence s'appliquent dans treize jours.",
       "nbItems": 14,
-      "nbSources": 16,
-      "tempsLecture": 4,
+      "nbSources": 18,
+      "tempsLecture": 7,
       "zones": [
         {
           "cle": "europe",
@@ -164,30 +166,37 @@
         }
       ],
       "sources": [
-        "Next.ink",
         "South China Morning Post",
+        "SCMP, tech war",
         "Bloomberg",
+        "The Verge",
+        "Next.ink",
+        "Commission européenne",
         "CNIL",
         "Siècle Digital",
-        "Commission européenne",
+        "01net",
         "MIT Technology Review",
-        "TechCrunch",
         "Nikkei Asia",
         "arXiv",
+        "ZDNet France",
         "Clubic",
-        "Numerama",
-        "ZDNet France"
+        "Microsoft Source"
       ],
       "items": [
         {
-          "t": "Kimi K3 secoue les marchés quatre jours après sa sortie",
+          "t": "Moonshot AI ferme les inscriptions à Kimi K3, faute de capacité de calcul",
           "z": "une",
-          "id": "kimi-k3-secoue-les-marches-quatre-jours-apres-sa-sortie"
+          "id": "moonshot-ai-ferme-les-inscriptions-a-kimi-k3-faute-de"
         },
         {
-          "t": "La CNIL publie une note exploratoire sur l'IA agentique",
+          "t": "La Commission européenne publie ses lignes directrices sur l'article 50 de l'AI Act",
           "z": "europe",
-          "id": "la-cnil-publie-une-note-exploratoire-sur-l-ia-agentique"
+          "id": "la-commission-europeenne-publie-ses-lignes-directrices-sur"
+        },
+        {
+          "t": "La CNIL et le CIANum publient une note exploratoire sur l'IA agentique",
+          "z": "europe",
+          "id": "la-cnil-et-le-cianum-publient-une-note-exploratoire-sur-l"
         },
         {
           "t": "L'Autorité de la concurrence alerte sur les agents d'achat",
@@ -195,59 +204,54 @@
           "id": "l-autorite-de-la-concurrence-alerte-sur-les-agents-d-achat"
         },
         {
-          "t": "La Commission européenne précise les obligations de transparence de l'AI Act",
-          "z": "europe",
-          "id": "la-commission-europeenne-precise-les-obligations-de"
-        },
-        {
-          "t": "Les modèles de langage discriminent davantage que les recruteurs humains",
+          "t": "Anthropic retire Claude Fable 5 des forfaits Pro et Team Standard",
           "z": "international",
-          "id": "les-modeles-de-langage-discriminent-davantage-que-les"
+          "id": "anthropic-retire-claude-fable-5-des-forfaits-pro-et-team"
         },
         {
-          "t": "Teleperformance veut équiper ses 500 000 salariés d'ici 2027",
+          "t": "Les modèles de langage forment leurs propres biais au tri des candidatures",
           "z": "international",
-          "id": "teleperformance-veut-equiper-ses-500-000-salaries-d-ici-2027"
+          "id": "les-modeles-de-langage-forment-leurs-propres-biais-au-tri"
         },
         {
-          "t": "Une plainte d'Apple pèse sur les projets matériels d'OpenAI",
+          "t": "Nvidia dévoile Rosa, le processeur de sa plateforme Feynman",
           "z": "international",
-          "id": "une-plainte-d-apple-pese-sur-les-projets-materiels-d-openai"
+          "id": "nvidia-devoile-rosa-le-processeur-de-sa-plateforme-feynman"
         },
         {
-          "t": "Alibaba positionne Qwen3.8 juste derrière Claude Fable 5",
+          "t": "01.ai, la société de Kai-Fu Lee, prépare une introduction en bourse à Hong Kong",
           "z": "chine",
-          "id": "alibaba-positionne-qwen3-8-juste-derriere-claude-fable-5"
+          "id": "01-ai-la-societe-de-kai-fu-lee-prepare-une-introduction-en"
         },
         {
-          "t": "Rapidus s'associe à Cadence sur la conception de puces assistée par agents",
+          "t": "La bourse de Tokyo décroche, Kioxia perd 16 %",
           "z": "chine",
-          "id": "rapidus-s-associe-a-cadence-sur-la-conception-de-puces"
+          "id": "la-bourse-de-tokyo-decroche-kioxia-perd-16"
         },
         {
-          "t": "SkillCorpus consolide l'écosystème des compétences pour agents",
+          "t": "VarRate compresse le cache clé-valeur sans réentraînement",
           "z": "recherche",
-          "id": "skillcorpus-consolide-l-ecosysteme-des-competences-pour"
+          "id": "varrate-compresse-le-cache-cle-valeur-sans-reentrainement"
         },
         {
-          "t": "VarRate compresse le cache KV sans réentraînement",
+          "t": "Un relecteur précis n'améliore pas un système multi-agents",
           "z": "recherche",
-          "id": "varrate-compresse-le-cache-kv-sans-reentrainement"
+          "id": "un-relecteur-precis-n-ameliore-pas-un-systeme-multi-agents"
         },
         {
-          "t": "France Travail envisage d'utiliser l'IA pour profiler des millions de demandeurs d'emploi.",
+          "t": "La Commission européenne veut contraindre Android et iOS à ouvrir aux assistants…",
           "z": "bref",
-          "id": "france-travail-envisage-d-utiliser-l-ia-pour-profiler-des"
+          "id": "la-commission-europeenne-veut-contraindre-android-et-ios"
         },
         {
-          "t": "Un piratage mené par IA a conduit Hugging Face à revoir ses…",
+          "t": "ASML, premier fournisseur mondial de machines de lithographie, est devenue la valeur…",
           "z": "bref",
-          "id": "un-piratage-mene-par-ia-a-conduit-hugging"
+          "id": "asml-premier-fournisseur-mondial-de-machines-de-lithographie"
         },
         {
-          "t": "L'Union européenne veut ouvrir Android et iOS aux assistants d'IA concurrents, ce…",
+          "t": "Microsoft étend son infrastructure Azure destinée à l'IA et au calcul haute…",
           "z": "bref",
-          "id": "l-union-europeenne-veut-ouvrir-android-et-ios-aux"
+          "id": "microsoft-etend-son-infrastructure-azure-destinee-a-l-ia"
         }
       ]
     }

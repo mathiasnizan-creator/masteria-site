@@ -6,29 +6,37 @@
   "dateCourte": "lun. 20 juil.",
   "jourSemaine": "lundi",
   "titre": "Veille IA du lundi 20 juillet 2026",
-  "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
-  "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, la demande ayant saturé sa capacité de calcul. À Paris, la CNIL et l'Autorité de la concurrence ont publié le même jour deux mises en garde sur les agents autonomes.",
+  "titreEditorial": "Kimi K3 sature, l'article 50 arrive",
+  "chapeau": "Moonshot AI a suspendu les inscriptions à Kimi K3 après quarante-huit heures, ses cartes graphiques saturées par la demande, et les valeurs des semi-conducteurs ont décroché. Bruxelles publie ses lignes directrices sur l'article 50 de l'AI Act, dont les obligations de transparence s'appliquent dans treize jours.",
   "une": {
-    "titre": "Kimi K3 secoue les marchés quatre jours après sa sortie",
-    "texteHtml": "<p>Moonshot AI a suspendu les nouvelles inscriptions à son modèle, la demande ayant approché les limites de sa capacité de calcul en quarante-huit heures. Ce modèle open source, annoncé à 2 800 milliards de paramètres, a fait reculer Nvidia et les grandes valeurs technologiques. Les marchés y voient un écho du choc DeepSeek R1 de janvier 2025, séance où Nvidia avait perdu près de 600 milliards de dollars de capitalisation. Bloomberg avance une lecture distincte du précédent : l'enjeu de Kimi K3 tiendrait à la mémoire davantage qu'à la puissance de calcul. Pour un acheteur européen, la question opérationnelle porte sur la capacité de Moonshot à servir ses utilisateurs hors de Chine, que la suspension des inscriptions laisse en suspens.</p>",
+    "titre": "Moonshot AI ferme les inscriptions à Kimi K3, faute de capacité de calcul",
+    "texteHtml": "<p>La société pékinoise a publié dimanche 19 juillet un message sur X : « Ces quarante-huit dernières heures, la demande a poussé nos capacités actuelles jusqu'à leurs limites. Nos GPU le sentent passer. » Le modèle, sorti vendredi 17 juillet avec des poids ouverts, annonce 2 800 milliards de paramètres, une capacité visuelle native et une conception orientée vers le code sur longue durée et le travail intellectuel. Le South China Morning Post rapporte que l'écart entre la Chine et les États-Unis sur les modèles de frontière se compte désormais « en semaines ». Bloomberg compare la réaction des marchés à celle de janvier 2025, quand la sortie de DeepSeek R1 avait effacé près de 600 milliards de dollars de la capitalisation de Nvidia en une séance, et avance une lecture distincte : l'enjeu de Kimi K3 porterait sur la mémoire davantage que sur la puissance de calcul. The Verge décrit une double offensive, Moonshot et Alibaba ayant présenté à quelques jours d'intervalle des modèles qu'ils déclarent au niveau des meilleurs d'OpenAI et d'Anthropic pour une fraction du coût.</p>",
     "sources": [
-      {
-        "nom": "Next.ink",
-        "url": "https://next.ink/248051/kimi-k3-ce-quil-faut-savoir-du-modele-open-source-de-2-800-milliards-de-parametres/"
-      },
       {
         "nom": "South China Morning Post",
         "url": "https://www.scmp.com/tech/article/3361172/kimi-k3-developer-suspends-new-subscriptions-amid-compute-constraints"
       },
       {
+        "nom": "SCMP, tech war",
+        "url": "https://www.scmp.com/tech/tech-war/article/3361142/why-chinas-open-weight-ai-model-kimi-k3-sparking-anxiety-silicon-valley"
+      },
+      {
         "nom": "Bloomberg",
         "url": "https://www.bloomberg.com/news/articles/2026-07-20/moonshot-s-kimi-k3-may-be-more-about-memory-than-compute"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/967781/chinese-ai-models-open-source-moonshot-kimi-k3-alibaba-qwen"
+      },
+      {
+        "nom": "Next.ink",
+        "url": "https://next.ink/248051/kimi-k3-ce-quil-faut-savoir-du-modele-open-source-de-2-800-milliards-de-parametres/"
       }
     ],
     "rang": 1,
     "zone": "une",
     "zoneLibelle": "En tête d'affiche",
-    "id": "kimi-k3-secoue-les-marches-quatre-jours-apres-sa-sortie"
+    "id": "moonshot-ai-ferme-les-inscriptions-a-kimi-k3-faute-de"
   },
   "sections": [
     {
@@ -38,40 +46,40 @@
       "format": "detaille",
       "items": [
         {
-          "titre": "La CNIL publie une note exploratoire sur l'IA agentique",
-          "texteHtml": "<p>Rédigée avec le Conseil de l'IA et du Numérique, elle porte sur les systèmes capables d'agir sur leur environnement à la place de leur utilisateur. Le régulateur s'intéresse à la délégation de tâches et aux interactions hyperpersonnalisées qu'elle suppose, deux points qui touchent au traitement des données personnelles.</p>",
-          "sources": [
-            {
-              "nom": "CNIL",
-              "url": "https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note"
-            }
-          ],
-          "rang": 2,
-          "id": "la-cnil-publie-une-note-exploratoire-sur-l-ia-agentique"
-        },
-        {
-          "titre": "L'Autorité de la concurrence alerte sur les agents d'achat",
-          "texteHtml": "<p>Elle décrit un scénario où un agent compare les prix, lit les avis, passe commande et paie à la place du consommateur. Sa mise en garde porte sur la position que prendraient ces intermédiaires entre les marchands et leurs clients.</p>",
-          "sources": [
-            {
-              "nom": "Siècle Digital",
-              "url": "https://siecledigital.fr/2026/07/20/lautorite-de-la-concurrence-alerte-sur-les-risques-des-agents-ia-pour-nos-achats-en-ligne/"
-            }
-          ],
-          "rang": 3,
-          "id": "l-autorite-de-la-concurrence-alerte-sur-les-agents-d-achat"
-        },
-        {
-          "titre": "La Commission européenne précise les obligations de transparence de l'AI Act",
-          "texteHtml": "<p>Ces lignes directrices délimitent le champ de l'article 50, qui s'applique aux fournisseurs comme aux déployeurs de systèmes d'IA. Les organisations qui intègrent un modèle tiers dans leurs outils sont donc concernées au même titre que ceux qui l'ont entraîné.</p>",
+          "titre": "La Commission européenne publie ses lignes directrices sur l'article 50 de l'AI Act",
+          "texteHtml": "<p>Le texte délimite le champ des obligations de transparence qui pèsent sur les fournisseurs et sur les déployeurs de systèmes d'IA. Ces obligations entrent en application le 2 août 2026, dans treize jours. Une entreprise française qui intègre un modèle tiers dans un outil destiné à ses clients ou à ses salariés relève du même régime que le laboratoire qui a entraîné ce modèle.</p>",
           "sources": [
             {
               "nom": "Commission européenne",
               "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
             }
           ],
+          "rang": 2,
+          "id": "la-commission-europeenne-publie-ses-lignes-directrices-sur"
+        },
+        {
+          "titre": "La CNIL et le CIANum publient une note exploratoire sur l'IA agentique",
+          "texteHtml": "<p>Les deux institutions examinent les systèmes capables d'agir sur leur environnement à la place de leur utilisateur. Elles pointent les chaînes de traitement qu'implique cette délégation, longues et parfois opaques, et les interactions hyperpersonnalisées qui la rendent possible. Le sujet touche au cœur du RGPD : qui traite quoi, sur quelle base légale, avec quelle traçabilité.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/ia-agentique-cnil-cianum-note"
+            }
+          ],
+          "rang": 3,
+          "id": "la-cnil-et-le-cianum-publient-une-note-exploratoire-sur-l"
+        },
+        {
+          "titre": "L'Autorité de la concurrence alerte sur les agents d'achat",
+          "texteHtml": "<p>Elle décrit la séquence complète : l'agent compare les prix, lit les avis, passe la commande et règle sans que l'utilisateur quitte la conversation. OpenAI propose déjà ce parcours. La question posée par l'Autorité porte sur le pouvoir d'intermédiation que prendrait un tel agent entre les marchands et leurs clients.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/07/20/lautorite-de-la-concurrence-alerte-sur-les-risques-des-agents-ia-pour-nos-achats-en-ligne/"
+            }
+          ],
           "rang": 4,
-          "id": "la-commission-europeenne-precise-les-obligations-de"
+          "id": "l-autorite-de-la-concurrence-alerte-sur-les-agents-d-achat"
         }
       ]
     },
@@ -82,40 +90,40 @@
       "format": "detaille",
       "items": [
         {
-          "titre": "Les modèles de langage discriminent davantage que les recruteurs humains",
-          "texteHtml": "<p>Une recherche relayée par la MIT Technology Review conclut que les modèles forment des biais plus marqués que les humains lors du tri de candidatures. Les chercheurs savaient déjà que ces systèmes héritent des biais de leurs données d'entraînement.</p>",
+          "titre": "Anthropic retire Claude Fable 5 des forfaits Pro et Team Standard",
+          "texteHtml": "<p>Le modèle le plus puissant de la gamme reste inclus dans les offres Max et Team Premium, avec un plafond d'usage. Les abonnés Pro et Team Standard perdent leur accès inclus et paieront chaque requête. Anthropic justifie la décision par la consommation de calcul du modèle.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/anthropic-annonce-une-mauvaise-nouvelle-aux-utilisateurs-de-claude-fable-5.html"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-retire-claude-fable-5-des-forfaits-pro-et-team"
+        },
+        {
+          "titre": "Les modèles de langage forment leurs propres biais au tri des candidatures",
+          "texteHtml": "<p>La MIT Technology Review relaie des travaux qui déplacent le problème connu du recrutement automatisé. Les chercheurs savaient déjà que les modèles héritent des biais humains contenus dans leurs données d'entraînement. Ces nouveaux résultats montrent que les modèles développent en plus des biais qui leur sont propres, sans équivalent chez les recruteurs humains. La portée pratique est immédiate : un modèle lit désormais le CV avant tout être humain. L'AI Act range les systèmes de sélection de candidats parmi les usages à haut risque de son annexe III, ce qui impose évaluation, documentation et supervision humaine à l'employeur qui les déploie.</p>",
           "sources": [
             {
               "nom": "MIT Technology Review",
               "url": "https://www.technologyreview.com/2026/07/20/1140655/ai-biases-hiring-humans/"
             }
           ],
-          "rang": 5,
-          "id": "les-modeles-de-langage-discriminent-davantage-que-les"
-        },
-        {
-          "titre": "Teleperformance veut équiper ses 500 000 salariés d'ici 2027",
-          "texteHtml": "<p>Le prestataire français de services externalisés prévoit d'intégrer l'IA au flux de travail de l'ensemble de ses effectifs, dans un secteur que cette même technologie déstabilise.</p>",
-          "sources": [
-            {
-              "nom": "Bloomberg",
-              "url": "https://www.bloomberg.com/news/articles/2026-07-19/teleperformance-wants-entire-bpo-staff-to-be-ai-enabled-by-2027"
-            }
-          ],
           "rang": 6,
-          "id": "teleperformance-veut-equiper-ses-500-000-salaries-d-ici-2027"
+          "id": "les-modeles-de-langage-forment-leurs-propres-biais-au-tri"
         },
         {
-          "titre": "Une plainte d'Apple pèse sur les projets matériels d'OpenAI",
-          "texteHtml": "<p>La procédure intervient alors qu'OpenAI prépare une entrée dans le matériel et une introduction en bourse.</p>",
+          "titre": "Nvidia dévoile Rosa, le processeur de sa plateforme Feynman",
+          "texteHtml": "<p>Le fondeur avait présenté en début d'année la plateforme Rubin, associant un processeur Arm maison, Vera, successeur de Grace, et un GPU Rubin remplaçant Blackwell. Vera aligne 88 cœurs Olympus en architecture Arm v9.2 et 176 fils d'exécution, avec un cache L2 doublé à 2 Mo par cœur et un cache L3 unifié porté à 162 Mo. Rosa lui succédera dans la génération suivante. Le calendrier compte pour qui planifie un achat de serveurs : deux générations de processeurs maison sont désormais annoncées avant la fin de la décennie.</p>",
           "sources": [
             {
-              "nom": "TechCrunch",
-              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/"
+              "nom": "Next.ink",
+              "url": "https://next.ink/brief-article/nvidia-parle-de-sa-prochaine-generation-de-cpu-rosa-qui-sera-dans-la-plateforme-feynman/"
             }
           ],
           "rang": 7,
-          "id": "une-plainte-d-apple-pese-sur-les-projets-materiels-d-openai"
+          "id": "nvidia-devoile-rosa-le-processeur-de-sa-plateforme-feynman"
         }
       ]
     },
@@ -126,28 +134,28 @@
       "format": "detaille",
       "items": [
         {
-          "titre": "Alibaba positionne Qwen3.8 juste derrière Claude Fable 5",
-          "texteHtml": "<p>Le groupe a présenté Qwen3.8-Max-Preview, version d'aperçu du modèle le plus puissant de sa famille, qu'il déclare second derrière le modèle d'Anthropic.</p>",
+          "titre": "01.ai, la société de Kai-Fu Lee, prépare une introduction en bourse à Hong Kong",
+          "texteHtml": "<p>L'entreprise, fondée par l'informaticien qui a créé Microsoft Research Asia puis dirigé Google Chine, lève des fonds avant une opération visée pour 2027. 01.ai édite la famille Yi, l'une des premières séries chinoises de modèles à poids ouverts. L'opération rejoint la série d'entrées en bourse de laboratoires chinois à Hong Kong, place qui s'impose comme le lieu de cotation du secteur.</p>",
           "sources": [
             {
-              "nom": "South China Morning Post",
-              "url": "https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5"
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-20/ai-pioneer-kai-fu-lee-s-startup-targets-hong-kong-ipo-next-year"
             }
           ],
           "rang": 8,
-          "id": "alibaba-positionne-qwen3-8-juste-derriere-claude-fable-5"
+          "id": "01-ai-la-societe-de-kai-fu-lee-prepare-une-introduction-en"
         },
         {
-          "titre": "Rapidus s'associe à Cadence sur la conception de puces assistée par agents",
-          "texteHtml": "<p>Le fondeur japonais travaillera avec l'éditeur américain sur des outils de conception pilotés par des agents d'IA.</p>",
+          "titre": "La bourse de Tokyo décroche, Kioxia perd 16 %",
+          "texteHtml": "<p>Nikkei Asia attribue la chute à un mouvement de désendettement sur les valeurs liées à l'IA. Kioxia produit de la mémoire flash, segment que la sortie de Kimi K3 place au centre des questions d'investisseurs, Bloomberg lisant ce modèle comme un problème de mémoire davantage que de calcul. Le marché japonais des composants sert de baromètre avancé pour les commandes de serveurs d'IA.</p>",
           "sources": [
             {
               "nom": "Nikkei Asia",
-              "url": "https://asia.nikkei.com/business/tech/semiconductors/japan-s-rapidus-partners-with-cadence-on-ai-agent-chip-design-tools"
+              "url": "https://asia.nikkei.com/business/markets/japanese-stocks-plunge-as-ai-deleverage-sends-kioxia-down-16"
             }
           ],
           "rang": 9,
-          "id": "rapidus-s-associe-a-cadence-sur-la-conception-de-puces"
+          "id": "la-bourse-de-tokyo-decroche-kioxia-perd-16"
         }
       ]
     },
@@ -158,28 +166,28 @@
       "format": "recherche",
       "items": [
         {
-          "titre": "SkillCorpus consolide l'écosystème des compétences pour agents",
-          "texteHtml": "<p>Les auteurs rassemblent et évaluent les compétences ouvertes disponibles pour des agents fondés sur des modèles de langage, dans des conditions d'usage réel. Un travail utile à qui outille des agents en entreprise.</p>",
-          "sources": [
-            {
-              "nom": "arXiv",
-              "url": "https://arxiv.org/abs/2607.15557"
-            }
-          ],
-          "rang": 10,
-          "id": "skillcorpus-consolide-l-ecosysteme-des-competences-pour"
-        },
-        {
-          "titre": "VarRate compresse le cache KV sans réentraînement",
-          "texteHtml": "<p>La méthode ajuste le taux de compression du cache selon le contexte, pour les modèles à contexte long. Le sujet rejoint la lecture que Bloomberg fait de Kimi K3 sur le poids de la mémoire.</p>",
+          "titre": "VarRate compresse le cache clé-valeur sans réentraînement",
+          "texteHtml": "<p>Le cache KV constitue le goulot mémoire de l'inférence sur contexte long. Les auteurs montrent les limites des deux familles de méthodes existantes : les approches par sélection de tokens, SnapKV et Ada-KV, évincent les tokens jugés peu importants de façon irréversible, et l'exactitude s'effondre de 11 à 15 points quand le signal d'importance se dégrade en réutilisation sans requête ; le codage uniforme de rang faible conserve tous les tokens mais dépense le même rang partout. VarRate fait varier le taux de compression selon le contexte. Le travail intéresse qui exploite des modèles à long contexte sur son propre matériel.</p>",
           "sources": [
             {
               "nom": "arXiv",
               "url": "https://arxiv.org/abs/2607.15498"
             }
           ],
+          "rang": 10,
+          "id": "varrate-compresse-le-cache-cle-valeur-sans-reentrainement"
+        },
+        {
+          "titre": "Un relecteur précis n'améliore pas un système multi-agents",
+          "texteHtml": "<p>Les auteurs testent l'hypothèse répandue selon laquelle ajouter un rôle de relecteur spécialisé corrige les réponses fausses. Le protocole couvre 4 181 problèmes Omni-MATH vérifiés, avec des agents gpt-oss-120b appariés. La collaboration n'apporte presque rien sur les niveaux faciles, puis les gains s'ouvrent nettement à partir du quatrième palier de difficulté. Dans ce régime, la discussion ouverte entre pairs atteint une exactitude finale supérieure au pipeline planificateur-exécuteur-relecteur. La précision du relecteur et la reprise effective de ses critiques varient indépendamment l'une de l'autre, résultat à connaître avant d'ajouter un agent de contrôle à une architecture.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.15388"
+            }
+          ],
           "rang": 11,
-          "id": "varrate-compresse-le-cache-kv-sans-reentrainement"
+          "id": "un-relecteur-precis-n-ameliore-pas-un-systeme-multi-agents"
         }
       ]
     },
@@ -191,52 +199,53 @@
       "items": [
         {
           "titre": null,
-          "texteHtml": "<p>France Travail envisage d'utiliser l'IA pour profiler des millions de demandeurs d'emploi.</p>",
-          "sources": [
-            {
-              "nom": "Clubic",
-              "url": "https://www.clubic.com/"
-            }
-          ],
-          "rang": 12,
-          "id": "france-travail-envisage-d-utiliser-l-ia-pour-profiler-des"
-        },
-        {
-          "titre": null,
-          "texteHtml": "<p>Un piratage mené par IA a conduit Hugging Face à revoir ses défenses, cas que Numerama présente comme une leçon pratique.</p>",
-          "sources": [
-            {
-              "nom": "Numerama",
-              "url": "https://www.numerama.com/"
-            }
-          ],
-          "rang": 13,
-          "id": "un-piratage-mene-par-ia-a-conduit-hugging"
-        },
-        {
-          "titre": null,
-          "texteHtml": "<p>L'Union européenne veut ouvrir Android et iOS aux assistants d'IA concurrents, ce que Google et Apple contestent.</p>",
+          "texteHtml": "<p>La Commission européenne veut contraindre Android et iOS à ouvrir aux assistants d'IA concurrents les fonctions réservées à Gemini et à Siri ; Google et Apple invoquent un risque de sécurité.</p>",
           "sources": [
             {
               "nom": "ZDNet France",
-              "url": "https://www.zdnet.fr/"
+              "url": "https://www.zdnet.fr/actualites/lue-veut-ouvrir-android-et-ios-aux-assistants-ia-concurrents-google-et-apple-denoncent-un-risque-pour-la-securite-498787.htm"
+            }
+          ],
+          "rang": 12,
+          "id": "la-commission-europeenne-veut-contraindre-android-et-ios"
+        },
+        {
+          "titre": null,
+          "texteHtml": "<p>ASML, premier fournisseur mondial de machines de lithographie, est devenue la valeur la plus chère de la bourse européenne et approche les 1 000 milliards de dollars de capitalisation.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-621937-le-gros-boom-d-asml-qui-pourrait-devenir-la-premiere-entreprise-europeenne-a-valoir-1000-milliards-de-dollars.html"
+            }
+          ],
+          "rang": 13,
+          "id": "asml-premier-fournisseur-mondial-de-machines-de-lithographie"
+        },
+        {
+          "titre": null,
+          "texteHtml": "<p>Microsoft étend son infrastructure Azure destinée à l'IA et au calcul haute performance avec AMD.</p>",
+          "sources": [
+            {
+              "nom": "Microsoft Source",
+              "url": "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/"
             }
           ],
           "rang": 14,
-          "id": "l-union-europeenne-veut-ouvrir-android-et-ios-aux"
+          "id": "microsoft-etend-son-infrastructure-azure-destinee-a-l-ia"
         }
       ]
     }
   ],
   "analyse": {
-    "titre": "Le sujet agentique est passé au droit applicable",
-    "these": "Deux régulateurs français regardent déjà les agents que les entreprises prototypent aujourd'hui.",
-    "html": "<p>Deux autorités françaises ont publié sur les agents autonomes le même jour. La CNIL s'inquiète des données personnelles que suppose une délégation de tâches hyperpersonnalisée. L'Autorité de la concurrence s'inquiète du pouvoir d'intermédiation que prendrait un agent capable de choisir un produit et de payer à votre place. Les deux notes ne se citent pas et ne relèvent pas du même mandat. Leur simultanéité dit quelque chose.</p>\n<p>Nous observons que le sujet agentique a quitté le terrain de la démonstration technique pour entrer dans celui du droit applicable. Ce déplacement change le calendrier des entreprises françaises. Une organisation qui teste aujourd'hui un agent capable d'agir sur ses systèmes, de passer une commande ou de répondre à un client, construit un dispositif que deux régulateurs regardent déjà. Les questions qu'ils posent porteront sur la base légale du traitement, sur la traçabilité des décisions prises sans intervention humaine, et sur la dépendance créée envers un intermédiaire.</p>\n<p>Nous en tirons une recommandation de méthode. Documentez dès le prototype ce qu'un agent décide seul, ce qu'il exécute et ce qu'il transmet à un tiers. Cette cartographie coûte peu à établir en phase d'essai. Elle coûte cher à reconstituer après coup, quand le dispositif tourne en production et que le régulateur demande à voir. La même exigence vaut pour les obligations de transparence de l'article 50 de l'AI Act, dont la Commission a précisé le champ ce matin : elles s'appliquent aussi à qui déploie un modèle tiers, pas seulement à qui l'entraîne.</p>\n<p>Le calendrier joue en votre faveur pour quelques mois. Les organisations qui traitent la question maintenant auront un avantage sur celles qui découvriront l'exigence documentaire une fois leurs agents installés.</p>",
-    "htmlExtrait": "<p>Deux autorités françaises ont publié sur les agents autonomes le même jour. La CNIL s'inquiète des données personnelles que suppose une délégation de tâches hyperpersonnalisée. L'Autorité de la concurrence s'inquiète du pouvoir d'intermédiation que prendrait un agent capable de choisir un produit et de payer à votre place. Les deux notes ne se citent pas et ne relèvent pas du même mandat. Leur simultanéité dit quelque chose.</p>\n<p>Nous observons que le sujet agentique a quitté le terrain de la démonstration technique pour entrer dans celui du droit applicable. Ce déplacement change le calendrier des entreprises françaises. Une organisation qui teste aujourd'hui un agent capable d'agir sur ses systèmes, de passer une commande ou de répondre à un client, construit un dispositif que deux régulateurs regardent déjà. Les questions qu'ils posent porteront sur la base légale du traitement, sur la traçabilité des décisions prises sans intervention humaine, et sur la dépendance créée envers un intermédiaire.</p>",
+    "titre": "La capacité de service décide de votre accès aux modèles",
+    "these": "Trois annonces du 20 juillet rationnent l'accès aux modèles. Les contrats fournisseurs signés en Europe ne couvrent pas ce risque.",
+    "html": "<p>Moonshot AI a fermé les inscriptions à Kimi K3 dimanche 19 juillet, quarante-huit heures après leur ouverture, ses GPU saturés. Le même lundi, Anthropic retire Claude Fable 5 des forfaits Pro et Team Standard, dont les abonnés paieront désormais chaque requête, en invoquant la consommation de calcul du modèle. Microsoft annonce le jour même l'extension de son infrastructure Azure avec AMD. Nous lisons ces trois annonces comme un seul fait : la capacité de service décide aujourd'hui de votre accès à un modèle. La qualité du modèle a cessé d'être le facteur limitant.</p>\n<p>Deux risques en découlent, que les contrats fournisseurs couvrent mal. Le premier tient au retrait d'un palier inclus dans un abonnement. Une équipe qui a monté un flux de travail sur Fable 5 avec un compte Pro voit son coût unitaire changer sans préavis. Le second tient à la fermeture des inscriptions : une organisation qui prévoyait d'évaluer Kimi K3 cette semaine ne peut pas ouvrir de compte, quel que soit son budget.</p>\n<p>Trois mesures répondent à cette lecture. Relisez chaque contrat fournisseur pour séparer ce qui est garanti contractuellement de ce qui relève de conditions d'utilisation modifiables sans votre accord ; le palier de modèle figure presque toujours dans la seconde catégorie. Maintenez deux fournisseurs en production sur chaque charge critique, avec des jeux d'évaluation portables d'un modèle à l'autre, pour qu'un basculement prenne une journée. Pour les modèles à poids ouverts, téléchargez les poids dès leur publication et conservez-les : les poids de Kimi K3 sont publics, la capacité qui les sert ne l'est pas.</p>\n<p>Un indicateur à suivre dans les semaines qui viennent : la date à laquelle Moonshot rouvre ses inscriptions et le tarif affiché alors. Un retour au prix d'avant dira que la pénurie relevait de l'incident de lancement. Une réouverture plus chère, ou réservée aux comptes entreprise, confirmera que le rationnement par le prix s'installe chez les fournisseurs chinois comme chez les américains.</p>",
+    "htmlExtrait": "<p>Moonshot AI a fermé les inscriptions à Kimi K3 dimanche 19 juillet, quarante-huit heures après leur ouverture, ses GPU saturés. Le même lundi, Anthropic retire Claude Fable 5 des forfaits Pro et Team Standard, dont les abonnés paieront désormais chaque requête, en invoquant la consommation de calcul du modèle. Microsoft annonce le jour même l'extension de son infrastructure Azure avec AMD. Nous lisons ces trois annonces comme un seul fait : la capacité de service décide aujourd'hui de votre accès à un modèle. La qualité du modèle a cessé d'être le facteur limitant.</p>\n<p>Deux risques en découlent, que les contrats fournisseurs couvrent mal. Le premier tient au retrait d'un palier inclus dans un abonnement. Une équipe qui a monté un flux de travail sur Fable 5 avec un compte Pro voit son coût unitaire changer sans préavis. Le second tient à la fermeture des inscriptions : une organisation qui prévoyait d'évaluer Kimi K3 cette semaine ne peut pas ouvrir de compte, quel que soit son budget.</p>",
     "itemsCites": [
-      2,
-      3,
-      4
+      1,
+      5,
+      10,
+      14
     ],
     "auteur": "L'équipe éditoriale Masteria",
     "auteurRole": "Sous la direction de Mathias Nizan"
@@ -245,13 +254,13 @@
   "suivante": {
     "date": "2026-07-21",
     "dateLongue": "mardi 21 juillet 2026",
-    "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
+    "titreEditorial": "Washington vise les poids ouverts, la dette rattrape l'IA",
     "nbItems": 14
   },
   "nbItems": 14,
-  "nbSources": 16,
-  "nbSignes": 4854,
-  "tempsLecture": 4,
+  "nbSources": 18,
+  "nbSignes": 8172,
+  "tempsLecture": 7,
   "zones": [
     {
       "cle": "europe",
@@ -280,16 +289,16 @@
     }
   ],
   "sourcesDuJour": [
-    "Next.ink",
     "South China Morning Post",
+    "SCMP, tech war",
     "Bloomberg",
+    "The Verge",
+    "Next.ink",
+    "Commission européenne",
     "CNIL",
     "Siècle Digital",
-    "Commission européenne",
-    "MIT Technology Review",
-    "TechCrunch",
-    "Nikkei Asia",
-    "arXiv"
+    "01net",
+    "MIT Technology Review"
   ],
   "nbFluxConsultes": 38,
   "nbArticlesCollectes": 108,
