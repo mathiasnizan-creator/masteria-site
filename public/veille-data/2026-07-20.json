@@ -242,7 +242,12 @@
     "auteurRole": "Sous la direction de Mathias Nizan"
   },
   "precedente": null,
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-21",
+    "dateLongue": "mardi 21 juillet 2026",
+    "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 16,
   "nbSignes": 4854,

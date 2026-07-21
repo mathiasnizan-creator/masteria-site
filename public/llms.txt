@@ -178,5 +178,6 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [21 juillet 2026 : Washington vise les poids ouverts, Shanghai le token](https://www.master-ia.fr/veille-ia/2026-07-21)
 - [20 juillet 2026 : Kimi K3 sature, Paris cadre les agents](https://www.master-ia.fr/veille-ia/2026-07-20)
 <!-- veille:editions:fin -->

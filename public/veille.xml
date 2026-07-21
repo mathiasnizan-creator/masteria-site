@@ -6,7 +6,14 @@
     <atom:link href="https://www.master-ia.fr/veille.xml" rel="self" type="application/rss+xml" />
     <description>L'actualité de l'intelligence artificielle, commentée et analysée chaque matin ouvré par Masteria.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Mon, 20 Jul 2026 22:12:03 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 09:56:34 +0200</lastBuildDate>
+    <item>
+      <title>Washington vise les poids ouverts, Shanghai le token</title>
+      <link>https://www.master-ia.fr/veille-ia/2026-07-21</link>
+      <guid isPermaLink="true">https://www.master-ia.fr/veille-ia/2026-07-21</guid>
+      <pubDate>Tue, 21 Jul 2026 09:56:34 +0200</pubDate>
+      <description><![CDATA[<p>La Maison-Blanche prépare des restrictions sur les modèles ouverts étrangers, six jours avant la publication des poids de Kimi K3. À Shanghai, le patron de SenseTime annonce la fin de l&#x27;économie du token.</p><ul><li>En tête d&#x27;affiche : Washington prépare sa riposte avant l&#x27;ouverture des poids de Kimi K3</li><li>Europe et France : Le CEPD réclame une base juridique pour les échanges entre régulateurs</li><li>Europe et France : France Travail teste un algorithme de profilage des demandeurs d&#x27;emploi</li><li>Europe et France : La Banque des règlements internationaux décrit un secteur en surinvestissement</li><li>Europe et France : Pékin suspend ses exportations d&#x27;hélium et expose l&#x27;industrie européenne</li><li>International : OpenAI publie ses enseignements sur les modèles à horizon long</li><li>International : Le règlement de 1,5 milliard de dollars d&#x27;Anthropic sur le droit d&#x27;auteur est approuvé</li><li>International : Google travaillerait sur une puce taillée pour Gemini</li><li>Chine et Asie : SenseTime annonce le passage de l&#x27;économie du token à l&#x27;économie de la tâche</li><li>Chine et Asie : Z.AI achève un centre de données équipé uniquement de puces chinoises</li><li>Recherche et publications : PlanFlip attaque les systèmes multi-agents par leur planificateur</li><li>En bref : Le coût de protection de la dette d&#x27;Oracle contre un défaut a…</li><li>En bref : La direction du Center for AI Standards and Innovation se retrouve vacante…</li><li>En bref : GigaAI, société chinoise de modèles du monde, discute d&#x27;une introduction en bourse…</li></ul>]]></description>
+    </item>
     <item>
       <title>Kimi K3 sature, Paris cadre les agents</title>
       <link>https://www.master-ia.fr/veille-ia/2026-07-20</link>

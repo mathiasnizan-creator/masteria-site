@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-20",
-    "totalEditions": 1,
-    "totalItems": 14,
-    "totalSources": 16
+    "derniereDate": "2026-07-21",
+    "totalEditions": 2,
+    "totalItems": 28,
+    "totalSources": 37
   },
   "editions": [
+    {
+      "date": "2026-07-21",
+      "dateAffichee": "21 juillet 2026",
+      "dateCourte": "mar. 21 juil.",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 6
+    },
     {
       "date": "2026-07-20",
       "dateAffichee": "20 juillet 2026",

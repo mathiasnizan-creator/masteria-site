@@ -3,12 +3,133 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-20",
-    "totalEditions": 1,
-    "totalItems": 14,
-    "totalSources": 16
+    "derniereDate": "2026-07-21",
+    "totalEditions": 2,
+    "totalItems": 28,
+    "totalSources": 37
   },
   "editions": [
+    {
+      "date": "2026-07-21",
+      "dateCourte": "mar. 21 juil.",
+      "dateAffichee": "21 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
+      "chapeau": "La Maison-Blanche prépare des restrictions sur les modèles ouverts étrangers, six jours avant la publication des poids de Kimi K3. À Shanghai, le patron de SenseTime annonce la fin de l'économie du token.",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 6,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "ZDNet France",
+        "Next.ink",
+        "MIT Technology Review",
+        "Stratechery",
+        "CNIL",
+        "Siècle Digital",
+        "Clubic",
+        "La Tribune",
+        "OpenAI",
+        "TechCrunch",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Washington prépare sa riposte avant l'ouverture des poids de Kimi K3",
+          "z": "une",
+          "id": "washington-prepare-sa-riposte-avant-l-ouverture-des-poids"
+        },
+        {
+          "t": "Le CEPD réclame une base juridique pour les échanges entre régulateurs",
+          "z": "europe",
+          "id": "le-cepd-reclame-une-base-juridique-pour-les-echanges-entre"
+        },
+        {
+          "t": "France Travail teste un algorithme de profilage des demandeurs d'emploi",
+          "z": "europe",
+          "id": "france-travail-teste-un-algorithme-de-profilage-des"
+        },
+        {
+          "t": "La Banque des règlements internationaux décrit un secteur en surinvestissement",
+          "z": "europe",
+          "id": "la-banque-des-reglements-internationaux-decrit-un-secteur"
+        },
+        {
+          "t": "Pékin suspend ses exportations d'hélium et expose l'industrie européenne",
+          "z": "europe",
+          "id": "pekin-suspend-ses-exportations-d-helium-et-expose-l"
+        },
+        {
+          "t": "OpenAI publie ses enseignements sur les modèles à horizon long",
+          "z": "international",
+          "id": "openai-publie-ses-enseignements-sur-les-modeles-a-horizon"
+        },
+        {
+          "t": "Le règlement de 1,5 milliard de dollars d'Anthropic sur le droit d'auteur est approuvé",
+          "z": "international",
+          "id": "le-reglement-de-1-5-milliard-de-dollars-d-anthropic-sur-le"
+        },
+        {
+          "t": "Google travaillerait sur une puce taillée pour Gemini",
+          "z": "international",
+          "id": "google-travaillerait-sur-une-puce-taillee-pour-gemini"
+        },
+        {
+          "t": "SenseTime annonce le passage de l'économie du token à l'économie de la tâche",
+          "z": "chine",
+          "id": "sensetime-annonce-le-passage-de-l-economie-du-token-a-l"
+        },
+        {
+          "t": "Z.AI achève un centre de données équipé uniquement de puces chinoises",
+          "z": "chine",
+          "id": "z-ai-acheve-un-centre-de-donnees-equipe-uniquement-de-puces"
+        },
+        {
+          "t": "PlanFlip attaque les systèmes multi-agents par leur planificateur",
+          "z": "recherche",
+          "id": "planflip-attaque-les-systemes-multi-agents-par-leur"
+        },
+        {
+          "t": "Le coût de protection de la dette d'Oracle contre un défaut a…",
+          "z": "bref",
+          "id": "le-cout-de-protection-de-la-dette-d-oracle"
+        },
+        {
+          "t": "La direction du Center for AI Standards and Innovation se retrouve vacante…",
+          "z": "bref",
+          "id": "la-direction-du-center-for-ai-standards-and"
+        },
+        {
+          "t": "GigaAI, société chinoise de modèles du monde, discute d'une introduction en bourse…",
+          "z": "bref",
+          "id": "gigaai-societe-chinoise-de-modeles-du-monde-discute"
+        }
+      ]
+    },
     {
       "date": "2026-07-20",
       "dateCourte": "lun. 20 juil.",

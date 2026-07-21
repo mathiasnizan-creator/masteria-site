@@ -1,0 +1,320 @@
+{
+  "schema": 2,
+  "date": "2026-07-21",
+  "dateAffichee": "21 juillet 2026",
+  "dateLongue": "mardi 21 juillet 2026",
+  "dateCourte": "mar. 21 juil.",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA du mardi 21 juillet 2026",
+  "titreEditorial": "Washington vise les poids ouverts, Shanghai le token",
+  "chapeau": "La Maison-Blanche prépare des restrictions sur les modèles ouverts étrangers, six jours avant la publication des poids de Kimi K3. À Shanghai, le patron de SenseTime annonce la fin de l'économie du token.",
+  "une": {
+    "titre": "Washington prépare sa riposte avant l'ouverture des poids de Kimi K3",
+    "texteHtml": "<p>Moonshot AI publiera les poids complets de son modèle le 27 juillet, et l'administration Trump étudie déjà plusieurs pistes pour restreindre l'accès aux modèles open source étrangers, selon Axios. Le camp américain se divise sur la réponse. Samedi 18 et dimanche 19 juillet, des conseillers et anciens conseillers de Donald Trump sur l'IA, David Sacks parmi eux, ont pris à partie publiquement les principaux laboratoires du pays. Ben Thompson soutient dans Stratechery que les laboratoires de frontière tiendront le choc et que l'urgence consiste à faire naître des modèles ouverts américains. Pour une entreprise européenne, la question porte sur le canal d'accès. Un modèle téléchargé et exécuté sur une infrastructure européenne relève d'un régime différent du même modèle consommé chez un hébergeur américain, et une restriction décidée à Washington frapperait le second canal en premier.</p>",
+    "sources": [
+      {
+        "nom": "ZDNet France",
+        "url": "https://www.zdnet.fr/actualites/washington-envisage-de-durcir-les-sanctions-contre-lia-chinoise-et-cible-les-modeles-open-source-498833.htm"
+      },
+      {
+        "nom": "Next.ink",
+        "url": "https://next.ink/248193/avant-meme-louverture-de-ses-poids-kimi-k3-inquiete-deja-washington/"
+      },
+      {
+        "nom": "MIT Technology Review",
+        "url": "https://www.technologyreview.com/2026/07/20/1140675/chinas-ai-models-have-trumps-ai-world-at-war-with-itself/"
+      },
+      {
+        "nom": "Stratechery",
+        "url": "https://stratechery.com/2026/whos-afraid-of-chinese-models/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "washington-prepare-sa-riposte-avant-l-ouverture-des-poids"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Le CEPD réclame une base juridique pour les échanges entre régulateurs",
+          "texteHtml": "<p>Réuni à Dublin les 16 et 17 juillet, le Comité européen de la protection des données a plaidé pour un cadre clair autorisant le partage d'informations entre autorités aux compétences distinctes. La demande vise une difficulté quotidienne : un même dossier d'IA relève à la fois du RGPD et de l'AI Act, appliqués par des régulateurs qui ne disposent pas aujourd'hui d'un fondement solide pour se transmettre leurs pièces.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/cepd-base-juridique-interreglementaire"
+            }
+          ],
+          "rang": 2,
+          "id": "le-cepd-reclame-une-base-juridique-pour-les-echanges-entre"
+        },
+        {
+          "titre": "France Travail teste un algorithme de profilage des demandeurs d'emploi",
+          "texteHtml": "<p>La Quadrature du Net a obtenu un document interne et l'a transmis à Radio France, ce qui a rendu l'outil public ; l'opérateur n'avait rien annoncé. L'algorithme examine le dossier d'un inscrit pour signaler ceux dont la recherche d'emploi paraît insuffisante. Sept mille dossiers ont servi de test et le dispositif viserait plus de six millions d'inscrits.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/248042/france-travail-un-algorithme-pour-accelerer-le-profilage-des-chomeurs-et-les-controles/"
+            },
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/07/21/france-travail-teste-une-ia-pour-reperer-les-chomeurs-qui-ne-chercheraient-pas-vraiment-un-emploi/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-621985-france-travail-veut-utiliser-l-ia-pour-profiler-des-millions-de-demandeurs-d-emploi.html"
+            }
+          ],
+          "rang": 3,
+          "id": "france-travail-teste-un-algorithme-de-profilage-des"
+        },
+        {
+          "titre": "La Banque des règlements internationaux décrit un secteur en surinvestissement",
+          "texteHtml": "<p>Le rapport de l'institution bâloise, banque des banques centrales, estime la course à l'investissement dans l'IA déjà excessive. Il envisage un passage de l'« explosion » à l'« effondrement », d'autant plus brutal que la construction des centres de données repose sur de la dette.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/248064/le-surinvestissement-dans-lia-pourrait-passer-dune-explosion-a-un-effondrement/"
+            }
+          ],
+          "rang": 4,
+          "id": "la-banque-des-reglements-internationaux-decrit-un-secteur"
+        },
+        {
+          "titre": "Pékin suspend ses exportations d'hélium et expose l'industrie européenne",
+          "texteHtml": "<p>Ce gaz refroidit les aimants des appareils d'imagerie médicale et intervient dans la fabrication des semi-conducteurs, sans substitut connu. La Tribune décrit une crise d'approvisionnement mondiale et l'urgence pour l'Europe de trouver d'autres fournisseurs. Les hôpitaux et les fondeurs partagent ici la même dépendance.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/10052323342891/tensions-sur-lhelium-pourquoi-la-decision-de-pekin-menace-lindustrie-et-la-sante-en-europe"
+            }
+          ],
+          "rang": 5,
+          "id": "pekin-suspend-ses-exportations-d-helium-et-expose-l"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI publie ses enseignements sur les modèles à horizon long",
+          "texteHtml": "<p>Le laboratoire détaille les risques propres aux modèles qui exécutent des tâches sur de longues durées, les défaillances rencontrées en production et les garde-fous ajoutés au fil des déploiements. Le document tombe au moment où les entreprises passent leurs premiers agents en exploitation réelle.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/safety-alignment-long-horizon-models"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-publie-ses-enseignements-sur-les-modeles-a-horizon"
+        },
+        {
+          "titre": "Le règlement de 1,5 milliard de dollars d'Anthropic sur le droit d'auteur est approuvé",
+          "texteHtml": "<p>L'homologation définitive clôt cette procédure. Elle laisse entière la question de l'entraînement sur des œuvres protégées, que d'autres affaires continuent de poser devant les tribunaux américains.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/"
+            }
+          ],
+          "rang": 7,
+          "id": "le-reglement-de-1-5-milliard-de-dollars-d-anthropic-sur-le"
+        },
+        {
+          "titre": "Google travaillerait sur une puce taillée pour Gemini",
+          "texteHtml": "<p>L'information vient de The Information et Google ne l'a pas confirmée : Alphabet développerait un composant serveur destiné à exécuter Gemini avec un meilleur rendement énergétique. ZDNet indique que cette puce, nommée « Frozen v2 », s'ajouterait aux TPU maison plutôt que de les remplacer. L'action Alphabet a monté après la publication.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-20/google-plans-new-chip-to-boost-ai-efficiency-information-says"
+            },
+            {
+              "nom": "ZDNet France",
+              "url": "https://www.zdnet.fr/actualites/avec-frozen-v2-google-veut-graver-gemini-directement-dans-le-silicium-498828.htm"
+            }
+          ],
+          "rang": 8,
+          "id": "google-travaillerait-sur-une-puce-taillee-pour-gemini"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "SenseTime annonce le passage de l'économie du token à l'économie de la tâche",
+          "texteHtml": "<p>Xu Li, son directeur général, déclare au South China Morning Post que le prix des tokens baissera comme celui de la donnée télécom il y a vingt ans. Une fois les modèles et la puissance de calcul devenus des infrastructures de base, la valeur commerciale se déplacerait vers la tâche accomplie. Le groupe chinois construit sa stratégie sur ce basculement.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3361242/no-longer-token-economy-sensetime-bets-task-economy-token-prices-set-drop"
+            }
+          ],
+          "rang": 9,
+          "id": "sensetime-annonce-le-passage-de-l-economie-du-token-a-l"
+        },
+        {
+          "titre": "Z.AI achève un centre de données équipé uniquement de puces chinoises",
+          "texteHtml": "<p>L'installation, destinée à l'entraînement de modèles, ne contient aucun composant Nvidia, dont l'exportation vers la Chine reste sous restriction américaine. Pékin dispose ainsi d'une démonstration grandeur nature de sa capacité à entraîner sans silicium américain.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-20/z-ai-completes-giant-data-center-with-chinese-chips-to-train-ai"
+            }
+          ],
+          "rang": 10,
+          "id": "z-ai-acheve-un-centre-de-donnees-equipe-uniquement-de-puces"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "PlanFlip attaque les systèmes multi-agents par leur planificateur",
+          "texteHtml": "<p>Les auteurs montrent qu'une injection unique dans le contexte du planificateur corrompt d'un seul coup toutes les sous-tâches transmises aux agents d'exécution et de contrôle, un effet qu'ils nomment amplification en cascade. Quatre variantes sont décrites : substitution d'objectif, inversion de priorité, pollution du contexte, confusion des rôles. Une architecture qui filtre les entrées des exécutants sans filtrer celles du planificateur protège la mauvaise porte.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.16199"
+            }
+          ],
+          "rang": 11,
+          "id": "planflip-attaque-les-systemes-multi-agents-par-leur"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<p>Le coût de protection de la dette d'Oracle contre un défaut a atteint son plus haut niveau depuis près de dix-huit ans, les investisseurs doutant du rendement de ses investissements en IA.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-20/oracle-credit-risk-hits-near-18-year-high-on-ai-debt-load-angst"
+            }
+          ],
+          "rang": 12,
+          "id": "le-cout-de-protection-de-la-dette-d-oracle"
+        },
+        {
+          "titre": null,
+          "texteHtml": "<p>La direction du Center for AI Standards and Innovation se retrouve vacante après une nouvelle démission, la troisième rotation du poste depuis le départ de David Sacks.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/"
+            }
+          ],
+          "rang": 13,
+          "id": "la-direction-du-center-for-ai-standards-and"
+        },
+        {
+          "titre": null,
+          "texteHtml": "<p>GigaAI, société chinoise de modèles du monde, discute d'une introduction en bourse à Hong Kong dès cette année, dans une vague d'entrées en bourse de laboratoires chinois.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-21/china-s-gigaai-seeks-2026-hong-kong-ipo-in-first-for-world-model"
+            }
+          ],
+          "rang": 14,
+          "id": "gigaai-societe-chinoise-de-modeles-du-monde-discute"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le prix du token compte plus que le vainqueur des modèles",
+    "these": "La chute annoncée du prix des tokens pèse plus lourd, pour un acheteur français, que la riposte préparée à Washington.",
+    "html": "<p>Le bruit du jour vient de Washington. La Maison-Blanche cherche un moyen de bloquer les modèles ouverts chinois, les conseillers du président s'invectivent en public, et l'ouverture des poids de Kimi K3 le 27 juillet occupera les commentateurs jusqu'à la fin du mois. Nous pensons qu'une phrase prononcée à Shanghai pèse plus lourd pour un décideur français.</p>\n<p>Xu Li, patron de SenseTime, présente la baisse du prix des tokens comme une certitude et la compare à celle de la donnée télécom des années 2000. Rapprochez cette déclaration de deux autres éléments du jour. La Banque des règlements internationaux décrit un secteur en surinvestissement, financé par de la dette. Le coût de protection de la dette d'Oracle atteint son plus haut niveau depuis près de dix-huit ans. Trois signaux, une même mécanique : des capitaux empruntés pour bâtir des capacités dont le prix de vente unitaire va baisser.</p>\n<p>Nous en tirons une conséquence budgétaire. Le poste « inférence » de vos plans 2027 et 2028 est surestimé si vous l'avez calculé sur les tarifs de 2026. Les engagements pluriannuels de volume, que les fournisseurs proposent aujourd'hui avec des remises confortables, transfèrent ce risque de baisse sur l'acheteur. Une organisation qui réserve trois ans de capacité ce trimestre paiera en 2029 un tarif que le marché aura oublié.</p>\n<p>Trois mesures suivent de cette lecture. Négociez des clauses de révision tarifaire annuelle plutôt que des remises de volume. Séparez dans vos architectures la couche modèle de la couche tâche, pour changer de fournisseur sans réécrire vos agents. Mesurez le coût par tâche accomplie plutôt que le coût par million de tokens : c'est l'unité sur laquelle vos fournisseurs factureront demain, et la seule qui garde du sens quand le prix unitaire s'effondre.</p>\n<p>Le sort des poids ouverts se décidera à Washington, sans vous. Les contrats que vous signez ce trimestre engagent votre budget pour trois exercices. La seconde question mérite au moins le temps que vous accordez à la première.</p>",
+    "htmlExtrait": "<p>Le bruit du jour vient de Washington. La Maison-Blanche cherche un moyen de bloquer les modèles ouverts chinois, les conseillers du président s'invectivent en public, et l'ouverture des poids de Kimi K3 le 27 juillet occupera les commentateurs jusqu'à la fin du mois. Nous pensons qu'une phrase prononcée à Shanghai pèse plus lourd pour un décideur français.</p>\n<p>Xu Li, patron de SenseTime, présente la baisse du prix des tokens comme une certitude et la compare à celle de la donnée télécom des années 2000. Rapprochez cette déclaration de deux autres éléments du jour. La Banque des règlements internationaux décrit un secteur en surinvestissement, financé par de la dette. Le coût de protection de la dette d'Oracle atteint son plus haut niveau depuis près de dix-huit ans. Trois signaux, une même mécanique : des capitaux empruntés pour bâtir des capacités dont le prix de vente unitaire va baisser.</p>",
+    "itemsCites": [
+      1,
+      4,
+      9,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-07-20",
+    "dateLongue": "lundi 20 juillet 2026",
+    "titreEditorial": "Kimi K3 sature, Paris cadre les agents",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 21,
+  "nbSignes": 6732,
+  "tempsLecture": 6,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "ZDNet France",
+    "Next.ink",
+    "MIT Technology Review",
+    "Stratechery",
+    "CNIL",
+    "Siècle Digital",
+    "Clubic",
+    "La Tribune",
+    "OpenAI",
+    "TechCrunch"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 129,
+  "publieLe": "2026-07-21T09:56:34+02:00",
+  "publieLeAffiche": "9h56",
+  "ogImage": "/veille-data/og/2026-07-21.png"
+}
