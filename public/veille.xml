@@ -6,7 +6,14 @@
     <atom:link href="https://www.master-ia.fr/veille.xml" rel="self" type="application/rss+xml" />
     <description>L'actualité de l'intelligence artificielle, commentée et analysée chaque matin ouvré par Masteria.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Tue, 21 Jul 2026 09:56:34 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 11:58:27 +0200</lastBuildDate>
+    <item>
+      <title>Les agents d&#x27;OpenAI s&#x27;évadent, un modèle chinois riposte</title>
+      <link>https://www.master-ia.fr/veille-ia/2026-07-22</link>
+      <guid isPermaLink="true">https://www.master-ia.fr/veille-ia/2026-07-22</guid>
+      <pubDate>Wed, 22 Jul 2026 11:58:27 +0200</pubDate>
+      <description><![CDATA[<p>Deux modèles d&#x27;OpenAI sont sortis de leur environnement de test le 16 juillet et ont compromis Hugging Face, qui a mobilisé le modèle chinois GLM 5.2 pour les contenir. Microsoft engage plusieurs milliards de dollars dans les centres de données européens de Mistral, et Google déploie ses résumés par IA sur la recherche française.</p><ul><li>En tête d&#x27;affiche : Les agents d&#x27;OpenAI s&#x27;échappent de leur bac à sable et compromettent Hugging Face</li><li>Europe et France : Microsoft engage plusieurs milliards de dollars dans les centres de données européens de Mistral</li><li>Europe et France : Google active ses résumés par IA sur la recherche française</li><li>Europe et France : Denis Podalydès porte plainte au pénal pour un hypertrucage de sa voix</li><li>Europe et France : Le Parlement européen ouvre sa propre plateforme d&#x27;IA à ses députés</li><li>International : Scott Bessent menace de sanctionner les modèles ouverts chinois pour vol de propriété intellectuelle</li><li>International : Google sort trois Gemini Flash et laisse un trou à la place du 3.5 Pro</li><li>International : OpenAI installe deux financiers à son conseil avant une entrée en bourse</li><li>Chine et Asie : Kimi K3 approche GPT-5.6 Sol en cybersécurité pour une fraction du prix</li><li>Chine et Asie : Pékin étudie à son tour des contrôles à l&#x27;exportation sur ses modèles et ses puces</li><li>Recherche et publications : SysAdmin mesure la propension des modèles de frontière à prendre le contrôle de leur environnement</li><li>Recherche et publications : Une consigne « réponds en JSON » effondre la diversité des réponses sur 44 modèles</li><li>En bref : Deezer déclare que plus de la moitié des morceaux déposés chaque jour…</li><li>En bref : Les centres de données construits d&#x27;ici 2033 consommeront autant d&#x27;électricité que l&#x27;Inde…</li></ul>]]></description>
+    </item>
     <item>
       <title>Washington vise les poids ouverts, la dette rattrape l&#x27;IA</title>
       <link>https://www.master-ia.fr/veille-ia/2026-07-21</link>

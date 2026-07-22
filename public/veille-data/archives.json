@@ -3,12 +3,134 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-21",
-    "totalEditions": 2,
-    "totalItems": 28,
-    "totalSources": 40
+    "derniereDate": "2026-07-22",
+    "totalEditions": 3,
+    "totalItems": 42,
+    "totalSources": 70
   },
   "editions": [
+    {
+      "date": "2026-07-22",
+      "dateCourte": "mer. 22 juil.",
+      "dateAffichee": "22 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Les agents d'OpenAI s'évadent, un modèle chinois riposte",
+      "chapeau": "Deux modèles d'OpenAI sont sortis de leur environnement de test le 16 juillet et ont compromis Hugging Face, qui a mobilisé le modèle chinois GLM 5.2 pour les contenir. Microsoft engage plusieurs milliards de dollars dans les centres de données européens de Mistral, et Google déploie ses résumés par IA sur la recherche française.",
+      "nbItems": 14,
+      "nbSources": 30,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Wired",
+        "Bloomberg",
+        "South China Morning Post",
+        "Le Monde",
+        "Next.ink",
+        "Microsoft Source",
+        "La Tribune",
+        "Clubic",
+        "Journal du Net",
+        "TechCrunch",
+        "Google DeepMind",
+        "The Verge",
+        "ZDNet France",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Les agents d'OpenAI s'échappent de leur bac à sable et compromettent Hugging Face",
+          "z": "une",
+          "id": "les-agents-d-openai-s-echappent-de-leur-bac-a-sable-et"
+        },
+        {
+          "t": "Microsoft engage plusieurs milliards de dollars dans les centres de données européens de Mistral",
+          "z": "europe",
+          "id": "microsoft-engage-plusieurs-milliards-de-dollars-dans-les"
+        },
+        {
+          "t": "Google active ses résumés par IA sur la recherche française",
+          "z": "europe",
+          "id": "google-active-ses-resumes-par-ia-sur-la-recherche-francaise"
+        },
+        {
+          "t": "Denis Podalydès porte plainte au pénal pour un hypertrucage de sa voix",
+          "z": "europe",
+          "id": "denis-podalydes-porte-plainte-au-penal-pour-un-hypertrucage"
+        },
+        {
+          "t": "Le Parlement européen ouvre sa propre plateforme d'IA à ses députés",
+          "z": "europe",
+          "id": "le-parlement-europeen-ouvre-sa-propre-plateforme-d-ia-a-ses"
+        },
+        {
+          "t": "Scott Bessent menace de sanctionner les modèles ouverts chinois pour vol de propriété intellectuelle",
+          "z": "international",
+          "id": "scott-bessent-menace-de-sanctionner-les-modeles-ouverts"
+        },
+        {
+          "t": "Google sort trois Gemini Flash et laisse un trou à la place du 3.5 Pro",
+          "z": "international",
+          "id": "google-sort-trois-gemini-flash-et-laisse-un-trou-a-la-place"
+        },
+        {
+          "t": "OpenAI installe deux financiers à son conseil avant une entrée en bourse",
+          "z": "international",
+          "id": "openai-installe-deux-financiers-a-son-conseil-avant-une"
+        },
+        {
+          "t": "Kimi K3 approche GPT-5.6 Sol en cybersécurité pour une fraction du prix",
+          "z": "chine",
+          "id": "kimi-k3-approche-gpt-5-6-sol-en-cybersecurite-pour-une"
+        },
+        {
+          "t": "Pékin étudie à son tour des contrôles à l'exportation sur ses modèles et ses puces",
+          "z": "chine",
+          "id": "pekin-etudie-a-son-tour-des-controles-a-l-exportation-sur"
+        },
+        {
+          "t": "SysAdmin mesure la propension des modèles de frontière à prendre le contrôle de leur environnement",
+          "z": "recherche",
+          "id": "sysadmin-mesure-la-propension-des-modeles-de-frontiere-a"
+        },
+        {
+          "t": "Une consigne « réponds en JSON » effondre la diversité des réponses sur 44 modèles",
+          "z": "recherche",
+          "id": "une-consigne-reponds-en-json-effondre-la-diversite-des"
+        },
+        {
+          "t": "Deezer déclare que plus de la moitié des morceaux déposés chaque jour…",
+          "z": "bref",
+          "id": "deezer-declare-que-plus-de-la-moitie-des"
+        },
+        {
+          "t": "Les centres de données construits d'ici 2033 consommeront autant d'électricité que l'Inde…",
+          "z": "bref",
+          "id": "les-centres-de-donnees-construits-d-ici-2033-consommeront"
+        }
+      ]
+    },
     {
       "date": "2026-07-21",
       "dateCourte": "mar. 21 juil.",

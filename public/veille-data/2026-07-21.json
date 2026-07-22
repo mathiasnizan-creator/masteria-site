@@ -272,7 +272,12 @@
     "titreEditorial": "Kimi K3 sature, l'article 50 arrive",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-22",
+    "dateLongue": "mercredi 22 juillet 2026",
+    "titreEditorial": "Les agents d'OpenAI s'évadent, un modèle chinois riposte",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 22,
   "nbSignes": 9850,
