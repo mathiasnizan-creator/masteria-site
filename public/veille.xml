@@ -6,7 +6,14 @@
     <atom:link href="https://www.master-ia.fr/veille.xml" rel="self" type="application/rss+xml" />
     <description>L'actualité de l'intelligence artificielle, commentée et analysée chaque matin ouvré par Masteria.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Wed, 22 Jul 2026 11:58:27 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 09:42:24 +0200</lastBuildDate>
+    <item>
+      <title>Washington attaque Moonshot, la dépendance européenne se chiffre</title>
+      <link>https://www.master-ia.fr/veille-ia/2026-07-23</link>
+      <guid isPermaLink="true">https://www.master-ia.fr/veille-ia/2026-07-23</guid>
+      <pubDate>Thu, 23 Jul 2026 09:42:24 +0200</pubDate>
+      <description><![CDATA[<p>La Maison-Blanche accuse le laboratoire chinois Moonshot d&#x27;avoir distillé un modèle d&#x27;Anthropic et d&#x27;avoir utilisé des puces Nvidia sous embargo, et le Trésor américain menace de sanctions la classe des modèles ouverts. Au même moment, le Cigref évalue à 140 milliards d&#x27;euros par an la dépendance des entreprises européennes aux logiciels et au cloud américains, tandis qu&#x27;AMD engage 5 milliards de dollars dans Anthropic.</p><ul><li>En tête d&#x27;affiche : La Maison-Blanche accuse Moonshot d&#x27;avoir pillé Anthropic et le Trésor menace de sanctions les modèles ouverts</li><li>Europe et France : Samsung étudie un investissement pouvant atteindre 1 milliard d&#x27;euros dans Mistral</li><li>Europe et France : Le Cigref évalue à 140 milliards d&#x27;euros par an la facture payée aux géants américains du logiciel</li><li>Europe et France : La CNIL publie une FAQ et un webinaire sur les pixels de suivi dans les courriels</li><li>International : AMD engage jusqu&#x27;à 5 milliards de dollars dans Anthropic contre une commande massive de puces</li><li>International : Alphabet vise 205 milliards de dollars d&#x27;investissement, OpenAI programme 750 milliards</li><li>International : Monday.com supprime 630 postes, Uber coupe 10 % de son service client, tous deux au nom de l&#x27;IA</li><li>Chine et Asie : Un modèle de RedNote décroche le premier score parfait à l&#x27;Olympiade internationale de mathématiques</li><li>Chine et Asie : Pékin ajoute 50 000 pétaflops de calcul pour doper son « économie du token »</li><li>Chine et Asie : Bloomberg Intelligence mesure un écart de performance ramené à 6 % entre modèles chinois et américains</li><li>Recherche et publications : NEXUS propose un contrôle d&#x27;exécution structuré pour les agents qui manient des outils</li><li>Recherche et publications : Un cadre mesure l&#x27;accumulation du risque au fil d&#x27;une conversation</li><li>En bref : Bloomberg précise que les modèles d&#x27;OpenAI sont restés des heures non détectés…</li><li>En bref : YouTube passe à la détection automatique des vidéos générées par IA de…</li></ul>]]></description>
+    </item>
     <item>
       <title>Les agents d&#x27;OpenAI s&#x27;évadent, un modèle chinois riposte</title>
       <link>https://www.master-ia.fr/veille-ia/2026-07-22</link>

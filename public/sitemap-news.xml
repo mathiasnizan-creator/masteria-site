@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-07-23</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-23T09:42:24+02:00</news:publication_date>
+      <news:title>Veille IA du 23 juillet 2026 : Washington attaque Moonshot, la dépendance européenne se chiffre</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-07-22</loc>
     <news:news>
       <news:publication>
@@ -21,17 +32,6 @@
       </news:publication>
       <news:publication_date>2026-07-21T09:56:34+02:00</news:publication_date>
       <news:title>Veille IA du 21 juillet 2026 : Washington vise les poids ouverts, la dette rattrape l&#x27;IA</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-20</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-20T22:12:03+02:00</news:publication_date>
-      <news:title>Veille IA du 20 juillet 2026 : Kimi K3 sature, l&#x27;article 50 arrive</news:title>
     </news:news>
   </url>
 </urlset>

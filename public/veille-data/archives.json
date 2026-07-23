@@ -3,12 +3,135 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-22",
-    "totalEditions": 3,
-    "totalItems": 42,
-    "totalSources": 70
+    "derniereDate": "2026-07-23",
+    "totalEditions": 4,
+    "totalItems": 56,
+    "totalSources": 94
   },
   "editions": [
+    {
+      "date": "2026-07-23",
+      "dateCourte": "jeu. 23 juil.",
+      "dateAffichee": "23 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Washington attaque Moonshot, la dépendance européenne se chiffre",
+      "chapeau": "La Maison-Blanche accuse le laboratoire chinois Moonshot d'avoir distillé un modèle d'Anthropic et d'avoir utilisé des puces Nvidia sous embargo, et le Trésor américain menace de sanctions la classe des modèles ouverts. Au même moment, le Cigref évalue à 140 milliards d'euros par an la dépendance des entreprises européennes aux logiciels et au cloud américains, tandis qu'AMD engage 5 milliards de dollars dans Anthropic.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "Bloomberg",
+        "Wired",
+        "Next.ink",
+        "ZDNet France",
+        "La Tribune",
+        "CNIL, questions-réponses",
+        "CNIL, webinaire",
+        "The Verge",
+        "TechCrunch, Google",
+        "TechCrunch, OpenAI",
+        "South China Morning Post",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "La Maison-Blanche accuse Moonshot d'avoir pillé Anthropic et le Trésor menace de sanctions les modèles ouverts",
+          "z": "une",
+          "id": "la-maison-blanche-accuse-moonshot-d-avoir-pille-anthropic"
+        },
+        {
+          "t": "Samsung étudie un investissement pouvant atteindre 1 milliard d'euros dans Mistral",
+          "z": "europe",
+          "id": "samsung-etudie-un-investissement-pouvant-atteindre-1"
+        },
+        {
+          "t": "Le Cigref évalue à 140 milliards d'euros par an la facture payée aux géants américains du logiciel",
+          "z": "europe",
+          "id": "le-cigref-evalue-a-140-milliards-d-euros-par-an-la-facture"
+        },
+        {
+          "t": "La CNIL publie une FAQ et un webinaire sur les pixels de suivi dans les courriels",
+          "z": "europe",
+          "id": "la-cnil-publie-une-faq-et-un-webinaire-sur-les-pixels-de"
+        },
+        {
+          "t": "AMD engage jusqu'à 5 milliards de dollars dans Anthropic contre une commande massive de puces",
+          "z": "international",
+          "id": "amd-engage-jusqu-a-5-milliards-de-dollars-dans-anthropic"
+        },
+        {
+          "t": "Alphabet vise 205 milliards de dollars d'investissement, OpenAI programme 750 milliards",
+          "z": "international",
+          "id": "alphabet-vise-205-milliards-de-dollars-d-investissement"
+        },
+        {
+          "t": "Monday.com supprime 630 postes, Uber coupe 10 % de son service client, tous deux au nom de l'IA",
+          "z": "international",
+          "id": "monday-com-supprime-630-postes-uber-coupe-10-de-son-service"
+        },
+        {
+          "t": "Un modèle de RedNote décroche le premier score parfait à l'Olympiade internationale de mathématiques",
+          "z": "chine",
+          "id": "un-modele-de-rednote-decroche-le-premier-score-parfait-a-l"
+        },
+        {
+          "t": "Pékin ajoute 50 000 pétaflops de calcul pour doper son « économie du token »",
+          "z": "chine",
+          "id": "pekin-ajoute-50-000-petaflops-de-calcul-pour-doper-son"
+        },
+        {
+          "t": "Bloomberg Intelligence mesure un écart de performance ramené à 6 % entre modèles chinois et américains",
+          "z": "chine",
+          "id": "bloomberg-intelligence-mesure-un-ecart-de-performance"
+        },
+        {
+          "t": "NEXUS propose un contrôle d'exécution structuré pour les agents qui manient des outils",
+          "z": "recherche",
+          "id": "nexus-propose-un-controle-d-execution-structure-pour-les"
+        },
+        {
+          "t": "Un cadre mesure l'accumulation du risque au fil d'une conversation",
+          "z": "recherche",
+          "id": "un-cadre-mesure-l-accumulation-du-risque-au-fil-d-une"
+        },
+        {
+          "t": "Bloomberg précise que les modèles d'OpenAI sont restés des heures non détectés…",
+          "z": "bref",
+          "id": "bloomberg-precise-que-les-modeles-d-openai-sont-restes"
+        },
+        {
+          "t": "YouTube passe à la détection automatique des vidéos générées par IA de…",
+          "z": "bref",
+          "id": "youtube-passe-a-la-detection-automatique-des-videos"
+        }
+      ]
+    },
     {
       "date": "2026-07-22",
       "dateCourte": "mer. 22 juil.",
