@@ -512,9 +512,26 @@ export default function BlogArticlePage() {
   const { slug } = useParams()
   const navigate = useNavigate()
   const isMobile = useIsMobile()
-  const article = getArticleBySlug(slug)
+  const bundled = getArticleBySlug(slug)
+  const [article, setArticle] = useState(bundled)
+  // 'ok' | 'loading' | 'notfound'. Un article absent du bundle historique est
+  // chargé à la volée depuis public/blog-data/<slug>.json : c'est ce qui permet
+  // la publication incrémentale (nouveaux articles sans rebuild du bundle).
+  const [status, setStatus] = useState(bundled ? 'ok' : 'loading')
   const [readProgress, setReadProgress] = useState(0)
   const [tocCollapsed, setTocCollapsed] = useState(false)
+
+  useEffect(() => {
+    const b = getArticleBySlug(slug)
+    if (b) { setArticle(b); setStatus('ok'); return }
+    let annule = false
+    setStatus('loading')
+    fetch(`/blog-data/${slug}.json`)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('404'))))
+      .then(data => { if (!annule) { setArticle({ ...data, slug: data.slug || slug }); setStatus('ok') } })
+      .catch(() => { if (!annule) { setArticle(null); setStatus('notfound') } })
+    return () => { annule = true }
+  }, [slug])
 
   useEffect(() => {
     setReadProgress(0)
@@ -529,6 +546,14 @@ export default function BlogArticlePage() {
   if (article?.externalPath) {
     if (typeof window !== 'undefined') window.location.replace(article.externalPath)
     return null
+  }
+
+  if (status === 'loading') {
+    return (
+      <div style={{ padding: 'clamp(64px, 12vw, 120px) clamp(18px, 4vw, 32px)', textAlign: 'center', color: '#6B7280', fontFamily: 'DM Sans, sans-serif' }}>
+        Chargement de l'article…
+      </div>
+    )
   }
 
   if (!article) {

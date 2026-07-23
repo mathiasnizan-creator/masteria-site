@@ -140,6 +140,20 @@ const blogEntries = BLOG
     lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
   }));
 
+// Articles publiés hors bundle (public/blog-data/), comme la veille : une
+// publication incrémentale n'invalide pas le bundle. Le sitemap les énumère
+// depuis le manifeste du dossier (scripts/publish.py côté pipeline blog-ia).
+try {
+  const bdIdx = JSON.parse(fs.readFileSync(path.join(root, 'public/blog-data/index.json'), 'utf8'));
+  const knownSlugs = new Set(blogEntries.map(b => b.slug));
+  for (const a of (Array.isArray(bdIdx) ? bdIdx : [])) {
+    if (!a || !a.slug || a.externalPath || knownSlugs.has(a.slug)) continue;
+    blogEntries.push({ slug: a.slug, lastmod: (a.dateModified || a.datePublished || today).split('T')[0] });
+  }
+} catch {
+  // Pas encore d'article publié hors bundle : rien à ajouter.
+}
+
 // Dates par famille de pages, dérivées de git (dernier commit touchant les
 // sources de la famille). Le lastmod ne bouge donc que quand le contenu change.
 const HUB_LASTMOD    = gitLastMod(['src/data/hub-content.js', 'src/data/seo-pages.js', 'src/pages/HubPage.jsx']);

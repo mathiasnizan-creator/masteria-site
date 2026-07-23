@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Search, X, SlidersHorizontal, RotateCcw } from 'lucide-react'
 import { FadeIn } from '../components/components'
@@ -323,6 +323,23 @@ export default function BlogListPage() {
   const [sortOpen, setSortOpen] = useState(false)
   const searchRef = useRef(null)
 
+  // Articles publiés hors bundle (public/blog-data/), fusionnés à la volée
+  // avec le bundle historique. Publication incrémentale sans rebuild.
+  const [extra, setExtra] = useState([])
+  useEffect(() => {
+    let annule = false
+    fetch('/blog-data/index.json')
+      .then(r => (r.ok ? r.json() : []))
+      .then(list => {
+        if (annule) return
+        const connus = new Set(BLOG_ARTICLES.map(a => a.slug))
+        setExtra((Array.isArray(list) ? list : []).filter(a => a && a.slug && !connus.has(a.slug)))
+      })
+      .catch(() => {})
+    return () => { annule = true }
+  }, [])
+  const ALL = useMemo(() => [...extra, ...BLOG_ARTICLES], [extra])
+
   const toggleCategory = (id) => {
     setActiveCategories(prev => {
       const next = new Set(prev)
@@ -334,18 +351,18 @@ export default function BlogListPage() {
 
   /* Compteurs par méta-catégorie */
   const categoryCounts = useMemo(() => {
-    const counts = { all: BLOG_ARTICLES.length }
+    const counts = { all: ALL.length }
     META_CATEGORIES.forEach(cat => { counts[cat.id] = 0 })
-    BLOG_ARTICLES.forEach(a => {
+    ALL.forEach(a => {
       const cat = getCategoryForTag(a.tag)
       if (cat) counts[cat.id] += 1
     })
     return counts
-  }, [])
+  }, [ALL])
 
   /* Filtre + recherche + tri */
   const filtered = useMemo(() => {
-    let result = BLOG_ARTICLES
+    let result = ALL
     if (activeCategories.size > 0) {
       result = result.filter(a => {
         const cat = getCategoryForTag(a.tag)
@@ -376,7 +393,7 @@ export default function BlogListPage() {
         result.sort((a, b) => (b.datePublished || '').localeCompare(a.datePublished || ''))
     }
     return result
-  }, [activeCategories, search, sort])
+  }, [ALL, activeCategories, search, sort])
 
   const isFiltered = activeCategories.size > 0 || search.trim().length > 0 || sort !== 'recent'
   const showFeatured = activeCategories.size === 0 && !search.trim() && sort === 'recent' && filtered.length > 0
@@ -416,7 +433,7 @@ export default function BlogListPage() {
         name: 'Blog Masteria : IA en entreprise',
         url: 'https://www.master-ia.fr/blog',
         publisher: { '@type': 'Organization', name: 'Masteria', url: 'https://www.master-ia.fr' },
-        blogPost: BLOG_ARTICLES.filter(a => !a.externalPath).map(a => ({
+        blogPost: ALL.filter(a => !a.externalPath).map(a => ({
           '@type': 'BlogPosting',
           headline: a.title,
           url: `https://www.master-ia.fr/blog/${a.slug}`,
@@ -485,7 +502,7 @@ export default function BlogListPage() {
 
           <div style={{ display: 'flex', gap: 32, marginBottom: 36, flexWrap: 'wrap' }}>
             {[
-              { value: BLOG_ARTICLES.length, label: 'articles' },
+              { value: ALL.length, label: 'articles' },
               { value: META_CATEGORIES.length, label: 'thématiques' },
               { value: '1 500+', label: 'pros formés' },
             ].map(({ value, label }) => (
@@ -601,7 +618,7 @@ export default function BlogListPage() {
                   color: activeCategories.size === 0 ? '#fff' : '#9CA3AF',
                   borderRadius: 99, padding: '1px 5px', lineHeight: 1.5,
                 }}>
-                  {BLOG_ARTICLES.length}
+                  {ALL.length}
                 </span>
               </button>
             </div>
