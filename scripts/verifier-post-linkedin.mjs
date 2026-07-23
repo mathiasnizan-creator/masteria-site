@@ -6,6 +6,10 @@
 // est de vérifier que la CHUTE du post (sa dernière phrase de prose) est présente
 // sur la page publique. Si elle manque, le post a été coupé avant la fin.
 //
+// Robustesse : on déplie les « voir plus » avant de lire (LinkedIn peut replier
+// un post long), et on réessaie si la page n'est pas encore lisible (propagation,
+// mur de connexion intermittent) pour ne PAS crier à la troncature à tort.
+//
 // Usage :  node scripts/verifier-post-linkedin.mjs <urn> <fichier-post.txt>
 // Sortie (1re ligne) :
 //   VERIF: OK       le post est complet en ligne
@@ -18,8 +22,7 @@ import fs from 'fs';
 
 const urn = process.argv[2];
 const fichier = process.argv[3];
-
-const fin = (m) => { console.log(m); };
+const fin = (m) => console.log(m);
 
 if (!urn || !fichier || !fs.existsSync(fichier)) {
   fin('VERIF: INCONNU (usage : verifier-post-linkedin.mjs <urn> <fichier-post.txt>)');
@@ -41,6 +44,24 @@ const temoinHashtags = lignes.length && lignes[lignes.length - 1].startsWith('#'
   ? norm(lignes[lignes.length - 1]) : '';
 
 const url = 'https://www.linkedin.com/feed/update/' + urn;
+const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Déplie les « voir plus » / « see more » puis renvoie le texte de la page.
+async function lireTexte(page) {
+  await page.evaluate(() => {
+    for (const b of document.querySelectorAll('button, a, span[role="button"]')) {
+      const t = (b.innerText || b.textContent || '').trim().toLowerCase();
+      if (/(voir plus|see more|…\s*plus|\bplus\b|\bmore\b)/.test(t) && t.length < 20) {
+        try { b.click(); } catch (e) { /* ignore */ }
+      }
+    }
+  });
+  await pause(800);
+  return page.evaluate(() => (document.querySelector('main') || document.body).innerText || '');
+}
+
+const MAX = 3;
+let dernier = 'INCONNU (page non lisible)';
 const navigateur = await puppeteer.launch({
   headless: 'new',
   args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -50,32 +71,43 @@ try {
   await page.setUserAgent(
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
     '(KHTML, like Gecko) Chrome/126.0 Safari/537.36');
-  const resp = await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
-  await new Promise((r) => setTimeout(r, 2500));
-  const finalUrl = page.url();
-  const texte = await page.evaluate(
-    () => (document.querySelector('main') || document.body).innerText || '');
-  const texteN = norm(texte);
 
-  const mur = /authwall|\/login|\/uas\/login|\/signup/i.test(finalUrl) || texteN.length < 200;
-  const statut = resp && resp.status();
-  if (mur || statut !== 200) {
-    fin('VERIF: INCONNU (page non lisible' +
-        (statut ? ` — HTTP ${statut}` : '') + ', vérification non concluante)');
-    process.exit(2);
+  for (let essai = 1; essai <= MAX; essai++) {
+    let statut, finalUrl, texteN;
+    try {
+      const resp = await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
+      statut = resp && resp.status();
+      await pause(2500);
+      finalUrl = page.url();
+      texteN = norm(await lireTexte(page));
+    } catch (e) {
+      dernier = 'INCONNU (' + (e && e.message ? e.message : e) + ')';
+      await pause(5000);
+      continue;
+    }
+
+    const mur = /authwall|\/login|\/uas\/login|\/signup/i.test(finalUrl) || texteN.length < 200;
+    if (mur || statut !== 200) {
+      dernier = 'INCONNU (page non lisible' + (statut ? ` — HTTP ${statut}` : '') + ')';
+      await pause(5000);   // propagation ou mur intermittent : on réessaie
+      continue;
+    }
+
+    // Page lisible : verdict définitif, pas de réessai.
+    if (texteN.includes(temoinProse)) {
+      let msg = 'VERIF: OK (post complet en ligne, chute présente';
+      if (temoinHashtags) msg += texteN.includes(temoinHashtags) ? ', hashtags présents' : ', hashtags absents';
+      fin(msg + ')');
+      process.exit(0);
+    }
+    fin('VERIF: ALERTE (la fin du post est absente de la page publique — troncature probable)');
+    console.log('  attendu en fin de post : …' + temoinProse);
+    console.log('  page : ' + url);
+    process.exit(1);
   }
 
-  if (texteN.includes(temoinProse)) {
-    let msg = 'VERIF: OK (post complet en ligne, chute présente';
-    if (temoinHashtags) msg += texteN.includes(temoinHashtags) ? ', hashtags présents' : ', hashtags absents';
-    fin(msg + ')');
-    process.exit(0);
-  }
-
-  fin('VERIF: ALERTE (la fin du post est absente de la page publique — troncature probable)');
-  console.log('  attendu en fin de post : …' + temoinProse);
-  console.log('  page : ' + url);
-  process.exit(1);
+  fin('VERIF: ' + dernier + ', vérification non concluante');
+  process.exit(2);
 } catch (e) {
   fin('VERIF: INCONNU (' + (e && e.message ? e.message : e) + ')');
   process.exit(2);
