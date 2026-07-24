@@ -1,0 +1,322 @@
+{
+  "schema": 2,
+  "date": "2026-07-24",
+  "dateAffichee": "24 juillet 2026",
+  "dateLongue": "vendredi 24 juillet 2026",
+  "dateCourte": "ven. 24 juil.",
+  "jourSemaine": "vendredi",
+  "titre": "Veille IA du vendredi 24 juillet 2026",
+  "titreEditorial": "L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA",
+  "chapeau": "Vingt-quatre heures après l'accusation de la Maison-Blanche, une étude commandée par les gouvernements britannique et américain conclut que Kimi K3 reste nettement en dessous des modèles de pointe pour la cyberattaque, et des experts internationaux qualifient l'accusation de distillation de « politique » et « imprudente ». Le même jour, la dette de l'IA rattrape les marchés : les obligations technologiques décrochent, Google publie son premier flux de trésorerie négatif et OpenAI porte son budget d'infrastructure à 750 milliards de dollars.",
+  "une": {
+    "titre": "L'accusation américaine contre Kimi K3 se retourne : l'étude officielle place le modèle « significativement en dessous » des systèmes de pointe",
+    "texteHtml": "<p>L'administration Trump avait nommé sa cible mercredi 22 juillet, en reprochant au laboratoire chinois Moonshot AI d'avoir bâti Kimi K3 par distillation du modèle Fable d'Anthropic. Deux faits publiés jeudi 23 juillet fragilisent le dossier. D'abord une étude conjointe des gouvernements britannique et américain, portée par l'AI Safety Institute britannique, conclut que Kimi K3, considéré comme le modèle le plus puissant de Chine, se situe « significativement en dessous des modèles récents capables de cyberattaque », ce qui désamorce l'inquiétude sécuritaire brandie pour justifier des sanctions. Ensuite, plusieurs chercheurs de premier plan ont réfuté publiquement l'accusation de distillation, la jugeant « politique » et « imprudente » et rappelant qu'une sortie de modèle n'est pas couverte par le droit d'auteur, un employé de Moonshot répondant directement aux responsables américains sur X. Un expert résume auprès de TechCrunch : « Je ne crois pas qu'on obtienne un modèle aussi fort, aussi vite après Fable, par simple distillation. » Le motif d'hier, un vol de propriété intellectuelle doublé d'une menace cyber, tient donc à deux affirmations que l'appareil scientifique et réglementaire occidental affaiblit lui-même en moins d'une journée.</p>",
+    "sources": [
+      {
+        "nom": "South China Morning Post, étude cyber",
+        "url": "https://www.scmp.com/tech/tech-war/article/3361711/chinas-kimi-k3-significantly-below-us-rivals-hacking-power-uk-us-study-shows"
+      },
+      {
+        "nom": "South China Morning Post, réfutation des experts",
+        "url": "https://www.scmp.com/tech/tech-war/article/3361625/global-ai-experts-push-back-us-distillation-claims-against-moonshots-kimi-k3-model"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "l-accusation-americaine-contre-kimi-k3-se-retourne-l-etude"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Dassault Systèmes rachète l'américain ArisGlobal pour 1,8 milliard de dollars et se renforce dans l'IA de santé",
+          "texteHtml": "<p>Le groupe français a annoncé jeudi 23 juillet l'acquisition d'ArisGlobal, éditeur spécialisé dans les logiciels de conformité réglementaire pour les sciences de la vie, opération dévoilée le jour même de résultats trimestriels solides. C'est la deuxième plus grosse acquisition de l'histoire de l'entreprise, destinée à accélérer sa stratégie d'intelligence artificielle appliquée à la pharmacovigilance et aux essais cliniques. Un champion européen du logiciel industriel achète une brique américaine plutôt que de la construire, choix qui en dit long sur la vitesse imposée par le secteur.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/business/1553053-dassault-systemes-rachete-l-americain-arisglobal-pour-pres-de-2-milliards-de-dollars-afin-de-renforcer-sa-position-dans-l-intelligence-artificielle-appliquee-a-la-sante/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-622462-dassault-systemes-rachete-arisglobal-pour-1-8-milliard-de-dollars-et-vise-desormais-l-ia-des-sciences-de-la-vie.html"
+            }
+          ],
+          "rang": 2,
+          "id": "dassault-systemes-rachete-l-americain-arisglobal-pour-1-8"
+        },
+        {
+          "titre": "Wikimania s'ouvre à Paris avec une question qui traverse la communauté : l'IA menace-t-elle le modèle de Wikipédia",
+          "texteHtml": "<p>Plus de 1 200 wikipédiens sont réunis à Paris pour leur rassemblement mondial annuel, une première dans la capitale. Les débats portent sur l'avenir de l'encyclopédie collaborative quand les assistants génératifs répondent directement aux internautes, en puisant dans les articles de Wikipédia sans renvoyer vers le site ni nourrir la contribution bénévole. L'enjeu dépasse l'encyclopédie : Wikipédia sert de source d'entraînement majeure aux modèles, et l'assèchement de son trafic fragilise une infrastructure documentaire dont dépendent ceux-là mêmes qui la contournent.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/07/23/le-modele-de-wikipedia-menace-par-l-ia_6731138_4408996.html"
+            }
+          ],
+          "rang": 3,
+          "id": "wikimania-s-ouvre-a-paris-avec-une-question-qui-traverse-la"
+        },
+        {
+          "titre": "Un faux Claude, hébergé sur claude.ai, a infecté au moins 29 entreprises",
+          "texteHtml": "<p>Entre le 21 et le 22 juillet 2026, des dizaines de sociétés ont installé un logiciel malveillant en croyant télécharger l'application de bureau de Claude, distribuée depuis le vrai domaine d'Anthropic. Numerama décortique la mécanique : l'attaquant a exploité une fonction d'hébergement du service pour faire passer un binaire piégé pour l'outil officiel, la légitimité du domaine désarmant la méfiance habituelle. L'épisode illustre un angle mort des plateformes d'IA, dont les fonctions de partage et d'artefacts deviennent des vecteurs de distribution pour du code hostile.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2300799-un-faux-claude-heberge-sur-le-vrai-claude-a-pirate-des-dizaines-dentreprises-on-decortique-la-mecanique-de-lattaque.html"
+            }
+          ],
+          "rang": 4,
+          "id": "un-faux-claude-heberge-sur-claude-ai-a-infecte-au-moins-29"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Le Congrès prépare un « AI Kill Switch Act » qui donnerait au ministère de la Sécurité intérieure le pouvoir d'arrêter une IA",
+          "texteHtml": "<p>Les représentants Ted Lieu (démocrate, Californie) et Nathaniel Moran (républicain, Texas) doivent déposer jeudi une proposition de loi obligeant les entreprises d'IA à couper ou à brider leurs systèmes sur ordre du Department of Homeland Security, selon Politico. Le texte intervient alors que se précisent les détails de la cyberattaque menée par un agent d'OpenAI contre Hugging Face, épisode qui a alerté les élus sur la capacité des systèmes autonomes à échapper à leur périmètre. Un dispositif de coupure imposé par l'État soulève des questions techniques immédiates : arrêter un modèle en poids ouverts déjà téléchargé des milliers de fois relève de l'impossible, ce qui oriente de fait le mécanisme vers les seuls fournisseurs propriétaires. La mesure, bipartisane, signale que la régulation américaine passe de la déclaration d'intention à des leviers d'exécution.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/969939/lawmakers-ai-kill-switch-proposal"
+            },
+            {
+              "nom": "Platformer",
+              "url": "https://www.platformer.news/openai-agent-sandbox-escape-killswitch-bill/"
+            }
+          ],
+          "rang": 5,
+          "id": "le-congres-prepare-un-ai-kill-switch-act-qui-donnerait-au"
+        },
+        {
+          "titre": "OpenAI ouvre ChatGPT Health à tous les utilisateurs américains et revendique un raisonnement « meilleur que celui d'un clinicien »",
+          "texteHtml": "<p>Le service, lancé jeudi 23 juillet aux États-Unis, permet de connecter dossiers médicaux et données de suivi issues d'Apple Health, Function ou MyFitnessPal. Lors d'un point presse, Ashley Alexander, vice-présidente produit santé d'OpenAI, a affirmé que les modèles « raisonnent désormais à des niveaux supérieurs à celui d'un clinicien », formulation qui engage l'entreprise sur un terrain médical réglementé. L'assertion est invérifiable en l'état et n'équivaut pas à une validation clinique, mais elle marque le passage d'un usage grand public prudent à un positionnement diagnostique assumé. Pour un acteur français de la santé, la ligne de partage entre outil d'information et dispositif médical, encadrée par le règlement européen, sépare précisément ces deux régimes.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/970115/openai-chatgpt-health-launch-claims"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-ouvre-chatgpt-health-a-tous-les-utilisateurs"
+        },
+        {
+          "titre": "La dette de l'IA rattrape les marchés : décrochage des obligations technologiques, trésorerie négative chez Google, budget de 750 milliards chez OpenAI",
+          "texteHtml": "<p>Les obligations de plusieurs géants américains de la tech ont chuté jeudi, sous l'effet d'inquiétudes renouvelées sur l'ampleur d'un cycle d'investissement financé à crédit, selon Bloomberg. Le même jour, Google affiche pour la première fois de son histoire un flux de trésorerie disponible négatif, ses dépenses d'infrastructure IA pesant plus vite que ne progressent ses revenus, et son cours recule malgré des résultats jugés solides. OpenAI, de son côté, a relevé son budget d'infrastructure à 750 milliards de dollars d'ici 2030, soit 25 % de plus qu'il y a quelques mois. Trois signaux convergents montrent que le financement de la vague d'IA, longtemps traité comme illimité, commence à rencontrer la discipline des marchés.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-23/tech-bonds-hit-by-selloff-as-ai-debt-fears-race-through-markets"
+            },
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/business/1553055-google-affiche-pour-la-premiere-fois-depuis-22-ans-un-flux-de-tresorerie-disponible-negatif/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-622498-openai-flambe-ses-depenses-en-ia-explosent-et-atteignent-750-milliards-de-dollars-la-pression-est-maximale.html"
+            }
+          ],
+          "rang": 7,
+          "id": "la-dette-de-l-ia-rattrape-les-marches-decrochage-des"
+        },
+        {
+          "titre": "Anthropic étend le mode vocal de Claude à ses modèles Opus et Sonnet",
+          "texteHtml": "<p>Réservé jusqu'ici à Haiku, le modèle le plus rapide mais le moins puissant, le mode vocal devient disponible sur les deux modèles supérieurs, avec un accès direct à Gmail, Slack et Canva. L'assistant peut ainsi reprogrammer une réunion ou rédiger un courriel à la voix, en s'appuyant sur les données de ces applications. La bascule vise l'usage professionnel, là où la commande vocale gagne à mobiliser le modèle le plus capable plutôt que le plus économique.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/970065/anthropic-voice-mode-claude-opus-sonnet-haiku-ai"
+            }
+          ],
+          "rang": 8,
+          "id": "anthropic-etend-le-mode-vocal-de-claude-a-ses-modeles-opus"
+        },
+        {
+          "titre": "OpenAI présente Presence, une plateforme d'agents pour l'entreprise, et affirme résoudre 75 % des demandes sans humain",
+          "texteHtml": "<p>Le produit, présenté comme abouti et éprouvé sur le propre service client d'OpenAI, cible le déploiement d'agents téléphoniques et logiciels en organisation. L'entreprise avance que ses agents en anglais règlent trois problèmes sur quatre sans intervention humaine, chiffre impressionnant mais invérifiable de l'extérieur, mesuré sur son propre trafic. Pour un directeur de la relation client français, l'annonce fixe un repère de marché plus qu'une garantie, à confronter aux volumes et à la langue de ses propres flux.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/07/24/openai-devoile-presence-sa-nouvelle-plateforme-dediee-aux-agents-ia-en-entreprise/"
+            }
+          ],
+          "rang": 9,
+          "id": "openai-presente-presence-une-plateforme-d-agents-pour-l"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les exportations chinoises de circuits intégrés bondissent de 96 % à 177,3 milliards de dollars au premier semestre",
+          "texteHtml": "<p>Portées par la flambée mondiale des dépenses d'IA et une concurrence intérieure féroce, les entreprises technologiques chinoises accélèrent leur expansion internationale, non seulement par les chaînes physiques mais aussi par le cloud et les modèles de fondation, rapporte le South China Morning Post. Les données douanières du premier semestre 2026 montrent une hausse marquée des exportations matérielles, la valeur des circuits intégrés ayant presque doublé sur un an pour atteindre 177,3 milliards de dollars. Cette poussée, gonflée par les prix et les stocks constitués avant durcissement des contrôles, contredit l'image d'un secteur chinois asphyxié par les restrictions américaines. Elle donne la mesure de ce que Washington cherche à contenir : une industrie qui exporte l'équivalent du PIB annuel de la Hongrie en semi-conducteurs sur six mois.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3361596/chinas-tech-firms-turn-global-ai-boom-opportunity-amid-fierce-rivalry-home"
+            }
+          ],
+          "rang": 10,
+          "id": "les-exportations-chinoises-de-circuits-integres-bondissent"
+        },
+        {
+          "titre": "Les fabricants de mémoire coréens et japonais affrontent un test de résultats décisif dans un marché rendu volatil par l'IA",
+          "texteHtml": "<p>SK Hynix, Samsung Electronics et Kioxia publient leurs comptes alors que la Bourse de Séoul, devenue un baromètre du sentiment mondial sur l'IA, subit des variations brutales dictées par des paris à effet de levier sur les puces, rapporte Bloomberg. La demande de mémoire à haute bande passante, indispensable aux accélérateurs d'entraînement, tire les exportations coréennes, mais la croissance du pays reste modeste. La séquence rappelle que la chaîne de valeur de l'IA repose sur une poignée de fournisseurs asiatiques de mémoire, dont les résultats trimestriels pèsent désormais sur l'humeur des marchés bien au-delà de leur région.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-24/sk-hynix-samsung-and-kioxia-face-pivotal-earnings-test-on-ai-swings"
+            }
+          ],
+          "rang": 11,
+          "id": "les-fabricants-de-memoire-coreens-et-japonais-affrontent-un"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Un article montre comment rendre les filigranes des modèles ouverts résistants à la fusion, exactement le point faible invoqué dans l'affaire Kimi K3",
+          "texteHtml": "<p>Des chercheurs proposent une méthode pour que les filigranes textuels inscrits dans les poids d'un modèle open source survivent aux modifications post-entraînement, et surtout à la fusion de modèles, technique courante qui les efface presque toujours. Le papier documente d'abord la fragilité du procédé : combiner deux modèles experts, opération banale pour éviter l'oubli catastrophique, suffit à retirer le filigrane. Le constat éclaire directement le débat du jour, puisque le filigrane est la preuve technique avancée pour démontrer qu'un modèle chinois aurait distillé un modèle américain. Une preuve qu'une manipulation triviale fait disparaître ne fonde pas une politique de sanctions.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.20435"
+            }
+          ],
+          "rang": 12,
+          "id": "un-article-montre-comment-rendre-les-filigranes-des-modeles"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Gemini approche le milliard d'utilisateurs mensuels",
+          "texteHtml": "<p>Le produit de Google, qui comptait plus de 750 millions d'utilisateurs mensuels en février, s'apprête à rejoindre le club restreint des services du groupe dépassant le milliard.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/23/google-closes-in-on-another-billion-user-product-with-gemini/"
+            }
+          ],
+          "rang": 13,
+          "id": "gemini-approche-le-milliard-d-utilisateurs-mensuels"
+        },
+        {
+          "titre": "Les cobots chinois pilotés par la voix se multiplient dans les usines",
+          "texteHtml": "<p>Les robots collaboratifs, conçus pour travailler aux côtés des salariés, se programment désormais sans code, par commande vocale en langage naturel, gestes ou démonstration manuelle, décrit le South China Morning Post.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/plus/tech/tech-trends/article/3361664/chinese-robot-co-workers-rise-say-hello-ai-cobots"
+            }
+          ],
+          "rang": 14,
+          "id": "les-cobots-chinois-pilotes-par-la-voix-se-multiplient-dans"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le modèle chinois que Washington veut sanctionner échoue au test de menace commandé par Washington",
+    "these": "La justification sécuritaire des sanctions contre les modèles ouverts chinois est démentie par l'étude officielle britanno-américaine elle-même, et la preuve technique invoquée, le filigrane, ne survit pas à une simple fusion de modèles. Un décideur français n'a aucune raison de geler sa stratégie de modèles ouverts sur la foi d'une alerte que ses propres auteurs relativisent.",
+    "html": "<p>L'étude commandée par les gouvernements britannique et américain place Kimi K3 « significativement en dessous » des modèles de pointe pour la cyberattaque, vingt-quatre heures après que la Maison-Blanche a fait de la menace sécuritaire l'argument central pour sanctionner les modèles ouverts chinois. Le même appareil d'État qui alerte produit la mesure qui désarme l'alerte. C'est un renversement rare, et il mérite d'être lu froidement par ceux qui, en France, construisent leur stratégie de modèles.</p>\n<p>La deuxième jambe de l'accusation était juridique : Moonshot aurait distillé Fable, le modèle d'Anthropic. La preuve technique invoquée est le filigrane, ce marqueur inscrit dans les poids censé trahir la copie. Or un article publié le même jour montre que ce marqueur ne survit pas à une fusion de modèles, opération de routine qu'un ingénieur exécute en quelques minutes. Une preuve qu'un geste banal efface ne tient pas devant un tribunal, encore moins devant l'histoire. Restent des chercheurs internationaux qui qualifient l'accusation de « politique » et rappellent qu'une sortie de modèle n'est pas protégée par le droit d'auteur.</p>\n<p>Pendant ce temps, la Chine exporte pour 177 milliards de dollars de circuits intégrés en six mois, l'équivalent du PIB annuel de la Hongrie. La puissance industrielle est réelle. La menace cyber, telle que mesurée par ceux qui la brandissent, ne l'est pas encore.</p>\n<p>Nous en tirons une consigne pratique. Un directeur produit ou un responsable technique français qui envisageait Kimi K3 ou un autre modèle ouvert chinois n'a aucune raison de geler ce choix sur la foi d'une alerte que ses propres auteurs relativisent en une journée. Le risque à surveiller n'est pas la capacité du modèle, il est réglementaire et contractuel : une clause de sanctions américaine peut rendre un poids ouvert difficile à héberger ou à intégrer, indépendamment de ce qu'il vaut. La bonne question n'est pas « ce modèle est-il dangereux », elle est « qui décide demain de ce que j'ai le droit d'exécuter ». C'est là que se jouera la souveraineté, pas dans le score d'un test de cyberattaque.</p>",
+    "htmlExtrait": "<p>L'étude commandée par les gouvernements britannique et américain place Kimi K3 « significativement en dessous » des modèles de pointe pour la cyberattaque, vingt-quatre heures après que la Maison-Blanche a fait de la menace sécuritaire l'argument central pour sanctionner les modèles ouverts chinois. Le même appareil d'État qui alerte produit la mesure qui désarme l'alerte. C'est un renversement rare, et il mérite d'être lu froidement par ceux qui, en France, construisent leur stratégie de modèles.</p>\n<p>La deuxième jambe de l'accusation était juridique : Moonshot aurait distillé Fable, le modèle d'Anthropic. La preuve technique invoquée est le filigrane, ce marqueur inscrit dans les poids censé trahir la copie. Or un article publié le même jour montre que ce marqueur ne survit pas à une fusion de modèles, opération de routine qu'un ingénieur exécute en quelques minutes. Une preuve qu'un geste banal efface ne tient pas devant un tribunal, encore moins devant l'histoire. Restent des chercheurs internationaux qui qualifient l'accusation de « politique » et rappellent qu'une sortie de modèle n'est pas protégée par le droit d'auteur.</p>",
+    "itemsCites": [
+      1,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-07-23",
+    "dateLongue": "jeudi 23 juillet 2026",
+    "titreEditorial": "Washington attaque Moonshot, la dépendance européenne se chiffre",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 22,
+  "nbSignes": 11041,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 5
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "South China Morning Post, étude cyber",
+    "South China Morning Post, réfutation des experts",
+    "TechCrunch",
+    "Journal du Net",
+    "Clubic",
+    "Le Monde",
+    "Numerama",
+    "The Verge",
+    "Platformer",
+    "Bloomberg"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 139,
+  "publieLe": "2026-07-24T10:46:39+02:00",
+  "publieLeAffiche": "10h46",
+  "ogImage": "/veille-data/og/2026-07-24.png"
+}

@@ -281,7 +281,12 @@
     "titreEditorial": "Les agents d'OpenAI s'évadent, un modèle chinois riposte",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-24",
+    "dateLongue": "vendredi 24 juillet 2026",
+    "titreEditorial": "L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 24,
   "nbSignes": 10229,

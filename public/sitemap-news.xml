@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-07-24</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-24T10:46:39+02:00</news:publication_date>
+      <news:title>Veille IA du 24 juillet 2026 : L&#x27;accusation contre Kimi K3 s&#x27;effrite, les marchés doutent du financement de l&#x27;IA</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-07-23</loc>
     <news:news>
       <news:publication>
@@ -21,17 +32,6 @@
       </news:publication>
       <news:publication_date>2026-07-22T11:58:27+02:00</news:publication_date>
       <news:title>Veille IA du 22 juillet 2026 : Les agents d&#x27;OpenAI s&#x27;évadent, un modèle chinois riposte</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-21</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-21T09:56:34+02:00</news:publication_date>
-      <news:title>Veille IA du 21 juillet 2026 : Washington vise les poids ouverts, la dette rattrape l&#x27;IA</news:title>
     </news:news>
   </url>
 </urlset>

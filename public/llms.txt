@@ -178,6 +178,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [24 juillet 2026 : L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA](https://www.master-ia.fr/veille-ia/2026-07-24)
 - [23 juillet 2026 : Washington attaque Moonshot, la dépendance européenne se chiffre](https://www.master-ia.fr/veille-ia/2026-07-23)
 - [22 juillet 2026 : Les agents d'OpenAI s'évadent, un modèle chinois riposte](https://www.master-ia.fr/veille-ia/2026-07-22)
 - [21 juillet 2026 : Washington vise les poids ouverts, la dette rattrape l'IA](https://www.master-ia.fr/veille-ia/2026-07-21)

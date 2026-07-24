@@ -3,12 +3,133 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-23",
-    "totalEditions": 4,
-    "totalItems": 56,
-    "totalSources": 94
+    "derniereDate": "2026-07-24",
+    "totalEditions": 5,
+    "totalItems": 70,
+    "totalSources": 116
   },
   "editions": [
+    {
+      "date": "2026-07-24",
+      "dateCourte": "ven. 24 juil.",
+      "dateAffichee": "24 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA",
+      "chapeau": "Vingt-quatre heures après l'accusation de la Maison-Blanche, une étude commandée par les gouvernements britannique et américain conclut que Kimi K3 reste nettement en dessous des modèles de pointe pour la cyberattaque, et des experts internationaux qualifient l'accusation de distillation de « politique » et « imprudente ». Le même jour, la dette de l'IA rattrape les marchés : les obligations technologiques décrochent, Google publie son premier flux de trésorerie négatif et OpenAI porte son budget d'infrastructure à 750 milliards de dollars.",
+      "nbItems": 14,
+      "nbSources": 22,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 5
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "South China Morning Post, étude cyber",
+        "South China Morning Post, réfutation des experts",
+        "TechCrunch",
+        "Journal du Net",
+        "Clubic",
+        "Le Monde",
+        "Numerama",
+        "The Verge",
+        "Platformer",
+        "Bloomberg",
+        "Siècle Digital",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "L'accusation américaine contre Kimi K3 se retourne : l'étude officielle place le modèle « significativement en dessous » des systèmes de pointe",
+          "z": "une",
+          "id": "l-accusation-americaine-contre-kimi-k3-se-retourne-l-etude"
+        },
+        {
+          "t": "Dassault Systèmes rachète l'américain ArisGlobal pour 1,8 milliard de dollars et se renforce dans l'IA de santé",
+          "z": "europe",
+          "id": "dassault-systemes-rachete-l-americain-arisglobal-pour-1-8"
+        },
+        {
+          "t": "Wikimania s'ouvre à Paris avec une question qui traverse la communauté : l'IA menace-t-elle le modèle de Wikipédia",
+          "z": "europe",
+          "id": "wikimania-s-ouvre-a-paris-avec-une-question-qui-traverse-la"
+        },
+        {
+          "t": "Un faux Claude, hébergé sur claude.ai, a infecté au moins 29 entreprises",
+          "z": "europe",
+          "id": "un-faux-claude-heberge-sur-claude-ai-a-infecte-au-moins-29"
+        },
+        {
+          "t": "Le Congrès prépare un « AI Kill Switch Act » qui donnerait au ministère de la Sécurité intérieure le pouvoir d'arrêter une IA",
+          "z": "international",
+          "id": "le-congres-prepare-un-ai-kill-switch-act-qui-donnerait-au"
+        },
+        {
+          "t": "OpenAI ouvre ChatGPT Health à tous les utilisateurs américains et revendique un raisonnement « meilleur que celui d'un clinicien »",
+          "z": "international",
+          "id": "openai-ouvre-chatgpt-health-a-tous-les-utilisateurs"
+        },
+        {
+          "t": "La dette de l'IA rattrape les marchés : décrochage des obligations technologiques, trésorerie négative chez Google, budget de 750 milliards chez OpenAI",
+          "z": "international",
+          "id": "la-dette-de-l-ia-rattrape-les-marches-decrochage-des"
+        },
+        {
+          "t": "Anthropic étend le mode vocal de Claude à ses modèles Opus et Sonnet",
+          "z": "international",
+          "id": "anthropic-etend-le-mode-vocal-de-claude-a-ses-modeles-opus"
+        },
+        {
+          "t": "OpenAI présente Presence, une plateforme d'agents pour l'entreprise, et affirme résoudre 75 % des demandes sans humain",
+          "z": "international",
+          "id": "openai-presente-presence-une-plateforme-d-agents-pour-l"
+        },
+        {
+          "t": "Les exportations chinoises de circuits intégrés bondissent de 96 % à 177,3 milliards de dollars au premier semestre",
+          "z": "chine",
+          "id": "les-exportations-chinoises-de-circuits-integres-bondissent"
+        },
+        {
+          "t": "Les fabricants de mémoire coréens et japonais affrontent un test de résultats décisif dans un marché rendu volatil par l'IA",
+          "z": "chine",
+          "id": "les-fabricants-de-memoire-coreens-et-japonais-affrontent-un"
+        },
+        {
+          "t": "Un article montre comment rendre les filigranes des modèles ouverts résistants à la fusion, exactement le point faible invoqué dans l'affaire Kimi K3",
+          "z": "recherche",
+          "id": "un-article-montre-comment-rendre-les-filigranes-des-modeles"
+        },
+        {
+          "t": "Gemini approche le milliard d'utilisateurs mensuels",
+          "z": "bref",
+          "id": "gemini-approche-le-milliard-d-utilisateurs-mensuels"
+        },
+        {
+          "t": "Les cobots chinois pilotés par la voix se multiplient dans les usines",
+          "z": "bref",
+          "id": "les-cobots-chinois-pilotes-par-la-voix-se-multiplient-dans"
+        }
+      ]
+    },
     {
       "date": "2026-07-23",
       "dateCourte": "jeu. 23 juil.",
