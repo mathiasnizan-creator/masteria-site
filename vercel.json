@@ -458,6 +458,16 @@
       "permanent": true
     },
     {
+      "source": "/formation-ia/google-gemini",
+      "destination": "/formation-gemini-entreprise",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia/(.*)",
+      "destination": "/formation-intelligence-artificielle",
+      "permanent": true
+    },
+    {
       "source": "/formation-gemini-rennes",
       "destination": "/formation-gemini-entreprise",
       "permanent": true
