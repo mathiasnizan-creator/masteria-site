@@ -37,6 +37,9 @@ const AgenceIAPage = lazy(() => import('./pages/AgenceIAPage'));
 const MeilleureAgenceIAPage = lazy(() => import('./pages/MeilleureAgenceIAPage'));
 const MeilleurCabinetConseilIAPage = lazy(() => import('./pages/MeilleurCabinetConseilIAPage'));
 const AgenceDeveloppementIAPage = lazy(() => import('./pages/AgenceDeveloppementIAPage'));
+const AutomatiserVeilleIAPage = lazy(() => import('./pages/AutomatiserVeilleIAPage'));
+const OutilsVeilleIAPage = lazy(() => import('./pages/OutilsVeilleIAPage'));
+const VeilleConcurrentielleIAPage = lazy(() => import('./pages/VeilleConcurrentielleIAPage'));
 const AgenceGeoPage = lazy(() => import('./pages/AgenceGeoPage'));
 const AgenceIAMarketingPage = lazy(() => import('./pages/AgenceIAMarketingPage'));
 const AgenceSeoIAPage = lazy(() => import('./pages/AgenceSeoIAPage'));
@@ -1448,6 +1451,9 @@ export default function App() {
         <Route path="/meilleure-agence-ia" element={<MeilleureAgenceIAPage />} />
         <Route path="/meilleur-cabinet-conseil-ia" element={<MeilleurCabinetConseilIAPage />} />
         <Route path="/agence-developpement-ia" element={<AgenceDeveloppementIAPage />} />
+        <Route path="/automatiser-sa-veille-ia" element={<AutomatiserVeilleIAPage />} />
+        <Route path="/outils-veille-ia" element={<OutilsVeilleIAPage />} />
+        <Route path="/veille-concurrentielle-ia" element={<VeilleConcurrentielleIAPage />} />
         <Route path="/agence-ia-marketing" element={<AgenceIAMarketingPage />} />
         <Route path="/agence-seo-ia" element={<AgenceSeoIAPage />} />
         <Route path="/agence-ia-lyon" element={<AgenceGeoPage />} />

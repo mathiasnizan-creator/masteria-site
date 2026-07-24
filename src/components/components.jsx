@@ -134,6 +134,9 @@ const VEILLE_LINKS = [
   { label: 'La une',                  desc: "L'édition du jour",               path: '/veille-ia',              Icon: Newspaper },
   { label: 'Toutes les publications', desc: 'Historique et recherche',         path: '/veille-ia/publications', Icon: Library },
   { label: 'À propos',                desc: 'Méthode et politique éditoriale', path: '/veille-ia/a-propos',      Icon: Info },
+  { label: 'Automatiser sa veille',   desc: 'Méthode et outils',               path: '/automatiser-sa-veille-ia', Icon: Workflow },
+  { label: 'Outils de veille',        desc: 'Le comparatif',                   path: '/outils-veille-ia',       Icon: Wrench },
+  { label: 'Veille concurrentielle',  desc: 'Surveiller ses concurrents',      path: '/veille-concurrentielle-ia', Icon: Target },
 ];
 
 export function MasteriaHeader() {

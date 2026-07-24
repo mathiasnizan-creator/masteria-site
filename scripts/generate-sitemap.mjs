@@ -198,6 +198,11 @@ for (const s of solutionSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SOLUTIO
 // Offres de conversion high-ticket.
 urls.push({ loc: `${SITE}/diagnostic-ia`, lastmod: gitLastMod(['src/pages/DiagnosticIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });
+// Page pilier « veille IA » (intention méthode/outils, cible le mot-clé + le cluster automatisation).
+urls.push({ loc: `${SITE}/automatiser-sa-veille-ia`, lastmod: gitLastMod(['src/pages/AutomatiserVeilleIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+// Pages sœurs du cluster veille (outils + usage concurrentiel).
+urls.push({ loc: `${SITE}/outils-veille-ia`, lastmod: gitLastMod(['src/pages/OutilsVeilleIAPage.jsx']), changefreq: 'monthly', priority: 0.7 });
+urls.push({ loc: `${SITE}/veille-concurrentielle-ia`, lastmod: gitLastMod(['src/pages/VeilleConcurrentielleIAPage.jsx']), changefreq: 'monthly', priority: 0.7 });
 for (const s of [...spokeSet].sort()) urls.push({ loc: `${SITE}/${s}`,  lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.5 });
 for (const b of blogEntries)  urls.push({ loc: `${SITE}/blog/${b.slug}`, lastmod: b.lastmod,     changefreq: 'monthly', priority: 0.5 });
 const blogSlugs = blogEntries.map(b => b.slug);

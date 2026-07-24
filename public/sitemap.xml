@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/automatisation-ia</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -219,6 +219,12 @@
   <url>
     <loc>https://www.master-ia.fr/diagnostic-ia</loc>
     <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/automatiser-sa-veille-ia</loc>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -302,7 +308,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -525,6 +531,18 @@
   <url>
     <loc>https://www.master-ia.fr/integration-llm-rag</loc>
     <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/outils-veille-ia</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/veille-concurrentielle-ia</loc>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>

@@ -343,6 +343,7 @@ const RELATED = [
   { label: 'Les agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Guide', desc: "Ce que les agents IA autonomes savent faire, leurs limites et les conditions d'un déploiement sûr." },
   { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "En complément du déploiement, 2 jours pour rendre vos équipes autonomes. Certifié Qualiopi, finançable OPCO." },
   { label: 'Automatisation IA en PME : les processus prioritaires', href: '/blog/automatisation-ia-pme-processus-prioritaires', tag: 'Blog', desc: "Les processus qui rapportent le plus vite quand on démarre, classés par impact et faisabilité." },
+  { label: 'Automatiser sa veille IA', href: '/automatiser-sa-veille-ia', tag: 'Cas d\'usage', desc: "Un exemple d'automatisation de bout en bout : collecte, tri, analyse et publication d'une veille quotidienne." },
 ]
 
 /* ───────── Données de fraîcheur + schema Article (E-E-A-T, GEO) ───────── */

@@ -54,6 +54,7 @@ const ordonner = sections => [...sections].sort(
 function Kicker({ children }) { return <div style={kickerStyle}>{children}</div> }
 
 const RESSOURCES = [
+  { tag: 'Méthode', titre: 'Automatiser sa veille IA', desc: "Comment nous produisons cette veille : les approches, les outils et les pièges à éviter.", href: '/automatiser-sa-veille-ia' },
   { tag: 'Formation', titre: 'Former vos équipes à l\'IA', desc: "Programmes intra sur ChatGPT, Claude, Copilot, Gemini et Mistral, finançables par votre OPCO.", href: '/formations' },
   { tag: 'Conseil', titre: 'Cadrer votre stratégie IA', desc: "Diagnostic, priorisation des cas d'usage et feuille de route pour dirigeants.", href: '/conseil-intelligence-artificielle' },
   { tag: 'Développement', titre: 'Développer vos agents IA', desc: "Agents, automatisations et applications métier, avec transfert de compétence.", href: '/agence-developpement-ia' },
