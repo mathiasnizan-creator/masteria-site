@@ -46,6 +46,16 @@ const temoinHashtags = lignes.length && lignes[lignes.length - 1].startsWith('#'
 const url = 'https://www.linkedin.com/feed/update/' + urn;
 const pause = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Attend que le corps du post soit réellement rendu (page JS : le DOM arrive
+// avant le contenu). Sans échec dur : on lit ce qu'on a si le délai passe.
+async function attendreContenu(page) {
+  try {
+    await page.waitForFunction(
+      () => ((document.querySelector('main') || document.body).innerText || '').length > 400,
+      { timeout: 20000, polling: 500 });
+  } catch (e) { /* on lira quand même, le garde-fou « mur » tranchera */ }
+}
+
 // Déplie les « voir plus » / « see more » puis renvoie le texte de la page.
 async function lireTexte(page) {
   await page.evaluate(() => {
@@ -75,9 +85,12 @@ try {
   for (let essai = 1; essai <= MAX; essai++) {
     let statut, finalUrl, texteN;
     try {
-      const resp = await page.goto(url, { waitUntil: 'networkidle2', timeout: 45000 });
+      // 'domcontentloaded' plutôt que 'networkidle2' : LinkedIn sonde le réseau
+      // en continu (analytics, long-polling), la page n'est jamais « au repos »
+      // et l'attente expirait, rendant la vérification aveugle (cas du 27/07).
+      const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
       statut = resp && resp.status();
-      await pause(2500);
+      await attendreContenu(page);
       finalUrl = page.url();
       texteN = norm(await lireTexte(page));
     } catch (e) {
