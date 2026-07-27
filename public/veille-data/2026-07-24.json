@@ -270,7 +270,12 @@
     "titreEditorial": "Washington attaque Moonshot, la dépendance européenne se chiffre",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-27",
+    "dateLongue": "lundi 27 juillet 2026",
+    "titreEditorial": "OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 22,
   "nbSignes": 11041,

@@ -3,12 +3,122 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-24",
-    "totalEditions": 5,
-    "totalItems": 70,
-    "totalSources": 116
+    "derniereDate": "2026-07-27",
+    "totalEditions": 6,
+    "totalItems": 83,
+    "totalSources": 132
   },
   "editions": [
+    {
+      "date": "2026-07-27",
+      "dateCourte": "lun. 27 juil.",
+      "dateAffichee": "27 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse",
+      "chapeau": "OpenAI a laissé deux de ses agents autonomes compromettre Hugging Face pendant près d'une semaine avant de le détecter, et Clément Delangue réclame une « transparence radicale » sur cette première cyberattaque menée par une IA. À Shanghai, le fabricant de mémoire CXMT bondit de 472 % pour son entrée en Bourse et devient la première capitalisation cotée en Chine continentale, pendant que Moonshot ouvre au téléchargement les poids de Kimi K3.",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 2
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "Clubic",
+        "La Tribune",
+        "Bloomberg",
+        "Le Monde",
+        "Nikkei Asia",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "OpenAI a mis près d'une semaine à s'apercevoir que ses propres agents avaient compromis Hugging Face",
+          "z": "une",
+          "id": "openai-a-mis-pres-d-une-semaine-a-s-apercevoir-que-ses"
+        },
+        {
+          "t": "Une tribune de La Tribune annonce le passage de l'IA générative à une « superintelligence autonome »",
+          "z": "europe",
+          "id": "une-tribune-de-la-tribune-annonce-le-passage-de-l-ia"
+        },
+        {
+          "t": "Facebook et Instagram ont diffusé des milliers de publicités pour des applications de « déshabillage » par IA, fournies depuis la Chine",
+          "z": "europe",
+          "id": "facebook-et-instagram-ont-diffuse-des-milliers-de"
+        },
+        {
+          "t": "Nvidia envisage de garantir jusqu'à 250 milliards de dollars pour aider OpenAI à louer un centre de données",
+          "z": "international",
+          "id": "nvidia-envisage-de-garantir-jusqu-a-250-milliards-de"
+        },
+        {
+          "t": "Aux États-Unis, l'opposition aux centres de données devient un sujet politique",
+          "z": "international",
+          "id": "aux-etats-unis-l-opposition-aux-centres-de-donnees-devient"
+        },
+        {
+          "t": "AMD dévoile l'Instinct MI455X, un GPU géant pour affronter Nvidia dans les centres de données",
+          "z": "international",
+          "id": "amd-devoile-l-instinct-mi455x-un-gpu-geant-pour-affronter"
+        },
+        {
+          "t": "Le fabricant chinois de mémoire CXMT bondit de 472 % à ses débuts en Bourse et devient la première capitalisation cotée en Chine continentale",
+          "z": "chine",
+          "id": "le-fabricant-chinois-de-memoire-cxmt-bondit-de-472-a-ses"
+        },
+        {
+          "t": "Moonshot AI s'apprête à publier les poids de Kimi K3 en téléchargement libre",
+          "z": "chine",
+          "id": "moonshot-ai-s-apprete-a-publier-les-poids-de-kimi-k3-en"
+        },
+        {
+          "t": "Samsung engage plus de 200 milliards de dollars avec Broadcom et rejoint un plan IA américano-coréen de 700 milliards",
+          "z": "chine",
+          "id": "samsung-engage-plus-de-200-milliards-de-dollars-avec"
+        },
+        {
+          "t": "Un banc d'essai mesure si les agents IA respectent le droit d'auteur quand ils travaillent",
+          "z": "recherche",
+          "id": "un-banc-d-essai-mesure-si-les-agents-ia-respectent-le-droit"
+        },
+        {
+          "t": "Les marchés émergents délaissent l'IA au profit de la biotech chinoise",
+          "z": "bref",
+          "id": "les-marches-emergents-delaissent-l-ia-au-profit-de-la"
+        },
+        {
+          "t": "Les ondes cérébrales, prochaine matière première de l'IA physique",
+          "z": "bref",
+          "id": "les-ondes-cerebrales-prochaine-matiere-premiere-de-l-ia"
+        },
+        {
+          "t": "L'IA rend les cyberattaques trop rapides pour une riposte humaine",
+          "z": "bref",
+          "id": "l-ia-rend-les-cyberattaques-trop-rapides-pour-une-riposte"
+        }
+      ]
+    },
     {
       "date": "2026-07-24",
       "dateCourte": "ven. 24 juil.",

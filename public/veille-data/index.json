@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-24",
-    "totalEditions": 5,
-    "totalItems": 70,
-    "totalSources": 116
+    "derniereDate": "2026-07-27",
+    "totalEditions": 6,
+    "totalItems": 83,
+    "totalSources": 132
   },
   "editions": [
+    {
+      "date": "2026-07-27",
+      "dateAffichee": "27 juillet 2026",
+      "dateCourte": "lun. 27 juil.",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-07-24",
       "dateAffichee": "24 juillet 2026",

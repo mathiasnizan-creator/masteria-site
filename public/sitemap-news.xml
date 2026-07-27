@@ -2,36 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-24</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-07-27</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-24T10:46:39+02:00</news:publication_date>
-      <news:title>Veille IA du 24 juillet 2026 : L&#x27;accusation contre Kimi K3 s&#x27;effrite, les marchés doutent du financement de l&#x27;IA</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-23</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-23T09:42:24+02:00</news:publication_date>
-      <news:title>Veille IA du 23 juillet 2026 : Washington attaque Moonshot, la dépendance européenne se chiffre</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-22</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-22T11:58:27+02:00</news:publication_date>
-      <news:title>Veille IA du 22 juillet 2026 : Les agents d&#x27;OpenAI s&#x27;évadent, un modèle chinois riposte</news:title>
+      <news:publication_date>2026-07-27T06:22:47+02:00</news:publication_date>
+      <news:title>Veille IA du 27 juillet 2026 : OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s&#x27;envole en Bourse</news:title>
     </news:news>
   </url>
 </urlset>

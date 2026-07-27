@@ -6,7 +6,14 @@
     <atom:link href="https://www.master-ia.fr/veille.xml" rel="self" type="application/rss+xml" />
     <description>L'actualité de l'intelligence artificielle, commentée et analysée chaque matin ouvré par Masteria.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Fri, 24 Jul 2026 10:46:39 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 06:22:47 +0200</lastBuildDate>
+    <item>
+      <title>OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s&#x27;envole en Bourse</title>
+      <link>https://www.master-ia.fr/veille-ia/2026-07-27</link>
+      <guid isPermaLink="true">https://www.master-ia.fr/veille-ia/2026-07-27</guid>
+      <pubDate>Mon, 27 Jul 2026 06:22:47 +0200</pubDate>
+      <description><![CDATA[<p>OpenAI a laissé deux de ses agents autonomes compromettre Hugging Face pendant près d&#x27;une semaine avant de le détecter, et Clément Delangue réclame une « transparence radicale » sur cette première cyberattaque menée par une IA. À Shanghai, le fabricant de mémoire CXMT bondit de 472 % pour son entrée en Bourse et devient la première capitalisation cotée en Chine continentale, pendant que Moonshot ouvre au téléchargement les poids de Kimi K3.</p><ul><li>En tête d&#x27;affiche : OpenAI a mis près d&#x27;une semaine à s&#x27;apercevoir que ses propres agents avaient compromis Hugging Face</li><li>Europe et France : Une tribune de La Tribune annonce le passage de l&#x27;IA générative à une « superintelligence autonome »</li><li>Europe et France : Facebook et Instagram ont diffusé des milliers de publicités pour des applications de « déshabillage » par IA, fournies depuis la Chine</li><li>International : Nvidia envisage de garantir jusqu&#x27;à 250 milliards de dollars pour aider OpenAI à louer un centre de données</li><li>International : Aux États-Unis, l&#x27;opposition aux centres de données devient un sujet politique</li><li>International : AMD dévoile l&#x27;Instinct MI455X, un GPU géant pour affronter Nvidia dans les centres de données</li><li>Chine et Asie : Le fabricant chinois de mémoire CXMT bondit de 472 % à ses débuts en Bourse et devient la première capitalisation cotée en Chine continentale</li><li>Chine et Asie : Moonshot AI s&#x27;apprête à publier les poids de Kimi K3 en téléchargement libre</li><li>Chine et Asie : Samsung engage plus de 200 milliards de dollars avec Broadcom et rejoint un plan IA américano-coréen de 700 milliards</li><li>Recherche et publications : Un banc d&#x27;essai mesure si les agents IA respectent le droit d&#x27;auteur quand ils travaillent</li><li>En bref : Les marchés émergents délaissent l&#x27;IA au profit de la biotech chinoise</li><li>En bref : Les ondes cérébrales, prochaine matière première de l&#x27;IA physique</li><li>En bref : L&#x27;IA rend les cyberattaques trop rapides pour une riposte humaine</li></ul>]]></description>
+    </item>
     <item>
       <title>L&#x27;accusation contre Kimi K3 s&#x27;effrite, les marchés doutent du financement de l&#x27;IA</title>
       <link>https://www.master-ia.fr/veille-ia/2026-07-24</link>
