@@ -3,12 +3,126 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-27",
-    "totalEditions": 6,
-    "totalItems": 83,
-    "totalSources": 132
+    "derniereDate": "2026-07-28",
+    "totalEditions": 7,
+    "totalItems": 96,
+    "totalSources": 152
   },
   "editions": [
+    {
+      "date": "2026-07-28",
+      "dateCourte": "mar. 28 juil.",
+      "dateAffichee": "28 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards",
+      "chapeau": "Dans cinq jours, l'article 50 de l'AI Act impose d'étiqueter les contenus générés par IA et de signaler les chatbots dans toute l'Union, la première échéance du règlement qui vise ceux qui utilisent l'IA autant que ceux qui la fabriquent. Le même jour, Nvidia prépare plus de 750 milliards de dollars d'accords qui raniment la crainte d'un financement circulaire, et Moonshot ouvre les poids de Kimi K3 pendant que Dario Amodei presse Washington de resserrer les exportations de puces vers la Chine.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Journal du Net",
+        "Clubic",
+        "01net",
+        "Next.ink",
+        "The Verge",
+        "Wired",
+        "Bloomberg",
+        "ZDNet",
+        "TechCrunch",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Le 2 août, l'obligation d'étiqueter les contenus générés par intelligence artificielle entre en application dans toute l'Union européenne",
+          "z": "une",
+          "id": "le-2-aout-l-obligation-d-etiqueter-les-contenus-generes-par"
+        },
+        {
+          "t": "L'Arcep ouvre une consultation pour mesurer ce que l'IA générative consomme réellement en électricité",
+          "z": "europe",
+          "id": "l-arcep-ouvre-une-consultation-pour-mesurer-ce-que-l-ia"
+        },
+        {
+          "t": "Le vrai frein des projets d'IA en PME reste la qualité des données, pas la puissance du modèle",
+          "z": "europe",
+          "id": "le-vrai-frein-des-projets-d-ia-en-pme-reste-la-qualite-des"
+        },
+        {
+          "t": "Sept des neuf principaux modèles d'édition d'images hébergés sur Hugging Face produisent des deepfakes sexuels à la demande, selon l'ONG européenne AI Forensics",
+          "z": "europe",
+          "id": "sept-des-neuf-principaux-modeles-d-edition-d-images"
+        },
+        {
+          "t": "Nvidia travaille sur plus de 750 milliards de dollars de nouveaux accords, ce qui ranime la crainte d'un financement circulaire de l'IA",
+          "z": "international",
+          "id": "nvidia-travaille-sur-plus-de-750-milliards-de-dollars-de"
+        },
+        {
+          "t": "Satya Nadella prévient : les entreprises qui confient tout à une seule IA pourraient ne pas survivre",
+          "z": "international",
+          "id": "satya-nadella-previent-les-entreprises-qui-confient-tout-a"
+        },
+        {
+          "t": "Microsoft lance son premier modèle dédié à la cybersécurité et une alliance de sécurité ouverte, sans OpenAI, Google ni Anthropic",
+          "z": "international",
+          "id": "microsoft-lance-son-premier-modele-dedie-a-la-cybersecurite"
+        },
+        {
+          "t": "Dario Amodei refuse une interdiction des modèles ouverts mais réclame des tests avant publication et un durcissement des contrôles à l'export",
+          "z": "international",
+          "id": "dario-amodei-refuse-une-interdiction-des-modeles-ouverts"
+        },
+        {
+          "t": "Moonshot publie les poids de Kimi K3, et les développeurs chinois pourraient bientôt facturer l'hébergement de leurs modèles ouverts",
+          "z": "chine",
+          "id": "moonshot-publie-les-poids-de-kimi-k3-et-les-developpeurs"
+        },
+        {
+          "t": "Les bénéfices des fabricants de puces chinois ont bondi de 2 579 % au premier semestre 2026, portés par la demande d'IA",
+          "z": "chine",
+          "id": "les-benefices-des-fabricants-de-puces-chinois-ont-bondi-de"
+        },
+        {
+          "t": "Une partie du raisonnement des grands modèles reste invisible dans leur « chaîne de pensée »",
+          "z": "recherche",
+          "id": "une-partie-du-raisonnement-des-grands-modeles-reste"
+        },
+        {
+          "t": "Le projet Debian débat de quatre propositions allant de l'interdiction des contributions assistées par IA à leur autorisation sous conditions, avec en jeu la protection de ses mainteneurs bénévoles",
+          "z": "bref",
+          "id": "le-projet-debian-debat-de-quatre-propositions-allant-de-l"
+        },
+        {
+          "t": "Des conversations partagées via la fonction de partage de Claude se sont retrouvées indexées et consultables dans Google et Bing, rappel que ces liens rendent le contenu public",
+          "z": "bref",
+          "id": "des-conversations-partagees-via-la-fonction-de-partage-de"
+        }
+      ]
+    },
     {
       "date": "2026-07-27",
       "dateCourte": "lun. 27 juil.",

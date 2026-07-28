@@ -1,0 +1,306 @@
+{
+  "schema": 2,
+  "date": "2026-07-28",
+  "dateAffichee": "28 juillet 2026",
+  "dateLongue": "mardi 28 juillet 2026",
+  "dateCourte": "mar. 28 juil.",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA du mardi 28 juillet 2026",
+  "titreEditorial": "L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards",
+  "chapeau": "Dans cinq jours, l'article 50 de l'AI Act impose d'étiqueter les contenus générés par IA et de signaler les chatbots dans toute l'Union, la première échéance du règlement qui vise ceux qui utilisent l'IA autant que ceux qui la fabriquent. Le même jour, Nvidia prépare plus de 750 milliards de dollars d'accords qui raniment la crainte d'un financement circulaire, et Moonshot ouvre les poids de Kimi K3 pendant que Dario Amodei presse Washington de resserrer les exportations de puces vers la Chine.",
+  "une": {
+    "titre": "Le 2 août, l'obligation d'étiqueter les contenus générés par intelligence artificielle entre en application dans toute l'Union européenne",
+    "texteHtml": "<p>L'article 50 de l'AI Act (le règlement européen sur l'IA) impose trois choses à quiconque déploie ces outils : prévenir un utilisateur qu'il parle à une machine et non à un humain, marquer comme artificiels les images, vidéos, sons et textes d'intérêt public produits ou modifiés par IA, et signaler explicitement les hypertrucages (les deepfakes, ces montages réalistes qui font dire ou faire à quelqu'un ce qu'il n'a jamais fait). Le manquement expose à une amende pouvant atteindre 15 millions d'euros ou 3 % du chiffre d'affaires mondial, selon le montant le plus élevé. Google a confirmé sa signature du code de bonnes pratiques européen sur la transparence et annonce qu'il marquera et étiquettera l'ensemble de ses contenus génératifs en Europe. Le texte cible d'abord les organisations qui publient : services marketing, communication, support client, rédactions, plus que les laboratoires qui entraînent les modèles.</p>",
+    "sources": [
+      {
+        "nom": "Journal du Net",
+        "url": "https://www.journaldunet.com/business/action-publique/1553143-l-union-europeenne-impose-a-partir-du-2-aout-2026-l-obligation-d-etiqueter-les-contenus-generes-par-intelligence-artificielle-sous-peine-d-amende/"
+      },
+      {
+        "nom": "Clubic",
+        "url": "https://www.clubic.com/actualite-622843-google-signe-l-ia-act-europeen-et-veut-jouer-la-transparence.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "le-2-aout-l-obligation-d-etiqueter-les-contenus-generes-par"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "L'Arcep ouvre une consultation pour mesurer ce que l'IA générative consomme réellement en électricité",
+          "texteHtml": "<p>Le 24 juillet, le régulateur des télécoms a lancé une consultation publique pour élargir sa collecte de données environnementales aux fournisseurs d'IA générative, en vue de l'édition 2028 de son enquête « Pour un numérique soutenable », avec une campagne de mesure prévue en 2027. Le secteur communique jusqu'ici sur ses économies d'énergie davantage que sur sa facture, et l'Arcep veut le détail par modèle. La démarche prépare un chiffrage public là où ne circulent aujourd'hui que des estimations.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/lia-consomme-t-elle-trop-delectricite-larcep-veut-faire-le-point.html"
+            },
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/brief-article/numerique-soutenable-larcep-veut-connaitre-la-consommation-et-le-detail-des-llm/"
+            }
+          ],
+          "rang": 2,
+          "id": "l-arcep-ouvre-une-consultation-pour-mesurer-ce-que-l-ia"
+        },
+        {
+          "titre": "Le vrai frein des projets d'IA en PME reste la qualité des données, pas la puissance du modèle",
+          "texteHtml": "<p>Un praticien raconte dans le Journal du Net ce que lui ont appris 385 vecteurs (les représentations numériques que l'IA calcule à partir des documents d'une entreprise) : les données des PME sont incomplètes, mal rangées, contradictoires, et aucun modèle de pointe ne compense ce désordre en amont. Le débat public se fixe sur le classement des modèles ; le chantier concret des entreprises se joue sur le nettoyage des documents qu'elles veulent exploiter. Retour d'expérience chiffré, utile à quiconque prépare un projet interne.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1553089-ce-que-385-vecteurs-m-ont-appris-les-donnees-des-pme-sont-sales-et-c-est-le-vrai-frein-a-l-ia/"
+            }
+          ],
+          "rang": 3,
+          "id": "le-vrai-frein-des-projets-d-ia-en-pme-reste-la-qualite-des"
+        },
+        {
+          "titre": "Sept des neuf principaux modèles d'édition d'images hébergés sur Hugging Face produisent des deepfakes sexuels à la demande, selon l'ONG européenne AI Forensics",
+          "texteHtml": "<p>L'organisation a testé les modèles les plus populaires de la plateforme française et publié une analyse de 1 000 requêtes montrant comment ces outils servent à « déshabiller » des femmes et des enfants sans leur consentement. Sur les neuf modèles d'édition les plus utilisés, sept ont accepté sans résistance de générer des images explicites à partir de photos réelles. AI Forensics reproche à Hugging Face de laisser ces modèles accessibles et de faire peu pour l'empêcher. Le rapport tombe cinq jours avant l'entrée en vigueur des obligations de transparence de l'AI Act, et dans le champ du règlement sur les services numériques qui encadre déjà ce type de contenu.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/971723/hugging-face-nudify-deepfake-undress-women-children"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/hugging-face-has-a-nonconsensual-deepfakes-problem/"
+            }
+          ],
+          "rang": 4,
+          "id": "sept-des-neuf-principaux-modeles-d-edition-d-images"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Nvidia travaille sur plus de 750 milliards de dollars de nouveaux accords, ce qui ranime la crainte d'un financement circulaire de l'IA",
+          "texteHtml": "<p>Bloomberg rapporte que le fabricant de puces le plus valorisé au monde accélère des investissements que les sceptiques accusent de gonfler artificiellement la demande et les valorisations de tout le secteur. Deux pièces de ce montage sont déjà connues : Nvidia s'est engagé à investir 5 milliards de dollars dans Safe Superintelligence, le laboratoire d'Ilya Sutskever, cofondateur d'OpenAI parti fin 2024 ; et il discute d'une garantie financière pouvant atteindre 250 milliards de dollars pour aider OpenAI à louer un campus de centres de données dans l'Ohio, en s'appuyant sur la solidité du bilan de Nvidia. La mécanique est la même à chaque fois : le vendeur de processeurs finance les clients qui achèteront ses processeurs. Pour un acheteur européen, elle rappelle que la robustesse affichée des fournisseurs américains repose sur des engagements croisés dont il faut lire le détail avant de signer.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-27/nvidia-s-750-billion-deals-revive-fear-of-ai-circular-financing"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/data-centers-ia-nvidia-envisage-un-soutien-financier-record-de-250-milliards-de-dollars-a-openai-499043.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "nvidia-travaille-sur-plus-de-750-milliards-de-dollars-de"
+        },
+        {
+          "titre": "Satya Nadella prévient : les entreprises qui confient tout à une seule IA pourraient ne pas survivre",
+          "texteHtml": "<p>Le patron de Microsoft estime que les organisations dépourvues de modèles propres, ou d'une couche d'infrastructure appelée « passerelle d'IA » (un intermédiaire technique qui sépare les requêtes de l'entreprise du modèle qui les traite), se retrouveront en difficulté. Son raisonnement : dépendre d'un fournisseur unique expose à ses pannes, à ses hausses de prix et à ses changements de conditions du jour au lendemain. Il plaide pour une architecture qui permette de basculer d'un modèle à l'autre sans réécrire ses applications. Le conseil vise les directions techniques qui bâtissent aujourd'hui leurs premières briques d'IA en production.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/27/satya-nadella-says-companies-that-trust-one-ai-for-everything-may-not-survive/"
+            }
+          ],
+          "rang": 6,
+          "id": "satya-nadella-previent-les-entreprises-qui-confient-tout-a"
+        },
+        {
+          "titre": "Microsoft lance son premier modèle dédié à la cybersécurité et une alliance de sécurité ouverte, sans OpenAI, Google ni Anthropic",
+          "texteHtml": "<p>L'entreprise a présenté le 27 juillet MAI-Cyber-1-Flash, un modèle spécialisé dans la détection de failles, et Project Perception, un système d'agents qui enchaîne simulation d'attaque, enquête, détection et remédiation. Microsoft affirme battre tous ses concurrents, y compris Mythos d'Anthropic, en coûtant moins cher, un classement à prendre avec prudence tant que les conditions de comparaison ne sont pas publiées, prévient Next.ink. Le même jour, Nvidia, Microsoft, SpaceX et IBM ont fondé l'Open Secure AI Alliance pour partager des outils de sécurité en source ouverte, en réponse directe à l'intrusion des agents d'OpenAI chez Hugging Face. L'absence d'OpenAI, de Google et d'Anthropic dans cette alliance dessine une ligne de fracture dans l'industrie sur la façon de sécuriser des modèles devenus capables d'agir seuls.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/27/microsoft-launches-its-first-cyber-model-and-a-new-agentic-cybersecurity-system/"
+            }
+          ],
+          "rang": 7,
+          "id": "microsoft-lance-son-premier-modele-dedie-a-la-cybersecurite"
+        },
+        {
+          "titre": "Dario Amodei refuse une interdiction des modèles ouverts mais réclame des tests avant publication et un durcissement des contrôles à l'export",
+          "texteHtml": "<p>Dans un billet publié lundi, le patron d'Anthropic écarte l'idée de bannir les modèles à poids ouverts (qu'on peut télécharger et faire tourner soi-même), tout en demandant qu'ils soient testés avant leur mise à disposition. Il presse surtout Washington de resserrer les interdictions d'exportation de puces vers la Chine et de contrer la « distillation » (le fait d'entraîner un modèle en copiant les réponses d'un autre), qu'il présente comme le moyen « le plus efficace et le plus direct » d'empêcher Pékin de bâtir des systèmes de pointe à usage militaire ou de surveillance. Jensen Huang, patron de Nvidia, a lui aussi mis en garde contre une répression américaine des modèles ouverts, signe que le débat divise jusqu'aux dirigeants de la Silicon Valley. La sortie fait suite à la percée de Moonshot avec Kimi K3, qui a surpris l'industrie américaine.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-28/anthropic-s-amodei-rejects-open-model-ban-but-calls-for-testing"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3362105/anthropic-ceo-amodei-urges-washington-tighten-china-chip-export-bans"
+            }
+          ],
+          "rang": 8,
+          "id": "dario-amodei-refuse-une-interdiction-des-modeles-ouverts"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Moonshot publie les poids de Kimi K3, et les développeurs chinois pourraient bientôt facturer l'hébergement de leurs modèles ouverts",
+          "texteHtml": "<p>Le laboratoire chinois a rendu Kimi K3 téléchargeable le 27 juillet, un modèle dont les performances arrivent à une fraction derrière les meilleurs systèmes américains, pour un coût bien inférieur. Selon le responsable de la recherche internet Asie de Goldman Sachs, cité par le South China Morning Post, les développeurs chinois comme Moonshot (Kimi K3) ou Zhipu AI (GLM-5.2) pourraient réclamer aux plateformes cloud des frais de licence commerciale pour héberger leurs modèles à poids ouverts, afin de capter davantage de revenus d'un usage mondial en forte hausse. Le geste garde son intérêt pour une entreprise française : un modèle ouvert reste téléchargeable et exécutable sur ses propres serveurs, à l'abri d'une coupure de service distant. Un modèle sous licence payante à l'hébergement resterait ouvert techniquement, avec un coût d'exploitation à intégrer au calcul.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3362032/chinese-ai-developers-may-shift-paid-weights-commercial-licensing-goldman-sachs"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-07-27/what-is-moonshot-ai-s-kimi-k3-model-and-why-is-it-making-waves"
+            }
+          ],
+          "rang": 9,
+          "id": "moonshot-publie-les-poids-de-kimi-k3-et-les-developpeurs"
+        },
+        {
+          "titre": "Les bénéfices des fabricants de puces chinois ont bondi de 2 579 % au premier semestre 2026, portés par la demande d'IA",
+          "texteHtml": "<p>Les principaux fabricants de semi-conducteurs chinois ont vu leurs profits augmenter de 2 579,5 % sur les six premiers mois de l'année, selon le Bureau national des statistiques. Yu Weining, statisticien en chef de l'agence, attribue cette envolée à l'intégration accélérée de l'IA dans de nombreux secteurs, qui a généré une demande massive de puissance de calcul. Le chiffre surprend au regard des contrôles américains à l'export censés freiner la filière. Il donne une mesure comptable de l'effort chinois pour bâtir une chaîne de semi-conducteurs autonome, un socle sans lequel aucune ambition d'IA souveraine ne tient.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3362002/profits-chinas-chipmaking-sector-soar-2500-first-half-amid-ai-boom"
+            }
+          ],
+          "rang": 10,
+          "id": "les-benefices-des-fabricants-de-puces-chinois-ont-bondi-de"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Une partie du raisonnement des grands modèles reste invisible dans leur « chaîne de pensée »",
+          "texteHtml": "<p>Une étude déposée sur arXiv (« Not All LLM Reasoning is Visible in the Chain-of-Thought ») montre que des modèles de pointe améliorent leurs résultats en insérant des jetons de remplissage sémantiquement vides, sans que ce calcul apparaisse dans le texte qu'ils affichent. Sur treize modèles évalués et trois tâches, le gain de précision atteint jusqu'à 13 points selon les jetons utilisés. Le résultat compte pour la sécurité : auditer un agent en lisant son raisonnement affiché ne garantit pas de voir tout ce qu'il fait réellement.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.22925"
+            }
+          ],
+          "rang": 11,
+          "id": "une-partie-du-raisonnement-des-grands-modeles-reste"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Le projet Debian débat de quatre propositions allant de l'interdiction des contributions assistées par IA à leur autorisation sous conditions, avec en jeu la protection de ses mainteneurs bénévoles",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-622897-debian-pourrait-bannir-les-contributions-assistees-par-ia-et-ce-n-est-pas-qu-une-question-de-bugs.html"
+            }
+          ],
+          "rang": 12,
+          "id": "le-projet-debian-debat-de-quatre-propositions-allant-de-l"
+        },
+        {
+          "titre": "Des conversations partagées via la fonction de partage de Claude se sont retrouvées indexées et consultables dans Google et Bing, rappel que ces liens rendent le contenu public",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/private-claude-chats-exposed-in-google-and-bing-search-results/"
+            }
+          ],
+          "rang": 13,
+          "id": "des-conversations-partagees-via-la-fonction-de-partage-de"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le 2 août, la conformité IA quitte le séminaire juridique pour devenir un réglage dans votre chaîne de production",
+    "these": "L'obligation d'étiquetage de l'article 50 de l'AI Act est la première échéance qui tombe sur les organisations qui déploient l'IA, pas seulement sur les laboratoires qui l'entraînent. La compétence qui compte est de câbler le marquage dans les workflows marketing, support et communication avant qu'ils ne publient.",
+    "html": "<p>Le 2 août, la conformité à l'AI Act cesse d'être un sujet de séminaire juridique et devient un réglage dans votre chaîne de production. L'article 50 sur la transparence est la première échéance du règlement qui tombe sur les organisations qui utilisent l'IA, et pas seulement sur les laboratoires qui l'entraînent. Un chatbot doit annoncer qu'il est une machine. Une image, une vidéo, un texte d'intérêt public retouchés ou fabriqués par IA doivent porter une marque. Un hypertrucage doit être signalé. Ces obligations visent en premier lieu les équipes marketing, communication et support, celles qui publient tous les jours.</p>\n<p>Le chantier des six prochains mois se lit en quatre gestes concrets. Recenser où l'IA générative produit du contenu destiné au public dans l'organisation. Ajouter la mention d'usage sur chaque assistant conversationnel. Insérer une étape de marquage dans les chaînes de fabrication d'images et de vidéos. Nommer un responsable qui en répond. L'amende de référence, jusqu'à 15 millions d'euros ou 3 % du chiffre d'affaires mondial, représente près de 6 millions d'euros pour une entreprise à 200 millions de revenu : le prix d'un contrôle qu'on n'a pas outillé.</p>\n<p>La règle arrive au milieu d'un vide d'application. La même semaine, l'ONG AI Forensics montre que sept des neuf principaux modèles d'édition d'images de Hugging Face fabriquent des deepfakes à la demande, et Google signe un code de transparence encore volontaire. Le texte encadre les contenus au moment où les outils qui les produisent tournent sans garde-fou.</p>\n<p>Nous observons que la compétence qui départage les organisations tient à un geste précis : traduire une obligation en flux de travail, avant que le flux ne publie. Une équipe qui sait câbler l'étiquette dans son pipeline a déjà réglé la question ; une équipe qui découvre le texte le 2 août le découvre trop tard. La souveraineté numérique se joue aussi là, dans le geste minuscule qui marque une image avant qu'elle ne parte.</p>",
+    "htmlExtrait": "<p>Le 2 août, la conformité à l'AI Act cesse d'être un sujet de séminaire juridique et devient un réglage dans votre chaîne de production. L'article 50 sur la transparence est la première échéance du règlement qui tombe sur les organisations qui utilisent l'IA, et pas seulement sur les laboratoires qui l'entraînent. Un chatbot doit annoncer qu'il est une machine. Une image, une vidéo, un texte d'intérêt public retouchés ou fabriqués par IA doivent porter une marque. Un hypertrucage doit être signalé. Ces obligations visent en premier lieu les équipes marketing, communication et support, celles qui publient tous les jours.</p>\n<p>Le chantier des six prochains mois se lit en quatre gestes concrets. Recenser où l'IA générative produit du contenu destiné au public dans l'organisation. Ajouter la mention d'usage sur chaque assistant conversationnel. Insérer une étape de marquage dans les chaînes de fabrication d'images et de vidéos. Nommer un responsable qui en répond. L'amende de référence, jusqu'à 15 millions d'euros ou 3 % du chiffre d'affaires mondial, représente près de 6 millions d'euros pour une entreprise à 200 millions de revenu : le prix d'un contrôle qu'on n'a pas outillé.</p>",
+    "itemsCites": [
+      1,
+      4
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-07-27",
+    "dateLongue": "lundi 27 juillet 2026",
+    "titreEditorial": "OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse",
+    "nbItems": 13
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 20,
+  "nbSignes": 9872,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Journal du Net",
+    "Clubic",
+    "01net",
+    "Next.ink",
+    "The Verge",
+    "Wired",
+    "Bloomberg",
+    "ZDNet",
+    "TechCrunch",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 124,
+  "publieLe": "2026-07-28T11:39:17+02:00",
+  "publieLeAffiche": "11h39",
+  "ogImage": "/veille-data/og/2026-07-28.png"
+}

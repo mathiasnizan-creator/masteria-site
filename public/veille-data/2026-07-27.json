@@ -238,7 +238,12 @@
     "titreEditorial": "L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-28",
+    "dateLongue": "mardi 28 juillet 2026",
+    "titreEditorial": "L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards",
+    "nbItems": 13
+  },
   "nbItems": 13,
   "nbSources": 16,
   "nbSignes": 9119,
