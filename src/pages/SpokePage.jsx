@@ -84,7 +84,7 @@ const TOOL_ANGLES = {
   'Microsoft Copilot': "des déploiements Microsoft 365 Copilot et Copilot Studio chez des clients PME et ETI",
   'Google Gemini': "des projets Gemini et Gemini for Workspace dans des environnements Google",
   'Claude': "des cas d'usage Claude (Anthropic) pour l'analyse de documents longs et l'écriture de qualité",
-  'Mistral AI': "l'intégration de Mistral AI et Le Chat dans des entreprises françaises attachées à la souveraineté",
+  'Mistral AI': "l'intégration de Mistral AI et Vibe (anciennement Le Chat) dans des entreprises françaises attachées à la souveraineté",
   'Multi-outils IA': "la comparaison concrète ChatGPT, Copilot, Gemini, Claude et Mistral sur des cas d'usage réels",
   'Claude Code': "les déploiements Claude Code en équipe de développement, du terminal au CI, avec les garde-fous d'entreprise",
   'Prompt Engineering': "les techniques de prompt engineering qui rendent les résultats des IA fiables et reproductibles en entreprise",

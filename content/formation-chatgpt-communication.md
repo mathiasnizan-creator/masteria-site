@@ -192,7 +192,7 @@ Oui, et nous couvrons cela dans le module 2. La gestion communautaire réactive 
 C'est une question légitime. Nous abordons en début de formation les règles d'hygiène de données avec ChatGPT : anonymisation des informations sensibles, utilisation des paramètres de confidentialité disponibles, alternatives pour les contenus ultra-confidentiels. Les grandes entreprises ont souvent des politiques internes — nous aidons à les appliquer concrètement.
 
 **Faut-il une version payante de ChatGPT pour suivre cette formation ?**
-Nous recommandons ChatGPT Plus (20€/mois) pour accéder aux fonctionnalités avancées utilisées en formation (GPT-4o, téléchargement de documents, mémoire). La version gratuite permet de suivre la majorité des exercices. Masteria précise les prérequis techniques à l'inscription.
+Nous recommandons ChatGPT Plus (20€/mois) pour accéder aux fonctionnalités avancées utilisées en formation (GPT-5, téléchargement de documents, mémoire). La version gratuite permet de suivre la majorité des exercices. Masteria précise les prérequis techniques à l'inscription.
 
 **Cette formation est-elle adaptée aux communicants qui ne sont pas du tout à l'aise avec la tech ?**
 Oui, c'est même notre public principal. Aucun prérequis technique n'est nécessaire. Si vous savez écrire un email et utiliser Google, vous savez utiliser ChatGPT. La formation est conçue pour des professionnels de la communication, pas pour des développeurs.

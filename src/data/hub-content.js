@@ -186,9 +186,9 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Gemini 2.5 Pro dans Workspace : Gmail, Docs, Sheets, Slides, Meet',
+        title: 'Gemini 3 Pro dans Workspace : Gmail, Docs, Sheets, Slides, Meet',
         items: [
-          'Panorama 2026 : Gemini 2.5 Pro vs Flash, fenêtre de contexte 2M tokens (la plus large du marché), différences Free/Workspace Enterprise',
+          'Panorama 2026 : Gemini 3 Pro vs Flash, fenêtre de contexte 2M tokens (la plus large du marché), différences Free/Workspace Enterprise',
           'Gemini dans Gmail : tri intelligent, résumé de fils longs, rédaction contextuelle avec accès au calendrier et au Drive',
           'Gemini dans Google Docs : rédaction depuis un brief, "Help me write", restructuration de documents, traduction native',
           'Gemini dans Google Sheets : analyse de données par langage naturel, formules suggérées, "Help me organize" pour structurer un dataset',
@@ -216,7 +216,7 @@ export const HUB_CONTENT = {
     faq: [
       {
         q: 'Qu\'est-ce que Google Gemini dans Workspace ?',
-        a: "Google Gemini dans Workspace est l'assistant IA de Google intégré directement dans les applications de la suite Google Workspace (anciennement G Suite) : Gmail, Google Docs, Sheets, Slides et Meet. Il permet de rédiger, analyser, résumer et générer du contenu sans quitter les outils Google. Gemini for Workspace est disponible via un abonnement complémentaire à Google Workspace (à partir de 22 dollars par utilisateur et par mois pour la version Business). Il s'appuie sur les modèles Gemini d'Anthropic Google DeepMind, les plus puissants accessibles dans un environnement d'entreprise sécurisé.",
+        a: "Google Gemini dans Workspace est l'assistant IA de Google intégré directement dans les applications de la suite Google Workspace (anciennement G Suite) : Gmail, Google Docs, Sheets, Slides et Meet. Il permet de rédiger, analyser, résumer et générer du contenu sans quitter les outils Google. Gemini for Workspace est disponible via un abonnement complémentaire à Google Workspace (à partir de 22 dollars par utilisateur et par mois pour la version Business). Il s'appuie sur les modèles Gemini de Google DeepMind, les plus puissants accessibles dans un environnement d'entreprise sécurisé.",
       },
       {
         q: 'La formation Gemini est-elle différente d\'une formation ChatGPT ?',
@@ -232,7 +232,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'Quelle version de Gemini est utilisée en formation ?',
-        a: "La formation Masteria s'appuie sur Gemini 1.5 Pro et Gemini 2.0 intégrés dans Google Workspace, qui sont les versions accessibles aux entreprises via les abonnements Gemini for Workspace. Ces versions offrent une fenêtre contextuelle d'un million de tokens (soit environ 700 pages de texte), la capacité à analyser des fichiers volumineux depuis Google Drive et des performances avancées sur le français professionnel. Nous mettons à jour le contenu de la formation à chaque nouvelle version significative publiée par Google pour refléter l'état de l'art.",
+        a: "La formation Masteria s'appuie sur Gemini 3, dernière évolution après Gemini 1.5 Pro et Gemini 2.0, intégrée dans Google Workspace et accessible aux entreprises via les abonnements Gemini for Workspace. Cette version offre une fenêtre contextuelle large, la capacité à analyser des fichiers volumineux depuis Google Drive et des performances avancées sur le français professionnel. Nous mettons à jour le contenu de la formation à chaque nouvelle version significative publiée par Google pour refléter l'état de l'art.",
       },
       {
         q: 'La formation Gemini est-elle finançable par l\'OPCO ?',
@@ -265,10 +265,10 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Claude Opus 4.7 et fonctionnalités enterprise (Projects, Skills, Artifacts)',
+        title: 'Claude Opus 4.8 et fonctionnalités enterprise (Projects, Skills, Artifacts)',
         items: [
           'Panorama 2026 : différences Claude Free, Pro, Team, Enterprise (sécurité, fenêtre de contexte 200k vs 1M tokens)',
-          'Claude Opus 4.7 vs Sonnet 4.5 vs Haiku : choisir le bon modèle selon la tâche (analyse profonde, équilibre, rapidité)',
+          'Claude Opus 4.8 vs Sonnet 5 vs Haiku 4.5 : choisir le bon modèle selon la tâche (analyse profonde, équilibre, rapidité)',
           'Extended Thinking : activer le raisonnement étendu pour problèmes complexes (juridique, financier, code, stratégie)',
           'Projects : créer un espace persistant avec base documentaire dédiée (charte, brand voice, FAQ interne, références)',
           'Skills (lancées fin 2025) : compétences téléchargeables spécialisées (Excel, code, recherche, ingénierie financière)',
@@ -315,7 +315,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'Claude peut-il vraiment analyser des documents de 100 pages ?',
-        a: "Oui. Claude 3.5 Sonnet et Claude Opus 4 disposent d'une fenêtre contextuelle de 200 000 tokens, ce qui correspond à environ 150 000 mots ou 500 à 600 pages de texte selon la mise en forme. En pratique, on peut soumettre un contrat de 100 pages et demander à Claude d'en extraire toutes les clauses de résiliation, d'identifier les obligations des parties ou de comparer deux versions du même document. Cette capacité est vérifiée et testée en formation Masteria sur des documents réels fournis par les participants. La précision diminue légèrement sur les documents les plus volumineux, la formation inclut les stratégies pour maintenir la qualité.",
+        a: "Oui. Claude Sonnet 5 et Claude Opus 4.8 disposent d'une fenêtre contextuelle de 200 000 tokens, ce qui correspond à environ 150 000 mots ou 500 à 600 pages de texte selon la mise en forme. En pratique, on peut soumettre un contrat de 100 pages et demander à Claude d'en extraire toutes les clauses de résiliation, d'identifier les obligations des parties ou de comparer deux versions du même document. Cette capacité est vérifiée et testée en formation Masteria sur des documents réels fournis par les participants. La précision diminue légèrement sur les documents les plus volumineux, la formation inclut les stratégies pour maintenir la qualité.",
       },
     ],
   },
@@ -344,12 +344,12 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: 'Le Chat Pro/Enterprise, Mistral Large 2, Codestral, fonctionnalités souveraines',
+        title: 'Vibe Pro/Enterprise (anciennement Le Chat), Mistral Large 2, Codestral, fonctionnalités souveraines',
         items: [
-          'Panorama 2026 : Le Chat Free, Pro, Enterprise · Mistral Large 2 · Mistral Medium 3 · Codestral · Ministral (small)',
+          'Panorama 2026 : Vibe Free, Pro, Enterprise · Mistral Large 2 · Mistral Medium 3 · Codestral · Ministral (small)',
           'Architecture souveraine : hébergement Scaleway, OVHcloud, Microsoft Azure France, options on-premise via open-weight',
-          'Le Chat Pro : Projects (espaces persistants), web search natif, génération d\'images, Code Interpreter',
-          'Le Chat Enterprise : SSO, RBAC, audit trail, conformité RGPD article 28, contrat de traitement',
+          'Vibe Pro : Projects (espaces persistants), web search natif, génération d\'images, Code Interpreter',
+          'Vibe Enterprise : SSO, RBAC, audit trail, conformité RGPD article 28, contrat de traitement',
           'Maîtrise du français natif : pourquoi Mistral produit un français supérieur aux modèles US (corpus FR dense)',
           'Cas d\'usage juridiques et financiers : analyse de contrats, notes de conformité, rapports CSRD/Pilier 3',
           'Conformité RGPD article 9 : traiter les données de catégorie particulière (santé, vie syndicale) avec Mistral',
@@ -374,11 +374,11 @@ export const HUB_CONTENT = {
     faq: [
       {
         q: "Qu'est-ce que Mistral AI et pourquoi s'y former ?",
-        a: "Mistral AI est une société française fondée en 2023 par d'anciens chercheurs de Google DeepMind et Meta. Elle développe des grands modèles de langage (Mistral Large, Mixtral, Codestral) et propose un assistant conversationnel appelé Le Chat. Se former à Mistral présente trois intérêts majeurs : la qualité du français produit est supérieure aux modèles américains sur les registres soutenus et institutionnels, les garanties de souveraineté et de confidentialité sont natives (hébergement UE, conformité RGPD par conception), et les options de déploiement (dont on-premise) sont uniques sur le marché. Masteria forme vos équipes en 2 jours (14 heures) sur leurs cas d'usage réels.",
+        a: "Mistral AI est une société française fondée en 2023 par d'anciens chercheurs de Google DeepMind et Meta. Elle développe des grands modèles de langage (Mistral Large, Mixtral, Codestral) et propose un assistant conversationnel appelé Vibe (anciennement Le Chat). Se former à Mistral présente trois intérêts majeurs : la qualité du français produit est supérieure aux modèles américains sur les registres soutenus et institutionnels, les garanties de souveraineté et de confidentialité sont natives (hébergement UE, conformité RGPD par conception), et les options de déploiement (dont on-premise) sont uniques sur le marché. Masteria forme vos équipes en 2 jours (14 heures) sur leurs cas d'usage réels.",
       },
       {
         q: "Mistral est-il aussi performant que ChatGPT ou Claude ?",
-        a: "Sur de nombreux benchmarks publics, Mistral Large se classe au niveau de GPT-4 et de Claude 3.5 Sonnet. Sur les tâches en français, notamment sur les productions soutenues et institutionnelles, Mistral prend souvent l'avantage. Sur certaines tâches de raisonnement très avancées ou d'analyse de documents très longs (plus de 100 pages), Claude reste en tête. La formation Masteria vous apprend à choisir le bon outil selon la tâche, avec des comparaisons pratiques sur vos propres cas d'usage.",
+        a: "Sur de nombreux benchmarks publics, Mistral Large se classe au niveau de GPT-5 et de Claude Sonnet 5. Sur les tâches en français, notamment sur les productions soutenues et institutionnelles, Mistral prend souvent l'avantage. Sur certaines tâches de raisonnement très avancées ou d'analyse de documents très longs (plus de 100 pages), Claude reste en tête. La formation Masteria vous apprend à choisir le bon outil selon la tâche, avec des comparaisons pratiques sur vos propres cas d'usage.",
       },
       {
         q: "Mistral est-il vraiment conforme RGPD ?",
@@ -543,7 +543,7 @@ export const HUB_CONTENT = {
       },
       {
         q: "Quels outils sont effectivement comparés ?",
-        a: "Les 5 IA génératives leader du marché en 2026 : ChatGPT (OpenAI), Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. La formation couvre les versions grand public et les versions Entreprise lorsqu'elles existent (ChatGPT Enterprise, Copilot pour Microsoft 365, Gemini Workspace, Claude pour Entreprises, Le Chat Pro et Mistral on-premise). Les outils sont testés sur les vrais comptes des participants quand ils en disposent, ou sur des comptes de démonstration sinon.",
+        a: "Les 5 IA génératives leader du marché en 2026 : ChatGPT (OpenAI), Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. La formation couvre les versions grand public et les versions Entreprise lorsqu'elles existent (ChatGPT Enterprise, Copilot pour Microsoft 365, Gemini Workspace, Claude pour Entreprises, Vibe Pro (anciennement Le Chat) et Mistral on-premise). Les outils sont testés sur les vrais comptes des participants quand ils en disposent, ou sur des comptes de démonstration sinon.",
       },
     ],
   },

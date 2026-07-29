@@ -1049,7 +1049,7 @@ export const GEMINI_SPOKES = [
     faq: [
       { q: "Pourquoi Gemini plutôt que Copilot pour les managers ?", a: "Si votre stack est Google Workspace, Gemini évite les ruptures de workflow. Si vous êtes sur Microsoft 365, Copilot reste l'option naturelle." },
       { q: "NotebookLM est-il vraiment utile pour les dirigeants ?", a: "Oui, c'est l'un des outils Gemini les plus différenciants. NotebookLM génère synthèses, FAQ, mind maps depuis vos sources internes en quelques minutes." },
-      { q: "La fenêtre 2M tokens de Gemini est-elle vraiment utilisable ?", a: "Oui, Gemini 2.5 Pro permet d'avaler un dossier de 100+ documents en une requête. C'est le plus grand contexte du marché en 2026." },
+      { q: "La fenêtre 2M tokens de Gemini est-elle vraiment utilisable ?", a: "Oui, Gemini 3 Pro permet d'avaler un dossier de 100+ documents en une requête. C'est le plus grand contexte du marché en 2026." },
       { q: "Mes informations confidentielles sont-elles protégées ?", a: "Sur Workspace Enterprise avec Gemini Pro, oui : engagement contractuel de Google de non-utilisation pour l'entraînement." },
       { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi, finançable 100% par les OPCO." },
     ],

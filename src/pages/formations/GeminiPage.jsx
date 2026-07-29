@@ -13,7 +13,7 @@ const MODULES = [
     duration: '1 h 30',
     intro: "Avant de commencer à utiliser Gemini, il faut savoir à quoi on a affaire. Gemini.google.com, Gemini for Workspace, NotebookLM, Google AI Studio : ce ne sont pas les mêmes outils et ils ne servent pas aux mêmes choses. Ce module clarifie le terrain.",
     items: [
-      "Les différences entre Gemini 2.0 Flash et Gemini 2.5 Pro : quand utiliser l'un plutôt que l'autre",
+      "Les différences entre Gemini 3 Flash et Gemini 3 Pro : quand utiliser l'un plutôt que l'autre",
       "Comment Google traite vos données dans Gemini for Workspace (RGPD, politique de non-utilisation pour l'entraînement des modèles)",
       "Les limites à connaître : inexactitudes factuelles, données en temps réel, informations sensibles",
     ],

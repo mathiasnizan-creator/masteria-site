@@ -39,7 +39,7 @@ export const COMPARISONS = {
       id: 'claude',
       name: 'Claude',
       editor: 'Anthropic',
-      currentModel: 'Claude Opus 4.7 / Sonnet 4.5',
+      currentModel: 'Claude Opus 4.8 / Sonnet 5',
       country: 'États-Unis',
       pricing: '20 €/mois Pro · 30 €/utilisateur Team · sur devis Enterprise',
       foundedAI: '2023',
@@ -145,7 +145,7 @@ export const COMPARISONS = {
     // NB : la clé `faq` est définie plus bas (~L266) — version étendue à 9 questions.
     // L'ancienne FAQ de 5 questions a été supprimée car JS gardait la 2e en écrasant la 1re.
     methodology:
-      "Ce comparatif s'appuie sur l'expérience terrain : depuis 2022, Masteria a formé plus de 1 500 professionnels à ChatGPT et Claude dans des contextes très variés — marketing, RH, finance, juridique, code. Les évaluations qui suivent reflètent les retours réels de ces utilisateurs et des formateurs Masteria, pas des benchmarks théoriques. Les versions testées en avril 2026 : **GPT-5** (OpenAI) et **Claude Opus 4.7** (Anthropic), via les abonnements Pro/Team standards.",
+      "Ce comparatif s'appuie sur l'expérience terrain : depuis 2022, Masteria a formé plus de 1 500 professionnels à ChatGPT et Claude dans des contextes très variés — marketing, RH, finance, juridique, code. Les évaluations qui suivent reflètent les retours réels de ces utilisateurs et des formateurs Masteria, pas des benchmarks théoriques. Les versions testées en avril 2026 : **GPT-5** (OpenAI) et **Claude Opus 4.8** (Anthropic), via les abonnements Pro/Team standards.",
     realCases: [
       {
         scenario: "Préparer une présentation commerciale en partant d'un brief client",
@@ -156,7 +156,7 @@ export const COMPARISONS = {
       },
       {
         scenario: "Générer 8 visuels pour une campagne LinkedIn (charte respectée)",
-        feature: "ChatGPT + GPT Image 2 (génération native) · Claude Opus 4.7 (sans génération d'images)",
+        feature: "ChatGPT + GPT Image 2 (génération native) · Claude Opus 4.8 (sans génération d'images)",
         prompt: "Je lance une série LinkedIn sur l'IA en RH. Génère 8 visuels carrés (1080×1080) avec ce style : minimaliste, palette bleu nuit + or, pas de visage humain, ambiance feutrée corporate. Chaque visuel illustre un thème : recrutement, onboarding, formation, entretien annuel, mobilité interne, fidélisation, paie, offboarding.",
         verdictText: "ChatGPT gagne facilement. GPT Image 2 (le successeur de DALL-E intégré nativement à ChatGPT depuis 2025) génère les 8 visuels en quelques minutes, avec une cohérence de style impressionnante grâce au respect des références visuelles. Claude ne génère pas d'images en natif : il faut combiner avec un autre outil (Midjourney, Imagen 4, Sora 2 pour la vidéo).",
         winner: 'a',
@@ -228,7 +228,7 @@ export const COMPARISONS = {
     ],
     alsoConsidered: [
       { name: 'Perplexity', summary: "Excellent pour la recherche web et la veille (sources citées), mais moins puissant en génération longue. Complément, pas concurrent." },
-      { name: 'Le Chat (Mistral AI)', summary: "Alternative française et souveraine. Voir notre [panorama complet](/meilleure-ia-entreprise-2026) si la souveraineté est un critère." },
+      { name: 'Vibe (Mistral AI)', summary: "Anciennement Le Chat. Alternative française et souveraine. Voir notre [panorama complet](/meilleure-ia-entreprise-2026) si la souveraineté est un critère." },
       { name: 'Google Gemini', summary: "Pertinent surtout pour les entreprises sur Google Workspace. Voir le [comparatif des 5 outils](/meilleure-ia-entreprise-2026)." },
       { name: 'Grok (xAI)', summary: "Performances montantes mais positionnement et image de marque ambigus pour un usage B2B sérieux." },
     ],
@@ -243,7 +243,7 @@ export const COMPARISONS = {
       },
       {
         q: "Lequel est le meilleur pour le français ?",
-        a: "Les deux sont excellents en français. Claude est parfois perçu comme légèrement plus naturel sur les contenus longs. Pour des cas critiques en langue française avec souveraineté, considérez Mistral AI (français) ou Le Chat Pro.",
+        a: "Les deux sont excellents en français. Claude est parfois perçu comme légèrement plus naturel sur les contenus longs. Pour des cas critiques en langue française avec souveraineté, considérez Mistral AI (français) ou Vibe Pro (anciennement Le Chat).",
       },
       {
         q: "ChatGPT vs Claude : lequel est le plus rapide ?",
@@ -266,8 +266,8 @@ export const COMPARISONS = {
         a: "L'**interface web** (chat.openai.com, claude.ai) est destinée à l'usage humain interactif. L'**API** est pour les développeurs qui intègrent le modèle dans leurs applications. Mêmes modèles, mais l'API permet l'industrialisation (workflows, agents, intégrations CRM) avec une tarification au token, pas par mois.",
       },
       {
-        q: "ChatGPT 5 vs Claude Opus 4.7 : qui gagne sur le raisonnement ?",
-        a: "Match très serré. ChatGPT 5 avec mode \"Thinking\" est la référence sur les problèmes math/scientifiques. Claude Opus 4.7 avec Extended Thinking se distingue sur les analyses business complexes et la rigueur du raisonnement nuancé. Pour les cas critiques, tester les deux sur votre cas concret reste la meilleure méthode.",
+        q: "ChatGPT 5 vs Claude Opus 4.8 : qui gagne sur le raisonnement ?",
+        a: "Match très serré. ChatGPT 5 avec mode \"Thinking\" est la référence sur les problèmes math/scientifiques. Claude Opus 4.8 avec Extended Thinking se distingue sur les analyses business complexes et la rigueur du raisonnement nuancé. Pour les cas critiques, tester les deux sur votre cas concret reste la meilleure méthode.",
       },
     ],
     relatedLinks: [
@@ -359,7 +359,7 @@ export const COMPARISONS = {
       {
         title: 'Code et développement',
         descriptionA:
-          "M365 Copilot n'est pas conçu pour le développement. Microsoft propose **GitHub Copilot** (produit séparé, basé sur Claude Sonnet 4.5 par défaut depuis 2025) pour les développeurs.",
+          "M365 Copilot n'est pas conçu pour le développement. Microsoft propose **GitHub Copilot** (produit séparé, basé sur Claude Sonnet 5 par défaut depuis 2025) pour les développeurs.",
         descriptionB:
           "Capacités de code solides. Pour les développeurs, l'écosystème complet inclut GitHub Copilot (extension VS Code).",
         winner: 'b',
@@ -558,7 +558,7 @@ export const COMPARISONS = {
       { id: 'claude', name: 'Claude', editor: 'Anthropic', country: 'États-Unis', strengths: 'Code, analyse, longs documents', priceMonthly: '20-30 €', color: '#D97706' },
       { id: 'copilot', name: 'Microsoft Copilot', editor: 'Microsoft', country: 'États-Unis', strengths: 'Intégration M365, sécurité', priceMonthly: '30 $', color: '#0078D4' },
       { id: 'gemini', name: 'Google Gemini', editor: 'Google', country: 'États-Unis', strengths: 'Intégration Workspace, multimodal', priceMonthly: '20-30 €', color: '#4285F4' },
-      { id: 'mistral', name: 'Mistral AI (Le Chat)', editor: 'Mistral AI', country: 'France', strengths: 'Souveraineté, open-weight', priceMonthly: '15-25 €', color: '#FA500F' },
+      { id: 'mistral', name: 'Mistral AI (Vibe)', editor: 'Mistral AI', country: 'France', strengths: 'Souveraineté, open-weight', priceMonthly: '15-25 €', color: '#FA500F' },
     ],
     verdict: {
       title: 'Verdict express : 5 profils, 5 recommandations',
@@ -643,7 +643,7 @@ export const COMPARISONS = {
       },
       {
         tool: 'mistral',
-        title: 'Mistral AI (Le Chat)',
+        title: 'Mistral AI (Vibe)',
         position: 'La carte souveraineté',
         pros: [
           "Hébergement européen (France) — argument souveraineté décisif",
@@ -652,7 +652,7 @@ export const COMPARISONS = {
           "Performances proches des leaders sur de nombreuses tâches",
         ],
         cons: [
-          "Écosystème grand public moins mature (Le Chat)",
+          "Écosystème grand public moins mature (Vibe)",
           "Multimodalité plus limitée",
           "Communauté et ressources francophones plus restreintes",
         ],
@@ -702,7 +702,7 @@ export const COMPARISONS = {
       },
     ],
     methodology:
-      "Ce panorama s'appuie sur l'expérience de Masteria depuis 2022 : 1 500 professionnels formés, déploiements concrets dans des PME, ETI et grands groupes français. Les 5 outils analysés (ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral) ont tous été testés sur des cas d'usage métier réels (marketing, RH, finance, juridique, productivité bureautique). Les évaluations reflètent l'usage en mai 2026, avec les versions actuelles : **GPT-5**, **Claude Opus 4.7 / Sonnet 4.5**, **Microsoft 365 Copilot** (avec Researcher), **Gemini 2.5 Pro**, **Mistral Large 2 / Le Chat Pro**.",
+      "Ce panorama s'appuie sur l'expérience de Masteria depuis 2022 : 1 500 professionnels formés, déploiements concrets dans des PME, ETI et grands groupes français. Les 5 outils analysés (ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral) ont tous été testés sur des cas d'usage métier réels (marketing, RH, finance, juridique, productivité bureautique). Les évaluations reflètent l'usage en mai 2026, avec les versions actuelles : **GPT-5**, **Claude Opus 4.8 / Sonnet 5**, **Microsoft 365 Copilot** (avec Researcher), **Gemini 3 Pro**, **Mistral Large 2 / Vibe Pro** (anciennement Le Chat).",
     realCases: [
       {
         scenario: "Préparer une présentation client de 10 slides",
@@ -872,7 +872,7 @@ export const COMPARISONS = {
           "Intégration native dans VS Code, Visual Studio, JetBrains, Neovim, Eclipse",
           "Complétion de code instantanée pendant la frappe (le plus rapide)",
           "Tarif le plus bas : 10 €/dev (Business), 19 €/dev (Enterprise)",
-          "Modèles multiples disponibles depuis 2025 : GPT-5, Claude Sonnet 4.5, Gemini 2.5 (au choix selon la tâche)",
+          "Modèles multiples disponibles depuis 2025 : GPT-5, Claude Sonnet 5, Gemini 3 (au choix selon la tâche)",
           "Agent intégré (\"Copilot Workspace\") pour les modifications multi-fichiers",
           "Intégration GitHub native : code review, génération de PR, tests",
         ],
@@ -932,12 +932,12 @@ export const COMPARISONS = {
       { criterion: 'Intégration IDE', chatgpt: 'Partiel, extension', claude: 'Partiel, via Cursor / extensions', 'github-copilot': 'Oui, native VS Code, JetBrains', cursor: 'Oui, éditeur dédié', mistral: '—' },
       { criterion: 'Fenêtre de contexte', chatgpt: '128k tokens', claude: '200k tokens', 'github-copilot': "selon modèle choisi", cursor: 'repo entier indexé', mistral: '—' },
       { criterion: 'Mode agentique multi-fichiers', chatgpt: 'Partiel, Canvas limité', claude: 'Oui, Claude Code CLI', 'github-copilot': 'Oui, Workspace', cursor: 'Oui, Composer', mistral: '—' },
-      { criterion: 'Modèles sous-jacents', chatgpt: 'GPT-5, o-series', claude: 'Claude Opus 4.7, Sonnet 4.5', 'github-copilot': 'GPT-5, Claude, Gemini (au choix)', cursor: 'Claude, GPT-5, Gemini (au choix)', mistral: '—' },
+      { criterion: 'Modèles sous-jacents', chatgpt: 'GPT-5, o-series', claude: 'Claude Opus 4.8, Sonnet 5', 'github-copilot': 'GPT-5, Claude, Gemini (au choix)', cursor: 'Claude, GPT-5, Gemini (au choix)', mistral: '—' },
       { criterion: 'Tests & code review', chatgpt: 'Oui, via GPTs', claude: 'Oui, excellent', 'github-copilot': 'Oui, natif GitHub', cursor: 'Partiel, via prompts', mistral: '—' },
       { criterion: 'Adoption en France', chatgpt: 'Très large', claude: 'En forte croissance (dev seniors)', 'github-copilot': 'Très large (B2B)', cursor: 'Croissante chez les freelances', mistral: '—' },
     ],
     methodology:
-      "Ce comparatif s'appuie sur l'expérience terrain des formateurs Masteria, dont plusieurs sont eux-mêmes développeurs et utilisent ces outils au quotidien. Évaluation menée en mai 2026 sur **Claude Opus 4.7 / Sonnet 4.5**, **GitHub Copilot** (avec choix de modèle GPT-5 / Claude Sonnet 4.5), **Cursor** (avec Composer), **ChatGPT GPT-5 Pro** (avec Canvas + Code Interpreter). Cas d'usage testés : refactoring TypeScript, debug Python, génération de tests Jest, conception d'API REST, code review, génération de migrations SQL.",
+      "Ce comparatif s'appuie sur l'expérience terrain des formateurs Masteria, dont plusieurs sont eux-mêmes développeurs et utilisent ces outils au quotidien. Évaluation menée en mai 2026 sur **Claude Opus 4.8 / Sonnet 5**, **GitHub Copilot** (avec choix de modèle GPT-5 / Claude Sonnet 5), **Cursor** (avec Composer), **ChatGPT GPT-5 Pro** (avec Canvas + Code Interpreter). Cas d'usage testés : refactoring TypeScript, debug Python, génération de tests Jest, conception d'API REST, code review, génération de migrations SQL.",
     realCases: [
       {
         scenario: "Compléter du code pendant la frappe (auto-complétion intelligente)",
@@ -995,7 +995,7 @@ export const COMPARISONS = {
       },
       {
         title: "Sous-estimer GitHub Copilot parce qu'il \"existe depuis longtemps\"",
-        desc: "Copilot 2022 et Copilot 2026 n'ont rien à voir. Depuis 2025, vous pouvez choisir le modèle sous-jacent (GPT-5, Claude Sonnet 4.5, Gemini 2.5) selon la tâche. Workspace permet les modifications multi-fichiers. Code review intégré. C'est devenu un produit complètement nouveau, à réévaluer.",
+        desc: "Copilot 2022 et Copilot 2026 n'ont rien à voir. Depuis 2025, vous pouvez choisir le modèle sous-jacent (GPT-5, Claude Sonnet 5, Gemini 3) selon la tâche. Workspace permet les modifications multi-fichiers. Code review intégré. C'est devenu un produit complètement nouveau, à réévaluer.",
       },
       {
         title: "Vouloir tout faire avec ChatGPT \"général\"",
@@ -1182,7 +1182,7 @@ export const COMPARISONS = {
       { criterion: 'Adoption B2B France', chatgpt: 'Très large', claude: 'Croissance forte', 'manus': 'Émergente', copilot: 'Très large', mistral: '—' },
     ],
     methodology:
-      "Ce comparatif s'appuie sur les déploiements d'agents IA accompagnés par Masteria depuis 2024 (cabinet de conseil + centre de formation Qualiopi). Les 4 plateformes ont été testées en mai 2026 sur les cas d'usage les plus fréquents en entreprise : qualification de prospects, traitement automatique de mails, génération de rapports, automatisation de processus métier. Versions de référence : **Claude Opus 4.7 + Computer Use**, **ChatGPT Pro + Operator (avril 2026)**, **Manus 2.0**, **Microsoft Copilot Studio (build 2026)**.",
+      "Ce comparatif s'appuie sur les déploiements d'agents IA accompagnés par Masteria depuis 2024 (cabinet de conseil + centre de formation Qualiopi). Les 4 plateformes ont été testées en mai 2026 sur les cas d'usage les plus fréquents en entreprise : qualification de prospects, traitement automatique de mails, génération de rapports, automatisation de processus métier. Versions de référence : **Claude Opus 4.8 + Computer Use**, **ChatGPT Pro + Operator (avril 2026)**, **Manus 2.0**, **Microsoft Copilot Studio (build 2026)**.",
     realCases: [
       {
         scenario: "Agent qui qualifie automatiquement les prospects entrants (200/semaine)",
@@ -1316,9 +1316,9 @@ export const COMPARISONS = {
       id: 'mistral',
       name: 'Mistral AI',
       editor: 'Mistral AI (France)',
-      currentModel: 'Mistral Large / Magistral / Le Chat',
+      currentModel: 'Mistral Large / Magistral / Vibe',
       country: 'France',
-      pricing: "Le Chat gratuit · Pro ≈ 15 €/mois · Team et Enterprise sur devis · modèles open-weight auto-hébergeables",
+      pricing: "Vibe gratuit · Pro ≈ 15 €/mois · Team et Enterprise sur devis · modèles open-weight auto-hébergeables",
       foundedAI: '2023',
       color: '#FF7000',
     },
@@ -1361,7 +1361,7 @@ export const COMPARISONS = {
       {
         title: 'Fonctionnalités et écosystème',
         descriptionA:
-          "Le Chat a bien progressé : recherche web, génération d'images (via Flux), interpréteur de code, agents, connecteurs. L'écosystème reste plus jeune : moins d'intégrations tierces, pas d'équivalent au magasin de GPTs.",
+          "Vibe (anciennement Le Chat) a bien progressé : recherche web, génération d'images (via Flux), interpréteur de code, agents, connecteurs. L'écosystème reste plus jeune : moins d'intégrations tierces, pas d'équivalent au magasin de GPTs.",
         descriptionB:
           "L'écosystème le plus riche du marché : GPTs personnalisés, mémoire persistante, voix avancée, génération d'images et de vidéo (Sora), Deep Research, connecteurs natifs. Chaque besoin a déjà son outil intégré.",
         winner: 'b',
@@ -1397,7 +1397,7 @@ export const COMPARISONS = {
       {
         title: 'Tarifs et coût total',
         descriptionA:
-          "Le Chat Pro coûte environ 25 % de moins que ChatGPT Plus, l'API est agressive sur les prix, et les modèles open-weight sont gratuits hors coût d'infrastructure. Le coût de possession peut être très bas à grande échelle.",
+          "Vibe Pro coûte environ 25 % de moins que ChatGPT Plus, l'API est agressive sur les prix, et les modèles open-weight sont gratuits hors coût d'infrastructure. Le coût de possession peut être très bas à grande échelle.",
         descriptionB:
           "Tarification standard du marché (20 €/mois Plus, 25 €/utilisateur Team). Le coût réel vient surtout de l'adoption et de la formation, identiques pour les deux outils.",
         winner: 'a',
@@ -1413,7 +1413,7 @@ export const COMPARISONS = {
       { metier: 'Direction générale', recommendation: 'tie', why: "Le bon arbitrage est souvent les deux : ChatGPT pour la polyvalence, Mistral pour les flux sensibles." },
     ],
     methodology:
-      "Ce comparatif s'appuie sur les déploiements réels accompagnés par Masteria depuis 2022 auprès de PME, ETI et acteurs publics français, dont plusieurs bascules complètes vers Mistral pour des raisons de souveraineté. Versions évaluées en juin 2026 : **Le Chat Pro / Mistral Large** et **ChatGPT Plus / GPT-5**, complétées par les retours de plus de 1 500 professionnels formés.",
+      "Ce comparatif s'appuie sur les déploiements réels accompagnés par Masteria depuis 2022 auprès de PME, ETI et acteurs publics français, dont plusieurs bascules complètes vers Mistral pour des raisons de souveraineté. Versions évaluées en juin 2026 : **Vibe Pro / Mistral Large** et **ChatGPT Plus / GPT-5**, complétées par les retours de plus de 1 500 professionnels formés.",
     realCases: [
       {
         scenario: "Répondre à un appel d'offres public avec exigence de souveraineté",
@@ -1424,9 +1424,9 @@ export const COMPARISONS = {
       },
       {
         scenario: "Produire une campagne multicanal complète avec visuels",
-        feature: "ChatGPT (GPT Image 2, Canvas, GPTs) · Le Chat (génération via Flux)",
+        feature: "ChatGPT (GPT Image 2, Canvas, GPTs) · Vibe (génération via Flux)",
         prompt: "Lance la campagne de notre nouveau service : landing page, séquence de 4 emails, 6 posts LinkedIn, 8 visuels carrés cohérents avec notre charte (bleu nuit, minimaliste), et un script vidéo de 45 secondes.",
-        verdictText: "ChatGPT prend l'avantage. La chaîne créative complète (textes, visuels cohérents, script, itérations dans Canvas) se fait dans un seul outil avec un meilleur contrôle du style visuel. Le Chat produit l'essentiel mais demande plus d'allers-retours sur les visuels et n'a pas d'équivalent à la vidéo générée.",
+        verdictText: "ChatGPT prend l'avantage. La chaîne créative complète (textes, visuels cohérents, script, itérations dans Canvas) se fait dans un seul outil avec un meilleur contrôle du style visuel. Vibe produit l'essentiel mais demande plus d'allers-retours sur les visuels et n'a pas d'équivalent à la vidéo générée.",
         winner: 'b',
       },
       {
@@ -1443,8 +1443,8 @@ export const COMPARISONS = {
         desc: "Sur les tâches d'entreprise courantes (rédaction, synthèse, analyse de documents, code standard), Mistral Large joue dans la même catégorie que les modèles américains. L'écart ne se voit que sur les cas extrêmes, qui représentent une minorité des usages réels d'une PME ou d'une ETI.",
       },
       {
-        title: "Comparer Le Chat gratuit à ChatGPT Plus",
-        desc: "L'erreur symétrique du comparatif ChatGPT vs Claude : les versions gratuites sont bridées. Pour un test honnête, comparez Le Chat Pro à ChatGPT Plus, sur vos cas d'usage réels, pendant deux semaines.",
+        title: "Comparer Vibe gratuit à ChatGPT Plus",
+        desc: "L'erreur symétrique du comparatif ChatGPT vs Claude : les versions gratuites sont bridées. Pour un test honnête, comparez Vibe Pro à ChatGPT Plus, sur vos cas d'usage réels, pendant deux semaines.",
       },
       {
         title: "Choisir la souveraineté par principe sans cartographier ses flux",
@@ -1466,7 +1466,7 @@ export const COMPARISONS = {
         a: "Un modèle open-weight publie ses poids (le cœur du modèle) sous licence permissive : vous pouvez le télécharger et le faire tourner sur vos serveurs, sans envoyer une seule donnée à l'éditeur. C'est la garantie ultime de confidentialité, et un avantage structurel de Mistral que ni OpenAI ni Anthropic n'offrent.",
       },
       {
-        q: "Le Chat peut-il remplacer ChatGPT pour mes équipes au quotidien ?",
+        q: "Vibe (anciennement Le Chat) peut-il remplacer ChatGPT pour mes équipes au quotidien ?",
         a: "Pour 80 % des usages bureautiques (rédaction, synthèse, analyse, traduction, brainstorming), oui. Les 20 % restants dépendent de fonctionnalités spécifiques à ChatGPT : GPTs personnalisés, mémoire avancée, génération vidéo, voix. Listez vos usages réels avant de trancher, c'est l'exercice que nous faisons en formation multi-outils.",
       },
       {

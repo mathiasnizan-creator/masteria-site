@@ -1607,7 +1607,7 @@ const BASE_SPOKES = [
       {
         title: 'Jour 1 · Matin, Production de contenus marketing avec Mistral',
         items: [
-          "Découvrir Le Chat et les modèles Mistral : forces sur le français",
+          "Découvrir Vibe (anciennement Le Chat) et les modèles Mistral : forces sur le français",
           "Rédiger des contenus marketing en français naturel et culturellement adapté",
           "Encoder votre brand voice pour des productions cohérentes",
           "Décliner un message sur plusieurs canaux et formats",
@@ -1776,7 +1776,7 @@ const BASE_SPOKES = [
       },
     ],
     faq: [
-      { q: "Mistral s'intègre-t-il avec les CRM comme Salesforce ou HubSpot ?", a: "Mistral AI propose une API compatible avec les principaux CRM du marché, et des intégrations natives existent pour HubSpot, Pipedrive et des CRM européens (Axonaut, Sellsy, Sellsy). La formation présente le workflow pratique : générer dans Le Chat, copier dans le CRM, ou exploiter l'API pour l'automatisation." },
+      { q: "Mistral s'intègre-t-il avec les CRM comme Salesforce ou HubSpot ?", a: "Mistral AI propose une API compatible avec les principaux CRM du marché, et des intégrations natives existent pour HubSpot, Pipedrive et des CRM européens (Axonaut, Sellsy, Sellsy). La formation présente le workflow pratique : générer dans Vibe (anciennement Le Chat), copier dans le CRM, ou exploiter l'API pour l'automatisation." },
     ],
     relatedSpokes: ['formation-chatgpt-commercial', 'formation-claude-commercial', 'formation-copilot-commercial'],
   },
@@ -2030,7 +2030,7 @@ const BASE_SPOKES = [
           "Synthétiser dossiers complexes et rapports volumineux",
           "Préparer des briefings et notes pour la direction",
           "Confidentialité des dossiers sensibles : bonnes pratiques",
-          "Construire un workflow quotidien efficace avec Le Chat",
+          "Construire un workflow quotidien efficace avec Vibe (anciennement Le Chat)",
         ],
       },
       {

@@ -212,10 +212,10 @@ export const BLOG_ARTICLES = [
       { type: 'h3', text: "Versions et tarifs indicatifs" },
       { type: 'p', text: "Free, Pro (22 €/mois), Team (environ 30 €/utilisateur/mois, minimum 5 sièges), Enterprise (sur devis, minimum 50 sièges)." },
 
-      { type: 'h2', text: "Mistral (Le Chat) : pour les contraintes de souveraineté des données" },
-      { type: 'p', text: "Mistral est une startup française fondée en 2023, aujourd'hui valorisée à près de 12 milliards d'euros et première décacorne française dans l'IA. Son produit grand public, Le Chat, est disponible en version gratuite, Pro et Enterprise." },
+      { type: 'h2', text: "Mistral (Vibe, anciennement Le Chat) : pour les contraintes de souveraineté des données" },
+      { type: 'p', text: "Mistral est une startup française fondée en 2023, aujourd'hui valorisée à près de 12 milliards d'euros et première décacorne française dans l'IA. Son produit grand public, Vibe, est disponible en version gratuite, Pro et Enterprise." },
       { type: 'p', text: "Ce qui distingue Mistral de tous les autres outils de ce comparatif, c'est sa souveraineté : données hébergées en Europe, conformité RGPD native, et pour les clients Enterprise, option de déploiement on-premise (vos données ne quittent jamais votre infrastructure). Pour les entreprises des secteurs régulés en France (banque, assurance, santé, défense, administration publique), c'est souvent le critère qui clôt le débat." },
-      { type: 'p', text: "Le Chat Enterprise est désormais disponible sur les trois grands clouds (AWS, Azure et Google Cloud), ce qui simplifie son déploiement pour les DSI qui ont déjà un compte sur ces plateformes." },
+      { type: 'p', text: "Vibe Enterprise est désormais disponible sur les trois grands clouds (AWS, Azure et Google Cloud), ce qui simplifie son déploiement pour les DSI qui ont déjà un compte sur ces plateformes." },
       { type: 'p', text: "Ses modèles sont excellents en français, plus rapides que la plupart des concurrents, et ses tarifs sont sensiblement inférieurs à ceux d'OpenAI ou d'Anthropic. Sur les tâches courantes de rédaction, synthèse et analyse de documents, la qualité est au niveau des meilleures offres du marché. Sur les tâches de raisonnement très complexe ou de codage avancé, les modèles d'OpenAI et d'Anthropic gardent un avantage mesurable." },
       { type: 'h3', text: "Où Mistral est clairement le bon choix" },
       {
@@ -272,7 +272,7 @@ export const BLOG_ARTICLES = [
       },
       {
         q: "Gemini et Copilot sont-ils vraiment différents de ChatGPT ou est-ce le même moteur ?",
-        a: "Copilot utilise des modèles d'OpenAI (GPT-4) sous licence Microsoft. Il y a donc une parenté technique avec ChatGPT. Mais l'expérience utilisateur est très différente parce que Copilot est intégré dans les applications Microsoft. Gemini utilise les modèles de Google (Gemini 2.0 et 2.5). Claude et Mistral ont leurs propres modèles développés en interne.",
+        a: "Copilot utilise des modèles d'OpenAI (GPT-5) sous licence Microsoft. Il y a donc une parenté technique avec ChatGPT. Mais l'expérience utilisateur est très différente parce que Copilot est intégré dans les applications Microsoft. Gemini utilise les modèles de Google (Gemini 3). Claude et Mistral ont leurs propres modèles développés en interne.",
       },
       {
         q: "Comment Mistral se compare-t-il à ChatGPT sur la qualité des réponses en français ?",
@@ -1968,7 +1968,7 @@ export const BLOG_ARTICLES = [
       { type: 'p', text: "Ce guide pratique couvre les cas d'usage qui justifient une licence Copilot for Microsoft 365 (environ 30 €/utilisateur/mois) et donne des prompts concrets pour chaque application. Il s'adresse aux responsables formation, DSI et managers qui évaluent ou déploient Copilot." },
 
       { type: 'h2', text: "Qu'est-ce que Microsoft Copilot exactement ?" },
-      { type: 'p', text: "Microsoft Copilot for Microsoft 365 est un assistant IA basé sur les modèles GPT-4 d'OpenAI, intégré dans les applications Microsoft 365. Il accède à vos documents, e-mails, réunions et fichiers SharePoint pour générer du contenu contextualisé, sans copier-coller manuel." },
+      { type: 'p', text: "Microsoft Copilot for Microsoft 365 est un assistant IA basé sur les modèles GPT-5 d'OpenAI, intégré dans les applications Microsoft 365. Il accède à vos documents, e-mails, réunions et fichiers SharePoint pour générer du contenu contextualisé, sans copier-coller manuel." },
       { type: 'p', text: "À ne pas confondre avec Copilot Chat (le chatbot gratuit accessible sur copilot.microsoft.com) ni avec GitHub Copilot (l'assistant pour développeurs). Cet article couvre uniquement Copilot for Microsoft 365, la version professionnelle intégrée à la suite bureautique." },
 
       { type: 'h2', text: "Copilot dans Word : rédiger, reformuler, synthétiser" },
@@ -2233,7 +2233,7 @@ export const BLOG_ARTICLES = [
       { type: 'p', text: "Cette fonctionnalité, disponible dans ChatGPT Team, Enterprise et Plus, transforme la façon dont les équipes utilisent l'IA. Au lieu de réécrire le même prompt long à chaque nouvelle tâche, elles ouvrent leur Custom GPT et obtiennent une réponse calibrée en quelques secondes. Ce guide explique comment créer un Custom GPT utile, sécurisé et adopté par les équipes." },
 
       { type: 'h2', text: "Qu'est-ce qu'un Custom GPT exactement ?" },
-      { type: 'p', text: "Un Custom GPT est une instance préparamétrée de ChatGPT. Il garde le même moteur (GPT-4 ou supérieur), mais reçoit en permanence trois éléments supplémentaires : des instructions système (qui définissent son rôle et ses règles), des fichiers de connaissance (que vous chargez : guide de style, documents métier, FAQ interne), et éventuellement des actions (appels à des API externes pour aller chercher des données en temps réel)." },
+      { type: 'p', text: "Un Custom GPT est une instance préparamétrée de ChatGPT. Il garde le même moteur (GPT-5 ou supérieur), mais reçoit en permanence trois éléments supplémentaires : des instructions système (qui définissent son rôle et ses règles), des fichiers de connaissance (que vous chargez : guide de style, documents métier, FAQ interne), et éventuellement des actions (appels à des API externes pour aller chercher des données en temps réel)." },
       { type: 'p', text: "Concrètement, un commercial qui ouvre le Custom GPT « Réponse appel d'offres » n'a plus à expliquer à chaque fois la structure de l'entreprise, le ton attendu ou la trame standard : tout est déjà dans le contexte permanent de l'assistant." },
 
       { type: 'h2', text: "Pourquoi un Custom GPT plutôt qu'un prompt classique ?" },
@@ -2375,7 +2375,7 @@ export const BLOG_ARTICLES = [
           ['Microsoft Copilot M365', 'EU Data Boundary disponible', 'Non', 'Oui (largement déployé)'],
           ['Google Gemini Workspace', 'Multi-régions, options EU', 'Non en Workspace', 'Oui sauf souveraineté stricte'],
           ['Claude Team / Enterprise', 'USA principalement', 'Non', 'Oui sauf souveraineté stricte'],
-          ['Mistral Le Chat Pro / Enterprise', 'Europe (UE)', 'Non', 'Oui (recommandé secteurs régulés)'],
+          ['Mistral Vibe Pro / Enterprise', 'Europe (UE)', 'Non', 'Oui (recommandé secteurs régulés)'],
           ['Mistral on-premise', 'Vos serveurs', 'Non', 'Oui (santé, défense, banque)'],
         ],
       },
@@ -2548,14 +2548,14 @@ export const BLOG_ARTICLES = [
 
       { type: 'h2', text: "Qui est Mistral AI ?" },
       { type: 'p', text: "Fondée à Paris en 2023 par d'anciens chercheurs de Meta et Google DeepMind, Mistral AI a levé plus de 2 milliards d'euros et est aujourd'hui valorisée à environ 12 milliards d'euros (mars 2026). Ses modèles open weight (Mistral 7B, Mixtral, Mistral Small, Mistral Large) ont été parmi les premiers à concurrencer GPT-4 sur des tâches généralistes." },
-      { type: 'p', text: "Son produit grand public, Le Chat, est disponible en versions Free, Pro (15 €/mois) et Enterprise. Ses modèles sont également distribués via API sur AWS, Azure et Google Cloud, ce qui simplifie leur intégration pour les entreprises déjà clientes de ces plateformes." },
+      { type: 'p', text: "Son produit grand public, Vibe (anciennement Le Chat), est disponible en versions Free, Pro (15 €/mois) et Enterprise. Ses modèles sont également distribués via API sur AWS, Azure et Google Cloud, ce qui simplifie leur intégration pour les entreprises déjà clientes de ces plateformes." },
 
       { type: 'h2', text: "Le différenciateur clé : la souveraineté des données" },
       { type: 'p', text: "Trois caractéristiques font de Mistral l'option naturelle pour les entreprises européennes soumises à des contraintes de souveraineté :" },
       {
         type: 'ul',
         items: [
-          "Hébergement en Europe par défaut : pour Le Chat Pro et Enterprise, les données sont stockées dans l'UE",
+          "Hébergement en Europe par défaut : pour Vibe Pro et Enterprise, les données sont stockées dans l'UE",
           "Conformité RGPD native : pas de transfert hors UE à gérer, pas de Standard Contractual Clauses à négocier",
           "Option on-premise : pour les clients Enterprise, possibilité de déployer le modèle sur l'infrastructure du client (vos serveurs, vos data centers)",
           "Pas de réutilisation des données pour l'entraînement par défaut sur les versions professionnelles",
@@ -2566,7 +2566,7 @@ export const BLOG_ARTICLES = [
       { type: 'h2', text: "Mistral vs ChatGPT : ce qui est comparable et ce qui ne l'est pas" },
       {
         type: 'table',
-        headers: ['Critère', 'Mistral Le Chat', 'ChatGPT'],
+        headers: ['Critère', 'Mistral Vibe', 'ChatGPT'],
         rows: [
           ['Qualité du français', 'Excellente (natif)', 'Très bonne'],
           ['Vitesse de réponse', 'Plus rapide en moyenne', 'Standard'],
@@ -2601,12 +2601,12 @@ export const BLOG_ARTICLES = [
           "Si votre stack est Microsoft 365 sans contrainte de souveraineté forte : Copilot reste plus simple à déployer",
           "Si vos équipes utilisent intensivement la génération d'images, de vidéos ou la voix : ChatGPT garde un avantage sur l'écosystème multimodal",
           "Si vous cherchez l'outil avec le plus de tutoriels et de prompts en français disponibles : ChatGPT a encore une avance sur la documentation communautaire",
-          "Pour les tâches de codage très complexes : les modèles GPT-4 et Claude Opus restent légèrement supérieurs sur les benchmarks",
+          "Pour les tâches de codage très complexes : les modèles GPT-5 et Claude Opus 4.8 restent légèrement supérieurs sur les benchmarks",
         ],
       },
 
       { type: 'h2', text: "Comment déployer Mistral en entreprise ?" },
-      { type: 'h3', text: "Option 1 : Le Chat Pro / Team (le plus simple)" },
+      { type: 'h3', text: "Option 1 : Vibe Pro / Team (le plus simple)" },
       { type: 'p', text: "Abonnement direct sur chat.mistral.ai. Mise en service en quelques heures. Adapté pour des PME/ETI qui veulent un outil prêt à l'emploi avec hébergement européen." },
       { type: 'h3', text: "Option 2 : Mistral via API sur AWS, Azure ou Google Cloud" },
       { type: 'p', text: "Pour les organisations qui veulent intégrer Mistral dans leurs propres applications (chatbot client, assistant interne, pipeline d'analyse documentaire). Tarification à l'usage (par tokens). Adapté aux DSI qui ont déjà un compte cloud actif." },
@@ -2614,11 +2614,11 @@ export const BLOG_ARTICLES = [
       { type: 'p', text: "Le modèle est déployé sur vos serveurs ou dans votre data center privé. Vos données ne quittent jamais votre infrastructure. Plus complexe à mettre en œuvre (POC, hardware, équipe IA), mais c'est la seule option pour certains secteurs très régulés." },
     ],
     faq: [
-      { q: "Mistral est-il vraiment équivalent à ChatGPT en qualité ?", a: "Sur la majorité des tâches professionnelles courantes (rédaction d'e-mails, synthèse de documents, reformulation, génération d'idées), Mistral est au niveau de ChatGPT. Sur les tâches très complexes de raisonnement ou de codage avancé, les modèles GPT-4 et Claude Opus gardent un avantage mesurable. Pour 90 % des usages professionnels, la différence est imperceptible." },
-      { q: "Mistral est-il moins cher que ChatGPT ?", a: "Oui, sensiblement. Le Chat Pro est à 15 €/mois (vs 20 €/mois pour ChatGPT Plus). En version Team, comptez environ 25 €/utilisateur/mois (vs 30 € pour ChatGPT Team). Sur de gros volumes API, l'écart est encore plus marqué." },
+      { q: "Mistral est-il vraiment équivalent à ChatGPT en qualité ?", a: "Sur la majorité des tâches professionnelles courantes (rédaction d'e-mails, synthèse de documents, reformulation, génération d'idées), Mistral est au niveau de ChatGPT. Sur les tâches très complexes de raisonnement ou de codage avancé, les modèles GPT-5 et Claude Opus 4.8 gardent un avantage mesurable. Pour 90 % des usages professionnels, la différence est imperceptible." },
+      { q: "Mistral est-il moins cher que ChatGPT ?", a: "Oui, sensiblement. Vibe (anciennement Le Chat) Pro est à 15 €/mois (vs 20 €/mois pour ChatGPT Plus). En version Team, comptez environ 25 €/utilisateur/mois (vs 30 € pour ChatGPT Team). Sur de gros volumes API, l'écart est encore plus marqué." },
       { q: "Mistral est-il certifié pour le secteur santé (HDS) ?", a: "Mistral propose des options de déploiement compatibles avec la certification HDS via ses partenaires cloud (notamment OVHcloud et Outscale). Pour un usage en hôpital ou en clinique, prévoir un audit de conformité avec votre DPO et votre RSSI avant déploiement." },
       { q: "Peut-on entraîner Mistral sur ses propres données ?", a: "Oui, pour les clients Enterprise. Mistral propose du fine-tuning sur les modèles ouverts (Mistral 7B, Mixtral) et des options de personnalisation pour adapter un modèle à votre vocabulaire métier ou à votre base de connaissances. Cette option est particulièrement utile dans les secteurs où la terminologie est très spécifique (juridique, médical, financier)." },
-      { q: "Mistral propose-t-il un équivalent aux Custom GPTs de ChatGPT ?", a: "Oui, via la fonctionnalité Agents disponible dans Le Chat Enterprise et l'API. Le principe est similaire : créer un assistant préparamétré avec un rôle, des instructions et des fichiers de référence. L'écosystème est plus jeune que celui des Custom GPTs mais évolue vite." },
+      { q: "Mistral propose-t-il un équivalent aux Custom GPTs de ChatGPT ?", a: "Oui, via la fonctionnalité Agents disponible dans Vibe (anciennement Le Chat) Enterprise et l'API. Le principe est similaire : créer un assistant préparamétré avec un rôle, des instructions et des fichiers de référence. L'écosystème est plus jeune que celui des Custom GPTs mais évolue vite." },
     ],
     cta: {
       title: "Former vos équipes à Mistral AI",
@@ -3255,7 +3255,7 @@ export const BLOG_ARTICLES = [
         type: 'ul',
         items: [
           "<strong>Les cas d'usage sont de plus en plus multimodaux.</strong> Une équipe marketing qui rédige un post LinkedIn génère aussi le visuel — et de plus en plus, la courte vidéo qui l'accompagne",
-          "<strong>Les modèles eux-mêmes deviennent multimodaux.</strong> ChatGPT-5 et Gemini 2.5 génèrent texte, image et bientôt vidéo dans la même interface. Un utilisateur formé uniquement à la rédaction passe à côté d'une grande partie de la valeur",
+          "<strong>Les modèles eux-mêmes deviennent multimodaux.</strong> ChatGPT-5 et Gemini 3 génèrent texte, image et bientôt vidéo dans la même interface. Un utilisateur formé uniquement à la rédaction passe à côté d'une grande partie de la valeur",
           "<strong>L'arbitrage outil dépend du cas d'usage.</strong> Pour un visuel marketing, Midjourney reste le plus créatif, Firefly est le plus sûr juridiquement, DALL·E est le plus intégré dans ChatGPT — chaque outil a sa zone d'excellence",
         ],
       },

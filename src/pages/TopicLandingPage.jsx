@@ -54,7 +54,7 @@ const TOPICS = {
       },
       {
         h2: "Outils, prérequis techniques et organisation",
-        body: "Aucun logiciel à installer : la formation se fait directement dans votre outil de visioconférence habituel. Chaque participant doit avoir un ordinateur avec accès Internet, un casque ou des écouteurs, et un compte sur l'outil IA étudié (ChatGPT Plus, Copilot M365, Gemini Workspace, Claude.ai ou Le Chat Mistral). Si vos équipes n'ont pas encore de licence, nous proposons une formation avec comptes de démonstration. La connexion à la classe virtuelle se fait via un lien unique envoyé 48h avant la session.",
+        body: "Aucun logiciel à installer : la formation se fait directement dans votre outil de visioconférence habituel. Chaque participant doit avoir un ordinateur avec accès Internet, un casque ou des écouteurs, et un compte sur l'outil IA étudié (ChatGPT Plus, Copilot M365, Gemini Workspace, Claude.ai ou Vibe Mistral, anciennement Le Chat). Si vos équipes n'ont pas encore de licence, nous proposons une formation avec comptes de démonstration. La connexion à la classe virtuelle se fait via un lien unique envoyé 48h avant la session.",
       },
     ],
     faq: [

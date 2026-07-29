@@ -80,7 +80,7 @@ export const GLOSSARY_TERMS = [
     term: 'Modèle de fondation (Foundation Model)',
     category: 'fondamentaux',
     definition:
-      "Grand modèle pré-entraîné sur des données massives, conçu pour être adapté à de multiples cas d'usage. GPT-4, Claude 3.5 Sonnet, Gemini Pro et Mistral Large sont des modèles de fondation.",
+      "Grand modèle pré-entraîné sur des données massives, conçu pour être adapté à de multiples cas d'usage. GPT-5, Claude Sonnet 5, Gemini Pro et Mistral Large sont des modèles de fondation.",
   },
   {
     id: 'inference',
@@ -110,14 +110,14 @@ export const GLOSSARY_TERMS = [
     term: 'Claude',
     category: 'modeles',
     definition:
-      "Famille de modèles développée par Anthropic, fondée par d'anciens d'OpenAI. Connu pour sa sécurité, son alignement (Constitutional AI) et ses excellentes capacités en analyse de longs documents et en code. Versions phares : Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude Opus 4.",
+      "Famille de modèles développée par Anthropic, fondée par d'anciens d'OpenAI. Connu pour sa sécurité, son alignement (Constitutional AI) et ses excellentes capacités en analyse de longs documents et en code. Versions phares : Claude Sonnet 5, Claude Haiku 4.5, Claude Opus 4.8.",
   },
   {
     id: 'gemini',
     term: 'Gemini',
     category: 'modeles',
     definition:
-      "Famille de LLM multimodaux développée par Google DeepMind. Native dans Workspace (Docs, Gmail, Sheets) et Android. Versions principales : Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini 2.0.",
+      "Famille de LLM multimodaux développée par Google DeepMind. Native dans Workspace (Docs, Gmail, Sheets) et Android. Versions principales : Gemini 3 Pro, Gemini 3 Flash.",
   },
   {
     id: 'mistral',
@@ -131,7 +131,7 @@ export const GLOSSARY_TERMS = [
     term: 'Microsoft Copilot',
     category: 'modeles',
     definition:
-      "Famille de produits IA de Microsoft basée sur GPT-4 (en partenariat avec OpenAI). Intégré nativement à Word, Excel, Teams, Outlook, GitHub. Existe en version Microsoft 365 Copilot (entreprises) et Copilot gratuit.",
+      "Famille de produits IA de Microsoft basée sur GPT-5 (en partenariat avec OpenAI). Intégré nativement à Word, Excel, Teams, Outlook, GitHub. Existe en version Microsoft 365 Copilot (entreprises) et Copilot gratuit.",
   },
   {
     id: 'llama',
@@ -159,7 +159,7 @@ export const GLOSSARY_TERMS = [
     term: 'Modèle multimodal',
     category: 'modeles',
     definition:
-      "Modèle capable de traiter plusieurs types d'entrées : texte, image, audio, vidéo. GPT-4o, Gemini, Claude 3.5 sont multimodaux. Permet par exemple d'analyser une capture d'écran ou un graphique en plus du texte.",
+      "Modèle capable de traiter plusieurs types d'entrées : texte, image, audio, vidéo. GPT-4o, Gemini, Claude sont multimodaux. Permet par exemple d'analyser une capture d'écran ou un graphique en plus du texte.",
   },
 
   // ═══════════════════ ENTRAÎNEMENT & APPRENTISSAGE ═══════════════════
@@ -196,7 +196,7 @@ export const GLOSSARY_TERMS = [
     term: 'Distillation',
     category: 'entrainement',
     definition:
-      "Technique consistant à entraîner un \"petit\" modèle à imiter un \"grand\" modèle. Permet d'obtenir des performances proches du modèle d'origine pour une fraction du coût et de la latence. Claude 3.5 Haiku est en partie le résultat d'une distillation depuis Sonnet.",
+      "Technique consistant à entraîner un \"petit\" modèle à imiter un \"grand\" modèle. Permet d'obtenir des performances proches du modèle d'origine pour une fraction du coût et de la latence. Claude Haiku (Anthropic) illustre ce principe : un modèle rapide et économique dérivé d'un modèle plus grand de la même famille.",
   },
   {
     id: 'apprentissage-supervise',
@@ -384,7 +384,7 @@ export const GLOSSARY_TERMS = [
     term: 'Context window (Fenêtre de contexte)',
     category: 'donnees',
     definition:
-      "Quantité maximale de tokens (input + output) qu'un modèle peut traiter en une seule requête. Claude 3.5 Sonnet : 200k tokens. Gemini 1.5 Pro : jusqu'à 2M tokens. GPT-4o : 128k tokens. Détermine la taille des documents analysables.",
+      "Quantité maximale de tokens (input + output) qu'un modèle peut traiter en une seule requête. Claude Sonnet 5 : 200k tokens. Gemini 3 Pro : jusqu'à 2M tokens. Les modèles récents dépassent souvent 128k à 1M tokens selon l'éditeur. Détermine la taille des documents analysables.",
   },
   {
     id: 'embedding',
@@ -463,7 +463,7 @@ export const GLOSSARY_TERMS = [
     term: 'MMLU',
     category: 'evaluation',
     definition:
-      "Massive Multitask Language Understanding. Benchmark de référence couvrant 57 sujets (math, histoire, droit, médecine). Score humain expert : ~90%. GPT-4o : ~88%. Claude 3.5 Sonnet : ~88%.",
+      "Massive Multitask Language Understanding. Benchmark de référence couvrant 57 sujets (math, histoire, droit, médecine). Score humain expert : ~90%. Les meilleurs modèles actuels dépassent généralement 85-90 % sur ce benchmark.",
   },
   {
     id: 'eval',
@@ -572,7 +572,7 @@ export const GLOSSARY_TERMS = [
     term: 'Computer Vision',
     category: 'multimodal',
     definition:
-      "Branche de l'IA dédiée à l'analyse d'images et vidéos : détection d'objets, reconnaissance faciale, OCR, compréhension de scène. Désormais largement intégrée dans les LLM modernes (GPT-4o, Claude 3.5, Gemini).",
+      "Branche de l'IA dédiée à l'analyse d'images et vidéos : détection d'objets, reconnaissance faciale, OCR, compréhension de scène. Désormais largement intégrée dans les LLM modernes (GPT-5, Claude, Gemini).",
   },
   {
     id: 'tts',

@@ -277,7 +277,7 @@ export const METIER_FAQ = {
     },
     {
       q: "Quel outil IA est le plus adapté pour le service client ?",
-      a: "Microsoft Copilot est l'outil le plus stratégique pour les équipes service client opérant dans un environnement Microsoft 365, avec une intégration dans Outlook et Teams pour la gestion des demandes internes. ChatGPT est très efficace pour la rédaction de réponses personnalisées et la génération de bases de connaissances. Des plateformes comme Zendesk ou Intercom intègrent désormais des modules IA natifs construits sur GPT-4 qui s'interconnectent directement au CRM et à l'historique client. Notre formation couvre ChatGPT, Copilot et Gemini sur 2 jours, avec des ateliers spécifiques aux cas d'usage du service client.",
+      a: "Microsoft Copilot est l'outil le plus stratégique pour les équipes service client opérant dans un environnement Microsoft 365, avec une intégration dans Outlook et Teams pour la gestion des demandes internes. ChatGPT est très efficace pour la rédaction de réponses personnalisées et la génération de bases de connaissances. Des plateformes comme Zendesk ou Intercom intègrent désormais des modules IA natifs construits sur GPT-5 qui s'interconnectent directement au CRM et à l'historique client. Notre formation couvre ChatGPT, Copilot et Gemini sur 2 jours, avec des ateliers spécifiques aux cas d'usage du service client.",
     },
     {
       q: "L'IA risque-t-elle de déshumaniser le service client ?",
