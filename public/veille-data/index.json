@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-28",
-    "totalEditions": 7,
-    "totalItems": 96,
-    "totalSources": 152
+    "derniereDate": "2026-07-29",
+    "totalEditions": 8,
+    "totalItems": 109,
+    "totalSources": 169
   },
   "editions": [
+    {
+      "date": "2026-07-29",
+      "dateAffichee": "29 juillet 2026",
+      "dateCourte": "mer. 29 juil.",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "1 100 salariés des grands laboratoires demandent à Washington de ralentir l'IA de pointe ; pendant ce temps, l'usage non contrôlé s'installe dans les entreprises",
+      "nbItems": 13,
+      "nbSources": 17,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-07-28",
       "dateAffichee": "28 juillet 2026",

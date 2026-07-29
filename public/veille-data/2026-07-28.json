@@ -254,7 +254,12 @@
     "titreEditorial": "OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-29",
+    "dateLongue": "mercredi 29 juillet 2026",
+    "titreEditorial": "1 100 salariés des grands laboratoires demandent à Washington de ralentir l'IA de pointe ; pendant ce temps, l'usage non contrôlé s'installe dans les entreprises",
+    "nbItems": 13
+  },
   "nbItems": 13,
   "nbSources": 20,
   "nbSignes": 9872,

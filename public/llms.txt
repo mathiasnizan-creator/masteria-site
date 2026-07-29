@@ -181,6 +181,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [29 juillet 2026 : 1 100 salariés des grands laboratoires demandent à Washington de ralentir l'IA de pointe ; pendant ce temps, l'usage non contrôlé s'installe dans les entreprises](https://www.master-ia.fr/veille-ia/2026-07-29)
 - [28 juillet 2026 : L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards](https://www.master-ia.fr/veille-ia/2026-07-28)
 - [27 juillet 2026 : OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse](https://www.master-ia.fr/veille-ia/2026-07-27)
 - [24 juillet 2026 : L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA](https://www.master-ia.fr/veille-ia/2026-07-24)

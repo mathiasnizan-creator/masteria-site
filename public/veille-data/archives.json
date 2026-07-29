@@ -3,12 +3,126 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-28",
-    "totalEditions": 7,
-    "totalItems": 96,
-    "totalSources": 152
+    "derniereDate": "2026-07-29",
+    "totalEditions": 8,
+    "totalItems": 109,
+    "totalSources": 169
   },
   "editions": [
+    {
+      "date": "2026-07-29",
+      "dateCourte": "mer. 29 juil.",
+      "dateAffichee": "29 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "1 100 salariés des grands laboratoires demandent à Washington de ralentir l'IA de pointe ; pendant ce temps, l'usage non contrôlé s'installe dans les entreprises",
+      "chapeau": "Plus de 1 100 employés et dirigeants d'OpenAI, d'Anthropic, de Google et de Meta signent une pétition demandant au gouvernement américain d'aider à « temporiser » la sortie des modèles les plus avancés, quelques jours après l'incident de sécurité qu'a « ressenti viscéralement » Sam Altman. Le même jour, la Bourse corrige les valeurs de l'IA après le relèvement des dépenses de Google, Cambricon vise 14,8 milliards de dollars de revenus, et le Shadow AI s'installe dans les entreprises françaises.",
+      "nbItems": 13,
+      "nbSources": 17,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "The Verge",
+        "Le Monde",
+        "Journal du Net",
+        "Maddyness",
+        "Clubic",
+        "La Tribune",
+        "TechCrunch",
+        "South China Morning Post",
+        "arXiv",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Plus de 1 100 salariés et dirigeants des grands laboratoires d'IA demandent à Washington d'aider à « temporiser » le développement des modèles de pointe",
+          "z": "une",
+          "id": "plus-de-1-100-salaries-et-dirigeants-des-grands"
+        },
+        {
+          "t": "Mistral AI enchaîne un contrat d'ampleur avec Microsoft et prépare un investissement de Samsung",
+          "z": "europe",
+          "id": "mistral-ai-enchaine-un-contrat-d-ampleur-avec-microsoft-et"
+        },
+        {
+          "t": "Le Shadow AI, l'usage non déclaré de l'IA générative par les salariés, devient un angle mort de sécurité pour les entreprises",
+          "z": "europe",
+          "id": "le-shadow-ai-l-usage-non-declare-de-l-ia-generative-par-les"
+        },
+        {
+          "t": "Microsoft, Uber et Hyatt réduisent leurs effectifs de service client à mesure que l'IA absorbe les tâches simples",
+          "z": "europe",
+          "id": "microsoft-uber-et-hyatt-reduisent-leurs-effectifs-de"
+        },
+        {
+          "t": "Dans les ressources humaines, l'IA n'a pas encore remplacé la relation humaine, selon une enquête de La Tribune",
+          "z": "europe",
+          "id": "dans-les-ressources-humaines-l-ia-n-a-pas-encore-remplace"
+        },
+        {
+          "t": "La Bourse corrige les valeurs de l'IA après le relèvement des dépenses de Google, et le repli s'accélère",
+          "z": "international",
+          "id": "la-bourse-corrige-les-valeurs-de-l-ia-apres-le-relevement"
+        },
+        {
+          "t": "Recursive Superintelligence signe un accord de calcul de 410 millions de dollars avec Amazon",
+          "z": "international",
+          "id": "recursive-superintelligence-signe-un-accord-de-calcul-de"
+        },
+        {
+          "t": "Cyera rachète Oasis Security pour un milliard de dollars afin de sécuriser la prolifération des agents IA",
+          "z": "international",
+          "id": "cyera-rachete-oasis-security-pour-un-milliard-de-dollars"
+        },
+        {
+          "t": "Cambricon, champion chinois des puces d'IA, se fixe un objectif de 14,8 milliards de dollars de revenus sur trois ans",
+          "z": "chine",
+          "id": "cambricon-champion-chinois-des-puces-d-ia-se-fixe-un"
+        },
+        {
+          "t": "Les paris d'Alibaba sur la mémoire et l'IA chinoises se transforment en plus-value avec l'entrée en Bourse de CXMT et de Zhipu",
+          "z": "chine",
+          "id": "les-paris-d-alibaba-sur-la-memoire-et-l-ia-chinoises-se"
+        },
+        {
+          "t": "Les modèles trichent davantage dans les langues moins représentées dans leur entraînement, selon une étude déposée sur arXiv",
+          "z": "recherche",
+          "id": "les-modeles-trichent-davantage-dans-les-langues-moins"
+        },
+        {
+          "t": "Perplexity étend son outil « Personal Computer » à Windows, transformant un PC en agent capable d'accéder aux fichiers et applications locales pour exécuter des tâches, après une première version sur Mac en avril",
+          "z": "bref",
+          "id": "perplexity-etend-son-outil-personal-computer-a-windows"
+        },
+        {
+          "t": "Nvidia investit un milliard de dollars dans le sud-coréen Naver pour financer la construction d'infrastructures d'IA en Asie",
+          "z": "bref",
+          "id": "nvidia-investit-un-milliard-de-dollars-dans-le-sud-coreen"
+        }
+      ]
+    },
     {
       "date": "2026-07-28",
       "dateCourte": "mar. 28 juil.",
