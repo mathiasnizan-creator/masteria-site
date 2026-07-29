@@ -487,7 +487,7 @@ export function MasteriaHeader() {
               );
             })}
 
-            <Link to="/contact" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, background: '#2563EB', color: '#fff', borderRadius: 7, padding: '9px 18px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(37,99,235,0.30)' }}>
+            <Link to="/contact" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, background: '#2563EB', color: '#fff', borderRadius: 7, padding: '10px 20px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(37,99,235,0.30)', whiteSpace: 'nowrap', textAlign: 'center' }}>
               Demander un devis
             </Link>
           </nav>
@@ -803,6 +803,14 @@ export function MasteriaFooter() {
             </picture>
             <p style={{ fontSize: 13, color: '#888', lineHeight: 1.75, maxWidth: 260 }}>Centre de formation certifié Qualiopi. L'IA au service des hommes, pas l'inverse.</p>
             <p style={{ fontSize: 12, color: '#666', lineHeight: 1.6, maxWidth: 260, marginTop: 10 }}>Déclaration d'activité n° 84 69 23218 69 enregistrée auprès du préfet de région Auvergne-Rhône-Alpes</p>
+            <a
+              href="/assets/qualiopi-certificat-masteria.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-block', fontSize: 12, color: '#888', textDecoration: 'underline', marginTop: 8 }}
+            >
+              Voir notre certificat Qualiopi (PDF)
+            </a>
           </div>
           <div>
             <div style={colHead}>Formations par outil</div>
@@ -940,9 +948,15 @@ export function MasteriaFooter() {
             <Link to="/politique-de-confidentialite" style={{ fontSize: 12, color: '#666', textDecoration: 'none' }}>Confidentialité</Link>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
-            {['Qualiopi', 'OPCO'].map(b => (
-              <span key={b} style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#222', color: '#666', padding: '3px 10px', borderRadius: 999 }}>{b}</span>
-            ))}
+            <a
+              href="/assets/qualiopi-certificat-masteria.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#222', color: '#666', padding: '3px 10px', borderRadius: 999, textDecoration: 'none' }}
+            >
+              Qualiopi
+            </a>
+            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#222', color: '#666', padding: '3px 10px', borderRadius: 999 }}>OPCO</span>
           </div>
         </div>
       </div>

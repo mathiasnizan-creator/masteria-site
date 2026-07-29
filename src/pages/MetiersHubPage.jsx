@@ -538,7 +538,7 @@ export default function MetiersHubPage() {
                   }}>
                     <ToolLogo tool={hub.id} size={30} color={hub.color} />
                   </div>
-                  <div style={{ fontWeight: 700, color: '#0A0A0A', fontSize: 14, marginBottom: 4 }}>
+                  <div style={{ fontWeight: 700, color: '#0A0A0A', fontSize: 14, lineHeight: 1.3, minHeight: '2.6em', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
                     Formation {hub.tool}
                   </div>
                   <div style={{ color: hub.color, fontSize: 12, fontWeight: 600 }}>

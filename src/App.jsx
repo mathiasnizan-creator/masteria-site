@@ -528,9 +528,9 @@ function AboutScreen() {
             {[
               { year: '2020', title: 'Le déclic', desc: "Consultant en transformation digitale depuis 10 ans, Mathias Nizan se spécialise sur l'IA générative. Les premiers modèles GPT laissent entrevoir un basculement majeur." },
               { year: '2022', title: 'Naissance de Masteria', desc: "Masteria est fondé sur une conviction : l'IA doit être accessible à tous les professionnels. Les premiers clients grands comptes font confiance au cabinet." },
-              { year: '2023', title: 'Certification Qualiopi', desc: "Masteria devient organisme de formation certifié Qualiopi. Toutes les formations sont désormais finançables à 100 % via OPCO." },
               { year: '2024', title: '+1 500 professionnels formés', desc: "Masteria accompagne des PME, ETI et grands groupes en France, Suisse et Belgique. 98 % de taux de satisfaction, +6h gagnées par semaine par collaborateur formé." },
-              { year: '2025', title: 'Cabinet conseil + formation', desc: "Le positionnement hybride se consolide : audit stratégique, accompagnement opérationnel et transfert de compétences par des formations certifiées." },
+              { year: '2025', title: 'Cabinet conseil + formation', desc: "Le positionnement hybride se consolide : audit stratégique, accompagnement opérationnel et transfert de compétences par la formation." },
+              { year: '2026', title: 'Certification Qualiopi', desc: "Masteria devient organisme de formation certifié Qualiopi. Les formations sont désormais finançables via OPCO." },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div style={{

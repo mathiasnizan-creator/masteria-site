@@ -114,10 +114,14 @@ export default function QualiopiPage() {
           <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, marginBottom: 24 }}>
             Depuis le 1er janvier 2022, la certification Qualiopi est obligatoire pour tout organisme de formation
             souhaitant accéder aux financements publics. Sans elle, impossible d'obtenir une prise en charge OPCO,
-            CPF ou France Travail. Masteria a obtenu cette certification dès 2022 et la maintient avec rigueur :
-            audit de renouvellement tous les 3 ans, audit de suivi à 18 mois. Notre déclaration d'activité est
-            enregistrée sous le numéro 84 69 23218 69 auprès du préfet de la région Auvergne-Rhône-Alpes :
-            votre OPCO peut vérifier notre statut en quelques secondes sur la Liste Publique des Organismes de Formation.
+            CPF ou France Travail. Masteria est certifié Qualiopi (certificat n° 725311-1, délivré par CERTIFOPAC,
+            valide du 29/01/2026 au 28/01/2029) et le maintient avec rigueur : audit de suivi à 18 mois, audit de
+            renouvellement à échéance du cycle de 3 ans. Notre déclaration d'activité est enregistrée sous le numéro
+            84 69 23218 69 auprès du préfet de la région Auvergne-Rhône-Alpes : votre OPCO peut vérifier notre statut
+            en quelques secondes sur la Liste Publique des Organismes de Formation, ou consulter{' '}
+            <a href="/assets/qualiopi-certificat-masteria.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#16a34a', fontWeight: 700 }}>
+              notre certificat Qualiopi (PDF)
+            </a>.
           </p>
           <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, marginBottom: 40 }}>
             Concrètement pour vous : chaque formation IA Masteria — ChatGPT, Microsoft Copilot, Google Gemini,
