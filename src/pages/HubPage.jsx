@@ -683,6 +683,32 @@ export default function HubPage() {
       })()}
 
       {/* CTA BAS DE PAGE */}
+      {/* MAILLAGE INTERNE : formations sur les autres outils IA (concentre l'autorité entre hubs, ancres exact-match) */}
+      <section style={{ padding: '64px 40px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <h2 style={{ fontSize: 'clamp(20px, 2.6vw, 30px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A' }}>
+            Formations sur les autres outils IA
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15.5, marginBottom: 28, maxWidth: 640 }}>
+            Vos équipes utilisent plusieurs assistants ? Découvrez nos autres parcours, ou comparez les outils avant de choisir.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
+            {HUBS.filter(h => ['chatgpt', 'copilot', 'gemini', 'claude', 'mistral'].includes(h.id) && h.slug !== hub.slug).map(h => {
+              const short = (h.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()
+              return (
+                <Link key={h.slug} to={`/${h.slug}`} style={{ display: 'flex', alignItems: 'center', gap: 12, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '16px 18px', textDecoration: 'none' }}>
+                  <ToolLogo tool={h.id} size={22} color={h.color} />
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 700, fontSize: 15, color: '#0A0A0A' }}>Formation {short}</span>
+                </Link>
+              )
+            })}
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14.5, marginTop: 24, lineHeight: 1.7 }}>
+            Voir aussi : <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>le catalogue des formations IA</Link>, la <Link to="/formation-multi-outils" style={{ color: '#2563EB', fontWeight: 600 }}>formation multi-outils</Link>, ou le comparatif <Link to="/quelle-est-la-meilleure-ia" style={{ color: '#2563EB', fontWeight: 600 }}>quelle est la meilleure IA</Link> pour trancher.
+          </p>
+        </div>
+      </section>
+
       <section style={{
         background: '#F5F3EE', color: '#0A0A0A',
         padding: '80px 40px', textAlign: 'center',
