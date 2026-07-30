@@ -330,7 +330,7 @@ export default function MeilleurCabinetConseilIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous cherchez le bon cabinet conseil IA, ou vous hésitez entre un cabinet et un consultant indépendant ? Vous trouverez ici les trois compétences à exiger, un panorama factuel des acteurs du marché avec leurs noms, les honoraires et TJM constatés en 2026 et de quoi décider. Le panorama situe les acteurs par catégorie : il ne les note pas et n'en classe aucun.
+            Vous cherchez le bon cabinet conseil IA, ou vous hésitez entre un cabinet et un <Link to="/consultant-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>consultant indépendant</Link> ? Vous trouverez ici les trois compétences à exiger, un panorama factuel des acteurs du marché avec leurs noms, les honoraires et TJM constatés en 2026 et de quoi décider. Le panorama situe les acteurs par catégorie : il ne les note pas et n'en classe aucun.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>

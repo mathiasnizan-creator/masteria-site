@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-intelligence-artificielle</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -157,6 +157,12 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/consultant-ia</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/outils-ia-sur-mesure</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -236,7 +242,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -698,7 +704,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/publications</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
   </url>
@@ -1396,6 +1402,12 @@
     <loc>https://www.master-ia.fr/veille-ia/a-propos</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-07-30</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>

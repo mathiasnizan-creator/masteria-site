@@ -896,6 +896,7 @@ export function MasteriaFooter() {
               ['Meilleure agence IA', '/meilleure-agence-ia'],
               ['Meilleur cabinet de conseil IA', '/meilleur-cabinet-conseil-ia'],
               ['Meilleure formation IA', '/meilleure-formation-ia'],
+              ['Consultant IA (métier & TJM)', '/consultant-ia'],
               ['Contact', '/contact'],
             ].map(([l, path]) => (
               <Link key={path} to={path} style={lStyle}>{l}</Link>
