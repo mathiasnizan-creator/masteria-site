@@ -27,7 +27,7 @@ const PORT = 4195;
 const BASE = `http://127.0.0.1:${PORT}`;
 const SITE = 'https://www.master-ia.fr';
 const BATCH_SIZE = 10;          // taille d'un lot (affichage de progression)
-const RECYCLE_EVERY = 10;       // recycle le browser toutes les N routes pour plafonner
+const RECYCLE_EVERY = 4;        // recycle le browser toutes les N routes pour plafonner
                                 // la mémoire de Chromium et éviter l'OOM (SIGKILL) sur les longs runs
 const NAV_TIMEOUT = 25000;
 const HELMET_WAIT = 800;        // ms pour laisser react-helmet-async s'appliquer
@@ -137,6 +137,14 @@ async function launchBrowser() {
       '--no-first-run',
       '--no-default-browser-check',
       '--disable-features=VizDisplayCompositor',
+      // Empreinte mémoire minimale (machine sous forte pression RAM/swap) :
+      '--single-process',
+      '--renderer-process-limit=1',
+      '--disable-extensions',
+      '--disable-background-networking',
+      '--disable-software-rasterizer',
+      '--mute-audio',
+      '--js-flags=--max-old-space-size=512',
     ],
   });
 }
