@@ -39,18 +39,18 @@ const CASES = [
     id: 'distribution',
     icon: Bot,
     kicker: 'Cas 01 · Distribution B2B',
-    who: 'Distributeur IT B2B, 58 collaborateurs, filiale française d\'un groupe européen',
+    who: 'Distributeur IT B2B, filiale française d\'un groupe européen · force commerciale de 58 personnes',
     title: 'Des assistants Claude au service des équipes commerciales',
     stats: [
-      ['58', "collaborateurs dans l'entreprise"],
-      ['58 / 58', "formés : 100 % de l'effectif"],
+      ['58', 'commerciaux formés : toute la force de vente'],
       ['10', 'référents « équipe élite »'],
       ['11', 'assistants Claude métier'],
+      ['6', 'sessions de 2 jours'],
     ],
-    defi: "Gagner en force de frappe sans grossir les effectifs. Le temps commercial utile est absorbé par des tâches répétitives : cotations, relances, réponses aux cahiers des charges, prospection, analyse de stock. L'objectif : donner à 58 personnes la productivité d'une équipe bien plus large, sur les outils existants (ERP, base articles, CRM).",
+    defi: "Gagner en force de frappe sans grossir les effectifs. Le temps commercial utile est absorbé par des tâches répétitives : cotations, relances, réponses aux cahiers des charges, prospection, analyse de stock. L'objectif : donner aux 58 commerciaux la productivité d'une équipe bien plus large, sur les outils existants (ERP, base articles, CRM).",
     reponse: "Cadrage des cas d'usage avec la direction. Une session de deux jours pour former les 10 référents de l'équipe élite, puis cinq sessions de deux jours pour le reste des équipes. Chaque référent conçoit une compétence Claude branchée sur ses données ; la direction valide, l'organisation déploie.",
     livrables: ['Cotation à partir d\'un mail client', 'Relances de devis (en production)', 'Substitution vers les marques propres', 'Réponses aux cahiers des charges depuis l\'ERP', 'Prospection et réactivation clients', 'Pilotage stocks, livraisons et marge'],
-    resultat: "58 collaborateurs formés sur 58 : tout l'effectif, de la vente au pilotage des stocks, en six sessions de deux jours. Les premiers assistants sont en production, et 58 personnes assistées par Claude visent la force de frappe d'une équipe de 70, sans recrutement.",
+    resultat: "Les 58 commerciaux sont formés, en six sessions de deux jours : les 10 référents de l'équipe élite d'abord, puis toutes les équipes de vente. Les premiers assistants sont en production, et 58 personnes assistées par Claude visent la force de frappe d'une équipe de 70, sans recrutement.",
   },
   {
     id: 'industrie',
@@ -100,11 +100,11 @@ const FAQ = [
   },
   {
     q: "Quels types d'entreprises accompagnez-vous ?",
-    a: "Des PME de quelques dizaines de collaborateurs, des ETI et des groupes internationaux. Les trois cas présentés couvrent la distribution B2B (58 collaborateurs), l'industrie (groupe international) et le conseil (cabinet indépendant multi-équipes). Le dispositif s'adapte à la taille : équipe de référents internes chez le distributeur, déploiement par vagues chez l'industriel, un assistant par fonction au cabinet.",
+    a: "Des PME de quelques dizaines de collaborateurs, des ETI et des groupes internationaux. Les trois cas présentés couvrent la distribution IT B2B (force commerciale de 58 personnes), l'industrie (groupe international) et le conseil (cabinet indépendant multi-équipes). Le dispositif s'adapte à la taille : équipe de référents internes chez le distributeur, déploiement par vagues chez l'industriel, un assistant par fonction au cabinet.",
   },
   {
     q: "Combien de temps faut-il pour déployer des assistants IA en entreprise ?",
-    a: "Sur les cas présentés, le rythme type est : un cadrage des cas d'usage avec la direction, une première session de formation de deux jours, puis des assistants qui entrent en production au fil des semaines suivantes. Chez le distributeur, la couverture complète des 58 collaborateurs a demandé six sessions de deux jours. Le calendrier exact dépend du nombre d'équipes et de la profondeur d'intégration aux outils existants.",
+    a: "Sur les cas présentés, le rythme type est : un cadrage des cas d'usage avec la direction, une première session de formation de deux jours, puis des assistants qui entrent en production au fil des semaines suivantes. Chez le distributeur, la couverture des 58 commerciaux a demandé six sessions de deux jours. Le calendrier exact dépend du nombre d'équipes et de la profondeur d'intégration aux outils existants.",
   },
   {
     q: 'Quels outils utilisez-vous : Claude, Copilot, ChatGPT ?',
@@ -288,7 +288,7 @@ export default function EtudesDeCasIAPage() {
 
           {/* GEO : réponse directe citable */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un distributeur B2B de 58 collaborateurs, un groupe industriel international et un cabinet de conseil financier : <strong style={{ color: '#fff', fontWeight: 700 }}>trois organisations qui ont mis l'IA en production avec Masteria</strong>, des assistants Claude aux parcours Copilot, avec des équipes formées et des résultats mesurés à chaud.
+            La force commerciale d'un distributeur IT B2B (58 commerciaux), un groupe industriel international et un cabinet de conseil financier : <strong style={{ color: '#fff', fontWeight: 700 }}>trois organisations qui ont mis l'IA en production avec Masteria</strong>, des assistants Claude aux parcours Copilot, avec des équipes formées et des résultats mesurés à chaud.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 700 }}>
@@ -310,7 +310,7 @@ export default function EtudesDeCasIAPage() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
-                ['Distribution B2B (58 pers.)', "100 % de l'effectif formé (58/58), 10 référents « équipe élite », 11 assistants Claude métier, les premiers déjà en production."],
+                ['Distribution IT B2B', "58 commerciaux formés (toute la force de vente), 10 référents « équipe élite », 11 assistants Claude métier, les premiers déjà en production."],
                 ['Industrie (groupe international)', "Parcours managers Copilot sur fichiers réels, premier palier d'un déploiement international : 89,8 % de satisfaction en session pilote, 11 sur 11 recommandent."],
                 ['Conseil financier (secteur public)', "6 assistants Claude couvrant les 4 équipes du cabinet, à commencer par la réponse aux appels d'offres."],
                 ['Pourquoi anonymisées ?', "À la demande des clients, qui ne communiquent pas sur leur avance IA. Références vérifiables en privé, sous NDA."],
