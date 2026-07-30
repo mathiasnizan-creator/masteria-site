@@ -273,6 +273,7 @@ export const COMPARISONS = {
     relatedLinks: [
       { label: 'Formation ChatGPT pour entreprises', href: '/formation-chatgpt' },
       { label: 'Formation Claude IA', href: '/formation-claude-ia' },
+      { label: 'Formation IA gestion de projet', href: '/formation-ia-gestion-de-projet' },
       { label: 'Comparatif Copilot vs ChatGPT', href: '/copilot-vs-chatgpt' },
       { label: 'Quelle est la meilleure IA en 2026 ?', href: '/quelle-est-la-meilleure-ia' },
       { label: 'Glossaire IA — 80 termes', href: '/glossaire-ia' },
@@ -533,6 +534,7 @@ export const COMPARISONS = {
     relatedLinks: [
       { label: 'Formation Microsoft Copilot', href: '/formation-microsoft-copilot' },
       { label: 'Formation ChatGPT pour entreprises', href: '/formation-chatgpt' },
+      { label: 'Formation IA gestion de projet', href: '/formation-ia-gestion-de-projet' },
       { label: 'Comparatif ChatGPT vs Claude', href: '/chatgpt-vs-claude' },
       { label: 'Quelle est la meilleure IA en 2026 ?', href: '/quelle-est-la-meilleure-ia' },
       { label: 'Glossaire IA — 80 termes', href: '/glossaire-ia' },

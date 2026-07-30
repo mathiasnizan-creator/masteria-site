@@ -4739,7 +4739,7 @@ export const BLOG_ARTICLES = [
     metaDesc: "Parcours progressif pour apprendre l’automatisation IA sans coder : prompts, GPTs, Make, Zapier, n8n, agents. Durées réalistes et erreurs à éviter.",
     date: '12 juin 2026',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-07-30',
     readTime: '13 min',
     excerpt: "Un parcours en 4 paliers pour apprendre l'automatisation IA sans bagage technique : prompts, automatisations natives, plateformes no-code, agents supervisés. Avec des durées honnêtes par palier et les 5 erreurs de débutant à éviter.",
     intro: "Trier des e-mails, produire des comptes rendus, relancer des clients, alimenter un reporting : une grande partie de ces tâches peut aujourd'hui s'automatiser avec l'IA, sans écrire une ligne de code. Encore faut-il apprendre dans le bon ordre. Ce guide propose un parcours en quatre paliers, avec des durées réalistes, les erreurs classiques de débutant et les ressources pour pratiquer.",
