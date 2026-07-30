@@ -280,7 +280,7 @@ const useCaseItemList = {
 
 /* Données de fraîcheur + schema TechArticle (E-E-A-T, GEO) */
 const PUBLISHED = '2026-06-12'
-const UPDATED = '2026-07-02'
+const UPDATED = '2026-07-30'
 
 const articleJsonLd = {
   '@context': 'https://schema.org',

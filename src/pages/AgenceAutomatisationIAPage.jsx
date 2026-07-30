@@ -179,6 +179,10 @@ const FAQ = [
     a: "Elle identifie les processus automatisables d'une entreprise, conçoit l'architecture, développe les automatisations (workflows, assistants IA, agents) et les intègre aux outils existants jusqu'à la mise en production. Chez Masteria, nous menons ce développement sur mesure de bout en bout : vous récupérez un système qui tourne et dont vous gardez la propriété. Vos équipes peuvent se former en complément pour le faire évoluer.",
   },
   {
+    q: "Automatisation classique ou automatisation par l'IA : que choisir ?",
+    a: "L'automatisation classique (RPA, workflows no-code type Make ou Zapier) suffit pour des tâches répétitives et bien structurées : copier des données d'un outil à un autre, envoyer un rappel, mettre à jour un tableau. L'automatisation par l'IA prend le relais dès qu'il faut comprendre un texte, trier des demandes, rédiger, extraire une information d'un document ou décider selon un contexte. En pratique, une bonne agence d'automatisation combine les deux : le no-code pour la plomberie, l'IA pour l'intelligence de la tâche. Masteria conçoit ces systèmes hybrides et vous en laisse la propriété.",
+  },
+  {
     q: "Quelle différence entre Masteria et une agence d'automatisation classique ?",
     a: "Beaucoup d'agences livrent un prototype no-code et s'arrêtent là, ou facturent ensuite chaque évolution. Masteria conçoit, développe et intègre des automatisations fiabilisées, jusqu'à la production, et vous remet le système documenté dont vous restez propriétaire. Spécialisés sur l'IA depuis 2022, nous pouvons aussi former vos référents en complément pour qu'ils prennent la main.",
   },
@@ -270,7 +274,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-12',
-  dateModified: '2026-07-02',
+  dateModified: '2026-07-30',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-automatisation-ia#webpage' },
   about: [
@@ -331,7 +335,7 @@ export default function AgenceAutomatisationIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-12"
-        dateModified="2026-07-02"
+        dateModified="2026-07-30"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 

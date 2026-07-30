@@ -278,7 +278,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-14',
-  dateModified: '2026-07-02',
+  dateModified: '2026-07-30',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-seo-ia#webpage' },
   about: ['SEO (Search Engine Optimization)', 'GEO (Generative Engine Optimization)', "Référencement naturel augmenté par l'IA", 'Moteurs de réponse IA'],
@@ -335,7 +335,7 @@ export default function AgenceSeoIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-14"
-        dateModified="2026-07-02"
+        dateModified="2026-07-30"
         extraJsonLd={[serviceJsonLd, DEFINITIONS_JSONLD, articleJsonLd]}
       />
 
