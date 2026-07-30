@@ -25,8 +25,8 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Meilleur cabinet de conseil en IA : comment choisir | Masteria'
-const META_DESC = "Meilleur cabinet de conseil en intelligence artificielle : les 3 compétences à exiger, le paysage des acteurs et les honoraires 2026."
-const KEYWORDS = 'meilleur cabinet de conseil en intelligence artificielle, meilleur cabinet conseil ia, cabinet conseil intelligence artificielle, cabinet de conseil en ia, conseil en ia entreprise, consultant ia, cabinet conseil ia lyon, conseil strategie ia'
+const META_DESC = "Cabinet conseil IA ou consultant indépendant : les 3 compétences à exiger, le paysage des acteurs nommés et les honoraires 2026 pour bien choisir."
+const KEYWORDS = 'cabinet conseil ia, cabinet de conseil en intelligence artificielle, cabinet de conseil ia, meilleur cabinet de conseil en intelligence artificielle, meilleur cabinet conseil ia, cabinet conseil intelligence artificielle, consultant ia, consultant intelligence artificielle, conseil intelligence artificielle, conseil en ia entreprise, cabinet conseil ia paris, cabinet conseil ia lyon, conseil strategie ia'
 
 /* ── Design system local (aligné sur les pages money) ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -141,6 +141,22 @@ const FAQ = [
     a: "Ordres de grandeur du marché français : 5 000 à 30 000 € pour un audit de maturité, 15 000 à 80 000 € pour une stratégie de direction, 8 000 à 40 000 € pour un cadre de gouvernance, 15 000 à 150 000 € pour construire une solution sur mesure au forfait, 800 à 1 500 € de TJM pour un consultant senior. La formation intra chez Masteria est à 1 980 € HT par jour, finançable par votre OPCO car nous sommes certifiés Qualiopi ; le conseil et le développement ne le sont pas.",
   },
   {
+    q: 'Cabinet de conseil en IA ou consultant IA indépendant : que choisir ?',
+    a: "Un consultant IA indépendant apporte de la souplesse et un coût contenu pour une mission courte et bien cadrée : un audit, un avis d'expert, un cadrage. Un cabinet de conseil en IA mobilise une équipe et une méthode, tient la durée et couvre plusieurs compétences ensemble (stratégie, développement, formation). La règle simple : un consultant seul pour un besoin ponctuel et délimité, un cabinet dès que le projet engage plusieurs métiers, s'étale dans le temps ou doit être construit puis transmis. Dans les deux cas, vérifiez les références réelles et la spécialisation sur l'IA.",
+  },
+  {
+    q: 'Combien coûte un consultant en intelligence artificielle (TJM) ?',
+    a: "Le taux journalier d'un consultant en intelligence artificielle en France se situe le plus souvent entre 800 et 1 500 € pour un profil senior, davantage pour une expertise rare (LLM, MLOps, IA générative à l'échelle). Un cabinet facture parfois au forfait plutôt qu'au TJM, ce qui place le risque de dépassement sur le prestataire. Demandez toujours ce que couvre le tarif : la production seule, ou aussi le cadrage, la documentation et le transfert de compétence.",
+  },
+  {
+    q: 'Comment reconnaître un bon cabinet de conseil en IA ?',
+    a: "Trois signaux fiables : il montre une réalisation déjà en production, pas seulement des slides ; il sait écarter un cas d'usage mal choisi plutôt que de vendre du volume ; il prévoit le transfert de compétence pour rendre vos équipes autonomes. À l'inverse, méfiez-vous d'un cabinet qui reste flou sur qui réalisera vraiment la mission, ou qui promet un financement OPCO sur du conseil pur, qui n'est pas finançable.",
+  },
+  {
+    q: 'Faut-il un cabinet spécialisé en IA ou un cabinet de conseil généraliste ?',
+    a: "Un cabinet généraliste apporte une vision large de la transformation, mais l'IA générative évolue trop vite pour rester à jour sans en faire son cœur de métier. Un cabinet spécialisé en IA connaît les modèles, leurs limites, leur coût réel et leur cadre juridique (RGPD, AI Act), et sait ce qui se déploie vraiment. Pour un projet où l'IA est centrale, la spécialisation prime ; pour une réorganisation d'ensemble où l'IA n'est qu'un volet, un généraliste peut convenir, quitte à s'adjoindre un expert IA.",
+  },
+  {
     q: 'Pourquoi exiger qu\'un cabinet de conseil sache aussi construire ?',
     a: "Parce que la valeur d'un projet d'IA se révèle à l'usage, pas dans une recommandation. Un cabinet qui conseille sans jamais livrer dépend d'un tiers pour la réalisation, ce qui rallonge les délais, dilue la responsabilité et éloigne le résultat du terrain. Un cabinet qui sait construire teste ses propres recommandations contre la réalité technique. C'est aussi pour cela que la maîtrise du développement (agents, RAG, intégration au SI) est devenue un critère de choix à part entière.",
   },
@@ -193,10 +209,16 @@ const articleJsonLd = {
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-06-16',
-  dateModified: '2026-06-16',
+  dateModified: '2026-07-30',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
   about: ['Cabinet de conseil en intelligence artificielle', 'Conseil en IA', 'Stratégie IA'],
+  // GEO : passages lus/cités en priorité par les assistants vocaux et génératifs.
+  speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+  citation: [
+    'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689',
+    'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025',
+  ],
 }
 
 function CoverMeter({ level, label }) {
@@ -299,7 +321,7 @@ export default function MeilleurCabinetConseilIAPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juin 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
           {/* GEO : réponse directe citable — la thèse de la page */}
@@ -308,7 +330,7 @@ export default function MeilleurCabinetConseilIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous trouverez ici les trois compétences à exiger, un panorama factuel des acteurs du marché avec leurs noms, les honoraires constatés en 2026 et de quoi décider. Le panorama situe les acteurs par catégorie : il ne les note pas et n'en classe aucun.
+            Vous cherchez le bon cabinet conseil IA, ou vous hésitez entre un cabinet et un consultant indépendant ? Vous trouverez ici les trois compétences à exiger, un panorama factuel des acteurs du marché avec leurs noms, les honoraires et TJM constatés en 2026 et de quoi décider. Le panorama situe les acteurs par catégorie : il ne les note pas et n'en classe aucun.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -327,6 +349,7 @@ export default function MeilleurCabinetConseilIAPage() {
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
                 ['Le vrai critère', "Un cabinet de conseil en IA se juge sur trois compétences réunies : la stratégie (viser le bon cas d'usage), la technique (le construire), la formation (rendre vos équipes autonomes)."],
+                ['Cabinet ou consultant ?', "Un consultant indépendant pour un besoin ponctuel et cadré ; un cabinet dès que le projet engage plusieurs métiers, s'inscrit dans la durée, ou doit être construit puis transmis."],
                 ['Existe-t-il un classement ?', "Aucun classement officiel en France. Les palmarès en ligne sont déclaratifs ou sponsorisés."],
                 ['L\'erreur la plus coûteuse', "Confier la stratégie à un acteur incapable de construire, ou le développement à un acteur qui n'a pas cadré le besoin."],
                 ['Honoraires 2026', "Audit 5 000 à 30 000 €, feuille de route 15 000 à 80 000 €, TJM senior 800 à 1 500 €."],
@@ -342,8 +365,24 @@ export default function MeilleurCabinetConseilIAPage() {
         </div>
       </section>
 
+      {/* ── SOMMAIRE ancré (SEO/GEO : jump-to links + cibles d'ancre pour sitelinks) ── */}
+      <nav aria-label="Sur cette page" style={{ background: '#fff', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 4, overflowX: 'auto', whiteSpace: 'nowrap' }}>
+          <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#9CA3AF', paddingRight: 8, flexShrink: 0 }}>Sur cette page</span>
+          {[
+            ['#competences', 'Les 3 compétences'],
+            ['#paysage', 'Cabinet, agence ou ESN'],
+            ['#acteurs', 'Les acteurs du marché'],
+            ['#honoraires', 'Honoraires & TJM'],
+            ['#faq', 'FAQ'],
+          ].map(([href, label]) => (
+            <a key={href} href={href} style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 700, color: '#374151', textDecoration: 'none', padding: '13px 12px', flexShrink: 0 }}>{label}</a>
+          ))}
+        </div>
+      </nav>
+
       {/* ── LES TROIS COMPÉTENCES (le cœur) ── */}
-      <section id="competences" style={{ padding: SECTION_PAD, background: '#fff' }}>
+      <section id="competences" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>Le vrai critère</div>
           <h2 style={h2Style}>Les trois compétences qu'un cabinet de conseil en IA doit réunir</h2>
@@ -381,7 +420,7 @@ export default function MeilleurCabinetConseilIAPage() {
       </section>
 
       {/* ── LE PAYSAGE : QUI COUVRE QUOI (tableau meter, snippet magnet) ── */}
-      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+      <section id="paysage" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={kickerStyle}>Le paysage des acteurs</div>
           <h2 style={h2Style}>Qui couvre quoi : cabinet, agence, ESN, studio data</h2>
@@ -447,7 +486,7 @@ export default function MeilleurCabinetConseilIAPage() {
       </section>
 
       {/* ── LES ACTEURS DU MARCHÉ (comparatif factuel, noms réels, sans classement) ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+      <section id="acteurs" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={kickerStyle}>Les acteurs du marché</div>
           <h2 style={h2Style}>Les acteurs du conseil en IA en France : qui fait quoi</h2>
@@ -496,7 +535,7 @@ export default function MeilleurCabinetConseilIAPage() {
       </section>
 
       {/* ── HONORAIRES & MODÈLES D'ENGAGEMENT (ancre sombre) ── */}
-      <section style={{ position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
+      <section id="honoraires" style={{ scrollMarginTop: 96, position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
@@ -657,7 +696,7 @@ export default function MeilleurCabinetConseilIAPage() {
       <FounderNote bg="#fff" />
 
       {/* ── FAQ ── */}
-      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+      <section id="faq" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
