@@ -704,7 +704,7 @@ export default function HubPage() {
             })}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, marginTop: 24, lineHeight: 1.7 }}>
-            Voir aussi : <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>le catalogue des formations IA</Link>, la <Link to="/formation-multi-outils" style={{ color: '#2563EB', fontWeight: 600 }}>formation multi-outils</Link>, ou le comparatif <Link to="/quelle-est-la-meilleure-ia" style={{ color: '#2563EB', fontWeight: 600 }}>quelle est la meilleure IA</Link> pour trancher.
+            Voir aussi : <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>le catalogue des formations IA</Link>, la <Link to="/formation-multi-outils" style={{ color: '#2563EB', fontWeight: 600 }}>formation multi-outils</Link>, ou le comparatif <Link to="/quelle-est-la-meilleure-ia" style={{ color: '#2563EB', fontWeight: 600 }}>quelle est la meilleure IA</Link> pour trancher. Et pour juger sur pièces, nos <Link to="/etudes-de-cas-ia" style={{ color: '#2563EB', fontWeight: 600 }}>études de cas IA</Link> détaillent des formations menées en entreprise, résultats mesurés à l'appui.
           </p>
         </div>
       </section>

@@ -678,6 +678,8 @@ export default function SpokePage() {
                 <Link to={`/${hub.slug}`} style={{ color: c, fontWeight: 600 }}>{spoke.tool}</Link>
                 {' '}ou explorer{' '}
                 <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>les formations par métier</Link>.
+                {' '}Pour juger sur pièces, lisez nos{' '}
+                <Link to="/etudes-de-cas-ia" style={{ color: '#2563EB', fontWeight: 600 }}>études de cas IA</Link>, avec des résultats de formation mesurés en entreprise.
               </p>
             )}
           </div>

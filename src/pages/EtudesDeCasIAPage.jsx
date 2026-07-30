@@ -51,6 +51,11 @@ const CASES = [
     reponse: "Cadrage des cas d'usage avec la direction. Une session de deux jours pour former les 10 référents de l'équipe élite, puis cinq sessions de deux jours pour le reste des équipes. Chaque référent conçoit une compétence Claude branchée sur ses données ; la direction valide, l'organisation déploie.",
     livrables: ['Cotation à partir d\'un mail client', 'Relances de devis (en production)', 'Substitution vers les marques propres', 'Réponses aux cahiers des charges depuis l\'ERP', 'Prospection et réactivation clients', 'Pilotage stocks, livraisons et marge'],
     resultat: "Les 58 commerciaux sont formés, en six sessions de deux jours : les 10 référents de l'équipe élite d'abord, puis toutes les équipes de vente. Les premiers assistants sont en production, et 58 personnes assistées par Claude visent la force de frappe d'une équipe de 70, sans recrutement.",
+    pillars: [
+      { t: 'Conseil', d: "Cadrage des cas d'usage avec la direction : choix des tâches à plus fort rendement, circuit de validation, gouvernance de déploiement." },
+      { t: 'Construction', d: "11 assistants Claude conçus avec les référents et branchés sur les données réelles de l'entreprise (ERP, base articles, CRM)." },
+      { t: 'Formation', d: "58 commerciaux formés en six sessions de deux jours, dont une équipe élite de 10 référents capable de faire vivre les assistants en interne." },
+    ],
   },
   {
     id: 'industrie',
@@ -69,6 +74,11 @@ const CASES = [
     livrables: ['Ateliers Excel sur données réelles', 'Traitement du flux Outlook', 'Production PowerPoint et Word assistée', 'Création d\'assistants personnalisés', 'Veille concurrentielle outillée', 'Vision stratégique posée au comité de direction'],
     resultat: "Session pilote mesurée à chaud : 89,8 % de satisfaction moyenne, 11 participants sur 11 qui recommandent la formation, et 4,9/5 sur l'utilité concrète au poste. Les ateliers sur fichiers réels sont reconduits pour les vagues suivantes : le dispositif validé en France sert de socle au déploiement international du groupe.",
     verbatim: { text: "Beaucoup de nouvelles choses à mettre en pratique pour analyser des fichiers ou mettre en place un assistant basé sur les best practices existantes.", role: 'Une manager, fiche de satisfaction de la session pilote' },
+    pillars: [
+      { t: 'Conseil', d: "Une journée stratégique avec le comité de direction : vision IA du groupe, gouvernance d'usage et feuille de route avant la généralisation à l'international." },
+      { t: 'Construction', d: "Des assistants personnalisés construits en atelier, à partir des bonnes pratiques et des fichiers réels des managers, dans l'environnement Microsoft 365 du groupe." },
+      { t: 'Formation', d: "Un parcours de deux jours par groupe de managers pilotes, en ateliers pratiques mesurés à chaud (89,8 % de satisfaction)." },
+    ],
   },
   {
     id: 'conseil-financier',
@@ -86,6 +96,11 @@ const CASES = [
     reponse: "Un assistant Claude par équipe, nourri des documents réels du cabinet : trames et mémoires d'appels d'offres pour les consultants, dossiers et marchés pour l'administration, références pour le marketing, facturation pour la comptabilité. Les équipes sont formées dans un cadre strict : confidentialité des données, sources citées, validation humaine systématique.",
     livrables: ['Consultants : réponse aux appels d\'offres', 'Consultants : analyse financière', 'Administration : dossiers et marchés', 'Marketing : références et offres', 'Comptabilité : facturation et suivi', 'Base documentaire métier partagée'],
     resultat: "Les consultants concentrent leur temps sur l'analyse plutôt que sur la mise en forme des réponses. Chaque fonction du cabinet dispose de son assistant Claude sur ses propres documents, la rigueur et l'indépendance du cabinet restant au cœur du dispositif.",
+    pillars: [
+      { t: 'Conseil', d: "Cadrage par équipe des cas d'usage et du cadre de confidentialité : données sensibles, sources citées, validation humaine systématique." },
+      { t: 'Construction', d: "6 assistants Claude conçus et nourris des documents réels du cabinet : trames d'appels d'offres, dossiers et marchés, base documentaire métier." },
+      { t: 'Formation', d: "Chaque équipe formée à utiliser et faire évoluer son assistant, des consultants à la comptabilité." },
+    ],
   },
 ]
 
@@ -228,6 +243,26 @@ function CaseSection({ k, index, isDesktop }) {
             )}
           </div>
         </div>
+
+        {/* Accompagnement global : conseil, construction, formation (penser / construire / transmettre) */}
+        {k.pillars && (
+          <div style={{ marginTop: 36 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: dark ? '#93C5FD' : c, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 14 }}>
+              L'accompagnement Masteria, de bout en bout
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 14 }}>
+              {k.pillars.map((p, pi) => (
+                <div key={p.t} style={{ background: cardBg, border: cardBorder, borderTop: `3px solid ${c}`, borderRadius: 14, padding: '18px 20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8 }}>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: dark ? '#60A5FA' : c }}>{`0${pi + 1}`}</span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: ink }}>{p.t}</span>
+                  </div>
+                  <p style={{ fontSize: 13.5, color: body, lineHeight: 1.65, margin: 0 }}>{p.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
@@ -288,7 +323,7 @@ export default function EtudesDeCasIAPage() {
 
           {/* GEO : réponse directe citable */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La force commerciale d'un distributeur IT B2B (58 commerciaux), un groupe industriel international et un cabinet de conseil financier : <strong style={{ color: '#fff', fontWeight: 700 }}>trois organisations qui ont mis l'IA en production avec Masteria</strong>, des assistants Claude aux parcours Copilot, avec des équipes formées et des résultats mesurés à chaud.
+            La force commerciale d'un distributeur IT B2B (58 commerciaux), un groupe industriel international et un cabinet de conseil financier : <strong style={{ color: '#fff', fontWeight: 700 }}>trois organisations accompagnées de bout en bout par Masteria</strong>. Cadrage stratégique avec les directions, assistants construits sur leurs données réelles, équipes formées, résultats mesurés à chaud.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 700 }}>
@@ -350,7 +385,7 @@ export default function EtudesDeCasIAPage() {
           <div style={kickerStyle}>Notre cadre</div>
           <h2 style={h2Style}>Ce que ces trois missions ont en commun</h2>
           <p style={leadStyle}>
-            Trois secteurs, trois tailles d'organisation, un même fil conducteur : partir des documents et des tâches réels des équipes, former les personnes qui feront vivre le dispositif, et mesurer le résultat.
+            Trois secteurs, trois tailles d'organisation, un même fil conducteur : sur chaque mission, Masteria articule le conseil (cadrer avec la direction), la construction (des assistants branchés sur les données réelles) et la formation (des équipes capables de faire vivre le dispositif), puis mesure le résultat.
           </p>
           <p style={mutedStyle}>
             Et une règle que nous assumons : la discrétion. Nos clients gardent leur avance pour eux, nous gardons leurs noms pour nous.

@@ -737,8 +737,9 @@ export default function MeilleureFormationIAPage() {
                 </p>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
                   Nous formons aussi bien des équipes en PME que des directions dans de grandes organisations, du service opérationnel au comité de direction. Le format s'adapte à la taille et à la maturité de chaque structure. Pour voir le détail de nos programmes, consultez notre{' '}
-                  <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link>, ou la page{' '}
-                  <Link to="/financement-formation-ia" style={{ color: c, fontWeight: 600 }}>financement</Link> pour identifier les dispositifs mobilisables.
+                  <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link>, la page{' '}
+                  <Link to="/financement-formation-ia" style={{ color: c, fontWeight: 600 }}>financement</Link> pour identifier les dispositifs mobilisables, ou jugez sur pièces avec nos{' '}
+                  <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>.
                 </p>
               </div>
             </div>
