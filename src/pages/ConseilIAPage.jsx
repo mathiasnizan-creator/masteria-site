@@ -225,6 +225,10 @@ const FAQ_CONSEIL = [
     a: "Le jour de conseil se chiffre sur devis, selon la nature de la mission (audit, stratégie, accompagnement opérationnel), sa durée, le nombre d'interlocuteurs et la complexité technique et réglementaire. Le premier échange de cadrage de 30 minutes est gratuit. À noter : le conseil pur ne bénéficie d'aucune prise en charge OPCO. Seules les formations sont finançables, au tarif de 1 980 € HT par jour, grâce à notre certification Qualiopi. Associer un volet formation à la mission réduit donc son coût net.",
   },
   {
+    q: "Faut-il un expert en conseil IA externe ou recruter en interne ?",
+    a: "Recruter un expert IA en interne se justifie quand les projets sont continus et nombreux, mais le profil reste rare, cher et long à trouver. Un expert en conseil IA externe apporte une expertise à jour immédiatement, une vision transverse issue de nombreuses missions, et un transfert de compétence qui fait monter vos équipes. Beaucoup d'entreprises combinent les deux : un accompagnement IA externe pour cadrer et lancer, puis une internalisation progressive une fois les premiers cas d'usage en production.",
+  },
+  {
     q: "Cabinet de conseil IA ou agence IA : quelle différence ?",
     a: "Une agence IA développe des solutions : elle conçoit, code et livre des produits ou des intégrations sur mesure. Un cabinet de conseil IA intervient en amont et en transverse : il audite l'existant, définit la stratégie, sélectionne les outils de façon indépendante, structure la gouvernance et forme les équipes. Masteria réunit les deux : le conseil cadre la trajectoire, puis notre agence de développement IA assure elle-même la réalisation technique, sans rupture entre la recommandation et la solution livrée.",
   },
@@ -336,8 +340,8 @@ const REFERENCES = [
 
 /* ───────── Meta ───────── */
 
-const META_DESC = "Cabinet de conseil en IA pour PME et ETI : audit des usages, stratégie et feuille de route, puis développement des solutions sur mesure. Cadrage gratuit."
-const KEYWORDS = "conseil en intelligence artificielle, conseil ia, cabinet conseil ia, cabinet de conseil en intelligence artificielle, consultant ia, accompagnement ia entreprise, conseil en ia, stratégie ia"
+const META_DESC = "Conseil IA pour PME, ETI et grands groupes : audit des usages, stratégie, feuille de route et développement des solutions sur mesure. Cadrage gratuit."
+const KEYWORDS = "conseil ia, conseil en intelligence artificielle, conseil en ia, conseil intelligence artificielle, accompagnement ia, accompagnement ia entreprise, accompagnement intelligence artificielle, expert conseil ia, transformation ia, audit ia entreprise"
 
 /* ───────── JSON-LD ───────── */
 
@@ -363,10 +367,16 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-04-21',
-  dateModified: '2026-07-02',
+  dateModified: '2026-07-30',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-intelligence-artificielle#webpage' },
   about: ['Conseil en intelligence artificielle', 'Audit IA', 'Stratégie IA', "Gouvernance de l'IA"],
+  // GEO : passages lus/cités en priorité par les assistants vocaux et génératifs.
+  speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+  citation: [
+    'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689',
+    'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025',
+  ],
 }
 
 /* ───────── Composant ───────── */
@@ -390,7 +400,7 @@ export default function ConseilIAPage() {
   return (
     <>
       <SEOHead
-        title="Cabinet de conseil en intelligence artificielle | Masteria"
+        title="Conseil en intelligence artificielle pour entreprises | Masteria"
         description={META_DESC}
         slug="conseil-intelligence-artificielle"
         keywords={KEYWORDS}
@@ -400,7 +410,7 @@ export default function ConseilIAPage() {
         ]}
         faqItems={FAQ_CONSEIL}
         datePublished="2026-04-21"
-        dateModified="2026-07-02"
+        dateModified="2026-07-30"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -461,6 +471,22 @@ export default function ConseilIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── SOMMAIRE ancré (SEO/GEO : jump-to links + cibles d'ancre pour sitelinks) ── */}
+      <nav aria-label="Sur cette page" style={{ background: '#fff', borderBottom: `1px solid ${BORDER}` }}>
+        <div style={{ maxWidth: 1120, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 4, overflowX: 'auto', whiteSpace: 'nowrap' }}>
+          <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#9CA3AF', paddingRight: 8, flexShrink: 0 }}>Sur cette page</span>
+          {[
+            ['#services', 'Nos services'],
+            ['#deroulement', "Déroulé d'une mission"],
+            ['#choisir', 'Cabinet, ESN ou freelance'],
+            ['#pourquoi', 'Pourquoi un cabinet'],
+            ['#chiffres', 'Chiffres 2026'],
+          ].map(([href, label]) => (
+            <a key={href} href={href} style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 700, color: INK, textDecoration: 'none', padding: '13px 12px', flexShrink: 0 }}>{label}</a>
+          ))}
+        </div>
+      </nav>
 
       {/* QUE FAIT UN CABINET DE CONSEIL EN IA : réponse directe (éditorial asymétrique) */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>
@@ -543,7 +569,7 @@ export default function ConseilIAPage() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
+      <section id="services" style={{ scrollMarginTop: 96, background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
         <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <div style={kickerStyle}>Nos expertises</div>
@@ -625,7 +651,7 @@ export default function ConseilIAPage() {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={kickerStyle}>Notre méthodologie</div>
-            <h2 style={{ ...h2Style, marginBottom: 18 }}>
+            <h2 id="deroulement" style={{ ...h2Style, scrollMarginTop: 96, marginBottom: 18 }}>
               Comment se déroule une mission de conseil IA ?
             </h2>
             <p style={{ fontSize: 16, color: GREY_700, maxWidth: 720, margin: '0 auto', lineHeight: 1.7 }}>
@@ -684,7 +710,7 @@ export default function ConseilIAPage() {
 
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Bien choisir son partenaire</div>
-          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>
+          <h2 id="choisir" style={{ ...h2Style, scrollMarginTop: 96, color: '#F8FAFC' }}>
             Cabinet de conseil IA, ESN généraliste ou freelance : que choisir ?
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
@@ -815,7 +841,7 @@ export default function ConseilIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>Comprendre l'enjeu</div>
-              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+              <h2 id="pourquoi" style={{ ...h2Style, scrollMarginTop: 96, marginBottom: 18 }}>
                 Pourquoi recourir à un cabinet de conseil en intelligence artificielle ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
@@ -899,7 +925,7 @@ export default function ConseilIAPage() {
       <section style={{ background: BG_SOFT, padding: SECTION_PAD, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
           <div style={kickerStyle}>Repères du marché</div>
-          <h2 style={h2Style}>
+          <h2 id="chiffres" style={{ ...h2Style, scrollMarginTop: 96 }}>
             L'IA en entreprise en 2026 : ce que disent les chiffres
           </h2>
           <p style={{ fontSize: 16, color: GREY_700, lineHeight: 1.75, maxWidth: 820, marginBottom: 32 }}>
