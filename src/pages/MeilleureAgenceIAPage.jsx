@@ -615,8 +615,9 @@ export default function MeilleureAgenceIAPage() {
                 </p>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
                   Nous accompagnons aussi bien des PME et des ETI que de grandes organisations, des directions métier au comité de direction, qui veulent un outil adopté et des équipes autonomes ensuite. Nous adaptons le dispositif à votre taille et à votre maturité, et vous dirons franchement au premier rendez-vous si un autre profil d'acteur correspond mieux à votre besoin. Pour situer votre besoin, commencez par notre{' '}
-                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, ou voyez l'{' '}
-                  <Link to="/agence-ia" style={{ color: c, fontWeight: 600 }}>agence IA à Lyon</Link>.
+                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, voyez l'{' '}
+                  <Link to="/agence-ia" style={{ color: c, fontWeight: 600 }}>agence IA à Lyon</Link>, ou jugez sur pièces avec nos{' '}
+                  <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>.
                 </p>
               </div>
             </div>

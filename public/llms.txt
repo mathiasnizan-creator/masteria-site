@@ -99,6 +99,7 @@ Masteria propose deux activités complémentaires :
 - [Meilleur cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/meilleur-cabinet-conseil-ia) — Guide de choix 2026 (angle conseil/stratégie, distinct de l'agence) : familles de cabinets, 8 critères vérifiables, 10 questions, honoraires et TJM, sans classement nominatif
 - [Meilleure formation IA](https://www.master-ia.fr/meilleure-formation-ia) — Guide de choix 2026 (angle transmission, distinct du conseil et de l'agence) : 3 exigences (cadre, contenu, suivi), paysage des organismes, tarifs, méthode en 4 étapes, sans classement nominatif
 - [Consultant IA : métier, compétences, TJM et salaire](https://www.master-ia.fr/consultant-ia) — Guide métier : rôle et missions, compétences, salaire et TJM 2026, comment devenir consultant IA (tunnel formation) ou en recruter un (freelance vs cabinet vs interne, tunnel conseil)
+- [Études de cas IA en entreprise](https://www.master-ia.fr/etudes-de-cas-ia) — 3 déploiements réels anonymisés avec résultats mesurés : assistants Claude chez un distributeur B2B (58 formés, 11 assistants) et un cabinet de conseil financier (6 assistants, 4 équipes), parcours Copilot managers dans un groupe industriel (89,8 % de satisfaction en session pilote)
 
 ## Formations par outil IA
 

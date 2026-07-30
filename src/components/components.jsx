@@ -888,6 +888,7 @@ export function MasteriaFooter() {
             <div style={colHead}>Masteria</div>
             {[
               ['À propos', '/centre-formation-ia-entreprise'],
+              ['Études de cas IA', '/etudes-de-cas-ia'],
               ['Veille IA quotidienne', '/veille-ia'],
               ['À propos de la Veille IA', '/veille-ia/a-propos'],
               ['Blog', '/blog'],
