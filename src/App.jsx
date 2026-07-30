@@ -36,6 +36,7 @@ const AgentsIAEntreprisePage = lazy(() => import('./pages/AgentsIAEntreprisePage
 const AgenceIAPage = lazy(() => import('./pages/AgenceIAPage'));
 const MeilleureAgenceIAPage = lazy(() => import('./pages/MeilleureAgenceIAPage'));
 const MeilleurCabinetConseilIAPage = lazy(() => import('./pages/MeilleurCabinetConseilIAPage'));
+const MeilleureFormationIAPage = lazy(() => import('./pages/MeilleureFormationIAPage'));
 const AgenceDeveloppementIAPage = lazy(() => import('./pages/AgenceDeveloppementIAPage'));
 const AutomatiserVeilleIAPage = lazy(() => import('./pages/AutomatiserVeilleIAPage'));
 const OutilsVeilleIAPage = lazy(() => import('./pages/OutilsVeilleIAPage'));
@@ -1450,6 +1451,7 @@ export default function App() {
         <Route path="/agence-ia" element={<AgenceIAPage />} />
         <Route path="/meilleure-agence-ia" element={<MeilleureAgenceIAPage />} />
         <Route path="/meilleur-cabinet-conseil-ia" element={<MeilleurCabinetConseilIAPage />} />
+        <Route path="/meilleure-formation-ia" element={<MeilleureFormationIAPage />} />
         <Route path="/agence-developpement-ia" element={<AgenceDeveloppementIAPage />} />
         <Route path="/automatiser-sa-veille-ia" element={<AutomatiserVeilleIAPage />} />
         <Route path="/outils-veille-ia" element={<OutilsVeilleIAPage />} />

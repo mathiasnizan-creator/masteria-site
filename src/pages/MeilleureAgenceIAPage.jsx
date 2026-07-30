@@ -379,7 +379,9 @@ export default function MeilleureAgenceIAPage() {
             Votre besoin penche d'abord vers la stratégie et la gouvernance ? Notre guide{' '}
             <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>meilleur cabinet de conseil en IA</Link>{' '}
             compare les acteurs sous l'angle conseil. Pour le détail de nos réalisations, voyez l'{' '}
-            <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>.
+            <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>. Votre besoin porte sur la montée en compétences de vos équipes ? Notre guide{' '}
+            <Link to="/meilleure-formation-ia" style={{ color: c, fontWeight: 600 }}>meilleure formation IA</Link>{' '}
+            compare les organismes sous l'angle transmission.
           </p>
         </div>
       </section>

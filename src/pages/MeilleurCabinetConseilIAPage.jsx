@@ -439,7 +439,9 @@ export default function MeilleurCabinetConseilIAPage() {
             <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil en stratégie IA</Link>{' '}
             détaille la méthode de feuille de route, et{' '}
             <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>l'IA par secteur</Link>{' '}
-            les enjeux propres à votre métier.
+            les enjeux propres à votre métier. Votre besoin porte sur la montée en compétences de vos équipes ? Notre guide{' '}
+            <Link to="/meilleure-formation-ia" style={{ color: c, fontWeight: 600 }}>meilleure formation IA</Link>{' '}
+            compare les organismes sous l'angle transmission.
           </p>
         </div>
       </section>

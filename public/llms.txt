@@ -97,6 +97,7 @@ Masteria propose deux activités complémentaires :
 - [Agents IA en entreprise : guide et 20 cas d'usage](https://www.master-ia.fr/agents-ia-entreprise) — Fonctionnement, cas d'usage par fonction, outils, gouvernance
 - [Meilleure agence IA : comment choisir](https://www.master-ia.fr/meilleure-agence-ia) — Typologie du marché, 8 critères de sélection, questions à poser, budgets
 - [Meilleur cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/meilleur-cabinet-conseil-ia) — Guide de choix 2026 (angle conseil/stratégie, distinct de l'agence) : familles de cabinets, 8 critères vérifiables, 10 questions, honoraires et TJM, sans classement nominatif
+- [Meilleure formation IA](https://www.master-ia.fr/meilleure-formation-ia) — Guide de choix 2026 (angle transmission, distinct du conseil et de l'agence) : 3 exigences (cadre, contenu, suivi), paysage des organismes, tarifs, méthode en 4 étapes, sans classement nominatif
 
 ## Formations par outil IA
 
