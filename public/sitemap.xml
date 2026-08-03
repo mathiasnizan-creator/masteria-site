@@ -704,7 +704,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/methode-projet-ia</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -1184,6 +1184,24 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-sprint-ia-veille</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/ia-cabinet-expertise-comptable</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/poc-ia-passer-en-production</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/serveur-mcp-entreprise-connecter-ia-si</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>

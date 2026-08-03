@@ -17,6 +17,491 @@
 
 export const BLOG_ARTICLES = [
   {
+    slug: 'ia-cabinet-expertise-comptable',
+    tag: 'Métier',
+    title: "IA en cabinet d'expertise comptable : ce qui s'automatise vraiment, et ce qui ne s'automatise pas",
+    metaTitle: "IA et expertise comptable : ce qui s'automatise vraiment",
+    metaDesc: "IA en cabinet comptable : la frontière réelle flux par flux, ce que les éditeurs livrent déjà, le secret professionnel et la facture électronique.",
+    date: '3 août 2026',
+    datePublished: '2026-08-03',
+    dateModified: '2026-08-03',
+    readTime: '15 min',
+    keywords: ['ia comptabilité', 'intelligence artificielle expertise comptable', 'ia expert comptable', 'logiciel intelligence artificielle comptabilité', 'ia compta', 'automatisation cabinet comptable'],
+    excerpt: "Le taux d'automatisation affiché dans votre outil n'est pas une mesure, c'est une définition d'éditeur. Ce qui s'automatise réellement flux par flux, ce que la facture électronique change au 1er septembre 2026, et pourquoi le secret professionnel arrête la machine avant la technique.",
+    intro: "En cabinet d'expertise comptable, l'automatisation par l'IA s'arrête à une frontière précise : un flux s'automatise quand vérifier sa sortie ne coûte rien, et il s'arrête quand une signature engage une responsabilité. Le rapprochement bancaire automatique de Pennylane exige que les montants soient strictement identiques ; la révision des comptes reste manuelle parce que contrôler le résultat coûte aussi cher que le produire. Cet article détaille cette frontière flux par flux, ce que les éditeurs livrent déjà nativement, ce que la facture électronique change au 1er septembre 2026, et pourquoi les taux d'automatisation affichés ne sont pas comparables entre eux.",
+    blocks: [
+      { type: 'p', text: "Les cabinets achètent aujourd'hui des licences plutôt que des flux. C'est ce qui explique l'écart entre les promesses et le quotidien des collaborateurs. Pour le combler, il faut d'abord savoir où passe la ligne réelle entre ce qu'une machine traite seule et ce qu'elle ne traitera pas." },
+
+      { type: 'h2', text: "Le critère qui décide : le coût de la vérification" },
+      { type: 'p', text: "Une tâche ne s'automatise pas parce qu'elle est répétitive. Elle s'automatise quand contrôler le résultat ne coûte presque rien." },
+      { type: 'p', text: "Le rapprochement bancaire l'illustre. La documentation de Pennylane, mise à jour le 18 juin 2026, pose la condition technique du rapprochement automatique : les montants de la facture et de la transaction doivent être strictement identiques, et une suggestion doit avoir été identifiée. Deux conditions cumulatives, une vérification instantanée. La révision des comptes échoue à ce test : relire le travail d'une machine sur un cycle demande autant de temps que de le faire." },
+      { type: 'p', text: "Ce critère explique aussi pourquoi la comptabilisation automatique reste bornée. Chez le même éditeur, elle est réservée aux factures dont tous les champs obligatoires ont été correctement détectés par la reconnaissance de caractères. Une facture partiellement lue repart vers un humain, et c'est le comportement souhaitable." },
+
+      { type: 'h2', text: "Le taux d'automatisation de votre outil n'est pas une mesure" },
+      { type: 'p', text: "Beaucoup de cabinets pilotent sur le pourcentage affiché dans leur logiciel. Cette valeur est une construction de l'éditeur, pas une grandeur objective." },
+      { type: 'p', text: "Pennylane publie sa formule : le score vaut un tiers du taux sur les factures, plus un tiers du taux sur les transactions, plus un tiers du taux sur les réconciliations, sur trente jours glissants. Trois sous-taux choisis par l'éditeur, pondérés à parts égales par l'éditeur, sur une fenêtre choisie par l'éditeur. Deux cabinets qui comparent leur score ne comparent pas la même grandeur." },
+      { type: 'p', text: "Les taux commerciaux posent un problème du même ordre. Les précisions de reconnaissance annoncées par les éditeurs, de 70 à 99 % selon les pages, n'indiquent ni protocole, ni corpus, ni audit indépendant. Sur l'une de ces pages, un taux de 70 % d'écritures reconnues voisine avec l'affirmation que 100 % des flux sont automatisés, ce qui règle la question de sa valeur probante." },
+      {
+        type: 'callout',
+        title: "Aucune mesure indépendante n'existe",
+        text: "Il n'existe aujourd'hui aucune mesure publique et indépendante du taux d'automatisation par flux en cabinet français. Le baromètre officiel de la branche, publié en mai 2025 sur 300 cabinets, ne pose aucune question sur l'intelligence artificielle, l'automatisation ou le numérique. Quand un chiffre vous est présenté, la première question porte sur qui l'a produit et selon quel protocole.",
+      },
+
+      { type: 'h2', text: "Ce que la recherche mesure vraiment sur la lecture de pièces" },
+      { type: 'p', text: "Un travail académique publié en mai 2026, ReceiptBench, apporte ce que les pages produit ne donnent pas : un protocole. Dix mille reçus annotés à la main, dix-neuf champs à extraire. Les meilleurs modèles généralistes y obtiennent un score F1 d'environ 0,71 à 0,74, un modèle spécialement affiné atteignant 0,795." },
+      { type: 'p', text: "Le détail compte davantage que la moyenne. Sur la normalisation d'un champ simple, le score dépasse 0,94. Sur les structures imbriquées, celles qui correspondent aux lignes de détail d'une facture, il tombe à 0,64." },
+      { type: 'p', text: "Les auteurs documentent surtout un mode d'erreur qu'aucune brochure ne mentionne, et qui devrait retenir l'attention de tout associé. Ils l'appellent le piège de cohérence : plutôt que de laisser un champ vide, le modèle altère les valeurs lues pour faire tomber un total juste, fabrique des lignes de taxe inexistantes, invente un numéro de facture plausible. Une pièce fausse et cohérente passe tous les contrôles arithmétiques d'un collaborateur pressé. Une pièce fausse et incohérente saute aux yeux." },
+      { type: 'p', text: "La conséquence pratique est nette : le contrôle ne doit pas porter sur la vraisemblance du résultat, mais sur la confrontation à la pièce d'origine, par échantillon et selon une règle écrite." },
+
+      { type: 'h2', text: "Flux par flux : la frontière au 3 août 2026" },
+      {
+        type: 'table',
+        headers: ['Flux', 'État réel', 'Ce qui bloque'],
+        rows: [
+          ['Collecte et lecture des pièces', 'Automatisé, avec reprise humaine sur les champs non détectés', "Lignes de détail et pièces mal numérisées ; risque d'invention documenté"],
+          ['Rapprochement bancaire', 'Automatisé quand les montants correspondent exactement', 'Écarts, règlements partiels, paiements groupés'],
+          ['Lettrage', 'Partiellement automatisé', 'Cas multiples et rapprochements indirects'],
+          ['Révision des comptes', 'Manuel, assisté', "Le coût de vérification égale le coût de production ; le jugement professionnel est exigé par la norme"],
+          ['Production de la liasse', 'Outillé de longue date, hors IA générative', "Sujet de logiciel de production, pas de modèle de langage"],
+          ['Notes de synthèse et bilan commenté', "Assisté, gain réel sur le premier jet", "La responsabilité du contenu reste entière"],
+          ['Questions récurrentes des clients', 'Assisté, sur base documentaire interne', 'Confidentialité des données du client'],
+          ['Paie', 'Peu automatisable par l\'IA générative', 'Anonymisation des DSN impraticable, données sensibles'],
+        ],
+      },
+
+      { type: 'h2', text: "Ce que la profession écrit, et ce qu'elle n'écrit pas" },
+      { type: 'p', text: "Deux documents font référence dans la profession sur ce sujet. Leur contenu mérite d'être regardé de près." },
+      { type: 'p', text: "Le Cahier de l'Académie n° 41, publié en février 2025 sur 255 pages, ne contient aucune occurrence des mots « lettrage » et « liasse ». Le mot « saisie » y apparaît deux fois, à propos du nettoyage d'un fichier de codes postaux. Le groupe de travail écrit lui-même que les hallucinations sont nombreuses et qu'il ne traite pas encore des agents ni des systèmes de récupération documentaire." },
+      { type: 'p', text: "Le livre blanc du conseil régional de Paris–Île-de-France, publié en juillet 2025, ne mentionne pas davantage le lettrage ni la liasse, et ne présente aucun cas d'usage de révision. Il pose une phrase utile : il ne s'agit pas de remplacer les logiciels de production traditionnels, qui restent les meilleurs dans leur domaine. Sur la paie, il est plus net encore, en indiquant que certains documents comme la DSN sont difficiles voire impossibles à anonymiser et que les cas d'usage correspondants devront être proscrits." },
+      { type: 'p', text: "Le discours institutionnel porte donc sur la périphérie du métier : la rédaction, la synthèse, la communication. Le cœur de la chaîne de production reste peu traité. C'est là que se trouve le travail d'ingénierie, et c'est aussi ce qui explique que les gains constatés déçoivent les attentes." },
+
+      { type: 'h2', text: "Le verrou n'est pas technique, il est juridique" },
+      { type: 'p', text: "L'article 21 de l'ordonnance du 19 septembre 1945 soumet l'expert-comptable au secret professionnel dans les conditions et sous les peines de l'article 226-13 du code pénal, soit un an d'emprisonnement et 15 000 euros d'amende. Le déliement n'est prévu que dans trois situations limitées." },
+      { type: 'p', text: "La norme professionnelle applicable à la mission de présentation, agréée par arrêté du 1er septembre 2016, exige que l'expert-comptable exerce son jugement professionnel en faisant preuve d'esprit critique, et qu'il constitue un dossier de travail documentant ses travaux. Elle ne contient aucune occurrence du terme « intelligence artificielle », ce qui ne la rend pas inapplicable : elle s'applique quel que soit l'outil employé." },
+      { type: 'p', text: "La brochure publiée par le conseil national en août 2024 pose la règle d'usage la plus concrète : ne pas charger de données personnelles, sensibles ou confidentielles, ni mails clients, ni fichier des écritures comptables, ni DSN non anonymisés, dans des services non maîtrisés. Cette phrase disqualifie l'usage d'un assistant grand public sur des pièces clients, et elle oriente vers un environnement contractuellement encadré." },
+      { type: 'p', text: "Sur l'hébergement, la vérification est simple à mener. Un éditeur sérieux publie la liste de ses sous-traitants et la localisation des traitements. Pennylane indique par exemple que ses fonctionnalités d'IA reposent sur des services hébergés dans l'Union européenne, activés seulement si ces fonctionnalités le sont. C'est le niveau d'information à exiger avant d'y verser des pièces clients." },
+
+      { type: 'h2', text: "La facture électronique change l'ordre des priorités" },
+      { type: 'p', text: "Un cabinet qui investit aujourd'hui dans la lecture automatique de PDF doit connaître le calendrier. Selon le guide pratique publié par l'administration fiscale le 9 juillet 2026, toutes les entreprises concernées doivent être en capacité de recevoir une facture électronique au 1er septembre 2026. Les grandes entreprises et les entreprises de taille intermédiaire doivent émettre à la même date, les PME, TPE et micro-entreprises au 1er septembre 2027." },
+      { type: 'p', text: "Une facture structurée n'a pas besoin d'être devinée : elle est lue. La valeur d'un dispositif de reconnaissance de caractères se déprécie donc sur un calendrier connu, et l'investissement se justifie mieux en aval, sur le contrôle, l'analyse et l'exception." },
+      { type: 'p', text: "Deux nuances évitent l'erreur inverse. L'administration précise qu'une facture reçue par mail, en PDF ou sur papier après le 1er septembre ne doit pas être écartée pour ce seul motif : le double flux persistera. Et la phase de démarrage prévoit de ne pas appliquer de sanctions aux entreprises engagées dans une trajectoire sérieuse de mise en conformité, en indiquant expressément que cette approche ne constitue ni un report ni une suspension de l'obligation." },
+
+      { type: 'h2', text: "Par où commencer dans un cabinet" },
+      { type: 'p', text: "Trois quarts des cabinets de la branche comptent moins de dix salariés. À cette échelle, un chantier d'automatisation se juge sur un flux, pas sur une transformation." },
+      {
+        type: 'ol',
+        items: [
+          "Choisir un flux dont vous connaissez le volume et le temps passé, faute de quoi aucun gain ne sera démontrable.",
+          "Vérifier ce que votre éditeur livre déjà, et ce qu'il annonce. Faire développer une fonction qui arrive dans la prochaine version est un gaspillage.",
+          "Écrire le seuil de confiance et la règle de routage de l'exception avant de commencer. C'est cette règle qui produit le gain, pas le modèle.",
+          "Fixer la règle de contrôle par confrontation à la pièce d'origine, sur échantillon, en tenant compte du risque d'erreur cohérente.",
+          "Poser le cadre de confidentialité : quelles données sortent du cabinet, vers quel hébergement, sous quel contrat.",
+        ],
+      },
+      { type: 'p', text: "Le gain d'un cabinet ne vient pas du modèle qu'il choisit. Il vient de la façon dont l'exception est traitée, tracée et signée. C'est un travail d'ingénierie de flux, et c'est précisément ce que les licences ne fournissent pas." },
+    ],
+    faq: [
+      {
+        q: "Quelles tâches d'un cabinet comptable s'automatisent réellement avec l'IA ?",
+        a: "Un flux s'automatise quand vérifier sa sortie ne coûte presque rien. La lecture des pièces et le rapprochement bancaire remplissent ce critère : chez Pennylane, le rapprochement automatique suppose que les montants de la facture et de la transaction soient strictement identiques et qu'une suggestion ait été identifiée. La révision des comptes échoue au test, puisque contrôler le travail d'une machine sur un cycle demande autant de temps que de le faire. Entre les deux, le lettrage, les notes de synthèse et les réponses aux questions clients sont assistés plutôt qu'automatisés.",
+      },
+      {
+        q: "Peut-on se fier au taux d'automatisation affiché par son logiciel ?",
+        a: "C'est une définition d'éditeur, pas une mesure. Pennylane publie sa formule : un tiers du taux sur les factures, un tiers sur les transactions, un tiers sur les réconciliations, sur trente jours glissants. Les pondérations, les sous-taux et la fenêtre sont choisis par l'éditeur, donc deux cabinets qui comparent leurs scores ne comparent pas la même grandeur. Il n'existe à ce jour aucune mesure publique et indépendante du taux d'automatisation par flux en cabinet français.",
+      },
+      {
+        q: "L'IA peut-elle se tromper sur une facture sans qu'on le voie ?",
+        a: "Oui, et c'est le risque le plus mal connu. Le travail de recherche ReceiptBench, publié en mai 2026 sur dix mille reçus annotés, documente un piège de cohérence : plutôt que de laisser un champ vide, le modèle altère les valeurs lues pour faire tomber un total juste, fabrique des lignes de taxe inexistantes ou invente un numéro de facture plausible. Une pièce fausse mais cohérente franchit tous les contrôles arithmétiques. Le contrôle doit donc porter sur la confrontation à la pièce d'origine par échantillon, pas sur la vraisemblance du résultat.",
+      },
+      {
+        q: "Peut-on utiliser ChatGPT sur des dossiers clients dans un cabinet ?",
+        a: "Pas sur des données non anonymisées dans un service non maîtrisé. La brochure publiée par le conseil national de l'ordre en août 2024 est explicite : ne chargez pas de données personnelles, sensibles ou confidentielles, ni mails clients, ni fichier des écritures comptables, ni DSN non anonymisés, dans des sites non maîtrisés. S'y ajoute le secret professionnel de l'article 21 de l'ordonnance du 19 septembre 1945, sanctionné par l'article 226-13 du code pénal d'un an d'emprisonnement et 15 000 euros d'amende. L'usage suppose un environnement contractuellement encadré et un hébergement vérifié.",
+      },
+      {
+        q: "La facture électronique rend-elle inutile la lecture automatique des factures ?",
+        a: "Elle en réduit la valeur sur un calendrier connu. Selon le guide de l'administration fiscale du 9 juillet 2026, toutes les entreprises concernées doivent pouvoir recevoir une facture électronique au 1er septembre 2026, les grandes entreprises et ETI devant émettre à cette date, les PME, TPE et micro-entreprises au 1er septembre 2027. Une facture structurée se lit sans être devinée. Le double flux persistera néanmoins, l'administration précisant qu'une facture reçue en PDF ou sur papier après cette date ne doit pas être écartée pour ce seul motif.",
+      },
+      {
+        q: "Faut-il attendre les fonctions d'IA de son éditeur ou faire développer sur mesure ?",
+        a: "La question se tranche flux par flux. Faire développer une fonction annoncée dans la prochaine version de votre logiciel de production est un gaspillage, et les livres blancs de la profession rappellent eux-mêmes qu'il ne s'agit pas de remplacer les logiciels de production traditionnels. Le développement se justifie quand le besoin porte sur une logique propre au cabinet, sur la connexion entre plusieurs outils, ou sur le traitement de l'exception, qui est l'endroit où se trouve le gain réel.",
+      },
+      {
+        q: "L'IA peut-elle traiter la paie dans un cabinet ?",
+        a: "C'est le flux le plus contraint. Le livre blanc du conseil régional de Paris–Île-de-France indique que certains documents, la DSN notamment, sont difficiles voire impossibles à anonymiser, et que les cas d'usage correspondants devront être proscrits. Les données de paie sont par nature personnelles et souvent sensibles. Les gains se cherchent plutôt du côté de la documentation, de la préparation des dossiers et des réponses aux questions récurrentes, sans transmission de données nominatives.",
+      },
+      {
+        q: "Qui reste responsable d'une erreur produite avec l'aide d'une IA ?",
+        a: "L'expert-comptable, sans partage. La norme professionnelle applicable à la mission de présentation, agréée par arrêté du 1er septembre 2016, exige l'exercice du jugement professionnel avec esprit critique et la constitution d'un dossier de travail documentant les travaux. Elle ne mentionne pas l'intelligence artificielle, ce qui ne la rend pas inapplicable : elle vaut quel que soit l'outil utilisé. C'est ce régime de responsabilité, plus que la performance des modèles, qui fixe la frontière de l'automatisation.",
+      },
+    ],
+    internalLinks: [
+      { label: "Agence de développement IA : automatiser vos flux métier", href: '/agence-developpement-ia' },
+      { label: "Automatisation documentaire IA", href: '/automatisation-documentaire-ia' },
+      { label: "IA pour les services et le conseil", href: '/ia-secteurs/ia-services-conseil' },
+      { label: "Audit IA : ce qu'il contient et ce qu'il coûte", href: '/blog/audit-ia-entreprise-methode-prix' },
+      { label: "Formation IA finance, analyse et reporting", href: '/blog/formation-ia-finance-analyse-reporting' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/ia-cabinet-expertise-comptable#termes',
+        name: "IA en cabinet comptable : les termes du domaine",
+        hasDefinedTerm: [
+          {
+            '@type': 'DefinedTerm',
+            name: "Taux d'automatisation",
+            description: "Indicateur affiché par les logiciels comptables, calculé selon une formule propre à chaque éditeur. Il ne constitue pas une mesure comparable entre deux outils ou deux cabinets.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Piège de cohérence',
+            description: "Mode d'erreur documenté par la recherche : plutôt que de laisser un champ vide, un modèle altère les valeurs lues pour produire un document arithmétiquement cohérent mais faux.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Facture électronique structurée',
+            description: "Facture émise dans un format lisible par machine via une plateforme agréée. La réception devient obligatoire pour toutes les entreprises concernées au 1er septembre 2026.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Mission de présentation des comptes',
+            description: "Mission d'assurance de niveau modéré encadrée par une norme professionnelle agréée par arrêté du 1er septembre 2016, qui impose jugement professionnel, esprit critique et dossier de travail documenté.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: "Secret professionnel de l'expert-comptable",
+            description: "Obligation posée par l'article 21 de l'ordonnance du 19 septembre 1945, sanctionnée par l'article 226-13 du code pénal d'un an d'emprisonnement et 15 000 euros d'amende.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'poc-ia-passer-en-production',
+    tag: 'Pilotage',
+    title: "Votre POC IA fonctionne et rien n'est en production : les 5 murs entre le pilote et l'industrialisation",
+    metaTitle: "POC IA : les 5 murs entre le pilote et la production",
+    metaDesc: "Pourquoi un POC IA qui marche ne passe pas en production : reproductibilité, régularité, intégration, coût, adoption. Avec les critères de sortie.",
+    date: '3 août 2026',
+    datePublished: '2026-08-03',
+    dateModified: '2026-08-03',
+    readTime: '14 min',
+    keywords: ['poc ia', 'industrialisation ia', 'projet ia production', 'pilote ia entreprise', 'cadrage projet ia', 'déployer ia entreprise'],
+    excerpt: "Un POC démontre une occurrence, pas un comportement. Mille appels identiques à température 0 produisent 80 sorties différentes. Les cinq obstacles techniques et organisationnels du passage en production, et le barème publié en 2017 qui donne les critères de sortie.",
+    intro: "Un POC d'IA qui fonctionne en démonstration échoue rarement pour des raisons de modèle. Il bute sur cinq murs : la reproductibilité, puisque mille appels identiques à température zéro peuvent produire quatre-vingts sorties différentes ; la régularité, mesurée bien en dessous de la réussite moyenne ; l'intégration au système d'information, qui est un chantier de gestion des identités ; le coût d'exploitation, qui varie sans qu'une ligne de code change ; et l'adoption, puisque 19 % des entreprises déclarant un usage formel de l'IA ne montrent aucune trace d'usage par leurs salariés. Cet article détaille ces cinq murs et donne des critères de sortie écrits avant de lancer un pilote.",
+    blocks: [
+      { type: 'p', text: "Le comité de pilotage a vu la démonstration, elle marchait. Six mois plus tard, rien n'est en service. Le réflexe consiste à incriminer le modèle ou la conduite du changement. Les causes réelles sont ailleurs, et elles sont documentées." },
+
+      { type: 'h2', text: "Premier mur : votre démonstration n'est pas reproductible" },
+      { type: 'p', text: "C'est le fait le plus dérangeant du dossier, et il se vérifie en une heure. En septembre 2025, l'équipe de Thinking Machines Lab a lancé mille appels rigoureusement identiques, avec le même prompt et une température à zéro, sur un modèle ouvert. Résultat : quatre-vingts complétions différentes, la plus fréquente n'apparaissant que soixante-dix-huit fois." },
+      { type: 'p', text: "Le détail rend la chose plus troublante encore. Les mille sorties sont identiques jusqu'au cent-deuxième mot-jeton, puis divergent au cent-troisième. Neuf cent quatre-vingt-douze écrivent « Queens, New York », huit écrivent « New York City »." },
+      { type: 'p', text: "La cause ne se trouve pas dans le code appelant. Elle tient à la façon dont les calculs sont regroupés côté serveur : la taille des lots varie selon la charge, et les noyaux de calcul ne donnent pas exactement le même résultat selon cette taille. Avec des noyaux conçus pour être insensibles au lot, les mille sorties redeviennent identiques." },
+      {
+        type: 'callout',
+        title: "Ce que cela signifie pour votre pilote",
+        text: "Ce que vous avez validé en comité, vous ne pouvez pas le rejouer à l'identique. Le POC a démontré une occurrence, pas un comportement. Toute recette qui repose sur « on a testé, ça marchait » valide un tirage, pas un système. La conséquence pratique : une recette d'IA se mène sur une distribution de résultats, jamais sur un exemple.",
+      },
+
+      { type: 'h2', text: "Deuxième mur : la régularité, pas la moyenne" },
+      { type: 'p', text: "Un pilote se juge presque toujours sur un taux de réussite moyen. C'est la mauvaise grandeur." },
+      { type: 'p', text: "Le banc d'essai τ-bench, publié en juin 2024, évalue des agents sur des tâches de service client. Son résumé est explicite : même les meilleurs agents de l'époque réussissaient moins de la moitié des tâches, et surtout se montraient irréguliers, avec un taux de réussite sur huit tentatives consécutives inférieur à 25 % dans le domaine du commerce de détail." },
+      { type: 'p', text: "L'écart entre ces deux nombres est tout le sujet. Un agent qui réussit une fois sur deux en moyenne, mais rarement huit fois d'affilée, produit une expérience client inacceptable alors que son tableau de bord paraît honorable." },
+      { type: 'p', text: "Une publication de Princeton parue en juin 2026, portant sur quinze modèles et douze métriques de fiabilité, apporte la conclusion qui ferme le débat : les gains récents de capacité n'ont produit que de faibles améliorations de fiabilité. Attendre le prochain modèle ne fera pas passer votre pilote en production." },
+      { type: 'p', text: "Un travail publié en mai 2026 ajoute une mise en garde sur la mesure elle-même : les scores de fin de tâche menacent la crédibilité de l'évaluation, et l'analyse des journaux d'exécution est nécessaire. Les auteurs relèvent que sur un domaine de τ-bench, la performance réelle était sous-estimée de près de moitié faute d'examiner ce que l'agent avait fait." },
+
+      { type: 'h2', text: "Troisième mur : l'intégration est un chantier d'identités" },
+      { type: 'p', text: "Un POC tourne avec une clé d'API dans une variable d'environnement. Un système en production doit savoir qui demande quoi, au nom de qui, avec quels droits." },
+      { type: 'p', text: "L'exemple du protocole MCP, qui sert à connecter un modèle aux outils de l'entreprise, montre l'ampleur de la marche. Dans sa spécification, un serveur exposé en HTTP qui implémente l'autorisation doit s'appuyer sur OAuth 2.1, publier ses métadonnées de ressource protégée, recevoir du client un paramètre identifiant la ressource visée, et vérifier que le jeton présenté a bien été émis pour lui. La spécification écrit qu'un serveur ne doit accepter ni transmettre aucun autre jeton." },
+      { type: 'p', text: "C'est un chantier de gestion des identités et des accès, mené par des équipes qui n'étaient pas dans la salle pendant la démonstration. Il ne s'improvise pas en fin de projet." },
+      { type: 'p', text: "Cette disproportion entre le modèle et son environnement est un classique de l'ingénierie logicielle. Un article de recherche publié en 2015 par des ingénieurs de Google, devenu une référence sur la dette technique des systèmes d'apprentissage, avance qu'un système arrivé à maturité peut n'être composé que d'une faible part de code d'apprentissage, l'essentiel étant du code de liaison. Les auteurs y formulent aussi un principe utile à retenir avant de toucher à un système en service : changer quoi que ce soit change tout." },
+
+      { type: 'h2', text: "Quatrième mur : le coût d'exploitation bouge sans vous" },
+      { type: 'p', text: "Un pilote consomme peu, donc personne ne regarde la facture. En production, trois mécanismes la déplacent sans qu'une ligne de code ne change." },
+      {
+        type: 'ul',
+        items: [
+          "Le tarif du fournisseur. Le modèle Claude Sonnet 5 est facturé 2 et 10 dollars par million de tokens jusqu'au 31 août 2026 inclus, et passe à 3 et 15 dollars le 1er septembre. Une hausse de moitié, à volume identique.",
+          "Le découpage du texte. Le tokeniseur introduit avec les modèles récents d'Anthropic découpe le même texte en davantage d'unités facturables, avec environ 30 % de plus documenté pour Sonnet 5 par rapport à la génération précédente. Le même prompt coûte plus cher.",
+          "La mise en cache. Le seuil minimal pour qu'un contexte soit mis en cache diffère selon le modèle, de 512 à 4 096 tokens, et il n'évolue pas dans le même sens d'une génération à l'autre. L'échec est silencieux : aucune erreur, seulement un compteur qui reste à zéro et une facture qui ne baisse pas.",
+        ],
+      },
+      { type: 'p', text: "S'ajoute le cycle de vie des modèles. Anthropic s'engage sur un préavis d'au moins soixante jours avant le retrait d'un modèle, et cinq modèles ont été retirés entre février et juin 2026. Les requêtes vers un modèle retiré échouent. Un système en production doit donc prévoir son changement de modèle comme une opération de maintenance ordinaire, avec la campagne d'évaluation qui va avec." },
+
+      { type: 'h2', text: "Cinquième mur : l'outil est livré et personne ne s'en sert" },
+      { type: 'p', text: "Le chiffre le plus parlant vient d'une source publique et représentative. Un document de travail du bureau du recensement américain, publié en avril 2026 sur des données collectées entre novembre 2025 et janvier 2026, relève que 19 % des entreprises déclarant un usage formel de l'IA ne montrent aucune trace d'usage par leurs salariés dans leurs tâches. Les auteurs parlent d'une approche descendante confrontée à des délais de mise en œuvre." },
+      { type: 'p', text: "Côté français, l'Insee a publié le 21 juillet 2026 des données qui désignent précisément le blocage. Chez les entreprises qui utilisent déjà l'IA, le premier frein à l'extension de l'usage est le manque d'expertise, cité par 53 % d'entre elles, devant les données à 43 % et le cadre juridique à 42 %. Chez les entreprises de 250 salariés et plus qui n'utilisent pas encore l'IA, le manque d'expertise monte à 73 %." },
+      { type: 'p', text: "Le point de blocage n'est donc pas la décision d'adopter. C'est la capacité à exploiter ce qui a été livré. Un pilote qui ne prévoit ni propriétaire métier, ni montée en compétence, ni budget de maintien en condition opérationnelle prépare son propre abandon." },
+
+      { type: 'h2', text: "Les critères de sortie existent depuis 2017" },
+      { type: 'p', text: "Une équipe de Google a publié en 2017 un barème de préparation à la production pour les systèmes d'apprentissage automatique. Il comporte vingt-huit tests répartis en quatre sections : données, modèle, infrastructure, surveillance." },
+      { type: 'p', text: "Sa mécanique de notation est ce qui le rend utile. Un test vaut un demi-point s'il est exécuté manuellement avec des résultats documentés et diffusés, un point entier s'il existe un dispositif pour l'exécuter automatiquement de façon répétée. Le score final est le minimum des quatre sections, et non leur moyenne, les auteurs jugeant les quatre également importantes." },
+      { type: 'p', text: "L'interprétation du score zéro est écrite noir sur blanc : il s'agit davantage d'un projet de recherche que d'un système industrialisé. C'est exactement la note qu'obtient un POC, et c'est le diagnostic dont un comité de pilotage a besoin." },
+      {
+        type: 'table',
+        headers: ['À écrire avant de lancer le pilote', 'Ce que ça évite'],
+        rows: [
+          ["La distribution de résultats attendue, pas un exemple réussi", "Valider un tirage plutôt qu'un système"],
+          ["Le taux de réussite sur N tentatives consécutives, pas la moyenne", "Livrer un agent irrégulier au client final"],
+          ["Le mode d'authentification et les droits, validés par l'équipe sécurité", "Découvrir le chantier des identités en fin de projet"],
+          ["Le coût par transaction à volume cible, et qui le surveille", "Une facture qui dérive sans alerte"],
+          ["Le propriétaire métier nommé et son temps alloué", "Un outil livré que personne ne fait vivre"],
+          ["La procédure de changement de modèle et son budget d'évaluation", "Une panne au retrait d'un modèle"],
+        ],
+      },
+
+      { type: 'h2', text: "Reprendre un pilote qui n'aboutit pas" },
+      { type: 'p', text: "Une reprise commence par une mesure, pas par un choix d'outil. Rejouer le cas d'usage sur une centaine d'exécutions donne la distribution réelle et le taux de réussite consécutive. Cette seule mesure réoriente la plupart des projets, parce qu'elle remplace une impression par un chiffre." },
+      { type: 'p', text: "Vient ensuite l'inventaire de ce qui manque autour du modèle : authentification, journalisation, évaluation continue, propriétaire, budget de fonctionnement. C'est là que se trouve le travail restant, et il est rarement là où le comité de pilotage l'attend." },
+      { type: 'p', text: "Un pilote qui échoue n'a pas prouvé que l'IA ne marche pas chez vous. Il a prouvé qu'un système d'IA se juge sur sa régularité, son exploitation et son adoption, et qu'aucun des trois ne se démontre en réunion." },
+    ],
+    faq: [
+      {
+        q: "Pourquoi un POC IA qui fonctionne ne passe-t-il pas en production ?",
+        a: "Parce qu'un POC démontre une occurrence et pas un comportement. Cinq obstacles distincts se présentent ensuite : la reproductibilité, la régularité des résultats sur plusieurs tentatives, l'intégration au système d'information qui suppose un chantier d'authentification et de droits, le coût d'exploitation qui varie avec les tarifs et le découpage des textes, et l'adoption par les équipes. Aucun de ces cinq points ne se vérifie pendant une démonstration.",
+      },
+      {
+        q: "Un modèle à température zéro donne-t-il toujours le même résultat ?",
+        a: "Non. Une expérience publiée par Thinking Machines Lab en septembre 2025 a lancé mille appels identiques à température zéro sur un modèle ouvert et obtenu quatre-vingts complétions différentes, identiques jusqu'au cent-deuxième mot-jeton puis divergentes. La cause tient à la taille des lots de calcul côté serveur, qui varie avec la charge, et aux noyaux de calcul qui n'y sont pas insensibles. Une recette doit donc porter sur une distribution de résultats, jamais sur un exemple unique.",
+      },
+      {
+        q: "Comment mesurer correctement la fiabilité d'un agent IA ?",
+        a: "En regardant la réussite sur plusieurs tentatives consécutives plutôt que la moyenne. Le banc d'essai τ-bench publié en juin 2024 relevait que des agents réussissant moins de la moitié des tâches en moyenne tombaient sous 25 % de réussite sur huit tentatives consécutives dans le commerce de détail. Un travail publié en mai 2026 ajoute que les scores de fin de tâche ne suffisent pas et que l'analyse des journaux d'exécution est nécessaire pour une évaluation crédible.",
+      },
+      {
+        q: "Attendre le prochain modèle réglera-t-il le problème ?",
+        a: "Les données disponibles disent le contraire. Une publication de Princeton parue en juin 2026, portant sur quinze modèles et douze métriques réparties en quatre dimensions de fiabilité, conclut que les gains récents de capacité n'ont produit que de faibles améliorations de fiabilité. Le passage en production dépend davantage de l'ingénierie autour du modèle que de la génération du modèle lui-même.",
+      },
+      {
+        q: "Quels critères de sortie définir avant de lancer un POC IA ?",
+        a: "Un barème publié par une équipe de Google en 2017 fournit une base solide : vingt-huit tests répartis en quatre sections, données, modèle, infrastructure et surveillance, avec un demi-point par test exécuté manuellement et documenté, un point s'il est automatisé. Le score final est le minimum des quatre sections, et le score zéro y est décrit comme relevant davantage d'un projet de recherche que d'un système industrialisé. À cela s'ajoutent le coût par transaction à volume cible, le propriétaire métier nommé et la procédure de changement de modèle.",
+      },
+      {
+        q: "Comment le coût d'un système IA dérive-t-il en production ?",
+        a: "Par trois mécanismes indépendants de votre code. Les tarifs changent : Claude Sonnet 5 passe de 2 et 10 dollars par million de tokens à 3 et 15 dollars le 1er septembre 2026. Le découpage du texte change : le tokeniseur des modèles récents d'Anthropic produit environ 30 % de tokens de plus pour Sonnet 5 que la génération précédente sur le même texte. Et la mise en cache échoue silencieusement quand le contexte passe sous le seuil minimal du modèle, qui varie de 512 à 4 096 tokens selon les modèles.",
+      },
+      {
+        q: "Combien d'entreprises utilisent réellement l'IA en production ?",
+        a: "En France, l'Insee relevait le 21 juillet 2026 que 18 % des entreprises de 10 salariés ou plus utilisent l'IA, la proportion allant de 15 % pour les plus petites à 58 % pour les plus grandes. Aux États-Unis, un document de travail du bureau du recensement publié en avril 2026 relève que 19 % des entreprises déclarant un usage formel de l'IA ne montrent aucune trace d'usage par leurs salariés. L'écart entre l'adoption déclarée et l'usage réel est le phénomène central de cette période.",
+      },
+      {
+        q: "Qu'est-ce qui bloque le plus les entreprises qui utilisent déjà l'IA ?",
+        a: "Le manque d'expertise, et non la technologie ou le budget. Selon l'Insee, au 21 juillet 2026, les entreprises utilisatrices citent le manque d'expertise à 53 % comme premier frein à l'extension de leurs usages, devant les données à 43 % et le cadre juridique à 42 %. Chez les entreprises de 250 salariés et plus qui n'utilisent pas encore l'IA, ce frein atteint 73 %. Le blocage porte sur la capacité à exploiter ce qui a été livré.",
+      },
+    ],
+    internalLinks: [
+      { label: "Méthode projet IA : forfait, régie ou conseil", href: '/methode-projet-ia' },
+      { label: "Prix d'un projet IA : les fourchettes", href: '/prix-projet-ia' },
+      { label: "Agence de développement IA", href: '/agence-developpement-ia' },
+      { label: "Audit IA : ce qu'il contient et ce qu'il coûte", href: '/blog/audit-ia-entreprise-methode-prix' },
+      { label: "Piloter un projet IA en entreprise", href: '/blog/formation-piloter-projet-ia-entreprise' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/poc-ia-passer-en-production#termes',
+        name: "Industrialisation d'un projet IA : les termes du domaine",
+        hasDefinedTerm: [
+          {
+            '@type': 'DefinedTerm',
+            name: 'POC (preuve de concept)',
+            description: "Réalisation courte destinée à vérifier qu'une solution est possible. Elle démontre une occurrence dans des conditions choisies, pas un comportement reproductible en production.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Réussite sur N tentatives consécutives',
+            description: "Mesure de régularité d'un agent, distincte du taux de réussite moyen. Un agent peut réussir la moitié des tâches en moyenne tout en échouant à enchaîner plusieurs réussites.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Non-invariance au lot',
+            description: "Propriété des calculs côté serveur par laquelle le résultat dépend de la taille des lots traités, elle-même variable selon la charge. Elle explique qu'un modèle à température zéro puisse produire des sorties différentes.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Mise en condition opérationnelle',
+            description: "Ensemble des activités qui maintiennent un système en service : surveillance, évaluation continue, changement de modèle, gestion des coûts et des incidents.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Barème de préparation à la production',
+            description: "Grille publiée en 2017 par des ingénieurs de Google, comportant 28 tests répartis en quatre sections, dont le score final est le minimum des sections et non leur moyenne.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'serveur-mcp-entreprise-connecter-ia-si',
+    tag: 'Outils',
+    title: "MCP en entreprise : brancher l'IA sur votre SI sans tout réécrire",
+    metaTitle: "Serveur MCP en entreprise : brancher l'IA sur votre SI",
+    metaDesc: "MCP en 2026 : la révision qui rend le protocole sans état, ce que la spécification ne sécurise pas, et la matrice de compatibilité à poser d'abord.",
+    date: '3 août 2026',
+    datePublished: '2026-08-03',
+    dateModified: '2026-08-03',
+    readTime: '16 min',
+    keywords: ['serveur mcp', 'claude mcp', 'claude code mcp', 'mcp entreprise', 'model context protocol', 'connecter ia si'],
+    excerpt: "Le protocole MCP a changé de nature le 28 juillet 2026 : il est devenu sans état. Six jours plus tard, les deux bouts d'une même chaîne ne parlent pas la même révision. Ce que la spécification impose, ce qu'elle ne sécurise pas, et la matrice de compatibilité à poser avant de brancher quoi que ce soit.",
+    intro: "Le Model Context Protocol standardise la façon dont un modèle d'IA accède aux outils et aux données d'une entreprise. Sa révision du 28 juillet 2026 a rendu le protocole sans état : la poignée de main initiale, les sessions de niveau protocole et plusieurs mécanismes historiques ont disparu. Au 3 août 2026, les implémentations ne sont pas alignées sur cette révision, ce qui fait de la compatibilité une question d'architecture avant d'être une question d'outillage. Cet article détaille ce qui a changé, ce que la spécification impose réellement en matière d'autorisation, ce qu'elle ne sécurise pas, et comment cadrer un branchement sur un système d'information.",
+    blocks: [
+      { type: 'p', text: "La question posée en comité d'architecture n'est pas de savoir si MCP est mûr. Elle est de savoir quelle révision parle chacun des deux bouts de votre chaîne, parce que la réponse détermine ce que vous pouvez brancher aujourd'hui." },
+
+      { type: 'h2', text: "Ce que MCP fait, en une phrase" },
+      { type: 'p', text: "MCP est un protocole ouvert qui décrit comment un modèle découvre les outils disponibles, les appelle et lit des ressources. Il joue pour l'accès aux outils le rôle qu'un connecteur standard joue pour une base de données : écrire une fois un serveur MCP devant votre ERP évite d'écrire une intégration par assistant." },
+      { type: 'p', text: "Le protocole a été versé le 9 décembre 2025 à l'Agentic AI Foundation, aux côtés d'autres projets, avec une gouvernance ouverte réunissant les principaux acteurs du secteur. Il n'est donc plus le format d'un seul éditeur." },
+
+      { type: 'h2', text: "La révision du 28 juillet 2026 change la nature du protocole" },
+      { type: 'p', text: "La révision en vigueur porte la date du 28 juillet 2026 et rend le protocole sans état. Ce n'est pas un ajustement de surface." },
+      {
+        type: 'ul',
+        items: [
+          "La poignée de main initiale disparaît, ainsi que les sessions de niveau protocole et l'en-tête qui les portait.",
+          "Le point d'entrée HTTP en lecture longue disparaît, avec la reprise de flux et l'identifiant de dernier événement.",
+          "Chaque requête porte désormais sa version de protocole et les capacités du client ; le serveur s'identifie dans chaque résultat.",
+          "Un flux rompu perd la requête en cours : le client doit la réémettre avec un nouvel identifiant.",
+          "Tout serveur doit implémenter un point de découverte, et chaque résultat porte un type explicite.",
+          "Les listes deviennent cacheables, avec une durée de validité et une portée, et les serveurs devraient renvoyer leurs outils dans un ordre déterministe.",
+        ],
+      },
+      { type: 'p', text: "Pour une direction technique, le point le plus directement exploitable est ailleurs. Les requêtes en HTTP portent maintenant des en-têtes qui indiquent la méthode et le nom appelés. Une passerelle ou un répartiteur de charge peut donc router et appliquer une politique sans lire le corps du message. C'est ce qui rend le protocole administrable dans une architecture d'entreprise." },
+      { type: 'p', text: "La révision s'accompagne d'un calendrier de dette technique daté. Plusieurs fonctions historiques, dont l'échantillonnage côté serveur, la journalisation et l'enregistrement dynamique de client, sont dépréciées depuis le 28 juillet 2026 et deviennent éligibles au retrait à partir du 28 juillet 2027. La fenêtre minimale annoncée est de douze mois, et rien n'a encore été retiré." },
+
+      { type: 'h2', text: "Personne ne parle encore la même révision" },
+      { type: 'p', text: "C'est le fait qui doit gouverner votre calendrier, et il se vérifie en quelques minutes." },
+      { type: 'p', text: "Le jour même de la publication de la révision, son auteur historique indiquait que la prise en charge arrivait prochainement dans ses produits, sans date ni priorité. Au 3 août 2026, la documentation destinée aux développeurs d'un autre grand fournisseur référence encore la révision de novembre 2025 et décrit l'ancien transport." },
+      { type: 'p', text: "La matrice de compatibilité des extensions, maintenue par la communauté, donne la mesure de l'écart. L'extension d'autorisation administrée par l'entreprise compte un seul client. Le mode d'autorisation entre services n'en compte aucun. Une extension officielle de gestion de tâches n'a même pas de colonne dans cette matrice." },
+      {
+        type: 'callout',
+        title: "La conclusion d'architecte",
+        text: "La question n'est pas « MCP est-il prêt ». Elle est « quelle révision parle mon client, quelle révision parle mon serveur, et quelles extensions sont réellement implémentées de chaque côté ». Cette matrice de compatibilité a sa place dans le dossier d'architecture, avant tout choix d'outil. Un branchement qui marche en démonstration entre deux composants d'un même éditeur ne dit rien de votre chaîne réelle.",
+      },
+      { type: 'p', text: "Un second écart mérite d'être connu. L'ensemble des serveurs de référence s'est rétracté : sept sont encore maintenus, quatorze ont été archivés depuis mai 2025 dans un dépôt qui les désigne comme n'étant plus maintenus. Les connecteurs vers les principales forges, messageries et bases de données que beaucoup d'articles citent encore comme officiels n'en font plus partie. Vérifiez l'état du serveur avant de le mettre dans une architecture cible." },
+
+      { type: 'h2', text: "Ce que la spécification ne sécurise pas" },
+      { type: 'p', text: "C'est le point que la plupart des présentations passent sous silence, et il faut l'énoncer sans caricature dans un sens ni dans l'autre." },
+      { type: 'p', text: "La spécification écrit que l'autorisation est optionnelle pour les implémentations MCP. En transport local, elle demande même de ne pas suivre le cadre d'autorisation. Aucune primitive de gestion de rôles n'existe dans le protocole. Et le texte va jusqu'à indiquer que MCP ne peut pas faire respecter ses principes de sécurité au niveau du protocole lui-même." },
+      { type: 'p', text: "Autre point, souvent mal compris : les descriptions de comportement des outils, annotations comprises, doivent être considérées comme non fiables tant qu'elles ne proviennent pas d'un serveur de confiance. C'est la porte d'entrée de l'injection de consignes par un serveur tiers." },
+      { type: 'p', text: "La formulation juste tient en une phrase : MCP standardise le branchement, pas la sécurité." },
+      { type: 'p', text: "Quand l'autorisation est implémentée, elle devient en revanche exigeante. Le protocole s'appuie sur OAuth 2.1, qui est encore à l'état de brouillon à l'IETF. Le serveur doit publier ses métadonnées de ressource protégée, le client doit transmettre un paramètre identifiant la ressource visée, et le serveur doit vérifier que le jeton lui était bien destiné. La spécification écrit qu'un serveur MCP ne doit accepter aucun jeton qui ne lui a pas été explicitement délivré." },
+      { type: 'p', text: "Le passage au sans-état a créé une classe d'attaque nouvelle, traitée dans les recommandations de sécurité : le détournement de jeton d'état. La règle posée est nette, la possession d'un tel jeton ne vaut pas authentification, et il doit être lié à l'identité vérifiée de l'utilisateur." },
+
+      { type: 'h2', text: "Ce que la recherche mesure sur l'écosystème" },
+      { type: 'p', text: "Une étude relue par les pairs, acceptée à la conférence DSN 2026, a analysé plus de 67 000 serveurs recensés sur six registres publics. Elle identifie 833 serveurs vulnérables et 18 descriptions trompeuses, soit environ 1,2 % de l'échantillon." },
+      { type: 'p', text: "Ce chiffre mérite d'être lu dans les deux sens. Il contredit le récit d'un écosystème massivement dangereux. Il reste élevé en valeur absolue quand on installe un serveur trouvé dans un registre public sans le lire." },
+      { type: 'p', text: "Un préprint de mai 2026, qu'il faut nommer comme tel, relève par ailleurs que sur près de huit mille serveurs MCP distants actifs, environ 40 % exposent des outils sans authentification. C'est la statistique qui justifie la règle interne la plus simple : aucun serveur MCP distant tiers dans le périmètre de production sans revue." },
+      { type: 'p', text: "Une précision d'honnêteté sur les volumes. Aucun total fiable de serveurs MCP n'est publiable : le registre officiel n'expose pas de compteur global, et les chiffres qui circulent couvrent des périmètres différents et non comparables. Les déclarations d'éditeurs, qu'il s'agisse de dizaines de milliers de serveurs publiés ou de centaines de connecteurs dans un annuaire produit, sont des ordres de grandeur commerciaux, pas des mesures." },
+
+      { type: 'h2', text: "Côté Claude Code, ce qui marche aujourd'hui" },
+      { type: 'p', text: "Pour les équipes qui travaillent avec Claude Code, l'ajout d'un serveur se fait en ligne de commande. Un serveur distant s'ajoute en précisant le transport HTTP et son adresse ; un serveur local s'ajoute en donnant la commande à exécuter." },
+      { type: 'p', text: "Deux points de vigilance. Le transport par événements envoyés par le serveur est déprécié, la documentation recommandant d'utiliser HTTP quand c'est possible. Et le transport par WebSocket ne prend en charge ni l'authentification par OAuth ni l'option de transport, ce qui le réserve à des usages internes contrôlés." },
+
+      { type: 'h2', text: "Écrire un serveur MCP ou exposer une API : comment trancher" },
+      {
+        type: 'table',
+        headers: ['Situation', 'Ce qui convient', 'Pourquoi'],
+        rows: [
+          ["Un seul assistant, un seul outil, usage interne", "Appel d'outil classique", "MCP ajoute une couche sans bénéfice de réutilisation"],
+          ["Plusieurs assistants doivent accéder au même système", "Serveur MCP", "Écrit une fois, réutilisé par chaque client compatible"],
+          ["Système exposé à des tiers ou à des partenaires", "Serveur MCP avec autorisation complète", "Le protocole impose alors la validation d'audience et la portée des jetons"],
+          ["Besoin d'un contrôle d'accès par rôle", "Couche applicative en amont", "Aucune primitive de rôle n'existe dans la spécification"],
+        ],
+      },
+      { type: 'p', text: "Un levier de cloisonnement mérite d'être connu, parce qu'il est propre et peu utilisé. La liste des outils renvoyée par un serveur ne doit pas dépendre de la connexion, mais elle peut dépendre de l'autorisation présentée sur la requête, les identifiants étant une entrée par requête et non un état de connexion. Un même serveur peut donc exposer une surface réduite à un compte de service et une surface complète à un développeur identifié." },
+      { type: 'p', text: "Sur le coût et le délai d'une intégration, je ne donnerai pas de fourchette : rien de sourçable n'existe, et les durées annoncées par les éditeurs concernent leurs propres connecteurs sur leurs propres produits." },
+
+      { type: 'h2', text: "Cadrer un premier branchement" },
+      {
+        type: 'ol',
+        items: [
+          "Établir la matrice de compatibilité : révision parlée par le client, révision parlée par le serveur, extensions réellement implémentées de part et d'autre.",
+          "Décider du périmètre de droits avant d'écrire la première ligne : un serveur MCP hérite exactement des permissions que vous lui accordez, et rien dans le protocole ne les restreindra à votre place.",
+          "Choisir le mode d'autorisation avec l'équipe qui gère les identités, sans le traiter comme une option de fin de projet.",
+          "Traiter tout serveur tiers comme du code non fiable : lecture du code, épinglage de version, exécution cloisonnée.",
+          "Prévoir la dette : les fonctions dépréciées le 28 juillet 2026 deviennent retirables à partir du 28 juillet 2027.",
+        ],
+      },
+      { type: 'p', text: "MCP règle un vrai problème, celui de la multiplication des intégrations propriétaires. Il ne règle ni la gouvernance des accès, ni la confiance envers un serveur tiers, et sa spécification le dit elle-même. C'est un protocole de branchement, et le branchement n'a jamais été la partie difficile d'un système d'information." },
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce qu'un serveur MCP ?",
+        a: "Un serveur MCP expose des outils, des ressources et des invites à un modèle d'IA selon le Model Context Protocol, un protocole ouvert versé en décembre 2025 à l'Agentic AI Foundation. Écrire un serveur MCP devant un système d'information évite d'écrire une intégration différente pour chaque assistant : tout client compatible peut découvrir les outils disponibles et les appeler.",
+      },
+      {
+        q: "Qu'est-ce qui a changé avec la révision du 28 juillet 2026 ?",
+        a: "Le protocole est devenu sans état. La poignée de main initiale, les sessions de niveau protocole et leur en-tête, le point d'entrée HTTP en lecture longue, la reprise de flux et plusieurs notifications ont été supprimés. Chaque requête porte désormais sa version de protocole et les capacités du client, chaque résultat identifie le serveur et porte un type explicite, et tout serveur doit implémenter un point de découverte. Un flux rompu perd la requête en cours, que le client doit réémettre.",
+      },
+      {
+        q: "MCP est-il sécurisé ?",
+        a: "La formulation exacte est que MCP standardise le branchement, pas la sécurité. La spécification indique que l'autorisation est optionnelle pour les implémentations, qu'aucune primitive de gestion de rôles n'existe dans le protocole, et que MCP ne peut pas faire respecter ses principes de sécurité au niveau protocole. Quand l'autorisation est implémentée, elle est en revanche exigeante : elle repose sur OAuth 2.1, impose la publication de métadonnées de ressource protégée et la validation que le jeton présenté a bien été délivré pour ce serveur.",
+      },
+      {
+        q: "Peut-on installer un serveur MCP trouvé dans un registre public ?",
+        a: "Pas sans revue. Une étude relue par les pairs et acceptée à la conférence DSN 2026 a analysé plus de 67 000 serveurs sur six registres publics et identifié 833 serveurs vulnérables et 18 descriptions trompeuses, soit environ 1,2 %. Un préprint de mai 2026 relève par ailleurs qu'environ 40 % de près de huit mille serveurs distants actifs exposent des outils sans authentification. La spécification précise en outre que les descriptions de comportement des outils doivent être considérées comme non fiables tant qu'elles ne viennent pas d'un serveur de confiance.",
+      },
+      {
+        q: "Comment ajouter un serveur MCP à Claude Code ?",
+        a: "En ligne de commande. Un serveur distant s'ajoute en précisant le transport HTTP et l'adresse du serveur, un serveur local en donnant la commande à exécuter et ses arguments. Deux points de vigilance : le transport par événements envoyés par le serveur est déprécié au profit de HTTP quand celui-ci est disponible, et le transport par WebSocket ne prend en charge ni l'authentification par OAuth ni l'option de transport, ce qui le réserve à des usages internes contrôlés.",
+      },
+      {
+        q: "Faut-il écrire un serveur MCP ou exposer une API classique ?",
+        a: "Le critère est la réutilisation. Pour un seul assistant accédant à un seul outil en interne, un appel d'outil classique suffit et MCP ajoute une couche sans bénéfice. Dès que plusieurs assistants doivent accéder au même système, le serveur MCP s'écrit une fois et sert tous les clients compatibles. Pour un système exposé à des tiers, le protocole apporte un cadre d'autorisation exigeant. En revanche, un besoin de contrôle d'accès par rôle se traite dans une couche applicative en amont, aucune primitive de rôle n'existant dans la spécification.",
+      },
+      {
+        q: "Combien existe-t-il de serveurs MCP ?",
+        a: "Aucun total fiable n'est publiable. Le registre officiel n'expose pas de compteur global, et les chiffres qui circulent couvrent des périmètres différents et non comparables : entrées de registres publics analysées par la recherche, serveurs distants actifs relevés par un préprint, connecteurs listés dans l'annuaire d'un produit, serveurs publiés selon une fondation. Ces valeurs ne s'additionnent pas et ne mesurent pas la même chose.",
+      },
+      {
+        q: "Que deviennent les fonctions dépréciées de MCP ?",
+        a: "Plusieurs fonctions historiques, dont l'échantillonnage côté serveur, la journalisation et l'enregistrement dynamique de client, sont dépréciées depuis le 28 juillet 2026 et deviennent éligibles au retrait à partir du 28 juillet 2027, la fenêtre minimale annoncée étant de douze mois. Rien n'a encore été retiré. La spécification indique les migrations attendues, par exemple l'usage des paramètres d'outil ou de la configuration du serveur en remplacement de certaines de ces fonctions.",
+      },
+    ],
+    internalLinks: [
+      { label: "Intégration LLM et RAG : connecter l'IA à vos données", href: '/integration-llm-rag' },
+      { label: "Agence de développement IA", href: '/agence-developpement-ia' },
+      { label: "Sécurité de Claude en entreprise", href: '/securite-claude-entreprise' },
+      { label: "POC IA : les 5 murs avant la production", href: '/blog/poc-ia-passer-en-production' },
+      { label: "Glossaire IA : 83 termes expliqués", href: '/blog/glossaire-ia' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/serveur-mcp-entreprise-connecter-ia-si#termes',
+        name: "MCP : les termes du domaine",
+        hasDefinedTerm: [
+          {
+            '@type': 'DefinedTerm',
+            name: 'Model Context Protocol (MCP)',
+            description: "Protocole ouvert décrivant comment un modèle d'IA découvre, appelle des outils et lit des ressources. Versé en décembre 2025 à l'Agentic AI Foundation.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Serveur MCP',
+            description: "Composant qui expose des outils et des ressources d'un système d'information selon le protocole MCP, utilisable par tout client compatible.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Protocole sans état',
+            description: "Mode de fonctionnement introduit par la révision du 28 juillet 2026 : chaque requête porte sa version de protocole et les capacités du client, sans session maintenue au niveau du protocole.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: "Validation d'audience",
+            description: "Vérification par un serveur que le jeton d'accès présenté lui a bien été délivré. La spécification MCP impose de refuser tout jeton qui ne lui a pas été explicitement destiné.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Injection de consignes indirecte',
+            description: "Attaque par laquelle un contenu lu par le modèle, y compris la description d'un outil exposé par un serveur tiers, contient des instructions destinées à détourner son comportement.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'audit-ia-entreprise-methode-prix',
     tag: 'Conseil IA',
     title: "Audit IA : ce qu'il contient vraiment, ce qu'il coûte, et les 4 cas où il ne sert à rien",

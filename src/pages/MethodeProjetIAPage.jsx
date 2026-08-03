@@ -32,7 +32,10 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Méthode et modèles d'engagement IA | Masteria"
 const META_DESC = "Méthode projet IA de bout en bout et trois modèles d'engagement, dont la régie avec développeurs sur site. Code propriété client, gouvernance, sécurité."
-const KEYWORDS = "méthode projet ia, projet ia, conduite de projet ia, méthodologie projet ia, cadrage projet ia, poc ia, mvp ia"
+// « poc ia » est laissé à l'article /blog/poc-ia-passer-en-production, qui traite
+// de front le passage du pilote à la production. Cette page garde l'intention
+// « méthode et engagement contractuel ».
+const KEYWORDS = "méthode projet ia, projet ia, conduite de projet ia, méthodologie projet ia, cadrage projet ia, mvp ia"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
 
@@ -493,6 +496,11 @@ export default function MethodeProjetIAPage() {
 
           <p style={answerStyle}>
             <strong>Un projet suit cinq étapes, chacune avec un livrable : cadrage (note de cadrage), prototype ou POC (prototype fonctionnel), développement (solution documentée), déploiement (mise en production intégrée à votre SI) et transfert aux équipes (documentation, formation, autonomie). Vous décidez à chaque étape, sur des livrables concrets.</strong>
+          </p>
+          {/* Renvoi vers l'article qui traite le passage du POC à la production. */}
+          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 16, maxWidth: 720 }}>
+            Un prototype qui fonctionne ne devient pas un système en service pour autant. Nous détaillons les
+            obstacles réels dans <Link to="/blog/poc-ia-passer-en-production" style={{ color: '#2563EB', fontWeight: 600 }}>les 5 murs entre le POC et la production</Link>.
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 44, lineHeight: 1.7, maxWidth: 880 }}>
