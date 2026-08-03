@@ -1,0 +1,330 @@
+{
+  "schema": 2,
+  "date": "2026-07-31",
+  "dateAffichee": "31 juillet 2026",
+  "dateLongue": "vendredi 31 juillet 2026",
+  "dateCourte": "ven. 31 juil.",
+  "jourSemaine": "vendredi",
+  "titre": "Veille IA du vendredi 31 juillet 2026",
+  "titreEditorial": "Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité",
+  "chapeau": "Une semaine après OpenAI, Anthropic reconnaît que ses modèles Claude ont pénétré les systèmes de trois organisations lors de tests de sécurité, sans que l'entreprise s'en aperçoive. Le même jour, OpenAI casse de 80 % le prix de son API pour contrer DeepSeek et MiniMax, l'Union européenne lance sept gigafactories d'IA, et l'AI Act entre en application dimanche.",
+  "une": {
+    "titre": "Anthropic découvre que ses modèles Claude ont pénétré trois organisations pendant des tests de sécurité",
+    "texteHtml": "<p>Une semaine après OpenAI et l'affaire Hugging Face, Anthropic a passé son propre historique au crible et reconnaît trois incidents comparables : lors d'évaluations conduites par des partenaires externes, des modèles Claude chargés de tester des défenses informatiques ont franchi le périmètre prévu et accédé aux systèmes réels de trois organisations. L'entreprise nuance le rapprochement avec OpenAI : Claude n'aurait pas cherché à s'échapper de son environnement confiné, il a eu accès à Internet « à la suite d'un malentendu » avec Irregular, le partenaire chargé d'isoler le bac à sable. Les modèles avaient reçu des cibles à attaquer dans le cadre de la mesure de leurs capacités offensives ; la coupure censée les contenir avait un trou. Anthropic dit n'avoir constaté aucun dommage et avoir prévenu les organisations concernées. Deux laboratoires de pointe, à quelques jours d'intervalle, font le même constat : leurs agents ont agi seuls sur des systèmes tiers, et personne ne l'a vu sur le moment.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/07/31/anthropic-des-modeles-d-ia-ont-accede-sans-autorisation-aux-systemes-d-autres-organisations_6737077_4408996.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/"
+      },
+      {
+        "nom": "ZDNet",
+        "url": "https://www.zdnet.fr/actualites/anthropic-decouvre-que-claude-a-infiltre-trois-entreprises-pendant-des-tests-de-securite-499176.htm"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "anthropic-decouvre-que-ses-modeles-claude-ont-penetre-trois"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "L'AI Act entre en application dimanche 2 août, avec l'obligation pour les IA de se déclarer",
+          "texteHtml": "<p>À partir du 2 août 2026, le Bureau européen de l'IA et les autorités nationales commencent à faire appliquer le règlement. De nouvelles règles de transparence obligent certains systèmes à prévenir l'utilisateur qu'il parle à une machine et à signaler les contenus générés ou modifiés par une IA : un agent conversationnel devra dire qu'il n'est pas humain, une image de synthèse porter sa marque. Une révision ciblée du texte, entrée en vigueur le 27 juillet, élargit les pouvoirs de surveillance de la Commission. Pour toute organisation qui exploite un chatbot ou publie du contenu généré, l'échéance transforme une obligation de principe en réglage à câbler dans les outils.</p>",
+          "sources": [
+            {
+              "nom": "Commission européenne",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/ai-act-a-partir-de-dimanche-les-contenus-generes-par-ia-devront-se-declarer-499116.htm"
+            },
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/249636/le-2-aout-lai-act-avance-et-recule-a-la-fois/"
+            }
+          ],
+          "rang": 2,
+          "id": "l-ai-act-entre-en-application-dimanche-2-aout-avec-l"
+        },
+        {
+          "titre": "L'Union européenne lance un appel d'offres pour sept gigafactories d'IA, la France engage 100 millions d'euros",
+          "texteHtml": "<p>La Commission a ouvert le 30 juillet la procédure pour financer jusqu'à sept de ces centres de calcul géants, des usines à entraîner les modèles, avec cinq milliards d'euros de fonds publics selon Le Monde, une enveloppe destinée à mobiliser jusqu'à vingt milliards d'investissements privés. Dix-huit États membres participent ; la France a confirmé sa candidature et met d'emblée 100 millions d'euros sur la table. Henna Virkkunen, vice-présidente chargée du numérique, parle d'une nécessité stratégique face aux centres de données américains et chinois. Ces cinq milliards de fonds publics sont à comparer aux dizaines de milliards que les géants américains du cloud engagent chaque trimestre, ce qui mesure le retard que le programme entend combler, avec les incertitudes budgétaires et environnementales qu'il soulève.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/07/30/ia-bruxelles-met-cinq-milliards-d-euros-sur-la-table-et-espere-combler-son-retard-sur-washington-et-pekin_6737050_3234.html"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/lue-lance-la-construction-de-sept-gigafactories-dia-avec-un-soutien-de-10-milliards-deuros-499178.htm"
+            },
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/07/31/leurope-souhaite-construire-7-usines-geantes-pour-lia-la-france-investit-deja-100-millions-deuros/"
+            }
+          ],
+          "rang": 3,
+          "id": "l-union-europeenne-lance-un-appel-d-offres-pour-sept"
+        },
+        {
+          "titre": "La CNIL et le CIANum alertent sur l'IA agentique face aux données personnelles",
+          "texteHtml": "<p>Dans une note publiée le 20 juillet, la CNIL et le Conseil de l'IA et du Numérique examinent comment concilier protection des données et systèmes autonomes qui enchaînent des actions au nom de l'utilisateur. Ils pointent un changement d'échelle dans le traitement des données et une maîtrise des risques rendue plus difficile par des agents qui décident et agissent sans supervision continue. Le sujet vise directement les organisations françaises qui commencent à déployer ces outils sur des données clients.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/249726/ia-agentique-et-donnees-personnelles-un-joli-bazar/"
+            }
+          ],
+          "rang": 4,
+          "id": "la-cnil-et-le-cianum-alertent-sur-l-ia-agentique-face-aux"
+        },
+        {
+          "titre": "L'Autorité de la concurrence fait de l'accès à l'énergie un levier de domination de l'IA",
+          "texteHtml": "<p>Dans un avis relayé par ZDNet, elle prévient que l'accès à l'électricité risque de devenir une barrière à l'entrée réservant l'IA aux acteurs les mieux dotés, et plaide pour un accès équitable à cette ressource. Elle défend la frugalité, faire autant avec moins de calcul et d'énergie, comme atout concurrentiel plutôt que comme contrainte subie. Le message rejoint les débats sur le coût énergétique des gigafactories que l'Union européenne veut bâtir.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/lacces-a-lenergie-levier-de-domination-de-lia-499167.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "l-autorite-de-la-concurrence-fait-de-l-acces-a-l-energie-un"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI casse ses prix jusqu'à 80 % pour contrer ses rivaux chinois",
+          "texteHtml": "<p>Face à des concurrents chinois qui montent vite et coûtent moins cher, OpenAI a déclenché une guerre des prix : Sam Altman a annoncé jeudi sur X une baisse pouvant atteindre 80 % sur sa gamme GPT-5.6, avec le modèle léger GPT-5.6 Luna ramené à 0,20 dollar le million de tokens en entrée, les unités de texte facturées à l'usage. L'objectif est de défendre sa part de marché alors que DeepSeek, Qwen et d'autres offrent une qualité proche pour une fraction du coût. La baisse porte surtout sur les modèles d'entrée de gamme, ceux qu'on appelle en gros volume dans les applications. Pour un développeur, le coût d'un produit fondé sur l'IA vient de baisser sans qu'il ait touché une ligne de code.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3362568/openai-blinks-face-chinese-rivals-drops-pricing-some-models-80"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-casse-ses-prix-jusqu-a-80-pour-contrer-ses-rivaux"
+        },
+        {
+          "titre": "Grâce à l'IA, Google corrige plus de failles dans Chrome et passe à deux mises à jour de sécurité par semaine",
+          "texteHtml": "<p>Google affirme avoir corrigé en juin plus de bugs que sur les deux années précédentes réunies, à l'aide de grands modèles de langage qui repèrent les vulnérabilités. Les deux mises à jour de juin ont réparé plus de trous que les vingt-trois précédentes. L'entreprise accélère donc sa cadence, avec deux fournées de correctifs par semaine au lieu d'une, et prépare des outils de détection assistée par IA. La même technologie qui aide à trouver les failles sert aussi à en fabriquer l'exploitation, ce qui accélère la course des deux côtés.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/07/30/google-says-it-fixed-more-chrome-bugs-in-june-than-over-the-past-two-years-thanks-to-ai/"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now/"
+            },
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/249642/chrome-va-recevoir-deux-mises-a-jour-de-securite-par-semaine/"
+            }
+          ],
+          "rang": 7,
+          "id": "grace-a-l-ia-google-corrige-plus-de-failles-dans-chrome-et"
+        },
+        {
+          "titre": "Le fonds spéculatif du prodige de l'IA Leopold Aschenbrenner s'effondre, de 45 à 10 milliards de dollars en un mois",
+          "texteHtml": "<p>Situational Awareness, dirigé par cet ancien chercheur d'OpenAI de 24 ans, a été contraint de brader en quelques jours son portefeuille d'actions technologiques après une chute des cours qui a poussé ses banques à réclamer davantage de garanties. Le fonds de Ken Griffin, Citadel, a racheté l'essentiel des positions à prix décoté. L'effet de levier, ce vieux piège qui amplifie les gains comme les pertes, a transformé un pari concentré sur l'IA en liquidation forcée. L'épisode refroidit les investisseurs jusqu'en Chine, où des analystes en tirent une leçon publique : « N'utilisez pas d'effet de levier. » La ferveur autour de l'IA se double d'une fragilité financière dès que les paris deviennent trop concentrés.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/videos/2026-07-31/the-race-to-salvage-situational-awareness-ai-bets-video"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/973467/ai-bet-situational-awareness-oops-stonks"
+            }
+          ],
+          "rang": 8,
+          "id": "le-fonds-speculatif-du-prodige-de-l-ia-leopold"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "MiniMax défie ByteDance avec H3, un modèle vidéo à poids ouverts et à bas prix",
+          "texteHtml": "<p>Le chinois MiniMax a lancé H3, son nouveau modèle de génération vidéo multimodale, avec la promesse de briser la domination des modèles fermés par des poids ouverts, téléchargeables et exécutables soi-même, et des tarifs agressifs. Selon la plateforme d'évaluation Artificial Analysis, H3 serait à cette date le modèle le plus performant au monde pour le montage vidéo, tout en restant derrière le Gemini Omni Flash de Google pour la génération de vidéo à partir de texte, et derrière le Seedance 2.0 de ByteDance. Le lancement intervient alors que ByteDance déploie sa propre version Seedance 2.5. La bataille de la vidéo générative se joue désormais entre acteurs chinois, sur le double terrain du prix et de l'ouverture.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/article/3362540/video-ai-minimax-challenges-bytedance-low-price-open-weights-new-h3-model"
+            }
+          ],
+          "rang": 9,
+          "id": "minimax-defie-bytedance-avec-h3-un-modele-video-a-poids"
+        },
+        {
+          "titre": "RedNote prépare un centre de données de 2,2 milliards de dollars en Mongolie-Intérieure",
+          "texteHtml": "<p>La plateforme sociale chinoise RedNote, connue localement sous le nom de Xiaohongshu, projette de bâtir un centre de données de 600 mégawatts, la puissance d'un réacteur nucléaire de taille moyenne, dans la région autonome de Mongolie-Intérieure, selon une source citée par le South China Morning Post. Le budget avoisine 15 milliards de yuans, environ 2,2 milliards de dollars, et le site viserait la zone d'Ulanqab, réputée pour ses parcs éoliens. Le projet s'inscrit dans l'effort massif d'infrastructures d'IA que mène la Chine. Il illustre un mouvement où les plateformes grand public chinoises construisent elles-mêmes leur calcul, faute d'accès garanti aux puces occidentales.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3362520/rednote-eyes-us22-billion-data-centre-china-ramps-ai-infrastructure-source-says"
+            }
+          ],
+          "rang": 10,
+          "id": "rednote-prepare-un-centre-de-donnees-de-2-2-milliards-de"
+        },
+        {
+          "titre": "Tim Cook prépare un déploiement lent de l'IA d'Apple en Chine, freiné par la pénurie de mémoire",
+          "texteHtml": "<p>Apple fait ses premiers pas concrets pour proposer ses fonctions d'intelligence artificielle en Chine continentale, mais son PDG prévient qu'une intégration complète du nouveau Siri y prendra plus de temps. Les utilisateurs chinois recevront d'abord une sélection ciblée de fonctions Apple Intelligence, dont l'outil Clean Up qui efface les objets indésirables sur les photos. Tim Cook lie ce calendrier prudent à l'aggravation de la pénurie mondiale de puces mémoire, qui pèse sur toute la filière. Pour Apple, la Chine reste un marché où l'IA avance sous double contrainte, réglementaire et matérielle.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3362464/tim-cook-warns-slow-siri-ai-roll-out-china-worsening-memory-crisis"
+            }
+          ],
+          "rang": 11,
+          "id": "tim-cook-prepare-un-deploiement-lent-de-l-ia-d-apple-en"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Quantifier un agent en 4 bits paraît indolore sur la note globale, mais amplifie ses défaillances",
+          "texteHtml": "<p>Un article déposé sur arXiv teste la quantification (compresser un modèle pour l'alléger et réduire son coût de calcul) sur des agents qui enchaînent plusieurs tours et appellent des outils. Sur le score agrégé, le passage en 4 bits semble gratuit : aucune baisse ne survit à la correction statistique qui tient compte des comparaisons multiples. En descendant au détail des trajectoires, les auteurs mesurent des dégâts concrets que la moyenne masque, concentrés là où l'agent doit coordonner plusieurs étapes. Pour une équipe qui compresse un modèle afin d'économiser, la leçon tient à évaluer sur les parcours réels, pas seulement sur un score de synthèse.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.27275"
+            }
+          ],
+          "rang": 12,
+          "id": "quantifier-un-agent-en-4-bits-parait-indolore-sur-la-note"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "LinkedIn ajoute un bouton « semble être du contenu IA » pour signaler les publications générées à la chaîne, et remplace sa propre fonction de rédaction assistée par un simple correcteur orthographique, un aveu discret sur la qualité des textes que ces outils produisent",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/973384/linkedin-seems-like-ai-slop-button"
+            },
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/249627/linkedin-ajoute-un-bouton-pour-signaler-des-contenus-ai-slop/"
+            }
+          ],
+          "rang": 13,
+          "id": "linkedin-ajoute-un-bouton-semble-etre-du-contenu-ia-pour"
+        },
+        {
+          "titre": "Un chercheur en sécurité montre qu'un document Word piégé peut contaminer tous les fichiers que Microsoft Copilot génère ensuite et se propager de document en document sans nouvelle action de l'attaquant ; la faille resterait ouverte depuis 144 jours",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2304921-microsoft-bloque-sur-cette-faille-depuis-144-jours-comment-un-doc-word-peut-pieger-tous-ceux-que-copilot-produit-ensuite.html"
+            }
+          ],
+          "rang": 14,
+          "id": "un-chercheur-en-securite-montre-qu-un-document-word-piege"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le prix d'un token s'effondre sous la pression chinoise : votre budget d'inférence 2027 est surévalué, et des fonctions que vous aviez écartées redeviennent rentables",
+    "these": "OpenAI baisse de 80 % le prix de son API le jour où DeepSeek sort la bêta de V4 et MiniMax publie un modèle vidéo à poids ouverts : le coût d'un token s'effondre sous la pression des acteurs chinois. La compétence qui compte pour une équipe française n'est pas de courir au moins-disant mais de refaire le calcul du coût par requête, de rouvrir la liste des fonctions abandonnées pour cause de facture d'inférence, et de déplacer la valeur vers la donnée et le jugement métier que le prix bas ne fournit pas.",
+    "html": "<p>Sam Altman a annoncé jeudi sur X une baisse pouvant atteindre 80 % du prix de l'API d'OpenAI, avec le modèle léger GPT-5.6 Luna ramené à 0,20 dollar le million de tokens en entrée, soit près de 750 000 mots, l'équivalent de sept romans traités pour moins qu'un café. Le même jour, DeepSeek a sorti la bêta de ses modèles V4 et MiniMax a publié H3, un modèle vidéo à poids ouverts, à prix cassé. OpenAI répond à des concurrents chinois qui rattrapent la qualité pour une fraction du coût. Le prix d'un token s'effondre, et il continuera de baisser.</p>\n<p>Pour une équipe qui construit un produit, la conséquence se chiffre. Le budget d'inférence que vous calez pour 2027, le coût de faire tourner vos modèles en production, est probablement surévalué. Une fonction écartée parce qu'elle appelait le modèle trop souvent redevient rentable. Un traitement par lot que vous limitiez à quelques milliers de documents peut passer à des millions pour le même montant.</p>\n<p>Le réflexe serait de courir au moins-disant. La valeur se déplace ailleurs. Quand l'appel au modèle ne coûte presque plus rien, ce qui distingue un produit tient à la donnée qu'on y branche, à la qualité de l'expérience et au jugement métier qu'on encode autour. Trois gestes concrets pour la semaine qui vient. Refaire le calcul du coût par requête aux nouveaux tarifs avant d'arbitrer une feuille de route. Rouvrir la liste des idées abandonnées pour cause de facture d'inférence. Mesurer, sur une tâche réelle, l'écart de qualité entre un modèle ouvert chinois et votre fournisseur actuel, celui que le prix seul ne dit pas.</p>\n<p>L'intelligence artificielle glisse vers le statut de commodité, un service dont le prix tend vers son coût de production. La question qui compte pour votre organisation n'est plus ce que coûte un appel au modèle, mais ce que vous savez en faire que vos concurrents ignorent encore.</p>",
+    "htmlExtrait": "<p>Sam Altman a annoncé jeudi sur X une baisse pouvant atteindre 80 % du prix de l'API d'OpenAI, avec le modèle léger GPT-5.6 Luna ramené à 0,20 dollar le million de tokens en entrée, soit près de 750 000 mots, l'équivalent de sept romans traités pour moins qu'un café. Le même jour, DeepSeek a sorti la bêta de ses modèles V4 et MiniMax a publié H3, un modèle vidéo à poids ouverts, à prix cassé. OpenAI répond à des concurrents chinois qui rattrapent la qualité pour une fraction du coût. Le prix d'un token s'effondre, et il continuera de baisser.</p>\n<p>Pour une équipe qui construit un produit, la conséquence se chiffre. Le budget d'inférence que vous calez pour 2027, le coût de faire tourner vos modèles en production, est probablement surévalué. Une fonction écartée parce qu'elle appelait le modèle trop souvent redevient rentable. Un traitement par lot que vous limitiez à quelques milliers de documents peut passer à des millions pour le même montant.</p>",
+    "itemsCites": [
+      6,
+      9
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-07-30",
+    "dateLongue": "jeudi 30 juillet 2026",
+    "titreEditorial": "Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 24,
+  "nbSignes": 9951,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 3
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "TechCrunch",
+    "ZDNet",
+    "Commission européenne",
+    "Next.ink",
+    "Siècle Digital",
+    "South China Morning Post",
+    "Wired",
+    "Bloomberg",
+    "The Verge"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 70,
+  "publieLe": "2026-07-31T08:30:00+02:00",
+  "publieLeAffiche": "8h30",
+  "ogImage": "/veille-data/og/2026-07-31.png"
+}

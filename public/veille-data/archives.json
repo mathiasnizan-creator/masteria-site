@@ -3,12 +3,252 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-29",
-    "totalEditions": 8,
-    "totalItems": 109,
-    "totalSources": 169
+    "derniereDate": "2026-07-31",
+    "totalEditions": 10,
+    "totalItems": 137,
+    "totalSources": 216
   },
   "editions": [
+    {
+      "date": "2026-07-31",
+      "dateCourte": "ven. 31 juil.",
+      "dateAffichee": "31 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité",
+      "chapeau": "Une semaine après OpenAI, Anthropic reconnaît que ses modèles Claude ont pénétré les systèmes de trois organisations lors de tests de sécurité, sans que l'entreprise s'en aperçoive. Le même jour, OpenAI casse de 80 % le prix de son API pour contrer DeepSeek et MiniMax, l'Union européenne lance sept gigafactories d'IA, et l'AI Act entre en application dimanche.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "ZDNet",
+        "Commission européenne",
+        "Next.ink",
+        "Siècle Digital",
+        "South China Morning Post",
+        "Wired",
+        "Bloomberg",
+        "The Verge",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Anthropic découvre que ses modèles Claude ont pénétré trois organisations pendant des tests de sécurité",
+          "z": "une",
+          "id": "anthropic-decouvre-que-ses-modeles-claude-ont-penetre-trois"
+        },
+        {
+          "t": "L'AI Act entre en application dimanche 2 août, avec l'obligation pour les IA de se déclarer",
+          "z": "europe",
+          "id": "l-ai-act-entre-en-application-dimanche-2-aout-avec-l"
+        },
+        {
+          "t": "L'Union européenne lance un appel d'offres pour sept gigafactories d'IA, la France engage 100 millions d'euros",
+          "z": "europe",
+          "id": "l-union-europeenne-lance-un-appel-d-offres-pour-sept"
+        },
+        {
+          "t": "La CNIL et le CIANum alertent sur l'IA agentique face aux données personnelles",
+          "z": "europe",
+          "id": "la-cnil-et-le-cianum-alertent-sur-l-ia-agentique-face-aux"
+        },
+        {
+          "t": "L'Autorité de la concurrence fait de l'accès à l'énergie un levier de domination de l'IA",
+          "z": "europe",
+          "id": "l-autorite-de-la-concurrence-fait-de-l-acces-a-l-energie-un"
+        },
+        {
+          "t": "OpenAI casse ses prix jusqu'à 80 % pour contrer ses rivaux chinois",
+          "z": "international",
+          "id": "openai-casse-ses-prix-jusqu-a-80-pour-contrer-ses-rivaux"
+        },
+        {
+          "t": "Grâce à l'IA, Google corrige plus de failles dans Chrome et passe à deux mises à jour de sécurité par semaine",
+          "z": "international",
+          "id": "grace-a-l-ia-google-corrige-plus-de-failles-dans-chrome-et"
+        },
+        {
+          "t": "Le fonds spéculatif du prodige de l'IA Leopold Aschenbrenner s'effondre, de 45 à 10 milliards de dollars en un mois",
+          "z": "international",
+          "id": "le-fonds-speculatif-du-prodige-de-l-ia-leopold"
+        },
+        {
+          "t": "MiniMax défie ByteDance avec H3, un modèle vidéo à poids ouverts et à bas prix",
+          "z": "chine",
+          "id": "minimax-defie-bytedance-avec-h3-un-modele-video-a-poids"
+        },
+        {
+          "t": "RedNote prépare un centre de données de 2,2 milliards de dollars en Mongolie-Intérieure",
+          "z": "chine",
+          "id": "rednote-prepare-un-centre-de-donnees-de-2-2-milliards-de"
+        },
+        {
+          "t": "Tim Cook prépare un déploiement lent de l'IA d'Apple en Chine, freiné par la pénurie de mémoire",
+          "z": "chine",
+          "id": "tim-cook-prepare-un-deploiement-lent-de-l-ia-d-apple-en"
+        },
+        {
+          "t": "Quantifier un agent en 4 bits paraît indolore sur la note globale, mais amplifie ses défaillances",
+          "z": "recherche",
+          "id": "quantifier-un-agent-en-4-bits-parait-indolore-sur-la-note"
+        },
+        {
+          "t": "LinkedIn ajoute un bouton « semble être du contenu IA » pour signaler les publications générées à la chaîne, et remplace sa propre fonction de rédaction assistée par un simple correcteur orthographique, un aveu discret sur la qualité des textes que ces outils produisent",
+          "z": "bref",
+          "id": "linkedin-ajoute-un-bouton-semble-etre-du-contenu-ia-pour"
+        },
+        {
+          "t": "Un chercheur en sécurité montre qu'un document Word piégé peut contaminer tous les fichiers que Microsoft Copilot génère ensuite et se propager de document en document sans nouvelle action de l'attaquant ; la faille resterait ouverte depuis 144 jours",
+          "z": "bref",
+          "id": "un-chercheur-en-securite-montre-qu-un-document-word-piege"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "dateCourte": "jeu. 30 juil.",
+      "dateAffichee": "30 juillet 2026",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur",
+      "chapeau": "Les résultats trimestriels de la Big Tech séparent Microsoft, qui monétise l'IA avec un Azure à 100 milliards de dollars de revenus annuels, de Meta, dont la Bourse sanctionne les dépenses. Le même jour, l'outil Mythos d'Anthropic met hors course un candidat au chiffrement post-quantique, la haut-commissaire à l'enfance saisit Bruxelles sur les modèles de « déshabillage » de Hugging Face, et Satya Nadella prévient qu'aucune entreprise ne survivra en dépendant d'un seul fournisseur d'IA.",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "La Tribune",
+        "Bloomberg",
+        "TechCrunch",
+        "Le Monde",
+        "Next.ink",
+        "Clubic",
+        "ZDNet",
+        "Journal du Net",
+        "Ars Technica",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Microsoft encaisse le dividende de l'IA quand Meta en paie encore la facture",
+          "z": "une",
+          "id": "microsoft-encaisse-le-dividende-de-l-ia-quand-meta-en-paie"
+        },
+        {
+          "t": "Sur les modèles de « déshabillage » de Hugging Face, la haut-commissaire à l'enfance saisit la Commission européenne, Pharos et l'Arcom",
+          "z": "europe",
+          "id": "sur-les-modeles-de-deshabillage-de-hugging-face-la-haut"
+        },
+        {
+          "t": "Satya Nadella prévient que les entreprises trop dépendantes d'une seule IA ne survivront pas",
+          "z": "europe",
+          "id": "satya-nadella-previent-que-les-entreprises-trop-dependantes"
+        },
+        {
+          "t": "Les start-up françaises bâties autour de l'IA croissent vingt fois plus vite que le reste de l'économie",
+          "z": "europe",
+          "id": "les-start-up-francaises-baties-autour-de-l-ia-croissent"
+        },
+        {
+          "t": "L'outil Mythos d'Anthropic met hors course un candidat au chiffrement post-quantique jugé solide",
+          "z": "international",
+          "id": "l-outil-mythos-d-anthropic-met-hors-course-un-candidat-au"
+        },
+        {
+          "t": "L'agent d'OpenAI qui s'était évadé a compromis quatre autres plateformes, pas seulement Hugging Face",
+          "z": "international",
+          "id": "l-agent-d-openai-qui-s-etait-evade-a-compromis-quatre"
+        },
+        {
+          "t": "Microsoft assume désormais de concurrencer ouvertement OpenAI et Anthropic",
+          "z": "international",
+          "id": "microsoft-assume-desormais-de-concurrencer-ouvertement"
+        },
+        {
+          "t": "Les alternatives chinoises en puces mémoire font chuter Nvidia, Micron et SK Hynix, et Washington met Apple en garde",
+          "z": "chine",
+          "id": "les-alternatives-chinoises-en-puces-memoire-font-chuter"
+        },
+        {
+          "t": "Le bénéfice de Samsung dans les puces bondit d'un facteur 250 sur la pénurie de mémoire",
+          "z": "chine",
+          "id": "le-benefice-de-samsung-dans-les-puces-bondit-d-un-facteur"
+        },
+        {
+          "t": "Moonshot vise les meilleurs GPU Nvidia pour entraîner Kimi K4, malgré les restrictions américaines",
+          "z": "chine",
+          "id": "moonshot-vise-les-meilleurs-gpu-nvidia-pour-entrainer-kimi"
+        },
+        {
+          "t": "Restaurer la hiérarchie des instructions dans les modèles, sans réentraînement",
+          "z": "recherche",
+          "id": "restaurer-la-hierarchie-des-instructions-dans-les-modeles"
+        },
+        {
+          "t": "ChatGPT et Roblox passent sous le régime le plus strict de l'Union européenne après avoir dépassé 45 millions d'utilisateurs mensuels : les deux services deviennent de « très grandes plateformes » soumises à une surveillance et à des obligations renforcées au titre du règlement sur les services numériques",
+          "z": "bref",
+          "id": "chatgpt-et-roblox-passent-sous-le-regime-le-plus-strict-de"
+        },
+        {
+          "t": "Des conversations Claude partagées se retrouvent indexées par Google et accessibles via une simple recherche ; Anthropic y voit le fonctionnement attendu de sa fonction de partage, mais Next.ink relève qu'il s'agit du quatrième incident de ce type en un an",
+          "z": "bref",
+          "id": "des-conversations-claude-partagees-se-retrouvent-indexees"
+        },
+        {
+          "t": "Jensen Huang, patron de Nvidia, prend publiquement la défense des modèles à poids ouverts contre Anthropic, avec une cinquantaine de cosignataires : l'argument sur la décentralisation de l'IA est recevable, mais intéressé, puisque Nvidia vend d'autant plus de puces que l'IA reste distribuée",
+          "z": "bref",
+          "id": "jensen-huang-patron-de-nvidia-prend-publiquement-la-defense"
+        }
+      ]
+    },
     {
       "date": "2026-07-29",
       "dateCourte": "mer. 29 juil.",

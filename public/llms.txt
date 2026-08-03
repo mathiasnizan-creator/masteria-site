@@ -184,6 +184,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [31 juillet 2026 : Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité](https://www.master-ia.fr/veille-ia/2026-07-31)
 - [30 juillet 2026 : Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur](https://www.master-ia.fr/veille-ia/2026-07-30)
 - [29 juillet 2026 : 1 100 salariés des grands laboratoires demandent à Washington de ralentir l'IA de pointe ; pendant ce temps, l'usage non contrôlé s'installe dans les entreprises](https://www.master-ia.fr/veille-ia/2026-07-29)
 - [28 juillet 2026 : L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards](https://www.master-ia.fr/veille-ia/2026-07-28)

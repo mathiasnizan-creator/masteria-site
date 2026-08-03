@@ -244,7 +244,12 @@
     "titreEditorial": "L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-07-30",
+    "dateLongue": "jeudi 30 juillet 2026",
+    "titreEditorial": "Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 17,
   "nbSignes": 9054,

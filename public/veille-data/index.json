@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-29",
-    "totalEditions": 8,
-    "totalItems": 109,
-    "totalSources": 169
+    "derniereDate": "2026-07-31",
+    "totalEditions": 10,
+    "totalItems": 137,
+    "totalSources": 216
   },
   "editions": [
+    {
+      "date": "2026-07-31",
+      "dateAffichee": "31 juillet 2026",
+      "dateCourte": "ven. 31 juil.",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-07-30",
+      "dateAffichee": "30 juillet 2026",
+      "dateCourte": "jeu. 30 juil.",
+      "mois": "2026-07",
+      "moisAffiche": "Juillet 2026",
+      "titreEditorial": "Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-07-29",
       "dateAffichee": "29 juillet 2026",

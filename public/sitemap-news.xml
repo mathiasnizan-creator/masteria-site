@@ -2,25 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-29</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-07-31</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-29T10:08:02+02:00</news:publication_date>
-      <news:title>Veille IA du 29 juillet 2026 : 1 100 salariés des grands laboratoires demandent à Washington de ralentir l&#x27;IA de pointe ; pendant ce temps, l&#x27;usage non contrôlé s&#x27;installe dans les entreprises</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-28</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-28T11:39:17+02:00</news:publication_date>
-      <news:title>Veille IA du 28 juillet 2026 : L&#x27;étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards</news:title>
+      <news:publication_date>2026-07-31T08:30:00+02:00</news:publication_date>
+      <news:title>Veille IA du 31 juillet 2026 : Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l&#x27;inférence devient une commodité</news:title>
     </news:news>
   </url>
 </urlset>
