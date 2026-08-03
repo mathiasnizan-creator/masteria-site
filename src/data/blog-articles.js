@@ -16,6 +16,429 @@
  */
 
 export const BLOG_ARTICLES = [
+  {
+    slug: 'audit-ia-entreprise-methode-prix',
+    tag: 'Conseil IA',
+    title: "Audit IA : ce qu'il contient vraiment, ce qu'il coûte, et les 4 cas où il ne sert à rien",
+    metaTitle: "Audit IA : ce qu'il contient, ce qu'il coûte vraiment",
+    metaDesc: "Audit IA : les trois types à ne pas confondre, ce que la loi impose vraiment, les normes publiées, le seul prix public vérifiable et les cas à éviter.",
+    date: '3 août 2026',
+    datePublished: '2026-08-03',
+    dateModified: '2026-08-03',
+    readTime: '15 min',
+    keywords: ['audit ia', 'audit ia entreprise', 'audit de maturité ia', 'audit de conformité ia', 'audit ai act', 'cabinet audit ia', 'audit des processus ia'],
+    excerpt: "« Audit IA » recouvre trois missions différentes qu'on vous vendra au même prix. Ce que le règlement européen impose réellement, les normes publiées à ce jour, le seul tarif public vérifiable en France, et les quatre situations où l'audit est une dépense inutile.",
+    intro: "Un audit IA est un état des lieux de l'intelligence artificielle dans une organisation. Le terme n'a aucune définition officielle ni normalisée : c'est un mot commercial qui recouvre trois missions distinctes, l'audit de maturité, l'audit de conformité réglementaire et l'audit algorithmique d'un modèle. Contrairement à ce que laisse entendre une partie du marché, le règlement européen sur l'IA n'impose pas d'audit externe à la majorité des systèmes à haut risque : il prévoit une auto-évaluation documentée. Cet article détaille ce que contient chaque type de mission, les référentiels réellement publiés, le seul prix public vérifiable en France, et les quatre cas où l'audit ne sert à rien.",
+    blocks: [
+      { type: 'p', text: "Depuis que l'échéance du règlement européen approche, les propositions d'audit IA se multiplient. Beaucoup vendent un questionnaire de conformité en promettant une certification qui n'existe pas encore. Le tri se fait sur trois questions simples : de quel audit parle-t-on, quel référentiel est appliqué, et qui délivre quoi." },
+
+      { type: 'h2', text: "« Audit IA » ne veut rien dire tant qu'on n'a pas dit lequel" },
+      { type: 'p', text: "Trois missions circulent sous le même nom. Elles n'ont ni le même objet, ni les mêmes compétences, ni le même livrable. Un prestataire qui ne vous demande pas laquelle vous voulez ne sait pas ce qu'il vend." },
+      {
+        type: 'table',
+        headers: ['Type', 'La question à laquelle il répond', 'Livrable attendu'],
+        rows: [
+          ['Audit de maturité et d\'opportunité', "Où en est-on, que peut-on automatiser, dans quel ordre", "Cartographie des processus, portefeuille de cas d'usage priorisé, feuille de route chiffrée"],
+          ['Audit de conformité', "Sommes-nous en règle au regard du règlement IA et du RGPD", "Inventaire des systèmes, qualification par niveau de risque, écarts et plan de mise en conformité"],
+          ['Audit algorithmique', "Ce modèle fonctionne-t-il correctement et sans biais", "Mesures de performance, tests de biais, documentation technique, explicabilité"],
+        ],
+      },
+      { type: 'p', text: "Un quatrième usage du mot brouille les recherches : l'audit de visibilité dans les moteurs génératifs, qui consiste à mesurer si une marque est citée par ChatGPT ou Perplexity. Le sujet est légitime, il n'a rien à voir avec celui-ci." },
+      { type: 'p', text: "La confusion coûte cher. Une direction qui achète un audit de conformité en espérant une feuille de route d'automatisation reçoit un rapport de risques juridiques sans un seul cas d'usage. L'inverse arrive tout autant." },
+
+      { type: 'h2', text: "Ce que la loi impose réellement, et ce qu'elle n'impose pas" },
+      { type: 'p', text: "C'est le point sur lequel le marché entretient le plus grand flou, et il mérite d'être posé avec le texte en main." },
+      { type: 'p', text: "Le règlement (UE) 2024/1689, dit règlement européen sur l'intelligence artificielle, a été modifié par le règlement (UE) 2026/1744 du 8 juillet 2026, publié au Journal officiel de l'Union européenne le 24 juillet 2026. Ce paquet a reporté les obligations pesant sur les systèmes à haut risque : au 2 décembre 2027 pour ceux de l'annexe III, au 2 août 2028 pour ceux de l'annexe I. Ce sont des dates fixes." },
+      { type: 'p', text: "Voilà ce qui s'applique aujourd'hui, au 3 août 2026." },
+      {
+        type: 'ul',
+        items: [
+          "Les interdictions de l'article 5, depuis le 2 février 2025. Certaines pratiques sont proscrites, pas encadrées.",
+          "La littératie IA de l'article 4, depuis le 2 février 2025. Le paquet du 8 juillet 2026 l'a assouplie en obligation de moyens : soutenir la montée en compétence, sans garantir un niveau individuel.",
+          "Les obligations sur les modèles à usage général, depuis le 2 août 2025.",
+          "La transparence de l'article 50, depuis le 2 août 2026. C'est elle qui impose d'annoncer à une personne qu'elle interagit avec une IA.",
+        ],
+      },
+      {
+        type: 'callout',
+        title: "Le règlement n'impose pas d'audit externe à la plupart des systèmes à haut risque",
+        text: "Pour les points 2 à 8 de l'annexe III, qui couvrent l'emploi et les ressources humaines, l'éducation, les infrastructures critiques, les services essentiels, le crédit, l'assurance et la justice, l'article 43 renvoie à la procédure de contrôle interne de l'annexe VI. La Commission européenne précise que cette procédure ne prévoit pas l'intervention d'un organisme notifié. Autrement dit, l'entreprise évalue elle-même sa conformité et documente cette évaluation.",
+      },
+      { type: 'p', text: "Le contraste avec d'autres textes éclaire ce choix. Le règlement sur les services numériques impose bien un audit externe annuel, mais aux seules plateformes que le texte qualifie de « très grandes plateformes en ligne », une poignée d'acteurs. Aux États-Unis, la loi locale 144 de la ville de New York impose un audit de biais aux employeurs qui utilisent des outils automatisés de recrutement, applicable depuis le 5 juillet 2023. Le règlement européen a retenu une autre logique pour la majorité des cas." },
+      { type: 'p', text: "Une conséquence pratique en découle. À l'été 2026, aucune norme harmonisée n'a été citée au Journal officiel de l'Union européenne au titre du règlement IA. La présomption de conformité prévue par l'article 40 n'est donc pas disponible, et le comité technique européen chargé de ces travaux, le JTC 21 du CEN-CENELEC créé en juin 2021, poursuit ses travaux. Un prestataire qui vous propose aujourd'hui une conformité au règlement IA « certifiée » vend quelque chose qui n'est pas encore certifiable." },
+      { type: 'p', text: "Sur le registre des systèmes d'IA, même prudence. Aucune obligation générale n'existe de tenir un inventaire. L'enregistrement prévu aux articles 49 et 71 concerne les fournisseurs de systèmes à haut risque de l'annexe III et les déployeurs publics, et il est reporté au 2 décembre 2027. L'inventaire reste une bonne pratique, recommandée par le cadre américain NIST, et non une obligation opposable." },
+
+      { type: 'h2', text: "Le vrai risque français en 2026 passe par le RGPD" },
+      { type: 'p', text: "Pendant que le marché regarde le règlement IA, le contrôle qui peut tomber cette année vient d'ailleurs. La CNIL a publié le 3 avril 2026 ses thématiques prioritaires de contrôle, dont le recrutement. Elle y vise les systèmes de décision automatisée, l'information des candidats et les durées de conservation, en ciblant les grandes entreprises et les cabinets de recrutement. Elle indique elle-même que ce thème préfigure son futur rôle de surveillance du marché dans le champ du travail au titre du règlement IA. Les thèmes prioritaires représentent environ 20 % de ses contrôles annuels." },
+      { type: 'p', text: "Une obligation antérieure s'ajoute, souvent ignorée. La délibération n° 2018-327 du 11 octobre 2018 rend l'analyse d'impact relative à la protection des données obligatoire pour les algorithmes de sélection en recrutement. L'absence d'analyse d'impact lorsqu'elle est due expose à une sanction pouvant atteindre 10 millions d'euros ou 2 % du chiffre d'affaires mondial." },
+      { type: 'p', text: "Un audit utile en 2026 commence donc par le RGPD, sur les traitements réellement en service, avant de traiter le règlement IA dont l'essentiel des obligations n'est pas encore applicable." },
+
+      { type: 'h2', text: "Les référentiels réellement publiés" },
+      { type: 'p', text: "Un audit sérieux s'appuie sur un référentiel nommé et daté. La famille de normes dédiée à l'IA est encore courte : trois documents seulement sont publiés à ce jour." },
+      {
+        type: 'table',
+        headers: ['Norme', 'Objet', 'Publication', 'Certifiable'],
+        rows: [
+          ['ISO/IEC 42001', "Système de management de l'IA : gouvernance, rôles, cycle de vie, fournisseurs", '18 décembre 2023', 'Oui, par un organisme accrédité'],
+          ['ISO/IEC 42005', "Évaluation de l'impact d'un système d'IA sur les personnes et la société", '28 mai 2025', 'Non, lignes directrices'],
+          ['ISO/IEC 42006', "Exigences applicables aux organismes qui auditent et certifient un système de management de l'IA", '7 juillet 2025', "Sans objet, elle encadre les certificateurs"],
+        ],
+      },
+      { type: 'p', text: "Deux précisions utiles pour ne pas se faire raconter d'histoires. ISO/IEC 42007 est encore au stade de projet et plusieurs pages commerciales la présentent à tort comme publiée. ISO/IEC 42003 n'existe pas encore. En revanche, deux normes voisines publiées en 2023 servent réellement dans une mission : ISO/IEC 23894 sur le management du risque lié à l'IA, et ISO/IEC 25059 sur la qualité des systèmes d'IA." },
+      { type: 'p', text: "Côté américain, le cadre de gestion des risques du NIST, publié en janvier 2023 sous la référence AI 100-1, structure la réflexion autour de quatre fonctions : gouverner, cartographier, mesurer, gérer. Le NIST le qualifie lui-même de volontaire et non sectoriel. Il ne certifie rien et se prête bien à un audit de maturité." },
+      { type: 'p', text: "En France, le Laboratoire national de métrologie et d'essais certifie des processus de conception, de développement, d'évaluation et de maintien en condition opérationnelle de l'IA. La distinction compte : la certification porte sur la façon de travailler, pas sur un modèle ni sur un produit. Le cycle prévoit un audit initial, des suivis à douze et vingt-quatre mois et un renouvellement à trois ans." },
+      {
+        type: 'callout',
+        title: "La question qui tranche en cinq secondes",
+        text: "Demandez à votre prestataire s'il est un organisme de certification accrédité ou un cabinet de conseil. Les deux métiers sont légitimes et ne délivrent pas la même chose : un cabinet de conseil ne peut pas certifier, et un organisme certificateur ne peut pas conseiller le même client, l'impartialité étant au cœur des règles de certification. Un acteur qui promet les deux se trompe ou vous trompe.",
+      },
+      { type: 'p', text: "Dernier point sur les certificats, valable même quand ils sont authentiques : un certificat ISO/IEC 42001 couvre un périmètre déclaré, pas « l'IA de l'entreprise ». Microsoft, certifié, énumère nommément les services couverts et rappelle que son client reste responsable de l'évaluation de ses propres déploiements. Lire le périmètre avant d'être rassuré par le logo." },
+
+      { type: 'h2', text: "Ce que contient une mission sérieuse" },
+      { type: 'p', text: "Au-delà du vocabulaire, un audit se juge à ce qu'il produit. Les étapes qui reviennent dans les missions qui aboutissent tiennent en six temps." },
+      {
+        type: 'ol',
+        items: [
+          "Cadrage : périmètre, entités concernées, ce qui est explicitement hors sujet, et le format de restitution attendu par la direction.",
+          "Inventaire des systèmes en service, y compris les outils utilisés par les équipes sans validation de la direction informatique. C'est la découverte principale de la plupart des audits.",
+          "Entretiens métier, pour confronter les processus décrits aux processus réels.",
+          "État des données : disponibilité, qualité, droits d'usage. Un cas d'usage sans données exploitables reste une intention.",
+          "Qualification des risques : traitement de données personnelles, décision automatisée, exposition réglementaire, dépendance à un fournisseur.",
+          "Priorisation et feuille de route, avec pour chaque action un responsable, un ordre de grandeur budgétaire et une échéance.",
+        ],
+      },
+      { type: 'p', text: "Un rapport qui s'arrête à l'état des lieux n'a aucune valeur d'usage. Le livrable qui change quelque chose est celui qui nomme trois actions à lancer dans les quatre-vingt-dix jours, avec leur porteur." },
+
+      { type: 'h2', text: "Ce que ça coûte" },
+      { type: 'p', text: "J'ai cherché des fourchettes de prix publiées et vérifiables. Les chiffres qui circulent en ligne, de 5 000 à 40 000 euros selon les pages, viennent de sites de cabinets qui vendent la prestation, sans méthode, sans échantillon et sans date de collecte. Publier ces montants reviendrait à présenter le tarif d'un concurrent comme une référence de marché. Je m'en abstiens." },
+      { type: 'p', text: "Un seul prix public et opposable existe en France, et il constitue un bon repère : le Diag Data IA de Bpifrance. Huit jours d'intervention d'un expert agréé, sur trois mois au maximum, avec un devis plafonné à 10 000 euros hors taxes et un reste à charge de 6 000 euros hors taxes après une subvention de 40 % au titre de France 2030. Il s'adresse aux PME et ETI de 10 à 2 000 salariés. Le bilan publié par Bpifrance en février 2026 fait état de 460 diagnostics Data IA réalisés." },
+      { type: 'p', text: "Ce repère donne l'ordre de grandeur d'un audit de maturité pour une organisation de taille moyenne : une poignée de jours d'expertise, pas un chantier de plusieurs mois. Un devis qui s'éloigne de ce repère doit s'expliquer par un périmètre plus large, multi-entités ou multi-pays, et cela se dit." },
+      { type: 'p', text: "Sur le coût d'une certification ISO/IEC 42001, aucun organisme certificateur français ne publie de tarif. La mécanique est en revanche connue : l'accompagnement à la mise en place du système de management, puis l'audit de certification par un organisme accrédité, puis les audits de surveillance. Trois lignes distinctes, à faire chiffrer séparément." },
+
+      { type: 'h2', text: "Les quatre cas où l'audit ne sert à rien" },
+      { type: 'p', text: "Un cabinet qui vend des audits a peu d'intérêt à écrire cette section. Elle évite pourtant les dépenses les plus stériles." },
+      { type: 'h3', text: "1. Vous connaissez déjà votre premier cas d'usage" },
+      { type: 'p', text: "Une direction qui sait que le sujet est la réponse aux appels d'offres ou le traitement des factures n'a pas besoin d'une cartographie complète pour le confirmer. Un cadrage court sur ce cas précis, puis un prototype, apportent davantage qu'un rapport de cinquante pages." },
+      { type: 'h3', text: "2. Le problème n'est pas un problème d'IA" },
+      { type: 'p', text: "Quand les données sont éparpillées, contradictoires ou inaccessibles, aucun audit IA ne réglera la question. C'est un chantier de données et de processus. L'audit dira ce que vous savez déjà, en facturant l'information." },
+      { type: 'h3', text: "3. La décision est déjà prise" },
+      { type: 'p', text: "Un audit commandé pour justifier une orientation arrêtée est un exercice de communication. Il coûte le prix d'un audit et produit la valeur d'une note d'intention. Autant assumer la décision et investir dans sa mise en œuvre." },
+      { type: 'h3', text: "4. L'organisation est trop petite pour l'exercice" },
+      { type: 'p', text: "En dessous d'une vingtaine de personnes, la cartographie tient dans une réunion. Le formalisme d'un audit apporte peu quand le dirigeant connaît chaque processus de son entreprise." },
+      { type: 'p', text: "Un cinquième cas mérite d'être nommé, plus insidieux : l'audit de conformité mené pour se rassurer sans intention de changer les pratiques. La littérature sur la conformité algorithmique désigne ce travers, la conformité de façade. Un rapport rangé dans un tiroir ne protège de rien, ni juridiquement, ni opérationnellement." },
+
+      { type: 'h2', text: "Le conflit d'intérêts, puisqu'il faut en parler" },
+      { type: 'p', text: "Masteria audite, puis construit et forme. C'est exactement la position qui appelle une remarque : un cabinet qui diagnostique et vend ensuite la mise en œuvre a intérêt à trouver du travail. Le lecteur a le droit de le savoir en lisant ces lignes." },
+      { type: 'p', text: "Deux garde-fous existent, et ils se demandent. Le premier : exiger que le rapport comporte les actions à ne pas lancer et les cas d'usage écartés, avec leur motif. Un audit qui recommande tout est un devis déguisé. Le second : séparer contractuellement le diagnostic de la mise en œuvre, de sorte que la feuille de route reste exploitable par un autre prestataire. Un livrable qui ne fonctionne qu'avec son auteur n'est pas un livrable." },
+      { type: 'p', text: "Sur le terrain de la certification, la règle est plus stricte encore, puisque l'impartialité interdit à un organisme certificateur de conseiller le client qu'il certifie. Le conseil n'est pas soumis à cette règle, ce qui rend la transparence d'autant plus nécessaire." },
+
+      { type: 'h2', text: "Par où commencer" },
+      { type: 'p', text: "Trois décisions valent mieux qu'un appel d'offres. Nommer le type d'audit voulu, en sachant que maturité et conformité ne se traitent pas dans la même mission ni par les mêmes profils. Exiger le référentiel appliqué, avec sa référence et sa date. Fixer le livrable attendu en une phrase, en y incluant les actions écartées." },
+      { type: 'p', text: "Le calendrier européen a reculé de dix-huit mois, ce qui laisse le temps de faire les choses dans l'ordre. Ce délai ne suspend ni les obligations déjà applicables, ni les contrôles de la CNIL sur le recrutement. La conformité s'organise mieux en amont d'un déploiement qu'après une mise en demeure." },
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce qu'un audit IA en entreprise ?",
+        a: "Un audit IA est un état des lieux de l'intelligence artificielle dans une organisation. Le terme n'a aucune définition officielle ni normalisée : il recouvre trois missions distinctes. L'audit de maturité et d'opportunité répond à la question « où en est-on et que peut-on automatiser ». L'audit de conformité vérifie la situation au regard du règlement européen sur l'IA et du RGPD. L'audit algorithmique évalue un modèle précis, sa performance et ses biais. Un prestataire qui ne vous demande pas laquelle de ces missions vous voulez ne sait pas ce qu'il vend.",
+      },
+      {
+        q: "Le règlement européen sur l'IA impose-t-il un audit externe ?",
+        a: "Non, pas dans la majorité des cas. Pour les points 2 à 8 de l'annexe III, qui couvrent notamment l'emploi, l'éducation, le crédit, l'assurance et la justice, l'article 43 renvoie à la procédure de contrôle interne de l'annexe VI, qui ne prévoit pas l'intervention d'un organisme notifié. L'entreprise évalue elle-même sa conformité et documente cette évaluation. Un audit externe reste utile pour objectiver le résultat, il n'est pas une obligation légale dans ces cas.",
+      },
+      {
+        q: "Quand les obligations sur les systèmes à haut risque s'appliquent-elles ?",
+        a: "Le règlement (UE) 2026/1744 du 8 juillet 2026 a reporté ces obligations : au 2 décembre 2027 pour les systèmes de l'annexe III, au 2 août 2028 pour ceux de l'annexe I. Ce sont des dates fixes. Restent applicables aujourd'hui les interdictions de l'article 5 et la littératie IA de l'article 4 depuis le 2 février 2025, les obligations sur les modèles à usage général depuis le 2 août 2025, et la transparence de l'article 50 depuis le 2 août 2026.",
+      },
+      {
+        q: "Sur quelles normes un audit IA doit-il s'appuyer ?",
+        a: "Trois normes de la famille dédiée à l'IA sont publiées à ce jour : ISO/IEC 42001, publiée le 18 décembre 2023, qui porte sur le système de management de l'IA et se certifie ; ISO/IEC 42005, publiée le 28 mai 2025, qui donne des lignes directrices pour évaluer l'impact d'un système et ne se certifie pas ; ISO/IEC 42006, publiée le 7 juillet 2025, qui fixe les exigences applicables aux organismes certificateurs. S'y ajoutent ISO/IEC 23894 sur le management du risque et le cadre volontaire du NIST publié en janvier 2023. ISO/IEC 42007 est encore au stade de projet malgré ce qu'en disent certaines pages commerciales.",
+      },
+      {
+        q: "Combien coûte un audit IA ?",
+        a: "Les fourchettes publiées en ligne viennent de cabinets qui vendent la prestation, sans méthode ni échantillon : elles ne constituent pas une référence de marché. Un seul prix public et opposable existe en France, le Diag Data IA de Bpifrance : huit jours d'expert agréé sur trois mois au maximum, devis plafonné à 10 000 euros hors taxes, reste à charge de 6 000 euros hors taxes après une subvention de 40 % au titre de France 2030, pour les PME et ETI de 10 à 2 000 salariés. Cela donne l'ordre de grandeur d'un audit de maturité : quelques jours d'expertise, pas un chantier de plusieurs mois.",
+      },
+      {
+        q: "Peut-on obtenir une certification de conformité au règlement européen sur l'IA ?",
+        a: "Pas encore. À l'été 2026, aucune norme harmonisée n'a été citée au Journal officiel de l'Union européenne au titre du règlement IA, ce qui signifie que la présomption de conformité prévue par l'article 40 n'est pas disponible. Un prestataire qui propose aujourd'hui une conformité « certifiée » au règlement IA vend quelque chose qui n'est pas certifiable en l'état. Une certification ISO/IEC 42001 est en revanche possible, sur un périmètre déclaré, auprès d'un organisme accrédité.",
+      },
+      {
+        q: "Faut-il tenir un registre des systèmes d'IA ?",
+        a: "Aucune obligation générale n'existe à ce jour. L'enregistrement prévu aux articles 49 et 71 du règlement vise les fournisseurs de systèmes à haut risque de l'annexe III et les déployeurs publics, et il est reporté au 2 décembre 2027. Restent opposables aujourd'hui le registre des traitements du RGPD, l'analyse d'impact là où elle est due, la littératie IA et l'obligation de transparence. Tenir un inventaire des systèmes en service reste une bonne pratique, recommandée par le cadre du NIST.",
+      },
+      {
+        q: "Dans quels cas un audit IA est-il inutile ?",
+        a: "Quatre situations. Quand vous connaissez déjà votre premier cas d'usage : un cadrage court puis un prototype valent mieux qu'une cartographie complète. Quand le problème réel porte sur les données ou l'organisation plutôt que sur l'IA. Quand la décision est déjà prise et que l'audit sert à la justifier. Et quand l'organisation compte moins d'une vingtaine de personnes, le dirigeant connaissant alors chaque processus. Un cinquième cas mérite attention : l'audit de conformité mené sans intention de changer les pratiques, qui ne protège ni juridiquement ni opérationnellement.",
+      },
+    ],
+    internalLinks: [
+      { label: "Diagnostic IA : la feuille de route en 1 journée", href: '/diagnostic-ia' },
+      { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
+      { label: "Méthode projet IA : forfait, régie ou conseil", href: '/methode-projet-ia' },
+      { label: "Charte IA d'entreprise : exemples et méthode", href: '/charte-ia-entreprise' },
+      { label: "Agent vocal IA : ce qu'un agent téléphonique sait faire", href: '/blog/agent-vocal-ia-entreprise' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/audit-ia-entreprise-methode-prix#termes',
+        name: "Audit IA : les termes du domaine",
+        hasDefinedTerm: [
+          {
+            '@type': 'DefinedTerm',
+            name: 'Audit de maturité IA',
+            description: "Mission d'état des lieux qui cartographie les processus d'une organisation, identifie et priorise les cas d'usage de l'IA, et produit une feuille de route chiffrée.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Audit de conformité IA',
+            description: "Mission qui vérifie la situation d'une organisation au regard du règlement européen sur l'IA et du RGPD : inventaire des systèmes, qualification par niveau de risque, écarts et plan de mise en conformité.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Audit algorithmique',
+            description: "Évaluation technique d'un modèle donné : performance, biais, explicabilité et documentation.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'ISO/IEC 42001',
+            description: "Norme internationale publiée le 18 décembre 2023 définissant les exigences d'un système de management de l'intelligence artificielle. Certifiable par un organisme accrédité, sur un périmètre déclaré.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Procédure de contrôle interne (annexe VI)',
+            description: "Procédure d'évaluation de la conformité prévue par le règlement européen sur l'IA pour la plupart des systèmes à haut risque de l'annexe III, qui ne fait pas intervenir d'organisme notifié.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: "Analyse d'impact relative à la protection des données",
+            description: "Étude obligatoire au titre du RGPD pour certains traitements, dont les algorithmes de sélection en recrutement selon la délibération CNIL n° 2018-327 du 11 octobre 2018.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'agent-vocal-ia-entreprise',
+    tag: 'Conseil IA',
+    title: "Agent vocal IA : ce qu'un agent téléphonique sait vraiment faire, et où il casse",
+    metaTitle: "Agent vocal IA : ce qu'un agent téléphonique sait faire",
+    metaDesc: "Agent vocal IA : architectures, latence mesurée, coûts publics, obligation d'annonce depuis le 2 août 2026, et les cas où il ne faut pas en installer.",
+    date: '3 août 2026',
+    datePublished: '2026-08-03',
+    dateModified: '2026-08-03',
+    readTime: '14 min',
+    keywords: ['agent vocal ia', 'agent téléphonique ia', 'callbot', 'voicebot', 'agent vocal', 'agent conversationnel ia', 'standard téléphonique ia'],
+    excerpt: "Un agent vocal répond au téléphone, comprend une demande et agit dans vos outils. Trois architectures, quatre points de rupture documentés, une obligation légale d'annonce depuis le 2 août 2026 : l'état réel de la technologie, chiffres publics à l'appui.",
+    intro: "Un agent vocal IA est un programme qui décroche le téléphone, comprend ce que dit l'appelant, consulte vos systèmes et répond de vive voix. En 2026, trois architectures coexistent, les mesures indépendantes situent le délai avant la première syllabe entre 0,44 seconde et plus de 4 secondes selon les modèles, et l'article 50 du règlement européen sur l'IA impose depuis le 2 août 2026 d'annoncer à l'appelant qu'il parle à une machine. Cet article décrit ce que la technologie tient réellement, les quatre points où elle rompt, ce qu'elle coûte d'après les tarifs publics des fournisseurs, et les situations où il vaut mieux ne pas en installer.",
+    blocks: [
+      { type: 'p', text: "Je vois passer beaucoup de projets d'agents vocaux depuis dix-huit mois. Les démonstrations sont spectaculaires, les mises en production le sont beaucoup moins. L'écart ne vient pas de la qualité des modèles, qui a franchi un vrai palier. Il vient de quatre points techniques que les démonstrations évitent soigneusement, et d'une obligation réglementaire que la plupart des projets découvrent trop tard." },
+
+      { type: 'h2', text: "Agent vocal, callbot, voicebot : le même objet, trois vocabulaires" },
+      { type: 'p', text: "Les trois termes désignent la même chose et viennent de trois mondes différents. « Callbot » et « voicebot » sont nés dans l'univers des centres de contact, où ils décrivent l'automate qui traite un flux d'appels. « Agent vocal » vient du monde de l'IA générative et insiste sur la capacité à décider d'une action plutôt qu'à suivre un script. En pratique, un acheteur qui compare des offres verra les trois mots employés pour des produits comparables." },
+      { type: 'p', text: "La distinction qui compte porte ailleurs, sur ce que le système sait faire au-delà de parler." },
+      {
+        type: 'table',
+        headers: ['Génération', 'Ce qu\'il comprend', 'Ce qu\'il sait faire'],
+        rows: [
+          ['Serveur vocal interactif (SVI)', 'Des touches du clavier, parfois quelques mots-clés', 'Router vers un service, lire un message enregistré'],
+          ['Callbot de première génération', 'Des phrases courtes rattachées à des intentions prédéfinies', 'Suivre un arbre de dialogue écrit à l\'avance'],
+          ['Agent vocal génératif (2025-2026)', 'Une demande formulée librement, avec du contexte', 'Consulter un agenda ou un CRM, effectuer une action, reformuler, s\'adapter hors script'],
+        ],
+      },
+      { type: 'p', text: "Le saut de la deuxième à la troisième ligne est celui qui intéresse une entreprise. Un agent génératif ne s'effondre plus dès que l'appelant sort du script, ce qui était le défaut rédhibitoire des callbots précédents. En échange, il devient capable d'inventer une réponse, ce qui crée un risque nouveau." },
+
+      { type: 'h2', text: "Les trois architectures, et pourquoi le choix vous engage" },
+      { type: 'p', text: "Un agent vocal se construit aujourd'hui de trois façons. Le choix n'est pas un détail d'ingénierie, il détermine votre latence, votre facture et votre capacité à brancher l'agent sur vos outils métier." },
+      {
+        type: 'table',
+        headers: ['Architecture', 'Principe', 'Ce que vous gagnez', 'Ce que vous perdez'],
+        rows: [
+          ['Chaîne classique', 'Transcription (STT) → modèle de langage → synthèse vocale (TTS), trois briques séparées', 'Contrôle de chaque brique, choix du modèle, coûts lisibles, filtrage possible entre les étapes', 'Les délais s\'additionnent à chaque passage de relais'],
+          ['Half-cascade', 'L\'audio entre nativement dans le modèle, la réponse ressort en texte puis passe par une synthèse vocale', 'Compréhension du ton et du bruit ambiant, appels d\'outils réputés plus fiables', 'Contrôle moindre qu\'une chaîne complète'],
+          ['Speech-to-speech natif', 'L\'audio entre et sort d\'un modèle unique, sans repasser par le texte', 'Prosodie plus naturelle, latence annoncée la plus basse', 'Boîte noire, coût au token audio élevé, capacité à appeler vos outils à vérifier'],
+        ],
+      },
+      { type: 'p', text: "Deux avertissements sur cette dernière colonne. D'abord, la latence annoncée pour le speech-to-speech est une promesse commerciale, contredite par la mesure indépendante que je détaille plus bas. Ensuite, le passage au tout-natif s'accompagne de régressions rapportées par des développeurs sur l'appel de fonctions, la capacité du modèle à déclencher une requête vers votre agenda ou votre CRM. Pour un agent de prise de rendez-vous, cette capacité est le produit lui-même. Elle se teste avant de choisir, pas après." },
+      { type: 'p', text: "Une précision utile si vos équipes travaillent déjà avec Claude : au 3 août 2026, les modèles Anthropic n'acceptent que du texte et des images en entrée et ne produisent que du texte. Un agent vocal bâti sur Claude passe donc par une transcription et une synthèse vocale tierces. C'est un point d'architecture à connaître avant de promettre un délai de réponse, et il reste parfaitement viable." },
+
+      { type: 'h2', text: "La latence : le chiffre que tout le monde cite, et que personne n'a mesuré" },
+      { type: 'p', text: "Le marché s'est mis d'accord sur des seuils qui reviennent partout : 500 millisecondes pour une conversation fluide, 800 pour un délai perceptible, 1 500 pour un échange cassé. J'ai cherché la publication d'origine de ces trois chiffres. Elle n'existe pas. Ils circulent d'éditeur en éditeur et de vendeur d'outils de test en vendeur d'outils de test, chacun citant le précédent." },
+      { type: 'p', text: "Ce qui est réellement établi tient en trois points, et aucun ne dit ce que le marché lui prête." },
+      {
+        type: 'ul',
+        items: [
+          "Les humains se répondent entre eux autour de 200 millisecondes, mesure établie sur dix langues par Stivers et ses coauteurs (PNAS, 2009). C'est une cible de naturel, sur des conversations humaines en face à face de 2009, pas un seuil de rupture face à une machine.",
+          "La recommandation UIT-T G.114 fixe 400 millisecondes de délai maximum en planification de réseau téléphonique. Elle porte sur le temps de TRANSMISSION du signal, pas sur le temps de réflexion d'un agent. La citer comme un budget de réponse est un contresens fréquent.",
+          "Les mesures indépendantes d'Artificial Analysis, consultées le 3 août 2026, situent le temps avant le premier son entre 0,44 seconde et plus de 4 secondes selon les modèles. Un même modèle, Gemini 3.1 Flash, passe de 0,96 à 2,99 secondes selon le niveau d'effort de raisonnement demandé.",
+        ],
+      },
+      {
+        type: 'callout',
+        title: "Le seuil de tolérance face à un agent vocal n'a jamais été publié",
+        text: "Aucune étude accessible ne mesure à partir de quel délai un appelant décroche face à une machine. Tout prestataire qui vous annonce un seuil vous récite le marketing d'un fournisseur. Exigez plutôt une mesure sur VOS appels, en conditions réelles, et regardez la distribution des délais plutôt que la moyenne.",
+      },
+      { type: 'p', text: "Un point pratique vaut mieux que ces seuils. Une part importante du délai ressenti ne vient pas du calcul, elle vient d'un réglage : le temps de silence que le système attend avant de considérer que l'appelant a fini sa phrase. Ce paramètre se règle. Trop court, l'agent coupe la parole ; trop long, il paraît lent. C'est le premier bouton à ajuster en recette, et le dernier auquel pensent les équipes." },
+      { type: 'p', text: "Les mêmes mesures montrent que le modèle le plus rapide n'est pas le meilleur sur la conduite du dialogue. Les scores de dynamique conversationnelle relevés par Artificial Analysis vont de moins de 75 % à plus de 98 %, sans corrélation avec la vitesse. Un agent qui répond vite en coupant la parole est plus pénible qu'un agent posé." },
+
+      { type: 'h2', text: "Les quatre points de rupture, admis par les éditeurs eux-mêmes" },
+      { type: 'p', text: "Le meilleur inventaire des faiblesses d'un agent vocal se trouve dans le journal des modifications d'OpenAI. L'entrée du 6 juillet 2026, qui accompagne le modèle gpt-realtime-2.1, annonce une amélioration de « la reconnaissance alphanumérique, la gestion du silence et du bruit, et le comportement en interruption ». Le fournisseur leader désigne ainsi lui-même les quatre endroits où ses prédécesseurs cassaient." },
+      { type: 'h3', text: "1. Les chaînes de chiffres et de lettres" },
+      { type: 'p', text: "C'est le point de rupture le plus documenté et le plus sous-estimé. Le corpus de recherche SNuC (LREC, 2022) mesure 96,6 % de précision au caractère, ce qui paraît excellent, pour seulement 77 % d'identifiants complets correctement transcrits sur des données de terrain. Après adaptation au domaine, ce taux monte à 91,7 %." },
+      { type: 'p', text: "Traduction pour un standard : un numéro de dossier, une immatriculation ou une référence client sur dix reste fausse. Les auteurs de l'étude posent eux-mêmes le seuil d'acceptabilité à moins d'une erreur sur dix identifiants. Voilà un critère de recette chiffrable, à écrire dans votre cahier des charges." },
+      { type: 'h3', text: "2. La conduite du tour de parole" },
+      { type: 'p', text: "Savoir quand l'appelant a fini, gérer une interruption, distinguer une hésitation d'une fin de phrase : cette famille de comportements fait l'objet d'un banc d'essai académique dédié, Full-Duplex-Bench, ce qui indique assez que le problème n'est pas résolu. Les fournisseurs d'outils de transcription documentent eux-mêmes l'arbitrage : plus la détection de fin de tour est rapide, plus les fausses coupures augmentent." },
+      { type: 'h3', text: "3. Le bruit, les accents, les langues mélangées" },
+      { type: 'p', text: "Les travaux de Koenecke et de ses coauteurs (PNAS, 2020) établissent, sur cinq systèmes commerciaux, un écart structurel de reconnaissance selon la variété de parole du locuteur. L'étude porte sur l'anglais américain, ses chiffres ne se transposent pas au français, le mécanisme si. Un agent qui fonctionne parfaitement en réunion de démonstration se dégrade sur un appelant pressé, dans une voiture, avec un accent régional." },
+      { type: 'h3', text: "4. L'invention pure" },
+      { type: 'p', text: "Une étude de Koenecke et coauteurs présentée à la conférence FAccT en 2024 relève environ 1 % de transcriptions contenant des phrases entièrement inventées avec le modèle Whisper, dont 38 % comportaient un préjudice explicite. Sur un canal vocal, ce risque est plus grave qu'à l'écrit : l'appelant n'a aucune trace de ce qui lui a été dit, et une parole engage plus qu'un texte affiché." },
+      { type: 'p', text: "Le guide officiel de rédaction de consignes d'OpenAI recommande d'ailleurs de faire relire les chiffres caractère par caractère par l'agent, et signale le risque que le modèle devine au lieu de demander une répétition. Un agent bien conçu dit « je n'ai pas compris » plus souvent qu'un agent mal conçu." },
+
+      { type: 'h2', text: "Ce que ça coûte, avec les tarifs publics" },
+      { type: 'p', text: "Beaucoup d'articles annoncent un coût par minute d'appel ou une fourchette de développement. J'ai vérifié ces chiffres un par un : ils viennent tous d'agences qui vendent la prestation, et ils se contredisent d'un facteur douze. Je ne les reprendrai pas. En revanche, les tarifs des briques sont publics et vérifiables, relevés le 3 août 2026." },
+      {
+        type: 'table',
+        headers: ['Brique', 'Fournisseur', 'Tarif public au 3 août 2026'],
+        rows: [
+          ['Modèle vocal temps réel', 'OpenAI gpt-realtime-2.1', '32 $ / 64 $ le million de tokens audio (entrée / sortie), 0,40 $ en cache'],
+          ['Version allégée', 'OpenAI gpt-realtime-2.1-mini', '10 $ / 20 $ le million de tokens audio'],
+          ['Transcription en flux', 'OpenAI gpt-live-transcribe', '0,017 $ par minute'],
+          ['Transcription en flux', 'Deepgram Nova-3', '0,0048 $ par minute'],
+          ['Synthèse vocale', 'Deepgram Aura-2', '0,030 $ pour 1 000 caractères'],
+          ['Numéro et acheminement France', 'Twilio', '1,35 $/mois le numéro, 0,0100 $/min en entrant, jusqu\'à 0,1603 $/min vers un mobile'],
+        ],
+      },
+      { type: 'p', text: "Cette dernière ligne mérite un arrêt. Chez Twilio, un appel sortant vers un mobile français coûte jusqu'à 8,6 fois plus cher que vers un fixe. Un agent de rappel client qui compose majoritairement des mobiles voit sa facture de téléphonie changer d'ordre de grandeur, indépendamment de l'IA." },
+      { type: 'p', text: "Six mécanismes font dériver une facture entre le pilote et la production : le contexte de la conversation renvoyé au modèle à chaque tour de parole, la facturation au temps de connexion plutôt qu'au temps de parole, les tarifs majorés en pointe, les appels de concurrence, les options de conformité, et le stockage des enregistrements. Aucun ne se voit sur une démonstration de trois appels." },
+      {
+        type: 'callout',
+        title: "La question à poser à votre prestataire",
+        text: "Demandez le coût complet d'un appel de trois minutes en production, décomposé ligne à ligne, et le mode de facturation exact : au temps de connexion ou au temps de parole, avec ou sans arrondi à la minute supérieure. Un prestataire qui ne sait pas répondre n'a pas encore exploité d'agent à l'échelle.",
+      },
+
+      { type: 'h2', text: "Depuis le 2 août 2026, vous devez dire que c'est une machine" },
+      { type: 'p', text: "L'article 50 du règlement européen sur l'IA, le règlement (UE) 2024/1689, s'applique depuis le 2 août 2026. Il impose d'informer une personne qu'elle interagit avec un système d'IA. Le paquet Digital Omnibus, le règlement (UE) 2026/1744 du 8 juillet 2026, a reporté les obligations sur les systèmes à haut risque, en décembre 2027 et août 2028 selon les catégories. Il n'a pas touché à l'article 50." },
+      { type: 'p', text: "En téléphonie, cette obligation prend une forme précise : une déclaration orale explicite au début de l'interaction. Ne suffisent pas des conditions générales d'utilisation, un marquage technique du fichier audio, ni le simple mot « assistant ». L'exception prévue pour les cas où la nature artificielle est manifestement évidente s'interprète de façon restrictive, et un agent vocal de 2026 tombe rarement dessous." },
+      { type: 'p', text: "La sanction encourue atteint 15 millions d'euros ou 3 % du chiffre d'affaires mondial, le montant le plus élevé étant retenu. Un chiffre circule à tort dans les articles sur le sujet, celui de 7,5 millions ou 1 % : il vise un autre manquement, la transmission d'informations inexactes aux autorités." },
+      { type: 'p', text: "Deux points d'attention que les projets découvrent tard. Analyser les émotions de vos téléconseillers relève des pratiques interdites depuis le 2 février 2025, avec un plafond de sanction porté à 35 millions d'euros ou 7 %. Et l'obligation d'annonce pèse sur le fournisseur du système : une entreprise qui déploie un agent sous sa propre marque peut endosser ce rôle." },
+      { type: 'p', text: "Si votre projet concerne la prospection sortante, un second calendrier s'impose. La loi du 30 juin 2025 et son décret du 23 juillet 2026 font basculer le démarchage téléphonique au consentement préalable le 11 août 2026, avec la fin de Bloctel et un consentement valable un an au plus. Les sanctions atteignent 75 000 euros pour une personne physique et 375 000 euros pour une personne morale." },
+      { type: 'p', text: "Une précision d'honnêteté : au 3 août 2026, la France n'a pas encore formellement désigné les autorités chargées de surveiller l'application du règlement IA, le véhicule législatif n'étant pas promulgué. Cela ne suspend pas les obligations, cela retarde le contrôle." },
+
+      { type: 'h2', text: "Acheter sur étagère ou faire construire" },
+      { type: 'p', text: "La réponse dépend d'un seul critère : la profondeur du branchement sur vos systèmes. Une plateforme clés en main gère sans peine un dialogue autonome. Elle bloque dès qu'il faut écrire dans votre ERP, appliquer une règle métier particulière ou garder la maîtrise des enregistrements." },
+      {
+        type: 'table',
+        headers: ['Scénario', 'Ce qu\'il faut brancher', 'Recommandation'],
+        rows: [
+          ['Prise de rendez-vous', 'Un agenda, parfois un CRM', 'Solution du marché, sauf règles de planification complexes'],
+          ['Qualification d\'appel entrant', 'Un CRM, une logique de routage propre à l\'entreprise', 'Solution du marché si le routage est simple, développement dès que la règle métier compte'],
+          ['SAV de niveau 1', 'Une base de connaissances, un outil de ticketing, souvent l\'ERP', 'Développement sur mesure, la valeur est dans l\'intégration'],
+        ],
+      },
+      { type: 'p', text: "Une règle de conduite, quelle que soit l'option : imposez dès le départ une règle de transfert vers un humain, écrite et testée. Les taux de résolution autonome annoncés par les éditeurs, de 55 à 90 % selon les brochures, ne reposent sur aucune source indépendante que j'aie pu vérifier. Traitez-les comme des arguments commerciaux et mesurez le vôtre." },
+
+      { type: 'h2', text: "Les situations où il ne faut pas d'agent vocal" },
+      { type: 'p', text: "Un cabinet qui vend des projets a rarement intérêt à écrire cette section. Elle évite pourtant les échecs les plus coûteux." },
+      {
+        type: 'ul',
+        items: [
+          "L'urgence et la détresse. Un appelant en difficulté, un incident de sécurité, une annonce grave : la voix synthétique y est vécue comme un abandon.",
+          "Les publics fragiles ou peu à l'aise avec la technologie, quand aucun accès direct à un humain n'est maintenu.",
+          "Les appels où une erreur d'un caractère coûte cher, tant que la transcription des identifiants n'a pas été mesurée sur vos propres données.",
+          "Les faibles volumes. Sous quelques dizaines d'appels par jour, le coût de conception, de recette et d'exploitation dépasse le gain.",
+          "Les organisations dont le problème réel est un processus mal défini. Un agent vocal branché sur un processus confus produit une confusion plus rapide.",
+        ],
+      },
+      { type: 'p', text: "Deux affaires méritent d'être connues avant de se lancer. Aux États-Unis, la SEC a sanctionné Presto Automation en janvier 2025 pour avoir exagéré l'autonomie de son agent vocal de restauration rapide. Au Canada, la décision Moffatt contre Air Canada de 2024 a écarté l'argument selon lequel le chatbot serait une entité distincte de l'entreprise : le transporteur répond de ce que dit son agent. C'est une décision canadienne de petites créances portant sur un agent écrit, elle ne fait pas autorité en France, elle indique une direction." },
+      { type: 'p', text: "Du côté des déploiements, McDonald's a retiré son système de prise de commande vocale de plus de cent restaurants à l'été 2024. Ces retraits ne condamnent pas la technologie, ils rappellent que le drive-in cumule bruit, accents et impatience, autrement dit les quatre points de rupture en même temps." },
+
+      { type: 'h2', text: "Par où commencer" },
+      { type: 'p', text: "Un projet d'agent vocal qui tient en production commence par trois décisions, avant toute démonstration de fournisseur. Choisir un scénario dont vous connaissez le volume et le coût actuel, pour disposer d'un point de comparaison. Écrire les critères de recette chiffrés : taux d'identifiants correctement transcrits, distribution des délais de réponse, règle de transfert vers un humain. Rédiger la phrase d'annonce exigée par l'article 50 et la faire valider." },
+      { type: 'p', text: "La technologie vocale a franchi en 2026 le seuil qui la rend utilisable en production. Ce qui décide du résultat se joue ailleurs : dans le branchement sur vos systèmes, dans la recette, et dans l'honnêteté avec laquelle vous annoncez à vos clients qui leur répond." },
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce qu'un agent vocal IA ?",
+        a: "Un agent vocal IA est un programme qui répond au téléphone, comprend une demande formulée librement, consulte les systèmes de l'entreprise et répond de vive voix. Il se distingue d'un serveur vocal interactif, qui réagit aux touches du clavier, et d'un callbot de première génération, qui suit un arbre de dialogue écrit à l'avance. Un agent génératif s'adapte hors script, ce qui lui permet de traiter des demandes imprévues et l'expose au risque d'inventer une réponse.",
+      },
+      {
+        q: "Quelle est la différence entre un callbot, un voicebot et un agent vocal ?",
+        a: "Les trois termes désignent des produits comparables. « Callbot » et « voicebot » viennent du monde des centres de contact, « agent vocal » vient de l'IA générative et insiste sur la capacité à décider d'une action plutôt qu'à suivre un script. En comparant des offres commerciales, la distinction utile porte sur ce que le système sait faire dans vos outils, pas sur le mot employé.",
+      },
+      {
+        q: "Faut-il prévenir l'appelant qu'il parle à une IA ?",
+        a: "Oui. L'article 50 du règlement européen sur l'IA, applicable depuis le 2 août 2026, impose d'informer une personne qu'elle interagit avec un système d'IA. En téléphonie, cela prend la forme d'une déclaration orale explicite en début d'appel. Des conditions générales, un marquage technique du fichier audio ou le simple mot « assistant » ne suffisent pas. La sanction atteint 15 millions d'euros ou 3 % du chiffre d'affaires mondial, le montant le plus élevé étant retenu.",
+      },
+      {
+        q: "Quelle latence faut-il viser pour un agent téléphonique ?",
+        a: "Les seuils de 500, 800 ou 1 500 millisecondes qui circulent partout ne reposent sur aucune publication : ils sont repris d'éditeur en éditeur. Les mesures indépendantes d'Artificial Analysis situent le temps avant le premier son entre 0,44 seconde et plus de 4 secondes selon les modèles. Plutôt qu'un seuil théorique, exigez une mesure sur vos propres appels et regardez la distribution des délais, pas la moyenne. Le réglage du silence d'attente avant que le système considère que l'appelant a fini de parler pèse souvent plus lourd que la puissance du modèle.",
+      },
+      {
+        q: "Combien coûte un agent vocal IA ?",
+        a: "Les fourchettes de coût de développement publiées en ligne viennent d'agences qui vendent la prestation et se contredisent d'un facteur douze : elles ne constituent pas une référence. Les tarifs des briques sont en revanche publics. Au 3 août 2026, le modèle vocal temps réel gpt-realtime-2.1 d'OpenAI est à 32 $ et 64 $ le million de tokens audio, la transcription Deepgram Nova-3 à 0,0048 $ la minute, un numéro Twilio français à 1,35 $ par mois avec 0,0100 $ la minute en entrant. Demandez à votre prestataire le coût complet d'un appel de trois minutes, décomposé ligne à ligne.",
+      },
+      {
+        q: "Un agent vocal comprend-il bien les numéros de dossier et les immatriculations ?",
+        a: "C'est son point faible le plus documenté. Le corpus de recherche SNuC mesure 96,6 % de précision au caractère mais seulement 77 % d'identifiants complets corrects sur des données de terrain, et 91,7 % après adaptation au domaine. Autrement dit, une référence sur dix reste fausse. Les auteurs posent le seuil d'acceptabilité à moins d'une erreur sur dix identifiants : c'est un critère de recette à inscrire dans votre cahier des charges et à mesurer sur vos propres appels.",
+      },
+      {
+        q: "Peut-on construire un agent vocal avec Claude d'Anthropic ?",
+        a: "Indirectement. Au 3 août 2026, les modèles Claude acceptent du texte et des images en entrée et produisent du texte : aucune modalité audio native, aucune API vocale temps réel. Un agent vocal reposant sur Claude combine donc une transcription et une synthèse vocale tierces avec le modèle au centre. Cette architecture en chaîne reste parfaitement viable et offre plus de contrôle sur chaque brique, au prix de délais qui s'additionnent.",
+      },
+      {
+        q: "Dans quels cas faut-il éviter un agent vocal ?",
+        a: "Cinq situations : les appels d'urgence ou de détresse, les publics fragiles sans accès direct maintenu à un humain, les échanges où une erreur d'un caractère coûte cher tant que la transcription n'a pas été mesurée sur vos données, les volumes inférieurs à quelques dizaines d'appels par jour où le coût de conception dépasse le gain, et les organisations dont le processus sous-jacent est mal défini. Un agent vocal branché sur un processus confus produit une confusion plus rapide.",
+      },
+    ],
+    internalLinks: [
+      { label: "Audit IA : ce qu'il contient et ce qu'il coûte", href: '/blog/audit-ia-entreprise-methode-prix' },
+      { label: "Agence de développement IA : faire construire vos agents", href: '/agence-developpement-ia' },
+      { label: "Chatbot IA sur mesure", href: '/chatbot-ia-sur-mesure' },
+      { label: "Agents IA en entreprise : 20 cas d'usage", href: '/agents-ia-entreprise' },
+      { label: "Meilleur agent IA : le comparatif (agents texte)", href: '/blog/meilleur-agent-ia' },
+      { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/agent-vocal-ia-entreprise#termes',
+        name: "Agents vocaux IA : les termes du domaine",
+        hasDefinedTerm: [
+          {
+            '@type': 'DefinedTerm',
+            name: 'Agent vocal IA',
+            description: "Programme qui répond au téléphone, comprend une demande formulée librement, consulte les systèmes de l'entreprise et répond de vive voix, avec la capacité de décider d'une action plutôt que de suivre un script.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Callbot',
+            description: "Terme issu du monde des centres de contact désignant un automate qui traite un flux d'appels téléphoniques. Employé comme synonyme commercial d'agent vocal.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Voicebot',
+            description: "Synonyme de callbot, également issu du vocabulaire des centres de contact et de la relation client.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Speech-to-speech',
+            description: "Architecture dans laquelle l'audio entre et sort d'un modèle unique, sans repasser par une étape de texte intermédiaire.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: 'Barge-in',
+            description: "Capacité d'un agent vocal à s'interrompre quand l'appelant se met à parler pendant qu'il énonce sa réponse.",
+          },
+          {
+            '@type': 'DefinedTerm',
+            name: "Article 50 du règlement européen sur l'IA",
+            description: "Disposition du règlement (UE) 2024/1689 applicable depuis le 2 août 2026, imposant d'informer une personne qu'elle interagit avec un système d'intelligence artificielle.",
+          },
+        ],
+      },
+    ],
+  },
   /* ─────────────────────────────────────────────────────────────
    * STUBS — pages standalone exposées dans /blog
    * Champ `externalPath` : la card du blog redirige vers cette URL
@@ -77,6 +500,11 @@ export const BLOG_ARTICLES = [
   {
     slug: 'meilleur-agent-ia',
     externalPath: '/meilleur-agent-ia',
+    internalLinks: [
+      { label: "Agent vocal IA : le cas particulier du téléphone", href: '/blog/agent-vocal-ia-entreprise' },
+      { label: "Agents IA en entreprise : 20 cas d'usage", href: '/agents-ia-entreprise' },
+      { label: "Agence de développement IA", href: '/agence-developpement-ia' },
+    ],
     tag: 'Comparatif',
     title: "Quel est le meilleur agent IA pour votre entreprise en 2026 ?",
     metaTitle: "Quel est le meilleur agent IA en 2026 ? | Masteria",

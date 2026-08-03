@@ -341,7 +341,7 @@ const REFERENCES = [
 /* ───────── Meta ───────── */
 
 const META_DESC = "Conseil IA pour PME, ETI et grands groupes : audit des usages, stratégie, feuille de route et développement des solutions sur mesure. Cadrage gratuit."
-const KEYWORDS = "conseil ia, conseil en intelligence artificielle, conseil en ia, conseil intelligence artificielle, accompagnement ia, accompagnement ia entreprise, accompagnement intelligence artificielle, expert conseil ia, transformation ia, audit ia entreprise"
+const KEYWORDS = "conseil ia, conseil en intelligence artificielle, conseil en ia, conseil intelligence artificielle, accompagnement ia, accompagnement ia entreprise, accompagnement intelligence artificielle, expert conseil ia, transformation ia"
 
 /* ───────── JSON-LD ───────── */
 

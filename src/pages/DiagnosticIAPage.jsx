@@ -33,7 +33,11 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
 const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
-const KEYWORDS = "diagnostic ia, audit ia, diagnostic intelligence artificielle, audit maturité ia, maturité ia, état des lieux ia"
+// Les requêtes « audit ia » et « audit de maturité ia » sont volontairement laissées
+// à l'article /blog/audit-ia-entreprise-methode-prix, qui les traite de front.
+// Cette page garde l'intention transactionnelle « diagnostic », l'article capte
+// l'intention informationnelle « audit » et renvoie ici pour la mission.
+const KEYWORDS = "diagnostic ia, diagnostic intelligence artificielle, maturité ia, état des lieux ia, diagnostic ia entreprise"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
 
@@ -547,6 +551,12 @@ export default function DiagnosticIAPage() {
               </tbody>
             </table>
           </div>
+          {/* Renvoi vers l'article qui traite l'audit de front : sépare les deux
+              intentions de recherche (« diagnostic » ici, « audit » côté blog). */}
+          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 720 }}>
+            Pour savoir ce que contient un audit, ce qu'il coûte et dans quels cas il ne sert à rien,
+            lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={{ color: '#2563EB', fontWeight: 600 }}>guide complet de l'audit IA</Link>.
+          </p>
         </div>
       </section>
 
