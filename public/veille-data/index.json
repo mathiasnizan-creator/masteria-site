@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-31",
-    "totalEditions": 10,
-    "totalItems": 137,
-    "totalSources": 216
+    "derniereDate": "2026-08-03",
+    "totalEditions": 11,
+    "totalItems": 151,
+    "totalSources": 235
   },
   "editions": [
+    {
+      "date": "2026-08-03",
+      "dateAffichee": "3 août 2026",
+      "dateCourte": "lun. 3 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-07-31",
       "dateAffichee": "31 juillet 2026",

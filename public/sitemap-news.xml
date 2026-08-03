@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-07-31</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-03</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-07-31T08:30:00+02:00</news:publication_date>
-      <news:title>Veille IA du 31 juillet 2026 : Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l&#x27;inférence devient une commodité</news:title>
+      <news:publication_date>2026-08-03T11:01:33+02:00</news:publication_date>
+      <news:title>Veille IA du 3 août 2026 : Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l&#x27;AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d&#x27;IA</news:title>
     </news:news>
   </url>
 </urlset>

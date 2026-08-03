@@ -3,12 +3,131 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-07-31",
-    "totalEditions": 10,
-    "totalItems": 137,
-    "totalSources": 216
+    "derniereDate": "2026-08-03",
+    "totalEditions": 11,
+    "totalItems": 151,
+    "totalSources": 235
   },
   "editions": [
+    {
+      "date": "2026-08-03",
+      "dateCourte": "lun. 3 août",
+      "dateAffichee": "3 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA",
+      "chapeau": "Alibaba rend accessible Qwen3.8-Max, revendique un niveau proche des meilleurs modèles occidentaux et promet une version en poids ouverts dans une semaine, pendant que les laboratoires chinois resserrent l'écart avec les États-Unis. Le même week-end, les obligations de transparence de l'AI Act deviennent applicables et Doctolib intègre par défaut les données de santé de 50 millions d'utilisateurs dans un programme de recherche en IA.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "La Tribune",
+        "Journal du Net",
+        "Wired",
+        "Clubic",
+        "TechCrunch",
+        "ZDNet France",
+        "arXiv",
+        "01net"
+      ],
+      "items": [
+        {
+          "t": "Alibaba publie Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine",
+          "z": "une",
+          "id": "alibaba-publie-qwen3-8-max-son-plus-grand-modele-et-annonce"
+        },
+        {
+          "t": "L'AI Act devient applicable au 2 août, avec de nouveaux pouvoirs de sanction et l'obligation de signaler les contenus produits par IA",
+          "z": "europe",
+          "id": "l-ai-act-devient-applicable-au-2-aout-avec-de-nouveaux"
+        },
+        {
+          "t": "Doctolib intègre par défaut les données de santé de 50 millions d'utilisateurs dans un projet de recherche en IA",
+          "z": "europe",
+          "id": "doctolib-integre-par-defaut-les-donnees-de-sante-de-50"
+        },
+        {
+          "t": "Gemini Spark s'ouvre à 160 pays, sauf l'Union européenne",
+          "z": "europe",
+          "id": "gemini-spark-s-ouvre-a-160-pays-sauf-l-union-europeenne"
+        },
+        {
+          "t": "Sam Altman appelle le secteur à ralentir le rythme du développement de l'IA",
+          "z": "international",
+          "id": "sam-altman-appelle-le-secteur-a-ralentir-le-rythme-du"
+        },
+        {
+          "t": "Les géants américains ont dépassé 1 100 milliards de dollars investis dans l'IA, la rentabilité devient l'enjeu",
+          "z": "international",
+          "id": "les-geants-americains-ont-depasse-1-100-milliards-de"
+        },
+        {
+          "t": "Snapchat écarte les vidéos entièrement générées par IA de ses recommandations",
+          "z": "international",
+          "id": "snapchat-ecarte-les-videos-entierement-generees-par-ia-de"
+        },
+        {
+          "t": "Une interdiction américaine des modèles chinois coûterait 12 milliards de dollars par an aux entreprises américaines",
+          "z": "chine",
+          "id": "une-interdiction-americaine-des-modeles-chinois-couterait"
+        },
+        {
+          "t": "JD.com équipe ses livreurs de casques connectés dopés à l'IA",
+          "z": "chine",
+          "id": "jd-com-equipe-ses-livreurs-de-casques-connectes-dopes-a-l-ia"
+        },
+        {
+          "t": "Les modèles de langage ne sont pas encore sûrs pour un tri médical autonome",
+          "z": "recherche",
+          "id": "les-modeles-de-langage-ne-sont-pas-encore-surs-pour-un-tri"
+        },
+        {
+          "t": "Chain-of-Models : auditer un modèle juge par un modèle d'une autre famille",
+          "z": "recherche",
+          "id": "chain-of-models-auditer-un-modele-juge-par-un-modele-d-une"
+        },
+        {
+          "t": "Un malware trie ses victimes Windows grâce à l'IA",
+          "z": "bref",
+          "id": "un-malware-trie-ses-victimes-windows-grace-a-l-ia"
+        },
+        {
+          "t": "ChatGPT refuse désormais d'imiter le style de vos auteurs préférés",
+          "z": "bref",
+          "id": "chatgpt-refuse-desormais-d-imiter-le-style-de-vos-auteurs"
+        },
+        {
+          "t": "Zeiss dit pouvoir tenir la demande de composants critiques pour l'IA",
+          "z": "bref",
+          "id": "zeiss-dit-pouvoir-tenir-la-demande-de-composants-critiques"
+        }
+      ]
+    },
     {
       "date": "2026-07-31",
       "dateCourte": "ven. 31 juil.",

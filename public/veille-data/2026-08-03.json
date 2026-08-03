@@ -1,0 +1,310 @@
+{
+  "schema": 2,
+  "date": "2026-08-03",
+  "dateAffichee": "3 août 2026",
+  "dateLongue": "lundi 3 août 2026",
+  "dateCourte": "lun. 3 août",
+  "jourSemaine": "lundi",
+  "titre": "Veille IA du lundi 3 août 2026",
+  "titreEditorial": "Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA",
+  "chapeau": "Alibaba rend accessible Qwen3.8-Max, revendique un niveau proche des meilleurs modèles occidentaux et promet une version en poids ouverts dans une semaine, pendant que les laboratoires chinois resserrent l'écart avec les États-Unis. Le même week-end, les obligations de transparence de l'AI Act deviennent applicables et Doctolib intègre par défaut les données de santé de 50 millions d'utilisateurs dans un programme de recherche en IA.",
+  "une": {
+    "titre": "Alibaba publie Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine",
+    "texteHtml": "<p>Le groupe chinois a rendu son modèle phare de nouvelle génération accessible à l'ensemble des utilisateurs le 3 août, une semaine avant une sortie en poids ouverts (téléchargeable et exécutable sur ses propres serveurs). Selon Bloomberg, c'est le plus gros modèle jamais entraîné par Alibaba, qui revendique des scores de référence au niveau d'Anthropic, l'un des leaders occidentaux. Le geste marque le retour d'Alibaba à l'ouverture de ses modèles haut de gamme, après avoir gardé propriétaires plusieurs de ses derniers modèles phares plus tôt dans l'année. Il rejoint une série de sorties agressives d'acteurs chinois qui réduisent l'écart avec les laboratoires américains de pointe. Un bémol : le titre publié par Nikkei Asia estime, tests à l'appui, que le modèle n'atteint pas la performance annoncée quand Alibaba le présente juste derrière Fable 5, le modèle occidental de tête. La revendication de benchmark reste donc à confirmer par des mesures indépendantes.</p>",
+    "sources": [
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-03/alibaba-drops-another-china-ai-model-with-breakthrough-performance"
+      },
+      {
+        "nom": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/article/3362738/alibabas-ai-model-qwen38-max-made-widely-accessible-ahead-open-weights-release"
+      },
+      {
+        "nom": "Nikkei Asia",
+        "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/alibaba-s-new-qwen-ai-model-falls-short-of-second-only-to-fable-5-claim"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "alibaba-publie-qwen3-8-max-son-plus-grand-modele-et-annonce"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "L'AI Act devient applicable au 2 août, avec de nouveaux pouvoirs de sanction et l'obligation de signaler les contenus produits par IA",
+          "texteHtml": "<p>Depuis le dimanche 2 août, la Commission européenne dispose de pouvoirs de contrôle et de sanction sur les modèles d'IA les plus avancés, tandis que de nouvelles obligations de transparence s'imposent progressivement aux entreprises. L'article 50 du règlement impose de signaler qu'un contenu a été généré ou modifié par une IA, et de prévenir l'utilisateur quand il interagit avec une machine ; l'obligation vise les concepteurs comme les organisations qui déploient ces systèmes. Côté américain, Wired rapporte une crainte partagée dans le secteur, celle d'une « fatigue du signalement » où des mentions « généré par IA » omniprésentes finiraient par ne plus rien signifier pour le public. Pour une organisation française qui exploite un agent conversationnel ou publie des visuels de synthèse, l'échéance transforme un principe en réglage à câbler dans ses outils.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/21415810029151/ia-bruxelles-muscle-son-arsenal-avec-l-entree-en-vigueur-de-nouvelles-regles"
+            },
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1553327-ai-act-a-compter-du-2-aout-2026-le-droit-de-savoir-qui-ou-quoi-a-produit-l-information/"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/"
+            }
+          ],
+          "rang": 2,
+          "id": "l-ai-act-devient-applicable-au-2-aout-avec-de-nouveaux"
+        },
+        {
+          "titre": "Doctolib intègre par défaut les données de santé de 50 millions d'utilisateurs dans un projet de recherche en IA",
+          "texteHtml": "<p>La plateforme a lancé début août un programme de recherche en intelligence artificielle avec l'Inria, l'Inserm et l'Université Paris Cité. Les données de santé de 50 millions d'utilisateurs sont incluses par défaut, sauf opposition explicite de leur part. Doctolib a prévenu les personnes concernées par un courriel envoyé le 8 juillet, mais le lien permettant de refuser se trouve tout en bas du message, difficile à repérer. Le dispositif porte sur la catégorie de données la plus sensible du RGPD, celle qui touche à la santé.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-623806-vos-donnees-doctolib-peuvent-servir-a-un-projet-d-ia-mais-vous-pouvez-refuser.html"
+            }
+          ],
+          "rang": 3,
+          "id": "doctolib-integre-par-defaut-les-donnees-de-sante-de-50"
+        },
+        {
+          "titre": "Gemini Spark s'ouvre à 160 pays, sauf l'Union européenne",
+          "texteHtml": "<p>Google déploie Gemini Spark, un agent IA personnel capable d'enchaîner des tâches en utilisant les comptes et mots de passe de l'utilisateur, dans 160 pays. L'Europe reste écartée du lancement, une prudence liée au cadre réglementaire du continent qui repousse une fois de plus l'arrivée de ces agents autonomes chez les utilisateurs européens.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-623695-gemini-spark-google-ouvre-son-agent-ia-personnel-au-reste-du-monde-sauf-chez-nous.html"
+            }
+          ],
+          "rang": 4,
+          "id": "gemini-spark-s-ouvre-a-160-pays-sauf-l-union-europeenne"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Sam Altman appelle le secteur à ralentir le rythme du développement de l'IA",
+          "texteHtml": "<p>Dans un épisode du podcast Equity de TechCrunch, la rédaction revient sur la sortie de Sam Altman, patron d'OpenAI, qui demande à l'industrie de « tempérer le rythme du développement de l'IA ». La prise de position alimente le débat sur la décélération qui traverse le secteur depuis plusieurs semaines, alors même qu'OpenAI continue de sortir modèles et produits à cadence soutenue. Le fond du désaccord porte sur la capacité des laboratoires à maîtriser des systèmes qu'ils déploient plus vite qu'ils ne les comprennent.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/"
+            }
+          ],
+          "rang": 5,
+          "id": "sam-altman-appelle-le-secteur-a-ralentir-le-rythme-du"
+        },
+        {
+          "titre": "Les géants américains ont dépassé 1 100 milliards de dollars investis dans l'IA, la rentabilité devient l'enjeu",
+          "texteHtml": "<p>Google, Amazon, Microsoft et Meta accélèrent leurs dépenses en centres de données, en processeurs graphiques et en infrastructures énergétiques pour soutenir l'essor de l'IA générative. La croissance du cloud valide la stratégie, mais les investisseurs attendent désormais des retours financiers tangibles. Nikkei Asia chiffre la facture à court terme : les quatre grands du secteur ont brûlé 95 milliards de dollars de trésorerie au deuxième trimestre sur leurs investissements dans l'IA. La question s'est déplacée du montant engagé vers la date à laquelle il commence à rapporter.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet France",
+              "url": "https://www.zdnet.fr/actualites/les-geants-americains-de-la-tech-ont-deja-investi-plus-de-1-100-milliards-de-dollars-dans-lia-la-rentabilite-devient-le-veritable-enjeu-499216.htm"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/four-us-tech-giants-bled-95bn-in-cash-in-q2-on-soaring-ai-investments"
+            }
+          ],
+          "rang": 6,
+          "id": "les-geants-americains-ont-depasse-1-100-milliards-de"
+        },
+        {
+          "titre": "Snapchat écarte les vidéos entièrement générées par IA de ses recommandations",
+          "texteHtml": "<p>Snapchat a refondu l'algorithme de son service Spotlight, qui n'affichera plus en recommandation les vidéos entièrement produites par IA et les exclut de la monétisation. L'exception vise les vidéos réalisées avec les propres outils IA de l'application, une manière de canaliser la création synthétique vers son écosystème plutôt que de la bannir. La décision rejoint le mouvement des plateformes qui cherchent à protéger la valeur des contenus humains face à l'afflux de vidéos automatisées.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet France",
+              "url": "https://www.zdnet.fr/actualites/snapchat-privilegie-les-createurs-humains-face-a-la-vague-de-videos-ia-499210.htm"
+            }
+          ],
+          "rang": 7,
+          "id": "snapchat-ecarte-les-videos-entierement-generees-par-ia-de"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Une interdiction américaine des modèles chinois coûterait 12 milliards de dollars par an aux entreprises américaines",
+          "texteHtml": "<p>Selon les calculs d'un universitaire américain relayés par le South China Morning Post, un blocage des modèles d'IA chinois à poids ouverts coûterait jusqu'à 12 milliards de dollars par an aux entreprises des États-Unis, qui se tournent de plus en plus vers ces solutions économiques. Le chiffrage exact reste difficile, mais les données d'usage d'OpenRouter, un agrégateur de modèles de langage basé à New York, donnent un aperçu de l'ampleur : la demande américaine pour les modèles chinois est déjà substantielle. Daniel Yue, l'assistant chercheur auteur de l'estimation, illustre un basculement où le coût pousse les entreprises américaines vers des modèles que leur propre gouvernement envisage d'interdire. Le contrôle des exports se heurte à la logique de la facture.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3362583/potential-us-ban-chinese-ai-models-could-cost-american-businesses-us12b-year-report"
+            }
+          ],
+          "rang": 8,
+          "id": "une-interdiction-americaine-des-modeles-chinois-couterait"
+        },
+        {
+          "titre": "JD.com équipe ses livreurs de casques connectés dopés à l'IA",
+          "texteHtml": "<p>Le géant chinois du commerce en ligne JD.com a lancé un casque intelligent pour ses coursiers, après des déploiements comparables de ses rivaux Alibaba et Meituan. L'appareil intègre un assistant vocal piloté par IA et une caméra capable d'analyser l'environnement du livreur, présenté comme un outil de sécurité et d'efficacité. Le dispositif illustre la manière dont les grandes plateformes chinoises intègrent l'IA directement dans les métiers de terrain, à grande échelle et au contact des travailleurs. Il pose aussi la question de la surveillance permanente des livreurs, que ces équipements rendent possible.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3362761/chinas-tech-giants-race-put-ai-delivery-riders-heads"
+            }
+          ],
+          "rang": 9,
+          "id": "jd-com-equipe-ses-livreurs-de-casques-connectes-dopes-a-l-ia"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Les modèles de langage ne sont pas encore sûrs pour un tri médical autonome",
+          "texteHtml": "<p>Un article de recherche prévient que les modèles de langage, capables de passer les examens de licence médicale et de rivaliser avec des médecins sur des cas choisis, restent dangereux pour l'application la plus lourde de conséquences : le tri autonome de patients qui se présentent sans diagnostic préalable, avec peu ou pas de clinicien dans la boucle. Les auteurs soulignent que la preuve de sécurité manque pour cette tâche précise, où une erreur de tri peut retarder une prise en charge vitale. Le message vise directement les projets qui déploient l'IA en première ligne du parcours de soin.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.28677"
+            }
+          ],
+          "rang": 10,
+          "id": "les-modeles-de-langage-ne-sont-pas-encore-surs-pour-un-tri"
+        },
+        {
+          "titre": "Chain-of-Models : auditer un modèle juge par un modèle d'une autre famille",
+          "texteHtml": "<p>Les modèles de langage servent de plus en plus de juges automatiques, mais leurs verdicts restent sensibles aux biais cognitifs. L'étude propose un pipeline où un second modèle inspecte la trace de raisonnement du premier avant de rendre le jugement final, et montre que l'auditeur le plus efficace appartient à une famille de modèles différente de celle qu'il évalue. L'enseignement est pratique pour toute équipe qui utilise un modèle pour noter les sorties d'un autre : croiser les familles réduit le risque qu'un modèle valide ses propres angles morts.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2607.28636"
+            }
+          ],
+          "rang": 11,
+          "id": "chain-of-models-auditer-un-modele-juge-par-un-modele-d-une"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Un malware trie ses victimes Windows grâce à l'IA",
+          "texteHtml": "<p>Un logiciel malveillant repéré dans les milieux cybercriminels classe automatiquement les machines infectées selon leur potentiel de rentabilité, aidant les pirates à choisir leurs cibles les plus intéressantes.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/malware-utilise-ia-choisir-ordinateurs-windows-pirater.html"
+            }
+          ],
+          "rang": 12,
+          "id": "un-malware-trie-ses-victimes-windows-grace-a-l-ia"
+        },
+        {
+          "titre": "ChatGPT refuse désormais d'imiter le style de vos auteurs préférés",
+          "texteHtml": "<p>Demandez du Stephen King à ChatGPT, il décline et propose « une ambiance similaire », une prudence nouvelle pour une entreprise qui a entraîné ses modèles sur des bibliothèques entières sans demander l'avis des auteurs.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/chatgpt-necrit-plus-a-la-maniere-de-vos-auteurs-preferes.html"
+            }
+          ],
+          "rang": 13,
+          "id": "chatgpt-refuse-desormais-d-imiter-le-style-de-vos-auteurs"
+        },
+        {
+          "titre": "Zeiss dit pouvoir tenir la demande de composants critiques pour l'IA",
+          "texteHtml": "<p>Le fournisseur allemand d'ASML, maillon central de la fabrication de semi-conducteurs, écarte les inquiétudes des investisseurs sur les goulets d'étranglement et se dit capable d'absorber la demande de la chaîne d'approvisionnement de l'IA.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-03/asml-supplier-zeiss-says-it-can-handle-demand-for-key-ai-parts"
+            }
+          ],
+          "rang": 14,
+          "id": "zeiss-dit-pouvoir-tenir-la-demande-de-composants-critiques"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le jour où l'AI Act rend la transparence obligatoire, Doctolib enrôle 50 millions de dossiers de santé par défaut : la compétence à bâtir est le design du consentement, pas la case de conformité",
+    "these": "Doctolib inscrit d'office les données de santé de 50 millions de personnes dans un projet d'IA avec un lien de refus enterré en bas d'un courriel, le week-end même où les obligations de transparence de l'AI Act deviennent applicables. La compétence qui compte pour une équipe française est de concevoir la couche d'information et de refus pour qu'elle soit lisible au moment de la décision : base légale choisie sciemment, droit d'opposition placé au bon endroit, langage clair. La conformité formelle et le consentement réel sont deux choses différentes, et c'est la seconde qui décide de la confiance.",
+    "html": "<p>Doctolib inscrit d'office les données de santé de 50 millions de personnes dans un projet de recherche en IA, et place le lien pour refuser tout en bas d'un courriel envoyé le 8 juillet. Le même week-end, les obligations de transparence de l'AI Act deviennent applicables. Deux événements, une seule discipline : la manière dont une organisation explique aux gens ce qu'elle fait d'eux et de leurs données.</p>\n<p>Le cas Doctolib expose l'écart entre la conformité formelle et le consentement réel. L'entreprise a bien envoyé un courriel, elle informe, elle offre un droit d'opposition. L'information existe, mais elle n'est pas lisible : un lien de refus enterré au bas d'un message, sur la catégorie de données que le RGPD protège le plus, celle de la santé. Cocher la case juridique et obtenir un accord éclairé sont deux gestes distincts, et c'est le second qui décide de la confiance.</p>\n<p>Pour une équipe française qui déploie de l'IA sur des données personnelles, la compétence à bâtir se situe là. Choisir la base légale de manière assumée, consentement explicite ou intérêt légitime, et savoir défendre ce choix. Placer le refus au moment de la décision, pas au fond d'un courriel que personne ne lit jusqu'en bas. Écrire l'information en langage clair, celui que comprend un patient, pas celui qui protège le service juridique. Ces gestes ne relèvent pas du droit seul ; ils relèvent du design du produit, de l'ergonomie de l'écran où l'utilisateur dit oui ou non.</p>\n<p>Cinquante millions de dossiers, c'est près des trois quarts des adultes de ce pays. Une donnée de santé enrôlée par défaut à cette échelle ne se rattrape pas avec un communiqué. La transparence vient de devenir la surface où se gagne ou se perd la confiance, et cette surface se conçoit, ligne à ligne, comme le reste du produit.</p>",
+    "htmlExtrait": "<p>Doctolib inscrit d'office les données de santé de 50 millions de personnes dans un projet de recherche en IA, et place le lien pour refuser tout en bas d'un courriel envoyé le 8 juillet. Le même week-end, les obligations de transparence de l'AI Act deviennent applicables. Deux événements, une seule discipline : la manière dont une organisation explique aux gens ce qu'elle fait d'eux et de leurs données.</p>\n<p>Le cas Doctolib expose l'écart entre la conformité formelle et le consentement réel. L'entreprise a bien envoyé un courriel, elle informe, elle offre un droit d'opposition. L'information existe, mais elle n'est pas lisible : un lien de refus enterré au bas d'un message, sur la catégorie de données que le RGPD protège le plus, celle de la santé. Cocher la case juridique et obtenir un accord éclairé sont deux gestes distincts, et c'est le second qui décide de la confiance.</p>",
+    "itemsCites": [
+      2,
+      3
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-07-31",
+    "dateLongue": "vendredi 31 juillet 2026",
+    "titreEditorial": "Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 19,
+  "nbSignes": 9312,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Bloomberg",
+    "South China Morning Post",
+    "Nikkei Asia",
+    "La Tribune",
+    "Journal du Net",
+    "Wired",
+    "Clubic",
+    "TechCrunch",
+    "ZDNet France",
+    "arXiv"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 70,
+  "publieLe": "2026-08-03T11:01:33+02:00",
+  "publieLeAffiche": "11h01",
+  "ogImage": "/veille-data/og/2026-08-03.png"
+}

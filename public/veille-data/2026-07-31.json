@@ -278,7 +278,12 @@
     "titreEditorial": "Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-03",
+    "dateLongue": "lundi 3 août 2026",
+    "titreEditorial": "Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 24,
   "nbSignes": 9951,
