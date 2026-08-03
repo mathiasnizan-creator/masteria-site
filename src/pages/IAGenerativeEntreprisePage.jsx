@@ -345,6 +345,7 @@ export default function IAGenerativeEntreprisePage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Conseil en IA', slug: 'conseil-intelligence-artificielle' },
     { name: 'IA générative en entreprise', slug: SLUG },
   ]
 
@@ -372,7 +373,9 @@ export default function IAGenerativeEntreprisePage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>IA générative en entreprise</span>
+            <Link to="/conseil-intelligence-artificielle" style={{ color: '#5B6679' }}>Conseil en IA</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }} aria-current="page">IA générative en entreprise</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}

@@ -119,6 +119,35 @@ function descriptionMeta(texte, max = 160) {
   return (i > 40 ? coupe.slice(0, i) : coupe).replace(/[\s.,;:!?…]+$/, '') + '…'
 }
 
+// Titre de la page. Google coupe l'affichage de la SERP vers 60 caractères : on
+// plafonne à 65. Le titre éditorial passe AVANT la marque, car sans lui les 12
+// éditions auraient des titres quasi identiques (« Veille IA du <date> »), donc
+// sans mot-clé thématique et en doublon les unes des autres. La marque n'est
+// ajoutée que si elle tient encore. Le h1 porte le titre éditorial complet.
+const TITRE_MAX = 65
+const MARQUE_TITRE = ' | Masteria'
+const EXTRAIT_MIN = 18
+
+function extraitTitre(titre, budget) {
+  const t = (titre || '').trim()
+  if (!t) return ''
+  if (t.length <= budget) return t
+  // Coupe sur la dernière frontière de mot tenant dans le budget, ellipse
+  // comprise, sans laisser de ponctuation orpheline avant les points de suspension.
+  const bout = t
+    .slice(0, budget - 1)
+    .replace(/\s+\S*$/, '')
+    .replace(/[,;:\s]+$/, '')
+  return bout.length >= EXTRAIT_MIN ? `${bout}…` : ''
+}
+
+function titreEdition(dateAffichee, titreEditorial) {
+  const base = dateAffichee ? `Veille IA du ${dateAffichee}` : 'Veille IA'
+  const extrait = extraitTitre(titreEditorial, TITRE_MAX - base.length - 3)
+  const titre = `${base}${extrait ? ` : ${extrait}` : ''}`
+  return titre.length + MARQUE_TITRE.length <= TITRE_MAX ? `${titre}${MARQUE_TITRE}` : titre
+}
+
 // Phrase de répartition, générée depuis zones[]. Accord au singulier et au
 // pluriel, zones absentes omises.
 function phraseRepartition(ed) {
@@ -256,8 +285,8 @@ export default function VeilleEditionPage() {
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
       <SEOHead
         title={ok
-          ? `Veille IA du ${edition.dateAffichee} : ${edition.titreEditorial} | Masteria`.slice(0, 95)
-          : `Veille IA du ${lisible} | Masteria`}
+          ? titreEdition(edition.dateAffichee, edition.titreEditorial)
+          : titreEdition(lisible, '')}
         description={ok ? descriptionMeta(edition.chapeau)
           : `L'actualité de l'intelligence artificielle du ${lisible}, commentée et analysée par Masteria.`}
         type="article"
@@ -557,7 +586,8 @@ export default function VeilleEditionPage() {
             <div className="veille-analyse" style={{ maxWidth: 760 }} dangerouslySetInnerHTML={{ __html: analyse.html }} />
 
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760, marginTop: 36, display: 'flex', gap: 18, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-              <img src="/assets/mathias-nizan@240.jpg" width={56} height={56} loading="lazy" alt=""
+              <img src="/assets/mathias-nizan@240.jpg" width={56} height={56} loading="lazy"
+                alt="Mathias Nizan, fondateur de Masteria"
                 style={{ borderRadius: 99, objectFit: 'cover', flexShrink: 0 }} />
               <div style={{ flex: 1, minWidth: 240 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16, color: '#F8FAFC' }}>{analyse.auteur}</div>

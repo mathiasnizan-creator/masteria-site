@@ -9,7 +9,7 @@ import {
   Newspaper, Library, Info,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
-import { useIsMobile } from '../hooks/useMediaQuery';
+import { useIsMobile, useMediaQuery } from '../hooks/useMediaQuery';
 
 const METIER_ICONS_NAV = {
   'formation-ia-marketing':           Megaphone,
@@ -139,9 +139,22 @@ const VEILLE_LINKS = [
   { label: 'Veille concurrentielle',  desc: 'Surveiller ses concurrents',      path: '/veille-concurrentielle-ia', Icon: Target },
 ];
 
+// Déroulant « À propos » : regroupe les pages d'identité et de preuve. Les études
+// de cas étaient jusque-là accessibles depuis le seul pied de page, alors que
+// c'est la page que les prospects cherchent avant de nous contacter.
+const APROPOS_LINKS = [
+  { label: 'À propos de Masteria', desc: 'Le centre de formation et le cabinet', path: '/centre-formation-ia-entreprise', Icon: Info },
+  { label: 'Études de cas IA',     desc: 'Trois déploiements, résultats mesurés', path: '/etudes-de-cas-ia',                Icon: BadgeCheck },
+  { label: 'Certification Qualiopi', desc: 'Portée et financement OPCO',         path: '/formation-ia-qualiopi',            Icon: Award },
+  { label: 'Financement',          desc: 'OPCO et plan de développement',        path: '/financement-formation-ia',         Icon: Wallet },
+];
+
 export function MasteriaHeader() {
   const location = useLocation();
-  const isMobile = useIsMobile();
+  // La nav desktop réclame ~950 px (logo + 6 entrées + CTA). En dessous de 1024 px
+  // elle débordait de l'écran et venait coller le logo (scroll horizontal parasite
+  // entre 768 et 1023 px) : on bascule sur le menu burger dès cette largeur.
+  const isMobile = useMediaQuery('(max-width: 1023px)');
   const [menuOpen, setMenuOpen] = useState(false);
   const [conseilOpen, setConseilOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -149,6 +162,8 @@ export function MasteriaHeader() {
   const [mobileConseilOpen, setMobileConseilOpen] = useState(false);
   const [veilleOpen, setVeilleOpen] = useState(false);
   const [mobileVeilleOpen, setMobileVeilleOpen] = useState(false);
+  const [aproposOpen, setAproposOpen] = useState(false);
+  const [mobileAproposOpen, setMobileAproposOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(104);
   const menuRef = useRef(null);
   const conseilRef = useRef(null);
@@ -156,6 +171,8 @@ export function MasteriaHeader() {
   const conseilTimerRef = useRef(null);
   const veilleRef = useRef(null);
   const veilleTimerRef = useRef(null);
+  const aproposRef = useRef(null);
+  const aproposTimerRef = useRef(null);
   const headerRef = useRef(null);
 
   // Mesure la hauteur réelle du header (nav + bandeau confiance)
@@ -174,6 +191,7 @@ export function MasteriaHeader() {
     setMobileFormationsOpen(v => (v ? false : v));
     setMobileConseilOpen(v => (v ? false : v));
     setMobileVeilleOpen(v => (v ? false : v));
+    setMobileAproposOpen(v => (v ? false : v));
   }, [location.pathname]);
 
   // Bloquer le scroll body quand le drawer est ouvert
@@ -206,10 +224,16 @@ export function MasteriaHeader() {
   const handleVeilleLeave = () => {
     veilleTimerRef.current = setTimeout(() => setVeilleOpen(false), 120);
   };
+  const handleAproposEnter = () => {
+    clearTimeout(aproposTimerRef.current);
+    setAproposOpen(true);
+  };
+  const handleAproposLeave = () => {
+    aproposTimerRef.current = setTimeout(() => setAproposOpen(false), 120);
+  };
 
+  // « À propos » et « Financement » sont désormais dans le déroulant APROPOS_LINKS.
   const navLinks = [
-    { label: 'Financement', path: '/financement-formation-ia' },
-    { label: 'À propos', path: '/centre-formation-ia-entreprise' },
     { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
   ];
@@ -224,6 +248,7 @@ export function MasteriaHeader() {
   ];
   const conseilActive = CONSEIL_PATHS.includes(location.pathname);
   const veilleActive = location.pathname.startsWith('/veille-ia');
+  const aproposActive = APROPOS_LINKS.some(l => l.path === location.pathname);
 
   return (
     <header ref={headerRef} style={{ position: 'sticky', top: 0, background: '#fff', borderBottom: '1px solid #EFEFEF', zIndex: 200, transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}>
@@ -232,6 +257,7 @@ export function MasteriaHeader() {
         padding: isMobile ? '0 18px' : '0 32px',
         height: isMobile ? 64 : 80,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        gap: isMobile ? 12 : 48, // gouttière minimale entre le logo et la nav
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <picture>
@@ -257,7 +283,7 @@ export function MasteriaHeader() {
 
         {/* ═════════════ NAV DESKTOP ═════════════ */}
         {!isMobile && (
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
 
             {/* ── Formations + méga-menu ── */}
             <div ref={menuRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} style={{ position: 'relative' }}>
@@ -477,6 +503,48 @@ export function MasteriaHeader() {
               )}
             </div>
 
+            {/* ── À propos + déroulant (identité et preuves) ── */}
+            <div ref={aproposRef} onMouseEnter={handleAproposEnter} onMouseLeave={handleAproposLeave} style={{ position: 'relative' }}>
+              <Link to="/centre-formation-ia-entreprise"
+                style={{
+                  fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500,
+                  cursor: 'pointer', padding: '4px 0', display: 'flex', alignItems: 'center', gap: 5, textDecoration: 'none', whiteSpace: 'nowrap',
+                  color: aproposActive ? '#111' : '#717171',
+                  borderBottom: aproposActive ? '2px solid #111' : '2px solid transparent',
+                  transition: 'all 150ms',
+                }}
+              >
+                À propos
+                <svg width="11" height="7" viewBox="0 0 11 7" fill="none" style={{ transform: aproposOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms', marginTop: 1 }}>
+                  <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+
+              {aproposOpen && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 12px)', left: '50%', transform: 'translateX(-50%)',
+                  background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
+                  padding: 10, width: 300, zIndex: 300,
+                }}>
+                  {APROPOS_LINKS.map(v => (
+                    <Link key={v.path} to={v.path} onClick={() => setAproposOpen(false)}
+                      style={{ textDecoration: 'none', borderRadius: 8, padding: '9px 10px', display: 'flex', alignItems: 'center', gap: 10, transition: 'background 120ms' }}
+                      onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >
+                      <div style={{ width: 34, height: 34, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <v.Icon size={17} color="#2563EB" strokeWidth={2.2} />
+                      </div>
+                      <div>
+                        <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#111' }}>{v.label}</div>
+                        <div style={{ fontSize: 11, color: '#6B7280' }}>{v.desc}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {navLinks.map(item => {
               const active = location.pathname === item.path;
               return (
@@ -673,6 +741,35 @@ export function MasteriaHeader() {
           {mobileVeilleOpen && (
             <div style={{ paddingLeft: 4, paddingBottom: 12 }}>
               {VEILLE_LINKS.map(v => (
+                <Link key={v.path} to={v.path} style={{
+                  display: 'flex', alignItems: 'center', gap: 12, padding: '10px 8px',
+                  textDecoration: 'none', borderRadius: 8,
+                }}>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <v.Icon size={17} color="#2563EB" strokeWidth={2.2} />
+                  </div>
+                  <span style={{ fontSize: 15, fontWeight: 600, color: '#0A0A0A' }}>{v.label}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {/* À propos accordion */}
+          <button
+            onClick={() => setMobileAproposOpen(v => !v)}
+            style={{
+              width: '100%', background: 'none', border: 'none', padding: '16px 0',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              fontFamily: 'DM Sans, sans-serif', fontSize: 17, fontWeight: 700,
+              color: '#0A0A0A', cursor: 'pointer', borderBottom: '1px solid #F3F4F6',
+            }}
+          >
+            À propos
+            <ChevronDown size={20} style={{ transform: mobileAproposOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
+          </button>
+          {mobileAproposOpen && (
+            <div style={{ paddingLeft: 4, paddingBottom: 12 }}>
+              {APROPOS_LINKS.map(v => (
                 <Link key={v.path} to={v.path} style={{
                   display: 'flex', alignItems: 'center', gap: 12, padding: '10px 8px',
                   textDecoration: 'none', borderRadius: 8,

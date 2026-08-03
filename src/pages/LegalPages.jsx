@@ -192,7 +192,7 @@ export function PolitiqueConfidentialitePage() {
     <>
       <SEOHead
         title="Politique de confidentialité | Masteria"
-        description="Politique de confidentialité de Masteria, conforme au RGPD. Finalités, durées de conservation, destinataires, droits des utilisateurs sur leurs données personnelles."
+        description="Politique de confidentialité de Masteria, conforme au RGPD : finalités, durées de conservation, destinataires et droits sur vos données."
         slug="politique-de-confidentialite"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },

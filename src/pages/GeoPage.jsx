@@ -55,9 +55,11 @@ export default function GeoPage() {
     ? `Formation ${tool.shortName} ${city.nameLoc} — intra-entreprise sur mesure`
     : `Formation ${tool.shortName} ${city.nameLoc} — intra ou accompagnement individuel`
   const metaTitle = `Formation ${tool.shortName} ${city.name} | ${isIntraOnly ? 'Intra-entreprise' : 'Intra & individuel'} | Masteria`
+  // Formulations calibrées pour rester sous 158 caractères, y compris dans le pire
+  // cas « Claude (Anthropic) » + « à Marseille » (sinon troncature en SERP).
   const metaDesc = isIntraOnly
-    ? `Formation ${tool.name} ${city.nameLoc}, en intra-entreprise dans vos locaux. Programme sur mesure, certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h.`
-    : `Formation ${tool.name} ${city.nameLoc}, en intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis sous 24 h.`
+    ? `Formation ${tool.name} ${city.nameLoc} : intra-entreprise dans vos locaux, programme sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`
+    : `Formation ${tool.name} ${city.nameLoc} : intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`
   const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug).slice(0, 5)
   const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug)
 

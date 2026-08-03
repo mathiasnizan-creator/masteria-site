@@ -21,7 +21,7 @@ const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Études de cas IA : 3 déploiements réels | Masteria'
+const META_TITLE = 'Études de cas IA : 3 déploiements en entreprise | Masteria'
 const META_DESC = "Études de cas IA anonymisées : assistants Claude en production, équipes formées, résultats mesurés. Distribution B2B, industrie, conseil financier."
 const KEYWORDS = 'étude de cas ia, études de cas ia entreprise, cas client ia, exemple déploiement ia entreprise, assistants ia entreprise, retour d\'expérience ia, projet ia entreprise exemple, adoption ia entreprise'
 
@@ -53,7 +53,7 @@ const CASES = [
     resultat: "Les 58 commerciaux sont formés, en six sessions de deux jours : les 10 référents de l'équipe élite d'abord, puis toutes les équipes de vente. Les premiers assistants sont en production, et 58 personnes assistées par Claude visent la force de frappe d'une équipe de 70, sans recrutement.",
     pillars: [
       { t: 'Conseil', d: "Cadrage des cas d'usage avec la direction : choix des tâches à plus fort rendement, circuit de validation, gouvernance de déploiement." },
-      { t: 'Construction', d: "11 assistants Claude conçus avec les référents et branchés sur les données réelles de l'entreprise (ERP, base articles, CRM)." },
+      { t: 'Construction', d: "11 assistants Claude conçus avec les référents et branchés sur les données de l'entreprise (ERP, base articles, CRM)." },
       { t: 'Formation', d: "58 commerciaux formés en six sessions de deux jours, dont une équipe élite de 10 référents capable de faire vivre les assistants en interne." },
     ],
   },
@@ -70,13 +70,13 @@ const CASES = [
       ['5', 'fonctions couvertes : direction, finance, commerce, opérations, RH'],
     ],
     defi: "Les équipes IT du groupe ont retenu Microsoft 365 Copilot, avec un déploiement prévu à l'échelle du groupe, à l'international. L'enjeu : réussir le premier palier français avant cette généralisation, sur deux niveaux : décider et cadrer côté comité de direction, mettre en pratique côté managers pilotes, avec un critère strict pour ces derniers : repartir avec des usages applicables à leur poste dès le retour au bureau, pas une démonstration de fonctionnalités.",
-    reponse: "Une journée de sensibilisation stratégique pour le comité de direction (directeurs fonctionnels), puis un parcours de deux jours par groupe de managers pilotes, en ateliers pratiques (Excel, Outlook, PowerPoint, Word, création d'assistants). Chaque atelier est construit sur des jeux de données et des fichiers réels du groupe, dans son environnement Microsoft 365. Session pilote mesurée, puis vagues suivantes.",
-    livrables: ['Ateliers Excel sur données réelles', 'Traitement du flux Outlook', 'Production PowerPoint et Word assistée', 'Création d\'assistants personnalisés', 'Veille concurrentielle outillée', 'Vision stratégique posée au comité de direction'],
-    resultat: "Session pilote mesurée à chaud : 89,8 % de satisfaction moyenne, 11 participants sur 11 qui recommandent la formation, et 4,9/5 sur l'utilité concrète au poste. Les ateliers sur fichiers réels sont reconduits pour les vagues suivantes : le dispositif validé en France sert de socle au déploiement international du groupe.",
+    reponse: "Une journée de sensibilisation stratégique pour le comité de direction (directeurs fonctionnels), puis un parcours de deux jours par groupe de managers pilotes, en ateliers pratiques (Excel, Outlook, PowerPoint, Word, création d'assistants). Chaque atelier est construit sur les jeux de données et les fichiers du groupe, dans son environnement Microsoft 365. Session pilote mesurée, puis vagues suivantes.",
+    livrables: ['Ateliers Excel sur les données du groupe', 'Traitement du flux Outlook', 'Production PowerPoint et Word assistée', 'Création d\'assistants personnalisés', 'Veille concurrentielle outillée', 'Vision stratégique posée au comité de direction'],
+    resultat: "Session pilote mesurée à chaud : 89,8 % de satisfaction moyenne, 11 participants sur 11 qui recommandent la formation, et 4,9/5 sur l'utilité concrète au poste. Ces ateliers sont reconduits pour les vagues suivantes : le dispositif validé en France sert de socle au déploiement international du groupe.",
     verbatim: { text: "Beaucoup de nouvelles choses à mettre en pratique pour analyser des fichiers ou mettre en place un assistant basé sur les best practices existantes.", role: 'Une manager, fiche de satisfaction de la session pilote' },
     pillars: [
       { t: 'Conseil', d: "Une journée stratégique avec le comité de direction : vision IA du groupe, gouvernance d'usage et feuille de route avant la généralisation à l'international." },
-      { t: 'Construction', d: "Des assistants personnalisés construits en atelier, à partir des bonnes pratiques et des fichiers réels des managers, dans l'environnement Microsoft 365 du groupe." },
+      { t: 'Construction', d: "Des assistants personnalisés construits en atelier, à partir des bonnes pratiques et des fichiers des managers, dans l'environnement Microsoft 365 du groupe." },
       { t: 'Formation', d: "Un parcours de deux jours par groupe de managers pilotes, en ateliers pratiques mesurés à chaud (89,8 % de satisfaction)." },
     ],
   },
@@ -93,12 +93,12 @@ const CASES = [
       ['1er', "cas d'usage : les appels d'offres"],
     ],
     defi: "Le cabinet conseille le secteur public sur des sujets exigeants : ingénierie financière, dette, contrats publics. Le temps des consultants part en grande partie dans les appels d'offres et la production de notes. Autour d'eux, l'administration, le marketing et la comptabilité font tourner le cabinet. L'enjeu : faire gagner du temps à chaque équipe sans rien céder sur la rigueur ni la confidentialité.",
-    reponse: "Un assistant Claude par équipe, nourri des documents réels du cabinet : trames et mémoires d'appels d'offres pour les consultants, dossiers et marchés pour l'administration, références pour le marketing, facturation pour la comptabilité. Les équipes sont formées dans un cadre strict : confidentialité des données, sources citées, validation humaine systématique.",
+    reponse: "Un assistant Claude par équipe, nourri des documents du cabinet : trames et mémoires d'appels d'offres pour les consultants, dossiers et marchés pour l'administration, références pour le marketing, facturation pour la comptabilité. Les équipes sont formées dans un cadre strict : confidentialité des données, sources citées, validation humaine systématique.",
     livrables: ['Consultants : réponse aux appels d\'offres', 'Consultants : analyse financière', 'Administration : dossiers et marchés', 'Marketing : références et offres', 'Comptabilité : facturation et suivi', 'Base documentaire métier partagée'],
     resultat: "Les consultants concentrent leur temps sur l'analyse plutôt que sur la mise en forme des réponses. Chaque fonction du cabinet dispose de son assistant Claude sur ses propres documents, la rigueur et l'indépendance du cabinet restant au cœur du dispositif.",
     pillars: [
       { t: 'Conseil', d: "Cadrage par équipe des cas d'usage et du cadre de confidentialité : données sensibles, sources citées, validation humaine systématique." },
-      { t: 'Construction', d: "6 assistants Claude conçus et nourris des documents réels du cabinet : trames d'appels d'offres, dossiers et marchés, base documentaire métier." },
+      { t: 'Construction', d: "6 assistants Claude conçus à partir des documents du cabinet : trames d'appels d'offres, dossiers et marchés, base documentaire métier." },
       { t: 'Formation', d: "Chaque équipe formée à utiliser et faire évoluer son assistant, des consultants à la comptabilité." },
     ],
   },
@@ -107,7 +107,7 @@ const CASES = [
 const FAQ = [
   {
     q: 'Pourquoi vos études de cas IA sont-elles anonymisées ?',
-    a: "Parce que nos clients considèrent leur avance sur l'IA comme un avantage concurrentiel et préfèrent ne pas communiquer publiquement dessus. Nous respectons ce choix : chaque cas est décrit par son secteur, sa taille et ses résultats réels, sans nommer l'entreprise. Tous les chiffres publiés viennent des dossiers de mission : fiches de satisfaction, comptes rendus, dispositifs livrés.",
+    a: "Parce que nos clients considèrent leur avance sur l'IA comme un avantage concurrentiel et préfèrent ne pas communiquer publiquement dessus. Nous respectons ce choix : chaque cas est décrit par son secteur, sa taille et ses résultats, sans nommer l'entreprise. Tous les chiffres publiés viennent des dossiers de mission : fiches de satisfaction, comptes rendus, dispositifs livrés.",
   },
   {
     q: 'Peut-on vérifier ces références ou parler à vos clients ?',
@@ -141,7 +141,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: 'Études de cas IA en entreprise : trois déploiements réels',
+  headline: 'Études de cas IA en entreprise : trois déploiements documentés',
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
@@ -307,14 +307,14 @@ export default function EtudesDeCasIAPage() {
               <ShieldCheck size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Références · Déploiements réels
+              Références · Missions accompagnées
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.7vw, 48px)', fontWeight: 900, lineHeight: 1.06, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 860 }}>
             Études de cas IA en entreprise
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>trois déploiements réels, résultats mesurés</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>trois déploiements, résultats mesurés</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
@@ -323,11 +323,11 @@ export default function EtudesDeCasIAPage() {
 
           {/* GEO : réponse directe citable */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La force commerciale d'un distributeur IT B2B (58 commerciaux), un groupe industriel international et un cabinet de conseil financier : <strong style={{ color: '#fff', fontWeight: 700 }}>trois organisations accompagnées de bout en bout par Masteria</strong>. Cadrage stratégique avec les directions, assistants construits sur leurs données réelles, équipes formées, résultats mesurés à chaud.
+            La force commerciale d'un distributeur IT B2B (58 commerciaux), un groupe industriel international et un cabinet de conseil financier : <strong style={{ color: '#fff', fontWeight: 700 }}>trois organisations accompagnées de bout en bout par Masteria</strong>. Cadrage stratégique avec les directions, assistants construits sur leurs propres données, équipes formées, résultats mesurés à chaud.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 700 }}>
-            Nos clients considèrent leur avance sur l'IA comme un avantage concurrentiel et ne communiquent pas publiquement dessus. Ces études de cas sont donc anonymisées : secteur, taille et chiffres réels, sans les noms. La mise en relation avec un client reste possible en privé, sous accord de confidentialité.
+            Nos clients considèrent leur avance sur l'IA comme un avantage concurrentiel et ne communiquent pas publiquement dessus. Ces études de cas sont donc anonymisées : secteur, taille et chiffres, sans les noms. La mise en relation avec un client reste possible en privé, sous accord de confidentialité.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -346,7 +346,7 @@ export default function EtudesDeCasIAPage() {
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
                 ['Distribution IT B2B', "58 commerciaux formés (toute la force de vente), 10 référents « équipe élite », 11 assistants Claude métier, les premiers déjà en production."],
-                ['Industrie (groupe international)', "Parcours managers Copilot sur fichiers réels, premier palier d'un déploiement international : 89,8 % de satisfaction en session pilote, 11 sur 11 recommandent."],
+                ['Industrie (groupe international)', "Parcours managers Copilot sur les fichiers du groupe, premier palier d'un déploiement international : 89,8 % de satisfaction en session pilote, 11 sur 11 recommandent."],
                 ['Conseil financier (secteur public)', "6 assistants Claude couvrant les 4 équipes du cabinet, à commencer par la réponse aux appels d'offres."],
                 ['Pourquoi anonymisées ?', "À la demande des clients, qui ne communiquent pas sur leur avance IA. Références vérifiables en privé, sous NDA."],
               ].map(([k, v], i) => (
@@ -385,14 +385,14 @@ export default function EtudesDeCasIAPage() {
           <div style={kickerStyle}>Notre cadre</div>
           <h2 style={h2Style}>Ce que ces trois missions ont en commun</h2>
           <p style={leadStyle}>
-            Trois secteurs, trois tailles d'organisation, un même fil conducteur : sur chaque mission, Masteria articule le conseil (cadrer avec la direction), la construction (des assistants branchés sur les données réelles) et la formation (des équipes capables de faire vivre le dispositif), puis mesure le résultat.
+            Trois secteurs, trois tailles d'organisation, un même fil conducteur : sur chaque mission, Masteria articule le conseil (cadrer avec la direction), la construction (des assistants branchés sur les données de l'entreprise) et la formation (des équipes capables de faire vivre le dispositif), puis mesure le résultat.
           </p>
           <p style={mutedStyle}>
             Et une règle que nous assumons : la discrétion. Nos clients gardent leur avance pour eux, nous gardons leurs noms pour nous.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
             {[
-              { icon: BadgeCheck, t: 'Sur les vrais dossiers', d: "Chaque atelier et chaque assistant est construit sur les fichiers, données et documents réels de l'entreprise, jamais sur des exemples génériques." },
+              { icon: BadgeCheck, t: 'Sur les dossiers de l\'entreprise', d: "Chaque atelier et chaque assistant est construit sur les fichiers, données et documents de l'entreprise, jamais sur des exemples génériques." },
               { icon: ShieldCheck, t: 'Un cadre de confidentialité écrit', d: "Offres entreprise sans entraînement sur vos données, règles d'usage, sources citées, validation humaine : le cadre est posé avant le premier prompt." },
               { icon: Lock, t: 'Anonymat public, vérification privée', d: "Les cas sont anonymisés à la demande des clients. En discussion avancée, nous organisons une mise en relation sous accord de confidentialité." },
             ].map(({ icon: Icon, t, d }) => (

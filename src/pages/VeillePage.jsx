@@ -22,6 +22,15 @@ import VeilleNav from '../components/VeilleNav'
  * déjà prérendues du site.
  */
 
+// Meta description : coupe sur frontière de mot sous la limite d'affichage SERP,
+// une troncature brute laisserait un mot coupé en deux dans le résultat Google.
+const DESC_MAX = 158
+function resumeMeta(texte) {
+  const t = (texte || '').trim()
+  if (t.length <= DESC_MAX) return t
+  return `${t.slice(0, DESC_MAX - 1).replace(/\s+\S*$/, '').replace(/[,;:\s]+$/, '')}…`
+}
+
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 const sectionPad = 'clamp(64px, 9vw, 110px) 24px'
@@ -191,7 +200,7 @@ export default function VeillePage() {
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
       <SEOHead
         title="Veille IA : l'actualité de l'intelligence artificielle analysée | Masteria"
-        description={ok ? ed.chapeau.slice(0, 158)
+        description={ok ? resumeMeta(ed.chapeau)
           : "Chaque matin ouvré, dix à quatorze actualités IA vérifiées et sourcées, puis une analyse signée Masteria. Europe, international, Chine et Asie."}
         slug="veille-ia"
         keywords="veille ia, actualité intelligence artificielle, actualité ia, ai act, veille technologique ia, analyse ia"
@@ -447,7 +456,8 @@ export default function VeillePage() {
             )}
 
             <div style={{ display: 'flex', gap: 14, alignItems: 'center', marginTop: 28, paddingTop: 24, borderTop: '1px solid #1E293B' }}>
-              <img src="/assets/mathias-nizan@240.jpg" width={44} height={44} loading="lazy" alt=""
+              <img src="/assets/mathias-nizan@240.jpg" width={44} height={44} loading="lazy"
+                alt="Mathias Nizan, fondateur de Masteria"
                 style={{ borderRadius: 99, objectFit: 'cover', flexShrink: 0 }} />
               <div>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15, color: '#F8FAFC' }}>{ed.analyse.auteur}</div>

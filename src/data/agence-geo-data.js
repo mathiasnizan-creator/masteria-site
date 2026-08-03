@@ -27,7 +27,7 @@ export const AGENCE_GEO_CITIES = [
     locale: 'fr-FR',
     coordinates: { latitude: 45.7640, longitude: 4.8357 },
     metaDesc:
-      "Agence IA à Lyon : conseil et gouvernance, agents IA et outils sur mesure, automatisation, formation des équipes. Bureaux en presqu'île (Lyon 1er). Cadrage gratuit.",
+      "Agence IA à Lyon : conseil et gouvernance, agents IA et outils sur mesure, automatisation, formation. Bureaux en presqu'île (Lyon 1er). Cadrage gratuit.",
     heroSubtitle:
       "Lyon est notre ville : Masteria y a ses bureaux, en presqu'île (Lyon 1er). Nous cadrons votre stratégie et votre gouvernance IA, nous créons les agents, outils et automatisations qui s'intègrent à votre système d'information, et la formation rend vos équipes autonomes. Le tout en circuit court : vos locaux sont à quelques minutes des nôtres.",
     localEconomy:

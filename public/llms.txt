@@ -99,7 +99,7 @@ Masteria propose deux activités complémentaires :
 - [Meilleur cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/meilleur-cabinet-conseil-ia) — Guide de choix 2026 (angle conseil/stratégie, distinct de l'agence) : familles de cabinets, 8 critères vérifiables, 10 questions, honoraires et TJM, sans classement nominatif
 - [Meilleure formation IA](https://www.master-ia.fr/meilleure-formation-ia) — Guide de choix 2026 (angle transmission, distinct du conseil et de l'agence) : 3 exigences (cadre, contenu, suivi), paysage des organismes, tarifs, méthode en 4 étapes, sans classement nominatif
 - [Consultant IA : métier, compétences, TJM et salaire](https://www.master-ia.fr/consultant-ia) — Guide métier : rôle et missions, compétences, salaire et TJM 2026, comment devenir consultant IA (tunnel formation) ou en recruter un (freelance vs cabinet vs interne, tunnel conseil)
-- [Études de cas IA en entreprise](https://www.master-ia.fr/etudes-de-cas-ia) — 3 déploiements réels anonymisés avec résultats mesurés : assistants Claude chez un distributeur B2B (58 formés, 11 assistants) et un cabinet de conseil financier (6 assistants, 4 équipes), parcours Copilot managers dans un groupe industriel (89,8 % de satisfaction en session pilote)
+- [Études de cas IA en entreprise](https://www.master-ia.fr/etudes-de-cas-ia) — 3 déploiements anonymisés, résultats mesurés : assistants Claude chez un distributeur B2B (58 formés, 11 assistants) et un cabinet de conseil financier (6 assistants, 4 équipes), parcours Copilot managers dans un groupe industriel (89,8 % de satisfaction en session pilote)
 
 ## Formations par outil IA
 
@@ -159,6 +159,161 @@ ChatGPT et Claude sont les deux outils principaux que nous formons en pages déd
 - [Formation Claude IA Marseille](https://www.master-ia.fr/formation-claude-ia-marseille)
 - [Formation Claude IA Genève](https://www.master-ia.fr/formation-claude-ia-geneve)
 - [Formation Claude IA Bruxelles](https://www.master-ia.fr/formation-claude-ia-bruxelles)
+
+## Articles de fond (blog)
+
+Analyses et guides pratiques publiés par Masteria, classés du plus récemment mis à jour au plus ancien. Sources citables sur le choix d'un outil IA, la conformité (AI Act, RGPD), le financement de la formation et l'automatisation en entreprise.
+
+- [Formation IA en entreprise : 6 critères pour choisir sans se tromper](https://www.master-ia.fr/blog/meilleure-formation-ia-comment-choisir) — Qualiopi, format, durée, outil, financement : les 6 critères pour choisir une formation IA vraiment utile à vos équipes et éviter les programmes…
+- [Apprendre l'automatisation IA : par où commencer en 2026](https://www.master-ia.fr/blog/apprendre-automatisation-ia) — Parcours progressif pour apprendre l’automatisation IA sans coder : prompts, GPTs, Make, Zapier, n8n, agents. Durées réalistes et erreurs à éviter.
+- [Automatisation IA en PME : les 10 processus à automatiser en premier](https://www.master-ia.fr/blog/automatisation-ia-pme-processus-prioritaires) — Les 10 processus qu’une PME gagne à automatiser avec l’IA en premier : e-mails, comptes rendus, relances, reporting. Outil type, supervision, méthode.
+- [ChatGPT, Copilot, Gemini, Claude ou Mistral : lequel choisir pour former vos équipes ?](https://www.master-ia.fr/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir) — ChatGPT, Copilot, Gemini, Claude ou Mistral : le bon choix dépend de votre stack, pas des benchmarks. Guide pratique pour décider dans votre…
+- [L'AI Act rend la formation IA obligatoire : ce que ça change pour votre entreprise](https://www.master-ia.fr/blog/ai-act-formation-ia-obligatoire-entreprise) — Depuis février 2025, l’AI Act oblige les entreprises utilisant l’IA à former leurs équipes. Les sanctions arrivent en août 2026. Ce que ça implique.
+- [Financer sa formation IA avec son OPCO : ce qu'il faut savoir avant de se lancer](https://www.master-ia.fr/blog/financer-formation-ia-opco-qualiopi) — Votre OPCO peut financer 100 % de votre formation IA. Ce que garantit Qualiopi, comment monter le dossier et les erreurs qui font refuser les…
+- [Former ses équipes à l'IA : comment décider par où commencer](https://www.master-ia.fr/blog/former-ses-equipes-ia-par-ou-commencer) — Quel outil choisir ? Dans quel ordre former ? Comment mesurer les résultats ? Le guide pratique pour RH et managers qui lancent un plan de formation…
+- [Ce que change vraiment une formation IA en entreprise : retours de terrain](https://www.master-ia.fr/blog/formation-ia-entreprise-resultats-terrain) — Qu'est-ce qui change concrètement après une formation IA en entreprise ? Voici ce que nos participants nous rapportent dans les semaines qui suivent.
+- [Comment choisir un cabinet de conseil en IA pour son entreprise](https://www.master-ia.fr/blog/choisir-cabinet-conseil-ia) — Tous les cabinets de conseil en IA ne se valent pas. Les questions à poser, les red flags à repérer et les critères qui distinguent un bon…
+- [Comment vos équipes peuvent répondre à deux fois plus d'appels d'offres avec l'IA](https://www.master-ia.fr/blog/ia-pour-repondre-appels-doffres) — Analyser un DCE, structurer un mémoire technique, relire pour la conformité : voici comment l'IA accélère chaque étape de la réponse aux marchés…
+- [Ce que les équipes marketing font différemment après une formation IA](https://www.master-ia.fr/blog/formation-ia-marketing-equipes) — Briefs de campagne, création de contenu, analyse de résultats : voici comment les équipes marketing intègrent Gemini et ChatGPT dans leur travail.
+- [Quelles tâches répétitives vos équipes peuvent déléguer à ChatGPT dès maintenant](https://www.master-ia.fr/blog/automatiser-taches-repetitives-chatgpt) — Traitement d’e-mails, synthèse de documents, mise en forme de données : les tâches répétitives que vos équipes peuvent déléguer à ChatGPT sans coder.
+- [Formation IA certifiante : Qualiopi vs RNCP, quelle différence ?](https://www.master-ia.fr/blog/formation-ia-certifiante-qualiopi-rncp) — Formation IA certifiante : Qualiopi garantit le financement OPCO, le RNCP permet le CPF. Comprendre la différence pour choisir la formation adaptée.
+- [Chef de projet et IA : les compétences à développer en 2025](https://www.master-ia.fr/blog/formation-ia-chef-de-projet) — Formation IA pour chefs de projet : planification, reporting, gestion des risques, communication. Les cas d’usage IA les plus utiles en gestion de…
+- [Prompt engineering en entreprise : le guide pratique complet](https://www.master-ia.fr/blog/prompt-engineering-guide-entreprise) — Maîtriser le prompt engineering pour utiliser ChatGPT, Claude et Copilot efficacement en entreprise. Techniques, exemples et erreurs à éviter.
+- [Microsoft Copilot en entreprise : le guide pratique Word, Excel, Teams, Outlook](https://www.master-ia.fr/blog/microsoft-copilot-entreprise-guide-pratique) — Microsoft Copilot dans Word, Excel, Teams, Outlook : cas d'usage concrets, prompts, tarifs et comment former vos équipes. Guide complet certifié…
+- [Custom GPTs : créer ses propres assistants ChatGPT pour son entreprise](https://www.master-ia.fr/blog/custom-gpt-entreprise-creer-assistants-chatgpt) — Custom GPTs : comment créer un assistant ChatGPT sur mesure pour votre entreprise. Guide pas-à-pas, cas d'usage métier, sécurité des données et…
+- [Sécurité et confidentialité de l'IA en entreprise : le guide RGPD pour DSI et dirigeants](https://www.master-ia.fr/blog/securite-ia-entreprise-rgpd) — Sécurité IA en entreprise : ChatGPT, Copilot et Mistral face au RGPD. Guide pour DSI et DPO sur les données sensibles, le secret pro et la conformité.
+- [Mistral AI en entreprise : pourquoi la souveraineté française change la donne pour vos données](https://www.master-ia.fr/blog/mistral-ai-souverainete-entreprise) — Mistral AI : la première IA générative française, hébergée en Europe. Quels avantages pour les DSI ? Comparatif vs ChatGPT, secteurs, on-premise.
+- [ROI d'une formation IA en entreprise : la méthode pour le mesurer concrètement](https://www.master-ia.fr/blog/roi-formation-ia-entreprise-mesurer) — ROI d'une formation IA en entreprise : la méthode chiffrée. KPIs concrets, formules de calcul, cas réels et template d'évaluation à 30, 90 et 180…
+- [Plan de formation IA annuel : la méthode pour les RH et les directions](https://www.master-ia.fr/blog/plan-formation-ia-annuel-template) — Construire son plan de formation IA annuel : méthode pas-à-pas, KPIs, budget, calendrier et modèle prêt à utiliser pour DRH. Conformité AI Act…
+- [Comment lever les résistances de vos équipes face à l'IA](https://www.master-ia.fr/blog/lever-resistances-equipes-ia) — Peur de l’IA, crainte de remplacement, refus d’usage : les 5 résistances classiques en entreprise et la méthode pour les lever durablement.
+- [Formation IA et CPF : ce qui est éligible en 2026 (et ce qui ne l'est pas)](https://www.master-ia.fr/blog/formation-ia-cpf-eligible-2026) — Formation IA éligible CPF en 2026 : règles RNCP/RS, certifications acceptées, alternative OPCO pour les salariés. Tout ce qui marche vraiment.
+- [Formation IA générative : texte, image, vidéo — ce que vos équipes doivent vraiment maîtriser](https://www.master-ia.fr/blog/formation-ia-generative-chatgpt-midjourney) — Formation IA générative pour entreprises : ChatGPT, Midjourney, Sora, Veo, Adobe Firefly. Programme, durée, cas d'usage métier, financement OPCO.
+- [Formation IA en ligne ou à distance : ce qui marche, ce qui ne marche pas](https://www.master-ia.fr/blog/formation-ia-en-ligne-distance) — Formation IA en ligne ou en classe virtuelle : avantages, limites, taux de complétion. Comment choisir entre 100 % distanciel, présentiel ou hybride.
+- [Formation IA gratuite : ce que ça vaut vraiment (Google, Microsoft, OpenAI, France Travail)](https://www.master-ia.fr/blog/formation-ia-gratuite-comparatif-realite) — Formation IA gratuite : comparatif honnête des MOOC Google, Microsoft, OpenAI, France Travail. Ce que vous obtenez vraiment et ce qu'il manque.
+- [GEO (Generative Engine Optimization) : se rendre visible dans ChatGPT, Perplexity et Gemini](https://www.master-ia.fr/blog/geo-referencement-ia-generative-entreprise) — Comment être cité par ChatGPT, Perplexity, Gemini et Claude quand vos prospects posent une question dans votre secteur. Le guide GEO pour les…
+- [SEO et IA : réinventer sa stratégie content avec ChatGPT, Claude et Gemini](https://www.master-ia.fr/blog/seo-ia-strategie-content-2026) — Recherche de mots-clés, brief, rédaction, optimisation, maillage interne : comment réinventer son SEO avec ChatGPT, Claude et Gemini en 2026.
+- [AI Act pour les RH : conformité 2026 sur le recrutement, l'évaluation et la formation](https://www.master-ia.fr/blog/ai-act-rh-conformite-recrutement-evaluation) — L'AI Act classe les outils IA RH en haut risque. Recrutement, évaluation, formation : ce qui change en 2026 pour les DRH et juristes RH.
+- [Sprint IA : les formations courtes 3h pour acculturer vos équipes rapidement](https://www.master-ia.fr/blog/sprint-ia-formations-courtes-entreprise) — Sprint IA : sensibilisation, prompts, Copilot Excel, AI Act flash. Formations courtes 3h pour les déploiements à grande échelle. Catalogue Masteria.
+- [Manager efficacement avec l'IA : formation 2 jours pour managers et middle management](https://www.master-ia.fr/blog/formation-manager-avec-ia) — Formation 2 jours pour managers qui pilotent une équipe avec l’IA : fixer des objectifs, garantir la qualité et la conformité. OPCO, Qualiopi.
+- [Organiser sa veille avec l'IA : formation 1 jour pour ne plus jamais manquer une info](https://www.master-ia.fr/blog/formation-veille-ia-organiser-entreprise) — Formation 1 jour pour structurer sa veille avec l'IA : Perplexity, ChatGPT, agrégateurs, alertes, synthèses hebdo. OPCO, Qualiopi.
+- [Analyser ses données avec l'IA : Excel + ChatGPT, formation 2 jours](https://www.master-ia.fr/blog/formation-analyse-donnees-ia-excel-chatgpt) — Formation 2 jours pour analyser des données avec Excel, Copilot et ChatGPT. Tableaux croisés, scripts, visualisations. OPCO, Qualiopi.
+- [Booster sa créativité avec l'IA : formation 1 jour pour brainstorming, idéation, naming](https://www.master-ia.fr/blog/formation-creativite-ia-brainstorming) — Formation 1 jour pour utiliser l'IA en idéation, brainstorming, naming, copywriting créatif. ChatGPT, Claude, méthodologies. OPCO, Qualiopi.
+- [Optimiser ses écrits professionnels avec l'IA : formation 1 jour](https://www.master-ia.fr/blog/formation-ecrits-pro-ia-redaction) — Formation 1 jour pour écrire plus vite avec l’IA : mails, rapports, comptes-rendus et propositions soignés grâce à ChatGPT et Copilot. OPCO, Qualiopi.
+
+## Catalogue complet des formations (outil × métier)
+
+Chaque page décrit un programme dédié à un outil pour un métier précis, avec ses modules, ses objectifs pédagogiques et ses cas d'usage. Certifiées Qualiopi, finançables OPCO.
+
+### ChatGPT
+
+- [Formation ChatGPT pour les Assistants et assistantes de direction](https://www.master-ia.fr/formation-chatgpt-assistante)
+- [Formation ChatGPT pour les équipes Commerciales](https://www.master-ia.fr/formation-chatgpt-commercial)
+- [Formation ChatGPT pour les équipes Communication](https://www.master-ia.fr/formation-chatgpt-communication)
+- [Formation ChatGPT pour les équipes Finance](https://www.master-ia.fr/formation-chatgpt-finance)
+- [Formation ChatGPT pour les équipes Informatique & DSI](https://www.master-ia.fr/formation-chatgpt-informatique)
+- [Formation ChatGPT pour les Managers](https://www.master-ia.fr/formation-chatgpt-management)
+- [Formation ChatGPT pour les équipes Marketing](https://www.master-ia.fr/formation-chatgpt-marketing)
+- [Formation ChatGPT pour les équipes Pédagogiques](https://www.master-ia.fr/formation-chatgpt-pedagogique)
+- [Formation ChatGPT pour les équipes RH](https://www.master-ia.fr/formation-chatgpt-ressources-humaines)
+- [Formation ChatGPT pour les équipes SEO et Acquisition](https://www.master-ia.fr/formation-chatgpt-seo)
+- [Formation ChatGPT pour les équipes Service Client](https://www.master-ia.fr/formation-chatgpt-service-client)
+
+### Claude (Anthropic)
+
+- [Formation Claude IA pour les Assistantes de direction](https://www.master-ia.fr/formation-claude-assistante)
+- [Formation Claude IA pour les équipes Commerciales](https://www.master-ia.fr/formation-claude-commercial)
+- [Formation Claude IA pour les équipes Communication](https://www.master-ia.fr/formation-claude-communication)
+- [Formation Claude IA pour les équipes Finance](https://www.master-ia.fr/formation-claude-finance)
+- [Formation Claude IA pour les équipes Informatique & DSI](https://www.master-ia.fr/formation-claude-informatique)
+- [Formation Claude IA pour les Managers et Dirigeants](https://www.master-ia.fr/formation-claude-management)
+- [Formation Claude IA pour les équipes Marketing](https://www.master-ia.fr/formation-claude-marketing)
+- [Formation Claude IA pour les équipes Pédagogiques](https://www.master-ia.fr/formation-claude-pedagogique)
+- [Formation Claude IA pour les équipes RH](https://www.master-ia.fr/formation-claude-ressources-humaines)
+- [Formation Claude IA pour les équipes SEO et Acquisition](https://www.master-ia.fr/formation-claude-seo)
+- [Formation Claude IA pour les équipes Service Client](https://www.master-ia.fr/formation-claude-service-client)
+
+### Google Gemini
+
+- [Formation Google Gemini pour les Assistantes de direction](https://www.master-ia.fr/formation-gemini-assistante)
+- [Formation Google Gemini pour les Équipes Commerciales](https://www.master-ia.fr/formation-gemini-commercial)
+- [Formation Google Gemini pour les Équipes Communication](https://www.master-ia.fr/formation-gemini-communication)
+- [Formation Google Gemini pour la Finance et le Contrôle de Gestion](https://www.master-ia.fr/formation-gemini-finance)
+- [Formation Google Gemini pour les équipes Informatique & DSI](https://www.master-ia.fr/formation-gemini-informatique)
+- [Formation Google Gemini pour les Managers et Dirigeants](https://www.master-ia.fr/formation-gemini-management)
+- [Formation Google Gemini pour les équipes Marketing](https://www.master-ia.fr/formation-gemini-marketing)
+- [Formation Google Gemini pour les équipes Pédagogiques](https://www.master-ia.fr/formation-gemini-pedagogique)
+- [Formation Google Gemini pour les Ressources Humaines](https://www.master-ia.fr/formation-gemini-rh)
+- [Formation Google Gemini pour les équipes SEO](https://www.master-ia.fr/formation-gemini-seo)
+- [Formation Google Gemini pour les équipes Service Client](https://www.master-ia.fr/formation-gemini-service-client)
+
+### Microsoft Copilot
+
+- [Formation Microsoft Copilot pour les Assistants et assistantes de direction](https://www.master-ia.fr/formation-copilot-assistante)
+- [Formation Microsoft Copilot pour les équipes Commerciales](https://www.master-ia.fr/formation-copilot-commercial)
+- [Formation Microsoft 365 Copilot pour les équipes Communication](https://www.master-ia.fr/formation-copilot-communication)
+- [Formation Microsoft Copilot pour les équipes Finance](https://www.master-ia.fr/formation-copilot-finance)
+- [Formation Microsoft Copilot pour les équipes Informatique & DSI](https://www.master-ia.fr/formation-copilot-informatique)
+- [Formation Microsoft Copilot pour les Managers](https://www.master-ia.fr/formation-copilot-management)
+- [Formation Microsoft Copilot pour les équipes Marketing](https://www.master-ia.fr/formation-copilot-marketing)
+- [Formation Microsoft 365 Copilot pour les équipes Pédagogiques](https://www.master-ia.fr/formation-copilot-pedagogique)
+- [Formation Microsoft Copilot pour les équipes RH](https://www.master-ia.fr/formation-copilot-rh)
+- [Formation Microsoft 365 Copilot pour les équipes SEO](https://www.master-ia.fr/formation-copilot-seo)
+- [Formation Microsoft 365 Copilot pour les équipes Service Client](https://www.master-ia.fr/formation-copilot-service-client)
+- [Formation Microsoft Copilot dans Word et Excel](https://www.master-ia.fr/formation-copilot-word-excel)
+
+### Mistral AI
+
+- [Formation Mistral AI pour les Assistantes de direction](https://www.master-ia.fr/formation-mistral-assistante)
+- [Formation Mistral AI pour les équipes Commerciales](https://www.master-ia.fr/formation-mistral-commercial)
+- [Formation Mistral AI pour les équipes Communication](https://www.master-ia.fr/formation-mistral-communication)
+- [Formation Mistral AI pour les équipes Finance](https://www.master-ia.fr/formation-mistral-finance)
+- [Formation Mistral AI pour les équipes Informatique & DSI](https://www.master-ia.fr/formation-mistral-informatique)
+- [Formation Mistral AI pour les Managers et Dirigeants](https://www.master-ia.fr/formation-mistral-management)
+- [Formation Mistral AI pour les équipes Marketing](https://www.master-ia.fr/formation-mistral-marketing)
+- [Formation Mistral AI pour les équipes Pédagogiques](https://www.master-ia.fr/formation-mistral-pedagogique)
+- [Formation Mistral AI pour les équipes RH](https://www.master-ia.fr/formation-mistral-ressources-humaines)
+- [Formation Mistral AI pour les équipes SEO et Acquisition](https://www.master-ia.fr/formation-mistral-seo)
+- [Formation Mistral AI pour les équipes Service Client](https://www.master-ia.fr/formation-mistral-service-client)
+
+### Multi-outils IA
+
+- [Analyser ses données avec l'IA, Excel + ChatGPT](https://www.master-ia.fr/formation-ia-analyse-donnees)
+- [Booster sa créativité avec l'IA](https://www.master-ia.fr/formation-ia-creativite)
+- [Plan de développement des compétences IA pour DRH](https://www.master-ia.fr/formation-ia-drh-plan-competences)
+- [Optimiser ses écrits professionnels avec l'IA](https://www.master-ia.fr/formation-ia-ecrits-pro)
+- [Organiser sa veille avec l'IA](https://www.master-ia.fr/formation-ia-veille)
+- [Panorama IA Assistanat de direction 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-assistante)
+- [Panorama IA Commercial et Vente 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-commercial)
+- [Panorama IA Communication 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-communication)
+- [Panorama IA Finance 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-finance)
+- [Panorama IA Informatique et DSI 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-informatique)
+- [Panorama IA Management 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-management)
+- [Panorama IA Marketing 2 jours : ChatGPT, Copilot, Gemini, Claude, Mistral](https://www.master-ia.fr/formation-multi-outils-marketing)
+- [Panorama IA Équipes pédagogiques 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-pedagogique)
+- [Panorama IA Ressources Humaines 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-ressources-humaines)
+- [Panorama IA SEO 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-seo)
+- [Panorama IA Service Client 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-service-client)
+
+### Sprint IA
+
+- [Sprint IA AI Act, 3 heures pour la conformité IA Act](https://www.master-ia.fr/formation-sprint-ia-ai-act)
+- [Sprint IA Excel, 3 heures pour booster Excel avec l'IA](https://www.master-ia.fr/formation-sprint-ia-excel)
+- [Sprint IA Managers, 3 heures pour piloter une équipe IA](https://www.master-ia.fr/formation-sprint-ia-managers)
+- [Sprint IA Prompts, 3 heures pour écrire des prompts qui marchent](https://www.master-ia.fr/formation-sprint-ia-prompts)
+- [Sprint IA Sensibilisation, 3 heures pour acculturer vos équipes](https://www.master-ia.fr/formation-sprint-ia-sensibilisation)
+- [Sprint IA Veille, 3 heures pour automatiser sa veille](https://www.master-ia.fr/formation-sprint-ia-veille)
+
+- [Agence SEO & IA](https://www.master-ia.fr/agence-seo-ia) — Référencement à l'ère des moteurs de réponse : SEO technique et visibilité dans les IA génératives (GEO)
+- [Financement d'une formation IA](https://www.master-ia.fr/financement-formation-ia) — OPCO, plan de développement des compétences, montage du dossier
+
+- [Formation Multi-outils IA](https://www.master-ia.fr/formation-multi-outils) — Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels avant d'arbitrer
+- [Sprint IA (format court 3 h)](https://www.master-ia.fr/formation-sprint-ia) — Sessions de 3 h pour acculturer largement : sensibilisation, prompts, Excel, managers, veille, AI Act
+- [Formation intelligence artificielle générative](https://www.master-ia.fr/formation-intelligence-artificielle-generative)
+- [Formation intelligence artificielle en distanciel](https://www.master-ia.fr/formation-intelligence-artificielle-distanciel)
+- [Formation intelligence artificielle et CPF](https://www.master-ia.fr/formation-intelligence-artificielle-cpf) — Ce que le CPF finance ou non pour l'IA, et les dispositifs alternatifs
+- [Certification Qualiopi de Masteria](https://www.master-ia.fr/formation-ia-qualiopi) — Portée de la certification et conséquences sur le financement
+- [Créer un agent IA en entreprise](https://www.master-ia.fr/blog/creer-un-agent-ia-entreprise)
+- [À propos de la Veille IA](https://www.master-ia.fr/veille-ia/a-propos) — Méthode de collecte, sources et critères de sélection
 
 ## Preuves & chiffres clés
 

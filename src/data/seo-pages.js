@@ -7,6 +7,7 @@ import { CLAUDE_SPOKES } from './claude-spokes-enriched.js'
 import { MISTRAL_SPOKES } from './mistral-spokes-enriched.js'
 import { MULTI_OUTILS_SPOKES } from './multi-outils-spokes.js'
 import { TESTIMONIALS } from './testimonials.js'
+import { SPOKE_DATES } from './spoke-dates.js'
 
 import { HUBS, METIERS } from './catalog-meta.js'
 export { HUBS, METIERS }
@@ -3306,15 +3307,22 @@ const BASE_SPOKES = [
 
 ]
 
+// Ne retient que les clés réellement définies : évite d'écraser une valeur par undefined.
+const pick = (obj, keys) =>
+  Object.fromEntries(keys.filter(k => obj[k] !== undefined).map(k => [k, obj[k]]))
+
 // Merge enriched data into base spokes by slug
 const ALL_ENRICHED = [...CHATGPT_SPOKES, ...COPILOT_SPOKES, ...GEMINI_SPOKES, ...CLAUDE_SPOKES, ...MISTRAL_SPOKES, ...MULTI_OUTILS_SPOKES]
 // Les multi-outils n'existent pas dans BASE_SPOKES : on les ajoute directement
 const ALL_BASE_SPOKES = [...BASE_SPOKES, ...MULTI_OUTILS_SPOKES]
 export const SPOKES = ALL_BASE_SPOKES.map(spoke => {
   const enriched = ALL_ENRICHED.find(e => e.slug === spoke.slug)
-  if (!enriched) return { ...spoke, testimonials: TESTIMONIALS[spoke.slug] ?? [] }
+  // Dates git (spoke-dates.js) : un spoke qui déclare les siennes garde la priorité.
+  const dates = { ...SPOKE_DATES[spoke.slug], ...pick(spoke, ['datePublished', 'updatedAt', 'updatedLabel']) }
+  if (!enriched) return { ...spoke, ...dates, testimonials: TESTIMONIALS[spoke.slug] ?? [] }
   return {
     ...spoke,
+    ...dates,
     // Prefer enriched SEO content when defined (shorter titles, better GEO-formatted intro)
     metaTitle: enriched.metaTitle ?? spoke.metaTitle,
     metaDesc: enriched.metaDesc ?? spoke.metaDesc,

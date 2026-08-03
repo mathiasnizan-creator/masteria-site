@@ -406,6 +406,7 @@ export default function ConseilIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
+          { name: 'Agence IA', slug: 'agence-ia' },
           { name: 'Conseil IA', slug: 'conseil-intelligence-artificielle' },
         ]}
         faqItems={FAQ_CONSEIL}
@@ -427,7 +428,9 @@ export default function ConseilIAPage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Conseil IA</span>
+            <Link to="/agence-ia" style={{ color: '#5B6679' }}>Agence IA</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }} aria-current="page">Conseil IA</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}

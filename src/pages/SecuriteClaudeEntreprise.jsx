@@ -246,7 +246,7 @@ export default function SecuriteClaudeEntreprise() {
     <>
       <SEOHead
         title="Sécurité Claude Enterprise : guide DSI & DPO"
-        description="Guide pratique sur la sécurité, la conformité et la gouvernance de Claude Enterprise pour DSI et DPO : ZDR, chiffrement, SOC 2, ISO 27001, ISO 42001, RGPD, DPA, SSO, RBAC, logs d'audit, checklist de déploiement."
+        description="Sécurité, conformité et gouvernance de Claude Enterprise pour DSI et DPO : ZDR, chiffrement, SOC 2, ISO 27001 et 42001, RGPD, SSO, logs d'audit."
         slug="securite-claude-entreprise"
         noindex
       />

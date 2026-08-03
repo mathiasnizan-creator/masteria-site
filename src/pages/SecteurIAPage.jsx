@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
-import { getSecteur } from '../data/secteur-ia-data'
+import { getSecteur, SECTEUR_DATE_PUBLISHED, SECTEUR_DATE_MODIFIED } from '../data/secteur-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /* Mapping nom d'icône (données) -> composant lucide (même table que le hub). */
@@ -165,6 +165,10 @@ export default function SecteurIAPage() {
 
   return (
     <>
+      {/* keywords : vocabulaire propre au secteur, pour éviter le fallback
+          « formation IA » de SEOHead, incohérent sur des pages conseil + dev.
+          datePublished / dateModified : signal de fraîcheur sur le nœud JSON-LD
+          WebPage, dates réelles issues de l'historique git (cf. secteur-ia-data.js). */}
       <SEOHead
         title={secteur.metaTitle}
         description={secteur.metaDesc}
@@ -173,6 +177,9 @@ export default function SecteurIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={secteur.faq}
         extraJsonLd={serviceJsonLd}
+        keywords={secteur.keywords}
+        datePublished={SECTEUR_DATE_PUBLISHED}
+        dateModified={SECTEUR_DATE_MODIFIED}
       />
 
       {/* ── HERO sombre premium ── */}

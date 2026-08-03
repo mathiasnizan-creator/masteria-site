@@ -291,6 +291,7 @@ export default function AgenceIAPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'À propos de Masteria', slug: 'centre-formation-ia-entreprise' },
     { name: 'Agence IA', slug: SLUG },
   ]
 
@@ -322,7 +323,9 @@ export default function AgenceIAPage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Agence IA</span>
+            <Link to="/centre-formation-ia-entreprise" style={{ color: '#5B6679' }}>À propos de Masteria</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }} aria-current="page">Agence IA</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}

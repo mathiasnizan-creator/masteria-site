@@ -42,7 +42,7 @@ export default function QualiopiPage() {
     <>
       <SEOHead
         title="Formation IA Qualiopi | Financement OPCO garanti | Masteria"
-        description="Masteria est certifié Qualiopi pour toutes ses formations IA (ChatGPT, Copilot, Gemini, Claude, Mistral). Financement OPCO jusqu'à 100 %. Accompagnement complet du dossier. Devis sous 24h."
+        description="Masteria est certifié Qualiopi pour toutes ses formations IA : ChatGPT, Copilot, Gemini, Claude, Mistral. Financement OPCO jusqu'à 100 %, dossier accompagné."
         slug="formation-ia-qualiopi"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },

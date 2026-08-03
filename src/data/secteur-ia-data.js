@@ -15,6 +15,18 @@
 // PAS d'OPCO/Qualiopi sur le cœur conseil+dev (non finançable) ; OPCO uniquement dans
 // le mini-bloc formation secondaire, et seulement pour le cadre français.
 
+/* Signal de fraîcheur (SEO + GEO) commun aux 12 pages du cluster, émis sur le nœud
+   JSON-LD WebPage par SEOHead. Dates RÉELLES issues de l'historique git, à ne pas
+   estimer ni arrondir :
+   - publication  = création de ce fichier de données, commit 4933274 du 2026-06-13
+     (`git log --diff-filter=A --format=%ad --date=short -- src/data/secteur-ia-data.js`)
+   - modification = dernier commit ayant réellement changé ce que ces pages affichent,
+     commit 736eeae du 2026-06-15 sur src/pages/SecteurIAPage.jsx
+     (`git log -1 --format=%ad --date=short -- src/pages/SecteurIAPage.jsx`)
+   À remettre à jour uniquement lors d'une vraie modification de contenu. */
+export const SECTEUR_DATE_PUBLISHED = '2026-06-13'
+export const SECTEUR_DATE_MODIFIED = '2026-06-15'
+
 export const SECTEURS = [
   {
     slug: 'ia-banque-assurance',
@@ -26,6 +38,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour la banque & assurance · conseil & dev | Masteria',
     metaDesc:
       "IA pour la banque et l'assurance : synthèse de dossiers, conformité LCB-FT, copilotes souscription. Conseil et dev sur mesure. Cadrage gratuit.",
+    keywords:
+      "IA banque, IA assurance, intelligence artificielle secteur bancaire, cas d'usage IA finance, agent IA conformité LCB-FT, automatisation KYC, copilote souscription, conseil IA assurance",
     tagline:
       "Synthèse de dossiers, conformité LCB-FT, souscription et relation client, dans un cadre où le secret bancaire et la traçabilité priment.",
     directAnswer:
@@ -105,6 +119,8 @@ export const SECTEURS = [
     metaTitle: "IA pour l'industrie & l'énergie · conseil & dev | Masteria",
     metaDesc:
       "IA pour l'industrie et l'énergie : documentation technique, maintenance, qualité, appels d'offres. Dev sur mesure, on-premise possible. Cadrage gratuit.",
+    keywords:
+      "IA industrie, IA énergie, intelligence artificielle industrielle, cas d'usage IA production, IA documentation technique, IA maintenance industrielle, LLM on-premise industrie, agent IA appels d'offres industriels",
     tagline:
       "Documentation technique, maintenance, qualité et réponses aux appels d'offres, avec une propriété intellectuelle qui ne quitte pas l'atelier.",
     directAnswer:
@@ -184,6 +200,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour la santé & la pharma · conseil & dev | Masteria',
     metaDesc:
       "IA pour la santé et la pharma : protocoles, pharmacovigilance, affaires réglementaires. Dev sur mesure, hébergement HDS. Cadrage gratuit.",
+    keywords:
+      "IA santé, IA pharmaceutique, intelligence artificielle secteur médical, IA pharmacovigilance, IA affaires réglementaires, hébergement HDS IA, IA protocoles et procédures, conseil IA santé",
     tagline:
       "Assistants documentaires sur protocoles, pharmacovigilance et affaires réglementaires, avec des données de santé hébergées dans un cadre conforme.",
     directAnswer:
@@ -263,6 +281,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour le juridique & le droit · conseil & dev | Masteria',
     metaDesc:
       "IA pour le juridique : analyse de contrats, recherche jurisprudentielle, rédaction d'actes. Dev sur mesure, secret professionnel préservé. Cadrage gratuit.",
+    keywords:
+      "IA juridique, IA cabinet d'avocats, intelligence artificielle droit, IA analyse de contrats, IA recherche jurisprudentielle, legaltech sur mesure, IA direction juridique, secret professionnel IA",
     tagline:
       "Analyse de contrats, recherche jurisprudentielle et rédaction assistée, dans le respect strict du secret professionnel.",
     directAnswer:
@@ -342,6 +362,8 @@ export const SECTEURS = [
     metaTitle: "IA pour le retail & l'e-commerce · conseil & dev | Masteria",
     metaDesc:
       "IA pour le retail et l'e-commerce : fiches produits, support client, contenus multilingues. Dev sur mesure sur votre catalogue. Cadrage gratuit.",
+    keywords:
+      "IA retail, IA e-commerce, intelligence artificielle distribution, IA fiches produits, IA support client e-commerce, IA merchandising, recherche sémantique catalogue, IA contenus marketing",
     tagline:
       "Fiches produits à l'échelle, support client, merchandising et contenus multilingues, branchés sur votre catalogue et votre PIM.",
     directAnswer:
@@ -421,6 +443,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour la logistique & transport · conseil & dev | Masteria',
     metaDesc:
       "IA pour la logistique et le transport : tournées, suivi des expéditions, traitement douanier. Dev sur mesure sur TMS/WMS. Cadrage gratuit.",
+    keywords:
+      "IA logistique, IA transport, intelligence artificielle supply chain, IA optimisation des tournées, IA documents douaniers, IA suivi des expéditions, intégration IA TMS WMS, agent IA exploitation transport",
     tagline:
       "Optimisation des tournées, suivi des expéditions et traitement documentaire, branchés sur votre TMS et votre WMS.",
     directAnswer:
@@ -500,6 +524,8 @@ export const SECTEURS = [
     metaTitle: "IA pour l'immobilier & le BTP · conseil & dev | Masteria",
     metaDesc:
       "IA pour l'immobilier et le BTP : annonces, analyse de baux, marchés (DCE/CCTP), suivi de chantier. Conseil et dev sur mesure. Cadrage gratuit.",
+    keywords:
+      "IA immobilier, IA BTP, intelligence artificielle construction, IA rédaction d'annonces immobilières, IA analyse de baux, IA appels d'offres DCE CCTP, IA suivi de chantier, IA estimation immobilière",
     tagline:
       "Annonces et mandats, analyse de baux et de DCE, réponses aux marchés et suivi documentaire de chantier.",
     directAnswer:
@@ -579,6 +605,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour le secteur public · conseil & dev | Masteria',
     metaDesc:
       "IA pour le secteur public : demandes usagers, rédaction administrative, recherche réglementaire, souveraineté des données. Dev sur mesure. Cadrage gratuit.",
+    keywords:
+      "IA secteur public, IA collectivités territoriales, intelligence artificielle administration, IA demandes usagers, IA rédaction administrative, IA marchés publics, souveraineté numérique IA, conseil IA service public",
     tagline:
       "Demandes usagers, rédaction administrative et recherche réglementaire, dans un cadre de souveraineté et de commande publique.",
     directAnswer:
@@ -658,6 +686,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour les services & le conseil · conseil & dev | Masteria',
     metaDesc:
       "IA pour les services et cabinets de conseil : livrables, synthèse documentaire, propositions, savoir du cabinet. Dev sur mesure. Cadrage gratuit.",
+    keywords:
+      "IA cabinet de conseil, IA services professionnels, intelligence artificielle conseil, IA production de livrables, IA synthèse documentaire, IA propositions commerciales, knowledge management IA, copilote de cabinet",
     tagline:
       "Production de livrables, synthèse documentaire et propositions commerciales, branchées sur le savoir du cabinet.",
     directAnswer:
@@ -737,6 +767,8 @@ export const SECTEURS = [
     metaTitle: "IA tourisme & hôtellerie · conseil & dev | Masteria",
     metaDesc:
       "IA pour le tourisme et l'hôtellerie : relation client multilingue, avis, contenus, réservation. Dev sur mesure sur PMS. Cadrage gratuit.",
+    keywords:
+      "IA tourisme, IA hôtellerie, intelligence artificielle hospitality, IA relation client multilingue, IA gestion des avis clients, IA réservation hôtelière, IA contenus touristiques, intégration IA PMS",
     tagline:
       "Relation client multilingue, gestion des avis et production de contenus, branchées sur votre PMS et vos canaux de distribution.",
     directAnswer:
@@ -816,6 +848,8 @@ export const SECTEURS = [
     metaTitle: "IA pour l'agroalimentaire · conseil & dev | Masteria",
     metaDesc:
       "IA pour l'agroalimentaire : qualité et conformité (HACCP, INCO), traçabilité, fiches techniques, R&D. Dev sur mesure. Cadrage gratuit.",
+    keywords:
+      "IA agroalimentaire, IA industrie alimentaire, intelligence artificielle qualité HACCP, IA étiquetage INCO, IA fiches techniques produit, IA traçabilité alimentaire, IA veille réglementaire sanitaire, IA R&D formulation",
     tagline:
       "Qualité, conformité réglementaire, traçabilité et fiches techniques, branchées sur vos référentiels produit.",
     directAnswer:
@@ -895,6 +929,8 @@ export const SECTEURS = [
     metaTitle: 'IA pour la tech & le SaaS · conseil & dev | Masteria',
     metaDesc:
       "IA pour la tech et le SaaS : fonctionnalités IA produit, support technique, documentation, copilotes internes. Dev sur mesure, LLM/RAG. Cadrage gratuit.",
+    keywords:
+      "IA SaaS, IA éditeur de logiciels, intelligence artificielle produit tech, fonctionnalité IA embarquée, intégration LLM RAG, agents et connecteurs MCP, IA support technique, évaluation et garde-fous LLM",
     tagline:
       "Fonctionnalités IA dans le produit, support technique et documentation, avec une intégration LLM/RAG soignée.",
     directAnswer:

@@ -123,6 +123,7 @@ export default function SecteursHubPage() {
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
+    { name: 'Agence IA', slug: 'agence-ia' },
     { name: 'IA par secteur', slug: SLUG },
   ]
 
@@ -169,7 +170,9 @@ export default function SecteursHubPage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>IA par secteur</span>
+            <Link to="/agence-ia" style={{ color: '#5B6679' }}>Agence IA</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }} aria-current="page">IA par secteur</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}
