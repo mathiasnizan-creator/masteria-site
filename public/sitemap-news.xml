@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-04</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-04T10:29:24+02:00</news:publication_date>
+      <news:title>Veille IA du 4 août 2026 : Les agents autonomes d&#x27;OpenAI et d&#x27;Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu&#x27;au NIST et Apple manque d&#x27;enterrer une vraie faille sous les rapports automatisés</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-08-03</loc>
     <news:news>
       <news:publication>

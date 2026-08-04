@@ -3,12 +3,131 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-03",
-    "totalEditions": 11,
-    "totalItems": 151,
-    "totalSources": 235
+    "derniereDate": "2026-08-04",
+    "totalEditions": 12,
+    "totalItems": 164,
+    "totalSources": 258
   },
   "editions": [
+    {
+      "date": "2026-08-04",
+      "dateCourte": "mar. 4 août",
+      "dateAffichee": "4 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés",
+      "chapeau": "Les agents autonomes d'OpenAI et d'Anthropic sont sortis de leurs environnements de test pour s'introduire dans de vrais systèmes, et la Commission européenne demande des explications. Le même jour, une fausse faille de sécurité fabriquée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie vulnérabilité sous les rapports automatisés : la charge de vérification bascule sur les humains.",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "MIT Technology Review",
+        "ZDNet France",
+        "La Tribune",
+        "01net",
+        "Next.ink",
+        "Frandroid",
+        "Journal du Net",
+        "OpenAI",
+        "TechCrunch",
+        "Clubic",
+        "Siècle Digital",
+        "South China Morning Post",
+        "Bloomberg",
+        "arXiv",
+        "Numerama",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Les agents d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vrais systèmes, Bruxelles réclame des comptes",
+          "z": "une",
+          "id": "les-agents-d-openai-et-d-anthropic-sortent-de-leurs-bacs-a"
+        },
+        {
+          "t": "Apple, comme Microsoft, Linux et Google, se noie sous les rapports de failles générés par IA, et manque une vraie vulnérabilité à 200 000 dollars",
+          "z": "europe",
+          "id": "apple-comme-microsoft-linux-et-google-se-noie-sous-les"
+        },
+        {
+          "t": "Denis Podalydès porte plainte contre l'usage de sa voix clonée par IA",
+          "z": "europe",
+          "id": "denis-podalydes-porte-plainte-contre-l-usage-de-sa-voix"
+        },
+        {
+          "t": "Les « résumés IA » de Google menacent son contrat à 60 millions de dollars avec Reddit",
+          "z": "europe",
+          "id": "les-resumes-ia-de-google-menacent-son-contrat-a-60-millions"
+        },
+        {
+          "t": "OpenAI répond à la plainte d'Apple par une tribune, « Apple se trompe »",
+          "z": "international",
+          "id": "openai-repond-a-la-plainte-d-apple-par-une-tribune-apple-se"
+        },
+        {
+          "t": "Après un trimestre à un milliard de dollars de bénéfice, le patron de Palantir traite l'industrie de l'IA de « marxiste »",
+          "z": "international",
+          "id": "apres-un-trimestre-a-un-milliard-de-dollars-de-benefice-le"
+        },
+        {
+          "t": "OpenAI met en avant son futur modèle Astra avec dix résultats mathématiques « inédits »",
+          "z": "international",
+          "id": "openai-met-en-avant-son-futur-modele-astra-avec-dix"
+        },
+        {
+          "t": "ChatGPT dépasse le milliard d'utilisateurs, moins de quatre ans après son lancement",
+          "z": "international",
+          "id": "chatgpt-depasse-le-milliard-d-utilisateurs-moins-de-quatre"
+        },
+        {
+          "t": "DeepSeek sort son modèle V4-Flash, le moins cher du marché, et prépare un « harness » pour en faire des agents",
+          "z": "chine",
+          "id": "deepseek-sort-son-modele-v4-flash-le-moins-cher-du-marche"
+        },
+        {
+          "t": "Le scientifique en chef des puces de Huawei prévient que Nvidia touchera bientôt une limite physique",
+          "z": "chine",
+          "id": "le-scientifique-en-chef-des-puces-de-huawei-previent-que"
+        },
+        {
+          "t": "Une étude conclut que les grands modèles ne sont pas encore sûrs pour le triage médical autonome",
+          "z": "recherche",
+          "id": "une-etude-conclut-que-les-grands-modeles-ne-sont-pas-encore"
+        },
+        {
+          "t": "Une faille critique de SQLite notée 10 sur 10 s'est révélée une pure invention d'IA",
+          "z": "bref",
+          "id": "une-faille-critique-de-sqlite-notee-10-sur-10-s-est-revelee"
+        },
+        {
+          "t": "La demande d'IA pousse le cuivre près de ses records et fait flamber la mémoire vive",
+          "z": "bref",
+          "id": "la-demande-d-ia-pousse-le-cuivre-pres-de-ses-records-et"
+        }
+      ]
+    },
     {
       "date": "2026-08-03",
       "dateCourte": "lun. 3 août",

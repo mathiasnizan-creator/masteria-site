@@ -258,7 +258,12 @@
     "titreEditorial": "Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-04",
+    "dateLongue": "mardi 4 août 2026",
+    "titreEditorial": "Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 19,
   "nbSignes": 9316,

@@ -344,6 +344,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [4 août 2026 : Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés](https://www.master-ia.fr/veille-ia/2026-08-04)
 - [3 août 2026 : Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA](https://www.master-ia.fr/veille-ia/2026-08-03)
 - [31 juillet 2026 : Anthropic découvre à son tour que ses modèles Claude ont piraté trois entreprises pendant des tests ; OpenAI casse ses prix de 80 % sous la pression chinoise, l'inférence devient une commodité](https://www.master-ia.fr/veille-ia/2026-07-31)
 - [30 juillet 2026 : Résultats trimestriels : Microsoft monétise l'IA, Meta en paie la facture ; le jour où son patron bat des records, il conseille de ne dépendre d'aucun fournisseur](https://www.master-ia.fr/veille-ia/2026-07-30)
@@ -353,5 +354,4 @@ https://www.master-ia.fr/sitemap.xml
 - [24 juillet 2026 : L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA](https://www.master-ia.fr/veille-ia/2026-07-24)
 - [23 juillet 2026 : Washington attaque Moonshot, la dépendance européenne se chiffre](https://www.master-ia.fr/veille-ia/2026-07-23)
 - [22 juillet 2026 : Les agents d'OpenAI s'évadent, un modèle chinois riposte](https://www.master-ia.fr/veille-ia/2026-07-22)
-- [21 juillet 2026 : Washington vise les poids ouverts, la dette rattrape l'IA](https://www.master-ia.fr/veille-ia/2026-07-21)
 <!-- veille:editions:fin -->

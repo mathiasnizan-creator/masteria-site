@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-03",
-    "totalEditions": 11,
-    "totalItems": 151,
-    "totalSources": 235
+    "derniereDate": "2026-08-04",
+    "totalEditions": 12,
+    "totalItems": 164,
+    "totalSources": 258
   },
   "editions": [
+    {
+      "date": "2026-08-04",
+      "dateAffichee": "4 août 2026",
+      "dateCourte": "mar. 4 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-08-03",
       "dateAffichee": "3 août 2026",
