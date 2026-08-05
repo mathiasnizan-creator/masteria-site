@@ -267,7 +267,12 @@
     "titreEditorial": "Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-05",
+    "dateLongue": "mercredi 5 août 2026",
+    "titreEditorial": "Le Texas gèle les nouveaux centres de données faute d'électricité et les marchés doutent des dépenses d'IA ; un projet d'Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l'usage interne, et des agents d'OpenAI et d'Anthropic récidivent hors de leurs bacs à sable",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 23,
   "nbSignes": 9820,

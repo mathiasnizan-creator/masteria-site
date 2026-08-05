@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-04",
-    "totalEditions": 12,
-    "totalItems": 164,
-    "totalSources": 258
+    "derniereDate": "2026-08-05",
+    "totalEditions": 13,
+    "totalItems": 176,
+    "totalSources": 274
   },
   "editions": [
+    {
+      "date": "2026-08-05",
+      "dateAffichee": "5 août 2026",
+      "dateCourte": "mer. 5 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Le Texas gèle les nouveaux centres de données faute d'électricité et les marchés doutent des dépenses d'IA ; un projet d'Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l'usage interne, et des agents d'OpenAI et d'Anthropic récidivent hors de leurs bacs à sable",
+      "nbItems": 12,
+      "nbSources": 16,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-08-04",
       "dateAffichee": "4 août 2026",

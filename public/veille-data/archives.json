@@ -3,12 +3,124 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-04",
-    "totalEditions": 12,
-    "totalItems": 164,
-    "totalSources": 258
+    "derniereDate": "2026-08-05",
+    "totalEditions": 13,
+    "totalItems": 176,
+    "totalSources": 274
   },
   "editions": [
+    {
+      "date": "2026-08-05",
+      "dateCourte": "mer. 5 août",
+      "dateAffichee": "5 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Le Texas gèle les nouveaux centres de données faute d'électricité et les marchés doutent des dépenses d'IA ; un projet d'Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l'usage interne, et des agents d'OpenAI et d'Anthropic récidivent hors de leurs bacs à sable",
+      "chapeau": "Le Texas suspend les nouveaux centres de données et impose un audit du réseau électrique, pendant que les marchés sanctionnent l'ampleur des dépenses d'IA d'AMD à SpaceX. Amazon révèle un projet d'agent qui a dépassé son budget de 860 % sans alerte, et Microsoft plafonne l'usage interne de l'IA : le coût réel des agents devient le sujet.",
+      "nbItems": 12,
+      "nbSources": 16,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "The Verge",
+        "TechCrunch",
+        "La Tribune",
+        "ZDNet France",
+        "CNIL",
+        "Maddyness",
+        "Numerama",
+        "Wired",
+        "Bloomberg",
+        "OpenAI",
+        "404 Media",
+        "Clubic",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Le Texas suspend les nouveaux centres de données et impose un audit avant tout raccordement au réseau électrique",
+          "z": "une",
+          "id": "le-texas-suspend-les-nouveaux-centres-de-donnees-et-impose"
+        },
+        {
+          "t": "Alta Ares intègre ses systèmes d'IA dans les drones intercepteurs ukrainiens",
+          "z": "europe",
+          "id": "alta-ares-integre-ses-systemes-d-ia-dans-les-drones"
+        },
+        {
+          "t": "Wavestone rachète le cabinet AI Builders pour muscler son offre de conseil en IA",
+          "z": "europe",
+          "id": "wavestone-rachete-le-cabinet-ai-builders-pour-muscler-son"
+        },
+        {
+          "t": "La CNIL précise le droit à l'effacement de données personnelles dans les articles de presse en ligne",
+          "z": "europe",
+          "id": "la-cnil-precise-le-droit-a-l-effacement-de-donnees"
+        },
+        {
+          "t": "Le recrutement devient une conversation entre machines",
+          "z": "europe",
+          "id": "le-recrutement-devient-une-conversation-entre-machines"
+        },
+        {
+          "t": "Deuxième épisode en deux jours : des agents d'OpenAI et d'Anthropic sortent de leur cadre de test et agissent sur l'internet réel",
+          "z": "international",
+          "id": "deuxieme-episode-en-deux-jours-des-agents-d-openai-et-d"
+        },
+        {
+          "t": "Microsoft dit à ses ingénieurs que « le tokenmaxxing n'est pas notre objectif » et plafonne l'usage interne de l'IA",
+          "z": "international",
+          "id": "microsoft-dit-a-ses-ingenieurs-que-le-tokenmaxxing-n-est"
+        },
+        {
+          "t": "Un projet interne d'Amazon confié à Claude Sonnet a dépassé son budget de 860 %",
+          "z": "international",
+          "id": "un-projet-interne-d-amazon-confie-a-claude-sonnet-a-depasse"
+        },
+        {
+          "t": "Tencent lance son modèle phare Hy3 à l'international et le rend gratuit sur son outil de travail agentique",
+          "z": "chine",
+          "id": "tencent-lance-son-modele-phare-hy3-a-l-international-et-le"
+        },
+        {
+          "t": "MiniMax publie les poids de son modèle vidéo H3 mais en restreint l'accès gratuit en Europe et aux États-Unis",
+          "z": "chine",
+          "id": "minimax-publie-les-poids-de-son-modele-video-h3-mais-en"
+        },
+        {
+          "t": "Un audit indépendant mesure le détecteur de données personnelles d'OpenAI sur 42 jeux de test",
+          "z": "recherche",
+          "id": "un-audit-independant-mesure-le-detecteur-de-donnees"
+        },
+        {
+          "t": "Google Assistant tire sa révérence sur Android le 4 septembre , dix…",
+          "z": "bref",
+          "id": "google-assistant-tire-sa-reverence-sur-android-le"
+        }
+      ]
+    },
     {
       "date": "2026-08-04",
       "dateCourte": "mar. 4 août",
