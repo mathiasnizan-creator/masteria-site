@@ -51,6 +51,7 @@ function FAQItem({ q, a, color }) {
           padding: '20px 0', cursor: 'pointer', display: 'flex',
           justifyContent: 'space-between', alignItems: 'center', gap: 16,
         }}
+        aria-expanded={open}
       >
         <span style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{q}</span>
         <span style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
@@ -224,6 +225,11 @@ export default function SpokePage() {
         keywords={spoke.keywords}
         datePublished={spoke.datePublished}
         dateModified={spoke.updatedAt || spoke.datePublished}
+        speakable={['#geo-summary', ...(spoke.faq?.length ? ['#faq'] : [])]}
+        citations={[
+          { name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+          { name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+        ]}
       />
 
       {/* ── HERO clair ── */}
@@ -260,7 +266,7 @@ export default function SpokePage() {
           </h1>
 
           {/* GEO-optimized first paragraph : réponse directe à la query pour citation LLM */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
+          <p id="geo-summary" style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
             {heroSentence}
           </p>
 
@@ -288,6 +294,45 @@ export default function SpokePage() {
               </span>
             ))}
           </div>
+
+          {/* En bref — synthèse citable (GEO), <dl> sémantique, 100 % data-driven */}
+          <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '20px 26px', marginTop: 28, maxWidth: 760 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 12 }}>En bref</div>
+            <dl style={{ margin: 0 }}>
+              {[
+                { label: 'Formation', value: `${spoke.tool} pour ${spoke.metier}` },
+                { label: 'Durée', value: is3h ? '3 heures (Sprint IA)' : isOneDay ? '1 jour (7 h de formation effective)' : '2 jours (14 h de formation effective)' },
+                { label: 'Formats', value: "Intra-entreprise dans vos locaux (jusqu'à 12 participants), accompagnement individuel sur mesure, présentiel ou distanciel" },
+                { label: 'Tarif', value: is3h ? '1 980 € HT par session, intra comme individuel · devis sous 24 h' : '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
+                { label: 'Financement', value: "Organisme certifié Qualiopi, finançable OPCO jusqu'à 100 %, dossier monté par Masteria" },
+                { label: 'Prérequis', value: 'Aucun prérequis technique, maîtrise des outils bureautiques courants' },
+              ].map((row, i) => (
+                <div key={row.label} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
+                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
+          <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+            {[
+              spoke.useCases?.length ? ["Cas d'usage", '#cas-usage'] : null,
+              (modulesJ1.length > 0 || modulesJ2.length > 0 || spoke.program?.length > 0) ? ['Programme', '#programme'] : null,
+              ['Objectifs', '#objectifs'],
+              ['Tarifs', '#tarifs'],
+              ['Formateur', '#formateur'],
+              spoke.faq?.length ? ['FAQ', '#faq'] : null,
+            ].filter(Boolean).map(([label, href]) => (
+              <a key={href} href={href} style={{
+                fontSize: 12.5, fontWeight: 600, color: '#374151', textDecoration: 'none',
+                background: '#fff', border: '1px solid #E5E7EB', borderRadius: 99, padding: '6px 12px',
+              }}>
+                {label}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
@@ -330,7 +375,7 @@ export default function SpokePage() {
 
       {/* ── CAS D'USAGE ── */}
       {spoke.useCases?.length > 0 && (
-        <section style={{ padding: '80px 40px', background: spoke.audience?.length > 0 ? '#F9FAFB' : '#fff' }}>
+        <section id="cas-usage" style={{ padding: '80px 40px', background: spoke.audience?.length > 0 ? '#F9FAFB' : '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 960, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
               Ce que vous allez maîtriser
@@ -353,7 +398,7 @@ export default function SpokePage() {
 
       {/* ── PROGRAMME (modules enrichis) ── */}
       {(modulesJ1.length > 0 || modulesJ2.length > 0) ? (
-        <section style={{ padding: '80px 40px', background: '#F5F3EE', color: '#0A0A0A' }}>
+        <section id="programme" style={{ padding: '80px 40px', background: '#F5F3EE', color: '#0A0A0A', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
               {programTitle}
@@ -405,7 +450,7 @@ export default function SpokePage() {
         </section>
       ) : spoke.program?.length > 0 && (
         /* Fallback: ancien format */
-        <section style={{ padding: '80px 40px', background: '#F5F3EE', color: '#0A0A0A' }}>
+        <section id="programme" style={{ padding: '80px 40px', background: '#F5F3EE', color: '#0A0A0A', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
               {programTitle}
@@ -450,7 +495,7 @@ export default function SpokePage() {
       </section>
 
       {/* ── OBJECTIFS ── */}
-      <section style={{ padding: '80px 40px', background: '#fff' }}>
+      <section id="objectifs" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 32 }}>
             {objectivesTitle}
@@ -469,7 +514,7 @@ export default function SpokePage() {
       </section>
 
       {/* ── TARIFS ── */}
-      <section id="tarifs" style={{ padding: '80px 40px', background: '#F9FAFB' }}>
+      <section id="tarifs" style={{ padding: '80px 40px', background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
             Modalités et tarifs
@@ -523,7 +568,7 @@ export default function SpokePage() {
       </section>
 
       {/* ── FORMATEUR (E-E-A-T : Expérience & Expertise) ── */}
-      <section style={{ padding: '80px 40px', background: '#fff' }}>
+      <section id="formateur" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
             Un mot du fondateur
@@ -624,7 +669,7 @@ export default function SpokePage() {
             </div>
             <div style={{ marginTop: 40, textAlign: 'center' }}>
               <p style={{ fontSize: 14, color: '#6B7280' }}>
-                Formation certifiée Qualiopi · <span style={{ display: 'inline-flex', gap: 2, verticalAlign: 'middle' }}>{[1,2,3,4,5].map(s => <Star key={s} size={13} color="#FBBF24" fill="#FBBF24" aria-hidden="true" />)}</span> <span style={{ color: '#6B7280' }}>98 % de satisfaction (500+ participants formés)</span>
+                Formation certifiée Qualiopi · <span style={{ display: 'inline-flex', gap: 2, verticalAlign: 'middle' }}>{[1,2,3,4,5].map(s => <Star key={s} size={13} color="#FBBF24" fill="#FBBF24" aria-hidden="true" />)}</span> <span style={{ color: '#6B7280' }}>98 % de satisfaction (+1 500 professionnels formés)</span>
               </p>
             </div>
           </div>
@@ -633,7 +678,7 @@ export default function SpokePage() {
 
       {/* ── FAQ ── */}
       {spoke.faq?.length > 0 && (
-        <section style={{ padding: '80px 40px', background: '#fff' }}>
+        <section id="faq" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
               Questions fréquentes, Formation {spoke.tool} {spoke.metier}

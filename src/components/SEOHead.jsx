@@ -36,6 +36,9 @@ export default function SEOHead({
   dateModified,     // ISO 'YYYY-MM-DD' — dernière mise à jour. Fallback : datePublished.
   articleMeta,      // { publishedTime, modifiedTime, author, section } — balises OG d'article
                     // seules, sans le BlogPosting de articleData (qui rattache en dur au /blog)
+  speakable,        // GEO : array de sélecteurs CSS (ex ['#geo-summary', '#faq']) — émis sur la
+                    // WebPage existante (PAS un 2e nœud WebPage, cf. audit 2026-05-21)
+  citations,        // GEO : [{ name, url }] sources d'autorité citées par la page → WebPage.citation
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
@@ -171,6 +174,14 @@ export default function SEOHead({
     // le crawl de re-fraîcheur (SEO) et la citation par les moteurs génératifs (GEO).
     datePublished: datePublished || undefined,
     dateModified: dateModified || datePublished || undefined,
+    // GEO opt-in : zones à lire en priorité + sources d'autorité, portées par la
+    // WebPage canonique de la page (rétro-compatible : absentes si non fournies).
+    speakable: speakable?.length
+      ? { '@type': 'SpeakableSpecification', cssSelector: speakable }
+      : undefined,
+    citation: citations?.length
+      ? citations.map(({ name, url }) => ({ '@type': 'CreativeWork', name, url }))
+      : undefined,
   }
 
   /* ───── JSON-LD Course (enrichi : aggregateRating, teaches, timeRequired, hasCredential) ───── */

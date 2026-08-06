@@ -199,7 +199,7 @@ export default function VeillePage() {
   return (
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
       <SEOHead
-        title="Veille IA : l'actualité de l'intelligence artificielle analysée | Masteria"
+        title="Veille IA : l'actualité de l'intelligence artificielle | Masteria"
         description={ok ? resumeMeta(ed.chapeau)
           : "Chaque matin ouvré, dix à quatorze actualités IA vérifiées et sourcées, puis une analyse signée Masteria. Europe, international, Chine et Asie."}
         slug="veille-ia"
