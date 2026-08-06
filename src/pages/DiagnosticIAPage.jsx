@@ -489,7 +489,7 @@ export default function DiagnosticIAPage() {
                 <strong>Le Diagnostic IA est une intervention d'une journée qui cadre vos usages, cartographie vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. Il couvre quatre dimensions.
+                Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. Il couvre quatre dimensions. Pour une première photographie en 3 minutes, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> gratuit situe votre profil avant même l'échange de cadrage.
               </p>
             </div>
 

@@ -831,7 +831,8 @@ export default function FinancementPage() {
           </h2>
           <p style={{ textAlign: 'center', color: NEUTRAL, fontSize: 16, maxWidth: 720, margin: '0 auto 40px' }}>
             Chaque entreprise est rattachée à un OPCO unique en fonction de sa convention collective.
-            Voici les 11 OPCO français et leurs secteurs.
+            Voici les 11 OPCO français et leurs secteurs.{' '}
+            Pour un résultat en 10 secondes, utilisez notre <Link to="/quel-opco" style={{ color: '#2563EB', fontWeight: 600 }}>simulateur « Quel est mon OPCO ? »</Link>.
           </p>
 
           <div style={{

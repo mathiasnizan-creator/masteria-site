@@ -987,6 +987,8 @@ export function MasteriaFooter() {
             {[
               ['À propos', '/centre-formation-ia-entreprise'],
               ['Études de cas IA', '/etudes-de-cas-ia'],
+              ['Quel OPCO ? (simulateur)', '/quel-opco'],
+              ['Test de maturité IA', '/test-maturite-ia'],
               ['Presse', '/presse'],
               ['Veille IA quotidienne', '/veille-ia'],
               ['À propos de la Veille IA', '/veille-ia/a-propos'],
