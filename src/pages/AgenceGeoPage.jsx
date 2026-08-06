@@ -135,7 +135,7 @@ export default function AgenceGeoPage() {
 
   // E-E-A-T : byline visible + Article JSON-LD (auteur identifié, fraîcheur datée)
   const PUBLISHED = '2026-06-12'
-  const MODIFIED = '2026-07-02'
+  const MODIFIED = '2026-08-05'
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -150,6 +150,16 @@ export default function AgenceGeoPage() {
     inLanguage: 'fr-FR',
     mainEntityOfPage: { '@id': `${SITE}/${city.slug}#webpage` },
     about: [`Agence IA ${city.nameLoc}`, 'Conseil et développement IA sur mesure', city.regionLong || city.region],
+    // GEO : zones à lire en priorité par les moteurs génératifs (réponse directe + FAQ)
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#geo-summary', '#geo-faq'],
+    },
+    // Sources d'autorité du champ conseil/gouvernance évoqué sur la page
+    citation: [
+      { '@type': 'CreativeWork', name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+      { '@type': 'CreativeWork', name: 'CNIL — Intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+    ],
   }
 
   /* ── FAQ : locales + communes (les communes adaptées au cadre du pays) ── */
@@ -196,6 +206,24 @@ export default function AgenceGeoPage() {
     priceRange: '€€',
     provider: { '@id': `${SITE}/#organization` },
     parentOrganization: { '@id': `${SITE}/#organization` },
+    // NAP complet quand la ville a des bureaux réels (city.office : Lyon uniquement)
+    ...(city.office ? {
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: city.office.streetAddress,
+        postalCode: city.office.postalCode,
+        addressLocality: city.office.addressLocality,
+        addressRegion: city.office.addressRegion,
+        addressCountry: 'FR',
+      },
+      ...(city.coordinates && {
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: city.coordinates.latitude,
+          longitude: city.coordinates.longitude,
+        },
+      }),
+    } : {}),
     areaServed: [
       { '@type': 'City', name: city.name },
       {
@@ -270,11 +298,11 @@ export default function AgenceGeoPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 24px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
           </p>
 
           {/* GEO : réponse directe en gras (citable LLM) — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             {`Masteria est une agence IA qui intervient ${city.nameLoc} : conseil en stratégie IA et développement d'agents, d'outils et d'automatisations sur mesure, prolongés par la formation des équipes. L'équipe est basée à Lyon et se déplace ${city.nameLoc} en présentiel pour le cadrage et les passations, le reste de la mission se conduisant en distanciel. `}
             <strong style={{ color: '#fff', fontWeight: 700 }}>Plus de 1 500 professionnels formés, 98 % de satisfaction.</strong>
           </p>
@@ -459,10 +487,18 @@ export default function AgenceGeoPage() {
                   La formation se conduit en français pour vos équipes du marché romand, en présentiel sur le bassin lémanique ou en distanciel. Facturation selon le cadre suisse, en CHF ou en EUR.
                 </p>
               )}
-              <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                Découvrir les formations IA
-                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-              </Link>
+              <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', alignItems: 'center' }}>
+                {city.formationSlug && (
+                  <Link to={`/${city.formationSlug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                    Voir les formations IA {city.nameLoc}
+                    <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                )}
+                <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: city.formationSlug ? '#6B7280' : c, fontWeight: city.formationSlug ? 600 : 700, fontSize: 14, textDecoration: 'none' }}>
+                  {city.formationSlug ? 'Tout le catalogue de formations' : 'Découvrir les formations IA'}
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -507,7 +543,7 @@ export default function AgenceGeoPage() {
       </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+      <section id="geo-faq" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
@@ -534,8 +570,10 @@ export default function AgenceGeoPage() {
             Notre agence IA dans d'autres villes
           </h3>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
+            {/* Ancre volontairement non exact-match « Agence IA Lyon » : cette requête
+                appartient à /agence-ia-lyon (chip rendu via otherCities ci-dessous). */}
             <Link to="/agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }}>
-              <Building2 size={13} aria-hidden="true" /> Agence IA Lyon (siège)
+              <Building2 size={13} aria-hidden="true" /> Notre agence IA (présentation)
             </Link>
             {otherCities.map(x => (
               <Link key={x.slug} to={`/${x.slug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>

@@ -16,7 +16,7 @@
 
 ### Rédigez des propositions qui convertissent, prospectez plus intelligemment et pilotez votre pipeline avec l'IA directement intégrée dans vos outils Microsoft 365.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -141,7 +141,7 @@ Utilisez Copilot dans Excel pour analyser votre pipeline en temps réel, identif
 ## Tarifs et financement
 
 ### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
+**1 980 € HT / jour (accompagnement individuel)**
 Sessions planifiées avec d'autres professionnels commerciaux. Format idéal pour les commerciaux indépendants, les TPE et les PME sans département formation dédié.
 
 ### Formation intra-entreprise
@@ -216,6 +216,6 @@ Oui. Les nouveaux commerciaux trouvent en Copilot un formidable accélérateur p
 
 Un commercial qui gagne 6 heures par semaine sur l'administratif, c'est 6 heures supplémentaires en prospection, en RDV clients, en négociation. Sur une équipe de 10 commerciaux, c'est 60 heures de vente effective gagnées chaque semaine.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Financement OPCO intégralement pris en charge par Masteria.

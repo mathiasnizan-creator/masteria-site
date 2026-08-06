@@ -138,7 +138,7 @@ La formation se conclut sur les garde-fous indispensables et l'outillage pour un
 ## Modalités et tarifs
 
 **Format accompagnement individuel sur mesure**
-1 380 € HT / jour
+1 980 € HT / jour
 Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme co-construit, rythme adapté.
 
 **Format intra-entreprise**

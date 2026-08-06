@@ -16,7 +16,7 @@
 
 ### Créez plus de contenus, analysez vos performances et pilotez vos campagnes 2x plus vite avec l'IA directement intégrée à vos outils Microsoft 365.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -141,7 +141,7 @@ Transformez vos données et vos briefs en présentations professionnelles pour v
 ## Tarifs et financement
 
 ### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
+**1 980 € HT / jour (accompagnement individuel)**
 Sessions planifiées avec d'autres professionnels marketing. Idéal pour les indépendants et les entreprises de moins de 10 personnes.
 
 ### Formation intra-entreprise
@@ -216,6 +216,6 @@ Comme Mathias Nizan, fondateur de Masteria, le dit : **"L'IA ne remplace pas les
 
 Vos concurrents forment déjà leurs équipes. Chaque semaine sans formation représente des heures perdues en production manuelle.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Financement OPCO pris en charge par Masteria.

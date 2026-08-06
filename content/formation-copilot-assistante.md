@@ -147,7 +147,7 @@ Vous coordonnez plusieurs dirigeants ou plusieurs équipes. La gestion de multip
 
 | Format | Tarif | Conditions |
 |---|---|---|
-| **Inter-entreprises** | 1 380 € / jour (accompagnement individuel) | Sessions planifiées, groupes mixtes, max 12 participants |
+| **Accompagnement individuel** | 1 980 € / jour | Programme co-construit sur vos enjeux, présentiel ou distanciel |
 | **Intra-entreprise** | 1 980 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à votre organisation Microsoft |
 | **Financement OPCO** | 100% finançable | Tous les OPCO acceptés, dossier pris en charge par Masteria |
 
@@ -206,8 +206,8 @@ Oui, et c'est même une configuration que Copilot gère particulièrement bien. 
 
 **Prêt à former vos assistantes à Microsoft Copilot ?**
 
-Demandez un devis personnalisé ou inscrivez-vous à la prochaine session inter. Nos conseillers vous répondent sous 24h.
+Demandez un devis personnalisé. Nos conseillers vous répondent sous 24h.
 
-[Demander un devis intra] [Voir les prochaines sessions inter] [Télécharger le programme PDF]
+[Demander un devis intra] [Télécharger le programme PDF]
 
 > "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel." — Mathias Nizan, fondateur de Masteria

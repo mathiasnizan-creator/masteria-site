@@ -16,7 +16,7 @@
 
 ### Créez plus de contenus, analysez vos performances et pilotez votre veille concurrentielle avec l'IA directement intégrée dans Google Workspace.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -145,7 +145,7 @@ Découvrez NotebookLM, l'outil de veille et d'analyse de contenu de Google, pour
 ## Tarifs et financement
 
 ### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
+**1 980 € HT / jour (accompagnement individuel)**
 Sessions planifiées avec d'autres professionnels marketing. Idéal pour les indépendants et les équipes marketing de PME.
 
 ### Formation intra-entreprise
@@ -220,6 +220,6 @@ Oui. De nombreuses entreprises utilisent les deux écosystèmes. Cette formation
 
 Votre équipe utilise déjà Google Workspace chaque jour. En 2 jours de formation, Gemini transforme ces outils familiers en moteurs de productivité. Moins de temps de production, plus de temps de stratégie — et des contenus de meilleure qualité.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Financement OPCO intégralement pris en charge par Masteria.

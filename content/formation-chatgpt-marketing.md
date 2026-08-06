@@ -135,7 +135,7 @@ La formation se conclut sur l'autonomie à long terme : comment intégrer ChatGP
 ## Modalités et tarifs
 
 **Format accompagnement individuel sur mesure**
-1 380 € HT / jour
+1 980 € HT / jour
 Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme co-construit autour de vos enjeux personnels, rythme adapté, suivi entre les sessions.
 
 **Format intra-entreprise**

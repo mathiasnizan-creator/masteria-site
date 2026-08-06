@@ -147,7 +147,7 @@ Préparer un Q&A pour un DG avant une interview, rédiger des éléments de lang
 
 | Format | Tarif | Conditions |
 |---|---|---|
-| **Inter-entreprises** | 1 380 € / jour (accompagnement individuel) | Sessions planifiées, groupes mixtes, max 12 participants |
+| **Accompagnement individuel** | 1 980 € / jour | Programme co-construit sur vos enjeux, présentiel ou distanciel |
 | **Intra-entreprise** | 1 980 € / jour pour le groupe | Jusqu'à 12 participants, contenu adapté à vos contextes |
 | **Financement OPCO** | 100% finançable | Tous les OPCO acceptés, dossier pris en charge par Masteria |
 
@@ -211,8 +211,8 @@ Oui, c'est même notre public principal. Aucun prérequis technique n'est néces
 
 **Prêt à former votre équipe communication ?**
 
-Demandez un devis personnalisé ou inscrivez-vous à la prochaine session inter. Nos conseillers vous répondent sous 24h.
+Demandez un devis personnalisé. Nos conseillers vous répondent sous 24h.
 
-[Demander un devis intra] [Voir les prochaines sessions inter] [Télécharger le programme PDF]
+[Demander un devis intra] [Télécharger le programme PDF]
 
 > "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel." — Mathias Nizan, fondateur de Masteria

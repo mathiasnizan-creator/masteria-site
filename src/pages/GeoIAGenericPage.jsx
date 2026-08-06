@@ -63,7 +63,7 @@ export default function GeoIAGenericPage() {
   const financePhrase = isFrance
     ? "Certifié Qualiopi, finançable OPCO jusqu'à 100 %."
     : 'Certifié Qualiopi, formation finançable.'
-  const metaDesc = `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et 89 programmes par métier. ${financePhrase} Devis sous 24 h.`
+  const metaDesc = city.metaDescOverride || `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et 89 programmes par métier. ${financePhrase} Devis sous 24 h.`
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -87,7 +87,7 @@ export default function GeoIAGenericPage() {
 
   // E-E-A-T : auteur identifié + fraîcheur datée (Article JSON-LD + byline visible)
   const PUBLISHED = '2026-05-11'
-  const MODIFIED = '2026-07-02'
+  const MODIFIED = '2026-08-05'
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -102,6 +102,18 @@ export default function GeoIAGenericPage() {
     inLanguage: 'fr-FR',
     mainEntityOfPage: { '@id': `https://www.master-ia.fr/${slug}#webpage` },
     about: [`Formation intelligence artificielle ${city.nameLoc}`, 'Formation IA entreprise', city.region],
+    // GEO : zones à lire en priorité par les moteurs génératifs (résumé du hero + FAQ).
+    // Porté par le nœud Article (pas de second WebPage, cf. audit 2026-05-21).
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#geo-summary', '#geo-faq'],
+    },
+    // Sources d'autorité citées sur la page (bloc Sources officielles + financement)
+    citation: [
+      { '@type': 'CreativeWork', name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+      { '@type': 'CreativeWork', name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+      { '@type': 'CreativeWork', name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+    ],
   }
 
   // ItemList JSON-LD : les 2 pages outil × ville priorisées (uniquement si la ville existe dans GEO_CITIES)
@@ -120,6 +132,9 @@ export default function GeoIAGenericPage() {
   } : null
 
   // Place / LocalBusiness schema
+  // Si la ville a des bureaux réels (city.office, cf. Lyon), le nœud porte aussi
+  // l'adresse et les coordonnées de l'établissement : NAP complet aligné sur le
+  // schéma Organization de SEOHead (17 rue d'Algérie), signal local fort.
   const localBusinessSchema = !isCountry && city.coordinates ? {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -129,6 +144,21 @@ export default function GeoIAGenericPage() {
     url: `https://www.master-ia.fr/${slug}`,
     telephone: '+33667754128',
     priceRange: '€€',
+    ...(city.office ? {
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: city.office.streetAddress,
+        postalCode: city.office.postalCode,
+        addressLocality: city.office.addressLocality,
+        addressRegion: city.office.addressRegion,
+        addressCountry: 'FR',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: city.coordinates.latitude,
+        longitude: city.coordinates.longitude,
+      },
+    } : {}),
     areaServed: {
       '@type': 'AdministrativeArea',
       name: city.region,
@@ -251,8 +281,27 @@ export default function GeoIAGenericPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
           </p>
+
+          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
+          <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
+            {[
+              city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
+              ['Outils', '#outils'],
+              ['Métiers', '#metiers'],
+              ['Programme & tarifs', '#programme'],
+              ['Financement', '#financement'],
+              ['FAQ', '#geo-faq'],
+            ].filter(Boolean).map(([label, href]) => (
+              <a key={href} href={href} style={{
+                fontSize: 12.5, fontWeight: 600, color: '#374151', textDecoration: 'none',
+                background: '#fff', border: '1px solid #E5E7EB', borderRadius: 99, padding: '6px 12px',
+              }}>
+                {label}
+              </a>
+            ))}
+          </nav>
 
           <p style={{ fontSize: isMobile ? 15 : 17, color: '#4B5563', lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
             {city.desc}
@@ -307,7 +356,8 @@ export default function GeoIAGenericPage() {
                 { label: 'Outils', value: 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI' },
                 { label: 'Métiers', value: '13 fonctions couvertes, 89 programmes au catalogue' },
                 { label: 'Zone', value: city.zones },
-              ].map((row, i) => (
+                city.office?.note ? { label: 'Organisme', value: city.office.note } : null,
+              ].filter(Boolean).map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #EFF6FF' }}>
                   <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
                   <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{row.value}</dd>
@@ -320,7 +370,7 @@ export default function GeoIAGenericPage() {
 
       {/* ── INDUSTRIES & TISSU LOCAL ── */}
       {city.industriesDeep && city.industriesDeep.length > 0 && (
-        <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff' }}>
+        <section id="secteurs" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Tissu économique {city.nameLoc}</div>
@@ -377,7 +427,7 @@ export default function GeoIAGenericPage() {
       )}
 
       {/* ── OUTILS DÉDIÉS ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE' }}>
+      <section id="outils" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Outils IA dédiés</div>
@@ -447,7 +497,7 @@ export default function GeoIAGenericPage() {
       </section>
 
       {/* ── 13 MÉTIERS ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff' }}>
+      <section id="metiers" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>13 métiers couverts</div>
@@ -477,7 +527,7 @@ export default function GeoIAGenericPage() {
       </section>
 
       {/* ── PROGRAMME, DURÉE & TARIFS ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE' }}>
+      <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 980, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Programme &amp; tarifs</div>
@@ -550,6 +600,42 @@ export default function GeoIAGenericPage() {
               </div>
             </div>
           </FadeIn>
+
+          {/* Tableau comparatif des formats : réponse directe aux requêtes tarif/prix
+              + surface d'extraction structurée pour les moteurs génératifs (GEO) */}
+          <FadeIn delay={120}>
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '32px 0 14px' }}>
+              Quel format choisir {city.nameLoc} ?
+            </h3>
+            <div style={{ overflowX: 'auto', background: '#fff', borderRadius: 14, border: '1px solid #E5E7EB' }}>
+              <table aria-label={`Comparatif des formats de formation IA ${city.nameLoc}`} style={{ width: '100%', minWidth: 640, borderCollapse: 'collapse', fontSize: 13.5 }}>
+                <thead>
+                  <tr style={{ background: '#F9FAFB' }}>
+                    {['Format', 'Pour qui', 'Durée', 'Tarif HT', isFrance ? 'Financement' : 'Facturation'].map(h => (
+                      <th key={h} scope="col" style={{ textAlign: 'left', padding: '12px 16px', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 12.5, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB' }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Intra-entreprise', `Une équipe, dans vos locaux ${city.nameLoc} (jusqu'à 12 participants)`, '1 jour (7 h), extensible à 2-3 jours', '1 980 €/jour pour le groupe', isFrance ? "OPCO jusqu'à 100 %" : 'Adaptée à votre pays'],
+                    ['Individuel sur mesure', 'Dirigeants, experts métier, profils stratégiques (1-to-1)', '1 jour, séquençable en demi-journées', '1 980 €/jour', isFrance ? "OPCO jusqu'à 100 %" : 'Adaptée à votre pays'],
+                    ['Sprint IA', "Sensibilisation à grande échelle (jusqu'à 100 participants)", '3 h', 'Sur devis', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
+                    ['Distanciel', 'Équipes réparties sur plusieurs sites, suivis individuels', 'Identique au présentiel', '1 980 €/jour', isFrance ? "OPCO jusqu'à 100 %" : 'Adaptée à votre pays'],
+                  ].map(row => (
+                    <tr key={row[0]}>
+                      {row.map((cell, i) => (
+                        <td key={i} style={{ padding: '12px 16px', color: i === 0 ? '#0A0A0A' : '#374151', fontWeight: i === 0 ? 700 : 400, lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '10px 0 0' }}>
+              Tarifs hors taxes. Le devis précise le programme, la durée et le montant pris en charge{isFrance ? ' par votre OPCO' : ''}.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -620,7 +706,7 @@ export default function GeoIAGenericPage() {
       </section>
 
       {/* ── FINANCEMENT ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+      <section id="financement" style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Financement</div>
@@ -677,7 +763,7 @@ export default function GeoIAGenericPage() {
       )}
 
       {/* ── FAQ ── */}
-      <section id="geo-faq" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+      <section id="geo-faq" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <FadeIn>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 28, fontWeight: 900, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
@@ -705,6 +791,22 @@ export default function GeoIAGenericPage() {
                 Tout le catalogue <ArrowRight size={13} />
               </Link>
             </div>
+
+            {/* Maillage local complémentaire (agence, références) — villes avec relatedLocal */}
+            {city.relatedLocal && city.relatedLocal.length > 0 && (
+              <>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '28px 0 12px' }}>
+                  Aller plus loin {city.nameLoc}
+                </h3>
+                <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                  {city.relatedLocal.map(l => (
+                    <Link key={l.href} to={l.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                      {l.label} <ArrowRight size={13} color="#6B7280" />
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
           </FadeIn>
         </div>
       </section>

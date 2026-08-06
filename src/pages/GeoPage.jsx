@@ -27,7 +27,10 @@ function FaqItem({ q, a }) {
         <span style={{ fontSize: 15, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.4 }}>{q}</span>
         <ChevronDown size={18} strokeWidth={2} style={{ flexShrink: 0, color: '#6B7280', marginTop: 2, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
       </button>
-      {open && <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, marginTop: -4 }}>{a}</p>}
+      {/* Réponse toujours dans le DOM (repli CSS) : citable par les moteurs génératifs (GEO) */}
+      <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
+        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, marginTop: -4 }}>{a}</p>
+      </div>
     </div>
   )
 }
@@ -151,6 +154,25 @@ export default function GeoPage() {
     url: `https://www.master-ia.fr/${slug}`,
     telephone: '+33667754128',
     priceRange: '€€',
+    // NAP complet quand la ville a des bureaux réels (city.office : Lyon),
+    // aligné sur l'adresse du schéma Organization de SEOHead.
+    ...(city.office ? {
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: city.office.streetAddress,
+        postalCode: city.office.postalCode,
+        addressLocality: city.office.addressLocality,
+        addressRegion: city.office.addressRegion,
+        addressCountry: 'FR',
+      },
+      ...(city.coordinates && {
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: city.coordinates.latitude,
+          longitude: city.coordinates.longitude,
+        },
+      }),
+    } : {}),
     areaServed: {
       '@type': 'AdministrativeArea',
       name: city.region,
@@ -165,15 +187,33 @@ export default function GeoPage() {
     parentOrganization: { '@id': 'https://www.master-ia.fr/#organization' },
   }
 
-  // Speakable (AEO) — laisse Google/Assistant lire les sections clés à voix haute
-  const speakableSchema = {
+  // E-E-A-T : auteur identifié + fraîcheur datée (Article JSON-LD + byline visible).
+  // Le speakable vit sur ce nœud Article : l'ancien nœud WebPage dédié dupliquait
+  // le @id #webpage émis par SEOHead et brouillait l'entité primaire (audit 2026-05-21).
+  const PUBLISHED = '2026-05-11'
+  const MODIFIED = '2026-08-05'
+  const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `https://www.master-ia.fr/${slug}#webpage`,
+    '@type': 'Article',
+    '@id': `https://www.master-ia.fr/${slug}#article`,
+    headline: h1,
+    description: metaDesc,
+    author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+    editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+    publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    inLanguage: city.locale || 'fr-FR',
+    mainEntityOfPage: { '@id': `https://www.master-ia.fr/${slug}#webpage` },
+    about: [`Formation ${tool.name} ${city.nameLoc}`, `Formation ${tool.shortName}`, city.region],
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', '#geo-summary', '#geo-faq'],
+      cssSelector: ['#geo-summary', '#geo-faq'],
     },
+    citation: [
+      { '@type': 'CreativeWork', name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+      { '@type': 'CreativeWork', name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+    ],
   }
 
   return (
@@ -185,8 +225,10 @@ export default function GeoPage() {
         courseData={courseData}
         faqItems={faqItems}
         breadcrumbs={breadcrumbs}
-        extraJsonLd={[localCourseSchema, localBusinessSchema, speakableSchema]}
+        extraJsonLd={[localCourseSchema, localBusinessSchema, articleJsonLd]}
         locale={city.locale}
+        datePublished={PUBLISHED}
+        dateModified={MODIFIED}
       />
 
       {/* ── HERO ── */}
@@ -244,6 +286,30 @@ export default function GeoPage() {
             {h1}
           </h1>
 
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+          </p>
+
+          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
+          <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
+            {[
+              city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
+              city.localCases?.length ? ["Cas d'usage", '#cas-usage'] : null,
+              ['Programme', '#programme'],
+              ['Formats', '#formats'],
+              ['Financement', '#financement'],
+              ['FAQ', '#geo-faq'],
+            ].filter(Boolean).map(([label, href]) => (
+              <a key={href} href={href} style={{
+                fontSize: 12.5, fontWeight: 600, color: '#374151', textDecoration: 'none',
+                background: '#fff', border: '1px solid #E5E7EB', borderRadius: 99, padding: '6px 12px',
+              }}>
+                {label}
+              </a>
+            ))}
+          </nav>
+
           <p style={{ fontSize: isMobile ? 15 : 17, color: '#4B5563', lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
             {city.desc}
           </p>
@@ -252,7 +318,7 @@ export default function GeoPage() {
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
               { icon: Wallet,     label: '100 % OPCO' },
-              { icon: Users,      label: isIntraOnly ? 'Intra-entreprise' : 'Inter & intra' },
+              { icon: Users,      label: isIntraOnly ? 'Intra-entreprise' : 'Intra & individuel' },
               { icon: Clock,      label: 'Devis sous 24 h' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{
@@ -289,7 +355,7 @@ export default function GeoPage() {
       </section>
 
       {/* ── POURQUOI SE FORMER ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff' }}>
+      <section id="secteurs" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 980, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Pourquoi {tool.shortName} {city.nameLoc}</div>
@@ -348,7 +414,7 @@ export default function GeoPage() {
 
       {/* ── CAS D'USAGE LOCAUX ── */}
       {city.localCases && city.localCases.length > 0 && (
-        <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE' }}>
+        <section id="cas-usage" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Cas d'usage observés</div>
@@ -379,7 +445,7 @@ export default function GeoPage() {
       )}
 
       {/* ── PROGRAMME ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff' }}>
+      <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Programme</div>
@@ -408,7 +474,7 @@ export default function GeoPage() {
 
       {/* ── FORMAT (intra ou Lyon inter+intra) ── */}
       {isIntraOnly ? (
-        <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <section id="formats" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Format disponible</div>
@@ -443,8 +509,8 @@ export default function GeoPage() {
           </div>
         </section>
       ) : (
-        /* Lyon : inter + intra */
-        <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        /* Lyon : intra + accompagnement individuel */
+        <section id="formats" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Formats disponibles {city.nameLoc}</div>
@@ -512,7 +578,7 @@ export default function GeoPage() {
       </section>
 
       {/* ── FINANCEMENT ── */}
-      <section style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+      <section id="financement" style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Financement</div>
@@ -569,7 +635,7 @@ export default function GeoPage() {
       )}
 
       {/* ── FAQ ── */}
-      <section id="geo-faq" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+      <section id="geo-faq" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <FadeIn>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 28, fontWeight: 900, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
@@ -616,6 +682,11 @@ export default function GeoPage() {
                   <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }}>
                     Catalogue 89 formations <ArrowRight size={13} />
                   </Link>
+                  {(city.relatedLocal || []).map(l => (
+                    <Link key={l.href} to={l.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                      {l.label} <ArrowRight size={13} color="#6B7280" />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>

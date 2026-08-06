@@ -16,7 +16,7 @@
 
 ### Pilotez vos équipes avec plus de clarté, moins d'administratif et des décisions mieux informées grâce à l'IA intégrée dans vos outils Microsoft 365.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -145,7 +145,7 @@ Utilisez Microsoft Loop pour centraliser le suivi de vos projets d'équipe et Co
 ## Tarifs et financement
 
 ### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
+**1 980 € HT / jour (accompagnement individuel)**
 Sessions avec des managers d'horizons et de secteurs variés. Format idéal pour les managers de PME et les managers isolés dans de grandes structures.
 
 ### Formation intra-entreprise
@@ -217,6 +217,6 @@ C'est une question que nous entendons dans toutes nos sessions. Nous consacrons 
 
 Un manager qui récupère 8 heures par semaine sur l'administratif, c'est 8 heures de plus pour coacher son équipe, anticiper les problèmes et prendre des décisions stratégiques mieux informées. C'est exactement là que se joue la performance managériale.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Dossier OPCO intégralement pris en charge par Masteria.

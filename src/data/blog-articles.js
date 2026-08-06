@@ -4914,7 +4914,7 @@ export const BLOG_ARTICLES = [
         "Créer un mémo dirigeant en 10 minutes",
       ] },
 
-      { type: 'callout', text: "Cette formation est éligible au plan de développement des compétences et finançable par les OPCO. Elle peut être organisée en présentiel ou distanciel, en intra-entreprise (groupe d'assistantes) ou en inter." },
+      { type: 'callout', text: "Cette formation est éligible au plan de développement des compétences et finançable par les OPCO. Elle peut être organisée en présentiel ou distanciel, en intra-entreprise (groupe d'assistantes) ou en accompagnement individuel." },
 
       { type: 'h2', text: "Pour qui cette formation ?" },
       { type: 'ul', items: [

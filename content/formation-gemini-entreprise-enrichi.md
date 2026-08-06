@@ -63,7 +63,7 @@ Vos équipes maîtrisent Google Gemini et Workspace IA en 1 à 2 jours. Formatio
         "@type": "Offer",
         "price": "760",
         "priceCurrency": "EUR",
-        "description": "1 380 € / jour (accompagnement individuel)"
+        "description": "1 980 € / jour"
       }
     }
   ]
@@ -285,13 +285,13 @@ Un agent IA Gemini, c'est un assistant configuré une fois pour accomplir une s�
 
 ## Modalités et tarifs
 
-| | Inter-entreprises | Intra-entreprise |
+| | Accompagnement individuel | Intra-entreprise |
 |---|---|---|
-| **Format** | Groupe de 5 à 10 personnes | Réservé à votre équipe |
-| **Tarif** | 1 380 € / jour (accompagnement individuel) | 1 980 € / jour (max 12 participants) |
+| **Format** | Coaching 1-to-1 (dirigeants, experts métier) | Réservé à votre équipe |
+| **Tarif** | 1 980 € / jour | 1 980 € / jour (max 12 participants) |
 | **Durée** | 1 ou 2 jours | 1 ou 2 jours |
-| **Lieu** | Paris, Lyon, Bordeaux, distanciel | Dans vos locaux ou distanciel |
-| **Financement** | OPCO, FIF-PL, FIFPL | OPCO, plan de développement des compétences |
+| **Lieu** | Présentiel ou distanciel | Dans vos locaux ou distanciel |
+| **Financement** | OPCO, plan de développement des compétences | OPCO, plan de développement des compétences |
 
 Masteria est certifié Qualiopi pour les actions de formation. Toutes nos formations sont finançables à 100 % via votre OPCO. Notre équipe vous accompagne dans la constitution du dossier.
 

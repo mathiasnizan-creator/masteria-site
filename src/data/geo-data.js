@@ -1,6 +1,6 @@
 // Données géographiques pour les pages formation IA par ville
 // Stratégie SEO/GEO ciblée : 5 villes prioritaires × 2 outils + 5 pages génériques = 15 pages géo
-// Couverture : Lyon (siège, inter + intra), Paris, Marseille, Genève, Bruxelles
+// Couverture : Lyon (siège, intra + individuel), Paris, Marseille, Genève, Bruxelles
 // Outils ciblés : ChatGPT (volume max), Claude IA (différentiation premium)
 //
 // Chaque ville porte un contenu rédactionnel dense (industries, cas d'usage, accès, OPCO, écosystème)
@@ -62,10 +62,26 @@ export const GEO_CITIES = [
     country: 'France',
     countryCode: 'FR',
     locale: 'fr-FR',
-    // Lyon est le siège de Masteria : la page vise la requête complète
-    // « formation intelligence artificielle lyon » en plus de « formation ia lyon ».
-    metaTitleOverride: 'Formation intelligence artificielle Lyon | Masteria',
+    // Lyon est le siège de Masteria : la page vise le couple de requêtes en se
+    // répartissant les emplacements — « formation ia lyon » (260/mois) en tête de
+    // title, « formation intelligence artificielle lyon » (90/mois) contiguë dans le H1.
+    metaTitleOverride: 'Formation IA Lyon : intelligence artificielle | Masteria',
     h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et 89 programmes par métier',
+    metaDescOverride: "Formation intelligence artificielle à Lyon : ChatGPT, Claude, 89 programmes métier dans vos locaux. Organisme lyonnais certifié Qualiopi, finançable OPCO.",
+    // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
+    // l'adresse du ProfessionalService + la ligne « Organisme » de l'encart En bref.
+    office: {
+      streetAddress: "17 rue d'Algérie",
+      postalCode: '69001',
+      addressLocality: 'Lyon',
+      addressRegion: 'Auvergne-Rhône-Alpes',
+      note: "Organisme de formation lyonnais : bureaux en presqu'île (Lyon 1ᵉʳ), fondé à Lyon en 2022",
+    },
+    // Maillage local complémentaire (rendu dans la section maillage interne)
+    relatedLocal: [
+      { label: 'Agence IA Lyon : conseil & développement', href: '/agence-ia-lyon' },
+      { label: "Études de cas IA en entreprise", href: '/etudes-de-cas-ia' },
+    ],
     coordinates: { latitude: 45.7640, longitude: 4.8357 },
     population: '522 000 habitants intra-muros',
     metroArea: 'Métropole de Lyon : 1,4 million d\'habitants, deuxième pôle économique français',
@@ -99,10 +115,13 @@ export const GEO_CITIES = [
       { name: 'Inria Grenoble Rhône-Alpes', type: 'Centre de recherche IA' },
     ],
     additionalFAQ: [
-      { q: 'Quelle différence entre une session inter et une intra à Lyon ?', a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
+      { q: "Quelle différence entre l'intra-entreprise et l'accompagnement individuel à Lyon ?", a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
       { q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?', a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry / Valence. Les modalités sont identiques à celles de Lyon." },
       { q: 'Où se déroulent les formations IA à Lyon ?', a: "En intra-entreprise : le formateur vient chez vous, partout dans la métropole de Lyon (Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de l'agglomération). Les bureaux de Masteria sont en presqu'île (Lyon 1er). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace : c'est celui que nous recommandons. Le distanciel reste disponible pour les équipes dispersées." },
       { q: 'Pourquoi choisir un organisme de formation IA lyonnais ?', a: "La proximité change le déroulé : cadrage en présentiel dans vos locaux, connaissance du tissu économique régional (pharma, industrie, banque, numérique) et des OPCO qui financent en Auvergne-Rhône-Alpes, interventions de suivi faciles à planifier. Masteria est fondé et basé à Lyon depuis 2022 ; une partie de nos références vient de la métropole, ce qui donne des cas d'usage directement comparables aux vôtres." },
+      { q: 'Quel délai pour organiser une formation IA à Lyon ?', a: "Comptez 3 à 4 semaines entre le premier échange et la session quand un financement OPCO est demandé : devis et programme sous 24 h ouvrées, instruction OPCO (ATLAS, OPCO 2i, AKTO ou AFDAS selon votre branche) en 5 à 10 jours ouvrés, puis calage de la date avec vos équipes. Sans dossier de financement, le délai se réduit au calage d'agenda. Nos bureaux en presqu'île permettent un cadrage en présentiel rapide partout dans la métropole." },
+      { q: 'Pouvez-vous former plusieurs équipes ou tout un site à Lyon ?', a: "Oui. Le déploiement se fait par vagues : un Sprint IA de 3 heures sensibilise jusqu'à 100 participants par session, puis des journées intra par métier (jusqu'à 12 participants) approfondissent les cas d'usage de chaque fonction. Ce format convient aux PME comme aux ETI et grands groupes lyonnais qui veulent aligner tout un site, des équipes opérationnelles au comité de direction." },
+      { q: 'La formation a-t-elle lieu dans vos bureaux lyonnais ou chez nous ?', a: "Nos bureaux du 1ᵉʳ arrondissement accueillent les cadrages et les accompagnements individuels. Pour les groupes, la formation se tient dans vos locaux : vos équipes travaillent sur leurs postes, avec leurs outils et leurs documents, ce qui ancre les réflexes dès la première journée. En distanciel, la classe virtuelle reprend la même pédagogie, exercices guidés compris." },
     ],
   },
   {
@@ -256,8 +275,8 @@ export const GEO_TOOLS = [
     shortName: 'ChatGPT',
     color: '#10a37f',
     colorLight: '#d1fae5',
-    pitch: "outil IA le plus utilisé en entreprise, polyvalent, intégrations nombreuses, CPF éligible",
-    differentiator: "ChatGPT est l'outil IA le plus adopté en entreprise. Avec plus de 200 millions d'utilisateurs actifs hebdomadaires en 2025 et une intégration native avec les principaux outils de productivité (Slack, Notion, Office, Google Workspace), c'est le point d'entrée naturel pour la transformation IA de vos équipes. La formation ChatGPT de Masteria est 100 % pratique : vos équipes repartent avec des prompts, des automatisations et un plan d'action applicables dès le lendemain.",
+    pitch: "outil IA le plus utilisé en entreprise, polyvalent, intégrations nombreuses",
+    differentiator: "ChatGPT est l'outil IA le plus adopté en entreprise. Avec des centaines de millions d'utilisateurs actifs chaque semaine et une intégration native avec les principaux outils de productivité (Slack, Notion, Office, Google Workspace), c'est le point d'entrée naturel pour la transformation IA de vos équipes. La formation ChatGPT de Masteria est 100 % pratique : vos équipes repartent avec des prompts, des automatisations et un plan d'action applicables dès le lendemain.",
     useCases: [
       "Rédaction professionnelle accélérée (emails, rapports, contenus, fiches de poste)",
       "Analyse et synthèse de documents (contrats, études, rapports trimestriels)",

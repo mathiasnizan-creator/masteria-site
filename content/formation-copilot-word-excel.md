@@ -16,7 +16,7 @@
 
 ### Rédigez, analysez et automatisez vos documents et tableaux de données sans formule complexe ni expertise technique — avec l'IA directement intégrée dans vos outils du quotidien.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -142,9 +142,9 @@ Découvrez la puissance des workflows qui combinent Copilot dans Word et Excel p
 
 ## Tarifs et financement
 
-### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
-Sessions avec des professionnels de différents secteurs. Format idéal pour les PME souhaitant former un ou deux collaborateurs sans organiser une session intra.
+### Accompagnement individuel sur mesure
+**1 980 € HT / jour**
+Coaching 1-to-1 co-construit sur vos cas d'usage. Format idéal pour les PME souhaitant former un ou deux collaborateurs sans organiser une session intra.
 
 ### Formation intra-entreprise
 **1 980 € HT / jour** — jusqu'à 12 participants
@@ -215,6 +215,6 @@ Ce programme se concentre exclusivement sur Word et Excel pour en faire une maî
 
 Word et Excel sont sur votre bureau chaque jour. En 2 jours de formation, Copilot les transforme en assistants qui travaillent pour vous, pas l'inverse. Le retour sur investissement est mesurable dès la première semaine.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Dossier OPCO pris en charge intégralement par Masteria.

@@ -626,7 +626,7 @@ export default function AgenceSeoIAPage() {
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Agents, intégrations et outils sur mesure, dont les automatisations de monitoring de visibilité." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité et vos priorités, visibilité comprise." },
-              { label: 'Agence IA Lyon', href: '/agence-ia', tag: 'Agence', desc: "Notre agence IA basée à Lyon : conseil, développement et formation, en France et au-delà." },
+              { label: 'Agence IA Lyon', href: '/agence-ia-lyon', tag: 'Agence', desc: "Notre agence IA basée à Lyon : conseil, développement et formation, en France et au-delà." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
               { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Notre lecture des enjeux et cas d'usage IA propres à chaque secteur d'activité." },
               { label: "IA générative en entreprise", href: '/ia-generative-entreprise', tag: 'IA générative', desc: "Les modèles génératifs qui alimentent la production de contenu et la visibilité dans les moteurs de réponse." },

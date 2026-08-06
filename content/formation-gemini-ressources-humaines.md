@@ -16,7 +16,7 @@
 
 ### Rédigez des offres attractives, analysez vos candidatures et gérez vos processus RH de bout en bout avec l'IA intégrée dans Google Workspace.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -144,9 +144,9 @@ Découvrez comment Gemini dans Google Meet et NotebookLM transforment vos entret
 
 ## Tarifs et financement
 
-### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
-Sessions avec des professionnels RH de différents secteurs. Format idéal pour les DRH de PME ou les RH généralistes souhaitant se former sans organiser une session interne.
+### Accompagnement individuel sur mesure
+**1 980 € HT / jour**
+Coaching 1-to-1 co-construit sur vos enjeux RH. Format idéal pour les DRH de PME ou les RH généralistes souhaitant se former sans mobiliser toute une équipe.
 
 ### Formation intra-entreprise
 **1 980 € HT / jour** — jusqu'à 12 participants
@@ -220,6 +220,6 @@ Oui. Cette formation couvre les usages Gemini dans Google Workspace. Si votre or
 
 Chaque professionnel RH formé à Gemini gagne en moyenne 6 heures par semaine sur les tâches rédactionnelles et documentaires. Ce sont 6 heures réorientées vers ce qui fait vraiment la valeur de la fonction RH : accompagner les collaborateurs, construire la culture d'entreprise, développer les talents.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Dossier OPCO intégralement pris en charge par Masteria.

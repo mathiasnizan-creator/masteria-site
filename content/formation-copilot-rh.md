@@ -16,7 +16,7 @@
 
 ### Rédigez des offres d'emploi attractives, analysez vos candidatures et gérez vos communications RH 3x plus vite avec l'IA intégrée dans vos outils Microsoft 365.
 
-✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra ou inter-entreprise
+✅ Qualiopi | ✅ Finançable OPCO | ✅ Présentiel & distanciel | ✅ Intra-entreprise ou individuel
 
 ---
 
@@ -141,7 +141,7 @@ Utilisez Copilot dans Teams pour transformer vos réunions RH en actions concrè
 ## Tarifs et financement
 
 ### Formation intra-entreprise ou accompagnement individuel sur mesure
-**1 380 € HT / jour (accompagnement individuel)**
+**1 980 € HT / jour (accompagnement individuel)**
 Sessions planifiées avec d'autres professionnels RH. Idéal pour les responsables RH de PME ou les indépendants RH.
 
 ### Formation intra-entreprise
@@ -216,6 +216,6 @@ Oui, c'est l'un des cas d'usage les plus plébiscités par nos participants RH. 
 
 Chaque professionnel RH formé à Copilot gagne en moyenne 6 heures par semaine sur des tâches rédactionnelles. Sur une équipe de 5 personnes, c'est 30 heures hebdomadaires réorientées vers ce qui compte vraiment : le contact humain, la prise de décision, l'accompagnement des collaborateurs.
 
-**[Demander un devis intra-entreprise](#contact)** | **[Voir les prochaines sessions inter](#sessions)** | **[Télécharger le programme PDF](#programme)**
+**[Demander un devis intra-entreprise](#contact)** | **[Télécharger le programme PDF](#programme)**
 
 Réponse sous 24h ouvrées. Dossier OPCO pris en charge intégralement par Masteria.

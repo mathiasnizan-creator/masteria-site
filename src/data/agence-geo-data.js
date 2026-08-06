@@ -26,6 +26,16 @@ export const AGENCE_GEO_CITIES = [
     countryCode: 'FR',
     locale: 'fr-FR',
     coordinates: { latitude: 45.7640, longitude: 4.8357 },
+    // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
+    // l'adresse du ProfessionalService. Lyon uniquement, aucune adresse inventée ailleurs.
+    office: {
+      streetAddress: "17 rue d'Algérie",
+      postalCode: '69001',
+      addressLocality: 'Lyon',
+      addressRegion: 'Auvergne-Rhône-Alpes',
+    },
+    // Page formation géo sœur (boucle de maillage du cluster lyonnais)
+    formationSlug: 'formation-ia-lyon',
     metaDesc:
       "Agence IA à Lyon : conseil et gouvernance, agents IA et outils sur mesure, automatisation, formation. Bureaux en presqu'île (Lyon 1er). Cadrage gratuit.",
     heroSubtitle:
