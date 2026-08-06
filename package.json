@@ -11,7 +11,8 @@
     "vercel:config": "node scripts/build-vercel-output-config.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "ping:indexnow": "node scripts/ping-indexnow.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
