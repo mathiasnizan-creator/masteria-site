@@ -230,7 +230,12 @@
     "titreEditorial": "Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-06",
+    "dateLongue": "jeudi 6 août 2026",
+    "titreEditorial": "Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d'interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d'inventer une idée neuve",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 16,
   "nbSignes": 8891,

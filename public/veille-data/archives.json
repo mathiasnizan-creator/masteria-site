@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-05",
-    "totalEditions": 13,
-    "totalItems": 176,
-    "totalSources": 274
+    "derniereDate": "2026-08-06",
+    "totalEditions": 14,
+    "totalItems": 189,
+    "totalSources": 293
   },
   "editions": [
+    {
+      "date": "2026-08-06",
+      "dateCourte": "jeu. 6 août",
+      "dateAffichee": "6 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d'interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d'inventer une idée neuve",
+      "chapeau": "Google réorganise son état-major de l'IA : Jeff Dean part fonder une start-up de découverte scientifique, Demis Hassabis passe président de DeepMind, et l'action Alphabet recule de 4 %. Anthropic se lance dans la conception de puces, Washington prépare des restrictions sur les composants optiques chinois, et un chercheur de DeepMind rappelle que les modèles actuels ne savent toujours pas inventer.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "Wired",
+        "Bloomberg",
+        "The Verge",
+        "ZDNet France",
+        "CNIL",
+        "Next.ink",
+        "Clubic",
+        "Siècle Digital",
+        "South China Morning Post",
+        "SCMP",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Jeff Dean quitte Google, Demis Hassabis est promu président de DeepMind : Google resserre son commandement IA en pleine course",
+          "z": "une",
+          "id": "jeff-dean-quitte-google-demis-hassabis-est-promu-president"
+        },
+        {
+          "t": "Une équipe de Formule 1 fait du savoir-faire humain la condition de son avantage IA",
+          "z": "europe",
+          "id": "une-equipe-de-formule-1-fait-du-savoir-faire-humain-la"
+        },
+        {
+          "t": "Cinq nouveaux membres entrent au collège de la CNIL",
+          "z": "europe",
+          "id": "cinq-nouveaux-membres-entrent-au-college-de-la-cnil"
+        },
+        {
+          "t": "Les classements de modèles d'IA ne disent quelque chose qu'à condition de connaître leurs conditions de test",
+          "z": "europe",
+          "id": "les-classements-de-modeles-d-ia-ne-disent-quelque-chose-qu"
+        },
+        {
+          "t": "SpaceX double son chiffre d'affaires, mais l'action plonge sur l'ampleur de ses dépenses d'IA",
+          "z": "europe",
+          "id": "spacex-double-son-chiffre-d-affaires-mais-l-action-plonge"
+        },
+        {
+          "t": "Anthropic constitue une équipe pour concevoir ses propres puces d'IA",
+          "z": "international",
+          "id": "anthropic-constitue-une-equipe-pour-concevoir-ses-propres"
+        },
+        {
+          "t": "Le cadre de sécurité IA de la Maison-Blanche viserait uniquement les modèles fermés d'OpenAI, Google et Anthropic",
+          "z": "international",
+          "id": "le-cadre-de-securite-ia-de-la-maison-blanche-viserait"
+        },
+        {
+          "t": "Shopify affirme que la recherche par IA amène du trafic et des ventes au lieu de les détourner",
+          "z": "international",
+          "id": "shopify-affirme-que-la-recherche-par-ia-amene-du-trafic-et"
+        },
+        {
+          "t": "Google documente enfin le modèle d'IA de 4 Go que Chrome télécharge en silence, et permet de le désactiver",
+          "z": "international",
+          "id": "google-documente-enfin-le-modele-d-ia-de-4-go-que-chrome"
+        },
+        {
+          "t": "Washington prépare une interdiction des transceivers optiques chinois dans les centres de données, les titres du secteur dévissent avant de rebondir",
+          "z": "chine",
+          "id": "washington-prepare-une-interdiction-des-transceivers"
+        },
+        {
+          "t": "Goldman Sachs relève de 30 % sa prévision de revenus pour les modèles d'IA chinois, à 13 milliards de dollars",
+          "z": "chine",
+          "id": "goldman-sachs-releve-de-30-sa-prevision-de-revenus-pour-les"
+        },
+        {
+          "t": "Un chercheur de Google DeepMind juge les modèles actuels incapables d'inventer une idée sans précédent",
+          "z": "recherche",
+          "id": "un-chercheur-de-google-deepmind-juge-les-modeles-actuels"
+        },
+        {
+          "t": "Suite du dossier des agents autonomes : au Black Hat, OpenAI a…",
+          "z": "bref",
+          "id": "suite-du-dossier-des-agents-autonomes-au"
+        }
+      ]
+    },
     {
       "date": "2026-08-05",
       "dateCourte": "mer. 5 août",

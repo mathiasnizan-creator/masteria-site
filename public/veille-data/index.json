@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-05",
-    "totalEditions": 13,
-    "totalItems": 176,
-    "totalSources": 274
+    "derniereDate": "2026-08-06",
+    "totalEditions": 14,
+    "totalItems": 189,
+    "totalSources": 293
   },
   "editions": [
+    {
+      "date": "2026-08-06",
+      "dateAffichee": "6 août 2026",
+      "dateCourte": "jeu. 6 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d'interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d'inventer une idée neuve",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-08-05",
       "dateAffichee": "5 août 2026",

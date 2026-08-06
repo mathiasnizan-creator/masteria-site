@@ -140,7 +140,7 @@ Pages dédiées avec contenu local : OPCO régional, secteurs économiques, zone
 
 ### Pages par ville (vue d'ensemble)
 - [Formation IA Paris](https://www.master-ia.fr/formation-ia-paris)
-- [Formation IA Lyon](https://www.master-ia.fr/formation-ia-lyon) — siège social, sessions inter-entreprises en présentiel
+- [Formation IA Lyon](https://www.master-ia.fr/formation-ia-lyon) — formation intelligence artificielle à Lyon, siège de Masteria : intra dans vos locaux, individuel sur mesure ou distanciel, 5 outils (ChatGPT, Claude, Copilot, Gemini, Mistral AI), 13 métiers, certifié Qualiopi, finançable OPCO en Auvergne-Rhône-Alpes
 - [Formation IA Marseille](https://www.master-ia.fr/formation-ia-marseille)
 - [Formation IA Genève](https://www.master-ia.fr/formation-ia-geneve)
 - [Formation IA Bruxelles](https://www.master-ia.fr/formation-ia-bruxelles)
@@ -150,12 +150,12 @@ Pages dédiées avec contenu local : OPCO régional, secteurs économiques, zone
 ChatGPT et Claude sont les deux outils principaux que nous formons en pages dédiées par ville. Pour Microsoft Copilot, Google Gemini, Mistral AI : programmes intra-entreprise disponibles via les hubs outils nationaux ([Copilot](https://www.master-ia.fr/formation-microsoft-copilot), [Gemini](https://www.master-ia.fr/formation-gemini-entreprise), [Mistral](https://www.master-ia.fr/formation-mistral-ai)).
 
 - [Formation ChatGPT Paris](https://www.master-ia.fr/formation-chatgpt-paris)
-- [Formation ChatGPT Lyon](https://www.master-ia.fr/formation-chatgpt-lyon)
+- [Formation ChatGPT Lyon](https://www.master-ia.fr/formation-chatgpt-lyon) — intra dans vos locaux lyonnais ou individuel sur mesure, certifié Qualiopi, finançable OPCO
 - [Formation ChatGPT Marseille](https://www.master-ia.fr/formation-chatgpt-marseille)
 - [Formation ChatGPT Genève](https://www.master-ia.fr/formation-chatgpt-geneve)
 - [Formation ChatGPT Bruxelles](https://www.master-ia.fr/formation-chatgpt-bruxelles)
 - [Formation Claude IA Paris](https://www.master-ia.fr/formation-claude-ia-paris)
-- [Formation Claude IA Lyon](https://www.master-ia.fr/formation-claude-ia-lyon)
+- [Formation Claude IA Lyon](https://www.master-ia.fr/formation-claude-ia-lyon) — Claude (Anthropic) pour les métiers documentaires, intra ou individuel sur mesure, certifié Qualiopi, finançable OPCO
 - [Formation Claude IA Marseille](https://www.master-ia.fr/formation-claude-ia-marseille)
 - [Formation Claude IA Genève](https://www.master-ia.fr/formation-claude-ia-geneve)
 - [Formation Claude IA Bruxelles](https://www.master-ia.fr/formation-claude-ia-bruxelles)
@@ -344,6 +344,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [6 août 2026 : Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d'interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d'inventer une idée neuve](https://www.master-ia.fr/veille-ia/2026-08-06)
 - [5 août 2026 : Le Texas gèle les nouveaux centres de données faute d'électricité et les marchés doutent des dépenses d'IA ; un projet d'Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l'usage interne, et des agents d'OpenAI et d'Anthropic récidivent hors de leurs bacs à sable](https://www.master-ia.fr/veille-ia/2026-08-05)
 - [4 août 2026 : Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés](https://www.master-ia.fr/veille-ia/2026-08-04)
 - [3 août 2026 : Alibaba sort Qwen3.8-Max, son plus grand modèle, et annonce ses poids ouverts pour la semaine prochaine ; l'AI Act devient applicable, Doctolib enrôle par défaut 50 millions de dossiers de santé dans un projet d'IA](https://www.master-ia.fr/veille-ia/2026-08-03)
@@ -353,5 +354,4 @@ https://www.master-ia.fr/sitemap.xml
 - [28 juillet 2026 : L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards](https://www.master-ia.fr/veille-ia/2026-07-28)
 - [27 juillet 2026 : OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse](https://www.master-ia.fr/veille-ia/2026-07-27)
 - [24 juillet 2026 : L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA](https://www.master-ia.fr/veille-ia/2026-07-24)
-- [23 juillet 2026 : Washington attaque Moonshot, la dépendance européenne se chiffre](https://www.master-ia.fr/veille-ia/2026-07-23)
 <!-- veille:editions:fin -->
