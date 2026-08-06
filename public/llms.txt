@@ -100,6 +100,7 @@ Masteria propose deux activités complémentaires :
 - [Meilleure formation IA](https://www.master-ia.fr/meilleure-formation-ia) — Guide de choix 2026 (angle transmission, distinct du conseil et de l'agence) : 3 exigences (cadre, contenu, suivi), paysage des organismes, tarifs, méthode en 4 étapes, sans classement nominatif
 - [Consultant IA : métier, compétences, TJM et salaire](https://www.master-ia.fr/consultant-ia) — Guide métier : rôle et missions, compétences, salaire et TJM 2026, comment devenir consultant IA (tunnel formation) ou en recruter un (freelance vs cabinet vs interne, tunnel conseil)
 - [Études de cas IA en entreprise](https://www.master-ia.fr/etudes-de-cas-ia) — 3 déploiements anonymisés, résultats mesurés : assistants Claude chez un distributeur B2B (58 formés, 11 assistants) et un cabinet de conseil financier (6 assistants, 4 équipes), parcours Copilot managers dans un groupe industriel (89,8 % de satisfaction en session pilote)
+- [Espace presse](https://www.master-ia.fr/presse) — contact journalistes (réponse sous 24 h ouvrées), bio et photos HD de Mathias Nizan, fondateur cité par Les Échos, chiffres vérifiables et sujets d'expertise IA
 
 ## Formations par outil IA
 

@@ -60,6 +60,7 @@ const staticRoutes = [
   { path: 'meilleure-formation-ia',              prio: 0.8, freq: 'monthly', files: ['src/pages/MeilleureFormationIAPage.jsx'] },
   { path: 'consultant-ia',                       prio: 0.8, freq: 'monthly', files: ['src/pages/ConsultantIAPage.jsx'] },
   { path: 'etudes-de-cas-ia',                    prio: 0.85, freq: 'monthly', files: ['src/pages/EtudesDeCasIAPage.jsx'] },
+  { path: 'presse',                              prio: 0.5,  freq: 'monthly', files: ['src/pages/PressePage.jsx'] },
   { path: 'agence-developpement-ia',             prio: 0.85, freq: 'monthly', files: ['src/pages/AgenceDeveloppementIAPage.jsx'] },
   { path: 'outils-ia-sur-mesure',                prio: 0.8, freq: 'monthly', files: ['src/pages/OutilsIASurMesurePage.jsx'] },
   { path: 'agence-ia-marketing',                 prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceIAMarketingPage.jsx'] },

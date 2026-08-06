@@ -987,6 +987,7 @@ export function MasteriaFooter() {
             {[
               ['À propos', '/centre-formation-ia-entreprise'],
               ['Études de cas IA', '/etudes-de-cas-ia'],
+              ['Presse', '/presse'],
               ['Veille IA quotidienne', '/veille-ia'],
               ['À propos de la Veille IA', '/veille-ia/a-propos'],
               ['Blog', '/blog'],
