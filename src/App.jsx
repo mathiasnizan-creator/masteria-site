@@ -42,6 +42,7 @@ const EtudesDeCasIAPage = lazy(() => import('./pages/EtudesDeCasIAPage'));
 const PressePage = lazy(() => import('./pages/PressePage'));
 const QuelOpcoPage = lazy(() => import('./pages/QuelOpcoPage'));
 const TestMaturiteIAPage = lazy(() => import('./pages/TestMaturiteIAPage'));
+const QuelOutilIAPage = lazy(() => import('./pages/QuelOutilIAPage'));
 const AgenceDeveloppementIAPage = lazy(() => import('./pages/AgenceDeveloppementIAPage'));
 const AutomatiserVeilleIAPage = lazy(() => import('./pages/AutomatiserVeilleIAPage'));
 const OutilsVeilleIAPage = lazy(() => import('./pages/OutilsVeilleIAPage'));
@@ -1462,6 +1463,7 @@ export default function App() {
         <Route path="/presse" element={<PressePage />} />
         <Route path="/quel-opco" element={<QuelOpcoPage />} />
         <Route path="/test-maturite-ia" element={<TestMaturiteIAPage />} />
+        <Route path="/quel-outil-ia" element={<QuelOutilIAPage />} />
         <Route path="/agence-developpement-ia" element={<AgenceDeveloppementIAPage />} />
         <Route path="/automatiser-sa-veille-ia" element={<AutomatiserVeilleIAPage />} />
         <Route path="/outils-veille-ia" element={<OutilsVeilleIAPage />} />

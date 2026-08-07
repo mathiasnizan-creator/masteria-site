@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/quelle-est-la-meilleure-ia</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -331,8 +331,14 @@
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/quel-outil-ia</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>

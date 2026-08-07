@@ -101,14 +101,24 @@ export default function ComparisonsHubPage() {
             ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI : voici la méthode pour décider en 3 minutes, et tous nos comparatifs détaillés.
           </p>
 
-          <a href="#decision-rapide" style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: '#0A0A0A', color: '#fff',
-            padding: '14px 28px', borderRadius: 10,
-            textDecoration: 'none', fontSize: 15, fontWeight: 800,
-          }}>
-            Décision rapide en 3 minutes <ArrowRight size={16} />
-          </a>
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="#decision-rapide" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: '#0A0A0A', color: '#fff',
+              padding: '14px 28px', borderRadius: 10,
+              textDecoration: 'none', fontSize: 15, fontWeight: 800,
+            }}>
+              Décision rapide en 3 minutes <ArrowRight size={16} />
+            </a>
+            <Link to="/quel-outil-ia" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: '#fff', color: '#0A0A0A', border: '1px solid #E5E7EB',
+              padding: '14px 28px', borderRadius: 10,
+              textDecoration: 'none', fontSize: 15, fontWeight: 700,
+            }}>
+              Quel outil IA pour votre métier ? (simulateur) <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
