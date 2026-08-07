@@ -1,24 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, ChevronDown, Compass, RefreshCw, Scale, ShieldCheck, Sparkles,
+  ArrowRight, BarChart3, Check, ChevronDown, Code2, Compass, FileSearch,
+  FileSpreadsheet, Headphones, Mail, Presentation, RefreshCw, Scale,
+  Search, ShieldCheck, Sparkles, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import ToolLogo from '../components/ToolLogo'
 import { SPOKE_SLUGS } from '../data/spoke-slugs'
 
 /*
- * « Quel outil IA pour votre métier ? » — outil gratuit liable, prolongement
- * du sujet de l'article Les Échos (choisir l'IA adaptée à son métier).
- * 3 questions (métier, environnement, priorité) → recommandation parmi
- * ChatGPT, Claude, Copilot, Gemini, Mistral (ou panorama multi-outils),
- * avec la formation exacte en face.
- * INTÉGRITÉ : les raisons reprennent le positionnement déjà publié sur le
- * site (hubs et comparatifs), aucune promesse de « meilleure IA » absolue.
- * LIENS : résolus à l'exécution contre SPOKE_SLUGS (spoke outil×métier si la
- * page existe, sinon hub outil) → zéro lien mort, y compris les slugs
- * irréguliers (copilot/gemini utilisent « rh »).
- * Le contenu de fond (5 profils d'outils, tableau, FAQ) est rendu
- * statiquement sous l'outil : crawlable et citable sans interaction.
+ * « Quel outil IA pour votre métier ? » — moteur d'arbitrage multi-critères.
+ * Prolongement du sujet de l'article Les Échos (choisir l'IA adaptée à son métier).
+ *
+ * v2 (refonte) : la v1 décidait sur une seule question, ce qu'un tableau statique
+ * donnait déjà. Ici, les usages cochés, l'environnement, les contraintes ET le
+ * métier alimentent un score par outil ; la page rend un CLASSEMENT des cinq avec
+ * le raisonnement (quels critères ont pesé), la combinaison à deux outils quand
+ * les réponses la justifient, ce qui aurait fait gagner les autres, et des prompts
+ * d'essai propres au métier.
+ *
+ * INTÉGRITÉ : la grille de pondération est un arbitrage ÉDITORIAL, assumé comme
+ * tel sur la page, fondé sur le positionnement public des cinq produits et sur ce
+ * que nous observons en formation. Aucun benchmark chiffré n'est inventé.
+ * LIENS : résolus à l'exécution contre SPOKE_SLUGS → zéro lien mort.
  */
 
 const c = '#2563EB'
@@ -26,101 +31,261 @@ const SECTION_PAD = 'clamp(56px, 8vw, 90px) 24px'
 const kickerStyle = { fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 14 }
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(23px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', letterSpacing: '-0.01em', lineHeight: 1.2, margin: '0 0 18px' }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 26 }
-const radioCard = (selected) => ({
-  display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer',
-  border: `2px solid ${selected ? c : '#E5E7EB'}`, background: selected ? '#F8FAFF' : '#fff',
-  borderRadius: 10, padding: '11px 14px', fontSize: 14, color: '#374151', lineHeight: 1.5,
-})
 
-const METIERS = [
-  { slug: 'marketing', label: 'Marketing' },
-  { slug: 'ressources-humaines', label: 'Ressources humaines' },
-  { slug: 'commercial', label: 'Commercial' },
-  { slug: 'finance', label: 'Finance' },
-  { slug: 'communication', label: 'Communication' },
-  { slug: 'management', label: 'Management' },
-  { slug: 'assistante', label: 'Assistanat de direction' },
-  { slug: 'seo', label: 'SEO et acquisition' },
-  { slug: 'service-client', label: 'Service client' },
-  { slug: 'informatique', label: 'Informatique et IT' },
-  { slug: 'pedagogique', label: 'Métiers pédagogiques' },
-  { slug: 'achats', label: 'Achats' },
-  { slug: 'juridique', label: 'Juridique' },
-]
-
-/* Slugs irréguliers côté spokes (copilot/gemini écrivent « rh »). */
-const SPOKE_ALIASES = { 'ressources-humaines': ['ressources-humaines', 'rh'] }
-const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats']
+/* ─────────── Les cinq outils ─────────── */
 
 const TOOLS = {
   chatgpt: {
-    name: 'ChatGPT', spoke: 'chatgpt', hub: 'formation-chatgpt', comparatif: { slug: 'chatgpt-vs-claude', label: 'ChatGPT vs Claude' },
-    reason: "L'outil le plus adopté en entreprise et le plus polyvalent : rédaction, synthèse, analyse, brainstorming, avec l'écosystème le plus riche (GPTs, intégrations). Le point d'entrée naturel quand les usages touchent à tout.",
+    name: 'ChatGPT', short: 'ChatGPT', logo: 'chatgpt', color: '#10A37F',
+    spoke: 'chatgpt', hub: 'formation-chatgpt',
+    comparatif: { slug: 'chatgpt-vs-claude', label: 'ChatGPT vs Claude' },
+    pitch: "Le plus polyvalent et le plus adopté, avec l'écosystème le plus riche (GPTs personnalisés, intégrations, API).",
+    astuce: "créez un GPT personnalisé pour réutiliser ces consignes sans les recoller à chaque fois",
+    edge: "des usages variés au quotidien et le besoin d'un écosystème ouvert",
   },
   claude: {
-    name: 'Claude (Anthropic)', spoke: 'claude', hub: 'formation-claude-ia', comparatif: { slug: 'chatgpt-vs-claude', label: 'ChatGPT vs Claude' },
-    reason: "La référence des documents longs et de la rédaction exigeante : analyse de contrats et de rapports volumineux, raisonnement structuré, fidélité au document source. Le choix des métiers à forte intensité documentaire.",
+    name: 'Claude (Anthropic)', short: 'Claude', logo: 'claude', color: '#D97706',
+    spoke: 'claude', hub: 'formation-claude-ia',
+    comparatif: { slug: 'chatgpt-vs-claude', label: 'ChatGPT vs Claude' },
+    pitch: "La référence des documents longs et de la rédaction exigeante : contrats, rapports, mémoires techniques, avec une grande fidélité au document source.",
+    astuce: "regroupez vos documents de référence dans un Projet pour ne plus les redéposer à chaque conversation",
+    edge: "du volume documentaire, de la rigueur rédactionnelle ou du code",
   },
   copilot: {
-    name: 'Microsoft Copilot', spoke: 'copilot', hub: 'formation-microsoft-copilot', comparatif: { slug: 'copilot-vs-chatgpt', label: 'Copilot vs ChatGPT' },
-    reason: "L'IA directement dans Word, Excel, Outlook et Teams : les équipes restent dans leurs outils Microsoft 365 et les données restent dans votre environnement. Le chemin le plus court quand la suite est déjà déployée.",
+    name: 'Microsoft Copilot', short: 'Copilot', logo: 'copilot', color: '#0078D4',
+    spoke: 'copilot', hub: 'formation-microsoft-copilot',
+    comparatif: { slug: 'copilot-vs-chatgpt', label: 'Copilot vs ChatGPT' },
+    pitch: "L'IA directement dans Word, Excel, Outlook et Teams : vos équipes ne quittent pas leurs outils et les données restent dans votre environnement Microsoft 365.",
+    astuce: "lancez-les depuis le volet Copilot du document concerné, il a déjà le contexte du fichier ouvert",
+    edge: "une suite Microsoft 365 déjà déployée et des usages bureautiques dominants",
   },
   gemini: {
-    name: 'Google Gemini', spoke: 'gemini', hub: 'formation-gemini-entreprise', comparatif: { slug: 'gemini-vs-copilot', label: 'Gemini vs Copilot' },
-    reason: "L'IA native de Google Workspace : Gmail, Docs, Sheets, Meet. Le choix cohérent pour les organisations déjà dans l'écosystème Google, avec de solides capacités multimodales.",
+    name: 'Google Gemini', short: 'Gemini', logo: 'gemini', color: '#4285F4',
+    spoke: 'gemini', hub: 'formation-gemini-entreprise',
+    comparatif: { slug: 'gemini-vs-copilot', label: 'Gemini vs Copilot' },
+    pitch: "L'IA native de Google Workspace : Gmail, Docs, Sheets, Meet, avec de solides capacités de recherche et de multimodal.",
+    astuce: "lancez-les depuis le document Docs ou Sheets concerné, Gemini lit le fichier ouvert",
+    edge: "un environnement Google Workspace et beaucoup de recherche ou de messagerie",
   },
   mistral: {
-    name: 'Mistral AI', spoke: 'mistral', hub: 'formation-mistral-ai', comparatif: { slug: 'mistral-vs-chatgpt', label: 'Mistral vs ChatGPT' },
-    reason: "L'acteur français : hébergement européen, souveraineté des données, et l'assistant Vibe (anciennement Le Chat) pour le quotidien. Le choix des organisations qui exigent un cadre européen.",
+    name: 'Mistral AI', short: 'Mistral', logo: 'mistral', color: '#FA520F',
+    spoke: 'mistral', hub: 'formation-mistral-ai',
+    comparatif: { slug: 'mistral-vs-chatgpt', label: 'Mistral vs ChatGPT' },
+    pitch: "L'acteur français : hébergement et juridiction européens, assistant Vibe (anciennement Le Chat) pour le quotidien.",
+    astuce: "enregistrez-les comme agents dans Vibe pour les relancer en un clic",
+    edge: "une exigence de souveraineté ou de juridiction européenne",
   },
-  multi: {
-    name: 'Panorama multi-outils', spoke: 'multi-outils', hub: 'formation-multi-outils', comparatif: { slug: 'quelle-est-la-meilleure-ia', label: 'Nos comparatifs détaillés' },
-    reason: "Le bon outil dépend de vos cas d'usage réels. La formation panorama compare ChatGPT, Claude, Copilot, Gemini et Mistral sur vos propres documents : l'équipe repart avec un choix argumenté, pas une intuition.",
-  },
+}
+const TOOL_KEYS = ['chatgpt', 'claude', 'copilot', 'gemini', 'mistral']
+
+/* ─────────── Grille d'arbitrage (assumée éditoriale) ─────────── */
+
+const USAGES = [
+  { id: 'docs', icon: FileSearch, label: 'Analyser des documents longs', ex: 'contrats, rapports, appels d’offres', short: 'documents longs',
+    w: { claude: 3, chatgpt: 2, gemini: 2, mistral: 1, copilot: 1 } },
+  { id: 'redaction', icon: Sparkles, label: 'Rédiger et produire du contenu', ex: 'articles, posts, argumentaires', short: 'rédaction',
+    w: { chatgpt: 3, claude: 3, gemini: 2, mistral: 2, copilot: 2 } },
+  { id: 'tableaux', icon: FileSpreadsheet, label: 'Travailler des tableaux et des données', ex: 'Excel, budgets, reportings', short: 'tableaux et données',
+    w: { copilot: 3, chatgpt: 2, gemini: 2, claude: 2, mistral: 1 } },
+  { id: 'emails', icon: Mail, label: 'Traiter emails et comptes rendus', ex: 'boîte de réception, réunions', short: 'emails et comptes rendus',
+    w: { copilot: 3, gemini: 3, chatgpt: 2, claude: 2, mistral: 2 } },
+  { id: 'slides', icon: Presentation, label: 'Préparer des présentations', ex: 'slides de comité, supports', short: 'présentations',
+    w: { copilot: 3, gemini: 2, chatgpt: 2, claude: 1, mistral: 1 } },
+  { id: 'code', icon: Code2, label: 'Coder et documenter du technique', ex: 'scripts, specs, revue de code', short: 'code et technique',
+    w: { claude: 3, chatgpt: 3, gemini: 2, mistral: 2, copilot: 2 } },
+  { id: 'client', icon: Headphones, label: 'Répondre à des clients en volume', ex: 'tickets, réclamations, FAQ', short: 'réponses client',
+    w: { chatgpt: 3, mistral: 2, claude: 2, gemini: 2, copilot: 2 } },
+  { id: 'recherche', icon: Search, label: 'Chercher et faire de la veille', ex: 'marché, réglementation, concurrence', short: 'recherche et veille',
+    w: { gemini: 3, chatgpt: 3, claude: 2, mistral: 2, copilot: 2 } },
+  { id: 'automatisation', icon: Workflow, label: 'Automatiser et connecter au SI', ex: 'API, agents, workflows', short: 'automatisation',
+    w: { chatgpt: 3, claude: 3, mistral: 2, gemini: 2, copilot: 1 } },
+]
+
+const ENVS = [
+  { id: 'm365', label: 'Microsoft 365', ex: 'Word, Excel, Outlook, Teams', short: 'environnement Microsoft 365',
+    w: { copilot: 5, chatgpt: 1, claude: 1, mistral: 1, gemini: 0 } },
+  { id: 'workspace', label: 'Google Workspace', ex: 'Gmail, Docs, Sheets, Meet', short: 'environnement Google Workspace',
+    w: { gemini: 5, chatgpt: 1, claude: 1, mistral: 1, copilot: 0 } },
+  { id: 'mixte', label: 'Mixte ou autre', ex: 'ou choix pas encore arrêté', short: 'environnement non contraignant',
+    w: { chatgpt: 2, claude: 2, mistral: 2, copilot: 0, gemini: 0 } },
+]
+
+const CONTRAINTES = [
+  { id: 'souverainete', icon: ShieldCheck, label: 'Souveraineté européenne', ex: 'hébergement et acteur européens exigés', short: 'souveraineté européenne',
+    w: { mistral: 6, claude: 1, chatgpt: 0, copilot: 1, gemini: 0 } },
+  { id: 'sensibles', icon: Scale, label: 'Données sensibles', ex: 'RH, santé, juridique, secret des affaires', short: 'données sensibles',
+    w: { copilot: 3, gemini: 2, mistral: 3, claude: 2, chatgpt: 1 } },
+  { id: 'large', icon: BarChart3, label: 'Déploiement à grande échelle', ex: 'administration centralisée, SSO, facturation unique', short: 'déploiement à grande échelle',
+    w: { copilot: 3, gemini: 3, chatgpt: 3, claude: 2, mistral: 1 } },
+]
+
+const METIERS = [
+  { slug: 'juridique', label: 'Juridique', w: { claude: 4, mistral: 2, chatgpt: 1, copilot: 1, gemini: 0 } },
+  { slug: 'finance', label: 'Finance', w: { copilot: 3, claude: 3, chatgpt: 1, gemini: 1, mistral: 1 } },
+  { slug: 'marketing', label: 'Marketing', w: { chatgpt: 3, gemini: 2, claude: 1, mistral: 1, copilot: 1 } },
+  { slug: 'ressources-humaines', label: 'Ressources humaines', w: { chatgpt: 2, copilot: 2, claude: 2, gemini: 1, mistral: 1 } },
+  { slug: 'commercial', label: 'Commercial', w: { chatgpt: 3, copilot: 2, claude: 1, gemini: 1, mistral: 1 } },
+  { slug: 'communication', label: 'Communication', w: { chatgpt: 3, claude: 2, gemini: 1, mistral: 1, copilot: 1 } },
+  { slug: 'management', label: 'Management', w: { copilot: 3, chatgpt: 2, gemini: 1, claude: 1, mistral: 1 } },
+  { slug: 'assistante', label: 'Assistanat de direction', w: { copilot: 4, gemini: 3, chatgpt: 1, claude: 1, mistral: 1 } },
+  { slug: 'seo', label: 'SEO et acquisition', w: { chatgpt: 3, gemini: 3, claude: 1, mistral: 1, copilot: 0 } },
+  { slug: 'service-client', label: 'Service client', w: { chatgpt: 3, mistral: 2, claude: 1, gemini: 1, copilot: 1 } },
+  { slug: 'informatique', label: 'Informatique et IT', w: { claude: 4, chatgpt: 3, gemini: 1, mistral: 2, copilot: 1 } },
+  { slug: 'pedagogique', label: 'Métiers pédagogiques', w: { chatgpt: 3, claude: 2, gemini: 2, mistral: 1, copilot: 1 } },
+  { slug: 'achats', label: 'Achats', w: { claude: 3, copilot: 2, chatgpt: 1, gemini: 1, mistral: 1 } },
+  { slug: 'direction', label: 'Direction générale', w: { claude: 2, chatgpt: 2, copilot: 2, gemini: 1, mistral: 1 } },
+]
+
+/* Slugs irréguliers côté spokes (copilot et gemini écrivent « rh »). */
+const SPOKE_ALIASES = { 'ressources-humaines': ['ressources-humaines', 'rh'] }
+const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats']
+
+/* ─────────── Prompts d'essai par métier (matière de formation) ─────────── */
+
+const PROMPTS = {
+  juridique: [
+    "Voici un contrat de prestation. Liste les clauses qui nous engagent au-delà de 12 mois, celles qui limitent notre responsabilité, et celles qui manquent par rapport à un contrat standard.",
+    "Compare ces deux versions du même accord et produis un tableau des écarts, classés par niveau de risque pour nous.",
+    "Résume cette décision de justice en 10 lignes pour un dirigeant non juriste, puis indique ce qu'elle change concrètement pour nos contrats en cours.",
+  ],
+  finance: [
+    "À partir de ce tableau de charges, identifie les trois postes qui dérivent le plus par rapport au budget et propose une explication plausible pour chacun.",
+    "Rédige la note de synthèse du comité financier à partir de ces chiffres trimestriels : faits marquants, écarts, points de vigilance, en une page.",
+    "Transforme cette liasse en cinq indicateurs lisibles par un manager non financier, avec une phrase d'interprétation par indicateur.",
+  ],
+  marketing: [
+    "Voici notre positionnement et trois posts publiés. Rédige cinq nouveaux posts LinkedIn dans le même ton, sur ce sujet, sans reprendre les formulations existantes.",
+    "Analyse les retours clients ci-dessous et sors les cinq arguments qui reviennent le plus, formulés comme les clients les disent, pas comme nous les écrivons.",
+    "Décline cette offre en trois angles différents : gain de temps, réduction de risque, avantage concurrentiel. Une accroche et trois arguments par angle.",
+  ],
+  'ressources-humaines': [
+    "À partir de cette fiche de poste et de ces trois CV, prépare une grille d'entretien avec les questions qui départagent les candidats sur les compétences clés.",
+    "Réécris cette annonce pour qu'elle parle des missions réelles et non de la culture d'entreprise, en gardant nos obligations légales de non-discrimination.",
+    "Synthétise ces verbatims d'entretiens annuels en cinq signaux managériaux, sans citer de nom, et propose une action par signal.",
+  ],
+  commercial: [
+    "Voici le compte rendu de mon rendez-vous. Rédige l'email de relance : reprends leurs mots, réponds à leur objection principale, propose une prochaine étape datée.",
+    "Prépare ma prochaine négociation : liste leurs objections probables au vu de cet échange, et une réponse courte et factuelle pour chacune.",
+    "Transforme ce cahier des charges client en proposition structurée : compréhension du besoin, réponse, livrables, planning.",
+  ],
+  communication: [
+    "Décline cette annonce en trois formats : communiqué de presse, post LinkedIn, message interne aux équipes. Même information, trois registres.",
+    "Voici notre charte éditoriale et deux textes validés. Réécris ce brouillon pour qu'il colle au ton, et signale ce qui s'en écarte.",
+    "Prépare cinq questions difficiles qu'un journaliste pourrait poser sur ce sujet, avec une réponse courte et honnête pour chacune.",
+  ],
+  management: [
+    "Transforme mes notes de réunion en compte rendu structuré : décisions prises, actions avec responsable et échéance, points en suspens.",
+    "Aide-moi à préparer un entretien difficile : voici la situation. Propose une trame en trois temps et les formulations à éviter.",
+    "Synthétise ces cinq rapports d'équipe en une page pour mon comité de direction : ce qui avance, ce qui bloque, ce qui demande un arbitrage.",
+  ],
+  assistante: [
+    "Voici ma boîte de réception de la matinée. Classe les messages par urgence réelle, propose une réponse courte pour ceux qui n'appellent qu'un accusé de réception.",
+    "À partir de ces échanges, prépare l'ordre du jour de la réunion, le dossier de préparation pour le dirigeant et la liste des documents à réunir.",
+    "Rédige le compte rendu de cette réunion à partir de mes notes brutes, avec un tableau des actions et des échéances en fin de document.",
+  ],
+  seo: [
+    "Voici les requêtes sur lesquelles nous sommes en page 2. Propose pour chacune l'intention de recherche réelle et ce qui manque à notre page pour y répondre.",
+    "Rédige un brief rédacteur pour ce mot-clé : intention, plan en H2, questions à traiter, ce qu'il ne faut surtout pas écrire.",
+    "Analyse ces cinq pages concurrentes et dis-moi ce qu'elles couvrent que nous ne couvrons pas, sans reprendre leur plan.",
+  ],
+  'service-client': [
+    "Voici 20 tickets de cette semaine. Regroupe-les par cause racine et indique les trois corrections qui supprimeraient le plus de tickets.",
+    "Réponds à cette réclamation : reconnais le problème, explique ce qui s'est passé sans jargon, propose une solution concrète et un délai.",
+    "Transforme ces réponses types en versions plus courtes et plus humaines, sans perdre les mentions obligatoires.",
+  ],
+  informatique: [
+    "Relis ce script et signale les erreurs de logique, les cas non gérés et ce qui poserait problème en production.",
+    "Rédige la documentation de ce module pour un développeur qui arrive demain : ce que ça fait, comment l'appeler, les pièges connus.",
+    "Transforme ce besoin métier en spécification technique : contraintes, interfaces, cas limites, critères d'acceptation.",
+  ],
+  pedagogique: [
+    "À partir de ce contenu, construis une séquence de formation de 3 heures : objectifs, déroulé, exercice pratique, évaluation.",
+    "Génère 10 questions de QCM sur ce support, avec une bonne réponse et trois distracteurs plausibles, plus l'explication de la bonne réponse.",
+    "Reformule ce chapitre pour un public débutant : même contenu, phrases plus courtes, un exemple concret par notion.",
+  ],
+  achats: [
+    "Compare ces trois offres fournisseurs sur un tableau : prix, périmètre réel, engagements, ce qui n'est pas inclus et qui coûtera en plus.",
+    "Prépare ma négociation : à partir de cette proposition, liste les points où le fournisseur a de la marge et les questions qui le feront réagir.",
+    "Rédige le cahier des charges de cette consultation à partir de ces besoins exprimés par les équipes, avec des critères de sélection pondérés.",
+  ],
+  direction: [
+    "Résume ces trois rapports en une note d'une page pour mon comité : ce qui change, ce que ça coûte, ce que je dois arbitrer.",
+    "Joue le rôle d'un administrateur sceptique et pose-moi les cinq questions les plus dérangeantes sur ce projet.",
+    "Transforme cette stratégie en plan d'action sur 6 mois : jalons, responsables, indicateurs de réussite.",
+  ],
+}
+
+/* ─────────── Moteur de scoring ─────────── */
+
+function computeRanking({ metier, usages, env, contraintes }) {
+  const scores = {}
+  for (const k of TOOL_KEYS) scores[k] = { total: 0, contribs: [] }
+  const add = (weights, label) => {
+    for (const k of TOOL_KEYS) {
+      const p = weights[k] || 0
+      if (!p) continue
+      scores[k].total += p
+      scores[k].contribs.push({ label, points: p })
+    }
+  }
+  for (const id of usages) {
+    const u = USAGES.find(x => x.id === id)
+    if (u) add(u.w, u.short)
+  }
+  const e = ENVS.find(x => x.id === env)
+  if (e) add(e.w, e.short)
+  for (const id of contraintes) {
+    const ct = CONTRAINTES.find(x => x.id === id)
+    if (ct) add(ct.w, ct.short)
+  }
+  const m = METIERS.find(x => x.slug === metier)
+  if (m) add(m.w, `métier ${m.label.toLowerCase()}`)
+
+  const max = Math.max(...TOOL_KEYS.map(k => scores[k].total), 1)
+  return TOOL_KEYS
+    .map(k => ({
+      key: k,
+      total: scores[k].total,
+      percent: Math.round((scores[k].total / max) * 100),
+      // Les trois critères qui ont le plus pesé pour cet outil
+      top: [...scores[k].contribs].sort((a, b) => b.points - a.points).slice(0, 3).map(x => x.label),
+    }))
+    .sort((a, b) => b.total - a.total)
 }
 
 /* Formation à recommander : spoke outil×métier si la page existe, sinon hub outil. */
 function formationFor(toolKey, metierSlug) {
   const tool = TOOLS[toolKey]
-  const variants = SPOKE_ALIASES[metierSlug] || [metierSlug]
-  for (const v of variants) {
+  for (const v of (SPOKE_ALIASES[metierSlug] || [metierSlug])) {
     const s = `formation-${tool.spoke}-${v}`
-    if (SPOKE_SLUGS.includes(s)) return { href: `/${s}`, label: `Formation ${tool.name} pour votre métier` }
+    if (SPOKE_SLUGS.includes(s)) return { href: `/${s}`, label: `Formation ${tool.short} pour votre métier` }
   }
-  return { href: `/${tool.hub}`, label: `Toutes les formations ${tool.name}` }
+  return { href: `/${tool.hub}`, label: `Toutes les formations ${tool.short}` }
 }
 
-function recommend(env, priorite) {
-  if (priorite === 'docs') return 'claude'
-  if (priorite === 'souverainete') return 'mistral'
-  if (priorite === 'bureautique') return env === 'm365' ? 'copilot' : env === 'workspace' ? 'gemini' : 'chatgpt'
-  if (priorite === 'polyvalence') return 'chatgpt'
-  return 'multi'
+/* Combinaison à deux outils : pertinente quand un outil bureautique arrive en tête
+   alors que des usages de fond (documents, code, automatisation) sont cochés,
+   ou l'inverse quand la suite est déployée et les usages bureautiques présents. */
+function computeCombo(ranking, { usages, env }) {
+  const first = ranking[0]
+  const bureautique = ['copilot', 'gemini']
+  const fond = usages.some(u => ['docs', 'code', 'automatisation'].includes(u))
+  const quotidien = usages.some(u => ['emails', 'slides', 'tableaux'].includes(u))
+
+  if (bureautique.includes(first.key) && fond) {
+    const partner = ranking.find(r => !bureautique.includes(r.key))
+    if (partner) return { first, partner, why: "vos usages de fond (documents longs, technique ou automatisation) dépassent ce que fait une IA intégrée à la bureautique" }
+  }
+  if (!bureautique.includes(first.key) && quotidien && (env === 'm365' || env === 'workspace')) {
+    const wanted = env === 'm365' ? 'copilot' : 'gemini'
+    const partner = ranking.find(r => r.key === wanted)
+    if (partner) return { first, partner, why: "votre suite bureautique est déjà déployée et une partie de vos usages vit dans les documents et la messagerie" }
+  }
+  return null
 }
 
-const ENVS = [
-  { id: 'm365', label: 'Microsoft 365 (Word, Excel, Outlook, Teams)' },
-  { id: 'workspace', label: 'Google Workspace (Gmail, Docs, Sheets)' },
-  { id: 'mixte', label: 'Mixte, autre, ou en cours de choix' },
-]
+/* ─────────── Lexique (ancrage d'entités GEO → DefinedTermSet) ─────────── */
 
-const PRIORITES = [
-  { id: 'polyvalence', label: 'La polyvalence au quotidien : rédiger, synthétiser, analyser, brainstormer' },
-  { id: 'docs', label: 'Les documents longs et la rigueur : contrats, rapports, appels d\'offres' },
-  { id: 'bureautique', label: 'Rester dans mes outils bureautiques actuels' },
-  { id: 'souverainete', label: 'La souveraineté : hébergement et acteur européens' },
-  { id: 'nesaispas', label: 'Je ne sais pas encore, je veux comparer' },
-]
-
-const PROFILS_STATIQUES = [
-  { key: 'chatgpt', ideal: 'Usages transverses, équipes qui touchent à tout', env: 'Tout environnement' },
-  { key: 'claude', ideal: 'Documents longs, juridique, finance, rédaction exigeante', env: 'Tout environnement' },
-  { key: 'copilot', ideal: 'Équipes qui vivent dans Word, Excel, Outlook, Teams', env: 'Microsoft 365' },
-  { key: 'gemini', ideal: 'Équipes qui vivent dans Gmail, Docs, Sheets', env: 'Google Workspace' },
-  { key: 'mistral', ideal: 'Exigence de souveraineté et de cadre européen', env: 'Tout environnement' },
-]
-
-/* Lexique express (ancrage d'entités GEO → DefinedTermSet) */
 const LEXIQUE = [
   { t: 'LLM (grand modèle de langage)', d: "Le moteur derrière ChatGPT, Claude, Copilot, Gemini et Mistral : un modèle entraîné sur de vastes corpus de texte, capable de rédiger, synthétiser, analyser et raisonner à partir d'instructions en langage naturel." },
   { t: 'Suite bureautique intégrée', d: "L'IA installée directement dans les documents et la messagerie : Copilot dans Microsoft 365, Gemini dans Google Workspace. L'intégration évite les copier-coller mais n'a de valeur que si la suite est réellement déployée." },
@@ -129,13 +294,14 @@ const LEXIQUE = [
 ]
 
 const FAQ = [
-  { q: 'Quelle est la meilleure IA pour une entreprise en 2026 ?', a: "Aucun outil ne domine tous les usages : ChatGPT est le plus polyvalent et le plus adopté, Claude est la référence des documents longs et de la rédaction rigoureuse, Copilot et Gemini gagnent quand les équipes vivent déjà dans Microsoft 365 ou Google Workspace, Mistral répond à l'exigence de souveraineté européenne. La bonne question est celle de vos cas d'usage : ce simulateur donne un point de départ, une formation panorama permet de trancher sur vos vrais documents." },
+  { q: 'Quelle est la meilleure IA pour une entreprise en 2026 ?', a: "Aucun outil ne domine tous les usages : ChatGPT est le plus polyvalent et le plus adopté, Claude est la référence des documents longs et de la rédaction rigoureuse, Copilot et Gemini gagnent quand les équipes vivent déjà dans Microsoft 365 ou Google Workspace, Mistral répond à l'exigence de souveraineté européenne. La bonne question est celle de vos cas d'usage : ce simulateur les pondère pour produire un classement argumenté, une formation panorama permet de trancher sur vos vrais documents." },
+  { q: 'Sur quoi repose le classement produit par ce simulateur ?', a: "Sur une grille de pondération que nous assumons comme éditoriale : chaque usage, contrainte, environnement et métier attribue des points aux cinq outils, selon leur positionnement public et ce que nous observons en formation depuis 2022. Elle est publiée en bas de page, critère par critère, pour que vous puissiez la contester. Ce n'est pas un benchmark de performance des modèles : ceux-ci évoluent tous les trimestres, les profils d'usage beaucoup moins." },
   { q: 'Faut-il attendre que les modèles se stabilisent avant de choisir ?', a: "Non, pour deux raisons. D'abord les usages en cachette existent déjà dans la plupart des équipes : attendre, c'est laisser des données partir vers des comptes personnels non cadrés. Ensuite les compétences se transfèrent : une équipe formée au prompting et aux bons réflexes sur un outil bascule vers un autre en quelques jours. On choisit un point de départ et un cadre, pas un mariage définitif." },
   { q: 'ChatGPT ou Claude, comment trancher ?', a: "Par la nature du travail. Pour la polyvalence quotidienne (emails, brainstorming, contenus variés, écosystème d'intégrations), ChatGPT reste le point d'entrée le plus naturel. Dès que le volume documentaire et la rigueur priment (contrats, rapports d'audit, mémoires techniques, appels d'offres), Claude prend l'avantage grâce à sa gestion des documents longs et sa fidélité au texte source. Beaucoup d'équipes finissent avec les deux, chacun sur son terrain." },
   { q: 'Copilot ou Gemini ?', a: "Suivez votre suite bureautique : Copilot n'a de sens plein que dans Microsoft 365, Gemini que dans Google Workspace. Choisir l'IA de l'autre écosystème revient à payer une intégration dont vous ne profiterez pas. Si votre environnement est mixte ou en cours de choix, un outil indépendant de la suite (ChatGPT, Claude ou Mistral) évite de figer la décision." },
-  { q: 'Peut-on utiliser plusieurs outils en même temps ?', a: "Oui, et les organisations matures le font : un outil bureautique intégré (Copilot ou Gemini) pour le quotidien dans les documents, et un assistant généraliste (ChatGPT, Claude ou Mistral) pour les tâches de fond. L'important est un cadre d'usage clair : qui utilise quoi, avec quelles données. Nos formations multi-outils comparent les cinq sur vos cas réels." },
+  { q: 'Peut-on utiliser plusieurs outils en même temps ?', a: "Oui, et les organisations matures le font : un outil bureautique intégré (Copilot ou Gemini) pour le quotidien dans les documents, et un assistant généraliste (ChatGPT, Claude ou Mistral) pour les tâches de fond. Le simulateur propose d'ailleurs cette combinaison quand vos réponses la justifient. L'important est un cadre d'usage clair : qui utilise quoi, avec quelles données." },
   { q: 'Et la confidentialité des données ?', a: "Elle se règle par le choix de l'offre, pas seulement de l'outil : les offres professionnelles des cinq acteurs excluent par défaut vos données de l'entraînement des modèles, ce que ne garantissent pas les comptes gratuits grand public. La règle d'or : des comptes professionnels administrés, une charte d'usage écrite, et la liste de ce qui ne doit jamais être saisi. Ce cadrage fait partie de chacune de nos formations." },
-  { q: 'Cette recommandation vaut-elle décision définitive ?', a: "Non, elle donne un point de départ solide. Les modèles évoluent vite et le bon choix dépend de vos documents, de vos volumes et de vos contraintes. Pour décider en connaissance de cause : une formation panorama multi-outils sur vos propres cas, ou un échange de cadrage gratuit avec Masteria." },
+  { q: 'Cette recommandation vaut-elle décision définitive ?', a: "Non, elle donne un point de départ argumenté. Le bon choix dépend aussi de vos documents réels, de vos volumes et de vos contraintes d'achat. Pour décider en connaissance de cause : une formation panorama multi-outils qui compare les cinq sur vos propres cas, ou un échange de cadrage gratuit avec Masteria." },
 ]
 
 function FaqItem({ q, a }) {
@@ -157,7 +323,42 @@ function FaqItem({ q, a }) {
   )
 }
 
-/* Maillage croisé entre les outils gratuits du site */
+/* ─────────── UI : anneau d'écart avec le second ───────────
+   Affiche l'avance du premier sur le deuxième, pas un score absolu :
+   le gagnant est toujours à 100 en relatif, ce qui n'apprendrait rien. */
+
+function GapRing({ gap, color, mounted }) {
+  const R = 34, C = 2 * Math.PI * R
+  const fill = Math.min(100, gap * 2.5) // un écart de 40 % remplit l'anneau
+  return (
+    <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <circle cx="42" cy="42" r={R} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="8" />
+      <circle
+        cx="42" cy="42" r={R} fill="none" stroke={color} strokeWidth="8" strokeLinecap="round"
+        strokeDasharray={C}
+        strokeDashoffset={mounted ? C - (C * fill) / 100 : C}
+        transform="rotate(-90 42 42)"
+        style={{ transition: 'stroke-dashoffset 900ms cubic-bezier(0.22,1,0.36,1)' }}
+      />
+      <text x="42" y="45" textAnchor="middle" fill="#fff" style={{ font: '800 18px Nunito, sans-serif' }}>
+        {gap > 0 ? `+${gap}%` : '='}
+      </text>
+      <text x="42" y="59" textAnchor="middle" fill="#94A3B8" style={{ font: '700 8px DM Sans, sans-serif', letterSpacing: '0.06em' }}>
+        VS 2ᵉ
+      </text>
+    </svg>
+  )
+}
+
+/* Verdict de netteté du classement, formulé honnêtement. */
+function verdictEcart(gap, secondName) {
+  if (gap >= 20) return { ton: 'net', texte: `Écart net avec le deuxième (${secondName}) : sur ce profil, le choix se discute peu.` }
+  if (gap >= 8) return { ton: 'clair', texte: `Avance réelle mais pas écrasante sur ${secondName} : les deux tiennent la route, celui-ci coche plus de cases.` }
+  return { ton: 'serre', texte: `Résultat serré avec ${secondName} : les deux se défendent sur votre profil, testez-les côte à côte avant de trancher.` }
+}
+
+/* ─────────── Maillage croisé ─────────── */
+
 const AUTRES_OUTILS = [
   { href: '/quel-opco', label: 'Quel est mon OPCO ? (simulateur)' },
   { href: '/test-maturite-ia', label: 'Test de maturité IA (3 min)' },
@@ -165,14 +366,13 @@ const AUTRES_OUTILS = [
 
 const PAGE_URL = 'https://www.master-ia.fr/quel-outil-ia'
 
-/* Entité outil gratuit (rich result Software + signal GEO « outil ») */
 const webAppJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   '@id': `${PAGE_URL}#app`,
-  name: 'Quel outil IA pour votre métier ? — simulateur',
+  name: 'Quel outil IA pour votre métier ? — comparateur',
   url: PAGE_URL,
-  description: "Simulateur gratuit : votre métier, votre environnement de travail et votre priorité → une recommandation parmi ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, avec la formation correspondante.",
+  description: "Comparateur gratuit : vos usages, votre environnement, vos contraintes et votre métier sont pondérés pour classer ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, avec le raisonnement, la combinaison à deux outils et des prompts d'essai.",
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   browserRequirements: 'Requires JavaScript',
@@ -190,15 +390,46 @@ const definedTermsJsonLd = {
   hasDefinedTerm: LEXIQUE.map(({ t, d }) => ({ '@type': 'DefinedTerm', name: t, description: d })),
 }
 
+/* ─────────── Page ─────────── */
+
 export default function QuelOutilIAPage() {
   const [metier, setMetier] = useState('')
+  const [usages, setUsages] = useState([])
   const [env, setEnv] = useState('')
-  const [priorite, setPriorite] = useState('')
-  const done = metier && env && priorite
-  const toolKey = done ? recommend(env, priorite) : null
-  const tool = toolKey ? TOOLS[toolKey] : null
-  const formation = toolKey ? formationFor(toolKey, metier) : null
+  const [contraintes, setContraintes] = useState([])
+  const [onglet, setOnglet] = useState('pourquoi')
+  const [mounted, setMounted] = useState(false)
+
+  const done = Boolean(metier) && usages.length > 0
+  const ranking = useMemo(() => (done ? computeRanking({ metier, usages, env, contraintes }) : null), [done, metier, usages, env, contraintes])
+  const combo = useMemo(() => (ranking ? computeCombo(ranking, { usages, env }) : null), [ranking, usages, env])
+
+  // Animation des barres et de l'anneau au premier rendu du résultat
+  useEffect(() => {
+    if (!done) { setMounted(false); return }
+    const id = setTimeout(() => setMounted(true), 60)
+    return () => clearTimeout(id)
+  }, [done, metier, usages, env, contraintes])
+
+  const toggle = (list, setList) => (id) =>
+    setList(list.includes(id) ? list.filter(x => x !== id) : [...list, id])
+  const toggleUsage = toggle(usages, setUsages)
+  const toggleContrainte = toggle(contraintes, setContraintes)
+
+  const winner = ranking?.[0]
+  const second = ranking?.[1]
+  const gap = winner && second && winner.total > 0
+    ? Math.round(((winner.total - second.total) / winner.total) * 100)
+    : 0
+  const verdict = winner && second ? verdictEcart(gap, TOOLS[second.key].short) : null
+  const tool = winner ? TOOLS[winner.key] : null
+  const formation = winner ? formationFor(winner.key, metier) : null
+  const metierLabel = METIERS.find(m => m.slug === metier)?.label
   const metierHub = METIER_HUB_SLUGS.includes(metier) ? `/formation-ia-${metier}` : null
+  const prompts = PROMPTS[metier] || []
+
+  const etapes = [Boolean(metier), usages.length > 0, Boolean(env) || contraintes.length > 0]
+  const progression = Math.round((etapes.filter(Boolean).length / 3) * 100)
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -206,28 +437,37 @@ export default function QuelOutilIAPage() {
     { name: 'Quel outil IA pour votre métier ?', slug: 'quel-outil-ia' },
   ]
 
+  const chip = (selected, color = c) => ({
+    display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer', textAlign: 'left',
+    border: `2px solid ${selected ? color : '#E5E7EB'}`, background: selected ? '#F8FAFF' : '#fff',
+    borderRadius: 12, padding: '13px 15px', fontFamily: 'DM Sans, sans-serif',
+    transition: 'border-color 160ms, background 160ms, transform 160ms',
+    transform: selected ? 'translateY(-1px)' : 'none', width: '100%',
+  })
+
   return (
     <>
       <SEOHead
         title="Quel outil IA choisir pour votre métier ? | Masteria"
-        description="ChatGPT, Claude, Copilot, Gemini ou Mistral : 3 questions et vous obtenez l'outil adapté à votre métier et votre environnement, avec la formation en face."
+        description="Comparateur gratuit : vos usages, votre environnement et votre métier classent ChatGPT, Claude, Copilot, Gemini et Mistral, avec le raisonnement et des prompts d'essai."
         slug="quel-outil-ia"
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        keywords="quel outil ia choisir, quelle ia choisir, chatgpt ou claude, copilot ou gemini, meilleur outil ia métier, choisir son ia entreprise"
+        keywords="quel outil ia choisir, quelle ia choisir, comparateur ia entreprise, chatgpt ou claude, copilot ou gemini, meilleur outil ia métier"
         datePublished="2026-08-07"
         dateModified="2026-08-07"
-        speakable={['#geo-summary', '#profils-outils']}
+        speakable={['#geo-summary', '#grille']}
         citations={[
           { name: "Les Échos — ChatGPT, Claude, Copilot, Gemini, Mistral : comment choisir l'IA la plus adaptée à son métier", url: 'https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741' },
         ]}
         extraJsonLd={[webAppJsonLd, definedTermsJsonLd]}
       />
 
-      {/* ── HERO sombre compact ── */}
+      {/* ── HERO ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(44px, 6vw, 64px) 24px clamp(48px, 7vw, 72px)', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -140, right: -100, width: 460, height: 460, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 28, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
@@ -236,43 +476,42 @@ export default function QuelOutilIAPage() {
             <span style={{ color: '#3A4658' }}>/</span>
             <span style={{ color: '#93C5FD', fontWeight: 600 }}>Quel outil pour votre métier ?</span>
           </nav>
+
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 22 }}>
             <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
               <Compass size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
-            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Outil gratuit · 1 minute</span>
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Comparateur gratuit · 2 minutes</span>
           </div>
+
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 16, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 800 }}>
             Quel outil IA choisir pour votre métier&nbsp;?
           </h1>
 
-          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 20px' }}>
             Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            ChatGPT, Claude, Copilot, Gemini ou Mistral : aucun ne domine tous les usages, et un outil mal choisi finit contourné par les équipes. Trois questions suffisent pour un point de départ solide : votre métier, votre environnement de travail, votre priorité.
+            ChatGPT, Claude, Copilot, Gemini ou Mistral : aucun ne domine tous les usages, et un outil mal choisi finit contourné par les équipes. Ce comparateur pondère vos usages réels, votre environnement, vos contraintes et votre métier, puis classe les cinq outils en expliquant ce qui a pesé.
           </p>
 
-          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
-            {[['Le simulateur', '#simulateur'], ['Les 5 outils', '#profils-outils'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
+            {[['Le comparateur', '#comparateur'], ['Grille d’arbitrage', '#grille'], ['Les 5 outils', '#profils-outils'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
               <a key={href} href={href} style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', textDecoration: 'none', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 12px' }}>
                 {label}
               </a>
             ))}
           </nav>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(18px, 3vw, 24px)', maxWidth: 720 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 12 }}>En bref</div>
             <dl style={{ margin: 0 }}>
               {[
-                ['Format', '3 questions, 1 minute, sans compte ni email'],
-                ['Choix couvert', 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI, ou panorama multi-outils'],
-                ['Résultat', 'Un outil recommandé, la raison, et la formation correspondante parmi 89 programmes'],
-                ['Et après', 'Un comparatif détaillé pour creuser, une formation pour trancher sur vos vrais documents'],
+                ['Ce qui entre', '9 usages métier, votre suite bureautique, 3 contraintes, 14 métiers'],
+                ['Ce qui sort', 'Les 5 outils classés avec un score, le raisonnement critère par critère, et ce qui aurait fait gagner les autres'],
+                ['En plus', "La combinaison à deux outils quand elle s'impose, et 3 prompts d'essai propres à votre métier"],
+                ['Méthode', 'Grille de pondération éditoriale, publiée en bas de page'],
               ].map(([label, value], i) => (
                 <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
@@ -284,118 +523,400 @@ export default function QuelOutilIAPage() {
         </div>
       </section>
 
-      {/* ── LE SIMULATEUR ── */}
-      <section id="simulateur" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
-        <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <div style={{ marginBottom: 26 }}>
-            <label htmlFor="metier-select" style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
+      {/* ── LE COMPARATEUR ── */}
+      <section id="comparateur" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+
+          {/* Barre de progression */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 30, flexWrap: 'wrap' }}>
+            <div style={{ flex: '1 1 240px', height: 6, background: '#F3F4F6', borderRadius: 99, overflow: 'hidden' }}>
+              <div style={{ width: `${progression}%`, height: '100%', background: c, borderRadius: 99, transition: 'width 420ms cubic-bezier(0.22,1,0.36,1)' }} />
+            </div>
+            <span style={{ fontSize: 12.5, fontWeight: 700, color: progression === 100 ? c : '#6B7280', fontFamily: 'Nunito, sans-serif' }}>
+              {etapes.filter(Boolean).length} / 3 renseigné{etapes.filter(Boolean).length > 1 ? 's' : ''}
+            </span>
+          </div>
+
+          {/* 1. Métier */}
+          <div style={{ marginBottom: 32 }}>
+            <label htmlFor="metier-select" style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>
               1. Votre métier
             </label>
+            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 12px' }}>Il pondère le classement et détermine les prompts d'essai proposés.</p>
             <select
               id="metier-select"
               value={metier}
               onChange={e => setMetier(e.target.value)}
-              style={{ width: '100%', padding: '13px 14px', borderRadius: 10, border: '1px solid #D1D5DB', fontSize: 15, color: '#0A0A0A', background: '#F9FAFB', fontFamily: 'DM Sans, sans-serif' }}
+              style={{ width: '100%', maxWidth: 420, padding: '13px 14px', borderRadius: 10, border: `1px solid ${metier ? c : '#D1D5DB'}`, fontSize: 15, color: '#0A0A0A', background: '#F9FAFB', fontFamily: 'DM Sans, sans-serif' }}
             >
               <option value="">Sélectionnez votre métier…</option>
               {METIERS.map(m => <option key={m.slug} value={m.slug}>{m.label}</option>)}
             </select>
           </div>
 
-          <fieldset style={{ border: 'none', padding: 0, margin: '0 0 26px' }}>
-            <legend style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>2. Votre environnement de travail</legend>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 8 }}>
-              {ENVS.map(e => (
-                <label key={e.id} style={radioCard(env === e.id)}>
-                  <input type="radio" name="env" checked={env === e.id} onChange={() => setEnv(e.id)} style={{ marginTop: 3, accentColor: c }} />
-                  {e.label}
-                </label>
-              ))}
+          {/* 2. Usages */}
+          <fieldset style={{ border: 'none', padding: 0, margin: '0 0 32px' }}>
+            <legend style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>
+              2. Ce que vos équipes feront avec l'IA
+            </legend>
+            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 12px' }}>
+              Cochez ce qui pèse dans leur quotidien {usages.length > 0 && <strong style={{ color: c }}>· {usages.length} sélectionné{usages.length > 1 ? 's' : ''}</strong>}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 265px), 1fr))', gap: 10 }}>
+              {USAGES.map(({ id, icon: Icon, label, ex }) => {
+                const on = usages.includes(id)
+                return (
+                  <label key={id} style={chip(on)}>
+                    <input type="checkbox" checked={on} onChange={() => toggleUsage(id)} style={{ position: 'absolute', opacity: 0, width: 1, height: 1 }} />
+                    <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 9, background: on ? c : '#F3F4F6', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 160ms' }}>
+                      {on ? <Check size={17} color="#fff" strokeWidth={3} /> : <Icon size={17} color="#6B7280" strokeWidth={2} />}
+                    </span>
+                    <span>
+                      <span style={{ display: 'block', fontSize: 14.5, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.35 }}>{label}</span>
+                      <span style={{ display: 'block', fontSize: 12.5, color: '#6B7280', marginTop: 2 }}>{ex}</span>
+                    </span>
+                  </label>
+                )
+              })}
             </div>
           </fieldset>
 
-          <fieldset style={{ border: 'none', padding: 0, margin: '0 0 30px' }}>
-            <legend style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>3. Votre priorité numéro un</legend>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {PRIORITES.map(p => (
-                <label key={p.id} style={radioCard(priorite === p.id)}>
-                  <input type="radio" name="priorite" checked={priorite === p.id} onChange={() => setPriorite(p.id)} style={{ marginTop: 3, accentColor: c }} />
-                  {p.label}
-                </label>
-              ))}
-            </div>
-          </fieldset>
+          {/* 3. Environnement + contraintes */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 28, marginBottom: 34 }}>
+            <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
+              <legend style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>3. Votre suite bureautique</legend>
+              <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 12px' }}>Celle qui est réellement déployée aujourd'hui.</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {ENVS.map(e => {
+                  const on = env === e.id
+                  return (
+                    <label key={e.id} style={chip(on)}>
+                      <input type="radio" name="env" checked={on} onChange={() => setEnv(e.id)} style={{ position: 'absolute', opacity: 0, width: 1, height: 1 }} />
+                      <span aria-hidden="true" style={{ width: 20, height: 20, borderRadius: '50%', border: `2px solid ${on ? c : '#D1D5DB'}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
+                        {on && <span style={{ width: 10, height: 10, borderRadius: '50%', background: c }} />}
+                      </span>
+                      <span>
+                        <span style={{ display: 'block', fontSize: 14.5, fontWeight: 700, color: '#0A0A0A' }}>{e.label}</span>
+                        <span style={{ display: 'block', fontSize: 12.5, color: '#6B7280', marginTop: 2 }}>{e.ex}</span>
+                      </span>
+                    </label>
+                  )
+                })}
+              </div>
+            </fieldset>
 
+            <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
+              <legend style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>4. Vos contraintes</legend>
+              <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 12px' }}>Facultatif, mais souvent décisif.</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {CONTRAINTES.map(({ id, icon: Icon, label, ex }) => {
+                  const on = contraintes.includes(id)
+                  return (
+                    <label key={id} style={chip(on)}>
+                      <input type="checkbox" checked={on} onChange={() => toggleContrainte(id)} style={{ position: 'absolute', opacity: 0, width: 1, height: 1 }} />
+                      <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 9, background: on ? c : '#F3F4F6', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 160ms' }}>
+                        {on ? <Check size={17} color="#fff" strokeWidth={3} /> : <Icon size={17} color="#6B7280" strokeWidth={2} />}
+                      </span>
+                      <span>
+                        <span style={{ display: 'block', fontSize: 14.5, fontWeight: 700, color: '#0A0A0A' }}>{label}</span>
+                        <span style={{ display: 'block', fontSize: 12.5, color: '#6B7280', marginTop: 2 }}>{ex}</span>
+                      </span>
+                    </label>
+                  )
+                })}
+              </div>
+            </fieldset>
+          </div>
+
+          {/* ── RÉSULTAT ── */}
           <div aria-live="polite">
-            {done && tool ? (
-              <div style={{ border: `2px solid ${c}`, borderRadius: 16, padding: 'clamp(22px, 3vw, 32px)', background: '#F8FAFF' }}>
-                <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 8 }}>Notre recommandation</div>
-                <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#0A0A0A', margin: '0 0 10px' }}>{tool.name}</p>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>{tool.reason}</p>
-                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 14 }}>
-                  <Link to={formation.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '12px 24px', borderRadius: 10, textDecoration: 'none', fontSize: 14.5, fontWeight: 700 }}>
-                    {formation.label} <ArrowRight size={15} aria-hidden="true" />
-                  </Link>
-                  <button onClick={() => { setMetier(''); setEnv(''); setPriorite('') }} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'none', border: '1px solid #E5E7EB', borderRadius: 10, padding: '12px 20px', fontSize: 14, fontWeight: 600, color: '#374151', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif' }}>
-                    <RefreshCw size={14} aria-hidden="true" /> Recommencer
-                  </button>
-                </div>
-                <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>
-                  Pour creuser : <Link to={`/${tool.comparatif.slug}`} style={{ color: c, fontWeight: 600 }}>{tool.comparatif.label}</Link>
-                  {metierHub && <> · <Link to={metierHub} style={{ color: c, fontWeight: 600 }}>toutes les formations IA de votre métier</Link></>}
+            {!done && (
+              <div style={{ border: '1px dashed #D1D5DB', borderRadius: 14, padding: '22px 24px', background: '#F9FAFB' }}>
+                <p style={{ fontSize: 14.5, color: '#374151', margin: 0, lineHeight: 1.6 }}>
+                  Le classement des cinq outils s'affiche ici dès que vous avez choisi un métier et au moins un usage. La suite bureautique et les contraintes affinent le résultat.
                 </p>
               </div>
-            ) : (
-              <p style={{ fontSize: 14, color: '#6B7280', margin: 0 }}>
-                La recommandation s'affiche ici dès les trois réponses données.
-              </p>
+            )}
+
+            {done && winner && (
+              <div>
+                {/* Gagnant */}
+                <div style={{ position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 18, padding: 'clamp(22px, 3.5vw, 34px)', marginBottom: 14 }}>
+                  <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: tool.color }} />
+                  <div aria-hidden="true" style={{ position: 'absolute', top: -110, right: -70, width: 320, height: 320, borderRadius: '50%', background: `radial-gradient(circle, ${tool.color}26, transparent 68%)`, pointerEvents: 'none' }} />
+                  <div style={{ position: 'relative', display: 'flex', gap: 22, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                    <GapRing gap={gap} color={tool.color} mounted={mounted} />
+                    <div style={{ flex: 1, minWidth: 260 }}>
+                      <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7DA9F0', marginBottom: 8 }}>
+                        Recommandé pour {metierLabel ? metierLabel.toLowerCase() : 'votre métier'}
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10, flexWrap: 'wrap' }}>
+                        <span style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(255,255,255,0.06)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <ToolLogo tool={tool.logo} size={24} color={tool.color} />
+                        </span>
+                        <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>{tool.name}</h3>
+                      </div>
+                      {verdict && (
+                        <p style={{ fontSize: 13.5, color: verdict.ton === 'serre' ? '#FBBF24' : '#93C5FD', fontWeight: 600, lineHeight: 1.6, margin: '0 0 10px' }}>
+                          {verdict.texte}
+                        </p>
+                      )}
+                      <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 16px' }}>{tool.pitch}</p>
+                      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                        <Link to={formation.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '12px 22px', borderRadius: 10, textDecoration: 'none', fontSize: 14.5, fontWeight: 700 }}>
+                          {formation.label} <ArrowRight size={15} aria-hidden="true" />
+                        </Link>
+                        <button
+                          onClick={() => { setMetier(''); setUsages([]); setEnv(''); setContraintes([]); setOnglet('pourquoi') }}
+                          style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'transparent', border: '1px solid #2A3650', borderRadius: 10, padding: '12px 18px', fontSize: 14, fontWeight: 600, color: '#E2E8F0', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif' }}
+                        >
+                          <RefreshCw size={14} aria-hidden="true" /> Recommencer
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Combinaison recommandée */}
+                {combo && (
+                  <div style={{ background: '#F8FAFF', border: `1px solid #BFDBFE`, borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '16px 20px', marginBottom: 14 }}>
+                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+                      <strong style={{ color: '#0A0A0A' }}>Combinaison à envisager : {TOOLS[combo.first.key].short} + {TOOLS[combo.partner.key].short}.</strong>{' '}
+                      C'est ce que font les organisations les plus avancées, et vos réponses le justifient : {combo.why}. Un outil pour le quotidien dans vos documents, l'autre pour les tâches de fond, avec une règle claire sur qui utilise quoi.
+                    </p>
+                  </div>
+                )}
+
+                {/* Classement complet */}
+                <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', marginBottom: 14 }}>
+                  <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', margin: '0 0 16px' }}>
+                    Le classement des cinq, sur vos réponses
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                    {ranking.map((r, i) => {
+                      const t = TOOLS[r.key]
+                      return (
+                        <div key={r.key}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                            <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: i === 0 ? '#0A0A0A' : '#9CA3AF', width: 18 }}>{i + 1}</span>
+                            <ToolLogo tool={t.logo} size={16} color={t.color} />
+                            <span style={{ fontSize: 14, fontWeight: i === 0 ? 800 : 600, color: i === 0 ? '#0A0A0A' : '#374151', flex: 1, fontFamily: 'Nunito, sans-serif' }}>{t.short}</span>
+                            <span style={{ fontSize: 13, fontWeight: 700, color: i === 0 ? t.color : '#9CA3AF' }}>{r.percent}</span>
+                          </div>
+                          <div style={{ height: 8, background: '#F3F4F6', borderRadius: 99, overflow: 'hidden' }}>
+                            <div style={{
+                              width: mounted ? `${r.percent}%` : '0%', height: '100%', background: t.color, borderRadius: 99,
+                              transition: `width 800ms cubic-bezier(0.22,1,0.36,1) ${i * 90}ms`, opacity: i === 0 ? 1 : 0.72,
+                            }} />
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                  <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '16px 0 0' }}>
+                    Score relatif au premier, calculé sur la <a href="#grille" style={{ color: c, fontWeight: 600 }}>grille d'arbitrage</a> publiée plus bas. Un écart de quelques points ne départage pas deux outils : au-delà, la différence est structurelle.
+                  </p>
+                </div>
+
+                {/* Onglets d'explication */}
+                <div style={{ ...cardStyle, padding: 0, overflow: 'hidden' }}>
+                  <div role="tablist" aria-label="Détail de la recommandation" style={{ display: 'flex', borderBottom: '1px solid #E5E7EB', flexWrap: 'wrap' }}>
+                    {[
+                      ['pourquoi', 'Pourquoi ce choix'],
+                      ['autres', 'Pourquoi pas les autres'],
+                      ['prompts', 'À tester aujourd’hui'],
+                    ].map(([id, label]) => (
+                      <button
+                        key={id} role="tab" aria-selected={onglet === id} onClick={() => setOnglet(id)}
+                        style={{
+                          flex: '1 1 auto', padding: '14px 16px', background: onglet === id ? '#fff' : '#F9FAFB',
+                          border: 'none', borderBottom: `2px solid ${onglet === id ? c : 'transparent'}`,
+                          fontSize: 13.5, fontWeight: onglet === id ? 800 : 600, color: onglet === id ? '#0A0A0A' : '#6B7280',
+                          cursor: 'pointer', fontFamily: 'Nunito, sans-serif', transition: 'background 160ms, color 160ms',
+                        }}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div style={{ padding: 'clamp(20px, 3vw, 26px)' }}>
+                    {onglet === 'pourquoi' && (
+                      <div>
+                        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }}>
+                          {TOOLS[winner.key].short} arrive en tête parce que vos réponses concentrent des points sur ce qu'il fait le mieux :
+                        </p>
+                        <ul style={{ margin: '0 0 16px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
+                          {winner.top.map(label => (
+                            <li key={label} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: '#374151', lineHeight: 1.6 }}>
+                              <Check size={16} color={c} strokeWidth={3} style={{ flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                              <span>{label}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
+                          Pour creuser le duel le plus fréquent sur ce profil : <Link to={`/${TOOLS[winner.key].comparatif.slug}`} style={{ color: c, fontWeight: 600 }}>{TOOLS[winner.key].comparatif.label}</Link>
+                          {metierHub && <> · <Link to={metierHub} style={{ color: c, fontWeight: 600 }}>toutes les formations IA {metierLabel ? `en ${metierLabel.toLowerCase()}` : 'de votre métier'}</Link></>}
+                        </p>
+                      </div>
+                    )}
+
+                    {onglet === 'autres' && (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                        {ranking.slice(1).map(r => {
+                          const t = TOOLS[r.key]
+                          return (
+                            <div key={r.key} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                              <span style={{ width: 30, height: 30, borderRadius: 8, background: '#F3F4F6', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                <ToolLogo tool={t.logo} size={16} color={t.color} />
+                              </span>
+                              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}>
+                                <strong style={{ color: '#0A0A0A' }}>{t.short}</strong> passerait devant avec {t.edge}.
+                              </p>
+                            </div>
+                          )
+                        })}
+                        <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.65, margin: '4px 0 0' }}>
+                          Aucun de ces outils n'est disqualifié : ils sont classés sur VOS réponses, pas dans l'absolu.
+                        </p>
+                      </div>
+                    )}
+
+                    {onglet === 'prompts' && (
+                      <div>
+                        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }}>
+                          Trois prompts tirés de nos formations {metierLabel ? metierLabel.toLowerCase() : ''}, à essayer sur un vrai document dès aujourd'hui :
+                        </p>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                          {prompts.map((p, i) => (
+                            <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${TOOLS[winner.key].color}`, borderRadius: '0 10px 10px 0', padding: '13px 16px' }}>
+                              <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.65, margin: 0, fontFamily: 'DM Sans, sans-serif' }}>{p}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: '14px 0 0' }}>
+                          Ils fonctionnent sur les cinq outils. Sur {TOOLS[winner.key].short}, {TOOLS[winner.key].astuce}.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </div>
       </section>
 
+      {/* ── GRILLE D'ARBITRAGE (contenu statique citable) ── */}
+      <section id="grille" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={kickerStyle}>La méthode, en clair</div>
+          <h2 style={h2Style}>Comment nous arbitrons entre les cinq outils</h2>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 780 }}>
+            Chaque usage, contrainte et métier attribue des points aux cinq outils. Voici la grille complète, publiée pour que vous puissiez la contester plutôt que de faire confiance à une boîte noire.
+          </p>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 780 }}>
+            C'est un arbitrage éditorial, fondé sur le positionnement public des cinq produits et sur ce que nous observons en formation depuis 2022. Ce n'est pas un benchmark de performance des modèles : ceux-ci évoluent chaque trimestre, les profils d'usage beaucoup moins.
+          </p>
+
+          <div style={{ overflowX: 'auto', background: '#fff', borderRadius: 14, border: '1px solid #E5E7EB' }}>
+            <table aria-label="Grille de pondération des usages par outil IA" style={{ width: '100%', minWidth: 680, borderCollapse: 'collapse', fontSize: 13.5 }}>
+              <thead>
+                <tr style={{ background: '#F9FAFB' }}>
+                  <th scope="col" style={{ textAlign: 'left', padding: '12px 16px', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 12.5, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB' }}>Usage</th>
+                  {TOOL_KEYS.map(k => (
+                    <th key={k} scope="col" style={{ textAlign: 'center', padding: '12px 10px', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 12.5, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB' }}>{TOOLS[k].short}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {USAGES.map(u => (
+                  <tr key={u.id}>
+                    <td style={{ padding: '11px 16px', color: '#374151', borderBottom: '1px solid #F3F4F6' }}>{u.label}</td>
+                    {TOOL_KEYS.map(k => {
+                      const p = u.w[k] || 0
+                      return (
+                        <td key={k} style={{ padding: '11px 10px', textAlign: 'center', borderBottom: '1px solid #F3F4F6' }}>
+                          <span style={{
+                            display: 'inline-block', minWidth: 26, padding: '3px 8px', borderRadius: 99, fontSize: 12.5, fontWeight: 700,
+                            background: p >= 3 ? `${TOOLS[k].color}1F` : p === 2 ? '#F3F4F6' : 'transparent',
+                            color: p >= 3 ? TOOLS[k].color : p === 2 ? '#374151' : '#9CA3AF',
+                          }}>{p}</span>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
+                {CONTRAINTES.map(ct => (
+                  <tr key={ct.id} style={{ background: '#FAFAFA' }}>
+                    <td style={{ padding: '11px 16px', color: '#374151', borderBottom: '1px solid #F3F4F6', fontStyle: 'italic' }}>Contrainte : {ct.label.toLowerCase()}</td>
+                    {TOOL_KEYS.map(k => {
+                      const p = ct.w[k] || 0
+                      return (
+                        <td key={k} style={{ padding: '11px 10px', textAlign: 'center', borderBottom: '1px solid #F3F4F6' }}>
+                          <span style={{
+                            display: 'inline-block', minWidth: 26, padding: '3px 8px', borderRadius: 99, fontSize: 12.5, fontWeight: 700,
+                            background: p >= 3 ? `${TOOLS[k].color}1F` : p === 2 ? '#F3F4F6' : 'transparent',
+                            color: p >= 3 ? TOOLS[k].color : p === 2 ? '#374151' : '#9CA3AF',
+                          }}>{p}</span>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
+                <tr style={{ background: '#FAFAFA' }}>
+                  <td style={{ padding: '11px 16px', color: '#374151', fontStyle: 'italic' }}>Suite bureautique déployée</td>
+                  <td colSpan={5} style={{ padding: '11px 16px', color: '#6B7280', fontSize: 13 }}>
+                    Microsoft 365 : +5 à Copilot · Google Workspace : +5 à Gemini · Environnement mixte : +2 aux outils indépendants de la suite
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: '16px 0 0' }}>
+            S'y ajoute un bonus de métier (0 à 4 points), qui traduit les usages dominants de chaque fonction : le juridique pousse Claude, l'assistanat de direction pousse Copilot, le SEO pousse ChatGPT et Gemini.
+          </p>
+        </div>
+      </section>
+
       {/* ── LES 5 PROFILS (contenu statique citable) ── */}
-      <section id="profils-outils" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="profils-outils" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>La grille de lecture</div>
           <h2 style={h2Style}>À qui va chaque outil</h2>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 30px', maxWidth: 760 }}>
             Le résumé de ce que nous observons en formation et en mission, outil par outil. Les modèles évoluent vite ; ces profils d'usage, eux, restent stables.
           </p>
-          <div style={{ overflowX: 'auto', background: '#fff', borderRadius: 14, border: '1px solid #E5E7EB' }}>
-            <table aria-label="Comparatif des 5 outils IA : profil idéal, environnement, formation" style={{ width: '100%', minWidth: 640, borderCollapse: 'collapse', fontSize: 13.5 }}>
-              <thead>
-                <tr style={{ background: '#F9FAFB' }}>
-                  {['Outil', 'Idéal pour', 'Environnement', 'Se former'].map(h => (
-                    <th key={h} scope="col" style={{ textAlign: 'left', padding: '12px 16px', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 12.5, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB' }}>{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {PROFILS_STATIQUES.map(({ key, ideal, env: e }) => {
-                  const t = TOOLS[key]
-                  return (
-                    <tr key={key}>
-                      <td style={{ padding: '12px 16px', color: '#0A0A0A', fontWeight: 700, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{t.name}</td>
-                      <td style={{ padding: '12px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{ideal}</td>
-                      <td style={{ padding: '12px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{e}</td>
-                      <td style={{ padding: '12px 16px', borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>
-                        <Link to={`/${t.hub}`} style={{ color: c, fontWeight: 700, textDecoration: 'none', fontSize: 13 }}>Programmes {t.name.split(' ')[0]}</Link>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18 }}>
+            {TOOL_KEYS.map(k => {
+              const t = TOOLS[k]
+              return (
+                <div key={k} style={{ ...cardStyle, borderTop: `3px solid ${t.color}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                    <span style={{ width: 36, height: 36, borderRadius: 9, background: `${t.color}14`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <ToolLogo tool={t.logo} size={20} color={t.color} />
+                    </span>
+                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{t.name}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>{t.pitch}</p>
+                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: '0 0 14px' }}>
+                    <strong style={{ color: '#374151' }}>Il gagne quand il y a</strong> {t.edge}.
+                  </p>
+                  <Link to={`/${t.hub}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: c, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}>
+                    Formations {t.short} <ArrowRight size={13} aria-hidden="true" />
+                  </Link>
+                </div>
+              )
+            })}
           </div>
-          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '18px 0 0' }}>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '20px 0 0' }}>
             Les comparatifs détaillés, critère par critère : <Link to="/quelle-est-la-meilleure-ia" style={{ color: c, fontWeight: 600 }}>quelle est la meilleure IA ?</Link> et <Link to="/meilleure-ia-entreprise-2026" style={{ color: c, fontWeight: 600 }}>meilleure IA pour entreprise</Link>.
           </p>
         </div>
       </section>
 
       {/* ── APRÈS LE CHOIX ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>Après le choix</div>
           <h2 style={h2Style}>L'outil ne fait pas l'adoption</h2>
@@ -425,7 +946,7 @@ export default function QuelOutilIAPage() {
         </div>
       </section>
 
-      {/* ── LEXIQUE EXPRESS (DefinedTermSet) ── */}
+      {/* ── LEXIQUE ── */}
       <section id="lexique" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={kickerStyle}>Lexique express</div>
@@ -454,7 +975,7 @@ export default function QuelOutilIAPage() {
         </div>
       </section>
 
-      {/* ── AUTRES OUTILS GRATUITS ── */}
+      {/* ── AUTRES OUTILS ── */}
       <section style={{ padding: 'clamp(40px, 6vw, 64px) 24px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }}>
