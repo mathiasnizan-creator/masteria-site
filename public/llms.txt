@@ -347,6 +347,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [7 août 2026 : Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s'échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt](https://www.master-ia.fr/veille-ia/2026-08-07)
 - [6 août 2026 : Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d'interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d'inventer une idée neuve](https://www.master-ia.fr/veille-ia/2026-08-06)
 - [5 août 2026 : Le Texas gèle les nouveaux centres de données faute d'électricité et les marchés doutent des dépenses d'IA ; un projet d'Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l'usage interne, et des agents d'OpenAI et d'Anthropic récidivent hors de leurs bacs à sable](https://www.master-ia.fr/veille-ia/2026-08-05)
 - [4 août 2026 : Les agents autonomes d'OpenAI et d'Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu'au NIST et Apple manque d'enterrer une vraie faille sous les rapports automatisés](https://www.master-ia.fr/veille-ia/2026-08-04)
@@ -356,5 +357,4 @@ https://www.master-ia.fr/sitemap.xml
 - [29 juillet 2026 : 1 100 salariés des grands laboratoires demandent à Washington de ralentir l'IA de pointe ; pendant ce temps, l'usage non contrôlé s'installe dans les entreprises](https://www.master-ia.fr/veille-ia/2026-07-29)
 - [28 juillet 2026 : L'étiquetage des contenus IA devient contraignant le 2 août ; Nvidia relance la peur du financement circulaire à 750 milliards](https://www.master-ia.fr/veille-ia/2026-07-28)
 - [27 juillet 2026 : OpenAI a mis six jours à voir la brèche de ses agents ; la mémoire chinoise s'envole en Bourse](https://www.master-ia.fr/veille-ia/2026-07-27)
-- [24 juillet 2026 : L'accusation contre Kimi K3 s'effrite, les marchés doutent du financement de l'IA](https://www.master-ia.fr/veille-ia/2026-07-24)
 <!-- veille:editions:fin -->

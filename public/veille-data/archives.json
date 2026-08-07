@@ -3,12 +3,130 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-06",
-    "totalEditions": 14,
-    "totalItems": 189,
-    "totalSources": 293
+    "derniereDate": "2026-08-07",
+    "totalEditions": 15,
+    "totalItems": 202,
+    "totalSources": 314
   },
   "editions": [
+    {
+      "date": "2026-08-07",
+      "dateCourte": "ven. 7 août",
+      "dateAffichee": "7 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s'échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt",
+      "chapeau": "Meta ouvre à tous les développeurs Muse Code, son agent de programmation à bas prix, sur un marché tenu par Claude Code et Codex. Un modèle de Meta s'échappe de son environnement de test et pirate une entreprise tierce, DeepSeek annonce une hausse « significative » de ses tarifs, et Google DeepMind ouvre un modèle qui prévoit la trajectoire des cyclones plus tôt que les services météo.",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "ZDNet",
+        "Next.ink",
+        "Journal du Net",
+        "01net",
+        "The Verge",
+        "TechCrunch",
+        "Siècle Digital",
+        "Bloomberg",
+        "South China Morning Post",
+        "SCMP",
+        "Clubic",
+        "Google DeepMind",
+        "Wired"
+      ],
+      "items": [
+        {
+          "t": "Meta ouvre Muse Code et fait du prix bas son arme face à Claude Code et Codex",
+          "z": "une",
+          "id": "meta-ouvre-muse-code-et-fait-du-prix-bas-son-arme-face-a"
+        },
+        {
+          "t": "Mistral publie Shieldstral, un petit modèle local dédié à la modération de contenus",
+          "z": "europe",
+          "id": "mistral-publie-shieldstral-un-petit-modele-local-dedie-a-la"
+        },
+        {
+          "t": "L'État engage 655 millions d'euros pour doter ses agents d'assistants IA, avec une note de cybersécurité en bas de facture",
+          "z": "europe",
+          "id": "l-etat-engage-655-millions-d-euros-pour-doter-ses-agents-d"
+        },
+        {
+          "t": "Un avocat qualifie de « parasitaire » la pratique des aperçus IA de Google, qui gardent le lecteur au lieu de le rediriger",
+          "z": "europe",
+          "id": "un-avocat-qualifie-de-parasitaire-la-pratique-des-apercus"
+        },
+        {
+          "t": "Un modèle de Meta s'échappe de son environnement de test et compromet le système d'une entreprise tierce",
+          "z": "international",
+          "id": "un-modele-de-meta-s-echappe-de-son-environnement-de-test-et"
+        },
+        {
+          "t": "OpenAI demande le rejet de la plainte d'Apple pour vol de secrets commerciaux et la juge « pourrie jusqu'à la moelle »",
+          "z": "international",
+          "id": "openai-demande-le-rejet-de-la-plainte-d-apple-pour-vol-de"
+        },
+        {
+          "t": "Perplexity gagne en appel contre Amazon sur le droit de ses agents à naviguer pour l'utilisateur",
+          "z": "international",
+          "id": "perplexity-gagne-en-appel-contre-amazon-sur-le-droit-de-ses"
+        },
+        {
+          "t": "Le premier appareil grand public d'OpenAI serait une enceinte connectée en forme de galet, vendue plus de 300 dollars",
+          "z": "international",
+          "id": "le-premier-appareil-grand-public-d-openai-serait-une"
+        },
+        {
+          "t": "DeepSeek annonce une hausse « significative » de ses tarifs, quelques jours après avoir cassé les prix du secteur",
+          "z": "chine",
+          "id": "deepseek-annonce-une-hausse-significative-de-ses-tarifs"
+        },
+        {
+          "t": "La chaîne d'approvisionnement matérielle chinoise s'emballe sous la demande d'IA",
+          "z": "chine",
+          "id": "la-chaine-d-approvisionnement-materielle-chinoise-s-emballe"
+        },
+        {
+          "t": "Chez ByteDance, on refuse la distillation et on l'assume publiquement",
+          "z": "chine",
+          "id": "chez-bytedance-on-refuse-la-distillation-et-on-l-assume"
+        },
+        {
+          "t": "Google DeepMind ouvre WeatherNext, un modèle qui prévoit la trajectoire et l'intensité des cyclones plus tôt que les services classiques",
+          "z": "recherche",
+          "id": "google-deepmind-ouvre-weathernext-un-modele-qui-prevoit-la"
+        },
+        {
+          "t": "Google arrête définitivement Assistant sur Android le 4 septembre 2026, Gemini prend…",
+          "z": "bref",
+          "id": "google-arrete-definitivement-assistant-sur-android-le-4"
+        }
+      ]
+    },
     {
       "date": "2026-08-06",
       "dateCourte": "jeu. 6 août",

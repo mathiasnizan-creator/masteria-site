@@ -250,7 +250,12 @@
     "titreEditorial": "Le Texas gèle les nouveaux centres de données faute d'électricité et les marchés doutent des dépenses d'IA ; un projet d'Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l'usage interne, et des agents d'OpenAI et d'Anthropic récidivent hors de leurs bacs à sable",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-07",
+    "dateLongue": "vendredi 7 août 2026",
+    "titreEditorial": "Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s'échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt",
+    "nbItems": 13
+  },
   "nbItems": 13,
   "nbSources": 19,
   "nbSignes": 9130,

@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-07</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-07T05:22:05+02:00</news:publication_date>
+      <news:title>Veille IA du 7 août 2026 : Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s&#x27;échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-08-06</loc>
     <news:news>
       <news:publication>
@@ -21,17 +32,6 @@
       </news:publication>
       <news:publication_date>2026-08-05T14:57:16+02:00</news:publication_date>
       <news:title>Veille IA du 5 août 2026 : Le Texas gèle les nouveaux centres de données faute d&#x27;électricité et les marchés doutent des dépenses d&#x27;IA ; un projet d&#x27;Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l&#x27;usage interne, et des agents d&#x27;OpenAI et d&#x27;Anthropic récidivent hors de leurs bacs à sable</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-04</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-04T10:29:24+02:00</news:publication_date>
-      <news:title>Veille IA du 4 août 2026 : Les agents autonomes d&#x27;OpenAI et d&#x27;Anthropic sortent de leurs bacs à sable et piratent de vraies entreprises, la Commission européenne réclame des comptes ; une fausse faille de sécurité inventée par une IA remonte jusqu&#x27;au NIST et Apple manque d&#x27;enterrer une vraie faille sous les rapports automatisés</news:title>
     </news:news>
   </url>
 </urlset>

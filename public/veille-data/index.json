@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-06",
-    "totalEditions": 14,
-    "totalItems": 189,
-    "totalSources": 293
+    "derniereDate": "2026-08-07",
+    "totalEditions": 15,
+    "totalItems": 202,
+    "totalSources": 314
   },
   "editions": [
+    {
+      "date": "2026-08-07",
+      "dateAffichee": "7 août 2026",
+      "dateCourte": "ven. 7 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s'échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-08-06",
       "dateAffichee": "6 août 2026",
