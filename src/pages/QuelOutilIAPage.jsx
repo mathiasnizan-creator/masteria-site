@@ -92,32 +92,55 @@ const USAGES = [
   { id: 'slides', icon: Presentation, label: 'Préparer des présentations', ex: 'slides de comité, supports', short: 'présentations',
     w: { copilot: 3, gemini: 2, chatgpt: 2, claude: 1, mistral: 1 } },
   { id: 'code', icon: Code2, label: 'Coder et documenter du technique', ex: 'scripts, specs, revue de code', short: 'code et technique',
-    w: { claude: 3, chatgpt: 3, gemini: 2, mistral: 2, copilot: 2 } },
+    // Microsoft 365 Copilot n'est pas un outil de développement : le produit de
+    // référence côté Microsoft est GitHub Copilot, distinct et vendu à part.
+    w: { claude: 3, chatgpt: 3, gemini: 2, mistral: 2, copilot: 1 },
+    note: 'Côté Microsoft, le produit pour le code est GitHub Copilot, distinct de Microsoft 365 Copilot évalué ici.' },
   { id: 'client', icon: Headphones, label: 'Répondre à des clients en volume', ex: 'tickets, réclamations, FAQ', short: 'réponses client',
     w: { chatgpt: 3, mistral: 2, claude: 2, gemini: 2, copilot: 2 } },
   { id: 'recherche', icon: Search, label: 'Chercher et faire de la veille', ex: 'marché, réglementation, concurrence', short: 'recherche et veille',
     w: { gemini: 3, chatgpt: 3, claude: 2, mistral: 2, copilot: 2 } },
   { id: 'automatisation', icon: Workflow, label: 'Automatiser et connecter au SI', ex: 'API, agents, workflows', short: 'automatisation',
-    w: { chatgpt: 3, claude: 3, mistral: 2, gemini: 2, copilot: 1 } },
+    w: { chatgpt: 3, claude: 3, mistral: 2, gemini: 2, copilot: 2 },
+    note: "Côté Microsoft, l'automatisation passe par Copilot Studio et Power Automate plutôt que par le Copilot bureautique." },
 ]
 
+/* Adéquation à la suite bureautique réellement déployée, sur 100.
+   L'IA native de VOTRE suite est imbattable sur le quotidien. Celle de l'AUTRE
+   suite tombe à 5 : Copilot suppose des licences Microsoft 365, Gemini des
+   licences Workspace. La recommander à qui ne l'a pas déployée n'est pas un
+   choix d'outil, c'est un projet de migration. */
 const ENVS = [
-  { id: 'm365', label: 'Microsoft 365', ex: 'Word, Excel, Outlook, Teams', short: 'environnement Microsoft 365',
-    w: { copilot: 5, chatgpt: 1, claude: 1, mistral: 1, gemini: 0 } },
-  { id: 'workspace', label: 'Google Workspace', ex: 'Gmail, Docs, Sheets, Meet', short: 'environnement Google Workspace',
-    w: { gemini: 5, chatgpt: 1, claude: 1, mistral: 1, copilot: 0 } },
+  { id: 'm365', label: 'Microsoft 365', ex: 'Word, Excel, Outlook, Teams', short: 'suite Microsoft 365',
+    fit: { copilot: 100, chatgpt: 55, claude: 55, mistral: 55, gemini: 5 } },
+  { id: 'workspace', label: 'Google Workspace', ex: 'Gmail, Docs, Sheets, Meet', short: 'suite Google Workspace',
+    fit: { gemini: 100, chatgpt: 55, claude: 55, mistral: 55, copilot: 5 } },
   { id: 'mixte', label: 'Mixte ou autre', ex: 'ou choix pas encore arrêté', short: 'environnement non contraignant',
-    w: { chatgpt: 2, claude: 2, mistral: 2, copilot: 0, gemini: 0 } },
+    fit: { chatgpt: 75, claude: 75, mistral: 75, copilot: 35, gemini: 35 } },
 ]
 
+/* Contraintes PONDÉRÉES (sur 100). Elles nuancent, elles n'excluent pas :
+   les cinq éditeurs proposent des offres entreprise qui excluent vos données de
+   l'entraînement. Le départage se fait sur le lieu de traitement et la maturité
+   d'administration, pas sur un jugement de sécurité des modèles. */
 const CONTRAINTES = [
-  { id: 'souverainete', icon: ShieldCheck, label: 'Souveraineté européenne', ex: 'hébergement et acteur européens exigés', short: 'souveraineté européenne',
-    w: { mistral: 6, claude: 1, chatgpt: 0, copilot: 1, gemini: 0 } },
   { id: 'sensibles', icon: Scale, label: 'Données sensibles', ex: 'RH, santé, juridique, secret des affaires', short: 'données sensibles',
-    w: { copilot: 3, gemini: 2, mistral: 3, claude: 2, chatgpt: 1 } },
+    fit: { copilot: 100, gemini: 100, mistral: 100, claude: 70, chatgpt: 70 },
+    note: "Copilot et Gemini traitent la donnée dans le locataire M365 ou Workspace que vous administrez déjà ; Mistral la traite en Europe. ChatGPT et Claude offrent les mêmes garanties contractuelles en version entreprise, avec un traitement hors UE par défaut." },
   { id: 'large', icon: BarChart3, label: 'Déploiement à grande échelle', ex: 'administration centralisée, SSO, facturation unique', short: 'déploiement à grande échelle',
-    w: { copilot: 3, gemini: 3, chatgpt: 3, claude: 2, mistral: 1 } },
+    fit: { copilot: 100, gemini: 100, chatgpt: 100, claude: 70, mistral: 70 },
+    note: "Microsoft et Google s'appuient sur l'annuaire que vous administrez déjà, OpenAI propose une offre entreprise avec SSO et provisionnement. Anthropic et Mistral ont des offres entreprise plus récentes sur ce terrain." },
 ]
+
+/* Contrainte ÉLIMINATOIRE, traitée à part : une exigence réglementaire ne se
+   compense pas par des points d'usage. Seul un éditeur européen y répond ;
+   l'hébergement en Europe est une question différente, expliquée dans le résultat. */
+const SOUVERAINETE = {
+  id: 'souverainete', icon: ShieldCheck,
+  label: 'Souveraineté : éditeur européen exigé',
+  ex: 'au-delà de l’hébergement en Europe, un éditeur soumis au droit européen',
+  eligibles: ['mistral'],
+}
 
 const METIERS = [
   { slug: 'juridique', label: 'Juridique', w: { claude: 4, mistral: 2, chatgpt: 1, copilot: 1, gemini: 0 } },
@@ -217,40 +240,65 @@ const PROMPTS = {
 
 /* ─────────── Moteur de scoring ─────────── */
 
-function computeRanking({ metier, usages, env, contraintes }) {
-  const scores = {}
-  for (const k of TOOL_KEYS) scores[k] = { total: 0, contribs: [] }
-  const add = (weights, label) => {
-    for (const k of TOOL_KEYS) {
-      const p = weights[k] || 0
-      if (!p) continue
-      scores[k].total += p
-      scores[k].contribs.push({ label, points: p })
-    }
-  }
-  for (const id of usages) {
-    const u = USAGES.find(x => x.id === id)
-    if (u) add(u.w, u.short)
-  }
-  const e = ENVS.find(x => x.id === env)
-  if (e) add(e.w, e.short)
-  for (const id of contraintes) {
-    const ct = CONTRAINTES.find(x => x.id === id)
-    if (ct) add(ct.w, ct.short)
-  }
-  const m = METIERS.find(x => x.slug === metier)
-  if (m) add(m.w, `métier ${m.label.toLowerCase()}`)
+/* Pondération des quatre composantes. Le métier pèse peu à dessein : il recoupe
+   largement les usages, que l'utilisateur a déjà déclarés explicitement. Le
+   compter lourdement reviendrait à valoriser deux fois la même réalité. */
+const POIDS = { usages: 0.55, suite: 0.25, contraintes: 0.15, metier: 0.05 }
+const NEUTRE = 50 // composante non renseignée : n'avantage personne
 
-  const max = Math.max(...TOOL_KEYS.map(k => scores[k].total), 1)
-  return TOOL_KEYS
-    .map(k => ({
+/* Score sur 100 par composante, puis moyenne pondérée. Les usages sont MOYENNÉS
+   et non additionnés : cocher dix cases ne doit pas noyer les critères
+   structurels (suite déployée, contraintes), c'est ce qui faisait passer un
+   éditeur non européen devant Mistral malgré une exigence de souveraineté. */
+function computeRanking({ metier, usages, env, contraintes, souverainete }) {
+  const m = METIERS.find(x => x.slug === metier)
+  const e = ENVS.find(x => x.id === env)
+  const cts = CONTRAINTES.filter(x => contraintes.includes(x.id))
+
+  const rows = TOOL_KEYS.map(k => {
+    const usageFits = usages
+      .map(id => USAGES.find(u => u.id === id))
+      .filter(Boolean)
+      .map(u => ((u.w[k] || 0) / 3) * 100)
+    const cUsages = usageFits.length ? usageFits.reduce((a, b) => a + b, 0) / usageFits.length : NEUTRE
+    const cSuite = e ? e.fit[k] : NEUTRE
+    const cContraintes = cts.length ? cts.reduce((a, ct) => a + ct.fit[k], 0) / cts.length : NEUTRE
+    const cMetier = m ? ((m.w[k] || 0) / 4) * 100 : NEUTRE
+
+    const score = cUsages * POIDS.usages + cSuite * POIDS.suite + cContraintes * POIDS.contraintes + cMetier * POIDS.metier
+
+    // Usages où l'outil est au meilleur niveau, et ceux où il décroche : sert à
+    // expliquer le résultat honnêtement, forces ET faiblesses.
+    const forts = usages.map(id => USAGES.find(u => u.id === id)).filter(u => u && (u.w[k] || 0) >= 3).map(u => u.short)
+    const faibles = usages.map(id => USAGES.find(u => u.id === id)).filter(u => u && (u.w[k] || 0) <= 1).map(u => u.short)
+
+    return {
       key: k,
-      total: scores[k].total,
-      percent: Math.round((scores[k].total / max) * 100),
-      // Les trois critères qui ont le plus pesé pour cet outil
-      top: [...scores[k].contribs].sort((a, b) => b.points - a.points).slice(0, 3).map(x => x.label),
-    }))
-    .sort((a, b) => b.total - a.total)
+      score: Math.round(score),
+      composantes: {
+        usages: Math.round(cUsages),
+        suite: Math.round(cSuite),
+        contraintes: Math.round(cContraintes),
+        metier: Math.round(cMetier),
+      },
+      forts,
+      faibles,
+      eligible: !souverainete || SOUVERAINETE.eligibles.includes(k),
+    }
+  })
+
+  // Départage explicite plutôt qu'arbitraire : à score égal, la composante la
+  // plus substantielle (l'adéquation aux usages) tranche, puis la suite.
+  const tri = (a, b) =>
+    b.score - a.score ||
+    b.composantes.usages - a.composantes.usages ||
+    b.composantes.suite - a.composantes.suite
+  const eligibles = rows.filter(r => r.eligible).sort(tri)
+  const ecartes = rows.filter(r => !r.eligible).sort(tri)
+  // Ce qu'aurait donné le classement SANS la contrainte éliminatoire : on le dit.
+  const sansFiltre = [...rows].sort(tri)
+
+  return { ranking: eligibles, ecartes, sansFiltre }
 }
 
 /* Formation à recommander : spoke outil×métier si la page existe, sinon hub outil. */
@@ -300,6 +348,7 @@ const FAQ = [
   { q: 'ChatGPT ou Claude, comment trancher ?', a: "Par la nature du travail. Pour la polyvalence quotidienne (emails, brainstorming, contenus variés, écosystème d'intégrations), ChatGPT reste le point d'entrée le plus naturel. Dès que le volume documentaire et la rigueur priment (contrats, rapports d'audit, mémoires techniques, appels d'offres), Claude prend l'avantage grâce à sa gestion des documents longs et sa fidélité au texte source. Beaucoup d'équipes finissent avec les deux, chacun sur son terrain." },
   { q: 'Copilot ou Gemini ?', a: "Suivez votre suite bureautique : Copilot n'a de sens plein que dans Microsoft 365, Gemini que dans Google Workspace. Choisir l'IA de l'autre écosystème revient à payer une intégration dont vous ne profiterez pas. Si votre environnement est mixte ou en cours de choix, un outil indépendant de la suite (ChatGPT, Claude ou Mistral) évite de figer la décision." },
   { q: 'Peut-on utiliser plusieurs outils en même temps ?', a: "Oui, et les organisations matures le font : un outil bureautique intégré (Copilot ou Gemini) pour le quotidien dans les documents, et un assistant généraliste (ChatGPT, Claude ou Mistral) pour les tâches de fond. Le simulateur propose d'ailleurs cette combinaison quand vos réponses la justifient. L'important est un cadre d'usage clair : qui utilise quoi, avec quelles données." },
+  { q: 'Faut-il une IA souveraine, et laquelle ?', a: "Tout dépend de ce que recouvre votre exigence, et la confusion coûte cher. Si elle porte sur la localisation des données, les offres entreprise des cinq acteurs permettent un traitement en Europe : le critère ne départage plus grand-chose. Si elle porte sur la nationalité de l'éditeur, parce que vous voulez échapper au droit extraterritorial américain, alors Mistral AI est le seul des cinq à être une société européenne, et le débat s'arrête là. C'est pour cette raison que notre comparateur traite cette exigence comme éliminatoire et non comme un bonus : une obligation réglementaire ne se compense pas par de meilleures performances ailleurs." },
   { q: 'Et la confidentialité des données ?', a: "Elle se règle par le choix de l'offre, pas seulement de l'outil : les offres professionnelles des cinq acteurs excluent par défaut vos données de l'entraînement des modèles, ce que ne garantissent pas les comptes gratuits grand public. La règle d'or : des comptes professionnels administrés, une charte d'usage écrite, et la liste de ce qui ne doit jamais être saisi. Ce cadrage fait partie de chacune de nos formations." },
   { q: 'Cette recommandation vaut-elle décision définitive ?', a: "Non, elle donne un point de départ argumenté. Le bon choix dépend aussi de vos documents réels, de vos volumes et de vos contraintes d'achat. Pour décider en connaissance de cause : une formation panorama multi-outils qui compare les cinq sur vos propres cas, ou un échange de cadrage gratuit avec Masteria." },
 ]
@@ -327,24 +376,21 @@ function FaqItem({ q, a }) {
    Affiche l'avance du premier sur le deuxième, pas un score absolu :
    le gagnant est toujours à 100 en relatif, ce qui n'apprendrait rien. */
 
-function GapRing({ gap, color, mounted }) {
+function ScoreRing({ score, color, mounted }) {
   const R = 34, C = 2 * Math.PI * R
-  const fill = Math.min(100, gap * 2.5) // un écart de 40 % remplit l'anneau
   return (
     <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true" style={{ flexShrink: 0 }}>
       <circle cx="42" cy="42" r={R} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="8" />
       <circle
         cx="42" cy="42" r={R} fill="none" stroke={color} strokeWidth="8" strokeLinecap="round"
         strokeDasharray={C}
-        strokeDashoffset={mounted ? C - (C * fill) / 100 : C}
+        strokeDashoffset={mounted ? C - (C * score) / 100 : C}
         transform="rotate(-90 42 42)"
         style={{ transition: 'stroke-dashoffset 900ms cubic-bezier(0.22,1,0.36,1)' }}
       />
-      <text x="42" y="45" textAnchor="middle" fill="#fff" style={{ font: '800 18px Nunito, sans-serif' }}>
-        {gap > 0 ? `+${gap}%` : '='}
-      </text>
+      <text x="42" y="45" textAnchor="middle" fill="#fff" style={{ font: '800 19px Nunito, sans-serif' }}>{score}</text>
       <text x="42" y="59" textAnchor="middle" fill="#94A3B8" style={{ font: '700 8px DM Sans, sans-serif', letterSpacing: '0.06em' }}>
-        VS 2ᵉ
+        SUR 100
       </text>
     </svg>
   )
@@ -397,11 +443,18 @@ export default function QuelOutilIAPage() {
   const [usages, setUsages] = useState([])
   const [env, setEnv] = useState('')
   const [contraintes, setContraintes] = useState([])
+  const [souverainete, setSouverainete] = useState(false)
   const [onglet, setOnglet] = useState('pourquoi')
   const [mounted, setMounted] = useState(false)
 
   const done = Boolean(metier) && usages.length > 0
-  const ranking = useMemo(() => (done ? computeRanking({ metier, usages, env, contraintes }) : null), [done, metier, usages, env, contraintes])
+  const resultat = useMemo(
+    () => (done ? computeRanking({ metier, usages, env, contraintes, souverainete }) : null),
+    [done, metier, usages, env, contraintes, souverainete],
+  )
+  const ranking = resultat?.ranking || null
+  const ecartes = resultat?.ecartes || []
+  const sansFiltre = resultat?.sansFiltre || []
   const combo = useMemo(() => (ranking ? computeCombo(ranking, { usages, env }) : null), [ranking, usages, env])
 
   // Animation des barres et de l'anneau au premier rendu du résultat
@@ -409,7 +462,7 @@ export default function QuelOutilIAPage() {
     if (!done) { setMounted(false); return }
     const id = setTimeout(() => setMounted(true), 60)
     return () => clearTimeout(id)
-  }, [done, metier, usages, env, contraintes])
+  }, [done, metier, usages, env, contraintes, souverainete])
 
   const toggle = (list, setList) => (id) =>
     setList(list.includes(id) ? list.filter(x => x !== id) : [...list, id])
@@ -418,17 +471,21 @@ export default function QuelOutilIAPage() {
 
   const winner = ranking?.[0]
   const second = ranking?.[1]
-  const gap = winner && second && winner.total > 0
-    ? Math.round(((winner.total - second.total) / winner.total) * 100)
+  const gap = winner && second && winner.score > 0
+    ? Math.round(((winner.score - second.score) / winner.score) * 100)
     : 0
   const verdict = winner && second ? verdictEcart(gap, TOOLS[second.key].short) : null
   const tool = winner ? TOOLS[winner.key] : null
+  // Si la souveraineté a écarté un outil qui aurait gagné, on le dit franchement.
+  const evinceParSouverainete = souverainete && sansFiltre[0] && sansFiltre[0].key !== winner?.key
+    ? sansFiltre[0]
+    : null
   const formation = winner ? formationFor(winner.key, metier) : null
   const metierLabel = METIERS.find(m => m.slug === metier)?.label
   const metierHub = METIER_HUB_SLUGS.includes(metier) ? `/formation-ia-${metier}` : null
   const prompts = PROMPTS[metier] || []
 
-  const etapes = [Boolean(metier), usages.length > 0, Boolean(env) || contraintes.length > 0]
+  const etapes = [Boolean(metier), usages.length > 0, Boolean(env) || contraintes.length > 0 || souverainete]
   const progression = Math.round((etapes.filter(Boolean).length / 3) * 100)
 
   const breadcrumbs = [
@@ -624,6 +681,21 @@ export default function QuelOutilIAPage() {
                     </label>
                   )
                 })}
+
+                {/* Contrainte éliminatoire, visuellement distinguée des pondérées */}
+                <label style={{ ...chip(souverainete, '#D97706'), background: souverainete ? '#FFFBEB' : '#fff', marginTop: 4 }}>
+                  <input type="checkbox" checked={souverainete} onChange={() => setSouverainete(s => !s)} style={{ position: 'absolute', opacity: 0, width: 1, height: 1 }} />
+                  <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 9, background: souverainete ? '#D97706' : '#F3F4F6', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 160ms' }}>
+                    {souverainete ? <Check size={17} color="#fff" strokeWidth={3} /> : <ShieldCheck size={17} color="#6B7280" strokeWidth={2} />}
+                  </span>
+                  <span>
+                    <span style={{ display: 'block', fontSize: 14.5, fontWeight: 700, color: '#0A0A0A' }}>{SOUVERAINETE.label}</span>
+                    <span style={{ display: 'block', fontSize: 12.5, color: '#6B7280', marginTop: 2 }}>{SOUVERAINETE.ex}</span>
+                    <span style={{ display: 'inline-block', marginTop: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#92400E', background: '#FEF3C7', borderRadius: 99, padding: '3px 9px' }}>
+                      Critère éliminatoire
+                    </span>
+                  </span>
+                </label>
               </div>
             </fieldset>
           </div>
@@ -645,7 +717,7 @@ export default function QuelOutilIAPage() {
                   <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: tool.color }} />
                   <div aria-hidden="true" style={{ position: 'absolute', top: -110, right: -70, width: 320, height: 320, borderRadius: '50%', background: `radial-gradient(circle, ${tool.color}26, transparent 68%)`, pointerEvents: 'none' }} />
                   <div style={{ position: 'relative', display: 'flex', gap: 22, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-                    <GapRing gap={gap} color={tool.color} mounted={mounted} />
+                    <ScoreRing score={winner.score} color={tool.color} mounted={mounted} />
                     <div style={{ flex: 1, minWidth: 260 }}>
                       <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7DA9F0', marginBottom: 8 }}>
                         Recommandé pour {metierLabel ? metierLabel.toLowerCase() : 'votre métier'}
@@ -667,7 +739,7 @@ export default function QuelOutilIAPage() {
                           {formation.label} <ArrowRight size={15} aria-hidden="true" />
                         </Link>
                         <button
-                          onClick={() => { setMetier(''); setUsages([]); setEnv(''); setContraintes([]); setOnglet('pourquoi') }}
+                          onClick={() => { setMetier(''); setUsages([]); setEnv(''); setContraintes([]); setSouverainete(false); setOnglet('pourquoi') }}
                           style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'transparent', border: '1px solid #2A3650', borderRadius: 10, padding: '12px 18px', fontSize: 14, fontWeight: 600, color: '#E2E8F0', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif' }}
                         >
                           <RefreshCw size={14} aria-hidden="true" /> Recommencer
@@ -676,6 +748,19 @@ export default function QuelOutilIAPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Effet de la contrainte éliminatoire, dit franchement */}
+                {evinceParSouverainete && (
+                  <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderLeft: '4px solid #D97706', borderRadius: 12, padding: '16px 20px', marginBottom: 14 }}>
+                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 8px' }}>
+                      <strong style={{ color: '#0A0A0A' }}>Sans votre exigence d'éditeur européen, {TOOLS[evinceParSouverainete.key].short} arrivait en tête ({evinceParSouverainete.score}/100).</strong>{' '}
+                      Mistral AI est le seul éditeur européen des cinq : c'est ce qui le place devant ici, pas une supériorité sur vos usages.
+                    </p>
+                    <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
+                      Nuance qui change souvent la décision : si votre exigence porte sur la <strong>localisation des données</strong> et non sur la nationalité de l'éditeur, les offres entreprise des quatre autres permettent un traitement en Europe. Elles restent éditées par des sociétés américaines, donc exposées au droit extraterritorial. Cet arbitrage se tranche avec votre direction juridique, pas avec un simulateur.
+                    </p>
+                  </div>
+                )}
 
                 {/* Combinaison recommandée */}
                 {combo && (
@@ -701,20 +786,40 @@ export default function QuelOutilIAPage() {
                             <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: i === 0 ? '#0A0A0A' : '#9CA3AF', width: 18 }}>{i + 1}</span>
                             <ToolLogo tool={t.logo} size={16} color={t.color} />
                             <span style={{ fontSize: 14, fontWeight: i === 0 ? 800 : 600, color: i === 0 ? '#0A0A0A' : '#374151', flex: 1, fontFamily: 'Nunito, sans-serif' }}>{t.short}</span>
-                            <span style={{ fontSize: 13, fontWeight: 700, color: i === 0 ? t.color : '#9CA3AF' }}>{r.percent}</span>
+                            <span style={{ fontSize: 13, fontWeight: 700, color: i === 0 ? t.color : '#9CA3AF' }}>{r.score}</span>
                           </div>
                           <div style={{ height: 8, background: '#F3F4F6', borderRadius: 99, overflow: 'hidden' }}>
                             <div style={{
-                              width: mounted ? `${r.percent}%` : '0%', height: '100%', background: t.color, borderRadius: 99,
+                              width: mounted ? `${r.score}%` : '0%', height: '100%', background: t.color, borderRadius: 99,
                               transition: `width 800ms cubic-bezier(0.22,1,0.36,1) ${i * 90}ms`, opacity: i === 0 ? 1 : 0.72,
                             }} />
                           </div>
                         </div>
                       )
                     })}
+
+                    {/* Outils écartés par la contrainte éliminatoire */}
+                    {ecartes.length > 0 && (
+                      <div style={{ marginTop: 6, paddingTop: 14, borderTop: '1px dashed #E5E7EB' }}>
+                        <p style={{ fontSize: 12.5, fontWeight: 700, color: '#92400E', margin: '0 0 10px', fontFamily: 'Nunito, sans-serif' }}>
+                          Écartés par votre exigence d'éditeur européen
+                        </p>
+                        {ecartes.map(r => {
+                          const t = TOOLS[r.key]
+                          return (
+                            <div key={r.key} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '5px 0', opacity: 0.5 }}>
+                              <span style={{ width: 18 }} />
+                              <ToolLogo tool={t.logo} size={15} color={t.color} />
+                              <span style={{ fontSize: 13.5, color: '#6B7280', flex: 1, fontFamily: 'Nunito, sans-serif' }}>{t.short}</span>
+                              <span style={{ fontSize: 12.5, color: '#9CA3AF' }}>aurait obtenu {r.score}</span>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    )}
                   </div>
                   <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '16px 0 0' }}>
-                    Score relatif au premier, calculé sur la <a href="#grille" style={{ color: c, fontWeight: 600 }}>grille d'arbitrage</a> publiée plus bas. Un écart de quelques points ne départage pas deux outils : au-delà, la différence est structurelle.
+                    Score sur 100 : le taux de correspondance avec votre profil, calculé sur la <a href="#grille" style={{ color: c, fontWeight: 600 }}>grille d'arbitrage</a> publiée plus bas (usages 55 %, suite bureautique 25 %, contraintes 15 %, métier 5 %). Quelques points d'écart ne départagent pas deux outils ; au-delà de dix, la différence est structurelle.
                   </p>
                 </div>
 
@@ -743,17 +848,37 @@ export default function QuelOutilIAPage() {
                   <div style={{ padding: 'clamp(20px, 3vw, 26px)' }}>
                     {onglet === 'pourquoi' && (
                       <div>
-                        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }}>
-                          {TOOLS[winner.key].short} arrive en tête parce que vos réponses concentrent des points sur ce qu'il fait le mieux :
+                        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>
+                          Le détail du score de {TOOLS[winner.key].short}, composante par composante :
                         </p>
-                        <ul style={{ margin: '0 0 16px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
-                          {winner.top.map(label => (
-                            <li key={label} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: '#374151', lineHeight: 1.6 }}>
-                              <Check size={16} color={c} strokeWidth={3} style={{ flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
-                              <span>{label}</span>
-                            </li>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginBottom: 18 }}>
+                          {[
+                            ['Vos usages', winner.composantes.usages, '55 %'],
+                            ['Votre suite bureautique', winner.composantes.suite, '25 %'],
+                            ['Vos contraintes', winner.composantes.contraintes, '15 %'],
+                            ['Votre métier', winner.composantes.metier, '5 %'],
+                          ].map(([label, val, poids]) => (
+                            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                              <span style={{ fontSize: 13.5, color: '#374151', flex: '0 0 165px' }}>{label}</span>
+                              <div style={{ flex: 1, height: 6, background: '#F3F4F6', borderRadius: 99, overflow: 'hidden' }}>
+                                <div style={{ width: `${val}%`, height: '100%', background: TOOLS[winner.key].color, borderRadius: 99, opacity: 0.85 }} />
+                              </div>
+                              <span style={{ fontSize: 12.5, fontWeight: 700, color: '#0A0A0A', width: 30, textAlign: 'right' }}>{val}</span>
+                              <span style={{ fontSize: 11.5, color: '#9CA3AF', width: 34, textAlign: 'right' }}>{poids}</span>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
+                        {winner.forts.length > 0 && (
+                          <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 8px' }}>
+                            <Check size={15} color={c} strokeWidth={3} style={{ verticalAlign: -2, marginRight: 6 }} aria-hidden="true" />
+                            Au meilleur niveau sur vos usages de : {winner.forts.join(', ')}.
+                          </p>
+                        )}
+                        {winner.faibles.length > 0 && (
+                          <p style={{ fontSize: 14, color: '#92400E', lineHeight: 1.7, margin: '0 0 14px' }}>
+                            Plus faible, en revanche, sur : {winner.faibles.join(', ')}. C'est le point à couvrir autrement, éventuellement par un second outil.
+                          </p>
+                        )}
                         <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
                           Pour creuser le duel le plus fréquent sur ce profil : <Link to={`/${TOOLS[winner.key].comparatif.slug}`} style={{ color: c, fontWeight: 600 }}>{TOOLS[winner.key].comparatif.label}</Link>
                           {metierHub && <> · <Link to={metierHub} style={{ color: c, fontWeight: 600 }}>toutes les formations IA {metierLabel ? `en ${metierLabel.toLowerCase()}` : 'de votre métier'}</Link></>}
@@ -813,11 +938,38 @@ export default function QuelOutilIAPage() {
           <div style={kickerStyle}>La méthode, en clair</div>
           <h2 style={h2Style}>Comment nous arbitrons entre les cinq outils</h2>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 780 }}>
-            Chaque usage, contrainte et métier attribue des points aux cinq outils. Voici la grille complète, publiée pour que vous puissiez la contester plutôt que de faire confiance à une boîte noire.
+            Le score sur 100 est la moyenne pondérée de quatre composantes, chacune notée sur 100. Voici la grille complète, publiée pour que vous puissiez la contester plutôt que de faire confiance à une boîte noire.
           </p>
-          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 780 }}>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 24px', maxWidth: 780 }}>
             C'est un arbitrage éditorial, fondé sur le positionnement public des cinq produits et sur ce que nous observons en formation depuis 2022. Ce n'est pas un benchmark de performance des modèles : ceux-ci évoluent chaque trimestre, les profils d'usage beaucoup moins.
           </p>
+
+          {/* Les 4 composantes et leur poids */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 14, marginBottom: 26 }}>
+            {[
+              ['55 %', 'Vos usages', "Moyenne de l'adéquation de l'outil à chaque usage coché. Une moyenne, pas une somme : cocher dix cases ne doit pas écraser les critères structurels."],
+              ['25 %', 'Votre suite bureautique', "L'IA native de votre suite est imbattable sur le quotidien ; celle de l'autre suite vous fait payer une intégration inutilisable."],
+              ['15 %', 'Vos contraintes', 'Données sensibles et déploiement à grande échelle. Elles nuancent, elles n’excluent pas.'],
+              ['5 %', 'Votre métier', "Volontairement faible : le métier recoupe les usages déjà déclarés, le compter lourd valoriserait deux fois la même réalité."],
+            ].map(([poids, titre, desc]) => (
+              <div key={titre} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, padding: '18px 20px' }}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: c, lineHeight: 1, marginBottom: 6 }}>{poids}</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 14.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 6 }}>{titre}</div>
+                <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* La contrainte éliminatoire, traitée hors pondération */}
+          <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderLeft: '4px solid #D97706', borderRadius: 12, padding: '18px 22px', marginBottom: 26 }}>
+            <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 8px' }}>
+              <strong style={{ color: '#0A0A0A' }}>Hors pondération : l'exigence d'un éditeur européen est éliminatoire.</strong>{' '}
+              Une obligation réglementaire ne se compense pas par des points d'usage. Si vous la cochez, seul Mistral AI reste éligible, parce qu'il est le seul éditeur européen des cinq ; les autres sont écartés quel que soit leur score, et nous affichons celui qu'ils auraient obtenu.
+            </p>
+            <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
+              À ne pas confondre avec l'hébergement : les quatre autres proposent en offre entreprise un traitement des données en Europe, tout en restant édités par des sociétés américaines soumises au droit extraterritorial. Selon que votre exigence porte sur la localisation ou sur la nationalité de l'éditeur, la réponse change.
+            </p>
+          </div>
 
           <div style={{ overflowX: 'auto', background: '#fff', borderRadius: 14, border: '1px solid #E5E7EB' }}>
             <table aria-label="Grille de pondération des usages par outil IA" style={{ width: '100%', minWidth: 680, borderCollapse: 'collapse', fontSize: 13.5 }}>
@@ -847,35 +999,55 @@ export default function QuelOutilIAPage() {
                     })}
                   </tr>
                 ))}
-                {CONTRAINTES.map(ct => (
-                  <tr key={ct.id} style={{ background: '#FAFAFA' }}>
-                    <td style={{ padding: '11px 16px', color: '#374151', borderBottom: '1px solid #F3F4F6', fontStyle: 'italic' }}>Contrainte : {ct.label.toLowerCase()}</td>
+                {ENVS.map(e => (
+                  <tr key={e.id} style={{ background: '#FAFAFA' }}>
+                    <td style={{ padding: '11px 16px', color: '#374151', borderBottom: '1px solid #F3F4F6', fontStyle: 'italic' }}>Suite déployée : {e.label}</td>
                     {TOOL_KEYS.map(k => {
-                      const p = ct.w[k] || 0
+                      const p = e.fit[k]
                       return (
                         <td key={k} style={{ padding: '11px 10px', textAlign: 'center', borderBottom: '1px solid #F3F4F6' }}>
                           <span style={{
-                            display: 'inline-block', minWidth: 26, padding: '3px 8px', borderRadius: 99, fontSize: 12.5, fontWeight: 700,
-                            background: p >= 3 ? `${TOOLS[k].color}1F` : p === 2 ? '#F3F4F6' : 'transparent',
-                            color: p >= 3 ? TOOLS[k].color : p === 2 ? '#374151' : '#9CA3AF',
+                            display: 'inline-block', minWidth: 30, padding: '3px 8px', borderRadius: 99, fontSize: 12.5, fontWeight: 700,
+                            background: p >= 100 ? `${TOOLS[k].color}1F` : p >= 55 ? '#F3F4F6' : 'transparent',
+                            color: p >= 100 ? TOOLS[k].color : p >= 55 ? '#374151' : '#9CA3AF',
                           }}>{p}</span>
                         </td>
                       )
                     })}
                   </tr>
                 ))}
-                <tr style={{ background: '#FAFAFA' }}>
-                  <td style={{ padding: '11px 16px', color: '#374151', fontStyle: 'italic' }}>Suite bureautique déployée</td>
-                  <td colSpan={5} style={{ padding: '11px 16px', color: '#6B7280', fontSize: 13 }}>
-                    Microsoft 365 : +5 à Copilot · Google Workspace : +5 à Gemini · Environnement mixte : +2 aux outils indépendants de la suite
-                  </td>
-                </tr>
+                {CONTRAINTES.map(ct => (
+                  <tr key={ct.id} style={{ background: '#FAFAFA' }}>
+                    <td style={{ padding: '11px 16px', color: '#374151', borderBottom: '1px solid #F3F4F6', fontStyle: 'italic' }}>Contrainte : {ct.label.toLowerCase()}</td>
+                    {TOOL_KEYS.map(k => {
+                      const p = ct.fit[k]
+                      return (
+                        <td key={k} style={{ padding: '11px 10px', textAlign: 'center', borderBottom: '1px solid #F3F4F6' }}>
+                          <span style={{
+                            display: 'inline-block', minWidth: 30, padding: '3px 8px', borderRadius: 99, fontSize: 12.5, fontWeight: 700,
+                            background: p >= 100 ? `${TOOLS[k].color}1F` : '#F3F4F6',
+                            color: p >= 100 ? TOOLS[k].color : '#374151',
+                          }}>{p}</span>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: '16px 0 0' }}>
-            S'y ajoute un bonus de métier (0 à 4 points), qui traduit les usages dominants de chaque fonction : le juridique pousse Claude, l'assistanat de direction pousse Copilot, le SEO pousse ChatGPT et Gemini.
-          </p>
+
+          {/* Notes de précision produit : là où le nom commercial induit en erreur */}
+          <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {[...USAGES.filter(u => u.note).map(u => [u.label, u.note]), ...CONTRAINTES.filter(x => x.note).map(x => [x.label, x.note])].map(([titre, note]) => (
+              <p key={titre} style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
+                <strong style={{ color: '#374151' }}>{titre} :</strong> {note}
+              </p>
+            ))}
+            <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#374151' }}>Métier :</strong> chaque fonction ajoute un ajustement de 0 à 4, ramené sur 100 et pesé à 5 % seulement. Le juridique pousse Claude, l'assistanat de direction pousse Copilot, le SEO pousse ChatGPT et Gemini.
+            </p>
+          </div>
         </div>
       </section>
 
