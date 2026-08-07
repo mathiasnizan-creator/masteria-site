@@ -85,8 +85,18 @@ const ETAPES = [
   ['Recevez l\'accord et formez', "Instruction en 5 à 10 jours ouvrés chez la plupart des OPCO. Une fois l'accord reçu, la session se tient ; l'OPCO règle selon votre branche, jusqu'à 100 % du coût pédagogique."],
 ]
 
+/* Lexique express (ancrage d'entités GEO → DefinedTermSet) */
+const LEXIQUE = [
+  { t: 'OPCO (opérateur de compétences)', d: "Organisme agréé par l'État qui collecte les contributions formation des entreprises de sa branche et finance les formations des salariés. Il en existe 11, chacun sur son périmètre de conventions collectives." },
+  { t: 'IDCC', d: "Identifiant de la convention collective, un numéro à 4 chiffres présent sur les bulletins de paie. C'est lui qui détermine sans ambiguïté l'OPCO de rattachement d'une entreprise." },
+  { t: 'Qualiopi', d: "Certification qualité obligatoire depuis le 1ᵉʳ janvier 2022 pour tout organisme de formation dont les clients veulent mobiliser des fonds mutualisés (OPCO, plan de développement des compétences)." },
+  { t: 'Plan de développement des compétences', d: "L'ensemble des formations décidées et financées par l'employeur pour ses salariés. L'OPCO peut en prendre une partie en charge selon la branche et la taille de l'entreprise." },
+]
+
 const FAQ = [
   { q: 'Comment savoir de quel OPCO je dépends, de façon certaine ?', a: "Par votre convention collective : le numéro IDCC figure sur les bulletins de paie. Le site officiel cfadock.fr donne l'OPCO exact à partir de ce numéro, ou de votre SIRET. Le sélecteur de cette page donne le résultat pour les secteurs les plus courants ; en cas de doute, l'IDCC tranche." },
+  { q: 'Que faire si mon dossier OPCO est refusé ?', a: "Les refus tiennent presque toujours à trois causes : un dépôt après le début de la formation, une enveloppe de branche épuisée (fréquent en fin d'année), ou une pièce manquante. Selon le motif : redéposer sur l'exercice suivant, basculer sur le plan de développement des compétences de l'entreprise, ou compléter le dossier. Masteria vérifie ces trois points avant le dépôt, ce qui évite l'essentiel des refus." },
+  { q: "L'OPCO finance-t-il aussi le conseil ou l'accompagnement ?", a: "Non. Les OPCO financent des actions de formation dispensées par un organisme certifié Qualiopi, avec programme, objectifs et émargements. Une mission de conseil ou de développement sur mesure reste une prestation de service, à financer sur budget propre (d'autres dispositifs existent, comme les aides à la transformation numérique selon les régions)." },
   { q: 'Quel montant mon OPCO prend-il en charge ?', a: "Les plafonds varient selon la branche, la taille de l'entreprise et l'année : ils sont votés par chaque branche et évoluent. Les entreprises de moins de 50 salariés sont les mieux couvertes, jusqu'à 100 % du coût pédagogique dans de nombreuses branches. Le montant exact figure sur votre espace adhérent OPCO ; nous le vérifions avec vous au moment du devis." },
   { q: 'La certification Qualiopi est-elle obligatoire pour être financé ?', a: "Oui. Depuis le 1ᵉʳ janvier 2022, seuls les organismes certifiés Qualiopi ouvrent droit aux financements mutualisés (OPCO, plan de développement des compétences). Masteria est certifié Qualiopi pour les actions de formation (NDA 84 69 23218 69, vérifiable sur la Liste publique des organismes de formation)." },
   { q: 'Puis-je utiliser mon CPF pour une formation Masteria ?', a: "Non. Nos formations se financent par l'OPCO de votre entreprise ou son plan de développement des compétences, pas par le CPF individuel. Pour une équipe, le financement OPCO est en pratique plus avantageux : il couvre le groupe entier et Masteria monte le dossier." },
@@ -113,6 +123,39 @@ function FaqItem({ q, a }) {
   )
 }
 
+/* Maillage croisé entre les outils gratuits du site */
+const AUTRES_OUTILS = [
+  { href: '/test-maturite-ia', label: 'Test de maturité IA (3 min)' },
+  { href: '/quel-outil-ia', label: 'Quel outil IA pour votre métier ?' },
+]
+
+const PAGE_URL = 'https://www.master-ia.fr/quel-opco'
+
+/* Entité outil gratuit (rich result Software + signal GEO « outil ») */
+const webAppJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  '@id': `${PAGE_URL}#app`,
+  name: 'Quel est mon OPCO ? — simulateur par secteur',
+  url: PAGE_URL,
+  description: "Simulateur gratuit : sélectionnez votre secteur d'activité et obtenez votre opérateur de compétences (OPCO), le lien officiel de vérification et les étapes du dossier de financement.",
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  browserRequirements: 'Requires JavaScript',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  provider: { '@id': 'https://www.master-ia.fr/#organization' },
+  inLanguage: 'fr-FR',
+}
+
+const definedTermsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${PAGE_URL}#lexique`,
+  name: 'Lexique du financement de la formation',
+  hasDefinedTerm: LEXIQUE.map(({ t, d }) => ({ '@type': 'DefinedTerm', name: t, description: d })),
+}
+
 export default function QuelOpcoPage() {
   const [choix, setChoix] = useState('')
   const secteur = SECTEURS.find(s => s.label === choix)
@@ -135,13 +178,14 @@ export default function QuelOpcoPage() {
         faqItems={FAQ}
         keywords="quel opco, quel est mon opco, trouver son opco, opco formation, opco par secteur, financement formation opco, opco formation ia"
         datePublished="2026-08-06"
-        dateModified="2026-08-06"
+        dateModified="2026-08-07"
         speakable={['#geo-summary', '#liste-opco']}
         citations={[
           { name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
           { name: 'CFA Dock — trouver son OPCO par IDCC ou SIRET', url: 'https://www.cfadock.fr' },
           { name: 'France compétences — répartition des branches par OPCO', url: 'https://www.francecompetences.fr' },
         ]}
+        extraJsonLd={[webAppJsonLd, definedTermsJsonLd]}
       />
 
       {/* ── HERO sombre compact ── */}
@@ -162,15 +206,30 @@ export default function QuelOpcoPage() {
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Outil gratuit</span>
           </div>
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 22, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 780 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 16, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 780 }}>
             Quel est votre OPCO&nbsp;?
           </h1>
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 30px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 20px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+          </p>
+
+          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             Onze opérateurs de compétences (OPCO) financent la formation des salariés en France, chacun sur ses branches. Sélectionnez votre secteur : vous obtenez votre opérateur, le lien officiel pour vérifier, et les étapes pour faire financer une formation, jusqu'à 100 % du coût pédagogique selon votre branche.
           </p>
 
+          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
+          <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
+            {[['Simulateur', '#simulateur'], ['Les 4 étapes', '#etapes'], ['Les 11 OPCO', '#liste-opco'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
+              <a key={href} href={href} style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', textDecoration: 'none', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 12px' }}>
+                {label}
+              </a>
+            ))}
+          </nav>
+
           {/* ── LE SIMULATEUR ── */}
-          <div style={{ background: '#fff', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 720, boxShadow: '0 12px 40px rgba(0,0,0,0.35)' }}>
+          <div id="simulateur" style={{ background: '#fff', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 720, boxShadow: '0 12px 40px rgba(0,0,0,0.35)', scrollMarginTop: 96 }}>
             <label htmlFor="secteur-select" style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
               Votre secteur d'activité
             </label>
@@ -221,7 +280,7 @@ export default function QuelOpcoPage() {
       </section>
 
       {/* ── ÉTAPES ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+      <section id="etapes" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>La marche à suivre</div>
           <h2 style={h2Style}>Faire financer une formation par votre OPCO, en 4 étapes</h2>
@@ -298,11 +357,48 @@ export default function QuelOpcoPage() {
         </div>
       </section>
 
+      {/* ── LEXIQUE EXPRESS (DefinedTermSet) ── */}
+      <section id="lexique" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <div style={kickerStyle}>Lexique express</div>
+          <h2 style={h2Style}>Les 4 termes à connaître</h2>
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)' }}>
+            <dl style={{ margin: 0 }}>
+              {LEXIQUE.map(({ t, d }, i) => (
+                <div key={t} style={{ padding: '12px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
+                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>{t}</dt>
+                  <dd style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>{d}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '16px 0 0' }}>
+            83 autres termes de l'IA en entreprise dans notre <Link to="/glossaire-ia" style={{ color: c, fontWeight: 600 }}>glossaire IA</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
-      <section id="faq" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="faq" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <h2 style={h2Style}>Questions fréquentes sur les OPCO</h2>
           {FAQ.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
+        </div>
+      </section>
+
+      {/* ── AUTRES OUTILS GRATUITS ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 64px) 24px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }}>
+            Nos autres outils gratuits
+          </h3>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {AUTRES_OUTILS.map(o => (
+              <Link key={o.href} to={o.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 15px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                {o.label} <ArrowRight size={13} color="#6B7280" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>

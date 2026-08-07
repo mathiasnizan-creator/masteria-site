@@ -120,8 +120,17 @@ const PROFILS_STATIQUES = [
   { key: 'mistral', ideal: 'Exigence de souveraineté et de cadre européen', env: 'Tout environnement' },
 ]
 
+/* Lexique express (ancrage d'entités GEO → DefinedTermSet) */
+const LEXIQUE = [
+  { t: 'LLM (grand modèle de langage)', d: "Le moteur derrière ChatGPT, Claude, Copilot, Gemini et Mistral : un modèle entraîné sur de vastes corpus de texte, capable de rédiger, synthétiser, analyser et raisonner à partir d'instructions en langage naturel." },
+  { t: 'Suite bureautique intégrée', d: "L'IA installée directement dans les documents et la messagerie : Copilot dans Microsoft 365, Gemini dans Google Workspace. L'intégration évite les copier-coller mais n'a de valeur que si la suite est réellement déployée." },
+  { t: 'Souveraineté des données', d: "La localisation et la juridiction qui s'appliquent à vos données : hébergement en Europe, droit européen, acteur européen. Le critère qui fait choisir Mistral à certaines organisations publiques et régulées." },
+  { t: 'Fenêtre de contexte', d: "La quantité de texte qu'un modèle peut traiter en une fois. Une grande fenêtre permet d'analyser des contrats ou rapports entiers sans les découper, la force historique de Claude sur les documents longs." },
+]
+
 const FAQ = [
   { q: 'Quelle est la meilleure IA pour une entreprise en 2026 ?', a: "Aucun outil ne domine tous les usages : ChatGPT est le plus polyvalent et le plus adopté, Claude est la référence des documents longs et de la rédaction rigoureuse, Copilot et Gemini gagnent quand les équipes vivent déjà dans Microsoft 365 ou Google Workspace, Mistral répond à l'exigence de souveraineté européenne. La bonne question est celle de vos cas d'usage : ce simulateur donne un point de départ, une formation panorama permet de trancher sur vos vrais documents." },
+  { q: 'Faut-il attendre que les modèles se stabilisent avant de choisir ?', a: "Non, pour deux raisons. D'abord les usages en cachette existent déjà dans la plupart des équipes : attendre, c'est laisser des données partir vers des comptes personnels non cadrés. Ensuite les compétences se transfèrent : une équipe formée au prompting et aux bons réflexes sur un outil bascule vers un autre en quelques jours. On choisit un point de départ et un cadre, pas un mariage définitif." },
   { q: 'ChatGPT ou Claude, comment trancher ?', a: "Par la nature du travail. Pour la polyvalence quotidienne (emails, brainstorming, contenus variés, écosystème d'intégrations), ChatGPT reste le point d'entrée le plus naturel. Dès que le volume documentaire et la rigueur priment (contrats, rapports d'audit, mémoires techniques, appels d'offres), Claude prend l'avantage grâce à sa gestion des documents longs et sa fidélité au texte source. Beaucoup d'équipes finissent avec les deux, chacun sur son terrain." },
   { q: 'Copilot ou Gemini ?', a: "Suivez votre suite bureautique : Copilot n'a de sens plein que dans Microsoft 365, Gemini que dans Google Workspace. Choisir l'IA de l'autre écosystème revient à payer une intégration dont vous ne profiterez pas. Si votre environnement est mixte ou en cours de choix, un outil indépendant de la suite (ChatGPT, Claude ou Mistral) évite de figer la décision." },
   { q: 'Peut-on utiliser plusieurs outils en même temps ?', a: "Oui, et les organisations matures le font : un outil bureautique intégré (Copilot ou Gemini) pour le quotidien dans les documents, et un assistant généraliste (ChatGPT, Claude ou Mistral) pour les tâches de fond. L'important est un cadre d'usage clair : qui utilise quoi, avec quelles données. Nos formations multi-outils comparent les cinq sur vos cas réels." },
@@ -146,6 +155,39 @@ function FaqItem({ q, a }) {
       </div>
     </div>
   )
+}
+
+/* Maillage croisé entre les outils gratuits du site */
+const AUTRES_OUTILS = [
+  { href: '/quel-opco', label: 'Quel est mon OPCO ? (simulateur)' },
+  { href: '/test-maturite-ia', label: 'Test de maturité IA (3 min)' },
+]
+
+const PAGE_URL = 'https://www.master-ia.fr/quel-outil-ia'
+
+/* Entité outil gratuit (rich result Software + signal GEO « outil ») */
+const webAppJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  '@id': `${PAGE_URL}#app`,
+  name: 'Quel outil IA pour votre métier ? — simulateur',
+  url: PAGE_URL,
+  description: "Simulateur gratuit : votre métier, votre environnement de travail et votre priorité → une recommandation parmi ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, avec la formation correspondante.",
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  browserRequirements: 'Requires JavaScript',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  provider: { '@id': 'https://www.master-ia.fr/#organization' },
+  inLanguage: 'fr-FR',
+}
+
+const definedTermsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${PAGE_URL}#lexique`,
+  name: "Lexique du choix d'un outil IA",
+  hasDefinedTerm: LEXIQUE.map(({ t, d }) => ({ '@type': 'DefinedTerm', name: t, description: d })),
 }
 
 export default function QuelOutilIAPage() {
@@ -179,6 +221,7 @@ export default function QuelOutilIAPage() {
         citations={[
           { name: "Les Échos — ChatGPT, Claude, Copilot, Gemini, Mistral : comment choisir l'IA la plus adaptée à son métier", url: 'https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741' },
         ]}
+        extraJsonLd={[webAppJsonLd, definedTermsJsonLd]}
       />
 
       {/* ── HERO sombre compact ── */}
@@ -199,17 +242,50 @@ export default function QuelOutilIAPage() {
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Outil gratuit · 1 minute</span>
           </div>
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 22, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 800 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 16, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 800 }}>
             Quel outil IA choisir pour votre métier&nbsp;?
           </h1>
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: 0, maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 20px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+          </p>
+
+          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             ChatGPT, Claude, Copilot, Gemini ou Mistral : aucun ne domine tous les usages, et un outil mal choisi finit contourné par les équipes. Trois questions suffisent pour un point de départ solide : votre métier, votre environnement de travail, votre priorité.
           </p>
+
+          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
+          <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
+            {[['Le simulateur', '#simulateur'], ['Les 5 outils', '#profils-outils'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
+              <a key={href} href={href} style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', textDecoration: 'none', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 12px' }}>
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          {/* En bref — synthèse citable (GEO), carte sombre */}
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(18px, 3vw, 24px)', maxWidth: 720 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 12 }}>En bref</div>
+            <dl style={{ margin: 0 }}>
+              {[
+                ['Format', '3 questions, 1 minute, sans compte ni email'],
+                ['Choix couvert', 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI, ou panorama multi-outils'],
+                ['Résultat', 'Un outil recommandé, la raison, et la formation correspondante parmi 89 programmes'],
+                ['Et après', 'Un comparatif détaillé pour creuser, une formation pour trancher sur vos vrais documents'],
+              ].map(([label, value], i) => (
+                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#94A3B8', lineHeight: 1.55 }}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
       {/* ── LE SIMULATEUR ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+      <section id="simulateur" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <div style={{ marginBottom: 26 }}>
             <label htmlFor="metier-select" style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
@@ -349,11 +425,48 @@ export default function QuelOutilIAPage() {
         </div>
       </section>
 
+      {/* ── LEXIQUE EXPRESS (DefinedTermSet) ── */}
+      <section id="lexique" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <div style={kickerStyle}>Lexique express</div>
+          <h2 style={h2Style}>Les 4 notions qui éclairent le choix</h2>
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)' }}>
+            <dl style={{ margin: 0 }}>
+              {LEXIQUE.map(({ t, d }, i) => (
+                <div key={t} style={{ padding: '12px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
+                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>{t}</dt>
+                  <dd style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>{d}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '16px 0 0' }}>
+            83 autres termes de l'IA en entreprise dans notre <Link to="/glossaire-ia" style={{ color: c, fontWeight: 600 }}>glossaire IA</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section id="faq" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <h2 style={h2Style}>Questions fréquentes</h2>
           {FAQ.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
+        </div>
+      </section>
+
+      {/* ── AUTRES OUTILS GRATUITS ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 64px) 24px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }}>
+            Nos autres outils gratuits
+          </h3>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {AUTRES_OUTILS.map(o => (
+              <Link key={o.href} to={o.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 15px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                {o.label} <ArrowRight size={13} color="#6B7280" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>

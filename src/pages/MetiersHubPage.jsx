@@ -245,6 +245,7 @@ export default function MetiersHubPage() {
             <strong style={{ color: '#0A0A0A' }}> outil</strong> et
             <strong style={{ color: '#0A0A0A' }}> métier</strong>.
             Masteria conçoit depuis 2022 des programmes opérationnels sur ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI.
+            Vous hésitez encore sur l'outil ? Notre <Link to="/quel-outil-ia" style={{ color: '#2563EB', fontWeight: 600 }}>simulateur « Quel outil IA pour votre métier ? »</Link> répond en 3 questions.
           </p>
 
           <p style={{ fontSize: 15, color: '#92400E', fontWeight: 600, margin: '0 auto 36px', maxWidth: 560 }}>

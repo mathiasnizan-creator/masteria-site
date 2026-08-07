@@ -59,8 +59,18 @@ const PROFILS = [
   },
 ]
 
+/* Lexique express (ancrage d'entités GEO → DefinedTermSet) */
+const LEXIQUE = [
+  { t: 'Maturité IA', d: "Le niveau d'intégration de l'IA dans une organisation, mesuré sur plusieurs dimensions : usages réels, outillage, formation, cadre d'usage, mesure des gains et portage par la direction. Elle ne se réduit pas au nombre d'abonnements souscrits." },
+  { t: 'Charte IA', d: "Document interne qui fixe les règles d'usage de l'IA : outils autorisés, données interdites, validation humaine, cas d'usage encadrés. C'est la première brique de gouvernance, avant même le choix des outils." },
+  { t: 'Littératie IA', d: "La capacité des équipes à comprendre et utiliser l'IA à bon escient. L'article 4 de l'AI Act en fait une obligation pour les entreprises qui déploient des systèmes d'IA, opposable depuis le 2 février 2025." },
+  { t: 'Gouvernance IA', d: "L'ensemble des dispositifs qui pilotent les usages : registre des cas d'usage, comité, charte, conformité RGPD et AI Act, revue régulière des outils et des risques." },
+]
+
 const FAQ = [
   { q: 'Comment le score est-il calculé ?', a: "Huit questions couvrent les dimensions qui déterminent la maturité IA d'une organisation : usages réels, outillage, formation, cas d'usage, cadre, confidentialité, mesure et portage par la direction. Chaque réponse vaut de 0 à 3 points, soit un score sur 24, rattaché à l'un des quatre profils. Le test qualifie une situation en 3 minutes ; il ne remplace pas un audit." },
+  { q: "Combien de temps faut-il pour passer au niveau suivant ?", a: "Cela dépend du point de départ et des moyens engagés, mais l'ordre de grandeur observé en mission tient en trimestres, pas en années : poser un cadre et former une première équipe se fait en quelques semaines ; structurer la mesure et les actifs partagés demande un ou deux trimestres ; le déploiement outillé (agents, intégrations) est un chantier continu. Le facteur décisif est moins la taille de l'entreprise que le portage par la direction." },
+  { q: 'Ce test remplace-t-il un audit de maturité IA ?', a: "Non. Le test photographie la situation en 8 questions déclaratives ; un audit examine les processus, les données, les outils et les usages réels sur pièces et sur entretiens. Utilisez le test pour situer le point de départ et cadrer la discussion, le diagnostic IA d'une journée pour obtenir une feuille de route engageante." },
   { q: 'Mes réponses sont-elles enregistrées ?', a: 'Non. Le test fonctionne entièrement dans votre navigateur : aucune réponse ne quitte votre poste, aucun compte ni email n\'est demandé pour voir le résultat.' },
   { q: 'Que faire de mon résultat ?', a: "Chaque profil vient avec trois priorités concrètes et l'offre Masteria correspondante : sensibilisation pour le profil Découverte, diagnostic pour l'Exploration, conseil pour la Structuration, développement sur mesure pour le Déploiement. Le premier échange de cadrage est gratuit." },
   { q: 'Le test vaut-il pour une PME comme pour un grand groupe ?', a: "Oui, les dimensions évaluées sont les mêmes ; seule l'ampleur des réponses change. Une PME de 30 personnes atteint le profil Structuration avec des moyens légers, là où un groupe devra outiller chaque direction. Les recommandations s'adaptent lors du cadrage." },
@@ -85,6 +95,39 @@ function FaqItem({ q, a }) {
   )
 }
 
+/* Maillage croisé entre les outils gratuits du site */
+const AUTRES_OUTILS = [
+  { href: '/quel-opco', label: 'Quel est mon OPCO ? (simulateur)' },
+  { href: '/quel-outil-ia', label: 'Quel outil IA pour votre métier ?' },
+]
+
+const PAGE_URL = 'https://www.master-ia.fr/test-maturite-ia'
+
+/* Entité outil gratuit (rich result Software + signal GEO « outil ») */
+const webAppJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  '@id': `${PAGE_URL}#app`,
+  name: 'Test de maturité IA',
+  url: PAGE_URL,
+  description: "Auto-évaluation gratuite de la maturité IA d'une entreprise : 8 questions, un score sur 24, un profil parmi 4 niveaux et les priorités pour progresser. Aucune donnée collectée.",
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  browserRequirements: 'Requires JavaScript',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  provider: { '@id': 'https://www.master-ia.fr/#organization' },
+  inLanguage: 'fr-FR',
+}
+
+const definedTermsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${PAGE_URL}#lexique`,
+  name: 'Lexique de la maturité IA',
+  hasDefinedTerm: LEXIQUE.map(({ t, d }) => ({ '@type': 'DefinedTerm', name: t, description: d })),
+}
+
 export default function TestMaturiteIAPage() {
   const [answers, setAnswers] = useState({})
   const done = Object.keys(answers).length === QUESTIONS.length
@@ -107,12 +150,13 @@ export default function TestMaturiteIAPage() {
         faqItems={FAQ}
         keywords="test maturité ia, maturité ia entreprise, évaluer maturité intelligence artificielle, audit ia gratuit, niveau ia entreprise"
         datePublished="2026-08-06"
-        dateModified="2026-08-06"
+        dateModified="2026-08-07"
         speakable={['#geo-summary', '#profils']}
         citations={[
           { name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
           { name: 'CNIL — Intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
         ]}
+        extraJsonLd={[webAppJsonLd, definedTermsJsonLd]}
       />
 
       {/* ── HERO sombre compact ── */}
@@ -133,17 +177,50 @@ export default function TestMaturiteIAPage() {
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Outil gratuit · 3 minutes</span>
           </div>
-          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 22, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 780 }}>
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 16, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 780 }}>
             Test de maturité IA&nbsp;: où en est votre entreprise&nbsp;?
           </h1>
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: 0, maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 20px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+          </p>
+
+          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             Huit questions sur vos usages, votre outillage, votre cadre et votre pilotage. À la clé : un score sur 24, votre profil parmi quatre niveaux de maturité, et les trois priorités qui font passer au niveau suivant. Aucune réponse ne quitte votre navigateur.
           </p>
+
+          {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
+          <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
+            {[['Le test', '#test'], ['Les 4 profils', '#profils'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
+              <a key={href} href={href} style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', textDecoration: 'none', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 12px' }}>
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          {/* En bref — synthèse citable (GEO), carte sombre */}
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(18px, 3vw, 24px)', maxWidth: 720 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 12 }}>En bref</div>
+            <dl style={{ margin: 0 }}>
+              {[
+                ['Format', '8 questions fermées, 3 minutes, sans compte ni email'],
+                ['Résultat', 'Score sur 24, profil parmi 4 niveaux, 3 priorités concrètes'],
+                ['Confidentialité', 'Aucune réponse ne quitte votre navigateur'],
+                ['Et après', "Un diagnostic IA d'une journée transforme le score en feuille de route"],
+              ].map(([label, value], i) => (
+                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
+                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#94A3B8', lineHeight: 1.55 }}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
       {/* ── LE TEST ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+      <section id="test" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           {QUESTIONS.map((item, qi) => (
             <fieldset key={qi} style={{ border: 'none', padding: 0, margin: '0 0 28px' }}>
@@ -230,11 +307,48 @@ export default function TestMaturiteIAPage() {
         </div>
       </section>
 
+      {/* ── LEXIQUE EXPRESS (DefinedTermSet) ── */}
+      <section id="lexique" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <div style={kickerStyle}>Lexique express</div>
+          <h2 style={h2Style}>Les 4 notions derrière le score</h2>
+          <div style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)' }}>
+            <dl style={{ margin: 0 }}>
+              {LEXIQUE.map(({ t, d }, i) => (
+                <div key={t} style={{ padding: '12px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
+                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 4 }}>{t}</dt>
+                  <dd style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>{d}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '16px 0 0' }}>
+            83 autres termes de l'IA en entreprise dans notre <Link to="/glossaire-ia" style={{ color: c, fontWeight: 600 }}>glossaire IA</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
-      <section id="faq" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+      <section id="faq" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <h2 style={h2Style}>Questions fréquentes</h2>
           {FAQ.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
+        </div>
+      </section>
+
+      {/* ── AUTRES OUTILS GRATUITS ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 64px) 24px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }}>
+            Nos autres outils gratuits
+          </h3>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {AUTRES_OUTILS.map(o => (
+              <Link key={o.href} to={o.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 15px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                {o.label} <ArrowRight size={13} color="#6B7280" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>
