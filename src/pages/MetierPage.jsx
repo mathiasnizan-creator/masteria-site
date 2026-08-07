@@ -11,6 +11,14 @@ import OfficialSources from '../components/OfficialSources'
 import { stripLeadingEmoji } from '../components/Pictogram'
 import ToolLogo from '../components/ToolLogo'
 import { METIERS, getSpokesByMetier } from '../data/seo-pages'
+
+/* Métiers couverts par /bibliotheque-de-prompts, listés en dur : importer
+   prompts-library.js ici chargerait les 112 prompts sur chaque page métier. */
+const PROMPT_LIB_SLUGS = [
+  'marketing', 'ressources-humaines', 'commercial', 'finance', 'communication',
+  'management', 'assistante', 'seo', 'service-client', 'informatique',
+  'pedagogique', 'achats',
+]
 import { METIER_FAQ } from '../data/metier-faq'
 
 // Icônes SVG par métier (lucide-react)
@@ -523,6 +531,20 @@ export default function MetierPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── BIBLIOTHÈQUE DE PROMPTS DU MÉTIER (maillage vers l'actif liable) ── */}
+      <section style={{ background: '#F9FAFB', padding: '30px 40px', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+            <strong style={{ color: '#0A0A0A' }}>Avant même de vous former :</strong>{' '}
+            notre{' '}
+            <Link to={PROMPT_LIB_SLUGS.includes(metier) ? `/bibliotheque-de-prompts#${metier}` : '/bibliotheque-de-prompts'} style={{ color: '#2563EB', fontWeight: 600 }}>
+              bibliothèque de prompts {metierData.label.toLowerCase()}
+            </Link>{' '}
+            rassemble des prompts prêts à copier, tirés de nos formations, avec pour chacun la raison de sa construction.
+          </p>
         </div>
       </section>
 

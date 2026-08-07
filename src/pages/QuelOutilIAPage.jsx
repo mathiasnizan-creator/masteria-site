@@ -408,6 +408,7 @@ function verdictEcart(gap, secondName) {
 const AUTRES_OUTILS = [
   { href: '/quel-opco', label: 'Quel est mon OPCO ? (simulateur)' },
   { href: '/test-maturite-ia', label: 'Test de maturité IA (3 min)' },
+  { href: '/bibliotheque-de-prompts', label: 'Bibliothèque de 112 prompts' },
 ]
 
 const PAGE_URL = 'https://www.master-ia.fr/quel-outil-ia'

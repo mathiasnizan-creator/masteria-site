@@ -97,7 +97,10 @@ export default function GlossaryPage() {
           }}>
             LLM, RAG, prompt, fine-tuning, agent, MCP, AI Act… Toutes les notions essentielles
             de l'IA en entreprise expliquées clairement, par des praticiens. Mis à jour en continu
-            par les formateurs Masteria.
+            par les formateurs Masteria.{' '}
+            Pour passer de la définition à la pratique, notre{' '}
+            <Link to="/bibliotheque-de-prompts" style={{ color: '#2563EB', fontWeight: 600 }}>bibliothèque de prompts par métier</Link>{' '}
+            rassemble des instructions prêtes à copier.
           </p>
 
           {/* Search bar */}

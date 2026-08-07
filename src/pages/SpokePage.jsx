@@ -14,6 +14,18 @@ import { SPOKES, HUBS } from '../data/seo-pages'
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
 const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
 
+/* Métiers couverts par /bibliotheque-de-prompts (pas de section « transverse » là-bas :
+   sans ce filtre, l'ancre profonde pointerait dans le vide). Liste en dur à dessein :
+   importer prompts-library.js chargerait les 112 prompts sur chaque page formation. */
+const PROMPT_LIB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats']
+
+/* Certains spokes (copilot, gemini) écrivent « rh » : sans cet alias, ils
+   rateraient l'ancre profonde et retomberaient sur la racine de la bibliothèque. */
+function promptLibHref(metierSlug) {
+  const cible = metierSlug === 'rh' ? 'ressources-humaines' : metierSlug
+  return PROMPT_LIB_SLUGS.includes(cible) ? `/bibliotheque-de-prompts#${cible}` : '/bibliotheque-de-prompts'
+}
+
 /* ── Icônes par métier (même mapping que HubPage) ── */
 const METIER_ICONS = {
   marketing:             Megaphone,
@@ -725,6 +737,8 @@ export default function SpokePage() {
                 <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>les formations par métier</Link>.
                 {' '}Pour juger sur pièces, lisez nos{' '}
                 <Link to="/etudes-de-cas-ia" style={{ color: '#2563EB', fontWeight: 600 }}>études de cas IA</Link>, avec des résultats de formation mesurés en entreprise.
+                {' '}Et pour commencer dès aujourd'hui, piochez dans notre{' '}
+                <Link to={promptLibHref(spoke.metierSlug)} style={{ color: '#2563EB', fontWeight: 600 }}>bibliothèque de prompts</Link>.
               </p>
             )}
           </div>

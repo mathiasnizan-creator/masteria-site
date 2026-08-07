@@ -127,6 +127,7 @@ function FaqItem({ q, a }) {
 const AUTRES_OUTILS = [
   { href: '/test-maturite-ia', label: 'Test de maturité IA (3 min)' },
   { href: '/quel-outil-ia', label: 'Quel outil IA pour votre métier ?' },
+  { href: '/bibliotheque-de-prompts', label: 'Bibliothèque de 112 prompts' },
 ]
 
 const PAGE_URL = 'https://www.master-ia.fr/quel-opco'

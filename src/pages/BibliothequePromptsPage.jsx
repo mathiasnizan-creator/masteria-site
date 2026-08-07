@@ -130,9 +130,13 @@ function FaqItem({ q, a }) {
   )
 }
 
-/* Carte d'un prompt : le texte est dans un <pre> sélectionnable, avec copie en un clic. */
-function PromptCard({ prompt, index }) {
+/* Carte d'un prompt : le texte est dans un <pre> sélectionnable, avec copie en un
+   clic. Chaque prompt porte son ancre propre (#metier-01) : il devient citable et
+   partageable individuellement, ce qui compte autant pour les liens entrants que
+   pour les moteurs génératifs. */
+function PromptCard({ prompt, index, metierSlug }) {
   const [copie, setCopie] = useState(false)
+  const ancre = `${metierSlug}-${String(index + 1).padStart(2, '0')}`
   const copier = () => {
     if (typeof navigator === 'undefined' || !navigator.clipboard) return
     navigator.clipboard.writeText(prompt.p).then(() => {
@@ -141,10 +145,12 @@ function PromptCard({ prompt, index }) {
     }).catch(() => {})
   }
   return (
-    <div style={{ ...cardStyle, padding: 0, overflow: 'hidden' }}>
+    <article id={ancre} style={{ ...cardStyle, padding: 0, overflow: 'hidden', scrollMarginTop: 96 }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 14, padding: '18px 22px 14px', flexWrap: 'wrap' }}>
         <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: 0, lineHeight: 1.35, flex: 1, minWidth: 200 }}>
-          <span style={{ color: '#C7CDD6', marginRight: 8 }}>{String(index + 1).padStart(2, '0')}</span>
+          <a href={`#${ancre}`} aria-label={`Lien direct vers le prompt : ${prompt.t}`} style={{ color: '#C7CDD6', marginRight: 8, textDecoration: 'none' }}>
+            {String(index + 1).padStart(2, '0')}
+          </a>
           {prompt.t}
         </h3>
         <button
@@ -169,7 +175,7 @@ function PromptCard({ prompt, index }) {
         <Lightbulb size={15} color={c} strokeWidth={2.2} style={{ flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
         <span><strong style={{ color: '#0A0A0A' }}>Pourquoi ça marche :</strong> {prompt.w}</span>
       </p>
-    </div>
+    </article>
   )
 }
 
@@ -195,7 +201,7 @@ export default function BibliothequePromptsPage() {
         keywords="bibliothèque de prompts, bibliotheque de prompts ia, banque de prompts, prompts chatgpt entreprise, prompts par métier, exemples de prompts professionnels, prompt engineering"
         datePublished="2026-08-07"
         dateModified="2026-08-07"
-        speakable={['#geo-summary', '#methode']}
+        speakable={['#geo-summary', '#definition', '#methode']}
         citations={[
           { name: 'CNIL — Intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
           { name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
@@ -239,7 +245,7 @@ export default function BibliothequePromptsPage() {
           </p>
 
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
-            {[['Les prompts', '#prompts'], ['La méthode', '#methode'], ['Erreurs à éviter', '#erreurs'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
+            {[['Définition', '#definition'], ['Les prompts', '#prompts'], ['La méthode', '#methode'], ['Erreurs à éviter', '#erreurs'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
               <a key={href} href={href} style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', textDecoration: 'none', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 12px' }}>
                 {label}
               </a>
@@ -266,8 +272,41 @@ export default function BibliothequePromptsPage() {
         </div>
       </section>
 
+      {/* ── DÉFINITION + SOMMAIRE DES MÉTIERS (réponse directe citable) ── */}
+      <section id="definition" style={{ padding: 'clamp(48px, 7vw, 72px) 24px', background: '#fff', scrollMarginTop: 96 }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <div style={kickerStyle}>La réponse en deux lignes</div>
+          <h2 style={h2Style}>Qu'est-ce qu'une bibliothèque de prompts ?</h2>
+          <p style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 18px', padding: '20px 24px' }}>
+            <strong>Une bibliothèque de prompts est un recueil d'instructions rédigées et testées, classées par métier ou par usage, qu'une équipe réutilise au lieu de réécrire sa demande à chaque fois.</strong>{' '}
+            Son intérêt n'est pas le gain de frappe : c'est la standardisation. Quand tout le monde part des mêmes prompts, les résultats deviennent comparables d'une personne à l'autre, et la qualité cesse de dépendre de l'aisance de chacun avec l'IA.
+          </p>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 30px', maxWidth: 780 }}>
+            On parle aussi de banque de prompts ou de recueil d'exemples de prompts. Celle-ci en rassemble {TOTAL}, prêts à copier, utilisables avec ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI. Choisissez votre métier ci-dessous.
+          </p>
+
+          {/* Sommaire des 14 métiers : navigation, sitelinks, et surface d'ancrage */}
+          <nav aria-label="Les métiers couverts" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 205px), 1fr))', gap: 10 }}>
+            {PROMPT_METIERS.map(m => (
+              <a
+                key={m.slug}
+                href={`#${m.slug}`}
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8,
+                  background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10, padding: '11px 15px',
+                  fontSize: 14, fontWeight: 600, color: '#374151', textDecoration: 'none',
+                }}
+              >
+                <span>Prompts {m.label.toLowerCase()}</span>
+                <span style={{ fontSize: 12.5, fontWeight: 700, color: c, flexShrink: 0 }}>{m.prompts.length}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
+      </section>
+
       {/* ── LES PROMPTS ── */}
-      <section id="prompts" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+      <section id="prompts" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Filtre par métier */}
@@ -315,7 +354,7 @@ export default function BibliothequePromptsPage() {
                 )}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                {m.prompts.map((p, i) => <PromptCard key={p.t} prompt={p} index={i} />)}
+                {m.prompts.map((p, i) => <PromptCard key={p.t} prompt={p} index={i} metierSlug={m.slug} />)}
               </div>
             </div>
           ))}
@@ -341,7 +380,7 @@ export default function BibliothequePromptsPage() {
       </section>
 
       {/* ── LA MÉTHODE (contenu statique citable) ── */}
-      <section id="methode" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="methode" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>La méthode</div>
           <h2 style={h2Style}>Les 6 règles d'un prompt qui donne un résultat utilisable</h2>
@@ -363,7 +402,7 @@ export default function BibliothequePromptsPage() {
       </section>
 
       {/* ── LES ERREURS ── */}
-      <section id="erreurs" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+      <section id="erreurs" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>Ce qui ruine un prompt</div>
           <h2 style={h2Style}>Les 4 erreurs que nous voyons en formation</h2>
@@ -384,7 +423,7 @@ export default function BibliothequePromptsPage() {
       </section>
 
       {/* ── LEXIQUE ── */}
-      <section id="lexique" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="lexique" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={kickerStyle}>Lexique express</div>
           <h2 style={h2Style}>Le vocabulaire du prompt professionnel</h2>
@@ -405,7 +444,7 @@ export default function BibliothequePromptsPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section id="faq" style={{ padding: SECTION_PAD, background: '#fff', scrollMarginTop: 96 }}>
+      <section id="faq" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <h2 style={h2Style}>Questions fréquentes</h2>
           {FAQ.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
