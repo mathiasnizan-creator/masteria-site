@@ -990,6 +990,7 @@ export function MasteriaFooter() {
               ['Quel OPCO ? (simulateur)', '/quel-opco'],
               ['Test de maturité IA', '/test-maturite-ia'],
               ['Quel outil IA ? (simulateur)', '/quel-outil-ia'],
+              ['Bibliothèque de prompts', '/bibliotheque-de-prompts'],
               ['Presse', '/presse'],
               ['Veille IA quotidienne', '/veille-ia'],
               ['À propos de la Veille IA', '/veille-ia/a-propos'],

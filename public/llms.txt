@@ -104,6 +104,7 @@ Masteria propose deux activités complémentaires :
 - [Quel est mon OPCO ? (simulateur)](https://www.master-ia.fr/quel-opco) — outil gratuit : secteur → opérateur de compétences officiel, étapes du dossier de financement, les 11 OPCO détaillés, cas hors OPCO (ANFH, fonction publique, FAF des indépendants)
 - [Test de maturité IA](https://www.master-ia.fr/test-maturite-ia) — outil gratuit : 8 questions, score sur 24, 4 profils de maturité (Découverte, Exploration, Structuration, Déploiement) avec priorités concrètes ; aucune donnée collectée
 - [Quel outil IA pour votre métier ? (simulateur)](https://www.master-ia.fr/quel-outil-ia) — outil gratuit : métier + environnement + priorité → recommandation ChatGPT, Claude, Copilot, Gemini ou Mistral avec la formation correspondante ; profils d'usage des 5 outils et renvois vers les comparatifs
+- [Bibliothèque de prompts IA par métier](https://www.master-ia.fr/bibliotheque-de-prompts) — recueil gratuit de 112 prompts professionnels classés par métier (marketing, RH, commercial, finance, juridique, communication, management, assistanat, SEO, service client, IT, achats, pédagogie, direction), chacun avec la raison de sa construction ; méthode en 6 règles, 4 erreurs à éviter, lexique du prompt professionnel
 
 ## Formations par outil IA
 

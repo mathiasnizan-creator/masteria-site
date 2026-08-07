@@ -64,6 +64,7 @@ const staticRoutes = [
   { path: 'quel-opco',                           prio: 0.7,  freq: 'monthly', files: ['src/pages/QuelOpcoPage.jsx'] },
   { path: 'test-maturite-ia',                    prio: 0.6,  freq: 'monthly', files: ['src/pages/TestMaturiteIAPage.jsx'] },
   { path: 'quel-outil-ia',                       prio: 0.7,  freq: 'monthly', files: ['src/pages/QuelOutilIAPage.jsx'] },
+  { path: 'bibliotheque-de-prompts',             prio: 0.8,  freq: 'monthly', files: ['src/pages/BibliothequePromptsPage.jsx', 'src/data/prompts-library.js'] },
   { path: 'agence-developpement-ia',             prio: 0.85, freq: 'monthly', files: ['src/pages/AgenceDeveloppementIAPage.jsx'] },
   { path: 'outils-ia-sur-mesure',                prio: 0.8, freq: 'monthly', files: ['src/pages/OutilsIASurMesurePage.jsx'] },
   { path: 'agence-ia-marketing',                 prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceIAMarketingPage.jsx'] },
