@@ -240,6 +240,24 @@ if (veilleEditions.length) {
   }
 }
 
+// Version anglaise de la veille (/en/ai-watch). Elle a son propre index, écrit
+// par publish.py --lang en, et ne contient que les éditions effectivement
+// traduites : les entrées ne sont donc jamais déduites du catalogue français.
+let veilleEditionsEn = [];
+try {
+  const idxEn = JSON.parse(fs.readFileSync(path.join(root, 'public/veille-data/en/index.json'), 'utf8'));
+  veilleEditionsEn = (idxEn.editions || []).filter(e => /^\d{4}-\d{2}-\d{2}$/.test(e.date || ''));
+} catch { /* pas encore d'édition anglaise */ }
+
+if (veilleEditionsEn.length) {
+  const derniereEn = veilleEditionsEn[0].date;
+  urls.push({ loc: `${SITE}/en/ai-watch`, lastmod: derniereEn, changefreq: 'daily', priority: 0.7 });
+  urls.push({ loc: `${SITE}/en/ai-watch/publications`, lastmod: derniereEn, changefreq: 'daily', priority: 0.5 });
+  for (const e of veilleEditionsEn) {
+    urls.push({ loc: `${SITE}/en/ai-watch/${e.date}`, lastmod: e.date, changefreq: 'yearly', priority: 0.4 });
+  }
+}
+
 // Tri par priority décroissante : Google crawl en priorité les URL en haut du sitemap.
 // Important pour les sites avec budget de crawl limité (domaine jeune).
 urls.sort((a, b) => b.priority - a.priority);

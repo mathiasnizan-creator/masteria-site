@@ -39,6 +39,11 @@ export default function SEOHead({
   speakable,        // GEO : array de sélecteurs CSS (ex ['#geo-summary', '#faq']) — émis sur la
                     // WebPage existante (PAS un 2e nœud WebPage, cf. audit 2026-05-21)
   citations,        // GEO : [{ name, url }] sources d'autorité citées par la page → WebPage.citation
+  webPageType,      // force le @type du nœud #webpage (ex: 'WebPage') quand la page fournit
+                    // déjà son propre nœud Article via extraJsonLd — évite le doublon d'entité
+  alternates,       // { fr, en } slugs de la MÊME page dans les deux langues → hreflang croisés.
+                    // Utilisé par la Veille IA, bilingue depuis août 2026.
+  htmlLang = 'fr',  // valeur de <html lang> : 'fr' par défaut, 'en' sur les pages anglaises
 }) {
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
@@ -161,7 +166,10 @@ export default function SEOHead({
     // Pages blog : le BlogPosting (jsonLdArticle) porte déjà la sémantique article,
     // donc la WebPage reste 'WebPage' (évite le doublon Article + BlogPosting).
     // Pages comparatives (type=article sans articleData) : on garde 'Article'.
-    '@type': (type === 'article' && !articleData) ? 'Article' : 'WebPage',
+    // `webPageType` permet à une page qui fournit son propre nœud Article enrichi
+    // via extraJsonLd de forcer 'WebPage' ici, pour éviter deux entités Article
+    // concurrentes sur la même URL (cf. audit 2026-08-08).
+    '@type': webPageType || ((type === 'article' && !articleData) ? 'Article' : 'WebPage'),
     '@id': `${fullUrl}#webpage`,
     url: fullUrl,
     name: title,
@@ -355,19 +363,26 @@ export default function SEOHead({
   return (
     <Helmet>
       {/* Lang & charset sont gérés par index.html — juste override du title et meta */}
-      <html lang="fr" />
+      <html lang={htmlLang} />
       <title>{title}</title>
       <meta name="description" content={description} />
 
       {/* Canonical */}
       <link rel="canonical" href={fullUrl} />
 
-      {/* hreflang */}
-      <link rel="alternate" hrefLang="fr-FR" href={fullUrl} />
-      {locale && locale !== 'fr-FR' && (
+      {/* hreflang. Quand la page existe en plusieurs langues (alternates), on
+          déclare le couple complet sur chaque version, comme Google l'exige,
+          et x-default pointe sur le français, langue principale du site. */}
+      {/* Helmet n'accepte que des enfants directs : un fragment <>…</> est
+          ignoré en silence et les balises disparaissent du HTML rendu. */}
+      {alternates && <link rel="alternate" hrefLang="fr-FR" href={`${SITE_URL}/${alternates.fr}`} />}
+      {alternates && <link rel="alternate" hrefLang="en" href={`${SITE_URL}/${alternates.en}`} />}
+      {alternates && <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/${alternates.fr}`} />}
+      {!alternates && <link rel="alternate" hrefLang="fr-FR" href={fullUrl} />}
+      {!alternates && locale && locale !== 'fr-FR' && (
         <link rel="alternate" hrefLang={locale} href={fullUrl} />
       )}
-      <link rel="alternate" hrefLang="x-default" href={fullUrl} />
+      {!alternates && <link rel="alternate" hrefLang="x-default" href={fullUrl} />}
 
       {/* Robots */}
       {noindex ? (

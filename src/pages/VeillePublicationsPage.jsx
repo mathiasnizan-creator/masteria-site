@@ -7,6 +7,8 @@ import {
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import VeilleNav from '../components/VeilleNav'
+import VeilleLangSwitch from '../components/VeilleLangSwitch'
+import { strings, baseVeille, baseData, alternatesVeille } from '../data/veille-i18n'
 
 /**
  * VeillePublicationsPage — toutes les publications de la Veille IA, avec recherche.
@@ -58,7 +60,9 @@ function norm(s) {
     .toLowerCase()
 }
 
-export default function VeillePublicationsPage() {
+export default function VeillePublicationsPage({ lang = 'fr' }) {
+  const L = strings(lang)
+  const base = baseVeille(lang)
   const isDesktop = useIsDesktop()
   const [data, setData] = useState(null)
   const [etat, setEtat] = useState('chargement')
@@ -101,7 +105,7 @@ export default function VeillePublicationsPage() {
 
   useEffect(() => {
     let actif = true
-    fetch('/veille-data/archives.json')
+    fetch(`${baseData(lang)}/archives.json`)
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
       .then(d => {
         if (!actif) return
@@ -163,11 +167,11 @@ export default function VeillePublicationsPage() {
   const jsonLd = ok ? [
     {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
-      '@id': `${SITE}/veille-ia/publications#collection`,
+      '@id': `${SITE}${base}/publications#collection`,
       name: 'Toutes les publications de la Veille IA Masteria',
-      url: `${SITE}/veille-ia/publications`,
+      url: `${SITE}${base}/publications`,
       inLanguage: 'fr-FR', isAccessibleForFree: true,
-      isPartOf: { '@id': `${SITE}/veille-ia#collection` },
+      isPartOf: { '@id': `${SITE}${base}#collection` },
       author: { '@id': `${SITE}/#organization` },
       editor: { '@id': `${SITE}/#mathias-nizan` },
       publisher: { '@id': `${SITE}/#organization` },
@@ -177,12 +181,12 @@ export default function VeillePublicationsPage() {
     },
     {
       '@context': 'https://schema.org', '@type': 'ItemList',
-      '@id': `${SITE}/veille-ia/publications#editions`,
+      '@id': `${SITE}${base}/publications#editions`,
       itemListOrder: 'https://schema.org/ItemListOrderDescending',
       numberOfItems: editions.length,
       itemListElement: editions.slice(0, 50).map((e, i) => ({
         '@type': 'ListItem', position: i + 1,
-        name: e.titreEditorial, url: `${SITE}/veille-ia/${e.date}`,
+        name: e.titreEditorial, url: `${SITE}${base}/${e.date}`,
       })),
     },
   ] : undefined
@@ -190,15 +194,19 @@ export default function VeillePublicationsPage() {
   return (
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
       <SEOHead
-        title="Toutes les publications de la Veille IA | Masteria"
+        title={lang === 'en'
+          ? 'All AI Watch editions | Masteria'
+          : 'Toutes les publications de la Veille IA | Masteria'}
         description={meta
           ? `Toutes les éditions de la Veille IA depuis le ${meta.premiereDateAffichee} : ${meta.totalItems} actualités analysées et sourcées, avec recherche par sujet, zone et mois.`
           : "Toutes les éditions de la Veille IA Masteria, avec recherche par sujet, zone géographique et mois."}
-        slug="veille-ia/publications"
+        slug={`${base.slice(1)}/publications`}
+        alternates={alternatesVeille('publications')}
+        htmlLang={L.htmlLang}
         keywords="veille ia, toutes les publications veille ia, historique actualité intelligence artificielle, recherche actualité ia"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
-          { name: 'Veille IA', slug: 'veille-ia' },
+          { name: 'Veille IA', slug: base.slice(1) },
           { name: 'Toutes les publications', slug: 'veille-ia/publications' },
         ]}
         datePublished={meta ? meta.premiereDate : undefined}
@@ -216,11 +224,11 @@ export default function VeillePublicationsPage() {
 
         <div style={{ ...wrap, position: 'relative' }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#94A3B8', display: 'flex', gap: 8, marginBottom: 28, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#94A3B8' }}>Accueil</Link>
+            <Link to="/" style={{ color: '#94A3B8' }}>{L.accueil}</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <Link to="/veille-ia" style={{ color: '#94A3B8' }}>Veille IA</Link>
+            <Link to={base} style={{ color: '#94A3B8' }}>{L.rubrique}</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>Toutes les publications</span>
+            <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>{L.toutesPublications}</span>
           </nav>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 22 }}>
@@ -260,7 +268,7 @@ export default function VeillePublicationsPage() {
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
                 Rechargez la page pour réessayer, ou repassez par la page principale de la veille.
               </p>
-              <Link to="/veille-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700 }}>
+              <Link to={base} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700 }}>
                 Retour à la Veille IA
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -368,7 +376,7 @@ export default function VeillePublicationsPage() {
                       </div>
                       {g.items.map(({ e, itemsTrouves }) => (
                         <div key={e.date} style={{ borderTop: '1px solid #E5E7EB' }}>
-                          <Link to={`/veille-ia/${e.date}`} style={{ textDecoration: 'none', display: 'block' }}>
+                          <Link to={`${base}/${e.date}`} style={{ textDecoration: 'none', display: 'block' }}>
                             <div className="veille-ligne-archive" style={{
                               display: 'grid',
                               gridTemplateColumns: isDesktop ? '150px 1fr auto' : '1fr',
@@ -384,7 +392,7 @@ export default function VeillePublicationsPage() {
                           {itemsTrouves.length > 0 && (
                             <div style={{ padding: '0 24px 16px', marginTop: -6 }}>
                               {itemsTrouves.slice(0, 5).map(it => (
-                                <Link key={it.id} to={`/veille-ia/${e.date}#${it.id}`}
+                                <Link key={it.id} to={`${base}/${e.date}#${it.id}`}
                                   className="veille-lien-fil"
                                   style={{ display: 'flex', alignItems: 'baseline', gap: 8, padding: '5px 0 5px 24px', fontSize: 13.5, color: '#374151', textDecoration: 'none', lineHeight: 1.5 }}>
                                   <ArrowUpRight size={13} strokeWidth={2.4} style={{ color: c, flexShrink: 0, alignSelf: 'center' }} aria-hidden="true" />
@@ -412,7 +420,7 @@ export default function VeillePublicationsPage() {
                   <Rss size={13} strokeWidth={2.2} aria-hidden="true" />
                 </a>
                 , et l'édition du jour est sur{' '}
-                <Link to="/veille-ia" style={aStyle}>la page principale de la veille</Link>.
+                <Link to={base} style={aStyle}>la page principale de la veille</Link>.
               </p>
             </>
           )}

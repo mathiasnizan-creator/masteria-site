@@ -1423,6 +1423,13 @@ export default function App() {
         <Route path="/veille-ia/publications" element={<VeillePublicationsPage />} />
         <Route path="/veille-ia/a-propos" element={<VeilleAProposPage />} />
         <Route path="/veille-ia/:date" element={<VeilleEditionPage />} />
+
+        {/* Veille IA en anglais. Mêmes composants, prop lang : les libellés
+            viennent de data/veille-i18n.js et les données de veille-data/en/.
+            Les hreflang croisés relient chaque page à sa jumelle française. */}
+        <Route path="/en/ai-watch" element={<VeillePage lang="en" />} />
+        <Route path="/en/ai-watch/publications" element={<VeillePublicationsPage lang="en" />} />
+        <Route path="/en/ai-watch/:date" element={<VeilleEditionPage lang="en" />} />
         <Route path="/contact" element={<ContactScreen />} />
         {/* Hub pages */}
         {/* Hub pages — URLs canoniques */}
