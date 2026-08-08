@@ -114,7 +114,7 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
       })
       .catch(() => actif && setEtat('erreur'))
     return () => { actif = false }
-  }, [])
+  }, [lang])
 
   const ok = etat === 'ok' && data
   const meta = ok ? data.meta : null
@@ -214,7 +214,7 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
         extraJsonLd={jsonLd}
       />
 
-      <VeilleNav active={"publications"} />
+      <VeilleNav lang={lang} active={"publications"} />
 
       {/* ── 1. HERO SOMBRE (compact) ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(44px, 6vw, 64px) 24px clamp(44px, 6vw, 64px)', overflow: 'hidden' }}>

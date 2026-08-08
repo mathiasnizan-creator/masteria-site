@@ -156,7 +156,7 @@ function titreEdition(dateAffichee, titreEditorial, lang = 'fr') {
 
 // Phrase de répartition, générée depuis zones[]. Accord au singulier et au
 // pluriel, zones absentes omises.
-function phraseRepartition(ed) {
+function phraseRepartition(ed, lang = 'fr') {
   const jourMois = ed.dateAffichee.replace(/\s\d{4}$/, '')
   const seg = z => {
     const n = z.nb
@@ -175,6 +175,9 @@ function phraseRepartition(ed) {
     : (parts[0] || '')
   const s1 = ed.nbItems > 1 ? 's' : ''
   const s2 = ed.nbSources > 1 ? 's' : ''
+  if (lang === 'en') {
+    return `The ${jourMois} edition covers ${ed.nbItems} stor${ed.nbItems > 1 ? 'ies' : 'y'} from ${ed.nbSources} source${ed.nbSources > 1 ? 's' : ''}${liste ? `: ${liste}` : ''}.`
+  }
   return `L'édition du ${jourMois} retient ${ed.nbItems} actualité${s1} issue${s1} de ${ed.nbSources} source${s2}${liste ? ` : ${liste}` : ''}.`
 }
 
@@ -208,7 +211,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
       })
       .catch(() => actif && setEtat('introuvable'))
     return () => { actif = false }
-  }, [date])
+  }, [date, lang])
 
   // Rejoue le défilement vers l'ancre une fois les données arrivées. Au moment
   // du changement de route, la cible n'existe pas encore dans le DOM (elle
@@ -287,7 +290,9 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
   } : undefined
 
   const ancreCTA = analyse ? '#analyse' : '#dossier'
-  const libelleCTA = analyse ? "Lire l'analyse Masteria" : 'Lire les actualités du jour'
+  const libelleCTA = analyse
+    ? (lang === 'en' ? 'Read the Masteria take' : "Lire l'analyse Masteria")
+    : (lang === 'en' ? "Read today's stories" : 'Lire les actualités du jour')
 
   return (
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
@@ -316,7 +321,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
         extraJsonLd={newsArticleJsonLd}
       />
 
-      <VeilleNav active={null} />
+      <VeilleNav lang={lang} active={null} />
 
       {/* ── 1. HERO SOMBRE ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
@@ -367,8 +372,12 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
           {ok && (
             <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
               {edition.nbArticlesCollectes
-                ? `${edition.nbItems} actualités retenues sur ${edition.nbArticlesCollectes} collectées ce matin, issues de ${edition.nbFluxConsultes} flux. ${edition.nbSources} sources citées, environ ${edition.tempsLecture} minutes de lecture.`
-                : `${edition.nbItems} actualités retenues ce matin. ${edition.nbSources} sources citées, environ ${edition.tempsLecture} minutes de lecture.`}
+                ? (lang === 'en'
+                    ? `${edition.nbItems} stories selected from ${edition.nbArticlesCollectes} collected this morning across ${edition.nbFluxConsultes} feeds. ${edition.nbSources} sources cited, about ${edition.tempsLecture} minutes to read.`
+                    : `${edition.nbItems} actualités retenues sur ${edition.nbArticlesCollectes} collectées ce matin, issues de ${edition.nbFluxConsultes} flux. ${edition.nbSources} sources citées, environ ${edition.tempsLecture} minutes de lecture.`)
+                : (lang === 'en'
+                    ? `${edition.nbItems} stories selected this morning. ${edition.nbSources} sources cited, about ${edition.tempsLecture} minutes to read.`
+                    : `${edition.nbItems} actualités retenues ce matin. ${edition.nbSources} sources citées, environ ${edition.tempsLecture} minutes de lecture.`)}
             </p>
           )}
 
@@ -384,7 +393,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                 </Link>
               ) : (
                 <Link to={base} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-                  Toutes les éditions
+                  {lang === 'en' ? 'All editions' : 'Toutes les éditions'}
                 </Link>
               )}
             </div>
@@ -393,9 +402,9 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
           {ok && (
             <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: 40 }}>
               {[
-                { icon: Newspaper, label: `${edition.nbItems} actualités` },
+                { icon: Newspaper, label: `${edition.nbItems} ${L.actualites}` },
                 { icon: Link2, label: `${edition.nbSources} sources` },
-                { icon: Clock, label: `${edition.tempsLecture} min de lecture` },
+                { icon: Clock, label: `${edition.tempsLecture} ${L.minutes}` },
               ].map(({ icon: Icon, label }) => (
                 <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
                   <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
@@ -410,9 +419,11 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <nav aria-label="Sommaire de l'édition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>{L.sommaire}</div>
               {[
-                ...(edition.une ? [{ id: 'une', libelle: 'À la une', zone: 'une', droite: edition.une.titre.slice(0, 42) + (edition.une.titre.length > 42 ? '…' : '') }] : []),
-                ...sections.map(s => ({ id: s.id, libelle: s.titre, zone: s.zone, droite: `${s.items.length} actualité${s.items.length > 1 ? 's' : ''}` })),
-                ...(analyse ? [{ id: 'analyse', libelle: "L'analyse Masteria", zone: 'analyse', droite: 'Signée' }] : []),
+                ...(edition.une ? [{ id: 'une', libelle: L.aLaUne, zone: 'une', droite: edition.une.titre.slice(0, 42) + (edition.une.titre.length > 42 ? '…' : '') }] : []),
+                ...sections.map(s => ({ id: s.id, libelle: s.titre, zone: s.zone, droite: lang === 'en'
+                  ? `${s.items.length} stor${s.items.length > 1 ? 'ies' : 'y'}`
+                  : `${s.items.length} actualité${s.items.length > 1 ? 's' : ''}` })),
+                ...(analyse ? [{ id: 'analyse', libelle: L.analyse, zone: 'analyse', droite: lang === 'en' ? 'Signed' : 'Signée' }] : []),
               ].map((row, i) => {
                 const Icon = row.zone === 'analyse' ? PenLine : zoneIcon(row.zone)
                 return (
@@ -476,13 +487,17 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <div style={editorialAside}>
               <Kicker>{L.detailDuJour}</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Les actualités du {edition.dateAffichee.replace(/\s\d{4}$/, '')}
+                {lang === 'en'
+                  ? `Stories from ${edition.dateAffichee.replace(/\s\d{4}$/, '')}`
+                  : `Les actualités du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}`}
               </h2>
               <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>{phraseRepartition(edition)}</strong>
+                <strong>{phraseRepartition(edition, lang)}</strong>
               </p>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
-                Chaque actualité porte sa ou ses sources. Les liens ouvrent la publication d'origine.
+                {lang === 'en'
+                  ? 'Every story carries its sources. Links open the original publication.'
+                  : "Chaque actualité porte sa ou ses sources. Les liens ouvrent la publication d'origine."}
               </p>
               <nav aria-label="Sections de l'édition">
                 {sections.map((s, i) => {
@@ -510,7 +525,9 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                       <h2 style={{ ...h2Style, fontSize: 'clamp(19px, 2.4vw, 24px)', margin: 0 }}>{s.titre}</h2>
                     </div>
                     <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 8px 41px' }}>
-                      {s.items.length} actualité{s.items.length > 1 ? 's' : ''}
+                      {lang === 'en'
+                        ? `${s.items.length} stor${s.items.length > 1 ? 'ies' : 'y'}`
+                        : `${s.items.length} actualité${s.items.length > 1 ? 's' : ''}`}
                     </p>
                     {s.items.map((it, j) => (
                       <article key={it.id} id={it.id} style={{ padding: '26px 0', borderTop: j === 0 ? 'none' : '1px solid #E5E7EB', scrollMarginTop: 140 }}>
@@ -620,7 +637,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             {cites.length > 0 && (
               <div style={{ marginTop: 32, maxWidth: 760 }}>
                 <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 6 }}>
-                  Les actualités citées
+                  {lang === 'en' ? 'Sources cited' : 'Les actualités citées'}
                 </div>
                 {tousItems.filter(it => cites.includes(it.rang)).map((it, i) => (
                   <a key={it.id} href={`#${it.id}`} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B', textDecoration: 'none', fontSize: 14.5, color: '#E2E8F0' }}>
@@ -643,8 +660,12 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <p style={{ ...answerStyle, background: '#fff' }}>
               <strong>
                 {edition.nbArticlesCollectes
-                  ? `${edition.nbFluxConsultes} flux ont été dépouillés le matin du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} actualités collectées, ${edition.nbItems} retenues, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`
-                  : `${edition.nbItems} actualités ont été retenues le ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`}
+                  ? (lang === 'en'
+                      ? `${edition.nbFluxConsultes} feeds were reviewed on the morning of ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} stories collected, ${edition.nbItems} selected, each linked to its source. The analysis is written by the editorial team and published with the edition.`
+                      : `${edition.nbFluxConsultes} flux ont été dépouillés le matin du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} actualités collectées, ${edition.nbItems} retenues, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`)
+                  : (lang === 'en'
+                      ? `${edition.nbItems} stories were selected on ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, each linked to its source. The analysis is written by the editorial team and published with the edition.`
+                      : `${edition.nbItems} actualités ont été retenues le ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`)}
               </strong>
             </p>
             {edition.sourcesDuJour && edition.sourcesDuJour.length > 0 && (
@@ -689,14 +710,14 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                     {tag}
                   </span>
                   <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 6 }}>{v.titreEditorial}</h3>
-                  <p style={{ fontSize: 13.5, color: '#6B7280', margin: 0 }}>{v.dateLongue} · {v.nbItems} actualités</p>
+                  <p style={{ fontSize: 13.5, color: '#6B7280', margin: 0 }}>{v.dateLongue} · {v.nbItems} {L.actualites}</p>
                 </Link>
               ))}
             </div>
             )}
             <div style={{ textAlign: 'center', marginTop: 28 }}>
               <Link to={base} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
-                Toutes les éditions de la veille
+                {lang === 'en' ? 'All AI Watch editions' : 'Toutes les éditions de la veille'}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
               {!edition.suivante && (
@@ -717,7 +738,9 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', margin: '0 0 16px' }}>
-              Ce que cette actualité change pour vos équipes
+              {lang === 'en'
+                ? 'What this changes for your teams'
+                : 'Ce que cette actualité change pour vos équipes'}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
               Masteria forme dirigeants, chefs de projet, développeurs et juristes sur l'IA générative, et développe les solutions qui vont avec.

@@ -47,6 +47,7 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 const SITE = 'https://www.master-ia.fr'
 const JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
+const JOURS_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 const ZONES = {
   une: { libelle: "En tête d'affiche", icon: Flame, rang: 0 },
@@ -95,34 +96,39 @@ function joursOuvresDepuis(iso) {
 }
 // Rendue après « Publiée le <date> · », donc sans verbe : « publiée hier »
 // juste après « Publiée le 20 juillet » répéterait le participe.
-function fraicheur(iso) {
+function fraicheur(iso, lang = 'fr') {
   const n = joursOuvresDepuis(iso)
-  if (n === 0) return 'ce matin'
-  if (n === 1) return 'hier'
-  if (n <= 3) return JOURS[new Date(iso + 'T12:00:00').getDay()]
+  const en = lang === 'en'
+  if (n === 0) return en ? 'this morning' : 'ce matin'
+  if (n === 1) return en ? 'yesterday' : 'hier'
+  if (n <= 3) return (en ? JOURS_EN : JOURS)[new Date(iso + 'T12:00:00').getDay()]
   return ''
 }
 const enRetard = iso => joursOuvresDepuis(iso) > 2
 
-function phraseRepartition(ed) {
+function phraseRepartition(ed, lang = 'fr') {
   const jourMois = ed.dateAffichee.replace(/\s\d{4}$/, '')
+  const en = lang === 'en'
   const seg = z => {
     const n = z.nb
     switch (z.cle) {
-      case 'europe': return `${n} pour l'Europe et la France`
-      case 'international': return `${n} pour l'international`
-      case 'chine': return `${n} pour la Chine et l'Asie`
-      case 'recherche': return `${n} publication${n > 1 ? 's' : ''} de recherche`
-      case 'bref': return `${n} brève${n > 1 ? 's' : ''}`
-      default: return `${n} autre${n > 1 ? 's' : ''}`
+      case 'europe': return en ? `${n} on Europe and France` : `${n} pour l'Europe et la France`
+      case 'international': return en ? `${n} international` : `${n} pour l'international`
+      case 'chine': return en ? `${n} on China and Asia` : `${n} pour la Chine et l'Asie`
+      case 'recherche': return en ? `${n} research paper${n > 1 ? 's' : ''}` : `${n} publication${n > 1 ? 's' : ''} de recherche`
+      case 'bref': return en ? `${n} brief${n > 1 ? 's' : ''}` : `${n} brève${n > 1 ? 's' : ''}`
+      default: return en ? `${n} other${n > 1 ? 's' : ''}` : `${n} autre${n > 1 ? 's' : ''}`
     }
   }
   const parts = (ed.zones || []).map(seg)
   const liste = parts.length > 1
-    ? `${parts.slice(0, -1).join(', ')} et ${parts[parts.length - 1]}`
+    ? `${parts.slice(0, -1).join(', ')} ${en ? 'and' : 'et'} ${parts[parts.length - 1]}`
     : (parts[0] || '')
   const s1 = ed.nbItems > 1 ? 's' : ''
   const s2 = ed.nbSources > 1 ? 's' : ''
+  if (en) {
+    return `The ${jourMois} edition covers ${ed.nbItems} stor${ed.nbItems > 1 ? 'ies' : 'y'} from ${ed.nbSources} source${ed.nbSources > 1 ? 's' : ''}${liste ? `: ${liste}` : ''}.`
+  }
   return `L'édition du ${jourMois} retient ${ed.nbItems} actualité${s1} issue${s1} de ${ed.nbSources} source${s2}${liste ? ` : ${liste}` : ''}.`
 }
 
@@ -138,6 +144,9 @@ export default function VeillePage({ lang = 'fr' }) {
 
   useEffect(() => {
     let actif = true
+    // Dépend de lang : la bascule FR/EN réutilise le même composant, sans ce
+    // rechargement la page anglaise resterait remplie de données françaises.
+    setEtat('chargement'); setData(null)
     fetch(`${baseData(lang)}/latest.json`)
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
       .then(d => {
@@ -147,11 +156,11 @@ export default function VeillePage({ lang = 'fr' }) {
       })
       .catch(() => actif && setEtat('erreur'))
     return () => { actif = false }
-  }, [])
+  }, [lang])
 
   useEffect(() => {
     if (etat !== 'ok' || !data) return
-    setRelatif(fraicheur(data.meta.derniereDate))
+    setRelatif(fraicheur(data.meta.derniereDate, lang))
   }, [etat, data])
 
   const ok = etat === 'ok' && data
@@ -219,7 +228,7 @@ export default function VeillePage({ lang = 'fr' }) {
         extraJsonLd={jsonLd}
       />
 
-      <VeilleNav active={"une"} />
+      <VeilleNav lang={lang} active={"une"} />
 
       {/* ── 1. HERO SOMBRE ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
@@ -389,7 +398,7 @@ export default function VeillePage({ lang = 'fr' }) {
                 Les {ed.nbItems - 1} autres actualités du {ed.dateAffichee.replace(/\s\d{4}$/, '')}
               </h2>
               <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>{phraseRepartition(ed)}</strong>
+                <strong>{phraseRepartition(ed, lang)}</strong>
               </p>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
                 Chaque actualité porte sa source. Le texte complet et l'analyse sont dans l'édition du jour.
