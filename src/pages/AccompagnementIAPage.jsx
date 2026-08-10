@@ -154,6 +154,61 @@ const CHANGEMENT = [
   },
 ]
 
+/* ───────── Pourquoi les projets IA échouent (5 causes, citable) ───────── */
+
+const ECHECS = [
+  {
+    num: '1',
+    title: "L'outil avant l'usage",
+    cause: "Des licences achetées à l'échelle avant de savoir qui s'en servira, pour quoi faire. Six mois plus tard, les tableaux de bord d'usage font mal, et l'IA passe pour un échec alors que c'est le déploiement qui en est un.",
+    parade: "L'accompagnement inverse l'ordre : d'abord le cadrage des usages qui créent de la valeur, ensuite l'outillage dimensionné sur ces usages.",
+  },
+  {
+    num: '2',
+    title: 'Le POC éternel',
+    cause: "Un prototype convaincant, une démonstration applaudie, puis rien : pas de responsable de l'industrialisation, pas de budget de passage à l'échelle, pas de plan d'intégration au quotidien des équipes.",
+    parade: "Chaque phase de l'accompagnement se termine par une décision explicite : on industrialise, on ajuste ou on arrête. Un POC sans suite décidée est un POC raté, même réussi techniquement.",
+  },
+  {
+    num: '3',
+    title: 'Personne ne porte le sujet',
+    cause: "Sans sponsor de direction ni relais de terrain, le sujet IA appartient à tout le monde, donc à personne. Les initiatives individuelles s'essoufflent, les questions restent sans réponse, les pratiques divergent.",
+    parade: "Le dispositif d'accompagnement installe les deux étages : un sponsor qui arbitre, des référents formés qui font vivre le sujet au quotidien.",
+  },
+  {
+    num: '4',
+    title: 'La formation générique qui ne change rien',
+    cause: "Une journée de sensibilisation sur des exemples hors sol, un quiz, un certificat. Deux semaines après, aucun usage n'a bougé : les équipes n'ont pas vu leur métier dans ce qu'on leur a montré.",
+    parade: "La formation de l'accompagnement part des cas réels de chaque équipe, ses documents et ses processus, et se mesure sur les usages installés, jamais sur la satisfaction en sortie de salle.",
+  },
+  {
+    num: '5',
+    title: "L'adoption jamais mesurée",
+    cause: "Sans indicateurs, l'échec est invisible jusqu'au renouvellement des licences. On découvre alors que 15 personnes sur 200 utilisent l'outil, sans savoir ni pourquoi ni depuis quand.",
+    parade: "La mesure d'adoption fait partie du dispositif dès le premier jour : taux d'usage, cas actifs, temps gagné déclaré, questions remontées. Ce qui dérive se voit, donc se corrige.",
+  },
+]
+
+/* ───────── Un accompagnement type, trimestre par trimestre ───────── */
+
+const TRIMESTRES = [
+  {
+    periode: 'Premier trimestre',
+    title: 'Cadrer et prouver',
+    desc: "Cadrage des usages (diagnostic ou audit selon la profondeur), choix des outils, conférence de lancement pour embarquer largement, et un ou deux cas d'usage déployés en pilote sur une équipe volontaire. Objectif : une première preuve de valeur visible en interne, sur laquelle tout le reste s'appuie.",
+  },
+  {
+    periode: 'Deuxième trimestre',
+    title: 'Déployer et former',
+    desc: "Extension aux équipes prioritaires par vagues : formation sur les cas réels de chacune, installation des référents internes, cadre d'usage posé (charte, données, conformité). Les premiers indicateurs d'adoption tournent et orientent les ajustements.",
+  },
+  {
+    periode: 'Troisième trimestre',
+    title: 'Ancrer et transmettre',
+    desc: "Montée en autonomie : les référents prennent le relais du quotidien, les cas suivants s'industrialisent, la gouvernance se stabilise. Notre présence s'espace volontairement ; elle se prolonge ensuite par des points d'ancrage à la demande, pas par une dépendance.",
+  },
+]
+
 /* ───────── Comparatif conseil / accompagnement / acculturation ───────── */
 
 const COMPARATIF = [
@@ -217,6 +272,18 @@ const FAQ = [
   {
     q: "Travaillez-vous avec un outil IA en particulier ?",
     a: "Non, et c'est un point de méthode : nous accompagnons les entreprises sur l'IA générative dans son ensemble, indépendants des éditeurs et multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). Le choix se fait sur vos critères : métiers concernés, contraintes de données et de sécurité, écosystème logiciel existant, budget. Quand un outil est déjà déployé chez vous, l'accompagnement part de l'existant plutôt que de tout remplacer. Notre recommandation est argumentée et jamais commissionnée.",
+  },
+  {
+    q: "Nous avons déjà déployé un outil d'IA et il n'a pas pris : que faire ?",
+    a: "C'est la situation de départ la plus fréquente de nos accompagnements, et elle se rattrape. Le schéma classique : l'outil a été déployé avant les usages, la formation a été générique, personne ne porte le sujet et rien ne se mesure. On reprend dans l'ordre : un cadrage court pour identifier les usages à valeur pour vos équipes, une relance ciblée sur une ou deux équipes volontaires avec une formation sur leurs cas réels, des référents pour tenir la dynamique, et des indicateurs pour objectiver la reprise. Relancer un outil déjà payé coûte bien moins cher que l'abandonner et recommencer dans deux ans.",
+  },
+  {
+    q: "Faut-il associer le CSE et les équipes à la démarche ?",
+    a: "Oui, et tôt. Sur le plan légal d'abord : le code du travail prévoit l'information et la consultation du CSE sur l'introduction de nouvelles technologies, et l'IA en relève pleinement ; un déploiement qui l'ignore s'expose à repartir de zéro. Sur le plan pratique ensuite : les craintes des équipes (remplacement, surveillance, charge) sont rationnelles et s'adressent de front, pas par une communication descendante. Nous aidons à préparer ces échanges : ce que l'outil fera, ce qu'il ne fera pas, ce qui est mesuré et ce qui ne l'est pas. Un déploiement co-construit avec les représentants du personnel avance plus vite qu'un déploiement subi.",
+  },
+  {
+    q: "Comment gérez-vous un accompagnement multi-sites ?",
+    a: "Par vagues, avec un site pilote. Le pilote essuie les plâtres et fournit la preuve interne : des collègues, pas des consultants, racontent ce qui a changé pour eux. Les vagues suivantes réutilisent ce qui est validé (cas d'usage, supports, cadre) en l'adaptant aux spécificités locales, et chaque site a son référent. Le distanciel couvre bien le suivi et une partie des formations ; les lancements de site gagnent à se faire sur place. Ce fonctionnement par vagues lisse aussi le budget et la charge des équipes centrales.",
   },
   {
     q: "L'accompagnement convient-il à une PME ?",
@@ -535,6 +602,66 @@ export default function AccompagnementIAPage() {
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
             La montée en compétence collective a sa démarche propre, l'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation IA</Link> : conférences, ateliers et parcours par métier, certifiés Qualiopi et finançables par votre OPCO.
+          </p>
+        </div>
+      </section>
+
+      {/* ── POURQUOI LES PROJETS IA ÉCHOUENT (citable + E-E-A-T terrain) ── */}
+      <section id="echecs" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <Kicker>Ce que le terrain apprend</Kicker>
+          <h2 style={h2Style}>
+            Pourquoi les projets IA échouent, et ce qui l'évite
+          </h2>
+
+          <p style={{ ...answerStyle, maxWidth: 'none' }}>
+            <strong>Cinq causes reviennent dans la quasi-totalité des projets IA qui échouent : l'outil acheté avant l'usage, le POC jamais industrialisé, l'absence de porteur interne, la formation générique qui ne change rien, et l'adoption jamais mesurée. Aucune n'est technique. C'est précisément ce que l'accompagnement traite.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px' }}>
+            Nous observons ces cinq schémas depuis 2022, en formant et en accompagnant plus de 1 500 professionnels, du COMEX aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> en montrent l'envers : ce qui se passe quand ces cinq points sont traités.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {ECHECS.map(item => (
+              <div key={item.num} style={{ ...cardStyle, padding: '22px 24px', display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 99, background: cLight, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif', fontSize: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.num}</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 6 }}>{item.title}</h3>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 8px' }}>{item.cause}</p>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
+                    <strong style={{ color: c }}>La parade :</strong> {item.parade}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── UN ACCOMPAGNEMENT TYPE (posture capacité) ── */}
+      <section id="deroule-type" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <Kicker>À quoi ça ressemble</Kicker>
+          <h2 style={h2Style}>
+            Un accompagnement type, trimestre par trimestre
+          </h2>
+
+          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
+            <strong>Un accompagnement représentatif s'étale sur trois trimestres : cadrer et prouver la valeur sur un pilote, déployer et former par vagues avec les référents, puis ancrer et transmettre jusqu'à l'autonomie. Le rythme s'ajuste à chaque organisation ; la logique, elle, ne change pas : chaque trimestre livre un résultat visible.</strong>
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginTop: 12 }}>
+            {TRIMESTRES.map(t => (
+              <div key={t.periode} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}` }}>
+                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 8 }}>{t.periode}</div>
+                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{t.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{t.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
+            Ce déroulé est représentatif, pas contractuel : une PME sur un périmètre net va plus vite, un groupe multi-sites étale davantage. Le rythme exact se pose au cadrage, avec les jalons de décision.
           </p>
         </div>
       </section>

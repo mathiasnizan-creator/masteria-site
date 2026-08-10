@@ -146,6 +146,56 @@ const DEMARCHE = [
   },
 ]
 
+/* ───────── Programme type sur un trimestre (posture capacité) ───────── */
+
+const PROGRAMME_TYPE = [
+  {
+    periode: 'Semaines 1-2',
+    title: 'Cadrage et lancement',
+    desc: "Cadrage avec la direction (objectifs, métiers prioritaires, outils disponibles, indicateurs), puis conférence d'acculturation en plénière : tout le monde entend la même chose, le langage commun s'installe, les questions réelles émergent.",
+  },
+  {
+    periode: 'Semaines 3-6',
+    title: 'Ateliers par vagues',
+    desc: "Ateliers découverte en petits groupes, métier par métier : chacun manipule sur ses propres situations de travail. Les cas d'usage qui émergent alimentent la suite ; les plus prometteurs deviennent les exemples internes de la démarche.",
+  },
+  {
+    periode: 'Semaines 7-10',
+    title: 'Parcours approfondis et cadre',
+    desc: "Les équipes prioritaires suivent leur parcours métier complet, le programme management aligne les encadrants, et le cadre d'usage se formalise : ce qu'on peut confier aux outils, ce qui reste interdit, comment vérifier une réponse.",
+  },
+  {
+    periode: 'Semaines 11-12',
+    title: 'Référents et mesure',
+    desc: "Formation des référents internes qui prennent le relais, premier relevé des indicateurs d'usage, restitution à la direction : ce qui a pris, ce qui doit être renforcé, et la suite recommandée. La dynamique appartient désormais à vos équipes.",
+  },
+]
+
+/* ───────── Les erreurs qui font rater une acculturation (citable) ───────── */
+
+const ERREURS = [
+  {
+    title: "L'événement unique sans suite",
+    desc: "Une conférence réussie qui n'est suivie de rien : l'enthousiasme retombe en quinze jours et le sujet passe pour une mode. La conférence est un lancement, jamais une démarche à elle seule.",
+  },
+  {
+    title: 'La démonstration hors sol',
+    desc: "Des exemples génériques dans lesquels personne ne reconnaît son métier. La règle inverse : chaque session part des documents et des processus réels des participants, sinon rien ne s'installe.",
+  },
+  {
+    title: "L'outil imposé sans cadre",
+    desc: "Des licences distribuées sans règles d'usage ni formation : les plus curieux prennent des risques avec les données, les autres n'ouvrent jamais l'outil. Le cadre d'usage fait partie de l'acculturation, pas de la paperasse.",
+  },
+  {
+    title: 'Le management oublié',
+    desc: "Former les équipes sans leurs encadrants produit des collaborateurs augmentés pilotés par des managers déroutés. Les équipes adoptent ce que leur management pratique : le programme management passe en premier.",
+  },
+  {
+    title: "L'absence de mesure",
+    desc: "Sans indicateurs d'usage, impossible de distinguer une acculturation réussie d'une opération de communication. La mesure se pose au cadrage : taux d'usage, cas actifs, questions remontées aux référents.",
+  },
+]
+
 /* ───────── FAQ ───────── */
 
 const FAQ = [
@@ -180,6 +230,14 @@ const FAQ = [
   {
     q: "Comment mesurez-vous que l'acculturation a fonctionné ?",
     a: "Sur les usages, pas sur la satisfaction en fin de session. Les indicateurs qui comptent : la part des équipes qui utilisent les outils chaque semaine, les cas d'usage actifs par métier, les questions qui remontent aux référents, et les gains de temps déclarés sur les tâches ciblées. Nous posons ces indicateurs au démarrage et les relevons après chaque vague. Les questionnaires de satisfaction existent aussi (c'est une exigence qualité), mais ils mesurent l'accueil, pas l'adoption.",
+  },
+  {
+    q: "Combien de personnes peut-on embarquer dans chaque format ?",
+    a: "Chaque format a sa jauge naturelle. La conférence d'acculturation fonctionne de quelques dizaines de personnes à une plénière de plusieurs centaines : c'est le format de masse. Les ateliers découverte tournent en petits groupes, autour d'une dizaine de participants, pour que chacun manipule réellement. Les parcours par métier se calent sur la taille de l'équipe concernée, et le programme management sur celle du CODIR ou du collectif d'encadrants. Une démarche complète alterne donc les jauges : large pour créer le langage commun, resserrée pour installer les usages.",
+  },
+  {
+    q: "Faut-il déjà avoir déployé un outil d'IA pour lancer l'acculturation ?",
+    a: "Non, et les deux ordres se pratiquent. Si un outil est déjà déployé, l'acculturation s'y adosse et en accélère l'adoption : c'est le cas le plus confortable. Si rien n'est déployé, l'acculturation éclaire justement le choix : les ateliers font émerger les cas d'usage réels, qui deviennent les critères de sélection de l'outil, avec notre comparatif multi-outils en appui. Ce qui ne fonctionne pas, c'est le troisième ordre : distribuer des licences sans acculturation ni cadre, et espérer que l'usage vienne tout seul.",
   },
   {
     q: "L'acculturation concerne-t-elle aussi les petites entreprises ?",
@@ -505,6 +563,72 @@ export default function AcculturationIAPage() {
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
             Quand l'acculturation s'inscrit dans une transformation plus large (outils à déployer, processus à automatiser), elle devient le volet formation de notre <Link to="/accompagnement-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>accompagnement IA</Link>, mené dans la durée.
           </p>
+        </div>
+      </section>
+
+      {/* ── PROGRAMME TYPE SUR UN TRIMESTRE (posture capacité) ── */}
+      <section id="programme-type" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <Kicker>À quoi ça ressemble</Kicker>
+          <h2 style={h2Style}>
+            Un programme d'acculturation type, sur un trimestre
+          </h2>
+
+          <p style={{ ...answerStyle, maxWidth: 'none' }}>
+            <strong>Un programme représentatif tient sur un trimestre : cadrage et conférence de lancement les deux premières semaines, ateliers par vagues métier, puis parcours approfondis avec le cadre d'usage, et enfin la formation des référents avec le premier relevé d'indicateurs. Le rythme s'ajuste à la taille de l'organisation ; l'ordre, lui, a fait ses preuves.</strong>
+          </p>
+
+          <div style={{ position: 'relative', marginTop: 12 }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
+            {PROGRAMME_TYPE.map((step, i) => (
+              <div
+                key={step.periode}
+                style={{
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 18px' : (i === PROGRAMME_TYPE.length - 1 ? '18px 0 0' : '18px 0'),
+                }}
+              >
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                  <span style={{ fontSize: 11.5, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif', textAlign: 'center', lineHeight: 1.1 }}>{step.periode.replace('Semaines ', 'S')}</span>
+                </div>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>{step.periode}</div>
+                  <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 740 }}>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
+            Ce déroulé est représentatif, pas contractuel : une PME le condense, un groupe l'étale par vagues de sites ou de directions. Le calendrier exact se pose au cadrage, gratuit.
+          </p>
+        </div>
+      </section>
+
+      {/* ── LES ERREURS CLASSIQUES (citable + E-E-A-T terrain) ── */}
+      <section id="erreurs" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Ce que le terrain apprend</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Les cinq erreurs qui font rater une acculturation IA
+          </h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Cinq erreurs reviennent dans les acculturations qui échouent : l'événement unique sans suite, les démonstrations hors sol, l'outil distribué sans cadre, le management oublié et l'absence de mesure. Chacune a sa parade, et aucune n'est une question de budget : c'est une question de séquence.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
+            Ce sont des schémas que nous observons depuis 2022, en formant plus de 1 500 professionnels du COMEX aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> montrent ce que produit la séquence inverse.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {ERREURS.map((item, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
