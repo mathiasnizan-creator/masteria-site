@@ -381,7 +381,8 @@ export default function MeilleureAgenceIAPage() {
             compare les acteurs sous l'angle conseil. Pour le détail de nos réalisations, voyez l'{' '}
             <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>. Votre besoin porte sur la montée en compétences de vos équipes ? Notre guide{' '}
             <Link to="/meilleure-formation-ia" style={{ color: c, fontWeight: 600 }}>meilleure formation IA</Link>{' '}
-            compare les organismes sous l'angle transmission.
+            compare les organismes sous l'angle transmission. Et pour la vue d'ensemble des cinq familles d'acteurs (agence, cabinet, ESN, formation, indépendant), notre guide du{' '}
+            <Link to="/prestataire-ia" style={{ color: c, fontWeight: 600 }}>prestataire IA</Link> pose les critères transverses.
           </p>
         </div>
       </section>

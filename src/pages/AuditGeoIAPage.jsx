@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -232,6 +233,7 @@ const serviceJsonLd = {
   alternateName: "Audit de visibilité dans les moteurs de réponse IA",
   description: "Audit GEO : mesure du taux de citation et de la part de voix d'une marque dans ChatGPT, Perplexity, Gemini et les Google AI Overviews, sur un corpus de questions représentatif, en relevés répétés. Vérification des fondations (accès des robots IA, données structurées, citabilité) et plan d'action priorisé pour devenir une source citée.",
   url: 'https://www.master-ia.fr/audit-geo-ia',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/audit-geo-ia#webpage' },
   serviceType: 'Audit GEO (Generative Engine Optimization)',
   category: 'Visibilité dans les moteurs de réponse IA',
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -735,6 +737,9 @@ export default function AuditGeoIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote />
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>

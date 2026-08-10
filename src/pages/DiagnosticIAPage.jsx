@@ -760,6 +760,7 @@ export default function DiagnosticIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
               { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "Quand il faut la vision exhaustive : maturité, données, conformité et feuille de route chiffrée." },
+              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "Après le cadrage : déploiement, conduite du changement et adoption, tenus dans la durée." },
               { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cadrage stratégique dans lequel s'inscrit le diagnostic, à l'échelle de l'entreprise." },
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand un cas est prêt : conception et développement de la solution, de l'idée au déploiement." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Déployer des agents IA sur les cas prioritaires que le diagnostic fait remonter." },

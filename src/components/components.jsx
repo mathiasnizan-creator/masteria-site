@@ -98,6 +98,8 @@ const CONSEIL_COLS = [
     head: 'Conseil & stratégie',
     items: [
       { label: 'Diagnostic IA',         desc: 'Audit + feuille de route en 1 journée', slug: 'diagnostic-ia',                Icon: Search },
+      { label: 'Audit IA',              desc: 'Maturité, conformité, plan d\'action',   slug: 'audit-ia',                     Icon: Target },
+      { label: 'Accompagnement IA',     desc: 'Du cadrage à l\'adoption, dans la durée', slug: 'accompagnement-ia',           Icon: TrendingUp },
       { label: 'Cabinet de conseil IA', desc: 'Cadrage, gouvernance et trajectoire IA', slug: 'conseil-intelligence-artificielle', Icon: Lightbulb },
       { label: 'Conseil stratégie IA',  desc: 'Feuille de route et priorisation des cas', slug: 'conseil-strategie-ia',            Icon: Compass },
       { label: 'Conseil data & IA',     desc: 'Données prêtes pour vos projets IA',      slug: 'conseil-data-ia',              Icon: Database },
@@ -238,13 +240,14 @@ export function MasteriaHeader() {
     { label: 'Contact', path: '/contact' },
   ];
 
-  const formationsActive = location.pathname.startsWith('/formation');
+  const formationsActive = location.pathname.startsWith('/formation') || location.pathname === '/acculturation-ia' || location.pathname === '/coaching-ia';
   const CONSEIL_PATHS = [
     '/conseil-intelligence-artificielle', '/conseil-strategie-ia',
     '/agence-developpement-ia', '/outils-ia-sur-mesure', '/agence-automatisation-ia',
-    '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing',
+    '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing', '/agence-seo-ia',
     '/automatisation-ia', '/meilleure-agence-ia', '/meilleur-cabinet-conseil-ia',
     '/gouvernance-ia', '/prix-projet-ia', '/ia-generative-entreprise', '/cas-usage-ia-entreprise',
+    '/audit-ia', '/audit-seo-ia', '/audit-geo-ia', '/accompagnement-ia', '/prestataire-ia',
   ];
   const conseilActive = CONSEIL_PATHS.includes(location.pathname);
   const veilleActive = location.pathname.startsWith('/veille-ia');
@@ -386,6 +389,20 @@ export function MasteriaHeader() {
                       </div>
                       <span style={{ fontSize: 16, color: '#9A3412', fontWeight: 700 }}>→</span>
                     </Link>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 10 }}>
+                      {[
+                        ['Acculturation IA (entreprise)', '/acculturation-ia'],
+                        ['Coaching IA individuel', '/coaching-ia'],
+                      ].map(([l, path]) => (
+                        <Link key={path} to={path} onClick={() => setMenuOpen(false)}
+                          style={{ textDecoration: 'none', borderRadius: 7, padding: '7px 10px', fontFamily: 'DM Sans, sans-serif', fontSize: 12.5, fontWeight: 600, color: '#374151', transition: 'background 120ms' }}
+                          onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
+                          onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                        >
+                          {l}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                   </div>
                 </div>
@@ -840,7 +857,7 @@ export function MasteriaHeader() {
         ]
           // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
           // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).
-          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|meilleur-cabinet|meilleure-agence|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia)/.test(location.pathname))
+          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|meilleur-cabinet|meilleure-agence|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia|audit-|accompagnement-ia|prestataire-ia)/.test(location.pathname))
           .map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
             display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
@@ -935,6 +952,8 @@ export function MasteriaFooter() {
               ['Gestion de projet', '/formation-ia-gestion-de-projet'],
               ['Dirigeants & COMEX', '/formation-ia-dirigeants'],
               ['Service client', '/formation-ia-service-client'],
+              ['Acculturation IA', '/acculturation-ia'],
+              ['Coaching IA individuel', '/coaching-ia'],
               ['Tous les métiers', '/formation-intelligence-artificielle'],
             ].map(([l, path]) => (
               <Link key={path} to={path} style={lStyle}>{l}</Link>
@@ -956,6 +975,9 @@ export function MasteriaFooter() {
             <div style={colHead}>Conseil &amp; développement</div>
             {[
               ['Diagnostic IA', '/diagnostic-ia'],
+              ['Audit IA', '/audit-ia'],
+              ['Accompagnement IA', '/accompagnement-ia'],
+              ['Prestataire IA : le guide', '/prestataire-ia'],
               ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
               ['Conseil stratégie IA', '/conseil-strategie-ia'],
               ['Conseil data & IA', '/conseil-data-ia'],
@@ -974,6 +996,8 @@ export function MasteriaFooter() {
               ['Agence IA Lyon', '/agence-ia-lyon'],
               ['Agence IA marketing', '/agence-ia-marketing'],
               ['Agence SEO IA', '/agence-seo-ia'],
+              ['Audit SEO IA & GEO', '/audit-seo-ia'],
+              ['Audit GEO', '/audit-geo-ia'],
               ['Agence IA Paris', '/agence-ia-paris'],
               ['Agence IA Annecy', '/agence-ia-annecy'],
               ['Agence IA Genève', '/agence-ia-geneve'],

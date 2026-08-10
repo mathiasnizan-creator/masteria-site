@@ -60,6 +60,10 @@ const DiagnosticIAPage = lazy(() => import('./pages/DiagnosticIAPage'));
 const AuditIAPage = lazy(() => import('./pages/AuditIAPage'));
 const AuditSeoIAPage = lazy(() => import('./pages/AuditSeoIAPage'));
 const AuditGeoIAPage = lazy(() => import('./pages/AuditGeoIAPage'));
+const AccompagnementIAPage = lazy(() => import('./pages/AccompagnementIAPage'));
+const AcculturationIAPage = lazy(() => import('./pages/AcculturationIAPage'));
+const PrestataireIAPage = lazy(() => import('./pages/PrestataireIAPage'));
+const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -1500,6 +1504,10 @@ export default function App() {
         ))}
         <Route path="/diagnostic-ia" element={<DiagnosticIAPage />} />
         <Route path="/audit-ia" element={<AuditIAPage />} />
+        <Route path="/accompagnement-ia" element={<AccompagnementIAPage />} />
+        <Route path="/acculturation-ia" element={<AcculturationIAPage />} />
+        <Route path="/prestataire-ia" element={<PrestataireIAPage />} />
+        <Route path="/coaching-ia" element={<CoachingIAPage />} />
         <Route path="/methode-projet-ia" element={<MethodeProjetIAPage />} />
         <Route path="/prix-projet-ia" element={<PrixProjetIAPage />} />
         <Route path="/gouvernance-ia" element={<GouvernanceIAPage />} />

@@ -208,6 +208,10 @@ for (const s of solutionSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SOLUTIO
 // Offres de conversion high-ticket.
 urls.push({ loc: `${SITE}/diagnostic-ia`, lastmod: gitLastMod(['src/pages/DiagnosticIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/audit-ia`, lastmod: gitLastMod(['src/pages/AuditIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/accompagnement-ia`, lastmod: gitLastMod(['src/pages/AccompagnementIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/acculturation-ia`, lastmod: gitLastMod(['src/pages/AcculturationIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/prestataire-ia`, lastmod: gitLastMod(['src/pages/PrestataireIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/coaching-ia`, lastmod: gitLastMod(['src/pages/CoachingIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });
 // Page pilier « veille IA » (intention méthode/outils, cible le mot-clé + le cluster automatisation).
 urls.push({ loc: `${SITE}/automatiser-sa-veille-ia`, lastmod: gitLastMod(['src/pages/AutomatiserVeilleIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });

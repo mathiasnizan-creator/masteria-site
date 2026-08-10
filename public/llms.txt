@@ -76,11 +76,14 @@ Masteria propose deux activités complémentaires :
 ## Engagement et offre d'entrée
 
 - [Diagnostic IA](https://www.master-ia.fr/diagnostic-ia) — Offre d'entrée : audit et feuille de route priorisée en une journée
+- [Audit IA](https://www.master-ia.fr/audit-ia) — État des lieux complet : maturité, processus, données, conformité RGPD/AI Act, feuille de route chiffrée et actions écartées motivées
+- [Accompagnement IA](https://www.master-ia.fr/accompagnement-ia) — Présence dans la durée : cadrage, choix des outils, conduite du changement, formation des équipes (Qualiopi) et mesure de l'adoption
 - [Méthode et modèles d'engagement](https://www.master-ia.fr/methode-projet-ia) — Forfait au projet, régie (développeurs détachés sur site), accompagnement conseil ; le code appartient au client
 
 ## Conseil, agence et guides experts
 
 - [Cabinet de conseil en intelligence artificielle](https://www.master-ia.fr/conseil-intelligence-artificielle) — Audit des usages, stratégie, accompagnement au déploiement, gouvernance
+- [Prestataire IA : le guide de choix](https://www.master-ia.fr/prestataire-ia) — Les 5 types de prestataires (agence, cabinet, ESN, organisme de formation, indépendant), les critères transverses et les 7 questions à poser avant de signer
 - [Conseil stratégie IA](https://www.master-ia.fr/conseil-strategie-ia) — Diagnostic de maturité, priorisation des cas d'usage, feuille de route 90 jours/12 mois
 - [Conseil data & IA](https://www.master-ia.fr/conseil-data-ia) — Audit, gouvernance et préparation des données pour des projets d'IA fiables (RAG, agents, analytics)
 - [Gouvernance de l'IA & conformité AI Act](https://www.master-ia.fr/gouvernance-ia) — Cadrage, classification des risques, registre des usages, politique et comité IA, mise en conformité AI Act et RGPD
@@ -118,6 +121,8 @@ Masteria propose deux activités complémentaires :
 - [Formation Vibe Coding](https://www.master-ia.fr/formation-vibe-coding) — Formation vibe coding pour profils non-développeurs (product, marketing, ops, fondateurs) : créer une application en décrivant son besoin en langage naturel à l'IA, avec Lovable, Bolt.new, Cursor, v0 et Replit. 2 jours, prototype/MVP/outil interne construit en séance, sécurité et RGPD, certifiée Qualiopi, finançable OPCO (présentiel ou distanciel, France/Suisse/Belgique)
 - [Formation Prompt Engineering](https://www.master-ia.fr/formation-prompt-engineering) — Méthode complète pour des prompts professionnels fiables, tous outils IA (1 jour)
 - [Formation IA pour dirigeants](https://www.master-ia.fr/formation-ia-dirigeants) — Journée stratégique COMEX/CODIR : enjeux, ROI, gouvernance, feuille de route 90 jours
+- [Acculturation IA](https://www.master-ia.fr/acculturation-ia) — Démarche d'entreprise : conférence d'acculturation, ateliers, parcours par métier, programme management et référents internes ; répond à l'obligation de littératie IA (article 4), certifiée Qualiopi, finançable OPCO
+- [Coaching IA individuel](https://www.master-ia.fr/coaching-ia) — Accompagnement individuel par un formateur humain sur les cas réels du participant : dirigeants, managers, professionnels ; en visio partout, sur site selon les villes ; Qualiopi, finançable OPCO
 - [Formation AI Act](https://www.master-ia.fr/formation-ai-act) — Conformité au règlement européen sur l'IA (IA Act) : cartographie des risques, article 4, gouvernance (1 jour)
 - [Formation gouvernance IA](https://www.master-ia.fr/formation-gouvernance-ia) — Construire et faire vivre le dispositif : registre des usages, charte, comité de gouvernance, gouvernance des données (1 jour, DPO/DSI/direction)
 - [Formation IA pour responsables QSE](https://www.master-ia.fr/formation-ia-qse) — Veille réglementaire HSE, document unique, analyses d'accidents, audits ISO avec l'IA (1 jour, multi-outils)
@@ -314,6 +319,8 @@ Chaque page décrit un programme dédié à un outil pour un métier précis, av
 - [Sprint IA Veille, 3 heures pour automatiser sa veille](https://www.master-ia.fr/formation-sprint-ia-veille)
 
 - [Agence SEO & IA](https://www.master-ia.fr/agence-seo-ia) — Référencement à l'ère des moteurs de réponse : SEO technique et visibilité dans les IA génératives (GEO)
+- [Audit SEO IA & GEO](https://www.master-ia.fr/audit-seo-ia) — État des lieux combiné : positions Google, citations dans les moteurs de réponse, technique, contenu, correctifs priorisés par impact
+- [Audit GEO](https://www.master-ia.fr/audit-geo-ia) — Mesure de visibilité dans ChatGPT, Perplexity, Gemini et les AI Overviews : taux de citation, part de voix, accès des robots IA, plan pour devenir citable
 - [Financement d'une formation IA](https://www.master-ia.fr/financement-formation-ia) — OPCO, plan de développement des compétences, montage du dossier
 
 - [Formation Multi-outils IA](https://www.master-ia.fr/formation-multi-outils) — Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels avant d'arbitrer

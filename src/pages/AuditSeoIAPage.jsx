@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -258,6 +259,7 @@ const serviceJsonLd = {
   alternateName: "Audit de visibilité Google et IA",
   description: "Audit SEO outillé par l'IA et audit GEO : mesure des positions Google et des citations dans ChatGPT, Perplexity, Gemini et les AI Overviews, audit technique (indexation, performance, données structurées, accès des robots IA), contenu et entités. Livrable : correctifs priorisés par impact, plan de contenu, grille de suivi des citations IA.",
   url: 'https://www.master-ia.fr/audit-seo-ia',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/audit-seo-ia#webpage' },
   serviceType: 'Audit SEO et audit GEO (visibilité dans les IA)',
   category: 'Référencement et visibilité IA',
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -729,6 +731,9 @@ export default function AuditSeoIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote />
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>

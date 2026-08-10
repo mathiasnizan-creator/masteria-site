@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -300,6 +301,7 @@ const serviceJsonLd = {
   alternateName: "Audit d'intelligence artificielle en entreprise",
   description: "Audit IA en entreprise : évaluation de la maturité, des processus, des données, des outils et de la conformité RGPD et AI Act. Livrable : rapport de maturité, portefeuille de cas d'usage priorisé, feuille de route chiffrée, plan de mise en conformité et actions écartées motivées. Mission cadrée de quelques jours à quelques semaines.",
   url: 'https://www.master-ia.fr/audit-ia',
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/audit-ia#webpage' },
   serviceType: "Audit de maturité et de conformité IA",
   category: "Conseil en intelligence artificielle",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -818,6 +820,9 @@ export default function AuditIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote />
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>

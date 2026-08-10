@@ -686,7 +686,7 @@ export default function MeilleurCabinetConseilIAPage() {
                   <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, poursuivez par un{' '}
                   <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> quand il faut la vision exhaustive, voyez le détail de nos{' '}
                   <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>missions de conseil</Link>, ou jugez sur pièces avec nos{' '}
-                  <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>.
+                  <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>. Et si vous hésitez encore entre un cabinet, une agence ou un autre type d'acteur, notre guide du <Link to="/prestataire-ia" style={{ color: c, fontWeight: 600 }}>prestataire IA</Link> compare les cinq familles.
                 </p>
               </div>
             </div>
