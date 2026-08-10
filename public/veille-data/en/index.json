@@ -1,0 +1,35 @@
+{
+  "schema": 2,
+  "meta": {
+    "premiereDate": "2026-08-06",
+    "premiereDateAffichee": "6 August 2026",
+    "derniereDate": "2026-08-10",
+    "totalEditions": 2,
+    "totalItems": 27,
+    "totalSources": 39
+  },
+  "editions": [
+    {
+      "date": "2026-08-10",
+      "dateAffichee": "10 August 2026",
+      "dateCourte": "Mon 10 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "OpenAI freezes part of Astra over cyber risk",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-08-06",
+      "dateAffichee": "6 August 2026",
+      "dateCourte": "Thu 6 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Jeff Dean leaves Google as DeepMind reshuffles its command",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7
+    }
+  ]
+}

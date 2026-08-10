@@ -257,7 +257,12 @@
     "titreEditorial": "Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d'interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d'inventer une idée neuve",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-10",
+    "dateLongue": "lundi 10 août 2026",
+    "titreEditorial": "OpenAI gèle une partie du développement d'Astra, jugé trop doué pour trouver des failles seul ; Meta publie Muse Glimmer, un modèle à poids ouverts qui tourne sur un portable, AgiBot dépasse Unitree en tête des robots humanoïdes, et la Chine entraîne toujours ses meilleurs modèles sur des puces Nvidia",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 21,
   "nbSignes": 10370,

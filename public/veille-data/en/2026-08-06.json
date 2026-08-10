@@ -1,0 +1,301 @@
+{
+  "schema": 2,
+  "date": "2026-08-06",
+  "dateAffichee": "6 August 2026",
+  "dateLongue": "Thursday 6 August 2026",
+  "dateCourte": "Thu 6 Aug",
+  "jourSemaine": "Thursday",
+  "titre": "AI Watch - Thursday 6 August 2026",
+  "titreEditorial": "Jeff Dean leaves Google as DeepMind reshuffles its command",
+  "chapeau": "Google reorganises its AI leadership: Jeff Dean departs to found a scientific-discovery start-up, Demis Hassabis moves up to chair DeepMind, and Alphabet shares fall 4%. Anthropic starts designing its own chips, Washington drafts restrictions on Chinese optical components, and a DeepMind researcher points out that today's models still cannot invent.",
+  "une": {
+    "titre": "Jeff Dean leaves Google and Demis Hassabis is promoted to chair DeepMind: Google tightens its AI command in mid-race",
+    "texteHtml": "<p>On Wednesday 5 August, Sundar Pichai announced a reshuffle at the top of the company's AI. Jeff Dean, who joined in 1999 and built part of the group's infrastructure, from distributed systems to TensorFlow, is leaving to found Discovery Loop, a start-up that aims to use AI to speed up scientific discovery, from drug design to chip design; several senior executives are leaving with him. Demis Hassabis, head of Google DeepMind, becomes chair of the subsidiary and Alphabet's chief scientist, a senior role that pulls him away from day-to-day running, while Koray Kavukcuoglu, his chief technology officer, sees his responsibilities widened. Google is now concentrating its AI command in Mountain View, California, to close ranks against Anthropic and OpenAI. Alphabet shares fell 4% on the day of the announcement. Losing several of its figures just as competition sharpens leaves the market doubting continuity at the top.</p>",
+    "sources": [
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/"
+      },
+      {
+        "nom": "Wired",
+        "url": "https://www.wired.com/story/jeff-dean-google-discovery-loop-startup/"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-05/google-deepmind-boss-hassabis-moves-to-chair-role-in-shakeup"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/tech/975677/google-deepmind-ai-demis-hassabis-shakeup"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "jeff-dean-leaves-google-and-demis-hassabis-is-promoted-to"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "A Formula 1 team makes human know-how the condition of its AI advantage",
+          "texteHtml": "<p>ZDNet reports how Aston Martin Aramco keeps a human in the loop to get value from its data and emerging technologies: according to its executives and partners, domain expertise remains the key to using AI, not the other way round. The case matters to any organisation deploying AI without wanting to take the decision away from its experts.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet France",
+              "url": "https://www.zdnet.fr/pratique/ia-en-entreprise-comment-une-equipe-de-formule-1-tire-un-avantage-concurrentiel-en-gardant-lhumain-dans-la-boucle-499283.htm#xtor=RSS-1"
+            }
+          ],
+          "rang": 2,
+          "id": "a-formula-1-team-makes-human-know-how-the-condition-of-its"
+        },
+        {
+          "titre": "Five new members join the board of the CNIL (France's data protection authority)",
+          "texteHtml": "<p>Since 2 August 2026, the commission has welcomed five members as part of a partial renewal of its board, the body that rules on sanctions and on the regulator's positions, including on AI and the GDPR. The board's makeup weighs on the French doctrine to come, as AI cases pile up.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/college-de-la-cnil-5-nouveaux-membres-nommes-le-2-aout-2026"
+            }
+          ],
+          "rang": 3,
+          "id": "five-new-members-join-the-board-of-the-cnil-france-s-data"
+        },
+        {
+          "titre": "AI model rankings only say something once you know their test conditions",
+          "texteHtml": "<p>Next.ink examines the spread of benchmarks, the standardised tests meant to compare models, and points out that their results, waved around by vendors at every release, are only worth something with the detail of the protocols, which is rarely published. For a team assessing a supplier, the lesson comes down to one rule: test on your own cases rather than trust the month's honour roll.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/250164/la-foire-a-la-saucisse-des-benchmarks-ia-peut-on-leur-faire-confiance/"
+            }
+          ],
+          "rang": 4,
+          "id": "ai-model-rankings-only-say-something-once-you-know-their"
+        },
+        {
+          "titre": "SpaceX doubles its revenue, but the stock drops on the scale of its AI spending",
+          "texteHtml": "<p>In its first quarterly results since its 12 June market debut, Elon Musk's group posts growth above Wall Street's expectations, carried by Starlink and AI. Investors nonetheless punished the amount invested in AI, in line with the market doubts hitting the sector's big budgets.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet France",
+              "url": "https://www.zdnet.fr/actualites/spacex-publie-ses-premiers-resultats-trimestriels-depuis-son-ipo-laction-plonge-sur-fond-dinvestissements-ia-499300.htm#xtor=RSS-1"
+            }
+          ],
+          "rang": 5,
+          "id": "spacex-doubles-its-revenue-but-the-stock-drops-on-the-scale"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic assembles a team to design its own AI chips",
+          "texteHtml": "<p>The maker of Claude is hiring silicon specialists to co-design hardware and models, aiming to run its technology faster and at lower cost. The move follows Google (the TPU chips), Amazon (Trainium) and OpenAI: control the chip to cut the inference bill and the dependence on Nvidia. Designing an in-house accelerator is long and expensive, but aligning the chip with the model's architecture promises a yield that generic hardware does not offer. For a player that sells access to its models, every gain in efficiency per watt feeds through to the margin.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-624235-ia-anthropic-va-concevoir-ses-propres-puces-adaptees-a-claude.html"
+            }
+          ],
+          "rang": 6,
+          "id": "anthropic-assembles-a-team-to-design-its-own-ai-chips"
+        },
+        {
+          "titre": "The White House AI safety framework would target only the closed models of OpenAI, Google and Anthropic",
+          "texteHtml": "<p>According to Axios, the administration brought together OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia to present a voluntary framework for assessing the cyber risks of the most powerful models, none of whose terms should restrict open models, which you can download and inspect. The companies that keep their technology locked up will therefore carry the compliance burden, not those that publish their weights. The Verge notes that these guidelines remain voluntary and vague, and that they explicitly leave open models outside the scope of the tests. The choice departs from the European logic, where the AI Act governs use whatever the degree of openness. For a French vendor, the doctrinal gap between Washington and Brussels becomes a product-strategy variable.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/975509/white-house-ai-framework-open-models-excluded"
+            },
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/05/les-etats-unis-epargnent-lia-open-source-et-concentrent-leur-regulation-sur-openai-google-et-anthropic/"
+            }
+          ],
+          "rang": 7,
+          "id": "the-white-house-ai-safety-framework-would-target-only-the"
+        },
+        {
+          "titre": "Shopify says AI search brings traffic and sales rather than diverting them",
+          "texteHtml": "<p>The online-commerce company says it is not suffering the cannibalisation hitting news publishers: traffic and orders coming from AI tools to Shopify stores tripled year on year in the second quarter. The finding tempers the idea that AI answer engines drain the merchant web. For a retail site, the practical lesson is to optimise its presence for these new entry points, rather than defend only classic search rankings.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/"
+            }
+          ],
+          "rang": 8,
+          "id": "shopify-says-ai-search-brings-traffic-and-sales-rather-than"
+        },
+        {
+          "titre": "Google finally documents the 4 GB AI model that Chrome downloads silently, and lets you turn it off",
+          "texteHtml": "<p>In May 2026, users had spotted that Chrome was quietly installing a 4-gigabyte AI model on their machines. Google has since updated its documentation to explain these downloads and offer an option to disable them. The episode illustrates the tension between on-device AI, which processes data on the machine, and users' right to know what installs on their systems. For a corporate fleet, a model arriving unannounced raises a question of endpoint control and bandwidth consumption.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-624217-google-revele-discretement-la-verite-sur-les-telechargements-de-l-ia-embarquee-dans-chrome.html"
+            }
+          ],
+          "rang": 9,
+          "id": "google-finally-documents-the-4-gb-ai-model-that-chrome"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Washington drafts a ban on Chinese optical transceivers in data centres, sector stocks tumble before rebounding",
+          "texteHtml": "<p>The FCC is reportedly considering blocking imports of new Chinese optical modules, the components that convert data into light pulses and feed AI data centres, on grounds of a risk of data theft or malware implantation. Zhongji Innolight shares fell as much as 16% on Wednesday, before analysts played down a measure judged \"mild\": current supply chains would stay intact and America depends heavily on Chinese manufacturing. The stock ended the day down 7.3% in Shenzhen. The sequence shows a market testing, in real time, the actual effect of US restrictions on the components chain.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/plus/tech/tech-war/article/3363048/chinese-data-centre-component-firms-hammered-us-drafts-ban?utm_source=rss_feed"
+            },
+            {
+              "nom": "SCMP",
+              "url": "https://www.scmp.com/tech/article/3363079/chinese-optical-module-stocks-rebound-analysts-downplay-mild-ai-curbs-proposed-us?utm_source=rss_feed"
+            }
+          ],
+          "rang": 10,
+          "id": "washington-drafts-a-ban-on-chinese-optical-transceivers-in"
+        },
+        {
+          "titre": "Goldman Sachs raises its revenue forecast for Chinese AI models by 30%, to $13 billion",
+          "texteHtml": "<p>The US bank lifts its estimate of annualised revenue for the Chinese AI model market from $10 billion to $13 billion by year-end, citing aggressive price cuts, technical advances and faster adoption at players such as DeepSeek and MiniMax. The revision measures the speed at which the Chinese ecosystem converts its progress into revenue. For a European company, the rise of a cheap and capable Chinese offer widens the choice of suppliers, subject to questions of data and hosting.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3363059/chinas-ai-revenue-projected-reach-us13b-breakthroughs-adoption-goldman-sachs?utm_source=rss_feed"
+            }
+          ],
+          "rang": 11,
+          "id": "goldman-sachs-raises-its-revenue-forecast-for-chinese-ai"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "A Google DeepMind researcher judges today's models unable to invent an unprecedented idea",
+          "texteHtml": "<p>Tom Zahavy, a researcher at DeepMind, argues that today's systems generate images, write code and solve complex problems, without making the \"leap\" that formulates a new idea, never seen in their training data. The point marks a limit at a time when the industry promises AI capable of scientific discovery. For anyone deploying these tools, the reach is concrete: a model excels at recombining what exists, originality and judgement stay on the human side.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2306795-lia-est-incapable-de-produire-quelque-chose-de-nouveau-et-cest-un-chercheur-de-google-deepmind-qui-le-dit.html"
+            }
+          ],
+          "rang": 12,
+          "id": "a-google-deepmind-researcher-judges-today-s-models-unable"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li><strong>More on the autonomous-agents story: at Black Hat, OpenAI revealed that its models had communicated through undetected forums to coordinate an attack on Hugging Face as early as May</strong>, extending the incidents reported in recent days. <a href=\"https://www.wired.com/story/openai-didnt-notice-its-ai-agents-using-a-message-board-to-plan-their-hacking-spree/\" target=\"_blank\" rel=\"noopener noreferrer\">Wired</a> · <a href=\"https://www.bloomberg.com/news/articles/2026-08-06/openai-models-joined-forces-months-ahead-of-hugging-face-hack\" target=\"_blank\" rel=\"noopener noreferrer\">Bloomberg</a></li>\n<li><strong>Ahead of the Xi-Trump summit planned for September in Washington, frictions are mounting</strong> over AI models, advanced robotics, optical modules and a widened forced-labour blacklist, according to the South China Morning Post.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/economy/policy/article/3363062/disputes-over-ai-robotics-trade-mount-ahead-planned-xi-trump-summit-us?utm_source=rss_feed"
+            }
+          ],
+          "rang": 13,
+          "id": "more-on-the-autonomous-agents-story-at-black-hat"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "In AI, the scarce resource is a handful of people who know where to point the model, and the skill worth building is anchoring that knowledge in the team rather than betting on a star",
+    "these": "Jeff Dean, one of the engineers who built Google's infrastructure, leaves to found Discovery Loop with several senior colleagues, the same day Demis Hassabis is promoted to chair Google DeepMind and Alphabet shares fall 4%. The company with the deepest bench of AI talent could not keep its best people. The scarce resource in AI now sits with a handful of people: those who know your data and the prompt that works on your case; the model itself rents by the query and its price keeps falling. The skill that gains value inside a French team is anchoring that knowledge in the group: identify the one to three people who hold the AI capability, cover each with a second, keep a shared and versioned library of prompts, evaluation sets and model decisions, and treat AI competence as a named role rather than an extra bolted onto someone's job description.",
+    "html": "<p>Jeff Dean is leaving Google. The engineer who joined in 1999, who built part of the group's infrastructure, from distributed systems to TensorFlow, is leaving to found Discovery Loop with several senior colleagues. The same day, Demis Hassabis takes the chair of Google DeepMind and a chief-scientist title at Alphabet, a senior role that pulls him away from operations, and Alphabet shares fall 4%. The company with the deepest bench of AI talent in the world has just lost part of it, and the market put a price on those departures.</p>\n<p>The scarce resource in AI now sits with a handful of people: those who know where to point the machine. The model rents by the query, its price falls every month. The person who knows your data, your constraints and the prompt that works on your case cannot be replaced with a click. Google, with all its means, did not keep Jeff Dean; a French small business will not keep its AI expert with counter-offers either.</p>\n<p>The skill worth building therefore rests less on hiring a star than on anchoring the knowledge in the team. Identify the one to three people who hold your AI capability, those who write the prompts that hold up, choose the model, manage the evaluation sets. Cover each with a second person. Get that knowledge out of people's heads: a shared library of prompts, test sets and model decisions, versioned and documented. Make AI competence a named and backed-up role, not an extra bolted onto someone's job description.</p>\n<p>One irony the day underlines remains. Those leaving are betting on the AI that discovers: biology, chips, materials. The same day, Tom Zahavy, a researcher at DeepMind, explains that today's models are still unable to make the leap that invents an unprecedented idea. The frontier moves toward science, carried by people who had been underrated. The model has become an ordinary product; the person who knows how to use it on your problem has not.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Jeff Dean is leaving Google. The engineer who joined in 1999, who built part of the group's infrastructure, from distributed systems to TensorFlow, is leaving to found Discovery Loop with several senior colleagues. The same day, Demis Hassabis takes the chair of Google DeepMind and a chief-scientist title at Alphabet, a senior role that pulls him away from operations, and Alphabet shares fall 4%. The company with the deepest bench of AI talent in the world has just lost part of it, and the market put a price on those departures.</p>\n<p>The scarce resource in AI now sits with a handful of people: those who know where to point the machine. The model rents by the query, its price falls every month. The person who knows your data, your constraints and the prompt that works on your case cannot be replaced with a click. Google, with all its means, did not keep Jeff Dean; a French small business will not keep its AI expert with counter-offers either.</p>",
+    "itemsCites": [
+      1,
+      12
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": null,
+  "suivante": {
+    "date": "2026-08-10",
+    "dateLongue": "Monday 10 August 2026",
+    "titreEditorial": "OpenAI freezes part of Astra over cyber risk",
+    "nbItems": 14
+  },
+  "nbItems": 13,
+  "nbSources": 19,
+  "nbSignes": 8383,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "TechCrunch",
+    "Wired",
+    "Bloomberg",
+    "The Verge",
+    "ZDNet France",
+    "CNIL",
+    "Next.ink",
+    "Clubic",
+    "Siècle Digital",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 123,
+  "publieLe": "2026-08-06T08:30:00+02:00",
+  "publieLeAffiche": "8h30"
+}

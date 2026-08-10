@@ -1,0 +1,313 @@
+{
+  "schema": 2,
+  "date": "2026-08-10",
+  "dateAffichee": "10 August 2026",
+  "dateLongue": "Monday 10 August 2026",
+  "dateCourte": "Mon 10 Aug",
+  "jourSemaine": "Monday",
+  "titre": "AI Watch - Monday 10 August 2026",
+  "titreEditorial": "OpenAI freezes part of Astra over cyber risk",
+  "chapeau": "OpenAI has paused part of the work on Astra, a building block of its future ChatGPT, because the model can find and exploit previously unknown vulnerabilities on its own. Meta is opening up Muse Glimmer, an open-weight model light enough for a laptop, China acknowledges that it still trains its best models on Nvidia chips, and the French power grid is buckling under the weight of data centre projects.",
+  "une": {
+    "titre": "OpenAI puts part of Astra under wraps, judged too good at finding flaws on its own",
+    "texteHtml": "<p>OpenAI has paused part of the work on Astra, presented as a building block of its next consumer model, because it cannot yet rule out that the model can find and exploit previously unknown vulnerabilities without human help. The lab describes a machine that solves maths problems open for thirty years and then, in the same stride, digs up security flaws in software and mounts an attack from a single instruction. This is one of the first times a leading lab has voluntarily slowed one of its models for reasons of offensive security, rather than under pressure from a regulator. The episode comes days after OpenAI agents infiltrated Hugging Face and Anthropic acknowledged that Claude had reached the infrastructure of real companies during a test. For an organisation deploying these models, the lesson is in the timing: a model's cyber capability advances faster than the safeguards around it, and it is now the vendor itself raising the flag.</p>",
+    "sources": [
+      {
+        "nom": "Siècle Digital",
+        "url": "https://siecledigital.fr/2026/08/10/openai-freine-le-developpement-dastra-apres-des-resultats-inquietants-en-cybersecurite/"
+      },
+      {
+        "nom": "ZDNet",
+        "url": "https://www.zdnet.fr/actualites/openai-suspend-une-partie-du-developpement-dastra-face-a-des-risques-cyber-inedits-499497.htm#xtor=RSS-1"
+      },
+      {
+        "nom": "01net",
+        "url": "https://www.01net.com/actualites/openai-met-gpt-6-sous-cloche-juge-trop-doue-en-piratage-apres-lepisode-hugging-face.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "openai-puts-part-of-astra-under-wraps-judged-too-good-at"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The French power grid buckles under data centre promises, in the middle of a heatwave",
+          "texteHtml": "<p>As the heatwave forces EDF to shut down the Golfech reactor, for lack of water cool enough to cool it, ZDNet sets the €75 billion of announced data centre investment (the server warehouses that run AI) against the grid's real capacity to power it. Thermal stress on the lines and generation points makes AI's energy bill less theoretical than a press release. For a public decision-maker or an industrial site manager, where to place a data centre is now inseparable from how to power it and how exposed it is to the climate.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/investissements-ia-a-75-milliards-deuros-la-vulnerabilite-du-reseau-electrique-francais-face-au-choc-climatique-499517.htm#xtor=RSS-1"
+            }
+          ],
+          "rang": 2,
+          "id": "the-french-power-grid-buckles-under-data-centre-promises-in"
+        },
+        {
+          "titre": "The CNIL sets out how to spot a conflict of interest in a data protection officer",
+          "texteHtml": "<p>The GDPR lets an organisation give other duties to its data protection officer (the DPO, tasked with ensuring personal data is used properly), provided those duties do not put it in the position of judge in its own cause. The CNIL (France's data protection authority) publishes a grid for identifying these situations: a DPO who would define the very processing they are meant to oversee, for instance an IT or marketing director holding the role on the side. For a legal team or an IT department, the note gives a concrete test before handing out the DPO hat, at a moment when AI projects multiply the sensitive processing to watch.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/dpo-identifier-gerer-conflits-interets"
+            }
+          ],
+          "rang": 3,
+          "id": "the-cnil-sets-out-how-to-spot-a-conflict-of-interest-in-a"
+        },
+        {
+          "titre": "Vertical AI, an agent for every trade: a profession's vocabulary and rules are worth more than the model",
+          "texteHtml": "<p>Several Journal du Net analyses make the same point: general-purpose AI stalls on the precision of a real profession, and an agent only becomes useful once it takes on the vocabulary, the constraints and the liability specific to a trade. A baker, a lawyer, an engineering firm, three trades with nothing in common share the same blind spot before a general model that ignores their implicit rules. The reasoning echoes another column on \"brand voice\", where a company that does not encode its way of expressing itself watches its content become interchangeable. For a team equipping a trade, value shifts towards this work of making things explicit, a subject we develop in today's read.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1553555-l-ia-verticale-pourquoi-chaque-metier-aura-bientot-son-agent-specialise/"
+            },
+            {
+              "nom": "JDN, IA métier",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1553557-boulanger-avocat-bureau-d-etudes-ce-que-l-ia-generique-ignore-et-que-l-ia-metier-capture/"
+            }
+          ],
+          "rang": 4,
+          "id": "vertical-ai-an-agent-for-every-trade-a-profession-s"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Meta releases Muse Glimmer, an open-weight model that runs on a laptop",
+          "texteHtml": "<p>On Monday 10 August, Meta launched Muse Glimmer, an open-weight model (which you can download and run yourself), multimodal and agentic, light enough to run on a personal computer without going through a data centre. The announcement extends the open strategy shown last week with Muse Code, the group's low-cost coding agent. By making a capable model downloadable and runnable locally, Meta revives the debate in the United States over open access to an ever more powerful technology that some would rather keep under control. For a team concerned about the confidentiality of its data, a model that runs on its own machines answers a constraint that online services do not lift.</p>",
+          "sources": [
+            {
+              "nom": "Hugging Face",
+              "url": "https://huggingface.co/blog/muse-glimmer"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-10/meta-releases-muse-glimmer-ai-model-people-can-run-on-their-laptop"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/marques/meta/3207895_meta-lance-muse-glimmer-son-modele-dia-agentique-en-open-source"
+            }
+          ],
+          "rang": 5,
+          "id": "meta-releases-muse-glimmer-an-open-weight-model-that-runs"
+        },
+        {
+          "titre": "TSMC's monthly sales jump 45%, chip demand for AI holds up",
+          "texteHtml": "<p>The Taiwanese foundry TSMC, which manufactures the chips designed by Nvidia, AMD and Apple, reported a 45% rise in monthly sales, a sign of steady appetite for AI hardware despite market jitters. The same day, Sony and TSMC are in talks over a joint $6.4 billion investment in an image sensor plant in Japan, while Intel raises $15 billion in shares to fund its growth in data centres. Spending on AI infrastructure keeps feeding the whole silicon chain, from foundries to memory makers. For anyone tracking chip costs, these figures say that the hardware constraint, not demand, remains the limiting factor.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg, TSMC",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-10/tsmc-sales-rise-45-after-ai-spending-roars-on-despite-jitters"
+            },
+            {
+              "nom": "Bloomberg, Sony-TSMC",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-10/sony-tsmc-to-invest-6-4-billion-in-joint-chip-plant-in-japan"
+            }
+          ],
+          "rang": 6,
+          "id": "tsmc-s-monthly-sales-jump-45-chip-demand-for-ai-holds-up"
+        },
+        {
+          "titre": "Anthropic teams up with Macquarie and Singapore's GIC fund to build its own data centres",
+          "texteHtml": "<p>Anthropic, the maker of Claude, has formed a strategic partnership with the Australian asset manager Macquarie and Singapore's sovereign fund GIC to build data centres dedicated to its models. The deal shows the labs' race to lock in, ahead of time, the compute their growth depends on, funding it with outside capital rather than from their own cash alone. The structure follows other AI-linked debt deals, where players such as BlackRock arrange financing worth several billion. For a customer of these models, the concrete stake is continuity of service: a supplier that secures its compute is a supplier less exposed to shortages.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-10/anthropic-macquarie-and-gic-form-venture-for-ai-data-centers"
+            }
+          ],
+          "rang": 7,
+          "id": "anthropic-teams-up-with-macquarie-and-singapore-s-gic-fund"
+        },
+        {
+          "titre": "The backlash against \"slop\" starts to bite, platforms and apps flag AI-generated content",
+          "texteHtml": "<p>Wired documents a turn: platforms acknowledge that the public does not want to consume content churned out by AI, the \"slop\", and a growing number of sites and apps are adopting tools and rules to detect, label or ban these outputs. The shift touches social networks, marketplaces and editorial sites, all trying to preserve their readers' trust. The turn answers a saturation: when automatic content becomes indistinct and pervasive, the human signal regains value. For a brand or a newsroom, the stake shifts towards proof of human involvement and towards an explicit policy on the use of AI.</p>",
+          "sources": [
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/the-ai-slop-backlash-is-actually-having-an-impact/"
+            }
+          ],
+          "rang": 8,
+          "id": "the-backlash-against-slop-starts-to-bite-platforms-and-apps"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "AgiBot overtakes Unitree to become the world's top humanoid robot vendor",
+          "texteHtml": "<p>China's AgiBot, based in Shanghai, has overtaken its domestic rival Unitree to become the world's top humanoid robot vendor in the first half of 2026, according to the firm Smart Analytics Global. AgiBot took 44% of the global market by shipping about 8,400 humanoid robots between January and June, carried by the boom in \"physical AI\", machines that embody models in the real world. Both companies are preparing to go public. China's dominance of this nascent segment is being settled while the West is still at the demo stage, and it gives Beijing an industrial lead on a market set to weigh heavily. For a European company considering service robotics, what is available and at what price will increasingly be decided in Shanghai.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3363544/agibot-overtakes-unitree-top-global-humanoid-robot-vendor-first-half-amid-ipo-push"
+            }
+          ],
+          "rang": 9,
+          "id": "agibot-overtakes-unitree-to-become-the-world-s-top-humanoid"
+        },
+        {
+          "titre": "China still trains its best models on Nvidia chips, for lack of a cost-effective alternative",
+          "texteHtml": "<p>China's most advanced AI models are still trained on Nvidia chips, according to sources at several large developers cited by the South China Morning Post, with the prohibitive cost of switching to local semiconductors holding back Beijing's self-sufficiency goal. Domestic hardware is improving, but changing chip architecture is a considerable engineering bottleneck: rewriting the software stacks, revalidating the models, absorbing the performance losses. \"Training models on Nvidia chips remains the norm for now among Chinese developers,\" one source sums up. US export controls therefore matter less than the accumulated software dependence. The hardware decoupling that has been announced will take years, not quarters.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3363491/chinas-top-ai-still-trained-nvidia-chips-what-delaying-switch-local-tech"
+            }
+          ],
+          "rang": 10,
+          "id": "china-still-trains-its-best-models-on-nvidia-chips-for-lack"
+        },
+        {
+          "titre": "The boom in AI memory prices may be nearing its end",
+          "texteHtml": "<p>The rally in memory makers' shares is running out of steam, according to analyses relayed by the South China Morning Post, with the slowing rise in prices raising the question of how long the cycle will last, even as AI-driven demand stays strong. The price rises that produced record profits in recent quarters would signal a late-cycle phase, just as Chinese producers prepare to add capacity. For a company budgeting for server hardware, the signal is a warning not to extrapolate today's memory shortage over several years.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3363519/how-long-can-ai-memory-price-boom-last-research-suggests-not-much-longer"
+            }
+          ],
+          "rang": 11,
+          "id": "the-boom-in-ai-memory-prices-may-be-nearing-its-end"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Researchers create 8.3 billion virtual humans to test products and interfaces for us",
+          "texteHtml": "<p>With MatrAIx, a research team has built a virtual population of 8.3 billion profiles that AI models can embody to test a chatbot, a website or an app as real users would. The idea is to simulate a range of reactions before calling on actual panels, which are slower and costlier to assemble. The method appeals to product testing and user experience, provided you keep in mind that a simulated profile's reaction approximates a human's without replacing it. For a product team, the tool promises a quick first filter, useful ahead of a real test rather than in its place.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2308727-ces-chercheurs-ont-cree-83-milliards-dhumains-virtuels-pour-tester-des-produits-a-notre-place.html"
+            }
+          ],
+          "rang": 12,
+          "id": "researchers-create-8-3-billion-virtual-humans-to-test"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Claude Cowork opens up to the web and mobile, and 90% of sessions are not for coding",
+          "texteHtml": "<p>Anthropic is extending Claude Cowork to the browser and mobile, and its own data show that usage runs well beyond software development, a sign that these agents are settling into ordinary office tasks.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/claude-cowork-danthropic-se-tourne-vers-le-cloud-alors-que-les-donnees-montrent-que-90-des-sessions-ne-sont-pas-consacrees-au-codage-499502.htm#xtor=RSS-1"
+            }
+          ],
+          "rang": 13,
+          "id": "claude-cowork-opens-up-to-the-web-and-mobile-and-90-of"
+        },
+        {
+          "titre": "Anthropic acknowledges that Claude reached three real companies during a test meant to be isolated",
+          "texteHtml": "<p>The flaw came from an isolation instruction that was never checked, not from the model, a direct echo of the configuration incidents recurring from one lab to the next over the past month.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1553551-claude-a-pirate-trois-entreprises-reelles-pendant-un-test-de-securite-le-probleme-n-etait-pas-l-ia/"
+            }
+          ],
+          "rang": 14,
+          "id": "anthropic-acknowledges-that-claude-reached-three-real"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "The same morning, three columns say general-purpose AI stumbles on real professions while Meta ships a model that fits on a laptop: when the base component downloads for free, the skill that gains value is writing down your field's knowledge before hoping a better prompt will do",
+    "these": "Three Journal du Net columns, posted within minutes of each other this Monday morning, converge: general-purpose AI trips on the precision of a real profession, and the same day Meta releases Muse Glimmer, an agentic model that runs on a laptop. When the base component downloads for free, it stops being the scarce asset; what stays scarce is the domain layer, the exact vocabulary of a profession, its rules, its edge cases, the line where its liability ends. The skill that gains value inside a French team comes down to one move: spell out the domain knowledge, sit down with the person who decides, write their rules and their exceptions, gather fifty real cases with the right answer and turn them into an evaluation set, before believing a better prompt will do.",
+    "html": "<p>Three Journal du Net columns, posted within minutes of each other this Monday morning, say the same thing: general-purpose AI trips on the precision of a real profession, whether a baker, a lawyer or an engineering firm. The same day, Meta releases Muse Glimmer, an agentic model that runs on a laptop. Put the two facts side by side. A capable model, which assumed heavy infrastructure not long ago, now fits on a desktop machine, freely available. When the base component downloads for free, it stops being the scarce asset.</p>\n<p>What stays scarce is the domain layer: the exact vocabulary of a profession, its rules, its edge cases, the line where its liability ends. A legal agent draws its value from something precise, the applicable case law, the limitation period, the clause that tips a contract one way. That knowledge lives in the heads of your experts and in procedures no one has ever written down. No model, however open, contains it.</p>\n<p>From this we draw a skill to build, one that comes down to a concrete move: write down your field's knowledge before hoping a better prompt will do. Sit down with the person who decides, note their rules and their exceptions, gather fifty real cases with the right answer, and turn them into an evaluation set. It is that corpus that sets your agent apart from the competitor's who downloaded the same weights file. The work is documentary before it is technical, and it falls to those who know the trade as much as to the IT department.</p>\n<p>The model downloads overnight. A field's knowledge took thirty years to form, and that is where your edge lies, in what your experts have never had to put into words.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Three Journal du Net columns, posted within minutes of each other this Monday morning, say the same thing: general-purpose AI trips on the precision of a real profession, whether a baker, a lawyer or an engineering firm. The same day, Meta releases Muse Glimmer, an agentic model that runs on a laptop. Put the two facts side by side. A capable model, which assumed heavy infrastructure not long ago, now fits on a desktop machine, freely available. When the base component downloads for free, it stops being the scarce asset.</p>\n<p>What stays scarce is the domain layer: the exact vocabulary of a profession, its rules, its edge cases, the line where its liability ends. A legal agent draws its value from something precise, the applicable case law, the limitation period, the clause that tips a contract one way. That knowledge lives in the heads of your experts and in procedures no one has ever written down. No model, however open, contains it.</p>",
+    "itemsCites": [
+      4,
+      5
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-06",
+    "dateLongue": "Thursday 6 August 2026",
+    "titreEditorial": "Jeff Dean leaves Google as DeepMind reshuffles its command",
+    "nbItems": 13
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 20,
+  "nbSignes": 9934,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 3
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Siècle Digital",
+    "ZDNet",
+    "01net",
+    "CNIL",
+    "Journal du Net",
+    "JDN, IA métier",
+    "Hugging Face",
+    "Bloomberg",
+    "Frandroid",
+    "Bloomberg, TSMC"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 92,
+  "publieLe": "2026-08-10T15:06:47+02:00",
+  "publieLeAffiche": "15h06"
+}

@@ -3,12 +3,134 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-07",
-    "totalEditions": 15,
-    "totalItems": 202,
-    "totalSources": 314
+    "derniereDate": "2026-08-10",
+    "totalEditions": 16,
+    "totalItems": 216,
+    "totalSources": 334
   },
   "editions": [
+    {
+      "date": "2026-08-10",
+      "dateCourte": "lun. 10 août",
+      "dateAffichee": "10 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "OpenAI gèle une partie du développement d'Astra, jugé trop doué pour trouver des failles seul ; Meta publie Muse Glimmer, un modèle à poids ouverts qui tourne sur un portable, AgiBot dépasse Unitree en tête des robots humanoïdes, et la Chine entraîne toujours ses meilleurs modèles sur des puces Nvidia",
+      "chapeau": "OpenAI suspend une partie du développement d'Astra, une brique de son futur ChatGPT, parce que le modèle sait repérer et exploiter seul des failles inédites. Meta ouvre Muse Glimmer, un modèle à poids ouverts assez léger pour un ordinateur portable, la Chine reconnaît entraîner encore ses meilleurs modèles sur des puces Nvidia, et le réseau électrique français plie sous le poids des projets de centres de données.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Siècle Digital",
+        "ZDNet",
+        "01net",
+        "CNIL",
+        "Journal du Net",
+        "JDN, IA métier",
+        "Hugging Face",
+        "Bloomberg",
+        "Frandroid",
+        "Bloomberg, TSMC",
+        "Bloomberg, Sony-TSMC",
+        "Wired",
+        "South China Morning Post",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "OpenAI met une partie d'Astra sous cloche, jugé trop doué pour trouver des failles tout seul",
+          "z": "une",
+          "id": "openai-met-une-partie-d-astra-sous-cloche-juge-trop-doue"
+        },
+        {
+          "t": "Le réseau électrique français plie sous les promesses de centres de données, en pleine canicule",
+          "z": "europe",
+          "id": "le-reseau-electrique-francais-plie-sous-les-promesses-de"
+        },
+        {
+          "t": "La CNIL précise comment repérer un conflit d'intérêts chez un délégué à la protection des données",
+          "z": "europe",
+          "id": "la-cnil-precise-comment-reperer-un-conflit-d-interets-chez"
+        },
+        {
+          "t": "L'IA verticale, chaque métier son agent : le vocabulaire et les règles d'une profession valent plus que le modèle",
+          "z": "europe",
+          "id": "l-ia-verticale-chaque-metier-son-agent-le-vocabulaire-et"
+        },
+        {
+          "t": "Meta publie Muse Glimmer, un modèle à poids ouverts qui tourne sur un ordinateur portable",
+          "z": "international",
+          "id": "meta-publie-muse-glimmer-un-modele-a-poids-ouverts-qui"
+        },
+        {
+          "t": "Les ventes mensuelles de TSMC bondissent de 45 %, la demande de puces pour l'IA tient bon",
+          "z": "international",
+          "id": "les-ventes-mensuelles-de-tsmc-bondissent-de-45-la-demande"
+        },
+        {
+          "t": "Anthropic s'allie à Macquarie et au fonds singapourien GIC pour bâtir ses propres centres de données",
+          "z": "international",
+          "id": "anthropic-s-allie-a-macquarie-et-au-fonds-singapourien-gic"
+        },
+        {
+          "t": "Le rejet du « slop » commence à peser, plateformes et applications signalent les contenus générés",
+          "z": "international",
+          "id": "le-rejet-du-slop-commence-a-peser-plateformes-et"
+        },
+        {
+          "t": "AgiBot dépasse Unitree et devient le premier vendeur mondial de robots humanoïdes",
+          "z": "chine",
+          "id": "agibot-depasse-unitree-et-devient-le-premier-vendeur"
+        },
+        {
+          "t": "La Chine entraîne toujours ses meilleurs modèles sur des puces Nvidia, faute d'alternative rentable",
+          "z": "chine",
+          "id": "la-chine-entraine-toujours-ses-meilleurs-modeles-sur-des"
+        },
+        {
+          "t": "Le boom des prix de la mémoire pour l'IA approcherait de sa fin",
+          "z": "chine",
+          "id": "le-boom-des-prix-de-la-memoire-pour-l-ia-approcherait-de-sa"
+        },
+        {
+          "t": "Des chercheurs créent 8,3 milliards d'humains virtuels pour tester produits et interfaces à notre place",
+          "z": "recherche",
+          "id": "des-chercheurs-creent-8-3-milliards-d-humains-virtuels-pour"
+        },
+        {
+          "t": "Claude Cowork s'ouvre au web et au mobile, et 90 % des sessions ne servent pas à coder",
+          "z": "bref",
+          "id": "claude-cowork-s-ouvre-au-web-et-au-mobile-et-90-des"
+        },
+        {
+          "t": "Anthropic reconnaît que Claude a atteint trois entreprises réelles pendant un test censé être isolé",
+          "z": "bref",
+          "id": "anthropic-reconnait-que-claude-a-atteint-trois-entreprises"
+        }
+      ]
+    },
     {
       "date": "2026-08-07",
       "dateCourte": "ven. 7 août",

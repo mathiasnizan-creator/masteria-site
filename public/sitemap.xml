@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/quelle-est-la-meilleure-ia</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -92,37 +92,37 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/chatgpt-vs-claude</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/copilot-vs-chatgpt</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleure-ia-entreprise-2026</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleure-ia-pour-coder</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/mistral-vs-chatgpt</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/gemini-vs-copilot</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -200,7 +200,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleur-agent-ia</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -254,7 +254,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -344,7 +344,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -583,6 +583,12 @@
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/en/ai-watch</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/test-maturite-ia</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -734,7 +740,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/publications</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
   </url>
@@ -1471,6 +1477,12 @@
     <priority>0.50</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-10</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-08-07</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
@@ -1559,6 +1571,24 @@
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/publications</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-08-10</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-08-06</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/mentions-legales</loc>

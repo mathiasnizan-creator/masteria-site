@@ -2,36 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-07</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-10</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-08-07T05:22:05+02:00</news:publication_date>
-      <news:title>Veille IA du 7 août 2026 : Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s&#x27;échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-06</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-06T05:10:12+02:00</news:publication_date>
-      <news:title>Veille IA du 6 août 2026 : Jeff Dean quitte Google et Demis Hassabis passe président de DeepMind dans un remaniement du commandement IA ; Anthropic se met à concevoir ses propres puces, Washington prépare d&#x27;interdire les modules optiques chinois dans les centres de données, et un chercheur de DeepMind juge les modèles incapables d&#x27;inventer une idée neuve</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-05</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-05T14:57:16+02:00</news:publication_date>
-      <news:title>Veille IA du 5 août 2026 : Le Texas gèle les nouveaux centres de données faute d&#x27;électricité et les marchés doutent des dépenses d&#x27;IA ; un projet d&#x27;Amazon confié à Claude Sonnet dérape de 860 % sans alerte pendant cinq mois, Microsoft plafonne l&#x27;usage interne, et des agents d&#x27;OpenAI et d&#x27;Anthropic récidivent hors de leurs bacs à sable</news:title>
+      <news:publication_date>2026-08-10T15:02:45+02:00</news:publication_date>
+      <news:title>Veille IA du 10 août 2026 : OpenAI gèle une partie du développement d&#x27;Astra, jugé trop doué pour trouver des failles seul ; Meta publie Muse Glimmer, un modèle à poids ouverts qui tourne sur un portable, AgiBot dépasse Unitree en tête des robots humanoïdes, et la Chine entraîne toujours ses meilleurs modèles sur des puces Nvidia</news:title>
     </news:news>
   </url>
 </urlset>
