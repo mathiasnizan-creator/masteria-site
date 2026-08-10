@@ -165,8 +165,8 @@ const FAQ = [
     a: "La taille oriente le profil. Une PME a intérêt à un cabinet proche du terrain, capable de cadrer vite, de construire et de rendre les équipes autonomes : souvent un cabinet hybride. Une ETI engagée dans une transformation plus large peut s'appuyer sur un cabinet de transformation numérique. Un grand groupe avec des enjeux de gouvernance internationaux se tournera vers un grand cabinet de stratégie. Dans tous les cas, vérifiez les trois compétences sur trois acteurs du profil adapté.",
   },
   {
-    q: 'Le conseil en IA est-il finançable (OPCO, Bpifrance) ?',
-    a: "En France, seules les actions de formation délivrées par un organisme certifié Qualiopi sont finançables par les OPCO. Le conseil et le développement ne le sont pas. Côté diagnostic, certains audits peuvent être soutenus par des dispositifs publics français comme le Diag Data IA de Bpifrance, sous conditions d'éligibilité. Ces dispositifs concernent la France ; en Suisse et en Belgique, le cadre diffère. Un prestataire qui promet une prise en charge OPCO sur du conseil mérite une vérification attentive.",
+    q: 'Le conseil en IA est-il finançable ?',
+    a: "En France, seules les actions de formation délivrées par un organisme certifié Qualiopi sont finançables par les OPCO. Le conseil et le développement ne le sont pas par votre OPCO. Selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil peuvent s'appliquer, sous conditions d'éligibilité : le tour se fait au cadrage. Ces dispositifs concernent la France ; en Suisse et en Belgique, le cadre diffère. Un prestataire qui promet une prise en charge OPCO sur du conseil mérite une vérification attentive.",
   },
   {
     q: 'Que prouve la certification Qualiopi pour un cabinet de conseil en IA ?',
@@ -587,7 +587,7 @@ export default function MeilleurCabinetConseilIAPage() {
 
           <div style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid #1E293B', borderRadius: 12, padding: '18px 22px' }}>
             <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#fff' }}>À savoir pour votre financement :</strong> en France, seules les actions de formation délivrées par un organisme certifié Qualiopi sont finançables par les OPCO. Le conseil et le développement ne le sont pas. Certains diagnostics peuvent relever de dispositifs publics comme le Diag Data IA de Bpifrance, sous conditions. Un cabinet qui promet une prise en charge OPCO sur du conseil mérite une vérification attentive.
+              <strong style={{ color: '#fff' }}>À savoir pour votre financement :</strong> en France, seules les actions de formation délivrées par un organisme certifié Qualiopi sont finançables par les OPCO. Le conseil et le développement ne le sont pas par votre OPCO. Des dispositifs publics de soutien au conseil existent selon votre profil, sous conditions, et se vérifient au cadrage. Un cabinet qui promet une prise en charge OPCO sur du conseil mérite une vérification attentive.
             </p>
           </div>
         </div>

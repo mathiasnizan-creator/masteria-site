@@ -31,9 +31,11 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * INTÉGRITÉ (ligne maison) : posture capacité, aucun cas client nommé, aucun
  * chiffre de résultat inventé, pas de prix ferme. Le conseil n'est pas
  * finançable par votre OPCO (réservé formation) ; le volet formation de
- * l'accompagnement l'est (Qualiopi). Aides publiques : uniquement des
- * dispositifs vérifiés (Diag Data IA Bpifrance) + « certaines régions »,
- * jamais de promesse d'éligibilité.
+ * l'accompagnement l'est (Qualiopi). Aides publiques : formulation GÉNÉRIQUE
+ * uniquement (« selon votre profil et votre région, détaillé au cadrage »).
+ * CONSIGNE Mathias 2026-08-10 : ne JAMAIS nommer Bpifrance / Diag Data IA sur
+ * le site — ça envoie les prospects faire leur audit ailleurs. En devis, les
+ * dispositifs restent mobilisables (mémoire financement conseil).
  */
 
 const SLUG = 'accompagnement-ia'
@@ -206,11 +208,11 @@ const FAQ = [
   },
   {
     q: "Combien coûte un accompagnement IA ?",
-    a: "Sur devis, selon le périmètre (nombre d'équipes, de sites, de cas d'usage) et la durée. Le premier échange de cadrage est gratuit et sans engagement. Deux repères pour budgéter : le volet formation de l'accompagnement est finançable par votre OPCO, Masteria étant certifiée Qualiopi ; et pour la phase de cadrage, des dispositifs publics existent selon votre profil, comme le Diag Data IA de Bpifrance pour les PME et ETI éligibles. Nous faisons le point sur les financements mobilisables dès le cadrage.",
+    a: "Sur devis, selon le périmètre (nombre d'équipes, de sites, de cas d'usage) et la durée. Le premier échange de cadrage est gratuit et sans engagement. Deux repères pour budgéter : le volet formation de l'accompagnement est finançable par votre OPCO, Masteria étant certifiée Qualiopi ; et selon votre profil et votre région, des dispositifs publics de soutien au conseil peuvent alléger le reste. Nous faisons le point sur les financements mobilisables dès le cadrage.",
   },
   {
     q: "Peut-on faire financer un accompagnement IA ?",
-    a: "En partie. Le volet conseil et déploiement n'est pas finançable par votre OPCO, qui couvre la formation : tout le volet formation de l'accompagnement (parcours par métier, acculturation des équipes) l'est en revanche, Masteria étant certifiée Qualiopi. Côté dispositifs publics, le Diag Data IA de Bpifrance subventionne la phase d'état des lieux pour les PME et ETI éligibles, et certaines régions aident le conseil en transformation numérique. Le tour des financements applicables à votre situation se fait au cadrage.",
+    a: "En partie. Le volet conseil et déploiement n'est pas finançable par votre OPCO, qui couvre la formation : tout le volet formation de l'accompagnement (parcours par métier, acculturation des équipes) l'est en revanche, Masteria étant certifiée Qualiopi. Côté dispositifs publics, des aides au conseil et à la transformation numérique existent selon votre taille, votre secteur et votre région. Le tour des financements applicables à votre situation se fait au cadrage, c'est compris dedans.",
   },
   {
     q: "Travaillez-vous avec un outil IA en particulier ?",
@@ -373,7 +375,6 @@ export default function AccompagnementIAPage() {
         dateModified="2026-08-10"
         speakable={['#geo-summary', '#en-bref']}
         citations={[
-          { name: 'Diag Data IA — Bpifrance', url: 'https://www.bpifrance.fr/catalogue-offres/diag-data-ia' },
           { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
         ]}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
@@ -591,12 +592,12 @@ export default function AccompagnementIAPage() {
                 Ce qui se finance dans un accompagnement IA
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le volet formation est finançable par votre OPCO : Masteria est certifiée Qualiopi, et la conduite du changement passe en grande partie par la formation des équipes. Le volet conseil et déploiement n'est pas finançable par votre OPCO ; selon votre profil, des dispositifs publics le soutiennent, comme le Diag Data IA de Bpifrance pour la phase d'état des lieux (PME et ETI éligibles, subvention de 40 %) et certaines aides régionales à la transformation numérique. Nous faisons le point sur les financements mobilisables dès le cadrage, c'est compris dedans.
+                Le volet formation est finançable par votre OPCO : Masteria est certifiée Qualiopi, et la conduite du changement passe en grande partie par la formation des équipes. Le volet conseil et déploiement n'est pas finançable par votre OPCO ; selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil et à la transformation numérique peuvent s'appliquer. Nous faisons le point sur les financements mobilisables dès le cadrage, c'est compris dedans.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
                   'Formation des équipes : OPCO (Qualiopi)',
-                  'État des lieux : Diag Data IA Bpifrance selon éligibilité',
+                  'Dispositifs publics selon votre profil et votre secteur',
                   'Aides régionales selon votre territoire',
                   'Tour des dispositifs fait au cadrage, sans surcoût',
                 ].map(pt => (

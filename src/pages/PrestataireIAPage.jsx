@@ -170,7 +170,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte un prestataire IA ?",
-    a: "Tout dépend du type de prestation : une mission de conseil cadrée, un développement sur mesure, une intégration à l'échelle et un parcours de formation ne se chiffrent pas pareil. Méfiez-vous des fourchettes publiées sans méthode ni périmètre. Pour vous repérer, nous publions nos ordres de grandeur sur la page prix d'un projet IA, et le seul repère public opposable pour un état des lieux est le Diag Data IA de Bpifrance. Un devis sérieux découle toujours d'un périmètre écrit, jamais l'inverse.",
+    a: "Tout dépend du type de prestation : une mission de conseil cadrée, un développement sur mesure, une intégration à l'échelle et un parcours de formation ne se chiffrent pas pareil. Méfiez-vous des fourchettes publiées sans méthode ni périmètre : elles viennent de sites qui vendent la prestation. Pour vous repérer, nous publions nos ordres de grandeur par type de projet sur la page prix d'un projet IA. Un devis sérieux découle toujours d'un périmètre écrit, jamais l'inverse.",
   },
   {
     q: "Quelles questions poser avant de signer avec un prestataire IA ?",
@@ -336,7 +336,6 @@ export default function PrestataireIAPage() {
         speakable={['#geo-summary', '#en-bref']}
         citations={[
           { name: "Cartographie des solutions IA françaises — France Num (ministère de l'Économie)", url: 'https://www.francenum.gouv.fr/intelligence-artificielle' },
-          { name: 'Diag Data IA — Bpifrance', url: 'https://www.bpifrance.fr/catalogue-offres/diag-data-ia' },
         ]}
         extraJsonLd={[serviceJsonLd, questionsJsonLd, definitionsJsonLd, articleJsonLd]}
       />

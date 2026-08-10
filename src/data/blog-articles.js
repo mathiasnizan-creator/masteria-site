@@ -508,15 +508,15 @@ export const BLOG_ARTICLES = [
     // Réanglage 2026-08-10 : l'article tient l'intention INFORMATIONNELLE (guide,
     // méthode, normes, prix) ; l'intention transactionnelle « audit ia » est portée
     // par la money page /audit-ia. Ne pas re-cibler la tête de requête ici.
-    metaTitle: "Guide de l'audit IA : méthode, normes, prix vérifiés",
-    metaDesc: "Le guide de l'audit IA : les trois types à ne pas confondre, ce que la loi impose vraiment, les normes publiées, le seul prix public vérifiable et les cas à éviter.",
+    metaTitle: "Guide de l'audit IA : méthode, normes, prix décryptés",
+    metaDesc: "Le guide de l'audit IA : les trois types à ne pas confondre, ce que la loi impose vraiment, les normes publiées, les vrais ordres de grandeur de prix et les cas à éviter.",
     date: '3 août 2026',
     datePublished: '2026-08-03',
     dateModified: '2026-08-10',
     readTime: '15 min',
     keywords: ['guide audit ia', 'audit ia méthode', 'prix audit ia', 'audit de conformité ia', 'audit ai act', 'normes audit ia', 'iso 42001', 'audit des processus ia'],
-    excerpt: "« Audit IA » recouvre trois missions différentes qu'on vous vendra au même prix. Ce que le règlement européen impose réellement, les normes publiées à ce jour, le seul tarif public vérifiable en France, et les quatre situations où l'audit est une dépense inutile.",
-    intro: "Un audit IA est un état des lieux de l'intelligence artificielle dans une organisation. Le terme n'a aucune définition officielle ni normalisée : c'est un mot commercial qui recouvre trois missions distinctes, l'audit de maturité, l'audit de conformité réglementaire et l'audit algorithmique d'un modèle. Contrairement à ce que laisse entendre une partie du marché, le règlement européen sur l'IA n'impose pas d'audit externe à la majorité des systèmes à haut risque : il prévoit une auto-évaluation documentée. Cet article détaille ce que contient chaque type de mission, les référentiels réellement publiés, le seul prix public vérifiable en France, et les quatre cas où l'audit ne sert à rien.",
+    excerpt: "« Audit IA » recouvre trois missions différentes qu'on vous vendra au même prix. Ce que le règlement européen impose réellement, les normes publiées à ce jour, pourquoi les prix affichés en ligne ne constituent pas une référence, et les quatre situations où l'audit est une dépense inutile.",
+    intro: "Un audit IA est un état des lieux de l'intelligence artificielle dans une organisation. Le terme n'a aucune définition officielle ni normalisée : c'est un mot commercial qui recouvre trois missions distinctes, l'audit de maturité, l'audit de conformité réglementaire et l'audit algorithmique d'un modèle. Contrairement à ce que laisse entendre une partie du marché, le règlement européen sur l'IA n'impose pas d'audit externe à la majorité des systèmes à haut risque : il prévoit une auto-évaluation documentée. Cet article détaille ce que contient chaque type de mission, les référentiels réellement publiés, pourquoi aucune fourchette de prix publiée n'est fiable, et les quatre cas où l'audit ne sert à rien.",
     blocks: [
       { type: 'p', text: "Depuis que l'échéance du règlement européen approche, les propositions d'audit IA se multiplient. Beaucoup vendent un questionnaire de conformité en promettant une certification qui n'existe pas encore. Le tri se fait sur trois questions simples : de quel audit parle-t-on, quel référentiel est appliqué, et qui délivre quoi." },
       { type: 'p', text: "Cet article est un guide pour comprendre ce qu'on vous vend. Si vous cherchez un prestataire pour conduire la mission, notre page <a href='/audit-ia'>audit IA</a> décrit le périmètre, la méthode, le livrable et les repères de prix de l'audit conduit par Masteria." },
@@ -600,8 +600,8 @@ export const BLOG_ARTICLES = [
 
       { type: 'h2', text: "Ce que ça coûte" },
       { type: 'p', text: "J'ai cherché des fourchettes de prix publiées et vérifiables. Les chiffres qui circulent en ligne, de 5 000 à 40 000 euros selon les pages, viennent de sites de cabinets qui vendent la prestation, sans méthode, sans échantillon et sans date de collecte. Publier ces montants reviendrait à présenter le tarif d'un concurrent comme une référence de marché. Je m'en abstiens." },
-      { type: 'p', text: "Un seul prix public et opposable existe en France, et il constitue un bon repère : le Diag Data IA de Bpifrance. Huit jours d'intervention d'un expert agréé, sur trois mois au maximum, avec un devis plafonné à 10 000 euros hors taxes et un reste à charge de 6 000 euros hors taxes après une subvention de 40 % au titre de France 2030. Il s'adresse aux PME et ETI de 10 à 2 000 salariés. Le bilan publié par Bpifrance en février 2026 fait état de 460 diagnostics Data IA réalisés." },
-      { type: 'p', text: "Ce repère donne l'ordre de grandeur d'un audit de maturité pour une organisation de taille moyenne : une poignée de jours d'expertise, pas un chantier de plusieurs mois. Un devis qui s'éloigne de ce repère doit s'expliquer par un périmètre plus large, multi-entités ou multi-pays, et cela se dit." },
+      { type: 'p', text: "Ce que l'on peut dire sans tricher tient en un ordre de grandeur de bon sens : pour une organisation de taille moyenne, un audit de maturité sérieux représente une poignée de jours d'expertise, étalés sur quelques semaines de calendrier, le temps de mener les entretiens. Pas un chantier de plusieurs mois. Des dispositifs publics de soutien au conseil existent par ailleurs selon le profil de l'entreprise et sa région ; leur éligibilité se vérifie au cas par cas, au moment du cadrage." },
+      { type: 'p', text: "Un devis qui s'éloigne de cet ordre de grandeur doit s'expliquer par un périmètre plus large, multi-entités ou multi-pays, et cela se dit. À l'inverse, un « audit complet » vendu en une journée n'en est pas un : c'est un diagnostic, et il faut l'appeler ainsi." },
       { type: 'p', text: "Sur le coût d'une certification ISO/IEC 42001, aucun organisme certificateur français ne publie de tarif. La mécanique est en revanche connue : l'accompagnement à la mise en place du système de management, puis l'audit de certification par un organisme accrédité, puis les audits de surveillance. Trois lignes distinctes, à faire chiffrer séparément." },
 
       { type: 'h2', text: "Les quatre cas où l'audit ne sert à rien" },
@@ -644,7 +644,7 @@ export const BLOG_ARTICLES = [
       },
       {
         q: "Combien coûte un audit IA ?",
-        a: "Les fourchettes publiées en ligne viennent de cabinets qui vendent la prestation, sans méthode ni échantillon : elles ne constituent pas une référence de marché. Un seul prix public et opposable existe en France, le Diag Data IA de Bpifrance : huit jours d'expert agréé sur trois mois au maximum, devis plafonné à 10 000 euros hors taxes, reste à charge de 6 000 euros hors taxes après une subvention de 40 % au titre de France 2030, pour les PME et ETI de 10 à 2 000 salariés. Cela donne l'ordre de grandeur d'un audit de maturité : quelques jours d'expertise, pas un chantier de plusieurs mois.",
+        a: "Les fourchettes publiées en ligne viennent de cabinets qui vendent la prestation, sans méthode ni échantillon : elles ne constituent pas une référence de marché. L'ordre de grandeur honnête pour un audit de maturité d'une organisation de taille moyenne : une poignée de jours d'expertise, étalés sur quelques semaines de calendrier, pas un chantier de plusieurs mois. Un devis plus lourd s'explique ligne à ligne par un périmètre plus large, multi-entités ou multi-pays. Des dispositifs publics de soutien au conseil peuvent par ailleurs alléger la facture selon le profil de l'entreprise ; leur éligibilité se vérifie au cas par cas.",
       },
       {
         q: "Peut-on obtenir une certification de conformité au règlement européen sur l'IA ?",

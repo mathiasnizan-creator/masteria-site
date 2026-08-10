@@ -22,11 +22,14 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * INTÉGRITÉ (alignée sur l'article, ne pas dévier) : trois types d'audit distincts ;
  * le règlement européen n'impose PAS d'audit externe à la majorité des systèmes à
  * haut risque (auto-évaluation documentée, annexe VI) ; AUCUNE conformité AI Act
- * n'est certifiable à ce jour (pas de norme harmonisée citée au JOUE à l'été 2026) ;
- * seul prix public opposable en France : Diag Data IA Bpifrance (8 jours, plafond
- * 10 000 € HT, subvention 40 %, reste à charge 6 000 € HT, PME/ETI 10-2 000 salariés).
+ * n'est certifiable à ce jour (pas de norme harmonisée citée au JOUE à l'été 2026).
  * Pas de prix inventé, pas de fourchette de marché non sourcée. Le conseil n'est pas
  * finançable par votre OPCO (réservé à la formation) — toujours formulé ainsi.
+ * CONSIGNE Mathias 2026-08-10 : ne JAMAIS nommer Bpifrance / Diag Data IA (ni
+ * aucun audit subventionné concurrent) sur les pages du site — ça envoie les
+ * prospects faire leur audit ailleurs. Les dispositifs publics se présentent en
+ * termes génériques (« selon votre profil et votre région ») et se détaillent au
+ * cadrage. En DEVIS, les mobiliser reste un levier (mémoire financement conseil).
  *
  * Design premium cabinet identique à /diagnostic-ia : kickers, icônes lucide,
  * cartes radius 16, réponses directes citables en gras, accent #2563EB, une ancre
@@ -80,7 +83,7 @@ const EN_BREF = [
   { label: 'Durée', value: "De quelques jours à quelques semaines selon le périmètre ; cadrage préalable gratuit" },
   { label: 'Livrable', value: "Rapport de maturité, cas d'usage priorisés, feuille de route chiffrée, actions écartées avec leur motif" },
   { label: 'Référentiels', value: "ISO/IEC 42001 et 23894, cadre de gestion des risques du NIST, RGPD, règlement européen sur l'IA" },
-  { label: 'Prix', value: "Forfait selon périmètre · Repère public : Diag Data IA Bpifrance, devis plafonné à 10 000 € HT" },
+  { label: 'Prix', value: "Forfait fixé après un cadrage gratuit qui délimite le périmètre ; jamais de pack vendu à l'aveugle" },
   { label: 'Et après', value: "Mise en œuvre par nos équipes ou par les vôtres : le livrable se suffit à lui-même" },
 ]
 
@@ -260,11 +263,11 @@ const FAQ = [
   },
   {
     q: "Combien coûte un audit IA ?",
-    a: "La mission se chiffre au forfait, après un cadrage gratuit qui fixe le périmètre : nombre d'entités, de processus et de systèmes examinés. Nous ne publions pas de fourchette de marché, car aucune n'est vérifiable. Le seul repère public et opposable en France est le Diag Data IA de Bpifrance : huit jours d'un expert référencé, devis plafonné à 10 000 € HT, subvention de 40 %, soit un reste à charge de 6 000 € HT pour les PME et ETI éligibles. C'est l'ordre de grandeur d'un audit de maturité pour une organisation de taille moyenne, et un devis qui s'en éloigne doit s'expliquer par un périmètre plus large.",
+    a: "La mission se chiffre au forfait, après un cadrage gratuit qui fixe le périmètre : nombre d'entités, de processus et de systèmes examinés. Nous ne publions pas de fourchette de marché, car aucune n'est vérifiable : les chiffres qui circulent en ligne viennent de cabinets qui vendent la prestation, sans méthode ni échantillon. L'ordre de grandeur honnête d'un audit de maturité pour une organisation de taille moyenne : une poignée de jours d'expertise, pas un chantier de plusieurs mois. Un devis plus lourd doit s'expliquer ligne à ligne par son périmètre, multi-entités ou multi-pays par exemple.",
   },
   {
     q: "Combien de temps dure un audit IA ?",
-    a: "De quelques jours à quelques semaines selon le périmètre, entretiens et restitution compris. Le repère public du Diag Data IA de Bpifrance donne l'ordre de grandeur : huit jours d'intervention, étalés sur trois mois au maximum. Un audit multi-entités ou multi-pays prend davantage, et cela se justifie ligne à ligne dans le devis. Si votre besoin tient en une journée de cadrage, c'est notre diagnostic IA qu'il vous faut, pas un audit.",
+    a: "De quelques jours à quelques semaines selon le périmètre, entretiens et restitution compris. Comptez quelques jours d'expertise pour une organisation de taille moyenne sur un périmètre net, étalés sur quelques semaines pour caler les entretiens ; un audit multi-entités ou multi-pays prend davantage, et cela se justifie ligne à ligne dans le devis. Si votre besoin tient en une journée de cadrage, c'est notre diagnostic IA qu'il vous faut, pas un audit.",
   },
   {
     q: "Quelle est la différence entre le diagnostic IA et l'audit IA ?",
@@ -284,7 +287,7 @@ const FAQ = [
   },
   {
     q: "Un audit IA peut-il être financé ?",
-    a: "Le conseil n'est pas finançable par votre OPCO, qui couvre la formation. En revanche, des dispositifs publics existent : le Diag Data IA de Bpifrance subventionne 40 % de l'intervention pour les PME et ETI de 10 à 2 000 salariés éligibles, dans le cadre de France 2030, et certaines régions ont leurs propres aides au conseil en transformation numérique. Nous faisons le point sur les dispositifs mobilisables lors du cadrage, selon votre taille, votre secteur et votre région. Si un volet formation accompagne la mission, celui-ci est finançable par votre OPCO : Masteria est certifiée Qualiopi.",
+    a: "Le conseil n'est pas finançable par votre OPCO, qui couvre la formation. En revanche, selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil et à la transformation numérique peuvent s'appliquer : nous faisons le point sur ceux qui sont mobilisables dans votre situation lors du cadrage, c'est compris dedans. Et si un volet formation accompagne la mission, celui-ci est finançable par votre OPCO : Masteria est certifiée Qualiopi.",
   },
   {
     q: "Et si l'audit conclut qu'il ne faut rien lancer ?",
@@ -412,7 +415,6 @@ export default function AuditIAPage() {
         speakable={['#geo-summary', '#en-bref']}
         citations={[
           { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-          { name: 'Diag Data IA — Bpifrance', url: 'https://www.bpifrance.fr/catalogue-offres/diag-data-ia' },
         ]}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd]}
       />
@@ -721,7 +723,7 @@ export default function AuditIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La mission se chiffre au forfait, après un cadrage gratuit qui fixe le périmètre. Le seul repère public et opposable en France est le Diag Data IA de Bpifrance : huit jours d'expertise, devis plafonné à 10 000 € HT, subvention de 40 % au titre de France 2030, soit 6 000 € HT de reste à charge pour les PME et ETI de 10 à 2 000 salariés éligibles. Un devis qui s'éloigne de ce repère doit s'expliquer par son périmètre.</strong>
+            <strong>La mission se chiffre au forfait, après un cadrage gratuit qui fixe le périmètre. Aucune fourchette de marché publiée n'est vérifiable : l'ordre de grandeur honnête d'un audit de maturité pour une organisation de taille moyenne est une poignée de jours d'expertise, pas un chantier de plusieurs mois. Un devis plus lourd s'explique ligne à ligne par son périmètre.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
@@ -740,7 +742,7 @@ export default function AuditIAPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Les financements mobilisables</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le conseil n'est pas finançable par votre OPCO, qui couvre la formation. En revanche, le Diag Data IA de Bpifrance subventionne 40 % de l'intervention pour les PME et ETI éligibles, et plusieurs régions aident le conseil en transformation numérique. Nous faisons le point sur les dispositifs applicables à votre situation lors du cadrage. Le volet formation d'une mission reste, lui, finançable par votre OPCO : Masteria est certifiée Qualiopi.
+                Le conseil n'est pas finançable par votre OPCO, qui couvre la formation. En revanche, selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil et à la transformation numérique peuvent s'appliquer : nous faisons le point sur ceux qui sont mobilisables dans votre situation lors du cadrage. Le volet formation d'une mission reste, lui, finançable par votre OPCO : Masteria est certifiée Qualiopi.
               </p>
             </div>
           </div>
