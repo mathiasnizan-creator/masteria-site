@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-intelligence-artificielle</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleur-cabinet-conseil-ia</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -188,7 +188,19 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-seo-ia</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/audit-seo-ia</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/audit-geo-ia</loc>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -200,13 +212,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -242,7 +254,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/diagnostic-ia</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/audit-ia</loc>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -266,7 +284,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/gouvernance-ia</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -320,7 +338,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-strategie-ia</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -344,7 +362,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -1244,7 +1262,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/audit-ia-entreprise-methode-prix</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>

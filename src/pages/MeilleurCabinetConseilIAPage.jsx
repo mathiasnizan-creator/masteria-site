@@ -683,7 +683,8 @@ export default function MeilleurCabinetConseilIAPage() {
                 </p>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
                   Nous accompagnons aussi bien des PME et des ETI que de grandes organisations, des directions métier au comité de direction, qui veulent un résultat utilisé et des équipes autonomes. Nous adaptons le dispositif à votre taille et à votre maturité, et vous dirons franchement au premier rendez-vous si un autre profil d'acteur correspond mieux à votre besoin. Pour situer votre besoin, commencez par notre{' '}
-                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, voyez le détail de nos{' '}
+                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, poursuivez par un{' '}
+                  <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> quand il faut la vision exhaustive, voyez le détail de nos{' '}
                   <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>missions de conseil</Link>, ou jugez sur pièces avec nos{' '}
                   <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>.
                 </p>

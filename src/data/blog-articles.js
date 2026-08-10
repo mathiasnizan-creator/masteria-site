@@ -505,17 +505,21 @@ export const BLOG_ARTICLES = [
     slug: 'audit-ia-entreprise-methode-prix',
     tag: 'Conseil IA',
     title: "Audit IA : ce qu'il contient vraiment, ce qu'il coûte, et les 4 cas où il ne sert à rien",
-    metaTitle: "Audit IA : ce qu'il contient, ce qu'il coûte vraiment",
-    metaDesc: "Audit IA : les trois types à ne pas confondre, ce que la loi impose vraiment, les normes publiées, le seul prix public vérifiable et les cas à éviter.",
+    // Réanglage 2026-08-10 : l'article tient l'intention INFORMATIONNELLE (guide,
+    // méthode, normes, prix) ; l'intention transactionnelle « audit ia » est portée
+    // par la money page /audit-ia. Ne pas re-cibler la tête de requête ici.
+    metaTitle: "Guide de l'audit IA : méthode, normes, prix vérifiés",
+    metaDesc: "Le guide de l'audit IA : les trois types à ne pas confondre, ce que la loi impose vraiment, les normes publiées, le seul prix public vérifiable et les cas à éviter.",
     date: '3 août 2026',
     datePublished: '2026-08-03',
-    dateModified: '2026-08-03',
+    dateModified: '2026-08-10',
     readTime: '15 min',
-    keywords: ['audit ia', 'audit ia entreprise', 'audit de maturité ia', 'audit de conformité ia', 'audit ai act', 'cabinet audit ia', 'audit des processus ia'],
+    keywords: ['guide audit ia', 'audit ia méthode', 'prix audit ia', 'audit de conformité ia', 'audit ai act', 'normes audit ia', 'iso 42001', 'audit des processus ia'],
     excerpt: "« Audit IA » recouvre trois missions différentes qu'on vous vendra au même prix. Ce que le règlement européen impose réellement, les normes publiées à ce jour, le seul tarif public vérifiable en France, et les quatre situations où l'audit est une dépense inutile.",
     intro: "Un audit IA est un état des lieux de l'intelligence artificielle dans une organisation. Le terme n'a aucune définition officielle ni normalisée : c'est un mot commercial qui recouvre trois missions distinctes, l'audit de maturité, l'audit de conformité réglementaire et l'audit algorithmique d'un modèle. Contrairement à ce que laisse entendre une partie du marché, le règlement européen sur l'IA n'impose pas d'audit externe à la majorité des systèmes à haut risque : il prévoit une auto-évaluation documentée. Cet article détaille ce que contient chaque type de mission, les référentiels réellement publiés, le seul prix public vérifiable en France, et les quatre cas où l'audit ne sert à rien.",
     blocks: [
       { type: 'p', text: "Depuis que l'échéance du règlement européen approche, les propositions d'audit IA se multiplient. Beaucoup vendent un questionnaire de conformité en promettant une certification qui n'existe pas encore. Le tri se fait sur trois questions simples : de quel audit parle-t-on, quel référentiel est appliqué, et qui délivre quoi." },
+      { type: 'p', text: "Cet article est un guide pour comprendre ce qu'on vous vend. Si vous cherchez un prestataire pour conduire la mission, notre page <a href='/audit-ia'>audit IA</a> décrit le périmètre, la méthode, le livrable et les repères de prix de l'audit conduit par Masteria." },
 
       { type: 'h2', text: "« Audit IA » ne veut rien dire tant qu'on n'a pas dit lequel" },
       { type: 'p', text: "Trois missions circulent sous le même nom. Elles n'ont ni le même objet, ni les mêmes compétences, ni le même livrable. Un prestataire qui ne vous demande pas laquelle vous voulez ne sait pas ce qu'il vend." },
@@ -528,7 +532,7 @@ export const BLOG_ARTICLES = [
           ['Audit algorithmique', "Ce modèle fonctionne-t-il correctement et sans biais", "Mesures de performance, tests de biais, documentation technique, explicabilité"],
         ],
       },
-      { type: 'p', text: "Un quatrième usage du mot brouille les recherches : l'audit de visibilité dans les moteurs génératifs, qui consiste à mesurer si une marque est citée par ChatGPT ou Perplexity. Le sujet est légitime, il n'a rien à voir avec celui-ci." },
+      { type: 'p', text: "Un quatrième usage du mot brouille les recherches : l'audit de visibilité dans les moteurs génératifs, qui consiste à mesurer si une marque est citée par ChatGPT ou Perplexity. Le sujet est légitime, il n'a rien à voir avec celui-ci ; il est traité sur notre page <a href='/audit-geo-ia'>audit GEO</a>." },
       { type: 'p', text: "La confusion coûte cher. Une direction qui achète un audit de conformité en espérant une feuille de route d'automatisation reçoit un rapport de risques juridiques sans un seul cas d'usage. L'inverse arrive tout autant." },
 
       { type: 'h2', text: "Ce que la loi impose réellement, et ce qu'elle n'impose pas" },
@@ -656,6 +660,7 @@ export const BLOG_ARTICLES = [
       },
     ],
     internalLinks: [
+      { label: "Audit IA : la mission conduite par Masteria", href: '/audit-ia' },
       { label: "Diagnostic IA : la feuille de route en 1 journée", href: '/diagnostic-ia' },
       { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
       { label: "Méthode projet IA : forfait, régie ou conseil", href: '/methode-projet-ia' },

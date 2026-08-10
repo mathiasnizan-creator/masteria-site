@@ -26,6 +26,10 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  *
  * Design premium identique à /agence-developpement-ia : icônes lucide (zéro emoji),
  * kickers, réponses directes citables en gras, accent bleu #2563EB, CTA finale sombre.
+ *
+ * Depuis 2026-08-10, l'offre d'entrée du cluster vit sur /audit-seo-ia (requêtes
+ * « audit ia seo » et « audit geo ia ») : cette page reste le pilier « agence »,
+ * l'audit convertit et renvoie ici pour l'accompagnement.
  */
 
 const SLUG = 'agence-seo-ia'
@@ -442,7 +446,7 @@ export default function AgenceSeoIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
+                Le point d'entrée le plus fréquent est l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA &amp; GEO</Link> : un état des lieux chiffré de votre visibilité sur Google et dans les IA, dont découle le reste. Pour le seul versant IA, l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO dédié</Link> mesure vos citations et votre part de voix en profondeur. Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
               </p>
             </div>
           </div>
@@ -621,6 +625,8 @@ export default function AgenceSeoIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Audit SEO IA & GEO', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "L'état des lieux chiffré de votre visibilité sur Google et dans les IA, avec correctifs priorisés." },
+              { label: 'Audit GEO', href: '/audit-geo-ia', tag: 'Visibilité IA', desc: "Le versant IA seul : taux de citation, part de voix face aux concurrents et plan pour devenir citable." },
               { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Marketing', desc: "Le marketing assisté par IA dans son ensemble : contenu, acquisition, growth, au-delà du seul SEO." },
               { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Les workflows et automatisations qui font tourner votre suivi SEO et votre production de contenu." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Agents, intégrations et outils sur mesure, dont les automatisations de monitoring de visibilité." },

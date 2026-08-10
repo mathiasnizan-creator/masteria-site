@@ -69,6 +69,8 @@ const staticRoutes = [
   { path: 'outils-ia-sur-mesure',                prio: 0.8, freq: 'monthly', files: ['src/pages/OutilsIASurMesurePage.jsx'] },
   { path: 'agence-ia-marketing',                 prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceIAMarketingPage.jsx'] },
   { path: 'agence-seo-ia',                       prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceSeoIAPage.jsx'] },
+  { path: 'audit-seo-ia',                        prio: 0.8, freq: 'monthly', files: ['src/pages/AuditSeoIAPage.jsx'] },
+  { path: 'audit-geo-ia',                        prio: 0.8, freq: 'monthly', files: ['src/pages/AuditGeoIAPage.jsx'] },
   { path: 'agence-ia-lyon',                      prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-annecy',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-paris',                     prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
@@ -205,6 +207,7 @@ urls.push({ loc: `${SITE}/solutions-ia`, lastmod: SOLUTION_LASTMOD, changefreq: 
 for (const s of solutionSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SOLUTION_LASTMOD, changefreq: 'monthly', priority: 0.7 });
 // Offres de conversion high-ticket.
 urls.push({ loc: `${SITE}/diagnostic-ia`, lastmod: gitLastMod(['src/pages/DiagnosticIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/audit-ia`, lastmod: gitLastMod(['src/pages/AuditIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });
 // Page pilier « veille IA » (intention méthode/outils, cible le mot-clé + le cluster automatisation).
 urls.push({ loc: `${SITE}/automatiser-sa-veille-ia`, lastmod: gitLastMod(['src/pages/AutomatiserVeilleIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });

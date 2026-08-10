@@ -57,6 +57,9 @@ const SecteurIAPage = lazy(() => import('./pages/SecteurIAPage'));
 const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
 const SolutionIAPage = lazy(() => import('./pages/SolutionIAPage'));
 const DiagnosticIAPage = lazy(() => import('./pages/DiagnosticIAPage'));
+const AuditIAPage = lazy(() => import('./pages/AuditIAPage'));
+const AuditSeoIAPage = lazy(() => import('./pages/AuditSeoIAPage'));
+const AuditGeoIAPage = lazy(() => import('./pages/AuditGeoIAPage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -1479,6 +1482,8 @@ export default function App() {
         <Route path="/veille-concurrentielle-ia" element={<VeilleConcurrentielleIAPage />} />
         <Route path="/agence-ia-marketing" element={<AgenceIAMarketingPage />} />
         <Route path="/agence-seo-ia" element={<AgenceSeoIAPage />} />
+        <Route path="/audit-seo-ia" element={<AuditSeoIAPage />} />
+        <Route path="/audit-geo-ia" element={<AuditGeoIAPage />} />
         <Route path="/agence-ia-lyon" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-annecy" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-paris" element={<AgenceGeoPage />} />
@@ -1494,6 +1499,7 @@ export default function App() {
           <Route key={s} path={`/${s}`} element={<SolutionIAPage />} />
         ))}
         <Route path="/diagnostic-ia" element={<DiagnosticIAPage />} />
+        <Route path="/audit-ia" element={<AuditIAPage />} />
         <Route path="/methode-projet-ia" element={<MethodeProjetIAPage />} />
         <Route path="/prix-projet-ia" element={<PrixProjetIAPage />} />
         <Route path="/gouvernance-ia" element={<GouvernanceIAPage />} />

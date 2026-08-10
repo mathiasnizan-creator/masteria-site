@@ -33,10 +33,11 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
 const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
-// Les requêtes « audit ia » et « audit de maturité ia » sont volontairement laissées
-// à l'article /blog/audit-ia-entreprise-methode-prix, qui les traite de front.
-// Cette page garde l'intention transactionnelle « diagnostic », l'article capte
-// l'intention informationnelle « audit » et renvoie ici pour la mission.
+// Répartition des intentions « audit » (depuis 2026-08-10) : la requête
+// transactionnelle « audit ia » est portée par la money page /audit-ia ;
+// l'intention informationnelle (méthode, normes, prix) reste à l'article
+// /blog/audit-ia-entreprise-methode-prix. Cette page garde l'intention
+// transactionnelle « diagnostic » et renvoie vers les deux.
 const KEYWORDS = "diagnostic ia, diagnostic intelligence artificielle, maturité ia, état des lieux ia, diagnostic ia entreprise"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
@@ -551,11 +552,10 @@ export default function DiagnosticIAPage() {
               </tbody>
             </table>
           </div>
-          {/* Renvoi vers l'article qui traite l'audit de front : sépare les deux
-              intentions de recherche (« diagnostic » ici, « audit » côté blog). */}
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 720 }}>
-            Pour savoir ce que contient un audit, ce qu'il coûte et dans quels cas il ne sert à rien,
-            lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={{ color: '#2563EB', fontWeight: 600 }}>guide complet de l'audit IA</Link>.
+          {/* Renvois : la mission audit vit sur /audit-ia (intention transactionnelle),
+              le fond (méthode, normes, prix) sur l'article (intention informationnelle). */}
+          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            Si c'est la vision exhaustive qu'il vous faut, voyez notre <Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit IA</Link> : périmètre, méthode, livrable et repères de prix. Pour le fond du sujet (ce que la loi impose, les normes publiées, les cas où l'audit ne sert à rien), lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={{ color: '#60A5FA', fontWeight: 600 }}>guide complet de l'audit IA</Link>.
           </p>
         </div>
       </section>
@@ -759,6 +759,7 @@ export default function DiagnosticIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "Quand il faut la vision exhaustive : maturité, données, conformité et feuille de route chiffrée." },
               { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cadrage stratégique dans lequel s'inscrit le diagnostic, à l'échelle de l'entreprise." },
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand un cas est prêt : conception et développement de la solution, de l'idée au déploiement." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Déployer des agents IA sur les cas prioritaires que le diagnostic fait remonter." },
