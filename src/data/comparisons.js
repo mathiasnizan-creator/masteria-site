@@ -18,20 +18,41 @@ export const COMPARISONS = {
 
   'chatgpt-vs-claude': {
     slug: 'chatgpt-vs-claude',
-    metaTitle: 'ChatGPT vs Claude : quel choisir en 2026 ? | Masteria',
-    metaDesc: "Comparatif ChatGPT vs Claude pour entreprises : forces, faiblesses, prix, sécurité, cas d'usage par métier. Recommandations 2026 par Masteria.",
+    metaTitle: 'ChatGPT vs Claude 2026 : lequel choisir ? | Comparatif Masteria',
+    metaDesc:
+      "ChatGPT (GPT-5.6) vs Claude (Opus 5) : contexte réel, agents, prix par siège, sécurité, cas d'usage par métier. Comparatif vérifié en août 2026 par Masteria.",
     h1: 'ChatGPT vs Claude : quel modèle IA choisir pour votre entreprise ?',
     intro:
-      "Deux des modèles IA les plus puissants du marché s'affrontent en 2026 : **ChatGPT** (OpenAI), pionnier de la révolution IA grand public, et **Claude** (Anthropic), challenger plébiscité pour la qualité de ses raisonnements et de son code. Lequel choisir pour votre entreprise ? Voici un comparatif structuré, par les formateurs qui les utilisent au quotidien.",
-    lastUpdate: 'Mai 2026',
-    readTime: '8 minutes',
+      "Deux assistants dominent les usages professionnels en 2026 : **ChatGPT** (OpenAI, famille **GPT-5.6** depuis juillet 2026) et **Claude** (Anthropic, **Opus 5** et **Sonnet 5**). Les deux savent rédiger, analyser et coder à un très bon niveau. Ce qui les sépare aujourd'hui n'est plus la puissance brute du modèle mais ce que vous en faites au quotidien : la taille des documents que l'interface accepte vraiment, la façon dont chacun automatise le travail, et le prix par siège une fois les fonctions utiles incluses.",
+    lastUpdate: 'Août 2026',
+    verifiedOn: '8 août 2026',
+    datePublished: '2026-05-04',
+    dateModified: '2026-08-08',
+    readTime: '9 minutes',
+    keywords:
+      'chatgpt vs claude, comparatif chatgpt claude 2026, claude opus 5, gpt-5.6, quel assistant ia entreprise, claude ou chatgpt entreprise, prix claude team, prix chatgpt business',
+
+    // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
+    answerBox: {
+      question: 'ChatGPT ou Claude : lequel choisir en 2026 ?',
+      answer:
+        "Choisissez **ChatGPT** (OpenAI) si votre besoin dominant est la production visuelle et l'écosystème : génération d'images (GPT Image 2), vidéo (Sora 2), voix, connecteurs métier et agents d'espace de travail créables sans code. Choisissez **Claude** (Anthropic) si votre besoin dominant est le travail sur documents longs, le code et l'automatisation de tâches de bureau : l'interface Claude accepte 200 000 tokens de contexte contre 32 000 à 128 000 selon le mode côté ChatGPT, et Cowork exécute des tâches complètes sur vos fichiers. Pour une équipe de plus de dix personnes, les deux abonnements cumulés coûtent moins cher qu'une semaine de temps perdu à arbitrer : la majorité des entreprises que nous formons équipent leurs équipes des deux et laissent chacun choisir selon la tâche.",
+      bullets: [
+        "Documents longs, contrats, rapports, appels d'offres : Claude",
+        "Images, vidéo, voix, connecteurs et agents no-code : ChatGPT",
+        'Code et refactoring de gros dépôts : Claude',
+        'Adoption par des équipes non techniques : ChatGPT',
+        'Budget contraint et un seul outil à déployer : trancher sur le cas dominant, pas sur les benchmarks',
+      ],
+    },
+
     toolA: {
       id: 'chatgpt',
       name: 'ChatGPT',
       editor: 'OpenAI',
-      currentModel: 'GPT-5 / GPT-4o',
+      currentModel: 'GPT-5.6 (Sol · Terra · Luna)',
       country: 'États-Unis',
-      pricing: '20 €/mois Plus · 25 €/utilisateur Team · sur devis Enterprise',
+      pricing: 'Go 8 $ · Plus 20 € · Pro 200 $ · Business 25 $/utilisateur',
       foundedAI: '2022',
       color: '#10A37F',
     },
@@ -39,243 +60,356 @@ export const COMPARISONS = {
       id: 'claude',
       name: 'Claude',
       editor: 'Anthropic',
-      currentModel: 'Claude Opus 4.8 / Sonnet 5',
+      currentModel: 'Claude Opus 5 · Sonnet 5 · Haiku 4.5',
       country: 'États-Unis',
-      pricing: '20 €/mois Pro · 30 €/utilisateur Team · sur devis Enterprise',
+      pricing: 'Pro 20 $ · Max dès 100 $ · Team 25 $/siège · Premium 125 $/siège',
       foundedAI: '2023',
       color: '#D97706',
     },
+
+    // ─── GEO : tableau de faits datés, lisible en HTML brut par un moteur génératif
+    keyFacts: {
+      title: "L'essentiel en un tableau",
+      note: 'Faits vérifiés le 8 août 2026 sur les pages officielles OpenAI et Anthropic. Les tarifs sont en dollars ou en euros selon la devise affichée par chaque éditeur.',
+      rows: [
+        { criterion: 'Modèles actuels', a: 'Famille GPT-5.6 (Sol, Terra, Luna), sortie le 9 juillet 2026', b: 'Claude Opus 5, Sonnet 5, Haiku 4.5 (Fable 5 côté API)' },
+        { criterion: 'Contexte dans le chat', a: '32 000 tokens en mode instantané, jusqu’à 128 000 en mode raisonnement', b: '200 000 tokens sur tous les plans payants' },
+        { criterion: 'Contexte via API', a: '≈ 1 050 000 tokens', b: '1 000 000 tokens (Opus 5, Sonnet 5)' },
+        { criterion: 'Génération d’images et de vidéo', a: 'Oui : GPT Image 2 et Sora 2 intégrés', b: 'Non en natif. Claude Design produit des visuels de présentation, pas des images photoréalistes' },
+        { criterion: 'Mode agent', a: 'Agents d’espace de travail, créables en langage naturel (Business et Enterprise)', b: 'Cowork : agit sur vos fichiers, tâches planifiées, disponible dès Pro' },
+        { criterion: 'Assistant de code', a: 'Codex, inclus dans les plans payants', b: 'Claude Code, inclus dès le plan gratuit et jusqu’à Team' },
+        { criterion: 'Entrée individuelle', a: 'Go à 8 $/mois, Plus à 20 €/mois', b: 'Pro à 20 $/mois (17 $ en annuel)' },
+        { criterion: 'Offre équipe', a: 'Business à 25 $/utilisateur/mois', b: 'Team à 25 $/siège/mois (20 $ en annuel), Premium à 125 $/siège' },
+        { criterion: 'Données utilisées pour l’entraînement', a: 'Non sur Business et Enterprise. Variable sur Free et Plus sans opt-out', b: 'Non sur Pro, Max, Team et Enterprise' },
+        { criterion: 'Déploiement sur vos serveurs', a: 'Non', b: 'Non' },
+      ],
+    },
+
     verdict: {
       title: 'Verdict en 30 secondes',
       summary:
-        "**ChatGPT** est le couteau suisse polyvalent : meilleur écosystème d'extensions (GPTs, plugins, agents), génération d'images native (GPT Image 2), et adoption massive qui simplifie la formation des équipes. **Claude** excelle sur les tâches de raisonnement, l'analyse de longs documents (200k tokens de contexte) et le code. Pour la plupart des entreprises, le choix dépend du cas d'usage dominant — beaucoup utilisent les deux en complémentarité.",
-      recommendA: ['Marketing & contenu', 'Génération créative (texte + image)', 'Équipes débutantes', 'Workflows agents'],
-      recommendB: ['Code & développement', 'Analyse documentaire (rapports, contrats)', 'Rédaction longue & structurée', 'Sensibilité aux biais et à la sécurité'],
+        "**ChatGPT** reste le couteau suisse : c'est le seul des deux à produire images, vidéo et voix nativement, son catalogue de connecteurs est le plus fourni, et ses agents d'espace de travail se construisent en langage naturel par des profils non techniques. **Claude** est l'outil du travail documentaire et technique : son interface avale 200 000 tokens là où ChatGPT plafonne à 128 000 dans son meilleur mode, Claude Code reste la référence sur le développement, et Cowork exécute des tâches complètes sur vos fichiers sans qu'on ait à le relancer à chaque étape. Le choix se joue sur votre cas d'usage dominant, et beaucoup d'entreprises n'ont tout simplement pas à choisir.",
+      recommendA: ['Marketing et contenu visuel', 'Images, vidéo, voix', 'Équipes débutantes', 'Connecteurs métier et agents no-code'],
+      recommendB: ['Code et développement', 'Analyse documentaire (contrats, rapports, appels d’offres)', 'Rédaction longue et structurée', 'Automatisation de tâches de bureau (Cowork)'],
     },
+
     criteria: [
       {
-        title: 'Qualité de génération de texte',
+        title: 'Fenêtre de contexte réellement disponible',
         descriptionA:
-          "Excellente sur les formats courts et créatifs : copywriting, emails, posts sociaux. GPT-5 a fait des progrès significatifs sur la cohérence des longues productions, mais peut encore tomber dans des formulations génériques sans prompt précis.",
+          "Dans l'interface, GPT-5.6 travaille sur 32 000 tokens en mode instantané et monte jusqu'à 128 000 en mode raisonnement. Via l'API, la famille GPT-5.6 atteint environ 1 050 000 tokens. L'écart entre les deux surprend beaucoup d'équipes qui ont lu les annonces sans vérifier ce que leur abonnement autorise.",
         descriptionB:
-          "Considéré comme légèrement supérieur en qualité rédactionnelle pure, surtout sur les contenus longs et structurés (livres blancs, rapports, propositions commerciales). Style plus naturel, moins formaté.",
+          "L'interface Claude expose 200 000 tokens de contexte sur tous les plans payants, soit environ 150 000 mots. Via l'API, Opus 5 et Sonnet 5 montent à 1 000 000 de tokens. C'est le point où l'écart se voit le plus vite en usage professionnel : un rapport de 200 pages passe d'un côté, pas de l'autre.",
+        winner: 'b',
+        winnerText: 'Avantage net Claude dans l’interface, parité via API',
+      },
+      {
+        title: 'Qualité de génération de texte en français',
+        descriptionA:
+          "Excellent sur les formats courts et créatifs : accroches, emails, posts sociaux, variantes publicitaires. GPT-5.6 Sol tient bien la longueur, avec une tendance résiduelle aux formulations passe-partout quand le prompt reste vague.",
+        descriptionB:
+          "Souvent préféré sur les contenus longs et structurés : livres blancs, notes de synthèse, propositions commerciales, comptes rendus. Le style sort moins formaté, avec moins de titres inutiles et moins de listes à puces réflexes.",
         winner: 'b',
         winnerText: 'Léger avantage Claude sur les contenus longs',
       },
       {
         title: 'Code et développement',
         descriptionA:
-          "Très bon sur la majorité des langages, intégré à GitHub Copilot pour les développeurs. Les agents Codex permettent l'exécution de tâches complexes en autonomie.",
+          "Très bon sur la majorité des langages. Codex exécute des tâches de développement en autonomie et l'intégration à l'écosystème Microsoft (GitHub, VS Code) reste un argument fort pour les équipes déjà installées dessus.",
         descriptionB:
-          "Référence du marché en 2026 sur les tâches de code complexes. Particulièrement performant sur les langages typés (TypeScript, Rust, Go), le refactoring de larges codebases, et la conception architecturale grâce à sa fenêtre de contexte de 200 000 tokens.",
+          "Référence du marché en 2026 sur les tâches complexes : refactoring de gros dépôts, langages typés, conception d'architecture. Claude Code est inclus dès le plan gratuit et jusqu'aux plans Team, ce qui change l'équation budgétaire pour une équipe de développement.",
         winner: 'b',
-        winnerText: 'Avantage Claude — référence en code',
+        winnerText: 'Avantage Claude, référence sur le code complexe',
       },
       {
-        title: "Fenêtre de contexte (taille des documents traités)",
-        descriptionA: "128 000 tokens (~96 000 mots) sur GPT-5. Suffisant pour la majorité des cas, mais limitant pour des analyses de très gros corpus.",
-        descriptionB: "200 000 tokens (~150 000 mots) en standard, jusqu'à 1 million de tokens en Enterprise. Permet d'analyser un livre entier ou des dizaines de contrats en une seule requête.",
+        title: 'Agents et automatisation du travail',
+        descriptionA:
+          "Les agents d'espace de travail sont disponibles sur Business et Enterprise depuis mai 2026. Ils se créent en langage naturel (rôle, déclencheur, étapes, règles), se testent, se partagent et se planifient. Point de vigilance budgétaire : depuis juillet 2026, leurs exécutions sont décomptées en crédits, en supplément des licences par utilisateur.",
+        descriptionB:
+          "Cowork transforme Claude en exécutant : il lit, modifie et crée des fichiers sur votre poste, enchaîne les étapes sans relance, et gère des tâches planifiées. Disponible dès le plan Pro, sur ordinateur depuis janvier 2026, sur web et mobile depuis juillet 2026 pour les abonnés Max.",
+        winner: 'tie',
+        winnerText: 'Match nul : deux philosophies différentes de l’automatisation',
+      },
+      {
+        title: 'Multimodalité (image, vidéo, voix)',
+        descriptionA:
+          "Multimodal complet : analyse d'images, génération d'images avec GPT Image 2, vidéo avec Sora 2, conversation vocale bidirectionnelle. C'est l'écart le plus visible entre les deux outils.",
+        descriptionB:
+          "Analyse d'images très bonne, mais pas de génération d'images photoréalistes ni de vidéo en natif. Claude Design (lancé en avril 2026) produit des visuels de présentation, maquettes et one-pagers, ce qui couvre une partie des besoins de mise en forme sans remplacer un générateur d'images.",
+        winner: 'a',
+        winnerText: 'Avantage clair ChatGPT sur la multimodalité',
+      },
+      {
+        title: 'Écosystème, connecteurs et intégrations',
+        descriptionA:
+          "Le catalogue le plus fourni : apps et connaissances d'entreprise (Google Drive, SharePoint, Slack, Notion), GPTs personnalisés, intégrations Zapier et Make, projets partagés avec mémoire propre. Attention toutefois : les connecteurs sont cadrés en lecture, une écriture automatique dans un logiciel métier reste un projet d'intégration à part.",
+        descriptionB:
+          "Moins d'extensions tierces, mais des briques natives solides : Projects, Artifacts, intégration Microsoft 365, recherche en entreprise, et surtout MCP (Model Context Protocol), le standard ouvert de connexion aux outils, aujourd'hui repris par l'ensemble du marché.",
+        winner: 'a',
+        winnerText: 'Avantage ChatGPT sur la largeur du catalogue',
+      },
+      {
+        title: 'Compétences réutilisables et portabilité',
+        descriptionA:
+          "Les Skills existent sur Business, Enterprise et Edu. Elles se créent en langage naturel dans la conversation et se déclenchent automatiquement quand elles sont pertinentes. Le partage à l'échelle d'un espace de travail complet reste à vérifier plan par plan.",
+        descriptionB:
+          "Anthropic a créé le format Agent Skills en octobre 2025 et l'a publié en standard ouvert. Il est aujourd'hui repris par une quarantaine d'outils, dont ChatGPT. Concrètement, une procédure formalisée une fois reste réutilisable même si vous changez d'éditeur.",
         winner: 'b',
-        winnerText: 'Avantage Claude pour les longs documents',
-      },
-      {
-        title: 'Multimodalité (texte, image, audio, vidéo)',
-        descriptionA:
-          "Multimodal natif : analyse d'images, génération d'images via GPT Image 2, voix bidirectionnelle (Voice Mode avancé), Sora 2 pour la vidéo. Écosystème le plus complet.",
-        descriptionB:
-          "Analyse d'images excellente. Pas de génération d'images native — il faut passer par d'autres outils. Pas de voix native intégrée à la version standard en 2026.",
-        winner: 'a',
-        winnerText: 'Avantage ChatGPT sur la multimodalité',
-      },
-      {
-        title: "Écosystème et extensions",
-        descriptionA:
-          "GPTs personnalisés (plus de 3 millions disponibles), plugins, intégrations Zapier/Make, App Connectors. Marché d'extensions le plus mature.",
-        descriptionB:
-          "Projects (espaces de travail avec base documentaire), Artifacts (rendu code/visuel en temps réel), MCP (Model Context Protocol — standard ouvert d'agents). Moins d'extensions tierces, mais qualité supérieure des intégrations natives.",
-        winner: 'a',
-        winnerText: "Avantage ChatGPT sur la richesse de l'écosystème",
+        winnerText: 'Avantage Claude sur la portabilité des procédures',
       },
       {
         title: 'Sécurité et confidentialité des données',
         descriptionA:
-          "OpenAI s'engage à ne pas utiliser les conversations API ou Enterprise pour entraîner ses modèles. Conformité SOC 2 Type 2, ISO 27001, GDPR. Pour ChatGPT Plus / Free, les conversations peuvent être utilisées sauf opt-out.",
+          "Pas d'entraînement sur les conversations Business et Enterprise. SOC 2 Type 2, ISO 27001, conformité RGPD. Sur Free et Plus, les conversations peuvent être utilisées sauf opt-out explicite. SSO disponible sur Business, SCIM et résidence des données réservés à Enterprise.",
         descriptionB:
-          "Anthropic n'utilise jamais les conversations Pro, Team, Enterprise pour entraîner les modèles (par défaut). Approche \"Constitutional AI\" : alignement par principes. Considéré comme plus prudent dans les réponses sensibles.",
+          "Pas d'entraînement sur les conversations Pro, Max, Team et Enterprise par défaut. SSO dès l'offre Team, SCIM, journaux d'audit, rétention personnalisée et offre compatible HIPAA sur Enterprise. Approche d'alignement par principes, avec des réponses plus prudentes sur les sujets sensibles.",
         winner: 'b',
-        winnerText: 'Léger avantage Claude — politique de données plus stricte',
+        winnerText: 'Léger avantage Claude sur la gouvernance par défaut',
       },
       {
         title: 'Raisonnement et analyse',
         descriptionA:
-          "Le mode \"Thinking\" / o-series effectue un raisonnement étendu avant de répondre, excellent pour les problèmes math, logique, scientifiques.",
+          "Le mode raisonnement de GPT-5.6 Sol est au meilleur niveau du marché sur les problèmes mathématiques, logiques et scientifiques. Les modèles de cette génération remportent des compétitions de mathématiques : l'idée reçue selon laquelle l'IA calcule mal a cessé d'être vraie.",
         descriptionB:
-          "Raisonnement étendu également disponible (Extended Thinking). Souvent perçu comme plus rigoureux et nuancé sur les analyses business complexes.",
+          "Claude Opus 5 est taillé pour le travail long et autonome : il tient le fil sur des tâches en plusieurs dizaines d'étapes et se relit sans qu'on le lui demande. Souvent préféré sur les analyses business complexes et le raisonnement nuancé.",
         winner: 'tie',
-        winnerText: 'Match nul — les deux excellents',
+        winnerText: 'Match nul : les deux sont au niveau, sur des terrains différents',
       },
       {
-        title: "Tarifs",
+        title: 'Tarifs et coût réel par siège',
         descriptionA:
-          "ChatGPT Free (limité), Plus 20 €/mois, Team 25 €/utilisateur/mois, Enterprise sur devis. API : 1,50 € à 30 €/million de tokens selon le modèle.",
+          "Free, Go à 8 $/mois, Plus à 20 €/mois, Pro à 200 $/mois, Business à 25 $/utilisateur/mois, Enterprise sur devis. À budgéter en plus : les crédits d'exécution des agents, facturés depuis juillet 2026 au-delà des licences.",
         descriptionB:
-          "Claude Free (limité), Pro 20 €/mois, Team 30 €/utilisateur/mois, Enterprise sur devis. API : 0,80 € à 75 €/million de tokens selon le modèle.",
+          "Free, Pro à 20 $/mois (17 $ en annuel), Max à partir de 100 $/mois, Team à 25 $/siège (20 $ en annuel) à partir de 2 sièges, Premium à 125 $/siège pour cinq fois plus d'usage, Enterprise à partir de 20 $/siège plus la consommation.",
         winner: 'tie',
-        winnerText: 'Tarification équivalente sur les plans pro',
+        winnerText: 'Tarification comparable à l’entrée, à vérifier sur les options',
       },
       {
-        title: "Hallucinations et fiabilité factuelle",
+        title: 'Hallucinations et fiabilité factuelle',
         descriptionA:
-          "Hallucinations en baisse en 2026, surtout avec recherche web activée. Reste prudent : à toujours vérifier sur des sujets pointus.",
+          "En net recul par rapport à 2024, surtout avec la recherche web activée. La limite qui compte en entreprise n'est plus le calcul mais la lecture fidèle de gros tableaux et tout ce qui vous engage : un chiffre repris tel quel dans un document contractuel doit être vérifié.",
         descriptionB:
-          "Réputé pour reconnaître plus facilement ses limites (\"je ne sais pas\"). Hallucinations comparables, mais formulation plus prudente.",
+          "Même ordre de grandeur, avec une formulation plus prudente et une meilleure reconnaissance de ses limites. Sur les documents longs, la citation de la source et de la page est plus fiable, ce qui rend la vérification humaine beaucoup plus rapide.",
         winner: 'b',
-        winnerText: 'Léger avantage Claude — meilleure méta-cognition',
+        winnerText: 'Léger avantage Claude sur la traçabilité des sources',
       },
     ],
+
     useCases: [
-      { metier: 'Marketing & communication', recommendation: 'a', why: "Génération d'images (GPT Image 2), créativité textuelle, GPTs spécialisés copywriting." },
-      { metier: 'Code & développement', recommendation: 'b', why: "Référence du marché. Performance supérieure sur le refactoring et les architectures complexes." },
-      { metier: 'Juridique & conformité', recommendation: 'b', why: "Fenêtre de 200k tokens permet d'ingérer un contrat entier. Style rédactionnel plus rigoureux." },
-      { metier: 'RH', recommendation: 'tie', why: "Les deux conviennent. ChatGPT pour la créativité (annonces, accueils), Claude pour les analyses (CVs en masse, rapports)." },
-      { metier: 'Finance & analyse', recommendation: 'b', why: "Analyse rigoureuse de longs rapports financiers, peu d'hallucinations sur les chiffres avec extended thinking." },
-      { metier: 'Service client', recommendation: 'a', why: "Écosystème agents plus mature pour des bots clients en production. Voice Mode pour le téléphone." },
-      { metier: 'Direction générale', recommendation: 'tie', why: "Beaucoup de DG utilisent les deux. ChatGPT pour la veille / brainstorming, Claude pour la lecture de mémos longs." },
+      { metier: 'Marketing et communication', recommendation: 'a', why: "Génération d'images avec GPT Image 2 et de vidéo avec Sora 2, créativité textuelle, connecteurs vers les outils de campagne." },
+      { metier: 'Code et développement', recommendation: 'b', why: 'Claude Code est inclus dès le plan gratuit et reste la référence sur le refactoring et les architectures complexes.' },
+      { metier: 'Juridique et conformité', recommendation: 'b', why: "200 000 tokens dans l'interface permettent d'ingérer un contrat entier, avec citation fiable des passages." },
+      { metier: 'Ressources humaines', recommendation: 'tie', why: 'ChatGPT pour la production (annonces, supports, visuels), Claude pour les analyses qualitatives (entretiens, enquêtes internes).' },
+      { metier: 'Finance et contrôle de gestion', recommendation: 'b', why: 'Analyse de rapports longs avec traçabilité des chiffres. Dans les deux cas, la lecture des gros tableaux reste à contrôler.' },
+      { metier: 'Service client', recommendation: 'a', why: 'Écosystème de connecteurs et agents plus mature pour un déploiement en production, plus voix native pour le canal téléphonique.' },
+      { metier: 'Appels d’offres et achats', recommendation: 'b', why: "Un dossier de consultation complet tient dans une seule conversation, ce qui évite le découpage manuel du cahier des charges." },
+      { metier: 'Direction générale', recommendation: 'tie', why: 'La plupart des dirigeants que nous accompagnons utilisent les deux : ChatGPT pour la veille et le brainstorming, Claude pour les mémos longs.' },
     ],
-    // NB : la clé `faq` est définie plus bas (~L266) — version étendue à 9 questions.
-    // L'ancienne FAQ de 5 questions a été supprimée car JS gardait la 2e en écrasant la 1re.
+
+    // ─── GEO : delta daté, très citable par les moteurs génératifs
+    changelog: {
+      title: 'Ce qui a changé depuis notre version de mai 2026',
+      items: [
+        { date: 'Juillet 2026', text: "OpenAI a sorti la famille GPT-5.6 en trois niveaux (Sol, Terra, Luna) le 9 juillet, avec une connaissance du monde arrêtée au 16 février 2026." },
+        { date: 'Juillet 2026', text: "Anthropic a étendu Cowork au web et au mobile pour les abonnés Max. Le mode agent ne dépend plus d'un ordinateur allumé." },
+        { date: 'Juillet 2026', text: "Les exécutions d'agents ChatGPT sont désormais décomptées en crédits d'espace de travail, en supplément des licences par utilisateur." },
+        { date: 'Juin 2026', text: 'Anthropic a lancé Claude Science, un environnement de travail dédié à la recherche en sciences du vivant.' },
+        { date: 'Avril 2026', text: 'Claude Design est sorti de recherche préliminaire : production de maquettes, présentations et one-pagers, sans être un générateur d’images.' },
+        { date: 'Correction', text: "Notre version précédente annonçait 128 000 tokens pour ChatGPT et 200 000 pour Claude sans distinguer l'interface et l'API. Les deux chiffres étaient trompeurs : cette version sépare explicitement les deux." },
+      ],
+    },
+
     methodology:
-      "Ce comparatif s'appuie sur l'expérience terrain : depuis 2022, Masteria a formé plus de 1 500 professionnels à ChatGPT et Claude dans des contextes très variés — marketing, RH, finance, juridique, code. Les évaluations qui suivent reflètent les retours réels de ces utilisateurs et des formateurs Masteria, pas des benchmarks théoriques. Les versions testées en avril 2026 : **GPT-5** (OpenAI) et **Claude Opus 4.8** (Anthropic), via les abonnements Pro/Team standards.",
+      "Ce comparatif s'appuie sur l'usage terrain : depuis 2022, Masteria a formé plus de 1 500 professionnels à ChatGPT et à Claude en marketing, RH, finance, juridique et développement. Les arbitrages ci-dessus reflètent les retours de ces utilisateurs et des formateurs du réseau, pas des classements de benchmarks. Les faits produit et les tarifs ont été revérifiés le **8 août 2026** sur les pages officielles d'OpenAI et d'Anthropic. Versions testées : **GPT-5.6 Sol** et **Claude Opus 5**, via les abonnements Plus, Business, Pro et Team.",
+
+    citations: [
+      { name: 'Anthropic — Plans & Pricing (Claude)', url: 'https://claude.com/pricing' },
+      { name: 'Anthropic — Claude Cowork', url: 'https://www.anthropic.com/product/claude-cowork' },
+      { name: 'Anthropic — Claude Design (Anthropic Labs)', url: 'https://www.anthropic.com/news/claude-design-anthropic-labs' },
+      { name: 'OpenAI — Model release notes', url: 'https://help.openai.com/en/articles/9624314-model-release-notes' },
+      { name: 'OpenAI — ChatGPT release notes', url: 'https://help.openai.com/en/articles/6825453-chatgpt-release-notes' },
+    ],
+
     realCases: [
       {
         scenario: "Préparer une présentation commerciale en partant d'un brief client",
-        feature: "ChatGPT Canvas + GPT Image 2 · Claude Artifacts + Skills",
-        prompt: "Voici le brief de mon prospect (PDF de 6 pages) : startup fintech qui cherche à équiper 80 commerciaux d'un outil IA. Crée-moi une présentation de 8 slides : (1) résumé du besoin, (2) 3 problèmes clés identifiés, (3) notre proposition, (4) ROI estimé, (5) 4 cas clients similaires, (6) planning, (7) tarif, (8) prochaines étapes. Style sobre, ton direct.",
-        verdictText: "Match nul. ChatGPT (Canvas + génération d'images via GPT Image 2) produit une présentation rapide et visuelle, idéal pour itérer en équipe. Claude (Artifacts + Skills) génère un slide deck plus structuré et factuel, plus aligné sur les attentes B2B traditionnelles. À tester sur un cas réel pour voir lequel correspond mieux à votre style.",
+        feature: 'ChatGPT Canvas et GPT Image 2 · Claude Design et Artifacts',
+        prompt:
+          "Voici le brief de mon prospect (PDF de 6 pages) : startup fintech qui cherche à équiper 80 commerciaux d'un outil IA. Crée-moi une présentation de 8 slides : (1) résumé du besoin, (2) 3 problèmes clés identifiés, (3) notre proposition, (4) ROI estimé, (5) 4 cas clients similaires, (6) planning, (7) tarif, (8) prochaines étapes. Style sobre, ton direct.",
+        verdictText:
+          "Match nul depuis avril 2026. ChatGPT produit une présentation rapide et visuelle grâce à Canvas et à la génération d'images. Claude Design, lancé en avril 2026, comble l'écart sur ce cas précis : il sort une présentation propre, structurée et exportable, avec un respect de charte plus fiable. Le départage se fait sur votre style de travail, pas sur les capacités.",
         winner: 'tie',
       },
       {
-        scenario: "Générer 8 visuels pour une campagne LinkedIn (charte respectée)",
-        feature: "ChatGPT + GPT Image 2 (génération native) · Claude Opus 4.8 (sans génération d'images)",
-        prompt: "Je lance une série LinkedIn sur l'IA en RH. Génère 8 visuels carrés (1080×1080) avec ce style : minimaliste, palette bleu nuit + or, pas de visage humain, ambiance feutrée corporate. Chaque visuel illustre un thème : recrutement, onboarding, formation, entretien annuel, mobilité interne, fidélisation, paie, offboarding.",
-        verdictText: "ChatGPT gagne facilement. GPT Image 2 (le successeur de DALL-E intégré nativement à ChatGPT depuis 2025) génère les 8 visuels en quelques minutes, avec une cohérence de style impressionnante grâce au respect des références visuelles. Claude ne génère pas d'images en natif : il faut combiner avec un autre outil (Midjourney, Imagen 4, Sora 2 pour la vidéo).",
+        scenario: 'Générer 8 visuels pour une campagne LinkedIn en respectant la charte',
+        feature: 'ChatGPT et GPT Image 2 · Claude sans génération d’images',
+        prompt:
+          "Je lance une série LinkedIn sur l'IA en RH. Génère 8 visuels carrés (1080×1080) avec ce style : minimaliste, palette bleu nuit et or, pas de visage humain, ambiance feutrée corporate. Chaque visuel illustre un thème : recrutement, onboarding, formation, entretien annuel, mobilité interne, fidélisation, paie, offboarding.",
+        verdictText:
+          "ChatGPT gagne sans discussion. GPT Image 2 sort les 8 visuels en quelques minutes avec une cohérence de style solide. Claude ne génère pas d'images photoréalistes : il faut un outil tiers (Midjourney, Imagen, Sora 2 pour la vidéo). Claude Design ne couvre pas ce besoin, il produit des visuels de présentation, pas des créations de campagne.",
         winner: 'a',
       },
       {
-        scenario: "Synthétiser un rapport sectoriel de 80 pages pour son comité de direction",
-        feature: "Claude Projects (200k tokens) · ChatGPT + Deep Research",
-        prompt: "Voici un rapport McKinsey de 80 pages sur l'évolution du e-commerce B2B en Europe. Pour mon comité de direction de demain : (1) synthèse en 1 page max, (2) 5 chiffres clés à retenir, (3) 3 implications stratégiques pour notre activité, (4) 2 questions à creuser. Reste fidèle aux chiffres du rapport, cite les pages.",
-        verdictText: "Claude prend l'avantage. Sa fenêtre de 200 000 tokens permet d'avaler le rapport entier en une fois, sans perte de contexte. Il préserve mieux les chiffres et cite les pages avec précision. ChatGPT y arrive aussi bien sur du 80 pages, mais sur des rapports plus longs (>150 pages) il commence à mélanger les sources.",
+        scenario: 'Synthétiser un rapport sectoriel de 200 pages pour son comité de direction',
+        feature: 'Claude Projects (200 000 tokens) · ChatGPT et Deep Research',
+        prompt:
+          "Voici un rapport de 200 pages sur l'évolution du e-commerce B2B en Europe. Pour mon comité de direction de demain : (1) synthèse en 1 page max, (2) 5 chiffres clés à retenir, (3) 3 implications stratégiques pour notre activité, (4) 2 questions à creuser. Reste fidèle aux chiffres du rapport, cite les pages.",
+        verdictText:
+          "Claude prend l'avantage, et l'écart s'est creusé. L'interface Claude accepte 200 000 tokens, soit le rapport entier en une fois, avec citation des pages. Dans l'interface ChatGPT, le même document dépasse la fenêtre disponible : il faut découper, ce qui casse les recoupements entre chapitres. Sur un rapport de 40 à 60 pages, les deux font le travail.",
         winner: 'b',
       },
       {
-        scenario: "Créer un agent qui prépare votre journée chaque matin",
-        feature: "ChatGPT Custom GPTs + Connecteurs · Claude Skills + MCP",
-        prompt: "Construis un agent qui chaque matin à 7h : (1) résume mes mails non lus de la nuit, (2) liste mes 3 réunions de la journée avec contexte (qui, sujet, dernière interaction), (3) rappelle mes 5 priorités de la semaine, (4) suggère 1 article pertinent à lire pendant mon café. Format : 1 message Slack court, lisible en 90 secondes.",
-        verdictText: "ChatGPT gagne pour la simplicité. Les Custom GPTs avec connecteurs natifs (Gmail, Slack, Calendar) permettent de monter cet agent en 30 minutes sans une ligne de code. Claude le fait aussi via Skills + MCP, mais nécessite plus de configuration technique. Pour un cas d'usage personnel quotidien, ChatGPT a l'avantage.",
+        scenario: 'Automatiser une tâche récurrente de préparation de journée',
+        feature: 'ChatGPT : agents d’espace de travail · Claude : Cowork et tâches planifiées',
+        prompt:
+          "Construis un agent qui chaque matin à 7h : (1) résume mes mails non lus de la nuit, (2) liste mes 3 réunions de la journée avec contexte (qui, sujet, dernière interaction), (3) rappelle mes 5 priorités de la semaine, (4) suggère 1 article pertinent à lire pendant mon café. Format : 1 message court, lisible en 90 secondes.",
+        verdictText:
+          "ChatGPT garde l'avantage sur ce cas. Les agents d'espace de travail se construisent en langage naturel et se connectent nativement à la messagerie et à l'agenda, sans configuration technique. Côté Claude, Cowork sait planifier et exécuter, mais la connexion aux outils passe par MCP, ce qui demande une mise en place. Deux réserves à budgéter côté ChatGPT : l'offre Business est requise, et les exécutions consomment des crédits.",
         winner: 'a',
       },
       {
         scenario: "Construire un budget prévisionnel Excel à partir d'un brief verbal",
-        feature: "ChatGPT Code Interpreter + GPTs Excel spécialisés · Claude Skills (skill 'Excel') + Artifacts",
-        prompt: "Mon DG veut un budget prévisionnel pour notre nouveau département (8 personnes, lancement T3 2026). Construis-moi un Excel : (1) salaires chargés par profil, (2) outils SaaS estimés, (3) déplacements/événementiel, (4) marketing, (5) consolidation par mois sur 18 mois, (6) graphique d'évolution du burn-rate, (7) sensibilité ±10 % sur le top 3 des coûts.",
-        verdictText: "Match nul, avec une approche différente. ChatGPT (Code Interpreter + GPT spécialisé Excel) génère le fichier directement, prêt à télécharger. Claude (avec sa Skill \"Excel\" lancée fin 2025) produit un fichier équivalent avec des formules plus propres et des commentaires explicatifs intégrés. Les deux font le job en 5 minutes contre 2 heures à la main.",
+        feature: 'ChatGPT Code Interpreter · Claude Skills et Cowork',
+        prompt:
+          "Mon DG veut un budget prévisionnel pour notre nouveau département (8 personnes, lancement T3 2026). Construis-moi un Excel : (1) salaires chargés par profil, (2) outils SaaS estimés, (3) déplacements et événementiel, (4) marketing, (5) consolidation par mois sur 18 mois, (6) graphique d'évolution du burn-rate, (7) sensibilité de plus ou moins 10 % sur le top 3 des coûts.",
+        verdictText:
+          "Match nul, avec deux approches. ChatGPT génère le fichier directement depuis la conversation. Claude fait la même chose via sa compétence tableur, et avec Cowork il peut aussi ouvrir le fichier existant sur votre poste, le modifier et le réenregistrer au bon endroit. Dans les deux cas, la relecture des formules reste à votre charge.",
         winner: 'tie',
       },
       {
-        scenario: "Rédiger un compte-rendu de réunion à partir d'un enregistrement audio (45 min)",
-        feature: "ChatGPT Voice Mode + transcription native · Claude (transcription externe + Projects)",
-        prompt: "Voici l'enregistrement de notre réunion de pilotage de ce matin (45 minutes). Génère un compte-rendu structuré : (1) liste des participants, (2) sujets abordés, (3) décisions prises, (4) actions par responsable avec deadlines, (5) points de désaccord à arbitrer. Style factuel, pas de bullshit.",
-        verdictText: "ChatGPT prend l'avantage en 2026. Le Voice Mode avancé transcrit et synthétise en une seule étape. Claude nécessite une transcription préalable via un outil externe (Whisper, Otter), puis l'analyse via un Project. Pour un usage récurrent et fluide, ChatGPT est plus simple. Pour la qualité de synthèse pure (sur transcription déjà faite), Claude reste légèrement supérieur.",
+        scenario: "Rédiger un compte rendu de réunion à partir d'un enregistrement audio de 45 minutes",
+        feature: 'ChatGPT : transcription native · Claude : transcription externe puis analyse',
+        prompt:
+          "Voici l'enregistrement de notre réunion de pilotage de ce matin (45 minutes). Génère un compte rendu structuré : (1) liste des participants, (2) sujets abordés, (3) décisions prises, (4) actions par responsable avec échéances, (5) points de désaccord à arbitrer. Style factuel.",
+        verdictText:
+          "ChatGPT prend l'avantage sur la chaîne complète : transcription et synthèse en une seule étape. Claude demande une transcription préalable par un outil externe, puis l'analyse. Sur la qualité de la synthèse à partir d'une transcription déjà faite, Claude reste légèrement devant, notamment sur la restitution fidèle des désaccords.",
         winner: 'a',
       },
       {
-        scenario: "Générer une vidéo courte pour la communication interne",
-        feature: "ChatGPT + Sora 2 (génération vidéo native) · Claude (sans génération vidéo)",
-        prompt: "Pour notre communication interne sur le déploiement de notre nouvelle politique télétravail, génère une vidéo de 30 secondes : style animation 2D moderne, ton positif et clair, palette de couleurs de notre marque (bleu/blanc), 3 scènes : avant/pendant/après le télétravail.",
-        verdictText: "ChatGPT gagne sans appel. Sora 2 (le modèle vidéo d'OpenAI accessible aux abonnés ChatGPT Plus et au-delà depuis 2025) génère la vidéo demandée en quelques minutes. Claude ne fait pas de génération vidéo. Pour ce besoin, il faut combiner Claude avec un outil tiers (Veo 3 de Google, Runway, Kling).",
+        scenario: 'Générer une vidéo courte pour la communication interne',
+        feature: 'ChatGPT et Sora 2 · Claude sans génération vidéo',
+        prompt:
+          "Pour notre communication interne sur le déploiement de notre nouvelle politique télétravail, génère une vidéo de 30 secondes : style animation 2D moderne, ton positif et clair, palette de couleurs de notre marque (bleu et blanc), 3 scènes : avant, pendant, après le télétravail.",
+        verdictText:
+          "ChatGPT gagne sans appel. Sora 2 est accessible aux abonnés ChatGPT payants et produit la vidéo en quelques minutes. Claude ne génère pas de vidéo : il faut passer par un outil tiers (Veo, Runway, Kling). En revanche Claude reste utile en amont pour écrire le script et le storyboard.",
         winner: 'a',
       },
       {
-        scenario: "Construire une note de synthèse à partir de 12 entretiens collaborateurs",
-        feature: "Claude Projects + Artifacts · ChatGPT Custom GPTs + Code Interpreter",
-        prompt: "Voici 12 transcriptions d'entretiens (60 pages au total) menés auprès de mes équipes sur le climat social. Identifie : (1) les 5 thèmes qui reviennent le plus, (2) 3 verbatims exacts par thème, (3) les divergences fortes entre managers et opérationnels, (4) 4 actions concrètes que je peux mettre en place ce trimestre. Format : note de 2 pages.",
-        verdictText: "Claude prend l'avantage sur les analyses qualitatives. Il préserve mieux les citations exactes (sans paraphraser), structure plus rigoureusement les thèmes et signale les divergences avec nuance. Les Artifacts permettent en plus de produire un visuel de synthèse (cartographie thèmes/fréquence) directement exportable.",
+        scenario: 'Construire une note de synthèse à partir de 12 entretiens collaborateurs',
+        feature: 'Claude Projects et Artifacts · ChatGPT et projets partagés',
+        prompt:
+          "Voici 12 transcriptions d'entretiens (60 pages au total) menés auprès de mes équipes sur le climat social. Identifie : (1) les 5 thèmes qui reviennent le plus, (2) 3 verbatims exacts par thème, (3) les divergences fortes entre managers et opérationnels, (4) 4 actions concrètes que je peux mettre en place ce trimestre. Format : note de 2 pages.",
+        verdictText:
+          "Claude prend l'avantage sur les analyses qualitatives. Il préserve mieux les citations exactes sans les reformuler, structure les thèmes plus rigoureusement et signale les divergences avec nuance. Les Artifacts permettent en plus de produire une cartographie thèmes et fréquences directement exportable.",
+        winner: 'b',
+      },
+      {
+        scenario: "Répondre à un appel d'offres public avec un DCE de 150 pages",
+        feature: 'Claude : dossier complet en une conversation · ChatGPT : découpage nécessaire',
+        prompt:
+          "Voici le règlement de consultation, le CCTP et le CCAP de cet appel d'offres. Extrais : (1) tous les critères de jugement avec leur pondération, (2) la liste exhaustive des pièces à fournir avec leur format, (3) les exigences techniques qui nous posent problème, (4) les échéances. Cite l'article et la page pour chaque point.",
+        verdictText:
+          "Claude prend l'avantage grâce au contexte de l'interface : les trois documents tiennent dans une seule conversation, ce qui permet de croiser le CCTP et le règlement de consultation sans découpage manuel. Dans l'interface ChatGPT, il faut segmenter le dossier, et c'est exactement là que se perdent les renvois entre pièces. Dans les deux cas, la liste des pièces à fournir se vérifie à la main avant dépôt.",
         winner: 'b',
       },
     ],
+
     mistakes: [
       {
-        title: "Choisir uniquement sur les benchmarks publics",
-        desc: "Les benchmarks (MMLU, HumanEval, GPQA) testent les modèles sur des problèmes standardisés sans rapport avec le quotidien d'une entreprise. Un modèle qui a 88 % au MMLU peut être moins utile pour rédiger vos emails clients qu'un modèle qui a 85 %. Le vrai critère c'est la qualité **sur vos cas d'usage réels**.",
+        title: 'Comparer les fenêtres de contexte annoncées au lieu de celles auxquelles vous avez droit',
+        desc: "Les annonces parlent du million de tokens accessible par API. Dans l'interface que vos équipes utilisent vraiment, on est à **200 000 tokens côté Claude** et **32 000 à 128 000 côté ChatGPT** selon le mode. C'est cet écart qui décide si votre rapport de 200 pages passe en une fois ou pas.",
       },
       {
-        title: "Comparer la version gratuite avec la version Pro de l'autre",
-        desc: "L'erreur classique : tester ChatGPT Plus contre Claude Free, puis conclure que ChatGPT est meilleur. Les versions gratuites donnent accès à des modèles bridés (limites de longueur, pas de raisonnement étendu, pas d'extended thinking). Comparez à versions équivalentes (Plus vs Pro).",
+        title: 'Choisir uniquement sur les benchmarks publics',
+        desc: "Les benchmarks (MMLU, HumanEval, GPQA, SWE-bench) testent les modèles sur des problèmes standardisés sans rapport avec le quotidien d'une entreprise. Un modèle à 88 % peut être moins utile pour rédiger vos emails clients qu'un modèle à 85 %. Le seul critère qui compte est la qualité **sur vos cas d'usage**.",
       },
       {
-        title: "Négliger le coût total (formation + adoption)",
-        desc: "L'abonnement à 25 € représente ~5 % du coût total d'un déploiement IA. La vraie variable c'est la formation (~1 980 € par jour en individuel) et le temps d'adoption. Un outil 30 % moins puissant mais adopté à 90 % bat largement un outil 30 % plus puissant adopté à 30 %.",
+        title: "Comparer la version gratuite d'un outil avec la version payante de l'autre",
+        desc: "L'erreur classique : tester ChatGPT Plus contre Claude Free, puis conclure. Les versions gratuites limitent la longueur, le nombre de messages et l'accès aux modes de raisonnement. Comparez à niveau équivalent : Plus contre Pro, Business contre Team.",
       },
       {
-        title: "Confondre \"je l'ai testé 10 minutes\" et \"je l'ai utilisé pour mon vrai travail\"",
-        desc: "Beaucoup d'évaluations en entreprise se font sur des cas joués (\"écris-moi un sonnet\", \"explique l'IA à mon enfant\"). Ces tests ne révèlent rien. Pour décider, faites tester pendant 2 semaines avec de vraies tâches métier — c'est ce que nous faisons dans nos formations panorama.",
+        title: 'Oublier ce qui se facture en plus de la licence',
+        desc: "Depuis juillet 2026, les exécutions d'agents ChatGPT consomment des crédits d'espace de travail en supplément des licences par utilisateur. Côté Claude, l'écart entre un siège Team standard et un siège Premium est de 100 $ par mois. Un budget calculé sur le seul prix affiché se révèle faux au premier trimestre.",
       },
       {
-        title: "Oublier la complémentarité",
-        desc: "ChatGPT et Claude ne sont pas des choix mutuellement exclusifs. Le coût marginal du second outil (20-30 €/mois) est négligeable face au gain. Beaucoup d'entreprises matures équipent leurs équipes des deux et laissent chacun choisir selon la tâche.",
+        title: 'Négliger le coût total, formation et adoption comprises',
+        desc: "L'abonnement représente une part minoritaire du coût d'un déploiement. La vraie variable est la formation et le temps d'adoption. Un outil 30 % moins puissant mais adopté par 90 % de l'équipe bat largement un outil 30 % plus puissant adopté par 30 %.",
+      },
+      {
+        title: 'Confondre un test de 10 minutes et un usage professionnel',
+        desc: "Beaucoup d'évaluations en entreprise se font sur des cas joués (« écris-moi un sonnet », « explique l'IA à mon enfant »). Ces tests ne révèlent rien. Pour décider, faites tester pendant deux semaines sur de vraies tâches métier, avec les documents que vos équipes manipulent réellement.",
+      },
+      {
+        title: 'Oublier la complémentarité',
+        desc: "ChatGPT et Claude ne sont pas des choix exclusifs. Le coût marginal du second outil, de l'ordre de 20 à 25 $ par mois et par personne, est faible face au gain. Beaucoup d'entreprises matures équipent leurs équipes des deux et laissent chacun choisir selon la tâche.",
       },
     ],
+
     alsoConsidered: [
-      { name: 'Perplexity', summary: "Excellent pour la recherche web et la veille (sources citées), mais moins puissant en génération longue. Complément, pas concurrent." },
-      { name: 'Vibe (Mistral AI)', summary: "Anciennement Le Chat. Alternative française et souveraine. Voir notre [panorama complet](/meilleure-ia-entreprise-2026) si la souveraineté est un critère." },
-      { name: 'Google Gemini', summary: "Pertinent surtout pour les entreprises sur Google Workspace. Voir le [comparatif des 5 outils](/meilleure-ia-entreprise-2026)." },
-      { name: 'Grok (xAI)', summary: "Performances montantes mais positionnement et image de marque ambigus pour un usage B2B sérieux." },
+      { name: 'Perplexity', summary: 'Excellent pour la recherche web et la veille avec sources citées, moins puissant en génération longue. Complément, pas concurrent.' },
+      { name: 'Vibe (Mistral AI)', summary: "Anciennement Le Chat, renommé en mai 2026. Alternative française et souveraine. Voir notre [panorama complet](/meilleure-ia-entreprise-2026) si la souveraineté est un critère." },
+      { name: 'Google Gemini', summary: "Pertinent surtout si votre entreprise tourne sur Google Workspace, où Gemini est déjà inclus dans les forfaits payants. Voir le [comparatif des 5 outils](/meilleure-ia-entreprise-2026)." },
+      { name: 'Microsoft 365 Copilot', summary: "Le vrai concurrent si votre stack est Microsoft : les données restent dans votre tenant. Voir le [comparatif Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
     ],
+
     faq: [
       {
-        q: "Faut-il choisir l'un ou l'autre, ou les deux ?",
-        a: "En 2026, beaucoup d'entreprises matures équipent leurs équipes des deux outils. Le coût marginal du second abonnement (20-30 €/utilisateur) est négligeable face au gain de complémentarité. Si vous devez choisir un seul outil, basez-vous sur le cas d'usage dominant : marketing/contenu → ChatGPT, code/analyse → Claude.",
+        q: 'ChatGPT ou Claude : lequel choisir en 2026 ?',
+        a: "Prenez **ChatGPT** si votre besoin dominant est visuel ou multimodal (images avec GPT Image 2, vidéo avec Sora 2, voix) ou si vous voulez des agents créables sans code par des profils non techniques. Prenez **Claude** si votre besoin dominant est le travail sur documents longs, le code ou l'automatisation de tâches de bureau : son interface accepte 200 000 tokens contre 32 000 à 128 000 côté ChatGPT, et Cowork exécute des tâches complètes sur vos fichiers. Si vous pouvez équiper vos équipes des deux, faites-le : c'est ce que font la plupart des entreprises que nous accompagnons.",
       },
       {
-        q: "Mes données sont-elles utilisées pour entraîner les modèles ?",
-        a: "Sur les versions Pro/Team/Enterprise des deux outils, **non** : OpenAI et Anthropic s'engagent contractuellement à ne pas utiliser vos conversations pour l'entraînement. Sur les versions gratuites, c'est variable et il faut activer l'opt-out manuellement.",
+        q: 'Quels sont les modèles ChatGPT et Claude actuels en août 2026 ?',
+        a: "Côté OpenAI, la famille **GPT-5.6** est sortie le 9 juillet 2026 en trois niveaux : **Sol** (le plus capable), **Terra** (équilibré) et **Luna** (rapide et économique), avec une connaissance du monde arrêtée au 16 février 2026. Côté Anthropic, les modèles courants sont **Claude Opus 5** (le plus capable sur le code et le travail autonome), **Claude Sonnet 5** (équilibre performance et coût) et **Claude Haiku 4.5** (rapide et économique), avec **Claude Fable 5** au-dessus pour les tâches de raisonnement les plus lourdes via API.",
       },
       {
-        q: "Lequel est le meilleur pour le français ?",
-        a: "Les deux sont excellents en français. Claude est parfois perçu comme légèrement plus naturel sur les contenus longs. Pour des cas critiques en langue française avec souveraineté, considérez Mistral AI (français) ou Vibe Pro (anciennement Le Chat).",
+        q: 'Quelle est vraiment la fenêtre de contexte de ChatGPT et de Claude ?',
+        a: "Il faut distinguer l'interface et l'API. **Dans l'interface** : Claude expose 200 000 tokens (environ 150 000 mots) sur tous ses plans payants, tandis que ChatGPT propose 32 000 tokens en mode instantané et jusqu'à 128 000 en mode raisonnement. **Via l'API** : Claude Opus 5 et Sonnet 5 atteignent 1 000 000 de tokens, la famille GPT-5.6 environ 1 050 000. Autrement dit, les deux se valent pour un développeur qui intègre le modèle, et Claude garde une avance nette pour un utilisateur qui travaille dans le chat.",
       },
       {
-        q: "ChatGPT vs Claude : lequel est le plus rapide ?",
-        a: "Sur les modèles \"flash\" (GPT-4o, Claude Haiku), les deux ont une latence comparable de 0,5 à 1,5 s pour les premières réponses. Sur les modèles avec raisonnement étendu (o-series ChatGPT, Claude Extended Thinking), Claude est souvent perçu comme plus rapide à fournir une réponse complète.",
+        q: 'Combien coûtent ChatGPT et Claude pour une équipe ?',
+        a: "Côté **ChatGPT** : Go à 8 $/mois, Plus à 20 €/mois, Pro à 200 $/mois, Business à 25 $/utilisateur/mois, Enterprise sur devis. À budgéter en plus depuis juillet 2026 : les crédits consommés par les exécutions d'agents. Côté **Claude** : Pro à 20 $/mois (17 $ en annuel), Max à partir de 100 $/mois, Team à 25 $/siège (20 $ en annuel) dès 2 sièges, Premium à 125 $/siège pour cinq fois plus d'usage, Enterprise à partir de 20 $/siège plus la consommation. À l'entrée, les deux offres équipe sont au même prix.",
       },
       {
-        q: "Combien coûte la formation des équipes à ces outils ?",
-        a: "Une formation Masteria de 1 jour pour ChatGPT ou Claude coûte 1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. 100 % finançable par les OPCO.",
+        q: 'Mes données sont-elles utilisées pour entraîner les modèles ?',
+        a: "Sur les offres professionnelles des deux éditeurs, **non**. OpenAI n'entraîne pas ses modèles sur les conversations Business et Enterprise, Anthropic n'entraîne pas sur les conversations Pro, Max, Team et Enterprise. Sur les versions gratuites et sur ChatGPT Plus, les conversations peuvent être utilisées sauf si vous activez l'opt-out. C'est le premier point à cadrer avant de déployer un outil dans une équipe.",
       },
       {
-        q: "Quels sont les risques de sécurité ?",
-        a: "Les deux outils sont conformes aux standards entreprise (SOC 2, ISO 27001, GDPR). Le principal risque vient de l'usage : éviter de copier-coller des données sensibles (codes clients, données médicales, IP) dans des sessions sans accord juridique. Une charte IA interne est indispensable.",
+        q: "Qu'est-ce que Claude Cowork et son équivalent chez ChatGPT ?",
+        a: "**Cowork** est le mode agent de Claude : il lit, modifie et crée des fichiers sur votre ordinateur, enchaîne les étapes d'une tâche sans relance et gère des tâches planifiées. Disponible dès le plan Pro, sur ordinateur depuis janvier 2026, sur web et mobile depuis juillet 2026 pour les abonnés Max. L'équivalent côté OpenAI, ce sont les **agents d'espace de travail**, disponibles sur Business et Enterprise depuis mai 2026 : ils se créent en langage naturel et s'exécutent dans le cloud, avec une facturation en crédits depuis juillet 2026.",
       },
       {
-        q: "Peut-on déployer ChatGPT ou Claude en interne (self-hosted) ?",
-        a: "Non, contrairement à Mistral ou Llama qui proposent des versions open-weight, ChatGPT et Claude sont uniquement disponibles via API ou interface web. Pour un déploiement strictement interne sans envoi de données aux serveurs OpenAI/Anthropic, il faut s'orienter vers Mistral, Llama ou DeepSeek.",
+        q: 'Lequel est le meilleur pour le français ?',
+        a: "Les deux sont excellents en français. Claude est souvent préféré sur les contenus longs pour un style moins formaté, ChatGPT sur les formats courts et créatifs. Si la souveraineté des données est un critère réglementaire pour vous, regardez plutôt **Vibe** de Mistral AI (anciennement Le Chat), qui héberge en Europe.",
+      },
+      {
+        q: 'Peut-on déployer ChatGPT ou Claude sur ses propres serveurs ?',
+        a: "Non. Contrairement à Mistral ou Llama qui publient des modèles à poids ouverts, ChatGPT et Claude sont uniquement accessibles via l'interface web ou l'API. Pour un traitement strictement interne sans envoi aux serveurs d'OpenAI ou d'Anthropic, il faut s'orienter vers un modèle à poids ouverts hébergé chez vous. À noter : Claude est disponible sur Amazon Bedrock, Google Vertex AI et Microsoft Foundry, ce qui permet de rester dans le périmètre contractuel de votre fournisseur cloud.",
       },
       {
         q: "Quelle est la différence entre l'API et l'interface web ?",
-        a: "L'**interface web** (chat.openai.com, claude.ai) est destinée à l'usage humain interactif. L'**API** est pour les développeurs qui intègrent le modèle dans leurs applications. Mêmes modèles, mais l'API permet l'industrialisation (workflows, agents, intégrations CRM) avec une tarification au token, pas par mois.",
+        a: "L'**interface web** (chatgpt.com, claude.ai) est faite pour l'usage humain interactif, avec un abonnement mensuel et des limites d'usage. L'**API** est faite pour les développeurs qui intègrent le modèle dans une application, avec une facturation au token. Ce ne sont pas exactement les mêmes conditions : la fenêtre de contexte et les modèles disponibles diffèrent entre les deux, comme le montre l'écart de contexte détaillé plus haut.",
       },
       {
-        q: "ChatGPT 5 vs Claude Opus 4.8 : qui gagne sur le raisonnement ?",
-        a: "Match très serré. ChatGPT 5 avec mode \"Thinking\" est la référence sur les problèmes math/scientifiques. Claude Opus 4.8 avec Extended Thinking se distingue sur les analyses business complexes et la rigueur du raisonnement nuancé. Pour les cas critiques, tester les deux sur votre cas concret reste la meilleure méthode.",
+        q: 'Les Skills de ChatGPT sont-elles une nouveauté OpenAI ?',
+        a: "Non. Le format **Agent Skills a été créé par Anthropic en octobre 2025** puis publié en standard ouvert, avant d'être repris par une quarantaine d'outils dont ChatGPT et Codex. C'est même un bon argument pour votre entreprise : une procédure formalisée en compétence reste réutilisable si vous changez d'éditeur. En pratique, la création diffère : sur ChatGPT elle se fait en langage naturel dans la conversation, sur Claude elle repose sur une arborescence de fichiers plus explicite.",
+      },
+      {
+        q: 'Combien coûte la formation des équipes à ces outils ?',
+        a: "Une formation Masteria d'une journée sur ChatGPT ou Claude coûte 1 980 € HT par jour, en intra-entreprise comme en accompagnement individuel sur mesure, avec un programme construit sur vos cas d'usage. Notre organisme est certifié Qualiopi, ce qui ouvre la prise en charge par votre OPCO.",
+      },
+      {
+        q: 'Quels sont les risques de sécurité et que dit le règlement européen ?',
+        a: "Les deux outils sont conformes aux standards entreprise (SOC 2 Type 2, ISO 27001, RGPD). Le risque principal vient de l'usage : coller des données sensibles (données clients, données de santé, propriété intellectuelle) dans une session sans cadre défini. Depuis le 2 février 2025, l'article 4 du règlement européen sur l'IA impose par ailleurs à tout employeur d'assurer un niveau suffisant de **littératie en IA** à ses collaborateurs. Une charte d'usage interne et une formation documentée répondent à ces deux sujets d'un coup.",
       },
     ],
+
     relatedLinks: [
       { label: 'Formation ChatGPT pour entreprises', href: '/formation-chatgpt' },
       { label: 'Formation Claude IA', href: '/formation-claude-ia' },
-      { label: 'Formation IA gestion de projet', href: '/formation-ia-gestion-de-projet' },
+      { label: 'Formation multi-outils (ChatGPT, Claude, Copilot, Gemini)', href: '/formation-multi-outils' },
       { label: 'Comparatif Copilot vs ChatGPT', href: '/copilot-vs-chatgpt' },
       { label: 'Quelle est la meilleure IA en 2026 ?', href: '/quelle-est-la-meilleure-ia' },
+      { label: 'IA et RGPD : ce que dit le règlement européen', href: '/ia-et-rgpd' },
       { label: 'Glossaire IA — 80 termes', href: '/glossaire-ia' },
       { label: 'Conseil IA pour entreprises', href: '/conseil-intelligence-artificielle' },
     ],

@@ -7,6 +7,21 @@ import { COMPARISONS } from '../data/comparisons'
 
 const SITE_URL = 'https://www.master-ia.fr'
 
+/* GEO — désambiguïsation d'entités.
+   Rattache chaque outil comparé à ses identifiants publics (Wikidata, Wikipédia,
+   site officiel) pour que les moteurs génératifs citent la page sur la bonne entité
+   et pas sur un homonyme (« Claude » le prénom, « Gemini » la constellation).
+   Clés = `id` des outils dans src/data/comparisons.js.
+   Q-ids et titres Wikipédia vérifiés sur Wikidata le 2026-08-08 : ne pas éditer
+   de mémoire, revérifier via https://www.wikidata.org/wiki/Special:EntityData/<Qid>.json */
+const ENTITY_SAMEAS = {
+  chatgpt: ['https://www.wikidata.org/wiki/Q115564437', 'https://fr.wikipedia.org/wiki/ChatGPT', 'https://chatgpt.com'],
+  claude: ['https://www.wikidata.org/wiki/Q118876059', 'https://fr.wikipedia.org/wiki/Claude_(mod%C3%A8le_de_langage)', 'https://claude.com'],
+  copilot: ['https://www.wikidata.org/wiki/Q116793893', 'https://fr.wikipedia.org/wiki/Microsoft_Copilot', 'https://copilot.microsoft.com'],
+  gemini: ['https://www.wikidata.org/wiki/Q116698014', 'https://fr.wikipedia.org/wiki/Gemini_(IA)', 'https://gemini.google.com'],
+  mistral: ['https://www.wikidata.org/wiki/Q119718658', 'https://fr.wikipedia.org/wiki/Mistral_AI', 'https://mistral.ai'],
+}
+
 export default function ComparisonPage({ slug: propSlug }) {
   const params = useParams()
   const slug = propSlug || params.slug
@@ -26,6 +41,9 @@ export default function ComparisonPage({ slug: propSlug }) {
     { name: 'Comparatifs IA', slug: 'comparatifs-ia' },
     { name: data.h1.split(':')[0].trim(), slug: data.slug },
   ]
+
+  // Outils comparés : panorama (data.tools) ou face-à-face (toolA / toolB).
+  const comparedTools = data.tools || [data.toolA, data.toolB].filter(Boolean)
 
   // JSON-LD Article enrichi (Mathias Nizan auteur, dates fraîches, mots-clés)
   const articleSchema = {
@@ -49,12 +67,24 @@ export default function ComparisonPage({ slug: propSlug }) {
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo-square.png`, width: 512, height: 512 },
     },
     datePublished: data.datePublished || '2026-05-04',
-    dateModified: data.lastUpdate ? '2026-05-05' : '2026-05-05',
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/${data.slug}` },
+    dateModified: data.dateModified || data.datePublished || '2026-05-04',
+    url: `${SITE_URL}/${data.slug}`,
+    mainEntityOfPage: { '@id': `${SITE_URL}/${data.slug}#webpage` },
     inLanguage: 'fr-FR',
     articleSection: 'Comparatif IA',
     keywords: data.keywords || `comparatif IA, ${data.toolA?.name || ''}, ${data.toolB?.name || ''}, formation IA entreprise`,
-    about: data.tools ? data.tools.map(t => ({ '@type': 'SoftwareApplication', name: t.name, applicationCategory: 'AI Assistant' })) : undefined,
+    // GEO : entités logicielles explicites (nom + éditeur + sameAs) pour que les moteurs
+    // génératifs rattachent la page aux bonnes entités plutôt qu'à des homonymes.
+    about: comparedTools.length
+      ? comparedTools.map(t => ({
+        '@type': 'SoftwareApplication',
+        name: t.name,
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web, iOS, Android, Windows, macOS',
+        ...(t.editor ? { author: { '@type': 'Organization', name: t.editor } } : {}),
+        ...(ENTITY_SAMEAS[t.id] ? { sameAs: ENTITY_SAMEAS[t.id] } : {}),
+      }))
+      : undefined,
     isPartOf: { '@id': `${SITE_URL}/quelle-est-la-meilleure-ia#cluster` },
   }
 
@@ -82,6 +112,17 @@ export default function ComparisonPage({ slug: propSlug }) {
         slug={data.slug}
         breadcrumbs={breadcrumbs}
         type="article"
+        webPageType="WebPage"
+        keywords={data.keywords}
+        datePublished={data.datePublished}
+        dateModified={data.dateModified}
+        citations={data.citations}
+        articleMeta={{
+          publishedTime: data.datePublished,
+          modifiedTime: data.dateModified || data.datePublished,
+          author: 'Mathias Nizan',
+          section: 'Comparatif IA',
+        }}
         extraJsonLd={faqSchema ? [articleSchema, faqSchema] : [articleSchema]}
       />
 
@@ -132,8 +173,18 @@ export default function ComparisonPage({ slug: propSlug }) {
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: 13, color: '#6B7280' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <Calendar size={14} /> Mis à jour : {data.lastUpdate}
+              <Calendar size={14} />
+              {data.dateModified ? (
+                <>Mis à jour : <time dateTime={data.dateModified}>{data.lastUpdate}</time></>
+              ) : (
+                <>Mis à jour : {data.lastUpdate}</>
+              )}
             </span>
+            {data.verifiedOn && (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <BadgeCheck size={14} /> Faits et tarifs vérifiés le {data.verifiedOn}
+              </span>
+            )}
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <Clock size={14} /> Lecture : {data.readTime}
             </span>
@@ -141,6 +192,110 @@ export default function ComparisonPage({ slug: propSlug }) {
           </div>
         </div>
       </section>
+
+      {/* ═════════════ RÉPONSE DIRECTE (GEO) ═════════════
+          Bloc autoportant placé haut : c'est l'unité la plus citable de la page
+          par les moteurs génératifs (question explicite + réponse chiffrée + entités). */}
+      {data.answerBox && (
+        <section
+          id="reponse-directe"
+          style={{
+            padding: 'clamp(36px, 5vw, 64px) clamp(18px, 4vw, 32px)',
+            background: '#fff',
+          }}
+        >
+          <div style={{
+            maxWidth: 880, margin: '0 auto',
+            background: '#F0F9FF',
+            border: '1px solid #BAE6FD',
+            borderLeft: '4px solid #1A62FF',
+            borderRadius: 12,
+            padding: 'clamp(22px, 3vw, 32px)',
+          }}>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif',
+              fontSize: 'clamp(19px, 2.6vw, 24px)', fontWeight: 900,
+              color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em',
+            }}>
+              {data.answerBox.question}
+            </h2>
+            <p
+              style={{ fontSize: 16.5, color: '#1F2937', lineHeight: 1.7, margin: 0 }}
+              dangerouslySetInnerHTML={{ __html: formatBold(data.answerBox.answer) }}
+            />
+            {data.answerBox.bullets?.length > 0 && (
+              <ul style={{
+                margin: '20px 0 0', padding: 0, listStyle: 'none',
+                display: 'grid', gap: 9,
+              }}>
+                {data.answerBox.bullets.map((b, i) => (
+                  <li key={i} style={{ fontSize: 14.5, color: '#374151', display: 'flex', gap: 9, lineHeight: 1.55 }}>
+                    <Check size={16} color="#1A62FF" style={{ flexShrink: 0, marginTop: 3 }} />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ═════════════ TABLEAU DE FAITS DATÉS (SEO + GEO) ═════════════
+          Vrai <table> HTML : structure explicite critère → valeur A → valeur B,
+          exploitable en extrait enrichi comme en citation par un moteur génératif. */}
+      {data.keyFacts && (
+        <section
+          id="tableau-comparatif"
+          style={{
+            padding: 'clamp(36px, 5vw, 72px) clamp(18px, 4vw, 32px)',
+            background: '#FAFAF7',
+            borderTop: '1px solid #E5E7EB',
+          }}
+        >
+          <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif',
+              fontSize: 'clamp(22px, 3.2vw, 32px)', fontWeight: 900,
+              color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em',
+            }}>
+              {data.keyFacts.title}
+            </h2>
+            {data.keyFacts.note && (
+              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720 }}>
+                {data.keyFacts.note}
+              </p>
+            )}
+            <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+                <caption style={{
+                  captionSide: 'bottom', textAlign: 'left', fontSize: 12.5,
+                  color: '#6B7280', padding: '12px 18px', lineHeight: 1.5,
+                }}>
+                  {data.toolA.name} ({data.toolA.editor}) face à {data.toolB.name} ({data.toolB.editor}){data.verifiedOn ? `, situation au ${data.verifiedOn}` : ''}.
+                </caption>
+                <thead>
+                  <tr style={{ background: '#FAFAF7' }}>
+                    <th scope="col" style={thStyle}>Critère</th>
+                    <th scope="col" style={{ ...thStyle, color: data.toolA.color }}>{data.toolA.name}</th>
+                    <th scope="col" style={{ ...thStyle, color: data.toolB.color }}>{data.toolB.name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.keyFacts.rows.map((row, i) => (
+                    <tr key={i} style={{ borderTop: '1px solid #F3F4F6' }}>
+                      <th scope="row" style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A', textAlign: 'left' }}>
+                        {row.criterion}
+                      </th>
+                      <td style={tdStyle}>{row.a}</td>
+                      <td style={tdStyle}>{row.b}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ═════════════ TOOLS HEADER (face-à-face ou panorama) ═════════════ */}
       {!isPanorama && (
@@ -541,6 +696,72 @@ export default function ComparisonPage({ slug: propSlug }) {
               style={{ fontSize: 14.5, color: '#1E3A8A', lineHeight: 1.65, margin: 0 }}
               dangerouslySetInnerHTML={{ __html: formatBold(data.methodology) }}
             />
+
+            {data.citations?.length > 0 && (
+              <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid #BAE6FD' }}>
+                <div style={{
+                  fontSize: 11, fontWeight: 800, color: '#2563EB',
+                  textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8,
+                }}>
+                  Sources officielles consultées
+                </div>
+                <ul style={{ margin: 0, paddingLeft: 18, display: 'grid', gap: 5 }}>
+                  {data.citations.map((c, i) => (
+                    <li key={i} style={{ fontSize: 13.5, color: '#1E3A8A', lineHeight: 1.55 }}>
+                      {/* Liens éditoriaux vers des sources de référence : suivis volontairement
+                          (pas de nofollow), c'est un signal de qualité et non un lien sponsorisé. */}
+                      <a href={c.url} target="_blank" rel="noopener" style={{ color: '#1E40AF' }}>
+                        {c.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ═════════════ JOURNAL DES MISES À JOUR (fraîcheur SEO + GEO) ═════════════
+          Delta daté : signale explicitement ce qui a bougé depuis la version
+          précédente, y compris nos propres corrections. */}
+      {data.changelog?.items?.length > 0 && (
+        <section
+          id="mises-a-jour"
+          style={{
+            padding: 'clamp(32px, 4vw, 56px) clamp(18px, 4vw, 32px)',
+            background: '#fff',
+          }}
+        >
+          <div style={{ maxWidth: 880, margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif',
+              fontSize: 'clamp(20px, 2.8vw, 26px)', fontWeight: 900,
+              color: '#0A0A0A', marginBottom: 20, letterSpacing: '-0.01em',
+            }}>
+              {data.changelog.title}
+            </h2>
+            <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 12 }}>
+              {data.changelog.items.map((item, i) => (
+                <li key={i} style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'minmax(96px, auto) 1fr',
+                  gap: 16, alignItems: 'baseline',
+                  padding: '14px 18px',
+                  background: '#FAFAF7',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: 10,
+                }}>
+                  <span style={{
+                    fontSize: 12, fontWeight: 800, color: '#1A62FF',
+                    textTransform: 'uppercase', letterSpacing: '0.04em',
+                  }}>
+                    {item.date}
+                  </span>
+                  <span style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{item.text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}
