@@ -242,8 +242,10 @@ export default function ComparisonPage({ slug: propSlug }) {
 
       {/* ═════════════ TABLEAU DE FAITS DATÉS (SEO + GEO) ═════════════
           Vrai <table> HTML : structure explicite critère → valeur A → valeur B,
-          exploitable en extrait enrichi comme en citation par un moteur génératif. */}
-      {data.keyFacts && (
+          exploitable en extrait enrichi comme en citation par un moteur génératif.
+          Réservé au face-à-face : la légende cite toolA / toolB, absents des panoramas.
+          Ces derniers passent par `comparisonTable` + `comparisonTableMeta` (N colonnes). */}
+      {data.keyFacts && data.toolA && data.toolB && (
         <section
           id="tableau-comparatif"
           style={{
@@ -538,7 +540,9 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              Analyse approfondie des 5 outils
+              {/* Compte dynamique : meilleure-ia-pour-coder et meilleur-agent-ia
+                  n'ont que 4 outils, le libellé « 5 outils » était faux sur ces pages. */}
+              Analyse approfondie des {data.deepDive.length} outils
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
@@ -634,18 +638,32 @@ export default function ComparisonPage({ slug: propSlug }) {
             <h2 style={{
               fontFamily: 'Nunito, sans-serif',
               fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 900,
-              color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em',
+              color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em',
               textAlign: 'center',
             }}>
-              Tableau de synthèse
+              {data.comparisonTableMeta?.title || 'Tableau de synthèse'}
             </h2>
-            <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12 }}>
+            {data.comparisonTableMeta?.note && (
+              <p style={{
+                fontSize: 14, color: '#6B7280', lineHeight: 1.6,
+                margin: '0 auto 24px', maxWidth: 760, textAlign: 'center',
+              }}>
+                {data.comparisonTableMeta.note}
+              </p>
+            )}
+            <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, marginTop: 24 }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
+                <caption style={{
+                  captionSide: 'bottom', textAlign: 'left', fontSize: 12.5,
+                  color: '#6B7280', padding: '12px 18px', lineHeight: 1.5,
+                }}>
+                  {data.tools.map(t => t.name).join(', ')} comparés critère par critère{data.verifiedOn ? `, situation au ${data.verifiedOn}` : ''}.
+                </caption>
                 <thead>
                   <tr style={{ background: '#FAFAF7' }}>
-                    <th style={thStyle}>Critère</th>
+                    <th scope="col" style={thStyle}>Critère</th>
                     {data.tools.map(t => (
-                      <th key={t.id} style={{ ...thStyle, color: t.color }}>{t.name}</th>
+                      <th key={t.id} scope="col" style={{ ...thStyle, color: t.color }}>{t.name}</th>
                     ))}
                   </tr>
                 </thead>
@@ -656,7 +674,9 @@ export default function ComparisonPage({ slug: propSlug }) {
                       des colonnes vides parce que le template hardcodait chatgpt/claude/copilot/gemini/mistral. */}
                   {data.comparisonTable.map((row, i) => (
                     <tr key={i} style={{ borderTop: '1px solid #F3F4F6' }}>
-                      <td style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A' }}>{row.criterion}</td>
+                      <th scope="row" style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A', textAlign: 'left' }}>
+                        {row.criterion}
+                      </th>
                       {data.tools.map(t => (
                         <td key={t.id} style={tdStyle}>{row[t.id] ?? '—'}</td>
                       ))}
