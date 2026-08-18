@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BadgeCheck, ListChecks, Gauge, GraduationCap as Grad, FileText, ShieldCheck, Layers,
+  ArrowRight, Search, Bot, PenLine, Gauge, Network, BarChart3, ShieldCheck, Sparkles as Spark,
   GraduationCap, MapPin, Check, Sparkles, Landmark, Users, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
@@ -10,35 +10,32 @@ import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Money page « formation IA Qualiopi » (slug /formation-ia-qualiopi).
- * REFONTE 2026-08-10 : remplace la page dédiée d'origine (259 lignes, hero clair,
- * 8 FAQ) par le patron des money pages formation. Cible « formation ia qualiopi »
- * (170/mois, KD 6, intention I — Semrush 2026-08-10) : l'acheteur cherche « une
- * formation IA qui soit Qualiopi, donc finançable ». La page est un guide-pivot :
- * elle explique Qualiopi et le financement, prouve la certification de Masteria
- * (NDA + catégorie), puis ROUTE vers le catalogue par métier et par outil.
+ * Money page dédiée « formation SEO IA » (slug /formation-ia-seo).
+ * REFONTE 2026-08-10 : sort du template MetierPage (générique 13 métiers) pour
+ * le patron des money pages formation. Cible « formation seo ia » (90/mois,
+ * KD 19, intention C — Semrush 2026-08-10) et ses variantes « formation ia
+ * seo », « formation seo intelligence artificielle », « formation geo ».
  *
- * INTÉGRITÉ : plus jamais « financement OPCO garanti » ni « 100 % pris en
- * charge » (l'ancienne page le promettait) — la prise en charge dépend de
- * l'OPCO, de la branche, de l'effectif et des plafonds ; on dit « éligible »
- * et « selon votre OPCO ». Jamais de CPF (nos formations n'y sont pas
- * éligibles : pas de certification RNCP). Identité légale : Mathias NIZAN,
- * EI, NDA 84 69 23218 69 (mémoire identité légale / EI sur docs financeur).
+ * ANTI-CANNIBALISATION : /agence-seo-ia = PRESTATION (agence SEO IA + GEO) ;
+ * /audit-seo-ia et /audit-geo-ia = audits ; /formation-multi-outils-seo =
+ * « Panorama IA SEO · 5 outils comparés » (comparatif) ; spokes par outil
+ * (/formation-chatgpt-seo, -copilot, -claude, -gemini, -mistral) = « formation
+ * <outil> seo ». CETTE page = la FORMATION métier SEO à l'IA (SEO outillé par
+ * l'IA + GEO). Renvoie vers l'agence pour déléguer, vers les spokes pour
+ * approfondir un outil.
  *
- * ANTI-CANNIBALISATION : /financement-formation-ia = le guide FINANCEMENT
- * (dispositifs, montage du dossier, CII/CIR pour le dev) ; /quel-opco =
- * l'outil ; CETTE page = l'angle « Qualiopi » (ce que c'est, ce que ça
- * garantit, ce que ça permet, notre certification) + porte d'entrée
- * catalogue. Les deux se renvoient sans se recouvrir.
+ * INTÉGRITÉ : pas de garantie de position ni de citation ; pas de fermes de
+ * contenu ; relecture humaine ; la mesure GEO en tendance sur corpus stable
+ * (même méthodo que /audit-geo-ia). Programme 2 jours Matin/Après-midi.
  */
 
-const SLUG = 'formation-ia-qualiopi'
+const SLUG = 'formation-ia-seo'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Formation IA certifiée Qualiopi : catalogue et financement | Masteria"
-const META_DESC = "Formation IA Qualiopi : ce que la certification garantit, ce qu'elle permet de financer (OPCO), et notre catalogue par métier et par outil, certifié Qualiopi. Devis sous 24 h."
-const KEYWORDS = "formation ia qualiopi, formation intelligence artificielle qualiopi, formation ia certifiée qualiopi, formation ia finançable opco, organisme formation ia qualiopi, formation ia opco"
+const META_TITLE = "Formation SEO IA : contenu, technique et GEO | Masteria"
+const META_DESC = "Formation SEO IA sur vos propres mots-clés et pages : recherche d'intentions, briefs et contenu outillés par l'IA, technique et données structurées, GEO pour être cité par ChatGPT et Google. Qualiopi, OPCO."
+const KEYWORDS = "formation seo ia, formation ia seo, formation seo intelligence artificielle, formation geo, formation référencement ia, formation seo chatgpt, formation generative engine optimization"
 
 /* ───────── Styles partagés ───────── */
 
@@ -68,53 +65,53 @@ function IconTile({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
-  { icon: Target, label: "Toutes nos formations sont certifiées Qualiopi" },
+  { icon: Target, label: "Sur vos mots-clés, vos pages et votre marché" },
   { icon: MapPin, label: 'Présentiel & distanciel · France · Suisse · Belgique' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Qualiopi', value: "La certification qualité nationale des prestataires d'actions de formation, exigée pour accéder aux financements publics et mutualisés" },
-  { label: 'Masteria', value: "Certifiée Qualiopi au titre des actions de formation, sous le numéro de déclaration d'activité 84 69 23218 69 (préfet de région Auvergne-Rhône-Alpes)" },
-  { label: 'Ce que ça permet', value: "Rendre nos formations IA éligibles à la prise en charge par votre OPCO, selon votre branche, votre effectif et les plafonds en vigueur" },
-  { label: 'Ce que ça ne permet pas', value: "Le CPF : nos formations ne sont pas inscrites au RNCP, donc non éligibles au compte personnel de formation" },
-  { label: 'Catalogue', value: "Formations par métier (marketing, commercial, finance, RH, gestion de projet…), par outil (ChatGPT, Copilot, Claude, Gemini, Mistral) et thématiques (AI Act, dirigeants)" },
-  { label: 'Tarif', value: "1 980 € HT par jour de formation en intra, pour le groupe ; devis et pièces du dossier OPCO sous 24 h" },
+  { label: 'Durée', value: "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré (contenu ou GEO)" },
+  { label: 'Pour qui', value: "Équipes SEO et contenu, responsables acquisition, chargés de marketing digital, rédacteurs web, consultants SEO en agence" },
+  { label: 'Outils', value: "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec vos outils SEO (Search Console, Semrush ou équivalents)" },
+  { label: 'Deux fronts', value: "Le SEO outillé par l'IA (recherche, briefs, contenu, technique) et le GEO : être cité dans les réponses de ChatGPT, Perplexity, Gemini et les AI Overviews" },
+  { label: 'Livrables', value: "Bibliothèque de prompts SEO, gabarits de brief et de page citable, check-list technique GEO, corpus de mesure des citations IA" },
+  { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h" },
 ]
 
 /* ───────── Ce que couvre la page (6 cartes) ───────── */
 
 const MISSIONS = [
   {
-    icon: BadgeCheck,
-    title: 'Ce que Qualiopi certifie réellement',
-    desc: "Qualiopi atteste que l'organisme respecte le référentiel national qualité : information du public, adaptation des prestations aux bénéficiaires, moyens pédagogiques, qualification des formateurs, veille, prise en compte des appréciations. Elle est délivrée par un organisme certificateur accrédité et se contrôle par audits de surveillance. Elle certifie l'organisme et sa méthode, pas un niveau atteint par les stagiaires.",
+    icon: Search,
+    title: 'Recherche de mots-clés et d\'intentions',
+    desc: "Grappes sémantiques, intentions derrière les requêtes, questions à couvrir, clusters pilier et pages liées : l'IA structure en minutes ce qui prenait des heures de tableur, à partir de vos exports Search Console et de vos outils. La formation apprend à cadrer cette recherche et à la vérifier contre les données réelles.",
   },
   {
-    icon: Landmark,
-    title: 'Ce que ça change pour votre financement',
-    desc: "Sans Qualiopi, aucun financement public ou mutualisé n'est possible. Avec, nos formations sont éligibles à la prise en charge par votre OPCO au titre du plan de développement des compétences. Le montant dépend de votre OPCO, de votre branche, de votre effectif et des plafonds de l'année : nous ne promettons pas de taux, nous montons le dossier avec vous et vous orientons vers votre opérateur.",
+    icon: PenLine,
+    title: 'Briefs et production de contenu',
+    desc: "Briefs structurés (intention, plan, entités, questions, maillage), premiers jets à votre ton, variantes de titres et de métas, FAQ, réécritures : la vitesse de l'IA au service d'un contenu utile, relu et enrichi par des humains. Jamais de ferme de contenu : Google et les IA le sanctionnent, la formation le démontre.",
   },
   {
-    icon: ShieldCheck,
-    title: 'Ce que ça ne fait pas',
-    desc: "Qualiopi n'ouvre pas le CPF : le compte personnel de formation exige une certification inscrite au RNCP ou au répertoire spécifique, ce que nos formations courtes en entreprise ne sont pas. Elle ne garantit pas non plus une prise en charge à 100 % : cette décision appartient à l'OPCO. Un organisme qui vous promet l'un ou l'autre mérite une question de plus.",
+    icon: Bot,
+    title: 'Le GEO : être cité par les IA',
+    desc: "Le versant nouveau du métier. Comprendre comment ChatGPT, Perplexity, Gemini et les AI Overviews sélectionnent leurs sources ; structurer une page citable (réponse directe, entités, données structurées, format) ; ouvrir ou non son site aux robots des IA ; mesurer sa part de voix sur un corpus de questions. La formation en fait un savoir-faire, pas un mot à la mode.",
   },
   {
-    icon: Layers,
-    title: 'Le catalogue certifié, par métier',
-    desc: "Marketing, commercial, finance, ressources humaines, gestion de projet, communication, management, assistanat, service client, achats, QSE : chaque formation métier applique l'IA générative aux situations réelles de l'équipe, sur ses propres cas, avec un programme et une évaluation des acquis conformes au référentiel.",
+    icon: Gauge,
+    title: 'Technique et données structurées',
+    desc: "Audit outillé par l'IA (indexation, performance, balisage), génération et contrôle des données structurées Schema.org, maillage interne, corrections priorisées par impact. L'IA écrit le JSON-LD et explique le rapport de crawl ; vous décidez et vérifiez.",
   },
   {
-    icon: Sparkles,
-    title: 'Le catalogue certifié, par outil',
-    desc: "ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, et le panorama multi-outils pour les organisations qui n'ont pas encore choisi : indépendants des éditeurs, nous formons sur l'outil que vos équipes utilisent, ou nous comparons sur vos cas d'usage avant de recommander.",
+    icon: Network,
+    title: 'Architecture sémantique et entités',
+    desc: "Cartographie des sujets et des entités de votre domaine, cocon et maillage, cohérence thématique du site : ce qui fait comprendre votre expertise à Google comme aux modèles. L'IA aide à cartographier ; l'arbitrage éditorial reste le vôtre.",
   },
   {
-    icon: Grad,
-    title: 'Les formations thématiques et sur mesure',
-    desc: "AI Act et gouvernance, dirigeants et COMEX, acculturation d'entreprise, coaching individuel, sprints de trois heures : des formats pour chaque besoin, tous certifiés. Et quand aucune fiche ne correspond, nous construisons le programme sur mesure, dans le même cadre qualité et le même financement.",
+    icon: BarChart3,
+    title: 'Mesure, reporting et automatisations',
+    desc: "Lecture d'un export de positions, synthèse mensuelle, suivi des citations IA sur un corpus stable, alertes : l'IA commente les données et automatise le récurrent. Avec la règle : positions et citations se mesurent en tendance, jamais en promesse.",
   },
 ]
 
@@ -122,28 +119,28 @@ const MISSIONS = [
 
 const ATOUTS = [
   {
-    title: 'Un dossier OPCO monté avec vous',
-    desc: "Programme détaillé, objectifs pédagogiques, modalités d'évaluation, convention, attestations : nous fournissons toutes les pièces au format attendu par votre OPCO, et nous vous accompagnons jusqu'au dépôt, avant le début de la formation.",
+    title: 'Deux fronts couverts, pas un seul',
+    desc: "La plupart des formations SEO IA enseignent à produire plus vite. Celle-ci ajoute ce qui décide de la visibilité de demain : être cité dans les réponses des IA. Vos équipes repartent avec les deux, et la façon dont ils se renforcent.",
   },
   {
-    title: 'Un tarif unique et lisible',
-    desc: "1 980 € HT par jour de formation en intra-entreprise, pour le groupe jusqu'à dix participants, quel que soit le métier ou l'outil. Le même tarif en accompagnement individuel. Pas de grille opaque, pas de supplément selon le format.",
+    title: 'La vitesse sans le générique',
+    desc: "L'IA mal utilisée produit du contenu que Google déclasse et que les IA ignorent. La formation apprend le contraire : briefs riches en entités, premiers jets relus et enrichis, sources citées. Ce qui tient face aux mises à jour et devient citable.",
   },
   {
-    title: 'Le métier avant l\'outil, l\'outil avant la théorie',
-    desc: "Chaque formation part des situations réelles des participants : leurs documents, leurs processus, leurs campagnes, leurs dossiers. Le référentiel exige l'adaptation aux bénéficiaires ; nous en faisons notre méthode.",
+    title: 'La technique démystifiée',
+    desc: "Données structurées, JSON-LD, robots.txt, balisage : l'IA écrit et explique, vos équipes comprennent et contrôlent. Le fossé entre le SEO éditorial et le SEO technique se réduit.",
   },
   {
-    title: 'Un organisme spécialisé sur l\'IA depuis 2022',
-    desc: "Plus de 1 500 professionnels formés, du COMEX aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Formateurs indépendants expérimentés et pédagogues, la force du réseau, mis à jour à chaque évolution des outils.",
+    title: 'Une mesure GEO qui tient la route',
+    desc: "Un corpus de questions stable, des relevés répétés, une part de voix en tendance : la méthode que nous appliquons dans nos audits, transmise à vos équipes pour qu'elles la fassent vivre.",
   },
   {
-    title: 'La certification vérifiable, pas déclarative',
-    desc: "Notre numéro de déclaration d'activité et notre certification sont publics et vérifiables auprès des registres officiels. Nous les mettons sur chaque convention et chaque devis, parce que c'est ce que votre OPCO regarde en premier.",
+    title: 'Formés par ceux qui le pratiquent',
+    desc: "Masteria opère du SEO et du GEO pour ses clients et pour elle-même : la formation transmet une pratique, avec ses réussites et ses limites, pas une théorie de plaquette.",
   },
   {
-    title: 'L\'honnêteté sur les limites',
-    desc: "Pas de CPF, pas de taux de prise en charge garanti, pas de certification RNCP : nous le disons avant le devis. Ce que nous garantissons, c'est le cadre qualité, la conformité du dossier et une formation qui change les pratiques.",
+    title: 'Des livrables qui servent le lendemain',
+    desc: "Bibliothèque de prompts SEO, gabarits de brief et de page citable, check-list GEO, corpus de mesure : de quoi appliquer dès la semaine suivante sur vos propres pages.",
   },
 ]
 
@@ -151,35 +148,35 @@ const ATOUTS = [
 
 const PROGRAMME = [
   {
-    jour: 'Étape 1',
-    titre: "Du besoin au devis, en 24 heures",
+    jour: 'Jour 1',
+    titre: "Le SEO outillé par l'IA : recherche, briefs, contenu, technique",
     matin: [
-      "Vous décrivez votre équipe, vos outils et vos enjeux ; un échange de cadrage gratuit précise le périmètre",
-      "Nous identifions la formation du catalogue adaptée, ou nous construisons le programme sur mesure",
-      "Devis sous 24 heures au tarif unique de 1 980 € HT par jour, avec le programme détaillé et les objectifs pédagogiques",
-      "Nous vous orientons vers votre OPCO (notre outil Quel OPCO ? le trouve en deux minutes)",
+      "Comprendre ce que les modèles font et ne font pas pour le SEO : capacités, limites, ce que Google sanctionne (contenu à l'échelle sans valeur)",
+      "Panorama des outils : ChatGPT, Copilot, Claude, Gemini, Mistral, et leur articulation avec Search Console et vos outils SEO",
+      "La méthode de la demande efficace appliquée au SEO : contexte, intention, entités, format, itération",
+      "Atelier recherche : grappes de mots-clés, intentions et questions à partir de vos exports réels ; plan de cluster pilier et pages liées",
     ],
     apresmidi: [
-      "Convention de formation avec notre identité légale complète et notre certification, comme l'OPCO l'exige",
-      "Pièces du dossier prêtes au format attendu : programme, modalités, évaluation, calendrier",
-      "Dépôt de la demande de prise en charge avant le début de la formation, par vous ou avec notre aide",
-      "Réponse de l'OPCO selon ses délais et ses règles ; nous ajustons si besoin (dates, format, périmètre)",
+      "Atelier brief : produire un brief complet (intention, plan, entités, questions, maillage) sur l'un de vos mots-clés",
+      "Atelier contenu : du brief au premier jet à votre ton, variantes de titres et de métas, FAQ ; relecture et enrichissement humains",
+      "Atelier technique : lire un rapport de crawl avec l'IA, générer et contrôler des données structurées Schema.org, prioriser les correctifs",
+      "Cadre d'usage : originalité, sources, mention de l'IA, données clients dans les contenus, ce qu'on ne publie jamais sans vérifier",
     ],
   },
   {
-    jour: 'Étape 2',
-    titre: "La formation, puis les preuves de réalisation",
+    jour: 'Jour 2',
+    titre: "Le GEO, l'architecture sémantique, la mesure et l'industrialisation",
     matin: [
-      "Formation en présentiel dans vos locaux ou à distance, sur vos cas réels, avec le programme validé",
-      "Émargement, positionnement en entrée, évaluation des acquis en sortie : le cadre qualité tenu du début à la fin",
-      "Questionnaire de satisfaction à chaud, exigé par le référentiel et utile pour ajuster la suite",
-      "Certificat de réalisation et attestation d'assiduité, pièces nécessaires au règlement par l'OPCO",
+      "Le GEO en clair : comment ChatGPT, Perplexity, Gemini et les AI Overviews sélectionnent leurs sources ; ce qu'un contenu citable contient",
+      "Atelier page citable : restructurer une de vos pages (réponse directe, entités, données structurées, format) et vérifier l'accès des robots IA",
+      "Atelier corpus : construire votre corpus de questions représentatif, relever les citations sur plusieurs moteurs, calculer une part de voix",
+      "Architecture sémantique : cartographier les entités de votre domaine avec l'IA, cocon et maillage, cohérence thématique",
     ],
     apresmidi: [
-      "Facturation conforme aux attentes de votre OPCO (subrogation possible selon les opérateurs)",
-      "Livrables de la formation transmis aux participants (prompts, gabarits, cadre d'usage)",
-      "Évaluation à froid quelques semaines plus tard : ce qui a pris dans les pratiques, ce qui reste à renforcer",
-      "Suite possible : approfondissement outil, acculturation d'entreprise, coaching individuel",
+      "Atelier mesure et reporting : commenter un export de positions, synthèse mensuelle, suivi des citations IA en tendance",
+      "Automatiser le récurrent : alertes, briefs en série, contrôles techniques, avec l'IA et vos outils",
+      "Industrialiser : la bibliothèque de prompts SEO de l'équipe, les gabarits, les assistants ou GPTs personnalisés",
+      "Votre plan d'action : les trois usages à installer dans le mois, qui les porte, comment on mesure ; évaluation des acquis",
     ],
   },
 ]
@@ -187,77 +184,78 @@ const PROGRAMME = [
 /* ───────── Pour qui (4 profils) ───────── */
 
 const PROFILS = [
-  { icon: Users, title: 'Responsables formation et RH', desc: "Vous devez financer la montée en compétence IA de vos équipes et sécuriser le dossier OPCO. Vous trouvez ici la preuve de certification, le tarif, les pièces, et le catalogue pour choisir la bonne formation par métier." },
-  { icon: Target, title: 'Dirigeants de PME et de TPE', desc: "Vous voulez former vos équipes sans avancer plus que nécessaire. La certification rend nos formations éligibles à votre OPCO ; nous montons le dossier avec vous et nous vous disons honnêtement ce qui sera pris en charge." },
-  { icon: Layers, title: 'Managers qui portent un projet de formation', desc: "Marketing, commercial, finance, projet : vous cherchez une formation IA appliquée à votre métier et finançable. Le catalogue par métier vous mène directement à la fiche qui vous concerne." },
-  { icon: Landmark, title: 'Acheteurs formation et grands comptes', desc: "Vous consultez plusieurs organismes et vérifiez d'abord la certification, l'identité légale et la conformité du dossier. Tout est ici, vérifiable auprès des registres officiels." },
+  { icon: Search, title: 'Équipes SEO et acquisition', desc: "Recherche, briefs, technique, mesure : les usages qui multiplient votre capacité sans dégrader la qualité, et le GEO comme nouveau territoire à occuper avant les concurrents. Le cœur des ateliers est fait pour vous." },
+  { icon: PenLine, title: 'Rédacteurs web et équipes contenu', desc: "Produire mieux et plus vite à partir de briefs riches, écrire citable pour les IA sans écrire pour les robots, relire et enrichir : la méthode qui protège votre valeur ajoutée." },
+  { icon: Bot, title: 'Consultants SEO en agence', desc: "Industrialiser vos livrables (audits, briefs, reportings), ajouter le GEO à votre offre, former vos clients : la formation vous donne la méthode et les gabarits, sans vous rendre dépendants d'un outil." },
+  { icon: Users, title: 'Responsables marketing digital', desc: "Comprendre où va la visibilité (Google et IA), arbitrer les efforts, mesurer honnêtement, fixer le cadre d'usage de l'équipe. La lecture d'ensemble sans jargon." },
 ]
 
 /* ───────── FAQ ───────── */
 
 const FAQ = [
   {
-    q: "Qu'est-ce qu'une formation IA Qualiopi ?",
-    a: "C'est une formation à l'intelligence artificielle dispensée par un organisme certifié Qualiopi, la certification qualité nationale des prestataires d'actions de formation. Concrètement, cela signifie deux choses : l'organisme respecte le référentiel national qualité (information, adaptation aux bénéficiaires, moyens, formateurs, évaluation, amélioration continue), et ses formations sont éligibles aux financements publics et mutualisés, en premier lieu la prise en charge par votre OPCO. Toutes les formations IA de Masteria sont dans ce cadre.",
+    q: "Qu'apprend-on dans une formation SEO IA ?",
+    a: "Deux choses, sur vos propres mots-clés et pages. D'abord le SEO outillé par l'IA : recherche d'intentions et clusters, briefs riches en entités, production de contenu relue et enrichie, technique et données structurées, mesure et automatisations. Ensuite le GEO (Generative Engine Optimization) : comprendre comment les IA sélectionnent leurs sources, structurer des pages citables, ouvrir ou non son site aux robots des IA, mesurer sa part de voix dans ChatGPT, Perplexity, Gemini et les AI Overviews. Et surtout la discipline qui rend tout cela durable : jamais de contenu à l'échelle sans valeur, relecture humaine, sources.",
   },
   {
-    q: "Masteria est-il certifié Qualiopi ?",
-    a: "Oui. Masteria est certifiée Qualiopi au titre des actions de formation, sous le numéro de déclaration d'activité 84 69 23218 69 enregistré auprès du préfet de la région Auvergne-Rhône-Alpes. La certification est délivrée par un organisme certificateur accrédité et vérifiable auprès des registres officiels. Elle figure, avec notre identité légale complète, sur chaque convention et chaque devis, parce que c'est la première chose que votre OPCO vérifie.",
+    q: "Qu'est-ce que le GEO, et pourquoi le traiter dans une formation SEO ?",
+    a: "Le GEO (Generative Engine Optimization, parfois AEO) est l'optimisation pour être cité dans les réponses générées par les IA : ChatGPT, Perplexity, Gemini, les AI Overviews de Google. Une part croissante des recherches reçoit une réponse directe sans clic ; sur ces requêtes, être absent des réponses revient à être absent. Les fondamentaux se recouvrent avec le SEO (contenu clair, site sain, données structurées), mais le GEO ajoute ses leviers : entités, formats citables, accès des robots IA, autorité, mesure sur corpus. Le traiter dans la même formation évite deux silos et deux prestataires.",
   },
   {
-    q: "Une formation IA Qualiopi est-elle prise en charge à 100 % ?",
-    a: "Pas automatiquement, et méfiez-vous des organismes qui le garantissent. Qualiopi rend la formation éligible ; la décision et le montant de prise en charge appartiennent à votre OPCO, selon votre branche, votre effectif (les entreprises de moins de 50 salariés sont généralement mieux couvertes) et les plafonds de l'année. Nous montons le dossier avec vous pour maximiser la prise en charge, et nous vous disons avant le devis ce qui est probable. Notre guide du financement d'une formation IA détaille les dispositifs.",
+    q: "L'IA ne va-t-elle pas produire du contenu que Google pénalise ?",
+    a: "Si on l'utilise mal, oui : du contenu à l'échelle sans valeur ajoutée est ce que Google déclasse depuis ses mises à jour sur le contenu utile, et ce que les IA ignorent. La formation enseigne l'inverse : des briefs riches en intentions et en entités, un premier jet à votre ton, une relecture et un enrichissement humains, des sources citées, une information réelle. L'IA accélère la production d'un contenu qui aurait été bon de toute façon ; elle ne transforme pas du vide en visibilité.",
   },
   {
-    q: "Peut-on financer une formation IA Masteria avec le CPF ?",
-    a: "Non. Le compte personnel de formation exige une certification inscrite au RNCP ou au répertoire spécifique ; nos formations courtes en entreprise délivrent une attestation et un certificat de réalisation dans le cadre Qualiopi, pas une certification professionnelle. Nos formations sont conçues pour les salariés et dirigeants financés par leur entreprise via l'OPCO. Pour un projet individuel, notre coaching IA peut être structuré en action de formation finançable OPCO ; le CPF reste exclu.",
+    q: "Garantissez-vous des positions ou des citations dans les IA ?",
+    a: "Non, et personne de sérieux ne le peut : les algorithmes de Google et les modèles d'IA évoluent en permanence. Ce que la formation garantit, c'est la méthode et la mesure : des actions qui augmentent objectivement vos chances (contenu citable, entités, données structurées, technique saine), une mesure honnête en tendance (positions, trafic, part de voix IA sur un corpus stable), et la capacité de vos équipes à itérer. Une formation qui vous promet la première position vous promet ce qui ne dépend pas d'elle.",
   },
   {
-    q: "Quelles formations IA Qualiopi proposez-vous ?",
-    a: "Trois familles, toutes certifiées. Par métier : marketing, commercial, finance, ressources humaines, gestion de projet, communication, management, assistanat, service client, achats, QSE. Par outil : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, et un panorama multi-outils pour comparer. Thématiques et formats : AI Act et gouvernance, dirigeants et COMEX, acculturation d'entreprise, coaching individuel, sprints de trois heures. Et le sur mesure quand aucune fiche ne correspond, dans le même cadre.",
+    q: "Sur quels outils la formation porte-t-elle ?",
+    a: "Sur les IA génératives que votre équipe utilisera (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral) et sur leur articulation avec vos outils SEO existants : Search Console, Semrush, Ahrefs ou équivalents, votre CMS. Nous sommes indépendants des éditeurs : quand un outil est déployé, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Pour approfondir un outil, voyez nos formations ChatGPT SEO ou Claude SEO ; pour un comparatif complet, notre panorama IA SEO.",
   },
   {
-    q: "Combien coûte une formation IA Qualiopi chez Masteria ?",
-    a: "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à dix participants), quel que soit le métier ou l'outil ; le même tarif journalier en accompagnement individuel. Une formation métier de deux jours représente donc 3 960 € HT pour l'équipe, avant prise en charge par votre OPCO. Le devis, le programme et les pièces du dossier arrivent sous 24 heures ; en présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
+    q: "La formation travaille-t-elle sur nos vrais mots-clés et nos vraies pages ?",
+    a: "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : exports Search Console ou de votre outil SEO, deux ou trois pages représentatives, votre charte éditoriale, votre marché et vos concurrents. Chaque atelier part de là : votre grappe à structurer, votre brief à produire, votre page à rendre citable, votre corpus de questions. Les participants repartent avec des livrables directement utilisables.",
   },
   {
-    q: "Comment se passe la prise en charge OPCO, concrètement ?",
-    a: "Vous nous décrivez le besoin, nous établissons devis et programme sous 24 heures. Nous fournissons la convention (avec notre identité légale et notre certification) et toutes les pièces au format attendu. Vous déposez la demande auprès de votre OPCO avant le début de la formation, seul ou avec notre aide ; certains OPCO acceptent la subrogation, c'est-à-dire de nous régler directement. Après la formation, émargements, évaluation et certificat de réalisation déclenchent le règlement. Notre outil Quel OPCO ? identifie votre opérateur en deux minutes.",
+    q: "Combien de temps dure la formation et en quel format ?",
+    a: "Le format de référence est de deux jours (14 heures) en intra-entreprise, en présentiel ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un périmètre resserré : le contenu outillé par l'IA seul, ou le GEO seul. Un accompagnement individuel est possible pour un responsable SEO ou un consultant. Les journées pleines alternent apports courts et ateliers pratiques, matin et après-midi.",
   },
   {
-    q: "Quelle différence entre Qualiopi et une certification RNCP ?",
-    a: "Qualiopi certifie l'organisme de formation et sa qualité de service ; une certification RNCP certifie une compétence acquise par le stagiaire, inscrite dans un répertoire national, et ouvre notamment le CPF. Une formation peut être Qualiopi sans être certifiante (c'est le cas de nos formations courtes en entreprise), et c'est suffisant pour le financement OPCO et le plan de développement des compétences. Si vous cherchez un diplôme ou un titre, il vous faut un parcours long, ce que nous ne proposons pas.",
+    q: "Combien coûte une formation SEO IA ?",
+    a: "Le tarif intra-entreprise est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT pour l'équipe. La formation étant certifiée Qualiopi, votre OPCO peut la prendre en charge dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis détaillé sous 24 heures.",
   },
   {
-    q: "Formez-vous en Suisse et en Belgique ? Le financement y est-il le même ?",
-    a: "Nous formons en France, en Suisse et en Belgique, en présentiel ou à distance. Qualiopi et les OPCO sont des dispositifs français : ils s'appliquent aux entreprises françaises. En Suisse et en Belgique, le cadre de financement diffère (fonds de branche, chèques-formation régionaux selon les régions belges) et se vérifie au cas par cas ; nous ne promettons aucune prise en charge hors de France sans l'avoir vérifiée avec vous.",
+    q: "Quelle différence avec votre agence SEO IA ?",
+    a: "L'agence fait pour vous ; la formation apprend à vos équipes à faire. Beaucoup de clients combinent les deux : un audit SEO IA & GEO pour mesurer le point de départ et fixer les priorités, la formation pour que l'équipe interne exécute et fasse vivre, et un accompagnement plus léger ensuite. Si vous préférez déléguer entièrement, c'est le rôle de notre agence SEO IA. Le cadrage gratuit sert à choisir le bon montage.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formations IA certifiées Qualiopi — Masteria',
-  description: "Catalogue de formations à l'intelligence artificielle générative certifiées Qualiopi (actions de formation, NDA 84 69 23218 69) : par métier (marketing, commercial, finance, RH, gestion de projet, communication, management, assistanat, service client, achats, QSE), par outil (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, multi-outils) et thématiques (AI Act, dirigeants, acculturation, coaching). Éligibles à la prise en charge OPCO. Intra-entreprise, présentiel ou distanciel, France, Suisse, Belgique.",
+  name: 'Formation SEO IA — Masteria',
+  description: "Formation au référencement à l'ère de l'IA générative, sur les mots-clés et pages réels des participants : recherche d'intentions et clusters, briefs et contenu outillés par l'IA avec relecture humaine, technique et données structurées, GEO (être cité par ChatGPT, Perplexity, Gemini et les AI Overviews), architecture sémantique, mesure et automatisations. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
   level: 'Tous niveaux',
   teaches: [
-    "Appliquer l'IA générative aux situations réelles de son métier",
-    "Maîtriser l'outil déployé dans son entreprise (ChatGPT, Copilot, Claude, Gemini ou Mistral)",
-    "Formuler des demandes efficaces, vérifier les réponses, protéger les données",
-    "Installer des usages durables avec un cadre d'usage et une bibliothèque de prompts",
+    "Structurer une recherche de mots-clés et d'intentions avec l'IA à partir de données réelles",
+    "Produire des briefs riches en entités et un contenu relu, citable et utile",
+    "Générer et contrôler des données structurées, lire un audit technique avec l'IA",
+    "Rendre une page citable par les IA et mesurer sa part de voix sur un corpus stable",
+    "Automatiser le reporting et les tâches SEO récurrentes",
   ],
-  about: 'Formation professionnelle à l\'intelligence artificielle générative',
-  timeRequired: 'PT7H',
-  duration: 'PT7H',
-  prerequisites: 'Aucun prérequis technique.',
-  audience: 'Salariés, managers et dirigeants d\'entreprises et d\'organisations',
+  about: 'Référencement naturel et optimisation pour les moteurs génératifs (SEO et GEO)',
+  timeRequired: 'PT14H',
+  duration: 'PT14H',
+  prerequisites: 'Aucun prérequis technique. Pratique du SEO, du contenu ou du marketing digital.',
+  audience: 'Équipes SEO et contenu, acquisition, marketing digital, consultants SEO',
   locationName: 'Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel',
 }
 /* Programme en ItemList (séquence citable — GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Parcours d'une formation IA Qualiopi chez Masteria, du devis aux preuves de réalisation",
+  name: "Programme de la formation SEO IA Masteria (2 jours)",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((j, ji) => [
     { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: j.matin.join(' ; ') },
@@ -269,19 +267,19 @@ const programmeJsonLd = {
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': 'https://www.master-ia.fr/formation-ia-qualiopi#article',
-  headline: "Formation IA Qualiopi : ce que la certification garantit, et notre catalogue certifié",
+  '@id': 'https://www.master-ia.fr/formation-ia-seo#article',
+  headline: "Formation SEO IA : le référencement outillé par l'IA et le GEO, sur vos propres pages",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
-  datePublished: '2025-06-10',
+  datePublished: '2025-10-05',
   dateModified: '2026-08-10',
   inLanguage: 'fr-FR',
-  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-qualiopi#webpage' },
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-seo#webpage' },
   about: [
-    { '@type': 'Thing', name: 'Qualiopi', sameAs: 'https://fr.wikipedia.org/wiki/Qualiopi' },
-    { '@type': 'Thing', name: 'Formation professionnelle', sameAs: 'https://fr.wikipedia.org/wiki/Formation_professionnelle' },
+    { '@type': 'Thing', name: 'Optimisation pour les moteurs de recherche', sameAs: 'https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche' },
+    { '@type': 'Thing', name: 'Optimisation pour les moteurs génératifs', sameAs: 'https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_g%C3%A9n%C3%A9ratifs' },
     { '@type': 'Thing', name: 'Intelligence artificielle générative', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle_g%C3%A9n%C3%A9rative' },
   ],
 }
@@ -331,7 +329,7 @@ function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
   )
 }
 
-export default function QualiopiPage() {
+export default function FormationIASEOPage() {
   const isDesktop = useIsDesktop()
   const editorialGrid = isDesktop
     ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
@@ -343,7 +341,7 @@ export default function QualiopiPage() {
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Formation intelligence artificielle', slug: 'formation-intelligence-artificielle' },
-    { name: "Formation IA Qualiopi", slug: SLUG },
+    { name: "Formation SEO IA", slug: SLUG },
   ]
 
   return (
@@ -356,10 +354,12 @@ export default function QualiopiPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         courseData={COURSE_DATA}
-        datePublished="2025-06-10"
+        datePublished="2025-10-05"
         dateModified="2026-08-10"
         speakable={['#geo-summary', '#en-bref']}
         citations={[
+          { name: 'Google Search Central — AI features and your website', url: 'https://developers.google.com/search/docs/appearance/ai-features' },
+          { name: 'Google Search Central — SEO Starter Guide', url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
           { name: 'Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
         ]}
         extraJsonLd={[programmeJsonLd, articleJsonLd]}
@@ -377,22 +377,22 @@ export default function QualiopiPage() {
             <span style={{ color: '#3A4658' }}>/</span>
             <Link to="/formation-intelligence-artificielle" style={{ color: '#94A3B8' }}>Formation intelligence artificielle</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Formation IA Qualiopi</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Formation SEO IA</span>
           </nav>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
             <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <BadgeCheck size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              <Search size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Certification · Qualiopi
+              Formation métier · SEO & GEO
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
-            Formation IA Qualiopi :
+            Formation SEO IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce que la certification garantit, et notre catalogue certifié</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>le référencement outillé par l'IA, et le GEO pour être cité par les IA</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
@@ -400,11 +400,11 @@ export default function QualiopiPage() {
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA Qualiopi est dispensée par un organisme certifié selon le référentiel national qualité, ce qui la rend <strong style={{ color: '#fff', fontWeight: 700 }}>éligible à la prise en charge par votre OPCO</strong>. Masteria est certifiée Qualiopi au titre des actions de formation (NDA 84 69 23218 69) : toutes nos formations IA, par métier, par outil ou thématiques, sont dans ce cadre, au tarif unique de 1 980 € HT par jour en intra.
+            La formation SEO IA de Masteria apprend à vos équipes, sur vos propres mots-clés et pages, à outiller tout le référencement avec l'IA générative (<strong style={{ color: '#fff', fontWeight: 700 }}>recherche d'intentions, briefs, contenu relu, technique, données structurées, mesure</strong>) et à occuper le nouveau front : le GEO, être cité dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Cette page dit ce que Qualiopi garantit et ce qu'elle ne garantit pas (ni le CPF, ni un taux de prise en charge), prouve notre certification de façon vérifiable, puis vous mène à la formation qui correspond à votre équipe. Le dossier OPCO se monte avec nous, avant le début de la formation.
+            Le SEO change deux fois à la fois : l'IA accélère toute la chaîne de production, et une part croissante des recherches reçoit une réponse directe d'une IA, sans clic. La formation traite les deux mouvements ensemble, avec la discipline qui les rend durables : jamais de contenu à l'échelle sans valeur, relecture humaine, mesure en tendance. Transmise par une équipe qui pratique le SEO et le GEO pour ses clients et pour elle-même.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -445,15 +445,15 @@ export default function QualiopiPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Ce qu'il faut savoir</Kicker>
+              <Kicker>Activité par activité</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Que garantit une formation IA certifiée Qualiopi ?
+                Que change l'IA dans le travail d'une équipe SEO ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Qualiopi certifie l'organisme et sa méthode selon le référentiel national qualité, et rend ses formations éligibles aux financements publics et mutualisés, l'OPCO en premier lieu. Elle ne garantit ni le CPF (réservé aux certifications RNCP) ni un taux de prise en charge, qui dépend de votre OPCO. Chez Masteria, toutes les formations IA sont dans ce cadre : par métier, par outil, thématiques et sur mesure.</strong>
+                <strong>L'IA générative touche six activités du SEO : la recherche de mots-clés et d'intentions, les briefs et la production de contenu, le GEO (être cité par les IA), la technique et les données structurées, l'architecture sémantique, la mesure et les automatisations. Dans chacune, elle accélère et structure ; l'arbitrage éditorial, la relecture et la vérification restent aux professionnels.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Pour le détail des dispositifs et le montage du dossier, voyez notre guide <Link to="/financement-formation-ia" style={aStyle}>financer une formation IA</Link> ; pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link>.
+                La formation couvre les six, avec un poids ajusté à votre équipe au cadrage. Pour déléguer plutôt que former, voyez notre <Link to="/agence-seo-ia" style={aStyle}>agence SEO IA</Link> ; pour mesurer votre point de départ, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA & GEO</Link>.
               </p>
             </div>
             <div>
@@ -474,12 +474,12 @@ export default function QualiopiPage() {
       {/* ── LES ATOUTS DE L'IA POUR LA FINANCE ── */}
       <section id="atouts" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Pourquoi Masteria</Kicker>
+          <Kicker>Ce que vous y gagnez</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que vous gagnez à choisir un organisme IA certifié Qualiopi
+            Les atouts de l'IA générative pour une équipe SEO
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six choses : un dossier OPCO monté avec vous jusqu'au dépôt, un tarif unique et lisible, des formations qui partent de votre métier et de vos cas réels, un organisme spécialisé sur l'IA depuis 2022, une certification vérifiable auprès des registres officiels, et l'honnêteté sur les limites du financement avant le devis.</strong>
+            <strong>Six gains : deux fronts couverts (le SEO outillé et le GEO) au lieu d'un, la vitesse sans le générique, la technique démystifiée, une mesure GEO qui tient la route, une transmission par des praticiens, et des livrables applicables dès la semaine suivante sur vos propres pages.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {ATOUTS.map((item, i) => (
@@ -490,7 +490,7 @@ export default function QualiopiPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Un mot d'honnêteté : Qualiopi est une condition nécessaire, pas une garantie de résultat pédagogique. Ce qui fait qu'une formation change les pratiques, c'est le travail sur les cas réels des participants et le suivi des usages ensuite. La certification encadre ; la méthode fait la différence.
+            Un mot d'honnêteté qui rend ces gains durables : ni les positions ni les citations ne se garantissent, les algorithmes et les modèles évoluant sans cesse. Ce qui se garantit, c'est la méthode, la mesure et la capacité de vos équipes à itérer. C'est exactement ce que la formation transmet.
           </p>
         </div>
       </section>
@@ -502,16 +502,16 @@ export default function QualiopiPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Comment se déroule une formation IA Qualiopi chez Masteria ?
+            Programme de la formation SEO IA sur 2 jours
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Étape 1 : du besoin au devis en 24 heures, l'orientation vers votre OPCO, la convention et les pièces du dossier, le dépôt avant le début. Étape 2 : la formation sur vos cas réels avec le cadre qualité tenu (émargement, évaluation, satisfaction), puis les preuves de réalisation qui déclenchent le règlement, et l'évaluation à froid. Un parcours balisé, du premier échange au certificat.</strong>
+            <strong style={{ color: '#fff' }}>Jour 1 : le SEO outillé par l'IA, de la recherche d'intentions aux briefs, au contenu relu et à la technique, sur vos mots-clés et vos pages réels. Jour 2 : le GEO (comment les IA citent, la page citable, le corpus de mesure), l'architecture sémantique, la mesure et les automatisations, puis l'industrialisation avec la bibliothèque de prompts de l'équipe et votre plan d'action.</strong>
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {PROGRAMME.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Le calendrier dépend surtout de votre OPCO : comptez ses délais d'instruction entre le dépôt et l'accord, et prévoyez le dépôt avant la date de formation. Nous vous aidons à caler les dates en conséquence.
+            Le programme s'ajuste au cadrage : une équipe contenu approfondit le jour 1, une équipe acquisition ou une agence le jour 2. En version 1 jour, on choisit un front : le contenu outillé par l'IA, ou le GEO.
           </p>
         </div>
       </section>
@@ -520,9 +520,9 @@ export default function QualiopiPage() {
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Pour qui</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse cette page ?</h2>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse la formation SEO IA ?</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>À ceux qui doivent financer et sécuriser une formation IA : responsables formation et RH, dirigeants de PME et TPE, managers qui portent un projet pour leur équipe, acheteurs formation de grands comptes qui vérifient d'abord la certification et l'identité légale. Vous trouvez ici la preuve, le tarif, la méthode et le catalogue.</strong>
+            <strong>À ceux qui font ou pilotent le référencement : équipes SEO et acquisition, rédacteurs web et équipes contenu, consultants SEO en agence qui veulent industrialiser et ajouter le GEO à leur offre, responsables marketing digital qui arbitrent les efforts. Sans prérequis technique : la pratique du SEO, du contenu ou du marketing digital suffit.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
             {PROFILS.map(card => {
@@ -551,13 +551,13 @@ export default function QualiopiPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Le cadre, traité de front</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Ce que nous ne vous promettons pas, et pourquoi
+                Contenu utile, sources, mention de l'IA : ce que la formation pose noir sur blanc
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Trois promesses circulent chez les organismes de formation et nous ne les faisons pas. « Prise en charge à 100 % garantie » : la décision appartient à votre OPCO, selon votre branche, votre effectif et les plafonds ; nous montons le dossier pour maximiser, sans garantir. « Éligible CPF » : nos formations courtes en entreprise ne sont pas inscrites au RNCP, donc non éligibles ; nous le disons d'emblée. « Certifiante » : nous délivrons une attestation et un certificat de réalisation dans le cadre Qualiopi, pas un titre professionnel. Ce que nous garantissons : la certification vérifiable, la conformité du dossier, l'identité légale complète sur chaque document, et une formation qui part de vos cas réels. Pour cadrer les usages qui suivront, voyez notre <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
+                Le SEO outillé par l'IA a une réputation à tenir face à Google et face aux lecteurs. La formation formalise avec vous un cadre d'usage : ce qui distingue un contenu utile d'un contenu à l'échelle sans valeur (et ce que Google en fait), la relecture et l'enrichissement humains systématiques, les sources citées, la mention de l'IA quand elle s'impose, l'originalité et les droits sur les contenus générés, les données clients qu'on ne met jamais dans un prompt. Ce cadre est un livrable, à intégrer à votre <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>. Nous pratiquons le SEO et le GEO au quotidien, pour nos clients et pour notre propre site : la formation transmet une pratique, avec ses réussites et ses limites.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['Prise en charge : éligible, jamais « garantie »', 'CPF : non éligible, dit avant le devis', 'Attestation Qualiopi, pas de titre RNCP', 'Identité légale et certification sur chaque document'].map(pt => (
+                {['Contenu utile vs contenu à l\'échelle : la ligne que Google trace', 'Relecture et enrichissement humains, systématiques', 'Sources citées, mention de l\'IA quand elle s\'impose', 'Aucune donnée client dans un prompt'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />{pt}
                   </li>
@@ -574,7 +574,7 @@ export default function QualiopiPage() {
           <Kicker>Tarif et financement</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Combien coûte la formation, et comment la financer ?</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à dix participants), quel que soit le métier ou l'outil ; le même tarif en accompagnement individuel. Certifiées Qualiopi, nos formations sont éligibles à la prise en charge par votre OPCO au titre du plan de développement des compétences, selon votre branche et votre effectif ; nous montons le dossier avec vous. Devis sous 24 heures.</strong>
+            <strong>1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
@@ -583,7 +583,7 @@ export default function QualiopiPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le cadrage préalable, l'animation de la formation en présentiel ou à distance, les supports, les livrables (prompts, gabarits, cadre d'usage selon la formation), l'évaluation des acquis, le certificat de réalisation et toutes les pièces du dossier OPCO. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.
+                Le cadrage préalable avec vos éléments (exports SEO, pages représentatives, charte éditoriale, concurrents), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts SEO, gabarits de brief et de page citable, check-list GEO, corpus de mesure), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
@@ -605,7 +605,7 @@ export default function QualiopiPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation IA Qualiopi : les questions fréquentes</h2>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation SEO IA : les questions fréquentes</h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Posez-nous votre question
@@ -627,14 +627,14 @@ export default function QualiopiPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Par métier', desc: "Contenu, SEO, campagnes, analyse : l'IA sur vos campagnes réelles, 2 jours." },
-              { label: 'Formation IA commercial', href: '/formation-ia-commercial', tag: 'Par métier', desc: "Prospection, préparation de RDV, propositions, CRM : l'IA sur tout le cycle de vente, 2 jours." },
-              { label: 'Formation IA finance', href: '/formation-ia-finance', tag: 'Par métier', desc: "Excel, reporting, clôture, contrôle de gestion : l'IA sur vos vrais dossiers, 2 jours." },
-              { label: 'Formation IA gestion de projet', href: '/formation-ia-gestion-de-projet', tag: 'Par métier', desc: "Cadrage, comptes rendus, reporting, risques : l'IA du cadrage au reporting, 2 jours." },
-              { label: 'Toutes les formations par métier', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "RH, communication, management, assistanat, service client, achats, QSE et les autres." },
-              { label: 'Formation ChatGPT', href: '/formation-chatgpt', tag: 'Par outil', desc: "L'outil le plus répandu, par métier et par niveau." },
-              { label: 'Formation Microsoft Copilot', href: '/formation-microsoft-copilot', tag: 'Par outil', desc: "Copilot dans Microsoft 365 : Word, Excel, Outlook, Teams, agents." },
-              { label: 'Financer une formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, plan de développement des compétences, montage du dossier : le guide complet." },
+              { label: 'Agence SEO IA', href: '/agence-seo-ia', tag: 'Déléguer', desc: "Quand vous préférez confier le SEO et le GEO : l'accompagnement opéré pour vous." },
+              { label: 'Audit SEO IA & GEO', href: '/audit-seo-ia', tag: 'Point de départ', desc: "Mesurer votre visibilité sur Google et dans les IA avant de former : les priorités objectivées." },
+              { label: 'Audit GEO', href: '/audit-geo-ia', tag: 'Visibilité IA', desc: "Le versant IA seul : taux de citation, part de voix, robots IA, plan pour devenir citable." },
+              { label: 'Formation ChatGPT SEO', href: '/formation-chatgpt-seo', tag: 'Par outil', desc: "Approfondir ChatGPT pour le SEO : GPTs, projets, recherche, analyse de fichiers." },
+              { label: 'Formation Claude SEO', href: '/formation-claude-seo', tag: 'Par outil', desc: "Claude pour la rédaction longue, les projets par site et les compétences réutilisables." },
+              { label: 'Panorama IA SEO (5 outils)', href: '/formation-multi-outils-seo', tag: 'Comparatif', desc: "Quand le choix d'outil est ouvert : les cinq IA comparées sur vos cas SEO en 2 jours." },
+              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Métier voisin', desc: "L'IA pour toute l'équipe marketing : contenu, campagnes, réseaux, analyse." },
+              { label: 'Bibliothèque de prompts', href: '/bibliotheque-de-prompts', tag: 'Ressource', desc: "Des modèles de prompts SEO et contenu pour prolonger la formation au quotidien." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, padding: 26, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
@@ -659,10 +659,10 @@ export default function QualiopiPage() {
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation IA Qualiopi</div>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Trouvons la formation IA certifiée qui correspond à votre équipe</h2>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation SEO IA</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Formons votre équipe SEO sur ses vrais mots-clés</h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre équipe, vos outils et votre enjeu. Nous revenons vers vous sous 24 heures avec la formation adaptée (ou un programme sur mesure), le devis au tarif unique et les pièces du dossier OPCO. Vous saurez avant de signer ce qui est probable côté prise en charge.
+              Décrivez-nous votre équipe, vos outils, votre marché et vos enjeux du moment (contenu, technique, GEO). Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un devis

@@ -463,6 +463,30 @@
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/formation-ia-marche-public</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-immobilier</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-commerce</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-sante</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/formation-claude-code</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>

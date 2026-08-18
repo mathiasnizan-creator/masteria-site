@@ -67,6 +67,13 @@ const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
 const FormationIAMarketingPage = lazy(() => import('./pages/FormationIAMarketingPage'));
 const FormationIACommercialPage = lazy(() => import('./pages/FormationIACommercialPage'));
 const FormationIAFinancePage = lazy(() => import('./pages/FormationIAFinancePage'));
+const FormationAIActPage = lazy(() => import('./pages/FormationAIActPage'));
+const FormationIAQSEPage = lazy(() => import('./pages/FormationIAQSEPage'));
+const FormationIASEOPage = lazy(() => import('./pages/FormationIASEOPage'));
+const FormationIAMarchePublicPage = lazy(() => import('./pages/FormationIAMarchePublicPage'));
+const FormationIAImmobilierPage = lazy(() => import('./pages/FormationIAImmobilierPage'));
+const FormationIACommercePage = lazy(() => import('./pages/FormationIACommercePage'));
+const FormationIASantePage = lazy(() => import('./pages/FormationIASantePage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -1540,8 +1547,15 @@ export default function App() {
         <Route path="/formation-ia-marketing" element={<FormationIAMarketingPage />} />
         <Route path="/formation-ia-commercial" element={<FormationIACommercialPage />} />
         <Route path="/formation-ia-finance" element={<FormationIAFinancePage />} />
+        <Route path="/formation-ai-act" element={<FormationAIActPage />} />
+        <Route path="/formation-ia-qse" element={<FormationIAQSEPage />} />
+        <Route path="/formation-ia-seo" element={<FormationIASEOPage />} />
+        <Route path="/formation-ia-marche-public" element={<FormationIAMarchePublicPage />} />
+        <Route path="/formation-ia-immobilier" element={<FormationIAImmobilierPage />} />
+        <Route path="/formation-ia-commerce" element={<FormationIACommercePage />} />
+        <Route path="/formation-ia-sante" element={<FormationIASantePage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
-        {['ressources-humaines','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','transverse'].map(m => (
+        {['ressources-humaines','communication','management','assistante','service-client','informatique','pedagogique','achats','transverse'].map(m => (
           <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
         ))}
         {/* Spoke pages, dynamic via slug */}
