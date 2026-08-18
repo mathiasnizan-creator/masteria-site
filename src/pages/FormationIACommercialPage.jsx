@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, ClipboardList, Compass, CalendarDays, FileText, BarChart3, AlertTriangle, MessagesSquare,
+  ArrowRight, Briefcase, Search, CalendarCheck, FileText, RefreshCw, Database, Handshake,
   GraduationCap, MapPin, Check, ShieldCheck, Sparkles, Landmark, Users, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
@@ -10,17 +10,17 @@ import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Money page dédiée « formation IA gestion de projet » (slug
- * /formation-ia-gestion-de-projet). REFONTE 2026-08-10 : remplace la page
- * dédiée d'origine (patron SpokePage clair) par le patron des money pages du
- * jour. Cible « formation ia gestion de projet » (210/mois, KD 13, intention C
- * — Semrush 2026-08-10) ; SERP FR tenue par M2i, Orsys, Cegos, Wild Code
- * School, Ada Tech School + Reddit.
+ * Money page dédiée « formation IA commercial » (slug /formation-ia-commercial).
+ * REFONTE 2026-08-10 : sort du template MetierPage (générique 13 métiers) pour
+ * une page au patron des money pages du jour. Cible « formation ia commercial »
+ * (260/mois, KD 11, intention I — Semrush 2026-08-10) ; SERP FR tenue par
+ * Kedge, Orsys (751 mots), Certalis, Lefebvre Dalloz, ISM, Halifax.
  *
- * ANTI-CANNIBALISATION : pas de spokes par outil sur ce métier ; la page
- * /gestion-de-projet-ia n'existe pas ; /methode-projet-ia tient l'intention
- * « méthode projet IA » côté conseil/dev (comment Masteria mène un projet), pas
- * la formation des chefs de projet. Les deux se renvoient sans se recouvrir.
+ * ANTI-CANNIBALISATION : les spokes par outil (/formation-chatgpt-commercial,
+ * /formation-copilot-commercial, -claude, -gemini, -mistral) tiennent la tête
+ * « formation <outil> commercial » ; CETTE page tient « formation ia
+ * commercial » (multi-outils) et renvoie vers eux. /agent-commercial-ia tient
+ * l'intention SOLUTION (agent IA à développer), pas formation.
  *
  * INTÉGRITÉ (ligne maison) : posture capacité, aucun cas client nommé, pas de
  * chiffre de gain inventé (les « x3 » du template ont été retirés) ; tarif
@@ -30,13 +30,13 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * (mémoire programme 2 colonnes) ; RGPD et charte explicites.
  */
 
-const SLUG = 'formation-ia-gestion-de-projet'
+const SLUG = 'formation-ia-commercial'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Formation IA gestion de projet : cadrage, CR, reporting | Masteria"
-const META_DESC = "Formation IA gestion de projet sur vos projets réels : cadrage, planning, comptes rendus, reporting, risques. ChatGPT, Copilot, Claude, Gemini, Mistral. Qualiopi, finançable OPCO."
-const KEYWORDS = "formation ia gestion de projet, formation ia chef de projet, formation intelligence artificielle gestion de projet, formation ia pmo, formation ia pilotage de projet"
+const META_TITLE = "Formation IA commercial : prospection, propositions, RDV | Masteria"
+const META_DESC = "Formation IA commercial sur vos vrais comptes : prospection, préparation de RDV, propositions, relances, CRM. ChatGPT, Copilot, Claude, Gemini, Mistral. Qualiopi, finançable OPCO."
+const KEYWORDS = "formation ia commercial, formation ia commerciaux, formation intelligence artificielle vente, formation ia pour équipe commerciale, formation ia prospection"
 
 /* ───────── Styles partagés ───────── */
 
@@ -66,7 +66,7 @@ function IconTile({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
-  { icon: Target, label: 'Sur vos projets et vos livrables réels' },
+  { icon: Target, label: 'Sur vos comptes, vos offres et votre CRM' },
   { icon: MapPin, label: 'Présentiel & distanciel · France · Suisse · Belgique' },
 ]
 
@@ -74,45 +74,45 @@ const HERO_BADGES = [
 
 const EN_BREF = [
   { label: 'Durée', value: "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré" },
-  { label: 'Pour qui', value: "Chefs de projet MOA et MOE, PMO, directeurs de programme, product owners et scrum masters, managers transverses" },
-  { label: 'Outils', value: "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec vos outils projet" },
-  { label: 'Méthode', value: "Chaque atelier travaille sur vos projets en cours, vos gabarits et vos vrais comptes rendus, jamais sur des exemples génériques" },
-  { label: 'Livrables', value: "Bibliothèque de prompts projet mutualisée, gabarits (cadrage, CR, reporting) outillés, cadre d'usage confidentialité" },
+  { label: 'Pour qui', value: "Équipes commerciales : commerciaux terrain et sédentaires, business developers, key account managers, directeurs commerciaux" },
+  { label: 'Outils', value: "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec votre CRM" },
+  { label: 'Méthode', value: "Chaque atelier travaille sur vos comptes, vos offres et vos vrais rendez-vous, jamais sur des exemples génériques" },
+  { label: 'Livrables', value: "Bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, cadre d'usage données clients" },
   { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h" },
 ]
 
-/* ───────── Ce que l'IA change dans chaque activité projet (6 cartes) ───────── */
+/* ───────── Ce que l'IA change dans chaque étape du cycle de vente (6 cartes) ───────── */
 
 const MISSIONS = [
   {
-    icon: Compass,
-    title: 'Cadrage et note de lancement',
-    desc: "Objectifs, périmètre, parties prenantes, hypothèses, risques initiaux : à partir de vos échanges de cadrage et de votre gabarit, l'IA produit une note de lancement structurée que le chef de projet complète et arbitre. Le cadrage se fait en heures, pas en jours, et il est plus complet.",
+    icon: Search,
+    title: 'Prospection et ciblage',
+    desc: "Recherche d'un compte, lecture de son actualité, identification des enjeux probables et des interlocuteurs : l'IA prépare en dix minutes ce qui prenait une heure. La formation apprend à cadrer cette recherche et à en vérifier les sorties, car une info fausse dans un mail de prospection se paie cash.",
   },
   {
-    icon: CalendarDays,
-    title: 'Planification et découpage',
-    desc: "Décomposition en lots et en tâches, dépendances, estimation par analogie, plan de charge : l'IA propose une première structure à challenger. Avec la limite honnête : elle ne connaît pas votre organisation, elle accélère le premier jet et pose les bonnes questions.",
+    icon: CalendarCheck,
+    title: 'Préparation de rendez-vous',
+    desc: "Synthèse de l'historique du compte, hypothèses de besoins, questions de découverte, objections probables et réponses : le brief de rendez-vous se construit avec l'IA à partir de vos notes et de vos échanges. Le commercial arrive préparé, et garde l'écoute pour la vraie découverte.",
   },
   {
     icon: FileText,
-    title: 'Comptes rendus et COPIL',
-    desc: "Compte rendu de réunion structuré à partir de notes brutes ou d'une transcription, relevé de décisions, actions avec responsables et échéances, support de COPIL prêt à ajuster. La partie documentaire qui mange l'agenda, réglée en sortant de la réunion.",
+    title: 'Propositions commerciales',
+    desc: "À partir de votre trame et du compte rendu de découverte, l'IA produit un premier jet de proposition adapté aux enjeux du prospect, que le commercial affine. Le gain se joue autant sur le temps que sur la personnalisation : chaque proposition parle du client, pas de vous.",
   },
   {
-    icon: BarChart3,
-    title: 'Reporting et tableaux de bord',
-    desc: "Synthèse hebdomadaire à partir des données de suivi, commentaire d'avancement pour la direction, comparaison prévu/réalisé, mise en forme du flash projet. Avec la règle : les chiffres viennent de vos outils, l'IA les commente et les met en récit.",
+    icon: RefreshCw,
+    title: 'Relances et séquences',
+    desc: "Séquences de relance multicanal adaptées au profil et à l'étape du cycle, reformulations, variantes de ton, timing : l'IA écrit les variantes, le commercial choisit et personnalise. Avec la règle d'or : jamais un mail envoyé sans relecture humaine.",
   },
   {
-    icon: AlertTriangle,
-    title: 'Risques et arbitrages',
-    desc: "Identification des risques par analogie avec des projets comparables, plans de mitigation, préparation des arbitrages (options, impacts, recommandation) : l'IA aide à ne rien oublier et à formuler clairement ; la décision reste au chef de projet et au sponsor.",
+    icon: Database,
+    title: 'CRM et comptes rendus',
+    desc: "Compte rendu de rendez-vous structuré à partir de notes brutes ou d'une transcription, actions de suivi, mise à jour du CRM : la partie administrative de la vente, celle que les équipes repoussent, se fait en sortant du rendez-vous. Le pipeline devient enfin à jour.",
   },
   {
-    icon: MessagesSquare,
-    title: 'Communication projet et Agile',
-    desc: "Messages aux parties prenantes adaptés à chaque audience, FAQ projet, mails de relance ; côté Agile, rédaction de user stories, préparation des sprints, synthèse de rétrospective. La communication qui fait la différence entre un projet subi et un projet embarqué.",
+    icon: Handshake,
+    title: 'Négociation et objections',
+    desc: "Entraînement aux objections en jeu de rôle avec l'IA, préparation des arguments de valeur, simulation d'une négociation difficile avant la vraie. Un exercice que peu d'équipes font, faute d'interlocuteur disponible : l'IA en est un, à toute heure.",
   },
 ]
 
@@ -121,32 +121,32 @@ const MISSIONS = [
 const PROGRAMME = [
   {
     jour: 'Jour 1',
-    titre: "Fondamentaux, cadrage, planification et comptes rendus",
+    titre: "Fondamentaux, prospection et préparation de rendez-vous",
     matin: [
-      "Comprendre ce que les modèles font et ne font pas : capacités, limites, ce qui engage un projet",
-      "Panorama des outils du chef de projet : ChatGPT, Copilot, Claude, Gemini, Mistral ; articulation avec vos outils projet",
+      "Comprendre ce que les modèles font et ne font pas : capacités, limites, ce qui engage la relation client",
+      "Panorama des outils du commercial : ChatGPT, Copilot, Claude, Gemini, Mistral ; articulation avec votre CRM",
       "La méthode de la demande efficace : contexte, rôle, format, exemples, itération",
-      "Atelier : encoder vos gabarits (note de cadrage, CR, flash) et votre vocabulaire projet dans des instructions réutilisables",
+      "Atelier : encoder votre offre, vos personas acheteurs et votre ton dans une instruction réutilisable",
     ],
     apresmidi: [
-      "Atelier cadrage : produire une note de lancement complète à partir de vos échanges réels de cadrage",
-      "Atelier planification : découpage en lots et tâches, dépendances, première estimation à challenger",
-      "Atelier comptes rendus : du brouillon ou de la transcription au CR structuré, décisions, actions, échéances",
-      "Cadre d'usage : confidentialité des projets, données clients et fournisseurs, ce qu'on confie à quel outil",
+      "Atelier prospection : rechercher un compte réel, identifier ses enjeux, rédiger une approche personnalisée",
+      "Atelier préparation de RDV : brief de rendez-vous, questions de découverte, objections anticipées sur un vrai compte",
+      "Vérification : détecter l'info fausse, le générique, le hors-ton ; ce qu'on n'envoie jamais sans relire",
+      "Cadre d'usage : données clients, RGPD, confidentialité des offres, ce qu'on peut confier à quel outil",
     ],
   },
   {
     jour: 'Jour 2',
-    titre: "Reporting, risques, communication et industrialisation",
+    titre: "Propositions, relances, CRM et industrialisation",
     matin: [
-      "Atelier reporting : flash hebdo, commentaire d'avancement direction, comparaison prévu/réalisé sur vos données",
-      "Atelier risques et arbitrages : registre des risques, plans de mitigation, note d'arbitrage options/impacts",
-      "Atelier communication : messages par audience, FAQ projet, préparation d'un COPIL",
-      "Volet Agile : user stories, préparation de sprint, synthèse de rétrospective (adapté selon vos méthodes)",
+      "Atelier proposition commerciale : de votre trame et d'un compte rendu de découverte au premier jet personnalisé",
+      "Atelier séquences : relances multicanal par profil et par étape du cycle, variantes, timing",
+      "Atelier négociation : jeu de rôle objections avec l'IA, arguments de valeur, simulation d'une négociation",
+      "Analyse : lire un export de pipeline, préparer une revue de compte, synthétiser un portefeuille",
     ],
     apresmidi: [
-      "Industrialiser : la bibliothèque de prompts projet mutualisée, les gabarits outillés, les assistants ou GPTs de l'équipe",
-      "Mesurer : les indicateurs de gain de temps et de qualité documentaire, la revue à trois mois",
+      "Atelier CRM : compte rendu structuré à partir de notes ou d'une transcription, actions, mise à jour",
+      "Industrialiser : la bibliothèque de prompts de l'équipe, les gabarits, les assistants ou GPTs personnalisés",
       "Votre plan d'action : les trois usages à installer dans le mois, qui les porte, comment on mesure",
       "Évaluation des acquis et remise des livrables (prompts, gabarits, cadre d'usage)",
     ],
@@ -156,33 +156,33 @@ const PROGRAMME = [
 /* ───────── Pour qui (4 profils) ───────── */
 
 const PROFILS = [
-  { icon: ClipboardList, title: 'Chefs de projet MOA et MOE', desc: "Vous pilotez des projets de bout en bout et la production documentaire (cadrage, CR, reporting) mange la moitié de votre agenda. Le cœur des ateliers pratiques est fait pour vous." },
-  { icon: Users, title: 'PMO et directeurs de programme', desc: "Vous industrialisez les pratiques de plusieurs équipes : bibliothèque de prompts mutualisée, gabarits outillés, mesure du gain réel. La formation vous donne la vue d'ensemble et les leviers d'échelle." },
-  { icon: Target, title: 'Product owners et scrum masters', desc: "Backlog, user stories, cérémonies : l'IA accélère la rédaction des stories, la préparation des sprints et les synthèses de rétrospective, avec la validation de l'équipe comme garde-fou." },
-  { icon: Compass, title: 'Managers transverses', desc: "Vous pilotez des projets sans être chef de projet à plein temps. Les bons réflexes IA pour produire vos livrables projet vite et bien, sans formalisme excessif." },
+  { icon: Briefcase, title: 'Commerciaux terrain et sédentaires', desc: "Prospecter, préparer, proposer, relancer : les usages qui rendent des heures chaque semaine et améliorent la personnalisation. Le cœur des ateliers pratiques est fait pour vous." },
+  { icon: Target, title: 'Business developers et SDR', desc: "Ciblage, recherche de comptes, séquences de prospection multicanal, qualification : l'IA industrialise la préparation sans industrialiser le spam, la nuance est tout l'enjeu." },
+  { icon: Handshake, title: 'Key account managers', desc: "Revues de compte, synthèses de portefeuille, préparation de négociations complexes, propositions sur mesure : les usages qui servent la profondeur de la relation." },
+  { icon: Users, title: 'Directeurs et managers commerciaux', desc: "Fixer le cadre d'usage de l'équipe, choisir les outils, mesurer le gain, faire vivre la bibliothèque de prompts. La formation vous donne la lecture d'ensemble et les réflexes de pilotage." },
 ]
 
 /* ───────── FAQ ───────── */
 
 const FAQ = [
   {
-    q: "Qu'apprend-on dans une formation IA gestion de projet ?",
-    a: "À intégrer l'intelligence artificielle générative dans chaque activité du chef de projet, sur vos projets réels : produire une note de cadrage complète, découper et planifier un premier jet à challenger, transformer des notes ou une transcription en compte rendu structuré avec décisions et actions, rédiger le reporting et le commentaire d'avancement, tenir un registre des risques et préparer les arbitrages, communiquer par audience, et côté Agile rédiger stories et synthèses de rétro. Et surtout à cadrer et vérifier : l'IA accélère la production documentaire, le jugement projet reste le vôtre.",
+    q: "Qu'apprend-on dans une formation IA commercial ?",
+    a: "À intégrer l'intelligence artificielle générative dans chaque étape du cycle de vente, sur vos propres comptes : rechercher un prospect et cadrer une approche personnalisée, préparer un rendez-vous (brief, questions, objections), produire une proposition adaptée à partir de votre trame, construire des séquences de relance par profil, structurer un compte rendu et tenir le CRM à jour, s'entraîner à la négociation. Et surtout à vérifier et personnaliser : c'est la différence entre un commercial augmenté et un envoyeur de mails génériques.",
   },
   {
-    q: "Quel outil d'IA choisir pour la gestion de projet ?",
-    a: "Celui que vos chefs de projet ont sous la main. Si votre organisation vit dans Microsoft 365 (Teams, Outlook, Excel, Planner, Project), Microsoft Copilot s'intègre naturellement dans les réunions et les documents. Si vous cherchez la meilleure rédaction longue et le travail par projet, Claude et ChatGPT sont très solides ; Gemini s'impose dans l'écosystème Google Workspace ; Mistral répond aux exigences de souveraineté. Nous sommes indépendants des éditeurs : la formation compare sur vos cas si le choix est ouvert, ou approfondit l'outil déjà déployé.",
+    q: "Sur quels outils la formation porte-t-elle ?",
+    a: "Sur ceux que votre équipe utilisera réellement. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral, articulés avec votre CRM (les copilotes intégrés aux CRM du marché sont abordés pour ce qu'ils font et ne font pas). Si votre entreprise a déjà déployé un outil, souvent Copilot dans l'écosystème Microsoft, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Pour approfondir un outil précis, voyez nos formations ChatGPT commercial ou Copilot commercial.",
   },
   {
-    q: "La formation travaille-t-elle sur nos projets en cours ?",
-    a: "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : gabarits (note de cadrage, CR, flash, registre des risques), un ou deux projets en cours représentatifs (anonymisés si besoin), vos outils projet. Chaque atelier part de là : votre note de lancement à produire, votre réunion à transcrire, votre reporting à rédiger. Les participants repartent avec des livrables directement utilisables : bibliothèque de prompts projet, gabarits outillés, cadre d'usage.",
+    q: "La formation travaille-t-elle sur nos vrais comptes et nos vraies offres ?",
+    a: "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : offre, trames de proposition, personas acheteurs, deux ou trois comptes ou rendez-vous représentatifs (anonymisés si besoin), votre CRM. Chaque atelier part de là : le compte à prospecter, le rendez-vous à préparer, la proposition à produire. Les participants repartent avec des livrables directement utilisables : bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, cadre d'usage.",
   },
   {
     q: "Combien de temps dure la formation et en quel format ?",
-    a: "Le format de référence est de deux jours (14 heures) en intra-entreprise, en présentiel ou à distance, pour un groupe de 4 à 10 chefs de projet. Une version d'une journée existe pour un périmètre resserré (comptes rendus et reporting par exemple). Un accompagnement individuel est possible pour un PMO ou un directeur de programme. Les journées pleines alternent apports courts et ateliers pratiques, matin et après-midi.",
+    a: "Le format de référence est de deux jours (14 heures) en intra-entreprise, en présentiel ou à distance, pour un groupe de 4 à 10 commerciaux. Une version d'une journée existe pour un périmètre resserré (prospection et préparation de rendez-vous par exemple). Un accompagnement individuel est possible pour un directeur commercial ou un key account manager. Les journées pleines alternent apports courts et ateliers pratiques, matin et après-midi.",
   },
   {
-    q: "Combien coûte une formation IA gestion de projet ?",
+    q: "Combien coûte une formation IA commercial ?",
     a: "Le tarif intra-entreprise est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT pour l'équipe. La formation étant certifiée Qualiopi, votre OPCO peut la prendre en charge dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis détaillé sous 24 heures.",
   },
   {
@@ -190,37 +190,37 @@ const FAQ = [
     a: "Oui. Masteria est certifiée Qualiopi, ce qui rend la formation éligible au financement par votre OPCO au titre du plan de développement des compétences. La prise en charge dépend de votre branche et de la taille de l'entreprise. Nous fournissons le programme, la convention et les pièces du dossier ; le dépôt se fait avant le début de la formation. Notre outil Quel OPCO ? identifie votre opérateur en deux minutes. La formation n'est pas éligible au CPF.",
   },
   {
-    q: "Peut-on confier à l'IA des informations confidentielles sur nos projets ?",
-    a: "Sous conditions, et la formation les pose clairement. Les offres entreprise des grands éditeurs (ChatGPT Business, Copilot Microsoft 365, Claude Team, Gemini Workspace) n'utilisent pas vos données pour entraîner leurs modèles et offrent un cadre contractuel, contrairement aux versions gratuites. Les projets manipulent des données clients, fournisseurs et parfois des informations sous accord de confidentialité : nous formalisons ensemble ce qu'on peut confier à quel outil, ce qui reste interdit, comment on anonymise un compte rendu. C'est un livrable de la formation.",
+    q: "Peut-on utiliser l'IA sur nos données clients et nos offres confidentielles ?",
+    a: "Sous conditions, et la formation les pose clairement. Les offres entreprise des grands éditeurs (ChatGPT Business, Copilot Microsoft 365, Claude Team, Gemini Workspace) n'utilisent pas vos données pour entraîner leurs modèles et offrent un cadre contractuel, contrairement aux versions gratuites. Le RGPD s'applique aux données personnelles de vos clients et prospects, comme pour tout traitement, y compris en prospection B2B. Nous formalisons ensemble un cadre d'usage : ce qu'on peut confier à quel outil, ce qui reste interdit, comment on anonymise. C'est un livrable de la formation.",
   },
   {
-    q: "L'IA peut-elle planifier ou estimer un projet à notre place ?",
-    a: "Non, et il faut le dire franchement. L'IA ne connaît ni votre organisation, ni vos équipes, ni vos contraintes réelles : elle produit un premier découpage cohérent et des estimations par analogie, utiles pour ne rien oublier et gagner du temps sur la structure, à condition de les challenger. La formation apprend à s'en servir ainsi : comme un assistant qui pose les bonnes questions et prépare le brouillon, jamais comme un oracle. La même prudence vaut pour les risques : l'IA aide à lister, le chef de projet hiérarchise.",
+    q: "L'IA ne va-t-elle pas rendre nos mails de prospection encore plus génériques ?",
+    a: "C'est le risque numéro un, et la formation le traite de front. Un commercial qui demande « écris-moi un mail de prospection » obtient le même mail que ses concurrents. La méthode que nous enseignons inverse la logique : la recherche du compte d'abord (actualité, enjeux, interlocuteurs), la personnalisation ensuite, l'IA comme accélérateur de cette préparation et non comme rédacteur de masse. Le résultat se mesure aux taux de réponse, pas au nombre de mails envoyés. Un mail bien préparé avec l'IA est plus personnel qu'un mail écrit à la main en deux minutes.",
   },
   {
-    q: "La formation couvre-t-elle les méthodes Agile ?",
-    a: "Oui, en proportion de vos pratiques. Un volet du jour 2 traite la rédaction de user stories, la préparation des sprints et la synthèse des rétrospectives avec l'IA ; pour une équipe entièrement Agile, ce volet peut prendre plus de place au cadrage. Pour une organisation en cycle en V ou en méthode hybride, l'accent se met sur le cadrage, le reporting et les COPIL. Les fondamentaux (demande efficace, vérification, cadre d'usage) sont communs à toutes les méthodes.",
+    q: "Quelle différence avec une formation ChatGPT ou Copilot pour commerciaux ?",
+    a: "L'angle. Une formation ChatGPT commercial ou Copilot commercial approfondit un outil précis, ses fonctions et ses limites : c'est le bon choix quand l'outil est déployé et imposé. La formation IA commercial part du métier : elle couvre l'ensemble du cycle de vente et compare les outils sur vos cas, ce qui convient quand l'équipe utilise plusieurs outils ou que le choix reste ouvert. Les deux se combinent bien : la formation métier d'abord, un approfondissement outil ensuite pour les usages intensifs.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation IA gestion de projet — Masteria',
-  description: "Formation à l'intelligence artificielle générative appliquée à la gestion de projet, sur les projets réels des participants : cadrage et note de lancement, planification et découpage, comptes rendus et COPIL, reporting, risques et arbitrages, communication projet et Agile, cadre de confidentialité. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  name: 'Formation IA commercial — Masteria',
+  description: "Formation à l'intelligence artificielle générative appliquée à la vente, sur les comptes réels des participants : prospection et ciblage, préparation de rendez-vous, propositions commerciales, relances et séquences, CRM et comptes rendus, négociation, cadre RGPD données clients. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
   level: 'Tous niveaux',
   teaches: [
-    "Produire une note de cadrage et un premier découpage de projet avec l'IA",
-    "Transformer des notes ou une transcription en compte rendu structuré avec décisions et actions",
-    "Rédiger le reporting et le commentaire d'avancement à partir des données de suivi",
-    "Tenir un registre des risques et préparer des arbitrages documentés",
-    "Appliquer un cadre de confidentialité aux informations projet confiées à l'IA",
+    "Rechercher un compte et rédiger une approche de prospection personnalisée avec l'IA",
+    "Préparer un rendez-vous : brief, questions de découverte, objections anticipées",
+    "Produire une proposition commerciale personnalisée à partir de sa trame",
+    "Construire des séquences de relance par profil et tenir son CRM à jour",
+    "Appliquer un cadre d'usage RGPD aux données clients et prospects",
   ],
-  about: 'Intelligence artificielle générative appliquée à la gestion de projet',
+  about: 'Intelligence artificielle générative appliquée à la vente',
   timeRequired: 'PT14H',
   duration: 'PT14H',
-  prerequisites: 'Aucun prérequis technique. Pratique de la conduite de projet.',
-  audience: 'Chefs de projet, PMO, directeurs de programme, product owners',
+  prerequisites: 'Aucun prérequis technique. Pratique du métier commercial.',
+  audience: 'Équipes commerciales, business developers, key account managers',
   locationName: 'Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel',
 }
 
@@ -228,7 +228,7 @@ const COURSE_DATA = {
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Programme de la formation IA gestion de projet Masteria (2 jours)',
+  name: 'Programme de la formation IA commercial Masteria (2 jours)',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((j, ji) => [
     { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: j.matin.join(' ; ') },
@@ -240,20 +240,20 @@ const programmeJsonLd = {
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': 'https://www.master-ia.fr/formation-ia-gestion-de-projet#article',
-  headline: "Formation IA gestion de projet : l'IA générative du cadrage au reporting",
+  '@id': 'https://www.master-ia.fr/formation-ia-commercial#article',
+  headline: "Formation IA commercial : l'IA générative sur tout votre cycle de vente",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
-  datePublished: '2026-06-20',
+  datePublished: '2025-09-15',
   dateModified: '2026-08-10',
   inLanguage: 'fr-FR',
-  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-gestion-de-projet#webpage' },
+  mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-commercial#webpage' },
   about: [
-    { '@type': 'Thing', name: 'Gestion de projet', sameAs: 'https://fr.wikipedia.org/wiki/Gestion_de_projet' },
+    { '@type': 'Thing', name: 'Vente', sameAs: 'https://fr.wikipedia.org/wiki/Vente' },
     { '@type': 'Thing', name: 'Intelligence artificielle générative', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle_g%C3%A9n%C3%A9rative' },
-    { '@type': 'Thing', name: 'Méthode agile', sameAs: 'https://fr.wikipedia.org/wiki/M%C3%A9thode_agile' },
+    { '@type': 'Thing', name: 'Gestion de la relation client', sameAs: 'https://fr.wikipedia.org/wiki/Gestion_de_la_relation_client' },
   ],
 }
 
@@ -302,7 +302,7 @@ function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
   )
 }
 
-export default function GestionDeProjetIAPage() {
+export default function FormationIACommercialPage() {
   const isDesktop = useIsDesktop()
   const editorialGrid = isDesktop
     ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
@@ -314,7 +314,7 @@ export default function GestionDeProjetIAPage() {
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Formation intelligence artificielle', slug: 'formation-intelligence-artificielle' },
-    { name: 'Formation IA gestion de projet', slug: SLUG },
+    { name: 'Formation IA commercial', slug: SLUG },
   ]
 
   return (
@@ -327,7 +327,7 @@ export default function GestionDeProjetIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         courseData={COURSE_DATA}
-        datePublished="2026-06-20"
+        datePublished="2025-09-15"
         dateModified="2026-08-10"
         speakable={['#geo-summary', '#en-bref']}
         citations={[
@@ -348,22 +348,22 @@ export default function GestionDeProjetIAPage() {
             <span style={{ color: '#3A4658' }}>/</span>
             <Link to="/formation-intelligence-artificielle" style={{ color: '#94A3B8' }}>Formation intelligence artificielle</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Formation IA gestion de projet</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Formation IA commercial</span>
           </nav>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
             <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <ClipboardList size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              <Briefcase size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Formation métier · Gestion de projet
+              Formation métier · Commercial
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
-            Formation IA gestion de projet :
+            Formation IA commercial :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>l'IA générative du cadrage au reporting</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>l'IA générative sur tout votre cycle de vente</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
@@ -371,11 +371,11 @@ export default function GestionDeProjetIAPage() {
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation IA gestion de projet de Masteria apprend à vos chefs de projet à intégrer l'intelligence artificielle générative dans chaque activité du métier : <strong style={{ color: '#fff', fontWeight: 700 }}>cadrage, planification, comptes rendus, reporting, risques, communication</strong>, sur vos projets en cours et vos gabarits. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.
+            La formation IA commercial de Masteria apprend à vos équipes de vente à intégrer l'intelligence artificielle générative dans chaque étape du cycle : <strong style={{ color: '#fff', fontWeight: 700 }}>prospection, préparation de rendez-vous, propositions, relances, CRM, négociation</strong>, sur vos propres comptes et vos vraies offres. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            La production documentaire occupe la moitié de l'agenda d'un chef de projet : notes de cadrage, comptes rendus, reporting, supports de COPIL. C'est exactement ce que l'IA générative sait assister, à condition d'apprendre à cadrer, vérifier et garder le jugement projet. La formation ne se limite pas à « savoir prompter » : elle réinstalle ce temps sur l'arbitrage et les parties prenantes.
+            La vente est le métier où l'IA fait le plus gagner de temps sur la préparation, et celui où le générique se paie le plus cher : un mail de prospection standard finit à la corbeille. La formation ne se limite pas à « savoir prompter » : elle apprend à rechercher, personnaliser, vérifier et suivre, pour que la vitesse serve la relation au lieu de la dégrader.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -416,15 +416,15 @@ export default function GestionDeProjetIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Activité par activité</Kicker>
+              <Kicker>Étape par étape</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Que change l'IA dans le travail d'un chef de projet ?
+                Que change l'IA dans le travail d'un commercial ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>L'IA générative touche six activités de la conduite de projet : le cadrage, la planification, les comptes rendus et COPIL, le reporting, les risques et arbitrages, la communication projet (Agile compris). Dans chacune, elle accélère le premier jet et la mise en forme ; la valeur reste dans le jugement, la vérification et l'arbitrage, que la formation travaille autant que la production.</strong>
+                <strong>L'IA générative touche six étapes du cycle de vente : la prospection et le ciblage, la préparation des rendez-vous, les propositions commerciales, les relances et séquences, le CRM et les comptes rendus, la négociation. Dans chacune, elle accélère la préparation et le premier jet ; la valeur reste dans la personnalisation, la vérification et la relation, que la formation travaille autant que la production.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                La formation couvre les six, avec un poids ajusté à vos méthodes au cadrage. Vous cherchez plutôt comment Masteria conduit un projet IA pour vous (forfait, régie, méthode) ? C'est notre page <Link to="/methode-projet-ia" style={aStyle}>méthode projet IA</Link>.
+                La formation couvre les six, avec un poids ajusté à votre équipe au cadrage. Si votre besoin est un agent IA qui qualifie ou relance à votre place, c'est une solution à développer : voyez notre page <Link to="/agent-commercial-ia" style={aStyle}>agent commercial IA</Link>.
               </p>
             </div>
             <div>
@@ -449,16 +449,16 @@ export default function GestionDeProjetIAPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Programme de la formation IA gestion de projet sur 2 jours
+            Programme de la formation IA commercial sur 2 jours
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : les fondamentaux, vos gabarits encodés, le cadrage, la planification et les comptes rendus sur vos projets réels. Jour 2 : reporting, risques et arbitrages, communication et volet Agile, puis l'industrialisation avec la bibliothèque de prompts projet et la mesure du gain. Chaque demi-journée alterne apports courts et ateliers sur vos projets.</strong>
+            <strong style={{ color: '#fff' }}>Jour 1 : les fondamentaux, votre offre et vos personas encodés, la prospection et la préparation de rendez-vous sur de vrais comptes. Jour 2 : propositions, séquences de relance, négociation en jeu de rôle, CRM et comptes rendus, puis l'industrialisation avec la bibliothèque de prompts de l'équipe et votre plan d'action. Chaque demi-journée alterne apports courts et ateliers sur vos comptes.</strong>
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {PROGRAMME.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Le programme s'ajuste au cadrage : une équipe Agile renforce le volet stories et sprints, une direction de programme le reporting et les arbitrages. En version 1 jour, on garde les fondamentaux, les gabarits encodés et deux ateliers au choix.
+            Le programme s'ajuste au cadrage : une équipe de prospection approfondit le jour 1, des key account managers le jour 2. En version 1 jour, on garde les fondamentaux, l'offre encodée et deux ateliers au choix.
           </p>
         </div>
       </section>
@@ -467,9 +467,9 @@ export default function GestionDeProjetIAPage() {
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Pour qui</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse la formation IA gestion de projet ?</h2>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse la formation IA commercial ?</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>À tous ceux qui pilotent des projets : chefs de projet MOA et MOE, PMO et directeurs de programme qui industrialisent les pratiques, product owners et scrum masters, managers transverses qui mènent des projets sans en avoir le titre. Sans prérequis technique : la pratique de la conduite de projet suffit, quelle que soit la méthode.</strong>
+            <strong>À toutes les équipes de vente : commerciaux terrain et sédentaires, business developers et SDR, key account managers, directeurs et managers commerciaux qui fixent le cadre et mesurent le gain. Sans prérequis technique : la pratique du métier suffit, en B2B comme en B2C.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
             {PROFILS.map(card => {
@@ -498,13 +498,13 @@ export default function GestionDeProjetIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Le cadre, traité de front</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Confidentialité des projets, jugement, gabarits : ce que la formation pose noir sur blanc
+                Données clients, prospection B2B, offres confidentielles : ce que la formation pose noir sur blanc
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Un projet manipule des données clients et fournisseurs, des informations parfois sous accord de confidentialité, des arbitrages sensibles : cela appelle un cadre. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise sans entraînement sur vos données, versions gratuites à proscrire pour le confidentiel), comment on anonymise un compte rendu, et où s'arrête l'assistance : l'IA prépare le brouillon et pose les questions, le chef de projet estime, hiérarchise et décide. Ce cadre d'usage est un livrable, à intégrer à votre <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>. Nous formons des équipes projet depuis 2022, dans l'industrie, l'énergie, l'immobilier, l'IT ou le secteur public : les mêmes questions reviennent partout, et elles ont des réponses pratiques.
+                La vente manipule des données personnelles (contacts, historiques, échanges) et des informations sensibles (offres, prix, conditions) : les deux appellent un cadre. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise sans entraînement sur vos données, versions gratuites à proscrire pour le confidentiel), comment on anonymise un compte rendu, ce que le RGPD impose en prospection B2B, et comment on garde la relation personnelle quand la préparation accélère. Ce cadre d'usage est un livrable, à intégrer à votre <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>. Nous formons des équipes commerciales depuis 2022, dans l'industrie, les services, l'immobilier ou la tech : les mêmes questions reviennent partout, et elles ont des réponses pratiques.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['Cadre de confidentialité par outil et par type d\'information', 'Où s\'arrête l\'assistance : estimer et décider restent humains', 'Gabarits projet encodés et mutualisés', 'Vérification : ce qu\'on ne diffuse jamais sans relire'].map(pt => (
+                {['Cadre d\'usage RGPD par outil et par type de donnée', 'Prospection B2B : ce que le RGPD impose vraiment', 'Offre et personas encodés, réutilisables', 'Relecture : ce qu\'on n\'envoie jamais sans vérifier'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />{pt}
                   </li>
@@ -530,7 +530,7 @@ export default function GestionDeProjetIAPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le cadrage préalable avec vos éléments (gabarits, projets en cours, outils), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts projet, gabarits outillés, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.
+                Le cadrage préalable avec vos éléments (offre, trames, personas, comptes), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
@@ -552,7 +552,7 @@ export default function GestionDeProjetIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation IA gestion de projet : les questions fréquentes</h2>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation IA commercial : les questions fréquentes</h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Posez-nous votre question
@@ -574,14 +574,14 @@ export default function GestionDeProjetIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation IA management', href: '/formation-ia-management', tag: 'Métier voisin', desc: "Pour les managers qui pilotent des équipes augmentées : cadre, arbitrage, réunions, communication." },
-              { label: 'Formation IA informatique / DSI', href: '/formation-ia-informatique', tag: 'Métier voisin', desc: "Pour les chefs de projet techniques et les DSI : usages IA côté équipes IT et pilotage des projets numériques." },
-              { label: 'Formation Microsoft Copilot', href: '/formation-microsoft-copilot', tag: 'Par outil', desc: "Copilot dans Microsoft 365, l'outil naturel des équipes projet sous Teams, Outlook, Excel, Planner." },
-              { label: 'Formation ChatGPT', href: '/formation-chatgpt', tag: 'Par outil', desc: "Approfondir ChatGPT : projets, GPTs personnalisés, analyse de fichiers, recherche." },
-              { label: 'Méthode projet IA', href: '/methode-projet-ia', tag: 'Conseil & dev', desc: "Comment Masteria conduit un projet IA pour vous : forfait, régie, jalons, propriété du code." },
-              { label: 'Bibliothèque de prompts', href: '/bibliotheque-de-prompts', tag: 'Ressource', desc: "Des modèles de prompts gestion de projet pour prolonger la formation au quotidien." },
-              { label: 'Coaching IA individuel', href: '/coaching-ia', tag: 'Individuel', desc: "Pour un PMO ou un directeur de programme : le tête-à-tête sur ses projets, à son rythme." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Entreprise', desc: "Quand c'est toute l'organisation, au-delà des équipes projet, qu'il faut embarquer." },
+              { label: 'Formation ChatGPT commercial', href: '/formation-chatgpt-commercial', tag: 'Par outil', desc: "Approfondir ChatGPT pour la vente : GPTs personnalisés, projets, recherche web, réglages." },
+              { label: 'Formation Copilot commercial', href: '/formation-copilot-commercial', tag: 'Par outil', desc: "Copilot dans Microsoft 365 pour la vente : Outlook, Teams, Word, Excel, agents." },
+              { label: 'Formation Claude commercial', href: '/formation-claude-commercial', tag: 'Par outil', desc: "Claude pour les propositions longues, les projets par compte et les compétences réutilisables." },
+              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Métier voisin', desc: "L'IA pour les équipes marketing : contenu, SEO, campagnes, analyse. Souvent formées ensemble." },
+              { label: 'Formation IA management', href: '/formation-ia-management', tag: 'Métier voisin', desc: "Pour les managers commerciaux : piloter une équipe augmentée, fixer le cadre, mesurer." },
+              { label: 'Agent commercial IA', href: '/agent-commercial-ia', tag: 'Solution', desc: "Quand le besoin est un agent qui qualifie ou relance à votre place : le développement sur mesure." },
+              { label: 'Bibliothèque de prompts', href: '/bibliotheque-de-prompts', tag: 'Ressource', desc: "Des modèles de prompts commerciaux pour prolonger la formation au quotidien." },
+              { label: 'Coaching IA individuel', href: '/coaching-ia', tag: 'Individuel', desc: "Pour un directeur commercial ou un key account manager : le tête-à-tête sur ses comptes." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, padding: 26, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
@@ -606,10 +606,10 @@ export default function GestionDeProjetIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation IA gestion de projet</div>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Formons vos chefs de projet sur leurs projets en cours</h2>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation IA commercial</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Formons votre équipe de vente sur ses vrais comptes</h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre équipe projet, vos méthodes, vos outils et vos gabarits. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris.
+              Décrivez-nous votre équipe, votre cycle de vente, vos outils et votre CRM. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un devis
