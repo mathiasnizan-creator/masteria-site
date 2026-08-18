@@ -66,6 +66,7 @@ const PrestataireIAPage = lazy(() => import('./pages/PrestataireIAPage'));
 const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
 const FormationIAMarketingPage = lazy(() => import('./pages/FormationIAMarketingPage'));
 const FormationIACommercialPage = lazy(() => import('./pages/FormationIACommercialPage'));
+const FormationIAFinancePage = lazy(() => import('./pages/FormationIAFinancePage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -1538,8 +1539,9 @@ export default function App() {
         {/* Pages métier dédiées (money pages, sorties du template le 2026-08-10) */}
         <Route path="/formation-ia-marketing" element={<FormationIAMarketingPage />} />
         <Route path="/formation-ia-commercial" element={<FormationIACommercialPage />} />
+        <Route path="/formation-ia-finance" element={<FormationIAFinancePage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
-        {['ressources-humaines','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','transverse'].map(m => (
+        {['ressources-humaines','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','transverse'].map(m => (
           <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
         ))}
         {/* Spoke pages, dynamic via slug */}
