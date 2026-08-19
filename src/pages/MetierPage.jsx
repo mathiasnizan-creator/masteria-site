@@ -4,13 +4,17 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
-  ShoppingCart, Sparkles, Check,
+  ShoppingCart, Sparkles, Check, ArrowRight, MapPin, ShieldCheck, Landmark,
+  HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 import { stripLeadingEmoji } from '../components/Pictogram'
 import ToolLogo from '../components/ToolLogo'
+import { useIsDesktop } from '../hooks/useMediaQuery'
 import { METIERS, getSpokesByMetier } from '../data/seo-pages'
+import { METIER_ENRICHI } from '../data/metier-content-enrichi'
 
 /* Métiers couverts par /bibliotheque-de-prompts, listés en dur : importer
    prompts-library.js ici chargerait les 112 prompts sur chaque page métier. */
@@ -37,6 +41,19 @@ const METIER_ICONS = {
   pedagogique:         GraduationCap,
   achats:              ShoppingCart,
   transverse:          Sparkles,
+  qse:                 HardHat,
+  'gestion-de-projet': ClipboardList,
+  'marche-public':     Landmark,
+  immobilier:          Home,
+  commerce:            Store,
+  sante:               HeartPulse,
+}
+
+// Icônes nommables depuis la data enrichie (metier-content-enrichi.js)
+const ICON_BY_NAME = {
+  Megaphone, Users, TrendingUp, Briefcase, Scale, Radio, Target, CalendarCheck, Search, Headphones,
+  Server, GraduationCap, BadgeCheck, Wallet, MonitorSmartphone, Building2, ShoppingCart, Sparkles,
+  Check, ArrowRight, MapPin, ShieldCheck, Landmark, HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
 }
 
 // ─── Contenu éditorial par métier ────────────────────────────────────────────
@@ -354,12 +371,68 @@ const TOOL_CONFIG = {
   chatgpt:  { label: 'ChatGPT',             color: '#10a37f', bg: '#d1fae5', hubSlug: 'formation-chatgpt' },
   copilot:  { label: 'Microsoft Copilot',   color: '#0078d4', bg: '#dbeafe', hubSlug: 'formation-microsoft-copilot' },
   gemini:   { label: 'Google Gemini',       color: '#ea4335', bg: '#fee2e2', hubSlug: 'formation-gemini-entreprise' },
-  claude:   { label: 'Claude (Anthropic)',  color: '#d97706', bg: '#fef3c7', hubSlug: 'formation-claude-ia' },
+  claude:   { label: 'Claude (Anthropic)',  color: '#2563EB', bg: '#DBEAFE', hubSlug: 'formation-claude-ia' },
   mistral:  { label: 'Mistral AI',          color: '#fa500a', bg: '#fed7aa', hubSlug: 'formation-mistral-ai' },
 }
 
 // Ordre d'affichage des outils ("multi-outils" en premier pour mettre en avant le panorama)
 const TOOL_ORDER = ['multi-outils', 'chatgpt', 'copilot', 'gemini', 'claude', 'mistral']
+
+/* ── Jetons de design des blocs enrichis (patron money page du site) ─────────
+   Rendus UNIQUEMENT si le métier fournit le contenu dans METIER_ENRICHI ;
+   les métiers non enrichis conservent le rendu historique. Accent bleu unique. */
+const C = '#2563EB'
+const C_LIGHT = '#DBEAFE'
+const sectionPad = 'clamp(64px, 9vw, 110px) 24px'
+const wrap = { maxWidth: 1140, margin: '0 auto' }
+const kickerStyle = { fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: C, marginBottom: 14 }
+const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 18px', lineHeight: 1.25, letterSpacing: '-0.01em' }
+const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }
+const aStyle = { color: C, fontWeight: 600 }
+const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
+const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${C}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
+
+function IconTile({ icon: Icon }) {
+  return (
+    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: C_LIGHT, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+      <Icon size={22} strokeWidth={2} style={{ color: C }} />
+    </div>
+  )
+}
+
+/* Rend un lien interne inline dans un texte enrichi : "…{/slug|libellé}…" */
+function RichText({ text }) {
+  const parts = String(text).split(/(\{\/[^|}]+\|[^}]+\})/g)
+  return parts.map((part, i) => {
+    const m = part.match(/^\{(\/[^|}]+)\|([^}]+)\}$/)
+    return m ? <Link key={i} to={m[1]} style={aStyle}>{m[2]}</Link> : <span key={i}>{part}</span>
+  })
+}
+
+function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
+  const col = { flex: 1, minWidth: 0 }
+  const list = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }
+  const li = { fontSize: 14.5, color: '#374151', lineHeight: 1.65, display: 'flex', gap: 9, alignItems: 'flex-start' }
+  const head = { fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, fontFamily: 'Nunito, sans-serif' }
+  return (
+    <div style={{ ...cardStyle, padding: 'clamp(22px, 3vw, 30px)' }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 18, flexWrap: 'wrap' }}>
+        <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: C }}>{jour}</span>
+        <h3 style={{ ...h3Style, fontSize: 18 }}>{titre}</h3>
+      </div>
+      <div style={{ display: 'flex', gap: isDesktop ? 28 : 20, flexDirection: isDesktop ? 'row' : 'column' }}>
+        <div style={col}>
+          <div style={head}>Matin</div>
+          <ul style={list}>{matin.map((m, i) => <li key={i} style={li}><Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{m}</li>)}</ul>
+        </div>
+        <div style={col}>
+          <div style={head}>Après-midi</div>
+          <ul style={list}>{apresmidi.map((m, i) => <li key={i} style={li}><Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{m}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 /* ── Composant accordéon FAQ ──────────────────────────────────── */
 function FaqItem({ q, a }) {
@@ -392,8 +465,14 @@ function FaqItem({ q, a }) {
 
 export default function MetierPage() {
   const location = useLocation()
+  const isDesktop = useIsDesktop()
   const metier = location.pathname.replace('/formation-ia-', '')
-  const content = METIER_CONTENT[metier]
+  const enrichi = METIER_ENRICHI[metier] || null
+  // Le contenu enrichi (data/metier-content-enrichi.js) prime sur le contenu
+  // historique ; un métier enrichi sans entrée historique reste valide.
+  const content = enrichi
+    ? { ...(METIER_CONTENT[metier] || {}), ...enrichi.base }
+    : METIER_CONTENT[metier]
   const metierData = METIERS.find(m => m.slug === metier)
 
   if (!content || !metierData) {
@@ -417,8 +496,10 @@ export default function MetierPage() {
   // Autres métiers pour le maillage interne
   const otherMetiers = METIERS.filter(m => m.slug !== metier)
 
-  // FAQ data pour ce métier
-  const faqItems = (METIER_FAQ && METIER_FAQ[metier]) || []
+  // FAQ data pour ce métier (enrichie prioritaire, sinon historique)
+  const faqItems = (enrichi && enrichi.faq && enrichi.faq.length) ? enrichi.faq : ((METIER_FAQ && METIER_FAQ[metier]) || [])
+  const slug = `formation-ia-${metier}`
+  const url = `https://www.master-ia.fr/${slug}`
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -441,83 +522,148 @@ export default function MetierPage() {
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Formations par métier', slug: 'formation-intelligence-artificielle' },
-    { name: metierData.label, slug: `formation-ia-${metier}` },
+    { name: metierData.label, slug },
   ]
+
+  /* Blocs JSON-LD enrichis (GEO) : programme en ItemList, Article auteur/dates/entités. */
+  const extraJsonLd = []
+  if (enrichi?.programme?.length) {
+    extraJsonLd.push({
+      '@context': 'https://schema.org', '@type': 'ItemList',
+      name: `Programme de la ${content.h1.split(':')[0].trim().toLowerCase()} Masteria`,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: enrichi.programme.flatMap((j, ji) => [
+        { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: j.matin.join(' ; ') },
+        { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi — ${j.titre}`, description: j.apresmidi.join(' ; ') },
+      ]),
+    })
+  }
+  if (enrichi?.article) {
+    extraJsonLd.push({
+      '@context': 'https://schema.org', '@type': 'Article', '@id': `${url}#article`,
+      headline: enrichi.article.headline, description: content.metaDesc,
+      author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' }, editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+      publisher: { '@id': 'https://www.master-ia.fr/#organization' },
+      datePublished: enrichi.article.datePublished, dateModified: enrichi.article.dateModified,
+      inLanguage: 'fr-FR', mainEntityOfPage: { '@id': `${url}#webpage` },
+      about: enrichi.article.about,
+    })
+  }
 
   return (
     <>
       <SEOHead
         title={content.metaTitle}
         description={content.metaDesc}
-        slug={`formation-ia-${metier}`}
+        slug={slug}
+        keywords={enrichi?.base?.keywords}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
+        courseData={enrichi?.course}
+        datePublished={enrichi?.article?.datePublished}
+        dateModified={enrichi?.article?.dateModified}
+        speakable={enrichi ? ['#geo-summary', '#en-bref'] : undefined}
+        citations={enrichi?.citations}
+        extraJsonLd={extraJsonLd.length ? extraJsonLd : undefined}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* ── HERO clair ── */}
-      <section style={{ background: '#FAFAF7', color: '#0A0A0A', padding: '64px 40px 72px', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          {/* Breadcrumb */}
-          <nav style={{ fontSize: 13, color: '#6B7280', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
-            <Link to="/" style={{ color: '#6B7280', textDecoration: 'none' }}>Accueil</Link>
-            <span style={{ color: '#6B7280' }}>/</span>
-            <Link to="/formation-intelligence-artificielle" style={{ color: '#6B7280', textDecoration: 'none' }}>Formations par métier</Link>
-            <span style={{ color: '#6B7280' }}>/</span>
-            <span style={{ color: '#92400E', fontWeight: 600 }}>{metierData.label}</span>
+      {/* ── HERO sombre premium (patron du site, accent bleu unique) ── */}
+      <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: C }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+        <div style={{ ...wrap, position: 'relative' }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 32, flexWrap: 'wrap' }}>
+            <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <Link to="/formation-intelligence-artificielle" style={{ color: '#94A3B8' }}>Formations par métier</Link>
+            <span style={{ color: '#3A4658' }}>/</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>{metierData.label}</span>
           </nav>
 
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, flexWrap: 'wrap' }}>
-            {(() => { const Icon = METIER_ICONS[metier]; return Icon ? (
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: '#fef3c7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid #fde68a' }}>
-                <Icon size={32} color="#d97706" strokeWidth={1.8} />
-              </div>
-            ) : null })()}
-            <div style={{ flex: 1, minWidth: 260 }}>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
-                <span style={{ background: '#fef3c7', color: '#92400E', padding: '5px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700 }}>
-                  {spokes.length} formation{spokes.length > 1 ? 's' : ''} disponible{spokes.length > 1 ? 's' : ''}
-                </span>
-                <span style={{ background: '#fff', color: '#6B7280', padding: '5px 12px', borderRadius: 99, fontSize: 12, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-                  2 jours · 14h · Certifié Qualiopi
-                </span>
-              </div>
-              <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 4vw, 48px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 20, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
-                {content.h1}
-              </h1>
-              <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, maxWidth: 660, marginBottom: 32 }}>
-                {content.intro}
-              </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 32 }}>
-                <a href="#formations" style={{ background: '#F97316', color: '#fff', padding: '13px 26px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 6px 20px rgba(249,115,22,0.35)' }}>
-                  Voir les formations →
-                </a>
-                <Link to="/contact" style={{ background: '#fff', color: '#0A0A0A', padding: '13px 26px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-                  Contacter notre équipe
-                </Link>
-              </div>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                {[
-                  { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
-                  { icon: Wallet,            label: 'Finançable OPCO' },
-                  { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-                  { icon: Building2,         label: 'Intra ou accompagnement individuel' },
-                ].map(({ icon: Icon, label }) => (
-                  <span
-                    key={label}
-                    style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 6, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
-                  >
-                    <Icon size={15} strokeWidth={2.2} style={{ color: '#d97706' }} />
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
+            {(() => { const Icon = METIER_ICONS[metier] || Sparkles; return (
+              <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Icon size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              </span>
+            ) })()}
+            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
+              {enrichi?.base?.eyebrow || `Formation métier · ${metierData.label}`}
+            </span>
           </div>
+
+          <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
+            {enrichi?.base?.h1a ? (
+              <>
+                {enrichi.base.h1a}
+                <br />
+                <span style={{ color: '#60A5FA', fontWeight: 800 }}>{enrichi.base.h1b}</span>
+              </>
+            ) : content.h1}
+          </h1>
+
+          <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria{enrichi?.article?.dateModified ? ` · Mise à jour ${enrichi.article.dateLabel || ''}` : ''}
+          </p>
+
+          {enrichi?.base?.geo ? (
+            <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${C}` }}>
+              <RichText text={enrichi.base.geo} />
+            </p>
+          ) : (
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${C}` }}>
+              {content.intro}
+            </p>
+          )}
+          {enrichi?.base?.sub && (
+            <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
+              <RichText text={enrichi.base.sub} />
+            </p>
+          )}
+
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: C, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Demander un devis
+              <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <a href={enrichi?.programme?.length ? '#programme' : '#formations'} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+              {enrichi?.programme?.length ? 'Voir le programme' : 'Voir les formations'}
+            </a>
+          </div>
+
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: enrichi?.enBref ? 40 : 0 }}>
+            {[
+              { icon: BadgeCheck, label: 'Certifié Qualiopi · Finançable OPCO' },
+              { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
+              { icon: Target, label: enrichi?.base?.badge3 || 'Sur vos cas réels' },
+              { icon: MapPin, label: 'Présentiel & distanciel · France · Suisse · Belgique' },
+            ].map(({ icon: Icon, label }) => (
+              <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                {label}
+              </span>
+            ))}
+          </div>
+
+          {enrichi?.enBref && (
+            <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+              <dl style={{ margin: 0 }}>
+                {enrichi.enBref.map((row, i) => (
+                  <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
+                    <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                    <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
         </div>
       </section>
 
       {/* ── PROBLÉMATIQUES MÉTIER ── */}
+      {content.painPoints?.length > 0 && (
       <section style={{ background: '#fff', padding: '36px 40px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', gap: 40, flexWrap: 'wrap', alignItems: 'center' }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', flexShrink: 0 }}>
@@ -533,6 +679,158 @@ export default function MetierPage() {
           </div>
         </div>
       </section>
+      )}
+
+      {/* ── MISSIONS / ACTIVITÉS (enrichi : éditorial asymétrique, 6 cartes) ── */}
+      {enrichi?.missions?.length > 0 && (
+        <section id="missions" style={{ padding: sectionPad, background: '#fff' }}>
+          <div style={wrap}>
+            <div style={isDesktop ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' } : {}}>
+              <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : { marginBottom: 32 }}>
+                <div style={kickerStyle}>{enrichi.missionsHead?.kicker || 'Activité par activité'}</div>
+                <h2 style={{ ...h2Style, marginBottom: 18 }}>{enrichi.missionsHead?.h2}</h2>
+                <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}><strong>{enrichi.missionsHead?.answer}</strong></p>
+                {enrichi.missionsHead?.foot && (
+                  <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}><RichText text={enrichi.missionsHead.foot} /></p>
+                )}
+              </div>
+              <div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+                  {enrichi.missions.map((item, i) => (
+                    <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                      <div style={{ marginBottom: 14 }}><IconTile icon={METIER_ICONS[item.icon] || ICON_BY_NAME[item.icon] || Sparkles} /></div>
+                      <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                      <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── ATOUTS (enrichi : 6 gains citables) ── */}
+      {enrichi?.atouts?.length > 0 && (
+        <section id="atouts" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>{enrichi.atoutsHead?.kicker || 'Ce que vous y gagnez'}</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.atoutsHead?.h2}</h2>
+            <p style={{ ...answerStyle, background: '#fff' }}><strong>{enrichi.atoutsHead?.answer}</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
+              {enrichi.atouts.map((item, i) => (
+                <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${C}` }}>
+                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            {enrichi.atoutsHead?.foot && (
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>{enrichi.atoutsHead.foot}</p>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ── PROGRAMME Matin / Après-midi (enrichi : ancre sombre — pivot) ── */}
+      {enrichi?.programme?.length > 0 && (
+        <section id="programme" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: C }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div style={{ ...wrap, position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
+            <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>{enrichi.programmeHead?.h2}</h2>
+            <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${C}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+              <strong style={{ color: '#fff' }}>{enrichi.programmeHead?.answer}</strong>
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              {enrichi.programme.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
+            </div>
+            {enrichi.programmeHead?.foot && (
+              <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>{enrichi.programmeHead.foot}</p>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ── POUR QUI (enrichi : 4 profils) ── */}
+      {enrichi?.profils?.length > 0 && (
+        <section style={{ padding: sectionPad, background: '#fff' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>Pour qui</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.profilsHead?.h2}</h2>
+            <p style={answerStyle}><strong>{enrichi.profilsHead?.answer}</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
+              {enrichi.profils.map(card => {
+                const Icon = ICON_BY_NAME[card.icon] || METIER_ICONS[card.icon] || Users
+                return (
+                  <div key={card.title} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${C}` }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                      <Icon size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
+                      <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                    </div>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── CADRE (enrichi : RGPD / confidentialité / frontière, E-E-A-T terrain) ── */}
+      {enrichi?.cadre && (
+        <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+          <div style={wrap}>
+            <div style={{ ...cardStyle, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: C_LIGHT, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <ShieldCheck size={28} strokeWidth={2} style={{ color: C }} />
+              </div>
+              <div style={{ flex: 1, minWidth: 280 }}>
+                <div style={kickerStyle}>{enrichi.cadre.kicker || 'Le cadre, traité de front'}</div>
+                <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>{enrichi.cadre.h2}</h2>
+                <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}><RichText text={enrichi.cadre.p} /></p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
+                  {enrichi.cadre.points.map(pt => (
+                    <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                      <Check size={17} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />{pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── TARIF & FINANCEMENT (enrichi) ── */}
+      {enrichi?.tarif && (
+        <section id="tarif" style={{ padding: sectionPad, background: '#fff' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>Tarif et financement</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>Combien coûte la formation, et comment la financer ?</h2>
+            <p style={{ ...answerStyle }}><strong>{enrichi.tarif.answer}</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
+              <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${C}` }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                  <GraduationCap size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
+                  <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
+                </div>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{enrichi.tarif.inclus}</p>
+              </div>
+              <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${C}` }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                  <Landmark size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
+                  <h3 style={{ ...h3Style, fontSize: 16 }}>La prise en charge</h3>
+                </div>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
+                  <RichText text={enrichi.tarif.financement || "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."} />
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── BIBLIOTHÈQUE DE PROMPTS DU MÉTIER (maillage vers l'actif liable) ── */}
       <section style={{ background: '#F9FAFB', padding: '30px 40px', borderBottom: '1px solid #E5E7EB' }}>
@@ -572,7 +870,8 @@ export default function MetierPage() {
         </section>
       )}
 
-      {/* ── FORMATIONS PAR OUTIL ── */}
+      {/* ── FORMATIONS PAR OUTIL (uniquement si le métier a des spokes) ── */}
+      {spokes.length > 0 && (
       <section id="formations" style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
@@ -610,6 +909,7 @@ export default function MetierPage() {
           })}
         </div>
       </section>
+      )}
 
       {/* ── CTA MILIEU DE PAGE ── */}
       <section style={{ padding: '48px 40px', background: 'linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)', color: '#fff' }}>
@@ -719,6 +1019,33 @@ export default function MetierPage() {
         </section>
       )}
 
+      {/* ── MAILLAGE ENRICHI (par outil, métiers voisins, ressources) ── */}
+      {enrichi?.maillage?.length > 0 && (
+        <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>Pour aller plus loin</div>
+            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Approfondir par outil, ou élargir</h2>
+            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
+              La formation métier compare les outils ; les formations par outil approfondissent celui que votre équipe a retenu.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
+              {enrichi.maillage.map(rel => (
+                <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
+                  <div style={{ ...cardStyle, padding: 26, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
+                    onMouseEnter={e => e.currentTarget.style.borderColor = C}
+                    onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
+                    <div style={{ display: 'inline-block', background: C_LIGHT, color: C, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>{rel.tag}</div>
+                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>{rel.label}</h3>
+                    <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
+                    <span style={{ fontSize: 13, color: C, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>En savoir plus<ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" /></span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── AUTRES MÉTIERS ── */}
       <section style={{ padding: '72px 40px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
@@ -744,14 +1071,17 @@ export default function MetierPage() {
         </div>
       </section>
 
+      {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      <FounderNote />
+
       {/* ── CTA ── */}
       <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 560, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 38px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
-            Vous ne savez pas quel outil choisir ?
+            {enrichi?.cta?.h2 || 'Vous ne savez pas quel outil choisir ?'}
           </h2>
           <p style={{ color: '#4B5563', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
-            Dites-nous votre environnement de travail et le profil de vos participants. On vous recommande la formation la plus adaptée sous 24 heures.
+            {enrichi?.cta?.p || "Dites-nous votre environnement de travail et le profil de vos participants. On vous recommande la formation la plus adaptée sous 24 heures."}
           </p>
           <Link to="/contact" style={{ display: 'inline-block', background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 20 }}>
             Contacter notre équipe →

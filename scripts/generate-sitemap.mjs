@@ -99,7 +99,7 @@ const metierSlugs = [
   'marketing','ressources-humaines','commercial','finance',
   'communication','management','assistante',
   'seo','service-client','informatique','pedagogique',
-  'achats','transverse',
+  'achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse',
 ].map(m => `formation-ia-${m}`);
 
 // Spokes (ChatGPT, Copilot, Gemini, Claude, Mistral, Sprint IA, Multi-outils Métier)
@@ -167,7 +167,7 @@ try {
 // Dates par famille de pages, dérivées de git (dernier commit touchant les
 // sources de la famille). Le lastmod ne bouge donc que quand le contenu change.
 const HUB_LASTMOD    = gitLastMod(['src/data/hub-content.js', 'src/data/seo-pages.js', 'src/pages/HubPage.jsx']);
-const METIER_LASTMOD = gitLastMod(['src/data/seo-pages.js', 'src/data/metier-faq.js', 'src/pages/MetierPage.jsx']);
+const METIER_LASTMOD = gitLastMod(['src/data/seo-pages.js', 'src/data/metier-faq.js', 'src/data/metier-content-enrichi.js', 'src/pages/MetierPage.jsx']);
 const GEO_LASTMOD    = gitLastMod(['src/data/geo-data.js', 'src/pages/GeoPage.jsx', 'src/pages/GeoIAGenericPage.jsx']);
 const SPOKE_LASTMOD  = gitLastMod([
   'src/data/seo-pages.js', 'src/data/multi-outils-spokes.js',
@@ -177,7 +177,7 @@ const SPOKE_LASTMOD  = gitLastMod([
 ]);
 const TOPIC_LASTMOD  = gitLastMod([
   'src/pages/TopicLandingPage.jsx', 'src/pages/AutomatisationIAPage.jsx',
-  'src/pages/GestionDeProjetIAPage.jsx', 'src/pages/QualiopiPage.jsx', 'src/pages/FinancementPage.jsx',
+  'src/pages/QualiopiPage.jsx', 'src/pages/FinancementPage.jsx',
 ]);
 
 const urls = [];
@@ -192,7 +192,7 @@ for (const s of metierSlugs)  urls.push({ loc: `${SITE}/${s}`,          lastmod:
 // siège de Masteria : priorité renforcée sur la requête locale principale.
 for (const s of geoSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: 0.6 });
 for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: s === 'formation-ia-lyon' ? 0.8 : 0.7 });
-const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-ia-gestion-de-projet','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia','formation-ia-marche-public','formation-ia-immobilier','formation-ia-commerce','formation-ia-sante'];
+const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia'];
 for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: TOPIC_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 for (const s of boostedSlugs) urls.push({ loc: `${SITE}/${s}`,          lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 // Cluster « IA par secteur » : hub + 12 secteurs (conseil/dev high-ticket).

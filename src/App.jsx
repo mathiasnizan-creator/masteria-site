@@ -64,16 +64,7 @@ const AccompagnementIAPage = lazy(() => import('./pages/AccompagnementIAPage'));
 const AcculturationIAPage = lazy(() => import('./pages/AcculturationIAPage'));
 const PrestataireIAPage = lazy(() => import('./pages/PrestataireIAPage'));
 const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
-const FormationIAMarketingPage = lazy(() => import('./pages/FormationIAMarketingPage'));
-const FormationIACommercialPage = lazy(() => import('./pages/FormationIACommercialPage'));
-const FormationIAFinancePage = lazy(() => import('./pages/FormationIAFinancePage'));
 const FormationAIActPage = lazy(() => import('./pages/FormationAIActPage'));
-const FormationIAQSEPage = lazy(() => import('./pages/FormationIAQSEPage'));
-const FormationIASEOPage = lazy(() => import('./pages/FormationIASEOPage'));
-const FormationIAMarchePublicPage = lazy(() => import('./pages/FormationIAMarchePublicPage'));
-const FormationIAImmobilierPage = lazy(() => import('./pages/FormationIAImmobilierPage'));
-const FormationIACommercePage = lazy(() => import('./pages/FormationIACommercePage'));
-const FormationIASantePage = lazy(() => import('./pages/FormationIASantePage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -88,7 +79,6 @@ const GeoPage = lazy(() => import('./pages/GeoPage'));
 const GeoIAGenericPage = lazy(() => import('./pages/GeoIAGenericPage'));
 const TopicLandingPage = lazy(() => import('./pages/TopicLandingPage'));
 const AutomatisationIAPage = lazy(() => import('./pages/AutomatisationIAPage'));
-const GestionDeProjetIAPage = lazy(() => import('./pages/GestionDeProjetIAPage'));
 const QualiopiPage = lazy(() => import('./pages/QualiopiPage'));
 const FinancementPage = lazy(() => import('./pages/FinancementPage'));
 const DebutantPage = lazy(() => import('./pages/DebutantPage'));
@@ -1470,7 +1460,6 @@ export default function App() {
           <Route key={s} path={`/${s}`} element={<TopicLandingPage />} />
         ))}
         <Route path="/formation-automatisation-ia" element={<AutomatisationIAPage />} />
-        <Route path="/formation-ia-gestion-de-projet" element={<GestionDeProjetIAPage />} />
         <Route path="/formation-ia-qualiopi" element={<QualiopiPage />} />
         <Route path="/financement-formation-ia" element={<FinancementPage />} />
         {/* Clusters conseil / automatisation / agents / agence (juin 2026) */}
@@ -1543,19 +1532,10 @@ export default function App() {
         <Route path="/competences-claude-eet" element={<CompetencesClaudeEET />} />
         <Route path="/artefacts-claude-entreprise" element={<ArtefactsClaudeEntreprise />} />
         <Route path="/securite-claude-entreprise" element={<SecuriteClaudeEntreprise />} />
-        {/* Pages métier dédiées (money pages, sorties du template le 2026-08-10) */}
-        <Route path="/formation-ia-marketing" element={<FormationIAMarketingPage />} />
-        <Route path="/formation-ia-commercial" element={<FormationIACommercialPage />} />
-        <Route path="/formation-ia-finance" element={<FormationIAFinancePage />} />
+
         <Route path="/formation-ai-act" element={<FormationAIActPage />} />
-        <Route path="/formation-ia-qse" element={<FormationIAQSEPage />} />
-        <Route path="/formation-ia-seo" element={<FormationIASEOPage />} />
-        <Route path="/formation-ia-marche-public" element={<FormationIAMarchePublicPage />} />
-        <Route path="/formation-ia-immobilier" element={<FormationIAImmobilierPage />} />
-        <Route path="/formation-ia-commerce" element={<FormationIACommercePage />} />
-        <Route path="/formation-ia-sante" element={<FormationIASantePage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
-        {['ressources-humaines','communication','management','assistante','service-client','informatique','pedagogique','achats','transverse'].map(m => (
+        {['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse'].map(m => (
           <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
         ))}
         {/* Spoke pages, dynamic via slug */}

@@ -143,5 +143,10 @@ export const METIERS = [
   { slug: 'pedagogique',         label: 'Équipes Pédagogiques',     desc: 'Conception de formations, évaluation, individualisation' },
   { slug: 'achats',              label: 'Achats',                   desc: 'Sourcing, analyse d\'offres, négociation, suivi fournisseurs' },
   { slug: 'qse',                 label: 'QSE / HSE',                desc: 'Veille réglementaire, document unique, procédures, audits' },
+  { slug: 'gestion-de-projet',   label: 'Gestion de projet',        desc: 'Cadrage, planning, comptes rendus, reporting, risques' },
+  { slug: 'marche-public',       label: 'Marchés publics',          desc: 'Répondre aux appels d\'offres et acheter avec l\'IA' },
+  { slug: 'immobilier',          label: 'Immobilier',               desc: 'Annonces, estimation, gestion locative, syndic, promotion' },
+  { slug: 'commerce',            label: 'Commerce & e-commerce',    desc: 'Fiches produits, magasin, avis clients, e-commerce' },
+  { slug: 'sante',               label: 'Santé & médico-social',    desc: 'Usages non cliniques : écrits, qualité, coordination' },
   { slug: 'transverse',          label: 'Tous publics',             desc: 'Formats courts pour acculturer ou outiller largement' },
 ];
