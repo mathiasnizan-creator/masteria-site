@@ -91,7 +91,7 @@ const FAQ = [
   },
   {
     q: "Le conseil ou le développement IA sur mesure sont-ils finançables par l'OPCO ?",
-    a: "Non. L'OPCO finance uniquement les actions de formation. Le conseil stratégique et le développement IA sur mesure (agent, outil, automatisation) sont des prestations de service, facturées au forfait sur devis. Selon votre profil et votre projet, d'autres dispositifs peuvent parfois s'appliquer (France Num, Bpifrance, crédit d'impôt innovation ou recherche, aides régionales), à étudier au cas par cas et sans garantie d'éligibilité. Nous ne promettons ni prise en charge ni taux : nous vous fournissons un devis détaillé et vous orientons vers les bons interlocuteurs.",
+    a: "Non. L'OPCO finance uniquement les actions de formation. Le conseil stratégique et le développement IA sur mesure (agent, outil, automatisation) sont des prestations de service, facturées au forfait sur devis. Selon votre profil et votre projet, d'autres dispositifs peuvent parfois s'appliquer (France Num, aides publiques à l'innovation, crédit d'impôt innovation ou recherche, aides régionales), à étudier au cas par cas et sans garantie d'éligibilité. Nous ne promettons ni prise en charge ni taux : nous vous fournissons un devis détaillé et vous orientons vers les bons interlocuteurs.",
   },
   {
     q: "Combien coûte un projet de conseil ou de développement IA ?",
@@ -110,8 +110,8 @@ const DISPOSITIFS_PROJET = [
   },
   {
     icon: Landmark,
-    name: 'Bpifrance',
-    desc: "Aides à l'innovation, prêts et dispositifs de financement de projets technologiques. Un développement IA structurant peut, selon sa nature et sa maturité, entrer dans le périmètre de certains dispositifs Bpifrance. L'éligibilité s'apprécie projet par projet.",
+    name: "Aides publiques à l'innovation (État, Régions)",
+    desc: "Aides à l'innovation, prêts et dispositifs publics de financement de projets technologiques, nationaux ou régionaux. Un développement IA structurant peut, selon sa nature et sa maturité, entrer dans le périmètre de certains d'entre eux. L'éligibilité s'apprécie projet par projet ; nous détaillons les dispositifs pertinents au cadrage.",
   },
   {
     icon: Percent,
@@ -134,7 +134,7 @@ export default function FinancementPage() {
     <>
       <SEOHead
         title="Financement IA : formation OPCO et projet | Masteria"
-        description="Formation IA finançable à 100 % par votre OPCO (Qualiopi). Conseil et dev IA sur devis : France Num, Bpifrance, CII/CIR à étudier. Devis sous 24 h."
+        description="Formation IA finançable à 100 % par votre OPCO (Qualiopi). Conseil et dev IA sur devis : France Num, aides publiques, CII/CIR à étudier. Devis sous 24 h."
         slug="financement-formation-ia"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -742,8 +742,8 @@ export default function FinancementPage() {
               Le conseil et le développement IA sur mesure ne sont pas finançables par l'OPCO :
               seule la formation l'est. Ce sont des prestations de service, facturées au forfait
               sur devis. Selon votre profil et votre projet, d'autres dispositifs peuvent parfois
-              s'appliquer (France Num, Bpifrance, crédit d'impôt innovation ou recherche, aides
-              régionales), à étudier au cas par cas, sans garantie d'éligibilité.
+              s'appliquer (France Num, aides publiques à l'innovation, crédit d'impôt innovation ou
+              recherche, aides régionales), à étudier au cas par cas, sans garantie d'éligibilité.
             </strong>
           </p>
 
