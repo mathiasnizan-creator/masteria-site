@@ -3020,7 +3020,7 @@ export const BLOG_ARTICLES = [
     dateModified: '2026-04-26',
     readTime: '11 min',
     excerpt: "Former ses équipes à l'IA à Paris : quels outils choisir, comment financer via les OPCO franciliens, présentiel intra ou distanciel. Le guide pratique pour les entreprises de l'Île-de-France.",
-    intro: "Paris et l'Île-de-France concentrent près de 30 % des entreprises françaises et la grande majorité des sièges sociaux du CAC 40. C'est aussi le territoire où la formation à l'IA progresse le plus vite : selon le baromètre BPI France 2025, 41 % des entreprises franciliennes ont engagé un programme de formation IA, contre 28 % au niveau national.",
+    intro: "Paris et l'Île-de-France concentrent près de 30 % des entreprises françaises et la grande majorité des sièges sociaux du CAC 40. C'est aussi le territoire où les programmes de formation à l'IA se multiplient le plus vite, portés par la densité de sièges, de directions métiers et de prestataires spécialisés.",
     blocks: [
       { type: 'p', text: "Cet article répond aux questions concrètes que se posent les responsables formation et DRH parisiens : quels outils choisir, comment organiser une session intra ou un accompagnement individuel, quels OPCO financent quoi, et où se former à Paris en 2026." },
 
