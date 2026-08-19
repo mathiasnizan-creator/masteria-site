@@ -216,6 +216,8 @@ export default function SEOHead({
         about: courseData.about || courseData.tool || undefined,
         // Durée totale au format ISO 8601 (PT14H = 14 heures = 2 jours)
         timeRequired: courseData.timeRequired || 'PT14H',
+        // Programme détaillé (schema.org Syllabus), quand la page le fournit
+        syllabusSections: courseData.syllabusSections || undefined,
         // Pas de prérequis sauf indication contraire
         coursePrerequisites: courseData.prerequisites || 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
         // Certification Qualiopi (rich result)

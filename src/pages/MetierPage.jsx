@@ -560,6 +560,12 @@ export default function MetierPage() {
   /* Blocs JSON-LD enrichis (GEO) : programme en ItemList, Article auteur/dates/entités. */
   const progText = items => items.map(it => (it && typeof it === 'object') ? `${it.t} : ${it.d || ''}`.trim() : it).join(' ; ')
   const extraJsonLd = []
+  const syllabusSections = enrichi?.programme?.length
+    ? enrichi.programme.flatMap(j => [
+        { '@type': 'Syllabus', name: `${j.jour} · Matin — ${j.titre}`, description: progText(j.matin) },
+        { '@type': 'Syllabus', name: `${j.jour} · Après-midi — ${j.titre}`, description: progText(j.apresmidi) },
+      ])
+    : undefined
   if (enrichi?.programme?.length) {
     extraJsonLd.push({
       '@context': 'https://schema.org', '@type': 'ItemList',
@@ -592,7 +598,7 @@ export default function MetierPage() {
         keywords={enrichi?.base?.keywords}
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
-        courseData={enrichi?.course}
+        courseData={enrichi?.course ? { ...enrichi.course, syllabusSections } : undefined}
         datePublished={enrichi?.article?.datePublished}
         dateModified={enrichi?.article?.dateModified}
         speakable={enrichi ? ['#geo-summary', '#en-bref'] : undefined}
