@@ -6,6 +6,14 @@ import {
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
   ShoppingCart, Sparkles, Check, ArrowRight, MapPin, ShieldCheck, Landmark,
   HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
+  // Icônes des missions/profils par métier (nommées dans metier-content-enrichi.js)
+  BarChart3, BookOpenCheck, LineChart, ScrollText, FileWarning, SearchCheck, PenLine, Bot, Gauge, Network,
+  FileSearch, FileText, ListChecks, ClipboardCheck, KeyRound, UsersRound, Building, FileSignature, Tags,
+  MessageSquareHeart, LayoutGrid, PackageSearch, ShoppingBag, Share2, Mail, Palette, RefreshCw, Database,
+  Handshake, Compass, CalendarDays, TriangleAlert, MessagesSquare, Stethoscope, UserSearch, UserPlus, DoorOpen,
+  UserCheck, Rocket, Presentation, FolderSearch, Lock, BookOpen, ListFilter, ShieldAlert, LayoutTemplate,
+  Wrench, Smile, Newspaper, FileCode, Terminal, Radar, Code2, Route, Puzzle, Copyright, School, Globe, Truck,
+  Zap, Layers, Award, Waves, NotebookPen, Eye,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -54,6 +62,13 @@ const ICON_BY_NAME = {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio, Target, CalendarCheck, Search, Headphones,
   Server, GraduationCap, BadgeCheck, Wallet, MonitorSmartphone, Building2, ShoppingCart, Sparkles,
   Check, ArrowRight, MapPin, ShieldCheck, Landmark, HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
+  BarChart3, BookOpenCheck, LineChart, ScrollText, FileWarning, SearchCheck, PenLine, Bot, Gauge, Network,
+  FileSearch, FileText, ListChecks, ClipboardCheck, KeyRound, UsersRound, Users2: UsersRound, Building, FileSignature, Tags,
+  MessageSquareHeart, LayoutGrid, PackageSearch, ShoppingBag, Share2, Mail, Palette, RefreshCw, Database,
+  Handshake, Compass, CalendarDays, TriangleAlert, AlertTriangle: TriangleAlert, MessagesSquare, Stethoscope,
+  UserSearch, UserPlus, DoorOpen, UserCheck, Rocket, Presentation, FolderSearch, Lock, BookOpen, ListFilter,
+  ShieldAlert, LayoutTemplate, Wrench, Smile, Newspaper, FileCode, Terminal, Radar, Code2, Route, Puzzle,
+  Copyright, School, Globe, Truck, Zap, Layers, Award, Waves, NotebookPen, Eye,
 }
 
 // ─── Contenu éditorial par métier ────────────────────────────────────────────
@@ -409,9 +424,26 @@ function RichText({ text }) {
   })
 }
 
+/* Un item de programme est soit une phrase (ancien format), soit { t, d } :
+   titre court en gras + détail (format approfondi, fonctionnalités avancées des outils). */
+function ProgItem({ item, li }) {
+  if (item && typeof item === 'object') {
+    return (
+      <li style={{ ...li, alignItems: 'flex-start' }}>
+        <Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+        <span>
+          <strong style={{ color: '#111827', fontWeight: 700 }}>{item.t}</strong>
+          {item.d && <span style={{ display: 'block', color: '#4B5563', fontSize: 14, lineHeight: 1.65, marginTop: 2 }}>{item.d}</span>}
+        </span>
+      </li>
+    )
+  }
+  return <li style={li}><Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{item}</li>
+}
+
 function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
   const col = { flex: 1, minWidth: 0 }
-  const list = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }
+  const list = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }
   const li = { fontSize: 14.5, color: '#374151', lineHeight: 1.65, display: 'flex', gap: 9, alignItems: 'flex-start' }
   const head = { fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, fontFamily: 'Nunito, sans-serif' }
   return (
@@ -423,11 +455,11 @@ function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
       <div style={{ display: 'flex', gap: isDesktop ? 28 : 20, flexDirection: isDesktop ? 'row' : 'column' }}>
         <div style={col}>
           <div style={head}>Matin</div>
-          <ul style={list}>{matin.map((m, i) => <li key={i} style={li}><Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{m}</li>)}</ul>
+          <ul style={list}>{matin.map((m, i) => <ProgItem key={i} item={m} li={li} />)}</ul>
         </div>
         <div style={col}>
           <div style={head}>Après-midi</div>
-          <ul style={list}>{apresmidi.map((m, i) => <li key={i} style={li}><Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{m}</li>)}</ul>
+          <ul style={list}>{apresmidi.map((m, i) => <ProgItem key={i} item={m} li={li} />)}</ul>
         </div>
       </div>
     </div>
@@ -526,6 +558,7 @@ export default function MetierPage() {
   ]
 
   /* Blocs JSON-LD enrichis (GEO) : programme en ItemList, Article auteur/dates/entités. */
+  const progText = items => items.map(it => (it && typeof it === 'object') ? `${it.t} : ${it.d || ''}`.trim() : it).join(' ; ')
   const extraJsonLd = []
   if (enrichi?.programme?.length) {
     extraJsonLd.push({
@@ -533,8 +566,8 @@ export default function MetierPage() {
       name: `Programme de la ${content.h1.split(':')[0].trim().toLowerCase()} Masteria`,
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: enrichi.programme.flatMap((j, ji) => [
-        { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: j.matin.join(' ; ') },
-        { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi — ${j.titre}`, description: j.apresmidi.join(' ; ') },
+        { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: progText(j.matin) },
+        { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi — ${j.titre}`, description: progText(j.apresmidi) },
       ]),
     })
   }
