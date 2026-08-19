@@ -662,8 +662,9 @@ export default function MetierPage() {
         </div>
       </section>
 
-      {/* ── PROBLÉMATIQUES MÉTIER ── */}
-      {content.painPoints?.length > 0 && (
+      {/* ── PROBLÉMATIQUES MÉTIER (historique ; masqué quand le métier est enrichi :
+          les painPoints d'origine portaient des chiffres non sourcés) ── */}
+      {!enrichi && content.painPoints?.length > 0 && (
       <section style={{ background: '#fff', padding: '36px 40px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', gap: 40, flexWrap: 'wrap', alignItems: 'center' }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', flexShrink: 0 }}>
