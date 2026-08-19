@@ -26,7 +26,11 @@ import HomePage from './pages/HomePage';
 const HubPage = lazy(() => import('./pages/HubPage'));
 const SpokePage = lazy(() => import('./pages/SpokePage'));
 const MetiersHubPage = lazy(() => import('./pages/MetiersHubPage'));
-const MetierPage = lazy(() => import('./pages/MetierPage'));
+/* Pages métier : une page-route par métier (src/pages/metiers/<slug>.jsx = template MetierPage
+   + données de ce seul métier), chargée à la demande → un chunk léger par page. */
+const METIER_SLUGS = ['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse'];
+const METIER_MODULES = import.meta.glob('./pages/metiers/*.jsx');
+const METIER_PAGES = Object.fromEntries(METIER_SLUGS.map(s => [s, lazy(METIER_MODULES[`./pages/metiers/${s}.jsx`])]));
 const ConseilIAPage = lazy(() => import('./pages/ConseilIAPage'));
 const ConseilStrategieIAPage = lazy(() => import('./pages/ConseilStrategieIAPage'));
 const ConseilDataIAPage = lazy(() => import('./pages/ConseilDataIAPage'));
@@ -1535,9 +1539,10 @@ export default function App() {
 
         <Route path="/formation-ai-act" element={<FormationAIActPage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
-        {['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse'].map(m => (
-          <Route key={m} path={`/formation-ia-${m}`} element={<MetierPage />} />
-        ))}
+        {METIER_SLUGS.map(m => {
+          const Page = METIER_PAGES[m]
+          return <Route key={m} path={`/formation-ia-${m}`} element={<Page />} />
+        })}
         {/* Spoke pages, dynamic via slug */}
         {SPOKE_SLUGS.map(slug => (
           <Route key={slug} path={`/${slug}`} element={<SpokePage />} />

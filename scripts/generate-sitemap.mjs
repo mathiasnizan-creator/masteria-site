@@ -167,7 +167,9 @@ try {
 // Dates par famille de pages, dérivées de git (dernier commit touchant les
 // sources de la famille). Le lastmod ne bouge donc que quand le contenu change.
 const HUB_LASTMOD    = gitLastMod(['src/data/hub-content.js', 'src/data/seo-pages.js', 'src/pages/HubPage.jsx']);
-const METIER_LASTMOD = gitLastMod(['src/data/seo-pages.js', 'src/data/metier-faq.js', 'src/data/metier-content-enrichi.js', 'src/pages/MetierPage.jsx']);
+// Pages métier : lastmod PAR métier (données dans src/data/metiers/<slug>.js + template partagé).
+const METIER_SHARED = ['src/data/seo-pages.js', 'src/data/metier-faq.js', 'src/pages/MetierPage.jsx'];
+const metierLastMod = s => gitLastMod([`src/data/metiers/${s.replace(/^formation-ia-/, '')}.js`, `src/pages/metiers/${s.replace(/^formation-ia-/, '')}.jsx`, ...METIER_SHARED]);
 const GEO_LASTMOD    = gitLastMod(['src/data/geo-data.js', 'src/pages/GeoPage.jsx', 'src/pages/GeoIAGenericPage.jsx']);
 const SPOKE_LASTMOD  = gitLastMod([
   'src/data/seo-pages.js', 'src/data/multi-outils-spokes.js',
@@ -186,7 +188,7 @@ const urls = [];
 // Le reste descend pour que Google concentre son crawl sur les pages à plus fort impact.
 for (const r of staticRoutes) urls.push({ loc: r.path ? `${SITE}/${r.path}` : `${SITE}/`, lastmod: r.files ? gitLastMod(r.files) : today, changefreq: r.freq, priority: r.prio });
 for (const s of hubSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: HUB_LASTMOD,    changefreq: 'monthly', priority: 0.9 });
-for (const s of metierSlugs)  urls.push({ loc: `${SITE}/${s}`,          lastmod: METIER_LASTMOD, changefreq: 'monthly', priority: 0.6 });
+for (const s of metierSlugs)  urls.push({ loc: `${SITE}/${s}`,          lastmod: metierLastMod(s), changefreq: 'monthly', priority: 0.6 });
 // Hiérarchie géo : la page ville (formation-ia-{ville}) est la page canonique de
 // l'intention locale ; les pages outil×ville sont ses enfants (0.6). Lyon est le
 // siège de Masteria : priorité renforcée sur la requête locale principale.

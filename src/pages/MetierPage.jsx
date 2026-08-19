@@ -6,7 +6,7 @@ import {
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
   ShoppingCart, Sparkles, Check, ArrowRight, MapPin, ShieldCheck, Landmark,
   HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
-  // Icônes des missions/profils par métier (nommées dans metier-content-enrichi.js)
+  // Icônes des missions/profils par métier (nommées dans src/data/metiers/<slug>.js)
   BarChart3, BookOpenCheck, LineChart, ScrollText, FileWarning, SearchCheck, PenLine, Bot, Gauge, Network,
   FileSearch, FileText, ListChecks, ClipboardCheck, KeyRound, UsersRound, Building, FileSignature, Tags,
   MessageSquareHeart, LayoutGrid, PackageSearch, ShoppingBag, Share2, Mail, Palette, RefreshCw, Database,
@@ -22,7 +22,6 @@ import { stripLeadingEmoji } from '../components/Pictogram'
 import ToolLogo from '../components/ToolLogo'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import { METIERS, getSpokesByMetier } from '../data/seo-pages'
-import { METIER_ENRICHI } from '../data/metier-content-enrichi'
 
 /* Métiers couverts par /bibliotheque-de-prompts, listés en dur : importer
    prompts-library.js ici chargerait les 112 prompts sur chaque page métier. */
@@ -57,7 +56,7 @@ const METIER_ICONS = {
   sante:               HeartPulse,
 }
 
-// Icônes nommables depuis la data enrichie (metier-content-enrichi.js)
+// Icônes nommables depuis la data enrichie (src/data/metiers/<slug>.js)
 const ICON_BY_NAME = {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio, Target, CalendarCheck, Search, Headphones,
   Server, GraduationCap, BadgeCheck, Wallet, MonitorSmartphone, Building2, ShoppingCart, Sparkles,
@@ -495,12 +494,13 @@ function FaqItem({ q, a }) {
   )
 }
 
-export default function MetierPage() {
+export default function MetierPage({ enrichi: enrichiProp = null }) {
   const location = useLocation()
   const isDesktop = useIsDesktop()
   const metier = location.pathname.replace('/formation-ia-', '')
-  const enrichi = METIER_ENRICHI[metier] || null
-  // Le contenu enrichi (data/metier-content-enrichi.js) prime sur le contenu
+  /* Contenu enrichi fourni par la page-route (src/pages/metiers/<slug>.jsx) : un chunk par métier. */
+  const enrichi = enrichiProp
+  // Le contenu enrichi (src/data/metiers/<slug>.js) prime sur le contenu
   // historique ; un métier enrichi sans entrée historique reste valide.
   const content = enrichi
     ? { ...(METIER_CONTENT[metier] || {}), ...enrichi.base }
