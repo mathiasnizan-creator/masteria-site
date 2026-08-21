@@ -98,8 +98,30 @@ routes.push({ src: '^/formations/.+$', dest: '/spa' });
 // (formation-*, blog/*) manque du filesystem (échec ponctuel de prerender),
 // on sert le shell SPA (200, React rend la bonne page) plutôt qu'une 404 qui
 // tuerait une URL du sitemap. Les URLs fantaisistes hors namespaces restent en 404.
-routes.push({ src: '^/formation-[a-z0-9-]+$', dest: '/spa' });
-routes.push({ src: '^/blog/[a-z0-9-]+$', dest: '/spa' });
+// Précision (2026-08-19, soft 404 vus par Bing sur /formation-chat-gpt) : le filet
+// ne couvre que les routes CONNUES du sitemap, pas n'importe quel slug du namespace.
+// Une URL fantaisiste (faute de frappe, ancien lien) tombe donc en vraie 404.
+// Regex chunkées (≤ 40 slugs par route) pour rester loin des limites de taille.
+{
+  let known = [];
+  try {
+    const sm = fs.readFileSync('dist/sitemap.xml', 'utf8');
+    known = [...sm.matchAll(/<loc>https:\/\/www\.master-ia\.fr(\/[^<]+)<\/loc>/g)]
+      .map(m => m[1])
+      .filter(p => /^\/formation-[a-z0-9-]+$/.test(p) || /^\/blog\/[a-z0-9-]+$/.test(p));
+  } catch { known = []; }
+  if (known.length) {
+    const esc = p => p.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
+    for (let i = 0; i < known.length; i += 40) {
+      routes.push({ src: `^(${known.slice(i, i + 40).map(esc).join('|')})$`, dest: '/spa' });
+    }
+    console.log(`[build-vercel-output-config] filet SPA précis : ${known.length} routes connues (${Math.ceil(known.length / 40)} règles)`);
+  } else {
+    // Repli si le sitemap manque (ne devrait pas arriver après build:prerender)
+    routes.push({ src: '^/formation-[a-z0-9-]+$', dest: '/spa' });
+    routes.push({ src: '^/blog/[a-z0-9-]+$', dest: '/spa' });
+  }
+}
 
 // Toute autre URL inconnue : vraie 404 (status 404 + page brandée avec liens de
 // reprise). Surtout PAS de fallback SPA global ici : il servirait la home en 200

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 const SITE_URL = 'https://www.master-ia.fr'
@@ -45,6 +46,9 @@ export default function SEOHead({
                     // Utilisé par la Veille IA, bilingue depuis août 2026.
   htmlLang = 'fr',  // valeur de <html lang> : 'fr' par défaut, 'en' sur les pages anglaises
 }) {
+  // Le shell index.html porte une description par défaut (routes non prérendues) :
+  // on la retire dès qu'une page pose la sienne, pour n'avoir qu'une balise.
+  useEffect(() => { document.getElementById('meta-default-description')?.remove() }, [])
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || DEFAULT_OG_IMAGE
   // Validité du tarif pour le schema Offer (recalculée à chaque build prerender) —

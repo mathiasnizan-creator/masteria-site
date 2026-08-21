@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/formation-chat-gpt",
+      "destination": "/formation-chatgpt",
+      "permanent": true
+    },
+    {
       "source": "/veille/archives",
       "destination": "/veille-ia/publications",
       "permanent": true
