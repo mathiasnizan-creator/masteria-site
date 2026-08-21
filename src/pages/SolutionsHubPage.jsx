@@ -5,6 +5,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import FounderNote from '../components/FounderNote'
 import { SOLUTIONS } from '../data/solution-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
@@ -69,6 +70,18 @@ const HUB_FAQ = [
   {
     q: 'Quelle différence entre une solution sur mesure et un outil IA sur étagère ?',
     a: "Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est conçue pour votre usage, branchée sur vos données et vos outils, et vous en êtes propriétaire. Pour un outil ou un copilote développé autour d'un métier précis, voyez aussi nos outils IA sur mesure, qui abordent le sujet sous l'angle du poste de travail.",
+  },
+  {
+    q: "Combien de temps faut-il pour un premier POC ?",
+    a: "Quelques semaines dans la plupart des cas : le cadrage prend une à deux semaines, la maquette sur vos données réelles suit. Le délai dépend surtout de l'accès aux données et aux personnes, pas du développement lui-même. Le critère de succès est posé avant de commencer : à la fin du POC, la décision se prend sur une mesure, pas sur une impression.",
+  },
+  {
+    q: "Nos données restent-elles chez nous ?",
+    a: "Oui, c'est un principe de conception : les solutions s'appuient sur des offres entreprise qui n'entraînent pas les modèles sur vos données, les accès sont bornés aux documents nécessaires, et l'hébergement suit vos exigences. Le cadre de données est écrit au cadrage, avec votre DSI ou votre DPO quand il y en a un, et il est vérifiable dans la documentation livrée.",
+  },
+  {
+    q: "Qui maintient la solution après la mise en production ?",
+    a: "Vous choisissez : vos équipes, avec la documentation et le code livrés, ou nous, dans un contrat de run dimensionné à l'usage réel (surveillance, corrections, évolutions). Dans les deux cas, un propriétaire est nommé côté client dès le cadrage : une solution sans propriétaire meurt en quelques mois, quelle que soit sa qualité technique.",
   },
 ]
 
@@ -444,6 +457,89 @@ export default function SolutionsHubPage() {
           </div>
         </div>
       </section>
+
+      {/* ── LE DÉROULÉ (hub, condensé) ── */}
+      <section style={{ padding: 'clamp(56px, 8vw, 88px) 24px', background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 14 }}>La méthode</div>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: 880 }}>
+            Comment se construit une solution IA, du cadrage au run ?
+          </h2>
+          <p style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: '3px solid #2563EB', borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }}>
+            <strong>Cinq étapes, toujours les mêmes : un cadrage qui priorise le cas d'usage, une maquette ou un POC sur vos données réelles, une décision d'industrialisation prise sur des critères mesurés, la construction et l'intégration, puis le run : qui surveille, qui corrige, qui possède. Un POC qui ne passe pas son critère s'arrête, et cet arrêt est un résultat : il coûte quelques milliers d'euros, pas un déploiement raté.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 210px), 1fr))', gap: 16 }}>
+            {[
+              ['01 · Cadrage', "Le cas d'usage priorisé par valeur et par effort, les données et licences recensées, le critère de succès posé par écrit."],
+              ['02 · POC', "Une maquette sur vos données réelles, entre les mains de vos utilisateurs. C'est elle qui dit si on continue."],
+              ['03 · Décision', "Industrialiser, ajuster ou arrêter : l'arbitrage se prend sur le critère mesuré, pas sur l'enthousiasme d'une démonstration."],
+              ['04 · Construction', "Développement, intégration au SI (lecture d'abord, toute écriture cadrée), sécurité et droits, recette avec vos équipes."],
+              ['05 · Run', "Surveillance, corrections, évolutions ; un propriétaire nommé côté client ; le code et la documentation vous appartiennent."],
+            ].map(([t, d]) => (
+              <div key={t} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: 20 }}>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
+                <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{d}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 860 }}>
+            La méthode complète est détaillée sur <Link to="/methode-projet-ia" style={{ color: '#2563EB', fontWeight: 600 }}>notre méthode projet IA</Link>, les ordres de grandeur sur <Link to="/prix-projet-ia" style={{ color: '#2563EB', fontWeight: 600 }}>combien coûte un projet IA</Link> : un POC se chiffre en milliers d'euros, un déploiement en dizaines de milliers, un programme complet peut dépasser 100 000 €. Le devis suit le cadrage.
+          </p>
+        </div>
+      </section>
+
+      {/* ── LES ERREURS ── */}
+      <section style={{ padding: 'clamp(56px, 8vw, 88px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 14 }}>Ce qui fait échouer</div>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 24px', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: 880 }}>
+            Les quatre erreurs des projets de solutions IA
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 250px), 1fr))', gap: 18 }}>
+            {[
+              ["Partir de l'outil", "Choisir la technologie avant le cas d'usage produit des démonstrateurs sans utilisateurs. Le cadrage part du travail réel d'une équipe, l'outil vient ensuite."],
+              ['Sous-estimer les données', "La plupart des retards viennent des données : dispersées, non nettoyées, aux droits flous. On les regarde en face au cadrage, pas au milieu du développement."],
+              ['Industrialiser sans critère', "Sans critère de succès mesuré au POC, la décision d'industrialiser se prend à l'enthousiasme. C'est la première cause de déploiements abandonnés."],
+              ['Oublier le run', "Une solution sans propriétaire, sans surveillance et sans budget d'évolution meurt en quelques mois. Le run se conçoit dès le cadrage, pas après la mise en production."],
+            ].map(([t, d]) => (
+              <div key={t} style={{ background: '#fff', border: '1px solid #E5E7EB', borderTop: '3px solid #2563EB', borderRadius: 14, padding: 22 }}>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── E-E-A-T : qui intervient ── */}
+      <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ flex: '1 1 380px', minWidth: 300 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
+              Un cabinet spécialisé IA, indépendant des éditeurs
+            </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
+              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les solutions sont construites par Mathias et par un réseau d'intervenants indépendants et expérimentés. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
+            {[
+              ['Depuis 2022', 'spécialisé uniquement IA'],
+              ['+1 500', 'professionnels formés'],
+              ['Indépendant', 'des éditeurs de solutions'],
+              ['Code livré', 'la solution vous appartient'],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FounderNote />
 
       <OfficialSources />
     </>
