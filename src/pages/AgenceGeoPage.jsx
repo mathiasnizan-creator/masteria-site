@@ -190,8 +190,75 @@ export default function AgenceGeoPage() {
       q: `Peut-on mener toute la mission à distance ${city.nameLoc} ?`,
       a: `Oui. La présence sur site ${city.nameLoc} se concentre sur les phases qui en bénéficient vraiment : ateliers de cadrage, observation des processus, passation. Le développement des agents et des outils, les itérations et le suivi se conduisent en distanciel, avec les mêmes contenus et les mêmes livrables. Certaines missions se mènent intégralement à distance quand le contexte s'y prête, par points réguliers en visio. Vous gardez un interlocuteur stable du cadrage à la passation, quel que soit le format.`,
     },
+    {
+      q: `Travaillez-vous avec les PME ${city.nameLoc} ?`,
+      a: "Oui, l'essentiel de nos missions se mène avec des PME et des ETI. Les cas d'usage les plus rentables s'y trouvent souvent : processus administratifs chargés, équipes réduites, données sous-exploitées. Les propositions forfaitaires et le premier cadrage gratuit sont pensés pour ce format d'entreprise : un périmètre resserré, un budget écrit à l'avance et des résultats mesurables, avec une charge interne réduite pendant la mission.",
+    },
+    {
+      q: "Faut-il déjà utiliser l'IA en interne pour faire appel à vous ?",
+      a: "Non. Une partie de nos missions part de zéro : aucun outil déployé, des usages individuels dispersés, des questions de conformité en suspens. Le cadrage et l'audit établissent le point de départ réel, y compris les usages officieux déjà installés dans les équipes. À l'inverse, si des outils sont déjà en place, la mission capitalise sur l'existant : elle consolide ce qui fonctionne et corrige ce qui expose.",
+    },
+    {
+      q: "Que reste-t-il chez vous à la fin d'une mission ?",
+      a: "Des livrables qui ne dépendent plus de nous : une feuille de route et ses arbitrages écrits pour le conseil, un outil documenté avec son code et ses accès pour le développement, des équipes formées et des supports réutilisables pour la formation. La passation fait partie de chaque mission, et la documentation est rédigée pour être reprise par vos équipes ou par un autre prestataire si vous le décidez.",
+    },
   ]
   const faqItems = [...city.localFaq, ...commonFaq]
+
+  /* ── Déroulé d'une mission (générique, ancré ville via nameLoc) ── */
+  const missionSteps = [
+    {
+      num: '01',
+      title: 'Cadrage',
+      desc: `Un premier échange gratuit, sur site ${city.nameLoc} ou en visio, pour poser le contexte : votre activité, vos processus, vos outils, ce qui coûte du temps aux équipes. Il débouche sur une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire.`,
+    },
+    {
+      num: '02',
+      title: 'Audit des usages et des données',
+      desc: "Nous examinons les processus concernés, les usages d'IA déjà installés dans les équipes, officiels ou officieux, et l'état de vos données : où elles vivent, qui y accède, ce que le RGPD et l'AI Act imposent. Cet état des lieux fonde toutes les décisions qui suivent.",
+    },
+    {
+      num: '03',
+      title: 'Recommandation indépendante des éditeurs',
+      desc: "Nous recommandons les outils, les modèles et l'architecture adaptés à votre contexte, en toute indépendance : nous ne revendons aucune licence. La recommandation s'écrit, avec ses motifs, ses ordres de grandeur budgétaires et les options écartées.",
+    },
+    {
+      num: '04',
+      title: 'Construction ou formation, selon le besoin',
+      desc: "La mission enchaîne sur ce que le cadrage a retenu : développement d'un agent ou d'un outil, automatisation d'un processus, formation des équipes. Certains projets combinent les trois, dans l'ordre fixé par la feuille de route.",
+    },
+    {
+      num: '05',
+      title: 'Suivi et mesure',
+      desc: "Une fois la solution en production ou les équipes formées, nous mesurons ce qui a changé : temps rendu aux équipes, qualité des livrables, adoption réelle. La documentation et la passation closent la mission, avec des points de suivi si vous le souhaitez.",
+    },
+  ]
+
+  /* ── Complémentarité des trois offres (conseil / développement / formation) ── */
+  const formationHref = city.formationSlug ? `/${city.formationSlug}` : '/formation-intelligence-artificielle'
+  const rolesCards = [
+    {
+      icon: Compass,
+      title: 'Le conseil : décider',
+      href: '/conseil-intelligence-artificielle',
+      cta: 'Voir le conseil IA',
+      desc: "Le conseil arbitre : quels cas d'usage lancer, dans quel ordre, avec quel budget et sous quelles règles de gouvernance. Il produit la feuille de route et évite de construire un outil que rien ne justifie.",
+    },
+    {
+      icon: Cpu,
+      title: 'Le développement : construire',
+      href: '/agence-developpement-ia',
+      cta: 'Voir le développement IA',
+      desc: "Le développement transforme la décision en solution qui tourne : agent, copilote interne, automatisation branchée sur votre SI. Il livre un outil testé, documenté et maintenable par d'autres que nous.",
+    },
+    {
+      icon: GraduationCap,
+      title: 'La formation : installer les usages',
+      href: formationHref,
+      cta: city.formationSlug ? `Voir les formations IA ${city.nameLoc}` : 'Voir les formations IA',
+      desc: "La formation ancre le dispositif dans le quotidien : des équipes qui savent utiliser, corriger et étendre ce qui a été construit. C'est elle qui rend les résultats durables après notre départ.",
+    },
+  ]
 
   /* ── JSON-LD ProfessionalService (areaServed = ville/région) ── */
   const professionalServiceJsonLd = {
@@ -505,6 +572,41 @@ export default function AgenceGeoPage() {
         </div>
       </section>
 
+      {/* ── DÉROULÉ D'UNE MISSION (timeline à rail) ── */}
+      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
+          <div style={kickerStyle}>Méthode</div>
+          <h2 style={h2Style}>Le déroulé d'une mission {city.nameLoc}</h2>
+          <p style={{ ...answerStyle, background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 'none' }}>
+            <strong style={{ color: '#0A0A0A' }}>Une mission suit cinq étapes : un cadrage sur site ou en visio, un audit des usages et des données, une recommandation indépendante des éditeurs, la construction ou la formation selon le besoin, puis le suivi et la mesure.</strong>{' '}
+            Chaque étape produit un livrable écrit et vous gardez la décision entre chacune.
+          </p>
+          <p style={mutedStyle}>
+            Le budget se chiffre sur devis après le cadrage, avec des fourchettes larges selon le périmètre : un audit court et le développement d'un outil complet ne mobilisent ni les mêmes profils ni la même durée.
+          </p>
+          <div style={{ position: 'relative' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
+            {missionSteps.map((step, i) => (
+              <div
+                key={step.num}
+                style={{
+                  display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
+                  padding: i === 0 ? '0 0 16px' : (i === missionSteps.length - 1 ? '16px 0 0' : '16px 0'),
+                }}
+              >
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                  <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
+                </div>
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{step.title}</h3>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── AGENCE SPÉCIALISÉE VS ESN (ancre sombre — pivot preuve) ── */}
       <section style={{ position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
@@ -540,6 +642,36 @@ export default function AgenceGeoPage() {
             <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
             détaille cette approche du cadrage, de la gouvernance et de la trajectoire.
           </p>
+        </div>
+      </section>
+
+      {/* ── CONSEIL / DÉVELOPPEMENT / FORMATION : QUI FAIT QUOI ── */}
+      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={kickerStyle}>Trois briques complémentaires</div>
+          <h2 style={h2Style}>Conseil, développement ou formation : qui fait quoi ?</h2>
+          <p style={answerStyle}>
+            <strong style={{ color: '#0A0A0A' }}>Les trois offres répondent à trois questions différentes : le conseil décide, le développement construit, la formation installe les usages.</strong>{' '}
+            Une mission peut mobiliser une seule de ces briques ou les enchaîner ; le cadrage initial dit laquelle ouvre la trajectoire.
+          </p>
+          <p style={mutedStyle}>
+            Un besoin encore flou commence par le conseil, un besoin déjà cadré part directement en construction, une équipe déjà équipée passe à la formation. Rien n'oblige à tout prendre : chaque brique se contracte séparément, avec son propre devis.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+            {rolesCards.map(({ icon: Icon, title, href, cta, desc }) => (
+              <div key={title} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${c}` }}>
+                <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
+                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+                </div>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
+                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>{desc}</p>
+                <Link to={href} style={{ marginTop: 'auto', color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {cta}
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

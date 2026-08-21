@@ -53,6 +53,147 @@ const COMPARISON_ROWS = [
   { aspect: 'Confidentialité et hébergement', off: 'Selon les règles du fournisseur', custom: 'Cloisonnement et hébergement UE possibles' },
 ]
 
+/* ── Sections communes du gabarit (typologies, déroulé, erreurs, budget, FAQ transverses).
+ * Contenu générique valable pour les 7 solutions : il situe chaque livrable dans le
+ * panorama et répond aux questions transverses que le cadrage soulève toujours. */
+
+/* a) Typologies : quelle solution pour quelle situation de départ. */
+const SITUATION_TYPES = [
+  {
+    icon: Database,
+    title: "L'assistant interne sur base documentaire",
+    serves: "Il répond aux questions de vos équipes depuis vos procédures, vos contrats, vos notices ou votre documentation qualité, en citant la source de chaque réponse. Le savoir de l'entreprise cesse de dépendre de la mémoire de quelques personnes.",
+    requires: "Un corpus rassemblé et tenu à jour, et des droits d'accès clarifiés : qui peut consulter quoi.",
+    signal: "Les mêmes questions reviennent chaque semaine et la réponse existe déjà, quelque part, dans un document.",
+  },
+  {
+    icon: Workflow,
+    title: "L'automatisation d'un flux",
+    serves: "Un document entre (facture, formulaire, courriel), la chaîne extrait les informations, les contrôle et produit le livrable attendu ; un humain valide avant tout envoi ou tout enregistrement. Le traitement devient traçable de bout en bout.",
+    requires: "Un flux volumineux et répétitif, des règles de gestion que l'on peut écrire, un point de validation humaine défini.",
+    signal: "Une personne passe une partie de ses journées à ressaisir ou reformater la même famille de documents.",
+    link: { href: '/automatisation-ia', label: "Approfondir : l'automatisation IA" },
+  },
+  {
+    icon: Bot,
+    title: "L'agent métier outillé",
+    serves: "Il prépare des dossiers dans un périmètre borné : dossier client avant un rendez-vous, trame de réponse à un appel d'offres, brief de production. Il consulte vos outils, assemble les éléments et soumet le résultat à votre relecture.",
+    requires: "Un périmètre écrit noir sur blanc, un accès en lecture aux systèmes concernés, un responsable qui relit.",
+    signal: "La préparation mobilise plusieurs outils et suit toujours les mêmes étapes, dossier après dossier.",
+    link: { href: '/agents-ia-entreprise', label: 'Approfondir : les agents IA en entreprise' },
+  },
+  {
+    icon: Plug,
+    title: "Le copilote intégré au SI",
+    serves: "Il interroge vos données métier depuis les écrans que vos équipes utilisent déjà, et rapproche des informations dispersées entre applications. La lecture vient d'abord ; toute écriture dans un logiciel métier (ERP, CRM, comptabilité) constitue un projet d'intégration à part entière, chiffré comme tel.",
+    requires: "Une API ou une base accessible, un environnement de test, la DSI associée dès le cadrage.",
+    signal: "L'information existe dans le SI, mais la chercher et la recouper prend plus de temps que la décision elle-même.",
+  },
+  {
+    icon: Files,
+    title: "La recherche et synthèse sur corpus",
+    serves: "La solution lit un grand volume de textes (veille, jurisprudence, littérature technique, réponses à une enquête) et produit des synthèses structurées et sourcées, selon la grille de lecture de votre métier. Chaque affirmation renvoie au passage d'origine.",
+    requires: "Un corpus délimité, des formats d'entrée stables dans le temps, une grille de lecture validée par le métier.",
+    signal: "Une décision repose sur des centaines de pages que personne n'a le temps de lire en entier.",
+  },
+  {
+    icon: Wrench,
+    title: "Le sur-mesure complet",
+    serves: "Quand le besoin combine plusieurs briques ou ne rentre dans aucune case : une application métier complète, avec ses écrans, ses règles et ses connexions, construite autour de votre façon de travailler et destinée à durer.",
+    requires: "Un cas d'usage cadré, un sponsor métier identifié et un budget de programme.",
+    signal: "Vous avez essayé les outils du marché et chacun bute sur une exigence propre à votre métier.",
+    link: { href: '/outils-ia-sur-mesure', label: 'Approfondir : les outils IA sur mesure' },
+  },
+]
+
+/* b) Déroulé d'un projet : cinq étapes, une décision à chaque palier. */
+const PROJECT_STAGES = [
+  {
+    title: "Cadrage et cas d'usage priorisé",
+    desc: "Nous inventorions les cas candidats avec vos équipes, nous en retenons un et nous le décrivons : le flux concerné, les données disponibles, le critère de succès mesurable qui servira à décider.",
+  },
+  {
+    title: 'Maquette ou POC sur vos données réelles',
+    desc: "La solution est confrontée à vos documents et à vos cas, y compris les ambigus. L'objectif : vérifier sur pièces que la valeur attendue se matérialise, avant d'engager le budget de construction.",
+  },
+  {
+    title: "Décision d'industrialisation",
+    desc: "Le résultat du POC est comparé au critère fixé au cadrage. Vous décidez alors d'industrialiser, d'ajuster le périmètre ou d'arrêter, avec des mesures issues de vos propres données.",
+  },
+  {
+    title: 'Construction et intégration',
+    desc: "Développement, connexion à vos outils, gestion des droits, tests avec les futurs utilisateurs. Cette étape est détaillée plus bas, palier par palier, pour ce livrable précis.",
+  },
+  {
+    title: 'Run, mesure et gouvernance',
+    desc: "La solution entre dans le quotidien : qui surveille la qualité des réponses, qui corrige, qui décide des évolutions, quels indicateurs sont suivis et à quel rythme ils sont revus.",
+  },
+]
+
+/* c) Les quatre causes d'échec récurrentes des projets solutions IA. */
+const PROJECT_MISTAKES = [
+  {
+    title: "Partir de l'outil au lieu du cas d'usage",
+    desc: "L'entreprise choisit une plateforme, puis cherche quoi en faire. Le projet aboutit à une démonstration que personne n'intègre à son travail quotidien. Le cadrage part du flux de travail à améliorer ; le choix de l'outil vient ensuite, comme une conséquence.",
+  },
+  {
+    title: 'Sous-estimer la préparation des données',
+    desc: "Corpus obsolète, doublons, versions contradictoires, droits d'accès flous : la qualité des réponses plafonne au niveau des sources. Le tri, la mise à jour et la propriété des documents se planifient dès le cadrage, avec un responsable nommé pour chaque source.",
+  },
+  {
+    title: 'Industrialiser sans critère mesuré au POC',
+    desc: "Quand personne n'a écrit ce que « réussir » veut dire, la décision d'industrialiser se prend à l'enthousiasme de la démonstration. Le critère se fixe avant la maquette, se mesure sur le POC, et la décision se prend en le comparant au résultat obtenu.",
+  },
+  {
+    title: 'Oublier le run',
+    desc: "Une solution en production demande un propriétaire nommé : qui corrige les réponses signalées, qui surveille les dérives, qui possède le budget des évolutions. Si personne ne tient ce rôle, l'outil se dégrade puis s'abandonne, quel que soit son niveau au lancement.",
+  },
+]
+
+/* d) Ce qui fait varier le devis d'une solution IA. */
+const COST_FACTORS = [
+  {
+    icon: Plug,
+    title: 'Les intégrations',
+    desc: "Lire un dossier de documents demande moins de travail que se connecter à un ERP. Chaque système supplémentaire ajoute une connexion, des droits à gérer et des tests à mener.",
+  },
+  {
+    icon: Database,
+    title: "L'état des données",
+    desc: "Un corpus propre et à jour se branche rapidement. Des sources dispersées ou contradictoires imposent un chantier de préparation, qui se chiffre au cadrage.",
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Les exigences de sécurité',
+    desc: "Hébergement dans l'Union européenne, cloisonnement par droits d'accès, journalisation, revue par votre DSI : chaque exigence s'intègre à la conception et au budget.",
+  },
+  {
+    icon: Server,
+    title: 'La volumétrie',
+    desc: "Le nombre d'utilisateurs, le volume de documents et la fréquence d'usage dimensionnent l'infrastructure et le coût de fonctionnement en production.",
+  },
+]
+
+/* e) FAQ transverses ajoutées aux questions propres à chaque solution.
+ * `overlap` : si une question de la solution couvre déjà le sujet, l'item générique est retiré. */
+const GENERIC_FAQ = [
+  {
+    overlap: /délai|combien de temps|\bpoc\b/i,
+    q: 'Quel est le délai pour un premier POC ?',
+    a: "Le POC se compte en semaines. Le calendrier précis dépend de l'accès à vos données et de la disponibilité d'un référent métier ; il est fixé au cadrage, qui tient lui-même en quelques ateliers. Vous voyez la solution fonctionner sur vos documents avant toute décision d'industrialisation.",
+  },
+  {
+    overlap: /données restent|confidentiel/i,
+    q: 'Nos données restent-elles chez nous ?',
+    a: "Oui. Vos données restent votre propriété et ne servent jamais à entraîner des modèles. Selon vos exigences, la solution s'héberge dans l'Union européenne, dans votre cloud ou sur votre infrastructure, et les accès sont cloisonnés selon vos droits internes. Ces choix se prennent au cadrage, avec votre DSI.",
+  },
+  {
+    overlap: /maintien|mainten|après la mise en production/i,
+    q: 'Qui maintient la solution après la mise en production ?',
+    a: "Vous choisissez au cadrage. Vos équipes peuvent reprendre la main : le code est livré, documenté, et la compétence transférée. Nous pouvons aussi assurer le run à vos côtés, avec un contrat de maintenance qui couvre la surveillance, les corrections et les évolutions de modèles. Dans les deux cas, un propriétaire est nommé côté métier.",
+  },
+]
+
 function IconTile({ icon: Icon }) {
   return (
     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -112,6 +253,12 @@ export default function SolutionIAPage() {
   const related = solution.relatedSolutions
     .map(s => SOLUTIONS.find(x => x.slug === s))
     .filter(Boolean)
+
+  // FAQ affichée (et JSON-LD) = questions propres à la solution + transverses non déjà couvertes.
+  const faqItems = [
+    ...solution.faq,
+    ...GENERIC_FAQ.filter(g => !solution.faq.some(f => g.overlap.test(f.q))).map(({ q, a }) => ({ q, a })),
+  ]
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -193,7 +340,7 @@ export default function SolutionIAPage() {
         slug={solution.slug}
         keywords={pageKeywords}
         breadcrumbs={breadcrumbs}
-        faqItems={solution.faq}
+        faqItems={faqItems}
         extraJsonLd={serviceJsonLd}
       />
 
@@ -333,6 +480,83 @@ export default function SolutionIAPage() {
         </div>
       </section>
 
+      {/* ── QUELLE SOLUTION POUR QUELLE SITUATION (typologies) ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <div style={kickerStyle}>Typologies</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Quelle solution IA pour quelle situation ?
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Le bon livrable se déduit de la situation de départ : une connaissance dispersée appelle un assistant documentaire, un flux répétitif appelle une automatisation, une préparation qui mobilise plusieurs outils appelle un agent. Six familles couvrent la grande majorité des projets ; le cadrage sert à identifier la vôtre.</strong>
+          </p>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 36px', maxWidth: 880 }}>
+            Chaque carte suit la même lecture : à quoi la solution sert, ce qu'elle suppose de votre côté (données, licences, accès) et le signal qui indique que vous êtes devant ce cas. Ces repères viennent de nos cadrages : la plupart des demandes arrivent formulées en outil (« il nous faut un chatbot ») et repartent formulées en situation, avec un livrable adapté au flux de travail concerné.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
+            {SITUATION_TYPES.map(st => (
+              <div key={st.title} style={{ ...cardStyle, padding: 28, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <IconTile icon={st.icon} />
+                <h3 style={{ ...h3Style, fontSize: 16.5 }}>{st.title}</h3>
+                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{st.serves}</p>
+                <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: 12 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 4 }}>Ce que ça suppose</div>
+                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{st.requires}</p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>Le signal que c'est la bonne</div>
+                  <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: 0 }}>{st.signal}</p>
+                </div>
+                {st.link && (
+                  <Link to={st.link.href} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 'auto' }}>
+                    {st.link.label}
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
+            Ces familles se combinent dans un même programme : un assistant documentaire sert souvent de socle, une automatisation s'y adosse, un agent orchestre l'ensemble. Le cadrage arbitre l'ordre de construction, en commençant par le livrable qui rend service le plus vite. Si aucune carte ne correspond à votre besoin, le premier échange sert justement à qualifier la situation avant de parler livrable.
+          </p>
+        </div>
+      </section>
+
+      {/* ── DÉROULÉ D'UN PROJET (cinq étapes, une décision par palier) ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <div style={kickerStyle}>Déroulé</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Le déroulé d'un projet solution IA
+          </h2>
+          <p style={answerStyle}>
+            <strong>Un projet solution IA avance en cinq étapes : cadrage sur un cas d'usage priorisé, maquette ou POC sur vos données réelles, décision d'industrialisation sur critères, construction et intégration, puis run avec mesure et gouvernance. Chaque étape se conclut par une décision, prise sur des éléments concrets.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 16, marginBottom: 28 }}>
+            {PROJECT_STAGES.map((step, i) => (
+              <div key={step.title} style={{ ...cardStyle, padding: 22 }}>
+                <div aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 9, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+                  <span style={{ fontSize: 13.5, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 15, marginBottom: 8 }}>{step.title}</h3>
+                <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
+            Chaque étape remet un livrable qui sert la décision suivante : la note de cadrage fixe le périmètre et le critère, le POC produit des mesures, la construction s'accompagne de la documentation et des tests, le run s'appuie sur un tableau de bord d'usage. Vous savez en permanence où en est le projet et ce qui reste à décider.
+          </p>
+          <div style={{ ...cardStyle, borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 880 }}>
+            <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+              Un POC qui ne passe pas son critère s'arrête à la maquette, et cet arrêt est un résultat : vous savez, pour un engagement limité, qu'il faut revoir le périmètre ou renoncer, avant d'avoir mobilisé le budget d'une industrialisation. Les enseignements restent acquis (qualité des données, réactions des utilisateurs, coûts d'exploitation constatés) et servent au cas d'usage suivant.
+            </p>
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+            Quand les cas d'usage candidats sont nombreux, un <Link to="/audit-ia" style={aStyle}>audit IA</Link> structure l'inventaire et la priorisation avant d'engager le premier POC.
+          </p>
+        </div>
+      </section>
+
       {/* ── COMMENT ON LE CONSTRUIT (timeline à rail) ── */}
       <section id="methode" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
@@ -434,6 +658,33 @@ export default function SolutionIAPage() {
         </div>
       </section>
 
+      {/* ── ERREURS DES PROJETS SOLUTIONS IA (quatre causes d'échec) ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <div style={kickerStyle}>À éviter</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Les erreurs des projets solutions IA
+          </h2>
+          <p style={answerStyle}>
+            <strong>Quatre causes d'échec reviennent dans les projets de solutions IA : partir de l'outil au lieu du cas d'usage, sous-estimer la préparation des données, industrialiser sans critère de succès mesuré au POC, et oublier le run. Les quatre se traitent au cadrage, avant d'écrire la moindre ligne de code.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
+            {PROJECT_MISTAKES.map(m => (
+              <div key={m.title} style={{ ...cardStyle, padding: 28 }}>
+                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: '#F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <X size={22} strokeWidth={2.2} style={{ color: '#6B7280' }} />
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 10 }}>{m.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
+            Ces quatre risques se neutralisent par la méthode : le critère de succès s'écrit au cadrage, le chantier de préparation des données se chiffre avant de construire, la décision d'industrialisation se prend sur les mesures du POC, et le propriétaire de la solution est nommé avant la mise en production. C'est l'objet des cinq étapes décrites plus haut.
+          </p>
+        </div>
+      </section>
+
       {/* ── COMPARATIF : SUR ÉTAGÈRE VS SUR MESURE (ancre sombre — GEO snippet) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
@@ -484,6 +735,39 @@ export default function SolutionIAPage() {
         </div>
       </section>
 
+      {/* ── COMBIEN ÇA COÛTE (fourchettes ouvertes, devis après cadrage) ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <div style={kickerStyle}>Budget</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Combien coûte une solution IA ?
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Un POC se chiffre en milliers d'euros, un déploiement en production en dizaines de milliers, et un programme complet (plusieurs métiers, intégrations multiples, équipe dédiée) peut dépasser 100 000 €. Le devis est établi après le cadrage, sur un périmètre écrit ; le premier échange est gratuit.</strong>
+          </p>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
+            Les fourchettes restent larges parce que le prix d'une solution IA dépend du périmètre davantage que de la technologie. Le budget s'engage par paliers : le POC mobilise un montant limité, et la décision d'industrialiser se prend avec ses résultats en main. Quatre facteurs font varier le devis.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 32 }}>
+            {COST_FACTORS.map(f => (
+              <div key={f.title} style={{ ...cardStyle, padding: 26 }}>
+                <div style={{ marginBottom: 14 }}>
+                  <IconTile icon={f.icon} />
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{f.title}</h3>
+                <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }}>
+            Le devis qui suit le cadrage décrit un périmètre écrit : les livrables de chaque palier, les hypothèses retenues (sources connectées, volumes, environnements) et ce qui reste hors périmètre. Un chiffre annoncé avant d'avoir vu vos données et vos systèmes a peu de valeur ; le devis engage sur un périmètre décrit noir sur blanc. Les montants de cette page sont des repères d'échelle, le devis remis après cadrage fait foi.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Les ordres de grandeur détaillés, les modèles d'engagement et la façon de lire un devis sont expliqués sur notre page <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── DÉVELOPPEURS SUR SITE / RÉGIE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -526,7 +810,7 @@ export default function SolutionIAPage() {
               </Link>
             </div>
             <div>
-              {solution.faq.map((item, i) => (
+              {faqItems.map((item, i) => (
                 <FAQItem key={i} q={item.q} a={item.a} color={c} />
               ))}
             </div>

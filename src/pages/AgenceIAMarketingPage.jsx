@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, PenLine, Search, Megaphone, Share2,
   Mail, BarChart3, Cog, Workflow, Target,
-  MapPin, Layers, GraduationCap, Sparkles,
+  MapPin, Layers, GraduationCap, Sparkles, AlertTriangle,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import FounderNote from '../components/FounderNote'
@@ -144,6 +144,60 @@ const OUTILS = [
   { icon: Target, title: 'Pilotage par les résultats', desc: "Les angles, canaux et formats sont arbitrés en fonction des performances mesurées, pas d'intuitions. Le dispositif s'ajuste en continu." },
 ]
 
+/* ───────── Ce que l'agence construit (livrables concrets) ───────── */
+
+const CONSTRUIT = [
+  {
+    icon: Layers,
+    title: 'Le socle de contenu assisté',
+    desc: "Votre plateforme de marque (positionnement, ton, lexique, interdits) est encodée dans des instructions réutilisables, déclinée en gabarits par format et rassemblée dans une bibliothèque de prompts propre à votre équipe. Ce socle rend chaque production fidèle à votre voix, quel que soit le canal ou le rédacteur.",
+    link: { href: '/bibliotheque-de-prompts', label: 'Construire votre bibliothèque de prompts' },
+  },
+  {
+    icon: Search,
+    title: 'Le SEO et le GEO',
+    desc: "Des pages pensées pour les moteurs de recherche et citables par les moteurs de réponse (ChatGPT, Perplexity, Google AI) : réponse directe en tête de page, données structurées, maillage interne, entités nettes. Le GEO prolonge le travail SEO avec ses propres critères de citation.",
+    link: { href: '/agence-seo-ia', label: "Découvrir l'agence SEO IA" },
+  },
+  {
+    icon: Workflow,
+    title: "L'automatisation marketing raisonnable",
+    desc: "Veille sectorielle résumée à cadence fixe, déclinaisons multi-canaux préparées à partir d'un contenu maître, rapports pré-remplis depuis vos exports. Nous automatisons ce qui se répète, et chaque sortie passe une relecture humaine avant d'être utilisée ou publiée.",
+  },
+  {
+    icon: BarChart3,
+    title: 'La mesure',
+    desc: "Vos exports analytiques sont collectés, analysés et restitués en tableaux commentés : ce qui progresse, ce qui décroche, ce que nous recommandons d'ajuster au cycle suivant. L'IA prépare la matière, la lecture et les recommandations restent un travail de consultant.",
+  },
+  {
+    icon: GraduationCap,
+    title: "La formation de l'équipe",
+    desc: "Pour que le dispositif tienne sans nous : vos équipes apprennent à utiliser le socle, les gabarits et la bibliothèque de prompts, jusqu'à reprendre la production en interne. Cette montée en compétence est certifiée Qualiopi et finançable par votre OPCO.",
+    link: { href: '/formation-ia-marketing', label: 'Voir la formation IA marketing' },
+  },
+]
+
+/* ───────── Les erreurs des dispositifs marketing IA ───────── */
+
+const ERREURS = [
+  {
+    title: 'Produire plus sans plateforme de marque',
+    desc: "L'IA démultiplie le volume : si le positionnement, le ton et le lexique n'ont pas été encodés en amont, elle démultiplie du générique. Les contenus se ressemblent d'une marque à l'autre et n'installent rien. Le socle éditorial se construit avant d'accélérer la cadence.",
+  },
+  {
+    title: 'Publier sans relecture',
+    desc: "Un modèle génère avec aplomb des chiffres inexacts, des sources approximatives et un ton lissé qui n'appartient à personne. Publier en direct expose votre marque à ces erreurs. Dans notre dispositif, chaque livrable passe un contrôle humain avant de vous être soumis.",
+  },
+  {
+    title: 'Confier le SEO à la seule volumétrie',
+    desc: "Publier des dizaines de pages générées n'installe aucune visibilité durable : les moteurs évaluent l'utilité des contenus, la profondeur du site et sa cohérence. Mieux vaut un corpus resserré, pensé requête par requête, relié par le maillage et entretenu dans le temps.",
+  },
+  {
+    title: "Outiller sans former l'équipe",
+    desc: "Des licences déployées sans accompagnement produisent des usages dispersés : chacun invente ses prompts, la qualité varie, la marque se dilue. L'outillage s'installe avec les gabarits, les règles d'usage et la formation de celles et ceux qui produisent.",
+  },
+]
+
 /* ───────── FAQ ───────── */
 
 const FAQ = [
@@ -178,6 +232,18 @@ const FAQ = [
   {
     q: "Quels résultats attendre d'une agence marketing IA ?",
     a: "Le gain le plus immédiat est la capacité de production : davantage de contenus et de campagnes à qualité tenue, sans grossir l'équipe. Viennent ensuite la cohérence de marque sur l'ensemble des canaux et un pilotage fondé sur les données mesurées. Nous ne promettons pas de chiffre de performance à l'aveugle : les indicateurs de succès (trafic, visibilité, engagement, conversions selon vos objectifs) sont définis avec vous au cadrage, mesurés en continu et commentés dans un reporting régulier.",
+  },
+  {
+    q: "L'IA peut-elle produire tout notre contenu ?",
+    a: "Non. L'IA accélère la recherche, les premiers jets, les déclinaisons et les reformulations ; la stratégie éditoriale, les angles, les preuves, la voix de marque et la validation finale restent humaines. C'est le partage que nous appliquons dans chaque mission : votre plateforme de marque encode la voix, nos consultants relisent et arbitrent, vous validez ce qui sort sous votre nom. Un dispositif entièrement automatisé produit vite du volume que personne ne lit et que rien ne distingue.",
+  },
+  {
+    q: "Nos contenus assistés par IA seront-ils pénalisés par Google ?",
+    a: "Les consignes de Google jugent un contenu à sa qualité et à son utilité pour le lecteur, quel que soit son mode de production. Ce qui expose un site aux sanctions : la production en masse de pages sans valeur ajoutée, qu'elles soient générées ou rédigées à la main. Un contenu assisté par l'IA, documenté, relu et utile à son lecteur se positionne dans les mêmes conditions qu'un contenu entièrement manuel. Notre dispositif est construit autour de ces critères : socle de marque, relecture humaine, preuves et maillage interne.",
+  },
+  {
+    q: "Combien de temps avant de voir des résultats ?",
+    a: "La capacité de production accélère dès les premières semaines : une fois le socle en place, les contenus et les campagnes sortent à cadence régulière. La visibilité organique suit un autre rythme : le SEO et le GEO se mesurent en mois, le temps que les moteurs explorent, évaluent et positionnent les pages. Nous ne promettons aucune position ni aucun délai chiffré ; nous fixons au cadrage les indicateurs suivis (volume produit, trafic, citations dans les moteurs de réponse, conversions) et nous les commentons dans le reporting.",
   },
 ]
 
@@ -452,6 +518,46 @@ export default function AgenceIAMarketingPage() {
         </div>
       </section>
 
+      {/* ── CE QUE L'AGENCE CONSTRUIT (livrables concrets) ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Livrables</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 860 }}>
+            Ce que l'agence construit, concrètement
+          </h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Une mission laisse cinq choses en place : un socle de contenu assisté propre à votre marque, un dispositif SEO et GEO, des automatisations marketing raisonnables, une mesure commentée des résultats et, si vous le souhaitez, une équipe formée pour reprendre la main. Chaque brique est documentée et reste exploitable après la mission.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 860 }}>
+            Ces livrables se construisent dans l'ordre du besoin, le socle en premier : tout le reste s'appuie dessus.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginBottom: 32 }}>
+            {CONSTRUIT.map(item => (
+              <div key={item.title} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ marginBottom: 14 }}>
+                  <IconBox icon={item.icon} />
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.68, margin: '0 0 14px' }}>{item.desc}</p>
+                {item.link && (
+                  <Link to={item.link.href} style={{ ...aStyle, marginTop: 'auto', fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                    {item.link.label}
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
+            Avant d'engager le chantier de visibilité, un état des lieux évite de produire au hasard : notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> mesure votre position dans les moteurs de recherche, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link> établit ce que les moteurs de réponse retiennent déjà de votre marque. Les deux se mènent en début de mission et fixent le point de référence de la mesure.
+          </p>
+        </div>
+      </section>
+
       {/* ── OUTILS & APPROCHE (ancre sombre — pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
@@ -490,6 +596,36 @@ export default function AgenceIAMarketingPage() {
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
             Les workflows qui font circuler vos contenus relèvent de notre <Link to="/agence-automatisation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence d'automatisation IA</Link>. Quand le besoin va au-delà du flux et appelle un véritable logiciel, nous concevons des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link> adaptés à vos cas d'usage marketing. Le rédactionnel, la création visuelle et la déclinaison de campagnes reposent sur l'<Link to="/ia-generative-entreprise" style={{ color: '#60A5FA', fontWeight: 600 }}>IA générative en entreprise</Link>, dont nous maîtrisons les modèles et les garde-fous.
           </p>
+        </div>
+      </section>
+
+      {/* ── LES ERREURS DES DISPOSITIFS MARKETING IA ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Ce qui fait échouer</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 860 }}>
+            Les erreurs des dispositifs marketing IA
+          </h2>
+
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Quatre erreurs reviennent dans les dispositifs marketing IA qui déçoivent : produire plus sans plateforme de marque, publier sans relecture, confier le SEO à la seule volumétrie et outiller les équipes sans les former. Notre méthode traite chacune d'elles dès le cadrage.</strong>
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
+            Nous reprenons régulièrement des dispositifs montés dans l'urgence : les symptômes se ressemblent, les causes aussi.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+            {ERREURS.map(item => (
+              <div key={item.title} style={{ ...cardStyle, padding: 24 }}>
+                <div style={{ marginBottom: 14 }}>
+                  <IconBox icon={AlertTriangle} />
+                </div>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.68, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
