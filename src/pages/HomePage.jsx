@@ -244,7 +244,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
             {[
-              { Icon: GraduationCap, title: 'Former vos équipes', desc: "Montez vos collaborateurs en compétences sur ChatGPT, Claude, Copilot, Gemini et Mistral. 89 programmes par outil et par métier, certifiés Qualiopi et finançables OPCO.", cta: 'Voir les formations', to: '/formation-intelligence-artificielle' },
+              { Icon: GraduationCap, title: 'Former vos équipes', desc: "Montez vos collaborateurs en compétences sur ChatGPT, Claude, Copilot, Gemini et Mistral. Plus de 100 programmes par outil et par métier, certifiés Qualiopi et finançables OPCO.", cta: 'Voir les formations', to: '/formation-intelligence-artificielle' },
               { Icon: Rocket, title: 'Déléguer un projet IA', desc: "Conseil, automatisations et développement d'outils, d'agents et d'applications sur mesure. Du cadrage au déploiement, avec transfert aux équipes. Développeurs détachables sur site.", cta: 'Conseil & développement', to: '/agence-developpement-ia' },
             ].map((p, i) => (
               <Link key={i} to={p.to}
@@ -766,7 +766,7 @@ export default function HomePage() {
             fontSize: 16, color: '#6B7280', lineHeight: 1.6,
             textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
           }}>
-            89 programmes structurés par outil, par métier ou par ville. Tous certifiés Qualiopi et finançables par les OPCO.
+            Plus de 100 programmes structurés par outil, par métier ou par ville. Tous certifiés Qualiopi et finançables par les OPCO.
           </p>
 
           <div style={{

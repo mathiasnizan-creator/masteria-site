@@ -296,6 +296,19 @@ export default function MetiersHubPage() {
         </div>
       </section>
 
+      {/* ── Pont : former toute une entreprise (page dédiée) ── */}
+      <section style={{ background: '#0A0F1E', padding: '20px 24px' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
+          <p style={{ color: '#CBD5E1', fontSize: 14.5, lineHeight: 1.6, margin: 0, flex: '1 1 480px' }}>
+            <strong style={{ color: '#F8FAFC' }}>Vous cherchez à former toute une entreprise plutôt qu'à choisir un programme ?</strong> Cadrage, sessions par équipe, référents et charte : la démarche complète est décrite sur la page dédiée.
+          </p>
+          <Link to="/formation-ia-entreprise" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', borderRadius: 8, padding: '10px 18px', textDecoration: 'none', fontSize: 14, fontWeight: 700, whiteSpace: 'nowrap' }}>
+            Formation IA en entreprise →
+          </Link>
+        </div>
+      </section>
+
+
       {/* ═══════════════════════════════════════════════════════════
        * FILTRES DYNAMIQUES
        * ═══════════════════════════════════════════════════════════ */}

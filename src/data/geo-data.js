@@ -83,8 +83,8 @@ export const GEO_CITIES = [
     // répartissant les emplacements — « formation ia lyon » (260/mois) en tête de
     // title, « formation intelligence artificielle lyon » (90/mois) contiguë dans le H1.
     metaTitleOverride: 'Formation intelligence artificielle Lyon · Qualiopi | Masteria',
-    h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et 89 programmes par métier',
-    metaDescOverride: "Formation intelligence artificielle à Lyon : ChatGPT, Claude, 89 programmes métier dans vos locaux. Organisme lyonnais certifié Qualiopi, finançable OPCO.",
+    h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et plus de 100 programmes par métier',
+    metaDescOverride: "Formation intelligence artificielle à Lyon : ChatGPT, Claude, des programmes par métier dans vos locaux. Organisme lyonnais certifié Qualiopi, finançable OPCO.",
     // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
     // l'adresse du ProfessionalService + la ligne « Organisme » de l'encart En bref.
     office: {

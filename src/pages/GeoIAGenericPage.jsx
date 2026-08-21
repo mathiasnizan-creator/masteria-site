@@ -56,14 +56,14 @@ export default function GeoIAGenericPage() {
   const isFrance = city.countryCode === 'FR'
   // Surcharges par ville (geo-data.js) : permet de viser la requête longue
   // « formation intelligence artificielle {ville} » sur les villes stratégiques.
-  const h1 = city.h1Override || `Formation IA ${city.nameLoc} — ChatGPT, Claude et 89 programmes par métier`
+  const h1 = city.h1Override || `Formation IA ${city.nameLoc} — ChatGPT, Claude et plus de 100 programmes par métier`
   const metaTitle = city.metaTitleOverride || `Formation IA ${city.name} | ChatGPT, Claude, 24 métiers | Masteria`
   // Meta description ≤ ~155 car. (l'argument financement n'est plus tronqué par Google).
   // Le volet financement est conditionnel : pas d'OPCO hors France (cf. CH / BE).
   const financePhrase = isFrance
     ? "Certifié Qualiopi, finançable OPCO jusqu'à 100 %."
     : 'Certifié Qualiopi, formation finançable.'
-  const metaDesc = city.metaDescOverride || `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et 89 programmes par métier. ${financePhrase} Devis sous 24 h.`
+  const metaDesc = city.metaDescOverride || `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et plus de 100 programmes par métier. ${financePhrase} Devis sous 24 h.`
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -354,7 +354,7 @@ export default function GeoIAGenericPage() {
                 { label: 'Tarif', value: '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
                 { label: 'Financement', value: isFrance ? `Certifié Qualiopi, finançable OPCO jusqu'à 100 % (${city.region})` : 'Certifié Qualiopi · dispositifs de financement selon votre pays, orientation lors du cadrage' },
                 { label: 'Outils', value: 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI' },
-                { label: 'Métiers', value: '13 fonctions couvertes, 89 programmes au catalogue' },
+                { label: 'Métiers', value: '24 métiers couverts, plus de 100 programmes au catalogue' },
                 { label: 'Zone', value: city.zones },
                 city.office?.note ? { label: 'Organisme', value: city.office.note } : null,
               ].filter(Boolean).map((row, i) => (

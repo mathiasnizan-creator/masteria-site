@@ -345,7 +345,7 @@ export default function QuelOpcoPage() {
             ))}
           </div>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 740 }}>
-            Nos formations IA (ChatGPT, Claude, Copilot, Gemini, Mistral, 89 programmes par métier) sont conçues pour passer le financement OPCO sans friction : programme détaillé, convention, émargements et attestations au format attendu. Vous choisissez la formation, nous portons le dossier.
+            Nos formations IA (ChatGPT, Claude, Copilot, Gemini, Mistral, plus de 100 programmes par métier) sont conçues pour passer le financement OPCO sans friction : programme détaillé, convention, émargements et attestations au format attendu. Vous choisissez la formation, nous portons le dossier.
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '13px 26px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
