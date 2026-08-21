@@ -1140,7 +1140,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources extra={enrichi?.citations} />
     </>
   )
 }

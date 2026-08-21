@@ -343,6 +343,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "ANSSI, Agence nationale de la sécurité des systèmes d'information — cyber.gouv.fr",
+   "url": "https://cyber.gouv.fr/"
   }
  ],
  "maillage": [

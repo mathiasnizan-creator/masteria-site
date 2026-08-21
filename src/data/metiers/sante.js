@@ -299,6 +299,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "L'hébergement des données de santé (certification HDS) — esante.gouv.fr",
+   "url": "https://esante.gouv.fr/produits-services/hds"
   }
  ],
  "maillage": [

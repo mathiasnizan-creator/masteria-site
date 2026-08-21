@@ -339,6 +339,14 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "Prévention des risques dans le BTP — INRS",
+   "url": "https://www.inrs.fr/metiers/btp.html"
+  },
+  {
+   "name": "Les seuils de publicité des marchés publics — Service Public Entreprendre",
+   "url": "https://entreprendre.service-public.fr/vosdroits/F23371"
   }
  ],
  "maillage": [

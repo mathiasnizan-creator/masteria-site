@@ -339,6 +339,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "Obtenir des avis clients et y répondre : le guide France Num (ministère de l'Économie)",
+   "url": "https://www.francenum.gouv.fr/guides-et-conseils/developpement-commercial/gestion-de-la-relation-client/comment-obtenir-des-avis"
   }
  ],
  "maillage": [

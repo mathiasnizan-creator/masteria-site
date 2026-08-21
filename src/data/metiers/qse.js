@@ -299,6 +299,14 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "L'évaluation des risques professionnels : ce qu'il faut retenir — INRS",
+   "url": "https://www.inrs.fr/demarche/evaluation-risques-professionnels/ce-qu-il-faut-retenir.html"
+  },
+  {
+   "name": "Le document unique d'évaluation des risques professionnels (DUERP) — Service Public Entreprendre",
+   "url": "https://entreprendre.service-public.fr/vosdroits/F35360"
   }
  ],
  "maillage": [

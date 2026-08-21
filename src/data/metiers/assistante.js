@@ -339,6 +339,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "Intelligence artificielle : le cadre posé par la CNIL (confidentialité et données personnelles)",
+   "url": "https://www.cnil.fr/fr/intelligence-artificielle"
   }
  ],
  "maillage": [

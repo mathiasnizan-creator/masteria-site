@@ -343,6 +343,10 @@ export default {
   {
    "name": "Directive (UE) 2016/97 sur la distribution d'assurances (devoir de conseil, DIPA) — EUR-Lex",
    "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016L0097"
+  },
+  {
+   "name": "ACPR, Autorité de contrôle prudentiel et de résolution (supervision banque et assurance)",
+   "url": "https://acpr.banque-france.fr/"
   }
  ],
  "maillage": [

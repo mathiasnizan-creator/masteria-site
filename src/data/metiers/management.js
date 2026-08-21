@@ -339,6 +339,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "L'entretien professionnel : obligations de l'employeur — ministère du Travail et de l'Emploi",
+   "url": "https://travail-emploi.gouv.fr/lentretien-professionnel"
   }
  ],
  "maillage": [

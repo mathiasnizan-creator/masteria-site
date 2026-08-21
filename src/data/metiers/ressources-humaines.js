@@ -339,6 +339,14 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "Règlement (UE) 2024/1689 sur l'intelligence artificielle (article 4, littératie IA) — EUR-Lex",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  },
+  {
+   "name": "Intelligence artificielle : le cadre posé par la CNIL (recrutement et données des personnes)",
+   "url": "https://www.cnil.fr/fr/intelligence-artificielle"
   }
  ],
  "maillage": [

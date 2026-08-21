@@ -339,6 +339,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "Propriété littéraire et artistique (droit d'auteur) — ministère de la Culture",
+   "url": "https://www.culture.gouv.fr/Thematiques/Propriete-litteraire-et-artistique"
   }
  ],
  "maillage": [

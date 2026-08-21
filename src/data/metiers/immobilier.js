@@ -339,6 +339,10 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "Le diagnostic de performance énergétique (DPE) — Service Public",
+   "url": "https://www.service-public.fr/particuliers/vosdroits/F16096"
   }
  ],
  "maillage": [

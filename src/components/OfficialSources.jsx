@@ -27,8 +27,18 @@ function vendorFor(tool) {
 const linkStyle = { color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }
 const noteStyle = { color: '#6B7280' }
 
-export default function OfficialSources({ tool }) {
+/* `extra` : sources sectorielles propres à la page ([{ name, url }], déjà émises
+   en WebPage.citation par SEOHead) — rendues ici en liens visibles, à côté des
+   liens institutionnels, pour que la citation soit vérifiable par le lecteur
+   comme par les moteurs. Les doublons des liens fixes sont filtrés. */
+const FIXED_URLS = [
+  'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation',
+  'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco',
+]
+
+export default function OfficialSources({ tool, extra }) {
   const vendor = vendorFor(tool)
+  const extras = (extra || []).filter(x => x && x.url && !FIXED_URLS.includes(x.url))
   return (
     <section aria-labelledby="sources-officielles" style={{ padding: '56px 40px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
       <div style={{ maxWidth: 880, margin: '0 auto' }}>
@@ -53,6 +63,11 @@ export default function OfficialSources({ tool }) {
               <span style={noteStyle}> : la documentation de l'éditeur sur l'outil que nous formons.</span>
             </li>
           )}
+          {extras.map(x => (
+            <li key={x.url}>
+              <a href={x.url} target="_blank" rel="noopener noreferrer" style={linkStyle}>{x.name}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

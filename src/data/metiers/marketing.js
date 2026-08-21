@@ -339,6 +339,14 @@ export default {
   {
    "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+  },
+  {
+   "name": "La prospection commerciale par courrier électronique : les règles — CNIL",
+   "url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique"
+  },
+  {
+   "name": "ARPP, Autorité de régulation professionnelle de la publicité (déontologie des contenus publicitaires)",
+   "url": "https://www.arpp.org/"
   }
  ],
  "maillage": [
