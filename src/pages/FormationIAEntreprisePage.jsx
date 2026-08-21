@@ -437,6 +437,13 @@ function FAQItem({ q, a, color }) {
   )
 }
 
+/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
+   affichées dans le bloc « Sources et références officielles ». */
+const PAGE_CITATIONS = [
+          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+          { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+        ]
+
 export default function FormationIAEntreprisePage() {
   const isDesktop = useIsDesktop()
   const editorialGrid = isDesktop
@@ -464,10 +471,7 @@ export default function FormationIAEntreprisePage() {
         datePublished="2026-08-21"
         dateModified="2026-08-21"
         speakable={['#geo-summary', '#en-bref']}
-        citations={[
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-          { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
-        ]}
+        citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd, termsJsonLd, metiersJsonLd]}
       />
 
@@ -997,7 +1001,7 @@ export default function FormationIAEntreprisePage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources extra={PAGE_CITATIONS} />
     </>
   )
 }

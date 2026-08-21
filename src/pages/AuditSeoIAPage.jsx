@@ -339,6 +339,13 @@ function FAQItem({ q, a, color }) {
   )
 }
 
+/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
+   affichées dans le bloc « Sources et références officielles ». */
+const PAGE_CITATIONS = [
+          { name: 'Google Search Central — AI features and your website', url: 'https://developers.google.com/search/docs/appearance/ai-features' },
+          { name: 'Google Search Central — SEO Starter Guide', url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+        ]
+
 export default function AuditSeoIAPage() {
   const isDesktop = useIsDesktop()
   // Patron éditorial asymétrique réutilisable
@@ -367,10 +374,7 @@ export default function AuditSeoIAPage() {
         datePublished="2026-08-10"
         dateModified="2026-08-10"
         speakable={['#geo-summary', '#en-bref']}
-        citations={[
-          { name: 'Google Search Central — AI features and your website', url: 'https://developers.google.com/search/docs/appearance/ai-features' },
-          { name: 'Google Search Central — SEO Starter Guide', url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
-        ]}
+        citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd]}
       />
 
@@ -733,6 +737,36 @@ export default function AuditSeoIAPage() {
       </section>
 
       {/* ── LE FONDATEUR (E-E-A-T) ── */}
+      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+        <div style={wrap}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ flex: '1 1 380px', minWidth: 300 }}>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui intervient</div>
+              <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
+                Un cabinet spécialisé IA, indépendant des éditeurs
+              </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
+                Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les audits sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
+              {[
+                ['Depuis 2022', 'spécialisé uniquement IA'],
+                ['+1 500', 'professionnels formés'],
+                ['Indépendant', 'des éditeurs de solutions'],
+                ['FR · CH · BE', 'sur site ou à distance'],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
+                  <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FounderNote />
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
@@ -760,7 +794,7 @@ export default function AuditSeoIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources extra={PAGE_CITATIONS} />
     </>
   )
 }

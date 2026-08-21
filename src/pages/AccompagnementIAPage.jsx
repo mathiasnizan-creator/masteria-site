@@ -414,6 +414,12 @@ function FAQItem({ q, a, color }) {
   )
 }
 
+/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
+   affichées dans le bloc « Sources et références officielles ». */
+const PAGE_CITATIONS = [
+          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+        ]
+
 export default function AccompagnementIAPage() {
   const isDesktop = useIsDesktop()
   const editorialGrid = isDesktop
@@ -441,9 +447,7 @@ export default function AccompagnementIAPage() {
         datePublished="2026-08-10"
         dateModified="2026-08-10"
         speakable={['#geo-summary', '#en-bref']}
-        citations={[
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-        ]}
+        citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
       />
 
@@ -837,7 +841,7 @@ export default function AccompagnementIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources extra={PAGE_CITATIONS} />
     </>
   )
 }

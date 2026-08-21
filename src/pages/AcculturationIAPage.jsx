@@ -373,6 +373,13 @@ function FAQItem({ q, a, color }) {
   )
 }
 
+/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
+   affichées dans le bloc « Sources et références officielles ». */
+const PAGE_CITATIONS = [
+          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+          { name: "Acculturer à l'IA : partir du réel, expérimenter, partager — Mission innovation, economie.gouv.fr", url: 'https://www.economie.gouv.fr/mission-innovation/acculturer-lia-partir-du-reel-experimenter-partager' },
+        ]
+
 export default function AcculturationIAPage() {
   const isDesktop = useIsDesktop()
   const editorialGrid = isDesktop
@@ -400,10 +407,7 @@ export default function AcculturationIAPage() {
         datePublished="2026-08-10"
         dateModified="2026-08-10"
         speakable={['#geo-summary', '#en-bref']}
-        citations={[
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-          { name: "Acculturer à l'IA : partir du réel, expérimenter, partager — Mission innovation, economie.gouv.fr", url: 'https://www.economie.gouv.fr/mission-innovation/acculturer-lia-partir-du-reel-experimenter-partager' },
-        ]}
+        citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
       />
 
@@ -796,7 +800,7 @@ export default function AcculturationIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources extra={PAGE_CITATIONS} />
     </>
   )
 }

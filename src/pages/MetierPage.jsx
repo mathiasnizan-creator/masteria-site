@@ -567,7 +567,24 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
 
   /* Blocs JSON-LD enrichis (GEO) : programme en ItemList, Article auteur/dates/entités. */
   const progText = items => items.map(it => (it && typeof it === 'object') ? `${it.t} : ${it.d || ''}`.trim() : it).join(' ; ')
+  /* Lexique GEO commun aux pages métier : mêmes notions sur chaque pilier. */
+  const termsJsonLd = enrichi ? {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    '@id': `${url}#lexique`,
+    name: `Lexique de la formation IA ${(METIERS.find(x => x.slug === metier) || {}).label || 'par métier'}`,
+    hasDefinedTerm: [
+      { '@type': 'DefinedTerm', name: 'Formation intra-entreprise', description: "Session organisée pour les salariés d'une seule entreprise, dans ses locaux ou à distance, sur ses cas réels ; par opposition à l'inter-entreprises, qui réunit des participants de plusieurs organisations." },
+      { '@type': 'DefinedTerm', name: 'Littératie IA', description: "Niveau de compréhension et de maîtrise de l'IA que l'article 4 du règlement européen sur l'IA demande aux entreprises d'assurer, à la mesure du contexte, pour toute personne qui utilise un système d'IA dans un cadre professionnel." },
+      { '@type': 'DefinedTerm', name: 'Compétence (Skill)', description: "Procédure d'un métier transformée en instruction réutilisable par l'IA : elle se déclenche d'elle-même quand la demande correspond, et se partage à l'équipe une fois validée." },
+      { '@type': 'DefinedTerm', name: 'Référent IA', description: "Collaborateur formé pour prolonger la dynamique après les sessions : il anime la bibliothèque de prompts, répond aux questions du quotidien et fait remonter les nouveaux cas d'usage." },
+      { '@type': 'DefinedTerm', name: "Charte IA d'entreprise", description: "Document qui fixe les règles d'usage de l'IA dans l'entreprise : données autorisées par outil, relecture de ce qui engage, propriété des assistants et des compétences créés." },
+      { '@type': 'DefinedTerm', name: 'OPCO', description: "Opérateur de compétences : l'organisme qui finance la formation des salariés au titre du plan de développement des compétences ; il varie selon la convention collective de l'entreprise." },
+    ],
+  } : null
+
   const extraJsonLd = []
+  if (termsJsonLd) extraJsonLd.push(termsJsonLd)
   const syllabusSections = enrichi?.programme?.length
     ? enrichi.programme.flatMap(j => [
         { '@type': 'Syllabus', name: `${j.jour} · Matin — ${j.titre}`, description: progText(j.matin) },
@@ -1047,6 +1064,38 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           ))}
         </div>
       </section>
+
+      {/* ── E-E-A-T : qui vous forme (cabinet + réseau, preuves) ── */}
+      {enrichi && (
+        <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+          <div style={wrap}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div style={{ flex: '1 1 380px', minWidth: 300 }}>
+                <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
+                <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
+                  Un cabinet spécialisé IA, et des formateurs qui connaissent votre métier
+                </h2>
+                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
+                  Masteria est un cabinet indépendant des éditeurs, spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues, choisis pour leur connaissance du métier formé. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                </p>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
+                {[
+                  ['Depuis 2022', 'spécialisé uniquement IA'],
+                  ['+1 500', 'professionnels formés'],
+                  ['Qualiopi', 'actions de formation certifiées'],
+                  ['FR · CH · BE', 'intra sur site ou à distance'],
+                ].map(([k, v]) => (
+                  <div key={k}>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
+                    <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── FAQ ── */}
       {faqItems.length > 0 && (
