@@ -163,6 +163,52 @@ const DEROULE = [
   },
 ]
 
+/* ───────── Parcours types (sémantique : à quoi ressemble un coaching IA) ───────── */
+
+const PARCOURS = [
+  {
+    profil: 'Dirigeant',
+    seances: '4 à 5 séances de 1 h 30',
+    contenu: "Lecture stratégique (ce que l'IA change dans votre secteur), prise en main personnelle sur vos dossiers (notes, synthèses, préparation de comités), cadrage de la démarche d'entreprise : par quoi faire commencer les équipes, quelles règles poser, comment arbitrer les demandes d'outils. Dernière séance sur votre feuille de route.",
+  },
+  {
+    profil: 'Manager',
+    seances: '4 séances de 1 h 30 à 2 h',
+    contenu: "Vos situations réelles de management : préparation d'entretiens et de feedbacks, comptes rendus et reporting, communication d'équipe, arbitrage des usages IA de l'équipe. Entre les séances, vous appliquez sur votre quotidien ; chaque séance repart de ce qui a marché et de ce qui a résisté.",
+  },
+  {
+    profil: 'Expert métier',
+    seances: '5 à 6 séances de 2 h',
+    contenu: "Le fond du métier : vos documents, vos processus, vos outils (ChatGPT, Copilot, Claude, Gemini ou Mistral selon votre environnement), jusqu'aux fonctionnalités avancées (projets, compétences, analyse de données, recherche approfondie). Objectif : des usages installés et une bibliothèque personnelle réutilisable.",
+  },
+  {
+    profil: 'Transition professionnelle',
+    seances: '5 à 6 séances réparties sur le dispositif',
+    contenu: "Un socle multi-outils, puis l'application au projet : cible métier, candidatures et entretiens outillés, ou préparation d'une activité indépendante. Le rythme suit votre dispositif d'accompagnement ; le programme se cale sur le projet professionnel, pas l'inverse.",
+  },
+]
+
+/* ───────── Les erreurs qui font perdre le bénéfice d'un coaching IA ───────── */
+
+const ERREURS_COACHING = [
+  {
+    title: 'Venir sans cas réels',
+    desc: "Un coaching sur des exemples génériques produit une culture générale, pas des réflexes. Chaque séance part de vos documents et de vos situations de la semaine : c'est la condition pour que les usages tiennent après la dernière séance.",
+  },
+  {
+    title: 'Tout concentrer sur une journée',
+    desc: "La progression vient de l'alternance : une séance, des applications réelles entre les séances, un retour sur ce qui a résisté. Des séances espacées d'une à deux semaines produisent plus qu'une journée dense, à volume d'heures égal.",
+  },
+  {
+    title: "Choisir l'outil avant le besoin",
+    desc: "Le bon outil dépend de votre environnement de travail et de vos cas d'usage, pas de l'actualité. Le cadrage part de votre poste ; l'outil se choisit ensuite, et le programme couvre ses fonctions réelles, limites comprises.",
+  },
+  {
+    title: 'Ignorer le cadre de confidentialité',
+    desc: "Un usage individuel mal cadré expose autant qu'un usage d'équipe : données clients dans un compte gratuit, document confidentiel dans le mauvais outil. Le cadre (offres à utiliser, données à ne jamais saisir, relecture) fait partie du programme dès la première séance.",
+  },
+]
+
 /* ───────── FAQ ───────── */
 
 const FAQ = [
@@ -534,6 +580,31 @@ export default function CoachingIAPage() {
         </div>
       </section>
 
+      {/* ── PARCOURS TYPES ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Parcours types</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>À quoi ressemble un coaching IA, selon votre profil ?</h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Un coaching IA se construit sur mesure au cadrage, mais quatre parcours reviennent souvent : le dirigeant qui veut une lecture stratégique et une pratique personnelle, le manager qui pilote une équipe augmentée, l'expert métier qui installe des usages avancés, et le professionnel en transition qui outille son projet. De 4 à 6 séances, en visioconférence ou en présentiel.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
+            {PARCOURS.map((item, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10, marginBottom: 10, flexWrap: 'wrap' }}>
+                  <h3 style={{ ...h3Style, fontSize: 16, margin: 0 }}>{item.profil}</h3>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', color: c }}>{item.seances}</span>
+                </div>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.68, margin: 0 }}>{item.contenu}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 820 }}>
+            Le nombre de séances s'ajuste au cadrage : il dépend du point de départ et des objectifs, pas d'un forfait imposé. Le tarif reste au temps passé, au même barème quel que soit le profil.
+          </p>
+        </div>
+      </section>
+
       {/* ── VILLES & DISTANCIEL + FINANCEMENT ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -565,6 +636,22 @@ export default function CoachingIAPage() {
                 Structuré en action de formation individuelle (programme, objectifs, évaluation), le coaching est certifié Qualiopi et finançable par votre OPCO ; nous préparons le dossier avec vous. Pas d'éligibilité CPF. Parcours de transition professionnelle : les dispositifs varient selon votre situation, on fait le point au cadrage. Identifiez votre opérateur avec notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link>.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LES ERREURS QUI FONT PERDRE LE BÉNÉFICE ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Ce qui fait la différence</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Les quatre erreurs qui font perdre le bénéfice d'un coaching IA</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 8 }}>
+            {ERREURS_COACHING.map((item, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

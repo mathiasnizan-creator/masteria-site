@@ -92,6 +92,12 @@ export const GEO_CITIES = [
     opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture). Masteria est référencé auprès des OPCO de la région depuis 2022. Délai de traitement moyen : 5 à 10 jours ouvrés.",
     zones: "Lyon (1er au 9e arrondissement), Villeurbanne, Caluire-et-Cuire, Saint-Priest, Bron, Vénissieux, Grenoble, Saint-Étienne, Clermont-Ferrand, Annecy, Chambéry, Valence",
     industriesDeep: [
+      {
+        sector: 'Commerce, e-commerce & grande consommation',
+        companies: 'Groupe SEB (Écully), LDLC (Limonest), Aoste, Panzani, GL Events',
+        focus: "Fiches produits et contenus multilingues, réponses aux avis clients, analyse d'exports de ventes, préparation des opérations commerciales et des salons : les équipes marketing, e-commerce et relation client de la région lyonnaise concentrent des usages IA à gain rapide.",
+      },
+
       { sector: 'Pharma & biotech', companies: 'Sanofi Pasteur, BioMérieux, Boiron, Mérieux NutriSciences, BD Medical, Aguettant', focus: 'Veille réglementaire (ANSM, EMA), rédaction de dossiers AMM, synthèse d\'essais cliniques, communication scientifique.' },
       { sector: 'Banque & assurance', companies: 'Crédit Agricole Centre-Est, La Banque Postale, BNP Paribas Lyon, AÉSIO Mutuelle, Apicil, April', focus: 'Analyse de risque, rédaction de contrats, gestion des sinistres, conformité LCB-FT, communication conseiller.' },
       { sector: 'Industrie & énergie', companies: 'Renault Trucks, Iveco Group, Volvo Group, EDF Hydroélectrique, Framatome, SEB Group', focus: 'Documentation technique, maintenance prédictive, rédaction de cahiers des charges, support qualité, formation interne.' },
@@ -103,6 +109,8 @@ export const GEO_CITIES = [
       { profile: 'Direction R&D — équipementier automobile ETI (Bron)', usage: 'Rédaction de cahiers des charges techniques, traduction multilingue (FR / EN / DE), synthèse de brevets concurrents.' },
     ],
     localFacts: [
+      "La Part-Dieu est le deuxième quartier d'affaires de France : la densité de sièges et de directions régionales fait de Lyon un terrain naturel pour les formations intra multi-équipes.",
+
       'Lyon abrite le pôle de compétitivité Lyonbiopôle, leader européen en santé et bio-industries.',
       'L\'écosystème IA lyonnais s\'appuie sur l\'ENS Lyon, Inria Grenoble Rhône-Alpes et le LabIA, hub de recherche IA appliquée.',
       'OPCO 2i (industrie) et ATLAS (services financiers) couvrent 80 % des financements formation IA Masteria à Lyon.',

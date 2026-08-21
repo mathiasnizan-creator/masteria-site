@@ -415,6 +415,10 @@ export const HUB_CONTENT = {
         body: "L'article 4 du règlement européen sur l'intelligence artificielle impose, depuis février 2025, que toute personne utilisant un système d'IA dans un cadre professionnel dispose d'un niveau de connaissances suffisant. Sprint IA Sensibilisation et Sprint IA AI Act, combinés, couvrent cette obligation à l'échelle d'une entreprise, avec une traçabilité Qualiopi et des feuilles d'émargement opposables.",
       },
       {
+        title: "Un atelier construit sur les cas réels des participants, pas sur la démonstration",
+        body: "La différence entre un atelier intelligence artificielle qui change les pratiques et une conférence qu'on oublie tient à une chose : qui a les mains sur le clavier. Dans un Sprint IA, chaque participant apporte un ou deux cas réels de son poste (un mail difficile, un tableau à analyser, un document à synthétiser) et repart avec le résultat produit pendant la session, la méthode pour le refaire, et une bibliothèque de prompts adaptée à son métier. Les apports théoriques ne dépassent jamais quinze minutes d'affilée : le reste du temps, on produit, le formateur passe, corrige, montre le geste. C'est ce qui rend le format efficace à 12 comme à 100 participants, en présentiel comme en visioconférence.",
+      },
+      {
         title: "Tester un format court avant d'engager un plan de formation à plus grande échelle",
         body: "Beaucoup de DRH et responsables formation hésitent à engager un budget IA conséquent sans avoir mesuré l'appétence réelle de leurs équipes. Un Sprint IA déployé sur un échantillon de 50 à 100 collaborateurs permet de mesurer le NPS, l'usage réel post-formation et la maturité des cas d'usage. C'est un investissement minimal (à partir de 1 980 € en intra) qui éclaire les décisions suivantes.",
       },
@@ -442,6 +446,17 @@ export const HUB_CONTENT = {
           "Sprint IA Managers : exemplarité, cartographie d'équipe, objectifs IA dans les EAD",
           "Sprint IA Veille : combo Feedly + ChatGPT + Perplexity, première synthèse hebdomadaire pendant le Sprint",
           "Sprint IA AI Act : article 4, classifications de risque, calendrier 2026 et 2027, plan de conformité",
+        ],
+      },
+      {
+        day: 1,
+        title: "Déployer une série d'ateliers dans l'entreprise",
+        items: [
+          "Préparation : un échange de cadrage par population (cas d'usage attendus, outils et licences en place, niveau réel), les participants apportent 1 à 2 cas concrets",
+          "Cascade : les sessions s'enchaînent par équipes ou par sites, en présentiel ou en visioconférence, jusqu'à couvrir la population visée sans bloquer l'activité",
+          "Packages dégressifs à partir de 5 sessions ; le contenu s'adapte à chaque population (métiers, managers, fonctions support) à partir du même socle",
+          "Après chaque session : kit pédagogique numérique, bibliothèque de prompts, plan d'action 30 jours ; sondage NPS et question ouverte sur l'usage réel à 30 jours",
+          "Suite naturelle : les équipes qui doivent aller plus loin enchaînent sur une formation métier de 1 ou 2 jours, les référents sur un parcours dédié",
         ],
       },
     ],
@@ -474,6 +489,18 @@ export const HUB_CONTENT = {
       {
         q: "Sprint IA AI Act, à qui s'adresse ce format ?",
         a: "Sprint IA AI Act cible les DSI, DPO, juristes, RH, managers et dirigeants qui doivent piloter la mise en conformité IA Act dans leur périmètre. Aucun prérequis juridique n'est nécessaire : la formation explique les notions clés à partir d'exemples concrets et livre un mini plan d'action 90 jours, 6 mois et 12 mois. Combinable avec Sprint IA Sensibilisation pour couvrir l'obligation de littératie IA (article 4) à l'échelle d'une entreprise.",
+      },
+      {
+        q: "Un atelier intelligence artificielle peut-il se tenir à distance ?",
+        a: "Oui, le format est conçu pour les deux. En présentiel, l'atelier se tient dans vos locaux, jusqu'à 12 à 15 participants pour garder la manipulation guidée. En visioconférence, il monte à 50 voire 100 participants avec démonstrations guidées et questions structurées ; les cas réels sont collectés en amont pour que la pratique reste concrète. Les entreprises multi-sites combinent souvent les deux : présentiel sur le site principal, visio pour les équipes distantes.",
+      },
+      {
+        q: "Que se passe-t-il après l'atelier ?",
+        a: "Chaque participant repart avec le kit pédagogique, la bibliothèque de prompts de sa population et un plan d'action de 30 jours. Un mini-sondage à 30 jours mesure l'usage réel et fait remonter les besoins d'approfondissement. Pour les équipes qui doivent aller plus loin, la suite logique est une formation métier de 1 ou 2 jours sur leurs processus, ou un parcours de référents pour ancrer la dynamique en interne.",
+      },
+      {
+        q: "L'atelier couvre-t-il l'obligation de littératie IA de l'article 4 ?",
+        a: "Il y contribue directement : l'article 4 du règlement européen demande un niveau de maîtrise adapté au contexte pour toute personne qui utilise un système d'IA dans un cadre professionnel. Un Sprint IA Sensibilisation ou AI Act documente cette action (émargement Qualiopi, attestation, contenu daté), ce qui alimente le dossier de conformité. Pour les populations qui utilisent l'IA intensivement, une formation plus complète reste le bon niveau de réponse.",
       },
     ],
   },
