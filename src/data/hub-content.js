@@ -23,6 +23,10 @@ export const HUB_CONTENT = {
         title: 'Construire un avantage concurrentiel durable fondé sur les compétences IA',
         body: "Les entreprises dont les équipes maîtrisent les outils IA prennent des décisions plus vite, livrent plus de valeur à leurs clients et libèrent du temps pour des tâches stratégiques. Former vos collaborateurs à ChatGPT, c'est investir dans un actif de compétence qui reste dans l'organisation, pas dans un abonnement logiciel que vous pouvez perdre.",
       },
+      {
+        "title": "Former à ChatGPT en 2026, c'est former aux fonctionnalités d'entreprise",
+        "body": "Savoir formuler une demande efficace reste le socle. Le gain d'équipe se joue ensuite dans les fonctions d'entreprise de ChatGPT Business, le nouveau nom de ChatGPT Team. Les Projets partagés regroupent instructions communes, fichiers de référence et mémoire propre au dossier. Les compétences (Skills) se créent en langage naturel dans la conversation et se déclenchent quand la demande correspond. Les agents d'espace de travail se construisent sans code, avec un rôle, un déclencheur et des étapes, puis se testent avant publication ; leurs exécutions sont décomptées en crédits, un budget à suivre. S'ajoutent les tâches planifiées, Deep Research, Canvas et l'analyse de données. La formation travaille sur l'outil que vos équipes utilisent vraiment, avec ses droits et son administration réelle."
+      },
     ],
 
     programme: [
@@ -53,6 +57,17 @@ export const HUB_CONTENT = {
           'Plan d\'action 30 jours : industrialiser ChatGPT dans les rituels de votre équipe avec gouvernance et sécurité',
         ],
       },
+      {
+        "day": 1,
+        "title": "Fonctionnalités avancées de ChatGPT Business",
+        "items": [
+          "Projets partagés appliqués à un dossier d'équipe : instructions communes, fichiers de référence, mémoire propre au projet et droits de lecture ou d'écriture posés dès la création",
+          "Reprendre vos GPTs existants, puis construire un agent d'espace de travail en langage naturel : rôle, déclencheur, étapes, règles, test avant publication et partage à l'équipe",
+          "Créer une compétence (Skill) en langage naturel dans la conversation, à partir d'une procédure réelle de votre équipe, et vérifier qu'elle se déclenche quand la demande correspond",
+          "Mettre en place une tâche planifiée de veille créée en une phrase, en tenant compte des limites : au plus une exécution par heure, nombre de tâches actives plafonné",
+          "Lancer un Deep Research et une analyse de données sur un vrai dossier apporté par les participants, puis relire les chiffres produits avant toute diffusion"
+        ]
+      },
     ],
 
     faq: [
@@ -80,6 +95,18 @@ export const HUB_CONTENT = {
         q: 'La formation ChatGPT est-elle disponible en intra-entreprise ?',
         a: "Oui. La formation intra-entreprise se déroule dans vos locaux ou en visioconférence, pour un groupe de 4 à 12 participants. Elle est personnalisée en amont : le formateur travaille avec vous sur vos cas d'usage réels, vos documents types et vos processus métier avant la session. Le tarif est de 1 980 euros par jour pour l'ensemble du groupe, soit 3 960 euros pour les 2 jours, ce qui revient à 330 euros par personne pour 12 participants. L'accompagnement individuel sur mesure est facturé 1 980 € par jour.",
       },
+      {
+        "q": "ChatGPT utilise-t-il nos données pour s'entraîner ?",
+        "a": "Tout dépend de l'offre. Sur ChatGPT Business et Enterprise, les données saisies ne servent pas à entraîner les modèles d'OpenAI : c'est le fonctionnement par défaut de l'offre entreprise. Sur les versions gratuite et Plus, elles peuvent servir à l'entraînement, sauf si l'utilisateur désactive le réglage dans ses paramètres. Cette différence fonde la règle que la formation installe : aucune donnée d'entreprise sur un compte personnel, les documents internes et les informations clients passent uniquement par l'offre entreprise. La formation consacre un temps dédié à ce cadre : où vont les données selon le compte utilisé, quels réglages vérifier, comment formuler la consigne auprès des équipes."
+      },
+      {
+        "q": "ChatGPT Team ou ChatGPT Business, quelle différence ?",
+        "a": "Aucune sur le fond : ChatGPT Business est le nouveau nom de ChatGPT Team depuis août 2025, pour le même produit. L'offre regroupe l'espace de travail partagé, l'administration des membres et l'exclusion des données de l'entraînement des modèles. Si votre entreprise a souscrit ChatGPT Team, elle utilise aujourd'hui ChatGPT Business. La confusion vient des contenus publiés avant ce renommage, qui continuent de citer Team. La formation Masteria est à jour de cette dénomination et travaille sur les fonctions actuelles de l'offre : Projets partagés, compétences (Skills), agents d'espace de travail, tâches planifiées et réglages d'administration."
+      },
+      {
+        "q": "Faut-il encore construire des GPTs personnalisés en 2026 ?",
+        "a": "Les GPTs personnalisés fonctionnent toujours et restent utiles : un GPT bien construit continue de rendre service et mérite d'être maintenu tant qu'il couvre le besoin. Pour les nouveaux projets, OpenAI fait converger l'offre vers les agents d'espace de travail, créés en langage naturel, testés avant publication et administrés au niveau de l'espace. La formation applique cette lecture : inventaire de vos GPTs existants, maintien de ceux qui tournent, et construction du neuf sous la forme adaptée, projet partagé pour un dossier d'équipe, compétence (Skill) pour une procédure, agent pour un enchaînement d'étapes. Vous évitez d'investir du temps dans une brique que l'éditeur ne met plus en avant."
+      },
     ],
   },
 
@@ -101,6 +128,10 @@ export const HUB_CONTENT = {
       {
         title: 'Uniformiser les pratiques et garantir la sécurité des données d\'entreprise',
         body: "Contrairement aux outils IA grand public, Microsoft 365 Copilot s'exécute dans le tenant sécurisé de votre organisation : vos données ne quittent jamais votre environnement Microsoft et ne sont pas utilisées pour entraîner les modèles. Former vos équipes à Copilot, c'est aussi leur enseigner les bonnes pratiques d'utilisation qui protègent la confidentialité des données clients et des informations stratégiques.",
+      },
+      {
+        "title": "Copilot est déjà dans vos licences, encore faut-il qu'il produise",
+        "body": "Beaucoup d'organisations ont déployé Microsoft 365 Copilot dans Word, Excel, PowerPoint, Outlook et Teams, puis constatent que l'usage reste en surface. Copilot Chat lit OneDrive et SharePoint avec les droits existants de chaque utilisateur, jamais les lecteurs réseau partagés : la qualité des réponses dépend directement de la préparation des données, et le sur-partage SharePoint devient un sujet à traiter dès le déploiement. Les fonctions qui portent la valeur au quotidien restent souvent inexplorées : Copilot Pages pour co-éditer un livrable avec l'assistant et ses collègues, les Notebooks pour raisonner sur un dossier de sources choisies plutôt que sur tout le tenant. La formation transforme une licence déployée en usages installés, ancrés dans les documents et les rituels de votre équipe."
       },
     ],
 
@@ -132,6 +163,17 @@ export const HUB_CONTENT = {
           'Plan d\'action 30 jours : politique d\'usage Copilot, gouvernance des données, audit de permissions SharePoint, plan de déploiement à l\'échelle',
         ],
       },
+      {
+        "day": 1,
+        "title": "Fonctionnalités avancées de Microsoft 365 Copilot",
+        "items": [
+          "Python dans Excel sur un export réel de votre activité : nettoyage, croisements et graphiques demandés en langage naturel, avec relecture des chiffres avant toute diffusion",
+          "Agents Researcher et Analyst appliqués à un dossier de votre choix : l'un prépare une synthèse sourcée croisant mails, fichiers et réunions, l'autre analyse les données chiffrées associées",
+          "Copilot Pages en co-édition d'équipe : transformer une réponse de Copilot Chat en page de travail partagée, l'enrichir à plusieurs et la relier aux documents du projet",
+          "Agent Builder, l'assistant sans code construit sur vos documents SharePoint (l'interface française dit « assistant »), et la frontière avec Copilot Studio, qui relève d'un projet d'intégration à chiffrer",
+          "Récapitulatifs de réunion Teams et rédaction assistée dans Outlook sur vos vrais fils : points d'action, réponses contextualisées, relance, puis relecture systématique avant envoi"
+        ]
+      },
     ],
 
     faq: [
@@ -159,6 +201,18 @@ export const HUB_CONTENT = {
         q: 'La formation Microsoft Copilot est-elle finançable par l\'OPCO ?',
         a: "Oui. Masteria est certifié Qualiopi, ce qui permet la prise en charge de la formation Microsoft Copilot par votre OPCO via le Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours). L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est disponible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu'en distanciel. Nous vous accompagnons dans la demande de financement OPCO.",
       },
+      {
+        "q": "Copilot lit-il tous nos fichiers ?",
+        "a": "Non. Copilot Chat travaille sur OneDrive et SharePoint, avec les droits d'accès existants de chaque utilisateur, et il ignore les lecteurs réseau partagés. Il ne crée aucun droit nouveau : un collaborateur ne voit dans ses réponses que ce qu'il pouvait déjà ouvrir. En revanche, il révèle le sur-partage existant : un dossier SharePoint ouvert trop largement remonte soudain dans les réponses de tous ceux qui y ont accès. C'est un point de cadrage à traiter avec la DSI avant un déploiement large : revue des partages et des droits en amont. La formation intègre cette dimension et apprend aux participants à vérifier d'où viennent les réponses, source par source."
+      },
+      {
+        "q": "Peut-on utiliser Claude dans Copilot ?",
+        "a": "Oui. Depuis fin 2025, les modèles Claude d'Anthropic sont disponibles dans Microsoft 365 Copilot, à condition que l'administrateur du tenant ait activé l'option. Une fois l'activation faite, le modèle se sélectionne directement dans Copilot Chat, et chacun choisit le modèle adapté à sa tâche. Cela permet de comparer les sorties sur un même brief : rédaction longue, analyse d'un document, préparation d'une synthèse. La méthode enseignée en formation reste identique d'un modèle à l'autre : contexte fourni, format attendu, relecture avant diffusion. Le statut de l'option sur votre tenant est vérifié au cadrage, avec votre administrateur, pour que les participants travaillent le jour J sur la configuration réelle de l'entreprise."
+      },
+      {
+        "q": "Agent Builder ou Copilot Studio ?",
+        "a": "La distinction tient à ce que l'agent doit faire. Un assistant qui répond à partir de vos documents SharePoint, avec des instructions et un périmètre définis, se construit dans Agent Builder, sans code, pendant la formation ; l'interface française le nomme « assistant ». Dès que l'agent doit écrire dans un logiciel métier, créer un ticket ou dialoguer avec un client, on passe sur Copilot Studio : connexions au système d'information, droits à gouverner, tests à mener. Ce chantier relève d'un projet d'intégration chiffré à part, hors du temps de formation. La formation vous donne la grille de lecture pour situer chaque besoin du bon côté de la frontière, et éviter d'engager un projet là où un assistant suffit."
+      },
     ],
   },
 
@@ -180,6 +234,10 @@ export const HUB_CONTENT = {
       {
         title: 'Bénéficier d\'une IA multimodale capable de traiter texte, images et données en un seul flux',
         body: "Gemini est conçu dès l'origine pour traiter plusieurs types de contenus simultanément : textes, tableaux, images, vidéos et données structurées. En entreprise, cela ouvre des cas d'usage concrets comme l'analyse de visuels de campagnes marketing, l'extraction de données depuis des captures d'écran ou la génération automatique de graphiques depuis des données textuelles. Ces capacités multimodales dépassent ce que proposent la plupart des autres assistants IA intégrés.",
+      },
+      {
+        "title": "Gemini est inclus dans Workspace, la formation le rend utile",
+        "body": "Un forfait Google Workspace payant embarque déjà l'essentiel : Gemini dans Gmail, Docs, Sheets, Slides et Meet, l'app Gemini pour les conversations libres, les Gems pour configurer des assistants avec instructions et fichiers, NotebookLM pour raisonner sur un corpus sourcé (50 sources en version gratuite, 100 sur le palier Plus inclus dans Business Standard), Deep Research pour les états des lieux documentés, Workspace Studio pour automatiser sans code à travers Gmail, Docs, Sheets et Drive. Aucune licence supplémentaire à acheter pour commencer. Ce qui manque le plus souvent, ce sont des usages installés : des Gems partagés par l'équipe, des corpus entretenus, des automatisations qui tournent. La formation part de vos documents et de vos processus pour les mettre en place."
       },
     ],
 
@@ -211,6 +269,17 @@ export const HUB_CONTENT = {
           'Plan d\'action 30 jours : intégrer Gemini dans les rituels d\'équipe avec gouvernance, audit Workspace admin, optimisation Drive',
         ],
       },
+      {
+        "day": 1,
+        "title": "Fonctionnalités avancées de Gemini dans Workspace",
+        "items": [
+          "Créer un Gem sur un cas de votre équipe : instructions, fichiers de connaissance, ton attendu, puis partage aux collègues concernés et test croisé sur des demandes réelles",
+          "NotebookLM sur un vrai corpus documentaire du métier : charger les sources, interroger le dossier, obtenir des réponses citées, repérer ce que le corpus ne couvre pas",
+          "Deep Research pour un état des lieux sourcé : cadrer la question, valider le plan proposé, lire le rapport avec ses sources et en vérifier les points qui engagent",
+          "« Prendre des notes pour moi » dans Meet : compte rendu et points d'action, une langue par réunion, la transcription restant une fonction distincte à activer selon vos règles internes",
+          "Les limites réelles de Gemini dans Sheets : pas de mode agent, pas de Python natif, fenêtre de contexte bornée, déploiement anglophone d'abord ; on vérifie sur votre compte et on cadre les usages fiables"
+        ]
+      },
     ],
 
     faq: [
@@ -238,6 +307,18 @@ export const HUB_CONTENT = {
         q: 'La formation Gemini est-elle finançable par l\'OPCO ?',
         a: "Oui. Masteria est certifié Qualiopi, condition obligatoire pour la prise en charge des formations par les OPCO dans le cadre du Plan de Développement des Compétences. La formation Google Gemini est éligible à ce dispositif. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes. L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est accessible en présentiel dans toute la France, la Belgique et la Suisse, ainsi qu'en distanciel. Notre équipe vous accompagne dans le montage du dossier OPCO.",
       },
+      {
+        "q": "Nos données Workspace servent-elles à entraîner Gemini ?",
+        "a": "Non. Dans Google Workspace, vos contenus restent dans le périmètre de votre domaine : ils ne servent pas à entraîner les modèles, ne font pas l'objet d'une revue humaine et ne sortent pas de votre organisation. Les interactions avec Gemini bénéficient des mêmes engagements de protection que le reste de Workspace. Le vrai piège se trouve à côté : Google AI Studio, l'outil gratuit de Google pour tester les modèles, obéit à d'autres conditions, et les données qui y transitent peuvent être réutilisées. Aucune donnée client, RH ou stratégique ne doit y passer. La formation pose cette frontière dès la première demi-journée, avec une règle simple par outil, pour que chacun sache où travailler selon la sensibilité du contenu."
+      },
+      {
+        "q": "Peut-on choisir le modèle dans le panneau latéral ?",
+        "a": "Non. Dans le panneau latéral de Gmail, Docs, Sheets ou Slides, Gemini route automatiquement la demande vers le modèle qu'il juge adapté ; l'utilisateur n'a pas la main sur ce choix. Le choix explicite du modèle existe dans l'app Gemini autonome, où le modèle se sélectionne avant d'écrire. En pratique, cette différence structure les usages : les tâches courantes dans le document (reformuler, résumer, préparer une trame) se font dans le panneau latéral, les travaux plus exigeants (raisonnement long, recherche approfondie) passent par l'app. La formation apprend à répartir les tâches entre les deux surfaces et à garder le réflexe de relecture, quel que soit le modèle qui a répondu."
+      },
+      {
+        "q": "Workspace Studio remplace-t-il un développeur ?",
+        "a": "Pour une partie des besoins, oui, et c'est son intérêt. Workspace Studio automatise sans code à travers Gmail, Docs, Sheets et Drive : trier des demandes entrantes, produire un document récurrent, alimenter un tableau de suivi, envoyer des rappels. Un utilisateur formé construit ces automatisations lui-même et les fait évoluer. Les intégrations profondes au système d'information restent en revanche des projets : écrire dans un ERP, un CRM ou un outil métier demande des connexions, des droits et des tests qui dépassent l'atelier. Quant à Agent Designer, il relève de Gemini Enterprise, une licence séparée, jamais incluse dans Business Standard : la formation vous aide à situer chaque besoin au bon niveau avant d'investir."
+      },
     ],
   },
 
@@ -259,6 +340,10 @@ export const HUB_CONTENT = {
       {
         title: 'Maîtriser l\'outil IA le plus performant sur les tâches de rédaction et d\'analyse complexe',
         body: "Les benchmarks indépendants publiés en 2024 et 2025 placent systématiquement Claude Sonnet et Claude Opus en tête sur les tâches de rédaction professionnelle longue, d'analyse de documents et de raisonnement structuré. Pour les équipes dont la production principale est documentaire ou analytique, consultants, juristes, analystes financiers, communicants, choisir Claude plutôt qu'un autre outil signifie des sorties de meilleure qualité avec moins de corrections nécessaires.",
+      },
+      {
+        "title": "Claude, l'outil des documents longs et de l'écrit exigeant",
+        "body": "Claude apporte aux équipes rédactionnelles un socle de travail complet. Les Projets rassemblent des instructions et des fichiers de connaissance pour partager un même contexte à toute l'équipe. Les Artifacts servent à co-éditer un document, une page ou un visuel dans la conversation. Les styles et la mémoire ancrent vos préférences et le ton maison d'une conversation à l'autre. La recherche approfondie instruit une question en lisant ses sources, les connecteurs relient Claude aux outils de l'entreprise, et Claude produit directement des fichiers Word, Excel ou PowerPoint. Les compétences (Skills) formalisent une procédure d'équipe dans un dossier contenant un fichier SKILL.md ; la compétence se déclenche d'elle-même quand la demande correspond. La formation installe chacune de ces fonctions sur vos documents et vos procédures réels."
       },
     ],
 
@@ -290,6 +375,17 @@ export const HUB_CONTENT = {
           'Plan d\'action 30 jours : industrialiser Claude dans les rituels d\'équipe, gouvernance des données, bibliothèque de Projects et Skills',
         ],
       },
+      {
+        "day": 1,
+        "title": "Fonctionnalités avancées de Claude",
+        "items": [
+          "Monter un Projet d'équipe sur un dossier réel : rédiger les instructions, charger les fichiers de connaissance, partager l'espace et vérifier que chacun obtient des réponses ancrées dans le même contexte",
+          "Co-éditer un livrable en Artifact : Claude produit une première version du document ou de la page, chacun demande ses retouches, la version retenue rejoint vos gabarits",
+          "Créer une compétence (Skill) sur une procédure du métier : le dossier et son fichier SKILL.md, le test en conditions réelles, puis le provisionnement par l'owner de l'organisation",
+          "Lancer une recherche approfondie sur une question réelle de votre activité : cadrer la demande, laisser Claude lire les sources, puis contrôler ce qu'il en retient avant de citer le rapport",
+          "Produire un fichier Word ou PowerPoint à partir d'un travail mené en conversation : Claude génère le document, vous le relisez et l'ajustez avant diffusion"
+        ]
+      },
     ],
 
     faq: [
@@ -317,6 +413,18 @@ export const HUB_CONTENT = {
         q: 'Claude peut-il vraiment analyser des documents de 100 pages ?',
         a: "Oui. Claude Sonnet 5 et Claude Opus 4.8 disposent d'une fenêtre contextuelle de 200 000 tokens, ce qui correspond à environ 150 000 mots ou 500 à 600 pages de texte selon la mise en forme. En pratique, on peut soumettre un contrat de 100 pages et demander à Claude d'en extraire toutes les clauses de résiliation, d'identifier les obligations des parties ou de comparer deux versions du même document. Cette capacité est vérifiée et testée en formation Masteria sur des documents réels fournis par les participants. La précision diminue légèrement sur les documents les plus volumineux, la formation inclut les stratégies pour maintenir la qualité.",
       },
+      {
+        "q": "Claude s'entraîne-t-il sur nos conversations ?",
+        "a": "Sur les plans Team et Enterprise, non : les conversations et les fichiers de votre organisation ne servent pas à entraîner les modèles. C'est un engagement de l'offre entreprise d'Anthropic, à distinguer des usages grand public, dont les réglages diffèrent. Cette distinction structure le cadre d'usage travaillé en formation : quelles données passent par Claude, sur quel compte, et ce qui reste hors de l'outil. Un temps dédié reprend vos règles internes de confidentialité, pour que chaque participant sache répondre à la question avant de coller un document dans une conversation."
+      },
+      {
+        "q": "Qu'est-ce qu'une compétence (Skill) et à quoi ça sert ?",
+        "a": "Une compétence est une procédure formalisée que Claude applique de lui-même. Concrètement, c'est un dossier contenant un fichier SKILL.md : le nom et la description servent de déclencheur, et la compétence s'active quand la demande d'un utilisateur correspond. Un membre de l'équipe la crée et la teste, puis l'owner de l'organisation la provisionne pour tout le monde. L'intérêt : une procédure maîtrisée par une personne devient un geste disponible pour toute l'équipe, avec le même niveau d'exigence. Le format est ouvert et repris par une quarantaine d'outils, ce qui protège le travail investi. En formation, chaque équipe construit une première compétence sur une procédure réelle de son métier."
+      },
+      {
+        "q": "À qui s'adressent Cowork et Claude Code ?",
+        "a": "Ce sont deux outils distincts de l'application Claude classique. Cowork est un agent qui travaille directement dans vos fichiers : on lui confie une tâche sur un dossier, il la mène et rend un travail à relire ; il s'adresse aux métiers qui traitent des dossiers entiers de documents. Claude Code est l'outil des développeurs, qui l'utilisent sur leur code. La formation les situe dans le paysage : qui en a l'usage, ce que cela suppose côté licences et côté cadre, et par où commencer. Les équipes concernées repartent orientées ; pour les autres, l'application Claude et ses Projets couvrent déjà l'essentiel des besoins."
+      },
     ],
   },
 
@@ -338,6 +446,10 @@ export const HUB_CONTENT = {
       {
         title: 'Bénéficier d\'options de déploiement uniques : cloud public, cloud privé, on-premise',
         body: "Contrairement aux autres grands fournisseurs d'IA générative, Mistral propose une gamme complète d'options de déploiement : API publique (La Plateforme), cloud privé dédié, et déploiement on-premise sur vos propres serveurs via des licences commerciales. Les modèles ouverts (Mistral 7B, Mixtral) peuvent même être déployés gratuitement sur votre infrastructure. Cette flexibilité est essentielle pour les directions techniques soumises à des contraintes réglementaires fortes.",
+      },
+      {
+        "title": "Vibe (anciennement Le Chat) : l'option souveraine qui s'est professionnalisée",
+        "body": "L'argument souverain de Mistral s'appuie désormais sur un produit d'équipe complet. Vibe est hébergé en Europe, un point central quand la conformité RGPD structure le choix d'outil : service public, santé, juridique, tout secteur qui manipule des données sensibles. L'application s'organise en trois espaces, Chat, Work et Code. Work concentre les fonctions professionnelles : des Projets, des Bibliothèques de documents, des Instructions qui encodent le ton et les gabarits maison, des compétences (skills), des Connecteurs vers Google Workspace, Outlook, SharePoint ou Slack, des Tâches planifiées et des Workflows. Canvas sert à co-éditer un texte dans la conversation et le mode Think pousse le raisonnement sur les questions difficiles. La formation installe cet ensemble sur vos documents réels et vos procédures."
       },
     ],
 
@@ -369,6 +481,17 @@ export const HUB_CONTENT = {
           'Plan d\'action 30 jours : politique d\'usage, gouvernance données, conformité DORA / CSRD / Pilier 3',
         ],
       },
+      {
+        "day": 1,
+        "title": "Fonctionnalités avancées de Vibe",
+        "items": [
+          "Monter un Projet et sa Bibliothèque sur un dossier d'équipe réel : charger les documents de référence, partager le contexte, vérifier que les réponses s'ancrent dans vos contenus",
+          "Rédiger des Instructions qui encodent le ton et les gabarits maison : le format attendu, les mentions obligatoires, les tournures à proscrire, pour des productions alignées dès le premier jet",
+          "Créer une compétence (skill) sur une procédure réelle du métier : formaliser les étapes et les règles, tester sur un cas concret, ajuster jusqu'à obtenir un geste reproductible par toute l'équipe",
+          "Construire un Workflow ou une Tâche planifiée pour une veille hebdomadaire : sources définies, synthèse produite à date fixe, relecture humaine systématique avant toute diffusion",
+          "Co-éditer un document exigeant dans Canvas et activer le mode Think sur une question qui demande du raisonnement : note de position, réponse argumentée, arbitrage à documenter"
+        ]
+      },
     ],
 
     faq: [
@@ -395,6 +518,18 @@ export const HUB_CONTENT = {
       {
         q: "Quels métiers bénéficient le plus de Mistral AI ?",
         a: "Mistral est particulièrement adapté aux équipes qui produisent du contenu en français et/ou qui manipulent des données sensibles. En premier lieu : les juristes et directions juridiques (droit français, contrats en français, confidentialité des dossiers), les équipes RH (documents RH en français, données personnelles), la communication institutionnelle (qualité du français soutenu), les équipes marketing B2B France (copywriting français natif), les directions financières (données confidentielles) et les DSI (souveraineté numérique, déploiement on-premise). Pour les équipes travaillant principalement en anglais ou avec des besoins d'intégration dans l'écosystème Microsoft ou Google, ChatGPT, Copilot ou Gemini peuvent rester plus adaptés.",
+      },
+      {
+        "q": "Pourquoi choisir Vibe plutôt qu'un outil américain ?",
+        "a": "L'hébergement européen et la conformité RGPD par conception forment l'argument de fond : les données restent dans un cadre juridique européen, ce qui simplifie l'instruction du dossier pour un DPO et compte beaucoup dans le service public, la santé et les secteurs qui traitent des données sensibles. Le choix reste une décision d'environnement : équipement Microsoft ou Google déjà en place, licences existantes, nature des documents, exigences de vos donneurs d'ordres. La formation compare honnêtement les outils sur vos cas réels, montre où Vibe tient la comparaison et où un autre choix se défend, et vous laisse arbitrer sur des faits observés en séance."
+      },
+      {
+        "q": "Le Chat existe-t-il encore ?",
+        "a": "Oui, sous un autre nom : Mistral a renommé son assistant Vibe le 28 mai 2026. C'est le même produit, avec un périmètre élargi : les espaces Chat, Work et Code structurent désormais l'application, et l'espace Work regroupe les fonctions d'équipe comme les Projets, les Bibliothèques, les Instructions, les compétences et les Workflows. Les habitudes acquises restent valables : les conversations, les réflexes de formulation et les usages installés se retrouvent tels quels dans Vibe. Pour une équipe déjà utilisatrice, la formation sert surtout à couvrir ce qui s'est ajouté ; pour une équipe qui démarre, elle part directement du produit actuel."
+      },
+      {
+        "q": "Que valent les connecteurs de Vibe ?",
+        "a": "Ils couvrent la lecture des sources connectées : Google Workspace, Outlook, SharePoint ou Slack. Vibe va chercher les éléments dans vos mails, vos documents ou vos canaux pour rédiger et synthétiser : préparer une réunion à partir des derniers échanges, résumer un dossier SharePoint, retrouver les décisions d'un fil Slack. C'est le bon niveau d'attente : un connecteur cadré en lecture rend déjà de grands services. Écrire dans un logiciel métier, en revanche, reste un projet d'intégration à chiffrer à part, quel que soit l'outil retenu. La formation cadre cette frontière et met en place les connecteurs utiles sur vos comptes."
       },
     ],
   },
@@ -524,6 +659,10 @@ export const HUB_CONTENT = {
         title: "Préparer un appel d'offres IA ou un choix de stack interne en connaissance de cause",
         body: "Avant d'engager 50 000 € à 500 000 € sur une stack IA d'entreprise (licences, intégration, formation), former les décideurs et les utilisateurs clés au comparatif des 5 IA évite des choix coûteux à reverser. La formation Multi-outils est régulièrement utilisée comme étape préalable à un appel d'offres ou à une négociation éditeur.",
       },
+      {
+        "title": "Choisir son outil est devenu une décision d'architecture",
+        "body": "En 2026, choisir un assistant IA se raisonne comme une décision d'architecture, à partir de l'environnement de travail existant. Une organisation équipée Microsoft 365 regarde d'abord Copilot, qui travaille dans Word, Excel, Outlook et Teams. Une organisation sous Google Workspace regarde Gemini, présent dans Gmail, Docs et Sheets. Hors suite bureautique, ou quand l'exigence porte sur la rédaction et l'analyse de documents, ChatGPT et Claude prennent l'avantage. Quand la souveraineté et l'hébergement européen pèsent dans l'arbitrage, Vibe (anciennement Le Chat) de Mistral entre dans la comparaison. La formation multi-outils met ces cinq environnements côte à côte sur les mêmes cas réels de votre équipe et outille la décision : critères pesés, écarts constatés, recommandation argumentée."
+      },
     ],
 
     programme: [
@@ -548,6 +687,17 @@ export const HUB_CONTENT = {
           "Construire un plan de déploiement IA sur 30, 60 et 90 jours adapté à votre stack",
           "Définir un cadre d'usage interne : ce qui est OK, ce qui ne l'est pas, comment escalader un doute",
         ],
+      },
+      {
+        "day": 1,
+        "title": "Le comparatif appliqué : mêmes cas, cinq outils",
+        "items": [
+          "Le même document de votre activité analysé dans les cinq outils, avec une grille de lecture des écarts : fidélité au texte, structure de la réponse, qualité du français, temps passé",
+          "Où vont les données selon l'offre et l'éditeur : ce que les versions entreprise excluent de l'entraînement des modèles, ce que les versions gratuites ne protègent pas",
+          "Les fonctions d'entreprise comparées : Projets partagés, GPTs et agents côté ChatGPT, Copilot dans Word et Excel, Gems et NotebookLM chez Google, Projets et Artifacts de Claude, l'espace Work de Vibe",
+          "Le format ouvert des compétences (Skills), créé par Anthropic et repris par une quarantaine d'outils : formaliser une procédure une fois, la transposer d'un outil à l'autre",
+          "La grille de décision remise aux participants : critères pondérés selon votre contexte, scores relevés pendant les ateliers, recommandation argumentée à présenter en interne"
+        ]
       },
     ],
 
@@ -575,6 +725,18 @@ export const HUB_CONTENT = {
       {
         q: "Quels outils sont effectivement comparés ?",
         a: "Les 5 IA génératives leader du marché en 2026 : ChatGPT (OpenAI), Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. La formation couvre les versions grand public et les versions Entreprise lorsqu'elles existent (ChatGPT Enterprise, Copilot pour Microsoft 365, Gemini Workspace, Claude pour Entreprises, Vibe Pro (anciennement Le Chat) et Mistral on-premise). Les outils sont testés sur les vrais comptes des participants quand ils en disposent, ou sur des comptes de démonstration sinon.",
+      },
+      {
+        "q": "Quel outil IA choisir pour son entreprise ?",
+        "a": "La réponse honnête : cela dépend de quatre éléments que la formation examine dans l'ordre. La suite bureautique d'abord : un environnement Microsoft 365 oriente vers Copilot, un environnement Google Workspace vers Gemini. Les données ensuite : leur sensibilité et les exigences d'hébergement européen mettent Vibe de Mistral dans la balance. Le budget, car les licences s'ajoutent à la suite existante et les exécutions d'agents peuvent être décomptées en crédits. Les usages enfin : rédaction longue, analyse de tableaux, veille, chaque dominante déplace le curseur. La formation applique ces critères à vos cas réels et vous remet une grille de décision complétée, argumentée, que vous pouvez présenter en interne."
+      },
+      {
+        "q": "Peut-on mélanger plusieurs outils IA dans une même entreprise ?",
+        "a": "Oui, et c'est une configuration courante. Beaucoup d'organisations combinent un outil intégré à la suite bureautique, Copilot dans Microsoft 365 ou Gemini dans Google Workspace, pour les mails, les réunions et les tableaux, avec un outil de fond documentaire comme Claude ou ChatGPT pour la rédaction longue et l'analyse de dossiers. La condition de réussite tient au cadre : définir pour chaque outil quelles données peuvent y entrer, sur quelle offre, avec quels réglages, et le formaliser dans une charte d'usage. Sans ce cadre, chacun choisit son outil au hasard des habitudes et les données sensibles finissent sur un compte personnel. La formation construit cette combinaison et le cadre qui va avec, à partir de votre environnement réel."
+      },
+      {
+        "q": "Les compétences créées dans un outil sont-elles perdues si on change d'outil ?",
+        "a": "Le risque est plus faible qu'on le pense. Les compétences (Skills) reposent sur un format ouvert, Agent Skills, créé par Anthropic en octobre 2025, publié en standard et repris depuis par une quarantaine d'outils, dont ChatGPT. Une compétence est d'abord une procédure formalisée : le contexte, les étapes, les règles, le format de sortie. Ce travail de formalisation se transpose d'un outil à l'autre, avec des adaptations légères selon les environnements. Changer d'outil ne remet donc pas le compteur à zéro. C'est un argument de plus pour formaliser vos procédures pendant la formation : la valeur reste dans l'entreprise, sous une forme lisible, quel que soit l'assistant retenu ensuite."
       },
     ],
   },
