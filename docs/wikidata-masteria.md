@@ -42,8 +42,8 @@ Les identifiants Q des valeurs courantes sont donnés quand ils sont sûrs ; pou
 | P856 site officiel | https://www.master-ia.fr | langue : français |
 | P1616 numéro SIREN | 919252403 | identifiant externe, sans espaces |
 | P101 domaine d'activité | Q11660 (intelligence artificielle) | |
-| P452 secteur d'activité | taper « formation professionnelle continue » et prendre l'élément proposé ; ajouter « conseil en management » si proposé | |
-| P1454 forme juridique | taper « entreprise individuelle » et prendre l'élément français | Masteria est le nom commercial de l'EI de Mathias Nizan |
+| P452 secteur d'activité | Q3535127 (formation professionnelle continue) | |
+| P1454 forme juridique | Q2912172 (entreprise individuelle) | Masteria est le nom commercial de l'EI de Mathias Nizan |
 | P112 fondateur | Mathias Nizan | nécessite l'item personne (voir section 5) ; sinon laisser vide au départ |
 | P4264 identifiant LinkedIn d'organisation | slug de la page entreprise LinkedIn de Masteria (la partie après `linkedin.com/company/`) | à compléter |
 | P973 décrit à l'URL | l'URL de l'article des Échos (section 4) | |
@@ -55,7 +55,7 @@ Ne pas renseigner d'adresse postale (P6375) : le siège légal est le domicile, 
 
 Sur chaque déclaration importante (nature, pays, siège, création, domaine), ajouter une référence :
 
-- **Les Échos** (preuve de notoriété) : P854 URL de référence = `https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741` ; P1476 titre = le titre de l'article ; P123 éditeur = Les Échos (Q1182754 à vérifier dans le sélecteur) ; P813 date de consultation = date du jour.
+- **Les Échos** (preuve de notoriété) : P854 URL de référence = `https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741` ; P1476 titre = le titre de l'article ; P123 éditeur = Les Échos (Q923193) ; P813 date de consultation = date du jour.
 - **Site officiel** : P854 = `https://www.master-ia.fr/centre-formation-ia-entreprise` (page À propos) ; P813 date de consultation.
 - **SIRENE** (pour le SIREN et la forme juridique) : P854 = `https://annuaire-entreprises.data.gouv.fr/entreprise/919252403` ; P813 date de consultation.
 - **Qualiopi** (si une déclaration « certification » est ajoutée) : le certificat n° 725311-1 (CERTIFOPAC, valide du 29/01/2026 au 28/01/2029) se référence par le document officiel ; à n'ajouter que si une propriété adaptée est trouvée (« certification » P2021 n'est pas standard : ignorer si doute).
@@ -69,7 +69,7 @@ Créer un second item seulement si l'on est à l'aise avec une page personne pub
 | P31 | Q5 (être humain) |
 | P21 | sexe ou genre (au choix de l'intéressé) |
 | P27 pays de nationalité | Q142 (France) |
-| P106 occupation | taper « consultant » et/ou « formateur » et prendre les éléments proposés |
+| P106 occupation | Q15978655 (consultant) et Q3077353 (formateur) |
 | P108 employeur / P1830 propriétaire de | l'item Masteria |
 | P856 site officiel | https://www.master-ia.fr |
 | P6634 identifiant LinkedIn personnel | `mathias-nizan` (la partie après `linkedin.com/in/`) |
