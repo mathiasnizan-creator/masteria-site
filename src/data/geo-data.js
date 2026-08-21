@@ -65,7 +65,7 @@ export const GEO_CITIES = [
     // Lyon est le siège de Masteria : la page vise le couple de requêtes en se
     // répartissant les emplacements — « formation ia lyon » (260/mois) en tête de
     // title, « formation intelligence artificielle lyon » (90/mois) contiguë dans le H1.
-    metaTitleOverride: 'Formation IA Lyon : intelligence artificielle | Masteria',
+    metaTitleOverride: 'Formation intelligence artificielle Lyon · Qualiopi | Masteria',
     h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et 89 programmes par métier',
     metaDescOverride: "Formation intelligence artificielle à Lyon : ChatGPT, Claude, 89 programmes métier dans vos locaux. Organisme lyonnais certifié Qualiopi, finançable OPCO.",
     // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
@@ -88,7 +88,7 @@ export const GEO_CITIES = [
     intraOnly: false,
     sectors: "pharma, biotech, finance, industrie, numérique et services B2B",
     desc: "Deuxième pôle économique de France, Lyon est le siège historique de Masteria. Lyon abrite notre siège et concentre une part importante de nos interventions intra-entreprise dans la région, en complément des accompagnements individuels sur mesure réalisés en présentiel ou en distanciel. Lyon est aussi un hub IA reconnu (LabIA, ENS Lyon, Inria Lyon) avec un tissu d'entreprises pharma, industrie et services en pleine accélération sur le sujet.",
-    introPitch: "Lyon est notre base : formations intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure en présentiel à Lyon ou en distanciel. Grenoble, Saint-Étienne, Clermont-Ferrand et Annecy sont également couverts en intra.",
+    introPitch: "Lyon est notre base, et la formation intelligence artificielle y est notre métier depuis 2022 : sessions intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure en présentiel à Lyon ou en distanciel. Grenoble, Saint-Étienne, Clermont-Ferrand et Annecy sont également couverts en intra.",
     opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture). Masteria est référencé auprès des OPCO de la région depuis 2022. Délai de traitement moyen : 5 à 10 jours ouvrés.",
     zones: "Lyon (1er au 9e arrondissement), Villeurbanne, Caluire-et-Cuire, Saint-Priest, Bron, Vénissieux, Grenoble, Saint-Étienne, Clermont-Ferrand, Annecy, Chambéry, Valence",
     industriesDeep: [
@@ -115,7 +115,15 @@ export const GEO_CITIES = [
       { name: 'Inria Grenoble Rhône-Alpes', type: 'Centre de recherche IA' },
     ],
     additionalFAQ: [
-      { q: "Quelle différence entre l'intra-entreprise et l'accompagnement individuel à Lyon ?", a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
+      { q: "Comment choisir sa formation intelligence artificielle à Lyon ?",
+        a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, l'organisme est-il certifié Qualiopi (condition du financement OPCO), et le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral). Masteria est un organisme lyonnais fondé en 2022 : le cadrage se fait avec vous, le programme est monté par métier, et la session a lieu dans vos locaux de la métropole ou à distance.",
+      },
+      {
+        q: "Proposez-vous une formation intelligence artificielle pour débutants à Lyon ?",
+        a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, apprendre à formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
+      },
+      {
+        q: "Quelle différence entre l'intra-entreprise et l'accompagnement individuel à Lyon ?", a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
       { q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?', a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry / Valence. Les modalités sont identiques à celles de Lyon." },
       { q: 'Où se déroulent les formations IA à Lyon ?', a: "En intra-entreprise : le formateur vient chez vous, partout dans la métropole de Lyon (Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de l'agglomération). Les bureaux de Masteria sont en presqu'île (Lyon 1er). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace : c'est celui que nous recommandons. Le distanciel reste disponible pour les équipes dispersées." },
       { q: 'Pourquoi choisir un organisme de formation IA lyonnais ?', a: "La proximité change le déroulé : cadrage en présentiel dans vos locaux, connaissance du tissu économique régional (pharma, industrie, banque, numérique) et des OPCO qui financent en Auvergne-Rhône-Alpes, interventions de suivi faciles à planifier. Masteria est fondé et basé à Lyon depuis 2022 ; une partie de nos références vient de la métropole, ce qui donne des cas d'usage directement comparables aux vôtres." },

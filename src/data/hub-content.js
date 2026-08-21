@@ -408,7 +408,7 @@ export const HUB_CONTENT = {
     why: [
       {
         title: "Acculturer rapidement plusieurs centaines de collaborateurs sans bloquer leur agenda",
-        body: "Les formations IA classiques de 1 ou 2 jours sont précieuses pour faire monter en compétence des équipes ciblées, mais elles deviennent un goulot d'étranglement dès qu'on doit toucher 200, 500 ou 2 000 personnes en quelques mois. Sprint IA répond à ce besoin : 3 heures, ciblé, pratique, animable en visioconférence avec 12 à 100 participants par session, déployable en cascade pour atteindre toute une organisation en 6 à 8 semaines.",
+        body: "Les formations IA classiques de 1 ou 2 jours sont précieuses pour faire monter en compétence des équipes ciblées, mais elles deviennent un goulot d'étranglement dès qu'on doit toucher 200, 500 ou 2 000 personnes en quelques mois. Sprint IA répond à ce besoin par un atelier intelligence artificielle de 3 heures, ciblé, pratique, animable en présentiel ou en visioconférence avec 12 à 100 participants par session, déployable en cascade pour atteindre toute une organisation en 6 à 8 semaines.",
       },
       {
         title: "Couvrir l'obligation de littératie IA prévue par l'AI Act, dès 2026",
@@ -423,7 +423,7 @@ export const HUB_CONTENT = {
     programme: [
       {
         day: 1,
-        title: "Structure type d'un Sprint IA de 3 heures",
+        title: "Structure type d'un atelier Sprint IA de 3 heures",
         items: [
           "1ère heure, fondamentaux : panorama IA générative (ChatGPT, Copilot, Gemini, Claude, Mistral), confidentialité, RGPD et AI Act",
           "2e heure, manipulation guidée : chaque participant prompte sur un cas réel apporté en amont, avec guide formateur en direct",
@@ -447,6 +447,10 @@ export const HUB_CONTENT = {
     ],
 
     faq: [
+      {
+        q: "Qu'est-ce qu'un atelier intelligence artificielle et pour qui est-il fait ?",
+        a: "Un atelier intelligence artificielle est une session courte et pratique où chaque participant manipule l'IA générative sur un cas réel de son poste, avec un formateur qui guide en direct. Chez Masteria, ce format s'appelle Sprint IA : 3 heures, six déclinaisons (sensibilisation, prompts, Excel, managers, veille, AI Act), en présentiel dans vos locaux ou à distance. Il est fait pour les entreprises qui veulent acculturer vite une équipe ou toucher un grand nombre de collaborateurs, en complément des formations d'une ou deux journées qui font monter en compétence un métier.",
+      },
       {
         q: "Sprint IA ou formation 2 jours, comment choisir ?",
         a: "Sprint IA cible les besoins d'acculturation à grande échelle, de sensibilisation transverse ou de mise en conformité (AI Act). La formation 2 jours est nécessaire pour faire monter en compétence opérationnelle des équipes ciblées (marketing, finance, RH…) sur des cas d'usage métier complexes. Beaucoup de clients combinent les deux : Sprint pour la base élargie (100 à 500 personnes), formation 2 jours pour les 20 à 30 référents IA internes.",
