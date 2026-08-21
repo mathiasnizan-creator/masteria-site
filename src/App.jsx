@@ -66,6 +66,7 @@ const AuditSeoIAPage = lazy(() => import('./pages/AuditSeoIAPage'));
 const AuditGeoIAPage = lazy(() => import('./pages/AuditGeoIAPage'));
 const AccompagnementIAPage = lazy(() => import('./pages/AccompagnementIAPage'));
 const AcculturationIAPage = lazy(() => import('./pages/AcculturationIAPage'));
+const FormationIAEntreprisePage = lazy(() => import('./pages/FormationIAEntreprisePage'));
 const PrestataireIAPage = lazy(() => import('./pages/PrestataireIAPage'));
 const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
 const FormationAIActPage = lazy(() => import('./pages/FormationAIActPage'));
@@ -1509,6 +1510,7 @@ export default function App() {
         <Route path="/audit-ia" element={<AuditIAPage />} />
         <Route path="/accompagnement-ia" element={<AccompagnementIAPage />} />
         <Route path="/acculturation-ia" element={<AcculturationIAPage />} />
+        <Route path="/formation-ia-entreprise" element={<FormationIAEntreprisePage />} />
         <Route path="/prestataire-ia" element={<PrestataireIAPage />} />
         <Route path="/coaching-ia" element={<CoachingIAPage />} />
         <Route path="/methode-projet-ia" element={<MethodeProjetIAPage />} />

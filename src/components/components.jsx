@@ -414,6 +414,7 @@ export function MasteriaHeader() {
                     </Link>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 10 }}>
                       {[
+                        ['Formation IA en entreprise', '/formation-ia-entreprise'],
                         ['Acculturation IA (entreprise)', '/acculturation-ia'],
                         ['Coaching IA individuel', '/coaching-ia'],
                       ].map(([l, path]) => (
@@ -984,6 +985,7 @@ export function MasteriaFooter() {
               ['Assurance', '/formation-ia-assurance'],
               ['BTP & construction', '/formation-ia-btp'],
               ['Tourisme & hôtellerie', '/formation-ia-tourisme'],
+              ['Formation IA en entreprise', '/formation-ia-entreprise'],
               ['Acculturation IA', '/acculturation-ia'],
               ['Coaching IA individuel', '/coaching-ia'],
               ['Tous les métiers', '/formation-intelligence-artificielle'],
