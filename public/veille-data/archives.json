@@ -3,12 +3,253 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-10",
-    "totalEditions": 16,
-    "totalItems": 216,
-    "totalSources": 334
+    "derniereDate": "2026-08-21",
+    "totalEditions": 18,
+    "totalItems": 244,
+    "totalSources": 375
   },
   "editions": [
+    {
+      "date": "2026-08-21",
+      "dateCourte": "ven. 21 août",
+      "dateAffichee": "21 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Anthropic vise une entrée en Bourse à la taille record de SpaceX et OpenAI accélère la sienne pendant que les acheteurs professionnels basculent d'un modèle à l'autre à chaque sortie ; une étude parue dans Nature mesure la propagande d'État chinoise dans ChatGPT et Claude, Alibaba divise son bénéfice par quatre pour financer 10 milliards de dollars d'infrastructure IA, et les États-Unis alertent sur des attaques assistées par IA contre les automates Siemens",
+      "chapeau": "Anthropic et OpenAI courent vers les marchés publics au même moment, sur la même promesse d'un revenu d'entreprise durable, quand les clients professionnels, eux, changent de fournisseur à chaque nouveau modèle. Le même jour, une étude dans Nature chiffre l'empreinte de la propagande chinoise dans les grands modèles, Alibaba paie comptant sa capacité de calcul, et Washington qualifie de « non théoriques » des cyberattaques contre l'industrie dopées à l'IA.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "ZDNet",
+        "The Verge",
+        "La Tribune",
+        "Numerama",
+        "TechCrunch",
+        "Ars Technica",
+        "SCMP",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Anthropic vise une entrée en Bourse à la taille record de SpaceX, OpenAI accélère la sienne",
+          "z": "une",
+          "id": "anthropic-vise-une-entree-en-bourse-a-la-taille-record-de"
+        },
+        {
+          "t": "Une étude parue dans Nature mesure l'empreinte de la propagande d'État chinoise dans ChatGPT et Claude",
+          "z": "europe",
+          "id": "une-etude-parue-dans-nature-mesure-l-empreinte-de-la"
+        },
+        {
+          "t": "Des versions « sans censure » du modèle chinois Qwen circulent librement sur Hugging Face",
+          "z": "europe",
+          "id": "des-versions-sans-censure-du-modele-chinois-qwen-circulent"
+        },
+        {
+          "t": "Un classement de la confidentialité des IA place Vibe, de Mistral, en position honorable",
+          "z": "europe",
+          "id": "un-classement-de-la-confidentialite-des-ia-place-vibe-de"
+        },
+        {
+          "t": "Les entreprises basculent entre OpenAI et Anthropic à chaque nouveau modèle",
+          "z": "international",
+          "id": "les-entreprises-basculent-entre-openai-et-anthropic-a"
+        },
+        {
+          "t": "Ramp lance Router, un service qui répartit chaque requête vers le meilleur modèle du moment",
+          "z": "international",
+          "id": "ramp-lance-router-un-service-qui-repartit-chaque-requete"
+        },
+        {
+          "t": "ChatGPT peut désormais envoyer des messages à votre place via Apple Messages",
+          "z": "international",
+          "id": "chatgpt-peut-desormais-envoyer-des-messages-a-votre-place"
+        },
+        {
+          "t": "Grok livre des données d'utilisateurs quand des instructions malveillantes sont chiffrées",
+          "z": "international",
+          "id": "grok-livre-des-donnees-d-utilisateurs-quand-des"
+        },
+        {
+          "t": "Alibaba : le cloud IA bondit de 45 %, mais 10 milliards de dollars de dépenses divisent le bénéfice par quatre",
+          "z": "chine",
+          "id": "alibaba-le-cloud-ia-bondit-de-45-mais-10-milliards-de"
+        },
+        {
+          "t": "Les puces d'IA chinoises peinent sur le code, forçant les entreprises à ménager leurs Nvidia",
+          "z": "chine",
+          "id": "les-puces-d-ia-chinoises-peinent-sur-le-code-forcant-les"
+        },
+        {
+          "t": "Les « supernodes » chinois se généralisent à mesure que les modèles grossissent",
+          "z": "chine",
+          "id": "les-supernodes-chinois-se-generalisent-a-mesure-que-les"
+        },
+        {
+          "t": "Papier de position : les systèmes multi-agents devraient traiter en priorité le contrôle de concurrence",
+          "z": "recherche",
+          "id": "papier-de-position-les-systemes-multi-agents-devraient"
+        },
+        {
+          "t": "Google donne aux éditeurs un bouton « source préférée » pour limiter la perte de trafic due à l'IA",
+          "z": "bref",
+          "id": "google-donne-aux-editeurs-un-bouton-source-preferee-pour"
+        },
+        {
+          "t": "Les États-Unis alertent sur des attaques assistées par IA visant les automates Siemens",
+          "z": "bref",
+          "id": "les-etats-unis-alertent-sur-des-attaques-assistees-par-ia"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "dateCourte": "mar. 11 août",
+      "dateAffichee": "11 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Mark Zuckerberg publie un manifeste de 6 500 mots pour défendre un accès large à l'IA et nier la destruction massive des emplois ; Anthropic, Suno et Apple déploient des filigranes de provenance sous la pression de l'AI Act, Nvidia arrange 500 milliards de dollars auprès de Wall Street, et Pékin retient ses ingénieurs IA au pays",
+      "chapeau": "Mark Zuckerberg signe un manifeste de 6 500 mots pour un accès large à l'IA et l'accueil critique est rude. Le même jour, Anthropic, Suno et Apple installent des marqueurs de provenance pour se plier à l'AI Act, Nvidia lève 500 milliards de dollars auprès de Wall Street, et la Chine encadre les déplacements de ses meilleurs chercheurs.",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 10,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "The Verge",
+        "Platformer",
+        "404 Media",
+        "Numerama",
+        "01net",
+        "Clubic",
+        "Next",
+        "Bloomberg, Nvidia",
+        "Bloomberg, Intel",
+        "Stratechery",
+        "TechCrunch",
+        "South China Morning Post",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "Mark Zuckerberg publie un manifeste de 6 500 mots sur l'IA, l'accueil est glacial",
+          "z": "une",
+          "id": "mark-zuckerberg-publie-un-manifeste-de-6-500-mots-sur-l-ia"
+        },
+        {
+          "t": "Anthropic marquera chaque texte de Claude pour se conformer à l'AI Act",
+          "z": "europe",
+          "id": "anthropic-marquera-chaque-texte-de-claude-pour-se-conformer"
+        },
+        {
+          "t": "La presse française attaque les résumés IA de Google devant l'Autorité de la concurrence",
+          "z": "europe",
+          "id": "la-presse-francaise-attaque-les-resumes-ia-de-google-devant"
+        },
+        {
+          "t": "Next teste Shieldstral, le modèle de modération de Mistral, sur un million de commentaires",
+          "z": "europe",
+          "id": "next-teste-shieldstral-le-modele-de-moderation-de-mistral"
+        },
+        {
+          "t": "Nvidia arrange 500 milliards de dollars auprès de Wall Street pour financer l'infrastructure IA",
+          "z": "international",
+          "id": "nvidia-arrange-500-milliards-de-dollars-aupres-de-wall"
+        },
+        {
+          "t": "OpenAI lance GPT-5.6-Cyber, un modèle entraîné pour trouver et exploiter des failles",
+          "z": "international",
+          "id": "openai-lance-gpt-5-6-cyber-un-modele-entraine-pour-trouver"
+        },
+        {
+          "t": "Un agent autonome pirate le système de réservation d'une salle de sport pour doubler la file",
+          "z": "international",
+          "id": "un-agent-autonome-pirate-le-systeme-de-reservation-d-une"
+        },
+        {
+          "t": "Les mathématiques entrent dans l'ère de l'IA, et les chercheurs s'interrogent",
+          "z": "international",
+          "id": "les-mathematiques-entrent-dans-l-ere-de-l-ia-et-les"
+        },
+        {
+          "t": "Pékin encadre les déplacements de ses ingénieurs IA et inaugure un campus de calcul géant",
+          "z": "chine",
+          "id": "pekin-encadre-les-deplacements-de-ses-ingenieurs-ia-et"
+        },
+        {
+          "t": "Le coût pour faire tourner l'IA tombe à son plus bas de l'année, poussé par les modèles chinois ouverts",
+          "z": "chine",
+          "id": "le-cout-pour-faire-tourner-l-ia-tombe-a-son-plus-bas-de-l"
+        },
+        {
+          "t": "Alibaba dit livrer un centre de données IA en 100 jours, à 10 % de coût en moins",
+          "z": "chine",
+          "id": "alibaba-dit-livrer-un-centre-de-donnees-ia-en-100-jours-a"
+        },
+        {
+          "t": "Rendre un modèle interprétable dès l'entraînement, plutôt que de l'ausculter après coup",
+          "z": "recherche",
+          "id": "rendre-un-modele-interpretable-des-l-entrainement-plutot"
+        },
+        {
+          "t": "Apple préparerait un moyen de prouver qu'une photo n'a pas été générée par IA",
+          "z": "bref",
+          "id": "apple-preparerait-un-moyen-de-prouver-qu-une-photo-n-a-pas"
+        },
+        {
+          "t": "Suno va filigraner ses chansons pour signaler la musique générée par IA",
+          "z": "bref",
+          "id": "suno-va-filigraner-ses-chansons-pour-signaler-la-musique"
+        }
+      ]
+    },
     {
       "date": "2026-08-10",
       "dateCourte": "lun. 10 août",

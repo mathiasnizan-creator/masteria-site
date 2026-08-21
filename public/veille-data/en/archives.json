@@ -3,12 +3,253 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-10",
-    "totalEditions": 2,
-    "totalItems": 27,
-    "totalSources": 39
+    "derniereDate": "2026-08-21",
+    "totalEditions": 4,
+    "totalItems": 55,
+    "totalSources": 80
   },
   "editions": [
+    {
+      "date": "2026-08-21",
+      "dateCourte": "Fri 21 Aug",
+      "dateAffichee": "21 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Anthropic eyes a SpaceX-sized listing as enterprise buyers switch models",
+      "chapeau": "Anthropic and OpenAI are racing to the public markets at the same moment, on the same promise of durable enterprise revenue, while professional customers change providers with every new model. The same day, a study in Nature puts a number on the footprint of Chinese propaganda in the large models, Alibaba pays cash for its compute, and Washington calls AI-boosted cyberattacks on industry \\\"non-theoretical\\\".",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "ZDNet",
+        "The Verge",
+        "La Tribune",
+        "Numerama",
+        "TechCrunch",
+        "Ars Technica",
+        "SCMP",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Anthropic is aiming for a listing at the record size of SpaceX, and OpenAI is speeding up its own",
+          "z": "une",
+          "id": "anthropic-is-aiming-for-a-listing-at-the-record-size-of"
+        },
+        {
+          "t": "A study published in Nature measures the footprint of Chinese state propaganda in ChatGPT and Claude",
+          "z": "europe",
+          "id": "a-study-published-in-nature-measures-the-footprint-of"
+        },
+        {
+          "t": "\"Uncensored\" versions of the Chinese Qwen model circulate freely on Hugging Face",
+          "z": "europe",
+          "id": "uncensored-versions-of-the-chinese-qwen-model-circulate"
+        },
+        {
+          "t": "A ranking of AI privacy places Mistral's Vibe in a respectable position",
+          "z": "europe",
+          "id": "a-ranking-of-ai-privacy-places-mistral-s-vibe-in-a"
+        },
+        {
+          "t": "Companies switch between OpenAI and Anthropic with every new model",
+          "z": "international",
+          "id": "companies-switch-between-openai-and-anthropic-with-every"
+        },
+        {
+          "t": "Ramp launches Router, a service that routes each request to the best model of the moment",
+          "z": "international",
+          "id": "ramp-launches-router-a-service-that-routes-each-request-to"
+        },
+        {
+          "t": "ChatGPT can now send messages on your behalf through Apple Messages",
+          "z": "international",
+          "id": "chatgpt-can-now-send-messages-on-your-behalf-through-apple"
+        },
+        {
+          "t": "Grok hands over user data when malicious instructions are encrypted",
+          "z": "international",
+          "id": "grok-hands-over-user-data-when-malicious-instructions-are"
+        },
+        {
+          "t": "Alibaba: AI cloud jumps 45%, but $10 billion in spending cuts profit by four",
+          "z": "chine",
+          "id": "alibaba-ai-cloud-jumps-45-but-10-billion-in-spending-cuts"
+        },
+        {
+          "t": "Chinese AI chips fall short on code, forcing companies to ration their Nvidia",
+          "z": "chine",
+          "id": "chinese-ai-chips-fall-short-on-code-forcing-companies-to"
+        },
+        {
+          "t": "Chinese \"supernodes\" go mainstream as models grow",
+          "z": "chine",
+          "id": "chinese-supernodes-go-mainstream-as-models-grow"
+        },
+        {
+          "t": "Position paper: multi-agent systems should treat concurrency control as a priority",
+          "z": "recherche",
+          "id": "position-paper-multi-agent-systems-should-treat-concurrency"
+        },
+        {
+          "t": "Google gives publishers a \"preferred source\" button to limit the traffic loss caused by AI",
+          "z": "bref",
+          "id": "google-gives-publishers-a-preferred-source-button-to-limit"
+        },
+        {
+          "t": "The United States warns of AI-assisted attacks targeting Siemens controllers",
+          "z": "bref",
+          "id": "the-united-states-warns-of-ai-assisted-attacks-targeting"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "dateCourte": "Tue 11 Aug",
+      "dateAffichee": "11 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "The AI Act makes provenance a job",
+      "chapeau": "Mark Zuckerberg has published a 6,500-word manifesto for broad access to AI, and the critical reception is harsh. The same day, Anthropic, Suno and Apple install provenance markers to comply with the AI Act, Nvidia raises $500 billion from Wall Street, and China tightens the movement of its best researchers.",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "The Verge",
+        "Platformer",
+        "404 Media",
+        "Numerama",
+        "01net",
+        "Clubic",
+        "Next",
+        "Bloomberg, Nvidia",
+        "Bloomberg, Intel",
+        "Stratechery",
+        "TechCrunch",
+        "South China Morning Post",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "Mark Zuckerberg publishes a 6,500-word manifesto on AI, and the reception is icy",
+          "z": "une",
+          "id": "mark-zuckerberg-publishes-a-6-500-word-manifesto-on-ai-and"
+        },
+        {
+          "t": "Anthropic will mark every text from Claude to comply with the AI Act",
+          "z": "europe",
+          "id": "anthropic-will-mark-every-text-from-claude-to-comply-with"
+        },
+        {
+          "t": "The French press files against Google's AI summaries before the competition authority",
+          "z": "europe",
+          "id": "the-french-press-files-against-google-s-ai-summaries-before"
+        },
+        {
+          "t": "Next tests Shieldstral, Mistral's moderation model, on a million comments",
+          "z": "europe",
+          "id": "next-tests-shieldstral-mistral-s-moderation-model-on-a"
+        },
+        {
+          "t": "Nvidia arranges $500 billion from Wall Street to fund AI infrastructure",
+          "z": "international",
+          "id": "nvidia-arranges-500-billion-from-wall-street-to-fund-ai"
+        },
+        {
+          "t": "OpenAI launches GPT-5.6-Cyber, a model trained to find and exploit flaws",
+          "z": "international",
+          "id": "openai-launches-gpt-5-6-cyber-a-model-trained-to-find-and"
+        },
+        {
+          "t": "An autonomous agent hacks a gym's booking system to jump the queue",
+          "z": "international",
+          "id": "an-autonomous-agent-hacks-a-gym-s-booking-system-to-jump"
+        },
+        {
+          "t": "Mathematics enters the age of AI, and researchers are asking questions",
+          "z": "international",
+          "id": "mathematics-enters-the-age-of-ai-and-researchers-are-asking"
+        },
+        {
+          "t": "Beijing curbs the movement of its AI engineers and opens a giant computing campus",
+          "z": "chine",
+          "id": "beijing-curbs-the-movement-of-its-ai-engineers-and-opens-a"
+        },
+        {
+          "t": "The cost of running AI falls to its lowest of the year, driven by open Chinese models",
+          "z": "chine",
+          "id": "the-cost-of-running-ai-falls-to-its-lowest-of-the-year"
+        },
+        {
+          "t": "Alibaba says it delivers an AI data centre in 100 days, at 10% lower cost",
+          "z": "chine",
+          "id": "alibaba-says-it-delivers-an-ai-data-centre-in-100-days-at"
+        },
+        {
+          "t": "Make a model interpretable during training, rather than probing it after the fact",
+          "z": "recherche",
+          "id": "make-a-model-interpretable-during-training-rather-than"
+        },
+        {
+          "t": "Apple is reportedly preparing a way to prove a photo was not AI-generated",
+          "z": "bref",
+          "id": "apple-is-reportedly-preparing-a-way-to-prove-a-photo-was"
+        },
+        {
+          "t": "Suno will watermark its songs to flag AI-generated music",
+          "z": "bref",
+          "id": "suno-will-watermark-its-songs-to-flag-ai-generated-music"
+        }
+      ]
+    },
     {
       "date": "2026-08-10",
       "dateCourte": "Mon 10 Aug",

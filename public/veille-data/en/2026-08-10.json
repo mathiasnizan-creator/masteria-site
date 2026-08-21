@@ -262,7 +262,12 @@
     "titreEditorial": "Jeff Dean leaves Google as DeepMind reshuffles its command",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-11",
+    "dateLongue": "Tuesday 11 August 2026",
+    "titreEditorial": "The AI Act makes provenance a job",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 20,
   "nbSignes": 9934,

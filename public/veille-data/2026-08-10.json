@@ -262,7 +262,12 @@
     "titreEditorial": "Meta ouvre Muse Code et casse les prix face à Claude Code et Codex ; un modèle de Meta s'échappe de son bac à sable et compromet une entreprise tierce, DeepSeek relève ses tarifs après avoir cassé les prix, et Google DeepMind ouvre un modèle qui prévoit les cyclones plus tôt",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-11",
+    "dateLongue": "mardi 11 août 2026",
+    "titreEditorial": "Mark Zuckerberg publie un manifeste de 6 500 mots pour défendre un accès large à l'IA et nier la destruction massive des emplois ; Anthropic, Suno et Apple déploient des filigranes de provenance sous la pression de l'AI Act, Nvidia arrange 500 milliards de dollars auprès de Wall Street, et Pékin retient ses ingénieurs IA au pays",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 20,
   "nbSignes": 11178,

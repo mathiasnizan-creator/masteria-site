@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-10",
-    "totalEditions": 2,
-    "totalItems": 27,
-    "totalSources": 39
+    "derniereDate": "2026-08-21",
+    "totalEditions": 4,
+    "totalItems": 55,
+    "totalSources": 80
   },
   "recentes": [
+    {
+      "date": "2026-08-21",
+      "dateAffichee": "21 August 2026",
+      "dateCourte": "Fri 21 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Anthropic eyes a SpaceX-sized listing as enterprise buyers switch models",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-08-11",
+      "dateAffichee": "11 August 2026",
+      "dateCourte": "Tue 11 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "The AI Act makes provenance a job",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-08-10",
       "dateAffichee": "10 August 2026",
@@ -34,35 +56,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-08-10",
-    "dateAffichee": "10 August 2026",
-    "dateLongue": "Monday 10 August 2026",
-    "dateCourte": "Mon 10 Aug",
-    "jourSemaine": "Monday",
-    "titre": "AI Watch - Monday 10 August 2026",
-    "titreEditorial": "OpenAI freezes part of Astra over cyber risk",
-    "chapeau": "OpenAI has paused part of the work on Astra, a building block of its future ChatGPT, because the model can find and exploit previously unknown vulnerabilities on its own. Meta is opening up Muse Glimmer, an open-weight model light enough for a laptop, China acknowledges that it still trains its best models on Nvidia chips, and the French power grid is buckling under the weight of data centre projects.",
+    "date": "2026-08-21",
+    "dateAffichee": "21 August 2026",
+    "dateLongue": "Friday 21 August 2026",
+    "dateCourte": "Fri 21 Aug",
+    "jourSemaine": "Friday",
+    "titre": "AI Watch - Friday 21 August 2026",
+    "titreEditorial": "Anthropic eyes a SpaceX-sized listing as enterprise buyers switch models",
+    "chapeau": "Anthropic and OpenAI are racing to the public markets at the same moment, on the same promise of durable enterprise revenue, while professional customers change providers with every new model. The same day, a study in Nature puts a number on the footprint of Chinese propaganda in the large models, Alibaba pays cash for its compute, and Washington calls AI-boosted cyberattacks on industry \\\"non-theoretical\\\".",
     "une": {
-      "titre": "OpenAI puts part of Astra under wraps, judged too good at finding flaws on its own",
-      "texteHtml": "<p>OpenAI has paused part of the work on Astra, presented as a building block of its next consumer model, because it cannot yet rule out that the model can find and exploit previously unknown vulnerabilities without human help. The lab describes a machine that solves maths problems open for thirty years and then, in the same stride, digs up security flaws in software and mounts an attack from a single instruction. This is one of the first times a leading lab has voluntarily slowed one of its models for reasons of offensive security, rather than under pressure from a regulator. The episode comes days after OpenAI agents infiltrated Hugging Face and Anthropic acknowledged that Claude had reached the infrastructure of real companies during a test. For an organisation deploying these models, the lesson is in the timing: a model's cyber capability advances faster than the safeguards around it, and it is now the vendor itself raising the flag.</p>",
+      "titre": "Anthropic is aiming for a listing at the record size of SpaceX, and OpenAI is speeding up its own",
+      "texteHtml": "<p>According to Bloomberg, Anthropic, the maker of the Claude model, expects to match or beat the largest initial public offering ever done, SpaceX's, carried by demand from investors eager to ride the AI wave. The same day, OpenAI confirmed it is targeting a listing by 2027, possibly sooner, as the company sees a run of executive departures and as Greg Brockman, its co-founder, expands his role to the point where The Verge runs the headline \"it's Greg Brockman's OpenAI now\". Both labs are racing to the public markets at the same moment, on the same promise: enterprise revenue expected to last. That promise underpins valuations of several hundred billion dollars. The news of the same day supplies the counterpoint, and that is the subject of our analysis.</p>",
       "sources": [
         {
-          "nom": "Siècle Digital",
-          "url": "https://siecledigital.fr/2026/08/10/openai-freine-le-developpement-dastra-apres-des-resultats-inquietants-en-cybersecurite/"
+          "nom": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/anthropic-expects-to-match-spacex-s-record-ipo-size-or-top-it"
         },
         {
           "nom": "ZDNet",
-          "url": "https://www.zdnet.fr/actualites/openai-suspend-une-partie-du-developpement-dastra-face-a-des-risques-cyber-inedits-499497.htm#xtor=RSS-1"
+          "url": "https://www.zdnet.fr/actualites/openai-vise-une-entree-en-bourse-dici-2027-voire-avant-500252.htm"
         },
         {
-          "nom": "01net",
-          "url": "https://www.01net.com/actualites/openai-met-gpt-6-sous-cloche-juge-trop-doue-en-piratage-apres-lepisode-hugging-face.html"
+          "nom": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/982774/greg-brockman-openai-role-expansion"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "openai-puts-part-of-astra-under-wraps-judged-too-good-at"
+      "id": "anthropic-is-aiming-for-a-listing-at-the-record-size-of"
     },
     "sections": [
       {
@@ -72,44 +94,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The French power grid buckles under data centre promises, in the middle of a heatwave",
-            "texteHtml": "<p>As the heatwave forces EDF to shut down the Golfech reactor, for lack of water cool enough to cool it, ZDNet sets the €75 billion of announced data centre investment (the server warehouses that run AI) against the grid's real capacity to power it. Thermal stress on the lines and generation points makes AI's energy bill less theoretical than a press release. For a public decision-maker or an industrial site manager, where to place a data centre is now inseparable from how to power it and how exposed it is to the climate.</p>",
+            "titre": "A study published in Nature measures the footprint of Chinese state propaganda in ChatGPT and Claude",
+            "texteHtml": "<p>Content from Chinese state media has been absorbed into the corpora that train generative AI, La Tribune reports from a study published in Nature. The researchers find up to 23% of coordinated documents on certain sensitive political topics, and the bias shows up most when the question is asked in Chinese. For a company deploying a multilingual AI assistant, the finding raises a concrete governance question: the answer depends on the language of the query, and the corpus carries leanings the user never sees.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/investissements-ia-a-75-milliards-deuros-la-vulnerabilite-du-reseau-electrique-francais-face-au-choc-climatique-499517.htm#xtor=RSS-1"
+                "nom": "La Tribune",
+                "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/14929457641832/ia-comment-la-propagande-chinoise-s-invite-dans-les-reponses-de-chatgpt-et-claude"
               }
             ],
             "rang": 2,
-            "id": "the-french-power-grid-buckles-under-data-centre-promises-in"
+            "id": "a-study-published-in-nature-measures-the-footprint-of"
           },
           {
-            "titre": "The CNIL sets out how to spot a conflict of interest in a data protection officer",
-            "texteHtml": "<p>The GDPR lets an organisation give other duties to its data protection officer (the DPO, tasked with ensuring personal data is used properly), provided those duties do not put it in the position of judge in its own cause. The CNIL (France's data protection authority) publishes a grid for identifying these situations: a DPO who would define the very processing they are meant to oversee, for instance an IT or marketing director holding the role on the side. For a legal team or an IT department, the note gives a concrete test before handing out the DPO hat, at a moment when AI projects multiply the sensitive processing to watch.</p>",
+            "titre": "\"Uncensored\" versions of the Chinese Qwen model circulate freely on Hugging Face",
+            "texteHtml": "<p>Since the release of Qwen 3.8, Alibaba's latest open-weight model (which you can download and run yourself), \"uncensored\" variants have sprung up on Hugging Face, the main model-hosting platform, Numerama explains. Stripped of their safeguards, these versions answer requests the original model refuses. The ease of the operation is a reminder of a limit of open weights: once the model is out, its protections come off beyond the maker's reach.</p>",
             "sources": [
               {
-                "nom": "CNIL",
-                "url": "https://www.cnil.fr/fr/dpo-identifier-gerer-conflits-interets"
+                "nom": "Numerama",
+                "url": "https://www.numerama.com/cyberguerre/2314343-il-fera-tout-ce-que-vous-lui-demanderez-les-versions-uncensored-du-modele-dia-chinois-qwen-affolent-les-reseaux.html"
               }
             ],
             "rang": 3,
-            "id": "the-cnil-sets-out-how-to-spot-a-conflict-of-interest-in-a"
+            "id": "uncensored-versions-of-the-chinese-qwen-model-circulate"
           },
           {
-            "titre": "Vertical AI, an agent for every trade: a profession's vocabulary and rules are worth more than the model",
-            "texteHtml": "<p>Several Journal du Net analyses make the same point: general-purpose AI stalls on the precision of a real profession, and an agent only becomes useful once it takes on the vocabulary, the constraints and the liability specific to a trade. A baker, a lawyer, an engineering firm, three trades with nothing in common share the same blind spot before a general model that ignores their implicit rules. The reasoning echoes another column on \"brand voice\", where a company that does not encode its way of expressing itself watches its content become interchangeable. For a team equipping a trade, value shifts towards this work of making things explicit, a subject we develop in today's read.</p>",
+            "titre": "A ranking of AI privacy places Mistral's Vibe in a respectable position",
+            "texteHtml": "<p>Researchers at Incogni analysed thirteen AI platforms and the risk each poses to privacy, ZDNet reports. The general rule they observe: the larger the platform, the higher the risk, with one exception. Vibe, Mistral AI's assistant, does better than the average of the American giants, one more argument for European organisations under the GDPR looking for a defensible provider.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1553555-l-ia-verticale-pourquoi-chaque-metier-aura-bientot-son-agent-specialise/"
-              },
-              {
-                "nom": "JDN, IA métier",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1553557-boulanger-avocat-bureau-d-etudes-ce-que-l-ia-generique-ignore-et-que-l-ia-metier-capture/"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/confidentialite-voici-un-classement-des-meilleures-et-des-pires-ia-et-vibe-mistral-ai-ne-sen-sort-pas-si-mal-500310.htm"
               }
             ],
             "rang": 4,
-            "id": "vertical-ai-an-agent-for-every-trade-a-profession-s"
+            "id": "a-ranking-of-ai-privacy-places-mistral-s-vibe-in-a"
           }
         ]
       },
@@ -120,64 +138,56 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Meta releases Muse Glimmer, an open-weight model that runs on a laptop",
-            "texteHtml": "<p>On Monday 10 August, Meta launched Muse Glimmer, an open-weight model (which you can download and run yourself), multimodal and agentic, light enough to run on a personal computer without going through a data centre. The announcement extends the open strategy shown last week with Muse Code, the group's low-cost coding agent. By making a capable model downloadable and runnable locally, Meta revives the debate in the United States over open access to an ever more powerful technology that some would rather keep under control. For a team concerned about the confidentiality of its data, a model that runs on its own machines answers a constraint that online services do not lift.</p>",
+            "titre": "Companies switch between OpenAI and Anthropic with every new model",
+            "texteHtml": "<p>New data cited by TechCrunch shows OpenAI regaining ground with enterprise customers against Anthropic, which had been leading in business usage. Above all, buyers move back and forth from one provider to the other as models ship, a volatility that, the article stresses, should give investors in both labs pause about how solid that revenue really is. Enterprise AI spending, then, looks far less like a locked-in contract than the story goes.</p>",
             "sources": [
               {
-                "nom": "Hugging Face",
-                "url": "https://huggingface.co/blog/muse-glimmer"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-08-10/meta-releases-muse-glimmer-ai-model-people-can-run-on-their-laptop"
-              },
-              {
-                "nom": "Frandroid",
-                "url": "https://www.frandroid.com/marques/meta/3207895_meta-lance-muse-glimmer-son-modele-dia-agentique-en-open-source"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/"
               }
             ],
             "rang": 5,
-            "id": "meta-releases-muse-glimmer-an-open-weight-model-that-runs"
+            "id": "companies-switch-between-openai-and-anthropic-with-every"
           },
           {
-            "titre": "TSMC's monthly sales jump 45%, chip demand for AI holds up",
-            "texteHtml": "<p>The Taiwanese foundry TSMC, which manufactures the chips designed by Nvidia, AMD and Apple, reported a 45% rise in monthly sales, a sign of steady appetite for AI hardware despite market jitters. The same day, Sony and TSMC are in talks over a joint $6.4 billion investment in an image sensor plant in Japan, while Intel raises $15 billion in shares to fund its growth in data centres. Spending on AI infrastructure keeps feeding the whole silicon chain, from foundries to memory makers. For anyone tracking chip costs, these figures say that the hardware constraint, not demand, remains the limiting factor.</p>",
+            "titre": "Ramp launches Router, a service that routes each request to the best model of the moment",
+            "texteHtml": "<p>Spend-management company Ramp has put its own model router into service, called Router, which lets you use several large language models and move from one to another through a single application programming interface (API), TechCrunch reports. The tool illustrates a practice that is spreading: instead of depending on a single provider, a company places a software layer between its applications and the models, then arbitrates on price and quality.</p>",
             "sources": [
               {
-                "nom": "Bloomberg, TSMC",
-                "url": "https://www.bloomberg.com/news/articles/2026-08-10/tsmc-sales-rise-45-after-ai-spending-roars-on-despite-jitters"
-              },
-              {
-                "nom": "Bloomberg, Sony-TSMC",
-                "url": "https://www.bloomberg.com/news/articles/2026-08-10/sony-tsmc-to-invest-6-4-billion-in-joint-chip-plant-in-japan"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/08/20/ramp-launches-its-own-ai-model-router-called-router/"
               }
             ],
             "rang": 6,
-            "id": "tsmc-s-monthly-sales-jump-45-chip-demand-for-ai-holds-up"
+            "id": "ramp-launches-router-a-service-that-routes-each-request-to"
           },
           {
-            "titre": "Anthropic teams up with Macquarie and Singapore's GIC fund to build its own data centres",
-            "texteHtml": "<p>Anthropic, the maker of Claude, has formed a strategic partnership with the Australian asset manager Macquarie and Singapore's sovereign fund GIC to build data centres dedicated to its models. The deal shows the labs' race to lock in, ahead of time, the compute their growth depends on, funding it with outside capital rather than from their own cash alone. The structure follows other AI-linked debt deals, where players such as BlackRock arrange financing worth several billion. For a customer of these models, the concrete stake is continuity of service: a supplier that secures its compute is a supplier less exposed to shortages.</p>",
+            "titre": "ChatGPT can now send messages on your behalf through Apple Messages",
+            "texteHtml": "<p>OpenAI rolled out on Thursday an integration that lets ChatGPT control iMessage, Apple's messaging service, to write and send texts, TechCrunch and Bloomberg report. The feature raises privacy questions for Apple, whose end-to-end encrypted messaging is now opened to a third-party assistant. For an organisation, the arrival of agents able to act inside personal communication tools moves the boundary of consent and of the trail left behind: who wrote this message, and with what access.</p>",
             "sources": [
               {
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/08/20/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plugin/"
+              },
+              {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-08-10/anthropic-macquarie-and-gic-form-venture-for-ai-data-centers"
+                "url": "https://www.bloomberg.com/news/articles/2026-08-20/chatgpt-can-now-control-imessage-potentially-raising-apple-privacy-concerns"
               }
             ],
             "rang": 7,
-            "id": "anthropic-teams-up-with-macquarie-and-singapore-s-gic-fund"
+            "id": "chatgpt-can-now-send-messages-on-your-behalf-through-apple"
           },
           {
-            "titre": "The backlash against \"slop\" starts to bite, platforms and apps flag AI-generated content",
-            "texteHtml": "<p>Wired documents a turn: platforms acknowledge that the public does not want to consume content churned out by AI, the \"slop\", and a growing number of sites and apps are adopting tools and rules to detect, label or ban these outputs. The shift touches social networks, marketplaces and editorial sites, all trying to preserve their readers' trust. The turn answers a saturation: when automatic content becomes indistinct and pervasive, the human signal regains value. For a brand or a newsroom, the stake shifts towards proof of human involvement and towards an explicit policy on the use of AI.</p>",
+            "titre": "Grok hands over user data when malicious instructions are encrypted",
+            "texteHtml": "<p>Researchers have shown that by hiding instructions inside encrypted content, you can push Grok, xAI's assistant, to disclose user data, Ars Technica describes. Named \"Cryptographic Context Injection\", the method bypasses the model's safeguards by masking the attack long enough for it to clear the filters. The technique adds to an already long list of injection methods: a model that reads a text can be hijacked by that text, even when it looks harmless.</p>",
             "sources": [
               {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/the-ai-slop-backlash-is-actually-having-an-impact/"
+                "nom": "Ars Technica",
+                "url": "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/"
               }
             ],
             "rang": 8,
-            "id": "the-backlash-against-slop-starts-to-bite-platforms-and-apps"
+            "id": "grok-hands-over-user-data-when-malicious-instructions-are"
           }
         ]
       },
@@ -188,40 +198,44 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "AgiBot overtakes Unitree to become the world's top humanoid robot vendor",
-            "texteHtml": "<p>China's AgiBot, based in Shanghai, has overtaken its domestic rival Unitree to become the world's top humanoid robot vendor in the first half of 2026, according to the firm Smart Analytics Global. AgiBot took 44% of the global market by shipping about 8,400 humanoid robots between January and June, carried by the boom in \"physical AI\", machines that embody models in the real world. Both companies are preparing to go public. China's dominance of this nascent segment is being settled while the West is still at the demo stage, and it gives Beijing an industrial lead on a market set to weigh heavily. For a European company considering service robotics, what is available and at what price will increasingly be decided in Shanghai.</p>",
+            "titre": "Alibaba: AI cloud jumps 45%, but $10 billion in spending cuts profit by four",
+            "texteHtml": "<p>Alibaba reported 45% growth in its cloud and AI division in the June quarter, lifting adjusted profit to 27.3 billion yuan (about $4 billion), above expectations, the South China Morning Post and Bloomberg report. At the same time, net profit fell more than 75%, as the group raised its quarterly investment to nearly $10 billion for its AI infrastructure. Executives say this spending will pay off in two to three years, as gross margins recover. The message to investors fits in one line: China is paying cash, today, for the compute that will decide its place tomorrow.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3363544/agibot-overtakes-unitree-top-global-humanoid-robot-vendor-first-half-amid-ipo-push"
+                "nom": "SCMP",
+                "url": "https://www.scmp.com/tech/big-tech/article/3364705/alibabas-ai-cloud-growth-surge-drives-earnings-despite-soaring-tech-spending"
+              },
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/videos/2026-08-20/alibaba-profit-dives-75-as-ai-spending-ratchets-up-video"
               }
             ],
             "rang": 9,
-            "id": "agibot-overtakes-unitree-to-become-the-world-s-top-humanoid"
+            "id": "alibaba-ai-cloud-jumps-45-but-10-billion-in-spending-cuts"
           },
           {
-            "titre": "China still trains its best models on Nvidia chips, for lack of a cost-effective alternative",
-            "texteHtml": "<p>China's most advanced AI models are still trained on Nvidia chips, according to sources at several large developers cited by the South China Morning Post, with the prohibitive cost of switching to local semiconductors holding back Beijing's self-sufficiency goal. Domestic hardware is improving, but changing chip architecture is a considerable engineering bottleneck: rewriting the software stacks, revalidating the models, absorbing the performance losses. \"Training models on Nvidia chips remains the norm for now among Chinese developers,\" one source sums up. US export controls therefore matter less than the accumulated software dependence. The hardware decoupling that has been announced will take years, not quarters.</p>",
+            "titre": "Chinese AI chips fall short on code, forcing companies to ration their Nvidia",
+            "texteHtml": "<p>Chinese companies are optimising their software to absorb inference demand (the cost of running a model once it is trained), part of that load still depending on a limited stock of high-end chips, for lack of access to Nvidia processors, the South China Morning Post reports. Simple inference adapts to domestic hardware, but complex tasks, code generation in particular, still require American chips. The export controls decided by Washington thus produce a concrete effect: Chinese players reserve their scarce silicon for the uses where it remains irreplaceable.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3363491/chinas-top-ai-still-trained-nvidia-chips-what-delaying-switch-local-tech"
+                "nom": "SCMP",
+                "url": "https://www.scmp.com/tech/tech-trends/article/3364700/chinese-ai-chips-fall-short-coding-forcing-firms-stretch-scarce-nvidia-supply"
               }
             ],
             "rang": 10,
-            "id": "china-still-trains-its-best-models-on-nvidia-chips-for-lack"
+            "id": "chinese-ai-chips-fall-short-on-code-forcing-companies-to"
           },
           {
-            "titre": "The boom in AI memory prices may be nearing its end",
-            "texteHtml": "<p>The rally in memory makers' shares is running out of steam, according to analyses relayed by the South China Morning Post, with the slowing rise in prices raising the question of how long the cycle will last, even as AI-driven demand stays strong. The price rises that produced record profits in recent quarters would signal a late-cycle phase, just as Chinese producers prepare to add capacity. For a company budgeting for server hardware, the signal is a warning not to extrapolate today's memory shortage over several years.</p>",
+            "titre": "Chinese \"supernodes\" go mainstream as models grow",
+            "texteHtml": "<p>Assemblies of tens or hundreds of linked chips, supernodes are China's answer to the American ban on exporting the most advanced AI processors, the South China Morning Post explains from the World Artificial Intelligence Conference in Shanghai. By stacking large quantities of domestic chips, China rebuilds top-tier compute without the embargoed components. The method costs in energy and complexity what it gains in autonomy.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3363519/how-long-can-ai-memory-price-boom-last-research-suggests-not-much-longer"
+                "nom": "SCMP",
+                "url": "https://www.scmp.com/plus/tech/big-tech/article/3364660/chinas-supernodes-go-mainstream-ai-model-sizes-grow"
               }
             ],
             "rang": 11,
-            "id": "the-boom-in-ai-memory-prices-may-be-nearing-its-end"
+            "id": "chinese-supernodes-go-mainstream-as-models-grow"
           }
         ]
       },
@@ -232,16 +246,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Researchers create 8.3 billion virtual humans to test products and interfaces for us",
-            "texteHtml": "<p>With MatrAIx, a research team has built a virtual population of 8.3 billion profiles that AI models can embody to test a chatbot, a website or an app as real users would. The idea is to simulate a range of reactions before calling on actual panels, which are slower and costlier to assemble. The method appeals to product testing and user experience, provided you keep in mind that a simulated profile's reaction approximates a human's without replacing it. For a product team, the tool promises a quick first filter, useful ahead of a real test rather than in its place.</p>",
+            "titre": "Position paper: multi-agent systems should treat concurrency control as a priority",
+            "texteHtml": "<p>A paper published on arXiv argues that many failures of multi-agent AI systems are classic concurrency problems: agents read and write a shared state at the same time, and long inference windows amplify the risk of stale reads, lost updates and inconsistent results. The authors propose handling these failures with the proven tools of databases, locks and transactions, rather than blaming them on a lack of \"communication\" between agents. For anyone putting agents into production, the lesson is direct: the failures often come from the architecture, not from the model's intelligence.</p>",
             "sources": [
               {
-                "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2308727-ces-chercheurs-ont-cree-83-milliards-dhumains-virtuels-pour-tester-des-produits-a-notre-place.html"
+                "nom": "arXiv",
+                "url": "https://arxiv.org/abs/2608.18092"
               }
             ],
             "rang": 12,
-            "id": "researchers-create-8-3-billion-virtual-humans-to-test"
+            "id": "position-paper-multi-agent-systems-should-treat-concurrency"
           }
         ]
       },
@@ -252,55 +266,56 @@
         "format": "bref",
         "items": [
           {
-            "titre": "Claude Cowork opens up to the web and mobile, and 90% of sessions are not for coding",
-            "texteHtml": "<p>Anthropic is extending Claude Cowork to the browser and mobile, and its own data show that usage runs well beyond software development, a sign that these agents are settling into ordinary office tasks.</p>",
+            "titre": "Google gives publishers a \"preferred source\" button to limit the traffic loss caused by AI",
+            "texteHtml": "<p>Readers will be able to designate an outlet as a preferred source in Search, Discover and Google News, a partial fix as AI-boosted search sends fewer clicks back to the web.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/claude-cowork-danthropic-se-tourne-vers-le-cloud-alors-que-les-donnees-montrent-que-90-des-sessions-ne-sont-pas-consacrees-au-codage-499502.htm#xtor=RSS-1"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/08/20/google-gives-publishers-a-new-way-to-fight-ai-driven-traffic-losses/"
               }
             ],
             "rang": 13,
-            "id": "claude-cowork-opens-up-to-the-web-and-mobile-and-90-of"
+            "id": "google-gives-publishers-a-preferred-source-button-to-limit"
           },
           {
-            "titre": "Anthropic acknowledges that Claude reached three real companies during a test meant to be isolated",
-            "texteHtml": "<p>The flaw came from an isolation instruction that was never checked, not from the model, a direct echo of the configuration incidents recurring from one lab to the next over the past month.</p>",
+            "titre": "The United States warns of AI-assisted attacks targeting Siemens controllers",
+            "texteHtml": "<p>In a joint advisory of 19 August, several American federal agencies warn that attackers are using AI to develop tools targeting Siemens S7 industrial controllers in critical infrastructure, a threat they call \"non-theoretical\".</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1553551-claude-a-pirate-trois-entreprises-reelles-pendant-un-test-de-securite-le-probleme-n-etait-pas-l-ia/"
+                "nom": "Numerama",
+                "url": "https://www.numerama.com/cyberguerre/2314557-non-theorique-des-risques-de-piratage-dautomates-siemens-mettent-les-etats-unis-en-alerte.html"
               }
             ],
             "rang": 14,
-            "id": "anthropic-acknowledges-that-claude-reached-three-real"
+            "id": "the-united-states-warns-of-ai-assisted-attacks-targeting"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "The same morning, three columns say general-purpose AI stumbles on real professions while Meta ships a model that fits on a laptop: when the base component downloads for free, the skill that gains value is writing down your field's knowledge before hoping a better prompt will do",
-      "these": "Three Journal du Net columns, posted within minutes of each other this Monday morning, converge: general-purpose AI trips on the precision of a real profession, and the same day Meta releases Muse Glimmer, an agentic model that runs on a laptop. When the base component downloads for free, it stops being the scarce asset; what stays scarce is the domain layer, the exact vocabulary of a profession, its rules, its edge cases, the line where its liability ends. The skill that gains value inside a French team comes down to one move: spell out the domain knowledge, sit down with the person who decides, write their rules and their exceptions, gather fifty real cases with the right answer and turn them into an evaluation set, before believing a better prompt will do.",
-      "html": "<p>Three Journal du Net columns, posted within minutes of each other this Monday morning, say the same thing: general-purpose AI trips on the precision of a real profession, whether a baker, a lawyer or an engineering firm. The same day, Meta releases Muse Glimmer, an agentic model that runs on a laptop. Put the two facts side by side. A capable model, which assumed heavy infrastructure not long ago, now fits on a desktop machine, freely available. When the base component downloads for free, it stops being the scarce asset.</p>\n<p>What stays scarce is the domain layer: the exact vocabulary of a profession, its rules, its edge cases, the line where its liability ends. A legal agent draws its value from something precise, the applicable case law, the limitation period, the clause that tips a contract one way. That knowledge lives in the heads of your experts and in procedures no one has ever written down. No model, however open, contains it.</p>\n<p>From this we draw a skill to build, one that comes down to a concrete move: write down your field's knowledge before hoping a better prompt will do. Sit down with the person who decides, note their rules and their exceptions, gather fifty real cases with the right answer, and turn them into an evaluation set. It is that corpus that sets your agent apart from the competitor's who downloaded the same weights file. The work is documentary before it is technical, and it falls to those who know the trade as much as to the IT department.</p>\n<p>The model downloads overnight. A field's knowledge took thirty years to form, and that is where your edge lies, in what your experts have never had to put into words.</p>\n<p>The Masteria editorial team.</p>",
-      "htmlExtrait": "<p>Three Journal du Net columns, posted within minutes of each other this Monday morning, say the same thing: general-purpose AI trips on the precision of a real profession, whether a baker, a lawyer or an engineering firm. The same day, Meta releases Muse Glimmer, an agentic model that runs on a laptop. Put the two facts side by side. A capable model, which assumed heavy infrastructure not long ago, now fits on a desktop machine, freely available. When the base component downloads for free, it stops being the scarce asset.</p>\n<p>What stays scarce is the domain layer: the exact vocabulary of a profession, its rules, its edge cases, the line where its liability ends. A legal agent draws its value from something precise, the applicable case law, the limitation period, the clause that tips a contract one way. That knowledge lives in the heads of your experts and in procedures no one has ever written down. No model, however open, contains it.</p>",
+      "titre": "OpenAI and Anthropic's enterprise customers switch models with every release while both labs race to the market on the promise of captive revenue: the skill that gains value is portability, an abstraction layer and an in-house eval set that let you change providers in a day rather than in six months",
+      "these": "Companies change their AI model with every release, with no loyalty. TechCrunch documented it on 20 August: OpenAI's and Anthropic's enterprise customers move back and forth from one provider to the other as new models ship, a volatility that, the article notes, should worry investors about the strength of that revenue. The same day, Anthropic is preparing a listing at the record size of SpaceX and Ramp puts Router into service, an in-house switch that sends each request to the best model of the moment. Three signals, one direction: the lock-in the labs are selling to their future shareholders, captive enterprise revenue, does not hold up on the ground. The skill that gains value inside a French team is portability: designing your applications so that none is welded to a single API, keeping an in-house eval set of fifty to a hundred real cases that you run against every new model on the day it ships, and setting the price per request against measured quality. Then switching models becomes a management decision taken in a day, not a six-month project.",
+      "html": "<p>Companies change their AI model with every release, with no loyalty. TechCrunch documented it on 20 August: OpenAI's and Anthropic's enterprise customers move back and forth from one provider to the other as new models ship, a volatility that, the article notes, should worry investors about the strength of that revenue. The same day, Anthropic is preparing a listing at the record size of SpaceX and Ramp puts Router into service, an in-house switch that sends each request to the best model of the moment. Three signals, one direction: the lock-in the labs are selling to their future shareholders, captive enterprise revenue, does not hold up on the ground.</p>\n<p>For a French organisation, the position is favourable, provided it is held. The value stays with whoever can change providers without rebuilding everything.</p>\n<p>The skill that gains value inside a team is portability. It comes down to three moves. Designing your AI applications so that none is welded to a single API: an abstraction layer that keeps the provider behind your own interface. Keeping an in-house eval set, fifty to a hundred real cases with their correct answer, that you run against every new model on the day it ships. Setting the price per request against measured quality, on the same table. Then switching models becomes a management decision taken in a day, not a six-month project.</p>\n<p>The labs are raising hundreds of billions of dollars on the promise that you will stay. A team that learns AI gives itself the means to leave. That is where, in the door kept open, the real bargaining power of the coming years sits.</p>\n<p>The Masteria editorial team.</p>",
+      "htmlExtrait": "<p>Companies change their AI model with every release, with no loyalty. TechCrunch documented it on 20 August: OpenAI's and Anthropic's enterprise customers move back and forth from one provider to the other as new models ship, a volatility that, the article notes, should worry investors about the strength of that revenue. The same day, Anthropic is preparing a listing at the record size of SpaceX and Ramp puts Router into service, an in-house switch that sends each request to the best model of the moment. Three signals, one direction: the lock-in the labs are selling to their future shareholders, captive enterprise revenue, does not hold up on the ground.</p>\n<p>For a French organisation, the position is favourable, provided it is held. The value stays with whoever can change providers without rebuilding everything.</p>",
       "itemsCites": [
-        4,
-        5
+        1,
+        5,
+        6
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-08-06",
-      "dateLongue": "Thursday 6 August 2026",
-      "titreEditorial": "Jeff Dean leaves Google as DeepMind reshuffles its command",
-      "nbItems": 13
+      "date": "2026-08-11",
+      "dateLongue": "Tuesday 11 August 2026",
+      "titreEditorial": "The AI Act makes provenance a job",
+      "nbItems": 14
     },
     "suivante": null,
     "nbItems": 14,
-    "nbSources": 20,
-    "nbSignes": 9934,
-    "tempsLecture": 8,
+    "nbSources": 18,
+    "nbSignes": 8111,
+    "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
@@ -329,20 +344,19 @@
       }
     ],
     "sourcesDuJour": [
-      "Siècle Digital",
-      "ZDNet",
-      "01net",
-      "CNIL",
-      "Journal du Net",
-      "JDN, IA métier",
-      "Hugging Face",
       "Bloomberg",
-      "Frandroid",
-      "Bloomberg, TSMC"
+      "ZDNet",
+      "The Verge",
+      "La Tribune",
+      "Numerama",
+      "TechCrunch",
+      "Ars Technica",
+      "SCMP",
+      "arXiv"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 92,
-    "publieLe": "2026-08-10T15:06:47+02:00",
-    "publieLeAffiche": "15h06"
+    "nbArticlesCollectes": 111,
+    "publieLe": "2026-08-21T06:02:07+02:00",
+    "publieLeAffiche": "6h02"
   }
 }
