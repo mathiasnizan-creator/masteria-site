@@ -148,5 +148,10 @@ export const METIERS = [
   { slug: 'immobilier',          label: 'Immobilier',               desc: 'Annonces, estimation, gestion locative, syndic, promotion' },
   { slug: 'commerce',            label: 'Commerce & e-commerce',    desc: 'Fiches produits, magasin, avis clients, e-commerce' },
   { slug: 'sante',               label: 'Santé & médico-social',    desc: 'Usages non cliniques : écrits, qualité, coordination' },
+  { slug: 'juridique',           label: 'Juridique',                desc: 'Contrats, recherche, actes, veille : sources vérifiées' },
+  { slug: 'comptabilite',        label: 'Comptabilité',             desc: 'Cabinets et services comptables : révision, annexe, clients' },
+  { slug: 'assurance',           label: 'Assurance',                desc: 'Sinistres, souscription, relation assurés' },
+  { slug: 'btp',                 label: 'BTP & construction',       desc: 'Études de prix, mémoires techniques, chantier' },
+  { slug: 'tourisme',            label: 'Tourisme & hôtellerie',    desc: 'Avis clients, fiches, emails, multilingue' },
   { slug: 'transverse',          label: 'Tous publics',             desc: 'Formats courts pour acculturer ou outiller largement' },
 ];

@@ -14,6 +14,8 @@ import {
   UserCheck, Rocket, Presentation, FolderSearch, Lock, BookOpen, ListFilter, ShieldAlert, LayoutTemplate,
   Wrench, Smile, Newspaper, FileCode, Terminal, Radar, Code2, Route, Puzzle, Copyright, School, Globe, Truck,
   Zap, Layers, Award, Waves, NotebookPen, Eye,
+  Gavel, Hammer, Plane, Umbrella, Receipt, FileSpreadsheet, BedDouble, UtensilsCrossed, Luggage, Map, Banknote,
+  PiggyBank, LifeBuoy, FileCheck, Ruler, Blocks, BrickWall, Warehouse, Sun,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -54,6 +56,10 @@ const METIER_ICONS = {
   immobilier:          Home,
   commerce:            Store,
   sante:               HeartPulse,
+  comptabilite:        Calculator,
+  assurance:           Umbrella,
+  btp:                 Hammer,
+  tourisme:            Plane,
 }
 
 // Icônes nommables depuis la data enrichie (src/data/metiers/<slug>.js)
@@ -68,6 +74,8 @@ const ICON_BY_NAME = {
   UserSearch, UserPlus, DoorOpen, UserCheck, Rocket, Presentation, FolderSearch, Lock, BookOpen, ListFilter,
   ShieldAlert, LayoutTemplate, Wrench, Smile, Newspaper, FileCode, Terminal, Radar, Code2, Route, Puzzle,
   Copyright, School, Globe, Truck, Zap, Layers, Award, Waves, NotebookPen, Eye,
+  Gavel, Hammer, Plane, Umbrella, Receipt, FileSpreadsheet, BedDouble, UtensilsCrossed, Luggage, Map, Banknote,
+  PiggyBank, LifeBuoy, FileCheck, Ruler, Blocks, BrickWall, Warehouse, Sun,
 }
 
 // ─── Contenu éditorial par métier ────────────────────────────────────────────

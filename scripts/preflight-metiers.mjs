@@ -7,7 +7,7 @@ const DIST=path.resolve('dist'); const PORT=4196;
 const MIME={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.xml':'application/xml','.txt':'text/plain'};
 const server=http.createServer((req,res)=>{let p=decodeURIComponent(req.url.split('?')[0]); let f=path.join(DIST,p); if(!fs.existsSync(f)||fs.statSync(f).isDirectory()) f=path.join(DIST,'index.html'); res.writeHead(200,{'Content-Type':MIME[path.extname(f)]||'application/octet-stream'}); fs.createReadStream(f).pipe(res);});
 await new Promise(r=>server.listen(PORT,r));
-const METIERS=(process.argv[2]?process.argv[2].split(','):['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse']);
+const METIERS=(process.argv[2]?process.argv[2].split(','):['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','juridique','comptabilite','assurance','btp','tourisme','transverse']);
 const browser=await puppeteer.launch({headless:true,args:['--no-sandbox']});
 let bad=0;
 for(const m of METIERS){

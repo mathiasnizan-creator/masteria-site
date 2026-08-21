@@ -99,7 +99,8 @@ const metierSlugs = [
   'marketing','ressources-humaines','commercial','finance',
   'communication','management','assistante',
   'seo','service-client','informatique','pedagogique',
-  'achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse',
+  'achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante',
+  'juridique','comptabilite','assurance','btp','tourisme','transverse',
 ].map(m => `formation-ia-${m}`);
 
 // Spokes (ChatGPT, Copilot, Gemini, Claude, Mistral, Sprint IA, Multi-outils Métier)

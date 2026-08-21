@@ -28,7 +28,7 @@ const SpokePage = lazy(() => import('./pages/SpokePage'));
 const MetiersHubPage = lazy(() => import('./pages/MetiersHubPage'));
 /* Pages métier : une page-route par métier (src/pages/metiers/<slug>.jsx = template MetierPage
    + données de ce seul métier), chargée à la demande → un chunk léger par page. */
-const METIER_SLUGS = ['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','transverse'];
+const METIER_SLUGS = ['marketing','ressources-humaines','commercial','finance','communication','management','assistante','seo','service-client','informatique','pedagogique','achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante','juridique','comptabilite','assurance','btp','tourisme','transverse'];
 const METIER_MODULES = import.meta.glob('./pages/metiers/*.jsx');
 const METIER_PAGES = Object.fromEntries(METIER_SLUGS.map(s => [s, lazy(METIER_MODULES[`./pages/metiers/${s}.jsx`])]));
 const ConseilIAPage = lazy(() => import('./pages/ConseilIAPage'));

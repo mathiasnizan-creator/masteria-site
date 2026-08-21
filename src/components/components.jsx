@@ -7,6 +7,7 @@ import {
   BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
   Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award, Database, Cpu, Boxes,
   Newspaper, Library, Info,
+  HardHat, ClipboardList, Landmark, Home, Store, HeartPulse, Scale, Calculator, Umbrella, Hammer, Plane,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
 import { useIsMobile, useMediaQuery } from '../hooks/useMediaQuery';
@@ -24,6 +25,17 @@ const METIER_ICONS_NAV = {
   'formation-ia-informatique':        Server,
   'formation-ia-pedagogique':         GraduationCap,
   'formation-ia-achats':              ShoppingCart,
+  'formation-ia-qse':                 HardHat,
+  'formation-ia-gestion-de-projet':   ClipboardList,
+  'formation-ia-marche-public':       Landmark,
+  'formation-ia-immobilier':          Home,
+  'formation-ia-commerce':            Store,
+  'formation-ia-sante':               HeartPulse,
+  'formation-ia-juridique':           Scale,
+  'formation-ia-comptabilite':        Calculator,
+  'formation-ia-assurance':           Umbrella,
+  'formation-ia-btp':                 Hammer,
+  'formation-ia-tourisme':            Plane,
   'formation-ia-transverse':          Sparkles,
 };
 
@@ -89,6 +101,17 @@ const METIERS_NAV = [
   { label: 'Informatique / DSI',      slug: 'formation-ia-informatique' },
   { label: 'Équipes Pédagogiques',    slug: 'formation-ia-pedagogique' },
   { label: 'Achats',                  slug: 'formation-ia-achats' },
+  { label: 'QSE / HSE',               slug: 'formation-ia-qse' },
+  { label: 'Gestion de projet',       slug: 'formation-ia-gestion-de-projet' },
+  { label: 'Marchés publics',         slug: 'formation-ia-marche-public' },
+  { label: 'Immobilier',              slug: 'formation-ia-immobilier' },
+  { label: 'Commerce & e-commerce',   slug: 'formation-ia-commerce' },
+  { label: 'Santé & médico-social',   slug: 'formation-ia-sante' },
+  { label: 'Juridique',               slug: 'formation-ia-juridique' },
+  { label: 'Comptabilité',            slug: 'formation-ia-comptabilite' },
+  { label: 'Assurance',               slug: 'formation-ia-assurance' },
+  { label: 'BTP & construction',      slug: 'formation-ia-btp' },
+  { label: 'Tourisme & hôtellerie',   slug: 'formation-ia-tourisme' },
   { label: 'Multi-métier',            slug: 'formation-ia-transverse' },
 ]
 
@@ -956,6 +979,11 @@ export function MasteriaFooter() {
               ['Immobilier', '/formation-ia-immobilier'],
               ['Commerce & e-commerce', '/formation-ia-commerce'],
               ['Santé & médico-social', '/formation-ia-sante'],
+              ['Juridique', '/formation-ia-juridique'],
+              ['Comptabilité', '/formation-ia-comptabilite'],
+              ['Assurance', '/formation-ia-assurance'],
+              ['BTP & construction', '/formation-ia-btp'],
+              ['Tourisme & hôtellerie', '/formation-ia-tourisme'],
               ['Acculturation IA', '/acculturation-ia'],
               ['Coaching IA individuel', '/coaching-ia'],
               ['Tous les métiers', '/formation-intelligence-artificielle'],

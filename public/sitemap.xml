@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -386,7 +386,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -632,115 +632,145 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-marketing</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-ressources-humaines</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-commercial</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-finance</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-communication</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-management</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-assistante</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-seo</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-service-client</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-informatique</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-pedagogique</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-achats</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-qse</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-gestion-de-projet</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-marche-public</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-immobilier</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-commerce</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-sante</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-juridique</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-comptabilite</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-assurance</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-btp</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-ia-tourisme</loc>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-transverse</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
