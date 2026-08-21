@@ -101,21 +101,29 @@ const PRIVATE_ROUTES = ['/competences-claude-eet', '/artefacts-claude-entreprise
 // /formations/:id passent par le fallback SPA ciblé du config Vercel.
 const EXTRA_ROUTES = ['/formations'];
 
-const routes = [...sitemapRoutes, ...PRIVATE_ROUTES, ...EXTRA_ROUTES];
+const allRoutes = [...sitemapRoutes, ...PRIVATE_ROUTES, ...EXTRA_ROUTES];
+
+// Mode réparation : PRERENDER_ONLY="/a,/b" ne re-prerender que ces routes
+// (après un échec transitoire de Chrome), sans refaire les ~290 autres.
+const REPAIR = (process.env.PRERENDER_ONLY || '').split(',').map(r => r.trim()).filter(Boolean);
+const routes = REPAIR.length ? allRoutes.filter(r => REPAIR.includes(r)) : allRoutes;
+if (REPAIR.length) console.log(`→ mode réparation : ${routes.length}/${REPAIR.length} routes demandées trouvées`);
 
 console.log(`→ ${routes.length} routes à prerender (lots de ${BATCH_SIZE})`);
 
 // Backup de l'index.html source (vite build) : utilisé comme shell pour chaque
 // route AVANT écriture. Sinon, dès qu'on prerender "/", les routes suivantes
 // chargent dist/index.html déjà peuplé des tags HomePage → doublons de canonicals/meta.
-const SHELL_PATH = path.join(dist, 'index.html');
+// En mode réparation, dist/index.html est déjà la home prérendue : le shell
+// propre est alors dist/spa.html (écrit par le run complet précédent).
+const SHELL_PATH = path.join(dist, (REPAIR.length && fs.existsSync(path.join(dist, 'spa.html'))) ? 'spa.html' : 'index.html');
 const SHELL_HTML = fs.readFileSync(SHELL_PATH, 'utf8');
 // Copie pérenne du shell SPA propre : servie par Vercel (en /spa, via cleanUrls)
 // comme fallback des routes non prérendues (/formations/:id, filets de sécurité).
 // Nécessaire car dist/index.html sera remplacé par la home prérendue en fin de run.
 fs.writeFileSync(path.join(dist, 'spa.html'), SHELL_HTML);
 // On placera "/" en dernier pour ne pas écraser le shell pendant le run.
-const orderedRoutes = [...routes.filter(r => r !== '/'), '/'];
+const orderedRoutes = REPAIR.length ? routes : [...routes.filter(r => r !== '/'), '/'];
 
 // ─────────────────────────────────────────────────────────────────
 // 3) Serveur + boucle prerender par lots
