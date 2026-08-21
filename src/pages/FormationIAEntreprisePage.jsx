@@ -222,6 +222,40 @@ const OUTILS = [
 
 /* ───────── FAQ ───────── */
 
+/* ───────── Les erreurs qui font échouer (sémantique : réussir sa formation IA) ───────── */
+
+const ERREURS = [
+  {
+    title: 'Former tout le monde pareil',
+    desc: "Une session unique pour toute l'entreprise produit des exemples qui ne parlent à personne : un prompt de campagne marketing n'apprend rien à un comptable. Le programme se monte par équipe, sur les documents et les processus de chacune ; le socle commun, lui, se traite en journée transverse.",
+  },
+  {
+    title: 'Former sans poser le cadre',
+    desc: "Si la session ne fixe pas quelles données peuvent passer dans quels outils, chacun improvise dès le lendemain, parfois sur des comptes personnels gratuits. Le cadre de confidentialité s'enseigne en même temps que les usages : offres entreprise, anonymisation, relecture de ce qui engage.",
+  },
+  {
+    title: "Former à un outil que personne n'aura",
+    desc: "Une démonstration de ChatGPT ne sert à rien si l'entreprise déploie Copilot, et réciproquement. Le cadrage recense licences et environnement réel ; la formation travaille sur les outils que vos équipes ouvriront le lundi suivant, avec leurs fonctions réelles et leurs limites.",
+  },
+  {
+    title: 'La session sans suite',
+    desc: "Sans référents ni bibliothèque partagée, les acquis retombent en quelques semaines : chacun garde ses prompts pour soi et les départs emportent le savoir. Ce qui se construit en session est rangé dans vos espaces partagés, et des référents internes prolongent la dynamique entre les vagues.",
+  },
+  {
+    title: 'Les démonstrations spectaculaires',
+    desc: "Une heure d'exemples impressionnants convainc sur le moment et ne change rien au poste de travail. La proportion s'inverse en atelier : des apports courts, puis chacun produit sur son propre document, avec le formateur qui passe. C'est la transposition qui fait l'adoption, pas la démonstration.",
+  },
+]
+
+/* ───────── Le tempo d'un déploiement (sémantique : plan de formation, combien de temps) ───────── */
+
+const VAGUES = [
+  { periode: 'Semaines 1 et 2', titre: 'Cadrage, puis vague pilote', desc: "Recueil des cas d'usage et des licences, choix des équipes pilotes, premières sessions. La vague pilote sert de preuve interne : elle rode les programmes sur vos documents et donne des exemples maison aux vagues suivantes." },
+  { periode: 'Les semaines suivantes', titre: 'Vagues par équipe', desc: "Les équipes passent par groupes, au format qui correspond à leur besoin : sprint de 3 heures, journée socle, deux jours métier. Le calendrier suit vos contraintes d'activité ; un site ou un service complet se couvre vague après vague, sans bloquer l'exploitation." },
+  { periode: 'En parallèle', titre: 'Référents, charte, bibliothèque', desc: "Les référents volontaires sont formés pendant les vagues, la charte d'usage se rédige avec la direction, et la bibliothèque de prompts et de gabarits s'alimente à chaque session dans vos espaces partagés." },
+  { periode: 'À 30 jours', titre: 'Mesure, puis la suite', desc: "Relevé des usages réellement installés, restitution à la direction, arbitrage de la vague suivante : équipes restantes, approfondissements, fonctionnalités avancées pour les équipes déjà formées. La montée en compétence devient un rythme, pas un événement." },
+]
+
 const FAQ = [
   {
     q: "Qu'est-ce qu'une formation IA en entreprise ?",
@@ -254,6 +288,14 @@ const FAQ = [
   {
     q: 'La formation est-elle finançable par notre OPCO ?',
     a: "Masteria est certifiée Qualiopi, condition nécessaire pour mobiliser votre OPCO dans le cadre du plan de développement des compétences. Nous préparons le dossier avec vous : programme, objectifs pédagogiques, modalités d'évaluation. La décision et le niveau de prise en charge appartiennent à votre opérateur, selon votre branche et votre budget formation ; aucun organisme sérieux ne peut vous promettre un montant à l'avance. Pas d'éligibilité CPF : ces formations d'équipe relèvent du budget formation de l'entreprise, pas des comptes individuels des salariés.",
+  },
+  {
+    q: "Faut-il former tout le monde en même temps ?",
+    a: "Non, et c'est rarement une bonne idée : bloquer toute l'entreprise le même jour coûte cher et produit des sessions trop hétérogènes. Le déploiement se fait par vagues : une vague pilote qui rode les programmes et crée des exemples internes, puis les équipes par groupes, au rythme de votre activité. Les managers passent tôt : leur pratique donne le ton, et ce sont eux qui font vivre les usages dans les équipes. Les référents se forment en parallèle des vagues.",
+  },
+  {
+    q: "Que reste-t-il dans l'entreprise après la formation ?",
+    a: "Des livrables concrets, rangés chez vous : la bibliothèque de prompts de chaque équipe, les gabarits outillés sur vos documents, les instructions et projets configurés dans vos espaces de travail, les compétences créées en atelier, la charte d'usage et le cadre de confidentialité. S'y ajoutent les référents internes formés et un relevé des usages installés remis à la direction. L'objectif est que la dynamique tienne sans nous : nous revenons pour approfondir, pas pour réinstaller.",
   },
   {
     q: "Quelle différence entre une formation IA en entreprise et une acculturation IA ?",
@@ -336,6 +378,42 @@ const articleJsonLd = {
 
 /* ───────── Composants ───────── */
 
+/* ── GEO : lexique structuré des termes de la page (DefinedTermSet) ── */
+const SITE = 'https://www.master-ia.fr'
+const termsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': `${SITE}/${SLUG}#lexique`,
+  name: 'Lexique de la formation IA en entreprise',
+  hasDefinedTerm: [
+    { '@type': 'DefinedTerm', name: 'Formation intra-entreprise', description: "Session organisée pour les salariés d'une seule entreprise, dans ses locaux ou à distance, sur ses cas réels ; par opposition à l'inter-entreprises, qui réunit des participants de plusieurs organisations." },
+    { '@type': 'DefinedTerm', name: 'Littératie IA', description: "Niveau de compréhension et de maîtrise de l'IA que l'article 4 du règlement européen sur l'IA demande aux entreprises d'assurer, à la mesure du contexte, pour toute personne qui utilise un système d'IA dans un cadre professionnel." },
+    { '@type': 'DefinedTerm', name: 'Référent IA', description: "Collaborateur formé pour prolonger la dynamique après les sessions : il anime la bibliothèque de prompts, répond aux questions du quotidien et fait remonter les nouveaux cas d'usage." },
+    { '@type': 'DefinedTerm', name: 'Sprint IA', description: "Format court de 3 heures signé Masteria : un atelier intelligence artificielle ciblé et pratique, conçu pour acculturer rapidement une équipe ou un grand nombre de collaborateurs." },
+    { '@type': 'DefinedTerm', name: 'Plan de développement des compétences', description: "Cadre dans lequel l'employeur organise la formation de ses salariés ; c'est à ce titre que les formations IA certifiées Qualiopi sont finançables par l'OPCO de l'entreprise." },
+    { '@type': 'DefinedTerm', name: "Charte IA d'entreprise", description: "Document qui fixe les règles d'usage de l'IA dans l'entreprise : données autorisées par outil, relecture de ce qui engage, propriété des assistants et des compétences créés." },
+  ],
+}
+
+/* ── GEO : les 24 formations métier en ItemList ── */
+const METIERS_ALL = [
+  ['Marketing', 'marketing'], ['Ressources humaines', 'ressources-humaines'], ['Commercial', 'commercial'], ['Finance', 'finance'],
+  ['Communication', 'communication'], ['Management', 'management'], ['Assistanat de direction', 'assistante'], ['SEO', 'seo'],
+  ['Service client', 'service-client'], ['Informatique / DSI', 'informatique'], ['Équipes pédagogiques', 'pedagogique'], ['Achats', 'achats'],
+  ['QSE / HSE', 'qse'], ['Gestion de projet', 'gestion-de-projet'], ['Marchés publics', 'marche-public'], ['Immobilier', 'immobilier'],
+  ['Commerce & e-commerce', 'commerce'], ['Santé & médico-social', 'sante'], ['Juridique', 'juridique'], ['Comptabilité', 'comptabilite'],
+  ['Assurance', 'assurance'], ['BTP & construction', 'btp'], ['Tourisme & hôtellerie', 'tourisme'], ['Tous publics (socle commun)', 'transverse'],
+]
+const metiersJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${SITE}/${SLUG}#metiers`,
+  name: 'Les 24 formations IA par métier de Masteria',
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  numberOfItems: METIERS_ALL.length,
+  itemListElement: METIERS_ALL.map(([label, slug], i) => ({ '@type': 'ListItem', position: i + 1, name: `Formation IA ${label}`, url: `${SITE}/formation-ia-${slug}` })),
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -390,7 +468,7 @@ export default function FormationIAEntreprisePage() {
           { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
           { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
         ]}
-        extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd]}
+        extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd, termsJsonLd, metiersJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -552,6 +630,37 @@ export default function FormationIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── LE TEMPO : combien de temps pour former l'entreprise ── */}
+      <section id="tempo" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <div style={editorialGrid}>
+            <div style={editorialAside}>
+              <Kicker>Le tempo</Kicker>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>
+                Combien de temps pour former toute l'entreprise ?
+              </h2>
+              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
+                <strong>Une équipe se forme en une session, de 3 heures à 2 jours ; une entreprise se forme par vagues, en quelques semaines à quelques mois selon le nombre d'équipes et votre calendrier. Le rythme est le vôtre : la formation IA en entreprise s'organise autour de l'activité, jamais contre elle.</strong>
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                Par où commencer ? Par les équipes qui produisent le plus d'écrit (assistanat, RH, commercial, marketing) : les gains y sont immédiats et visibles. Et par les managers, tôt : leur pratique donne le ton du reste de l'entreprise.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gap: 16 }}>
+              {VAGUES.map((v, i) => (
+                <div key={i} style={{ ...cardStyle, padding: 22, display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                  <div style={{ flexShrink: 0, minWidth: 132, fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: c, paddingTop: 3 }}>{v.periode}</div>
+                  <div>
+                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 6 }}>{v.titre}</h3>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{v.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── LES FORMATS ── */}
       <section id="formats" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -663,6 +772,30 @@ export default function FormationIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── LES ERREURS QUI FONT ÉCHOUER ── */}
+      <section id="erreurs" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Ce qui fait échouer</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Les cinq erreurs qui font échouer une formation IA en entreprise
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Cinq schémas reviennent dans les déploiements qui n'ont rien produit : la session unique pour tous les métiers, l'absence de cadre de confidentialité, la formation à un outil sans licence, la session sans suite, et la démonstration spectaculaire sans transposition au poste. Chacun a son antidote, intégré à notre déroulé.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
+            {ERREURS.map((item, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
+            Ce sont des schémas que nous observons depuis 2022, en formant plus de 1 500 professionnels du COMEX aux équipes terrain. Nos <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas</Link> détaillent ce que produit la séquence inverse, équipe par équipe.
+          </p>
+        </div>
+      </section>
+
       {/* ── LE CADRE : RGPD, CONFIDENTIALITÉ, AI ACT ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
@@ -730,6 +863,36 @@ export default function FormationIAEntreprisePage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── E-E-A-T : l'expérience derrière la page ── */}
+      <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+        <div style={wrap}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ flex: '1 1 380px', minWidth: 300 }}>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
+              <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
+                Un cabinet spécialisé IA, et des formateurs qui connaissent votre métier
+              </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
+                Masteria est un cabinet indépendant des éditeurs, spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues, choisis pour leur connaissance du métier formé. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
+              {[
+                ['Depuis 2022', 'spécialisé uniquement IA'],
+                ['+1 500', 'professionnels formés'],
+                ['Qualiopi', 'actions de formation certifiées'],
+                ['FR · CH · BE', 'intra sur site ou à distance'],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
+                  <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
