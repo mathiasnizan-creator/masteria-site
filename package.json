@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "sitemap": "node scripts/generate-sitemap.mjs",
-    "ping:indexnow": "node scripts/ping-indexnow.mjs"
+    "ping:indexnow": "node scripts/ping-indexnow.mjs",
+    "prebuild": "node scripts/no-concurrent-prerender.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

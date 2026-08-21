@@ -700,6 +700,34 @@ export default function AgenceIAPage() {
         </div>
       </section>
 
+      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ flex: '1 1 380px', minWidth: 300 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
+              Un cabinet spécialisé IA, indépendant des éditeurs
+            </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
+              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
+            {[
+              ['Depuis 2022', 'spécialisé uniquement IA'],
+              ['+1 500', 'professionnels formés'],
+              ['Indépendant', 'des éditeurs de solutions'],
+              ['FR · CH · BE', 'sur site ou à distance'],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <OfficialSources />
     </>
   )
