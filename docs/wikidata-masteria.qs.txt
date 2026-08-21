@@ -1,0 +1,19 @@
+CREATE
+LAST	Lfr	"Masteria"
+LAST	Len	"Masteria"
+LAST	Dfr	"cabinet de formation et de conseil en intelligence artificielle fondé à Lyon en 2022"
+LAST	Den	"French artificial intelligence training and consulting firm based in Lyon, founded in 2022"
+LAST	Afr	"Masteria IA"
+LAST	Afr	"master-ia.fr"
+LAST	Aen	"Masteria AI"
+LAST	P31	Q4830453	S854	"https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741"	S123	Q923193	S813	+2026-08-19T00:00:00Z/11
+LAST	P17	Q142	S854	"https://www.master-ia.fr/centre-formation-ia-entreprise"	S813	+2026-08-19T00:00:00Z/11
+LAST	P159	Q456	S854	"https://www.master-ia.fr/centre-formation-ia-entreprise"	S813	+2026-08-19T00:00:00Z/11
+LAST	P571	+2022-00-00T00:00:00Z/9	S854	"https://www.master-ia.fr/centre-formation-ia-entreprise"	S813	+2026-08-19T00:00:00Z/11
+LAST	P1448	fr:"Masteria"
+LAST	P856	"https://www.master-ia.fr"	P407	Q150
+LAST	P1616	"919252403"	S854	"https://annuaire-entreprises.data.gouv.fr/entreprise/919252403"	S813	+2026-08-19T00:00:00Z/11
+LAST	P1454	Q2912172	S854	"https://annuaire-entreprises.data.gouv.fr/entreprise/919252403"	S813	+2026-08-19T00:00:00Z/11
+LAST	P101	Q11660	S854	"https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741"	S123	Q923193	S813	+2026-08-19T00:00:00Z/11
+LAST	P452	Q3535127	S854	"https://www.master-ia.fr/centre-formation-ia-entreprise"	S813	+2026-08-19T00:00:00Z/11
+LAST	P973	"https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741"

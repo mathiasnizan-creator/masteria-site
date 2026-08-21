@@ -1,0 +1,12 @@
+CREATE
+LAST	Lfr	"Mathias Nizan"
+LAST	Len	"Mathias Nizan"
+LAST	Dfr	"consultant et formateur français en intelligence artificielle, fondateur de Masteria"
+LAST	Den	"French artificial intelligence consultant and trainer, founder of Masteria"
+LAST	P31	Q5
+LAST	P27	Q142
+LAST	P106	Q15978655	S854	"https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741"	S123	Q923193	S813	+2026-08-19T00:00:00Z/11
+LAST	P106	Q3077353	S854	"https://www.master-ia.fr/centre-formation-ia-entreprise"	S813	+2026-08-19T00:00:00Z/11
+LAST	P856	"https://www.master-ia.fr"	P407	Q150
+LAST	P6634	"mathias-nizan"
+LAST	P973	"https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741"

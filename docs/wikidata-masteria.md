@@ -4,7 +4,18 @@
 >
 > Admissibilité : Wikidata demande une entité clairement identifiable, décrite dans au moins une source sérieuse et publique. L'article des Échos (2025) et le site officiel suffisent. Créer l'item depuis un compte Wikidata personnel (Mathias), pas anonyme.
 
-## 1. Créer le compte et l'item
+## 0. Le plus simple : QuickStatements (2 minutes, compte Wikidata déjà créé)
+
+Le fichier n'a rien à « téléverser » sur Wikidata : l'item se crée par déclarations. L'outil officiel QuickStatements les saisit toutes d'un coup.
+
+1. Ouvrir https://quickstatements.toolforge.org → « Log in » (connexion OAuth avec ton compte Wikidata, autoriser l'outil).
+2. « New batch » → coller le contenu de `docs/wikidata-masteria.qs.txt` (colonnes séparées par des tabulations ; le `|` est accepté à la place) → « Import V1 commands » → vérifier l'aperçu → « Run ».
+3. L'outil affiche l'identifiant `Q…` créé : le noter, et me le donner pour le `sameAs` du site.
+4. Optionnel : même manipulation avec `docs/wikidata-mathias-nizan.qs.txt` pour l'item personne, puis une dernière ligne dans un nouveau batch pour relier les deux : `Q<masteria>|P112|Q<mathias>` (fondateur) et `Q<mathias>|P1830|Q<masteria>` (propriétaire de).
+
+Les identifiants de valeurs ont été vérifiés dans l'API Wikidata : entreprise Q4830453, France Q142, Lyon Q456, intelligence artificielle Q11660, formation professionnelle continue Q3535127, entreprise individuelle Q2912172, Les Échos Q923193, français Q150, consultant Q15978655, formateur Q3077353. Aucun item « Masteria » (cabinet) ni « Mathias Nizan » n'existe encore (les « Masteria » existants sont un genre d'araignées, la description distingue).
+
+## 1. Créer le compte et l'item (méthode manuelle, si tu préfères le formulaire)
 
 1. https://www.wikidata.org → « Créer un compte » (compte personnel, e-mail pro).
 2. Menu de gauche → « Créer un nouvel élément » (Special:NewItem).
