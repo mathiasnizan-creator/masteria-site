@@ -193,11 +193,6 @@
       "permanent": true
     },
     {
-      "source": "/formation-ia-entreprise",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
       "source": "/formation-ia-suisse-romande",
       "destination": "/formation-intelligence-artificielle",
       "permanent": true
@@ -274,11 +269,6 @@
     },
     {
       "source": "/formation-multi-outils-juridique",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-juridique",
       "destination": "/formation-intelligence-artificielle",
       "permanent": true
     },
@@ -826,20 +816,32 @@
     {
       "source": "/veille.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=1800, must-revalidate" }
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=1800, must-revalidate"
+        }
       ]
     },
     {
       "source": "/veille-data/latest.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, must-revalidate"
+        }
       ]
     },
     {
       "source": "/veille-data/(\\d{4}-\\d{2}-\\d{2})\\.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
