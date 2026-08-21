@@ -48,7 +48,7 @@ const CHIFFRES = [
   { label: 'Création', value: "2022, à Lyon · bureaux en presqu'île (Lyon 1ᵉʳ)" },
   { label: 'Certification', value: 'Qualiopi (actions de formation) · NDA 84 69 23218 69, vérifiable sur la Liste publique des organismes de formation' },
   { label: 'Formés', value: 'Plus de 1 500 professionnels · 98 % de satisfaction' },
-  { label: 'Catalogue', value: '89 programmes de formation · 5 outils · 13 métiers' },
+  { label: 'Catalogue', value: '5 outils · 24 métiers · des programmes par outil et par fonction' },
   { label: 'Activités', value: "Formation, conseil en stratégie IA, développement d'agents et d'outils sur mesure" },
   { label: 'Zone', value: 'France, Suisse, Belgique · présentiel et distanciel' },
   { label: 'Références', value: 'Études de cas publiées, anonymisées à la demande des clients, vérifiables sous NDA' },

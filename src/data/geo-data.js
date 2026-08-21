@@ -9,6 +9,9 @@
 export const GEO_CITIES = [
   {
     slug: 'paris',
+    metaTitleOverride: 'Formation intelligence artificielle Paris · Qualiopi | Masteria',
+    h1Override: "Formation intelligence artificielle à Paris : vos équipes formées sur leurs cas réels, dans vos locaux",
+    metaDescOverride: "Formation intelligence artificielle à Paris et en Île-de-France : ChatGPT, Copilot, Claude, Gemini, Mistral, programmes par métier dans vos locaux. Certifié Qualiopi, finançable OPCO.",
     name: 'Paris',
     nameLoc: 'à Paris',
     region: 'Île-de-France',
@@ -21,10 +24,15 @@ export const GEO_CITIES = [
     intraOnly: true,
     sectors: "finance, conseil stratégique, tech, médias, retail et grands groupes du CAC 40",
     desc: "Capitale économique française, Paris concentre 25 sièges sociaux du CAC 40, l'écosystème conseil le plus dense d'Europe et le plus grand bassin tech français. La demande en formation IA y est particulièrement forte dans les secteurs finance, conseil, tech et médias. Masteria intervient directement dans vos locaux parisiens, sans frais de déplacement supplémentaires.",
-    introPitch: "Nous nous déplaçons dans vos bureaux parisiens, en intra-muros ou en proche couronne, pour former vos équipes dans leur environnement de travail habituel. Programme construit sur vos cas d'usage réels, vos outils internes, vos processus métier.",
+    introPitch: "La formation intelligence artificielle à Paris se fait chez vous : nous nous déplaçons dans vos bureaux, en intra-muros ou en proche couronne, pour former vos équipes dans leur environnement de travail habituel. Programme construit sur vos cas d'usage réels, vos outils internes, vos processus métier.",
     opco: "OPCO principaux en Île-de-France : ATLAS (conseil, services financiers, banque, assurance), AKTO (hôtellerie, propreté, services à la personne, sécurité), CONSTRUCTYS (BTP), AFDAS (médias, culture, tourisme), OPCO 2i (industrie). Prise en charge jusqu'à 100 % selon votre convention collective. Délai de traitement OPCO en Île-de-France : 5 à 10 jours ouvrés en moyenne.",
     zones: "Paris intra-muros (75) et l'ensemble de l'Île-de-France : La Défense, Massy, Saint-Denis, Issy-les-Moulineaux, Boulogne, Versailles, Cergy, Marne-la-Vallée, Roissy",
     industriesDeep: [
+      {
+        sector: 'Luxe & maisons',
+        companies: "LVMH, Kering, Hermès, L'Oréal, Chanel",
+        focus: "Contenus et fiches produit multilingues au ton des maisons, clienteling et relation client exigeante, protection stricte des créations et des lancements : le cadre de confidentialité se traite en premier, l'IA travaille ensuite sur les écrits et l'analyse.",
+      },
       { sector: 'Finance & banque', companies: 'BNP Paribas, Société Générale, Crédit Agricole, AXA, BPCE, La Banque Postale', focus: 'Reporting réglementaire, analyse de portefeuille, KYC/AML, automatisation back-office, rédaction de notes de marché.' },
       { sector: 'Conseil & cabinet', companies: 'BCG, McKinsey, Bain, EY, KPMG, Deloitte, Wavestone, Sia Partners', focus: 'Rédaction de propositions commerciales, synthèses de mission, slides de CODIR, capitalisation sur les missions passées.' },
       { sector: 'Tech & numérique', companies: 'Capgemini, Atos, OVHcloud, Doctolib, Mirakl, Aircall, Datadog Paris, Criteo', focus: 'Documentation technique, code review assistée, communication produit, support client multilingue.' },
@@ -36,6 +44,7 @@ export const GEO_CITIES = [
       { profile: 'Direction financière — groupe industriel CAC 40 (La Défense)', usage: 'Synthèse de rapports trimestriels, analyse comparative de filiales, préparation de board international en anglais.' },
     ],
     localFacts: [
+      "La Défense est le premier quartier d'affaires d'Europe : directions financières, juridiques et RH y concentrent des usages IA à gain rapide sur l'écrit et l'analyse.",
       '25 sièges sociaux du CAC 40 sont situés à Paris ou à La Défense.',
       'Le bassin d\'emploi parisien regroupe 6,2 millions de cadres, soit 38 % des cadres français.',
       '92 % des grandes entreprises franciliennes ont lancé un programme IA générative en 2025 (étude PwC France).',
@@ -48,6 +57,14 @@ export const GEO_CITIES = [
       { name: 'Station F', type: 'Plus grand campus de startups au monde, partenaire formation IA' },
     ],
     additionalFAQ: [
+      {
+        q: "Comment choisir sa formation intelligence artificielle à Paris ?",
+        a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral), et l'organisation colle-t-elle à vos contraintes (en Île-de-France, dans vos locaux ou à distance). Le financement passe par votre OPCO (l'opérateur dépend de votre convention collective) : nous fournissons programme, convention et pièces, le dépôt se fait avant le début.",
+      },
+      {
+        q: "Proposez-vous une formation intelligence artificielle pour débutants à Paris ?",
+        a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
+      },
       { q: 'Intervenez-vous aussi en proche couronne (92, 93, 94) ?', a: "Oui. Nous nous déplaçons sans frais supplémentaires partout en Île-de-France : Hauts-de-Seine (La Défense, Boulogne, Issy-les-Moulineaux), Seine-Saint-Denis (Saint-Denis, Aubervilliers, Plaine Commune), Val-de-Marne (Créteil, Charenton, Villejuif). Préciser l'adresse exacte au moment du cadrage permet d'optimiser la logistique." },
       { q: 'Quels sont les délais d\'instruction OPCO ATLAS en Île-de-France ?', a: "Compter 5 à 10 jours ouvrés en moyenne pour une réponse OPCO ATLAS, premier financeur du conseil et des services financiers en Île-de-France. Masteria fournit le dossier complet (devis, programme, convention, attestation Qualiopi) sous 24 h ouvrées après acceptation du devis, ce qui permet une mise en formation en 3 à 4 semaines." },
       { q: 'Où se déroulent les formations IA à Paris ?', a: "En intra-entreprise : le formateur vient dans vos bureaux, partout dans Paris intra-muros et en Île-de-France (La Défense, les quartiers d'affaires de l'ouest parisien, Boulogne, Issy-les-Moulineaux, Saint-Denis, Marne-la-Vallée). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace. Le distanciel reste disponible pour les équipes réparties sur plusieurs sites." },
@@ -142,6 +159,9 @@ export const GEO_CITIES = [
   },
   {
     slug: 'marseille',
+    metaTitleOverride: 'Formation intelligence artificielle Marseille · Qualiopi | Masteria',
+    h1Override: "Formation intelligence artificielle à Marseille : vos équipes formées sur leurs cas réels, dans vos locaux",
+    metaDescOverride: "Formation intelligence artificielle à Marseille et en Provence-Alpes-Côte d'Azur : programmes par métier dans vos locaux, du port à la biotech. Certifié Qualiopi, finançable OPCO.",
     name: 'Marseille',
     nameLoc: 'à Marseille',
     region: 'Provence-Alpes-Côte d\'Azur',
@@ -154,10 +174,15 @@ export const GEO_CITIES = [
     intraOnly: true,
     sectors: "logistique portuaire, tourisme, services, santé, biotech, défense et industrie maritime",
     desc: "Premier port de France et deuxième ville française par sa population, Marseille est un hub méditerranéen avec un tissu d'ETI et de PME en forte transformation numérique. Le Grand Port Maritime de Marseille (GPMM), Eurocopter, CMA CGM, Onet et l'AP-HM y dessinent une économie tournée vers la mer, la santé et les services. Masteria intervient en intra-entreprise dans vos locaux marseillais pour former vos équipes à l'IA, avec un programme adapté aux réalités du marché provençal.",
-    introPitch: "Formation dans vos bureaux marseillais, construite sur vos enjeux métier. Masteria connaît les spécificités du tissu économique provençal — logistique portuaire, tourisme, santé, défense — et adapte le programme en conséquence. Nos formateurs se déplacent depuis Lyon en TGV (3 h 15) sans frais supplémentaires.",
+    introPitch: "La formation intelligence artificielle à Marseille se construit sur vos enjeux métier, dans vos bureaux. Masteria connaît les spécificités du tissu économique provençal : logistique portuaire, tourisme, santé, défense — et adapte le programme en conséquence. Nos formateurs se déplacent depuis Lyon en TGV (3 h 15) sans frais supplémentaires.",
     opco: "OPCO principaux en Provence-Alpes-Côte d'Azur : ATLAS (services financiers, conseil), AKTO (services, hôtellerie, propreté), AFDAS (tourisme, médias, sport, loisirs), OPCO 2i (industrie, défense), OPCO Santé (établissements sanitaires et sociaux). Délai d'instruction OPCO en région PACA : 7 à 12 jours ouvrés.",
     zones: "Marseille (1er au 16e arrondissement), Aix-en-Provence, Aubagne, Vitrolles, Salon-de-Provence, La Ciotat, Cassis, Martigues, Plan-de-Campagne",
     industriesDeep: [
+      {
+        sector: 'Agroalimentaire & services',
+        companies: 'Ricard (maison fondée à Marseille), Haribo, Onet, Compagnie Fruitière',
+        focus: "Fiches et argumentaires produits, qualité et procédures multi-sites, appels d'offres et contrats de services, communication interne d'équipes terrain : des usages IA concrets pour les sièges et les réseaux implantés dans la métropole.",
+      },
       { sector: 'Logistique & maritime', companies: 'CMA CGM, GPMM, Eurogate, Eurofos, Hapag-Lloyd, Bolloré Logistics', focus: 'Suivi de conteneurs, communication client multilingue, douane et conformité, automatisation des EDI, rédaction de bordereaux.' },
       { sector: 'Tourisme & hôtellerie', companies: 'Pierre & Vacances, Club Med, Accor région Sud, Sofitel Vieux-Port, Mama Shelter, Marseille Tourisme', focus: 'Réponses aux avis clients, contenus éditoriaux multilingues, gestion des réservations, support client 24/7.' },
       { sector: 'Santé & biotech', companies: 'AP-HM (CHU public, 4e plus grand de France), Eurobio, Innate Pharma, Gemini, Inserm Marseille', focus: 'Synthèse de protocoles cliniques, codification ICD-10, communication patient, rédaction de comptes rendus médicaux.' },
@@ -169,6 +194,7 @@ export const GEO_CITIES = [
       { profile: 'Direction qualité — laboratoire d\'analyses médicales régional (Aix-en-Provence)', usage: 'Synthèse de protocoles, mise à jour des procédures HAS, rédaction de comptes rendus structurés pour les médecins prescripteurs.' },
     ],
     localFacts: [
+      "Le grand port maritime de Marseille-Fos est le premier port de France : documentation de flux, déclarations et correspondances multilingues sont un terrain naturel pour l'IA générative.",
       'Marseille est le 1er port maritime de France et 5e d\'Europe en tonnage.',
       'L\'AP-HM (Assistance publique des Hôpitaux de Marseille) est le 4e CHU de France et emploie plus de 15 000 personnes.',
       'CMA CGM, leader mondial du transport maritime, a son siège social à Marseille (La Joliette).',
@@ -181,6 +207,14 @@ export const GEO_CITIES = [
       { name: 'The Camp', type: 'Campus innovation Sud, partenaire formation tech' },
     ],
     additionalFAQ: [
+      {
+        q: "Comment choisir sa formation intelligence artificielle à Marseille ?",
+        a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral), et l'organisation colle-t-elle à vos contraintes (dans la métropole Aix-Marseille, dans vos locaux ou à distance). Le financement passe par votre OPCO (l'opérateur dépend de votre convention collective) : nous fournissons programme, convention et pièces, le dépôt se fait avant le début.",
+      },
+      {
+        q: "Proposez-vous une formation intelligence artificielle pour débutants à Marseille ?",
+        a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
+      },
       { q: 'Quels formats proposez-vous à Marseille ?', a: "Nous privilégions l'intra-entreprise à Marseille : programme construit sur vos cas réels, exemples tirés de votre activité, équipe formée ensemble. Pour les profils dirigeants ou experts souhaitant une approche personnalisée, l'accompagnement individuel sur mesure (1-to-1) est disponible en présentiel à Marseille ou en distanciel." },
       { q: 'Vous formez aussi à Aix-en-Provence et sur la côte ?', a: "Oui. Nous intervenons régulièrement à Aix-en-Provence (banque privée, conseil, étudiants des écoles AMU), à Aubagne (industrie, agroalimentaire), à La Ciotat (chantier naval, tech) et à Cassis. Aucun frais de déplacement supplémentaire dans toute la métropole Aix-Marseille-Provence." },
       { q: 'Où se déroulent les formations IA à Marseille ?', a: "En intra-entreprise : le formateur vient chez vous, du Vieux-Port à La Joliette et dans les seize arrondissements, ainsi que dans toute la métropole (Aix-en-Provence, Aubagne, Vitrolles, Martigues). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace. Le distanciel reste disponible pour les équipes réparties entre plusieurs sites." },
@@ -189,6 +223,9 @@ export const GEO_CITIES = [
   },
   {
     slug: 'geneve',
+    metaTitleOverride: 'Formation intelligence artificielle Genève · sur mesure | Masteria',
+    h1Override: "Formation intelligence artificielle à Genève : vos équipes formées sur leurs cas réels, en français",
+    metaDescOverride: "Formation intelligence artificielle à Genève : programmes par métier dans vos bureaux ou à distance, adaptés aux exigences suisses (confidentialité, FINMA, multilinguisme). Sur mesure, en français.",
     name: 'Genève',
     nameLoc: 'à Genève',
     region: 'Suisse romande',
@@ -201,10 +238,15 @@ export const GEO_CITIES = [
     intraOnly: true,
     sectors: "finance internationale, organisations internationales (ONU, OMS, CICR), pharma, négoce de matières premières, private equity",
     desc: "Capitale mondiale de la finance internationale et siège de plus de 40 organisations internationales (ONU, OMS, OMC, CICR, HCR), Genève concentre un tissu d'entreprises à très haute valeur ajoutée. Avec plus de 1 200 banques privées et trading houses, c'est aussi le premier centre mondial de négoce de matières premières. Masteria intervient en intra-entreprise dans vos locaux genevois pour former vos équipes à l'IA, avec une attention particulière aux exigences de confidentialité du secteur financier suisse et à la conformité FINMA.",
-    introPitch: "Formation sur mesure dans vos bureaux genevois. Masteria adapte le programme aux contraintes spécifiques de votre secteur : conformité FINMA, confidentialité bancaire, exigences des organisations internationales, environnement multilingue. Tout le contenu est construit sur vos cas d'usage réels, dans le respect du secret professionnel.",
+    introPitch: "La formation intelligence artificielle à Genève se fait sur mesure, dans vos bureaux ou à distance. Masteria adapte le programme aux contraintes spécifiques de votre secteur : conformité FINMA, confidentialité bancaire, exigences des organisations internationales, environnement multilingue. Tout le contenu est construit sur vos cas d'usage réels, dans le respect du secret professionnel.",
     opco: "En Suisse, la formation continue est financée via le plan de formation de l'entreprise, les contributions sectorielles cantonales (Fonds genevois pour la formation et le perfectionnement professionnels — FFPP), les conventions collectives de travail (CCT), ou les budgets de développement RH des organisations internationales. Masteria vous accompagne dans l'identification des dispositifs disponibles dans le canton de Genève et propose des factures conformes pour le remboursement.",
     zones: "Canton de Genève intra (Genève, Carouge, Vernier, Lancy, Meyrin, Onex), canton de Vaud frontalier (Nyon, Morges), région du Grand Genève (Annemasse, Saint-Julien, pays de Gex côté français)",
     industriesDeep: [
+      {
+        sector: 'Horlogerie & luxe',
+        companies: 'Rolex, Patek Philippe, Richemont, Vacheron Constantin',
+        focus: "Contenus et correspondance client multilingues au ton des maisons, documentation technique et formation interne, confidentialité absolue des développements produits : le cadre d'usage se définit avant tout déploiement d'IA.",
+      },
       { sector: 'Banque privée & wealth management', companies: 'Pictet, Lombard Odier, Mirabaud, UBP, Edmond de Rothschild, Bordier, Banque Heritage, Reyl', focus: 'Reporting client confidentiel, analyse de portefeuille, conformité FINMA et LBA, due diligence M&A, communication multilingue.' },
       { sector: 'Organisations internationales', companies: 'ONU (Palais des Nations), OMS, OMC, CICR, HCR, OIT, CERN (proche), Aga Khan Foundation', focus: 'Rédaction multilingue (FR/EN/ES/AR/RU), synthèse de rapports volumineux, traduction structurée, communication institutionnelle.' },
       { sector: 'Négoce de matières premières', companies: 'Trafigura, Cargill International, Mercuria, Vitol, Glencore, Louis Dreyfus, Gunvor, Kolmar Group', focus: 'Rapports de marché commodities, communication broker / trader, gestion KYC, traduction technique, suivi opérationnel logistique.' },
@@ -216,6 +258,7 @@ export const GEO_CITIES = [
       { profile: 'Recherche & développement — pharma (Plan-les-Ouates)', usage: 'Synthèse de littérature scientifique, mise à jour de fiches produit en 8 langues, support documentation réglementaire EMA.' },
     ],
     localFacts: [
+      "Genève abrite le siège européen de l'ONU et de nombreuses organisations internationales : le travail multilingue et la confidentialité y structurent tous les usages de l'IA.",
       'Genève abrite plus de 40 organisations internationales et 750 ONG, plus grande concentration mondiale.',
       'La place financière genevoise gère plus de 2 000 milliards de CHF d\'actifs sous gestion.',
       'Le canton de Genève emploie 100 000 frontaliers français (Haute-Savoie, Ain), couverts par les CCT suisses.',
@@ -228,6 +271,14 @@ export const GEO_CITIES = [
       { name: 'Fondation pour Genève', type: 'Acteur du rayonnement international' },
     ],
     additionalFAQ: [
+      {
+        q: "Comment choisir sa formation intelligence artificielle à Genève ?",
+        a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral), et l'organisation colle-t-elle à vos contraintes (en Suisse romande, dans vos locaux ou à distance). En Suisse, le financement relève du plan de formation de l'entreprise (pas d'OPCO ni de Qualiopi côté suisse) : le devis est établi en conséquence, en euros ou en francs selon votre préférence.",
+      },
+      {
+        q: "Proposez-vous une formation intelligence artificielle pour débutants à Genève ?",
+        a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
+      },
       { q: 'La formation est-elle facturée en EUR ou en CHF ?', a: "Au choix. Masteria propose une facturation en EUR ou en CHF selon votre préférence comptable. Le tarif intra de référence est 1 980 € HT par jour ou environ 1 600 CHF HT (taux indicatif, cours du jour appliqué à la facturation). La TVA suisse (8,1 %) est ajoutée si vous êtes assujetti en Suisse." },
       { q: 'Comment finance-t-on une formation IA en Suisse ?', a: "Plusieurs voies : 1) le plan de formation de votre entreprise (déductible fiscalement), 2) le Fonds genevois pour la formation et le perfectionnement professionnels (FFPP) pour les entreprises soumises à une CCT genevoise, 3) les budgets formation de votre convention collective sectorielle (banque, finance, IT), 4) pour les organisations internationales, les budgets internes RH et développement professionnel. Nous fournissons toutes les factures et certifications nécessaires." },
       { q: 'Comment respectez-vous la confidentialité bancaire suisse ?', a: "Nos formateurs signent un accord de confidentialité avant chaque mission. Les exemples utilisés en formation sont systématiquement anonymisés (vous fournissez les versions caviardées). Pour les sessions sur cas réels en environnement bancaire, nous travaillons à partir de documents fictifs structurellement équivalents aux vôtres. Aucun document n'est conservé après la formation." },
@@ -236,6 +287,9 @@ export const GEO_CITIES = [
   },
   {
     slug: 'bruxelles',
+    metaTitleOverride: 'Formation intelligence artificielle Bruxelles · sur mesure | Masteria',
+    h1Override: "Formation intelligence artificielle à Bruxelles : vos équipes formées sur leurs cas réels, en français",
+    metaDescOverride: "Formation intelligence artificielle à Bruxelles : programmes par métier dans vos bureaux ou à distance, adaptés au contexte belge et européen (RGPD, règlement IA, multilinguisme). Sur mesure.",
     name: 'Bruxelles',
     nameLoc: 'à Bruxelles',
     region: 'Belgique francophone',
@@ -248,10 +302,15 @@ export const GEO_CITIES = [
     intraOnly: true,
     sectors: "institutions européennes, services financiers, conseil et lobbying, pharmaceutique, tech et startups",
     desc: "Capitale de l'Union européenne et hub économique de la Belgique, Bruxelles accueille les principales institutions européennes (Commission, Parlement, Conseil, Service Européen pour l'Action Extérieure), des multinationales, un tissu dense de cabinets de conseil et de lobbying, ainsi que les sièges belges de la pharma et des services financiers. La transformation IA y est tirée par les exigences de l'AI Act et la modernisation des administrations européennes. Masteria intervient en intra-entreprise dans vos locaux bruxellois, entièrement en français.",
-    introPitch: "Formation dans vos bureaux bruxellois, entièrement en français. Masteria adapte le programme aux spécificités du marché belge : réglementations européennes, AI Act, secteur financier, environnement multilingue. Nos formateurs se déplacent chez vous (depuis Lyon en TGV via Paris, 4 h 30), sans contrainte logistique pour vos équipes.",
+    introPitch: "La formation intelligence artificielle à Bruxelles se fait dans vos bureaux ou à distance, entièrement en français. Masteria adapte le programme aux spécificités du marché belge : réglementations européennes, AI Act, secteur financier, environnement multilingue. Nos formateurs se déplacent chez vous (depuis Lyon en TGV via Paris, 4 h 30), sans contrainte logistique pour vos équipes.",
     opco: "En Belgique francophone, la formation professionnelle est cofinancée par les fonds sectoriels paritaires : CEFORA (commission paritaire 200 — secteur tertiaire), FOPAS (services financiers), Constructiv (BTP), IFAPME pour les indépendants, et le Forem (service public de l'emploi et de la formation wallonne) pour la Wallonie. Masteria vous accompagne dans l'identification du fonds applicable et fournit les justificatifs au format belge (TVA BE, attestations).",
     zones: "Bruxelles-Capitale (19 communes), Brabant wallon (Louvain-la-Neuve, Wavre, Nivelles), Brabant flamand francophone (Vilvorde, Halle), région de Mons-Charleroi, Namur",
     industriesDeep: [
+      {
+        sector: 'Industrie, énergie & distribution',
+        companies: 'Solvay, Engie, Delhaize, Colruyt',
+        focus: "Procédures et communication interne bilingues FR/NL, veille réglementaire européenne lue à la source, documentation qualité et sécurité, relation fournisseurs : des usages IA transverses aux sièges belges et à leurs réseaux.",
+      },
       { sector: 'Institutions européennes', companies: 'Commission européenne (DG CONNECT, DG TAXUD, DG SANTE), Parlement européen, SEAE, Banque centrale européenne (BCE Bruxelles), AESA, EuroParl', focus: 'Rédaction multilingue (24 langues UE), synthèse de directives et règlements, AI Act et conformité, traduction structurée, communication institutionnelle.' },
       { sector: 'Conseil & lobbying', companies: 'McKinsey EU, BCG Brussels, FleishmanHillard, Edelman, Hill+Knowlton Strategies, Burson Cohn & Wolfe, Brunswick', focus: 'Notes de position, communication publique, analyse politique européenne, briefings clients, surveillance réglementaire.' },
       { sector: 'Services financiers', companies: 'BNP Paribas Fortis, KBC, ING Belgium, Belfius, Euroclear, Bourse de Bruxelles, Mastercard Brussels HQ', focus: 'Conformité MiFID II et AML, reporting trimestriel, communication client multilingue, gestion KYC, automatisation back-office.' },
@@ -263,6 +322,7 @@ export const GEO_CITIES = [
       { profile: 'Communications — institution européenne (Berlaymont)', usage: 'Rédaction de communiqués en 4 langues, synthèse de réunions multilingues, mise en forme de documents officiels en cohérence avec le manuel d\'identité visuelle européen.' },
     ],
     localFacts: [
+      "La communication d'entreprise bruxelloise est couramment bilingue français-néerlandais, souvent trilingue avec l'anglais : la déclinaison multilingue est l'un des premiers gains de l'IA générative sur place.",
       'Bruxelles abrite 32 000 lobbyistes accrédités, plus grande concentration mondiale après Washington.',
       'L\'AI Act européen, adopté en 2024, impose une obligation de littératie IA à toute organisation utilisant un système d\'IA depuis février 2025.',
       'Les 24 langues officielles de l\'UE rendent les outils IA multilingues particulièrement stratégiques pour les institutions européennes.',
@@ -275,6 +335,14 @@ export const GEO_CITIES = [
       { name: 'Université libre de Bruxelles (ULB) — Machine Learning Group', type: 'Laboratoire de recherche IA' },
     ],
     additionalFAQ: [
+      {
+        q: "Comment choisir sa formation intelligence artificielle à Bruxelles ?",
+        a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral), et l'organisation colle-t-elle à vos contraintes (en Belgique francophone, dans vos locaux ou à distance). En Belgique, le financement relève du plan de formation de l'entreprise et, selon votre commission paritaire, de fonds sectoriels : le tour se fait au cadrage, sans promesse de prise en charge.",
+      },
+      {
+        q: "Proposez-vous une formation intelligence artificielle pour débutants à Bruxelles ?",
+        a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
+      },
       { q: 'Comment fonctionne le financement par CEFORA pour une formation IA ?', a: "CEFORA finance les formations professionnelles des employés de la commission paritaire 200 (secteur tertiaire belge), soit la plus grande commission paritaire du pays. Les formations doivent être suivies par un employé en CDI déclaré sur la commission paritaire 200, et le dossier est instruit en 2 à 4 semaines. Masteria fournit les attestations au format CEFORA (devis, programme, convention, présence) sous 24 h ouvrées. Le remboursement peut atteindre 100 % selon le profil de l'employé et le budget annuel restant." },
       { q: 'Vous formez aussi à Anvers, Gand ou Liège ?', a: "Pour les sessions en français, nous couvrons toute la Belgique francophone (Bruxelles, Wallonie). Pour les missions à Anvers ou Gand, nous pouvons intervenir en français si vos équipes sont francophones, mais la majorité des entreprises flamandes préfèrent le néerlandais ou l'anglais — que nous ne dispensons pas en formation. Pour Liège, oui : nous nous déplaçons sans frais supplémentaires." },
       { q: 'Quelles sont les obligations de l\'AI Act pour mon entreprise belge ?', a: "L'AI Act s'applique uniformément dans toute l'UE depuis 2025. Les obligations principales : 1) inventorier vos systèmes d'IA et leur niveau de risque, 2) garantir la littératie IA des collaborateurs (article 4, en vigueur depuis février 2025), 3) tenir un registre interne pour les systèmes à haut risque, 4) anticiper les obligations de transparence (chatbots, contenus générés). Notre Sprint IA AI Act (3 h, finançable CEFORA) couvre cette mise en conformité." },

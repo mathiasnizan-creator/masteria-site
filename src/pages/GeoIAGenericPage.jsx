@@ -57,7 +57,7 @@ export default function GeoIAGenericPage() {
   // Surcharges par ville (geo-data.js) : permet de viser la requête longue
   // « formation intelligence artificielle {ville} » sur les villes stratégiques.
   const h1 = city.h1Override || `Formation IA ${city.nameLoc} — ChatGPT, Claude et 89 programmes par métier`
-  const metaTitle = city.metaTitleOverride || `Formation IA ${city.name} | ChatGPT, Claude, 13 métiers | Masteria`
+  const metaTitle = city.metaTitleOverride || `Formation IA ${city.name} | ChatGPT, Claude, 24 métiers | Masteria`
   // Meta description ≤ ~155 car. (l'argument financement n'est plus tronqué par Google).
   // Le volet financement est conditionnel : pas d'OPCO hors France (cf. CH / BE).
   const financePhrase = isFrance
@@ -311,7 +311,7 @@ export default function GeoIAGenericPage() {
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
               { icon: Wallet,     label: '100 % OPCO' },
-              { icon: Briefcase,  label: '5 outils, 13 métiers' },
+              { icon: Briefcase,  label: '5 outils, 24 métiers' },
               { icon: Clock,      label: 'Devis sous 24 h' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{
@@ -500,7 +500,7 @@ export default function GeoIAGenericPage() {
       <section id="metiers" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>13 métiers couverts</div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>24 métiers couverts</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
               Formation IA par métier {city.nameLoc}
             </h2>
