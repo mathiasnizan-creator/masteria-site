@@ -255,7 +255,12 @@
     "titreEditorial": "The AI Act makes provenance a job",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-24",
+    "dateLongue": "Monday 24 August 2026",
+    "titreEditorial": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers as memory costs soar; the same day SoftBank places a record bond to fund OpenAI, Samsung returns $79 billion under the pressure of the AI boom, Alibaba raises $10.2 billion in Hong Kong, and Hugging Face is said to be exploring a sale at around $13 billion",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 8111,

@@ -255,7 +255,12 @@
     "titreEditorial": "Mark Zuckerberg publie un manifeste de 6 500 mots pour défendre un accès large à l'IA et nier la destruction massive des emplois ; Anthropic, Suno et Apple déploient des filigranes de provenance sous la pression de l'AI Act, Nvidia arrange 500 milliards de dollars auprès de Wall Street, et Pékin retient ses ingénieurs IA au pays",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-24",
+    "dateLongue": "lundi 24 août 2026",
+    "titreEditorial": "Nvidia prévient ses plus gros clients d'une hausse de plus de 15 % du prix de ses serveurs IA à cause du coût de la mémoire qui s'envole ; le même jour SoftBank place une obligation record pour financer OpenAI, Samsung rend 79 milliards de dollars sous la pression du boom IA, Alibaba lève 10,2 milliards à Hong Kong, et Hugging Face étudierait sa vente autour de 13 milliards",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 9044,

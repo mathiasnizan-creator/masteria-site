@@ -3,12 +3,128 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-21",
-    "totalEditions": 18,
-    "totalItems": 244,
-    "totalSources": 375
+    "derniereDate": "2026-08-24",
+    "totalEditions": 19,
+    "totalItems": 258,
+    "totalSources": 390
   },
   "editions": [
+    {
+      "date": "2026-08-24",
+      "dateCourte": "lun. 24 août",
+      "dateAffichee": "24 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia prévient ses plus gros clients d'une hausse de plus de 15 % du prix de ses serveurs IA à cause du coût de la mémoire qui s'envole ; le même jour SoftBank place une obligation record pour financer OpenAI, Samsung rend 79 milliards de dollars sous la pression du boom IA, Alibaba lève 10,2 milliards à Hong Kong, et Hugging Face étudierait sa vente autour de 13 milliards",
+      "chapeau": "La couche physique de l'IA se rappelle au marché : Nvidia relève ses prix de plus de 15 %, la mémoire manque, et les capitaux affluent par dizaines de milliards vers les puces et le calcul. Le même jour, Hugging Face étudierait sa vente, un agent d'IA s'infiltre seul dans les outils internes de Snowflake, et un modèle furtif nommé Ox Alpha apparaît en accès libre sans créateur identifié.",
+      "nbItems": 14,
+      "nbSources": 15,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "Numerama",
+        "Clubic",
+        "Nikkei Asia",
+        "TechCrunch",
+        "South China Morning Post",
+        "arXiv",
+        "ZDNet"
+      ],
+      "items": [
+        {
+          "t": "Nvidia prévient ses plus gros clients d'une hausse de plus de 15 % du prix de ses serveurs IA",
+          "z": "une",
+          "id": "nvidia-previent-ses-plus-gros-clients-d-une-hausse-de-plus"
+        },
+        {
+          "t": "Hugging Face étudierait sa vente pour une valorisation d'au moins 13 milliards de dollars",
+          "z": "europe",
+          "id": "hugging-face-etudierait-sa-vente-pour-une-valorisation-d-au"
+        },
+        {
+          "t": "Un agent d'IA s'est infiltré seul dans les outils internes de Snowflake, et des Qwen « sans censure » circulent",
+          "z": "europe",
+          "id": "un-agent-d-ia-s-est-infiltre-seul-dans-les-outils-internes"
+        },
+        {
+          "t": "OpenAI préparerait un verrou par code ou empreinte digitale pour certaines conversations ChatGPT",
+          "z": "europe",
+          "id": "openai-preparerait-un-verrou-par-code-ou-empreinte-digitale"
+        },
+        {
+          "t": "SoftBank place la plus grosse obligation grand public de l'histoire du Japon pour financer OpenAI",
+          "z": "international",
+          "id": "softbank-place-la-plus-grosse-obligation-grand-public-de-l"
+        },
+        {
+          "t": "Samsung annonce un retour record de 79 milliards de dollars à ses actionnaires, sous la pression du boom IA",
+          "z": "international",
+          "id": "samsung-annonce-un-retour-record-de-79-milliards-de-dollars"
+        },
+        {
+          "t": "Un modèle furtif nommé Ox Alpha apparaît en accès libre, sans créateur identifié",
+          "z": "international",
+          "id": "un-modele-furtif-nomme-ox-alpha-apparait-en-acces-libre"
+        },
+        {
+          "t": "Entraîner une IA sur des livres sous droits : une légalité toujours incertaine",
+          "z": "international",
+          "id": "entrainer-une-ia-sur-des-livres-sous-droits-une-legalite"
+        },
+        {
+          "t": "Alibaba lève 10,2 milliards de dollars à Hong Kong pour ses infrastructures d'IA",
+          "z": "chine",
+          "id": "alibaba-leve-10-2-milliards-de-dollars-a-hong-kong-pour-ses"
+        },
+        {
+          "t": "En Chine, une armée discrète d'entreprises intègre l'IA dans les usages du quotidien",
+          "z": "chine",
+          "id": "en-chine-une-armee-discrete-d-entreprises-integre-l-ia-dans"
+        },
+        {
+          "t": "SSR accélère les modèles de raisonnement en les faisant se relire eux-mêmes",
+          "z": "recherche",
+          "id": "ssr-accelere-les-modeles-de-raisonnement-en-les-faisant-se"
+        },
+        {
+          "t": "Les robots de thérapie comprennent mal le vocabulaire des adolescents",
+          "z": "recherche",
+          "id": "les-robots-de-therapie-comprennent-mal-le-vocabulaire-des"
+        },
+        {
+          "t": "Claude Code contre Codex",
+          "z": "bref",
+          "id": "claude-code-contre-codex"
+        },
+        {
+          "t": "DeepSeek supprime sa tarification de pointe le week-end",
+          "z": "bref",
+          "id": "deepseek-supprime-sa-tarification-de-pointe-le-week-end"
+        }
+      ]
+    },
     {
       "date": "2026-08-21",
       "dateCourte": "ven. 21 août",

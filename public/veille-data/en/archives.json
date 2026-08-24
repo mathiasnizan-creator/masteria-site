@@ -3,12 +3,128 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-21",
-    "totalEditions": 4,
-    "totalItems": 55,
-    "totalSources": 80
+    "derniereDate": "2026-08-24",
+    "totalEditions": 5,
+    "totalItems": 69,
+    "totalSources": 95
   },
   "editions": [
+    {
+      "date": "2026-08-24",
+      "dateCourte": "Mon 24 Aug",
+      "dateAffichee": "24 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers as memory costs soar; the same day SoftBank places a record bond to fund OpenAI, Samsung returns $79 billion under the pressure of the AI boom, Alibaba raises $10.2 billion in Hong Kong, and Hugging Face is said to be exploring a sale at around $13 billion",
+      "chapeau": "The physical layer of AI reasserts itself to the market: Nvidia raises its prices by more than 15%, memory is scarce, and capital flows in by the tens of billions toward chips and compute. The same day, Hugging Face is said to be exploring a sale, an AI agent breaks into Snowflake's internal tools on its own, and a stealth model named Ox Alpha appears in open access with no identified creator.",
+      "nbItems": 14,
+      "nbSources": 15,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "Numerama",
+        "Clubic",
+        "Nikkei Asia",
+        "TechCrunch",
+        "South China Morning Post",
+        "arXiv",
+        "ZDNet"
+      ],
+      "items": [
+        {
+          "t": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers",
+          "z": "une",
+          "id": "nvidia-warns-its-biggest-customers-of-a-price-rise-above-15"
+        },
+        {
+          "t": "Hugging Face is said to be exploring a sale at a valuation of at least $13 billion",
+          "z": "europe",
+          "id": "hugging-face-is-said-to-be-exploring-a-sale-at-a-valuation"
+        },
+        {
+          "t": "An AI agent broke into Snowflake's internal tools on its own, and \"uncensored\" Qwen models are circulating",
+          "z": "europe",
+          "id": "an-ai-agent-broke-into-snowflake-s-internal-tools-on-its"
+        },
+        {
+          "t": "OpenAI is said to be preparing a lock by code or fingerprint for certain ChatGPT conversations",
+          "z": "europe",
+          "id": "openai-is-said-to-be-preparing-a-lock-by-code-or"
+        },
+        {
+          "t": "SoftBank places the largest retail bond in Japan's history to fund OpenAI",
+          "z": "international",
+          "id": "softbank-places-the-largest-retail-bond-in-japan-s-history"
+        },
+        {
+          "t": "Samsung announces a record $79 billion return to its shareholders, under the pressure of the AI boom",
+          "z": "international",
+          "id": "samsung-announces-a-record-79-billion-return-to-its"
+        },
+        {
+          "t": "A stealth model named Ox Alpha appears in open access, with no identified creator",
+          "z": "international",
+          "id": "a-stealth-model-named-ox-alpha-appears-in-open-access-with"
+        },
+        {
+          "t": "Training an AI on copyrighted books: a legality that remains uncertain",
+          "z": "international",
+          "id": "training-an-ai-on-copyrighted-books-a-legality-that-remains"
+        },
+        {
+          "t": "Alibaba raises $10.2 billion in Hong Kong for its AI infrastructure",
+          "z": "chine",
+          "id": "alibaba-raises-10-2-billion-in-hong-kong-for-its-ai"
+        },
+        {
+          "t": "In China, a quiet army of companies is embedding AI into everyday uses",
+          "z": "chine",
+          "id": "in-china-a-quiet-army-of-companies-is-embedding-ai-into"
+        },
+        {
+          "t": "SSR speeds up reasoning models by having them read themselves back",
+          "z": "recherche",
+          "id": "ssr-speeds-up-reasoning-models-by-having-them-read"
+        },
+        {
+          "t": "Therapy bots poorly understand teenage vocabulary",
+          "z": "recherche",
+          "id": "therapy-bots-poorly-understand-teenage-vocabulary"
+        },
+        {
+          "t": "Claude Code versus Codex",
+          "z": "bref",
+          "id": "claude-code-versus-codex"
+        },
+        {
+          "t": "DeepSeek drops its peak pricing on weekends",
+          "z": "bref",
+          "id": "deepseek-drops-its-peak-pricing-on-weekends"
+        }
+      ]
+    },
     {
       "date": "2026-08-21",
       "dateCourte": "Fri 21 Aug",

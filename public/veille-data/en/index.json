@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-21",
-    "totalEditions": 4,
-    "totalItems": 55,
-    "totalSources": 80
+    "derniereDate": "2026-08-24",
+    "totalEditions": 5,
+    "totalItems": 69,
+    "totalSources": 95
   },
   "editions": [
+    {
+      "date": "2026-08-24",
+      "dateAffichee": "24 August 2026",
+      "dateCourte": "Mon 24 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers as memory costs soar; the same day SoftBank places a record bond to fund OpenAI, Samsung returns $79 billion under the pressure of the AI boom, Alibaba raises $10.2 billion in Hong Kong, and Hugging Face is said to be exploring a sale at around $13 billion",
+      "nbItems": 14,
+      "nbSources": 15,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-08-21",
       "dateAffichee": "21 August 2026",

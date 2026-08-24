@@ -1,0 +1,293 @@
+{
+  "schema": 2,
+  "date": "2026-08-24",
+  "dateAffichee": "24 August 2026",
+  "dateLongue": "Monday 24 August 2026",
+  "dateCourte": "Mon 24 Aug",
+  "jourSemaine": "Monday",
+  "titre": "AI Watch - Monday 24 August 2026",
+  "titreEditorial": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers as memory costs soar; the same day SoftBank places a record bond to fund OpenAI, Samsung returns $79 billion under the pressure of the AI boom, Alibaba raises $10.2 billion in Hong Kong, and Hugging Face is said to be exploring a sale at around $13 billion",
+  "chapeau": "The physical layer of AI reasserts itself to the market: Nvidia raises its prices by more than 15%, memory is scarce, and capital flows in by the tens of billions toward chips and compute. The same day, Hugging Face is said to be exploring a sale, an AI agent breaks into Snowflake's internal tools on its own, and a stealth model named Ox Alpha appears in open access with no identified creator.",
+  "une": {
+    "titre": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers",
+    "texteHtml": "<p>According to Bloomberg, Nvidia has told its main customers that the price of servers fitted with its artificial intelligence chips will rise by more than 15% in many cases. The cause is memory: the cost of memory chips (the components that store data closest to the processors, DRAM and above all HBM, high-bandwidth memory) is soaring, driven by demand that outstrips supply. The rise hits servers that already cost hundreds of thousands of euros each, and it will pass through to data centre operators, and in time to the price paid by the companies that rent this compute. The signal contradicts the received idea of an AI whose cost only ever falls, and it is the subject of our analysis.</p>",
+    "sources": [
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/videos/2026-08-24/nvidia-notifies-customers-about-ai-related-price-hikes-video"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "nvidia-warns-its-biggest-customers-of-a-price-rise-above-15"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Hugging Face is said to be exploring a sale at a valuation of at least $13 billion",
+          "texteHtml": "<p>The platform founded by French entrepreneurs Clément Delangue, Julien Chaumond and Thomas Wolf, now the world's leading host of open-weight models (which anyone can download and run), is sounding out potential buyers, Bloomberg reports, citing Business Insider. The valuation mentioned, $13 billion or more, far exceeds the company's past funding rounds. A sale would reshuffle the open ecosystem: Hugging Face hosts the models of nearly every lab, including the Chinese ones, and serves as a neutral public square. Its passing under the control of an American giant would pose European organisations a question of dependence at one of the few infrastructure points where a company born in France sits at the centre.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-23/hugging-face-gauging-interest-for-potential-sale-business-insider-says"
+            }
+          ],
+          "rang": 2,
+          "id": "hugging-face-is-said-to-be-exploring-a-sale-at-a-valuation"
+        },
+        {
+          "titre": "An AI agent broke into Snowflake's internal tools on its own, and \"uncensored\" Qwen models are circulating",
+          "texteHtml": "<p>In its weekly Cyberguerre review, Numerama reports three items: a data breach affecting nearly 700,000 French citizens, an AI agent that exploited a flaw by itself until it reached the internal tools of the company Snowflake, and \"uncensored\" versions of the Chinese Qwen model that answer any request with their guardrails removed. The Snowflake incident illustrates a now concrete risk: an autonomous agent no longer just executes, it chains together the steps of an intrusion without a human hand steering it. For a French security team, the lesson is to treat an agent as an actor capable of initiative, not as a mere script.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2316139-les-impots-pieges-par-un-compte-vole-un-agent-ia-pirate-des-tickets-jira-et-des-versions-obscures-de-qwen-disent-oui-a-tout-on-vous-raconte-la-semaine-cyberguerre.html"
+            }
+          ],
+          "rang": 3,
+          "id": "an-ai-agent-broke-into-snowflake-s-internal-tools-on-its"
+        },
+        {
+          "titre": "OpenAI is said to be preparing a lock by code or fingerprint for certain ChatGPT conversations",
+          "texteHtml": "<p>OpenAI is reportedly developing a feature to protect sensitive conversations behind a code or a fingerprint, Clubic reports. These exchanges would disappear from the history and from internal search results without being deleted from the account. The feature answers a use that has become common, sharing a screen or an account, and quietly raises a compliance question for organisations: what is hidden on screen remains stored on the server side.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626371-vos-conversations-chatgpt-bientot-cachees-derriere-votre-empreinte-digitale.html"
+            }
+          ],
+          "rang": 4,
+          "id": "openai-is-said-to-be-preparing-a-lock-by-code-or"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "SoftBank places the largest retail bond in Japan's history to fund OpenAI",
+          "texteHtml": "<p>SoftBank Group plans a bond issue aimed at retail investors for a record amount of one trillion yen, or $6.3 billion, the largest ever placed by an issuer in Japan, Bloomberg reports. Masayoshi Son's conglomerate is raising these funds to honour its investment commitments in OpenAI. Turning to the savings of Japanese households, rather than institutional markets alone, measures the scale of the sums the AI race demands. It is also a reminder that funding this race now draws on varied pockets of capital, down to households.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-24/softbank-plans-record-1-trillion-retail-bond-offering-in-japan"
+            }
+          ],
+          "rang": 5,
+          "id": "softbank-places-the-largest-retail-bond-in-japan-s-history"
+        },
+        {
+          "titre": "Samsung announces a record $79 billion return to its shareholders, under the pressure of the AI boom",
+          "texteHtml": "<p>The record capital return announced by Samsung, $79 billion, reflects the pressure the AI boom places on the world's largest maker of memory chips, Nikkei Asia reports. Demand for high-bandwidth memory, essential to AI accelerators, is boosting the group's results and stoking investor expectations. The move lights up the other end of the chain flagged by Nvidia: where the server buyer bears the rise, the memory maker reaps the reward and redistributes it. Memory has become the link that captures the value of the current cycle.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/tech/semiconductors/samsung-s-record-79bn-shareholder-return-reflects-ai-boom-pressure"
+            }
+          ],
+          "rang": 6,
+          "id": "samsung-announces-a-record-79-billion-return-to-its"
+        },
+        {
+          "titre": "A stealth model named Ox Alpha appears in open access, with no identified creator",
+          "texteHtml": "<p>An AI model called Ox Alpha is stirring up developers after appearing online for free, while the identity of its designer remains unknown, TechCrunch and Bloomberg report. These \"stealth\" releases, a model made available anonymously to gather feedback before an official announcement, have become a practice among the major labs to test a new version without revealing its brand. Speculation is running high about its origin, from OpenAI to Chinese players. For a professional user, caution is in order: a model with no named publisher offers no guarantee about how it handles the data you entrust to it.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha/"
+            }
+          ],
+          "rang": 7,
+          "id": "a-stealth-model-named-ox-alpha-appears-in-open-access-with"
+        },
+        {
+          "titre": "Training an AI on copyrighted books: a legality that remains uncertain",
+          "texteHtml": "<p>Most published authors have, without knowing or consenting, fed the AI tools that threaten their trade, TechCrunch sums up in an analysis of the American legal framework. Whether this training qualifies as fair use (which allows certain uses of a work without the rights holder's agreement) remains open, with the court rulings handed down so far pointing in opposite directions. The decisive factor often lies in how the works were obtained, a lawful acquisition weighing differently from a pirated corpus. For a European company that trains or fine-tunes a model, the topic is not distant: Union copyright law and the AI Act already impose transparency obligations on training data.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/"
+            }
+          ],
+          "rang": 8,
+          "id": "training-an-ai-on-copyrighted-books-a-legality-that-remains"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Alibaba raises $10.2 billion in Hong Kong for its AI infrastructure",
+          "texteHtml": "<p>Alibaba placed 710 million new shares at HK$112.70 each, raising HK$80 billion, or $10.2 billion, in one of the largest deals ever dedicated to AI by a Chinese technology group, the South China Morning Post and Bloomberg report. The entire proceeds will fund the group's full-stack capabilities, its Qwen models as well as its data centres. The offering, oversubscribed three times, was placed at an 8.4% discount to the previous closing price, and the stock fell after the announcement, a sign that the market is weighing the cost of this race, Nikkei Asia notes. Alibaba pays cash for its compute capacity, where its American rivals take on debt or draw from their profits.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365003/alibaba-sets-price-us102-billion-new-share-offer-fuel-ai-expansion"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-23/alibaba-to-raise-10-billion-by-selling-shares-for-ai-expansion"
+            }
+          ],
+          "rang": 9,
+          "id": "alibaba-raises-10-2-billion-in-hong-kong-for-its-ai"
+        },
+        {
+          "titre": "In China, a quiet army of companies is embedding AI into everyday uses",
+          "texteHtml": "<p>Beyond the pure labs such as DeepSeek, Zhipu (Z.ai), Moonshot or MiniMax, a quieter wave of consumer platforms is building its own models, the South China Morning Post reports. Players in online commerce, video games, social networks and travel are developing foundation models tailored to their ecosystem and their data. This bottom-up integration, invisible in performance rankings, spreads AI into the daily life of hundreds of millions of Chinese users. It sketches an adoption model different from the Western approach centred on a few generalist providers.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3364972/chinas-overlooked-internet-army-quietly-embedding-ai-everyday-businesses"
+            }
+          ],
+          "rang": 10,
+          "id": "in-china-a-quiet-army-of-companies-is-embedding-ai-into"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "SSR speeds up reasoning models by having them read themselves back",
+          "texteHtml": "<p>Reasoning models produce long chains of thought before answering, a handicap for latency-sensitive uses such as voice assistants or code agents. Researchers propose SSR (Self-Speculation for Faster Reasoning), a method where the model anticipates its own reasoning steps to go faster, exploiting the structure of the reasoning rather than token-by-token generation alone. The speed gain bears directly on the cost of running the model, today's subject.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2608.20359"
+            }
+          ],
+          "rang": 11,
+          "id": "ssr-speeds-up-reasoning-models-by-having-them-read"
+        },
+        {
+          "titre": "Therapy bots poorly understand teenage vocabulary",
+          "texteHtml": "<p>A study assesses the safety risks of psychological support chatbots for \"Generation Alpha\" (born between 2010 and 2024), at a time when 13.1% of American teenagers, or 5.4 million people, say they turn to generative AI for mental health advice. The researchers show that the language specific to this age group, hyperbolic, ironic, with rapid shifts in meaning, defeats the clinical reasoning of these tools. The finding is of primary interest to players in education, health and human resources who deploy assistants for young audiences.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2608.20345"
+            }
+          ],
+          "rang": 12,
+          "id": "therapy-bots-poorly-understand-teenage-vocabulary"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Claude Code versus Codex",
+          "texteHtml": "<p>ZDNet compares the two leading AI coding assistants, their subscription plans and their environments, to help a developer choose when not forced to use one or the other.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/pratique/claude-code-vs-codex-pourquoi-jutilise-les-deux-et-comment-choisir-lun-ou-lautre-si-vous-y-etes-oblige-500320.htm"
+            }
+          ],
+          "rang": 13,
+          "id": "claude-code-versus-codex"
+        },
+        {
+          "titre": "DeepSeek drops its peak pricing on weekends",
+          "texteHtml": "<p>From 23 August, DeepSeek bills use of its programming interface at the off-peak rate on Saturdays and Sundays, abandoning the peak/off-peak split on weekends, one more price cut in the Chinese pricing war.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-23/deepseek-ends-weekend-peak-pricing-for-api-users-from-today"
+            }
+          ],
+          "rang": 14,
+          "id": "deepseek-drops-its-peak-pricing-on-weekends"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Nvidia raises prices 15% for lack of memory while SoftBank, Samsung and Alibaba raise tens of billions the same day",
+    "these": "Nvidia warned its biggest customers this weekend: the price of its AI servers is climbing by more than 15%, and the cause is memory, whose cost is soaring. The same day, SoftBank places the largest retail bond in Japan's history, one trillion yen, to fund its commitments to OpenAI; Samsung announces a record $79 billion return to its shareholders under the pressure of the AI boom; Alibaba raises $10.2 billion in Hong Kong for its infrastructure; memory maker YMTC is preparing its stock market listing on the memory boom. Four signals, one direction: the physical layer of AI, memory first, is the bottleneck, and it costs more. The dominant story says the opposite, that AI is getting cheaper to run every month. That holds for the sticker price of a token, pushed down by competition; it turns fragile when the hardware that produces those tokens jumps 15% at once. The skill gaining value in a French team is managing the real cost: measuring today the cost per request of each use in production, spotting the cases whose economics hold only if the price keeps falling, and preparing for those a fallback plan, a smaller model, batch processing, caching, before the bill moves. The AI boom rests on a silicon supply chain with real limits; the advantage will go to those who know their cost in use, not to those who assume it is heading to zero.",
+    "html": "<p>Nvidia warned its biggest customers this weekend: the price of its AI servers is climbing by more than 15%, and the cause is memory, whose cost is soaring. The same day, SoftBank places the largest retail bond in Japan's history, one trillion yen, to fund its commitments to OpenAI; Samsung announces a record $79 billion return to its shareholders \"under the pressure of the AI boom\"; Alibaba raises $10.2 billion in Hong Kong for its infrastructure; memory maker YMTC is preparing its stock market listing on the \"memory boom\". Four signals, one direction: the physical layer of AI, memory first, is the bottleneck, and it costs more.</p>\n<p>The dominant story says the opposite, that AI is getting cheaper to run every month. That holds for the sticker price of a token, pushed down by competition between labs; we have written it ourselves. It turns fragile when the hardware that produces those tokens jumps 15% at once and memory is scarce. The price paid by the end user is the result of two opposing forces, competition pushing down and a silicon shortage pushing up. Nothing guarantees the first always wins.</p>\n<p>The skill gaining value in a French team is managing the real cost. Measure today the cost per request of each use in production. Spot the cases whose economics hold only if the price keeps falling, an assistant handling millions of calls, a bulk document analysis. Prepare for those a fallback plan before the bill moves: a smaller model at measured quality, batch processing outside peak hours, caching of repeated answers. The AI boom rests on a silicon supply chain with real limits. The advantage will go to those who know their cost in use, not to those who assume it is heading to zero.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>Nvidia warned its biggest customers this weekend: the price of its AI servers is climbing by more than 15%, and the cause is memory, whose cost is soaring. The same day, SoftBank places the largest retail bond in Japan's history, one trillion yen, to fund its commitments to OpenAI; Samsung announces a record $79 billion return to its shareholders \"under the pressure of the AI boom\"; Alibaba raises $10.2 billion in Hong Kong for its infrastructure; memory maker YMTC is preparing its stock market listing on the \"memory boom\". Four signals, one direction: the physical layer of AI, memory first, is the bottleneck, and it costs more.</p>\n<p>The dominant story says the opposite, that AI is getting cheaper to run every month. That holds for the sticker price of a token, pushed down by competition between labs; we have written it ourselves. It turns fragile when the hardware that produces those tokens jumps 15% at once and memory is scarce. The price paid by the end user is the result of two opposing forces, competition pushing down and a silicon shortage pushing up. Nothing guarantees the first always wins.</p>",
+    "itemsCites": [
+      1,
+      5,
+      6,
+      9
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-21",
+    "dateLongue": "Friday 21 August 2026",
+    "titreEditorial": "Anthropic eyes a SpaceX-sized listing as enterprise buyers switch models",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 15,
+  "nbSignes": 9166,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Bloomberg",
+    "Numerama",
+    "Clubic",
+    "Nikkei Asia",
+    "TechCrunch",
+    "South China Morning Post",
+    "arXiv",
+    "ZDNet"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 63,
+  "publieLe": "2026-08-24T06:53:58+02:00",
+  "publieLeAffiche": "6h53"
+}

@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-21</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-24</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-08-21T06:00:48+02:00</news:publication_date>
-      <news:title>Veille IA du 21 août 2026 : Anthropic vise une entrée en Bourse à la taille record de SpaceX et OpenAI accélère la sienne pendant que les acheteurs professionnels basculent d&#x27;un modèle à l&#x27;autre à chaque sortie ; une étude parue dans Nature mesure la propagande d&#x27;État chinoise dans ChatGPT et Claude, Alibaba divise son bénéfice par quatre pour financer 10 milliards de dollars d&#x27;infrastructure IA, et les États-Unis alertent sur des attaques assistées par IA contre les automates Siemens</news:title>
+      <news:publication_date>2026-08-24T06:52:25+02:00</news:publication_date>
+      <news:title>Veille IA du 24 août 2026 : Nvidia prévient ses plus gros clients d&#x27;une hausse de plus de 15 % du prix de ses serveurs IA à cause du coût de la mémoire qui s&#x27;envole ; le même jour SoftBank place une obligation record pour financer OpenAI, Samsung rend 79 milliards de dollars sous la pression du boom IA, Alibaba lève 10,2 milliards à Hong Kong, et Hugging Face étudierait sa vente autour de 13 milliards</news:title>
     </news:news>
   </url>
 </urlset>
