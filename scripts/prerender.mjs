@@ -128,7 +128,17 @@ const orderedRoutes = REPAIR.length ? routes : [...routes.filter(r => r !== '/')
 // ─────────────────────────────────────────────────────────────────
 // 3) Serveur + boucle prerender par lots
 // ─────────────────────────────────────────────────────────────────
-await new Promise(resolve => server.listen(PORT, resolve));
+await new Promise((resolve, reject) => {
+  // Un port occupé (serveur zombie d'un prérendu planté) laissait Node sortir
+  // en code 0 avec zéro page rendue : le build « réussissait » à 15 pages et
+  // la production restait figée. L'échec doit être bruyant.
+  server.on('error', (e) => {
+    console.error(`✗ impossible d'écouter sur le port ${PORT} : ${e.code || e.message}`);
+    console.error(`  Un serveur zombie occupe sans doute le port :  lsof -nP -iTCP:${PORT} -sTCP:LISTEN`);
+    process.exit(1);
+  });
+  server.listen(PORT, resolve);
+});
 console.log(`→ Serveur local ${BASE}`);
 
 async function launchBrowser() {
