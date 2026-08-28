@@ -658,36 +658,6 @@
       "permanent": true
     },
     {
-      "source": "/formation-ia-nantes",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-rennes",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-bordeaux",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-toulouse",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-lille",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-strasbourg",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
       "source": "/formation-ia-la-rochelle",
       "destination": "/formation-intelligence-artificielle",
       "permanent": true
@@ -699,11 +669,6 @@
     },
     {
       "source": "/formation-ia-montpellier",
-      "destination": "/formation-intelligence-artificielle",
-      "permanent": true
-    },
-    {
-      "source": "/formation-ia-nice",
       "destination": "/formation-intelligence-artificielle",
       "permanent": true
     },
