@@ -1,0 +1,319 @@
+{
+  "schema": 2,
+  "date": "2026-08-26",
+  "dateAffichee": "26 August 2026",
+  "dateLongue": "Wednesday 26 August 2026",
+  "dateCourte": "Wed 26 Aug",
+  "jourSemaine": "Wednesday",
+  "titre": "AI Watch - Wednesday 26 August 2026",
+  "titreEditorial": "Open-weight models pass proprietary ones on Vercel",
+  "chapeau": "OpenAI unveils Jalapeño, its first in-house inference chip, rated faster and more power-efficient than the best hardware on the market. The same day, open models overtake proprietary ones on the Vercel developer platform, DeepSeek moves toward a stock listing valuing it at $74 billion, and Apple puts on sale a 512-gigabyte Mac Studio built for local AI.",
+  "une": {
+    "titre": "OpenAI unveils Jalapeño, its first in-house inference chip, and rates it ahead of the best hardware on the market",
+    "texteHtml": "<p>Jalapeño is a chip designed by OpenAI for inference (running an already-trained model so it produces its answers). On SemiAnalysis's independent InferenceX benchmark, it delivers both more tokens per user and more throughput per kilowatt than the best hardware available, according to the tests reported by TechCrunch and The Verge. Richard Ho, OpenAI's head of hardware, claims \"the best of both worlds,\" lower latency and higher throughput at the same time. The announcement comes with a piece by chief financial officer Sarah Friar on \"the full stack behind abundant intelligence\": OpenAI wants to own the entire chain, from chips to product, to bring down the cost of each answer. Designing its own inference silicon is a bid to loosen its dependence on Nvidia and take back control of the bill weighing on its margins.</p>",
+    "sources": [
+      {
+        "nom": "OpenAI",
+        "url": "https://openai.com/index/jalapeno-first-results"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/984290/openai-jalapeno-ai-chip-benchmarks"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "openai-unveils-jalapeno-its-first-in-house-inference-chip"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Microsoft gets the green light for an AI data centre in Mulhouse",
+          "texteHtml": "<p>The American company will be able to build new infrastructure dedicated to AI and cloud in the Haut-Rhin, Clubic reports. The project does not have unanimous local support, at a time when the water and electricity consumption of these facilities is already fuelling sharp tensions. Every siting of this kind plants a concrete question in France for local authorities and neighbouring businesses: which resources for what territorial benefit.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626662-microsoft-obtient-le-feu-vert-pour-la-construction-d-un-data-center-a-mulhouse.html"
+            }
+          ],
+          "rang": 2,
+          "id": "microsoft-gets-the-green-light-for-an-ai-data-centre-in"
+        },
+        {
+          "titre": "LinkedIn reports more than a million AI contents flagged by its members",
+          "texteHtml": "<p>The button to report a post judged AI-generated, opened in July, has been activated more than a million times, says Hari Srinivasan, the network's head of product, quoted by Siècle Digital and Clubic. LinkedIn now adds a notice in post analytics to warn the author concerned. The figure measures a fatigue: professionals are rejecting mass-produced text, including on the network that pushed assisted writing hardest.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/25/sur-linkedin-les-contenus-ia-ont-deja-ete-signales-plus-dun-million-de-fois/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626617-linkedin-gagne-une-premiere-bataille-contre-les-contenus-generes-par-ia.html"
+            }
+          ],
+          "rang": 3,
+          "id": "linkedin-reports-more-than-a-million-ai-contents-flagged-by"
+        },
+        {
+          "titre": "Nscale prepares a $3 billion listing to fund its AI infrastructure",
+          "texteHtml": "<p>The specialist in cloud infrastructure dedicated to AI is aiming for this raise in an offering planned for September, ZDNet reports. The move illustrates the rise of the \"neoclouds,\" those specialised operators that stand against the established cloud giants to rent out compute. An IPO of this size signals that investors keep betting heavily on compute demand, at a time when hardware costs are climbing.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/cloud-ia-nscale-prepare-une-mega-ipo-de-3-milliards-de-dollars-500513.htm"
+            }
+          ],
+          "rang": 4,
+          "id": "nscale-prepares-a-3-billion-listing-to-fund-its-ai"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Open-weight models overtake proprietary models on the Vercel platform",
+          "texteHtml": "<p>On Vercel's AI Gateway, a widely used web development service, open models (which you download and run yourself) accounted for 54% of the token volume processed on Tuesday, against 46% for proprietary models, the South China Morning Post reports from the platform's public data. The share of open models even reached a record 62% on one given day. DeepSeek's most recent lightweight model is driving this shift. In the same move, corporate demand for Fable 5, Anthropic's most powerful model, is stalling because of its high price. The trade-off between top performance and acceptable cost is thus being replayed in the field, request by request, and it is tilting toward open. This is the subject of our analysis.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3365204/deepseek-leads-surge-low-cost-chinese-open-weight-models-us-platform"
+            }
+          ],
+          "rang": 5,
+          "id": "open-weight-models-overtake-proprietary-models-on-the"
+        },
+        {
+          "titre": "Apple puts on sale a Mac Studio with 512 GB of memory, built for local AI",
+          "texteHtml": "<p>Two weeks before its autumn keynote, Apple unveiled by surprise new Mac mini and Mac Studio models and two chips, the M6 and the M5 Ultra, Numerama and ZDNet report. The M5 Ultra Mac Studio version goes up to 512 gigabytes of unified memory and supports eight external displays; Apple claims AI performance four times that of the M3 Ultra. Prices start at $2,499 for the M5 Max and $5,499 for the M5 Ultra, available on 22 September. That much memory targets a precise use: running large models locally, on a desktop, without going through the cloud.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2317375-surprise-apple-devoile-la-puce-m6-pensee-pour-lia-locale-avec-de-nouveaux-mac-mini-et-mac-studio.html"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/puce-m5-ultra-des-perfs-en-ia-4-fois-superieures-a-celles-de-la-m3-ultra-selon-apple-500587.htm"
+            }
+          ],
+          "rang": 6,
+          "id": "apple-puts-on-sale-a-mac-studio-with-512-gb-of-memory-built"
+        },
+        {
+          "titre": "OpenAI loses a key data centre executive as the run of departures continues",
+          "texteHtml": "<p>Chris Malone, who helped lead the construction of OpenAI's data centres, has left the company, Bloomberg and TechCrunch report. Asked about the departure, the company says it \"recently reorganised\" its infrastructure organisation \"to support the scale and pace\" of its work. Malone joins a list of high-profile departures in recent months, at the very moment OpenAI is committing tens of billions to its compute capacity. These moves raise a question of continuity: building data centres at this speed requires a stable team in charge, and the company is losing its people one after another.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-25/openai-data-center-executive-chris-malone-departs-the-ai-startup"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-loses-a-key-data-centre-executive-as-the-run-of"
+        },
+        {
+          "titre": "Hexaware's boss expects a 25% drop in the value of IT services under the effect of AI",
+          "texteHtml": "<p>AI could cut the price of routine IT projects by up to 25%, the head of the Indian digital services group Hexaware told Bloomberg. The observation targets a sector built on labour-intensive tasks, where automating part of the coding and testing compresses the bill charged to the client. For providers, value shifts from the volume of hours sold toward the ability to deliver faster at equal quality. For French companies that outsource their development, it is a signal to renegotiate: yesterday's rate no longer holds if AI does part of the work.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-26/ai-will-deflate-value-of-it-work-by-up-to-25-hexaware-ceo-says"
+            }
+          ],
+          "rang": 8,
+          "id": "hexaware-s-boss-expects-a-25-drop-in-the-value-of-it"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "DeepSeek nears a funding round valuing it at $74 billion ahead of a stock listing",
+          "texteHtml": "<p>The Chinese lab is finalising a raise that values it at about 500 billion yuan, or $74 billion, pre-money, the South China Morning Post reports. DeepSeek was seeking to raise nearly 50 billion yuan in this round, expected to close before the end of August, notably from its existing shareholders. The move sets up a listing targeted for 2027 on Shanghai's Star Market, China's technology exchange. The timing is no accident: DeepSeek's lightweight model is the one pushing open models ahead of proprietary models on Western platforms. A Chinese lab funded at this level, whose models spread free of charge internationally, is redrawing the map of value in AI.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365280/deepseek-nears-pre-ipo-funding-round-2027-market-debut-takes-shape-sources"
+            }
+          ],
+          "rang": 9,
+          "id": "deepseek-nears-a-funding-round-valuing-it-at-74-billion"
+        },
+        {
+          "titre": "Xiaomi doubles down on in-house chips despite falling profit",
+          "texteHtml": "<p>Xiaomi is pursuing its bet on proprietary silicon to prepare for complex AI workloads on smartphones and cars, the South China Morning Post reports, as its profit declines and component costs soar. On Monday the group presented its Xring O3 AI processor, built on a 3-nanometre process, due in September aboard the Xiaomi 18 Fold, along with a Xring O100 on 6 nanometres. Designing its own chips is expensive and weighs on margins in the short term, but reduces dependence on American suppliers subject to export controls. The approach matches that of several Chinese giants: bring compute in-house to last over time.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3365179/why-xiaomi-doubling-down-house-chips-despite-profit-slump"
+            }
+          ],
+          "rang": 10,
+          "id": "xiaomi-doubles-down-on-in-house-chips-despite-falling-profit"
+        },
+        {
+          "titre": "Alibaba raises $10.2 billion for its AI infrastructure",
+          "texteHtml": "<p>The Chinese giant issued 710 million shares at $14.4 apiece in Hong Kong, the largest deal of its kind ever carried out by a company on the exchange, Siècle Digital reports. The full amount will fund its AI infrastructure, while its net profit fell 75% in the last quarter. In the same move, founder Jack Ma and the group's executives bought back several hundred million dollars of shares, a signal of confidence sent to the market after a week of decline in the stock.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/25/le-geant-chinois-alibaba-leve-10-milliards-de-dollars-pour-accelerer-encore-dans-la-course-a-lia/"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365217/jack-ma-buys-hk600-million-alibaba-shares-signalling-ai-confidence-sources"
+            }
+          ],
+          "rang": 11,
+          "id": "alibaba-raises-10-2-billion-for-its-ai-infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "An MIT Media Lab study shows that getting your news through a chatbot degrades judgement",
+          "texteHtml": "<p>Participants who spent four weeks assessing news headlines and images, presented in pairs, were 21% more accurate at the start at telling true from false; the regular use of a conversational assistant as a source of information reduced that accuracy, the MIT Technology Review sums up from the work of Pattie Maes and her colleagues. The mechanism is familiar to researchers: delegating the sorting of information to a machine lowers cognitive effort, and critical attention dulls. For the training and change-management professions, the result invites treating the chatbot as a synthesis tool to be checked, not as a source to take on trust. The stakes go beyond general knowledge: a team that loses the habit of checking makes worse decisions.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/08/25/1140958/your-brain-on-ai/"
+            }
+          ],
+          "rang": 12,
+          "id": "an-mit-media-lab-study-shows-that-getting-your-news-through"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "OpenAI restores the five-hour limit on Codex and ChatGPT Work",
+          "texteHtml": "<p>Six weeks after removing it, OpenAI is reactivating for Plus subscribers a quota calculated over a five-hour window, on top of the weekly cap, Numerama reports.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2317749-chatgpt-plus-openai-retablit-la-limite-des-cinq-heures-sur-codex-et-work-six-semaines-apres-lavoir-supprimee.html"
+            }
+          ],
+          "rang": 13,
+          "id": "openai-restores-the-five-hour-limit-on-codex-and-chatgpt"
+        },
+        {
+          "titre": "A study estimates that a third of new web pages are written by AI",
+          "texteHtml": "<p>More than a third of the pages created are said to be produced with the help of AI, according to results relayed by Siècle Digital, a sign of the speed at which generated text is filling the web.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/25/quelle-part-du-web-est-desormais-ecrite-par-lia-une-etude-apporte-une-reponse/"
+            }
+          ],
+          "rang": 14,
+          "id": "a-study-estimates-that-a-third-of-new-web-pages-are-written"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Open-weight models pass proprietary ones on Vercel, DeepSeek heads for a $74 billion listing, and Apple sells a 512 GB Mac Studio",
+    "these": "On Vercel, a widely used web development platform, open-weight models (which you download and run yourself) overtook proprietary models on Tuesday: 54% of the token volume processed against 46%, with a peak at 62%. DeepSeek's lightweight model is driving this shift, while corporate demand for Fable 5, Anthropic's most powerful model, stalls on its price. The same day, DeepSeek is preparing a raise that values it at $74 billion ahead of a Shanghai listing, and Apple puts on sale a Mac Studio with 512 gigabytes of unified memory, enough to run a full large open model on a desktop computer. Three signals, one direction: the open layer, cheap and self-hostable, is becoming the default choice for real production work. The skill gaining value in a French team is the ability to run open models in-house: take one production use case this quarter, deploy an open model on your server or a local machine, measure it on your own set of cases against the API you pay for today, compare quality, latency and cost per request, then decide use case by use case between hosting and renting. Many organisations find that half of their calls do not need the most expensive model. The technical frontier keeps advancing; autonomy is built now, one use case at a time.",
+    "html": "<p>On Vercel, a widely used web development platform, open-weight models, the ones you download and run yourself, overtook proprietary models on Tuesday: 54% of the token volume processed against 46%, with a peak at 62% on one day. DeepSeek's lightweight model is driving this shift, while corporate demand for Fable 5, Anthropic's most powerful model, stalls on its price. The same day, DeepSeek is preparing a raise that values it at $74 billion ahead of a Shanghai listing, and Apple puts on sale a Mac Studio with 512 gigabytes of unified memory, enough to run a full large open model on a desktop computer. Three signals, one direction: the open layer, cheap and self-hostable, is becoming the default choice for real production work.</p>\n<p>The usual story pits closed labs, sole holders of performance, against second-rate open models. In the field, sufficient performance costs less and less and is shifting toward models you install yourself. For a French team, the advantage goes to whoever can pick the right open model for each use and run it on their own premises, on their server or on a machine sitting in the office.</p>\n<p>The skill gaining value is the ability to run open models in-house. Take one production use case this quarter, deploy an open model on it, and measure it on your own set of cases against the API you pay for today. Compare quality, latency and cost per request, then decide use case by use case: host or rent. Many organisations then find that half of their calls do not need the most expensive model. The technical frontier keeps advancing; autonomy is built now, one use case at a time.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>On Vercel, a widely used web development platform, open-weight models, the ones you download and run yourself, overtook proprietary models on Tuesday: 54% of the token volume processed against 46%, with a peak at 62% on one day. DeepSeek's lightweight model is driving this shift, while corporate demand for Fable 5, Anthropic's most powerful model, stalls on its price. The same day, DeepSeek is preparing a raise that values it at $74 billion ahead of a Shanghai listing, and Apple puts on sale a Mac Studio with 512 gigabytes of unified memory, enough to run a full large open model on a desktop computer. Three signals, one direction: the open layer, cheap and self-hostable, is becoming the default choice for real production work.</p>\n<p>The usual story pits closed labs, sole holders of performance, against second-rate open models. In the field, sufficient performance costs less and less and is shifting toward models you install yourself. For a French team, the advantage goes to whoever can pick the right open model for each use and run it on their own premises, on their server or on a machine sitting in the office.</p>",
+    "itemsCites": [
+      5,
+      6,
+      9
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-25",
+    "dateLongue": "Tuesday 25 August 2026",
+    "titreEditorial": "Uber fined €825 million over automated decisions",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-08-27",
+    "dateLongue": "Thursday 27 August 2026",
+    "titreEditorial": "Nvidia posts a record $96.2 billion in quarterly revenue and looks ahead to 2028, while Amazon triples its chip order and Anthropic signs $45 billion of compute with Nscale; on the same day, OpenAI releases its report on the Hugging Face breach carried out by nearly 700 of its own agents, Bill Gates breaks his silence to call for a robot tax, and the CNIL updates its open-model traceability tool",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 20,
+  "nbSignes": 8973,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 3
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "OpenAI",
+    "TechCrunch",
+    "The Verge",
+    "Clubic",
+    "Siècle Digital",
+    "ZDNet",
+    "South China Morning Post",
+    "Numerama",
+    "Bloomberg",
+    "MIT Technology Review"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 123,
+  "publieLe": "2026-08-26T09:02:46+02:00",
+  "publieLeAffiche": "9h02"
+}

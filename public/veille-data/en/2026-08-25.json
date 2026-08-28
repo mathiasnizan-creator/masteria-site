@@ -1,0 +1,294 @@
+{
+  "schema": 2,
+  "date": "2026-08-25",
+  "dateAffichee": "25 August 2026",
+  "dateLongue": "Tuesday 25 August 2026",
+  "dateCourte": "Tue 25 Aug",
+  "jourSemaine": "Tuesday",
+  "titre": "AI Watch - Tuesday 25 August 2026",
+  "titreEditorial": "Uber fined €825 million over automated decisions",
+  "chapeau": "The Dutch data protection authority, working with France's CNIL, fines Uber €825 million for automated decisions taken with no human in the loop, the heaviest penalty of its kind in Europe. The same day, advertising arrives in ChatGPT in France, Mistral launches a document search that verifies its sources, Stripe buys OpenRouter for $7.5 billion, and Taiwan indicts an Nvidia executive over chip smuggling to China.",
+  "une": {
+    "titre": "The Dutch authority, with the CNIL, fines Uber €825 million over automated decisions taken with no human",
+    "texteHtml": "<p>The Autoriteit Persoonsgegevens, the Dutch data regulator, in cooperation with France's CNIL (the country's data protection authority), imposed a fine of €824,990,000 on Uber B.V. and Uber Technologies Inc. The platform was cutting off drivers' access to work, deactivating them, through automated individual decisions with no real human intervention. The GDPR frames these decisions in its Article 22: when processing produces legal or significant effects on a person, that person has a right to human intervention, an explanation and the ability to contest. The amount, the second heaviest penalty in Uber's history, puts a figure at this scale on the price of an algorithm that decides a worker's fate alone. This is the subject of our analysis.</p>",
+    "sources": [
+      {
+        "nom": "CNIL",
+        "url": "https://www.cnil.fr/fr/decisions-automatisees-sanction-de-pres-de-825-millions-deuros-lencontre-duber"
+      },
+      {
+        "nom": "Clubic",
+        "url": "https://www.clubic.com/actualite-626440-uber-a-ecope-d-une-enorme-amende-en-europe-pour-avoir-laisse-des-algorithmes-decider-seuls-du-sort-de-ses-chauffeurs.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "the-dutch-authority-with-the-cnil-fines-uber-825-million"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Advertising arrives in ChatGPT in France",
+          "texteHtml": "<p>Since Monday 24 August, advertisers can pay to display their brand next to the answers of OpenAI's assistant in France, Le Monde reports. The company is looking to diversify revenue drawn so far from subscriptions and its programming interface. For organisations, the arrival of advertising in a conversational assistant raises a new question: an AI's answer becomes commercial space, with the risk of seeing information and paid message blur together.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/08/24/intelligence-artificielle-les-publicites-arrivent-sur-chatgpt-en-france_6755543_3234.html"
+            }
+          ],
+          "rang": 2,
+          "id": "advertising-arrives-in-chatgpt-in-france"
+        },
+        {
+          "titre": "Mistral launches Agentic Search, a document search that verifies its sources",
+          "texteHtml": "<p>Mistral AI presents Agentic Search, a technology that browses documents, extracts the relevant information and verifies the sources it cites, ZDNet reports. The approach corrects a known weakness of standard RAG (retrieval-augmented generation, where the model draws on a document base before answering), which sometimes returns information without being able to trace it. Mistral shows marked gains on several document benchmarks. For a French legal department or a business unit, an AI that shows where each claim comes from changes how much you can trust it.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/mistral-ai-lance-une-ia-capable-de-chercher-et-verifier-les-informations-dans-les-documents-500439.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "mistral-launches-agentic-search-a-document-search-that"
+        },
+        {
+          "titre": "A creator sues Amazon and Twitch over the use of content in training their models",
+          "texteHtml": "<p>A streamer has filed a class action against Amazon and Twitch, accusing them of exploiting channel content to train the group's AI models without consent, Next and 01net report. An opt-out exists, but it is enabled by default, and the messages in a chat room stay usable as soon as a single participant has agreed. The case sheds light on a widespread practice among the large platforms: data produced by users feeds the in-house models, with consent coming after the fact, if it comes at all.</p>",
+          "sources": [
+            {
+              "nom": "Next",
+              "url": "https://next.ink/252963/twitch-accuse-davoir-donne-les-contenus-de-ses-createurs-a-amazon-et-ses-modeles-ia/"
+            },
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/amazon-est-accuse-davoir-recolte-les-donnees-des-utilisateurs-twitch-sans-leur-accord.html"
+            }
+          ],
+          "rang": 4,
+          "id": "a-creator-sues-amazon-and-twitch-over-the-use-of-content-in"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Stripe buys OpenRouter for $7.5 billion",
+          "texteHtml": "<p>Stripe, the online payments specialist, is acquiring OpenRouter, the gateway that lets developers call hundreds of AI models through a single interface, ZDNet reports. The deal gives Stripe a hand on its customers' revenue and costs in the AI era, placing under its control the routing to models as much as the billing. For technical teams, OpenRouter's promise, switching provider without rewriting your code, now depends on the strategy of a payments player.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/stripe-rachete-openrouter-pour-75-milliards-de-dollars-et-muscle-son-infrastructure-ia-500433.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "stripe-buys-openrouter-for-7-5-billion"
+        },
+        {
+          "titre": "Big Tech is said to be hiding $3 trillion of AI-linked debt through off-balance-sheet structures",
+          "texteHtml": "<p>To finance the expansion of their data centres, the tech giants are borrowing financing methods from aviation and shipping, which lodge trillions of dollars of commitments off the accounting balance sheet, ZDNet analyses. These structures, dedicated subsidiaries and long-term leases, keep the debt invisible to the investor reading the group's accounts. The figure put forward, $3 trillion, approaches France's annual gross domestic product. The worry is that of a bubble whose real scale escapes ordinary financial reading.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/comment-la-big-tech-utilise-les-methodes-de-laviation-pour-dissimuler-3-000-milliards-de-dollars-de-dette-dans-lia-500493.htm"
+            }
+          ],
+          "rang": 6,
+          "id": "big-tech-is-said-to-be-hiding-3-trillion-of-ai-linked-debt"
+        },
+        {
+          "titre": "Taiwan indicts an Nvidia executive in a case of AI chip smuggling to China",
+          "texteHtml": "<p>Taiwanese prosecutors have indicted a senior Nvidia executive, described as a member of a group said to have smuggled advanced AI accelerators to China, Bloomberg reports. It is the island's first known action against the black market in these components, subject to the US export controls that ban the sale of the most powerful chips to China. The case shows that Chinese demand for advanced compute is strong enough to fuel organised trafficking despite the sanctions. It also places Nvidia in a delicate position, with the company having to prove that its own executives are not circumventing the rules that govern its sales. For legal buyers, these controls sustain a shortage that weighs on prices and delivery times.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-24/taiwan-indicts-nvidia-manager-following-chip-smuggling-probe"
+            }
+          ],
+          "rang": 7,
+          "id": "taiwan-indicts-an-nvidia-executive-in-a-case-of-ai-chip"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Alibaba launches Wan3, its video generation model against Google Veo",
+          "texteHtml": "<p>Alibaba presents Wan3, a new version of its video generation model, with the ambition of competing with Google Veo, Clubic reports. The Chinese giant is pursuing a strategy of fast releases and broad availability, already followed for its Qwen language models. AI video generation is advancing at a brisk pace, and the arrival of a Chinese player of this weight in the field narrows the gap with the US models.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626503-alibaba-lance-wan3-sa-nouvelle-ia-video-qui-va-faire-trembler-google-veo.html"
+            }
+          ],
+          "rang": 8,
+          "id": "alibaba-launches-wan3-its-video-generation-model-against"
+        },
+        {
+          "titre": "Xpeng's robotics unit raises $900 million as China bets on embodied AI",
+          "texteHtml": "<p>Chinese electric-vehicle maker Xpeng has raised $900 million for its robotics unit Dogotix, valued at $6.3 billion, from investors including Alibaba and IDG Capital, the South China Morning Post reports. The deal is the largest private funding round ever completed by a Chinese robot maker, and it comes despite a widening quarterly loss for Xpeng. The stated ambition is to rival Tesla on embodied AI, these robots fitted with a model able to perceive and act in physical space. Caution remains warranted: in his weekly letter, researcher Jeff Ding judges China's embodied robotics sector overvalued, rich in spectacular demonstrations and poor in profitable industrial uses. The contrast between capital raised and real markets will be the indicator to watch.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/business/china-evs/article/3365096/ev-maker-xpeng-set-challenge-tesla-embodied-ai-after-robotics-unit-raises-us900m"
+            },
+            {
+              "nom": "ChinAI",
+              "url": "https://chinai.substack.com/p/chinai-372-chinas-overhyped-embodied"
+            }
+          ],
+          "rang": 9,
+          "id": "xpeng-s-robotics-unit-raises-900-million-as-china-bets-on"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Stanford researchers use generative AI to synthesise novel functional viruses",
+          "texteHtml": "<p>A team at Stanford University has created for the first time, using a generative model, functional viruses that did not exist in nature, ZDNet reports. The breakthrough opens medical prospects, notably against antibiotic-resistant bacteria, and shows that these models can design living things, not only text or images. It raises a direct safety question: the capability that helps research can also lower the barrier to making pathogens. The debate over guardrails on models applied to biology becomes concrete.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/quand-lia-generative-cree-la-vie-la-percee-de-stanford-dans-la-synthese-de-virus-inedits-500496.htm"
+            }
+          ],
+          "rang": 10,
+          "id": "stanford-researchers-use-generative-ai-to-synthesise-novel"
+        },
+        {
+          "titre": "Children learn a language better than AI, and no one knows why",
+          "texteHtml": "<p>The MIT Technology Review revisits a gap that has stayed unexplained: a child reaches perfect command of their language in a few years, from a tiny amount of data, while a large language model needs the equivalent of a hundred thousand times more examples for a comparable result. Four years after ChatGPT, humans remain the only ones to learn a language with such frugality. The article sees a useful reminder in this: the intelligence of today's models rests on brute force of data, not on the learning efficiency of the brain. For training and human-resources professions, the finding is an invitation not to confuse a model's performance with understanding in the human sense.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/08/24/1141740/kids-machines-language-learning/"
+            }
+          ],
+          "rang": 11,
+          "id": "children-learn-a-language-better-than-ai-and-no-one-knows"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Google's AI Mode reacts to the nationality mentioned",
+          "texteHtml": "<p>Numerama reproduced the experiment and confirms that Gemini and Google's AI Mode return different answers, sometimes alarmist, depending on the nationality named in the same query, a sign of a bias lodged in the training data.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2316669-je-suis-seule-avec-un-algerien-lia-de-google-est-elle-vraiment-raciste.html"
+            }
+          ],
+          "rang": 12,
+          "id": "google-s-ai-mode-reacts-to-the-nationality-mentioned"
+        },
+        {
+          "titre": "AI hedge fund Situational Awareness under SEC investigation",
+          "texteHtml": "<p>After coming close to imploding, the AI-focused hedge fund Situational Awareness, for a time a Wall Street darling, is now the subject of subpoenas from the SEC, the US securities regulator, TechCrunch reports.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/"
+            }
+          ],
+          "rang": 13,
+          "id": "ai-hedge-fund-situational-awareness-under-sec-investigation"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "The Dutch authority, with the CNIL, fines Uber €825 million for automated decisions taken with no human, while Google returns answers skewed by nationality: the skill gaining value is designing human oversight of automated decisions, mapping where your systems decide a person's fate alone and putting back a human who can understand, challenge and overturn",
+    "these": "The Dutch data protection authority, backed by France's CNIL, fines Uber €825 million for cutting drivers off through automated decisions, with no human reviewing the case. The penalty rests on Article 22 of the GDPR, in force since 2018: when a machine alone takes a decision with significant effects on a person, that person has a right to human intervention, an explanation and a means of appeal. The same day, Numerama shows Google's AI Mode returning alarmist answers depending on the nationality named. Two facts, one mechanism: systems decide in a human's place, at scale, and their mistakes land on real people. The wave of agents that vendors are now pushing into every profession will multiply these automatic decisions; European law does not ban them, it requires that a human be able to understand, challenge and overturn. The skill gaining value in a French organisation is designing human oversight of automated decisions: mapping where a system decides a person's fate alone (hiring, credit, pricing, penalties, prioritisation), placing on every decision with significant effects a human intervention with the time, the information and the authority to say no to the machine, documenting the logic, informing the person concerned and giving them a real means of appeal. An agent deployed without this setup exposes the organisation to the penalty that has just hit Uber. That €825 million measures what is at stake when the decision stays in the machine's hands alone.",
+    "html": "<p>The Dutch data protection authority, backed by France's CNIL, fines Uber €825 million for cutting drivers off through automated decisions, with no human reviewing the case. The penalty rests on Article 22 of the GDPR, in force since 2018: when a machine alone takes a decision with significant effects on a person, that person has a right to human intervention, an explanation and a means of appeal. Uber let the algorithm cut off drivers' access to work, without that safety net. The price of forgetting it now has a figure.</p>\n<p>The same day, Numerama shows Google's AI Mode returning alarmist answers depending on the nationality named in a query. Two facts, one mechanism: systems decide in a human's place, at scale, and their mistakes land on real people. The wave of agents that vendors are now pushing into every profession, from booking travel to sorting case files, will multiply these automatic decisions. European law does not ban them; it requires that a human be able to understand, challenge and overturn.</p>\n<p>The skill gaining value in a French organisation is designing human oversight of automated decisions. First map where, in your processes, a system decides a person's fate alone: hiring, credit, pricing, penalties, prioritising a file. For each of these decisions with significant effects, place a human intervention that is not a rubber stamp, a person with the time, the information and the authority to say no to the machine. Document the logic followed, inform the person concerned, give them a real means of appeal. An agent deployed without this setup exposes your organisation to the penalty that has just hit Uber. That €825 million measures what is at stake when the decision stays in the machine's hands alone.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>The Dutch data protection authority, backed by France's CNIL, fines Uber €825 million for cutting drivers off through automated decisions, with no human reviewing the case. The penalty rests on Article 22 of the GDPR, in force since 2018: when a machine alone takes a decision with significant effects on a person, that person has a right to human intervention, an explanation and a means of appeal. Uber let the algorithm cut off drivers' access to work, without that safety net. The price of forgetting it now has a figure.</p>\n<p>The same day, Numerama shows Google's AI Mode returning alarmist answers depending on the nationality named in a query. Two facts, one mechanism: systems decide in a human's place, at scale, and their mistakes land on real people. The wave of agents that vendors are now pushing into every profession, from booking travel to sorting case files, will multiply these automatic decisions. European law does not ban them; it requires that a human be able to understand, challenge and overturn.</p>",
+    "itemsCites": [
+      1,
+      12
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-24",
+    "dateLongue": "Monday 24 August 2026",
+    "titreEditorial": "Nvidia warns its biggest customers of a price rise above 15% on its AI servers as memory costs soar; the same day SoftBank places a record bond to fund OpenAI, Samsung returns $79 billion under the pressure of the AI boom, Alibaba raises $10.2 billion in Hong Kong, and Hugging Face is said to be exploring a sale at around $13 billion",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-08-26",
+    "dateLongue": "Wednesday 26 August 2026",
+    "titreEditorial": "Open-weight models pass proprietary ones on Vercel",
+    "nbItems": 14
+  },
+  "nbItems": 13,
+  "nbSources": 16,
+  "nbSignes": 8523,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "CNIL",
+    "Clubic",
+    "Le Monde",
+    "ZDNet",
+    "Next",
+    "01net",
+    "Bloomberg",
+    "South China Morning Post",
+    "ChinAI",
+    "MIT Technology Review"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 106,
+  "publieLe": "2026-08-25T05:44:07+02:00",
+  "publieLeAffiche": "5h44"
+}

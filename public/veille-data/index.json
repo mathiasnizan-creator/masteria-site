@@ -3,12 +3,56 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-24",
-    "totalEditions": 19,
-    "totalItems": 258,
-    "totalSources": 390
+    "derniereDate": "2026-08-28",
+    "totalEditions": 23,
+    "totalItems": 313,
+    "totalSources": 465
   },
   "editions": [
+    {
+      "date": "2026-08-28",
+      "dateAffichee": "28 août 2026",
+      "dateCourte": "ven. 28 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars, la plateforme open source fondée par trois Français, la même semaine où elle vient d'être piratée par les agents d'OpenAI ; une juge fédérale casse le bannissement d'Anthropic par le Pentagone, OpenAI fait entrer la publicité dans ChatGPT en Inde, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces chinoises, et OpenAI documente ce que l'esprit critique change à l'usage d'un chatbot",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-08-27",
+      "dateAffichee": "27 août 2026",
+      "dateCourte": "jeu. 27 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu'en 2028, pendant qu'Amazon triple sa commande de puces et qu'Anthropic signe 45 milliards de dollars de calcul avec Nscale ; le même jour, OpenAI publie le rapport sur le piratage de Hugging Face mené par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-08-26",
+      "dateAffichee": "26 août 2026",
+      "dateCourte": "mer. 26 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "OpenAI dévoile Jalapeño, sa première puce d'inférence maison, donnée plus rapide et plus sobre que le meilleur matériel du marché sur un banc d'essai indépendant ; le même jour, les modèles à poids ouverts dépassent les modèles propriétaires sur la plateforme Vercel, DeepSeek s'achemine vers une entrée en Bourse qui la valorise 74 milliards de dollars, Apple lance un Mac Studio à 512 Go pensé pour l'IA locale et LinkedIn revendique plus d'un million de contenus IA signalés",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-08-25",
+      "dateAffichee": "25 août 2026",
+      "dateCourte": "mar. 25 août",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "L'autorité néerlandaise de protection des données, en coopération avec la CNIL, condamne Uber à 825 millions d'euros pour avoir déconnecté des chauffeurs par décision automatisée sans intervention humaine ; le même jour, la publicité entre dans ChatGPT en France, Mistral lance Agentic Search, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-08-24",
       "dateAffichee": "24 août 2026",

@@ -244,7 +244,12 @@
     "titreEditorial": "Anthropic eyes a SpaceX-sized listing as enterprise buyers switch models",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-25",
+    "dateLongue": "Tuesday 25 August 2026",
+    "titreEditorial": "Uber fined €825 million over automated decisions",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 15,
   "nbSignes": 9166,

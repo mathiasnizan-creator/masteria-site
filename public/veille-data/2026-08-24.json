@@ -244,7 +244,12 @@
     "titreEditorial": "Anthropic vise une entrée en Bourse à la taille record de SpaceX et OpenAI accélère la sienne pendant que les acheteurs professionnels basculent d'un modèle à l'autre à chaque sortie ; une étude parue dans Nature mesure la propagande d'État chinoise dans ChatGPT et Claude, Alibaba divise son bénéfice par quatre pour financer 10 milliards de dollars d'infrastructure IA, et les États-Unis alertent sur des attaques assistées par IA contre les automates Siemens",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-25",
+    "dateLongue": "mardi 25 août 2026",
+    "titreEditorial": "L'autorité néerlandaise de protection des données, en coopération avec la CNIL, condamne Uber à 825 millions d'euros pour avoir déconnecté des chauffeurs par décision automatisée sans intervention humaine ; le même jour, la publicité entre dans ChatGPT en France, Mistral lance Agentic Search, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 15,
   "nbSignes": 10367,

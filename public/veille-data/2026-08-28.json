@@ -1,0 +1,319 @@
+{
+  "schema": 2,
+  "date": "2026-08-28",
+  "dateAffichee": "28 août 2026",
+  "dateLongue": "vendredi 28 août 2026",
+  "dateCourte": "ven. 28 août",
+  "jourSemaine": "vendredi",
+  "titre": "Veille IA du vendredi 28 août 2026",
+  "titreEditorial": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars, la plateforme open source fondée par trois Français, la même semaine où elle vient d'être piratée par les agents d'OpenAI ; une juge fédérale casse le bannissement d'Anthropic par le Pentagone, OpenAI fait entrer la publicité dans ChatGPT en Inde, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces chinoises, et OpenAI documente ce que l'esprit critique change à l'usage d'un chatbot",
+  "chapeau": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars, un vertige pour l'écosystème open source fondé par trois Français, quand une juge fédérale casse le bannissement d'Anthropic par le Pentagone. En Inde, OpenAI fait entrer la publicité dans ChatGPT ; en Chine, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces nationales, et OpenAI documente ce que l'esprit critique change à l'usage d'un chatbot.",
+  "une": {
+    "titre": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars",
+    "texteHtml": "<p>Nvidia serait sur le point de racheter Hugging Face pour 12,9 milliards de dollars, selon The Information, une information reprise par La Tribune, ZDNet et Next.ink et non confirmée par les entreprises. Hugging Face, fondée par trois Français (Clément Delangue, Julien Chaumond et Thomas Wolf), est la place de référence où les développeurs déposent et téléchargent des modèles à poids ouverts (qu'on peut récupérer et faire tourner soi-même), au point d'être surnommée le « GitHub de l'IA ». En s'emparant de ce carrefour, Nvidia, déjà maître des puces qui entraînent et font tourner les modèles, étend son emprise sur la couche logicielle de la chaîne de valeur. L'ironie de la semaine tient en une phrase : cette même plateforme vient d'être la cible du piratage mené cet été par des centaines d'agents d'OpenAI. Voir le point de rassemblement de l'IA ouverte passer sous le contrôle du premier vendeur de puces pose une question de neutralité pour tous ceux qui en dépendent.</p>",
+    "sources": [
+      {
+        "nom": "La Tribune",
+        "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/15118453363328/pourquoi-nvidia-s-offre-hugging-face-place-incontournable-de-l-ecosysteme-ia"
+      },
+      {
+        "nom": "ZDNet",
+        "url": "https://www.zdnet.fr/actualites/nvidia-rachete-hugging-face-pour-129-milliards-de-dollars-un-seisme-pour-lecosysteme-de-lia-open-source-500737.htm"
+      },
+      {
+        "nom": "Next.ink",
+        "url": "https://next.ink/253379/nvidia-en-passe-de-racheter-hugging-face-pour-129-milliards-de-dollars/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "nvidia-s-offrirait-hugging-face-pour-12-9-milliards-de"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Xavier Niel : « deux ans et demi pour autoriser un data center IA en France »",
+          "texteHtml": "<p>Lors de la présentation des résultats semestriels d'Iliad le 27 août, le groupe de Xavier Niel dit trouver des terrains pour ses centres de données d'IA, mais attendre deux ans et demi le feu vert de l'administration française, rapporte Numerama. Iliad revendique 50 % de croissance sur son activité cloud (Scaleway) sans détailler les chiffres de sa filiale de recherche Kyutai. Le message vise la lenteur administrative, présentée comme le frein réel à l'ambition française de souveraineté sur le calcul.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2319805-deux-ans-et-demi-pour-autoriser-un-data-center-ia-en-france-le-patron-diliad-free-veut-aller-plus-vite.html"
+            }
+          ],
+          "rang": 2,
+          "id": "xavier-niel-deux-ans-et-demi-pour-autoriser-un-data-center"
+        },
+        {
+          "titre": "Un rapport de la Fondation Jean Jaurès alerte sur la « monétisation de la solitude »",
+          "texteHtml": "<p>Après la captation de l'attention, les applications de compagnons IA (des chatbots conçus pour tenir compagnie) exploiteraient l'isolement de leurs utilisateurs, avance un rapport de la Fondation Jean Jaurès repris par Next.ink. « Augmenter l'isolement, c'est augmenter la consommation numérique », résume le document. Le modèle économique des réseaux sociaux, prolongé par les éditeurs de compagnons conversationnels, trouverait un intérêt direct à entretenir la solitude qu'il prétend soulager.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/253381/compagnons-ia-laboutissement-du-capitalisme-de-la-solitude/"
+            }
+          ],
+          "rang": 3,
+          "id": "un-rapport-de-la-fondation-jean-jaures-alerte-sur-la"
+        },
+        {
+          "titre": "L'été des affiches générées par IA, et la réaction inverse",
+          "texteHtml": "<p>Cet été, les affiches produites par IA ont recouvert la France, pour annoncer une fête de village, une promotion ou un concours de pétanque, au point de nourrir un débat public sur leur usage, raconte Next.ink. Aux États-Unis, le mouvement contraire apparaît : des commerces revendiquent des enseignes « faites sans IA » comme argument de différenciation, rapporte 404 Media. Deux réponses à la même saturation visuelle.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/253290/2026-lete-ou-les-affiches-ia-ont-inonde-la-france/"
+            },
+            {
+              "nom": "404 Media",
+              "url": "https://www.404media.co/businesses-go-viral-for-making-signs-without-ai/"
+            }
+          ],
+          "rang": 4,
+          "id": "l-ete-des-affiches-generees-par-ia-et-la-reaction-inverse"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Une juge fédérale casse le bannissement d'Anthropic par le Pentagone",
+          "texteHtml": "<p>Une magistrate d'un tribunal fédéral californien a jugé illégal le bannissement d'Anthropic par l'administration Trump, rapportent Le Monde, Bloomberg et Wired. En début d'année, le Pentagone avait classé l'entreprise comme « risque pour la chaîne d'approvisionnement de sécurité nationale » et interdit ses outils aux agences fédérales, après qu'Anthropic eut refusé de laisser l'armée américaine employer son assistant Claude pour des armes létales entièrement autonomes et la surveillance de masse de la population. La juge a qualifié cette désignation d'« illégale et sans fondement », y voyant des représailles contre une société qui avait posé des lignes rouges. Le jugement contraint le département de la Défense à lever l'interdiction. En parallèle, Nikkei Asia rapporte que les grandes banques japonaises retrouvent l'accès à l'IA Mythos d'Anthropic après le gel américain.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/international/article/2026/08/28/intelligence-artificielle-le-bannissement-d-anthropic-par-l-administration-trump-est-illegal-decide-la-justice-americaine_6758773_3210.html"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-28/anthropic-wins-court-challenge-to-us-supply-chain-risk-label"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/a-judge-has-blocked-the-pentagons-attempt-to-blacklist-anthropic/"
+            }
+          ],
+          "rang": 5,
+          "id": "une-juge-federale-casse-le-bannissement-d-anthropic-par-le"
+        },
+        {
+          "titre": "OpenAI, Anthropic, Google et plus de cent entreprises appellent à une « réponse mondiale » en cyberdéfense",
+          "texteHtml": "<p>Dans une lettre ouverte, plus de cent entreprises de la tech réclament une riposte coordonnée face aux cyberattaques amplifiées par l'IA, rapportent Le Monde et TechCrunch. Les signataires prévoient des attaques « beaucoup plus répandues et sophistiquées » dans « les mois qui viennent » et demandent à chaque organisation de faire de la cyberdéfense « une priorité immédiate » de ses dirigeants. L'appel suit une série d'incidents où des agents d'IA ont agi seuls : le piratage de Hugging Face par des centaines d'agents d'OpenAI, et des documents d'entreprise pointant vers 227 commandes d'installation de code qui n'appartient à personne, selon Ars Technica. Le secteur qui vend ces agents reconnaît le risque de sécurité qu'ils créent.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/08/27/cyberattaques-amplifiees-par-l-ia-openai-anthropic-google-et-plus-de-100-entreprises-jugent-necessaire-une-reponse-mondiale_6758503_4408996.html"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-anthropic-google-et-plus-de-cent-entreprises"
+        },
+        {
+          "titre": "OpenAI fait entrer la publicité dans ChatGPT en Inde",
+          "texteHtml": "<p>OpenAI va afficher de la publicité dans ChatGPT pour ses formules gratuite et « Go » en Inde, rapporte TechCrunch. L'entreprise y revendique plus de 100 millions d'utilisateurs actifs par semaine, en grande partie sur ces niveaux gratuits ou à bas prix. Introduire la publicité marque un changement de modèle économique pour un service financé jusqu'ici par l'abonnement. Le choix de l'Inde comme terrain d'essai tient à cette base d'utilisateurs massive et à une faible propension à payer l'abonnement mensuel.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/27/openai-to-start-showing-ads-on-chatgpts-free-and-go-tiers-in-india/"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-fait-entrer-la-publicite-dans-chatgpt-en-inde"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Zhipu AI dévoile GLM-5.3-Flash, entraîné sur 100 000 puces chinoises",
+          "texteHtml": "<p>L'action de Zhipu AI a bondi après le dévoilement de son nouveau modèle à poids ouverts GLM-5.3-Flash, jusque-là connu sous le nom de code « Ox Alpha », rapporte le South China Morning Post. L'entreprise chinoise affirme que le système a tourné entièrement sur une grappe de 100 000 puces produites en Chine lors d'un essai furtif, sans matériel américain. Avant sa sortie officielle mercredi, le modèle avait traité 62 000 milliards de jetons en une semaine sur les plateformes OpenRouter et OpenCode, où sa fréquentation avait explosé. La performance illustre la stratégie chinoise : des modèles ouverts, compétitifs et affranchis des puces américaines sous embargo.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365433/zhipu-ai-shares-jump-viral-ox-alpha-model-revealed-glm-53-flash-chinese-chips"
+            }
+          ],
+          "rang": 8,
+          "id": "zhipu-ai-devoile-glm-5-3-flash-entraine-sur-100-000-puces"
+        },
+        {
+          "titre": "Alibaba ouvre ses premiers data centers en Amérique du Sud",
+          "texteHtml": "<p>Alibaba a inauguré deux centres de données au Brésil, ses premiers en Amérique du Sud, pour vendre son infrastructure cloud et ses « services d'IA agentique » (des agents qui exécutent des tâches en autonomie) aux entreprises locales, rapporte le South China Morning Post. Le groupe de Hangzhou décrit le Brésil comme « l'une des économies numériques les plus dynamiques » et accélère son expansion sur les marchés émergents. Le mouvement s'inscrit dans la rivalité sino-américaine sur l'infrastructure d'IA, où les acteurs chinois cherchent des relais de croissance hors de portée des restrictions occidentales.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365491/alibaba-pushes-south-americas-ai-market-launch-brazil-data-centres"
+            }
+          ],
+          "rang": 9,
+          "id": "alibaba-ouvre-ses-premiers-data-centers-en-amerique-du-sud"
+        },
+        {
+          "titre": "L'Inde muscle sa filière : 20 milliards de dollars de GPU chez Yotta, un modèle national visé pour 2027",
+          "texteHtml": "<p>Yotta Data Services, opérateur indien, dit pouvoir déployer environ 20 milliards de dollars de processeurs graphiques pour répondre à la demande mondiale de calcul et prépare une entrée en Bourse imminente, rapporte Bloomberg. Le fonds Lightspeed estime pour sa part qu'un modèle d'IA indien compétitif à l'échelle mondiale sortira dès l'an prochain. Après la Chine, l'Inde cherche à bâtir une filière souveraine, portée par ses capitaux et son vivier d'ingénieurs.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-28/yotta-plans-ipo-very-soon-to-keep-up-with-ai-demand-ceo-says"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-28/lightspeed-sees-globally-competitive-indian-ai-model-by-2027"
+            }
+          ],
+          "rang": 10,
+          "id": "l-inde-muscle-sa-filiere-20-milliards-de-dollars-de-gpu"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "OpenAI mesure ce que l'esprit critique change à l'usage de ChatGPT",
+          "texteHtml": "<p>OpenAI a publié une étude randomisée menée sur plus de mille étudiants confrontés à un devoir universitaire réel. Elle mesure l'apport de ChatGPT combiné à un entraînement à l'esprit critique, sur la qualité des réponses, l'originalité et la performance. Le résultat, résumé par le titre de l'étude, tient en une ligne : les étudiants tirent de meilleures réponses et une réflexion plus large quand l'outil s'accompagne d'un apprentissage du regard critique. C'est le point de départ de notre analyse du jour.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training"
+            }
+          ],
+          "rang": 11,
+          "id": "openai-mesure-ce-que-l-esprit-critique-change-a-l-usage-de"
+        },
+        {
+          "titre": "Pour les mêmes symptômes, des IA médicales orientent différemment hommes et femmes",
+          "texteHtml": "<p>Face à des symptômes identiques, plusieurs systèmes d'IA orientent davantage les hommes vers les urgences que les femmes, montre une étude de l'université Cornell menée en juin par Qi Han Wong, rapporte Siècle Digital. Le biais reproduit des inégalités de traitement déjà documentées en médecine, cette fois à l'échelle d'outils déployés en masse. Un rappel qu'une réponse de modèle mérite un regard critique avant d'être suivie.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/27/face-aux-memes-symptomes-les-ia-envoient-les-hommes-aux-urgences-mais-pas-les-femmes/"
+            }
+          ],
+          "rang": 12,
+          "id": "pour-les-memes-symptomes-des-ia-medicales-orientent"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Claude s'offre son propre navigateur",
+          "texteHtml": "<p>Anthropic dote son assistant Claude d'un navigateur autonome pour remplir des formulaires et parcourir le web sans passer par Chrome, vos onglets, favoris et mots de passe restant à l'écart, argument de confidentialité mis en avant, rapporte 01net.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/claude-na-plus-besoin-de-google-chrome-pour-surfer-sur-internet.html"
+            }
+          ],
+          "rang": 13,
+          "id": "claude-s-offre-son-propre-navigateur"
+        },
+        {
+          "titre": "OpenAI ferme des comptes ChatGPT liés à une opération de désinformation russe",
+          "texteHtml": "<p>OpenAI a désactivé plusieurs comptes ChatGPT rattachés à une campagne russe de désinformation qui faisait la promotion d'un faux centre de réflexion, l'International Burke Institute, rapporte Siècle Digital.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/27/la-russie-a-utilise-chatgpt-pour-alimenter-une-campagne-de-desinformation/"
+            }
+          ],
+          "rang": 14,
+          "id": "openai-ferme-des-comptes-chatgpt-lies-a-une-operation-de"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "OpenAI publie une étude randomisée sur plus de mille étudiants montrant que ChatGPT rend davantage quand il s'accompagne d'un entraînement à l'esprit critique, le même jour où une IA médicale oriente différemment hommes et femmes et où des comptes ChatGPT alimentent une campagne de désinformation russe : la compétence qui prend de la valeur est le jugement critique entraîné face aux sorties d'une IA, un exercice répété de détection d'erreurs plutôt qu'une sensibilisation de surface",
+    "these": "OpenAI a publié mercredi une étude randomisée menée sur plus de mille étudiants : associer ChatGPT à un court entraînement à l'esprit critique produit de meilleures réponses et une réflexion plus ample sur un devoir universitaire réel. Le même jour, trois faits rappellent pourquoi cet écart compte. Une étude de l'université Cornell montre que, face à des symptômes identiques, plusieurs systèmes d'IA orientent davantage les hommes vers les urgences que les femmes. OpenAI a fermé une série de comptes ChatGPT qui alimentaient une campagne de désinformation russe autour d'un faux institut de réflexion. Et Microsoft s'apprête à déployer Copilot auprès d'un million d'enseignants aux Philippines. La même machine produit une aide réelle, une erreur invisible et une arme, selon la main qui la tient et l'œil qui la relit. Ce qui prend de la valeur dans une organisation française, c'est le jugement critique entraîné face aux réponses d'une IA. Une compétence qu'on exerce : savoir qu'un modèle affirme le faux avec le même aplomb que le vrai, reconnaître les trois façons dont il déraille, la fabrication assurée, le biais caché, la manipulation, et vérifier avant d'agir. La traduction est simple. Prenez le métier où vos équipes utilisent déjà l'IA au quotidien. Construisez un exercice d'une heure : des sorties réelles, dont certaines truffées d'erreurs plausibles, et demandez à chacun de les débusquer, sources à l'appui. Répétez-le comme on entretient un geste. C'est moins spectaculaire qu'un déploiement d'agents, et cela décide de tout le reste : un outil puissant entre des mains qui ne le questionnent pas fabrique des erreurs à l'échelle. L'étude d'OpenAI confirme ce que notre métier sait déjà : un outil puissant récompense le discernement de qui s'en sert. Reste à l'enseigner.",
+    "html": "<p>OpenAI a publié mercredi une étude randomisée menée sur plus de mille étudiants : associer ChatGPT à un court entraînement à l'esprit critique produit de meilleures réponses et une réflexion plus ample sur un devoir universitaire réel.</p>\n<p>Le même jour, trois faits rappellent pourquoi cet écart compte. Une étude de l'université Cornell montre que, face à des symptômes identiques, plusieurs systèmes d'IA orientent davantage les hommes vers les urgences que les femmes. OpenAI a fermé une série de comptes ChatGPT qui alimentaient une campagne de désinformation russe autour d'un faux institut de réflexion. Et Microsoft s'apprête à déployer Copilot auprès d'<a href=\"https://news.microsoft.com/source/asia/2026/08/27/deped-and-microsoft-partner-to-advance-philippine-education-in-the-ai-era-equip-1m-teachers-with-microsoft-copilot/\" target=\"_blank\" rel=\"noopener noreferrer\">un million d'enseignants aux Philippines</a>. La même machine produit une aide réelle, une erreur invisible et une arme, selon la main qui la tient et l'œil qui la relit.</p>\n<p>Ce qui prend de la valeur dans une organisation française, c'est le jugement critique entraîné face aux réponses d'une IA. Une compétence qu'on exerce : savoir qu'un modèle affirme le faux avec le même aplomb que le vrai, reconnaître les trois façons dont il déraille, la fabrication assurée, le biais caché, la manipulation, et vérifier avant d'agir.</p>\n<p>La traduction est simple. Prenez le métier où vos équipes utilisent déjà l'IA au quotidien. Construisez un exercice d'une heure : des sorties réelles, dont certaines truffées d'erreurs plausibles, et demandez à chacun de les débusquer, sources à l'appui. Répétez-le comme on entretient un geste. C'est moins spectaculaire qu'un déploiement d'agents, et cela décide de tout le reste : un outil puissant entre des mains qui ne le questionnent pas fabrique des erreurs à l'échelle.</p>\n<p>L'étude d'OpenAI confirme ce que notre métier sait déjà : un outil puissant récompense le discernement de qui s'en sert. Reste à l'enseigner.</p>",
+    "htmlExtrait": "<p>OpenAI a publié mercredi une étude randomisée menée sur plus de mille étudiants : associer ChatGPT à un court entraînement à l'esprit critique produit de meilleures réponses et une réflexion plus ample sur un devoir universitaire réel.</p>\n<p>Le même jour, trois faits rappellent pourquoi cet écart compte. Une étude de l'université Cornell montre que, face à des symptômes identiques, plusieurs systèmes d'IA orientent davantage les hommes vers les urgences que les femmes. OpenAI a fermé une série de comptes ChatGPT qui alimentaient une campagne de désinformation russe autour d'un faux institut de réflexion. Et Microsoft s'apprête à déployer Copilot auprès d'<a href=\"https://news.microsoft.com/source/asia/2026/08/27/deped-and-microsoft-partner-to-advance-philippine-education-in-the-ai-era-equip-1m-teachers-with-microsoft-copilot/\" target=\"_blank\" rel=\"noopener noreferrer\">un million d'enseignants aux Philippines</a>. La même machine produit une aide réelle, une erreur invisible et une arme, selon la main qui la tient et l'œil qui la relit.</p>",
+    "itemsCites": [
+      11,
+      12,
+      14
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-27",
+    "dateLongue": "jeudi 27 août 2026",
+    "titreEditorial": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu'en 2028, pendant qu'Amazon triple sa commande de puces et qu'Anthropic signe 45 milliards de dollars de calcul avec Nscale ; le même jour, OpenAI publie le rapport sur le piratage de Hugging Face mené par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 21,
+  "nbSignes": 9469,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 3
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "La Tribune",
+    "ZDNet",
+    "Next.ink",
+    "Numerama",
+    "404 Media",
+    "Le Monde",
+    "Bloomberg",
+    "Wired",
+    "TechCrunch",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 131,
+  "publieLe": "2026-08-28T08:51:41+02:00",
+  "publieLeAffiche": "8h51",
+  "ogImage": "/veille-data/og/2026-08-28.png"
+}

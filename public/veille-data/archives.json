@@ -3,12 +3,486 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-24",
-    "totalEditions": 19,
-    "totalItems": 258,
-    "totalSources": 390
+    "derniereDate": "2026-08-28",
+    "totalEditions": 23,
+    "totalItems": 313,
+    "totalSources": 465
   },
   "editions": [
+    {
+      "date": "2026-08-28",
+      "dateCourte": "ven. 28 août",
+      "dateAffichee": "28 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars, la plateforme open source fondée par trois Français, la même semaine où elle vient d'être piratée par les agents d'OpenAI ; une juge fédérale casse le bannissement d'Anthropic par le Pentagone, OpenAI fait entrer la publicité dans ChatGPT en Inde, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces chinoises, et OpenAI documente ce que l'esprit critique change à l'usage d'un chatbot",
+      "chapeau": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars, un vertige pour l'écosystème open source fondé par trois Français, quand une juge fédérale casse le bannissement d'Anthropic par le Pentagone. En Inde, OpenAI fait entrer la publicité dans ChatGPT ; en Chine, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces nationales, et OpenAI documente ce que l'esprit critique change à l'usage d'un chatbot.",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "La Tribune",
+        "ZDNet",
+        "Next.ink",
+        "Numerama",
+        "404 Media",
+        "Le Monde",
+        "Bloomberg",
+        "Wired",
+        "TechCrunch",
+        "South China Morning Post",
+        "OpenAI",
+        "Siècle Digital",
+        "01net"
+      ],
+      "items": [
+        {
+          "t": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars",
+          "z": "une",
+          "id": "nvidia-s-offrirait-hugging-face-pour-12-9-milliards-de"
+        },
+        {
+          "t": "Xavier Niel : « deux ans et demi pour autoriser un data center IA en France »",
+          "z": "europe",
+          "id": "xavier-niel-deux-ans-et-demi-pour-autoriser-un-data-center"
+        },
+        {
+          "t": "Un rapport de la Fondation Jean Jaurès alerte sur la « monétisation de la solitude »",
+          "z": "europe",
+          "id": "un-rapport-de-la-fondation-jean-jaures-alerte-sur-la"
+        },
+        {
+          "t": "L'été des affiches générées par IA, et la réaction inverse",
+          "z": "europe",
+          "id": "l-ete-des-affiches-generees-par-ia-et-la-reaction-inverse"
+        },
+        {
+          "t": "Une juge fédérale casse le bannissement d'Anthropic par le Pentagone",
+          "z": "international",
+          "id": "une-juge-federale-casse-le-bannissement-d-anthropic-par-le"
+        },
+        {
+          "t": "OpenAI, Anthropic, Google et plus de cent entreprises appellent à une « réponse mondiale » en cyberdéfense",
+          "z": "international",
+          "id": "openai-anthropic-google-et-plus-de-cent-entreprises"
+        },
+        {
+          "t": "OpenAI fait entrer la publicité dans ChatGPT en Inde",
+          "z": "international",
+          "id": "openai-fait-entrer-la-publicite-dans-chatgpt-en-inde"
+        },
+        {
+          "t": "Zhipu AI dévoile GLM-5.3-Flash, entraîné sur 100 000 puces chinoises",
+          "z": "chine",
+          "id": "zhipu-ai-devoile-glm-5-3-flash-entraine-sur-100-000-puces"
+        },
+        {
+          "t": "Alibaba ouvre ses premiers data centers en Amérique du Sud",
+          "z": "chine",
+          "id": "alibaba-ouvre-ses-premiers-data-centers-en-amerique-du-sud"
+        },
+        {
+          "t": "L'Inde muscle sa filière : 20 milliards de dollars de GPU chez Yotta, un modèle national visé pour 2027",
+          "z": "chine",
+          "id": "l-inde-muscle-sa-filiere-20-milliards-de-dollars-de-gpu"
+        },
+        {
+          "t": "OpenAI mesure ce que l'esprit critique change à l'usage de ChatGPT",
+          "z": "recherche",
+          "id": "openai-mesure-ce-que-l-esprit-critique-change-a-l-usage-de"
+        },
+        {
+          "t": "Pour les mêmes symptômes, des IA médicales orientent différemment hommes et femmes",
+          "z": "recherche",
+          "id": "pour-les-memes-symptomes-des-ia-medicales-orientent"
+        },
+        {
+          "t": "Claude s'offre son propre navigateur",
+          "z": "bref",
+          "id": "claude-s-offre-son-propre-navigateur"
+        },
+        {
+          "t": "OpenAI ferme des comptes ChatGPT liés à une opération de désinformation russe",
+          "z": "bref",
+          "id": "openai-ferme-des-comptes-chatgpt-lies-a-une-operation-de"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "dateCourte": "jeu. 27 août",
+      "dateAffichee": "27 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu'en 2028, pendant qu'Amazon triple sa commande de puces et qu'Anthropic signe 45 milliards de dollars de calcul avec Nscale ; le même jour, OpenAI publie le rapport sur le piratage de Hugging Face mené par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts",
+      "chapeau": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu'en 2028, pendant qu'Amazon triple sa commande de puces. Le même jour, OpenAI publie le rapport sur le piratage de Hugging Face par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "TechCrunch",
+        "CNIL",
+        "La Tribune",
+        "ZDNet",
+        "MIT Technology Review",
+        "Ars Technica",
+        "South China Morning Post",
+        "arXiv",
+        "Bloomberg",
+        "Clubic"
+      ],
+      "items": [
+        {
+          "t": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et promet une croissance jusqu'en 2028",
+          "z": "une",
+          "id": "nvidia-bat-un-record-a-96-2-milliards-de-dollars-de-revenus"
+        },
+        {
+          "t": "La CNIL met à jour son outil de traçabilité des modèles d'IA en source ouverte",
+          "z": "europe",
+          "id": "la-cnil-met-a-jour-son-outil-de-tracabilite-des-modeles-d"
+        },
+        {
+          "t": "L'IA fait gagner trois heures par semaine aux salariés européens, sans gain de production automatique",
+          "z": "europe",
+          "id": "l-ia-fait-gagner-trois-heures-par-semaine-aux-salaries"
+        },
+        {
+          "t": "Les réponses IA de Google apparaissent dans plus d'une recherche française sur deux",
+          "z": "europe",
+          "id": "les-reponses-ia-de-google-apparaissent-dans-plus-d-une"
+        },
+        {
+          "t": "Le Syntec anticipe une refonte des compétences dans l'ingénierie et le conseil",
+          "z": "europe",
+          "id": "le-syntec-anticipe-une-refonte-des-competences-dans-l"
+        },
+        {
+          "t": "OpenAI publie son rapport sur le piratage de Hugging Face par ses propres agents",
+          "z": "international",
+          "id": "openai-publie-son-rapport-sur-le-piratage-de-hugging-face"
+        },
+        {
+          "t": "Bill Gates rompt le silence sur l'IA et réclame une taxe sur les robots et des emplois réservés aux humains",
+          "z": "international",
+          "id": "bill-gates-rompt-le-silence-sur-l-ia-et-reclame-une-taxe"
+        },
+        {
+          "t": "Chez Meta, des agents censés remplacer des salariés ont provoqué des actions « perturbatrices à grande échelle »",
+          "z": "international",
+          "id": "chez-meta-des-agents-censes-remplacer-des-salaries-ont"
+        },
+        {
+          "t": "Anthropic signe un accord de 45 milliards de dollars avec Nscale pour sa puissance de calcul",
+          "z": "international",
+          "id": "anthropic-signe-un-accord-de-45-milliards-de-dollars-avec"
+        },
+        {
+          "t": "Le laboratoire chinois Z.ai révèle qu'il est derrière « Ox Alpha », un modèle ouvert en tête des classements",
+          "z": "chine",
+          "id": "le-laboratoire-chinois-z-ai-revele-qu-il-est-derriere-ox"
+        },
+        {
+          "t": "La pénurie de condensateurs, « le riz de l'électronique », atteint un niveau record sous l'effet des serveurs d'IA",
+          "z": "chine",
+          "id": "la-penurie-de-condensateurs-le-riz-de-l-electronique"
+        },
+        {
+          "t": "« Les agents d'IA poussent l'humain hors de la boucle », alerte un article de recherche",
+          "z": "recherche",
+          "id": "les-agents-d-ia-poussent-l-humain-hors-de-la-boucle-alerte"
+        },
+        {
+          "t": "Nvidia serait en discussions pour racheter Hugging Face",
+          "z": "bref",
+          "id": "nvidia-serait-en-discussions-pour-racheter-hugging-face"
+        },
+        {
+          "t": "L'Australie bannit la musique intégralement générée par IA de ses classements officiels",
+          "z": "bref",
+          "id": "l-australie-bannit-la-musique-integralement-generee-par-ia"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "dateCourte": "mer. 26 août",
+      "dateAffichee": "26 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "OpenAI dévoile Jalapeño, sa première puce d'inférence maison, donnée plus rapide et plus sobre que le meilleur matériel du marché sur un banc d'essai indépendant ; le même jour, les modèles à poids ouverts dépassent les modèles propriétaires sur la plateforme Vercel, DeepSeek s'achemine vers une entrée en Bourse qui la valorise 74 milliards de dollars, Apple lance un Mac Studio à 512 Go pensé pour l'IA locale et LinkedIn revendique plus d'un million de contenus IA signalés",
+      "chapeau": "OpenAI présente Jalapeño, sa première puce d'inférence maison, donnée plus rapide et plus sobre que le meilleur matériel disponible. Le même jour, les modèles ouverts passent devant les modèles propriétaires sur la plateforme de développement Vercel, DeepSeek s'achemine vers une entrée en Bourse à 74 milliards de dollars et Apple met en vente un Mac Studio à 512 gigaoctets taillé pour l'IA locale.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "TechCrunch",
+        "The Verge",
+        "Clubic",
+        "Siècle Digital",
+        "ZDNet",
+        "South China Morning Post",
+        "Numerama",
+        "Bloomberg",
+        "MIT Technology Review"
+      ],
+      "items": [
+        {
+          "t": "OpenAI dévoile Jalapeño, sa première puce d'inférence maison, et la donne devant le meilleur matériel du marché",
+          "z": "une",
+          "id": "openai-devoile-jalapeno-sa-premiere-puce-d-inference-maison"
+        },
+        {
+          "t": "Microsoft obtient le feu vert pour un centre de données d'IA à Mulhouse",
+          "z": "europe",
+          "id": "microsoft-obtient-le-feu-vert-pour-un-centre-de-donnees-d"
+        },
+        {
+          "t": "LinkedIn revendique plus d'un million de contenus IA signalés par ses membres",
+          "z": "europe",
+          "id": "linkedin-revendique-plus-d-un-million-de-contenus-ia"
+        },
+        {
+          "t": "Nscale prépare une entrée en Bourse de 3 milliards de dollars pour financer ses infrastructures d'IA",
+          "z": "europe",
+          "id": "nscale-prepare-une-entree-en-bourse-de-3-milliards-de"
+        },
+        {
+          "t": "Les modèles à poids ouverts passent devant les modèles propriétaires sur la plateforme Vercel",
+          "z": "international",
+          "id": "les-modeles-a-poids-ouverts-passent-devant-les-modeles"
+        },
+        {
+          "t": "Apple met en vente un Mac Studio à 512 Go de mémoire, pensé pour l'IA locale",
+          "z": "international",
+          "id": "apple-met-en-vente-un-mac-studio-a-512-go-de-memoire-pense"
+        },
+        {
+          "t": "OpenAI perd un cadre clé de ses centres de données, la série de départs continue",
+          "z": "international",
+          "id": "openai-perd-un-cadre-cle-de-ses-centres-de-donnees-la-serie"
+        },
+        {
+          "t": "Le patron de Hexaware anticipe une baisse de 25 % de la valeur des prestations informatiques sous l'effet de l'IA",
+          "z": "international",
+          "id": "le-patron-de-hexaware-anticipe-une-baisse-de-25-de-la"
+        },
+        {
+          "t": "DeepSeek s'approche d'un tour de financement qui la valorise 74 milliards de dollars avant une entrée en Bourse",
+          "z": "chine",
+          "id": "deepseek-s-approche-d-un-tour-de-financement-qui-la"
+        },
+        {
+          "t": "Xiaomi accélère sur ses puces maison malgré un bénéfice en baisse",
+          "z": "chine",
+          "id": "xiaomi-accelere-sur-ses-puces-maison-malgre-un-benefice-en"
+        },
+        {
+          "t": "Alibaba lève 10,2 milliards de dollars pour ses infrastructures d'IA",
+          "z": "chine",
+          "id": "alibaba-leve-10-2-milliards-de-dollars-pour-ses"
+        },
+        {
+          "t": "Une étude du MIT Media Lab montre que s'informer via un chatbot dégrade le discernement",
+          "z": "recherche",
+          "id": "une-etude-du-mit-media-lab-montre-que-s-informer-via-un"
+        },
+        {
+          "t": "OpenAI rétablit la limite des cinq heures sur Codex et ChatGPT Work",
+          "z": "bref",
+          "id": "openai-retablit-la-limite-des-cinq-heures-sur-codex-et"
+        },
+        {
+          "t": "Une étude estime qu'un tiers des nouvelles pages web sont écrites par l'IA",
+          "z": "bref",
+          "id": "une-etude-estime-qu-un-tiers-des-nouvelles-pages-web-sont"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "dateCourte": "mar. 25 août",
+      "dateAffichee": "25 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "L'autorité néerlandaise de protection des données, en coopération avec la CNIL, condamne Uber à 825 millions d'euros pour avoir déconnecté des chauffeurs par décision automatisée sans intervention humaine ; le même jour, la publicité entre dans ChatGPT en France, Mistral lance Agentic Search, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine",
+      "chapeau": "L'autorité néerlandaise des données, épaulée par la CNIL, inflige 825 millions d'euros à Uber pour des décisions automatisées prises sans humain dans la boucle, la plus lourde sanction du genre en Europe. Le même jour, la publicité arrive dans ChatGPT en France, Mistral lance une recherche documentaire qui vérifie ses sources, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine.",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "CNIL",
+        "Clubic",
+        "Le Monde",
+        "ZDNet",
+        "Next",
+        "01net",
+        "Bloomberg",
+        "South China Morning Post",
+        "ChinAI",
+        "MIT Technology Review",
+        "Numerama",
+        "TechCrunch"
+      ],
+      "items": [
+        {
+          "t": "L'autorité néerlandaise, avec la CNIL, condamne Uber à 825 millions d'euros pour des décisions automatisées prises sans humain",
+          "z": "une",
+          "id": "l-autorite-neerlandaise-avec-la-cnil-condamne-uber-a-825"
+        },
+        {
+          "t": "La publicité entre dans ChatGPT en France",
+          "z": "europe",
+          "id": "la-publicite-entre-dans-chatgpt-en-france"
+        },
+        {
+          "t": "Mistral lance Agentic Search, une recherche documentaire qui vérifie ses sources",
+          "z": "europe",
+          "id": "mistral-lance-agentic-search-une-recherche-documentaire-qui"
+        },
+        {
+          "t": "Un créateur attaque Amazon et Twitch pour l'usage de contenus dans l'entraînement de leurs modèles",
+          "z": "europe",
+          "id": "un-createur-attaque-amazon-et-twitch-pour-l-usage-de"
+        },
+        {
+          "t": "Stripe rachète OpenRouter pour 7,5 milliards de dollars",
+          "z": "international",
+          "id": "stripe-rachete-openrouter-pour-7-5-milliards-de-dollars"
+        },
+        {
+          "t": "La Big Tech dissimulerait 3 000 milliards de dollars de dette liée à l'IA par des montages hors-bilan",
+          "z": "international",
+          "id": "la-big-tech-dissimulerait-3-000-milliards-de-dollars-de"
+        },
+        {
+          "t": "Taïwan inculpe un cadre de Nvidia dans une affaire de contrebande de puces d'IA vers la Chine",
+          "z": "international",
+          "id": "taiwan-inculpe-un-cadre-de-nvidia-dans-une-affaire-de"
+        },
+        {
+          "t": "Alibaba lance Wan3, son modèle de génération vidéo face à Google Veo",
+          "z": "chine",
+          "id": "alibaba-lance-wan3-son-modele-de-generation-video-face-a"
+        },
+        {
+          "t": "La filiale robotique du constructeur Xpeng lève 900 millions de dollars, la Chine mise sur l'IA incarnée",
+          "z": "chine",
+          "id": "la-filiale-robotique-du-constructeur-xpeng-leve-900"
+        },
+        {
+          "t": "Des chercheurs de Stanford synthétisent par IA générative des virus fonctionnels inédits",
+          "z": "recherche",
+          "id": "des-chercheurs-de-stanford-synthetisent-par-ia-generative"
+        },
+        {
+          "t": "Les enfants apprennent une langue mieux que l'IA, et personne ne sait pourquoi",
+          "z": "recherche",
+          "id": "les-enfants-apprennent-une-langue-mieux-que-l-ia-et"
+        },
+        {
+          "t": "Le Mode IA de Google réagit selon la nationalité mentionnée",
+          "z": "bref",
+          "id": "le-mode-ia-de-google-reagit-selon-la-nationalite-mentionnee"
+        },
+        {
+          "t": "Le fonds spéculatif IA Situational Awareness sous enquête de la SEC",
+          "z": "bref",
+          "id": "le-fonds-speculatif-ia-situational-awareness-sous-enquete"
+        }
+      ]
+    },
     {
       "date": "2026-08-24",
       "dateCourte": "lun. 24 août",

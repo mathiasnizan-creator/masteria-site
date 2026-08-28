@@ -1,0 +1,295 @@
+{
+  "schema": 2,
+  "date": "2026-08-25",
+  "dateAffichee": "25 août 2026",
+  "dateLongue": "mardi 25 août 2026",
+  "dateCourte": "mar. 25 août",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA du mardi 25 août 2026",
+  "titreEditorial": "L'autorité néerlandaise de protection des données, en coopération avec la CNIL, condamne Uber à 825 millions d'euros pour avoir déconnecté des chauffeurs par décision automatisée sans intervention humaine ; le même jour, la publicité entre dans ChatGPT en France, Mistral lance Agentic Search, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine",
+  "chapeau": "L'autorité néerlandaise des données, épaulée par la CNIL, inflige 825 millions d'euros à Uber pour des décisions automatisées prises sans humain dans la boucle, la plus lourde sanction du genre en Europe. Le même jour, la publicité arrive dans ChatGPT en France, Mistral lance une recherche documentaire qui vérifie ses sources, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine.",
+  "une": {
+    "titre": "L'autorité néerlandaise, avec la CNIL, condamne Uber à 825 millions d'euros pour des décisions automatisées prises sans humain",
+    "texteHtml": "<p>L'Autoriteit Persoonsgegevens, le régulateur néerlandais des données, en coopération avec la CNIL, a infligé une amende de 824 990 000 euros aux sociétés Uber B.V. et Uber Technologies Inc. La plateforme coupait l'accès au travail de chauffeurs, les déconnectait, par des décisions individuelles automatisées sans intervention humaine réelle. Le RGPD encadre pourtant ces décisions par son article 22 : lorsqu'un traitement produit des effets juridiques ou significatifs sur une personne, celle-ci a droit à une intervention humaine, à une explication et à la possibilité de contester. Le montant, deuxième plus lourde sanction de l'histoire d'Uber, chiffre à cette échelle le prix d'un algorithme qui décide seul du sort d'un travailleur. C'est le sujet de notre analyse.</p>",
+    "sources": [
+      {
+        "nom": "CNIL",
+        "url": "https://www.cnil.fr/fr/decisions-automatisees-sanction-de-pres-de-825-millions-deuros-lencontre-duber"
+      },
+      {
+        "nom": "Clubic",
+        "url": "https://www.clubic.com/actualite-626440-uber-a-ecope-d-une-enorme-amende-en-europe-pour-avoir-laisse-des-algorithmes-decider-seuls-du-sort-de-ses-chauffeurs.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "l-autorite-neerlandaise-avec-la-cnil-condamne-uber-a-825"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La publicité entre dans ChatGPT en France",
+          "texteHtml": "<p>Depuis le lundi 24 août, les annonceurs peuvent payer pour afficher leur marque à côté des réponses de l'assistant d'OpenAI en France, rapporte Le Monde. L'entreprise cherche à diversifier des revenus tirés jusqu'ici des abonnements et de son interface de programmation. Pour les organisations, l'arrivée de la publicité dans un assistant conversationnel pose une question neuve : la réponse d'une IA devient un espace commercial, avec le risque d'y voir se mêler information et message payé.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/08/24/intelligence-artificielle-les-publicites-arrivent-sur-chatgpt-en-france_6755543_3234.html"
+            }
+          ],
+          "rang": 2,
+          "id": "la-publicite-entre-dans-chatgpt-en-france"
+        },
+        {
+          "titre": "Mistral lance Agentic Search, une recherche documentaire qui vérifie ses sources",
+          "texteHtml": "<p>Mistral AI présente Agentic Search, une technologie qui navigue dans des documents, en extrait l'information pertinente et vérifie les sources qu'elle cite, rapporte ZDNet. L'approche corrige une faiblesse connue du RAG classique (la génération augmentée par récupération, où le modèle puise dans une base documentaire avant de répondre), qui restitue parfois une information sans pouvoir la tracer. Mistral affiche des gains marqués sur plusieurs tests documentaires. Pour un service juridique ou une direction métier française, une IA qui montre d'où vient chaque affirmation change la confiance qu'on peut lui accorder.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/mistral-ai-lance-une-ia-capable-de-chercher-et-verifier-les-informations-dans-les-documents-500439.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "mistral-lance-agentic-search-une-recherche-documentaire-qui"
+        },
+        {
+          "titre": "Un créateur attaque Amazon et Twitch pour l'usage de contenus dans l'entraînement de leurs modèles",
+          "texteHtml": "<p>Un streamer a déposé une plainte collective contre Amazon et Twitch, les accusant d'avoir exploité les contenus des chaînes pour entraîner les modèles d'IA du groupe sans consentement, rapportent Next et 01net. L'option de refus existe, mais elle est activée par défaut, et les messages d'un salon de discussion restent exploitables dès qu'un seul participant a accepté. L'affaire éclaire une pratique répandue chez les grandes plateformes : la donnée produite par les utilisateurs nourrit les modèles maison, le consentement venant après coup, s'il vient.</p>",
+          "sources": [
+            {
+              "nom": "Next",
+              "url": "https://next.ink/252963/twitch-accuse-davoir-donne-les-contenus-de-ses-createurs-a-amazon-et-ses-modeles-ia/"
+            },
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/amazon-est-accuse-davoir-recolte-les-donnees-des-utilisateurs-twitch-sans-leur-accord.html"
+            }
+          ],
+          "rang": 4,
+          "id": "un-createur-attaque-amazon-et-twitch-pour-l-usage-de"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Stripe rachète OpenRouter pour 7,5 milliards de dollars",
+          "texteHtml": "<p>Stripe, spécialiste des paiements en ligne, acquiert OpenRouter, la passerelle qui permet aux développeurs d'appeler des centaines de modèles d'IA via une seule interface, rapporte ZDNet. L'opération donne à Stripe la main sur les revenus et les coûts de ses clients à l'ère de l'IA, en plaçant sous son contrôle l'aiguillage vers les modèles autant que la facturation. Pour les équipes techniques, la promesse d'OpenRouter, changer de fournisseur sans réécrire son code, dépend désormais de la stratégie d'un acteur du paiement.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/stripe-rachete-openrouter-pour-75-milliards-de-dollars-et-muscle-son-infrastructure-ia-500433.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "stripe-rachete-openrouter-pour-7-5-milliards-de-dollars"
+        },
+        {
+          "titre": "La Big Tech dissimulerait 3 000 milliards de dollars de dette liée à l'IA par des montages hors-bilan",
+          "texteHtml": "<p>Pour financer l'expansion de leurs centres de données, les géants du numérique empruntent des méthodes de financement à l'aviation et au transport maritime, qui logent des milliers de milliards de dollars d'engagements hors du bilan comptable, analyse ZDNet. Ces structures, filiales dédiées et locations de long terme, gardent la dette invisible pour l'investisseur qui lit les comptes du groupe. Le chiffre avancé, 3 000 milliards de dollars, approche le produit intérieur brut annuel de la France. L'inquiétude est celle d'une bulle dont l'ampleur réelle échappe à la lecture financière ordinaire.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/comment-la-big-tech-utilise-les-methodes-de-laviation-pour-dissimuler-3-000-milliards-de-dollars-de-dette-dans-lia-500493.htm"
+            }
+          ],
+          "rang": 6,
+          "id": "la-big-tech-dissimulerait-3-000-milliards-de-dollars-de"
+        },
+        {
+          "titre": "Taïwan inculpe un cadre de Nvidia dans une affaire de contrebande de puces d'IA vers la Chine",
+          "texteHtml": "<p>Les procureurs taïwanais ont inculpé un cadre supérieur de Nvidia, présenté comme membre d'un groupe qui aurait fait passer en contrebande des accélérateurs d'IA de pointe vers la Chine, rapporte Bloomberg. C'est la première action connue de l'île contre le marché noir de ces composants, soumis aux contrôles d'exportation américains qui interdisent la vente des puces les plus puissantes à la Chine. L'affaire montre que la demande chinoise pour le calcul de pointe est assez forte pour alimenter un trafic organisé, malgré les sanctions. Elle place aussi Nvidia dans une position délicate, l'entreprise devant prouver que ses propres cadres ne contournent pas les règles qui encadrent ses ventes. Pour les acheteurs légaux, ces contrôles entretiennent une pénurie qui pèse sur les prix et les délais.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-24/taiwan-indicts-nvidia-manager-following-chip-smuggling-probe"
+            }
+          ],
+          "rang": 7,
+          "id": "taiwan-inculpe-un-cadre-de-nvidia-dans-une-affaire-de"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Alibaba lance Wan3, son modèle de génération vidéo face à Google Veo",
+          "texteHtml": "<p>Alibaba présente Wan3, nouvelle version de son modèle de génération de vidéo, avec l'ambition de concurrencer Google Veo, rapporte Clubic. Le géant chinois poursuit une stratégie de sorties rapides et de mise à disposition large, déjà suivie pour ses modèles de langage Qwen. La génération vidéo par IA progresse à vive allure, et l'arrivée d'un acteur chinois de ce poids sur ce créneau resserre l'écart avec les modèles américains.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626503-alibaba-lance-wan3-sa-nouvelle-ia-video-qui-va-faire-trembler-google-veo.html"
+            }
+          ],
+          "rang": 8,
+          "id": "alibaba-lance-wan3-son-modele-de-generation-video-face-a"
+        },
+        {
+          "titre": "La filiale robotique du constructeur Xpeng lève 900 millions de dollars, la Chine mise sur l'IA incarnée",
+          "texteHtml": "<p>Le constructeur chinois de véhicules électriques Xpeng a levé 900 millions de dollars pour sa filiale de robotique Dogotix, valorisée à 6,3 milliards de dollars, auprès d'investisseurs dont Alibaba et IDG Capital, rapporte le South China Morning Post. L'opération est le plus gros tour de table privé jamais réalisé par un fabricant de robots chinois, et elle intervient malgré une perte trimestrielle en hausse pour Xpeng. L'ambition affichée est de rivaliser avec Tesla sur l'IA incarnée, ces robots dotés d'un modèle capable de percevoir et d'agir dans l'espace physique. La prudence reste de mise : dans sa lettre hebdomadaire, le chercheur Jeff Ding juge le secteur chinois de la robotique incarnée surévalué, riche en démonstrations spectaculaires et pauvre en usages industriels rentables. Le contraste entre les capitaux levés et les débouchés réels sera l'indicateur à suivre.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/business/china-evs/article/3365096/ev-maker-xpeng-set-challenge-tesla-embodied-ai-after-robotics-unit-raises-us900m"
+            },
+            {
+              "nom": "ChinAI",
+              "url": "https://chinai.substack.com/p/chinai-372-chinas-overhyped-embodied"
+            }
+          ],
+          "rang": 9,
+          "id": "la-filiale-robotique-du-constructeur-xpeng-leve-900"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Des chercheurs de Stanford synthétisent par IA générative des virus fonctionnels inédits",
+          "texteHtml": "<p>Une équipe de l'université Stanford a créé pour la première fois, à l'aide d'un modèle génératif, des virus fonctionnels qui n'existaient pas dans la nature, rapporte ZDNet. La percée ouvre des perspectives médicales, notamment contre des bactéries résistantes aux antibiotiques, et démontre que ces modèles savent concevoir du vivant, pas seulement du texte ou des images. Elle soulève une question de sûreté directe : la capacité qui aide la recherche peut aussi abaisser la barrière à la fabrication d'agents pathogènes. Le débat sur les garde-fous des modèles appliqués à la biologie devient concret.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/quand-lia-generative-cree-la-vie-la-percee-de-stanford-dans-la-synthese-de-virus-inedits-500496.htm"
+            }
+          ],
+          "rang": 10,
+          "id": "des-chercheurs-de-stanford-synthetisent-par-ia-generative"
+        },
+        {
+          "titre": "Les enfants apprennent une langue mieux que l'IA, et personne ne sait pourquoi",
+          "texteHtml": "<p>La MIT Technology Review rappelle un écart resté sans explication : un enfant atteint une maîtrise parfaite de sa langue en quelques années, à partir d'une quantité de données minuscule, quand un grand modèle de langage exige l'équivalent de cent mille fois plus d'exemples pour un résultat comparable. Quatre ans après ChatGPT, l'humain reste le seul à apprendre une langue avec une telle frugalité. L'article y voit un rappel utile : l'intelligence des modèles actuels repose sur une force brute de données, pas sur l'efficacité d'apprentissage du cerveau. Pour les métiers de la formation et des ressources humaines, le constat invite à ne pas confondre la performance d'un modèle avec une compréhension à la manière humaine.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/08/24/1141740/kids-machines-language-learning/"
+            }
+          ],
+          "rang": 11,
+          "id": "les-enfants-apprennent-une-langue-mieux-que-l-ia-et"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Le Mode IA de Google réagit selon la nationalité mentionnée",
+          "texteHtml": "<p>Numerama a reproduit l'expérience et confirme que Gemini et le Mode IA de Google renvoient des réponses différentes, parfois alarmistes, selon la nationalité citée dans une même requête, signe d'un biais logé dans les données d'entraînement.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2316669-je-suis-seule-avec-un-algerien-lia-de-google-est-elle-vraiment-raciste.html"
+            }
+          ],
+          "rang": 12,
+          "id": "le-mode-ia-de-google-reagit-selon-la-nationalite-mentionnee"
+        },
+        {
+          "titre": "Le fonds spéculatif IA Situational Awareness sous enquête de la SEC",
+          "texteHtml": "<p>Après avoir frôlé l'implosion, le fonds spéculatif spécialisé dans l'IA Situational Awareness, un temps coqueluche de Wall Street, fait désormais l'objet de citations à comparaître de la SEC, le régulateur boursier américain, rapporte TechCrunch.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/"
+            }
+          ],
+          "rang": 13,
+          "id": "le-fonds-speculatif-ia-situational-awareness-sous-enquete"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "L'autorité néerlandaise, avec la CNIL, inflige 825 millions d'euros à Uber pour des décisions automatisées prises sans humain, quand Google renvoie des réponses biaisées selon la nationalité : la compétence qui prend de la valeur est la conception de la supervision humaine des décisions automatisées, cartographier où vos systèmes décident seuls du sort d'une personne et y réinsérer un humain qui peut comprendre, contester et renverser",
+    "these": "L'autorité néerlandaise de protection des données, épaulée par la CNIL, inflige 825 millions d'euros à Uber pour avoir déconnecté des chauffeurs par décision automatisée, sans qu'un humain examine le cas. La sanction s'appuie sur l'article 22 du RGPD, en vigueur depuis 2018 : quand une machine prend seule une décision aux effets significatifs sur une personne, celle-ci a droit à une intervention humaine, à une explication et à un recours. Le même jour, Numerama montre le Mode IA de Google renvoyer des réponses alarmistes selon la nationalité citée. Deux faits, une même mécanique : des systèmes tranchent à la place d'un humain, à grande échelle, et leurs erreurs frappent des personnes réelles. La vague d'agents que les éditeurs poussent aujourd'hui dans tous les métiers va multiplier ces décisions automatiques ; le droit européen ne les interdit pas, il exige qu'un humain puisse comprendre, contester et renverser. La compétence qui prend de la valeur dans une organisation française est la conception de la supervision humaine des décisions automatisées : cartographier où un système décide seul du sort d'une personne (embauche, crédit, tarif, sanction, priorisation), placer sur chaque décision à effet significatif une intervention humaine qui a le temps, l'information et l'autorité de dire non à la machine, documenter la logique, informer la personne concernée et lui ménager un recours réel. Un agent déployé sans ce dispositif expose l'organisation à la sanction qui vient de frapper Uber. Ces 825 millions d'euros donnent la mesure de ce qui se joue quand la décision reste entre les seules mains de la machine.",
+    "html": "<p>L'autorité néerlandaise de protection des données, épaulée par la CNIL, inflige 825 millions d'euros à Uber pour avoir déconnecté des chauffeurs par décision automatisée, sans qu'un humain examine le cas. La sanction s'appuie sur l'article 22 du RGPD, en vigueur depuis 2018 : quand une machine prend seule une décision aux effets significatifs sur une personne, celle-ci a droit à une intervention humaine, à une explication et à un recours. Uber a laissé l'algorithme couper l'accès au travail de conducteurs, sans ce filet. Le prix de l'oubli est désormais chiffré.</p>\n<p>Le même jour, Numerama montre le Mode IA de Google renvoyer des réponses alarmistes selon la nationalité citée dans une requête. Deux faits, une même mécanique : des systèmes tranchent à la place d'un humain, à grande échelle, et leurs erreurs frappent des personnes réelles. La vague d'agents que les éditeurs poussent aujourd'hui dans tous les métiers, de la réservation de voyage au tri de dossiers, va multiplier ces décisions automatiques. Le droit européen ne les interdit pas ; il exige qu'un humain puisse comprendre, contester et renverser.</p>\n<p>La compétence qui prend de la valeur dans une organisation française est la conception de la supervision humaine des décisions automatisées. Cartographiez d'abord où, dans vos processus, un système décide seul du sort d'une personne : embauche, crédit, tarif, sanction, priorisation d'un dossier. Pour chacune de ces décisions à effet significatif, placez une intervention humaine qui n'est pas un tampon, une personne qui a le temps, l'information et l'autorité de dire non à la machine. Documentez la logique suivie, informez la personne concernée, ménagez-lui un recours réel. Un agent déployé sans ce dispositif expose votre organisation à la sanction qui vient de frapper Uber. Ces 825 millions d'euros donnent la mesure de ce qui se joue quand la décision reste entre les seules mains de la machine.</p>",
+    "htmlExtrait": "<p>L'autorité néerlandaise de protection des données, épaulée par la CNIL, inflige 825 millions d'euros à Uber pour avoir déconnecté des chauffeurs par décision automatisée, sans qu'un humain examine le cas. La sanction s'appuie sur l'article 22 du RGPD, en vigueur depuis 2018 : quand une machine prend seule une décision aux effets significatifs sur une personne, celle-ci a droit à une intervention humaine, à une explication et à un recours. Uber a laissé l'algorithme couper l'accès au travail de conducteurs, sans ce filet. Le prix de l'oubli est désormais chiffré.</p>",
+    "itemsCites": [
+      1,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-24",
+    "dateLongue": "lundi 24 août 2026",
+    "titreEditorial": "Nvidia prévient ses plus gros clients d'une hausse de plus de 15 % du prix de ses serveurs IA à cause du coût de la mémoire qui s'envole ; le même jour SoftBank place une obligation record pour financer OpenAI, Samsung rend 79 milliards de dollars sous la pression du boom IA, Alibaba lève 10,2 milliards à Hong Kong, et Hugging Face étudierait sa vente autour de 13 milliards",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-08-26",
+    "dateLongue": "mercredi 26 août 2026",
+    "titreEditorial": "OpenAI dévoile Jalapeño, sa première puce d'inférence maison, donnée plus rapide et plus sobre que le meilleur matériel du marché sur un banc d'essai indépendant ; le même jour, les modèles à poids ouverts dépassent les modèles propriétaires sur la plateforme Vercel, DeepSeek s'achemine vers une entrée en Bourse qui la valorise 74 milliards de dollars, Apple lance un Mac Studio à 512 Go pensé pour l'IA locale et LinkedIn revendique plus d'un million de contenus IA signalés",
+    "nbItems": 14
+  },
+  "nbItems": 13,
+  "nbSources": 16,
+  "nbSignes": 9435,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "CNIL",
+    "Clubic",
+    "Le Monde",
+    "ZDNet",
+    "Next",
+    "01net",
+    "Bloomberg",
+    "South China Morning Post",
+    "ChinAI",
+    "MIT Technology Review"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 106,
+  "publieLe": "2026-08-25T05:42:18+02:00",
+  "publieLeAffiche": "5h42",
+  "ogImage": "/veille-data/og/2026-08-25.png"
+}

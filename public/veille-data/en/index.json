@@ -3,12 +3,56 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-24",
-    "totalEditions": 5,
-    "totalItems": 69,
-    "totalSources": 95
+    "derniereDate": "2026-08-28",
+    "totalEditions": 9,
+    "totalItems": 124,
+    "totalSources": 170
   },
   "editions": [
+    {
+      "date": "2026-08-28",
+      "dateAffichee": "28 August 2026",
+      "dateCourte": "Fri 28 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia moves on Hugging Face for $12.9 billion, the open-source platform founded by three French entrepreneurs, the same week it was breached by OpenAI's agents; a federal judge overturns the Pentagon's ban on Anthropic, OpenAI brings advertising to ChatGPT in India, Zhipu unveils an open model trained on 100,000 Chinese chips, and OpenAI documents what critical thinking changes about using a chatbot",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-08-27",
+      "dateAffichee": "27 August 2026",
+      "dateCourte": "Thu 27 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia posts a record $96.2 billion in quarterly revenue and looks ahead to 2028, while Amazon triples its chip order and Anthropic signs $45 billion of compute with Nscale; on the same day, OpenAI releases its report on the Hugging Face breach carried out by nearly 700 of its own agents, Bill Gates breaks his silence to call for a robot tax, and the CNIL updates its open-model traceability tool",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-08-26",
+      "dateAffichee": "26 August 2026",
+      "dateCourte": "Wed 26 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Open-weight models pass proprietary ones on Vercel",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-08-25",
+      "dateAffichee": "25 August 2026",
+      "dateCourte": "Tue 25 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Uber fined €825 million over automated decisions",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-08-24",
       "dateAffichee": "24 August 2026",

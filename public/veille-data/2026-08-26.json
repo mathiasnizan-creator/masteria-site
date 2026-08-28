@@ -1,0 +1,320 @@
+{
+  "schema": 2,
+  "date": "2026-08-26",
+  "dateAffichee": "26 août 2026",
+  "dateLongue": "mercredi 26 août 2026",
+  "dateCourte": "mer. 26 août",
+  "jourSemaine": "mercredi",
+  "titre": "Veille IA du mercredi 26 août 2026",
+  "titreEditorial": "OpenAI dévoile Jalapeño, sa première puce d'inférence maison, donnée plus rapide et plus sobre que le meilleur matériel du marché sur un banc d'essai indépendant ; le même jour, les modèles à poids ouverts dépassent les modèles propriétaires sur la plateforme Vercel, DeepSeek s'achemine vers une entrée en Bourse qui la valorise 74 milliards de dollars, Apple lance un Mac Studio à 512 Go pensé pour l'IA locale et LinkedIn revendique plus d'un million de contenus IA signalés",
+  "chapeau": "OpenAI présente Jalapeño, sa première puce d'inférence maison, donnée plus rapide et plus sobre que le meilleur matériel disponible. Le même jour, les modèles ouverts passent devant les modèles propriétaires sur la plateforme de développement Vercel, DeepSeek s'achemine vers une entrée en Bourse à 74 milliards de dollars et Apple met en vente un Mac Studio à 512 gigaoctets taillé pour l'IA locale.",
+  "une": {
+    "titre": "OpenAI dévoile Jalapeño, sa première puce d'inférence maison, et la donne devant le meilleur matériel du marché",
+    "texteHtml": "<p>Jalapeño est un circuit conçu par OpenAI pour l'inférence (faire tourner un modèle déjà entraîné afin qu'il produise ses réponses). Sur le banc d'essai indépendant InferenceX de SemiAnalysis, elle affiche à la fois plus de jetons par utilisateur et plus de débit par kilowatt que le meilleur matériel disponible, d'après les tests rapportés par TechCrunch et The Verge. Richard Ho, vice-président matériel d'OpenAI, revendique « le meilleur des deux mondes », une latence plus basse et un débit plus élevé en même temps. L'annonce accompagne un texte de la directrice financière Sarah Friar sur « la pile complète derrière l'intelligence abondante » : OpenAI veut maîtriser la chaîne entière, des puces au produit, pour faire baisser le coût de chaque réponse. Concevoir son propre silicium d'inférence, c'est chercher à desserrer la dépendance à Nvidia et à reprendre la main sur la facture qui pèse sur ses marges.</p>",
+    "sources": [
+      {
+        "nom": "OpenAI",
+        "url": "https://openai.com/index/jalapeno-first-results"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/984290/openai-jalapeno-ai-chip-benchmarks"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "openai-devoile-jalapeno-sa-premiere-puce-d-inference-maison"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Microsoft obtient le feu vert pour un centre de données d'IA à Mulhouse",
+          "texteHtml": "<p>L'américain va pouvoir construire une nouvelle infrastructure dédiée à l'IA et au cloud dans le Haut-Rhin, rapporte Clubic. Le projet ne fait pas l'unanimité localement, alors que la consommation d'eau et d'électricité de ces installations alimente déjà de vives tensions. Chaque implantation de ce type ancre en France une question concrète pour les collectivités et les entreprises voisines : quelles ressources pour quel bénéfice territorial.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626662-microsoft-obtient-le-feu-vert-pour-la-construction-d-un-data-center-a-mulhouse.html"
+            }
+          ],
+          "rang": 2,
+          "id": "microsoft-obtient-le-feu-vert-pour-un-centre-de-donnees-d"
+        },
+        {
+          "titre": "LinkedIn revendique plus d'un million de contenus IA signalés par ses membres",
+          "texteHtml": "<p>Le bouton permettant de signaler une publication jugée générée par IA, ouvert en juillet, a été activé plus d'un million de fois, indique Hari Srinivasan, directeur produit du réseau, cité par Siècle Digital et Clubic. LinkedIn ajoute désormais une notification dans les statistiques de publication pour prévenir l'auteur concerné. Le chiffre mesure une lassitude : les professionnels rejettent le texte fabriqué à la chaîne, y compris sur le réseau qui a le plus poussé la rédaction assistée.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/25/sur-linkedin-les-contenus-ia-ont-deja-ete-signales-plus-dun-million-de-fois/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-626617-linkedin-gagne-une-premiere-bataille-contre-les-contenus-generes-par-ia.html"
+            }
+          ],
+          "rang": 3,
+          "id": "linkedin-revendique-plus-d-un-million-de-contenus-ia"
+        },
+        {
+          "titre": "Nscale prépare une entrée en Bourse de 3 milliards de dollars pour financer ses infrastructures d'IA",
+          "texteHtml": "<p>Le spécialiste des infrastructures cloud dédiées à l'IA vise cette levée lors d'une introduction prévue en septembre, rapporte ZDNet. L'opération illustre l'émergence des « neoclouds », ces opérateurs spécialisés qui se dressent face aux géants historiques du cloud pour louer de la puissance de calcul. Une IPO de cette taille signale que les investisseurs continuent de parier lourd sur la demande de calcul, au moment où le coût du matériel grimpe.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/cloud-ia-nscale-prepare-une-mega-ipo-de-3-milliards-de-dollars-500513.htm"
+            }
+          ],
+          "rang": 4,
+          "id": "nscale-prepare-une-entree-en-bourse-de-3-milliards-de"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les modèles à poids ouverts passent devant les modèles propriétaires sur la plateforme Vercel",
+          "texteHtml": "<p>Sur l'AI Gateway de Vercel, un service de développement web répandu, les modèles ouverts (qu'on télécharge et fait tourner soi-même) ont représenté mardi 54 % du volume de jetons traités, contre 46 % pour les modèles propriétaires, rapporte le South China Morning Post à partir des données publiques de la plateforme. La part des modèles ouverts a même atteint un record de 62 % un jour donné. Le modèle léger le plus récent de DeepSeek tire cette bascule. Dans le même mouvement, la demande des entreprises pour Fable 5, le modèle le plus puissant d'Anthropic, cale à cause de son prix élevé. Le partage entre performance de pointe et coût acceptable se rejoue donc sur le terrain, requête par requête, et penche vers l'ouvert. C'est le sujet de notre analyse.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3365204/deepseek-leads-surge-low-cost-chinese-open-weight-models-us-platform"
+            }
+          ],
+          "rang": 5,
+          "id": "les-modeles-a-poids-ouverts-passent-devant-les-modeles"
+        },
+        {
+          "titre": "Apple met en vente un Mac Studio à 512 Go de mémoire, pensé pour l'IA locale",
+          "texteHtml": "<p>Deux semaines avant sa keynote de rentrée, Apple dévoile par surprise de nouveaux Mac mini et Mac Studio et deux puces, la M6 et la M5 Ultra, rapportent Numerama et ZDNet. La version Mac Studio M5 Ultra grimpe jusqu'à 512 gigaoctets de mémoire unifiée et prend en charge huit écrans externes ; Apple annonce des performances en IA quatre fois supérieures à celles de la M3 Ultra. Les prix débutent à 2 499 dollars pour le M5 Max et 5 499 dollars pour le M5 Ultra, disponibles le 22 septembre. Une telle mémoire vise un usage précis : faire tourner de grands modèles en local, sur un poste de bureau, sans passer par le cloud.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2317375-surprise-apple-devoile-la-puce-m6-pensee-pour-lia-locale-avec-de-nouveaux-mac-mini-et-mac-studio.html"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/puce-m5-ultra-des-perfs-en-ia-4-fois-superieures-a-celles-de-la-m3-ultra-selon-apple-500587.htm"
+            }
+          ],
+          "rang": 6,
+          "id": "apple-met-en-vente-un-mac-studio-a-512-go-de-memoire-pense"
+        },
+        {
+          "titre": "OpenAI perd un cadre clé de ses centres de données, la série de départs continue",
+          "texteHtml": "<p>Chris Malone, qui aidait à piloter la construction des centres de données d'OpenAI, a quitté l'entreprise, rapportent Bloomberg et TechCrunch. Interrogée sur ce départ, la société explique avoir « récemment réorganisé » son organisation infrastructure « pour soutenir l'échelle et le rythme » de ses travaux. Malone s'ajoute à une liste de départs de haut niveau ces derniers mois, au moment même où OpenAI engage des dizaines de milliards dans ses capacités de calcul. Ces mouvements posent une question de continuité : bâtir des centres de données à cette vitesse suppose une équipe stable aux commandes, et l'entreprise en perd les visages les uns après les autres.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-25/openai-data-center-executive-chris-malone-departs-the-ai-startup"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-perd-un-cadre-cle-de-ses-centres-de-donnees-la-serie"
+        },
+        {
+          "titre": "Le patron de Hexaware anticipe une baisse de 25 % de la valeur des prestations informatiques sous l'effet de l'IA",
+          "texteHtml": "<p>L'IA pourrait faire chuter le prix des projets informatiques de routine jusqu'à 25 %, déclare à Bloomberg le dirigeant du groupe indien de services numériques Hexaware. Le constat vise un secteur bâti sur des tâches à forte intensité de main-d'œuvre, où l'automatisation d'une part du code et des tests comprime la facture facturée au client. Pour les prestataires, la valeur se déplace du volume d'heures vendues vers la capacité à livrer plus vite à qualité égale. Pour les entreprises françaises qui sous-traitent leur développement, c'est un signal de renégociation : le tarif d'hier ne tient plus si l'IA fait une partie du travail.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-26/ai-will-deflate-value-of-it-work-by-up-to-25-hexaware-ceo-says"
+            }
+          ],
+          "rang": 8,
+          "id": "le-patron-de-hexaware-anticipe-une-baisse-de-25-de-la"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "DeepSeek s'approche d'un tour de financement qui la valorise 74 milliards de dollars avant une entrée en Bourse",
+          "texteHtml": "<p>Le laboratoire chinois finalise une levée qui le valorise environ 500 milliards de yuans, soit 74 milliards de dollars, avant investissement, rapporte le South China Morning Post. DeepSeek cherchait à lever près de 50 milliards de yuans dans ce tour, attendu bouclé avant la fin août, auprès notamment de ses actionnaires historiques. L'opération prépare une cotation visée en 2027 sur le Star Market de Shanghai, la place technologique chinoise. Le calendrier n'a rien d'anodin : le modèle léger de DeepSeek est celui qui pousse les modèles ouverts devant les modèles propriétaires sur les plateformes occidentales. Un laboratoire chinois financé à cette hauteur, dont les modèles se diffusent gratuitement à l'international, redessine la carte de la valeur dans l'IA.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365280/deepseek-nears-pre-ipo-funding-round-2027-market-debut-takes-shape-sources"
+            }
+          ],
+          "rang": 9,
+          "id": "deepseek-s-approche-d-un-tour-de-financement-qui-la"
+        },
+        {
+          "titre": "Xiaomi accélère sur ses puces maison malgré un bénéfice en baisse",
+          "texteHtml": "<p>Xiaomi poursuit son pari du silicium propriétaire pour préparer des charges d'IA complexes sur les smartphones et les voitures, rapporte le South China Morning Post, alors que son bénéfice recule et que le coût des composants s'envole. Le groupe a présenté lundi son processeur d'IA Xring O3, gravé en 3 nanomètres, prévu en septembre à bord du Xiaomi 18 Fold, ainsi qu'un Xring O100 en 6 nanomètres. Concevoir ses propres puces coûte cher et pèse sur les marges à court terme, mais réduit la dépendance aux fournisseurs américains soumis aux contrôles d'exportation. La démarche rejoint celle de plusieurs géants chinois : internaliser le calcul pour tenir dans la durée.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3365179/why-xiaomi-doubling-down-house-chips-despite-profit-slump"
+            }
+          ],
+          "rang": 10,
+          "id": "xiaomi-accelere-sur-ses-puces-maison-malgre-un-benefice-en"
+        },
+        {
+          "titre": "Alibaba lève 10,2 milliards de dollars pour ses infrastructures d'IA",
+          "texteHtml": "<p>Le géant chinois a émis 710 millions d'actions à 14,4 dollars pièce à Hong Kong, la plus importante opération de ce type jamais réalisée par une société de la place, rapporte Siècle Digital. La totalité du montant financera ses infrastructures d'IA, alors que son bénéfice net a chuté de 75 % au dernier trimestre. Dans le même mouvement, le fondateur Jack Ma et les dirigeants du groupe ont racheté pour plusieurs centaines de millions de dollars d'actions, un signal de confiance envoyé au marché après une semaine de repli du titre.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/25/le-geant-chinois-alibaba-leve-10-milliards-de-dollars-pour-accelerer-encore-dans-la-course-a-lia/"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3365217/jack-ma-buys-hk600-million-alibaba-shares-signalling-ai-confidence-sources"
+            }
+          ],
+          "rang": 11,
+          "id": "alibaba-leve-10-2-milliards-de-dollars-pour-ses"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Une étude du MIT Media Lab montre que s'informer via un chatbot dégrade le discernement",
+          "texteHtml": "<p>Des participants qui ont évalué pendant quatre semaines des titres et images d'actualité, présentés par paires, étaient au départ 21 % plus précis pour distinguer le vrai du faux ; l'usage régulier d'un assistant conversationnel comme source d'information a fait reculer cette précision, résume la MIT Technology Review à partir des travaux de Pattie Maes et de ses collègues. Le mécanisme est connu des chercheurs : déléguer le tri de l'information à une machine réduit l'effort cognitif, et l'attention critique s'émousse. Pour les métiers de la formation et de la conduite du changement, le résultat invite à traiter le chatbot comme un outil de synthèse à vérifier, pas comme une source à croire sur parole. L'enjeu dépasse la culture générale : une équipe qui perd l'habitude de vérifier prend de moins bonnes décisions.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/08/25/1140958/your-brain-on-ai/"
+            }
+          ],
+          "rang": 12,
+          "id": "une-etude-du-mit-media-lab-montre-que-s-informer-via-un"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "OpenAI rétablit la limite des cinq heures sur Codex et ChatGPT Work",
+          "texteHtml": "<p>Six semaines après l'avoir supprimée, OpenAI réactive pour les abonnés Plus un quota calculé sur une fenêtre de cinq heures, en plus du plafond hebdomadaire, rapporte Numerama.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2317749-chatgpt-plus-openai-retablit-la-limite-des-cinq-heures-sur-codex-et-work-six-semaines-apres-lavoir-supprimee.html"
+            }
+          ],
+          "rang": 13,
+          "id": "openai-retablit-la-limite-des-cinq-heures-sur-codex-et"
+        },
+        {
+          "titre": "Une étude estime qu'un tiers des nouvelles pages web sont écrites par l'IA",
+          "texteHtml": "<p>Plus d'un tiers des pages créées le seraient à l'aide de l'IA, selon des résultats relayés par Siècle Digital, un signe de la vitesse à laquelle le texte généré remplit le web.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/08/25/quelle-part-du-web-est-desormais-ecrite-par-lia-une-etude-apporte-une-reponse/"
+            }
+          ],
+          "rang": 14,
+          "id": "une-etude-estime-qu-un-tiers-des-nouvelles-pages-web-sont"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Les modèles à poids ouverts passent devant les modèles propriétaires sur Vercel (54 % du volume contre 46 %), DeepSeek file vers une entrée en Bourse à 74 milliards de dollars et Apple vend un Mac Studio à 512 Go capable de faire tourner un grand modèle ouvert chez soi : la compétence qui prend de la valeur est la capacité d'exécuter des modèles ouverts en interne, prendre un usage en production, y installer un modèle ouvert, le mesurer sur son propre jeu de cas face à l'API payante et trancher usage par usage entre héberger et louer",
+    "these": "Sur Vercel, plateforme de développement web répandue, les modèles à poids ouverts (qu'on télécharge et fait tourner soi-même) ont dépassé mardi les modèles propriétaires : 54 % du volume de jetons traités contre 46 %, avec une pointe à 62 %. Le modèle léger de DeepSeek tire cette bascule, quand la demande des entreprises pour Fable 5, le modèle le plus puissant d'Anthropic, cale sur son prix. Le même jour, DeepSeek prépare une levée qui la valorise 74 milliards de dollars avant une entrée en Bourse à Shanghai, et Apple met en vente un Mac Studio doté de 512 gigaoctets de mémoire unifiée, de quoi faire tourner un grand modèle ouvert entier sur un ordinateur de bureau. Trois signaux, une même direction : la couche ouverte, bon marché et hébergeable chez soi, devient le choix par défaut pour le travail réel en production. La compétence qui prend de la valeur dans une équipe française est la capacité d'exécuter des modèles ouverts en interne : prendre un usage en production ce trimestre, y déployer un modèle ouvert sur son serveur ou une machine locale, le mesurer sur son propre jeu de cas face à l'API payée aujourd'hui, comparer qualité, latence et coût par requête, puis trancher usage par usage entre héberger et louer. Beaucoup d'organisations découvrent que la moitié de leurs appels n'exigent pas le modèle le plus cher. La frontière technique avance sans cesse ; l'autonomie, elle, se construit maintenant, un usage après l'autre.",
+    "html": "<p>Sur Vercel, plateforme de développement web répandue, les modèles à poids ouverts, ceux qu'on télécharge et fait tourner soi-même, ont dépassé mardi les modèles propriétaires : 54 % du volume de jetons traités contre 46 %, avec une pointe à 62 % sur une journée. Le modèle léger de DeepSeek tire cette bascule, quand la demande des entreprises pour Fable 5, le modèle le plus puissant d'Anthropic, cale sur son prix. Le même jour, DeepSeek prépare une levée qui la valorise 74 milliards de dollars avant une entrée en Bourse à Shanghai, et Apple met en vente un Mac Studio doté de 512 gigaoctets de mémoire unifiée, de quoi faire tourner un grand modèle ouvert entier sur un ordinateur de bureau. Trois signaux, une même direction : la couche ouverte, bon marché et hébergeable chez soi, devient le choix par défaut pour le travail réel en production.</p>\n<p>Le récit habituel oppose des laboratoires fermés, seuls détenteurs de la performance, à des modèles ouverts de second rang. Sur le terrain, la performance suffisante coûte de moins en moins cher et se déplace vers des modèles qu'on installe soi-même. Pour une équipe française, l'avantage va à qui sait choisir le bon modèle ouvert pour chaque usage et le faire tourner à demeure, sur son serveur ou sur une machine posée dans le bureau.</p>\n<p>La compétence qui prend de la valeur est la capacité d'exécuter des modèles ouverts en interne. Prenez un usage en production ce trimestre, déployez-y un modèle ouvert, et mesurez-le sur votre propre jeu de cas face à l'API que vous payez aujourd'hui. Comparez la qualité, la latence et le coût par requête, puis tranchez usage par usage : héberger ou louer. Beaucoup d'organisations découvrent alors que la moitié de leurs appels n'exigent pas le modèle le plus cher. La frontière technique avance sans cesse ; l'autonomie, elle, se construit maintenant, un usage après l'autre.</p>",
+    "htmlExtrait": "<p>Sur Vercel, plateforme de développement web répandue, les modèles à poids ouverts, ceux qu'on télécharge et fait tourner soi-même, ont dépassé mardi les modèles propriétaires : 54 % du volume de jetons traités contre 46 %, avec une pointe à 62 % sur une journée. Le modèle léger de DeepSeek tire cette bascule, quand la demande des entreprises pour Fable 5, le modèle le plus puissant d'Anthropic, cale sur son prix. Le même jour, DeepSeek prépare une levée qui la valorise 74 milliards de dollars avant une entrée en Bourse à Shanghai, et Apple met en vente un Mac Studio doté de 512 gigaoctets de mémoire unifiée, de quoi faire tourner un grand modèle ouvert entier sur un ordinateur de bureau. Trois signaux, une même direction : la couche ouverte, bon marché et hébergeable chez soi, devient le choix par défaut pour le travail réel en production.</p>",
+    "itemsCites": [
+      5,
+      6,
+      9
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-25",
+    "dateLongue": "mardi 25 août 2026",
+    "titreEditorial": "L'autorité néerlandaise de protection des données, en coopération avec la CNIL, condamne Uber à 825 millions d'euros pour avoir déconnecté des chauffeurs par décision automatisée sans intervention humaine ; le même jour, la publicité entre dans ChatGPT en France, Mistral lance Agentic Search, Stripe rachète OpenRouter pour 7,5 milliards de dollars et Taïwan inculpe un cadre de Nvidia pour contrebande de puces vers la Chine",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-08-27",
+    "dateLongue": "jeudi 27 août 2026",
+    "titreEditorial": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu'en 2028, pendant qu'Amazon triple sa commande de puces et qu'Anthropic signe 45 milliards de dollars de calcul avec Nscale ; le même jour, OpenAI publie le rapport sur le piratage de Hugging Face mené par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 20,
+  "nbSignes": 10018,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 3
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "OpenAI",
+    "TechCrunch",
+    "The Verge",
+    "Clubic",
+    "Siècle Digital",
+    "ZDNet",
+    "South China Morning Post",
+    "Numerama",
+    "Bloomberg",
+    "MIT Technology Review"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 123,
+  "publieLe": "2026-08-26T09:01:11+02:00",
+  "publieLeAffiche": "9h01",
+  "ogImage": "/veille-data/og/2026-08-26.png"
+}

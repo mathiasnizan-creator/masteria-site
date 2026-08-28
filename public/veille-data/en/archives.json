@@ -3,12 +3,486 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-24",
-    "totalEditions": 5,
-    "totalItems": 69,
-    "totalSources": 95
+    "derniereDate": "2026-08-28",
+    "totalEditions": 9,
+    "totalItems": 124,
+    "totalSources": 170
   },
   "editions": [
+    {
+      "date": "2026-08-28",
+      "dateCourte": "Fri 28 Aug",
+      "dateAffichee": "28 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia moves on Hugging Face for $12.9 billion, the open-source platform founded by three French entrepreneurs, the same week it was breached by OpenAI's agents; a federal judge overturns the Pentagon's ban on Anthropic, OpenAI brings advertising to ChatGPT in India, Zhipu unveils an open model trained on 100,000 Chinese chips, and OpenAI documents what critical thinking changes about using a chatbot",
+      "chapeau": "Nvidia is reportedly buying Hugging Face for $12.9 billion, a jolt for the open-source ecosystem founded by three French entrepreneurs, while a federal judge overturns the Pentagon's ban on Anthropic. In India, OpenAI brings advertising into ChatGPT; in China, Zhipu unveils an open model trained on 100,000 domestic chips, and OpenAI documents what critical thinking changes about using a chatbot.",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "La Tribune",
+        "ZDNet",
+        "Next.ink",
+        "Numerama",
+        "404 Media",
+        "Le Monde",
+        "Bloomberg",
+        "Wired",
+        "TechCrunch",
+        "South China Morning Post",
+        "OpenAI",
+        "Siècle Digital",
+        "01net"
+      ],
+      "items": [
+        {
+          "t": "Nvidia is reportedly buying Hugging Face for $12.9 billion",
+          "z": "une",
+          "id": "nvidia-is-reportedly-buying-hugging-face-for-12-9-billion"
+        },
+        {
+          "t": "Xavier Niel: \"two and a half years to authorise an AI data center in France\"",
+          "z": "europe",
+          "id": "xavier-niel-two-and-a-half-years-to-authorise-an-ai-data"
+        },
+        {
+          "t": "A report from the Fondation Jean Jaurès warns of the \"monetisation of loneliness\"",
+          "z": "europe",
+          "id": "a-report-from-the-fondation-jean-jaures-warns-of-the"
+        },
+        {
+          "t": "The summer of AI-generated posters, and the backlash",
+          "z": "europe",
+          "id": "the-summer-of-ai-generated-posters-and-the-backlash"
+        },
+        {
+          "t": "A federal judge overturns the Pentagon's ban on Anthropic",
+          "z": "international",
+          "id": "a-federal-judge-overturns-the-pentagon-s-ban-on-anthropic"
+        },
+        {
+          "t": "OpenAI, Anthropic, Google and more than a hundred companies call for a \"global response\" in cyberdefense",
+          "z": "international",
+          "id": "openai-anthropic-google-and-more-than-a-hundred-companies"
+        },
+        {
+          "t": "OpenAI brings advertising into ChatGPT in India",
+          "z": "international",
+          "id": "openai-brings-advertising-into-chatgpt-in-india"
+        },
+        {
+          "t": "Zhipu AI unveils GLM-5.3-Flash, trained on 100,000 Chinese chips",
+          "z": "chine",
+          "id": "zhipu-ai-unveils-glm-5-3-flash-trained-on-100-000-chinese"
+        },
+        {
+          "t": "Alibaba opens its first data centers in South America",
+          "z": "chine",
+          "id": "alibaba-opens-its-first-data-centers-in-south-america"
+        },
+        {
+          "t": "India builds up its sector: $20 billion of GPUs at Yotta, a national model targeted for 2027",
+          "z": "chine",
+          "id": "india-builds-up-its-sector-20-billion-of-gpus-at-yotta-a"
+        },
+        {
+          "t": "OpenAI measures what critical thinking changes about using ChatGPT",
+          "z": "recherche",
+          "id": "openai-measures-what-critical-thinking-changes-about-using"
+        },
+        {
+          "t": "For the same symptoms, medical AIs route men and women differently",
+          "z": "recherche",
+          "id": "for-the-same-symptoms-medical-ais-route-men-and-women"
+        },
+        {
+          "t": "Claude gets its own browser",
+          "z": "bref",
+          "id": "claude-gets-its-own-browser"
+        },
+        {
+          "t": "OpenAI shuts down ChatGPT accounts linked to a Russian disinformation operation",
+          "z": "bref",
+          "id": "openai-shuts-down-chatgpt-accounts-linked-to-a-russian"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "dateCourte": "Thu 27 Aug",
+      "dateAffichee": "27 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Nvidia posts a record $96.2 billion in quarterly revenue and looks ahead to 2028, while Amazon triples its chip order and Anthropic signs $45 billion of compute with Nscale; on the same day, OpenAI releases its report on the Hugging Face breach carried out by nearly 700 of its own agents, Bill Gates breaks his silence to call for a robot tax, and the CNIL updates its open-model traceability tool",
+      "chapeau": "Nvidia posts a record $96.2 billion in quarterly revenue and looks ahead to 2028, while Amazon triples its chip order. On the same day, OpenAI releases its report on the Hugging Face breach by nearly 700 of its own agents, Bill Gates breaks his silence to call for a robot tax, and the CNIL updates its open-model traceability tool.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "TechCrunch",
+        "CNIL",
+        "La Tribune",
+        "ZDNet",
+        "MIT Technology Review",
+        "Ars Technica",
+        "South China Morning Post",
+        "arXiv",
+        "Bloomberg",
+        "Clubic"
+      ],
+      "items": [
+        {
+          "t": "Nvidia posts a record $96.2 billion in quarterly revenue and promises growth through 2028",
+          "z": "une",
+          "id": "nvidia-posts-a-record-96-2-billion-in-quarterly-revenue-and"
+        },
+        {
+          "t": "The CNIL updates its traceability tool for open-source AI models",
+          "z": "europe",
+          "id": "the-cnil-updates-its-traceability-tool-for-open-source-ai"
+        },
+        {
+          "t": "AI saves European employees three hours a week, with no automatic gain in output",
+          "z": "europe",
+          "id": "ai-saves-european-employees-three-hours-a-week-with-no"
+        },
+        {
+          "t": "Google's AI answers appear in more than one in two French searches",
+          "z": "europe",
+          "id": "google-s-ai-answers-appear-in-more-than-one-in-two-french"
+        },
+        {
+          "t": "Syntec anticipates a reshaping of skills in engineering and consulting",
+          "z": "europe",
+          "id": "syntec-anticipates-a-reshaping-of-skills-in-engineering-and"
+        },
+        {
+          "t": "OpenAI releases its report on the Hugging Face breach by its own agents",
+          "z": "international",
+          "id": "openai-releases-its-report-on-the-hugging-face-breach-by"
+        },
+        {
+          "t": "Bill Gates breaks his silence on AI and calls for a robot tax and jobs reserved for humans",
+          "z": "international",
+          "id": "bill-gates-breaks-his-silence-on-ai-and-calls-for-a-robot"
+        },
+        {
+          "t": "At Meta, agents meant to replace employees triggered \"large-scale disruptive\" actions",
+          "z": "international",
+          "id": "at-meta-agents-meant-to-replace-employees-triggered-large"
+        },
+        {
+          "t": "Anthropic signs a $45 billion deal with Nscale for compute power",
+          "z": "international",
+          "id": "anthropic-signs-a-45-billion-deal-with-nscale-for-compute"
+        },
+        {
+          "t": "Chinese lab Z.ai reveals it is behind \"Ox Alpha\", an open model topping the rankings",
+          "z": "chine",
+          "id": "chinese-lab-z-ai-reveals-it-is-behind-ox-alpha-an-open"
+        },
+        {
+          "t": "The shortage of capacitors, \"the rice of electronics\", hits a record level driven by AI servers",
+          "z": "chine",
+          "id": "the-shortage-of-capacitors-the-rice-of-electronics-hits-a"
+        },
+        {
+          "t": "\"AI agents are pushing humans out of the loop\", a research paper warns",
+          "z": "recherche",
+          "id": "ai-agents-are-pushing-humans-out-of-the-loop-a-research"
+        },
+        {
+          "t": "Nvidia is reportedly in talks to buy Hugging Face",
+          "z": "bref",
+          "id": "nvidia-is-reportedly-in-talks-to-buy-hugging-face"
+        },
+        {
+          "t": "Australia bans fully AI-generated music from its official charts",
+          "z": "bref",
+          "id": "australia-bans-fully-ai-generated-music-from-its-official"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "dateCourte": "Wed 26 Aug",
+      "dateAffichee": "26 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Open-weight models pass proprietary ones on Vercel",
+      "chapeau": "OpenAI unveils Jalapeño, its first in-house inference chip, rated faster and more power-efficient than the best hardware on the market. The same day, open models overtake proprietary ones on the Vercel developer platform, DeepSeek moves toward a stock listing valuing it at $74 billion, and Apple puts on sale a 512-gigabyte Mac Studio built for local AI.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "TechCrunch",
+        "The Verge",
+        "Clubic",
+        "Siècle Digital",
+        "ZDNet",
+        "South China Morning Post",
+        "Numerama",
+        "Bloomberg",
+        "MIT Technology Review"
+      ],
+      "items": [
+        {
+          "t": "OpenAI unveils Jalapeño, its first in-house inference chip, and rates it ahead of the best hardware on the market",
+          "z": "une",
+          "id": "openai-unveils-jalapeno-its-first-in-house-inference-chip"
+        },
+        {
+          "t": "Microsoft gets the green light for an AI data centre in Mulhouse",
+          "z": "europe",
+          "id": "microsoft-gets-the-green-light-for-an-ai-data-centre-in"
+        },
+        {
+          "t": "LinkedIn reports more than a million AI contents flagged by its members",
+          "z": "europe",
+          "id": "linkedin-reports-more-than-a-million-ai-contents-flagged-by"
+        },
+        {
+          "t": "Nscale prepares a $3 billion listing to fund its AI infrastructure",
+          "z": "europe",
+          "id": "nscale-prepares-a-3-billion-listing-to-fund-its-ai"
+        },
+        {
+          "t": "Open-weight models overtake proprietary models on the Vercel platform",
+          "z": "international",
+          "id": "open-weight-models-overtake-proprietary-models-on-the"
+        },
+        {
+          "t": "Apple puts on sale a Mac Studio with 512 GB of memory, built for local AI",
+          "z": "international",
+          "id": "apple-puts-on-sale-a-mac-studio-with-512-gb-of-memory-built"
+        },
+        {
+          "t": "OpenAI loses a key data centre executive as the run of departures continues",
+          "z": "international",
+          "id": "openai-loses-a-key-data-centre-executive-as-the-run-of"
+        },
+        {
+          "t": "Hexaware's boss expects a 25% drop in the value of IT services under the effect of AI",
+          "z": "international",
+          "id": "hexaware-s-boss-expects-a-25-drop-in-the-value-of-it"
+        },
+        {
+          "t": "DeepSeek nears a funding round valuing it at $74 billion ahead of a stock listing",
+          "z": "chine",
+          "id": "deepseek-nears-a-funding-round-valuing-it-at-74-billion"
+        },
+        {
+          "t": "Xiaomi doubles down on in-house chips despite falling profit",
+          "z": "chine",
+          "id": "xiaomi-doubles-down-on-in-house-chips-despite-falling-profit"
+        },
+        {
+          "t": "Alibaba raises $10.2 billion for its AI infrastructure",
+          "z": "chine",
+          "id": "alibaba-raises-10-2-billion-for-its-ai-infrastructure"
+        },
+        {
+          "t": "An MIT Media Lab study shows that getting your news through a chatbot degrades judgement",
+          "z": "recherche",
+          "id": "an-mit-media-lab-study-shows-that-getting-your-news-through"
+        },
+        {
+          "t": "OpenAI restores the five-hour limit on Codex and ChatGPT Work",
+          "z": "bref",
+          "id": "openai-restores-the-five-hour-limit-on-codex-and-chatgpt"
+        },
+        {
+          "t": "A study estimates that a third of new web pages are written by AI",
+          "z": "bref",
+          "id": "a-study-estimates-that-a-third-of-new-web-pages-are-written"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "dateCourte": "Tue 25 Aug",
+      "dateAffichee": "25 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Uber fined €825 million over automated decisions",
+      "chapeau": "The Dutch data protection authority, working with France's CNIL, fines Uber €825 million for automated decisions taken with no human in the loop, the heaviest penalty of its kind in Europe. The same day, advertising arrives in ChatGPT in France, Mistral launches a document search that verifies its sources, Stripe buys OpenRouter for $7.5 billion, and Taiwan indicts an Nvidia executive over chip smuggling to China.",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "CNIL",
+        "Clubic",
+        "Le Monde",
+        "ZDNet",
+        "Next",
+        "01net",
+        "Bloomberg",
+        "South China Morning Post",
+        "ChinAI",
+        "MIT Technology Review",
+        "Numerama",
+        "TechCrunch"
+      ],
+      "items": [
+        {
+          "t": "The Dutch authority, with the CNIL, fines Uber €825 million over automated decisions taken with no human",
+          "z": "une",
+          "id": "the-dutch-authority-with-the-cnil-fines-uber-825-million"
+        },
+        {
+          "t": "Advertising arrives in ChatGPT in France",
+          "z": "europe",
+          "id": "advertising-arrives-in-chatgpt-in-france"
+        },
+        {
+          "t": "Mistral launches Agentic Search, a document search that verifies its sources",
+          "z": "europe",
+          "id": "mistral-launches-agentic-search-a-document-search-that"
+        },
+        {
+          "t": "A creator sues Amazon and Twitch over the use of content in training their models",
+          "z": "europe",
+          "id": "a-creator-sues-amazon-and-twitch-over-the-use-of-content-in"
+        },
+        {
+          "t": "Stripe buys OpenRouter for $7.5 billion",
+          "z": "international",
+          "id": "stripe-buys-openrouter-for-7-5-billion"
+        },
+        {
+          "t": "Big Tech is said to be hiding $3 trillion of AI-linked debt through off-balance-sheet structures",
+          "z": "international",
+          "id": "big-tech-is-said-to-be-hiding-3-trillion-of-ai-linked-debt"
+        },
+        {
+          "t": "Taiwan indicts an Nvidia executive in a case of AI chip smuggling to China",
+          "z": "international",
+          "id": "taiwan-indicts-an-nvidia-executive-in-a-case-of-ai-chip"
+        },
+        {
+          "t": "Alibaba launches Wan3, its video generation model against Google Veo",
+          "z": "chine",
+          "id": "alibaba-launches-wan3-its-video-generation-model-against"
+        },
+        {
+          "t": "Xpeng's robotics unit raises $900 million as China bets on embodied AI",
+          "z": "chine",
+          "id": "xpeng-s-robotics-unit-raises-900-million-as-china-bets-on"
+        },
+        {
+          "t": "Stanford researchers use generative AI to synthesise novel functional viruses",
+          "z": "recherche",
+          "id": "stanford-researchers-use-generative-ai-to-synthesise-novel"
+        },
+        {
+          "t": "Children learn a language better than AI, and no one knows why",
+          "z": "recherche",
+          "id": "children-learn-a-language-better-than-ai-and-no-one-knows"
+        },
+        {
+          "t": "Google's AI Mode reacts to the nationality mentioned",
+          "z": "bref",
+          "id": "google-s-ai-mode-reacts-to-the-nationality-mentioned"
+        },
+        {
+          "t": "AI hedge fund Situational Awareness under SEC investigation",
+          "z": "bref",
+          "id": "ai-hedge-fund-situational-awareness-under-sec-investigation"
+        }
+      ]
+    },
     {
       "date": "2026-08-24",
       "dateCourte": "Mon 24 Aug",
