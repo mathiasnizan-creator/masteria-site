@@ -125,8 +125,9 @@ const geoTools = ['chatgpt','claude-ia']
 const geoCities = ['paris','lyon','marseille','geneve','bruxelles']
 const geoSlugs = geoTools.flatMap(t => geoCities.map(c => `formation-${t}-${c}`))
 
-// Pages géo génériques : /formation-ia-{ville} sur les 5 mêmes villes
-const geoIaCities = [...geoCities]
+// Pages géo génériques : /formation-ia-{ville} — les 5 villes historiques
+// + l'extension du 2026-08-28 (iaOnly : pas de pages outil×ville pour celles-ci)
+const geoIaCities = [...geoCities, 'nantes', 'nice', 'lille', 'bordeaux', 'toulouse', 'strasbourg', 'rennes', 'grenoble', 'annecy', 'aix-en-provence', 'nimes']
 const geoIaSlugs = geoIaCities.map(c => `formation-ia-${c}`)
 
 // Spokes multi-outils (générés dynamiquement depuis METIERS_SPEC)

@@ -162,6 +162,17 @@ Pages dédiées avec contenu local : OPCO régional, secteurs économiques, zone
 
 ### Pages par ville (vue d'ensemble)
 - [Formation IA Paris](https://www.master-ia.fr/formation-ia-paris)
+- [Formation IA Nantes](https://www.master-ia.fr/formation-ia-nantes) — intra dans vos locaux (métropole, Saint-Nazaire, Angers) : numérique, aéronautique-navale, agroalimentaire, tertiaire ; Qualiopi, OPCO
+- [Formation IA Nice](https://www.master-ia.fr/formation-ia-nice) — intra sur la Côte d'Azur (Nice, Sophia Antipolis, Cannes) : tourisme-hôtellerie, tech, santé, immobilier ; Qualiopi, OPCO
+- [Formation IA Lille](https://www.master-ia.fr/formation-ia-lille) — intra dans la métropole (Lille, Roubaix, Villeneuve-d'Ascq) : retail, e-commerce, agroalimentaire, numérique ; Qualiopi, OPCO
+- [Formation IA Bordeaux](https://www.master-ia.fr/formation-ia-bordeaux) — intra dans la métropole et le vignoble : vins et export, aéronautique-défense, numérique, tertiaire ; Qualiopi, OPCO
+- [Formation IA Toulouse](https://www.master-ia.fr/formation-ia-toulouse) — intra pour les entreprises (Toulouse, Blagnac, Labège) : aéronautique-spatial, santé, numérique ; Qualiopi, OPCO
+- [Formation IA Strasbourg](https://www.master-ia.fr/formation-ia-strasbourg) — intra dans l'Eurométropole et en Alsace : banque mutualiste, affaires européennes, industrie, bilingue FR-DE ; Qualiopi, OPCO
+- [Formation IA Rennes](https://www.master-ia.fr/formation-ia-rennes) — intra dans la métropole et en Bretagne : numérique-cyber, agroalimentaire, industrie ; Qualiopi, OPCO
+- [Formation IA Grenoble](https://www.master-ia.fr/formation-ia-grenoble) — formation IA pour les entreprises à Grenoble (Inovallée, Crolles, Bernin) : microélectronique, recherche, énergie ; sans frais de déplacement depuis Lyon ; Qualiopi, OPCO
+- [Formation IA Annecy](https://www.master-ia.fr/formation-ia-annecy) — formation IA pour les entreprises à Annecy (Grand Annecy, vallée de l'Arve) : outdoor, mécatronique, tourisme ; sans frais de déplacement depuis Lyon ; Qualiopi, OPCO
+- [Formation IA Aix-en-Provence](https://www.master-ia.fr/formation-ia-aix-en-provence) — formation IA pour les entreprises du Pays d'Aix (la Duranne, Rousset) : microélectronique, conseil, juridique ; Qualiopi, OPCO
+- [Formation IA Nîmes](https://www.master-ia.fr/formation-ia-nimes) — formation IA pour les entreprises du Gard : agroalimentaire-viticulture, logistique, santé ; Qualiopi, OPCO
 - [Formation IA Lyon](https://www.master-ia.fr/formation-ia-lyon) — formation intelligence artificielle à Lyon, siège de Masteria : intra dans vos locaux, individuel sur mesure ou distanciel, 5 outils (ChatGPT, Claude, Copilot, Gemini, Mistral AI), 13 métiers, certifié Qualiopi, finançable OPCO en Auvergne-Rhône-Alpes
 - [Formation IA Marseille](https://www.master-ia.fr/formation-ia-marseille)
 - [Formation IA Genève](https://www.master-ia.fr/formation-ia-geneve)
