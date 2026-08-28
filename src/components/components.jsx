@@ -19,6 +19,7 @@ const METIER_ICONS_NAV = {
   'formation-ia-commercial':          Briefcase,
   'formation-ia-communication':       Radio,
   'formation-ia-management':          Target,
+  'formation-ia-dirigeants':          Award,
   'formation-ia-assistante':          CalendarCheck,
   'formation-ia-seo':                 Search,
   'formation-ia-service-client':      Headphones,
@@ -95,6 +96,7 @@ const METIERS_NAV = [
   { label: 'Finance',                 slug: 'formation-ia-finance' },
   { label: 'Communication',           slug: 'formation-ia-communication' },
   { label: 'Management',              slug: 'formation-ia-management' },
+  { label: 'Dirigeants & CODIR',      slug: 'formation-ia-dirigeants' },
   { label: 'Assistanat de direction', slug: 'formation-ia-assistante' },
   { label: 'SEO',                     slug: 'formation-ia-seo' },
   { label: 'Service Client',          slug: 'formation-ia-service-client' },
@@ -346,7 +348,7 @@ export function MasteriaHeader() {
                       <Target size={18} color="#d97706" strokeWidth={2.2} />
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Catalogue complet · 89 formations</div>
+                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Catalogue complet · plus de 100 formations</div>
                       <div style={{ fontSize: 12, color: '#92400E' }}>Filtrer par outil et métier pour trouver la formation adaptée</div>
                     </div>
                     <span style={{ fontSize: 16, color: '#92400E', fontWeight: 700 }}>→</span>
@@ -397,7 +399,7 @@ export function MasteriaHeader() {
 
                   {/* COL 3 — Ateliers Sprint IA */}
                   <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Ateliers · Sprint IA</p>
+                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Ateliers & thématiques</p>
                     <Link to="/formation-sprint-ia" onClick={() => setMenuOpen(false)}
                       style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', padding: '12px 14px', borderRadius: 10, background: 'linear-gradient(135deg, #FFF7ED 0%, #FED7AA 100%)', border: '1px solid #FDBA74', transition: 'transform 120ms' }}
                       onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
@@ -415,6 +417,13 @@ export function MasteriaHeader() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 10 }}>
                       {[
                         ['Formation IA en entreprise', '/formation-ia-entreprise'],
+                        ['Formation agents IA', '/formation-agents-ia'],
+                        ['Formation automatisation IA', '/formation-automatisation-ia'],
+                        ['Formation prompt engineering', '/formation-prompt-engineering'],
+                        ['Formation vibe coding', '/formation-vibe-coding'],
+                        ['Formation Claude Code', '/formation-claude-code'],
+                        ['Formation AI Act', '/formation-ai-act'],
+                        ['Formation IA COMEX', '/formation-ia-comex'],
                         ['Acculturation IA (entreprise)', '/acculturation-ia'],
                         ['Coaching IA individuel', '/coaching-ia'],
                       ].map(([l, path]) => (
@@ -662,7 +671,7 @@ export function MasteriaHeader() {
                   <Target size={17} color="#d97706" strokeWidth={2.2} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 14, fontWeight: 800, color: '#111' }}>Catalogue complet · 89 formations</div>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#111' }}>Catalogue complet · plus de 100 formations</div>
                   <div style={{ fontSize: 12, color: '#92400E' }}>Filtrer par outil et métier</div>
                 </div>
                 <span style={{ color: '#92400E', fontWeight: 700 }}>→</span>
@@ -697,6 +706,22 @@ export function MasteriaHeader() {
                 </div>
                 <span style={{ color: '#9A3412', fontWeight: 700 }}>→</span>
               </Link>
+
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Thématiques & formats</div>
+              {[
+                ['Formation IA en entreprise', '/formation-ia-entreprise'],
+                ['Formation agents IA', '/formation-agents-ia'],
+                ['Formation automatisation IA', '/formation-automatisation-ia'],
+                ['Formation prompt engineering', '/formation-prompt-engineering'],
+                ['Formation vibe coding', '/formation-vibe-coding'],
+                ['Formation Claude Code', '/formation-claude-code'],
+                ['Formation AI Act', '/formation-ai-act'],
+                ['Formation IA COMEX', '/formation-ia-comex'],
+                ['Acculturation IA', '/acculturation-ia'],
+                ['Coaching IA individuel', '/coaching-ia'],
+              ].map(([l, path]) => (
+                <Link key={path} to={path} style={{ display: 'block', padding: '9px 8px', textDecoration: 'none', fontSize: 14, color: '#374151', fontWeight: 500 }}>{l}</Link>
+              ))}
 
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Par métier</div>
               {METIERS_NAV.map(m => {
@@ -959,6 +984,11 @@ export function MasteriaFooter() {
               ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
               ['Formation Google Gemini', '/formation-gemini-entreprise'],
               ['Formation automatisation IA', '/formation-automatisation-ia'],
+              ['Formation agents IA', '/formation-agents-ia'],
+              ['Formation prompt engineering', '/formation-prompt-engineering'],
+              ['Formation vibe coding', '/formation-vibe-coding'],
+              ['Formation Claude Code', '/formation-claude-code'],
+              ['Formation AI Act', '/formation-ai-act'],
               ['Toutes les formations IA', '/formation-intelligence-artificielle'],
             ].map(([l, path]) => (
               <Link key={l} to={path} style={lStyle}>{l}</Link>
@@ -974,7 +1004,8 @@ export function MasteriaFooter() {
               ['Communication', '/formation-ia-communication'],
               ['Management', '/formation-ia-management'],
               ['Gestion de projet', '/formation-ia-gestion-de-projet'],
-              ['Dirigeants & COMEX', '/formation-ia-dirigeants'],
+              ['Dirigeants & CODIR', '/formation-ia-dirigeants'],
+              ['Formation IA COMEX', '/formation-ia-comex'],
               ['Service client', '/formation-ia-service-client'],
               ['Marchés publics', '/formation-ia-marche-public'],
               ['Immobilier', '/formation-ia-immobilier'],
@@ -986,6 +1017,7 @@ export function MasteriaFooter() {
               ['BTP & construction', '/formation-ia-btp'],
               ['Tourisme & hôtellerie', '/formation-ia-tourisme'],
               ['Formation IA en entreprise', '/formation-ia-entreprise'],
+              ['Formation agents IA', '/formation-agents-ia'],
               ['Acculturation IA', '/acculturation-ia'],
               ['Coaching IA individuel', '/coaching-ia'],
               ['Tous les métiers', '/formation-intelligence-artificielle'],

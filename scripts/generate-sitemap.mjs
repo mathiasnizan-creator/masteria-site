@@ -214,6 +214,8 @@ urls.push({ loc: `${SITE}/audit-ia`, lastmod: gitLastMod(['src/pages/AuditIAPage
 urls.push({ loc: `${SITE}/accompagnement-ia`, lastmod: gitLastMod(['src/pages/AccompagnementIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/acculturation-ia`, lastmod: gitLastMod(['src/pages/AcculturationIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-ia-entreprise`, lastmod: gitLastMod(['src/pages/FormationIAEntreprisePage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/formation-agents-ia`, lastmod: gitLastMod(['src/pages/FormationAgentsIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/formation-ia-comex`, lastmod: gitLastMod(['src/pages/FormationIAComexPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/prestataire-ia`, lastmod: gitLastMod(['src/pages/PrestataireIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/coaching-ia`, lastmod: gitLastMod(['src/pages/CoachingIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });

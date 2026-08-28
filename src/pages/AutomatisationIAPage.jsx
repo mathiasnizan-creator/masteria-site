@@ -81,6 +81,7 @@ const FAQ = [
 ]
 
 const RELATED = [
+  { label: "Formation agents IA", href: "/formation-agents-ia", tag: "Formation", desc: "Concevoir, tester et superviser des agents qui enchaînent les étapes d'un processus, sans code." },
   { label: "Formation multi-outils IA", href: "/formation-multi-outils", tag: "Comparatif", desc: "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels." },
   { label: "Formation IA générative", href: "/formation-intelligence-artificielle-generative", tag: "Éditorial", desc: "Maîtriser les modèles qui produisent textes, images et analyses." },
   { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot", tag: "Outil", desc: "Automatiser avec Power Automate dans Microsoft 365." },

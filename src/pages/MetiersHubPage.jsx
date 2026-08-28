@@ -226,7 +226,7 @@ export default function MetiersHubPage() {
             fontSize: 13, fontWeight: 700, marginBottom: 24,
           }}>
             <Sparkles size={15} strokeWidth={2.2} />
-            <span>Catalogue complet · 89 formations · +1 500 pros formés</span>
+            <span>Catalogue complet · plus de 100 formations · +1 500 pros formés</span>
           </div>
 
           <h1 style={{
@@ -558,6 +558,60 @@ export default function MetiersHubPage() {
                   <div style={{ color: hub.color, fontSize: 12, fontWeight: 600 }}>
                     Voir le parcours →
                   </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+       * FORMATIONS THÉMATIQUES & FORMATS (pages dédiées hors spokes,
+       * absentes du filtre temps réel qui ne connaît que SPOKES)
+       * ═══════════════════════════════════════════════════════════ */}
+      <section style={{
+        padding: isMobile ? '48px 20px' : '72px 40px',
+        background: '#fff',
+        borderTop: '1px solid #E5E7EB',
+      }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800,
+            fontFamily: 'Nunito, sans-serif', color: '#0A0A0A',
+            marginBottom: 10, textAlign: 'center',
+          }}>
+            Les formations thématiques et les formats
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, textAlign: 'center', maxWidth: 640, margin: '0 auto 28px', lineHeight: 1.6 }}>
+            Au-delà des parcours par outil et par métier : les compétences transverses (agents, automatisation, prompts, conformité) et les formats qui structurent un déploiement.
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: `repeat(auto-fill, minmax(${isMobile ? 220 : 250}px, 1fr))`,
+            gap: 16,
+          }}>
+            {[
+              { label: 'Formation agents IA', slug: 'formation-agents-ia', desc: "Concevoir, tester et superviser des agents sans code, sur vos outils." },
+              { label: 'Formation automatisation IA', slug: 'formation-automatisation-ia', desc: "Automatiser les tâches répétitives : Make, Zapier, n8n, sous contrôle." },
+              { label: 'Formation prompt engineering', slug: 'formation-prompt-engineering', desc: "La méthode des prompts IA professionnels, valable sur tous les outils." },
+              { label: 'Formation vibe coding', slug: 'formation-vibe-coding', desc: "Construire un outil ou un prototype en pilotant l'IA, sans être développeur." },
+              { label: 'Formation Claude Code', slug: 'formation-claude-code', desc: "Les agents dans le code, pour les équipes de développement." },
+              { label: 'Formation AI Act (IA Act)', slug: 'formation-ai-act', desc: "Le règlement européen : obligations réelles, littératie, plan de conformité." },
+              { label: 'Formation gouvernance IA', slug: 'formation-gouvernance-ia', desc: "Cadre, charte d'usage et pilotage des usages IA de l'organisation." },
+              { label: 'Formation IA générative', slug: 'formation-intelligence-artificielle-generative', desc: "Les fondamentaux des modèles génératifs, pour toutes les équipes." },
+              { label: 'Formation IA COMEX', slug: 'formation-ia-comex', desc: "La session exécutive du comité de direction, en français ou en anglais." },
+              { label: 'Formation IA dirigeants', slug: 'formation-ia-dirigeants', desc: "Décider et piloter : la journée stratégique du dirigeant et de son CODIR." },
+              { label: 'Formation IA en entreprise', slug: 'formation-ia-entreprise', desc: "Former vos équipes en intra, du sprint de 3 h au parcours par métier." },
+              { label: 'Acculturation IA', slug: 'acculturation-ia', desc: "La démarche collective : conférences, vagues, référents, mesure." },
+            ].map(t => (
+              <Link key={t.slug} to={`/${t.slug}`} style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: '#fff', borderRadius: 12, padding: 18,
+                  border: '1px solid #E5E7EB', height: '100%', boxSizing: 'border-box',
+                }}>
+                  <div style={{ fontWeight: 800, color: '#0A0A0A', fontSize: 14.5, fontFamily: 'Nunito, sans-serif', marginBottom: 6 }}>{t.label}</div>
+                  <div style={{ color: '#6B7280', fontSize: 13, lineHeight: 1.55, marginBottom: 8 }}>{t.desc}</div>
+                  <div style={{ color: '#2563EB', fontSize: 12.5, fontWeight: 700 }}>Voir la formation →</div>
                 </div>
               </Link>
             ))}

@@ -680,7 +680,7 @@ export default function GeoPage() {
                     </Link>
                   )}
                   <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }}>
-                    Catalogue 89 formations <ArrowRight size={13} />
+                    Catalogue · plus de 100 formations <ArrowRight size={13} />
                   </Link>
                   {(city.relatedLocal || []).map(l => (
                     <Link key={l.href} to={l.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>

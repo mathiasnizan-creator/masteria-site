@@ -291,7 +291,7 @@ export default function GlossaryPage() {
             marginBottom: 36, maxWidth: 600, margin: '0 auto 36px',
           }}>
             Comprendre les termes, c'est un début. Maîtriser leur usage en entreprise,
-            c'est l'étape suivante. Découvrez nos 89 formations IA certifiées Qualiopi,
+            c'est l'étape suivante. Découvrez nos formations IA certifiées Qualiopi (plus de 100 programmes),
             adaptées par métier et par outil.
           </p>
 

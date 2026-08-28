@@ -70,6 +70,8 @@ const FormationIAEntreprisePage = lazy(() => import('./pages/FormationIAEntrepri
 const PrestataireIAPage = lazy(() => import('./pages/PrestataireIAPage'));
 const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
 const FormationAIActPage = lazy(() => import('./pages/FormationAIActPage'));
+const FormationAgentsIAPage = lazy(() => import('./pages/FormationAgentsIAPage'));
+const FormationIAComexPage = lazy(() => import('./pages/FormationIAComexPage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -105,30 +107,30 @@ import { SPOKE_SLUGS } from './data/spoke-slugs';
 import { getAllGeoCombinations, GEO_DESTINATIONS, geoIaSlug } from './data/geo-data';
 
 const TRAININGS = [
-  { id: 'ia-initiation', tag: 'IA & ChatGPT', title: "Initiation à l'IA pour les professionnels", desc: "Maîtrisez les fondamentaux de l'IA en 1 journée. Aucun prérequis technique.", price: '1 980 €', unit: '/ jour', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
-    objectives: ["Comprendre ce qu'est l'IA et ses limites", "Utiliser ChatGPT dans votre quotidien professionnel", "Identifier les cas d'usage dans votre secteur", "Adopter une posture éthique face à l'IA"],
-    program: [{ title: 'Matin, Les fondamentaux', items: ["Qu'est-ce que l'IA ?", 'Les grands modèles de langage', "ChatGPT & Co : tour d'horizon", 'Démonstrations en direct'] }, { title: 'Après-midi, Mise en pratique', items: ['Premiers prompts', "Cas d'usage par métier", 'Sécurité et confidentialité', "Plan d'action personnel"] }] },
-  { id: 'prompt-engineering', tag: 'Prompt Engineering', title: 'Maîtriser le Prompt Engineering', desc: 'Formulez des prompts précis pour décupler votre productivité au quotidien.', price: '1 980 €', unit: '/ jour', color: '#FEF3C7', duration: '1 jour', level: 'Intermédiaire',
-    objectives: ["Comprendre la structure d'un prompt efficace", 'Utiliser les techniques avancées (chain-of-thought, few-shot)', 'Construire des templates réutilisables', 'Automatiser des tâches répétitives'],
-    program: [{ title: 'Matin, Théorie & Méthodes', items: ["Anatomie d'un prompt", 'Techniques : zero-shot, few-shot, chain-of-thought', 'Rôles et personas', 'Instructions et contraintes'] }, { title: 'Après-midi, Ateliers pratiques', items: ['Bibliothèque de prompts métier', 'Optimisation itérative', 'Intégration dans votre workflow', 'Templates à emporter'] }] },
-  { id: 'marketing-ia', tag: 'Marketing IA', title: 'IA pour les équipes Marketing', desc: "Contenus, campagnes, analyses : boostez votre marketing avec l'IA.", price: '1 980 €', unit: '/ jour', color: '#DCFCE7', duration: '1 jour', level: 'Tous niveaux',
-    objectives: ['Produire des contenus 3× plus vite', "Optimiser vos campagnes avec l'IA", 'Analyser la data marketing intelligemment', 'Créer des visuels avec les IA génératives'],
-    program: [{ title: 'Matin, Contenu & Copywriting', items: ['Rédaction IA : articles, posts, emails', 'SEO assisté par IA', 'Tone of voice et cohérence de marque', 'Outils : ChatGPT, Jasper, Copy.ai'] }, { title: 'Après-midi, Campagnes & Analytics', items: ['Segmentation et personnalisation', 'A/B testing assisté', 'Reporting automatisé', 'Midjourney & DALL-E pour les visuels'] }] },
-  { id: 'rh-ia', tag: 'Ressources Humaines', title: 'IA appliquée aux RH', desc: "Recrutement, onboarding, formation interne : l'IA au service des RH.", price: '1 980 €', unit: '/ jour', color: '#F3E8FF', duration: '1 jour', level: 'Tous niveaux',
-    objectives: ['Accélérer le sourcing et la présélection', "Améliorer l'expérience candidat", 'Automatiser les tâches administratives', "Déployer l'IA pour la formation interne"],
-    program: [{ title: 'Matin, Recrutement & Sourcing', items: ["Rédaction d'offres optimisées", 'Analyse de CV par IA', 'Entretiens assistés', 'Outils RH IA du marché'] }, { title: 'Après-midi, RH opérationnel', items: ['Onboarding personnalisé', "Formation continue avec l'IA", 'Gestion de la performance', 'Aspects légaux et éthiques'] }] },
-  { id: 'appels-offres', tag: "Appels d'offres", title: "Répondre aux appels d'offres avec l'IA", desc: "Gagnez du temps et améliorez vos réponses grâce à l'IA générative.", price: '1 980 €', unit: '/ jour', color: '#FFE4E6', duration: '1 jour', level: 'Intermédiaire',
-    objectives: ['Analyser un cahier des charges rapidement', 'Rédiger des réponses percutantes', 'Construire une bibliothèque de réponses types', 'Améliorer votre taux de succès'],
-    program: [{ title: 'Matin, Analyse & Stratégie', items: ['Dépouillement de cahier des charges', 'Identification des critères clés', 'Analyse concurrentielle', 'Stratégie de réponse'] }, { title: 'Après-midi, Rédaction assistée', items: ['Structuration de la réponse', 'Prompts spécialisés AO', 'Relecture et optimisation', 'Base de connaissances AO'] }] },
-  { id: 'intra', tag: 'Intra-entreprise', title: 'Formation sur mesure en intra', desc: "Jusqu'à 12 participants, contenu 100% personnalisé, à votre rythme.", price: '1 980 €', unit: '/ jour / groupe', color: '#F0F0F0', duration: 'Sur mesure', level: 'Tous niveaux',
-    objectives: ['Programme 100% adapté à votre secteur', "Cas d'usage de votre entreprise", "Jusqu'à 12 participants simultanément", 'Suivi post-formation inclus'],
-    program: [{ title: 'Phase 1, Cadrage', items: ['Audit de vos besoins', 'Définition des objectifs pédagogiques', 'Construction du programme', 'Validation avec vos équipes'] }, { title: 'Phase 2, Formation', items: ['Animation présentiel ou distanciel', 'Exercices adaptés à vos outils', 'Supports personnalisés', 'Certification des participants'] }] },
+  { id: 'ia-initiation', tag: 'Fondamentaux', title: "Les fondamentaux de l'IA générative", desc: "Comprendre ce que les modèles font vraiment et installer les premiers usages sur votre outil : ChatGPT, Copilot, Claude, Gemini ou Mistral.", price: '1 980 €', unit: '/ jour', color: '#DBEAFE', duration: '1 jour', level: 'Débutant',
+    objectives: ["Comprendre ce que fait un modèle d'IA générative, et ce qu'il ne sait pas faire", "Formuler une demande complète et relire une réponse avec méthode", "Installer deux ou trois usages concrets sur son propre poste, le jour même", "Connaître le cadre : données confidentielles, vérification, règles d'usage"],
+    program: [{ title: 'Matin, Comprendre', items: ["Ce qu'est un modèle de langage, démontré en direct sur vos outils", 'Capacités réelles et limites : hallucinations, sources, données', 'Panorama de votre environnement : ChatGPT, Copilot, Claude, Gemini, Mistral', 'La méthode de la demande efficace : contexte, tâche, format'] }, { title: 'Après-midi, Pratiquer', items: ['Ateliers sur vos documents : synthèse, rédaction, préparation de réunion', "Relecture et vérification : ce qu'on contrôle avant d'utiliser une réponse", "Le cadre d'usage : ce qui peut entrer dans l'outil, ce qui reste hors champ", "Plan d'action personnel : les usages à installer dans la semaine"] }] },
+  { id: 'prompt-engineering', tag: 'Prompt engineering', title: 'Prompt engineering : la méthode complète', desc: "Structurer des prompts professionnels, fiabiliser les réponses et construire la bibliothèque de prompts de l'équipe, quel que soit l'outil.", price: '1 980 €', unit: '/ jour', color: '#FEF3C7', duration: '1 jour', level: 'Intermédiaire',
+    objectives: ['Structurer un prompt professionnel : rôle, contexte, contraintes, format, exemples', 'Appliquer les techniques avancées : exemples guidés, décomposition, ancrage sur vos documents', 'Imposer des formats de sortie directement exploitables et réduire les erreurs', "Construire la bibliothèque de prompts partagée de l'équipe"],
+    program: [{ title: 'Matin, La méthode', items: ["Anatomie d'un prompt fiable : ce qui change la qualité d'une réponse", 'Techniques avancées : exemples guidés, raisonnement par étapes, auto-vérification', 'Ancrage documentaire : faire répondre à partir de vos documents, jamais de mémoire', 'Atelier : réécrire trois prompts réels de son quotidien'] }, { title: 'Après-midi, La pratique en équipe', items: ["Prompts système : encoder le ton, les règles et le contexte de l'entreprise", "Gabarits paramétrables et bibliothèque partagée de l'équipe", 'Adapter le même prompt à ChatGPT, Claude, Copilot, Gemini ou Mistral', "Atelier final sur vos cas réels et plan d'usage à 30 jours"] }] },
+  { id: 'marketing-ia', tag: 'Marketing', title: "L'IA pour les équipes marketing", desc: "Contenus, campagnes, visuels et analyses sur vos outils réels, dans votre ton de marque, avec un cadre de relecture clair.", price: '1 980 €', unit: '/ jour', color: '#DCFCE7', duration: '1 jour', level: 'Tous niveaux',
+    objectives: ['Produire des contenus fidèles au ton de la marque : articles, posts, emails, pages', 'Outiller le SEO : briefs, plans de pages, réécritures, questions des clients', 'Analyser les données marketing : campagnes, audiences, verbatims clients', "Poser le cadre : relecture, droits d'usage des visuels, données clients"],
+    program: [{ title: 'Matin, Contenus & marque', items: ['Le ton de marque encodé une fois pour toutes : instructions et exemples maison', 'Production éditoriale : articles, posts, emails, déclinaisons multicanal', 'SEO assisté : briefs, structures de pages, intentions de recherche', 'Atelier sur vos contenus réels, dans vos gabarits'] }, { title: 'Après-midi, Campagnes & visuels', items: ["Analyse de campagnes et de verbatims clients avec l'IA", 'Personnalisation et segmentation : ce qui marche, ce qui déçoit', "Visuels : la génération d'images intégrée à vos outils, et ses règles d'usage", "Plan d'action : la bibliothèque de prompts marketing de l'équipe"] }] },
+  { id: 'rh-ia', tag: 'Ressources humaines', title: "L'IA pour les ressources humaines", desc: "Recrutement, entretiens, documents RH et formation interne : des usages installés sur vos cas réels, avec le cadre juridique posé.", price: '1 980 €', unit: '/ jour', color: '#F3E8FF', duration: '1 jour', level: 'Tous niveaux',
+    objectives: ['Rédiger offres, fiches de poste et documents RH dans les règles de la maison', 'Préparer entretiens et campagnes : trames, synthèses, comptes rendus', "Outiller la formation interne et les parcours d'intégration", 'Connaître le cadre : RGPD, non-discrimination, usages RH encadrés par le règlement européen'],
+    program: [{ title: 'Matin, Recrutement & documents', items: ['Offres et fiches de poste : rédaction structurée, relecture, déclinaisons', 'Préparer un entretien : trame, questions, synthèse après échange', "Le cadre d'abord : données candidats, RGPD, et ce que l'AI Act encadre côté RH", 'Atelier sur vos documents réels'] }, { title: 'Après-midi, RH du quotidien', items: ["Communication interne : notes, FAQ, supports d'annonce", 'Intégration et formation interne : parcours, quiz, supports outillés', "Assistants RH d'équipe : instructions, documents de référence, limites", "Plan d'action : les usages RH à installer, qui relit quoi"] }] },
+  { id: 'appels-offres', tag: "Appels d'offres", title: "Répondre aux appels d'offres avec l'IA", desc: "Analyser un dossier de consultation, bâtir le mémoire technique dans votre trame et constituer la bibliothèque de réponses, sans rien inventer.", price: '1 980 €', unit: '/ jour', color: '#FFE4E6', duration: '1 jour', level: 'Intermédiaire',
+    objectives: ['Dépouiller un dossier de consultation : exigences, critères, pièces attendues', 'Objectiver la décision de répondre avec une grille go/no-go outillée', 'Rédiger le mémoire technique dans votre trame, à partir de vos références réelles', "Constituer la bibliothèque de réponses et de preuves de l'entreprise"],
+    program: [{ title: 'Matin, Analyser & décider', items: ["Lire un dossier de consultation avec l'IA : règlement, CCTP, critères de notation", 'La grille go/no-go : décider de répondre sur des faits', "Cartographier les exigences : ce qu'il faudra prouver, pièce par pièce", 'Atelier sur un de vos dossiers réels'] }, { title: 'Après-midi, Rédiger & capitaliser', items: ['Le mémoire technique : votre trame, vos références, zéro invention', 'Adapter la réponse aux critères de notation du dossier', 'La bibliothèque de réponses : références, méthodologies, preuves à jour', "Relecture et contrôle : ce qu'on vérifie avant de déposer"] }] },
+  { id: 'intra', tag: 'Intra-entreprise', title: 'La formation sur mesure en intra', desc: "Un programme construit au cadrage sur les cas réels de vos équipes, dans vos locaux ou à distance, jusqu'à 12 participants.", price: '1 980 €', unit: '/ jour / groupe', color: '#F0F0F0', duration: 'Sur mesure', level: 'Tous niveaux',
+    objectives: ["Un programme construit au cadrage sur vos cas d'usage et vos outils", 'Des ateliers sur les documents réels de chaque équipe', "Jusqu'à 12 participants par session, dans vos locaux ou à distance", "Des livrables qui restent : prompts, gabarits, règles d'usage, référents"],
+    program: [{ title: 'Phase 1, Cadrage', items: ["Échange avec la direction et les managers : cas d'usage, licences, niveaux", 'Choix du format : sprint de 3 h, journée socle, 2 jours métier, parcours', 'Construction du programme sur vos processus réels', 'Cadre de confidentialité posé avant la session'] }, { title: 'Phase 2, Formation & suite', items: ['Animation dans vos locaux ou à distance, les mains sur vos outils', 'Livrables rangés dans vos espaces : prompts, gabarits, assistants', 'Évaluation des acquis et attestations de réalisation', 'Suite proposée : référents, vagues suivantes, approfondissements'] }] },
 ];
 
 function FormationsScreen() {
   const navigate = useNavigate();
   const [filter, setFilter] = useState('Tout');
-  const categories = ['Tout', 'IA & ChatGPT', 'Prompt Engineering', 'Marketing IA', 'Ressources Humaines', "Appels d'offres", 'Intra-entreprise'];
+  const categories = ['Tout', 'Fondamentaux', 'Prompt engineering', 'Marketing', 'Ressources humaines', "Appels d'offres", 'Intra-entreprise'];
   const filtered = filter === 'Tout' ? TRAININGS : TRAININGS.filter(t => t.tag === filter);
   return (
     <div style={{ padding: '64px 32px 96px' }}>
@@ -152,8 +154,34 @@ function FormationsScreen() {
             ))}
           </div>
         </div>
+        <Link to="/formation-intelligence-artificielle" style={{ display: 'flex', alignItems: 'center', gap: 14, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 12, padding: '16px 20px', textDecoration: 'none', marginBottom: 32 }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#111' }}>Le catalogue complet : plus de 100 formations par outil et par métier</div>
+            <div style={{ fontSize: 13, color: '#1E40AF' }}>ChatGPT, Copilot, Claude, Gemini, Mistral · 24 métiers · filtrable en temps réel</div>
+          </div>
+          <span style={{ fontSize: 16, color: '#2563EB', fontWeight: 700 }}>→</span>
+        </Link>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20, marginBottom: 48 }}>
           {filtered.map(t => <TrainingCard key={t.id} {...t} onClick={() => navigate(`/formations/${t.id}`)} />)}
+        </div>
+        <div style={{ marginBottom: 48 }}>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Formations thématiques</div>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {[
+              ['Agents IA', '/formation-agents-ia'],
+              ['Automatisation IA', '/formation-automatisation-ia'],
+              ['Prompt engineering', '/formation-prompt-engineering'],
+              ['Vibe coding', '/formation-vibe-coding'],
+              ['Claude Code', '/formation-claude-code'],
+              ['AI Act', '/formation-ai-act'],
+              ['IA COMEX', '/formation-ia-comex'],
+              ['Dirigeants & CODIR', '/formation-ia-dirigeants'],
+              ['IA en entreprise', '/formation-ia-entreprise'],
+              ['Acculturation IA', '/acculturation-ia'],
+            ].map(([l, path]) => (
+              <Link key={path} to={path} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#1C1C1C', background: '#F0F0F0', borderRadius: 999, padding: '8px 16px', textDecoration: 'none' }}>{l}</Link>
+            ))}
+          </div>
         </div>
         <FadeIn>
           <div style={{ background: '#F8F8F8', borderRadius: 14, padding: '24px 28px', display: 'flex', gap: 18, alignItems: 'center' }}>
@@ -1540,6 +1568,8 @@ export default function App() {
         <Route path="/securite-claude-entreprise" element={<SecuriteClaudeEntreprise />} />
 
         <Route path="/formation-ai-act" element={<FormationAIActPage />} />
+        <Route path="/formation-agents-ia" element={<FormationAgentsIAPage />} />
+        <Route path="/formation-ia-comex" element={<FormationIAComexPage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
         {METIER_SLUGS.map(m => {
           const Page = METIER_PAGES[m]

@@ -865,7 +865,7 @@ export default function AgentsIAEntreprisePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
-            Votre besoin dépasse l'agent isolé et appelle un véritable logiciel piloté par l'IA ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour donner les bons réflexes à vos équipes en complément, la <Link to="/formation-claude-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>formation Claude</Link> les outille sur les agents de code.
+            Votre besoin dépasse l'agent isolé et appelle un véritable logiciel piloté par l'IA ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#93C5FD', fontWeight: 600 }}>outils IA sur mesure</Link>. Et pour que vos équipes apprennent à construire et superviser elles-mêmes leurs agents, la <Link to="/formation-agents-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>formation agents IA</Link> les outille en deux jours.
           </p>
         </div>
       </section>

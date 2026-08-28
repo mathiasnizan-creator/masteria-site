@@ -742,7 +742,8 @@ export default function AcculturationIAPage() {
             {[
               { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "Quand l'acculturation s'inscrit dans une transformation complète : cadrage, outils, changement, mesure." },
               { label: 'Formation intelligence artificielle', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Les parcours par métier qui prolongent l'acculturation : assistanat, commerce, RH, finance, marketing." },
-              { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'COMEX', desc: "Le programme dédié aux directions : lecture stratégique, cadre, pilotage de la transformation." },
+              { label: 'Formation IA COMEX', href: '/formation-ia-comex', tag: 'Comité exécutif', desc: "La session exécutive qui aligne le comité : état de l'art sans jargon, arbitrages, feuille de route." },
+              { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'Dirigeants', desc: "Le programme dédié aux directions : lecture stratégique, cadre, pilotage de la transformation." },
               { label: 'Coaching IA individuel', href: '/coaching-ia', tag: 'Individuel', desc: "Pour les profils clés : un accompagnement en tête-à-tête sur leurs cas réels, à leur rythme." },
               { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Cadre', desc: "Le cadre d'usage qui sécurise l'expérimentation : ce qu'on peut confier aux outils, et comment." },
               { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Conformité', desc: "Pour aller au fond du règlement européen : obligations réelles, calendrier, mise en conformité." },

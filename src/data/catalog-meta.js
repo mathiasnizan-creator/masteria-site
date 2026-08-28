@@ -124,7 +124,7 @@ export const HUBS = [
     metaDesc: "Formation intelligence artificielle pour entreprises : plus de 100 programmes par outil (ChatGPT, Copilot, Gemini, Claude, Mistral) et par métier. Qualiopi, OPCO.",
     h1: "Formation intelligence artificielle pour les entreprises",
     intro: "La formation IA en entreprise est devenue incontournable pour toutes les organisations qui veulent améliorer leur productivité, moderniser leurs métiers et sécuriser leurs usages. Masteria propose des formations intelligence artificielle concrètes, certifiées Qualiopi et finançables OPCO, adaptées à chaque outil (ChatGPT, Microsoft Copilot, Google Gemini, Claude, Mistral, Sprint IA) et à chaque métier : marketing, RH, finance, commercial, communication, management, achats, assistantes de direction. Sélectionnez vos critères ci-dessous pour trouver la formation IA adaptée à votre équipe.",
-    pitch: "89 formations intelligence artificielle au catalogue, filtrables en temps réel selon votre stack et vos enjeux métier.",
+    pitch: "Plus de 100 formations intelligence artificielle au catalogue, filtrables en temps réel selon votre stack et vos enjeux métier.",
     spokes: [],
   },
 ];

@@ -883,7 +883,7 @@ export default function HomePage() {
               display: 'inline-flex', alignItems: 'center', gap: 8,
               color: '#2563EB', textDecoration: 'none', fontSize: 15, fontWeight: 700,
             }}>
-              Voir le catalogue complet (89 formations) <ArrowRight size={15} />
+              Voir le catalogue complet (plus de 100 formations) <ArrowRight size={15} />
             </Link>
           </div>
         </div>
