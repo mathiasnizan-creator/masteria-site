@@ -176,6 +176,12 @@ Pages dédiées avec contenu local : OPCO régional, secteurs économiques, zone
 - [Formation IA Rennes](https://www.master-ia.fr/formation-ia-rennes) — intra dans la métropole et en Bretagne : numérique-cyber, agroalimentaire, industrie ; Qualiopi, OPCO
 - [Formation Claude Rennes](https://www.master-ia.fr/formation-claude-ia-rennes) — formation Claude (Anthropic) à Rennes, en intra dans vos locaux : programme sur mesure sur vos cas réels ; Qualiopi, OPCO
 - [Formation Claude Nantes](https://www.master-ia.fr/formation-claude-ia-nantes) — formation Claude (Anthropic) à Nantes, en intra dans vos locaux : programme sur mesure sur vos cas réels ; Qualiopi, OPCO
+- [Formation ChatGPT Rennes](https://www.master-ia.fr/formation-chatgpt-rennes) — formation ChatGPT à Rennes en intra ; Qualiopi, OPCO
+- [Formation ChatGPT Nantes](https://www.master-ia.fr/formation-chatgpt-nantes) — formation ChatGPT à Nantes en intra ; Qualiopi, OPCO
+- [Formation ChatGPT Nice](https://www.master-ia.fr/formation-chatgpt-nice) — formation ChatGPT à Nice et sur la Côte d'Azur en intra ; Qualiopi, OPCO
+- [Formation ChatGPT Bordeaux](https://www.master-ia.fr/formation-chatgpt-bordeaux) — formation ChatGPT à Bordeaux en intra ; Qualiopi, OPCO
+- [Formation ChatGPT Toulouse](https://www.master-ia.fr/formation-chatgpt-toulouse) — formation ChatGPT à Toulouse en intra ; Qualiopi, OPCO
+- [Formation ChatGPT Strasbourg](https://www.master-ia.fr/formation-chatgpt-strasbourg) — formation ChatGPT à Strasbourg et en Alsace en intra ; Qualiopi, OPCO
 - [Formation IA Grenoble](https://www.master-ia.fr/formation-ia-grenoble) — formation IA pour les entreprises à Grenoble (Inovallée, Crolles, Bernin) : microélectronique, recherche, énergie ; sans frais de déplacement depuis Lyon ; Qualiopi, OPCO
 - [Formation IA Annecy](https://www.master-ia.fr/formation-ia-annecy) — formation IA pour les entreprises à Annecy (Grand Annecy, vallée de l'Arve) : outdoor, mécatronique, tourisme ; sans frais de déplacement depuis Lyon ; Qualiopi, OPCO
 - [Formation IA Aix-en-Provence](https://www.master-ia.fr/formation-ia-aix-en-provence) — formation IA pour les entreprises du Pays d'Aix (la Duranne, Rousset) : microélectronique, conseil, juridique ; Qualiopi, OPCO

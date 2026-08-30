@@ -367,8 +367,9 @@ export const GEO_CITIES = [
   {
     slug: 'nantes',
     iaOnly: true,
-    // Exception au gate iaOnly : « formation claude nantes » (170/mois, KD 9).
-    tools: ['claude-ia'],
+    // Exceptions au gate iaOnly : « formation claude nantes » (170/mois, KD 9)
+    // et « formation chatgpt nantes » (70/mois, KD 4).
+    tools: ['claude-ia', 'chatgpt'],
     metaTitleOverride: 'Formation IA Nantes : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Nantes : vos équipes formées sur leurs cas réels, dans vos locaux",
     metaDescOverride: "Formation IA à Nantes pour les entreprises : ChatGPT, Copilot, Claude, Gemini, Mistral, programmes par métier dans vos locaux ou à distance. Certifié Qualiopi, finançable OPCO.",
@@ -422,6 +423,7 @@ export const GEO_CITIES = [
   {
     slug: 'nice',
     iaOnly: true,
+    tools: ['chatgpt'],
     metaTitleOverride: 'Formation IA Nice : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Nice : vos équipes formées sur leurs cas réels, de la Promenade à Sophia Antipolis",
     metaDescOverride: "Formation IA à Nice et sur la Côte d'Azur : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, du tourisme à la tech de Sophia Antipolis. Qualiopi, OPCO.",
@@ -528,6 +530,7 @@ export const GEO_CITIES = [
   {
     slug: 'bordeaux',
     iaOnly: true,
+    tools: ['chatgpt'],
     metaTitleOverride: 'Formation IA Bordeaux : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Bordeaux : vos équipes formées sur leurs cas réels, dans vos locaux",
     metaDescOverride: "Formation IA à Bordeaux : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, du vin à l'aéronautique et au numérique. Certifié Qualiopi, finançable OPCO.",
@@ -580,6 +583,7 @@ export const GEO_CITIES = [
   {
     slug: 'toulouse',
     iaOnly: true,
+    tools: ['chatgpt'],
     metaTitleOverride: 'Formation IA Toulouse : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA pour les entreprises à Toulouse : vos équipes formées sur leurs cas réels",
     metaDescOverride: "Formation IA à Toulouse pour les entreprises : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, de l'aéronautique à la santé. Certifié Qualiopi, finançable OPCO.",
@@ -632,6 +636,7 @@ export const GEO_CITIES = [
   {
     slug: 'strasbourg',
     iaOnly: true,
+    tools: ['chatgpt'],
     metaTitleOverride: 'Formation IA Strasbourg : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Strasbourg : vos équipes formées sur leurs cas réels, dans vos locaux",
     metaDescOverride: "Formation IA à Strasbourg et en Alsace : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, de la banque mutualiste au transfrontalier. Qualiopi, OPCO.",
@@ -684,9 +689,9 @@ export const GEO_CITIES = [
   {
     slug: 'rennes',
     iaOnly: true,
-    // Exception au gate iaOnly : « formation claude rennes » (140/mois, KD 1,
-    // en tendance) justifie la page outil×ville Claude, et elle seule.
-    tools: ['claude-ia'],
+    // Exceptions au gate iaOnly : « formation claude rennes » (140/mois, KD 1,
+    // en tendance) et « formation chatgpt rennes » (90/mois, KD 6).
+    tools: ['claude-ia', 'chatgpt'],
     metaTitleOverride: 'Formation IA Rennes : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Rennes : vos équipes formées sur leurs cas réels, dans vos locaux",
     metaDescOverride: "Formation IA à Rennes et en Bretagne : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, du numérique à l'agroalimentaire. Certifié Qualiopi, finançable OPCO.",

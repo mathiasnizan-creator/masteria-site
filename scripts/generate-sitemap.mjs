@@ -127,6 +127,7 @@ const geoSlugs = geoTools.flatMap(t => geoCities.map(c => `formation-${t}-${c}`)
 // Exceptions outil×ville hors matrice (villes iaOnly avec whitelist `tools`
 // dans geo-data.js) : Claude à Rennes et Nantes (demande locale forte).
 geoSlugs.push('formation-claude-ia-rennes', 'formation-claude-ia-nantes')
+geoSlugs.push('formation-chatgpt-rennes', 'formation-chatgpt-nantes', 'formation-chatgpt-nice', 'formation-chatgpt-bordeaux', 'formation-chatgpt-toulouse', 'formation-chatgpt-strasbourg')
 
 // Pages géo génériques : /formation-ia-{ville} — les 5 villes historiques
 // + l'extension du 2026-08-28 (iaOnly : pas de pages outil×ville pour celles-ci)
