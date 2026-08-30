@@ -86,6 +86,7 @@ const SOMMAIRE = [
   ['#limites', 'Zapier suffit-il ?'],
   ['#cas-usage', "Cas d'usage"],
   ['#tarif', 'Tarif'],
+  ['#lexique', 'Lexique'],
   ['#faq', 'FAQ'],
 ]
 
@@ -123,7 +124,7 @@ const PROGRAMME = [
     resume: "Chaque participant repart avec plusieurs Zaps réels en état de marche, dont un avec une étape IA.",
     matin: [
       { t: 'Zapier démontré en direct', d: "Zaps, déclencheurs, actions, tâches : la logique de l'outil montrée sur des cas concrets avant de toucher au clavier." },
-      { t: 'Connecter vos applications', d: "Messagerie, tableurs, formulaires, CRM : brancher les applications réelles de l'équipe avec des accès propres." },
+      { t: 'Connecter vos applications', d: "Messagerie, tableurs, formulaires, CRM : brancher les applications réelles de l'équipe avec des accès propres, et les webhooks pour les outils absents du catalogue." },
       { t: 'Le premier Zap utile', d: "Un déclencheur, une action, un test : chaque participant automatise une vraie petite tâche de son poste avant la pause." },
       { t: 'Filtres, chemins et multi-étapes', d: "Ne déclencher que dans les bons cas, séparer les situations, enchaîner plusieurs actions : le Zap qui traite la réalité, pas la démo." },
       { t: 'Formatter : nettoyer les données', d: "Dates, textes, nombres : les transformations qui évitent 80 % des Zaps cassés." },
@@ -205,7 +206,7 @@ const FAQ = [
   },
   {
     q: "Peut-on utiliser l'IA dans Zapier ?",
-    a: "Oui : des étapes IA s'ajoutent aux Zaps pour résumer un message, classer une demande ou préparer un brouillon de réponse, et Zapier propose aussi des agents pour les cas simples. La formation les met en place avec le cadre que nous appliquons partout : format de sortie imposé, et relecture humaine sur tout ce qui engage l'entreprise. Pour des agents qui enchaînent plusieurs outils avec des garde-fous avancés, n8n est l'étape d'après.",
+    a: "Oui : des étapes IA s'ajoutent aux Zaps pour résumer un message, classer une demande ou préparer un brouillon de réponse, et Zapier propose aussi des agents pour les cas simples. L'écosystème complète le tout : Tables pour stocker des données, Interfaces pour créer de petits formulaires, sans changer d'outil. La formation met tout cela en place avec le cadre que nous appliquons partout : format de sortie imposé, et relecture humaine sur tout ce qui engage l'entreprise. Pour des agents qui enchaînent plusieurs outils avec des garde-fous avancés, n8n est l'étape d'après.",
   },
   {
     q: 'Quel cadre RGPD pour des Zaps ?',
@@ -658,6 +659,27 @@ export default function FormationZapierPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── LEXIQUE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
+      <section id="lexique" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Le vocabulaire</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Parler Zapier couramment : les sept termes à connaître
+          </h2>
+          <p style={answerStyle}>
+            <strong>Sept termes suffisent pour suivre une conversation Zapier et lire sa documentation : Zap, déclencheur, action, tâche, filtre et chemin, Formatter, étape IA. La formation les installe dès la première heure ; les voici tels que nous les enseignons.</strong>
+          </p>
+          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
+            {termsJsonLd.hasDefinedTerm.map(t => (
+              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
+                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
+                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

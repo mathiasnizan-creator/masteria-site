@@ -95,6 +95,7 @@ const SOMMAIRE = [
   ['#cas-usage', "Cas d'usage"],
   ['#pieges', 'Les pièges'],
   ['#tarif', 'Tarif'],
+  ['#lexique', 'Lexique'],
   ['#faq', 'FAQ'],
 ]
 
@@ -135,12 +136,12 @@ const PROGRAMME = [
       { t: 'Cloud ou auto-hébergé : poser le cadre', d: "Où tournent vos workflows, où passent vos données, qui a accès : le choix d'hébergement et la gestion des credentials se décident en premier." },
       { t: 'Connecter vos applications', d: "Messagerie, agenda, stockage, tableurs, CRM : brancher les applications réelles de l'équipe, proprement, avec des accès nominatifs." },
       { t: "L'anatomie d'un workflow fiable", d: "Déclencheur, étapes, transformations, sorties : la structure de référence, et les conventions de nommage qui gardent l'ensemble lisible." },
-      { t: 'Atelier : le premier workflow', d: "Chaque participant choisit une tâche répétitive réelle de son poste et la monte de bout en bout." },
+      { t: 'Atelier : le premier workflow', d: "Chaque participant choisit une tâche répétitive réelle de son poste et la monte de bout en bout, d'une page blanche ou d'un modèle de la bibliothèque de templates n8n adapté à son cas." },
     ],
     apresmidi: [
       { t: 'Transformer les données', d: "Filtres, mappings, boucles, fusions : le cœur du travail réel, là où la plupart des workflows se jouent." },
       { t: "Brancher l'IA dans le flux", d: "Les nœuds IA de n8n sur des cas concrets : résumer un document entrant, extraire des champs, classer une demande, rédiger un brouillon." },
-      { t: 'Webhooks et déclencheurs avancés', d: "Réagir à un événement extérieur : formulaire, email entrant, changement dans une application tierce." },
+      { t: 'Webhooks et déclencheurs avancés', d: "Réagir à un événement extérieur : formulaire, email entrant, changement dans une application tierce. Le nœud HTTP Request ouvre le reste : toute application dotée d'une API devient connectable." },
       { t: 'Atelier : une étape IA dans son workflow', d: "Chacun ajoute une étape IA utile à son workflow du matin, avec un format de sortie imposé et vérifiable." },
       { t: 'Revue croisée de fin de journée', d: "Chaque workflow passe devant le groupe : lisibilité, robustesse, ce qui casserait en production." },
     ],
@@ -279,6 +280,14 @@ const FAQ = [
   {
     q: "Que reste-t-il dans l'entreprise après les 2 jours ?",
     a: "Les workflows construits en atelier, en état de marche et documentés ; les conventions d'équipe (nommage, structure, sous-workflows) ; la gestion d'erreurs et les alertes posées ; les règles écrites sur les données, les credentials et la validation humaine ; et le plan d'automatisation de l'équipe : les trois processus suivants, qui les porte, à quelle échéance.",
+  },
+  {
+    q: "Comment installe-t-on n8n : cloud, Docker ou hébergeur ?",
+    a: "Trois voies : le cloud n8n, le plus rapide pour démarrer ; l'auto-hébergement sur vos serveurs, le plus souvent via Docker, pour garder les données chez vous ; ou un prestataire européen qui opère n8n pour votre compte. La formation démarre sur l'environnement retenu au cadrage ; quand la question n'est pas tranchée, la première matinée pose les critères (données, volumes, compétences internes). L'installation elle-même relève de votre IT ou de notre agence, pas des deux jours de formation.",
+  },
+  {
+    q: "n8n est en anglais : est-ce un obstacle pour mes équipes ?",
+    a: "L'interface de n8n est en anglais, comme la plupart des orchestrateurs. En pratique, ce n'est pas un obstacle : le vocabulaire utile tient en une vingtaine de termes (workflow, node, trigger, credential, execution), que la formation installe dès la première heure, en français, avec le lexique de cette page. Les ateliers, les supports et la documentation d'équipe que vous construisez sont intégralement en français.",
   },
   {
     q: 'Et si nous préférons faire construire nos workflows n8n ?',
@@ -747,6 +756,27 @@ export default function FormationN8nPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── LEXIQUE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
+      <section id="lexique" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Le vocabulaire</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Parler n8n couramment : les huit termes à connaître
+          </h2>
+          <p style={answerStyle}>
+            <strong>Huit termes suffisent pour suivre une conversation n8n et lire sa documentation : workflow, nœud, déclencheur, credential, exécution, sous-workflow, auto-hébergement, agent. La formation les installe dès la première heure, en français ; les voici tels que nous les enseignons.</strong>
+          </p>
+          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
+            {termsJsonLd.hasDefinedTerm.map(t => (
+              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
+                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
+                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

@@ -87,6 +87,7 @@ const SOMMAIRE = [
   ['#cas-usage', "Cas d'usage"],
   ['#pieges', 'Les pièges'],
   ['#tarif', 'Tarif'],
+  ['#lexique', 'Lexique'],
   ['#faq', 'FAQ'],
 ]
 
@@ -127,7 +128,7 @@ const PROGRAMME = [
       { t: 'Connecter vos applications', d: "CRM, messagerie, tableurs, facturation : brancher les applications réelles de l'équipe avec des accès propres et nominatifs." },
       { t: "L'anatomie d'un scénario fiable", d: "Déclencheur, filtres, modules, sorties : la structure de référence, et le réflexe de nommage qui garde l'ensemble lisible." },
       { t: 'Comprendre le modèle par opérations', d: "Chaque module exécuté compte : on apprend à lire sa consommation dès le premier jour, pour concevoir des scénarios sobres." },
-      { t: 'Atelier : le premier scénario', d: "Chaque participant choisit une tâche répétitive réelle de son poste et la monte de bout en bout." },
+      { t: 'Atelier : le premier scénario', d: "Chaque participant choisit une tâche répétitive réelle de son poste et la monte de bout en bout, d'une page blanche ou d'un template Make adapté à son cas." },
     ],
     apresmidi: [
       { t: 'Transformer les données', d: "Mapping, fonctions, formats de date et de texte : le cœur du travail réel, là où la plupart des scénarios se jouent." },
@@ -150,7 +151,7 @@ const PROGRAMME = [
     ],
     apresmidi: [
       { t: 'Optimiser les opérations', d: "Boucles sur gros volumes, appels évitables, agrégations : les techniques qui divisent la consommation, donc la facture, à service égal." },
-      { t: "Organiser le travail d'équipe", d: "Nommage, dossiers, documentation légère, propriétaire par scénario : ce qui différencie trois scénarios qui durent de trente qui meurent." },
+      { t: "Organiser le travail d'équipe", d: "Nommage, dossiers, documentation légère, propriétaire par scénario, export des blueprints pour sauvegarder et versionner : ce qui différencie trois scénarios qui durent de trente qui meurent." },
       { t: 'Données et RGPD', d: "Quelles données transitent par Make, quelles minimisations, quels accès : le cadre écrit, aligné sur les recommandations de la CNIL." },
       { t: 'Atelier : le plan de déploiement', d: "Pour chaque scénario construit : responsable, supervision, prochaine itération." },
       { t: "Plan d'automatisation de l'équipe", d: "Les trois processus prioritaires à automatiser ensuite, qui les porte, à quelle échéance ; la liste part avec vous." },
@@ -244,7 +245,7 @@ const FAQ = [
   },
   {
     q: "Peut-on utiliser l'IA dans Make ?",
-    a: "Oui : des modules IA s'insèrent dans les scénarios comme n'importe quelle étape, pour résumer un document entrant, extraire des champs, classer une demande ou rédiger un brouillon dans votre gabarit. La formation y consacre la matinée du jour 2, avec la règle appliquée partout chez Masteria : format de sortie imposé, et validation humaine sur tout ce qui engage l'entreprise.",
+    a: "Oui : des modules IA s'insèrent dans les scénarios comme n'importe quelle étape, pour résumer un document entrant, extraire des champs, classer une demande ou rédiger un brouillon dans votre gabarit ; Make propose aussi ses propres agents IA pour les cas simples. La formation y consacre la matinée du jour 2, avec la règle appliquée partout chez Masteria : format de sortie imposé, et validation humaine sur tout ce qui engage l'entreprise.",
   },
   {
     q: 'Quel cadre RGPD pour des scénarios Make ?',
@@ -719,6 +720,27 @@ export default function FormationMakePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── LEXIQUE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
+      <section id="lexique" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Le vocabulaire</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Parler Make couramment : les huit termes à connaître
+          </h2>
+          <p style={answerStyle}>
+            <strong>Huit termes suffisent pour suivre une conversation Make et lire sa documentation : scénario, module, opération, routeur, webhook, data store, mapping, itérateur. La formation les installe dès la première heure ; les voici tels que nous les enseignons.</strong>
+          </p>
+          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
+            {termsJsonLd.hasDefinedTerm.map(t => (
+              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
+                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
+                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
