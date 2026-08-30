@@ -148,11 +148,6 @@
       "permanent": true
     },
     {
-      "source": "/formation-chatgpt-nice",
-      "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
       "source": "/formation-chatgpt-valence",
       "destination": "/formation-chatgpt",
       "permanent": true
@@ -543,32 +538,7 @@
       "permanent": true
     },
     {
-      "source": "/formation-chatgpt-nantes",
-      "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
-      "source": "/formation-chatgpt-rennes",
-      "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
-      "source": "/formation-chatgpt-bordeaux",
-      "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
-      "source": "/formation-chatgpt-toulouse",
-      "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
       "source": "/formation-chatgpt-lille",
-      "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
-      "source": "/formation-chatgpt-strasbourg",
       "destination": "/formation-chatgpt",
       "permanent": true
     },
@@ -595,16 +565,6 @@
     {
       "source": "/formation-chatgpt-liege",
       "destination": "/formation-chatgpt",
-      "permanent": true
-    },
-    {
-      "source": "/formation-claude-ia-nantes",
-      "destination": "/formation-claude-ia",
-      "permanent": true
-    },
-    {
-      "source": "/formation-claude-ia-rennes",
-      "destination": "/formation-claude-ia",
       "permanent": true
     },
     {
