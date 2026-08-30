@@ -81,6 +81,9 @@ const FAQ = [
 ]
 
 const RELATED = [
+  { label: "Formation n8n", href: "/formation-n8n", tag: "Outil", desc: "Maîtriser l'orchestrateur auto-hébergeable : workflows, IA et agents, supervision." },
+  { label: "Formation Make", href: "/formation-make", tag: "Outil", desc: "Maîtriser Make (ex-Integromat) : scénarios visuels, modules, opérations, étapes IA." },
+  { label: "Formation Zapier", href: "/formation-zapier", tag: "Outil", desc: "Automatiser sans coder en une journée, et savoir quand passer à Make ou n8n." },
   { label: "Formation agents IA", href: "/formation-agents-ia", tag: "Formation", desc: "Concevoir, tester et superviser des agents qui enchaînent les étapes d'un processus, sans code." },
   { label: "Formation multi-outils IA", href: "/formation-multi-outils", tag: "Comparatif", desc: "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels." },
   { label: "Formation IA générative", href: "/formation-intelligence-artificielle-generative", tag: "Éditorial", desc: "Maîtriser les modèles qui produisent textes, images et analyses." },

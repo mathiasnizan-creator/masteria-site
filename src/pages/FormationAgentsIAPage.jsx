@@ -693,7 +693,7 @@ export default function FormationAgentsIAPage() {
           </div>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '24px 0 0', maxWidth: 880 }}>
-            Mistral a sa place quand c'est votre environnement : Vibe (anciennement Le Chat) porte projets et bibliothèques, et l'orchestrateur prend le relais pour les enchaînements. Le versant scénarios répétitifs est couvert par la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> ; et si vos développeurs veulent dépasser le sans-code, la <Link to="/formation-claude-code" style={aStyle}>formation Claude Code</Link> couvre les agents dans le code.
+            Mistral a sa place quand c'est votre environnement : Vibe (anciennement Le Chat) porte projets et bibliothèques, et l'orchestrateur prend le relais pour les enchaînements. Pour aller au fond de l'orchestrateur, la <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> y consacre 2 jours ; le versant scénarios répétitifs est couvert par la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> ; et si vos développeurs veulent dépasser le sans-code, la <Link to="/formation-claude-code" style={aStyle}>formation Claude Code</Link> couvre les agents dans le code.
           </p>
         </div>
       </section>

@@ -593,6 +593,9 @@ export default function MetiersHubPage() {
             {[
               { label: 'Formation agents IA', slug: 'formation-agents-ia', desc: "Concevoir, tester et superviser des agents sans code, sur vos outils." },
               { label: 'Formation automatisation IA', slug: 'formation-automatisation-ia', desc: "Automatiser les tâches répétitives : Make, Zapier, n8n, sous contrôle." },
+              { label: 'Formation n8n', slug: 'formation-n8n', desc: "L'orchestrateur auto-hébergeable : workflows, étapes IA et agents fiabilisés." },
+              { label: 'Formation Make', slug: 'formation-make', desc: "Les scénarios visuels (ex-Integromat) : modules, routeurs, IA, opérations maîtrisées." },
+              { label: 'Formation Zapier', slug: 'formation-zapier', desc: "La porte d'entrée sans code : des Zaps utiles et fiables en une journée." },
               { label: 'Formation prompt engineering', slug: 'formation-prompt-engineering', desc: "La méthode des prompts IA professionnels, valable sur tous les outils." },
               { label: 'Formation vibe coding', slug: 'formation-vibe-coding', desc: "Construire un outil ou un prototype en pilotant l'IA, sans être développeur." },
               { label: 'Formation Claude Code', slug: 'formation-claude-code', desc: "Les agents dans le code, pour les équipes de développement." },
