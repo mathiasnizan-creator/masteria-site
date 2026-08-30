@@ -439,7 +439,7 @@ export const CHATGPT_SPOKES = [
       { q: 'Comment optimiser pour les IA Search (Perplexity, ChatGPT Search) ?', a: "La formation couvre cette question : structure claire, sources citées, contenu factuellement irréprochable, llms.txt configuré. Les IA citent volontiers les sources de qualité — c'est un canal d'acquisition à part entière en 2026." },
       { q: 'Peut-on travailler sur nos vrais articles pendant la formation ?', a: "Oui, c'est la philosophie Masteria. Chaque exercice s'appuie sur vos vrais articles et stratégies. Vous repartez avec des livrables exploitables." },
     ],
-    relatedSpokes: ['formation-chatgpt-marketing', 'formation-chatgpt-communication', 'formation-claude-seo'],
+    relatedSpokes: ['formation-chatgpt-redaction', 'formation-chatgpt-marketing', 'formation-claude-seo'],
   },
 
   // ── ChatGPT × Service Client ────────────────────────────────────────────

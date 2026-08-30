@@ -117,7 +117,7 @@ while ((m = spokeRe.exec(src)) !== null) {
 
 // Pages formation transversales stratégiques : retirées du lot spokes (0.5)
 // et poussées à 0.7 (requêtes commerciales à fort volume).
-const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia'];
+const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia', 'formation-chatgpt-redaction'];
 for (const s of boostedSlugs) spokeSet.delete(s);
 
 // Pages géo : 2 outils × 5 villes = 10 pages outil×ville (stratégie ciblée)

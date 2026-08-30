@@ -2730,7 +2730,7 @@ const BASE_SPOKES = [
       { q: "Faut-il Microsoft Copilot ?", a: "Pas obligatoire. ChatGPT seul couvre 80 % des cas. Copilot ajoute la fluidité d'avoir l'IA directement dans Outlook, Word et Teams." },
       { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
     ],
-    relatedSpokes: ['formation-multi-outils-communication', 'formation-ia-creativite', 'formation-sprint-ia-prompts'],
+    relatedSpokes: ['formation-chatgpt-redaction', 'formation-multi-outils-communication', 'formation-ia-creativite'],
   },
 
   // ── Multi-outils × Plan compétences DRH (RH) ────────────────────────────
@@ -3121,6 +3121,65 @@ const BASE_SPOKES = [
       { q: 'Formation prompt IA et formation prompt engineering : est-ce la même chose ?', a: "Oui. « Prompt engineering » est le terme d'origine anglaise, « formation prompt IA » sa formulation française courante : dans les deux cas, il s'agit d'apprendre à concevoir des prompts qui produisent des résultats fiables et directement exploitables sur ChatGPT, Claude, Copilot, Gemini ou Mistral. Le programme couvre la méthode complète, de la structure d'un prompt professionnel à la bibliothèque de prompts partagée de l'équipe." },
     ],
     relatedSpokes: ['formation-claude-code', 'formation-vibe-coding', 'formation-chatgpt-marketing'],
+  },
+
+  // ── ChatGPT × Rédaction web & pro (2026-08-30) ───────────────────────────
+  // Cible : « formation chatgpt rédaction » (110/12) + « rédaction web »
+  // (110/11). Divergence : SEO → formation-chatgpt-seo ; écrits internes
+  // multi-outils → formation-ia-ecrits-pro ; campagnes → chatgpt-marketing.
+  {
+    slug: 'formation-chatgpt-redaction',
+    tool: 'ChatGPT',
+    toolSlug: 'chatgpt',
+    toolColor: '#10a37f',
+    toolColorLight: '#d1fae5',
+    metier: 'Rédaction & contenu',
+    metierSlug: 'communication',
+    hubSlug: 'formation-chatgpt',
+    priority: true,
+    duration: '1j',
+    datePublished: '2026-08-30',
+    updatedAt: '2026-08-30',
+    updatedLabel: 'Programme à jour · août 2026',
+    metaTitle: 'Formation ChatGPT rédaction web & pro | Masteria',
+    metaDesc: "Formation ChatGPT rédaction : articles, pages web, newsletters et écrits professionnels à votre ton, avec méthode et relecture. 1 jour pratique. Qualiopi, OPCO.",
+    h1: 'Formation ChatGPT rédaction : des contenus web et pro à votre ton, publiables',
+    intro: "Rédiger avec ChatGPT sans produire du texte générique : c'est tout l'objet de cette formation ChatGPT rédaction d'une journée. Vos équipes apprennent à encoder le ton de la maison, à mener un texte du brief à la version publiable (articles, pages web, newsletters, emails), à réécrire et décliner sans s'épuiser, et à relire ce qui part : véracité, style, originalité. Ateliers sur vos contenus réels ; la dimension référencement est couverte par la formation ChatGPT SEO, celle des campagnes par la formation ChatGPT marketing.",
+    audience: [
+      { title: 'Équipes communication & contenu', desc: "Vous produisez articles, pages, newsletters et supports : la journée installe une chaîne de production au ton de la marque, du brief à la version publiable, sans le style « IA » reconnaissable." },
+      { title: 'Marketing et community management', desc: "Vous déclinez un même message sur plusieurs canaux : la méthode de réécriture dirigée transforme un contenu source en variantes propres (post, email, page) en gardant le fond." },
+      { title: 'Fonctions support qui écrivent beaucoup', desc: "Assistanat, RH, direction : courriers sensibles, notes structurées, réponses délicates. Vous repartez avec des gabarits relus et une règle claire sur ce qui se relit à deux fois." },
+    ],
+    useCases: [
+      { icon: '🎯', title: 'Le ton encodé', desc: "La voix de la marque décrite une fois pour toutes : lexique, rythme, interdits, exemples maison, dans un projet partagé." },
+      { icon: '📝', title: "L'article du brief à la V1", desc: "Angle, plan, rédaction section par section, itération dirigée : un premier jet solide en une fraction du temps." },
+      { icon: '🔁', title: 'Réécrire et décliner', desc: "Un contenu source devient newsletter, post et page : mêmes faits, formats et longueurs adaptés, ton constant." },
+      { icon: '📚', title: 'La newsletter récurrente', desc: "Gabarit stable, rubriques alimentées, objet travaillé : la régularité sans la corvée." },
+      { icon: '💬', title: 'Les réponses délicates', desc: "Réclamation, refus, annonce sensible : des brouillons mesurés, à votre ton, toujours relus avant envoi." },
+      { icon: '📈', title: 'La page qui convertit', desc: "Structure, bénéfices, preuves, appel à l'action : la rédaction persuasive cadrée, sans promesses inventées." },
+    ],
+    modules: [
+      { day: 1, title: 'Module 1, Le ton de votre marque, encodé', duration: '1h45', description: "Faire écrire ChatGPT comme la maison, pas comme un modèle générique.", items: ["Décrire une voix : lexique, rythme, niveaux de langue, interdits", 'Les exemples maison comme référence : les extraits qui font foi', 'Instructions permanentes et projets partagés : encoder une fois, servir à tous', "Le test d'aveugle : distinguer un texte maison d'un texte générique"], exercise: "Chaque participant encode le ton de sa marque et le valide sur un texte réel comparé à l'original." },
+      { day: 1, title: 'Module 2, Du brief à la V1 : la méthode', duration: '1h45', description: 'Mener un contenu complet sans subir le premier jet.', items: ["Le brief qui produit : angle, cible, message, preuves, longueur", "Le plan d'abord : discuter la structure avant d'écrire", 'Rédaction section par section, avec itération dirigée', "Les tics d'écriture IA à traquer, et comment les éliminer"], exercise: 'Un article ou une page réelle menée du brief à la V1, sur un sujet apporté par le participant.' },
+      { day: 1, title: 'Module 3, Réécrire, raccourcir, décliner', duration: '1h45', description: 'La compétence quotidienne : transformer sans trahir.', items: ['Réécrire un texte existant : des consignes de transformation précises', 'Décliner un contenu source en formats courts (post, email, accroche)', 'Adapter le niveau : expert vers grand public, interne vers externe', 'Garder les faits : la déclinaison ne réinvente jamais le fond'], exercise: "Un contenu source décliné en trois formats publiables, faits vérifiés à l'identique." },
+      { day: 1, title: 'Module 4, Publiable : relecture, véracité, cadre', duration: '1h45', description: "Ce qui sépare un brouillon d'un contenu qui part.", items: ['La passe de véracité : chiffres, noms, affirmations sourcées ou retirées', 'Style et originalité : éviter le déjà-lu, assumer un point de vue', "Ce que dit Google des contenus assistés par IA : la qualité prime sur l'outil", "La règle d'équipe : qui relit, qui publie, ce qui se relit à deux fois"], exercise: 'Chaque participant fait passer sa V1 en version publiable avec la check-list complète, et repart avec elle.' },
+    ],
+    objectives: [
+      'Encoder le ton de la marque dans ChatGPT (instructions, projets, exemples de référence)',
+      'Mener un contenu du brief à la version publiable : plan, rédaction, itération dirigée',
+      'Réécrire et décliner un contenu source en plusieurs formats sans trahir le fond',
+      "Éliminer les tics d'écriture IA et tenir un style qui ne se repère pas",
+      "Appliquer la check-list de publication : véracité, originalité, relecture, règles d'équipe",
+    ],
+    faq: [
+      { q: 'Quelle différence avec la formation ChatGPT SEO ?', a: "La formation rédaction couvre l'écriture elle-même : ton, structure, qualité, déclinaisons, relecture. La formation ChatGPT SEO couvre le référencement : intentions de recherche, briefs SEO, optimisation des pages. Les deux se complètent naturellement pour une équipe contenu : beaucoup enchaînent rédaction puis SEO, ou l'inverse selon la priorité." },
+      { q: 'Quelle différence avec la formation aux écrits professionnels ?', a: "La formation écrits professionnels couvre les écrits internes du quotidien (emails, comptes rendus, notes) en multi-outils. Cette formation ChatGPT rédaction vise les contenus destinés à être publiés ou diffusés : articles, pages web, newsletters, réponses publiques, avec un travail approfondi sur le ton de marque et la check-list de publication. Le cadrage oriente vers la bonne journée selon ce que vos équipes écrivent le plus." },
+      { q: 'Les contenus rédigés avec ChatGPT sont-ils pénalisés par Google ?', a: "Google évalue la qualité et l'utilité d'un contenu, pas l'outil qui a servi à l'écrire : un texte assisté par IA, précis, original et utile peut très bien se positionner ; un texte générique et creux sera ignoré, qu'il soit humain ou non. C'est exactement ce que la formation travaille : ton propre, point de vue, faits vérifiés, valeur réelle. La position de Google est présentée en module 4, sans raccourci." },
+      { q: 'Comment éviter le style « IA » reconnaissable ?', a: "Par la méthode : un ton de marque encodé avec des exemples maison, des consignes qui interdisent les formules toutes faites, une passe de relecture qui traque les tics (superlatifs creux, structures répétitives, conclusions passe-partout), et l'affirmation d'un point de vue. Le test d'aveugle du module 1 sert de preuve : quand l'équipe ne distingue plus le texte assisté du texte maison, le ton est bien encodé." },
+      { q: "La méthode marche-t-elle avec un autre outil que ChatGPT ?", a: "Oui : le brief, le plan discuté, l'itération dirigée et la check-list de publication se transposent à Claude, Copilot, Gemini ou Mistral. La journée se tient sur ChatGPT parce que c'est l'outil le plus répandu dans les équipes contenu, et le cadrage peut basculer sur votre environnement réel. Le socle transverse est approfondi dans la formation prompt engineering." },
+      { q: 'Combien coûte la formation ChatGPT rédaction ?', a: "1 980 € HT la journée, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Certifiée Qualiopi, finançable par votre OPCO dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous et le devis arrive sous 24 h." },
+    ],
+    relatedSpokes: ['formation-chatgpt-seo', 'formation-ia-ecrits-pro', 'formation-prompt-engineering'],
   },
 
   // ── IA × Dirigeants ──────────────────────────────────────────────────────
