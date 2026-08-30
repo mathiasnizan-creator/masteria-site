@@ -166,7 +166,7 @@ const BUILD_STEPS = [
 /* ───────── Pourquoi Masteria ───────── */
 
 const WHY_MASTERIA = [
-  { icon: Target, title: "Spécialisés à 100 % sur l'IA", desc: "Masteria travaille sur l'intelligence artificielle depuis 2022, du conseil au développement. Les outils, les pièges et les raccourcis du sujet font notre quotidien." },
+  { icon: Target, title: "Spécialisés à 100 % sur l'IA", desc: "Masteria travaille sur l'intelligence artificielle depuis 2022, du conseil en automatisation IA au développement. Les outils, les pièges et les raccourcis du sujet font notre quotidien." },
   { icon: Cog, title: "De la conception à la production", desc: "Nous ne nous arrêtons pas au schéma : nous développons, intégrons via API et MCP, fiabilisons et déployons. Vous récupérez un système qui tourne, pas un prototype." },
   { icon: Key, title: "Vous restez propriétaire", desc: "Code, configurations et documentation vous appartiennent. Vos référents peuvent reprendre la main, et nous les formons en complément s'ils le souhaitent." },
   { icon: MapPin, title: 'Lyon, France entière, Suisse et Belgique', desc: "Basés à Lyon, nous intervenons sur site dans toute la France ainsi qu'en Suisse et en Belgique, et à distance pour le suivi." },

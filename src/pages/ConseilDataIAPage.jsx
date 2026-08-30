@@ -173,7 +173,7 @@ const WHY = [
 const FAQ = [
   {
     q: "Qu'est-ce que le conseil data & IA ?",
-    a: "Le conseil data & IA aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Il couvre l'audit du patrimoine de données, la gouvernance et la qualité, la préparation des données pour l'IA et leur exploitation (RAG, agents, analytics). Chez Masteria, ce conseil se prolonge par la mise en œuvre : nous préparons le socle data, puis développons les solutions IA qui s'appuient dessus.",
+    a: "Le conseil data & IA, ou conseil en données et IA, aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Il couvre l'audit du patrimoine de données, la gouvernance et la qualité, la préparation des données pour l'IA et leur exploitation (RAG, agents, analytics). Chez Masteria, ce conseil se prolonge par la mise en œuvre : nous préparons le socle data, puis développons les solutions IA qui s'appuient dessus.",
   },
   {
     q: "Pourquoi la qualité des données est-elle décisive pour l'IA ?",
@@ -410,7 +410,7 @@ export default function ConseilDataIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le conseil data & IA aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse reste une démonstration. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria cadre votre socle data, puis développe les solutions IA qui s'appuient dessus.</strong>
+            Le conseil data & IA, ou conseil en données et IA, aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse reste une démonstration. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria cadre votre socle data, puis développe les solutions IA qui s'appuient dessus.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>

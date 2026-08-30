@@ -487,7 +487,7 @@ export default function AccompagnementIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'accompagnement IA de Masteria couvre les quatre maillons d'une adoption réussie : <strong style={{ color: '#fff', fontWeight: 700 }}>cadrer les usages, choisir et déployer les outils, conduire le changement, mesurer l'adoption</strong>. Une présence dans la durée, avec un volet formation certifié Qualiopi et finançable par votre OPCO, jusqu'à ce que les usages tiennent sans nous.
+            L'accompagnement IA de Masteria est un conseil en transformation IA de bout en bout : il couvre les quatre maillons d'une adoption réussie,<strong style={{ color: '#fff', fontWeight: 700 }}>cadrer les usages, choisir et déployer les outils, conduire le changement, mesurer l'adoption</strong>. Une présence dans la durée, avec un volet formation certifié Qualiopi et finançable par votre OPCO, jusqu'à ce que les usages tiennent sans nous.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>

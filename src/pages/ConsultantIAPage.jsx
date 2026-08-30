@@ -99,7 +99,7 @@ const REFERENCES = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'un consultant IA ?",
-    a: "Un consultant IA (ou consultant en intelligence artificielle) accompagne les organisations sur l'usage de l'IA : il audite les usages et les données, cadre et priorise les cas d'usage, choisit les outils de façon indépendante, structure la gouvernance (RGPD, AI Act) et forme les équipes. Il peut exercer en indépendant, au sein d'un cabinet de conseil ou en interne. Son rôle n'est pas de coder un modèle, mais de faire en sorte que l'IA produise un résultat utile et adopté sur le terrain.",
+    a: "Un consultant IA (ou consultant en intelligence artificielle) accompagne les organisations sur l'usage de l'IA : il audite les usages et les données, cadre et priorise les cas d'usage, choisit les outils de façon indépendante, structure la gouvernance (RGPD, AI Act) et forme les équipes. Il peut exercer en indépendant, comme expert conseil IA au sein d'un cabinet, ou en interne. Son rôle n'est pas de coder un modèle, mais de faire en sorte que l'IA produise un résultat utile et adopté sur le terrain.",
   },
   {
     q: "Que fait un consultant en intelligence artificielle au quotidien ?",
