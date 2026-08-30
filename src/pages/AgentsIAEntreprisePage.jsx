@@ -414,7 +414,7 @@ const NEXT_STEPS = [
     to: '/agence-developpement-ia',
     tag: 'Sur mesure',
     title: 'Agence de développement IA',
-    desc: "Nous concevons, développons et intégrons vos agents et solutions IA de bout en bout, jusqu'à la production.",
+    desc: "Notre agence de création d'agents IA conçoit, développe et intègre vos agents et solutions de bout en bout, jusqu'à la production.",
   },
   {
     to: '/outils-ia-sur-mesure',

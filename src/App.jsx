@@ -1535,6 +1535,7 @@ export default function App() {
         <Route path="/agence-ia-paris" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-geneve" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-marseille" element={<AgenceGeoPage />} />
+        <Route path="/agence-ia-strasbourg" element={<AgenceGeoPage />} />
         {/* Cluster secteurs + solutions + offres (juin 2026) */}
         <Route path="/ia-secteurs" element={<SecteursHubPage />} />
         {SECTEUR_SLUGS.map(s => (

@@ -76,6 +76,7 @@ const staticRoutes = [
   { path: 'agence-ia-paris',                     prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-geneve',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-marseille',                 prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
+  { path: 'agence-ia-strasbourg',                prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'centre-formation-ia-entreprise',      prio: 0.7, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'contact',                             prio: 0.8, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'blog',                                prio: 0.8, freq: 'weekly',  files: ['src/pages/BlogListPage.jsx', 'src/data/blog-articles.js'] },

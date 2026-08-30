@@ -180,7 +180,7 @@ const WHY = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une agence SEO IA ?",
-    a: "Une agence SEO IA combine le référencement naturel et l'intelligence artificielle de deux façons. D'abord, elle utilise l'IA pour produire du contenu, des briefs et des audits techniques plus vite et à plus grande échelle : c'est le SEO augmenté par l'IA. Ensuite, elle optimise votre présence dans les réponses générées par les IA elles-mêmes (ChatGPT, Perplexity, Google AI Overviews, Gemini) : c'est le GEO, ou référencement génératif. Masteria couvre les deux, depuis l'angle d'un cabinet spécialisé sur l'IA.",
+    a: "Une agence SEO IA, ou agence de référencement IA, combine le référencement naturel et l'intelligence artificielle de deux façons. D'abord, elle utilise l'IA pour produire du contenu, des briefs et des audits techniques plus vite et à plus grande échelle : c'est le SEO augmenté par l'IA. Ensuite, elle optimise votre présence dans les réponses générées par les IA elles-mêmes (ChatGPT, Perplexity, Google AI Overviews, Gemini) : c'est le GEO, ou référencement génératif. Masteria couvre les deux, depuis l'angle d'un cabinet spécialisé sur l'IA.",
   },
   {
     q: "SEO et GEO : quelle est la différence ?",

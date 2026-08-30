@@ -62,6 +62,7 @@ Masteria propose deux activités complémentaires :
 - [Agence IA à Paris](https://www.master-ia.fr/agence-ia-paris) — Conseil et développement IA, interventions à Paris et en Île-de-France
 - [Agence IA à Genève](https://www.master-ia.fr/agence-ia-geneve) — Conseil et développement IA pour la Suisse romande
 - [Agence IA à Marseille](https://www.master-ia.fr/agence-ia-marseille) — Conseil et développement IA pour Marseille et la région PACA
+- [Agence IA à Strasbourg](https://www.master-ia.fr/agence-ia-strasbourg) — Conseil et développement IA pour l'Alsace et le bassin rhénan : bilingue FR-DE, banque mutualiste, industrie, affaires européennes (équipe Lyon, présentiel planifié + distanciel)
 
 ## Expertise par secteur (conseil & développement IA sur mesure)
 

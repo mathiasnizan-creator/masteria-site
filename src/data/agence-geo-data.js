@@ -250,6 +250,63 @@ export const AGENCE_GEO_CITIES = [
     ],
   },
   {
+    slug: 'agence-ia-strasbourg',
+    citySlug: 'strasbourg',
+    name: 'Strasbourg',
+    nameLoc: 'à Strasbourg',
+    region: 'Bas-Rhin',
+    regionLong: 'Alsace et bassin rhénan',
+    country: 'France',
+    countryCode: 'FR',
+    locale: 'fr-FR',
+    coordinates: { latitude: 48.5734, longitude: 7.7521 },
+    formationSlug: 'formation-ia-strasbourg',
+    metaDesc:
+      "Agence IA à Strasbourg : conseil et gouvernance, agents et outils sur mesure, automatisation, du bilingue FR-DE au réglementaire européen. Cadrage gratuit.",
+    heroSubtitle:
+      "Notre métier : aider les entreprises alsaciennes à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre système d'information, avec une attention particulière au travail bilingue français-allemand du bassin rhénan. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes.",
+    localEconomy:
+      "Strasbourg conjugue une place bancaire et assurantielle mutualiste de premier plan (le Crédit Mutuel y a son ancrage historique), la présence des institutions européennes (Parlement européen, Conseil de l'Europe) et de l'écosystème d'affaires publiques qui gravite autour, un tissu industriel et pharmaceutique dense de l'Eurométropole à Haguenau, et une économie profondément transfrontalière tournée vers l'Allemagne et la Suisse. Le couple français-allemand structure les documents, les contrats et la relation client d'une grande partie des entreprises du bassin.",
+    whyHere:
+      "Le premier gisement IA du bassin rhénan est le multilinguisme : documentation technique, contrats, correspondance et supports déclinés en français et en allemand se prêtent remarquablement aux agents et automatisations, avec des glossaires maison pour tenir la terminologie. S'y ajoutent la conformité et les processus documentaires du secteur bancaire mutualiste, et la veille réglementaire européenne que beaucoup d'acteurs locaux suivent à la source. Une agence IA aide à choisir où investir, dans quel ordre, puis à construire les outils plutôt qu'à se contenter d'une recommandation.",
+    presence:
+      "L'équipe Masteria est basée à Lyon (presqu'île). Nous intervenons à Strasbourg pour les phases clés (ateliers de cadrage, observation des processus, passation), en déplacements planifiés, et en distanciel pour le développement, les itérations et le suivi ; ce mode de travail est le quotidien de nos missions. Aucune agence physique à Strasbourg : nous travaillons depuis Lyon avec une présence terrain ponctuelle assumée, et les éventuels frais de déplacement figurent en clair dans la proposition.",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil IA, développement d'agents et d'outils, automatisation des processus sur mesure, bilingue FR-DE" },
+      { label: 'Présence à Strasbourg', value: 'Équipe basée à Lyon : présentiel planifié pour les phases clés, distanciel pour le développement' },
+      { label: 'Secteurs accompagnés', value: 'Banque et assurance mutualistes, industrie et pharma, affaires européennes, entreprises transfrontalières' },
+      { label: 'Premier échange', value: 'Cadrage gratuit, réponse sous 24 h, proposition forfaitaire écrite' },
+    ],
+    useCasesLocal: [
+      {
+        sector: 'Banque et assurance mutualistes',
+        usage: "Pour un acteur mutualiste du bassin, des automatisations de courriers et de synthèses de dossiers au ton de la maison, et des assistants internes cadrés par la conformité, avec validation humaine sur tout ce qui engage.",
+      },
+      {
+        sector: 'Industrie et pharma alsaciennes',
+        usage: "Pour un industriel de l'Eurométropole ou du Bas-Rhin, un agent qui tient la documentation technique bilingue français-allemand à partir des données produit, et des automatisations qualité et achats branchées sur l'existant.",
+      },
+      {
+        sector: 'Affaires européennes et services',
+        usage: "Pour un cabinet ou une organisation travaillant avec les institutions, une veille réglementaire synthétisée à la source, des notes structurées et des déclinaisons multilingues, livrées dans vos gabarits.",
+      },
+    ],
+    localFaq: [
+      {
+        q: 'Intervenez-vous sur site à Strasbourg ?',
+        a: "Oui, en déplacements planifiés : l'équipe est basée à Lyon et vient à Strasbourg pour les ateliers de cadrage, l'observation des processus sur le terrain et les passations ; le développement et le suivi se font en distanciel, comme sur la plupart de nos missions. Les éventuels frais de déplacement figurent en clair dans la proposition commerciale.",
+      },
+      {
+        q: "Gérez-vous le travail bilingue français-allemand des entreprises du bassin rhénan ?",
+        a: "Oui, et c'est souvent le premier gisement que nous outillons à Strasbourg : documentation technique, contrats, correspondance et supports déclinés dans les deux langues, avec des glossaires maison pour tenir la terminologie, et une relecture humaine systématique sur ce qui engage. Les agents et automatisations que nous construisons intègrent cette dimension dès la conception.",
+      },
+      {
+        q: "Proposez-vous aussi le référencement IA (SEO et GEO) à Strasbourg ?",
+        a: "Oui : notre offre d'agence SEO IA couvre le référencement naturel outillé par l'IA et la visibilité dans les moteurs de réponse (GEO), pour les entreprises strasbourgeoises comme pour le reste de la France. C'est une mission distincte du développement d'agents et d'automatisations, décrite sur sa page dédiée, et le cadrage gratuit permet de combiner les deux quand votre priorité est double.",
+      },
+    ],
+  },
+  {
     slug: 'agence-ia-marseille',
     citySlug: 'marseille',
     name: 'Marseille',
