@@ -600,6 +600,8 @@ export default function MetiersHubPage() {
               { label: 'Formation vibe coding', slug: 'formation-vibe-coding', desc: "Construire un outil ou un prototype en pilotant l'IA, sans être développeur." },
               { label: 'Formation Claude Code', slug: 'formation-claude-code', desc: "Les agents dans le code, pour les équipes de développement." },
               { label: 'Formation AI Act (IA Act)', slug: 'formation-ai-act', desc: "Le règlement européen : obligations réelles, littératie, plan de conformité." },
+              { label: 'Formation CSE & IA', slug: 'formation-cse-ia', desc: "Élus et directions au même niveau : consultation, grille d'instruction, avis motivé." },
+              { label: 'Formation data IA', slug: 'formation-data-ia', desc: "Analyser ses fichiers réels avec l'IA, vérifier ses chiffres, industrialiser le reporting." },
               { label: 'Formation gouvernance IA', slug: 'formation-gouvernance-ia', desc: "Cadre, charte d'usage et pilotage des usages IA de l'organisation." },
               { label: 'Formation IA générative', slug: 'formation-intelligence-artificielle-generative', desc: "Les fondamentaux des modèles génératifs, pour toutes les équipes." },
               { label: 'Formation IA COMEX', slug: 'formation-ia-comex', desc: "La session exécutive du comité de direction, en français ou en anglais." },

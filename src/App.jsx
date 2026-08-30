@@ -75,6 +75,8 @@ const FormationIAComexPage = lazy(() => import('./pages/FormationIAComexPage'));
 const FormationN8nPage = lazy(() => import('./pages/FormationN8nPage'));
 const FormationMakePage = lazy(() => import('./pages/FormationMakePage'));
 const FormationZapierPage = lazy(() => import('./pages/FormationZapierPage'));
+const FormationCseIaPage = lazy(() => import('./pages/FormationCseIaPage'));
+const FormationDataIaPage = lazy(() => import('./pages/FormationDataIaPage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
@@ -180,6 +182,8 @@ function FormationsScreen() {
               ['Vibe coding', '/formation-vibe-coding'],
               ['Claude Code', '/formation-claude-code'],
               ['AI Act', '/formation-ai-act'],
+              ['CSE & IA', '/formation-cse-ia'],
+              ['Data & IA', '/formation-data-ia'],
               ['IA COMEX', '/formation-ia-comex'],
               ['Dirigeants & CODIR', '/formation-ia-dirigeants'],
               ['IA en entreprise', '/formation-ia-entreprise'],
@@ -1579,6 +1583,8 @@ export default function App() {
         <Route path="/formation-n8n" element={<FormationN8nPage />} />
         <Route path="/formation-make" element={<FormationMakePage />} />
         <Route path="/formation-zapier" element={<FormationZapierPage />} />
+        <Route path="/formation-cse-ia" element={<FormationCseIaPage />} />
+        <Route path="/formation-data-ia" element={<FormationDataIaPage />} />
         {/* Pages par métier, routes explicites (React Router v7 ne supporte pas les params inline) */}
         {METIER_SLUGS.map(m => {
           const Page = METIER_PAGES[m]

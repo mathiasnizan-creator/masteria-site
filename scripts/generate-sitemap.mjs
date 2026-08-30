@@ -220,6 +220,8 @@ urls.push({ loc: `${SITE}/formation-ia-comex`, lastmod: gitLastMod(['src/pages/F
 urls.push({ loc: `${SITE}/formation-n8n`, lastmod: gitLastMod(['src/pages/FormationN8nPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-make`, lastmod: gitLastMod(['src/pages/FormationMakePage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-zapier`, lastmod: gitLastMod(['src/pages/FormationZapierPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/formation-cse-ia`, lastmod: gitLastMod(['src/pages/FormationCseIaPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/formation-data-ia`, lastmod: gitLastMod(['src/pages/FormationDataIaPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/prestataire-ia`, lastmod: gitLastMod(['src/pages/PrestataireIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/coaching-ia`, lastmod: gitLastMod(['src/pages/CoachingIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });

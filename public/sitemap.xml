@@ -313,6 +313,18 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/formation-cse-ia</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/formation-data-ia</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/prestataire-ia</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -734,13 +746,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-marketing</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-ressources-humaines</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -812,7 +824,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-gestion-de-projet</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -866,7 +878,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-tourisme</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
