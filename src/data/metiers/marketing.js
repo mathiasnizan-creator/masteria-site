@@ -4,7 +4,7 @@
 export default {
  "base": {
   "metaTitle": "Formation IA marketing : contenu, SEO, campagnes | Masteria",
-  "metaDesc": "Formation IA marketing sur vos campagnes réelles : contenu, SEO, réseaux sociaux, emailing, analyse. ChatGPT, Copilot, Claude, Gemini, Mistral. Qualiopi, finançable OPCO.",
+  "metaDesc": "Formation IA pour le marketing, sur vos campagnes réelles : contenu, SEO, réseaux sociaux, emailing, growth, analyse. ChatGPT, Claude, Copilot, Gemini. Qualiopi, OPCO.",
   "keywords": "formation ia marketing, formation intelligence artificielle marketing, formation ia générative marketing, formation ia pour équipe marketing, formation marketing digital ia",
   "h1": "Formation IA marketing : l'IA générative sur vos campagnes, du contenu à l'analyse",
   "h1a": "Formation IA marketing :",
@@ -288,6 +288,10 @@ export default {
   {
    "q": "Qui possède les contenus générés par l'IA ? Y a-t-il des risques juridiques ?",
    "a": "Le sujet est traité dans la formation parce qu'il conditionne l'usage. En droit français, une œuvre suppose un auteur humain : un contenu généré sans intervention créative n'est pas protégé par le droit d'auteur, ce qui a des conséquences sur vos visuels et vos textes. Les conditions d'utilisation des outils diffèrent aussi sur l'usage commercial. S'ajoutent le respect des marques tierces, le risque de reproduire une œuvre existante et l'obligation de transparence dans certains cas. Nous donnons les règles pratiques par type de contenu, sans faire de droit à la place de votre service juridique."
+  },
+  {
+   "q": "Peut-on orienter la journée vers le growth marketing et l'acquisition ?",
+   "a": "Oui : la formation IA growth hacking est une déclinaison fréquente du programme : idéation et priorisation d'expérimentations, pages et messages de test produits plus vite, analyse des résultats de campagnes, enrichissement et segmentation des fichiers, veille concurrentielle outillée. La méthode reste la même : vos canaux réels, vos données, un cadre écrit (respect du RGPD sur la prospection, pas de collecte sauvage), et des expérimentations dont la relecture humaine décide. Le cadrage bascule le programme vers l'acquisition quand c'est votre priorité."
   },
   {
    "q": "Quelle différence avec une formation ChatGPT ou Copilot pour le marketing ?",

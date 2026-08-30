@@ -4,7 +4,7 @@
 export default {
  "base": {
   "metaTitle": "Formation IA gestion de projet : cadrage, CR, reporting | Masteria",
-  "metaDesc": "Formation IA gestion de projet sur vos projets réels : cadrage, planning, comptes rendus, reporting, risques. ChatGPT, Copilot, Claude, Gemini, Mistral. Qualiopi, finançable OPCO.",
+  "metaDesc": "Formation IA gestion de projet, pour chefs de projet et PMO : cadrage, planning, comptes rendus, reporting, risques, sur vos projets réels. Qualiopi, finançable OPCO.",
   "keywords": "formation ia gestion de projet, formation ia chef de projet, formation intelligence artificielle gestion de projet, formation ia pmo, formation ia pilotage de projet",
   "h1": "Formation IA gestion de projet : l'IA générative du cadrage au reporting",
   "h1a": "Formation IA gestion de projet :",
@@ -288,6 +288,10 @@ export default {
   {
    "q": "L'IA peut-elle planifier ou estimer un projet à notre place ?",
    "a": "Non, et il faut le dire franchement. L'IA ne connaît ni votre organisation, ni vos équipes, ni vos contraintes réelles : elle produit un premier découpage cohérent et des estimations par analogie, utiles pour ne rien oublier et gagner du temps sur la structure, à condition de les challenger. La formation apprend à s'en servir ainsi : comme un assistant qui pose les bonnes questions et prépare le brouillon, jamais comme un oracle. La même prudence vaut pour les risques : l'IA aide à lister, le chef de projet hiérarchise."
+  },
+  {
+   "q": "Cette formation convient-elle aux chefs de projet ?",
+   "a": "C'est son public premier : la formation chef de projet IA s'adresse aux chefs de projet, PMO, directeurs de projet et responsables de portefeuille qui veulent outiller leur quotidien : cadrage, notes et comptes rendus, plannings, reporting, analyse de risques, préparation de comités. Elle convient aussi à ceux qui se retrouvent à piloter un projet d'intelligence artificielle sans être experts techniques : la journée donne le vocabulaire, les questions à poser aux équipes techniques et les réflexes de suivi. Aucun prérequis : la pratique de la gestion de projet suffit, quel que soit votre outil de pilotage."
   },
   {
    "q": "La formation couvre-t-elle les méthodes Agile ?",

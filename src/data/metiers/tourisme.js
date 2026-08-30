@@ -3,11 +3,11 @@
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
  "base": {
-  "metaTitle": "Formation IA tourisme : avis clients, fiches, multilingue | Masteria",
+  "metaTitle": "Formation IA tourisme & hôtellerie : avis, fiches | Masteria",
   "metaDesc": "Formation IA tourisme pour hôtels, campings, restaurants, offices de tourisme et agences : avis clients à votre ton, fiches plateformes, emails multilingues, réseaux sociaux. 1 jour en intra, Qualiopi, finançable OPCO.",
   "keywords": "formation ia tourisme, ia tourisme, formation ia hôtellerie, ia restauration, intelligence artificielle tourisme, ia hôtel, formation ia office de tourisme",
   "h1": "Formation IA tourisme : l'IA générative de l'avis client à la fiche, dans toutes vos langues",
-  "h1a": "Formation IA tourisme :",
+  "h1a": "Formation IA tourisme & hôtellerie :",
   "h1b": "l'IA générative de l'avis client à la fiche, dans toutes vos langues",
   "eyebrow": "Formation secteur · Tourisme, hôtellerie, restauration",
   "badge3": "Vos avis, fiches et emails réels · Multilingue vérifié",
@@ -248,6 +248,10 @@ export default {
   {
    "q": "Combien coûte la formation IA tourisme ?",
    "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : la journée représente 1 980 € HT, le format deux jours 3 960 € HT. Le cadrage préalable, les supports, les livrables (bibliothèque de prompts, gabarits de réponse, cadre d'usage) et le certificat de réalisation sont inclus ; en présentiel hors Lyon, les frais de déplacement s'ajoutent au réel. Nous établissons le devis sous 24 heures, dans les formes attendues par votre financeur. Pas d'éligibilité CPF."
+  },
+  {
+   "q": "Proposez-vous une formation IA dédiée à l'hôtellerie et à la restauration ?",
+   "a": "Oui, c'est le cœur de cette page : la formation IA hôtellerie et restauration travaille sur les écrits réels d'un hôtel ou d'un restaurant : réponses aux avis dans la langue du client, fiches des plateformes de réservation, emails de groupes, devis et confirmations, menus et supports multilingues, consignes d'accueil. Le format court permet de former une équipe de réception entre deux services, et la bibliothèque de prompts construite en session sert ensuite aux saisonniers qui arrivent. Les offices de tourisme, campings et prestataires d'activités suivent le même programme, ajusté à leurs documents au cadrage."
   },
   {
    "q": "Comment financer la formation pour un hôtel, un restaurant ou un office de tourisme ?",

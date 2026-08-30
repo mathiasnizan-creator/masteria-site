@@ -290,6 +290,10 @@ export default {
    "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes de la fonction RH. Une version d'une journée existe pour un périmètre resserré : recrutement seul, ou administration et développement RH. Un accompagnement individuel est possible pour un DRH ou un RRH seul sur sa fonction. Les journées pleines alternent apports courts et ateliers sur vos processus réels."
   },
   {
+   "q": "Peut-on centrer la formation sur l'IA et le recrutement ?",
+   "a": "Oui : la formation IA recrutement est l'angle le plus demandé par les équipes RH, et le cadrage peut y consacrer l'essentiel de la journée : rédaction d'offres structurées et relues contre les biais de formulation, sourcing outillé, trames d'entretien, synthèses après échange, réponses aux candidats à votre ton et dans des délais tenus. Le cadre est posé sans détour : le règlement européen sur l'IA encadre spécifiquement les usages RH qui évaluent des personnes (tri automatisé de candidatures, notation), et la non-discrimination reste votre responsabilité pleine. La règle enseignée est simple : l'IA prépare des documents et des synthèses, l'humain décide de chaque étape qui concerne une personne."
+  },
+  {
    "q": "Combien coûte une formation IA RH, et est-elle finançable ?",
    "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; en tant que RH vous connaissez le circuit, nous fournissons programme, convention et pièces, et le dépôt se fait avant le début. La formation n'est pas éligible au CPF. Devis sous 24 heures."
   }
