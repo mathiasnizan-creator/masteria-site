@@ -291,7 +291,7 @@ export default {
   },
   {
    "q": "Cette formation convient-elle aux chefs de projet ?",
-   "a": "C'est son public premier : la formation chef de projet IA s'adresse aux chefs de projet, PMO, directeurs de projet et responsables de portefeuille qui veulent outiller leur quotidien : cadrage, notes et comptes rendus, plannings, reporting, analyse de risques, préparation de comités. Elle convient aussi à ceux qui se retrouvent à piloter un projet d'intelligence artificielle sans être experts techniques : la journée donne le vocabulaire, les questions à poser aux équipes techniques et les réflexes de suivi. Aucun prérequis : la pratique de la gestion de projet suffit, quel que soit votre outil de pilotage."
+   "a": "C'est son public premier : la formation chef de projet IA s'adresse aux chefs de projet, PMO, directeurs de projet et responsables de portefeuille qui veulent outiller leur quotidien : cadrage, notes et comptes rendus, plannings, reporting, analyse de risques, préparation de comités. Elle répond aussi à la seconde lecture du terme, le chef de projet intelligence artificielle : celui qui se retrouve à piloter un projet d'IA sans être expert technique ; la journée donne le vocabulaire, les questions à poser aux équipes techniques et les réflexes de suivi. Aucun prérequis : la pratique de la gestion de projet suffit, quel que soit votre outil de pilotage."
   },
   {
    "q": "La formation couvre-t-elle les méthodes Agile ?",

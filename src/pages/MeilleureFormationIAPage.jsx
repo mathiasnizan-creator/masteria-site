@@ -348,7 +348,7 @@ export default function MeilleureFormationIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous trouverez ici les trois exigences non négociables, un panorama factuel des organismes du marché, les tarifs 2026 et une méthode pour trancher en une semaine. Les classements des « meilleures formations IA » publiés en ligne sont déclaratifs ou sponsorisés ; ce panorama situe les familles d'organismes par catégorie, sans les noter ni en classer aucune.
+            Vous trouverez ici les trois exigences non négociables, un panorama factuel des organismes du marché, les tarifs 2026 et une méthode pour trancher en une semaine. Les classements de « la meilleure formation intelligence artificielle » ou des « meilleures formations IA » publiés en ligne sont déclaratifs ou sponsorisés ; ce panorama situe les familles d'organismes par catégorie, sans les noter ni en classer aucune.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>

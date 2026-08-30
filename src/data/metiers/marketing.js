@@ -11,7 +11,7 @@ export default {
   "h1b": "l'IA générative sur vos campagnes, du contenu à l'analyse",
   "eyebrow": "Formation métier · Marketing",
   "badge3": "Sur vos campagnes et votre charte",
-  "geo": "La formation IA marketing de Masteria apprend à vos équipes à intégrer l'intelligence artificielle générative dans chaque mission du métier : contenu, SEO et GEO, réseaux sociaux, emailing, analyse, créativité, sur vos propres campagnes et à votre ton de marque. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
+  "geo": "La formation intelligence artificielle marketing de Masteria apprend à vos équipes à intégrer l'IA générative dans chaque mission du métier : contenu, SEO et GEO, réseaux sociaux, emailing, analyse, créativité, sur vos propres campagnes et à votre ton de marque. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
   "sub": "Le marketing est le métier où l'IA générative a le plus vite trouvé sa place, et celui où le générique se voit le plus. La formation ne se limite pas à « savoir prompter » : elle apprend à cadrer, produire, relire et mesurer, pour que la vitesse ne coûte ni la qualité ni la marque.",
   "intro": "La formation IA marketing de Masteria apprend à vos équipes à intégrer l'intelligence artificielle générative dans chaque mission du métier : contenu, SEO et GEO, réseaux sociaux, emailing, analyse, créativité, sur vos propres campagnes et à votre ton de marque. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO."
  },

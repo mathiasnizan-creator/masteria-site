@@ -186,7 +186,7 @@ const FIABILITE_TABLE = [
   {
     situation: "Très gros volumes et données temps réel",
     verdict: 'Outil data dédié',
-    detail: "Au-delà des fichiers de travail (des dizaines de milliers de lignes, des flux continus), les outils BI et data prennent le relais. La formation apprend à reconnaître cette frontière, notre conseil data prend la suite.",
+    detail: "Au-delà des fichiers de travail (des dizaines de milliers de lignes, des flux continus), les outils BI et big data prennent le relais. La formation apprend à reconnaître cette frontière, notre conseil data prend la suite.",
   },
   {
     situation: "Chiffres qui engagent : publication, client, décision",

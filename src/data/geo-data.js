@@ -371,7 +371,7 @@ export const GEO_CITIES = [
     // et « formation chatgpt nantes » (70/mois, KD 4).
     tools: ['claude-ia', 'chatgpt'],
     metaTitleOverride: 'Formation IA Nantes : formez vos équipes en intra | Masteria',
-    h1Override: "Formation IA à Nantes : vos équipes formées sur leurs cas réels, dans vos locaux",
+    h1Override: "Formation intelligence artificielle à Nantes : vos équipes formées sur leurs cas réels",
     metaDescOverride: "Formation IA à Nantes pour les entreprises : ChatGPT, Copilot, Claude, Gemini, Mistral, programmes par métier dans vos locaux ou à distance. Certifié Qualiopi, finançable OPCO.",
     name: 'Nantes',
     nameLoc: 'à Nantes',
@@ -389,7 +389,7 @@ export const GEO_CITIES = [
     intraOnly: true,
     sectors: "numérique et SaaS, industrie aéronautique et navale, agroalimentaire, tertiaire et santé",
     desc: "Première métropole du Grand Ouest, Nantes combine un écosystème numérique dense (l'un des premiers labels French Tech), une industrie aéronautique et navale structurante autour d'Airbus Atlantic et de Saint-Nazaire, de grandes coopératives agroalimentaires et un tertiaire en croissance autour d'Euronantes. Ce tissu d'ETI, de PME et de scale-up fait de la métropole nantaise un terrain naturel pour des formations IA par métier, du marketing à la production.",
-    introPitch: "La formation IA à Nantes se fait dans vos locaux, sur les cas réels de vos équipes : vos documents, vos processus, vos outils (ChatGPT, Copilot, Claude, Gemini ou Mistral selon votre environnement). Programmes par métier pour les équipes marketing, commerciales, RH, finance ou support, et journée socle commun pour embarquer tout le monde.",
+    introPitch: "La formation intelligence artificielle à Nantes se fait dans vos locaux, sur les cas réels de vos équipes : vos documents, vos processus, vos outils (ChatGPT, Copilot, Claude, Gemini ou Mistral selon votre environnement). Programmes par métier pour les équipes marketing, commerciales, RH, finance ou support, et journée socle commun pour embarquer tout le monde.",
     opco: "OPCO fréquents chez nos clients des Pays de la Loire : ATLAS (conseil, banque, assurance), OPCO 2i (industrie, métallurgie, navale), OCAPIAT et AKTO (agroalimentaire et services), Atlas et AFDAS pour le numérique et les médias selon les conventions. La prise en charge dépend de votre branche et de votre budget formation ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Nantes et toute la métropole : Saint-Herblain, Carquefou, Rezé, Orvault, Bouguenais, ainsi que Saint-Nazaire, Angers et La Roche-sur-Yon pour les sessions en région",
     industriesDeep: [
@@ -478,7 +478,7 @@ export const GEO_CITIES = [
     slug: 'lille',
     iaOnly: true,
     metaTitleOverride: 'Formation IA Lille : formez vos équipes en intra | Masteria',
-    h1Override: "Formation IA à Lille : vos équipes formées sur leurs cas réels, dans vos locaux",
+    h1Override: "Formation intelligence artificielle à Lille : vos équipes formées sur leurs cas réels",
     metaDescOverride: "Formation IA à Lille et dans la métropole : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, du retail à EuraTechnologies. Certifié Qualiopi, finançable OPCO.",
     name: 'Lille',
     nameLoc: 'à Lille',
@@ -693,7 +693,7 @@ export const GEO_CITIES = [
     // en tendance) et « formation chatgpt rennes » (90/mois, KD 6).
     tools: ['claude-ia', 'chatgpt'],
     metaTitleOverride: 'Formation IA Rennes : formez vos équipes en intra | Masteria',
-    h1Override: "Formation IA à Rennes : vos équipes formées sur leurs cas réels, dans vos locaux",
+    h1Override: "Formation intelligence artificielle à Rennes : vos équipes formées sur leurs cas réels",
     metaDescOverride: "Formation IA à Rennes et en Bretagne : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, du numérique à l'agroalimentaire. Certifié Qualiopi, finançable OPCO.",
     name: 'Rennes',
     nameLoc: 'à Rennes',
