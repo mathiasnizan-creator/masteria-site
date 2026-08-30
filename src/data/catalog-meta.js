@@ -60,7 +60,7 @@ export const HUBS = [
     color: '#d97706',
     colorLight: '#fef3c7',
     searchVolume: '~1 100 rech/mois',
-    metaTitle: "Formation Claude IA · Anthropic · Qualiopi · OPCO | Masteria",
+    metaTitle: "Formation Claude AI (Anthropic) · Qualiopi · OPCO | Masteria",
     metaDesc: "Formation Claude IA (Anthropic) : Opus 4.8, Sonnet 5, Skills, Projects, Code. 11 programmes métier, certifié Qualiopi, finançable OPCO.",
     h1: "Formation Claude IA pour entreprises",
     intro: "Claude (Anthropic) est devenu en 2026 la référence des IA pour les analyses longues, la rédaction nuancée et le code complexe. Avec sa fenêtre de 200 000 tokens (jusqu'à 1M en Enterprise), Claude Opus 4.8 et Claude Sonnet 5 ingèrent des rapports entiers, des contrats de 600 pages, des codebases complètes. Les fonctionnalités Projects (espaces persistants), Skills (compétences téléchargeables) et Artifacts (visualisations) en font l'outil de référence pour les équipes juridiques, financières, techniques et stratégiques. Nos formations Claude IA en 2 jours couvrent 11 métiers (marketing, RH, finance, juridique, code, etc.). Certifié Qualiopi, 100 % finançable OPCO. Que vous cherchiez une formation Claude AI pour découvrir l'outil ou pour structurer des usages déjà avancés, chaque session part de vos propres documents et de vos cas réels, sans prérequis technique. La formation se déroule en intra sur-mesure, en présentiel ou à distance, animée par un formateur praticien.",

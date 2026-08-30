@@ -367,6 +367,8 @@ export const GEO_CITIES = [
   {
     slug: 'nantes',
     iaOnly: true,
+    // Exception au gate iaOnly : « formation claude nantes » (170/mois, KD 9).
+    tools: ['claude-ia'],
     metaTitleOverride: 'Formation IA Nantes : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Nantes : vos équipes formées sur leurs cas réels, dans vos locaux",
     metaDescOverride: "Formation IA à Nantes pour les entreprises : ChatGPT, Copilot, Claude, Gemini, Mistral, programmes par métier dans vos locaux ou à distance. Certifié Qualiopi, finançable OPCO.",
@@ -682,6 +684,9 @@ export const GEO_CITIES = [
   {
     slug: 'rennes',
     iaOnly: true,
+    // Exception au gate iaOnly : « formation claude rennes » (140/mois, KD 1,
+    // en tendance) justifie la page outil×ville Claude, et elle seule.
+    tools: ['claude-ia'],
     metaTitleOverride: 'Formation IA Rennes : formez vos équipes en intra | Masteria',
     h1Override: "Formation IA à Rennes : vos équipes formées sur leurs cas réels, dans vos locaux",
     metaDescOverride: "Formation IA à Rennes et en Bretagne : ChatGPT, Copilot, Claude, Gemini, programmes par métier dans vos locaux, du numérique à l'agroalimentaire. Certifié Qualiopi, finançable OPCO.",
@@ -1046,7 +1051,7 @@ export function getAllGeoCombinations() {
   const combos = []
   for (const tool of GEO_TOOLS) {
     for (const city of GEO_CITIES) {
-      if (city.iaOnly) continue
+      if (city.iaOnly && !(city.tools || []).includes(tool.slug)) continue
       combos.push({ tool, city, slug: geoSlug(tool.slug, city.slug) })
     }
   }
