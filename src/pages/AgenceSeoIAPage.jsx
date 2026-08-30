@@ -210,6 +210,10 @@ const FAQ = [
     q: "Combien de temps pour voir des résultats en SEO IA ?",
     a: "Le SEO et le GEO sont des leviers de fond, pas des interrupteurs : les premiers effets sur la visibilité apparaissent généralement en quelques semaines pour la partie technique et les contenus à faible concurrence, et se consolident sur plusieurs mois pour les requêtes disputées. La visibilité dans les réponses des IA peut évoluer plus vite sur des sujets de niche bien traités. Nous mesurons le point de départ dès l'audit, puis suivons les positions, le trafic et les citations IA à intervalle régulier. Aucune agence sérieuse ne garantit un classement ni un délai ferme.",
   },
+  {
+    q: "Comment choisir parmi les agences SEO IA ?",
+    a: "Sur des critères vérifiables plutôt que sur les classements : les palmarès des « meilleures agences SEO IA » publiés en ligne sont déclaratifs ou sponsorisés. Une agence experte en IA et SEO se reconnaît à des choses concrètes : elle montre sa propre visibilité (positions et citations dans les moteurs de réponse), elle explique sa méthode sur vos pages plutôt qu'en généralités, elle écrit ce qu'elle ne garantit pas, et elle sait dire où finit le SEO et où commence le GEO. Que vous cherchiez une agence IA SEO pour un audit ponctuel ou un accompagnement continu, le cadrage gratuit permet de juger sur pièces.",
+  },
 ]
 
 /* ───────── JSON-LD ───────── */
