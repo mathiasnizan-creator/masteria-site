@@ -49,6 +49,8 @@ const staticRoutes = [
   { path: 'ia-responsable',                       prio: 0.75, freq: 'monthly', files: ['src/pages/IAResponsablePage.jsx'] },
   { path: 'ia-et-rgpd',                           prio: 0.75, freq: 'monthly', files: ['src/pages/IAEtRGPDPage.jsx'] },
   { path: 'prix-projet-ia',                       prio: 0.75, freq: 'monthly', files: ['src/pages/PrixProjetIAPage.jsx'] },
+  { path: 'roi-ia-entreprise',                    prio: 0.8, freq: 'monthly', files: ['src/pages/RoiIAEntreprisePage.jsx'] },
+  { path: 'calculateur-roi-ia',                   prio: 0.7, freq: 'monthly', files: ['src/pages/CalculateurRoiIAPage.jsx'] },
   { path: 'ia-generative-entreprise',            prio: 0.8, freq: 'monthly', files: ['src/pages/IAGenerativeEntreprisePage.jsx'] },
   { path: 'cas-usage-ia-entreprise',             prio: 0.7, freq: 'monthly', files: ['src/pages/CasUsageIAEntreprisePage.jsx'] },
   { path: 'automatisation-ia',                   prio: 0.85, freq: 'monthly', files: ['src/pages/AutomatisationIAGuidePage.jsx'] },

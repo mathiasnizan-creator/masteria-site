@@ -79,6 +79,8 @@ const FormationCseIaPage = lazy(() => import('./pages/FormationCseIaPage'));
 const FormationDataIaPage = lazy(() => import('./pages/FormationDataIaPage'));
 const MethodeProjetIAPage = lazy(() => import('./pages/MethodeProjetIAPage'));
 const PrixProjetIAPage = lazy(() => import('./pages/PrixProjetIAPage'));
+const RoiIAEntreprisePage = lazy(() => import('./pages/RoiIAEntreprisePage'));
+const CalculateurRoiIAPage = lazy(() => import('./pages/CalculateurRoiIAPage'));
 const GouvernanceIAPage = lazy(() => import('./pages/GouvernanceIAPage'));
 const CharteIAEntreprisePage = lazy(() => import('./pages/CharteIAEntreprisePage'));
 const IAResponsablePage = lazy(() => import('./pages/IAResponsablePage'));
@@ -1554,6 +1556,8 @@ export default function App() {
         <Route path="/coaching-ia" element={<CoachingIAPage />} />
         <Route path="/methode-projet-ia" element={<MethodeProjetIAPage />} />
         <Route path="/prix-projet-ia" element={<PrixProjetIAPage />} />
+        <Route path="/roi-ia-entreprise" element={<RoiIAEntreprisePage />} />
+        <Route path="/calculateur-roi-ia" element={<CalculateurRoiIAPage />} />
         <Route path="/gouvernance-ia" element={<GouvernanceIAPage />} />
         <Route path="/charte-ia-entreprise" element={<CharteIAEntreprisePage />} />
         <Route path="/ia-responsable" element={<IAResponsablePage />} />
