@@ -6,6 +6,7 @@ import {
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
   Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award, Database, Cpu, Boxes,
+  MessageSquare, Share2, Terminal, UserRound,
   Newspaper, Library, Info,
   HardHat, ClipboardList, Landmark, Home, Store, HeartPulse, Scale, Calculator, Umbrella, Hammer, Plane,
 } from 'lucide-react';
@@ -115,6 +116,25 @@ const METIERS_NAV = [
   { label: 'BTP & construction',      slug: 'formation-ia-btp' },
   { label: 'Tourisme & hôtellerie',   slug: 'formation-ia-tourisme' },
   { label: 'Multi-métier',            slug: 'formation-ia-transverse' },
+]
+
+// ── Formations transverses du menu (desktop + mobile), groupées ──
+const FORMATIONS_FORMATS = [
+  { label: 'Formation IA en entreprise',  path: '/formation-ia-entreprise', Icon: Building2 },
+  { label: 'Formation IA COMEX',          path: '/formation-ia-comex',      Icon: Briefcase },
+  { label: 'Formation CSE & IA',          path: '/formation-cse-ia',        Icon: Users },
+  { label: 'Acculturation IA',            path: '/acculturation-ia',        Icon: GraduationCap },
+  { label: 'Coaching IA individuel',      path: '/coaching-ia',             Icon: UserRound },
+]
+const FORMATIONS_THEMATIQUES = [
+  { label: 'Formation agents IA',           path: '/formation-agents-ia',          Icon: Bot },
+  { label: 'Formation automatisation IA',   path: '/formation-automatisation-ia',  Icon: Workflow },
+  { label: 'Formation n8n',                 path: '/formation-n8n',                Icon: Share2 },
+  { label: 'Formation prompt engineering',  path: '/formation-prompt-engineering', Icon: MessageSquare },
+  { label: 'Formation vibe coding',         path: '/formation-vibe-coding',        Icon: Code2 },
+  { label: 'Formation Claude Code',         path: '/formation-claude-code',        Icon: Terminal },
+  { label: 'Formation data IA',             path: '/formation-data-ia',            Icon: Database },
+  { label: 'Formation AI Act',              path: '/formation-ai-act',             Icon: Scale },
 ]
 
 // ── Données méga-menu "Conseil & Développement" ──
@@ -397,9 +417,9 @@ export function MasteriaHeader() {
                     </div>
                   </div>
 
-                  {/* COL 3 — Ateliers Sprint IA */}
+                  {/* COL 3 — Par format & public / Par thématique */}
                   <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Ateliers & thématiques</p>
+                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Par format & public</p>
                     <Link to="/formation-sprint-ia" onClick={() => setMenuOpen(false)}
                       style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', padding: '12px 14px', borderRadius: 10, background: 'linear-gradient(135deg, #FFF7ED 0%, #FED7AA 100%)', border: '1px solid #FDBA74', transition: 'transform 120ms' }}
                       onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
@@ -415,27 +435,27 @@ export function MasteriaHeader() {
                       <span style={{ fontSize: 16, color: '#9A3412', fontWeight: 700 }}>→</span>
                     </Link>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 10 }}>
-                      {[
-                        ['Formation IA en entreprise', '/formation-ia-entreprise'],
-                        ['Formation agents IA', '/formation-agents-ia'],
-                        ['Formation automatisation IA', '/formation-automatisation-ia'],
-                        ['Formation n8n', '/formation-n8n'],
-                        ['Formation prompt engineering', '/formation-prompt-engineering'],
-                        ['Formation vibe coding', '/formation-vibe-coding'],
-                        ['Formation Claude Code', '/formation-claude-code'],
-                        ['Formation AI Act', '/formation-ai-act'],
-                        ['Formation CSE & IA', '/formation-cse-ia'],
-                        ['Formation data IA', '/formation-data-ia'],
-                        ['Formation IA COMEX', '/formation-ia-comex'],
-                        ['Acculturation IA (entreprise)', '/acculturation-ia'],
-                        ['Coaching IA individuel', '/coaching-ia'],
-                      ].map(([l, path]) => (
+                      {FORMATIONS_FORMATS.map(({ label, path, Icon }) => (
                         <Link key={path} to={path} onClick={() => setMenuOpen(false)}
-                          style={{ textDecoration: 'none', borderRadius: 7, padding: '7px 10px', fontFamily: 'DM Sans, sans-serif', fontSize: 12.5, fontWeight: 600, color: '#374151', transition: 'background 120ms' }}
+                          style={{ textDecoration: 'none', borderRadius: 7, padding: '5px 8px', display: 'flex', alignItems: 'center', gap: 8, transition: 'background 120ms' }}
                           onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
                           onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                         >
-                          {l}
+                          <Icon size={13} color="#6B7280" strokeWidth={2} style={{ flexShrink: 0 }} />
+                          <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 500, color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                    <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 12px' }}>Par thématique</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                      {FORMATIONS_THEMATIQUES.map(({ label, path, Icon }) => (
+                        <Link key={path} to={path} onClick={() => setMenuOpen(false)}
+                          style={{ textDecoration: 'none', borderRadius: 7, padding: '5px 8px', display: 'flex', alignItems: 'center', gap: 8, transition: 'background 120ms' }}
+                          onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
+                          onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                        >
+                          <Icon size={13} color="#6B7280" strokeWidth={2} style={{ flexShrink: 0 }} />
+                          <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 500, color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{label}</span>
                         </Link>
                       ))}
                     </div>
@@ -710,23 +730,26 @@ export function MasteriaHeader() {
                 <span style={{ color: '#9A3412', fontWeight: 700 }}>→</span>
               </Link>
 
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Thématiques & formats</div>
-              {[
-                ['Formation IA en entreprise', '/formation-ia-entreprise'],
-                ['Formation agents IA', '/formation-agents-ia'],
-                ['Formation automatisation IA', '/formation-automatisation-ia'],
-                ['Formation n8n', '/formation-n8n'],
-                ['Formation prompt engineering', '/formation-prompt-engineering'],
-                ['Formation vibe coding', '/formation-vibe-coding'],
-                ['Formation Claude Code', '/formation-claude-code'],
-                ['Formation AI Act', '/formation-ai-act'],
-                ['Formation CSE & IA', '/formation-cse-ia'],
-                ['Formation data IA', '/formation-data-ia'],
-                ['Formation IA COMEX', '/formation-ia-comex'],
-                ['Acculturation IA', '/acculturation-ia'],
-                ['Coaching IA individuel', '/coaching-ia'],
-              ].map(([l, path]) => (
-                <Link key={path} to={path} style={{ display: 'block', padding: '9px 8px', textDecoration: 'none', fontSize: 14, color: '#374151', fontWeight: 500 }}>{l}</Link>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Par format & public</div>
+              {FORMATIONS_FORMATS.map(({ label, path, Icon }) => (
+                <Link key={path} to={path} style={{
+                  display: 'flex', alignItems: 'center', gap: 10, padding: '9px 8px',
+                  textDecoration: 'none',
+                }}>
+                  <Icon size={15} color="#6B7280" />
+                  <span style={{ fontSize: 14, color: '#374151', fontWeight: 500 }}>{label}</span>
+                </Link>
+              ))}
+
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Par thématique</div>
+              {FORMATIONS_THEMATIQUES.map(({ label, path, Icon }) => (
+                <Link key={path} to={path} style={{
+                  display: 'flex', alignItems: 'center', gap: 10, padding: '9px 8px',
+                  textDecoration: 'none',
+                }}>
+                  <Icon size={15} color="#6B7280" />
+                  <span style={{ fontSize: 14, color: '#374151', fontWeight: 500 }}>{label}</span>
+                </Link>
               ))}
 
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', margin: '16px 0 8px' }}>Par métier</div>
