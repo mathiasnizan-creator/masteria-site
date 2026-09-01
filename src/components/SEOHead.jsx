@@ -12,7 +12,7 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/logo-horizontal.png`
  * @param {string} description  — Meta description (≤160 chars recommandé)
  * @param {string} slug         — slug de la page (sans slash initial) — sert au canonical
  * @param {string} type         — og:type : 'website' | 'article' | 'profile'
- * @param {object} courseData   — { name, description, price, duration, audience } → JSON-LD Course
+ * @param {object} courseData   — { name, description, price, priceDescription, duration, audience } → JSON-LD Course
  * @param {array}  faqItems     — [{ q, a }] → JSON-LD FAQPage
  * @param {array}  breadcrumbs  — [{ name, slug }] → JSON-LD BreadcrumbList
  * @param {object} articleData  — { headline, author, datePublished, dateModified, image, tag } → JSON-LD Article
@@ -262,7 +262,7 @@ export default function SEOHead({
             price: courseData.price || '1980',
             priceCurrency: 'EUR',
             valueAddedTaxIncluded: false,
-            description: 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel sur mesure : 1 980 €/jour.',
+            description: courseData.priceDescription || 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel sur mesure : 1 980 €/jour.',
           },
           category: 'Formation professionnelle',
           availability: 'https://schema.org/InStock',

@@ -27,10 +27,15 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  *
  * INTÉGRITÉ : preuve = uniquement les faits publiés sur /etudes-de-cas-ia
  * (groupe industriel international du packaging : déploiement commencé par le
- * COMEX et les pilotes, ~30 personnes au premier palier). Tarif : grille
- * unique 1 980 € HT la session (3 h ou journée). Nuance financement honnête :
- * action de formation = finançable, conférence seule = budget de
- * fonctionnement. Entités Wikipédia vérifiées (curl 200) le 2026-08-28.
+ * COMEX et les pilotes, ~30 personnes au premier palier). Tarif exécutif
+ * (tranché le 2026-09-01) : 1 980 € HT la session de 3 h ou la demi-journée,
+ * 3 960 € HT la journée complète, pour l'ensemble du comité ; grille
+ * distincte de l'intra équipes (1 980 €/jour sur /formation-ia-entreprise et
+ * /formation-ia-dirigeants). Animation : Mathias Nizan OU un formateur senior
+ * du réseau (ne jamais promettre le fondateur systématiquement).
+ * Nuance financement honnête : action de formation = finançable, conférence
+ * seule = budget de fonctionnement. Entités Wikipédia vérifiées (curl 200)
+ * le 2026-08-28.
  */
 
 const SLUG = 'formation-ia-comex'
@@ -83,8 +88,8 @@ const EN_BREF = [
   { label: 'Pour qui', value: "Comités exécutifs, comités de direction et directions générales de PME, d'ETI et de groupes" },
   { label: 'Langue', value: "En français ou en anglais, pour les comités internationaux" },
   { label: 'Contenu', value: "État de l'art sans jargon (du modèle à l'agent), cas concrets de votre secteur, arbitrages et feuille de route" },
-  { label: 'Animation', value: "Mathias Nizan, fondateur de Masteria, anime lui-même les sessions de niveau COMEX" },
-  { label: 'Financement', value: "Les formats structurés en action de formation sont certifiés Qualiopi et finançables OPCO ; devis sous 24 h" },
+  { label: 'Animation', value: "Mathias Nizan, fondateur de Masteria, ou un formateur senior du réseau, choisi selon votre secteur et votre calendrier" },
+  { label: 'Tarif', value: "1 980 € HT la session de 3 h ou la demi-journée, 3 960 € HT la journée complète, pour l'ensemble du comité ; formats action de formation certifiés Qualiopi et finançables OPCO ; devis sous 24 h" },
 ]
 
 /* ───────── Sommaire ───────── */
@@ -213,7 +218,7 @@ const QUEL_PROGRAMME = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une formation IA COMEX ?",
-    a: "C'est une session exécutive conçue pour un comité de direction : en 3 heures à une journée, elle met tout le comité au même niveau sur ce que l'IA fait réellement (du modèle à l'agent), le confronte à des cas concrets de son secteur et débouche sur des arbitrages : données, outils, organisation, budget, feuille de route. Chez Masteria, elle est animée par le fondateur, en français ou en anglais, dans vos locaux ou hors site. Les formats structurés en action de formation sont certifiés Qualiopi.",
+    a: "C'est une session exécutive conçue pour un comité de direction : en 3 heures à une journée, elle met tout le comité au même niveau sur ce que l'IA fait réellement (du modèle à l'agent), le confronte à des cas concrets de son secteur et débouche sur des arbitrages : données, outils, organisation, budget, feuille de route. Chez Masteria, elle est animée par un formateur senior, en français ou en anglais, dans vos locaux ou hors site. Les formats structurés en action de formation sont certifiés Qualiopi.",
   },
   {
     q: 'Quelle différence avec la formation IA pour dirigeants ?',
@@ -236,6 +241,10 @@ const FAQ = [
     a: "Un relevé de décisions, la grille d'arbitrage remplie sur vos sujets (données, outils, organisation, budget), une première version du cadre d'usage et une feuille de route : chantiers prioritaires, équipes pilotes, calendrier. Sur les formats courts, la feuille de route reste à l'état d'orientations ; sur la journée complète, elle repart écrite.",
   },
   {
+    q: 'Combien coûte une formation IA COMEX ?',
+    a: "1 980 € HT pour la session de 3 h ou la demi-journée, 3 960 € HT pour la journée complète, dans les deux cas pour l'ensemble du comité (jusqu'à 12 participants), cadrage et préparation sur vos cas compris. Un programme étendu à 2 jours représente deux journées facturées. Le positionnement est exécutif : un intervenant senior, un contenu préparé sur votre secteur et une session qui débouche sur des décisions et une feuille de route.",
+  },
+  {
     q: 'Est-ce finançable par notre OPCO ?',
     a: "Les formats structurés en action de formation (objectifs pédagogiques, émargement, évaluation), typiquement la demi-journée et la journée, sont certifiés Qualiopi et finançables par votre OPCO dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous, la décision restant à votre opérateur. Une conférence courte sans dispositif d'évaluation relève en général du budget de fonctionnement, et nous vous le disons clairement au cadrage plutôt que de maquiller le format.",
   },
@@ -245,7 +254,7 @@ const FAQ = [
   },
   {
     q: 'Qui anime la session ?',
-    a: "Mathias Nizan, fondateur de Masteria, anime lui-même les sessions de niveau COMEX, en français ou en anglais. C'est un choix délibéré : à ce niveau, la valeur tient autant à la qualité du dialogue et des arbitrages qu'au contenu. Pour la suite du déploiement (acculturation des équipes, formations métier), interviennent Mathias et un réseau de formateurs indépendants, expérimentés et pédagogues.",
+    a: "Un formateur senior, choisi au cadrage selon votre secteur, la langue et le calendrier : Mathias Nizan, fondateur de Masteria, ou un formateur expérimenté de son réseau, des indépendants sélectionnés pour leur pratique réelle de l'IA en entreprise et leur aisance face à un comité de direction. À ce niveau, la valeur tient autant à la qualité du dialogue et des arbitrages qu'au contenu ; le profil de l'intervenant vous est présenté avant la session. Pour la suite du déploiement (acculturation des équipes, formations métier), le même réseau intervient.",
   },
   {
     q: 'Et après la session du comité, quelle suite ?',
@@ -257,7 +266,7 @@ const FAQ = [
 
 const COURSE_DATA = {
   name: 'Formation IA COMEX — Masteria',
-  description: "Formation IA pour comités exécutifs et comités de direction : état de l'art sans jargon (du modèle à l'agent), démonstrations en direct, cas concrets du secteur, arbitrages (données, outils, organisation, budget) et feuille de route. Session de 3 h, demi-journée ou journée complète, en français ou en anglais, animée par le fondateur de Masteria. Formats action de formation certifiés Qualiopi, finançables OPCO.",
+  description: "Formation IA pour comités exécutifs et comités de direction : état de l'art sans jargon (du modèle à l'agent), démonstrations en direct, cas concrets du secteur, arbitrages (données, outils, organisation, budget) et feuille de route. Session de 3 h, demi-journée ou journée complète, en français ou en anglais, animée par un formateur senior. 1 980 € HT la demi-journée, 3 960 € HT la journée complète, pour l'ensemble du comité. Formats action de formation certifiés Qualiopi, finançables OPCO.",
   level: 'Direction générale, comités exécutifs et comités de direction',
   teaches: [
     "Lire l'état de l'art réel de l'IA en entreprise, du modèle à l'agent, sans jargon",
@@ -272,6 +281,10 @@ const COURSE_DATA = {
   prerequisites: 'Aucun prérequis technique.',
   audience: 'Comités exécutifs, comités de direction, directions générales (PME, ETI, groupes)',
   locationName: 'Masteria — dans vos locaux ou hors site (France, Suisse, Belgique) ou distanciel',
+  /* Grille exécutive propre à cette page (≠ intra équipes) : prix d'entrée
+     porté par l'Offer, détail des deux formats dans la priceSpecification. */
+  price: '1980',
+  priceDescription: "Session exécutive pour l'ensemble du comité (jusqu'à 12 participants) : 1 980 € HT la session de 3 h ou la demi-journée, 3 960 € HT la journée complète.",
 }
 
 /* Le déroulé en ItemList (séquence citable — GEO). */
@@ -299,7 +312,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-28',
-  dateModified: '2026-08-28',
+  dateModified: '2026-09-01',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-comex#webpage' },
   /* Entités liées à Wikipédia (sameAs) : désambiguïsation pour les moteurs
@@ -385,7 +398,7 @@ export default function FormationIAComexPage() {
         courseData={COURSE_DATA}
         faqItems={FAQ}
         datePublished="2026-08-28"
-        dateModified="2026-08-28"
+        dateModified="2026-09-01"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[derouleJsonLd, articleJsonLd, termsJsonLd]}
@@ -427,7 +440,7 @@ export default function FormationIAComexPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA COMEX est une session exécutive conçue pour un comité de direction : en 3 heures à une journée, elle met tout le comité au même niveau sur ce que l'IA fait réellement, du modèle à l'agent, puis débouche sur des arbitrages concrets : données, outils, organisation, feuille de route. <strong style={{ color: '#fff', fontWeight: 700 }}>Animée par le fondateur de Masteria, en français ou en anglais</strong>, dans vos locaux ou hors site.
+            Une formation IA COMEX est une session exécutive conçue pour un comité de direction : en 3 heures à une journée, elle met tout le comité au même niveau sur ce que l'IA fait réellement, du modèle à l'agent, puis débouche sur des arbitrages concrets : données, outils, organisation, feuille de route. <strong style={{ color: '#fff', fontWeight: 700 }}>Animée par un formateur senior, en français ou en anglais</strong>, dans vos locaux ou hors site.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -644,15 +657,15 @@ export default function FormationIAComexPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT la session, pour l'ensemble du comité
+                1 980 € HT la demi-journée, 3 960 € HT la journée complète
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La grille est la même que pour toutes nos interventions : 1 980 € HT la session, qu'il s'agisse du format court de 3 h ou de la journée complète, pour l'ensemble du comité (jusqu'à 12 participants) ; un programme étendu à 2 jours représente deux sessions facturées. Les formats structurés en action de formation (objectifs, émargement, évaluation) sont certifiés Qualiopi et finançables par votre OPCO dans le cadre du plan de développement des compétences ; une conférence seule relève en général du budget de fonctionnement, et nous vous le disons au cadrage. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Le tarif couvre l'ensemble du comité (jusqu'à 12 participants), le cadrage préalable et la préparation sur vos cas : 1 980 € HT pour la session de 3 h ou la demi-journée, 3 960 € HT pour la journée complète, qui va jusqu'à la feuille de route écrite ; un programme étendu à 2 jours représente deux journées facturées. Les formats structurés en action de formation (objectifs, émargement, évaluation) sont certifiés Qualiopi et finançables par votre OPCO dans le cadre du plan de développement des compétences ; une conférence seule relève en général du budget de fonctionnement, et nous vous le disons au cadrage. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  "1 980 € HT la session (3 h à 1 journée), pour le comité entier",
-                  'En français ou en anglais, dans vos locaux ou hors site',
+                  "1 980 € HT la session de 3 h ou la demi-journée, pour le comité entier",
+                  '3 960 € HT la journée complète, jusqu\'à la feuille de route écrite',
                   'Qualiopi : formats formation finançables OPCO, dossier préparé ensemble',
                   'Devis sous 24 h après un cadrage gratuit avec la direction générale',
                 ].map(pt => (
@@ -674,10 +687,10 @@ export default function FormationIAComexPage() {
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
               <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui anime</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Le fondateur en salle, et des déploiements de groupe derrière
+                Un formateur senior en salle, et des déploiements de groupe derrière
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Les sessions COMEX sont animées par Mathias Nizan, fondateur de Masteria, en français ou en anglais. C'est le format que nous pratiquons en mission : chez un groupe industriel international du packaging, le déploiement IA a commencé par le comité exécutif et les pilotes, une trentaine de personnes au premier palier, avant les vagues managers et équipes. La démarche est détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> complète le tableau.
+                Les sessions COMEX sont animées en français ou en anglais par Mathias Nizan, fondateur de Masteria, ou par un formateur senior de son réseau, choisi pour votre secteur. C'est le format que nous pratiquons en mission : chez un groupe industriel international du packaging, le déploiement IA a commencé par le comité exécutif et les pilotes, une trentaine de personnes au premier palier, avant les vagues managers et équipes. La démarche est détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> complète le tableau.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
