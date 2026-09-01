@@ -127,6 +127,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/roi-ia-entreprise</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/ia-generative-entreprise</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -206,13 +212,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-lyon</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -236,7 +242,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-lyon</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -344,7 +350,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -386,37 +392,43 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-annecy</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-paris</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-geneve</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-marseille</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-strasbourg</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-strategie-ia</loc>
     <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/calculateur-roi-ia</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -440,7 +452,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -452,91 +464,91 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-paris</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-marseille</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-geneve</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-bruxelles</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-nantes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-nice</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-lille</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-bordeaux</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-toulouse</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-strasbourg</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-rennes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-grenoble</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-annecy</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-aix-en-provence</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-nimes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -746,7 +758,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.70</priority>
   </url>
@@ -902,109 +914,109 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-paris</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-lyon</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-marseille</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-geneve</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-bruxelles</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-paris</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-lyon</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-marseille</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-geneve</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-bruxelles</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-rennes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-nantes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-rennes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-nantes</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-nice</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-bordeaux</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-toulouse</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-strasbourg</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -1016,7 +1028,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/publications</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
   </url>
@@ -1747,6 +1759,18 @@
     <priority>0.50</priority>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-01</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-31</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-08-28</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -1886,9 +1910,21 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/publications</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-09-01</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-08-31</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-08-28</loc>

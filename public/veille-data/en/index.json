@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-28",
-    "totalEditions": 9,
-    "totalItems": 124,
-    "totalSources": 170
+    "derniereDate": "2026-09-01",
+    "totalEditions": 11,
+    "totalItems": 152,
+    "totalSources": 201
   },
   "editions": [
+    {
+      "date": "2026-09-01",
+      "dateAffichee": "1 September 2026",
+      "dateCourte": "Tue 1 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "The European Commission ranks ChatGPT among its most closely watched services under the DSA, the first generative AI targeted, OpenAI moves some of its large customers to performance-based billing, Anthropic signs $35 billion in compute with Lambda ahead of its IPO, and Nvidia invests $3.5 billion in MediaTek to stay indispensable",
+      "nbItems": 14,
+      "nbSources": 17,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-08-31",
+      "dateAffichee": "31 August 2026",
+      "dateCourte": "Mon 31 Aug",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Sony Music and Warner sue Anthropic for \\\"one of the largest thefts of intellectual property in history\\\" on the eve of its stock market listing, Bill Gates calls for taxing machines, Google rolls out its AI answers by default at the expense of the blue links, and Caterpillar applies thirty years of mining automation to AI",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-08-28",
       "dateAffichee": "28 August 2026",

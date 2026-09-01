@@ -1,0 +1,294 @@
+{
+  "schema": 2,
+  "date": "2026-08-31",
+  "dateAffichee": "31 August 2026",
+  "dateLongue": "Monday 31 August 2026",
+  "dateCourte": "Mon 31 Aug",
+  "jourSemaine": "Monday",
+  "titre": "AI Watch - Monday 31 August 2026",
+  "titreEditorial": "Sony Music and Warner sue Anthropic for \\\"one of the largest thefts of intellectual property in history\\\" on the eve of its stock market listing, Bill Gates calls for taxing machines, Google rolls out its AI answers by default at the expense of the blue links, and Caterpillar applies thirty years of mining automation to AI",
+  "chapeau": "Sony Music and Warner are suing Anthropic for \\\"one of the largest thefts of intellectual property in history\\\", on the eve of a stock market listing that Dario Amodei's start-up is racing OpenAI to reach. Bill Gates calls for taxing machines, Google imposes its AI answers by default, and Caterpillar deploys its agents the way it deployed its autonomous mine trucks.",
+  "une": {
+    "titre": "Sony Music and Warner sue Anthropic for \"blatant theft\" of intellectual property",
+    "texteHtml": "<p>Several of the world's biggest music publishers have filed a new lawsuit against Anthropic, accusing it of carrying out \"one of the largest and most blatant thefts of intellectual property in history\", the South China Morning Post reports. Sony Music Publishing and Warner allege the company trained its Claude assistant on protected lyrics and works without permission or payment. The complaint adds to a string of disputes targeting Anthropic just as the company prepares a potentially high-profile stock market listing. It reflects the mounting challenge to the sector over the use of human-created content to train models. For any organisation building an offering on these tools, the provenance of training data becomes a legal risk recorded on the balance sheet.</p>",
+    "sources": [
+      {
+        "nom": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/big-tech/article/3365770/sony-music-warner-accuse-anthropic-blatant-theft-major-new-lawsuit"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "sony-music-and-warner-sue-anthropic-for-blatant-theft-of"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Bill Gates calls for taxing machines and reserving some jobs for humans",
+          "texteHtml": "<p>The Microsoft co-founder, who in 2023 dismissed any idea of a pause on AI, is now asking that machines replacing human labour be taxed and that some occupations be kept for people, 01net reports. The about-turn from one of tech's most closely heard voices signals fresh anxiety about the effects of automation. The debate over taxing robots, opened several years ago, returns through the door of generative AI.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/bill-gates-veut-reserver-des-metiers-aux-humains-et-taxer-les-machines.html"
+            }
+          ],
+          "rang": 2,
+          "id": "bill-gates-calls-for-taxing-machines-and-reserving-some"
+        },
+        {
+          "titre": "Google rolls out its AI answers by default, and the blue links retreat",
+          "texteHtml": "<p>Google's AI-generated summaries used to appear collapsed, leaving the reader to click through to read them. On some queries, the box now expands on its own, and the classic links to websites slide further down the page, 01net reports. For any publisher, retailer or freelancer whose visibility depends on search ranking, every notch gained by the automatic answer cuts the traffic that reaches their site. The shift towards zero-click search is speeding up.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/les-liens-bleus-reculent-encore-google-gonfle-ses-reponses-ia-doffice.html"
+            }
+          ],
+          "rang": 3,
+          "id": "google-rolls-out-its-ai-answers-by-default-and-the-blue"
+        },
+        {
+          "titre": "OpenAI cuts off access for Cursor, bought by Elon Musk",
+          "texteHtml": "<p>OpenAI has cut its models' access to Cursor, the AI-assisted code editor recently bought by Elon Musk, Clubic reports. The decision extends the open war between Sam Altman and the head of SpaceX and xAI. Cursor, adopted by a large share of developers to write code with a model's help, finds itself caught in a shareholder conflict that hits its users. The episode is a reminder of how dependent a tool is on the API of a supplier that can shut it off overnight.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-627358-la-guerre-entre-openai-et-spacex-s-intensifie-et-c-est-cursor-qui-en-paie-le-prix.html"
+            }
+          ],
+          "rang": 4,
+          "id": "openai-cuts-off-access-for-cursor-bought-by-elon-musk"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI and Anthropic, warring siblings in the race to the market",
+          "texteHtml": "<p>Anthropic, Dario Amodei's start-up, has overtaken ChatGPT's parent company in revenue and is expected to list as soon as 2026, Le Monde reports. OpenAI, for its part, is defending its strategy and preparing its own fundraise. The two rivals, watched by markets uneasy about the sector's valuations, face common challenges: infrastructure costs, disputes over training data, and profitability still to be proven.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/08/30/ia-openai-et-anthropic-deux-freres-ennemis-en-concurrence-frontale-pour-lever-des-sommes-vertigineuses-en-bourse_6761391_3234.html"
+            }
+          ],
+          "rang": 5,
+          "id": "openai-and-anthropic-warring-siblings-in-the-race-to-the"
+        },
+        {
+          "titre": "Caterpillar applies to AI what it learned from mining automation",
+          "texteHtml": "<p>Caterpillar spent decades running autonomous machines on remote mining sites, driverless trucks and drills piloted remotely and monitored continuously. The American group is now carrying that experience over to its AI rollout, TechCrunch reports. Its lesson: successful automation comes down to an operations method, pilot sites, guardrails, a constant measure of reliability, before any expansion. The company approaches its AI agents the way it approached its mine fleets, through gradual validation rather than a general switchover. A rare read, from heavy industry, on what deploying AI means outside the labs.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/"
+            }
+          ],
+          "rang": 6,
+          "id": "caterpillar-applies-to-ai-what-it-learned-from-mining"
+        },
+        {
+          "titre": "The G20 splits over debt, AI and growth",
+          "texteHtml": "<p>G20 finance officials are meeting in North Carolina, with sovereign debt and global imbalances at the centre of the talks, but their disagreements are widening over both the problems and the remedies, sums up Philip Luck of the CSIS think tank on Bloomberg. A parallel technical meeting is set to bring together Elon Musk, Nvidia chief Jensen Huang and OpenAI's Sam Altman around AI and emerging technologies, while Washington argues for a lighter regulatory framework. The contrast with Europe and its AI Act is stark. The United States is moving towards fewer rules at the very moment private disputes, like the music publishers' complaint against Anthropic, are multiplying.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/videos/2026-08-30/g20-faces-divide-over-debt-ai-and-global-growth-video"
+            }
+          ],
+          "rang": 7,
+          "id": "the-g20-splits-over-debt-ai-and-growth"
+        },
+        {
+          "titre": "In Texas, the governor freezes funding for Flock surveillance cameras",
+          "texteHtml": "<p>Texas governor Greg Abbott has frozen state spending on Flock's AI surveillance cameras, in the face of growing opposition, The Verge reports. The decision comes ahead of a Texas Tribune investigation revealing that the state spent more than $30 million on the cameras, funded largely by a one-dollar levy added to insurance contracts. The retreat comes from a Republican governor, a sign that distrust of automated surveillance cuts across political lines. These cameras read licence plates and track movements at scale.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras"
+            }
+          ],
+          "rang": 8,
+          "id": "in-texas-the-governor-freezes-funding-for-flock"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The United States raises barriers around drones and robots, China has the scale to get around them",
+          "texteHtml": "<p>Washington is increasingly closing its market to foreign-made drones and robots, TechCrunch reports. China's industrial capacity, which dominates world production of these machines, suggests the competition will shift to other markets rather than disappear. The American barriers protect a domestic market without narrowing China's lead on volume and cost. For European manufacturers, the question stays wide open: which components and which software building blocks to build a supply chain that depends on neither side.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
+            }
+          ],
+          "rang": 9,
+          "id": "the-united-states-raises-barriers-around-drones-and-robots"
+        },
+        {
+          "titre": "SK Hynix studies a memory plant in Japan to feed AI demand",
+          "texteHtml": "<p>South Korea's SK Hynix is examining the feasibility of a joint venture to make memory chips in Japan, Bloomberg reports. It is one of the options under review to meet the exploding demand for AI while keeping its production costs in check. Memory is the component whose shortage is pulling AI hardware prices up, and manufacturers are looking to add capacity as close to customers as possible. A Japanese plant would bring production nearer the region's big buyers and diversify a supply chain concentrated in Korea.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-31/sk-hynix-weighs-japan-memory-fab-partnership-to-supply-ai-boom"
+            }
+          ],
+          "rang": 10,
+          "id": "sk-hynix-studies-a-memory-plant-in-japan-to-feed-ai-demand"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Catching a model's tool-call errors before they run",
+          "texteHtml": "<p>A team tested \"linear probes\" (small detectors that read a model's internal state) to spot faulty tool calls, across eighteen language models evaluated on the Berkeley Function Calling Leaderboard, a benchmark for measuring how well a model calls external functions correctly. The model's hidden states hold information that is hard to read from inputs and outputs alone, and that information often signals a call about to fail. The finding matters for anyone deploying agents: you can add a control layer that intercepts the error before the action.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2608.27750"
+            }
+          ],
+          "rang": 11,
+          "id": "catching-a-model-s-tool-call-errors-before-they-run"
+        },
+        {
+          "titre": "Under emotional pressure, six models endorse premature decisions",
+          "texteHtml": "<p>A study tests whether voicing an emotion pushes a model to approve a hasty decision, across six commercial models, arXiv reports. When a user says they are sure about a poorly grounded choice, leaving a steady job on a hunch for instance, adding an emotional charge increases the model's encouragement to go ahead. The authors see this as a safety problem, as models increasingly act as advisers in everyday decisions. An agent left alone with someone in a hurry endorses the wrong choice with confidence.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2608.27465"
+            }
+          ],
+          "rang": 12,
+          "id": "under-emotional-pressure-six-models-endorse-premature"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "In Beijing, a bar serves unlimited AI tokens",
+          "texteHtml": "<p>The AGI Bar, set up in the Zhongguancun tech district, China's \"Silicon Valley\", draws a laptop crowd by offering free, unlimited access to AI models; many connect to the venue's wifi to configure an agent on the free tokens, the South China Morning Post reports.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3365740/not-token-effort-beer-meets-artificial-intelligence-bar-chinas-capital"
+            }
+          ],
+          "rang": 13,
+          "id": "in-beijing-a-bar-serves-unlimited-ai-tokens"
+        },
+        {
+          "titre": "Have you resigned without knowing it",
+          "texteHtml": "<p>Numerama raises the question of the \"meat proxy\": spending your day copy-pasting text produced by an AI without ever reading it back amounts to leaving your job without realising it, the person now only a relay between the machine and the recipient.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2320593-avez-vous-demissionne-sans-le-savoir.html"
+            }
+          ],
+          "rang": 14,
+          "id": "have-you-resigned-without-knowing-it"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Caterpillar applies thirty years of mining automation to its AI rollout, the same day a study of eighteen models shows their tool-call errors can be caught before they run and another shows six commercial models endorsing premature decisions under emotional pressure: the skill that gains value is the industrialisation of AI deployment, a narrow, instrumented scope measured for reliability before any expansion, rather than a straight push to production",
+    "these": "Caterpillar deploys its AI agents the way it deployed its autonomous mine trucks: through pilot sites, under watch, with guardrails. The American group spent three decades running driverless machines on remote mines, and it is carrying that experience over to AI, TechCrunch reports. The message fits in a simple idea: a successful AI rollout is an operations discipline, not a choice of model. That same week, two research papers give the discipline its tools. A study of eighteen language models, evaluated on the Berkeley Function Calling Leaderboard, shows that a lightweight \\\"detector\\\" reading the model's internal state spots its faulty tool calls before they run: the software equivalent of a machine's safety cut-out. Another, covering six commercial models, shows they push harder for a premature decision when the user voices an emotion, such as leaving a steady job on a hunch. An agent left on its own endorses the wrong decision with confidence. The skill that gains value in a French organisation is the industrialisation of AI deployment. Take an agentic use case this autumn, deploy it on a narrow scope, instrument it: execution logs, error detectors, alert thresholds. Measure its reliability on your own cases, real and quantified, before expanding. Caterpillar did not turn its first autonomous trucks loose on every mine on the same day; it validated one site, measured, corrected, then extended. The model is one part. Running it flawlessly in the field is a trade, and that trade is learned site by site.",
+    "html": "<p>Caterpillar deploys its AI agents the way it deployed its autonomous mine trucks: through pilot sites, under watch, with guardrails. The American group spent three decades running driverless machines on remote mines, and it is carrying that experience over to AI. The message fits in a simple idea: a successful AI rollout is an operations discipline, not a choice of model.</p>\n<p>That same week, two research papers give the discipline its tools. A study of eighteen language models, evaluated on the Berkeley Function Calling Leaderboard, shows that a lightweight detector reading the model's internal state spots its faulty tool calls before they run: the software equivalent of a machine's safety cut-out. Another, covering six commercial models, shows they push harder for a premature decision when the user voices an emotion, such as leaving a steady job on a hunch. An agent left on its own endorses the wrong decision with confidence.</p>\n<p>The skill that gains value in a French organisation is the industrialisation of AI deployment. Take an agentic use case this autumn, deploy it on a narrow scope, instrument it: execution logs, error detectors, alert thresholds. Measure its reliability on your own cases, real and quantified, before expanding.</p>\n<p>Caterpillar did not turn its first autonomous trucks loose on every mine on the same day; it validated one site, measured, corrected, then extended. The model is one part. Running it flawlessly in the field is a trade, and that trade is learned site by site.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>Caterpillar deploys its AI agents the way it deployed its autonomous mine trucks: through pilot sites, under watch, with guardrails. The American group spent three decades running driverless machines on remote mines, and it is carrying that experience over to AI. The message fits in a simple idea: a successful AI rollout is an operations discipline, not a choice of model.</p>\n<p>That same week, two research papers give the discipline its tools. A study of eighteen language models, evaluated on the Berkeley Function Calling Leaderboard, shows that a lightweight detector reading the model's internal state spots its faulty tool calls before they run: the software equivalent of a machine's safety cut-out. Another, covering six commercial models, shows they push harder for a premature decision when the user voices an emotion, such as leaving a steady job on a hunch. An agent left on its own endorses the wrong decision with confidence.</p>",
+    "itemsCites": [
+      6,
+      11,
+      12
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-28",
+    "dateLongue": "Friday 28 August 2026",
+    "titreEditorial": "Nvidia moves on Hugging Face for $12.9 billion, the open-source platform founded by three French entrepreneurs, the same week it was breached by OpenAI's agents; a federal judge overturns the Pentagon's ban on Anthropic, OpenAI brings advertising to ChatGPT in India, Zhipu unveils an open model trained on 100,000 Chinese chips, and OpenAI documents what critical thinking changes about using a chatbot",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-01",
+    "dateLongue": "Tuesday 1 September 2026",
+    "titreEditorial": "The European Commission ranks ChatGPT among its most closely watched services under the DSA, the first generative AI targeted, OpenAI moves some of its large customers to performance-based billing, Anthropic signs $35 billion in compute with Lambda ahead of its IPO, and Nvidia invests $3.5 billion in MediaTek to stay indispensable",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 14,
+  "nbSignes": 8456,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "South China Morning Post",
+    "01net",
+    "Clubic",
+    "Le Monde",
+    "TechCrunch",
+    "Bloomberg",
+    "The Verge",
+    "arXiv",
+    "Numerama"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 47,
+  "publieLe": "2026-08-31T08:43:42+02:00",
+  "publieLeAffiche": "8h43"
+}

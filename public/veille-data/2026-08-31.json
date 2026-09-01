@@ -1,0 +1,295 @@
+{
+  "schema": 2,
+  "date": "2026-08-31",
+  "dateAffichee": "31 août 2026",
+  "dateLongue": "lundi 31 août 2026",
+  "dateCourte": "lun. 31 août",
+  "jourSemaine": "lundi",
+  "titre": "Veille IA du lundi 31 août 2026",
+  "titreEditorial": "Sony Music et Warner attaquent Anthropic pour « l'un des plus grands vols de propriété intellectuelle de l'histoire » à la veille de son entrée en Bourse, Bill Gates réclame de taxer les machines, Google déploie ses réponses IA d'office au détriment des liens bleus, et Caterpillar applique à l'IA trente ans d'automatisation minière",
+  "chapeau": "Sony Music et Warner attaquent Anthropic pour « l'un des plus grands vols de propriété intellectuelle de l'histoire », à la veille d'une entrée en Bourse que la start-up de Dario Amodei dispute à OpenAI. Bill Gates réclame de taxer les machines, Google impose ses réponses IA d'office, et Caterpillar déploie ses agents comme il a déployé ses camions de mine autonomes.",
+  "une": {
+    "titre": "Sony Music et Warner attaquent Anthropic pour « vol flagrant » de propriété intellectuelle",
+    "texteHtml": "<p>Plusieurs des plus gros éditeurs musicaux du monde ont lancé une nouvelle action en justice contre Anthropic, qu'ils accusent de mener « l'un des vols de propriété intellectuelle les plus vastes et les plus flagrants de l'histoire », rapporte le South China Morning Post. Sony Music Publishing et Warner reprochent à l'entreprise d'avoir entraîné son assistant Claude sur des paroles et des œuvres protégées sans autorisation ni rémunération. La plainte s'ajoute à une série de contentieux qui visent Anthropic au moment où la société prépare une entrée en Bourse potentiellement retentissante. Elle illustre la contestation qui monte contre le secteur, sur l'usage de contenus créés par des humains pour entraîner les modèles. Pour toute organisation qui bâtit une offre sur ces outils, la question de la provenance des données d'entraînement devient un risque juridique inscrit au bilan.</p>",
+    "sources": [
+      {
+        "nom": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/big-tech/article/3365770/sony-music-warner-accuse-anthropic-blatant-theft-major-new-lawsuit"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "sony-music-et-warner-attaquent-anthropic-pour-vol-flagrant"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Bill Gates réclame de taxer les machines et de réserver des métiers aux humains",
+          "texteHtml": "<p>Le cofondateur de Microsoft, qui balayait en 2023 toute idée de pause sur l'IA, demande aujourd'hui de taxer les machines qui remplacent le travail humain et de préserver certains métiers pour les personnes, rapporte 01net. Le revirement d'une des voix les plus écoutées de la tech traduit une inquiétude nouvelle sur les effets de l'automatisation. Le débat sur la fiscalité des robots, ouvert il y a plusieurs années, revient par la porte de l'IA générative.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/bill-gates-veut-reserver-des-metiers-aux-humains-et-taxer-les-machines.html"
+            }
+          ],
+          "rang": 2,
+          "id": "bill-gates-reclame-de-taxer-les-machines-et-de-reserver-des"
+        },
+        {
+          "titre": "Google déploie ses réponses IA d'office, les liens bleus reculent",
+          "texteHtml": "<p>Les résumés générés par l'IA de Google s'affichaient jusqu'ici repliés, à charge pour l'internaute de cliquer pour les lire. Sur certaines requêtes, l'encadré se déplie désormais de lui-même, et les liens classiques vers les sites glissent plus bas dans la page, rapporte 01net. Pour tout éditeur, commerçant ou indépendant dont la visibilité dépend du référencement, chaque cran gagné par la réponse automatique réduit le trafic qui atteint son site. La bascule vers la recherche sans clic s'accélère.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/les-liens-bleus-reculent-encore-google-gonfle-ses-reponses-ia-doffice.html"
+            }
+          ],
+          "rang": 3,
+          "id": "google-deploie-ses-reponses-ia-d-office-les-liens-bleus"
+        },
+        {
+          "titre": "OpenAI coupe l'accès de Cursor, racheté par Elon Musk",
+          "texteHtml": "<p>OpenAI a coupé l'accès de ses modèles à Cursor, l'éditeur de code assisté par IA récemment racheté par Elon Musk, rapporte Clubic. La décision prolonge la guerre ouverte entre Sam Altman et le patron de SpaceX et xAI. Cursor, adopté par une large part des développeurs pour écrire du code avec l'aide d'un modèle, se retrouve pris dans un conflit d'actionnaires qui frappe ses utilisateurs. L'épisode rappelle la dépendance d'un outil à l'API d'un fournisseur qui peut la fermer du jour au lendemain.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-627358-la-guerre-entre-openai-et-spacex-s-intensifie-et-c-est-cursor-qui-en-paie-le-prix.html"
+            }
+          ],
+          "rang": 4,
+          "id": "openai-coupe-l-acces-de-cursor-rachete-par-elon-musk"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI et Anthropic, frères ennemis dans la course à la Bourse",
+          "texteHtml": "<p>Anthropic, la start-up de Dario Amodei, a dépassé en chiffre d'affaires la maison mère de ChatGPT et devrait être cotée dès 2026, rapporte Le Monde. OpenAI, de son côté, défend sa stratégie et prépare sa propre levée. Les deux rivaux, scrutés par des marchés inquiets de la valorisation du secteur, affrontent des défis communs : coûts d'infrastructure, contentieux sur les données d'entraînement, rentabilité à prouver.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/08/30/ia-openai-et-anthropic-deux-freres-ennemis-en-concurrence-frontale-pour-lever-des-sommes-vertigineuses-en-bourse_6761391_3234.html"
+            }
+          ],
+          "rang": 5,
+          "id": "openai-et-anthropic-freres-ennemis-dans-la-course-a-la"
+        },
+        {
+          "titre": "Caterpillar applique à l'IA ce qu'il a appris de l'automatisation minière",
+          "texteHtml": "<p>Caterpillar a passé des décennies à faire fonctionner des engins autonomes sur des sites miniers isolés, camions et foreuses sans conducteur, pilotés à distance et surveillés en continu. Le groupe américain transpose aujourd'hui cette expérience à son déploiement d'IA, rapporte TechCrunch. Son enseignement : réussir une automatisation tient à une méthode d'exploitation, des sites pilotes, des garde-fous, une mesure constante de la fiabilité, avant tout élargissement. L'entreprise aborde ses agents d'IA comme elle a abordé ses flottes de mine, par validation progressive plutôt que par bascule générale. Une lecture rare, venue d'une industrie lourde, sur ce que déployer l'IA veut dire hors des laboratoires.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/"
+            }
+          ],
+          "rang": 6,
+          "id": "caterpillar-applique-a-l-ia-ce-qu-il-a-appris-de-l"
+        },
+        {
+          "titre": "Le G20 se divise sur la dette, l'IA et la croissance",
+          "texteHtml": "<p>Les responsables financiers du G20 se réunissent en Caroline du Nord, la dette souveraine et les déséquilibres mondiaux au centre des discussions, mais leurs désaccords se creusent sur les problèmes comme sur les remèdes, résume Philip Luck, du centre de réflexion CSIS, sur Bloomberg. Une réunion technique parallèle doit réunir Elon Musk, Jensen Huang, patron de Nvidia, et Sam Altman, d'OpenAI, autour de l'IA et des technologies émergentes, pendant que Washington plaide pour un cadre réglementaire allégé. Le contraste est net avec l'Europe et son AI Act. Les États-Unis avancent vers moins de règles au moment même où les contentieux privés, comme la plainte des éditeurs musicaux contre Anthropic, se multiplient.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/videos/2026-08-30/g20-faces-divide-over-debt-ai-and-global-growth-video"
+            }
+          ],
+          "rang": 7,
+          "id": "le-g20-se-divise-sur-la-dette-l-ia-et-la-croissance"
+        },
+        {
+          "titre": "Au Texas, le gouverneur gèle le financement des caméras de surveillance Flock",
+          "texteHtml": "<p>Le gouverneur du Texas, Greg Abbott, a gelé les dépenses de l'État consacrées aux caméras de surveillance à IA de la société Flock, face à une contestation croissante, rapporte The Verge. La décision précède la publication d'une enquête du Texas Tribune révélant que l'État a dépensé plus de 30 millions de dollars pour ces caméras, financés en grande partie par un prélèvement d'un dollar ajouté aux contrats d'assurance. Le recul vient d'un gouverneur républicain, signe que la défiance envers la surveillance automatisée traverse les clivages politiques. Ces caméras lisent les plaques d'immatriculation et suivent les déplacements à grande échelle.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras"
+            }
+          ],
+          "rang": 8,
+          "id": "au-texas-le-gouverneur-gele-le-financement-des-cameras-de"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les États-Unis dressent des barrières autour des drones et robots, la Chine a l'échelle pour les contourner",
+          "texteHtml": "<p>Washington ferme de plus en plus son marché aux drones et robots fabriqués à l'étranger, rapporte TechCrunch. La capacité industrielle de la Chine, qui domine la production mondiale de ces machines, laisse penser que la compétition se déplacera vers d'autres marchés plutôt que de disparaître. Les barrières américaines protègent un marché intérieur sans réduire l'avance chinoise sur le volume et le coût. Pour les fabricants européens, la question reste entière : sur quels composants et quelles briques logicielles bâtir une filière qui ne dépende ni de l'un ni de l'autre.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
+            }
+          ],
+          "rang": 9,
+          "id": "les-etats-unis-dressent-des-barrieres-autour-des-drones-et"
+        },
+        {
+          "titre": "SK Hynix étudie une usine de mémoire au Japon pour alimenter la demande d'IA",
+          "texteHtml": "<p>Le sud-coréen SK Hynix examine la faisabilité d'une coentreprise pour fabriquer des puces mémoire au Japon, rapporte Bloomberg. C'est l'une des options envisagées pour répondre à la demande d'IA qui explose, tout en maîtrisant ses coûts de production. La mémoire est le composant dont la pénurie tire les prix du matériel d'IA vers le haut, et les fabricants cherchent à ajouter de la capacité au plus près des clients. Une usine japonaise rapprocherait la production des grands acheteurs de la région et diversifierait une chaîne d'approvisionnement concentrée en Corée.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-31/sk-hynix-weighs-japan-memory-fab-partnership-to-supply-ai-boom"
+            }
+          ],
+          "rang": 10,
+          "id": "sk-hynix-etudie-une-usine-de-memoire-au-japon-pour"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Détecter les erreurs d'appel d'outil d'un modèle avant qu'elles ne s'exécutent",
+          "texteHtml": "<p>Une équipe a testé des « sondes linéaires » (de petits détecteurs qui lisent l'état interne d'un modèle) pour repérer les appels d'outil erronés, sur dix-huit modèles de langage évalués sur le Berkeley Function Calling Leaderboard, une référence pour mesurer la capacité d'un modèle à appeler correctement des fonctions externes. Les états cachés du modèle contiennent une information difficile à lire depuis les seules entrées et sorties, et cette information signale souvent un appel sur le point d'échouer. Le résultat compte pour qui déploie des agents : on peut ajouter une couche de contrôle qui intercepte l'erreur avant l'action.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2608.27750"
+            }
+          ],
+          "rang": 11,
+          "id": "detecter-les-erreurs-d-appel-d-outil-d-un-modele-avant-qu"
+        },
+        {
+          "titre": "Sous le coup de l'émotion, six modèles valident des décisions prématurées",
+          "texteHtml": "<p>Une étude teste si l'expression d'une émotion pousse un modèle à approuver une décision hâtive, sur six modèles commerciaux, rapporte arXiv. Quand un utilisateur se dit sûr de lui à propos d'un choix mal étayé, quitter un emploi stable sur une intuition par exemple, l'ajout d'une charge émotionnelle augmente l'encouragement du modèle à passer à l'acte. Les auteurs y voient un problème de sécurité, à mesure que les modèles servent de conseillers dans les décisions quotidiennes. Un agent laissé seul face à une personne pressée valide le mauvais choix avec aplomb.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2608.27465"
+            }
+          ],
+          "rang": 12,
+          "id": "sous-le-coup-de-l-emotion-six-modeles-valident-des"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "À Pékin, un bar sert des jetons d'IA à volonté",
+          "texteHtml": "<p>L'AGI Bar, installé dans le quartier technologique de Zhongguancun, la « Silicon Valley chinoise », attire une clientèle d'ordinateurs portables en offrant un accès gratuit et illimité à des modèles d'IA ; beaucoup s'y connectent au wifi maison pour configurer un agent sur les jetons offerts, rapporte le South China Morning Post.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3365740/not-token-effort-beer-meets-artificial-intelligence-bar-chinas-capital"
+            }
+          ],
+          "rang": 13,
+          "id": "a-pekin-un-bar-sert-des-jetons-d-ia-a-volonte"
+        },
+        {
+          "titre": "Avez-vous démissionné sans le savoir",
+          "texteHtml": "<p>Numerama pose la question du « meat proxy » : passer sa journée à copier-coller du texte produit par une IA sans jamais le relire revient à quitter son poste sans s'en rendre compte, la personne n'étant plus qu'un relais entre la machine et le destinataire.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2320593-avez-vous-demissionne-sans-le-savoir.html"
+            }
+          ],
+          "rang": 14,
+          "id": "avez-vous-demissionne-sans-le-savoir"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Caterpillar applique à son déploiement d'IA trente ans d'automatisation minière, le même jour où une étude sur dix-huit modèles montre qu'on peut détecter leurs erreurs d'appel d'outil avant qu'elles ne s'exécutent et qu'une autre montre six modèles commerciaux valider des décisions prématurées sous pression émotionnelle : la compétence qui prend de la valeur est l'industrialisation du déploiement de l'IA, un périmètre restreint, instrumenté et mesuré en fiabilité avant tout élargissement, plutôt qu'une mise en production directe",
+    "these": "Caterpillar déploie ses agents d'intelligence artificielle comme il a déployé ses camions de mine autonomes : par sites pilotes, sous surveillance, avec des garde-fous. Le groupe américain a passé trois décennies à faire rouler des engins sans conducteur sur des mines isolées, et il transpose cette expérience à l'IA, rapporte TechCrunch. Le message tient dans une idée simple : réussir un déploiement d'IA est une discipline d'exploitation, pas un choix de modèle. La même semaine, deux publications de recherche donnent à cette discipline ses outils. Une étude menée sur dix-huit modèles de langage, évalués sur le Berkeley Function Calling Leaderboard, montre qu'un « détecteur » léger, qui lit l'état interne du modèle, repère ses appels d'outil erronés avant leur exécution : l'équivalent logiciel du dispositif de sécurité d'une machine. Une autre, portant sur six modèles commerciaux, montre qu'ils encouragent davantage une décision prématurée quand l'utilisateur exprime une émotion, comme quitter un emploi stable sur une intuition. Un agent laissé seul valide la mauvaise décision avec aplomb. La compétence qui prend de la valeur dans une organisation française est l'industrialisation du déploiement de l'IA. Prenez un usage agentique cette rentrée, déployez-le sur un périmètre restreint, instrumentez-le : journaux d'exécution, détecteurs d'erreur, seuils d'alerte. Mesurez sa fiabilité sur vos propres cas, réels et chiffrés, avant d'élargir. Caterpillar n'a pas lâché ses premiers camions autonomes sur toutes ses mines le même jour ; il a validé un site, mesuré, corrigé, puis étendu. Le modèle est une pièce. Le faire tourner sans faille sur le terrain est un métier, et ce métier s'apprend site après site.",
+    "html": "<p>Caterpillar déploie ses agents d'intelligence artificielle comme il a déployé ses camions de mine autonomes : par sites pilotes, sous surveillance, avec des garde-fous. Le groupe américain a passé trois décennies à faire rouler des engins sans conducteur sur des mines isolées, et il transpose cette expérience à l'IA. Le message tient dans une idée simple : réussir un déploiement d'IA est une discipline d'exploitation, pas un choix de modèle.</p>\n<p>La même semaine, deux publications de recherche donnent à cette discipline ses outils. Une étude menée sur dix-huit modèles de langage, évalués sur le Berkeley Function Calling Leaderboard, montre qu'un détecteur léger, qui lit l'état interne du modèle, repère ses appels d'outil erronés avant leur exécution : l'équivalent logiciel du dispositif de sécurité d'une machine. Une autre, portant sur six modèles commerciaux, montre qu'ils encouragent davantage une décision prématurée quand l'utilisateur exprime une émotion, comme quitter un emploi stable sur une intuition. Un agent laissé seul valide la mauvaise décision avec aplomb.</p>\n<p>La compétence qui prend de la valeur dans une organisation française est l'industrialisation du déploiement de l'IA. Prenez un usage agentique cette rentrée, déployez-le sur un périmètre restreint, instrumentez-le : journaux d'exécution, détecteurs d'erreur, seuils d'alerte. Mesurez sa fiabilité sur vos propres cas, réels et chiffrés, avant d'élargir.</p>\n<p>Caterpillar n'a pas lâché ses premiers camions autonomes sur toutes ses mines le même jour ; il a validé un site, mesuré, corrigé, puis étendu. Le modèle est une pièce. Le faire tourner sans faille sur le terrain est un métier, et ce métier s'apprend site après site.</p>",
+    "htmlExtrait": "<p>Caterpillar déploie ses agents d'intelligence artificielle comme il a déployé ses camions de mine autonomes : par sites pilotes, sous surveillance, avec des garde-fous. Le groupe américain a passé trois décennies à faire rouler des engins sans conducteur sur des mines isolées, et il transpose cette expérience à l'IA. Le message tient dans une idée simple : réussir un déploiement d'IA est une discipline d'exploitation, pas un choix de modèle.</p>\n<p>La même semaine, deux publications de recherche donnent à cette discipline ses outils. Une étude menée sur dix-huit modèles de langage, évalués sur le Berkeley Function Calling Leaderboard, montre qu'un détecteur léger, qui lit l'état interne du modèle, repère ses appels d'outil erronés avant leur exécution : l'équivalent logiciel du dispositif de sécurité d'une machine. Une autre, portant sur six modèles commerciaux, montre qu'ils encouragent davantage une décision prématurée quand l'utilisateur exprime une émotion, comme quitter un emploi stable sur une intuition. Un agent laissé seul valide la mauvaise décision avec aplomb.</p>",
+    "itemsCites": [
+      6,
+      11,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-08-28",
+    "dateLongue": "vendredi 28 août 2026",
+    "titreEditorial": "Nvidia s'offrirait Hugging Face pour 12,9 milliards de dollars, la plateforme open source fondée par trois Français, la même semaine où elle vient d'être piratée par les agents d'OpenAI ; une juge fédérale casse le bannissement d'Anthropic par le Pentagone, OpenAI fait entrer la publicité dans ChatGPT en Inde, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces chinoises, et OpenAI documente ce que l'esprit critique change à l'usage d'un chatbot",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-01",
+    "dateLongue": "mardi 1 septembre 2026",
+    "titreEditorial": "La Commission européenne classe ChatGPT parmi ses services les plus surveillés au titre du DSA, première IA générative visée, OpenAI passe une partie de ses gros clients à une facturation à la performance, Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse, et Nvidia investit 3,5 milliards dans MediaTek pour rester incontournable",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 14,
+  "nbSignes": 9498,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "South China Morning Post",
+    "01net",
+    "Clubic",
+    "Le Monde",
+    "TechCrunch",
+    "Bloomberg",
+    "The Verge",
+    "arXiv",
+    "Numerama"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 47,
+  "publieLe": "2026-08-31T06:06:27+02:00",
+  "publieLeAffiche": "6h06",
+  "ogImage": "/veille-data/og/2026-08-31.png"
+}

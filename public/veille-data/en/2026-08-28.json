@@ -267,7 +267,12 @@
     "titreEditorial": "Nvidia posts a record $96.2 billion in quarterly revenue and looks ahead to 2028, while Amazon triples its chip order and Anthropic signs $45 billion of compute with Nscale; on the same day, OpenAI releases its report on the Hugging Face breach carried out by nearly 700 of its own agents, Bill Gates breaks his silence to call for a robot tax, and the CNIL updates its open-model traceability tool",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-31",
+    "dateLongue": "Monday 31 August 2026",
+    "titreEditorial": "Sony Music and Warner sue Anthropic for \\\"one of the largest thefts of intellectual property in history\\\" on the eve of its stock market listing, Bill Gates calls for taxing machines, Google rolls out its AI answers by default at the expense of the blue links, and Caterpillar applies thirty years of mining automation to AI",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 21,
   "nbSignes": 8695,

@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-28</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-01</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-08-28T08:51:41+02:00</news:publication_date>
-      <news:title>Veille IA du 28 août 2026 : Nvidia s&#x27;offrirait Hugging Face pour 12,9 milliards de dollars, la plateforme open source fondée par trois Français, la même semaine où elle vient d&#x27;être piratée par les agents d&#x27;OpenAI ; une juge fédérale casse le bannissement d&#x27;Anthropic par le Pentagone, OpenAI fait entrer la publicité dans ChatGPT en Inde, Zhipu dévoile un modèle ouvert entraîné sur 100 000 puces chinoises, et OpenAI documente ce que l&#x27;esprit critique change à l&#x27;usage d&#x27;un chatbot</news:title>
+      <news:publication_date>2026-09-01T05:13:43+02:00</news:publication_date>
+      <news:title>Veille IA du 1 septembre 2026 : La Commission européenne classe ChatGPT parmi ses services les plus surveillés au titre du DSA, première IA générative visée, OpenAI passe une partie de ses gros clients à une facturation à la performance, Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse, et Nvidia investit 3,5 milliards dans MediaTek pour rester incontournable</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-27</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-08-31</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-08-27T06:32:12+02:00</news:publication_date>
-      <news:title>Veille IA du 27 août 2026 : Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu&#x27;en 2028, pendant qu&#x27;Amazon triple sa commande de puces et qu&#x27;Anthropic signe 45 milliards de dollars de calcul avec Nscale ; le même jour, OpenAI publie le rapport sur le piratage de Hugging Face mené par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts</news:title>
+      <news:publication_date>2026-08-31T06:06:27+02:00</news:publication_date>
+      <news:title>Veille IA du 31 août 2026 : Sony Music et Warner attaquent Anthropic pour « l&#x27;un des plus grands vols de propriété intellectuelle de l&#x27;histoire » à la veille de son entrée en Bourse, Bill Gates réclame de taxer les machines, Google déploie ses réponses IA d&#x27;office au détriment des liens bleus, et Caterpillar applique à l&#x27;IA trente ans d&#x27;automatisation minière</news:title>
     </news:news>
   </url>
 </urlset>

@@ -267,7 +267,12 @@
     "titreEditorial": "Nvidia bat un record à 96,2 milliards de dollars de revenus trimestriels et se projette jusqu'en 2028, pendant qu'Amazon triple sa commande de puces et qu'Anthropic signe 45 milliards de dollars de calcul avec Nscale ; le même jour, OpenAI publie le rapport sur le piratage de Hugging Face mené par près de 700 de ses propres agents, Bill Gates rompt son silence pour réclamer une taxe sur les robots, et la CNIL met à jour son outil de traçabilité des modèles ouverts",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-08-31",
+    "dateLongue": "lundi 31 août 2026",
+    "titreEditorial": "Sony Music et Warner attaquent Anthropic pour « l'un des plus grands vols de propriété intellectuelle de l'histoire » à la veille de son entrée en Bourse, Bill Gates réclame de taxer les machines, Google déploie ses réponses IA d'office au détriment des liens bleus, et Caterpillar applique à l'IA trente ans d'automatisation minière",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 21,
   "nbSignes": 9469,

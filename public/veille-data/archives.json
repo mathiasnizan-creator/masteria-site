@@ -3,12 +3,251 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-08-28",
-    "totalEditions": 23,
-    "totalItems": 313,
-    "totalSources": 465
+    "derniereDate": "2026-09-01",
+    "totalEditions": 25,
+    "totalItems": 341,
+    "totalSources": 496
   },
   "editions": [
+    {
+      "date": "2026-09-01",
+      "dateCourte": "mar. 1 sept.",
+      "dateAffichee": "1 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "La Commission européenne classe ChatGPT parmi ses services les plus surveillés au titre du DSA, première IA générative visée, OpenAI passe une partie de ses gros clients à une facturation à la performance, Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse, et Nvidia investit 3,5 milliards dans MediaTek pour rester incontournable",
+      "chapeau": "La Commission européenne désigne ChatGPT comme « très grand moteur de recherche » au titre du DSA, une première pour une IA générative : OpenAI a quatre mois pour se plier aux obligations réservées aux plus grandes plateformes. Le même jour, OpenAI passe certains gros clients à une facturation à la performance, Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse, et le débat sur le coût réel de l'IA s'invite dans les comptes des entreprises.",
+      "nbItems": 14,
+      "nbSources": 17,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Commission européenne",
+        "Le Monde",
+        "La Tribune",
+        "01net",
+        "ZDNet",
+        "MIT Technology Review",
+        "Platformer",
+        "TechCrunch",
+        "Bloomberg",
+        "South China Morning Post",
+        "Next.ink",
+        "arXiv",
+        "OpenAI",
+        "Journal du Net"
+      ],
+      "items": [
+        {
+          "t": "L'Europe classe ChatGPT parmi ses services les plus surveillés, première IA générative visée par le DSA",
+          "z": "une",
+          "id": "l-europe-classe-chatgpt-parmi-ses-services-les-plus"
+        },
+        {
+          "t": "L'Europe se dote d'un supercalculateur IA auprès de Bull, 388 millions d'euros",
+          "z": "europe",
+          "id": "l-europe-se-dote-d-un-supercalculateur-ia-aupres-de-bull"
+        },
+        {
+          "t": "OpenAI passe certains gros clients à une facturation à la performance",
+          "z": "europe",
+          "id": "openai-passe-certains-gros-clients-a-une-facturation-a-la"
+        },
+        {
+          "t": "Cisco dote ses 90 000 salariés d'un agent IA personnel, sous contrôle strict",
+          "z": "europe",
+          "id": "cisco-dote-ses-90-000-salaries-d-un-agent-ia-personnel-sous"
+        },
+        {
+          "t": "La cyberattaque contre Hugging Face pointe une culture de la vitesse chez OpenAI",
+          "z": "international",
+          "id": "la-cyberattaque-contre-hugging-face-pointe-une-culture-de"
+        },
+        {
+          "t": "Nvidia investit 3,5 milliards de dollars dans MediaTek pour rester incontournable",
+          "z": "international",
+          "id": "nvidia-investit-3-5-milliards-de-dollars-dans-mediatek-pour"
+        },
+        {
+          "t": "Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse",
+          "z": "international",
+          "id": "anthropic-signe-35-milliards-de-dollars-de-calcul-avec"
+        },
+        {
+          "t": "Apple accuse OpenAI de détruire des preuves dans un procès pour vol de secrets industriels",
+          "z": "international",
+          "id": "apple-accuse-openai-de-detruire-des-preuves-dans-un-proces"
+        },
+        {
+          "t": "Les fabricants chinois de puces IA commencent à gagner de l'argent, Z.ai voit ses revenus bondir de 400 %",
+          "z": "chine",
+          "id": "les-fabricants-chinois-de-puces-ia-commencent-a-gagner-de-l"
+        },
+        {
+          "t": "La Corée du Sud érige l'IA générative en service public, gratuite et illimitée",
+          "z": "chine",
+          "id": "la-coree-du-sud-erige-l-ia-generative-en-service-public"
+        },
+        {
+          "t": "La quantification d'un modèle peut réveiller une porte dérobée invisible aux tests",
+          "z": "recherche",
+          "id": "la-quantification-d-un-modele-peut-reveiller-une-porte"
+        },
+        {
+          "t": "L'apport de l'IA commence à se voir dans les comptes",
+          "z": "bref",
+          "id": "l-apport-de-l-ia-commence-a-se-voir-dans-les-comptes"
+        },
+        {
+          "t": "ChatGPT Ads atteint 1 milliard de dollars de revenus annualisés",
+          "z": "bref",
+          "id": "chatgpt-ads-atteint-1-milliard-de-dollars-de-revenus"
+        },
+        {
+          "t": "Instagram limite la portée des profils IA non déclarés",
+          "z": "bref",
+          "id": "instagram-limite-la-portee-des-profils-ia-non-declares"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "dateCourte": "lun. 31 août",
+      "dateAffichee": "31 août 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Sony Music et Warner attaquent Anthropic pour « l'un des plus grands vols de propriété intellectuelle de l'histoire » à la veille de son entrée en Bourse, Bill Gates réclame de taxer les machines, Google déploie ses réponses IA d'office au détriment des liens bleus, et Caterpillar applique à l'IA trente ans d'automatisation minière",
+      "chapeau": "Sony Music et Warner attaquent Anthropic pour « l'un des plus grands vols de propriété intellectuelle de l'histoire », à la veille d'une entrée en Bourse que la start-up de Dario Amodei dispute à OpenAI. Bill Gates réclame de taxer les machines, Google impose ses réponses IA d'office, et Caterpillar déploie ses agents comme il a déployé ses camions de mine autonomes.",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "South China Morning Post",
+        "01net",
+        "Clubic",
+        "Le Monde",
+        "TechCrunch",
+        "Bloomberg",
+        "The Verge",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Sony Music et Warner attaquent Anthropic pour « vol flagrant » de propriété intellectuelle",
+          "z": "une",
+          "id": "sony-music-et-warner-attaquent-anthropic-pour-vol-flagrant"
+        },
+        {
+          "t": "Bill Gates réclame de taxer les machines et de réserver des métiers aux humains",
+          "z": "europe",
+          "id": "bill-gates-reclame-de-taxer-les-machines-et-de-reserver-des"
+        },
+        {
+          "t": "Google déploie ses réponses IA d'office, les liens bleus reculent",
+          "z": "europe",
+          "id": "google-deploie-ses-reponses-ia-d-office-les-liens-bleus"
+        },
+        {
+          "t": "OpenAI coupe l'accès de Cursor, racheté par Elon Musk",
+          "z": "europe",
+          "id": "openai-coupe-l-acces-de-cursor-rachete-par-elon-musk"
+        },
+        {
+          "t": "OpenAI et Anthropic, frères ennemis dans la course à la Bourse",
+          "z": "international",
+          "id": "openai-et-anthropic-freres-ennemis-dans-la-course-a-la"
+        },
+        {
+          "t": "Caterpillar applique à l'IA ce qu'il a appris de l'automatisation minière",
+          "z": "international",
+          "id": "caterpillar-applique-a-l-ia-ce-qu-il-a-appris-de-l"
+        },
+        {
+          "t": "Le G20 se divise sur la dette, l'IA et la croissance",
+          "z": "international",
+          "id": "le-g20-se-divise-sur-la-dette-l-ia-et-la-croissance"
+        },
+        {
+          "t": "Au Texas, le gouverneur gèle le financement des caméras de surveillance Flock",
+          "z": "international",
+          "id": "au-texas-le-gouverneur-gele-le-financement-des-cameras-de"
+        },
+        {
+          "t": "Les États-Unis dressent des barrières autour des drones et robots, la Chine a l'échelle pour les contourner",
+          "z": "chine",
+          "id": "les-etats-unis-dressent-des-barrieres-autour-des-drones-et"
+        },
+        {
+          "t": "SK Hynix étudie une usine de mémoire au Japon pour alimenter la demande d'IA",
+          "z": "chine",
+          "id": "sk-hynix-etudie-une-usine-de-memoire-au-japon-pour"
+        },
+        {
+          "t": "Détecter les erreurs d'appel d'outil d'un modèle avant qu'elles ne s'exécutent",
+          "z": "recherche",
+          "id": "detecter-les-erreurs-d-appel-d-outil-d-un-modele-avant-qu"
+        },
+        {
+          "t": "Sous le coup de l'émotion, six modèles valident des décisions prématurées",
+          "z": "recherche",
+          "id": "sous-le-coup-de-l-emotion-six-modeles-valident-des"
+        },
+        {
+          "t": "À Pékin, un bar sert des jetons d'IA à volonté",
+          "z": "bref",
+          "id": "a-pekin-un-bar-sert-des-jetons-d-ia-a-volonte"
+        },
+        {
+          "t": "Avez-vous démissionné sans le savoir",
+          "z": "bref",
+          "id": "avez-vous-demissionne-sans-le-savoir"
+        }
+      ]
+    },
     {
       "date": "2026-08-28",
       "dateCourte": "ven. 28 août",

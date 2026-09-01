@@ -3,12 +3,251 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-08-28",
-    "totalEditions": 9,
-    "totalItems": 124,
-    "totalSources": 170
+    "derniereDate": "2026-09-01",
+    "totalEditions": 11,
+    "totalItems": 152,
+    "totalSources": 201
   },
   "editions": [
+    {
+      "date": "2026-09-01",
+      "dateCourte": "Tue 1 Sep",
+      "dateAffichee": "1 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "The European Commission ranks ChatGPT among its most closely watched services under the DSA, the first generative AI targeted, OpenAI moves some of its large customers to performance-based billing, Anthropic signs $35 billion in compute with Lambda ahead of its IPO, and Nvidia invests $3.5 billion in MediaTek to stay indispensable",
+      "chapeau": "The European Commission designates ChatGPT as a \\\"very large online search engine\\\" under the DSA, a first for a generative AI: OpenAI has four months to comply with the obligations reserved for the largest platforms. The same day, OpenAI moves some large customers to performance-based billing, Anthropic signs $35 billion in compute with Lambda ahead of its IPO, and the debate over the real cost of AI works its way into company accounts.",
+      "nbItems": 14,
+      "nbSources": 17,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Commission européenne",
+        "Le Monde",
+        "La Tribune",
+        "01net",
+        "ZDNet",
+        "MIT Technology Review",
+        "Platformer",
+        "TechCrunch",
+        "Bloomberg",
+        "South China Morning Post",
+        "Next.ink",
+        "arXiv",
+        "OpenAI",
+        "Journal du Net"
+      ],
+      "items": [
+        {
+          "t": "Europe ranks ChatGPT among its most closely watched services, the first generative AI targeted by the DSA",
+          "z": "une",
+          "id": "europe-ranks-chatgpt-among-its-most-closely-watched"
+        },
+        {
+          "t": "Europe gets an AI supercomputer from Bull, €388 million",
+          "z": "europe",
+          "id": "europe-gets-an-ai-supercomputer-from-bull-388-million"
+        },
+        {
+          "t": "OpenAI moves some large customers to performance-based billing",
+          "z": "europe",
+          "id": "openai-moves-some-large-customers-to-performance-based"
+        },
+        {
+          "t": "Cisco gives its 90,000 employees a personal AI agent, under strict control",
+          "z": "europe",
+          "id": "cisco-gives-its-90-000-employees-a-personal-ai-agent-under"
+        },
+        {
+          "t": "The cyberattack on Hugging Face points to a culture of speed at OpenAI",
+          "z": "international",
+          "id": "the-cyberattack-on-hugging-face-points-to-a-culture-of"
+        },
+        {
+          "t": "Nvidia invests $3.5 billion in MediaTek to stay indispensable",
+          "z": "international",
+          "id": "nvidia-invests-3-5-billion-in-mediatek-to-stay-indispensable"
+        },
+        {
+          "t": "Anthropic signs $35 billion in compute with Lambda ahead of its IPO",
+          "z": "international",
+          "id": "anthropic-signs-35-billion-in-compute-with-lambda-ahead-of"
+        },
+        {
+          "t": "Apple accuses OpenAI of destroying evidence in a trade-secrets theft lawsuit",
+          "z": "international",
+          "id": "apple-accuses-openai-of-destroying-evidence-in-a-trade"
+        },
+        {
+          "t": "Chinese AI chipmakers start to make money, Z.ai sees revenue jump 400%",
+          "z": "chine",
+          "id": "chinese-ai-chipmakers-start-to-make-money-z-ai-sees-revenue"
+        },
+        {
+          "t": "South Korea makes generative AI a public service, free and unlimited",
+          "z": "chine",
+          "id": "south-korea-makes-generative-ai-a-public-service-free-and"
+        },
+        {
+          "t": "Quantizing a model can wake a backdoor invisible to testing",
+          "z": "recherche",
+          "id": "quantizing-a-model-can-wake-a-backdoor-invisible-to-testing"
+        },
+        {
+          "t": "AI's contribution is starting to show up in the accounts",
+          "z": "bref",
+          "id": "ai-s-contribution-is-starting-to-show-up-in-the-accounts"
+        },
+        {
+          "t": "ChatGPT Ads reaches $1 billion in annualised revenue",
+          "z": "bref",
+          "id": "chatgpt-ads-reaches-1-billion-in-annualised-revenue"
+        },
+        {
+          "t": "Instagram limits the reach of undisclosed AI profiles",
+          "z": "bref",
+          "id": "instagram-limits-the-reach-of-undisclosed-ai-profiles"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "dateCourte": "Mon 31 Aug",
+      "dateAffichee": "31 August 2026",
+      "mois": "2026-08",
+      "moisAffiche": "Août 2026",
+      "titreEditorial": "Sony Music and Warner sue Anthropic for \\\"one of the largest thefts of intellectual property in history\\\" on the eve of its stock market listing, Bill Gates calls for taxing machines, Google rolls out its AI answers by default at the expense of the blue links, and Caterpillar applies thirty years of mining automation to AI",
+      "chapeau": "Sony Music and Warner are suing Anthropic for \\\"one of the largest thefts of intellectual property in history\\\", on the eve of a stock market listing that Dario Amodei's start-up is racing OpenAI to reach. Bill Gates calls for taxing machines, Google imposes its AI answers by default, and Caterpillar deploys its agents the way it deployed its autonomous mine trucks.",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "South China Morning Post",
+        "01net",
+        "Clubic",
+        "Le Monde",
+        "TechCrunch",
+        "Bloomberg",
+        "The Verge",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Sony Music and Warner sue Anthropic for \"blatant theft\" of intellectual property",
+          "z": "une",
+          "id": "sony-music-and-warner-sue-anthropic-for-blatant-theft-of"
+        },
+        {
+          "t": "Bill Gates calls for taxing machines and reserving some jobs for humans",
+          "z": "europe",
+          "id": "bill-gates-calls-for-taxing-machines-and-reserving-some"
+        },
+        {
+          "t": "Google rolls out its AI answers by default, and the blue links retreat",
+          "z": "europe",
+          "id": "google-rolls-out-its-ai-answers-by-default-and-the-blue"
+        },
+        {
+          "t": "OpenAI cuts off access for Cursor, bought by Elon Musk",
+          "z": "europe",
+          "id": "openai-cuts-off-access-for-cursor-bought-by-elon-musk"
+        },
+        {
+          "t": "OpenAI and Anthropic, warring siblings in the race to the market",
+          "z": "international",
+          "id": "openai-and-anthropic-warring-siblings-in-the-race-to-the"
+        },
+        {
+          "t": "Caterpillar applies to AI what it learned from mining automation",
+          "z": "international",
+          "id": "caterpillar-applies-to-ai-what-it-learned-from-mining"
+        },
+        {
+          "t": "The G20 splits over debt, AI and growth",
+          "z": "international",
+          "id": "the-g20-splits-over-debt-ai-and-growth"
+        },
+        {
+          "t": "In Texas, the governor freezes funding for Flock surveillance cameras",
+          "z": "international",
+          "id": "in-texas-the-governor-freezes-funding-for-flock"
+        },
+        {
+          "t": "The United States raises barriers around drones and robots, China has the scale to get around them",
+          "z": "chine",
+          "id": "the-united-states-raises-barriers-around-drones-and-robots"
+        },
+        {
+          "t": "SK Hynix studies a memory plant in Japan to feed AI demand",
+          "z": "chine",
+          "id": "sk-hynix-studies-a-memory-plant-in-japan-to-feed-ai-demand"
+        },
+        {
+          "t": "Catching a model's tool-call errors before they run",
+          "z": "recherche",
+          "id": "catching-a-model-s-tool-call-errors-before-they-run"
+        },
+        {
+          "t": "Under emotional pressure, six models endorse premature decisions",
+          "z": "recherche",
+          "id": "under-emotional-pressure-six-models-endorse-premature"
+        },
+        {
+          "t": "In Beijing, a bar serves unlimited AI tokens",
+          "z": "bref",
+          "id": "in-beijing-a-bar-serves-unlimited-ai-tokens"
+        },
+        {
+          "t": "Have you resigned without knowing it",
+          "z": "bref",
+          "id": "have-you-resigned-without-knowing-it"
+        }
+      ]
+    },
     {
       "date": "2026-08-28",
       "dateCourte": "Fri 28 Aug",
