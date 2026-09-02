@@ -3,12 +3,132 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-01",
-    "totalEditions": 11,
-    "totalItems": 152,
-    "totalSources": 201
+    "derniereDate": "2026-09-02",
+    "totalEditions": 12,
+    "totalItems": 166,
+    "totalSources": 220
   },
   "editions": [
+    {
+      "date": "2026-09-02",
+      "dateCourte": "Wed 2 Sep",
+      "dateAffichee": "2 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI rates Astra at critical cyber capability",
+      "chapeau": "OpenAI rates Astra, its next frontier model, at the \\\"critical\\\" threshold for cyber capability, the first it acknowledges is skilled at breaking into computer systems, and warns that AI-swarm attacks could land within months. The same day, Nvidia moves closer to a $14 billion acquisition of Hugging Face, Anthropic cuts the price of its coding models, and the security of the AI that companies deploy moves to the front of the queue.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "Wired",
+        "TechCrunch",
+        "Le Monde",
+        "Bloomberg",
+        "Maddyness",
+        "Clubic",
+        "The Verge",
+        "La Tribune",
+        "South China Morning Post",
+        "arXiv",
+        "ZDNet"
+      ],
+      "items": [
+        {
+          "t": "OpenAI rates Astra at the \"critical\" threshold for cyber capability, a first for one of its models",
+          "z": "une",
+          "id": "openai-rates-astra-at-the-critical-threshold-for-cyber"
+        },
+        {
+          "t": "Nvidia close to buying Hugging Face for around $14 billion",
+          "z": "europe",
+          "id": "nvidia-close-to-buying-hugging-face-for-around-14-billion"
+        },
+        {
+          "t": "AI in human resources: regulation moves slowly on discrimination",
+          "z": "europe",
+          "id": "ai-in-human-resources-regulation-moves-slowly-on"
+        },
+        {
+          "t": "42% of companies abandon most of their AI projects",
+          "z": "europe",
+          "id": "42-of-companies-abandon-most-of-their-ai-projects"
+        },
+        {
+          "t": "Debian allows AI in its code, and part of the community walks out",
+          "z": "europe",
+          "id": "debian-allows-ai-in-its-code-and-part-of-the-community"
+        },
+        {
+          "t": "Anthropic launches Claude Fable 5.1 and Mythos 5.1, cheaper and less restrictive",
+          "z": "international",
+          "id": "anthropic-launches-claude-fable-5-1-and-mythos-5-1-cheaper"
+        },
+        {
+          "t": "ChatGPT connects to medical records, with an Epic integration for clinicians",
+          "z": "international",
+          "id": "chatgpt-connects-to-medical-records-with-an-epic"
+        },
+        {
+          "t": "Meta drops a massive workforce cut aimed at becoming \"AI native.\"",
+          "z": "international",
+          "id": "meta-drops-a-massive-workforce-cut-aimed-at-becoming-ai"
+        },
+        {
+          "t": "Manus goes solo again after the collapse of Meta's $2 billion buyout",
+          "z": "chine",
+          "id": "manus-goes-solo-again-after-the-collapse-of-meta-s-2"
+        },
+        {
+          "t": "Tencent puts its Hy4 model back among the open-source leaders thanks to its products",
+          "z": "chine",
+          "id": "tencent-puts-its-hy4-model-back-among-the-open-source"
+        },
+        {
+          "t": "Chinese chipmakers accelerate purchases of local equipment, a commercial test for self-sufficiency",
+          "z": "chine",
+          "id": "chinese-chipmakers-accelerate-purchases-of-local-equipment"
+        },
+        {
+          "t": "When a self-improving agent rigs its own evaluation",
+          "z": "recherche",
+          "id": "when-a-self-improving-agent-rigs-its-own-evaluation"
+        },
+        {
+          "t": "OpenAI warns of \"AI swarm\" cyberattacks within months",
+          "z": "bref",
+          "id": "openai-warns-of-ai-swarm-cyberattacks-within-months"
+        },
+        {
+          "t": "Cognition said to be raising $1 billion at a $47 billion valuation",
+          "z": "bref",
+          "id": "cognition-said-to-be-raising-1-billion-at-a-47-billion"
+        }
+      ]
+    },
     {
       "date": "2026-09-01",
       "dateCourte": "Tue 1 Sep",

@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-02</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-02T09:00:00+02:00</news:publication_date>
+      <news:title>Veille IA du 2 septembre 2026 : OpenAI classe Astra au seuil « critique » de capacité cyber, premier de ses modèles reconnu apte à pénétrer des systèmes, et alerte sur des attaques par essaims d&#x27;IA d&#x27;ici quelques mois ; Nvidia s&#x27;approche d&#x27;un rachat de Hugging Face à 14 milliards de dollars, Anthropic lance Claude Fable 5.1 jusqu&#x27;à 45 % moins cher, et Meta renonce à une coupe massive de ses effectifs pour devenir « IA native »</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-09-01</loc>
     <news:news>
       <news:publication>
@@ -10,17 +21,6 @@
       </news:publication>
       <news:publication_date>2026-09-01T05:13:43+02:00</news:publication_date>
       <news:title>Veille IA du 1 septembre 2026 : La Commission européenne classe ChatGPT parmi ses services les plus surveillés au titre du DSA, première IA générative visée, OpenAI passe une partie de ses gros clients à une facturation à la performance, Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse, et Nvidia investit 3,5 milliards dans MediaTek pour rester incontournable</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-08-31</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-31T06:06:27+02:00</news:publication_date>
-      <news:title>Veille IA du 31 août 2026 : Sony Music et Warner attaquent Anthropic pour « l&#x27;un des plus grands vols de propriété intellectuelle de l&#x27;histoire » à la veille de son entrée en Bourse, Bill Gates réclame de taxer les machines, Google déploie ses réponses IA d&#x27;office au détriment des liens bleus, et Caterpillar applique à l&#x27;IA trente ans d&#x27;automatisation minière</news:title>
     </news:news>
   </url>
 </urlset>

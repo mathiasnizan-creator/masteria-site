@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-01",
-    "totalEditions": 11,
-    "totalItems": 152,
-    "totalSources": 201
+    "derniereDate": "2026-09-02",
+    "totalEditions": 12,
+    "totalItems": 166,
+    "totalSources": 220
   },
   "editions": [
+    {
+      "date": "2026-09-02",
+      "dateAffichee": "2 September 2026",
+      "dateCourte": "Wed 2 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI rates Astra at critical cyber capability",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-09-01",
       "dateAffichee": "1 September 2026",
