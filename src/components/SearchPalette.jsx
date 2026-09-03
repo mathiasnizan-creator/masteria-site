@@ -42,15 +42,25 @@ const QUICK_LINKS = [
 
 const SUGGESTIONS = ['Copilot', 'ChatGPT pour les RH', 'financement OPCO', 'AI Act', 'agents IA', 'RGPD', 'Claude', 'Gemini'];
 
+// Mots vides retirés de la requête : ils chargent de gros blocs d'index pour rien
+// et diluent le classement (« ChatGPT pour les RH » → « ChatGPT RH »).
+const STOP_WORDS = new Set(['le', 'la', 'les', 'l', 'de', 'des', 'du', 'd', 'un', 'une', 'et', 'en', 'a', 'à', 'au', 'aux',
+  'avec', 'sur', 'dans', 'par', 'pour', 'mes', 'mon', 'ma', 'nos', 'notre', 'vos', 'votre', 'ses', 'son', 'sa', 'leur', 'leurs',
+  'ce', 'cet', 'cette', 'ces', 'qui', 'que', 'quoi', 'est', 'sont', 'comment', 'quel', 'quelle', 'quels', 'quelles', 'ou', 'où', 'the', 'of', 'for']);
+function cleanQuery(q) {
+  const words = q.trim().split(/\s+/).map(w => w.replace(/^[lLdD]['’]/, ''));
+  const kept = words.filter(w => !STOP_WORDS.has(w.toLowerCase()));
+  return (kept.length ? kept : words).join(' ');
+}
+
 // Chargement paresseux et partagé de Pagefind.
 let pagefindPromise = null;
 function loadPagefind() {
   if (!pagefindPromise) {
     pagefindPromise = import(/* @vite-ignore */ '/pagefind/pagefind.js')
       .then(async pf => {
-        // Langue de base de la page (fr-FR → fr) : l'index est construit par langue de base.
-        const language = (document.documentElement.lang || 'fr').split('-')[0].toLowerCase();
-        await pf.options({ excerptLength: 22, language });
+        // La langue est déduite par Pagefind de <html lang> (fr-FR retombe sur l'index fr).
+        await pf.options({ excerptLength: 22 });
         await pf.init();
         return pf;
       })
@@ -142,9 +152,11 @@ export default function SearchPalette() {
 
   // Recherche (débouncée) à chaque frappe.
   useEffect(() => {
-    const q = query.trim();
+    const q = cleanQuery(query);
     if (!open || !q) return;
     const id = ++requestId.current;
+    // Préchargement immédiat des blocs d'index du terme, recherche après un court délai.
+    loadPagefind().then(pf => pf.preload(q)).catch(() => {});
     const t = setTimeout(async () => {
       setStatus(s => (s === 'unavailable' ? s : 'loading'));
       try {
