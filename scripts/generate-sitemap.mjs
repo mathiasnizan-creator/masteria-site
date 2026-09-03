@@ -73,6 +73,8 @@ const staticRoutes = [
   { path: 'agence-seo-ia',                       prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceSeoIAPage.jsx'] },
   { path: 'audit-seo-ia',                        prio: 0.8, freq: 'monthly', files: ['src/pages/AuditSeoIAPage.jsx'] },
   { path: 'audit-geo-ia',                        prio: 0.8, freq: 'monthly', files: ['src/pages/AuditGeoIAPage.jsx'] },
+  { path: 'audit-conformite-ai-act',             prio: 0.8, freq: 'monthly', files: ['src/pages/AuditConformiteAIActPage.jsx'] },
+  { path: 'audit-ia-medico-social',              prio: 0.75, freq: 'monthly', files: ['src/pages/AuditIAMedicoSocialPage.jsx'] },
   { path: 'agence-ia-lyon',                      prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-annecy',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-paris',                     prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },

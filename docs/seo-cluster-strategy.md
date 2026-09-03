@@ -204,3 +204,23 @@ DÉPLOYÉ EN PROD le 2026-06-15 (`dpl_GnQ5FuEn6fcmrFp3x27Z2NkgKS51`, www.master-
 - Standard par page : metaTitle ≤60, metaDesc ≤155, réponse directe en gras sous H1, H2 en questions, FAQ « combien coûte » honnête (fourchettes marché, jamais de prix ferme inventé), schema Service+FAQPage+Breadcrumb, zéro emoji, pas d'OPCO sur conseil/dev.
 - Intégrité : posture capacité, aucun cas client/chiffre/prix inventé ; régie = capacité offerte.
 - CWV non mesurables via l'API PSI (quota 429 durable) → pagespeed.web.dev.
+
+## Cluster « audit IA » — répartition arrêtée le 2026-09-03
+
+Données Semrush FR (03/09/2026) : audit ia 480-590 (KD 16) · audit ia seo 260 · audit intelligence artificielle 110 (KD 14) · audit geo ia 90 · audit visibilité ia 90 · audit ia entreprise 70 · audit ia pour entreprises 70 · audit de maturité ia 50 · audit des processus ia 50 · cabinet d'audit ia 50 · audit de conformité ia 50 · audit ia médico-social ≈ 50 cumulé · auditabilité d'un système d'ia 40 · audit ia act 30.
+
+Une requête = une page :
+
+| Intention | Page |
+|---|---|
+| audit ia, audit intelligence artificielle, audit ia entreprise, cabinet d'audit ia | /audit-ia |
+| guide, normes, prix | /blog/audit-ia-entreprise-methode-prix |
+| audit de maturité ia, audit ia gratuit | /test-maturite-ia |
+| audit des processus ia | /diagnostic-ia |
+| audit geo ia, audit visibilité ia | /audit-geo-ia (le title de /audit-seo-ia ne porte plus « GEO ») |
+| audit ia seo | /audit-seo-ia |
+| audit de conformité ia, audit ia act | /audit-conformite-ai-act |
+| audit ia médico-social, ESMS | /audit-ia-medico-social |
+| auditabilité d'un système d'ia | /blog/auditabilite-systeme-ia |
+
+Hors cible : audit interne et IA, audit financier, ai audit tools, iauditor, intel audit, appareils auditifs (SERP Big Four ou hors sujet).

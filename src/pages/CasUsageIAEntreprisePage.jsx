@@ -6,6 +6,7 @@ import {
   Compass, ListChecks, Sparkles, Target, ShieldCheck, RefreshCw, TrendingUp,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -778,6 +779,13 @@ export default function CasUsageIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['industrie', 'photovoltaique', 'distribution']}
+        title="Des cas d'usage devenus des missions, avec leurs résultats"
+        intro="Reporting Excel, flux Outlook et assistants chez un industriel, transporteurs et fichiers d'entrepôt chez un distributeur, cotations et relances dans une force de vente : trois cas documentés, méthode en six temps et résultats."
+      />
+
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -848,7 +856,7 @@ export default function CasUsageIAEntreprisePage() {
               Un cabinet spécialisé IA, indépendant des éditeurs
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

@@ -145,6 +145,8 @@ const CONSEIL_COLS = [
     items: [
       { label: 'Diagnostic IA',         desc: 'Audit + feuille de route en 1 journée', slug: 'diagnostic-ia',                Icon: Search },
       { label: 'Audit IA',              desc: 'Maturité, conformité, plan d\'action',   slug: 'audit-ia',                     Icon: Target },
+      { label: 'Audit de conformité IA', desc: 'RGPD et AI Act : écarts, plan daté',      slug: 'audit-conformite-ai-act',      Icon: Scale },
+      { label: 'Audit IA médico-social', desc: 'Usages, données d\'usagers, cadre',       slug: 'audit-ia-medico-social',       Icon: Users },
       { label: 'Accompagnement IA',     desc: 'Du cadrage à l\'adoption, dans la durée', slug: 'accompagnement-ia',           Icon: TrendingUp },
       { label: 'Cabinet de conseil IA', desc: 'Cadrage, gouvernance et trajectoire IA', slug: 'conseil-intelligence-artificielle', Icon: Lightbulb },
       { label: 'Conseil stratégie IA',  desc: 'Feuille de route et priorisation des cas', slug: 'conseil-strategie-ia',            Icon: Compass },
@@ -1088,6 +1090,8 @@ export function MasteriaFooter() {
             {[
               ['Diagnostic IA', '/diagnostic-ia'],
               ['Audit IA', '/audit-ia'],
+              ['Audit de conformité IA', '/audit-conformite-ai-act'],
+              ['Audit IA médico-social', '/audit-ia-medico-social'],
               ['Accompagnement IA', '/accompagnement-ia'],
               ['Prestataire IA : le guide', '/prestataire-ia'],
               ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
@@ -1108,7 +1112,7 @@ export function MasteriaFooter() {
               ['Agence IA Lyon', '/agence-ia-lyon'],
               ['Agence IA marketing', '/agence-ia-marketing'],
               ['Agence SEO IA', '/agence-seo-ia'],
-              ['Audit SEO IA & GEO', '/audit-seo-ia'],
+              ['Audit SEO IA', '/audit-seo-ia'],
               ['Audit GEO', '/audit-geo-ia'],
               ['Agence IA Paris', '/agence-ia-paris'],
               ['Agence IA Annecy', '/agence-ia-annecy'],

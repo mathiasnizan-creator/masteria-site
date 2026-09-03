@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.master-ia.fr/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -188,25 +188,31 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-marketing</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-seo-ia</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-seo-ia</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-geo-ia</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/audit-conformite-ai-act</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -218,13 +224,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -260,13 +266,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/diagnostic-ia</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-ia</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -362,7 +368,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/gouvernance-ia</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -387,6 +393,12 @@
   <url>
     <loc>https://www.master-ia.fr/prix-projet-ia</loc>
     <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/audit-ia-medico-social</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -452,7 +464,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -764,7 +776,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/test-maturite-ia</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -812,7 +824,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-seo</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -1526,7 +1538,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/audit-ia-entreprise-methode-prix</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/auditabilite-systeme-ia</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
@@ -2006,13 +2024,13 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/mentions-legales</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.20</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/politique-de-confidentialite</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.20</priority>
   </url>

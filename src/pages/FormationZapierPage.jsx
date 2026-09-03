@@ -642,7 +642,7 @@ export default function FormationZapierPage() {
                 Des formateurs qui automatisent en mission, tous outils confondus
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria est un cabinet indépendant des éditeurs, spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022. Nous pratiquons Zapier, Make et n8n en <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>mission</Link> : c'est ce qui permet de vous dire honnêtement ce que chaque outil couvre, et quand en changer. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
+                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. Nous pratiquons Zapier, Make et n8n en <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>mission</Link> : c'est ce qui permet de vous dire honnêtement ce que chaque outil couvre, et quand en changer. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

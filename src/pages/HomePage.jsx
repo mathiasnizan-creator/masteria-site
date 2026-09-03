@@ -265,6 +265,9 @@ export default function HomePage() {
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: '#6B7280', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
               Vous hésitez par où commencer ? Démarrez par un <span style={{ color: '#2563EB', fontWeight: 700, marginLeft: 4 }}>diagnostic IA</span> <ArrowRight size={15} aria-hidden="true" />
             </Link>
+            <p style={{ margin: '10px 0 0', fontSize: 14, color: '#6B7280' }}>
+              Besoin d'un état des lieux complet et documenté ? Voyez notre <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>audit IA d'entreprise</Link>.
+            </p>
           </div>
         </div>
       </section>
@@ -473,6 +476,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginTop: 40 }}>
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none' }}>Démarrer par un diagnostic IA <ArrowRight size={17} aria-hidden="true" /></Link>
+            <Link to="/audit-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none', border: '1px solid #E5E7EB' }}>Cadrer un audit IA</Link>
             <Link to="/agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', fontWeight: 700, fontSize: 15, padding: '13px 26px', borderRadius: 10, textDecoration: 'none', border: '1px solid #E5E7EB' }}>Découvrir l'agence IA</Link>
           </div>
           <p style={{ textAlign: 'center', fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: '22px auto 0', maxWidth: 600 }}>

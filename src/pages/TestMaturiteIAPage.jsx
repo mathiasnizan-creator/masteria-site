@@ -144,12 +144,12 @@ export default function TestMaturiteIAPage() {
   return (
     <>
       <SEOHead
-        title="Test de maturité IA : où en est votre entreprise ? | Masteria"
-        description="Évaluez la maturité IA de votre entreprise en 3 minutes : 8 questions, un score sur 24, votre profil parmi 4 niveaux et les priorités pour avancer."
+        title="Audit de maturité IA gratuit : votre score en 3 minutes | Masteria"
+        description="Audit de maturité IA gratuit en 3 minutes : 8 questions, un score sur 24, votre profil parmi 4 niveaux et les priorités pour avancer. Le test avant l'audit complet."
         slug="test-maturite-ia"
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        keywords="test maturité ia, maturité ia entreprise, évaluer maturité intelligence artificielle, audit ia gratuit, niveau ia entreprise"
+        keywords="audit de maturité ia, test maturité ia, maturité ia entreprise, évaluer maturité intelligence artificielle, audit ia gratuit, niveau ia entreprise"
         datePublished="2026-08-06"
         dateModified="2026-08-07"
         speakable={['#geo-summary', '#profils']}
@@ -179,7 +179,7 @@ export default function TestMaturiteIAPage() {
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Outil gratuit · 3 minutes</span>
           </div>
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 16, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 780 }}>
-            Test de maturité IA&nbsp;: où en est votre entreprise&nbsp;?
+            Audit de maturité IA gratuit&nbsp;: où en est votre entreprise&nbsp;?
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}

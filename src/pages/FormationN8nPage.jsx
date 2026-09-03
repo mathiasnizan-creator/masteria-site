@@ -739,7 +739,7 @@ export default function FormationN8nPage() {
                 Des formateurs qui construisent des workflows en mission
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria est un cabinet indépendant des éditeurs, spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022. L'orchestration n8n et Make est le palier que nous installons après les assistants dans nos déploiements ; les règles enseignées (gestion d'erreurs, garde-fous IA, supervision) sont celles de nos propres <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link>. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
+                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. L'orchestration n8n et Make est le palier que nous installons après les assistants dans nos déploiements ; les règles enseignées (gestion d'erreurs, garde-fous IA, supervision) sont celles de nos propres <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link>. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

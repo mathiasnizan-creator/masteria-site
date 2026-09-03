@@ -6,6 +6,7 @@ import {
   BookOpen,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -658,6 +659,13 @@ export default function IAEtRGPDPage() {
           </ul>
         </div>
       </section>
+
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['photovoltaique', 'conseil-financier']}
+        title="Deux missions où la confidentialité fixait le cadre"
+        intro="Des données de stocks et de clients dans une PME, des dossiers de marchés publics dans un cabinet de conseil : comment le cadre d'usage se pose avant le premier prompt, et ce qu'il a permis de déployer."
+      />
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>

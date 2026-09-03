@@ -291,7 +291,7 @@ export default {
   },
   {
    "q": "Quelle différence avec votre agence SEO IA ?",
-   "a": "L'agence fait pour vous ; la formation apprend à vos équipes à faire. Beaucoup de clients combinent les deux : un audit SEO IA & GEO pour mesurer le point de départ et fixer les priorités, la formation pour que l'équipe interne exécute et fasse vivre, et un accompagnement plus léger ensuite. Si vous préférez déléguer entièrement, c'est le rôle de notre agence SEO IA. Le cadrage gratuit sert à choisir le bon montage."
+   "a": "L'agence fait pour vous ; la formation apprend à vos équipes à faire. Beaucoup de clients combinent les deux : un audit SEO IA pour mesurer le point de départ et fixer les priorités, la formation pour que l'équipe interne exécute et fasse vivre, et un accompagnement plus léger ensuite. Si vous préférez déléguer entièrement, c'est le rôle de notre agence SEO IA. Le cadrage gratuit sert à choisir le bon montage."
   }
  ],
  "course": {
@@ -357,7 +357,7 @@ export default {
    "desc": "Quand vous préférez confier le SEO et le GEO : l'accompagnement opéré pour vous."
   },
   {
-   "label": "Audit SEO IA & GEO",
+   "label": "Audit SEO IA",
    "href": "/audit-seo-ia",
    "tag": "Point de départ",
    "desc": "Mesurer votre visibilité sur Google et dans les IA avant de former : les priorités objectivées."

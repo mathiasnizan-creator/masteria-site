@@ -5,6 +5,7 @@ import {
   Users, Workflow, Zap, BookOpen, ExternalLink, BarChart3,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import { FAQSection } from '../components/screens2'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -456,7 +457,7 @@ export default function ConseilIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria est un cabinet de conseil en intelligence artificielle fondé en 2022 à Lyon. Nous aidons PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA et déployer les cas d'usage à fort ROI, en France, en Suisse et en Belgique.</strong>
+            <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, aide PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA et déployer les cas d'usage à fort ROI, en France, en Suisse et en Belgique.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -979,6 +980,13 @@ export default function ConseilIAPage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['industrie', 'photovoltaique', 'conseil-financier']}
+        title="Trois missions de conseil, méthode et résultats"
+        intro="Comité de direction et déploiement international d'un groupe industriel, assistants d'appels d'offres d'un cabinet de conseil financier, diagnostic et feuille de route d'un distributeur photovoltaïque : la même méthode en six temps, avec ce que chaque mission a changé pour les équipes et pour l'organisation."
+      />
+
       {/* FAQ */}
       <FAQSection items={FAQ_CONSEIL} title="Questions fréquentes sur nos missions de conseil IA" bg="#F9FAFB" />
 
@@ -1020,7 +1028,7 @@ export default function ConseilIAPage() {
               Un cabinet spécialisé IA, indépendant des éditeurs
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

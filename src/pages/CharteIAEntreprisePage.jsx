@@ -6,6 +6,7 @@ import {
   RefreshCw, ExternalLink, BookOpen,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -701,6 +702,13 @@ export default function CharteIAEntreprisePage() {
           </ul>
         </div>
       </section>
+
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['photovoltaique', 'industrie']}
+        title="Deux chartes d'usage nées d'une mission"
+        intro="Huit règles signées avant la formation chez un distributeur photovoltaïque, une charte présentée au comité de direction d'un groupe industriel face au shadow AI : deux cas documentés, méthode et résultats."
+      />
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>

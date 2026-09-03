@@ -6,6 +6,7 @@ import {
   ExternalLink, AlertTriangle, GraduationCap, ClipboardCheck, Building2,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -895,6 +896,13 @@ export default function GouvernanceIAPage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['industrie', 'photovoltaique']}
+        title="Deux gouvernances installées, du comité de direction à la PME"
+        intro="Un Data manager qui porte la politique d'usage d'un groupe international, un référent IA et une charte en huit règles dans une PME de cinq personnes : la méthode en six temps et ce qu'elle a changé pour les équipes et l'organisation."
+      />
+
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
@@ -942,6 +950,7 @@ export default function GouvernanceIAPage() {
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, gouvernance et conformité comprises." },
               { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "L'état des lieux exhaustif : maturité, données, écarts RGPD et AI Act, feuille de route chiffrée." },
+              { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "La mission qui précède la gouvernance : inventaire des systèmes, niveaux de risque, écarts et plan de mise en conformité daté." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Le développement de solutions IA, conçues avec garde-fous, supervision et traçabilité." },
               { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Les enjeux de gouvernance et de conformité propres à chaque secteur d'activité." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Des agents déployés avec les garde-fous et la supervision humaine que cela exige." },
@@ -1009,7 +1018,7 @@ export default function GouvernanceIAPage() {
               Un cabinet spécialisé IA, indépendant des éditeurs
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

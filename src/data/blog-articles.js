@@ -504,7 +504,7 @@ export const BLOG_ARTICLES = [
   {
     slug: 'audit-ia-entreprise-methode-prix',
     tag: 'Conseil IA',
-    title: "Audit IA : ce qu'il contient vraiment, ce qu'il coûte, et les 4 cas où il ne sert à rien",
+    title: "Guide de l'audit IA : les trois types, les normes ISO 42001 et AI Act, les prix 2026 et les 4 cas où il ne sert à rien",
     // Réanglage 2026-08-10 : l'article tient l'intention INFORMATIONNELLE (guide,
     // méthode, normes, prix) ; l'intention transactionnelle « audit ia » est portée
     // par la money page /audit-ia. Ne pas re-cibler la tête de requête ici.
@@ -512,7 +512,7 @@ export const BLOG_ARTICLES = [
     metaDesc: "Le guide de l'audit IA : les trois types à ne pas confondre, ce que la loi impose vraiment, les normes publiées, les vrais ordres de grandeur de prix et les cas à éviter.",
     date: '3 août 2026',
     datePublished: '2026-08-03',
-    dateModified: '2026-08-10',
+    dateModified: '2026-09-03',
     readTime: '15 min',
     keywords: ['guide audit ia', 'audit ia méthode', 'prix audit ia', 'audit de conformité ia', 'audit ai act', 'normes audit ia', 'iso 42001', 'audit des processus ia'],
     excerpt: "« Audit IA » recouvre trois missions différentes qu'on vous vendra au même prix. Ce que le règlement européen impose réellement, les normes publiées à ce jour, pourquoi les prix affichés en ligne ne constituent pas une référence, et les quatre situations où l'audit est une dépense inutile.",
@@ -532,7 +532,7 @@ export const BLOG_ARTICLES = [
           ['Audit algorithmique', "Ce modèle fonctionne-t-il correctement et sans biais", "Mesures de performance, tests de biais, documentation technique, explicabilité"],
         ],
       },
-      { type: 'p', text: "Un quatrième usage du mot brouille les recherches : l'audit de visibilité dans les moteurs génératifs, qui consiste à mesurer si une marque est citée par ChatGPT ou Perplexity. Le sujet est légitime, il n'a rien à voir avec celui-ci ; il est traité sur notre page <a href='/audit-geo-ia'>audit GEO</a>." },
+      { type: 'p', text: "Un quatrième usage du mot brouille les recherches : l'audit de visibilité dans les moteurs génératifs, qui consiste à mesurer si une marque est citée par ChatGPT ou Perplexity. Le sujet est légitime, il n'a rien à voir avec celui-ci ; il est traité sur notre page <a href='/audit-geo-ia'>audit GEO IA</a>." },
       { type: 'p', text: "La confusion coûte cher. Une direction qui achète un audit de conformité en espérant une feuille de route d'automatisation reçoit un rapport de risques juridiques sans un seul cas d'usage. L'inverse arrive tout autant." },
 
       { type: 'h2', text: "Ce que la loi impose réellement, et ce qu'elle n'impose pas" },
@@ -662,6 +662,8 @@ export const BLOG_ARTICLES = [
     internalLinks: [
       { label: "Audit IA : la mission conduite par Masteria", href: '/audit-ia' },
       { label: "Diagnostic IA : la feuille de route en 1 journée", href: '/diagnostic-ia' },
+      { label: "Audit de conformité IA : RGPD et AI Act, écarts et plan daté", href: '/audit-conformite-ai-act' },
+      { label: "Auditabilité d'un système d'IA : ce que vous devez pouvoir prouver", href: '/blog/auditabilite-systeme-ia' },
       { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
       { label: "Méthode projet IA : forfait, régie ou conseil", href: '/methode-projet-ia' },
       { label: "Charte IA d'entreprise : exemples et méthode", href: '/charte-ia-entreprise' },
@@ -704,6 +706,168 @@ export const BLOG_ARTICLES = [
             name: "Analyse d'impact relative à la protection des données",
             description: "Étude obligatoire au titre du RGPD pour certains traitements, dont les algorithmes de sélection en recrutement selon la délibération CNIL n° 2018-327 du 11 octobre 2018.",
           },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'auditabilite-systeme-ia',
+    tag: 'Conseil IA',
+    title: "Auditabilité d'un système d'IA : ce que vous devez pouvoir prouver, et comment",
+    metaTitle: "Auditabilité d'un système d'IA : définition, exigences, méthode",
+    metaDesc: "Auditabilité d'un système d'IA : définition, ce que le règlement européen demande (documentation, journaux, supervision), les quatre couches à tracer et un plan en trois semaines.",
+    date: '3 septembre 2026',
+    datePublished: '2026-09-03',
+    dateModified: '2026-09-03',
+    readTime: '12 min',
+    keywords: ["auditabilité d'un système d'ia", 'auditabilité ia', 'auditabilité ai/ml', 'traçabilité ia', 'journalisation ia act', 'article 12 ai act', 'documentation technique ia', 'supervision humaine ia'],
+    excerpt: "Un système d'IA est auditable quand on peut reconstituer, pour une sortie donnée, quel système l'a produite, dans quelle version, à partir de quelles données, et qui l'a validée. Ce que le règlement européen exige, à quelle date, et comment y arriver en trois semaines sans projet lourd.",
+    intro: "L'auditabilité d'un système d'intelligence artificielle est sa capacité à être examiné après coup : pour une sortie donnée, on peut dire quel système l'a produite, dans quelle version, à partir de quelles données d'entrée et de quels réglages, et quelle personne l'a validée ou corrigée. Le règlement (UE) 2024/1689 en fait une obligation pour les systèmes à haut risque, avec des dates reportées à décembre 2027 et août 2028. Pour tous les autres usages, elle reste la seule protection utile le jour où un client, un salarié, un juge ou une autorité pose la question « d'où vient cette décision ». Cet article définit le terme, liste ce que les textes demandent, décrit les quatre couches à tracer et propose un plan en trois semaines.",
+    blocks: [
+      { type: 'p', text: "Le mot circule dans les appels d'offres et les questionnaires de conformité sans définition partagée. Les éditeurs y mettent leurs journaux d'administration, les juristes la documentation technique, les data scientists la reproductibilité d'un modèle. Les trois ont raison, et aucun ne suffit seul." },
+      { type: 'p', text: "Si vous cherchez la mission qui vérifie votre situation au regard des textes, notre page <a href='/audit-conformite-ai-act'>audit de conformité IA</a> décrit le périmètre et le livrable. Cet article traite du fond : ce qu'est l'auditabilité, ce qui est exigé, et comment la construire." },
+
+      { type: 'h2', text: "Auditabilité : une définition opérationnelle" },
+      { type: 'p', text: "Un système d'IA est auditable quand quatre questions trouvent une réponse documentée, pour n'importe quelle sortie produite au cours des six derniers mois : quel système et quelle version ont produit cette sortie ; à partir de quelles données d'entrée et de quels réglages, prompt système compris ; quelle personne a vu la sortie, l'a validée, modifiée ou écartée ; sur quelle base ce système a été autorisé dans l'organisation, par qui, et avec quelles limites." },
+      { type: 'p', text: "Le test le plus simple tient en une phrase : prenez un courrier, un score ou un résumé produit avec l'IA il y a un mois, et reconstituez-le. Si vous ne retrouvez ni la version du modèle, ni le prompt, ni la personne qui a validé, le système n'est pas auditable, quelle que soit la qualité de sa documentation générale." },
+      { type: 'p', text: "L'auditabilité se distingue de l'explicabilité, qui porte sur la capacité à expliquer pourquoi un modèle a produit tel résultat. Un système peut être auditable sans être explicable : on sait qui a fait quoi et avec quoi, sans pouvoir ouvrir la boîte noire. Pour la plupart des usages d'entreprise, c'est l'auditabilité qui est exigée, l'explicabilité restant une propriété recherchée pour les décisions individuelles à fort enjeu." },
+
+      { type: 'h2', text: "Ce que le règlement européen demande, et à quelle date" },
+      { type: 'p', text: "Le règlement (UE) 2024/1689 ne parle pas d'« auditabilité » comme telle. Il la construit par un ensemble d'obligations qui pèsent sur les systèmes à haut risque, réparties entre le fournisseur, qui conçoit le système, et le déployeur, qui l'utilise. La plupart des entreprises sont déployeurs." },
+      {
+        type: 'ul',
+        items: [
+          "<strong>Documentation technique (article 11 et annexe IV)</strong> : le fournisseur tient une documentation qui décrit le système, ses données d'entraînement, ses performances, ses limites et son système de gestion des risques. Le déployeur doit pouvoir l'obtenir.",
+          "<strong>Enregistrement automatique des événements (article 12)</strong> : le système à haut risque journalise automatiquement les événements pertinents pendant toute sa durée de vie, de façon à permettre la traçabilité de son fonctionnement.",
+          "<strong>Transparence envers le déployeur (article 13)</strong> : une notice d'utilisation qui précise les capacités, les limites, le niveau d'exactitude et les mesures de supervision humaine prévues.",
+          "<strong>Supervision humaine (article 14)</strong> : le système est conçu pour être supervisé par des personnes capables de comprendre ses sorties, de les interpréter, de les écarter ou d'interrompre le système.",
+          "<strong>Conservation des journaux</strong> : le fournisseur les conserve au moins six mois (article 19) ; le déployeur conserve ceux qui sont sous son contrôle pendant au moins six mois (article 26, paragraphe 6).",
+          "<strong>Obligations du déployeur (article 26)</strong> : utiliser le système conformément à la notice, confier la supervision à des personnes formées, informer les représentants du personnel et les salariés concernés avant la mise en service d'un système à haut risque au travail.",
+          "<strong>Analyse d'impact sur les droits fondamentaux (article 27)</strong> : pour les organismes publics, les entités privées chargées d'une mission de service public, et les déployeurs de systèmes d'évaluation de crédit ou de tarification en assurance vie et santé.",
+        ],
+      },
+      {
+        type: 'callout',
+        title: "Les dates réelles, après le règlement (UE) 2026/1744",
+        text: "Le règlement du 8 juillet 2026 a reporté l'application des obligations sur les systèmes à haut risque : au 2 décembre 2027 pour les systèmes de l'annexe III (emploi, éducation, crédit, services essentiels, justice notamment), au 2 août 2028 pour ceux de l'annexe I (produits réglementés). Aucune de ces obligations de documentation et de journalisation n'est exigible aujourd'hui pour un usage à risque minimal. Toutes sont utiles dès maintenant en cas de litige, de contrôle ou de question d'un client, et toutes prennent plus de six mois à construire dans une organisation qui part de zéro.",
+      },
+      { type: 'p', text: "Le RGPD ajoute ses propres exigences, applicables dès aujourd'hui et quel que soit le niveau de risque : le registre des traitements (article 30), l'analyse d'impact quand elle est requise (article 35), et le droit d'obtenir une intervention humaine et des explications face à une décision entièrement automatisée (article 22). En pratique, c'est le RGPD qui rend l'auditabilité exigible en 2026, pas le règlement IA." },
+
+      { type: 'h2', text: "Les quatre couches de l'auditabilité" },
+      { type: 'p', text: "Un système auditable se documente à quatre niveaux. Les organisations qui échouent traitent en général un seul niveau, souvent le modèle, et découvrent le jour du contrôle que les trois autres manquent." },
+      { type: 'h3', text: "1. Les données" },
+      { type: 'p', text: "D'où viennent les données d'entrée et, pour un système entraîné en interne, les données d'entraînement : source, date d'extraction, base légale, droits d'usage, transformations appliquées. Pour un assistant génératif du marché, la couche données se réduit à ce que vos équipes y saisissent : c'est là que se logent la plupart des écarts, quand un document confidentiel ou une donnée personnelle part dans un outil non contractualisé." },
+      { type: 'h3', text: "2. Le modèle et sa configuration" },
+      { type: 'p', text: "Le fournisseur, le nom du modèle, sa version, la date de mise en service, les paramètres, le prompt système, les outils connectés, les sources documentaires branchées. Les éditeurs changent de modèle sans préavis, parfois plusieurs fois par an : sans date de version, deux sorties produites à trois mois d'écart ne sont pas comparables. Un simple journal des changements, tenu par la DSI, règle la question." },
+      { type: 'h3', text: "3. Les décisions et les journaux" },
+      { type: 'p', text: "Qui a demandé quoi, quelle sortie a été produite, qui l'a validée, ce qui a été modifié avant usage, et ce qui a été fait de la sortie. Pour un système à haut risque, cette couche est celle de l'article 12. Pour un assistant bureautique, elle se résume à deux règles : la sortie de l'IA ne part jamais telle quelle vers un tiers, et la personne qui la signe est identifiable." },
+      { type: 'h3', text: "4. L'organisation" },
+      { type: 'p', text: "Qui a autorisé le système, sur quelle base, avec quelles limites ; qui le supervise et avec quelle formation ; à quelle fréquence il est revu ; comment un incident remonte. C'est la couche que couvre une gouvernance de l'IA, et celle qu'une certification ISO/IEC 42001 examine en premier." },
+
+      { type: 'h2', text: "Ce que vous devez pouvoir produire, selon l'usage" },
+      { type: 'p', text: "Le niveau d'auditabilité attendu dépend de l'usage, pas de l'outil. Le tableau donne, pour les usages les plus fréquents en entreprise, le niveau de risque au sens du règlement, les pièces qu'on vous demandera et un délai réaliste pour les constituer." },
+      {
+        type: 'table',
+        headers: ['Usage', 'Niveau de risque', 'Ce qu\'on vous demandera de produire', 'Délai réaliste'],
+        rows: [
+          ["Assistant bureautique (rédaction, synthèse, tableaux)", 'Minimal', "Politique d'usage, liste des outils autorisés, preuve de formation des utilisateurs (littératie, article 4)", 'Une à deux semaines'],
+          ["Agent conversationnel face aux clients", 'Limité (transparence)', "Mention d'IA à l'ouverture (article 50), journal des conversations, procédure d'escalade vers un humain, base documentaire versionnée", 'Un mois'],
+          ["Contenus générés publiés (textes, images, vidéos)", 'Limité (transparence)', "Marquage ou mention selon le contenu, circuit de validation éditoriale tracé, journal des versions", 'Un mois'],
+          ["Aide au tri de candidatures, évaluation de salariés", 'Haut risque (annexe III)', "Documentation du fournisseur, journaux conservés six mois au moins, supervision humaine formée et tracée, information des candidats, des salariés et de leurs représentants, analyse d'impact RGPD", 'Six mois'],
+          ["Scoring de crédit, tarification en assurance vie ou santé", 'Haut risque (annexe III)', "Les pièces ci-dessus, plus l'analyse d'impact sur les droits fondamentaux (article 27) et l'enregistrement du fournisseur dans la base européenne", 'Six à douze mois'],
+        ],
+      },
+      { type: 'p', text: "Les délais supposent une organisation qui part de rien et un système déjà en service. Ils s'allongent quand le fournisseur ne livre pas sa documentation, ce qui arrive avec les éditeurs de logiciels métier qui ont activé une fonction d'IA sans le dire." },
+
+      { type: 'h2', text: "Auditabilité des IA génératives que vous achetez" },
+      { type: 'p', text: "Pour un assistant du marché, vous ne contrôlez ni le modèle ni son entraînement. L'auditabilité se joue alors dans le contrat et le plan souscrit. Cinq points à vérifier avant de signer, ou à vérifier maintenant si vous avez déjà signé." },
+      {
+        type: 'ol',
+        items: [
+          "<strong>Des journaux d'administration existent-ils, et sont-ils exportables ?</strong> Les plans destinés aux entreprises en proposent en général ; les comptes gratuits et grand public, jamais. Sans export, vos journaux vivent chez l'éditeur et disparaissent avec le compte.",
+          "<strong>Vos données sont-elles réutilisées pour l'entraînement ?</strong> La réponse doit être écrite dans le contrat, pas dans une page d'aide. Elle conditionne la couche données.",
+          "<strong>Où sont hébergées et traitées les données ?</strong> Région, sous-traitants, transferts hors Union européenne : le registre des traitements en a besoin.",
+          "<strong>Comment êtes-vous informé d'un changement de modèle ?</strong> À défaut de préavis de l'éditeur, tenez votre propre journal des versions, avec une date et un test de référence.",
+          "<strong>Pouvez-vous fixer un prompt système et des sources documentaires versionnés ?</strong> C'est ce qui rend deux sorties comparables et ce qui permet de reconstituer une réponse.",
+        ],
+      },
+      { type: 'p', text: "Sur un exemple précis, notre page sur la <a href='/securite-claude-entreprise'>sécurité de Claude en entreprise</a> décrit ce qu'un plan Entreprise apporte en matière de journaux et de conservation. Le principe vaut pour tous les éditeurs : l'auditabilité s'achète avec le plan, elle ne vient pas avec l'outil." },
+
+      { type: 'h2', text: "Auditabilité et ISO/IEC 42001" },
+      { type: 'p', text: "La norme ISO/IEC 42001, publiée le 18 décembre 2023, décrit un système de management de l'intelligence artificielle. Elle demande des enregistrements : inventaire des systèmes, évaluation des impacts, décisions documentées, revues périodiques. Une organisation certifiée a, par construction, traité la couche organisation de l'auditabilité, et souvent les trois autres. La certification est délivrée par un organisme accrédité sur un périmètre déclaré ; elle ne vaut pas conformité au règlement européen, pour lequel aucune norme harmonisée n'a été citée au Journal officiel de l'Union européenne à ce jour. Elle reste le cadre le plus utile pour structurer le travail, certification visée ou non." },
+
+      { type: 'h2', text: "Par où commencer : un plan en trois semaines" },
+      { type: 'p', text: "Pour une organisation qui utilise des outils du marché et n'a pas de système à haut risque en service, trois semaines suffisent à passer d'un usage non tracé à un usage auditable. Le plan ci-dessous se mène avec la DSI, le DPO et un responsable métier." },
+      {
+        type: 'ol',
+        items: [
+          "<strong>Semaine 1, inventaire et registre.</strong> Lister chaque système d'IA en service, y compris les fonctions activées dans vos logiciels et les comptes personnels connus. Pour chacun : usage, données, fournisseur, plan, version, personne responsable. Ce registre est la pièce que tout le reste suppose.",
+          "<strong>Semaine 2, journaux et versions pour les trois usages les plus sensibles.</strong> Activer ou exporter les journaux d'administration, dater la version du modèle, versionner le prompt système et les sources documentaires, écrire la règle « aucune sortie ne part telle quelle vers un tiers ».",
+          "<strong>Semaine 3, procédure et test.</strong> Rédiger la procédure d'autorisation d'un nouvel usage (qui décide, sur quels critères), la fiche de supervision (qui valide, comment on écarte une sortie), puis faire le test de reconstitution sur une sortie vieille d'un mois. Si le test échoue, la semaine 2 n'est pas finie.",
+        ],
+      },
+
+      { type: 'h2', text: "Les erreurs qui rendent un système inauditable" },
+      {
+        type: 'ul',
+        items: [
+          "Des comptes personnels ou gratuits utilisés pour un usage professionnel : aucun journal, aucune version, aucun contrat.",
+          "Un prompt système modifié à la main, sans historique : deux sorties ne sont plus comparables.",
+          "Des sorties copiées-collées dans un document final sans trace de ce qui vient de l'IA et de ce qui a été corrigé.",
+          "Un changement de modèle par l'éditeur, non daté côté entreprise : les performances mesurées avant ne veulent plus rien dire.",
+          "Des journaux qui n'existent que chez l'éditeur, sans export : ils disparaissent avec le compte ou avec le prestataire.",
+          "Une validation humaine réelle mais jamais tracée : au moment du litige, personne ne peut prouver qu'elle a eu lieu.",
+        ],
+      },
+      { type: 'p', text: "Chacune de ces erreurs se corrige en quelques jours. Aucune ne se corrige rétroactivement : les sorties produites avant restent inauditables. C'est la raison de commencer avant que le règlement ne l'exige, et avant qu'une question extérieure ne l'impose." },
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce que l'auditabilité d'un système d'IA ?",
+        a: "C'est la capacité à reconstituer, après coup et pour une sortie donnée, quel système l'a produite, dans quelle version, à partir de quelles données et de quels réglages, et quelle personne l'a validée. Elle se documente à quatre niveaux : les données, le modèle et sa configuration, les décisions et les journaux, l'organisation. Un système peut être auditable sans être explicable.",
+      },
+      {
+        q: "Le règlement européen exige-t-il l'auditabilité de tous les systèmes d'IA ?",
+        a: "Non. Les obligations de documentation technique, de journalisation automatique et de supervision humaine visent les systèmes à haut risque, et leur application est reportée au 2 décembre 2027 pour l'annexe III et au 2 août 2028 pour l'annexe I. Pour les autres usages, le RGPD impose déjà un registre des traitements et, pour les décisions entièrement automatisées, la possibilité d'une intervention humaine et d'une explication.",
+      },
+      {
+        q: "Combien de temps faut-il conserver les journaux d'un système d'IA ?",
+        a: "Pour un système à haut risque, au moins six mois, tant pour le fournisseur (article 19) que pour le déployeur pour les journaux sous son contrôle (article 26, paragraphe 6), sauf durée plus longue prévue par un autre texte. Pour les autres usages, aucune durée n'est fixée par le règlement IA ; la durée se déduit du RGPD et de vos besoins de preuve.",
+      },
+      {
+        q: "Un assistant comme ChatGPT, Copilot ou Claude est-il auditable ?",
+        a: "Cela dépend du plan souscrit et du contrat, pas de l'outil. Les plans destinés aux entreprises proposent en général des journaux d'administration exportables, une conservation définie et une clause d'exclusion de vos données de l'entraînement. Les comptes gratuits et grand public n'en proposent aucun. L'auditabilité s'achète avec le plan.",
+      },
+      {
+        q: "La certification ISO/IEC 42001 garantit-elle l'auditabilité ?",
+        a: "Elle garantit qu'un système de management est en place et documenté, ce qui couvre la couche organisation et, en pratique, les trois autres. Elle ne vaut pas conformité au règlement européen sur l'IA, pour lequel aucune norme harmonisée n'a été citée au Journal officiel à ce jour. Elle reste le cadre le plus structurant pour construire l'auditabilité.",
+      },
+      {
+        q: "Par où commencer si nous n'avons rien ?",
+        a: "Par l'inventaire : la liste de chaque système d'IA en service avec son usage, ses données, son fournisseur, sa version et son responsable. Puis les journaux et les versions pour les trois usages les plus sensibles, puis une procédure d'autorisation et une fiche de supervision. Trois semaines suffisent pour une organisation qui utilise des outils du marché sans système à haut risque.",
+      },
+    ],
+    internalLinks: [
+      { label: "Audit de conformité IA : la mission conduite par Masteria", href: '/audit-conformite-ai-act' },
+      { label: "Audit IA d'entreprise : maturité, conformité, plan d'action", href: '/audit-ia' },
+      { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
+      { label: "Formation AI Act : la littératie IA de vos équipes", href: '/formation-ai-act' },
+      { label: "IA et RGPD : les questions de données personnelles", href: '/ia-et-rgpd' },
+      { label: "Guide de l'audit IA : méthode, normes, prix", href: '/blog/audit-ia-entreprise-methode-prix' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/auditabilite-systeme-ia#lexique',
+        name: "Lexique de l'auditabilité des systèmes d'IA",
+        hasDefinedTerm: [
+          { '@type': 'DefinedTerm', name: "Auditabilité d'un système d'IA", description: "Capacité à reconstituer, pour une sortie donnée, le système et sa version, les données et réglages d'entrée, et la personne qui a validé la sortie." },
+          { '@type': 'DefinedTerm', name: 'Explicabilité', description: "Capacité à expliquer pourquoi un modèle a produit tel résultat. Distincte de l'auditabilité : un système peut être auditable sans être explicable." },
+          { '@type': 'DefinedTerm', name: 'Journalisation automatique (article 12)', description: "Obligation faite aux systèmes d'IA à haut risque d'enregistrer automatiquement les événements pertinents pendant leur durée de vie, pour permettre la traçabilité de leur fonctionnement." },
+          { '@type': 'DefinedTerm', name: 'Documentation technique (annexe IV)', description: "Documentation que le fournisseur d'un système à haut risque tient à jour : description du système, données, performances, limites, gestion des risques." },
+          { '@type': 'DefinedTerm', name: 'Supervision humaine (article 14)', description: "Exigence que les systèmes à haut risque soient conçus pour être supervisés par des personnes capables de comprendre, d'interpréter, d'écarter leurs sorties ou de les interrompre." },
+          { '@type': 'DefinedTerm', name: 'ISO/IEC 42001', description: "Norme publiée le 18 décembre 2023 définissant les exigences d'un système de management de l'intelligence artificielle, certifiable par un organisme accrédité." },
         ],
       },
     ],
@@ -1940,7 +2104,7 @@ export const BLOG_ARTICLES = [
         items: [
           "<strong>Vous avez besoin de conseil</strong> quand la question est : « Que devons-nous faire avec l'IA dans les 12 prochains mois ? » Vous cherchez à décider, à prioriser, à cadrer.",
           "<strong>Vous avez besoin de formation</strong> quand la question est : « Comment nos équipes vont-elles faire pour utiliser l'outil X sur leur métier ? » Vous avez déjà décidé, vous devez maintenant exécuter.",
-          "<strong>Vous avez besoin des deux</strong> dans la majorité des cas pour les PME et ETI. Un audit de trois semaines suivi d'un plan de formation sur les deux à trois trimestres qui viennent.",
+          "<strong>Vous avez besoin des deux</strong> dans la majorité des cas pour les PME et ETI. Un <a href='/audit-ia'>audit IA</a> de trois semaines suivi d'un plan de formation sur les deux à trois trimestres qui viennent.",
         ],
       },
       { type: 'p', text: "Les cabinets qui combinent les deux expertises (conseil stratégique et formation certifiée) sont rares. Mais quand cette combinaison existe, elle évite la rupture entre la phase « décision » et la phase « exécution ». Les recommandations du conseil arrivent directement dans les contenus de formation, sans traduction ni perte d'information." },

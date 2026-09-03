@@ -6,6 +6,7 @@ import {
   Gauge, Calendar, MapPin, Check, Landmark, Building2,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -37,12 +38,14 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  */
 
 const SLUG = 'audit-ia'
+/* Entité écrite partout de la même façon (GEO : ancrage d'entité cohérent). */
+const ENTITY = "Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan"
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Audit IA : maturité, conformité, plan d'action | Masteria"
-const META_DESC = "Audit IA en entreprise : maturité, processus, données, conformité RGPD et AI Act. Feuille de route chiffrée, livrable exploitable même sans suite. Cadrage gratuit."
-const KEYWORDS = "audit ia, audit ia entreprise, audit de maturité ia, cabinet audit ia, audit intelligence artificielle, audit de conformité ia"
+const META_TITLE = "Audit IA d'entreprise : maturité, conformité, plan d'action | Masteria"
+const META_DESC = "Audit IA d'entreprise par un cabinet spécialisé en intelligence artificielle : maturité, processus, conformité RGPD et AI Act, feuille de route chiffrée. Cadrage gratuit."
+const KEYWORDS = "audit ia, audit ia entreprise, audit intelligence artificielle, cabinet d'audit ia, audit de maturité ia, audit des processus ia, audit de conformité ia"
 
 /* ───────── Styles partagés (calque /diagnostic-ia) ───────── */
 
@@ -85,24 +88,28 @@ const EN_BREF = [
   { label: 'Référentiels', value: "ISO/IEC 42001 et 23894, cadre de gestion des risques du NIST, RGPD, règlement européen sur l'IA" },
   { label: 'Prix', value: "Forfait fixé après un cadrage gratuit qui délimite le périmètre ; jamais de pack vendu à l'aveugle" },
   { label: 'Et après', value: "Mise en œuvre par nos équipes ou par les vôtres : le livrable se suffit à lui-même" },
+  { label: 'Cabinet', value: ENTITY },
 ]
 
 /* ───────── Les trois types d'audit (cartes) ───────── */
 
 const TYPES_AUDIT = [
   {
+    id: 'audit-maturite',
     icon: Search,
-    title: "Audit de maturité et d'opportunité",
+    title: "Audit de maturité IA et d'opportunité",
     question: "Où en est-on, que peut-on automatiser, dans quel ordre ?",
-    desc: "Cartographie de vos processus, inventaire des usages existants, portefeuille de cas d'usage priorisé par impact et par effort, feuille de route chiffrée. C'est la demande la plus fréquente, et le cœur de la mission Masteria.",
+    desc: "Audit de vos processus et de leur potentiel d'automatisation, inventaire des usages existants, portefeuille de cas d'usage priorisé par impact et par effort, feuille de route chiffrée. C'est la demande la plus fréquente, et le cœur de la mission Masteria.",
   },
   {
+    id: 'audit-conformite',
     icon: Scale,
-    title: 'Audit de conformité',
+    title: 'Audit de conformité IA : RGPD et AI Act',
     question: "Sommes-nous en règle au regard du RGPD et du règlement IA ?",
     desc: "Inventaire des systèmes en service, qualification par niveau de risque, écarts et plan de mise en conformité. En 2026, il commence par le RGPD : c'est de là que viennent les contrôles de la CNIL, l'essentiel du règlement IA n'étant pas encore applicable.",
   },
   {
+    id: 'audit-algorithmique',
     icon: Cpu,
     title: 'Audit algorithmique',
     question: "Ce modèle fonctionne-t-il correctement et sans biais ?",
@@ -115,33 +122,68 @@ const TYPES_AUDIT = [
 const COMPARATIF = [
   {
     critere: 'Objectif',
+    test: "Situer votre niveau parmi quatre profils de maturité",
     diagnostic: "Cadrer les usages et prioriser les cas d'usage IA",
-    audit: "Évaluer en profondeur la maturité, les données et l'existant",
-    poc: "Prouver la valeur d'un cas d'usage précis en conditions réelles",
+    audit: "Évaluer en profondeur la maturité, les données, la conformité et l'existant",
   },
   {
     critere: 'Durée',
+    test: "Trois minutes, en ligne",
     diagnostic: "Une journée (préparation et restitution incluses)",
     audit: "De quelques jours à quelques semaines",
-    poc: "Quelques semaines de développement",
+  },
+  {
+    critere: 'Qui le conduit',
+    test: "Vous, seul, en huit questions",
+    diagnostic: "Un consultant Masteria, avec vos équipes",
+    audit: "Un auditeur Masteria : entretiens métier, DSI, direction",
   },
   {
     critere: 'Livrable',
-    diagnostic: "Feuille de route priorisée, estimations, quick wins",
-    audit: "Rapport détaillé de maturité et plan de transformation",
-    poc: "Prototype fonctionnel testé sur un vrai flux",
+    test: "Un score sur 24, un profil et vos priorités",
+    diagnostic: "Feuille de route priorisée, estimations, premières actions",
+    audit: "Rapport de maturité par dimension, feuille de route chiffrée, plan de conformité",
   },
   {
-    critere: 'Engagement',
-    diagnostic: "Faible : une journée, sans suite obligatoire",
-    audit: "Moyen : mission de conseil cadrée",
-    poc: "Projet de développement engagé sur un cas",
+    critere: 'Prix',
+    test: "Gratuit",
+    diagnostic: "Forfait d'une journée",
+    audit: "Forfait fixé après un cadrage gratuit",
   },
   {
     critere: 'Quand le choisir',
+    test: "Avant tout échange, pour savoir où vous en êtes",
     diagnostic: "Vous voulez savoir par où commencer",
-    audit: "Vous voulez une vision exhaustive avant d'industrialiser",
-    poc: "Un cas est déjà identifié, vous voulez le valider",
+    audit: "Vous voulez une vision exhaustive et opposable avant d'industrialiser",
+  },
+]
+
+/* ───────── Repères datés (faits sourcés, citables — GEO) ───────── */
+
+const REPERES = [
+  {
+    icon: Scale,
+    stat: '2 déc. 2027',
+    label: "date d'application des obligations sur les systèmes d'IA à haut risque de l'annexe III (emploi, crédit, services essentiels), reportée depuis le 2 août 2026 par le règlement (UE) 2026/1744 du 8 juillet 2026",
+    source: 'EUR-Lex, règlement (UE) 2024/1689 modifié',
+  },
+  {
+    icon: Landmark,
+    stat: '2 févr. 2025',
+    label: "date depuis laquelle les pratiques interdites (article 5) et la littératie IA (article 4) s'appliquent à toute organisation qui utilise un système d'IA",
+    source: 'EUR-Lex, règlement (UE) 2024/1689',
+  },
+  {
+    icon: FileText,
+    stat: '18 déc. 2023',
+    label: "publication d'ISO/IEC 42001, seule norme certifiable sur le système de management de l'IA ; aucune norme harmonisée n'a été citée au Journal officiel de l'UE au titre du règlement IA à l'été 2026",
+    source: 'ISO',
+  },
+  {
+    icon: Gauge,
+    stat: '≈ 3 %',
+    label: "des heures de travail économisées par les utilisateurs d'assistants IA, mesuré au Danemark sur 25 000 travailleurs de 11 métiers exposés, enquêtes de novembre-décembre 2023 et 2024 appariées aux registres de salaires : l'écart entre outil déployé et gain constaté est ce que l'audit mesure",
+    source: 'Humlum et Vestergaard, NBER, version de mars 2026',
   },
 ]
 
@@ -302,7 +344,7 @@ const serviceJsonLd = {
   '@type': ['Service', 'ProfessionalService'],
   name: 'Audit IA — Masteria',
   alternateName: "Audit d'intelligence artificielle en entreprise",
-  description: "Audit IA en entreprise : évaluation de la maturité, des processus, des données, des outils et de la conformité RGPD et AI Act. Livrable : rapport de maturité, portefeuille de cas d'usage priorisé, feuille de route chiffrée, plan de mise en conformité et actions écartées motivées. Mission cadrée de quelques jours à quelques semaines.",
+  description: "Audit IA en entreprise par " + ENTITY + " : évaluation de la maturité, des processus, des données, des outils et de la conformité RGPD et AI Act. Livrable : rapport de maturité, portefeuille de cas d'usage priorisé, feuille de route chiffrée, plan de mise en conformité et actions écartées motivées. Mission cadrée de quelques jours à quelques semaines.",
   url: 'https://www.master-ia.fr/audit-ia',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/audit-ia#webpage' },
   serviceType: "Audit de maturité et de conformité IA",
@@ -354,7 +396,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-10',
-  dateModified: '2026-08-10',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/audit-ia#webpage' },
   about: ['Audit IA', 'Audit de maturité IA', 'Audit de conformité IA', 'Feuille de route IA', 'Conseil en intelligence artificielle'],
@@ -404,8 +446,11 @@ const termsJsonLd = {
 /* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
    affichées dans le bloc « Sources et références officielles ». */
 const PAGE_CITATIONS = [
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-        ]
+  { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "ISO/IEC 42001:2023 — Système de management de l'intelligence artificielle", url: 'https://www.iso.org/fr/standard/81230.html' },
+  { name: "CNIL — Intelligence artificielle : recommandations et fiches pratiques", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: "Humlum & Vestergaard — Still Waters, Rapid Currents: Early Labor Market Transformation under Generative AI, NBER Working Paper 33777", url: 'https://www.nber.org/papers/w33777' },
+]
 
 export default function AuditIAPage() {
   const isDesktop = useIsDesktop()
@@ -433,8 +478,8 @@ export default function AuditIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-08-10"
-        dateModified="2026-08-10"
-        speakable={['#geo-summary', '#en-bref']}
+        dateModified="2026-09-03"
+        speakable={['#definition', '#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd, termsJsonLd]}
       />
@@ -475,12 +520,20 @@ export default function AuditIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026, mis à jour en septembre 2026
           </p>
+
+          {/* GEO : définition autonome (54 mots), citable hors contexte */}
+          <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
+              Un audit IA est l'état des lieux structuré de l'intelligence artificielle dans une organisation : usages réels, données, outils, organisation et conformité, évalués par un tiers indépendant et conclus par une feuille de route priorisée. Il se distingue du diagnostic d'une journée par sa profondeur, et du test de maturité par la présence d'un auditeur.
+            </p>
+          </div>
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit IA de Masteria évalue en profondeur votre entreprise sur cinq dimensions : processus, données, outils, organisation et conformité RGPD et AI Act. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>rapport de maturité et une feuille de route chiffrée</strong>, qui nomme aussi les actions à ne pas lancer. Une mission cadrée, de quelques jours à quelques semaines selon le périmètre.
+            L'audit IA de {ENTITY.split(',')[0]}, un audit d'intelligence artificielle mené par un cabinet indépendant, évalue en profondeur votre entreprise sur cinq dimensions : processus, données, outils, organisation et conformité RGPD et AI Act. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>rapport de maturité et une feuille de route chiffrée</strong>, qui nomme aussi les actions à ne pas lancer. Une mission cadrée, de quelques jours à quelques semaines selon le périmètre.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -538,14 +591,14 @@ export default function AuditIAPage() {
                 <strong>« Audit IA » recouvre trois missions distinctes : l'audit de maturité et d'opportunité, l'audit de conformité et l'audit algorithmique. Elles n'ont ni le même objet, ni le même livrable. Un prestataire qui ne vous demande pas laquelle vous voulez ne sait pas ce qu'il vend : chez Masteria, c'est la première question du cadrage.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Dans la plupart des demandes, le besoin combine les deux premières : comprendre où vous en êtes et ce que vous pouvez automatiser, en intégrant la conformité au passage plutôt qu'après coup. C'est le périmètre standard de notre mission. Pour le fond réglementaire (ce que la loi impose vraiment, les normes publiées, les prix vérifiables), lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide complet de l'audit IA</Link>.
+                Dans la plupart des demandes, le besoin combine les deux premières : comprendre où vous en êtes et ce que vous pouvez automatiser, en intégrant la conformité au passage plutôt qu'après coup. C'est le périmètre standard de notre mission. Pour le fond réglementaire (ce que la loi impose vraiment, les normes publiées, les prix vérifiables), lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide complet de l'audit IA</Link>. Quand la conformité est la question principale, la mission dédiée est notre <Link to="/audit-conformite-ai-act" style={aStyle}>audit de conformité IA</Link> ; pour une association ou un établissement médico-social, voyez notre <Link to="/audit-ia-medico-social" style={aStyle}>audit IA médico-social</Link>.
               </p>
             </div>
 
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
                 {TYPES_AUDIT.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                  <div key={i} id={item.id} style={{ ...cardStyle, padding: 24, scrollMarginTop: 96 }}>
                     <div style={{ marginBottom: 14 }}>
                       <IconTile icon={item.icon} />
                     </div>
@@ -556,53 +609,53 @@ export default function AuditIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Un quatrième usage du mot circule, sans rapport avec cette page : l'audit de visibilité dans les moteurs génératifs, qui mesure si votre marque est citée par ChatGPT ou Perplexity. Ce besoin a sa mission dédiée, notre <Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link>.
+                Un quatrième usage du mot circule, sans rapport avec cette page : l'audit de visibilité dans les moteurs génératifs, qui mesure si votre marque est citée par ChatGPT ou Perplexity. Ce besoin a sa mission dédiée, notre <Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link>.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── DIAGNOSTIC VS AUDIT VS POC (ancre sombre — pivot, tableau citable GEO) ── */}
+      {/* ── TEST VS DIAGNOSTIC VS AUDIT (ancre sombre — pivot, tableau citable GEO) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Audit, diagnostic ou POC</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Test, diagnostic ou audit</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             L'audit est-il la bonne mission pour vous ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>L'audit IA convient quand vous voulez une vision exhaustive avant d'industrialiser : maturité, données, conformité, trajectoire. Si vous cherchez seulement par où commencer, le diagnostic d'une journée suffit. Si un cas d'usage est déjà identifié, un POC le valide en conditions réelles. Le cadrage gratuit sert à choisir la bonne mission, y compris quand c'est la moins chère.</strong>
+            <strong style={{ color: '#fff' }}>Trois niveaux, du plus léger au plus profond. Le test de maturité IA situe votre profil en trois minutes, gratuitement. Le diagnostic IA cadre vos usages et priorise vos cas en une journée. L'audit IA évalue en profondeur maturité, données, conformité et trajectoire, sur plusieurs jours ou semaines. Le cadrage gratuit sert à choisir la bonne mission, y compris quand c'est la moins chère.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
-            <table aria-label="Comparatif entre audit IA complet, diagnostic IA et POC" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
+            <table aria-label="Comparatif entre test de maturité IA, diagnostic IA et audit IA complet" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
               <thead>
                 <tr>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '20%' }}>Critère</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '24%' }}>Test de maturité IA</th>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Diagnostic IA</th>
-                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '28%' }}>Audit IA complet</th>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>POC / preuve de concept</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '30%' }}>Audit IA complet</th>
                 </tr>
               </thead>
               <tbody>
                 {COMPARATIF.map((row, i) => (
                   <tr key={row.critere} style={{ borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                     <th scope="row" style={{ padding: '14px 18px', fontSize: 14, color: '#F8FAFC', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5 }}>{row.critere}</th>
+                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.test}</td>
                     <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.diagnostic}</td>
                     <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#fff', fontWeight: 500, lineHeight: 1.65, verticalAlign: 'top', background: 'rgba(37,99,235,0.10)' }}>{row.audit}</td>
-                    <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>{row.poc}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Le point d'entrée le plus rapide reste le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>diagnostic IA d'une journée</Link> : beaucoup de nos audits commencent là, sur un périmètre que le diagnostic a fait émerger.
+            Commencez par le <Link to="/test-maturite-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>test de maturité IA</Link> si vous voulez une première photographie, ou par le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>diagnostic IA d'une journée</Link> : beaucoup de nos audits commencent là, sur un périmètre que le diagnostic a fait émerger. Quand un cas d'usage est déjà identifié, un POC le valide en conditions réelles : c'est un projet de développement, pas un audit.
           </p>
         </div>
       </section>
@@ -642,6 +695,34 @@ export default function AuditIAPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── REPÈRES DATÉS (faits sourcés, citables — GEO) ── */}
+      <section id="reperes" style={{ padding: sectionPad, background: '#fff', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
+          <Kicker>Repères datés</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Quatre dates et un chiffre qui cadrent un audit IA en 2026
+          </h2>
+          <p style={{ ...answerStyle }}>
+            <strong>Les obligations du règlement européen s'appliquent à des dates différentes selon l'usage, et l'écart entre un outil déployé et un gain mesuré reste étroit : c'est ce double constat que l'audit documente pour votre organisation, date par date et service par service.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginTop: 12 }}>
+            {REPERES.map((r, i) => (
+              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
+                <div style={{ marginBottom: 14 }}>
+                  <IconTile icon={r.icon} />
+                </div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{r.stat}</div>
+                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{r.label}</p>
+                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>Source : {r.source}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '20px 0 0', maxWidth: 880 }}>
+            Les références complètes figurent en bas de page. Pour les mesures d'effet sur la productivité, la méthode et la période de collecte sont indiquées avec chaque chiffre : notre page sur le <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link> en rassemble une vingtaine, avec ce que chacune mesure et ne mesure pas.
+          </p>
         </div>
       </section>
 
@@ -773,6 +854,13 @@ export default function AuditIAPage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['photovoltaique', 'industrie']}
+        title="Deux missions de conseil, de l'état des lieux au plan d'action"
+        intro="Un distributeur photovoltaïque diagnostiqué par flux de travail, un groupe industriel accompagné du comité de direction aux sites internationaux : la même méthode en six temps, avec ses résultats pour les équipes et pour l'organisation."
+      />
+
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -814,6 +902,9 @@ export default function AuditIAPage() {
               { label: 'Diagnostic IA en une journée', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Le point d'entrée le plus rapide : cadrage et priorisation en une journée, avant un audit ciblé si besoin." },
               { label: "Guide complet de l'audit IA", href: '/blog/audit-ia-entreprise-methode-prix', tag: 'Guide', desc: "Les trois types d'audit, ce que la loi impose vraiment, les normes publiées et le seul prix public vérifiable." },
               { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Après l'audit : la trajectoire d'entreprise, les arbitrages COMEX et la feuille de route stratégique." },
+              { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "Quand la question est « sommes-nous en règle » : RGPD, AI Act, écarts hiérarchisés et plan daté." },
+              { label: 'Audit IA médico-social', href: '/audit-ia-medico-social', tag: 'Secteur', desc: "La déclinaison pour les associations et établissements médico-sociaux : usagers, DUI, HDS, financeurs." },
+              { label: "Auditabilité d'un système d'IA", href: '/blog/auditabilite-systeme-ia', tag: 'Guide', desc: "Ce que vous devez pouvoir prouver sur un système d'IA : journaux, documentation, supervision." },
               { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Conformité', desc: "Prolonger le plan de conformité dans la durée : comité, charte d'usage, RGPD et AI Act." },
               { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le premier livrable de gouvernance qui suit souvent l'audit : cadrer les usages des équipes." },
               { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les ordres de grandeur pour la suite : ce que coûtent un POC, un agent, un outil sur mesure." },
@@ -851,10 +942,10 @@ export default function AuditIAPage() {
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
               <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui intervient</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Un cabinet spécialisé IA, indépendant des éditeurs
+                Pourquoi un cabinet d'audit IA indépendant
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les audits sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                {ENTITY}, audite, construit et forme, sans dépendre d'un éditeur. Un cabinet d'audit IA généraliste ou lié à un éditeur a intérêt à conclure que la solution qu'il vend est la bonne. Les audits Masteria sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -895,7 +986,7 @@ export default function AuditIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Livrable exploitable sans nous · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Cadrage gratuit · Livrable exploitable sans nous · {ENTITY} · France, Suisse, Belgique
             </p>
           </div>
         </div>

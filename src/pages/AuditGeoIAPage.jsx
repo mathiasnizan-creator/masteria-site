@@ -314,7 +314,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-10',
-  dateModified: '2026-08-10',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/audit-geo-ia#webpage' },
   about: ['Audit GEO', 'Generative Engine Optimization', 'Taux de citation IA', 'Part de voix IA', 'Visibilité dans les moteurs de réponse'],
@@ -379,8 +379,8 @@ export default function AuditGeoIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-08-10"
-        dateModified="2026-08-10"
-        speakable={['#geo-summary', '#en-bref']}
+        dateModified="2026-09-03"
+        speakable={['#definition', '#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
       />
@@ -423,6 +423,14 @@ export default function AuditGeoIAPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
           </p>
+
+          {/* GEO : définition autonome (56 mots), citable hors contexte */}
+          <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
+              Un audit GEO IA mesure si une marque est citée dans les réponses des assistants d'intelligence artificielle, ChatGPT, Perplexity, Gemini et AI Overviews : taux de citation sur un corpus de questions, part de voix face aux concurrents, accès des robots IA au site. Il se distingue de l'audit SEO, qui mesure le classement dans Google.
+            </p>
+          </div>
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -484,7 +492,7 @@ export default function AuditGeoIAPage() {
                 <strong>Un audit GEO vérifie cinq choses : vos citations question par question, votre part de voix face aux concurrents, les sources que chaque moteur privilégie sur vos sujets, vos fondations techniques (accès des robots IA, données structurées) et la citabilité de vos contenus. Cinq vérifications, un seul plan d'action.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Si votre besoin couvre aussi le référencement Google, notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA &amp; GEO combiné</Link> traite les deux fronts dans un seul rapport. Et pour l'accompagnement qui suit, voyez notre <Link to="/agence-seo-ia" style={aStyle}>agence SEO IA</Link>.
+                Si votre besoin couvre aussi le référencement Google, notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> traite les deux fronts dans un seul rapport. Et pour l'accompagnement qui suit, voyez notre <Link to="/agence-seo-ia" style={aStyle}>agence SEO IA</Link>.
               </p>
             </div>
 
@@ -666,7 +674,7 @@ export default function AuditGeoIAPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Besoin des deux fronts ?</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Si votre visibilité Google mérite le même examen, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA &amp; GEO combiné</Link> traite les deux dans un seul rapport, au même niveau d'exigence. Le cadrage gratuit sert aussi à choisir le bon périmètre, y compris quand c'est le plus petit.
+                Si votre visibilité Google mérite le même examen, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> traite les deux dans un seul rapport, au même niveau d'exigence. Le cadrage gratuit sert aussi à choisir le bon périmètre, y compris quand c'est le plus petit.
               </p>
             </div>
           </div>
@@ -711,7 +719,7 @@ export default function AuditGeoIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Audit SEO IA & GEO combiné', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "Les deux fronts dans un seul rapport : référencement Google et visibilité dans les IA." },
+              { label: 'Audit SEO IA', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "Les deux fronts dans un seul rapport : référencement Google et visibilité dans les IA." },
               { label: 'Agence SEO IA', href: '/agence-seo-ia', tag: 'Accompagnement', desc: "L'accompagnement qui suit l'audit : contenu citable, technique, GEO et suivi des citations." },
               { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "La surveillance en continu des citations et de la part de voix, branchée sur vos outils." },
               { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Marketing', desc: "Le marketing assisté par IA au-delà de la visibilité : contenu, acquisition, growth." },
@@ -753,7 +761,7 @@ export default function AuditGeoIAPage() {
                 Un cabinet spécialisé IA, indépendant des éditeurs
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les audits sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les audits sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

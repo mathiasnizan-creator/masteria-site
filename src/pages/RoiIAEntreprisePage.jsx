@@ -6,6 +6,7 @@ import {
   Building2, Ban, GraduationCap, Scale,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -1015,6 +1016,13 @@ export default function RoiIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['photovoltaique', 'distribution', 'industrie']}
+        title="Trois missions où le gain est écrit comme une cible, puis mesuré"
+        intro="Des indicateurs relevés en séance et revus à J+30 dans une PME, des assistants en production dans une force de vente, une session pilote mesurée question par question dans un groupe industriel : la chaîne de conversion en pratique."
+      />
+
       {/* ── FAQ ── */}
       <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
@@ -1063,7 +1071,7 @@ export default function RoiIAEntreprisePage() {
               Chaque chiffre de cette page a été vérifié sur sa source primaire
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Nous affichons l&apos;échantillon et la période de mesure, pas seulement la date de parution. Les chiffres retenus sont ceux des versions publiées, qui diffèrent parfois des prépublications reprises dans la presse. Masteria est un cabinet spécialisé uniquement sur l&apos;intelligence artificielle, fondé à Lyon en 2022, indépendant des éditeurs. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Nous affichons l&apos;échantillon et la période de mesure, pas seulement la date de parution. Les chiffres retenus sont ceux des versions publiées, qui diffèrent parfois des prépublications reprises dans la presse. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

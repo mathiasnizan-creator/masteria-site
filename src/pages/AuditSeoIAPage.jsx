@@ -11,7 +11,8 @@ import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Offre d'entrée productisée du cluster SEO/GEO — « Audit SEO IA & GEO »
+ * Offre d'entrée productisée du cluster SEO/GEO — « Audit SEO IA » (depuis le 03/09/2026, le
+ * title/H1 ne portent plus « GEO » : la requête « audit geo ia » appartient à /audit-geo-ia)
  * (slug /audit-seo-ia). Même relation à /agence-seo-ia que /diagnostic-ia
  * au conseil : la page d'audit convertit, la page mère porte l'accompagnement.
  *
@@ -38,8 +39,8 @@ const SLUG = 'audit-seo-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Audit SEO IA & GEO : votre visibilité Google + IA | Masteria"
-const META_DESC = "Audit SEO IA et audit GEO : positions Google, citations dans ChatGPT, Perplexity et AI Overviews, technique, contenu. Correctifs priorisés par impact, sur devis."
+const META_TITLE = "Audit SEO IA : positions Google, technique, contenu | Masteria"
+const META_DESC = "Audit SEO IA : positions Google, indexation, technique et contenu, outillé par l'IA. Volet citations ChatGPT et Perplexity en complément. Correctifs priorisés par impact, sur devis."
 const KEYWORDS = "audit seo ia, audit ia seo, audit seo intelligence artificielle, audit référencement ia, audit seo augmenté ia"
 
 /* ───────── Styles partagés (calque /agence-seo-ia) ───────── */
@@ -255,7 +256,7 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Audit SEO IA & GEO — Masteria',
+  name: 'Audit SEO IA — Masteria',
   alternateName: "Audit de visibilité Google et IA",
   description: "Audit SEO outillé par l'IA et audit GEO : mesure des positions Google et des citations dans ChatGPT, Perplexity, Gemini et les AI Overviews, audit technique (indexation, performance, données structurées, accès des robots IA), contenu et entités. Livrable : correctifs priorisés par impact, plan de contenu, grille de suivi des citations IA.",
   url: 'https://www.master-ia.fr/audit-seo-ia',
@@ -270,7 +271,7 @@ const serviceJsonLd = {
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Audit SEO IA & GEO',
+    name: 'Audit SEO IA',
     itemListElement: [
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Audit SEO technique outillé IA', description: "Exploration, indexation, performance, données structurées, maillage et accès des robots IA, correctifs priorisés par impact." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Audit de visibilité GEO', description: "Mesure des citations dans ChatGPT, Perplexity, Gemini et les AI Overviews sur un corpus de questions, part de voix face aux concurrents." } },
@@ -283,7 +284,7 @@ const serviceJsonLd = {
 const processJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Méthode de l'audit SEO IA & GEO Masteria",
+  name: "Méthode de l'audit SEO IA Masteria",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: METHODE.map((step, i) => ({
     '@type': 'ListItem',
@@ -302,7 +303,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/audit-seo-ia#article',
-  headline: "Audit SEO IA & GEO : mesurer votre visibilité sur Google et dans les IA",
+  headline: "Audit SEO IA : mesurer votre visibilité sur Google, et dans les IA",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
@@ -359,7 +360,7 @@ export default function AuditSeoIAPage() {
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Agence SEO IA', slug: 'agence-seo-ia' },
-    { name: 'Audit SEO IA & GEO', slug: SLUG },
+    { name: 'Audit SEO IA', slug: SLUG },
   ]
 
   return (
@@ -393,7 +394,7 @@ export default function AuditSeoIAPage() {
             <span style={{ color: '#3A4658' }}>/</span>
             <Link to="/agence-seo-ia" style={{ color: '#94A3B8' }}>Agence SEO IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Audit SEO IA &amp; GEO</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }}>Audit SEO IA</span>
           </nav>
 
           {/* eyebrow : picto en tuile + label */}
@@ -407,9 +408,9 @@ export default function AuditSeoIAPage() {
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 860 }}>
-            Audit SEO IA &amp; GEO :
+            Audit SEO IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>votre visibilité mesurée, sur Google et dans les IA</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>votre visibilité Google mesurée, avec ses correctifs priorisés</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
@@ -419,7 +420,7 @@ export default function AuditSeoIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit SEO IA &amp; GEO de Masteria mesure votre visibilité sur deux fronts : votre référencement Google (technique, contenu, positions) et votre présence dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews. Vous repartez avec <strong style={{ color: '#fff', fontWeight: 700 }}>un état des lieux chiffré et des correctifs priorisés par impact</strong>, exploitables par vos équipes ou par une autre agence.
+            L'audit SEO IA de Masteria mesure votre visibilité sur deux fronts : votre référencement Google (technique, contenu, positions) et votre présence dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews. Vous repartez avec <strong style={{ color: '#fff', fontWeight: 700 }}>un état des lieux chiffré et des correctifs priorisés par impact</strong>, exploitables par vos équipes ou par une autre agence.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -494,7 +495,7 @@ export default function AuditSeoIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Le volet visibilité IA peut aussi se mener pour lui-même : notre <Link to="/audit-geo-ia" style={aStyle}>audit GEO dédié</Link> approfondit la mesure des citations, la part de voix et l'arbitrage des robots IA.
+                Le volet visibilité IA peut aussi se mener pour lui-même : notre <Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> approfondit la mesure des citations, la part de voix et l'arbitrage des robots IA.
               </p>
             </div>
           </div>
@@ -538,7 +539,7 @@ export default function AuditSeoIAPage() {
             </table>
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Pour le volet GEO mené seul, voyez notre <Link to="/audit-geo-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit GEO dédié</Link>. Pour la définition complète du SEO augmenté par l'IA et du GEO, et l'accompagnement qui suit l'audit, voyez notre <Link to="/agence-seo-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence SEO IA</Link>.
+            Pour le volet GEO mené seul, voyez notre <Link to="/audit-geo-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit GEO IA</Link>. Pour la définition complète du SEO augmenté par l'IA et du GEO, et l'accompagnement qui suit l'audit, voyez notre <Link to="/agence-seo-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence SEO IA</Link>.
           </p>
         </div>
       </section>
@@ -673,7 +674,7 @@ export default function AuditSeoIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Audit SEO IA &amp; GEO : les questions fréquentes
+                Audit SEO IA : les questions fréquentes
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
@@ -747,7 +748,7 @@ export default function AuditSeoIAPage() {
                 Un cabinet spécialisé IA, indépendant des éditeurs
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les audits sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les audits sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

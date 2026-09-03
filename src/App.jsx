@@ -105,6 +105,8 @@ const SolutionsHubPage = lazy(() => import('./pages/SolutionsHubPage'));
 const SolutionIAPage = lazy(() => import('./pages/SolutionIAPage'));
 const DiagnosticIAPage = lazy(() => import('./pages/DiagnosticIAPage'));
 const AuditIAPage = lazy(() => import('./pages/AuditIAPage'));
+const AuditConformiteAIActPage = lazy(() => import('./pages/AuditConformiteAIActPage'));
+const AuditIAMedicoSocialPage = lazy(() => import('./pages/AuditIAMedicoSocialPage'));
 const AuditSeoIAPage = lazy(() => import('./pages/AuditSeoIAPage'));
 const AuditGeoIAPage = lazy(() => import('./pages/AuditGeoIAPage'));
 const AccompagnementIAPage = lazy(() => import('./pages/AccompagnementIAPage'));
@@ -427,7 +429,7 @@ function AboutScreen() {
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Cabinet de conseil IA</h3>
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  Audit, stratégie, gouvernance, accompagnement opérationnel : nous aidons PME, ETI et grands groupes à cadrer leur démarche IA, à prototyper rapidement et à déployer avec méthode.
+                  <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, stratégie, gouvernance, accompagnement opérationnel : nous aidons PME, ETI et grands groupes à cadrer leur démarche IA, à prototyper rapidement et à déployer avec méthode.
                 </p>
                 <Link to="/conseil-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -1592,6 +1594,8 @@ export default function App() {
         ))}
         <Route path="/diagnostic-ia" element={<DiagnosticIAPage />} />
         <Route path="/audit-ia" element={<AuditIAPage />} />
+        <Route path="/audit-conformite-ai-act" element={<AuditConformiteAIActPage />} />
+        <Route path="/audit-ia-medico-social" element={<AuditIAMedicoSocialPage />} />
         <Route path="/accompagnement-ia" element={<AccompagnementIAPage />} />
         <Route path="/acculturation-ia" element={<AcculturationIAPage />} />
         <Route path="/formation-ia-entreprise" element={<FormationIAEntreprisePage />} />

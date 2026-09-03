@@ -6,6 +6,7 @@ import {
   Rocket, ShieldCheck, MapPin, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -33,13 +34,13 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
-const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
+const META_DESC = "Diagnostic IA en une journée : audit de vos processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
 // Répartition des intentions « audit » (depuis 2026-08-10) : la requête
 // transactionnelle « audit ia » est portée par la money page /audit-ia ;
 // l'intention informationnelle (méthode, normes, prix) reste à l'article
 // /blog/audit-ia-entreprise-methode-prix. Cette page garde l'intention
 // transactionnelle « diagnostic » et renvoie vers les deux.
-const KEYWORDS = "diagnostic ia, diagnostic intelligence artificielle, maturité ia, état des lieux ia, diagnostic ia entreprise"
+const KEYWORDS = "diagnostic ia, diagnostic intelligence artificielle, audit des processus ia, état des lieux ia, diagnostic ia entreprise"
 
 /* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
 
@@ -331,7 +332,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-13',
-  dateModified: '2026-07-02',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/diagnostic-ia#webpage' },
   about: ['Diagnostic IA', 'Audit de maturité IA', 'Feuille de route IA', 'Conseil en intelligence artificielle'],
@@ -388,7 +389,8 @@ export default function DiagnosticIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-13"
-        dateModified="2026-07-02"
+        dateModified="2026-09-03"
+        speakable={['#definition', '#geo-summary']}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd]}
       />
 
@@ -431,8 +433,16 @@ export default function DiagnosticIAPage() {
             Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
+          {/* GEO : définition autonome (58 mots), citable hors contexte */}
+          <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
+              Un diagnostic IA est une intervention d'une journée qui cadre les usages de l'intelligence artificielle dans une organisation : processus automatisables, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Il se distingue de l'audit IA par sa durée et son périmètre, et du test de maturité par l'intervention d'un consultant sur vos processus réels.
+            </p>
+          </div>
+
           {/* GEO : réponse directe citable — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             Le Diagnostic IA de Masteria est une journée de travail qui cadre vos usages, cartographie vos processus automatisables et les priorise par impact et par effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>livrable concret</strong> : une feuille de route priorisée, des estimations de budget et de délai et des quick wins activables, sans engagement de suite.
           </p>
 
@@ -488,10 +498,10 @@ export default function DiagnosticIAPage() {
                 Qu'est-ce que le Diagnostic IA de Masteria ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Le Diagnostic IA est une intervention d'une journée qui cadre vos usages, cartographie vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
+                <strong>Le Diagnostic IA est une intervention d'une journée qui cadre vos usages, réalise un audit de vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. Il couvre quatre dimensions. Pour une première photographie en 3 minutes, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> gratuit situe votre profil avant même l'échange de cadrage.
+                Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. C'est un audit des processus, pas un audit de maturité : il regarde ce que vos équipes font chaque semaine et ce qui peut être automatisé, sans évaluer toute l'organisation. Il couvre quatre dimensions. Pour une première photographie en 3 minutes, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> gratuit situe votre profil avant même l'échange de cadrage.
               </p>
             </div>
 
@@ -722,6 +732,13 @@ export default function DiagnosticIAPage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['photovoltaique', 'distribution']}
+        title="Ce qu'un cadrage bien mené produit ensuite"
+        intro="Un diagnostic par flux qui débouche sur trois chantiers et une charte, un cadrage de cas d'usage qui débouche sur onze assistants et une force de vente formée : deux missions documentées, méthode et résultats."
+      />
+
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -828,7 +845,7 @@ export default function DiagnosticIAPage() {
               Un cabinet spécialisé IA, indépendant des éditeurs
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

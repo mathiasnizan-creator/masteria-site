@@ -200,7 +200,7 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous à Lyon et à distance ?",
-    a: "Les deux. Masteria est un cabinet spécialisé sur l'intelligence artificielle basé à Lyon, et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le travail de SEO et de GEO se mène très bien à distance, par points réguliers ; les phases de cadrage ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
+    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le travail de SEO et de GEO se mène très bien à distance, par points réguliers ; les phases de cadrage ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
   },
   {
     q: "Proposez-vous du référencement IA à Lyon ?",
@@ -450,7 +450,7 @@ export default function AgenceSeoIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Le point d'entrée le plus fréquent est l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA &amp; GEO</Link> : un état des lieux chiffré de votre visibilité sur Google et dans les IA, dont découle le reste. Pour le seul versant IA, l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO dédié</Link> mesure vos citations et votre part de voix en profondeur. Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
+                Le point d'entrée le plus fréquent est l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> : un état des lieux chiffré de votre visibilité sur Google et dans les IA, dont découle le reste. Pour le seul versant IA, l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> mesure vos citations et votre part de voix en profondeur. Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
               </p>
             </div>
           </div>
@@ -629,7 +629,7 @@ export default function AgenceSeoIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Audit SEO IA & GEO', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "L'état des lieux chiffré de votre visibilité sur Google et dans les IA, avec correctifs priorisés." },
+              { label: 'Audit SEO IA', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "L'état des lieux chiffré de votre visibilité sur Google et dans les IA, avec correctifs priorisés." },
               { label: 'Audit GEO', href: '/audit-geo-ia', tag: 'Visibilité IA', desc: "Le versant IA seul : taux de citation, part de voix face aux concurrents et plan pour devenir citable." },
               { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Marketing', desc: "Le marketing assisté par IA dans son ensemble : contenu, acquisition, growth, au-delà du seul SEO." },
               { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Les workflows et automatisations qui font tourner votre suivi SEO et votre production de contenu." },
@@ -702,7 +702,7 @@ export default function AgenceSeoIAPage() {
               Un cabinet spécialisé IA, indépendant des éditeurs
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

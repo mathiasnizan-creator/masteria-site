@@ -553,7 +553,7 @@ export default function AgenceIAMarketingPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Avant d'engager le chantier de visibilité, un état des lieux évite de produire au hasard : notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> mesure votre position dans les moteurs de recherche, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link> établit ce que les moteurs de réponse retiennent déjà de votre marque. Les deux se mènent en début de mission et fixent le point de référence de la mesure.
+            Avant d'engager le chantier de visibilité, un état des lieux évite de produire au hasard : notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> mesure votre position dans les moteurs de recherche, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> établit ce que les moteurs de réponse retiennent déjà de votre marque. Les deux se mènent en début de mission et fixent le point de référence de la mesure.
           </p>
         </div>
       </section>
@@ -807,7 +807,7 @@ export default function AgenceIAMarketingPage() {
               Un cabinet spécialisé IA, indépendant des éditeurs
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est un cabinet spécialisé uniquement sur l'intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

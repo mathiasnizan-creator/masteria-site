@@ -5,6 +5,7 @@ import {
   MapPin, Check, Landmark, HeartHandshake, BarChart3,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -742,6 +743,13 @@ export default function AccompagnementIAPage() {
           </div>
         </div>
       </section>
+
+      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
+      <CaseStudyCards
+        ids={['industrie', 'distribution', 'conseil-financier']}
+        title="Trois accompagnements dans la durée, documentés"
+        intro="Un déploiement par paliers du comité de direction aux sites internationaux, une force de vente outillée par vagues avec ses référents, un cabinet dont les consultants font évoluer leurs assistants seuls : la méthode en six temps et ses résultats."
+      />
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
