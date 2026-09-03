@@ -2,6 +2,49 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 import { Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { useConsent, readConsent, PREFERENCES_EVENT } from './consent/consentStore';
+
+/* Bandeau cookies : chunk séparé (JS + CSS), chargé quand le navigateur est
+   inactif, uniquement s'il n'y a pas encore de choix valide ou si le visiteur
+   clique « Gérer les cookies ». Zéro octet sur le chemin critique. */
+const CookieConsent = lazy(() => import('./consent/CookieConsent'));
+function ConsentMount() {
+  const consent = useConsent();
+  const [mode, setMode] = useState(null); // null | 'banner' | 'panel'
+  useEffect(() => {
+    if (typeof window === 'undefined' || window.__MASTERIA_PRERENDER__) return;
+    const onOpen = () => setMode(m => m || 'panel');
+    window.addEventListener(PREFERENCES_EVENT, onOpen);
+    let idle;
+    if (!consent) {
+      const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 1200));
+      const cancel = window.cancelIdleCallback || clearTimeout;
+      idle = schedule(() => setMode(m => m || 'banner'), { timeout: 3000 });
+      return () => { window.removeEventListener(PREFERENCES_EVENT, onOpen); cancel(idle); };
+    }
+    return () => window.removeEventListener(PREFERENCES_EVENT, onOpen);
+  }, [consent]);
+  if (!mode) return null;
+  return (
+    <Suspense fallback={null}>
+      <CookieConsent autoOpen={mode === 'panel'} />
+    </Suspense>
+  );
+}
+
+/* Vercel Analytics et Speed Insights ne se chargent qu'après consentement explicite
+   (finalités « audience » et « performance »). beforeSend coupe l'envoi si le
+   visiteur retire son consentement alors que le script est déjà chargé. */
+function ConsentGatedAnalytics() {
+  const consent = useConsent();
+  const allowed = (id) => !!readConsent()?.choices?.[id];
+  return (
+    <>
+      {consent?.choices.audience && <Analytics beforeSend={(e) => (allowed('audience') ? e : null)} />}
+      {consent?.choices.performance && <SpeedInsights beforeSend={(e) => (allowed('performance') ? e : null)} />}
+    </>
+  );
+}
 import {
   Mail, MapPin, Clock, BadgeCheck, Wallet, Users as UsersIcon,
   ArrowRight, Sparkles, Send, CheckCircle2, Calendar, Building2,
@@ -1604,8 +1647,8 @@ export default function App() {
       </main>
       <MasteriaFooter />
       </Suspense>
-      <Analytics />
-      <SpeedInsights />
+      <ConsentGatedAnalytics />
+      <ConsentMount />
     </div>
   );
 }

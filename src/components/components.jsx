@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
+import { openCookiePreferences } from '../consent/consentStore';
 import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
@@ -1187,6 +1188,7 @@ export function MasteriaFooter() {
             <span style={{ fontSize: 12, color: '#444' }}>© 2026 Masteria · Fondé par Mathias Nizan</span>
             <Link to="/mentions-legales" style={{ fontSize: 12, color: '#666', textDecoration: 'none' }}>Mentions légales</Link>
             <Link to="/politique-de-confidentialite" style={{ fontSize: 12, color: '#666', textDecoration: 'none' }}>Confidentialité</Link>
+            <button type="button" onClick={openCookiePreferences} style={{ fontSize: 12, color: '#666', background: 'none', border: 0, padding: 0, cursor: 'pointer', fontFamily: 'inherit' }}>Gérer les cookies</button>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
             <a

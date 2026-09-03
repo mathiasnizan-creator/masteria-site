@@ -1,0 +1,113 @@
+/* ───── Consentement cookies (chargé avec le chunk CookieConsent, jamais dans le bundle initial) ─────
+   Bandeau non bloquant en bas à gauche (desktop) / feuille basse (mobile).
+   Accepter et refuser : même écran, même taille, même poids visuel (CNIL). */
+.ck-banner {
+  position: fixed; z-index: 9000;
+  left: 20px; bottom: 20px; width: min(420px, calc(100vw - 40px));
+  display: flex; gap: 14px; align-items: flex-start;
+  background: #fff; color: #1C1C1C;
+  border: 1px solid #E5E7EB; border-radius: 18px;
+  padding: 20px 20px 18px;
+  box-shadow: 0 24px 60px -18px rgba(15, 23, 42, .28), 0 4px 14px -6px rgba(15, 23, 42, .12);
+  font-family: 'DM Sans', 'DMSans-fallback', system-ui, sans-serif;
+  animation: ck-rise .45s cubic-bezier(.22, 1, .36, 1) both;
+}
+.ck-banner__icon {
+  flex: 0 0 auto; width: 44px; height: 44px; border-radius: 12px;
+  display: grid; place-items: center; color: #2563EB; background: #EFF4FF;
+}
+.ck-banner__body { min-width: 0; flex: 1; }
+.ck-banner__title {
+  font-family: 'Nunito', 'Nunito-fallback', system-ui, sans-serif;
+  font-weight: 900; font-size: 16px; line-height: 1.25; margin: 4px 0 8px; text-wrap: balance;
+}
+.ck-banner__text { font-size: 13.5px; line-height: 1.55; color: #4B5563; margin: 0 0 14px; }
+.ck-banner__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ck-banner__links { display: flex; gap: 10px; align-items: center; margin-top: 12px; font-size: 12.5px; color: #9CA3AF; }
+
+.ck-btn {
+  font-family: inherit; font-size: 14px; font-weight: 700; line-height: 1;
+  padding: 13px 14px; min-height: 44px; border-radius: 10px; border: 1px solid transparent;
+  cursor: pointer; white-space: nowrap;
+}
+/* Même taille, même écran, même nombre de clics (CNIL). L'acceptation porte la
+   couleur de marque, le refus reste un vrai bouton lisible et contrasté. */
+.ck-btn--refuse { background: #fff; color: #1C1C1C; border-color: #CBD5E1; }
+.ck-btn--refuse:hover { background: #F8FAFC; border-color: #94A3B8; }
+.ck-btn--accept { background: #2563EB; color: #fff; box-shadow: 0 6px 16px -6px rgba(37, 99, 235, .55); }
+.ck-btn--accept:hover { background: #1D4ED8; transform: translateY(-1px); }
+.ck-btn--save { background: #fff; color: #0F172A; border-color: #CBD5E1; }
+.ck-btn--save:hover { background: #F8FAFC; border-color: #94A3B8; }
+
+.ck-link {
+  background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit;
+  font-size: inherit; font-weight: 600; color: #4B5563; text-decoration: underline; text-underline-offset: 3px;
+}
+.ck-link:hover { color: #1D4ED8; }
+
+/* Panneau de préférences */
+.ck-overlay {
+  position: fixed; inset: 0; z-index: 9001;
+  background: rgba(15, 23, 42, .45); backdrop-filter: blur(2px);
+  display: grid; place-items: center; padding: 20px;
+  animation: ck-fade .2s ease both;
+}
+.ck-panel {
+  width: min(560px, 100%); max-height: min(88vh, 760px); overflow: auto;
+  background: #fff; color: #1C1C1C; border-radius: 20px; padding: 24px;
+  box-shadow: 0 30px 80px -20px rgba(15, 23, 42, .45);
+  font-family: 'DM Sans', 'DMSans-fallback', system-ui, sans-serif;
+  animation: ck-rise .35s cubic-bezier(.22, 1, .36, 1) both;
+  outline: none;
+}
+.ck-panel__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.ck-panel__title { font-family: 'Nunito', 'Nunito-fallback', system-ui, sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; margin: 0; }
+.ck-panel__close {
+  flex: 0 0 auto; width: 36px; height: 36px; border-radius: 10px; border: 1px solid #E5E7EB;
+  background: #fff; color: #4B5563; display: grid; place-items: center; cursor: pointer;
+}
+.ck-panel__close:hover { background: #F3F4F6; color: #0F172A; }
+.ck-panel__intro { font-size: 14px; line-height: 1.55; color: #4B5563; margin: 10px 0 18px; }
+.ck-cat { border: 1px solid #E5E7EB; border-radius: 14px; padding: 14px 16px; margin-bottom: 10px; }
+.ck-cat--locked { background: #F9FAFB; }
+.ck-cat__row { display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; }
+.ck-cat__label { font-weight: 700; font-size: 15px; margin: 0 0 4px; }
+.ck-cat__desc { font-size: 13.5px; line-height: 1.5; color: #4B5563; margin: 0; }
+.ck-cat__always { flex: 0 0 auto; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #15803D; background: #DCFCE7; padding: 6px 10px; border-radius: 999px; }
+.ck-switch {
+  flex: 0 0 auto; width: 48px; height: 28px; border-radius: 999px; border: 0; padding: 0;
+  background: #CBD5E1; position: relative; cursor: pointer; transition: background .18s ease;
+}
+.ck-switch__knob {
+  position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .18s ease;
+}
+.ck-switch.is-on { background: #2563EB; }
+.ck-switch.is-on .ck-switch__knob { transform: translateX(20px); }
+.ck-details { margin-top: 10px; font-size: 12.5px; }
+.ck-details__btn { color: #6B7280; font-weight: 600; }
+.ck-details__list { list-style: none; padding: 10px 12px; margin: 8px 0 0; background: #F9FAFB; border-radius: 10px; line-height: 1.55; color: #374151; }
+.ck-details__list li + li { margin-top: 8px; }
+.ck-details__vendor { color: #6B7280; }
+.ck-panel__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.ck-panel__actions .ck-btn--save { grid-column: 1 / -1; }
+.ck-panel__foot { font-size: 12.5px; color: #6B7280; margin: 12px 0 0; text-align: center; }
+
+@keyframes ck-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes ck-fade { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 640px) {
+  .ck-banner {
+    left: 0; right: 0; bottom: 0; width: 100%;
+    border-radius: 18px 18px 0 0; border-bottom: 0;
+    padding: 18px 18px calc(16px + env(safe-area-inset-bottom));
+  }
+  .ck-banner__icon { display: none; }
+  .ck-overlay { padding: 0; align-items: end; }
+  .ck-panel { width: 100%; max-height: 92vh; border-radius: 20px 20px 0 0; padding: 20px 18px calc(18px + env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ck-banner, .ck-panel, .ck-overlay { animation: none; }
+  .ck-switch, .ck-switch__knob { transition: none; }
+}
+.ck-banner__text strong { color: #1C1C1C; font-weight: 700; }

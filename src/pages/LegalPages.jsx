@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { openCookiePreferences } from '../consent/consentStore'
 import SEOHead from '../components/SEOHead'
 import { useIsMobile } from '../hooks/useMediaQuery'
 
@@ -85,7 +86,7 @@ export function MentionsLegalesPage() {
           </nav>
 
           <h1 style={s.h1}>Mentions légales</h1>
-          <p style={s.lastUpdate}>Dernière mise à jour : avril 2026</p>
+          <p style={s.lastUpdate}>Dernière mise à jour : septembre 2026</p>
 
           <p style={s.p}>
             Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site <strong>master-ia.fr</strong> les informations suivantes.
@@ -160,9 +161,9 @@ export function MentionsLegalesPage() {
             Pour exercer ces droits, adressez votre demande par email à <a href="mailto:mathias.nizan@master-ia.fr" style={s.a}>mathias.nizan@master-ia.fr</a> en précisant l'objet de votre demande.
           </p>
 
-          <h2 style={s.h2}>7. Cookies</h2>
+          <h2 style={s.h2}>7. Cookies et traceurs</h2>
           <p style={s.p}>
-            Ce site utilise des cookies strictement nécessaires à son bon fonctionnement, ainsi que des cookies de mesure d'audience anonymisée. Aucun cookie publicitaire ni de ciblage comportemental n'est déposé sans votre consentement explicite. Les modalités détaillées sont précisées dans notre politique de confidentialité.
+            Ce site ne dépose qu'un seul cookie de son propre fait : celui qui mémorise votre choix sur le bandeau de consentement. La mesure d'audience et la mesure de performance (Vercel) ne sont activées qu'avec votre accord explicite, recueilli à votre première visite et modifiable à tout moment via le lien « Gérer les cookies » en pied de page. Aucun traceur publicitaire n'est utilisé. Le détail figure dans notre <Link to="/politique-de-confidentialite#cookies" style={s.a}>politique de confidentialité</Link>.
           </p>
 
           <h2 style={s.h2}>8. Droit applicable et juridiction compétente</h2>
@@ -208,7 +209,7 @@ export function PolitiqueConfidentialitePage() {
           </nav>
 
           <h1 style={s.h1}>Politique de confidentialité</h1>
-          <p style={s.lastUpdate}>Dernière mise à jour : avril 2026</p>
+          <p style={s.lastUpdate}>Dernière mise à jour : septembre 2026</p>
 
           <p style={s.p}>
             Masteria accorde une importance essentielle à la protection des données personnelles de ses visiteurs, prospects, clients et apprenants. La présente politique de confidentialité décrit la manière dont nous collectons, utilisons et protégeons les données à caractère personnel, en conformité avec le <strong>Règlement Général sur la Protection des Données (RGPD)</strong> et la <strong>Loi Informatique et Libertés</strong> modifiée.
@@ -257,7 +258,7 @@ export function PolitiqueConfidentialitePage() {
             <li><strong>Clients actifs</strong> : durée de la relation commerciale, puis 3 ans à compter de la dernière interaction.</li>
             <li><strong>Documents de formation</strong> (convention, émargement, attestation) : 10 ans, conformément aux obligations Qualiopi et comptables.</li>
             <li><strong>Documents comptables et factures</strong> : 10 ans, conformément à l'article L.123-22 du Code de commerce.</li>
-            <li><strong>Cookies</strong> : durée maximale de 13 mois.</li>
+            <li><strong>Choix exprimé sur le bandeau cookies</strong> : 6 mois, puis la question vous est reposée.</li>
           </ul>
 
           <h2 style={s.h2}>5. Destinataires des données</h2>
@@ -302,24 +303,37 @@ export function PolitiqueConfidentialitePage() {
             <li>Téléphone : 01 53 73 22 22</li>
           </ul>
 
-          <h2 style={s.h2}>8. Cookies et traceurs</h2>
+          <h2 style={s.h2} id="cookies">8. Cookies et traceurs</h2>
           <p style={s.p}>
-            Le site master-ia.fr utilise des cookies et traceurs dans le respect de vos choix. À votre première visite, un bandeau vous permet d'accepter ou refuser les cookies non essentiels.
+            Conformément à l'article 82 de la loi Informatique et Libertés et aux lignes directrices de la CNIL, aucun traceur non essentiel n'est activé avant votre choix. À votre première visite, un bandeau vous propose d'accepter ou de refuser, avec la même facilité. Votre choix, quel qu'il soit, est mémorisé 6 mois. Vous pouvez le modifier à tout moment :
+          </p>
+          <p style={s.p}>
+            <button type="button" onClick={openCookiePreferences} style={{ fontFamily: 'inherit', fontSize: 15, fontWeight: 700, background: '#2563EB', color: '#fff', border: 0, borderRadius: 8, padding: '12px 20px', cursor: 'pointer' }}>Gérer mes préférences de cookies</button>
           </p>
 
-          <h3 style={s.h3}>Cookies strictement nécessaires</h3>
+          <h3 style={s.h3}>Traceur strictement nécessaire (sans consentement)</h3>
+          <ul style={s.ul}>
+            <li><strong>masteria_consent</strong> (Masteria) : cookie qui mémorise votre acceptation ou votre refus, ainsi que la date et la version de la liste des traceurs. Durée : 6 mois. Il constitue la preuve de votre choix.</li>
+          </ul>
+
+          <h3 style={s.h3}>Mesure d'audience (avec votre consentement)</h3>
+          <ul style={s.ul}>
+            <li><strong>Vercel Web Analytics</strong> (Vercel Inc., États-Unis) : pages vues, provenance des visites, type d'appareil, en statistiques agrégées. Aucun cookie n'est déposé. Un identifiant est calculé par hachage de l'adresse IP et du navigateur, renouvelé chaque jour et jamais conservé en clair. Pas de suivi d'un site à l'autre, pas de profil individuel. Transfert encadré par les clauses contractuelles types de la Commission européenne.</li>
+          </ul>
+
+          <h3 style={s.h3}>Performance du site (avec votre consentement)</h3>
+          <ul style={s.ul}>
+            <li><strong>Vercel Speed Insights</strong> (Vercel Inc., États-Unis) : temps de chargement et stabilité d'affichage des pages (Core Web Vitals), agrégés par page. Aucun cookie, aucun identifiant persistant.</li>
+          </ul>
+
+          <h3 style={s.h3}>Ce que nous n'utilisons pas</h3>
           <p style={s.p}>
-            Ces cookies sont indispensables au fonctionnement du site (préférences de langue, gestion des sessions, sécurité). Ils ne nécessitent pas de consentement.
+            Aucun cookie publicitaire, aucun pixel de réseau social, aucun outil de ciblage comportemental. Si cette liste évolue, le bandeau vous sera présenté à nouveau.
           </p>
 
-          <h3 style={s.h3}>Cookies de mesure d'audience</h3>
+          <h3 style={s.h3}>Réglages de votre navigateur</h3>
           <p style={s.p}>
-            Nous utilisons un outil de mesure d'audience anonymisée pour comprendre l'usage du site et l'améliorer. Aucune donnée personnelle identifiante n'est transmise. Ces cookies sont déposés uniquement avec votre consentement.
-          </p>
-
-          <h3 style={s.h3}>Gestion de vos préférences</h3>
-          <p style={s.p}>
-            Vous pouvez à tout moment modifier vos choix via le bandeau cookies ou les paramètres de votre navigateur. La plupart des navigateurs permettent de configurer le dépôt de cookies (Chrome, Firefox, Safari, Edge).
+            En complément, votre navigateur (Chrome, Firefox, Safari, Edge) vous permet de bloquer ou supprimer les cookies. Supprimer le cookie masteria_consent fera simplement réapparaître le bandeau.
           </p>
 
           <h2 style={s.h2}>9. Sécurité des données</h2>

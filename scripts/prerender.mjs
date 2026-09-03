@@ -171,6 +171,8 @@ async function renderOne(browser, route) {
   const page = await browser.newPage();
   try {
     await page.setViewport({ width: 1280, height: 800 });
+    // Le bandeau cookies ne doit pas être figé dans le HTML prérendu (cf. src/consent/CookieConsent.jsx)
+    await page.evaluateOnNewDocument(() => { window.__MASTERIA_PRERENDER__ = true; });
     await page.setRequestInterception(true);
     page.on('request', req => {
       const t = req.resourceType();
