@@ -39,7 +39,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Audit GEO IA : êtes-vous cité par ChatGPT ? | Masteria"
 const META_DESC = "Audit GEO IA : taux de citation dans ChatGPT, Perplexity, Gemini et AI Overviews, part de voix face aux concurrents, accès des robots IA. Plan d'action priorisé."
-const KEYWORDS = "audit geo ia, audit geo, audit visibilité ia, audit generative engine optimization, audit citation ia, visibilité chatgpt perplexity"
+const KEYWORDS = "audit geo ia, audit geo, audit visibilité ia, audit generative engine optimization, audit citation ia, audit aio, référencement aio, visibilité chatgpt perplexity"
 
 /* ───────── Styles partagés (calque /audit-seo-ia) ───────── */
 
@@ -434,7 +434,7 @@ export default function AuditGeoIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit GEO de Masteria mesure votre visibilité dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews : <strong style={{ color: '#fff', fontWeight: 700 }}>taux de citation, part de voix face à vos concurrents, sources reprises</strong>, sur un corpus de questions propre à votre marché et en relevés répétés. Vous repartez avec un plan d'action priorisé pour devenir une source citée.
+            L'audit GEO de Masteria mesure votre visibilité dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews : <strong style={{ color: '#fff', fontWeight: 700 }}>taux de citation, part de voix face à vos concurrents, sources reprises</strong>, sur un corpus de questions propre à votre marché et en relevés répétés. Vous repartez avec un plan d'action priorisé pour devenir une source citée. La discipline s'appelle aussi référencement AIO (Artificial Intelligence Optimization) ; c'est le même audit.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
