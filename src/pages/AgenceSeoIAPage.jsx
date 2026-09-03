@@ -629,6 +629,7 @@ export default function AgenceSeoIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Référencement AIO : le guide', href: '/blog/referencement-aio-strategie-contenu-ia', tag: 'Guide', desc: "AIO, GEO, AEO face au SEO, les AI Overviews de Google et la stratégie de contenu en cinq décisions." },
               { label: 'Audit SEO IA', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "L'état des lieux chiffré de votre visibilité sur Google et dans les IA, avec correctifs priorisés." },
               { label: 'Audit GEO', href: '/audit-geo-ia', tag: 'Visibilité IA', desc: "Le versant IA seul : taux de citation, part de voix face aux concurrents et plan pour devenir citable." },
               { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Marketing', desc: "Le marketing assisté par IA dans son ensemble : contenu, acquisition, growth, au-delà du seul SEO." },

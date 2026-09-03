@@ -719,13 +719,24 @@ export const BLOG_ARTICLES = [
     date: '3 septembre 2026',
     datePublished: '2026-09-03',
     dateModified: '2026-09-03',
-    readTime: '12 min',
-    keywords: ['référencement aio', 'référencement aio stratégie contenu ia', 'référencement aio overviews', 'aio seo', 'seo vs aio', 'aio geo aeo', 'artificial intelligence optimization', 'ai overviews référencement', 'stratégie de contenu ia'],
+    readTime: '14 min',
+    keywords: ['référencement aio', 'référencement aio stratégie contenu ia', 'référencement aio overviews', 'référencement aio', 'agence référencement aio', 'aio seo', 'seo vs aio', 'aio geo aeo', 'artificial intelligence optimization', 'ai optimization', 'ai overviews référencement', 'mode ia google', 'moteurs de réponse', 'generative engine optimization', 'answer engine optimization', 'stratégie de contenu ia', 'llms.txt', 'gptbot claudebot perplexitybot'],
     excerpt: "AIO, GEO, AEO : trois sigles pour un même objet, être cité dans les réponses des IA. Ce que le référencement AIO change par rapport au SEO, le cas particulier des AI Overviews de Google, et une stratégie de contenu en cinq décisions, avec sa mesure.",
     intro: "Le référencement AIO, pour Artificial Intelligence Optimization, désigne l'ensemble des pratiques qui rendent une marque visible dans les réponses produites par des intelligences artificielles : les AI Overviews et le Mode IA de Google, ChatGPT, Perplexity, Gemini, Claude. Le terme est apparu en France en 2025 dans le vocabulaire des agences, à côté de GEO (Generative Engine Optimization) et d'AEO (Answer Engine Optimization), qui désignent la même chose vue sous des angles voisins. Sous les sigles, une réalité : les moteurs de réponse ne classent pas des pages, ils citent des sources. Cet article dit ce que cela change, ce qui distingue les AI Overviews des assistants, et surtout quelle stratégie de contenu produit des citations, décision par décision.",
     blocks: [
       { type: 'p', text: "Le vocabulaire s'est installé plus vite que les pratiques. Beaucoup d'entreprises ont entendu parler d'AIO ou de GEO, peu savent ce qu'elles devraient changer dans leur production de contenu, et encore moins comment vérifier que ça marche. Ce guide s'adresse aux directions marketing et communication et aux responsables de contenu qui veulent une méthode, pas un sigle de plus." },
       { type: 'p', text: "Si vous cherchez la mesure de votre situation, notre <a href='/audit-geo-ia'>audit GEO IA</a> relève votre taux de citation dans les IA sur un corpus de questions propre à votre marché. Cet article traite du fond : ce qu'est le référencement AIO et comment construire le contenu qui se fait citer." },
+
+      {
+        type: 'ul',
+        items: [
+          "<strong>Le référencement AIO vise la citation, pas le classement</strong> : une réponse d'IA cite trois à six sources, ou ne vous cite pas.",
+          "<strong>AIO, GEO et AEO recouvrent le même travail</strong> ; AIO est le terme parapluie en France, AI Overviews de Google comprises.",
+          "<strong>Le contenu se conçoit par passages</strong> : définition autonome, réponse directe, preuves datées, entités écrites à l'identique, présence hors site.",
+          "<strong>La technique se vérifie en une demi-journée</strong> : robots des IA autorisés, HTML servi, données structurées, fichier llms.txt, contrôles d'extraits Google.",
+          "<strong>La mesure se fait sur un corpus de questions</strong>, en plusieurs passes : taux de citation, part de voix, sources reprises.",
+        ],
+      },
 
       { type: 'h2', text: "AIO, GEO, AEO, SEO : quatre sigles, deux réalités" },
       { type: 'p', text: "Les quatre sigles cohabitent dans les propositions des agences, et ils ne désignent que deux choses : le classement dans une liste de résultats, et la citation dans une réponse rédigée. Le tableau situe chacun." },
@@ -797,7 +808,8 @@ export const BLOG_ARTICLES = [
       {
         type: 'ol',
         items: [
-          "<strong>L'accès des robots.</strong> Le fichier robots.txt autorise explicitement GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot et Google-Extended. Beaucoup de sites les bloquent sans le savoir, par un réglage par défaut.",
+          "<strong>L'accès des robots.</strong> Le fichier robots.txt autorise explicitement GPTBot et OAI-SearchBot (OpenAI), ClaudeBot (Anthropic), PerplexityBot et Google-Extended. Beaucoup de sites les bloquent sans le savoir, par un réglage par défaut. Nuance à connaître : Google-Extended gouverne l'usage de vos pages pour l'entraînement des modèles Gemini, pas leur présence dans les AI Overviews, qui dépend de Googlebot et de votre indexation ordinaire.",
+          "<strong>Les contrôles d'extraits de Google.</strong> Les balises nosnippet, max-snippet et data-nosnippet, prévues pour les extraits classiques, s'appliquent aussi aux AI Overviews et au Mode IA selon la documentation de Google. Un réglage restrictif hérité d'un ancien plugin peut vous exclure des réponses sans que personne ne l'ait décidé.",
           "<strong>Le HTML servi.</strong> Un site rendu uniquement par JavaScript côté navigateur est invisible pour une partie des robots : le contenu doit être présent dans le HTML livré, par prérendu ou rendu côté serveur.",
           "<strong>Les données structurées.</strong> Organisation, personne, FAQ, article, définitions : le balisage JSON-LD nomme vos entités et vos réponses de façon lisible par machine.",
           "<strong>Un fichier llms.txt.</strong> Une page en texte simple, à la racine du site, qui décrit l'entreprise et liste ses pages essentielles avec une ligne de résumé : une convention émergente que plusieurs assistants lisent.",
@@ -808,7 +820,20 @@ export const BLOG_ARTICLES = [
       { type: 'p', text: "Il n'existe pas de « position » dans une IA, ni de score officiel. La mesure repose sur trois indicateurs relevés sur votre corpus de questions, en plusieurs passes espacées pour lisser la variabilité des réponses : le taux de citation, la part des questions où votre marque est citée ; la part de voix, votre poids face aux concurrents cités sur les mêmes questions ; et les sources reprises, quelles pages, du site ou de tiers, alimentent les réponses. Relevés une fois par mois, ces trois chiffres disent si la stratégie prend." },
       { type: 'p', text: "Pour Google, les AI Overviews s'observent dans la Search Console à travers les impressions et les clics, sans distinction dédiée à ce jour ; le relevé manuel sur le corpus reste nécessaire. Notre <a href='/audit-geo-ia'>audit GEO IA</a> établit ce point de départ et livre la grille de suivi." },
 
-      { type: 'h2', text: "SEO ou AIO : faut-il choisir ?" },
+      { type: 'h2', text: "Agence référencement AIO : cinq questions à poser avant de signer" },
+      { type: 'p', text: "Le marché s'est rempli d'offres AIO en quelques mois. Les cinq questions ci-dessous distinguent une méthode d'un habillage, et valent aussi pour une équipe interne." },
+      {
+        type: 'ol',
+        items: [
+          "<strong>Sur quel corpus de questions mesurez-vous, et en combien de passes ?</strong> Une mesure sur cinq requêtes en une passe n'est pas une mesure.",
+          "<strong>Quelle part de voix face à quels concurrents nommés ?</strong> Le taux de citation seul ne dit pas si vous progressez par rapport aux autres.",
+          "<strong>Quelles sources les IA citent-elles à votre place aujourd'hui ?</strong> La réponse oriente le travail hors site autant que le contenu.",
+          "<strong>Le plan de contenu AIO est-il le même que le plan SEO ?</strong> Deux plans séparés produisent deux fois ; un seul plan avec deux mesures produit une fois.",
+          "<strong>Le livrable est-il exploitable sans l'agence ?</strong> Grille de suivi, corpus, règles de rédaction : ce qui reste chez vous quand la mission s'arrête.",
+        ],
+      },
+
+      { type: 'h2', text: "SEO vs AIO : faut-il choisir ?" },
       { type: 'p', text: "Non, et la question revient souvent parce que les agences se sont spécialisées. Les deux disciplines partagent l'essentiel : structure, clarté, preuves, accès des robots, autorité. Elles divergent sur la mesure et sur quelques gestes propres aux IA, la définition autonome, l'entité cohérente, la présence hors site. Une entreprise qui mène les deux fronts dans un même plan de contenu évite de produire deux fois. C'est le parti pris de notre <a href='/agence-seo-ia'>agence SEO IA</a> et de l'<a href='/audit-seo-ia'>audit SEO IA</a> qui le précède." },
 
       { type: 'h2', text: "Par où commencer : trente jours" },
@@ -821,7 +846,20 @@ export const BLOG_ARTICLES = [
           "<strong>Mois 2, hors site.</strong> Une donnée originale publiée, deux tribunes ou interventions, les annuaires et profils alignés sur la même formule d'entité. Deuxième relevé à J+30.",
         ],
       },
-      { type: 'p', text: "La formation des équipes suit la même logique : nos <a href='/formation-ia-seo'>formations IA pour le SEO</a> apprennent aux rédacteurs et aux responsables de contenu à produire ces formats avec les outils d'IA, sur leurs propres pages." },
+      { type: 'p', text: "La formation des équipes suit la même logique : nos <a href='/formation-ia-seo'>formations IA pour le SEO</a> apprennent aux rédacteurs et aux responsables de contenu à produire ces formats avec les outils d'IA, sur leurs propres pages. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, mène l'audit de départ, forme les équipes et applique cette méthode à son propre site." },
+
+      { type: 'h2', text: "Sources et références" },
+      {
+        type: 'ul',
+        items: [
+          "<a href='https://developers.google.com/search/docs/appearance/ai-features' rel='noopener'>Google Search Central, « AI features and your website »</a> : fonctionnement des AI Overviews et du Mode IA pour les éditeurs de sites, conditions d'apparition.",
+          "<a href='https://developers.google.com/search/docs/appearance/snippet' rel='noopener'>Google Search Central, contrôles des extraits</a> : nosnippet, max-snippet, data-nosnippet et leur effet sur les fonctionnalités d'IA.",
+          "<a href='https://platform.openai.com/docs/bots' rel='noopener'>OpenAI, robots GPTBot et OAI-SearchBot</a> : identification et directives robots.txt.",
+          "<a href='https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler' rel='noopener'>Anthropic, ClaudeBot</a> : robot d'exploration et blocage.",
+          "<a href='https://docs.perplexity.ai/guides/bots' rel='noopener'>Perplexity, PerplexityBot et Perplexity-User</a> : robots et comportement de citation.",
+          "<a href='https://llmstxt.org/' rel='noopener'>llms.txt</a> : la proposition de convention pour décrire un site aux modèles de langage.",
+        ],
+      },
     ],
     faq: [
       {
@@ -849,6 +887,14 @@ export const BLOG_ARTICLES = [
         a: "Une grille de suivi sur un corpus de questions, relevée à la main ou par script en plusieurs passes, reste la base. Des outils spécialisés mesurent les citations dans les principaux assistants ; ils donnent une tendance, pas un score absolu, parce que les réponses varient d'une passe à l'autre. Pour Google, la Search Console montre l'effet global sur les impressions et les clics.",
       },
     ],
+    cta: {
+      title: "Mesurer votre référencement AIO avant de produire",
+      desc: "L'audit GEO IA de Masteria relève votre taux de citation, votre part de voix et les sources que les IA reprennent, sur un corpus de questions propre à votre marché. Vous repartez avec la grille de suivi et le plan de contenu priorisé.",
+      buttons: [
+        { label: "Demander un audit GEO IA", href: '/audit-geo-ia', primary: true },
+        { label: "Parler de votre projet", href: '/contact' },
+      ],
+    },
     internalLinks: [
       { label: "Audit GEO IA : mesurer votre taux de citation dans les IA", href: '/audit-geo-ia' },
       { label: "GEO : se rendre visible dans ChatGPT, Perplexity et Gemini", href: '/blog/geo-referencement-ia-generative-entreprise' },
@@ -858,6 +904,20 @@ export const BLOG_ARTICLES = [
       { label: "Formation IA pour le SEO", href: '/formation-ia-seo' },
     ],
     extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        '@id': 'https://www.master-ia.fr/blog/referencement-aio-strategie-contenu-ia#decisions',
+        name: "La stratégie de contenu AIO en cinq décisions",
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Partir des questions, pas des mots-clés', description: "Un corpus de trente à cinquante questions réelles, réparties sur les étapes de la décision, qui guide la production et sert de base de mesure." },
+          { '@type': 'ListItem', position: 2, name: 'Une page par question, une réponse en tête', description: "Définition autonome de quarante à soixante mots, réponse directe, développement ; un sujet par page." },
+          { '@type': 'ListItem', position: 3, name: 'Des preuves datées et sourcées', description: "Chiffres avec source et date de collecte, tableaux comparatifs, études de cas chiffrées, données originales." },
+          { '@type': 'ListItem', position: 4, name: 'Des entités écrites toujours de la même façon', description: "Nom, ville, fondateur, offres, date de création : la même formule sur chaque page, dans les données structurées et sur les annuaires." },
+          { '@type': 'ListItem', position: 5, name: 'Exister hors de votre site', description: "Presse, comparatifs, annuaires, interventions, données reprises : les assistants citent des tiers." },
+        ],
+      },
       {
         '@context': 'https://schema.org',
         '@type': 'DefinedTermSet',
@@ -5025,6 +5085,7 @@ export const BLOG_ARTICLES = [
     },
     internalLinks: [
       { label: "GEO et IA générative", href: '/blog/geo-referencement-ia-generative-entreprise' },
+      { label: "Référencement AIO : définition et stratégie de contenu", href: '/blog/referencement-aio-strategie-contenu-ia' },
       { label: "Formation IA marketing", href: '/blog/formation-ia-marketing-equipes' },
       { label: "Custom GPT pour entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
