@@ -101,7 +101,7 @@ export const GEO_CITIES = [
       { label: 'Formation IA Annecy', href: '/formation-ia-annecy' },
       { label: "Études de cas IA en entreprise", href: '/etudes-de-cas-ia' },
     ],
-    coordinates: { latitude: 45.7640, longitude: 4.8357 },
+    coordinates: { latitude: 45.7676, longitude: 4.8317 },
     population: '522 000 habitants intra-muros',
     metroArea: 'Métropole de Lyon : 1,4 million d\'habitants, deuxième pôle économique français',
     intraOnly: false,

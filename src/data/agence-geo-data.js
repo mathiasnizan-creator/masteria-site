@@ -25,7 +25,7 @@ export const AGENCE_GEO_CITIES = [
     country: 'France',
     countryCode: 'FR',
     locale: 'fr-FR',
-    coordinates: { latitude: 45.7640, longitude: 4.8357 },
+    coordinates: { latitude: 45.7676, longitude: 4.8317 },
     // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
     // l'adresse du ProfessionalService. Lyon uniquement, aucune adresse inventée ailleurs.
     office: {
