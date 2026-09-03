@@ -3,12 +3,133 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-02",
-    "totalEditions": 26,
-    "totalItems": 355,
-    "totalSources": 515
+    "derniereDate": "2026-09-03",
+    "totalEditions": 27,
+    "totalItems": 369,
+    "totalSources": 537
   },
   "editions": [
+    {
+      "date": "2026-09-03",
+      "dateCourte": "jeu. 3 sept.",
+      "dateAffichee": "3 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Le ministère américain de la justice prend parti pour OpenAI contre le New York Times et défend l'entraînement des modèles sur des œuvres protégées au nom du « fair use » et de la « sécurité nationale » ; le G20 adopte des principes de régulation légère proposés par Washington, l'État français détache des ingénieurs de Mistral dans ses ministères, Meta sort son modèle le plus puissant et Google enchaîne un troisième Gemini Flash en six semaines",
+      "chapeau": "Le ministère américain de la justice a pris parti pour OpenAI dans le procès du New York Times, jugeant que l'entraînement de ses modèles sur les archives du quotidien relève du « fair use » et sert la « sécurité nationale ». Le même jour, le G20 s'accorde sur une régulation légère de l'IA proposée par Washington, l'État français resserre son alliance avec Mistral, et Meta comme Google poussent de nouveaux modèles.",
+      "nbItems": 14,
+      "nbSources": 22,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "Wired",
+        "TechCrunch",
+        "Clubic",
+        "Journal du Net",
+        "Bloomberg",
+        "South China Morning Post",
+        "Google DeepMind",
+        "Frandroid",
+        "IEEE Spectrum",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Le gouvernement américain prend parti pour OpenAI dans le procès du New York Times",
+          "z": "une",
+          "id": "le-gouvernement-americain-prend-parti-pour-openai-dans-le"
+        },
+        {
+          "t": "L'État renforce son partenariat avec Mistral et détache des ingénieurs dans les ministères",
+          "z": "europe",
+          "id": "l-etat-renforce-son-partenariat-avec-mistral-et-detache-des"
+        },
+        {
+          "t": "Selon RSF, les grands chatbots relaient encore des médias russes sanctionnés",
+          "z": "europe",
+          "id": "selon-rsf-les-grands-chatbots-relaient-encore-des-medias"
+        },
+        {
+          "t": "Alex Karp, patron de Palantir, met en garde la France sur sa souveraineté numérique",
+          "z": "europe",
+          "id": "alex-karp-patron-de-palantir-met-en-garde-la-france-sur-sa"
+        },
+        {
+          "t": "L'IA accélère le travail des juniors, et menace de leur retirer ce qui les forme",
+          "z": "europe",
+          "id": "l-ia-accelere-le-travail-des-juniors-et-menace-de-leur"
+        },
+        {
+          "t": "Le G20 adopte des principes de régulation légère de l'IA proposés par Washington",
+          "z": "international",
+          "id": "le-g20-adopte-des-principes-de-regulation-legere-de-l-ia"
+        },
+        {
+          "t": "Meta sort son modèle le plus puissant et relâche la pression sur ses salariés",
+          "z": "international",
+          "id": "meta-sort-son-modele-le-plus-puissant-et-relache-la"
+        },
+        {
+          "t": "Google lance Gemini 3.8 Flash, son troisième modèle Flash en six semaines",
+          "z": "international",
+          "id": "google-lance-gemini-3-8-flash-son-troisieme-modele-flash-en"
+        },
+        {
+          "t": "Un ingénieur du nucléaire alerte : l'efficacité de l'IA menace la génération suivante d'experts",
+          "z": "international",
+          "id": "un-ingenieur-du-nucleaire-alerte-l-efficacite-de-l-ia"
+        },
+        {
+          "t": "Le fondeur Hua Hong investit 2 milliards de dollars dans une nouvelle usine pour l'IA",
+          "z": "chine",
+          "id": "le-fondeur-hua-hong-investit-2-milliards-de-dollars-dans"
+        },
+        {
+          "t": "Pékin lance une campagne contre le « slop » généré par l'IA",
+          "z": "chine",
+          "id": "pekin-lance-une-campagne-contre-le-slop-genere-par-l-ia"
+        },
+        {
+          "t": "Un article d'arXiv montre les limites de juger un agent sur son seul résultat",
+          "z": "recherche",
+          "id": "un-article-d-arxiv-montre-les-limites-de-juger-un-agent-sur"
+        },
+        {
+          "t": "ChatGPT affiche désormais des publicités, avec un ciblage désactivable",
+          "z": "bref",
+          "id": "chatgpt-affiche-desormais-des-publicites-avec-un-ciblage"
+        },
+        {
+          "t": "L'introduction en Bourse d'Enflame, adossé à Tencent, sursouscrite 4 073 fois",
+          "z": "bref",
+          "id": "l-introduction-en-bourse-d-enflame-adosse-a-tencent"
+        }
+      ]
+    },
     {
       "date": "2026-09-02",
       "dateCourte": "mer. 2 sept.",

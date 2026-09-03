@@ -3,12 +3,133 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-02",
-    "totalEditions": 12,
-    "totalItems": 166,
-    "totalSources": 220
+    "derniereDate": "2026-09-03",
+    "totalEditions": 13,
+    "totalItems": 180,
+    "totalSources": 242
   },
   "editions": [
+    {
+      "date": "2026-09-03",
+      "dateCourte": "Thu 3 Sep",
+      "dateAffichee": "3 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Washington backs OpenAI against the New York Times",
+      "chapeau": "The US Justice Department sided with OpenAI in the New York Times lawsuit, ruling that training its models on the paper's archives is 'fair use' and serves 'national security.' The same day, the G20 agreed on light-touch AI rules proposed by Washington, the French state tightened its alliance with Mistral, and both Meta and Google shipped new models.",
+      "nbItems": 14,
+      "nbSources": 22,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "Wired",
+        "TechCrunch",
+        "Clubic",
+        "Journal du Net",
+        "Bloomberg",
+        "South China Morning Post",
+        "Google DeepMind",
+        "Frandroid",
+        "IEEE Spectrum",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "The US government sides with OpenAI in the New York Times lawsuit",
+          "z": "une",
+          "id": "the-us-government-sides-with-openai-in-the-new-york-times"
+        },
+        {
+          "t": "The French state deepens its partnership with Mistral and seconds engineers into ministries",
+          "z": "europe",
+          "id": "the-french-state-deepens-its-partnership-with-mistral-and"
+        },
+        {
+          "t": "According to RSF, the major chatbots still relay sanctioned Russian media",
+          "z": "europe",
+          "id": "according-to-rsf-the-major-chatbots-still-relay-sanctioned"
+        },
+        {
+          "t": "Alex Karp, head of Palantir, warns France over its digital sovereignty",
+          "z": "europe",
+          "id": "alex-karp-head-of-palantir-warns-france-over-its-digital"
+        },
+        {
+          "t": "AI speeds up junior work, and threatens to strip away what trains them",
+          "z": "europe",
+          "id": "ai-speeds-up-junior-work-and-threatens-to-strip-away-what"
+        },
+        {
+          "t": "The G20 adopts light-touch AI principles proposed by Washington",
+          "z": "international",
+          "id": "the-g20-adopts-light-touch-ai-principles-proposed-by"
+        },
+        {
+          "t": "Meta ships its most powerful model and eases the pressure on its staff",
+          "z": "international",
+          "id": "meta-ships-its-most-powerful-model-and-eases-the-pressure"
+        },
+        {
+          "t": "Google launches Gemini 3.8 Flash, its third Flash model in six weeks",
+          "z": "international",
+          "id": "google-launches-gemini-3-8-flash-its-third-flash-model-in"
+        },
+        {
+          "t": "A nuclear engineer sounds the alarm: AI's efficiency threatens the next generation of experts",
+          "z": "international",
+          "id": "a-nuclear-engineer-sounds-the-alarm-ai-s-efficiency"
+        },
+        {
+          "t": "Foundry Hua Hong invests $2 billion in a new fab for AI",
+          "z": "chine",
+          "id": "foundry-hua-hong-invests-2-billion-in-a-new-fab-for-ai"
+        },
+        {
+          "t": "Beijing launches a campaign against AI-generated \"slop.\"",
+          "z": "chine",
+          "id": "beijing-launches-a-campaign-against-ai-generated-slop"
+        },
+        {
+          "t": "An arXiv paper shows the limits of judging an agent on its result alone",
+          "z": "recherche",
+          "id": "an-arxiv-paper-shows-the-limits-of-judging-an-agent-on-its"
+        },
+        {
+          "t": "ChatGPT now shows ads, with targeting you can switch off",
+          "z": "bref",
+          "id": "chatgpt-now-shows-ads-with-targeting-you-can-switch-off"
+        },
+        {
+          "t": "The IPO of Enflame, backed by Tencent, oversubscribed 4,073 times",
+          "z": "bref",
+          "id": "the-ipo-of-enflame-backed-by-tencent-oversubscribed-4-073"
+        }
+      ]
+    },
     {
       "date": "2026-09-02",
       "dateCourte": "Wed 2 Sep",

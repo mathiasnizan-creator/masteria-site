@@ -1,0 +1,322 @@
+{
+  "schema": 2,
+  "date": "2026-09-03",
+  "dateAffichee": "3 septembre 2026",
+  "dateLongue": "jeudi 3 septembre 2026",
+  "dateCourte": "jeu. 3 sept.",
+  "jourSemaine": "jeudi",
+  "titre": "Veille IA du jeudi 3 septembre 2026",
+  "titreEditorial": "Le ministère américain de la justice prend parti pour OpenAI contre le New York Times et défend l'entraînement des modèles sur des œuvres protégées au nom du « fair use » et de la « sécurité nationale » ; le G20 adopte des principes de régulation légère proposés par Washington, l'État français détache des ingénieurs de Mistral dans ses ministères, Meta sort son modèle le plus puissant et Google enchaîne un troisième Gemini Flash en six semaines",
+  "chapeau": "Le ministère américain de la justice a pris parti pour OpenAI dans le procès du New York Times, jugeant que l'entraînement de ses modèles sur les archives du quotidien relève du « fair use » et sert la « sécurité nationale ». Le même jour, le G20 s'accorde sur une régulation légère de l'IA proposée par Washington, l'État français resserre son alliance avec Mistral, et Meta comme Google poussent de nouveaux modèles.",
+  "une": {
+    "titre": "Le gouvernement américain prend parti pour OpenAI dans le procès du New York Times",
+    "texteHtml": "<p>Le ministère de la justice des États-Unis est intervenu mercredi 2 septembre dans la plainte que le New York Times a déposée contre OpenAI en décembre 2023, un dossier où le quotidien réclame « des milliards de dollars » pour avoir vu ses articles servir à entraîner ChatGPT. Dans un mémoire adressé au tribunal, l'administration Trump soutient l'argument d'OpenAI : entraîner un modèle sur des œuvres protégées relève du « fair use », l'exception américaine d'usage loyal, et n'a causé au journal ni préjudice commercial ni violation caractérisée du droit d'auteur. « Les États-Unis ont un intérêt fort à continuer de développer une industrie de l'intelligence artificielle robuste et compétitive, qui fixe la norme mondiale », écrit le gouvernement, qui invoque aussi la concurrence face à la Chine et la « sécurité nationale ». Un État qui plaide, dans un litige privé, pour le droit de ses champions à moissonner la presse sans payer, voilà qui déplace la ligne de front du droit d'auteur à l'ère des modèles. Pour les éditeurs européens engagés dans des batailles semblables, le signal venu de Washington pèsera dans les négociations à venir.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/09/03/ia-l-administration-trump-defend-le-droit-d-openai-a-utiliser-les-archives-du-new-york-times-sans-verser-de-droits-d-auteur_6764810_3234.html"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/988344/trump-administration-new-york-times-openai-lawsuit"
+      },
+      {
+        "nom": "Wired",
+        "url": "https://www.wired.com/story/trump-administration-sides-with-ai-giants-new-york-times-lawsuit/"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/02/u-s-government-sides-with-openai-on-issue-of-training-llms-on-copyrighted-material/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "le-gouvernement-americain-prend-parti-pour-openai-dans-le"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "L'État renforce son partenariat avec Mistral et détache des ingénieurs dans les ministères",
+          "texteHtml": "<p>L'État français resserre son alliance avec Mistral et lance de nouvelles expérimentations au sein des administrations, rapporte Le Monde. La start-up doit détacher directement des ingénieurs dans les services publics pour y déployer l'IA sur trois terrains sensibles : la cybersécurité, la lutte contre la fraude et la justice. Placer les équipes d'un fournisseur au cœur des ministères accélère l'adoption, mais lie plus étroitement le fonctionnement de l'État à un acteur privé, fût-il national.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/03/intelligence-artificielle-l-etat-renforce-son-partenariat-avec-mistral-et-lance-de-nouvelles-experimentations-dans-des-ministeres_6764672_4408996.html"
+            }
+          ],
+          "rang": 2,
+          "id": "l-etat-renforce-son-partenariat-avec-mistral-et-detache-des"
+        },
+        {
+          "titre": "Selon RSF, les grands chatbots relaient encore des médias russes sanctionnés",
+          "texteHtml": "<p>Une enquête de Reporters sans frontières établit que ChatGPT, Claude et Grok reprennent des contenus de médias russes visés par les sanctions de l'Union européenne, accusés de servir la « désinformation » du Kremlin, rapportent Le Monde et Clubic. Seul Meta AI refuse de le faire, en invoquant explicitement les sanctions en vigueur. Le constat met les fournisseurs devant une responsabilité concrète : leurs modèles rediffusent des sources que le droit européen interdit de propager, sans filtre suffisant.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/02/ia-des-chatbots-donnent-acces-aux-contenus-de-medias-russes-sanctionnes-par-l-union-europeenne-selon-une-enquete-de-rsf_6764323_4408996.html"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-627910-malgre-les-sanctions-europeennes-les-grandes-ia-reprennent-toujours-les-medias-russes.html"
+            }
+          ],
+          "rang": 3,
+          "id": "selon-rsf-les-grands-chatbots-relaient-encore-des-medias"
+        },
+        {
+          "titre": "Alex Karp, patron de Palantir, met en garde la France sur sa souveraineté numérique",
+          "texteHtml": "<p>Le dirigeant américain de Palantir a estimé, mercredi 2 septembre, que la France se « fera du mal » avec une souveraineté qu'il juge en trompe-l'œil, rapporte Le Monde. Il réagissait à la décision prise par Paris en juin de se passer des services de sa société pour le renseignement intérieur. La sortie illustre la tension entre l'ambition française de reprendre la main sur ses outils critiques et la dépendance persistante à des plateformes étrangères déjà installées.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/03/ia-le-patron-de-palantir-alex-karp-met-en-garde-la-france-au-sujet-de-sa-souverainete-numerique_6764606_3234.html"
+            }
+          ],
+          "rang": 4,
+          "id": "alex-karp-patron-de-palantir-met-en-garde-la-france-sur-sa"
+        },
+        {
+          "titre": "L'IA accélère le travail des juniors, et menace de leur retirer ce qui les forme",
+          "texteHtml": "<p>Le Journal du Net pointe un angle mort de la productivité : en confiant aux modèles les tâches d'entrée de gamme, on prive les débutants des situations où ils apprenaient à juger, décider et devenir les experts de demain. Le gain de temps est immédiat et mesurable ; la perte de compétence est différée et invisible. Un cabinet, une DSI ou une rédaction qui automatise ses premières marches gagne en vitesse aujourd'hui et fragilise sa relève à cinq ans.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1554277-ia-et-juniors-l-angle-mort-de-la-productivite/"
+            }
+          ],
+          "rang": 5,
+          "id": "l-ia-accelere-le-travail-des-juniors-et-menace-de-leur"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Le G20 adopte des principes de régulation légère de l'IA proposés par Washington",
+          "texteHtml": "<p>Les représentants des plus grandes économies mondiales ont approuvé à l'unanimité des lignes directrices présentées par les États-Unis, qui plaident pour une gouvernance souple de l'intelligence artificielle et des technologies émergentes, rapporte Bloomberg. L'accord, obtenu lors d'une réunion ministérielle du G20 sur l'innovation organisée aux États-Unis, offre une victoire à l'administration Trump et à la Silicon Valley, favorables à un cadre minimal. Dans le même temps, le ministre chinois de la science et de la technologie, Yin Hejun, y a appelé à une coopération mondiale « plutôt qu'à la rivalité », à quelques semaines d'une rencontre annoncée entre Xi Jinping et Donald Trump. Deux discours coexistent : Washington veut alléger la contrainte, Pékin veut fixer les règles à plusieurs. L'Union européenne, avec son AI Act contraignant, se retrouve isolée sur la ligne dure au moment où le consensus international glisse vers la légèreté.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-02/us-strikes-light-touch-ai-regulation-accord-with-g20-members"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-war/article/3366143/china-urges-global-ai-cooperation-not-rivalry-ahead-xi-trump-summit"
+            }
+          ],
+          "rang": 6,
+          "id": "le-g20-adopte-des-principes-de-regulation-legere-de-l-ia"
+        },
+        {
+          "titre": "Meta sort son modèle le plus puissant et relâche la pression sur ses salariés",
+          "texteHtml": "<p>Meta a publié son modèle d'IA le plus avancé à ce jour, dont le directeur scientifique affirme que les capacités « se rapprochent » des meilleurs concurrents, rapporte Bloomberg. En parallèle, l'entreprise pousse auprès de ses employés un nouvel agent baptisé Hatch, tout en réduisant la pression qui les incitait à consommer massivement des jetons d'IA, une course interne surnommée « tokenmaxxing », rapporte Wired. Le double mouvement dit l'état d'esprit du secteur : rattraper le peloton de tête sur la performance des modèles, et cesser de mesurer l'adoption au volume brut d'usage. Après des mois où la seule consigne était d'utiliser l'IA à tout prix, Meta corrige vers un usage plus mesuré. Le signal compte, venant de l'entreprise qui misait le plus fort sur le remplacement des équipes par des agents.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-02/meta-releases-more-powerful-ai-model-edging-closer-to-rivals"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/meta-pushes-its-new-ai-agent-on-employees-but-eases-off-on-tokenmaxxing/"
+            }
+          ],
+          "rang": 7,
+          "id": "meta-sort-son-modele-le-plus-puissant-et-relache-la"
+        },
+        {
+          "titre": "Google lance Gemini 3.8 Flash, son troisième modèle Flash en six semaines",
+          "texteHtml": "<p>Google a présenté Gemini 3.8 Flash le 2 septembre, quelques semaines seulement après son prédécesseur, rapportent The Verge et Frandroid. Le modèle « travaille plus dur » que Gemini 3.7 Flash, selon Google : il enchaîne davantage d'étapes de raisonnement sur les tâches complexes et appelle ses outils de façon itérative (il déclenche plusieurs actions successives au lieu d'une seule). Le tarif d'introduction reste identique à celui de la version précédente, 0,75 dollar par million de jetons en entrée et 3,75 dollars en sortie, mais seulement jusqu'au 31 décembre. Google a publié en même temps une variante « 3.8 Flash Cyber », orientée cybersécurité. La cadence, trois modèles Flash en six semaines, montre une industrialisation des sorties qui banalise le « nouveau modèle » et déplace la difficulté vers le choix : pour une équipe, suivre ce rythme d'itérations devient un travail en soi.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/988742/google-gemini-3-8-flash"
+            },
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/google-gemini/3231265_gemini-3-8-flash-google-sort-son-troisieme-modele-flash-en-six-semaines"
+            }
+          ],
+          "rang": 8,
+          "id": "google-lance-gemini-3-8-flash-son-troisieme-modele-flash-en"
+        },
+        {
+          "titre": "Un ingénieur du nucléaire alerte : l'efficacité de l'IA menace la génération suivante d'experts",
+          "texteHtml": "<p>Dans IEEE Spectrum, un ingénieur qui a dirigé la conception du premier système de commande entièrement numérique d'une centrale nucléaire américaine raconte un choix contre-intuitif : il a délibérément laissé des étapes manuelles dans des séquences que le système savait exécuter seul. La raison tenait à un problème précis. « Un opérateur qui ne fait que superviser l'automatisation cesse peu à peu d'être un opérateur. Les mains se refroidissent », écrit-il. Sa thèse, transposée à l'IA : optimiser chaque tâche au maximum prive les débutants des occasions d'apprendre le métier par la pratique, et tarit la formation des experts de demain. L'auteur ne conteste pas les gains d'efficacité ; il rappelle qu'une compétence humaine se maintient par l'exercice, et qu'une organisation qui l'oublie découvre le déficit quand il est trop tard pour le combler.</p>",
+          "sources": [
+            {
+              "nom": "IEEE Spectrum",
+              "url": "https://spectrum.ieee.org/ai-engineer-skills"
+            }
+          ],
+          "rang": 9,
+          "id": "un-ingenieur-du-nucleaire-alerte-l-efficacite-de-l-ia"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Le fondeur Hua Hong investit 2 milliards de dollars dans une nouvelle usine pour l'IA",
+          "texteHtml": "<p>Hua Hong Grace Semiconductor, deuxième fabricant chinois de puces à façon, injecte 2 milliards de dollars dans une extension de capacité à Wuxi, dans l'est de la Chine, pour répondre à la demande intérieure d'infrastructures d'IA et contourner les restrictions technologiques américaines, rapporte le South China Morning Post. Les fonds financeront une nouvelle ligne de production de galettes de 12 pouces, troisième site du groupe dans la ville, selon un dépôt transmis mardi à la Bourse de Hong Kong. La démarche illustre la stratégie chinoise de montée en puissance sur les puces matures : produire en volume, chez soi, ce que les sanctions rendent difficile à importer. Le pari porte sur la capacité à alimenter en masse les centres de données domestiques avec des puces matures, là où la gravure de pointe reste hors de portée.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366104/chinas-no-2-foundry-hua-hong-invests-us2b-new-fab-meet-surging-ai-driven-demand"
+            }
+          ],
+          "rang": 10,
+          "id": "le-fondeur-hua-hong-investit-2-milliards-de-dollars-dans"
+        },
+        {
+          "titre": "Pékin lance une campagne contre le « slop » généré par l'IA",
+          "texteHtml": "<p>L'Administration chinoise du cyberespace (CAC) a annoncé mercredi une vaste offensive contre le « slop », ce contenu synthétique de faible qualité produit en masse qui encombre réseaux sociaux et fils d'actualité, rapporte le South China Morning Post. Le régulateur affirme avoir supprimé plus de 5,61 millions de contenus jugés nuisibles ou illégaux et fermé quelque 49 000 comptes durant sa campagne, qui vise WeChat, RedNote et Douyin. L'opération cible les deepfakes et les pièges à clics générés automatiquement, symptômes d'une saturation que la Chine traite par la coercition réglementaire. Le même problème traverse tout l'internet mondial ; Pékin choisit d'y répondre par le nettoyage administratif à grande échelle.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/article/3366096/china-cracks-down-ai-deepfakes-and-clickbait-cluttering-wechat-rednote-douyin"
+            }
+          ],
+          "rang": 11,
+          "id": "pekin-lance-une-campagne-contre-le-slop-genere-par-l-ia"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Un article d'arXiv montre les limites de juger un agent sur son seul résultat",
+          "texteHtml": "<p>L'évaluation la plus répandue en production consiste à montrer à un « juge » la demande de l'utilisateur et la réponse finale de l'agent, puis à trancher si l'affaire a été bien traitée. Cette méthode est structurellement aveugle à un agent qui parvient au bon résultat par un mauvais chemin, expliquent les auteurs de « trajectory-judge ». Pour le prouver, ils construisent un environnement déterministe de support client, une politique de résolution qui réussit toujours, et un injecteur de fautes qui casse un seul maillon à un moment connu. Le dispositif mesure exactement ce que l'évaluation par le résultat laisse passer : les cas où le client reçoit la bonne réponse alors que l'agent a violé une règle en route. Pour toute entreprise qui déploie des agents, l'enseignement est direct : contrôler la sortie ne suffit pas, il faut inspecter la trajectoire.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.00038"
+            }
+          ],
+          "rang": 12,
+          "id": "un-article-d-arxiv-montre-les-limites-de-juger-un-agent-sur"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "ChatGPT affiche désormais des publicités, avec un ciblage désactivable",
+          "texteHtml": "<p>OpenAI introduit la publicité dans ChatGPT, y compris des annonces personnalisées, sauf pour les abonnés payants ; le ciblage peut se désactiver dans les réglages.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2322589-chatgpt-affiche-des-publicites-comment-desactiver-le-ciblage-publicitaire.html"
+            }
+          ],
+          "rang": 13,
+          "id": "chatgpt-affiche-desormais-des-publicites-avec-un-ciblage"
+        },
+        {
+          "titre": "L'introduction en Bourse d'Enflame, adossé à Tencent, sursouscrite 4 073 fois",
+          "texteHtml": "<p>Le fondeur chinois de puces IA Shanghai Enflame, dernier des « quatre petits dragons » à entrer en Bourse, a vu la demande des particuliers dépasser 4 073 fois l'offre qui leur était réservée.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-02/tencent-backed-enflame-s-ipo-draws-4-073-times-retail-demand"
+            }
+          ],
+          "rang": 14,
+          "id": "l-introduction-en-bourse-d-enflame-adosse-a-tencent"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Un ingénieur raconte dans IEEE Spectrum avoir laissé exprès des étapes manuelles dans le pilotage d'une centrale nucléaire pour que ses opérateurs restent aguerris, le même jour où le Journal du Net décrit l'IA effaçant les tâches par lesquelles un junior apprenait à juger : en automatisant les gestes ingrats, une organisation supprime l'atelier où se fabrique l'expertise, et la parade tient à traiter l'apprentissage comme un actif qui se cultive, en gardant les juniors sur les tâches formatrices même quand la machine irait plus vite",
+    "these": "Un ingénieur en systèmes de commande a délibérément laissé des étapes manuelles dans le pilotage numérique d'une centrale nucléaire américaine, alors que la machine savait les exécuter seule. Il raconte son choix cette semaine dans IEEE Spectrum, et sa raison tient en une phrase : « Un opérateur qui ne fait que superviser l'automatisation cesse peu à peu d'être un opérateur. Les mains se refroidissent. » Le même jour, le Journal du Net décrit le même mécanisme dans les bureaux : l'IA absorbe les tâches simples par lesquelles un junior apprenait à juger, décider, se tromper et corriger. Deux mondes éloignés, un signal commun. En supprimant les gestes ingrats, on supprime aussi l'atelier où se fabrique l'expertise. Le calcul qui séduit chaque trimestre est le piège. Confier à un modèle la revue de contrats, le premier jet de code, la synthèse d'un dossier, c'est gagner des heures visibles tout de suite. Former un expert prend dix à quinze ans, et ces heures gagnées sont justement celles où il se formait. Une organisation qui automatise sans y penser hypothèque sa réserve de seniors pour 2035, sans jamais le voir passer dans un tableau de bord. L'enjeu, pour une organisation française, est de traiter l'apprentissage comme un actif qui se cultive, au même titre qu'une machine qu'on entretient. Repérez, métier par métier, les tâches où se forme le jugement : le diagnostic qu'on pose seul avant de vérifier, l'erreur qu'on rattrape, le cas limite qu'aucune procédure ne couvre. Gardez-y vos juniors, même quand l'IA irait plus vite, et faites de la machine un partenaire qui commente leur travail et le corrige pendant qu'ils gardent la main. L'ingénieur de la centrale n'a pas ralenti sa machine par nostalgie ; il savait qu'une salle de commande sans opérateurs aguerris finit par coûter plus cher qu'elle ne rapporte. Une entreprise sans experts de demain aussi. L'efficacité se mesure ce trimestre. La compétence se cultive sur une décennie, et rien ne la rachète une fois la chaîne rompue. L'équipe éditoriale Masteria.",
+    "html": "<p>Un ingénieur en systèmes de commande a délibérément laissé des étapes manuelles dans le pilotage numérique d'une centrale nucléaire américaine, alors que la machine savait les exécuter seule. Il raconte son choix cette semaine dans IEEE Spectrum, et sa raison tient en une phrase : « Un opérateur qui ne fait que superviser l'automatisation cesse peu à peu d'être un opérateur. Les mains se refroidissent. » Le même jour, le Journal du Net décrit le même mécanisme dans les bureaux : l'IA absorbe les tâches simples par lesquelles un junior apprenait à juger, décider, se tromper et corriger. Deux mondes éloignés, un signal commun. En supprimant les gestes ingrats, on supprime aussi l'atelier où se fabrique l'expertise.</p>\n<p>Le calcul qui séduit chaque trimestre est le piège. Confier à un modèle la revue de contrats, le premier jet de code, la synthèse d'un dossier, c'est gagner des heures visibles tout de suite. Former un expert prend dix à quinze ans, et ces heures gagnées sont justement celles où il se formait. Une organisation qui automatise sans y penser hypothèque sa réserve de seniors pour 2035, sans jamais le voir passer dans un tableau de bord.</p>\n<p>L'enjeu, pour une organisation française, est de traiter l'apprentissage comme un actif qui se cultive, au même titre qu'une machine qu'on entretient. Repérez, métier par métier, les tâches où se forme le jugement : le diagnostic qu'on pose seul avant de vérifier, l'erreur qu'on rattrape, le cas limite qu'aucune procédure ne couvre. Gardez-y vos juniors, même quand l'IA irait plus vite, et faites de la machine un partenaire qui commente leur travail et le corrige pendant qu'ils gardent la main. L'ingénieur de la centrale n'a pas ralenti sa machine par nostalgie ; il savait qu'une salle de commande sans opérateurs aguerris finit par coûter plus cher qu'elle ne rapporte. Une entreprise sans experts de demain aussi. L'efficacité se mesure ce trimestre. La compétence se cultive sur une décennie, et rien ne la rachète une fois la chaîne rompue.</p>",
+    "htmlExtrait": "<p>Un ingénieur en systèmes de commande a délibérément laissé des étapes manuelles dans le pilotage numérique d'une centrale nucléaire américaine, alors que la machine savait les exécuter seule. Il raconte son choix cette semaine dans IEEE Spectrum, et sa raison tient en une phrase : « Un opérateur qui ne fait que superviser l'automatisation cesse peu à peu d'être un opérateur. Les mains se refroidissent. » Le même jour, le Journal du Net décrit le même mécanisme dans les bureaux : l'IA absorbe les tâches simples par lesquelles un junior apprenait à juger, décider, se tromper et corriger. Deux mondes éloignés, un signal commun. En supprimant les gestes ingrats, on supprime aussi l'atelier où se fabrique l'expertise.</p>",
+    "itemsCites": [
+      5,
+      9
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-02",
+    "dateLongue": "mercredi 2 septembre 2026",
+    "titreEditorial": "OpenAI classe Astra au seuil « critique » de capacité cyber, premier de ses modèles reconnu apte à pénétrer des systèmes, et alerte sur des attaques par essaims d'IA d'ici quelques mois ; Nvidia s'approche d'un rachat de Hugging Face à 14 milliards de dollars, Anthropic lance Claude Fable 5.1 jusqu'à 45 % moins cher, et Meta renonce à une coupe massive de ses effectifs pour devenir « IA native »",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 22,
+  "nbSignes": 11374,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "The Verge",
+    "Wired",
+    "TechCrunch",
+    "Clubic",
+    "Journal du Net",
+    "Bloomberg",
+    "South China Morning Post",
+    "Google DeepMind",
+    "Frandroid"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 145,
+  "publieLe": "2026-09-03T05:09:02+02:00",
+  "publieLeAffiche": "5h09",
+  "ogImage": "/veille-data/og/2026-09-03.png"
+}

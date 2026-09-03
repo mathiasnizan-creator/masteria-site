@@ -259,7 +259,12 @@
     "titreEditorial": "The European Commission ranks ChatGPT among its most closely watched services under the DSA, the first generative AI targeted, OpenAI moves some of its large customers to performance-based billing, Anthropic signs $35 billion in compute with Lambda ahead of its IPO, and Nvidia invests $3.5 billion in MediaTek to stay indispensable",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-03",
+    "dateLongue": "Thursday 3 September 2026",
+    "titreEditorial": "Washington backs OpenAI against the New York Times",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 19,
   "nbSignes": 10261,

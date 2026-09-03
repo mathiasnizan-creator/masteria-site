@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-03</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-03T05:09:02+02:00</news:publication_date>
+      <news:title>Veille IA du 3 septembre 2026 : Le ministère américain de la justice prend parti pour OpenAI contre le New York Times et défend l&#x27;entraînement des modèles sur des œuvres protégées au nom du « fair use » et de la « sécurité nationale » ; le G20 adopte des principes de régulation légère proposés par Washington, l&#x27;État français détache des ingénieurs de Mistral dans ses ministères, Meta sort son modèle le plus puissant et Google enchaîne un troisième Gemini Flash en six semaines</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-09-02</loc>
     <news:news>
       <news:publication>

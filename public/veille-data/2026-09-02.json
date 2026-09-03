@@ -259,7 +259,12 @@
     "titreEditorial": "La Commission européenne classe ChatGPT parmi ses services les plus surveillés au titre du DSA, première IA générative visée, OpenAI passe une partie de ses gros clients à une facturation à la performance, Anthropic signe 35 milliards de dollars de calcul avec Lambda avant son entrée en Bourse, et Nvidia investit 3,5 milliards dans MediaTek pour rester incontournable",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-03",
+    "dateLongue": "jeudi 3 septembre 2026",
+    "titreEditorial": "Le ministère américain de la justice prend parti pour OpenAI contre le New York Times et défend l'entraînement des modèles sur des œuvres protégées au nom du « fair use » et de la « sécurité nationale » ; le G20 adopte des principes de régulation légère proposés par Washington, l'État français détache des ingénieurs de Mistral dans ses ministères, Meta sort son modèle le plus puissant et Google enchaîne un troisième Gemini Flash en six semaines",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 19,
   "nbSignes": 11467,

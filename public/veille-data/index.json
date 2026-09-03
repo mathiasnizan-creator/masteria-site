@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-02",
-    "totalEditions": 26,
-    "totalItems": 355,
-    "totalSources": 515
+    "derniereDate": "2026-09-03",
+    "totalEditions": 27,
+    "totalItems": 369,
+    "totalSources": 537
   },
   "editions": [
+    {
+      "date": "2026-09-03",
+      "dateAffichee": "3 septembre 2026",
+      "dateCourte": "jeu. 3 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Le ministère américain de la justice prend parti pour OpenAI contre le New York Times et défend l'entraînement des modèles sur des œuvres protégées au nom du « fair use » et de la « sécurité nationale » ; le G20 adopte des principes de régulation légère proposés par Washington, l'État français détache des ingénieurs de Mistral dans ses ministères, Meta sort son modèle le plus puissant et Google enchaîne un troisième Gemini Flash en six semaines",
+      "nbItems": 14,
+      "nbSources": 22,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-09-02",
       "dateAffichee": "2 septembre 2026",

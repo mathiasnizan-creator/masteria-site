@@ -1,0 +1,321 @@
+{
+  "schema": 2,
+  "date": "2026-09-03",
+  "dateAffichee": "3 September 2026",
+  "dateLongue": "Thursday 3 September 2026",
+  "dateCourte": "Thu 3 Sep",
+  "jourSemaine": "Thursday",
+  "titre": "AI Watch - Thursday 3 September 2026",
+  "titreEditorial": "Washington backs OpenAI against the New York Times",
+  "chapeau": "The US Justice Department sided with OpenAI in the New York Times lawsuit, ruling that training its models on the paper's archives is 'fair use' and serves 'national security.' The same day, the G20 agreed on light-touch AI rules proposed by Washington, the French state tightened its alliance with Mistral, and both Meta and Google shipped new models.",
+  "une": {
+    "titre": "The US government sides with OpenAI in the New York Times lawsuit",
+    "texteHtml": "<p>The US Justice Department intervened on Wednesday 2 September in the complaint the New York Times filed against OpenAI in December 2023, a case in which the paper is claiming \"billions of dollars\" for having its articles used to train ChatGPT. In a brief submitted to the court, the Trump administration backs OpenAI's argument: training a model on copyrighted works is \"fair use,\" the US doctrine of fair dealing, and caused the paper neither commercial harm nor any clear copyright violation. \"The United States has a strong interest in continuing to develop a robust and competitive artificial intelligence industry that sets the global standard,\" the government writes, also invoking competition with China and \"national security.\" A state arguing, in a private dispute, for the right of its champions to harvest the press without paying shifts the front line of copyright into the age of models. For European publishers waging similar battles, the signal from Washington will weigh on the negotiations to come.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/09/03/ia-l-administration-trump-defend-le-droit-d-openai-a-utiliser-les-archives-du-new-york-times-sans-verser-de-droits-d-auteur_6764810_3234.html"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/988344/trump-administration-new-york-times-openai-lawsuit"
+      },
+      {
+        "nom": "Wired",
+        "url": "https://www.wired.com/story/trump-administration-sides-with-ai-giants-new-york-times-lawsuit/"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/02/u-s-government-sides-with-openai-on-issue-of-training-llms-on-copyrighted-material/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "the-us-government-sides-with-openai-in-the-new-york-times"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The French state deepens its partnership with Mistral and seconds engineers into ministries",
+          "texteHtml": "<p>The French state is tightening its alliance with Mistral and launching new pilots inside government departments, Le Monde reports. The start-up is to second engineers directly into public services to deploy AI on three sensitive fronts: cybersecurity, fraud prevention and justice. Placing a supplier's teams at the heart of ministries speeds up adoption, but ties the workings of the state more closely to a private company, national though it may be.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/03/intelligence-artificielle-l-etat-renforce-son-partenariat-avec-mistral-et-lance-de-nouvelles-experimentations-dans-des-ministeres_6764672_4408996.html"
+            }
+          ],
+          "rang": 2,
+          "id": "the-french-state-deepens-its-partnership-with-mistral-and"
+        },
+        {
+          "titre": "According to RSF, the major chatbots still relay sanctioned Russian media",
+          "texteHtml": "<p>An investigation by Reporters Without Borders (RSF) finds that ChatGPT, Claude and Grok reproduce content from Russian outlets targeted by European Union sanctions, accused of serving Kremlin \"disinformation,\" Le Monde and Clubic report. Only Meta AI refuses to do so, explicitly citing the sanctions in force. The finding confronts providers with a concrete responsibility: their models rebroadcast sources that European law forbids from spreading, without adequate filtering.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/02/ia-des-chatbots-donnent-acces-aux-contenus-de-medias-russes-sanctionnes-par-l-union-europeenne-selon-une-enquete-de-rsf_6764323_4408996.html"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-627910-malgre-les-sanctions-europeennes-les-grandes-ia-reprennent-toujours-les-medias-russes.html"
+            }
+          ],
+          "rang": 3,
+          "id": "according-to-rsf-the-major-chatbots-still-relay-sanctioned"
+        },
+        {
+          "titre": "Alex Karp, head of Palantir, warns France over its digital sovereignty",
+          "texteHtml": "<p>The American chief executive of Palantir said on Wednesday 2 September that France would \"hurt itself\" with a sovereignty he sees as an illusion, Le Monde reports. He was reacting to the decision Paris took in June to do without his company's services for domestic intelligence. The remark illustrates the tension between France's ambition to regain control of its critical tools and the persistent dependence on foreign platforms already in place.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/03/ia-le-patron-de-palantir-alex-karp-met-en-garde-la-france-au-sujet-de-sa-souverainete-numerique_6764606_3234.html"
+            }
+          ],
+          "rang": 4,
+          "id": "alex-karp-head-of-palantir-warns-france-over-its-digital"
+        },
+        {
+          "titre": "AI speeds up junior work, and threatens to strip away what trains them",
+          "texteHtml": "<p>The Journal du Net points to a blind spot in productivity: by handing models the entry-level tasks, you deprive beginners of the situations where they used to learn to judge, decide and become the experts of tomorrow. The time saved is immediate and measurable; the loss of skill is deferred and invisible. A firm, an IT department or a newsroom that automates its lower rungs gains speed today and weakens its bench strength five years out.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1554277-ia-et-juniors-l-angle-mort-de-la-productivite/"
+            }
+          ],
+          "rang": 5,
+          "id": "ai-speeds-up-junior-work-and-threatens-to-strip-away-what"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The G20 adopts light-touch AI principles proposed by Washington",
+          "texteHtml": "<p>Representatives of the world's largest economies unanimously approved guidelines put forward by the United States, which argue for a flexible governance of artificial intelligence and emerging technologies, Bloomberg reports. The deal, reached at a G20 ministerial meeting on innovation held in the United States, hands a win to the Trump administration and to Silicon Valley, both in favour of a minimal framework. At the same time, China's science and technology minister, Yin Hejun, called there for global cooperation \"rather than rivalry,\" a few weeks ahead of an announced meeting between Xi Jinping and Donald Trump. Two positions coexist: Washington wants to ease the constraint, Beijing wants the rules set collectively. The European Union, with its binding AI Act, finds itself isolated on the hard line just as the international consensus slides towards leniency.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-02/us-strikes-light-touch-ai-regulation-accord-with-g20-members"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-war/article/3366143/china-urges-global-ai-cooperation-not-rivalry-ahead-xi-trump-summit"
+            }
+          ],
+          "rang": 6,
+          "id": "the-g20-adopts-light-touch-ai-principles-proposed-by"
+        },
+        {
+          "titre": "Meta ships its most powerful model and eases the pressure on its staff",
+          "texteHtml": "<p>Meta has released its most advanced AI model to date, whose chief scientist claims its capabilities are \"closing in\" on the best rivals, Bloomberg reports. In parallel, the company is pushing a new agent called Hatch to its employees, while easing the pressure that pushed them to burn through AI tokens en masse, an internal race nicknamed \"tokenmaxxing,\" Wired reports. The twin move captures the sector's frame of mind: catch the leading pack on model performance, and stop measuring adoption by raw volume of use. After months when the only instruction was to use AI at any cost, Meta is correcting towards more measured use. The signal matters, coming from the company that bet hardest on replacing teams with agents.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-02/meta-releases-more-powerful-ai-model-edging-closer-to-rivals"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/meta-pushes-its-new-ai-agent-on-employees-but-eases-off-on-tokenmaxxing/"
+            }
+          ],
+          "rang": 7,
+          "id": "meta-ships-its-most-powerful-model-and-eases-the-pressure"
+        },
+        {
+          "titre": "Google launches Gemini 3.8 Flash, its third Flash model in six weeks",
+          "texteHtml": "<p>Google unveiled Gemini 3.8 Flash on 2 September, only a few weeks after its predecessor, The Verge and Frandroid report. The model \"works harder\" than Gemini 3.7 Flash, according to Google: it chains more reasoning steps on complex tasks and calls its tools iteratively (it triggers several successive actions instead of one). The introductory price stays the same as the previous version, $0.75 per million tokens in and $3.75 out, but only until 31 December. Google released at the same time a \"3.8 Flash Cyber\" variant, geared towards cybersecurity. The pace, three Flash models in six weeks, shows an industrialisation of releases that makes the \"new model\" routine and shifts the difficulty onto the choice: for a team, keeping up with this rhythm of iterations becomes a job in itself.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/988742/google-gemini-3-8-flash"
+            },
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/google-gemini/3231265_gemini-3-8-flash-google-sort-son-troisieme-modele-flash-en-six-semaines"
+            }
+          ],
+          "rang": 8,
+          "id": "google-launches-gemini-3-8-flash-its-third-flash-model-in"
+        },
+        {
+          "titre": "A nuclear engineer sounds the alarm: AI's efficiency threatens the next generation of experts",
+          "texteHtml": "<p>In IEEE Spectrum, an engineer who led the design of the first fully digital control system for a US nuclear plant recounts a counter-intuitive choice: he deliberately left manual steps in sequences the system could run on its own. The reason came down to a precise problem. \"An operator who only supervises the automation slowly stops being an operator. The hands go cold,\" he writes. His thesis, applied to AI: optimising every task to the hilt deprives beginners of the chances to learn the trade by practice, and dries up the training of tomorrow's experts. The author does not dispute the efficiency gains; he reminds us that a human skill is maintained through exercise, and that an organisation that forgets this discovers the shortfall when it is too late to fill it.</p>",
+          "sources": [
+            {
+              "nom": "IEEE Spectrum",
+              "url": "https://spectrum.ieee.org/ai-engineer-skills"
+            }
+          ],
+          "rang": 9,
+          "id": "a-nuclear-engineer-sounds-the-alarm-ai-s-efficiency"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Foundry Hua Hong invests $2 billion in a new fab for AI",
+          "texteHtml": "<p>Hua Hong Grace Semiconductor, China's second-largest contract chipmaker, is injecting $2 billion into a capacity expansion in Wuxi, in eastern China, to meet domestic demand for AI infrastructure and to work around US technology restrictions, the South China Morning Post reports. The funds will finance a new 12-inch wafer production line, the group's third site in the city, according to a filing submitted on Tuesday to the Hong Kong stock exchange. The move illustrates China's strategy of scaling up on mature chips: producing at volume, at home, what sanctions make hard to import. The bet is on the ability to supply domestic data centres en masse with mature chips, where leading-edge lithography remains out of reach.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366104/chinas-no-2-foundry-hua-hong-invests-us2b-new-fab-meet-surging-ai-driven-demand"
+            }
+          ],
+          "rang": 10,
+          "id": "foundry-hua-hong-invests-2-billion-in-a-new-fab-for-ai"
+        },
+        {
+          "titre": "Beijing launches a campaign against AI-generated \"slop.\"",
+          "texteHtml": "<p>The Cyberspace Administration of China (CAC) announced on Wednesday a sweeping offensive against \"slop,\" the low-quality synthetic content produced en masse that clutters social networks and news feeds, the South China Morning Post reports. The regulator says it has removed more than 5.61 million pieces of content judged harmful or illegal and shut down some 49,000 accounts during its campaign, which targets WeChat, RedNote and Douyin. The operation targets deepfakes and auto-generated clickbait, symptoms of a saturation China is treating through regulatory coercion. The same problem runs across the whole of the global internet; Beijing chooses to answer it with large-scale administrative cleanup.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/article/3366096/china-cracks-down-ai-deepfakes-and-clickbait-cluttering-wechat-rednote-douyin"
+            }
+          ],
+          "rang": 11,
+          "id": "beijing-launches-a-campaign-against-ai-generated-slop"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "An arXiv paper shows the limits of judging an agent on its result alone",
+          "texteHtml": "<p>The most common evaluation in production is to show a \"judge\" the user's request and the agent's final answer, then rule on whether the matter was handled well. This method is structurally blind to an agent that reaches the right result by a bad path, explain the authors of \"trajectory-judge.\" To prove it, they build a deterministic customer-support environment, a resolution policy that always succeeds, and a fault injector that breaks a single link at a known moment. The setup measures exactly what result-based evaluation lets through: the cases where the customer gets the right answer while the agent broke a rule along the way. For any company deploying agents, the lesson is direct: checking the output is not enough, you have to inspect the trajectory.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.00038"
+            }
+          ],
+          "rang": 12,
+          "id": "an-arxiv-paper-shows-the-limits-of-judging-an-agent-on-its"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "ChatGPT now shows ads, with targeting you can switch off",
+          "texteHtml": "<p>OpenAI is introducing advertising in ChatGPT, including personalised ads, except for paying subscribers; the targeting can be turned off in the settings.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2322589-chatgpt-affiche-des-publicites-comment-desactiver-le-ciblage-publicitaire.html"
+            }
+          ],
+          "rang": 13,
+          "id": "chatgpt-now-shows-ads-with-targeting-you-can-switch-off"
+        },
+        {
+          "titre": "The IPO of Enflame, backed by Tencent, oversubscribed 4,073 times",
+          "texteHtml": "<p>Chinese AI-chip foundry Shanghai Enflame, the last of the \"four little dragons\" to go public, saw retail demand exceed by 4,073 times the offering reserved for them.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-02/tencent-backed-enflame-s-ipo-draws-4-073-times-retail-demand"
+            }
+          ],
+          "rang": 14,
+          "id": "the-ipo-of-enflame-backed-by-tencent-oversubscribed-4-073"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "When automation erases the workshop where expertise is made",
+    "these": "A control-systems engineer deliberately left manual steps in the digital operation of a US nuclear plant, even though the machine could run them on its own. He tells the story this week in IEEE Spectrum, and his reason fits in one sentence: 'An operator who only supervises the automation slowly stops being an operator. The hands go cold.' The same day, the Journal du Net describes the same mechanism in the office: AI absorbs the simple tasks through which a junior learned to judge, decide, make mistakes and correct them. Two distant worlds, one shared signal. Remove the thankless steps and you also remove the workshop where expertise is made. The calculation that appeals every quarter is the trap. Handing a model the contract review, the first draft of code, the summary of a case file wins hours you can see right away. Training an expert takes ten to fifteen years, and those saved hours are exactly the ones in which they were being trained. An organisation that automates without thinking mortgages its reserve of seniors for 2035, without ever seeing it register on a dashboard. For a French organisation, the task is to treat learning as an asset you cultivate, like a machine you maintain. Identify, role by role, the tasks where judgement is formed: the diagnosis you make alone before you check it, the error you catch, the edge case no procedure covers. Keep your juniors on them, even when AI would be faster, and make the machine a partner that comments on their work and corrects it while they keep their hands on it. The plant engineer did not slow his machine out of nostalgia; he knew that a control room without seasoned operators ends up costing more than it earns. So does a company without the experts of tomorrow. Efficiency is measured this quarter. Skill is cultivated over a decade, and nothing buys it back once the chain is broken. The Masteria editorial team.",
+    "html": "<p>A control-systems engineer deliberately left manual steps in the digital operation of a US nuclear plant, even though the machine could run them on its own. He tells the story this week in IEEE Spectrum, and his reason fits in one sentence: \"An operator who only supervises the automation slowly stops being an operator. The hands go cold.\" The same day, the Journal du Net describes the same mechanism in the office: AI absorbs the simple tasks through which a junior learned to judge, decide, make mistakes and correct them. Two distant worlds, one shared signal. Remove the thankless steps and you also remove the workshop where expertise is made.</p>\n<p>The calculation that appeals every quarter is the trap. Handing a model the contract review, the first draft of code, the summary of a case file wins hours you can see right away. Training an expert takes ten to fifteen years, and those saved hours are exactly the ones in which they were being trained. An organisation that automates without thinking mortgages its reserve of seniors for 2035, without ever seeing it register on a dashboard.</p>\n<p>For a French organisation, the task is to treat learning as an asset you cultivate, like a machine you maintain. Identify, role by role, the tasks where judgement is formed: the diagnosis you make alone before you check it, the error you catch, the edge case no procedure covers. Keep your juniors on them, even when AI would be faster, and make the machine a partner that comments on their work and corrects it while they keep their hands on it. The plant engineer did not slow his machine out of nostalgia; he knew that a control room without seasoned operators ends up costing more than it earns. So does a company without the experts of tomorrow. Efficiency is measured this quarter. Skill is cultivated over a decade, and nothing buys it back once the chain is broken.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>A control-systems engineer deliberately left manual steps in the digital operation of a US nuclear plant, even though the machine could run them on its own. He tells the story this week in IEEE Spectrum, and his reason fits in one sentence: \"An operator who only supervises the automation slowly stops being an operator. The hands go cold.\" The same day, the Journal du Net describes the same mechanism in the office: AI absorbs the simple tasks through which a junior learned to judge, decide, make mistakes and correct them. Two distant worlds, one shared signal. Remove the thankless steps and you also remove the workshop where expertise is made.</p>\n<p>The calculation that appeals every quarter is the trap. Handing a model the contract review, the first draft of code, the summary of a case file wins hours you can see right away. Training an expert takes ten to fifteen years, and those saved hours are exactly the ones in which they were being trained. An organisation that automates without thinking mortgages its reserve of seniors for 2035, without ever seeing it register on a dashboard.</p>",
+    "itemsCites": [
+      5,
+      9
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-02",
+    "dateLongue": "Wednesday 2 September 2026",
+    "titreEditorial": "OpenAI rates Astra at critical cyber capability",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 22,
+  "nbSignes": 10404,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "The Verge",
+    "Wired",
+    "TechCrunch",
+    "Clubic",
+    "Journal du Net",
+    "Bloomberg",
+    "South China Morning Post",
+    "Google DeepMind",
+    "Frandroid"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 145,
+  "publieLe": "2026-09-03T05:10:32+02:00",
+  "publieLeAffiche": "5h10"
+}
