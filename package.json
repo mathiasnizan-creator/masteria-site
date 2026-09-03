@@ -6,14 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run sitemap && vite build",
-    "build:prerender": "npm run sitemap && vite build && npm run prerender && npm run vercel:config",
+    "build:prerender": "npm run sitemap && vite build && npm run prerender && npm run search:index && npm run vercel:config",
     "prerender": "node scripts/prerender.mjs",
     "vercel:config": "node scripts/build-vercel-output-config.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "ping:indexnow": "node scripts/ping-indexnow.mjs",
-    "prebuild": "node scripts/no-concurrent-prerender.mjs"
+    "prebuild": "node scripts/no-concurrent-prerender.mjs",
+    "search:index": "node scripts/build-search-index.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -34,6 +35,8 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
+    "node-html-parser": "^9.0.3",
+    "pagefind": "^1.5.2",
     "puppeteer": "^24.42.0",
     "vite": "^8.0.9"
   }

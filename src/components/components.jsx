@@ -12,6 +12,7 @@ import {
   HardHat, ClipboardList, Landmark, Home, Store, HeartPulse, Scale, Calculator, Umbrella, Hammer, Plane,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
+import SearchPalette, { SearchButton } from './SearchPalette';
 import { useIsMobile, useMediaQuery } from '../hooks/useMediaQuery';
 
 const METIER_ICONS_NAV = {
@@ -205,6 +206,7 @@ export function MasteriaHeader() {
   // elle débordait de l'écran et venait coller le logo (scroll horizontal parasite
   // entre 768 et 1023 px) : on bascule sur le menu burger dès cette largeur.
   const isMobile = useMediaQuery('(max-width: 1023px)');
+  const wideNav = useMediaQuery('(min-width: 1200px)');
   const [menuOpen, setMenuOpen] = useState(false);
   const [conseilOpen, setConseilOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -631,6 +633,8 @@ export function MasteriaHeader() {
               );
             })}
 
+            <SearchButton compact={!wideNav} />
+
             <Link to="/contact" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, background: '#2563EB', color: '#fff', borderRadius: 7, padding: '10px 20px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(37,99,235,0.30)', whiteSpace: 'nowrap', textAlign: 'center' }}>
               Demander un devis
             </Link>
@@ -640,6 +644,7 @@ export function MasteriaHeader() {
         {/* ═════════════ CTA + BURGER MOBILE ═════════════ */}
         {isMobile && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <SearchButton compact style={{ height: 34, padding: '0 7px' }} />
             <Link to="/contact" style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 12.5, fontWeight: 700,
               background: '#2563EB', color: '#fff', borderRadius: 7,
@@ -960,6 +965,7 @@ export function MasteriaHeader() {
           </span>
         ))}
       </div>
+      <SearchPalette />
     </header>
   );
 }
