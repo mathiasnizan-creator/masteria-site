@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, TrendingUp, Filter, FlaskConical, GitBranch, Receipt,
   Gauge, Globe2, Check, AlertTriangle, Calendar, Layers, Target, Users,
+  Building2, Ban, GraduationCap, Scale,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -72,7 +73,8 @@ function IconTile({ icon: Icon }) {
 /* ───────── Données ───────── */
 
 const HERO_CHIPS = [
-  { icon: FlaskConical, label: '4 essais contrôlés randomisés' },
+  { icon: FlaskConical, label: 'Essais randomisés et terrain en entreprise' },
+  { icon: Building2, label: 'Qualité et vitesse mesurées' },
   { icon: Calendar, label: 'Période de mesure affichée' },
   { icon: Globe2, label: 'Données France et zone euro' },
 ]
@@ -82,28 +84,29 @@ const EN_BREF = [
   { label: 'La cause', value: "Le gain se produit au poste de travail. Rien ne le convertit en résultat, faute de mesure intermédiaire et de refonte des processus." },
   { label: 'Le chiffre mal lu', value: "Les « 95 % » proviennent d'un rapport dont les propres données montrent 80 % de pilotes aboutis sur les outils généralistes." },
   { label: 'Le piège de méthode', value: "Mesurer l'effet d'un pilote sur le compte de résultat à six mois revient à mesurer le creux d'investissement d'une technologie générique." },
+  { label: "L'échelle", value: "Des gains de 15 à 40 % par tâche deviennent 3 % des heures d'un utilisateur, puis 1 % de productivité à l'échelle d'un pays. La chute se calcule étage par étage." },
 ]
 
 const ETUDES = [
   {
-    metier: 'Support client',
-    revue: 'Quarterly Journal of Economics, 2025',
+    titre: 'Support client',
+    source: 'Quarterly Journal of Economics, 2025',
     modele: 'Assistant bâti sur GPT-3',
     periode: 'automne 2020 à hiver 2021 · 5 172 agents',
     effet: '+15 % de tickets résolus par heure',
     nuance: "Les moins expérimentés progressent en vitesse et en qualité. Les plus expérimentés gagnent peu en vitesse et perdent légèrement en qualité.",
   },
   {
-    metier: 'Rédaction professionnelle',
-    revue: 'Science, 2023',
+    titre: 'Rédaction professionnelle',
+    source: 'Science, 2023',
     modele: 'ChatGPT, GPT-3.5',
     periode: 'début 2023 · 453 cadres',
     effet: '−40 % de temps, +18 % de qualité',
     nuance: "Tâches d'écriture courtes et isolées. Les écarts entre les plus performants et les autres se resserrent.",
   },
   {
-    metier: 'Conseil',
-    revue: 'Organization Science, 2026',
+    titre: 'Conseil',
+    source: 'Organization Science, 2026',
     modele: 'GPT-4, sans outils',
     periode: 'avril 2023 · 758 consultants',
     effet: '+12,2 % de tâches, +25,1 % de vitesse',
@@ -111,12 +114,170 @@ const ETUDES = [
     highlight: true,
   },
   {
-    metier: 'Développement logiciel',
-    revue: 'Management Science, 2025',
+    titre: 'Développement logiciel',
+    source: 'Management Science, 2026',
     modele: 'GitHub Copilot',
-    periode: 'avant 2024 · 4 867 développeurs',
+    periode: 'septembre 2022 à fin 2023 · 4 867 développeurs',
     effet: '+26 % de tâches livrées',
-    nuance: "Trois expérimentations en entreprise, de deux à huit mois. Gains plus élevés chez les moins expérimentés.",
+    nuance: "Trois expérimentations en entreprise, de deux à huit mois. Gains plus élevés chez les moins expérimentés. Dans l'une des trois entreprises, le taux de réussite des compilations recule de 17 %.",
+  },
+]
+
+const TERRAIN = [
+  {
+    titre: '66 grandes entreprises, 7 137 salariés',
+    source: 'Microsoft et Harvard · NBER 2025, à paraître dans American Economic Review: Insights',
+    modele: 'Microsoft 365 Copilot',
+    periode: 'septembre 2023 à octobre 2024 · six mois par entreprise',
+    effet: "2 h d'e-mail en moins par semaine chez les utilisateurs",
+    nuance: "Aucun effet mesurable sur le temps de réunion ni sur les documents produits. L'usage hebdomadaire se stabilise sous 40 % des salariés équipés, et l'entreprise d'appartenance explique deux fois plus l'usage que le profil individuel.",
+  },
+  {
+    titre: 'Procter & Gamble, 776 professionnels R&D et commerciaux',
+    source: 'Organization Science, 2026',
+    modele: 'GPT-4, puis GPT-4o',
+    periode: "mai à juillet 2024 · défis d'innovation de l'entreprise",
+    effet: 'Qualité +0,37 écart-type, temps −16 %',
+    nuance: "Un individu équipé atteint le niveau d'une équipe de deux sans IA. Les équipes équipées ont trois fois plus de chances de produire une solution du premier décile. Une heure de formation au prompting, atelier d'une journée.",
+    highlight: true,
+  },
+  {
+    titre: 'Ant Group, 1 219 programmeurs',
+    source: 'Banque des règlements internationaux, 2024',
+    modele: 'CodeFuse, assistant de code interne',
+    periode: 'septembre à novembre 2023 · douze semaines',
+    effet: '+55 % de lignes de code, +67 % chez les juniors',
+    nuance: "Effet non significatif chez les développeurs expérimentés, qui sollicitent l'outil 70 % moins souvent. La qualité du code n'est pas mesurée. Groupes définis par département puis appariés, sans tirage au sort individuel.",
+  },
+  {
+    titre: 'Google, 96 ingénieurs',
+    source: 'Prépublication Google Research, 2024',
+    modele: "Complétion et génération de code de l'environnement interne",
+    periode: 'juin à juillet 2024 · une tâche C++ de production',
+    effet: 'Environ 21 % plus rapides',
+    nuance: "Intervalle de confiance large, reconnu par les auteurs. Tâche bornée à trois heures, outils évalués par l'équipe qui les fabrique.",
+  },
+]
+
+const QUALITE = [
+  {
+    domaine: 'Toutes tâches, 106 expériences',
+    source: 'Nature Human Behaviour, 2024',
+    mesure: 'Méta-analyse de 370 effets, études parues de janvier 2020 à juin 2023',
+    chiffre: '−0,23',
+    unite: 'écart-type pour le binôme humain et IA face au meilleur des deux seuls',
+    nuance: "Le binôme perd sur les tâches de décision (−0,27) et gagne sur les tâches de création (+0,19, intervalle incluant zéro). Il fait mieux que l'humain seul quand l'humain était déjà le plus fort, et moins bien que l'IA seule quand l'IA l'était.",
+  },
+  {
+    domaine: 'Écriture créative, 293 auteurs',
+    source: 'Science Advances, 2024',
+    mesure: 'GPT-4, collecte 2023, 600 évaluateurs indépendants',
+    chiffre: '+8,1 %',
+    unite: "de nouveauté et +9 % d'utilité avec cinq idées fournies par l'IA",
+    nuance: "Le gain monte à +10,7 % et +11,5 % chez les auteurs les moins créatifs. En contrepartie, les textes produits avec IA se ressemblent entre eux 9 à 11 % de plus : la diversité collective baisse pendant que la qualité individuelle monte.",
+  },
+  {
+    domaine: 'Médecine, 50 puis 92 médecins',
+    source: 'JAMA Network Open, 2024 · Nature Medicine, 2025',
+    mesure: 'GPT-4, novembre 2023 à avril 2024, cas cliniques simulés',
+    chiffre: '76 % / 74 %',
+    unite: 'de raisonnement diagnostique avec et sans IA, écart non significatif. GPT-4 seul : 92 %',
+    nuance: "Sur la prise en charge, le second essai mesure +6,5 % de qualité pour le binôme, avec deux minutes de plus par cas. Au diagnostic, le modèle seul faisait mieux que le binôme : les médecins ne suivaient pas ce que l'outil proposait.",
+  },
+  {
+    domaine: 'Droit, 127 étudiants juristes',
+    source: 'Journal of Law & Empirical Analysis, 2026',
+    mesure: 'o1-preview et Vincent AI (recherche documentaire intégrée), octobre 2024, 768 tâches',
+    chiffre: '+0,20 à +0,35',
+    unite: 'écart-type de qualité, soit passer du 50e au 62e centile, et une productivité de +50 à +130 %',
+    nuance: "Premier essai contrôlé sur un modèle de raisonnement. L'outil avec recherche documentaire produit 3 hallucinations sur 768 tâches, le groupe sans IA 4, le modèle de raisonnement seul 11.",
+  },
+  {
+    domaine: 'Code, 807 dépôts open source',
+    source: 'Conférence MSR, 2026',
+    mesure: "Cursor, adoptions de janvier 2024 à mars 2025, suivi jusqu'en août 2025",
+    chiffre: '+40,7 %',
+    unite: "de complexité cognitive et +29,7 % d'avertissements d'analyse statique, effets persistants",
+    nuance: "La vitesse monte de 28,6 % en moyenne, avec un pic le premier mois, puis retombe à mesure que la dette technique s'accumule. Étude d'observation appariée, pas un essai randomisé.",
+  },
+  {
+    domaine: 'Support client, 5 172 agents',
+    source: 'Quarterly Journal of Economics, 2025',
+    mesure: 'Assistant bâti sur GPT-3, novembre 2020 à février 2021, 3 millions de conversations',
+    chiffre: '+1,3 pt',
+    unite: 'de taux de résolution, effet faible, satisfaction client stable',
+    nuance: "La vitesse ne dégrade pas la qualité, elle ne la transforme pas non plus. Les escalades vers les superviseurs et l'attrition des agents baissent, ce que peu de reprises mentionnent.",
+  },
+]
+
+const MACRO = [
+  {
+    perimetre: 'Danemark, 25 000 travailleurs de 11 métiers exposés',
+    source: 'Humlum et Vestergaard · NBER, version de mars 2026',
+    mesure: 'Enquêtes de novembre et décembre 2023 et 2024, appariées aux registres administratifs de salaires et d\'heures',
+    chiffre: '≈ 3 %',
+    unite: "des heures de travail économisées par les utilisateurs d'assistants IA",
+    nuance: "Effet nul sur les salaires et les heures deux ans après ChatGPT, avec des bornes qui excluent tout effet supérieur à 2 %. L'encouragement de l'employeur fait passer l'adoption de 47 % à 83 %, et à 93 % quand il s'accompagne d'un outil d'entreprise et d'une formation.",
+    highlight: true,
+  },
+  {
+    perimetre: 'États-Unis, 12 900 réponses de 18 à 64 ans',
+    source: 'Bick, Blandin et Deming · Fed de Saint-Louis et NBER',
+    mesure: 'Trois vagues d\'enquête, juin, août et novembre 2024, suivi jusqu\'en août 2025',
+    chiffre: '5,4 %',
+    unite: 'des heures économisées chez les utilisateurs, soit 1,4 % de l\'ensemble des heures travaillées',
+    nuance: "Gain de productivité agrégé estimé à 1,1 %, porté à 1,3 % fin 2025. Les auteurs précisent que ce calcul suppose tout le temps gagné converti en production plutôt qu'en repos.",
+  },
+  {
+    perimetre: 'Union européenne, 12 000 sociétés non financières',
+    source: 'Aldasoro et al. · BRI et Banque européenne d\'investissement, janvier 2026',
+    mesure: 'Enquête EIBIS appariée aux comptes ORBIS, 2019 à 2024, identification par variable instrumentale',
+    chiffre: '+4 %',
+    unite: "de niveau de productivité du travail chez les entreprises adoptantes, sans effet négatif sur l'emploi",
+    nuance: "L'IA y est définie au sens large, analyse de données massives comprise. Le gain vient de l'intensification du capital et se concentre sur les moyennes et grandes entreprises. Les auteurs jugent les effets de long terme incertains.",
+  },
+  {
+    perimetre: 'Zone euro, 6 000 entreprises',
+    source: 'Banque centrale européenne · Occasional Paper 395, février 2026',
+    mesure: 'Modules IA de l\'enquête SAFE, juin et décembre 2025, 12 pays',
+    chiffre: '70 % / 7 %',
+    unite: "utilisent l'IA à un degré quelconque, 7 % la qualifient de significative",
+    nuance: "Aucune différence de productivité statistiquement significative entre utilisateurs et non-utilisateurs, hors secteurs technologiques. Aucun signe de réduction d'effectifs. Résultats descriptifs, non causaux.",
+  },
+  {
+    perimetre: 'États-Unis, Royaume-Uni, Allemagne, Australie, 6 000 dirigeants',
+    source: 'Bank of England, Stanford et NBER · février 2026',
+    mesure: 'Panels de dirigeants, dont le Decision Maker Panel britannique, novembre 2025 à janvier 2026',
+    chiffre: '9 sur 10',
+    unite: "ne constatent aucun effet de l'IA sur leur productivité ni sur leurs effectifs depuis trois ans",
+    nuance: "69 % des entreprises utilisent pourtant l'IA et les dirigeants y passent 1,5 heure par semaine. Pour les trois prochaines années, ils anticipent +1,4 % de productivité et −0,7 % d'effectifs. Déclaratif.",
+  },
+  {
+    perimetre: 'Deux administrations, 20 000 et 5 800 agents',
+    source: 'Government Digital Service britannique, juin 2025 · Digital Transformation Agency australienne, octobre 2024',
+    mesure: 'Microsoft 365 Copilot, octobre à décembre 2024 au Royaume-Uni, janvier à juin 2024 en Australie',
+    chiffre: '26 min',
+    unite: 'par jour déclarées économisées au Royaume-Uni, estimées par tranches, sans groupe de contrôle',
+    nuance: "Les auteurs britanniques écrivent qu'il n'a pas été possible d'identifier à quoi le temps gagné a servi. En Australie, un tiers d'usage quotidien, des gains de qualité plus modestes que les gains de temps, et 61 % des managers incapables de reconnaître une production de l'outil.",
+  },
+]
+
+const A_NE_PLUS_CITER = [
+  {
+    chiffre: '« +44 % de découvertes de matériaux grâce à l\'IA »',
+    pourquoi: "Prépublication d'un doctorant du MIT, décembre 2024, 1 018 scientifiques. Le 16 mai 2025, le MIT a déclaré n'avoir aucune confiance dans la provenance, la fiabilité ou la validité des données. L'article a été retiré d'arXiv le 20 mai 2025.",
+  },
+  {
+    chiffre: '« 37 % du temps économisé par l\'IA est réabsorbé en corrections »',
+    pourquoi: "Absent de l'article de la Harvard Business Review auquel il est attribué. Les 37 % désignent la part des destinataires qui jugent l'émetteur d'un livrable creux moins intelligent.",
+  },
+  {
+    chiffre: '« +34 % de productivité chez les agents novices »',
+    pourquoi: "Chiffre du working paper de 2023. La version publiée au Quarterly Journal of Economics en 2025 retient +15 % en moyenne, avec un effet concentré sur les moins expérimentés. Citer la version publiée.",
+  },
+  {
+    chiffre: '« Moins de 10 % des entreprises ont mis l\'IA à l\'échelle »',
+    pourquoi: "Attribué à l'AI Index de Stanford, introuvable sur la page primaire du rapport. Le chapitre Économie 2026 donne 88 % d'organisations utilisatrices et 70 % ayant déployé l'IA générative dans au moins une fonction.",
   },
 ]
 
@@ -184,6 +345,22 @@ const FAQ = [
     q: "Les études citées sont-elles encore valables en 2026 ?",
     a: "Elles restent valables comme planchers, pas comme plafonds. Toutes ces mesures portent sur des modèles antérieurs à 2024, dépourvus de raisonnement, d'exécution de code et de lecture de corpus longs. L'étude sur le support client mesure un assistant bâti sur GPT-3 déployé fin 2020, publiée cinq ans plus tard. Le point décisif est ailleurs : entre ces mesures et aujourd'hui, les modèles ont changé plusieurs fois de génération, et la part d'entreprises attribuant un effet significatif à leur résultat d'exploitation est restée à 6 % d'une année sur l'autre. Si le modèle était le facteur limitant, ce chiffre aurait bougé.",
   },
+  {
+    q: "Quel gain de productivité l'IA apporte-t-elle à l'échelle d'une économie ?",
+    a: "Un ordre de grandeur en dessous des gains par tâche. Au Danemark, 25 000 travailleurs de onze métiers exposés, suivis dans les registres administratifs, déclarent économiser environ 3 % de leurs heures, et l'effet sur les salaires et les heures est nul deux ans après ChatGPT, avec des bornes excluant tout effet supérieur à 2 %. Aux États-Unis, les utilisateurs déclarent économiser 5,4 % de leurs heures, soit 1,4 % de l'ensemble des heures travaillées, pour un gain de productivité agrégé estimé entre 1,1 et 1,3 %. Sur 12 000 sociétés européennes suivies de 2019 à 2024, l'adoption de l'IA au sens large relève le niveau de productivité du travail de 4 %, sans effet négatif sur l'emploi. Les cadrages théoriques convergent : 0,5 à 0,7 % de productivité globale des facteurs sur dix ans pour Daron Acemoglu, 0,25 à 0,6 point par an pour l'OCDE. Ces chiffres et ceux des essais contrôlés décrivent les mêmes gains, mesurés après adoption partielle, dilution dans les heures et conversion incomplète.",
+  },
+  {
+    q: "Que montrent les expériences menées directement en entreprise ?",
+    a: "Elles confirment le gain au poste de travail et l'absence d'effet autour de lui. L'expérience la plus large a été menée par Microsoft et Harvard dans 66 grandes entreprises auprès de 7 137 salariés, de septembre 2023 à octobre 2024 : les utilisateurs de Microsoft 365 Copilot ont passé deux heures de moins par semaine sur leurs e-mails, sans changement mesurable du temps de réunion ni du volume de documents produits, et l'usage hebdomadaire s'est stabilisé sous 40 % des personnes équipées. Chez Procter & Gamble, 776 professionnels ont travaillé avec GPT-4 entre mai et juillet 2024 : un individu équipé a atteint le niveau d'une équipe de deux sans IA, avec 16 % de temps en moins. Chez Ant Group, 1 219 programmeurs ont produit 55 % de lignes de code en plus sur douze semaines fin 2023, 67 % chez les juniors, sans mesure de la qualité du code.",
+  },
+  {
+    q: "L'IA améliore-t-elle la qualité du travail, ou seulement la vitesse ?",
+    a: "Cela dépend de la nature de la tâche, et c'est mesuré. Une méta-analyse de 106 expériences publiée dans Nature Human Behaviour en 2024 montre que le binôme humain et IA fait en moyenne moins bien que le meilleur des deux seuls, avec une perte nette sur les tâches de décision et un gain sur les tâches de création. Sur l'écriture, 293 auteurs équipés de GPT-4 ont produit des textes jugés 8 % plus originaux et 9 % plus utiles, avec une perte de diversité collective. Chez Procter & Gamble, la qualité des solutions a progressé de 0,37 écart-type. En droit, 127 étudiants équipés d'un modèle de raisonnement et d'un outil de recherche documentaire ont gagné 0,20 à 0,35 écart-type de qualité. Au diagnostic médical, 50 médecins équipés de GPT-4 n'ont pas fait mieux que leurs collègues, alors que le modèle seul les dépassait de 16 points. Sur le code, 807 dépôts ayant adopté un assistant montrent une hausse persistante de la complexité et des avertissements d'analyse statique.",
+  },
+  {
+    q: "Quels chiffres sur l'IA ne faut-il plus citer ?",
+    a: "Quatre reviennent dans la plupart des présentations. Les 44 % de découvertes de matériaux en plus grâce à l'IA viennent d'une prépublication retirée d'arXiv le 20 mai 2025, après que le MIT a déclaré n'avoir aucune confiance dans la validité des données. Les 37 % de temps économisé réabsorbé en corrections ne figurent pas dans l'article de la Harvard Business Review qu'on leur attribue. Les 34 % de productivité en plus chez les agents novices sont un chiffre de working paper, la version publiée retient 15 % en moyenne. Les moins de 10 % d'entreprises ayant mis l'IA à l'échelle sont introuvables dans l'AI Index de Stanford auquel ils sont attribués. Le cinquième est le 95 % de projets IA qui échouent, traité en tête de cette page.",
+  },
 ]
 
 const MAILLAGE = [
@@ -207,6 +384,30 @@ const CITATIONS = [
   { name: "METR — Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity", url: 'https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/' },
   { name: "Banque de France — Entreprises françaises : existe-t-il un écart d'adoption de l'IA ?", url: 'https://www.banque-france.fr/fr/actualites/entreprises-francaises-existe-t-il-un-ecart-dadoption-de-lia' },
   { name: "Insee — Les technologies de l'information et de la communication dans les entreprises en 2025", url: 'https://www.insee.fr/fr/statistiques/9025878' },
+  { name: 'Dillon, Jaffe, Immorlica & Stanton — Shifting Work Patterns with Generative AI, NBER Working Paper 33795', url: 'https://arxiv.org/abs/2504.11436' },
+  { name: "Dell'Acqua et al. — The Cybernetic Teammate, NBER Working Paper 33641 / Organization Science", url: 'https://www.nber.org/papers/w33641' },
+  { name: 'Gambacorta, Qiu, Shan & Rees — Generative AI and labour productivity: a field experiment on coding, BIS Working Paper 1208', url: 'https://www.bis.org/publ/work1208.htm' },
+  { name: 'Paradis et al. (Google) — How much does AI impact development speed? An enterprise-based randomized controlled trial', url: 'https://arxiv.org/abs/2410.12944' },
+  { name: 'Vaccaro, Almaatouq & Malone — When combinations of humans and AI are useful, Nature Human Behaviour', url: 'https://www.nature.com/articles/s41562-024-02024-1' },
+  { name: 'Doshi & Hauser — Generative AI enhances individual creativity but reduces the collective diversity of novel content, Science Advances', url: 'https://www.science.org/doi/10.1126/sciadv.adn5290' },
+  { name: 'Goh et al. — Large Language Model Influence on Diagnostic Reasoning, JAMA Network Open', url: 'https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395' },
+  { name: 'Goh et al. — GPT-4 assistance for improvement of physician performance on patient care tasks, Nature Medicine', url: 'https://pubmed.ncbi.nlm.nih.gov/39910272/' },
+  { name: 'Schwarcz et al. — AI-Powered Lawyering, Journal of Law & Empirical Analysis', url: 'https://repository.law.umich.edu/facarticles/3173/' },
+  { name: "He, Miller, Agarwal, Kästner & Vasilescu — Does AI-Assisted Coding Deliver? A Difference-in-Differences Study of Cursor's Impact", url: 'https://arxiv.org/abs/2511.04427' },
+  { name: 'Bastani et al. — Generative AI without guardrails can harm learning, PNAS', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/' },
+  { name: 'Shen & Tamkin (Anthropic) — How AI Impacts Skill Formation', url: 'https://www.anthropic.com/research/AI-assistance-coding-skills' },
+  { name: 'MIT Economics — Assuring an accurate research record (16 mai 2025)', url: 'https://economics.mit.edu/news/assuring-accurate-research-record' },
+  { name: 'Humlum & Vestergaard — Still Waters, Rapid Currents: Early Labor Market Transformation under Generative AI, NBER Working Paper 33777', url: 'https://www.nber.org/papers/w33777' },
+  { name: 'Bick, Blandin & Deming — The Rapid Adoption of Generative AI, NBER Working Paper 32966', url: 'https://www.nber.org/papers/w32966' },
+  { name: 'Fed de Saint-Louis — The State of Generative AI Adoption in 2025', url: 'https://www.stlouisfed.org/on-the-economy/2025/nov/state-generative-ai-adoption-2025' },
+  { name: 'Aldasoro et al. — AI adoption, productivity and employment: evidence from European firms, BIS Working Paper 1325', url: 'https://www.bis.org/publ/work1325.htm' },
+  { name: 'BCE — Adoption and investment in AI across the euro area, Occasional Paper 395', url: 'https://www.ecb.europa.eu/pub/pdf/scpops/ecb.op395.en.pdf' },
+  { name: 'Yotzov et al. — Firm Data on AI, NBER Working Paper 34836', url: 'https://www.nber.org/papers/w34836' },
+  { name: 'Acemoglu — The Simple Macroeconomics of AI, NBER Working Paper 32487', url: 'https://www.nber.org/papers/w32487' },
+  { name: 'OCDE — Miracle or Myth? Assessing the macroeconomic productivity gains from Artificial Intelligence', url: 'https://www.oecd.org/en/publications/miracle-or-myth-assessing-the-macroeconomic-productivity-gains-from-artificial-intelligence_b524a072-en.html' },
+  { name: 'Government Digital Service — Microsoft 365 Copilot Experiment: Cross-Government Findings Report', url: 'https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report' },
+  { name: 'Digital Transformation Agency (Australie) — Evaluation of the whole-of-government trial of Microsoft 365 Copilot', url: 'https://www.digital.gov.au/initiatives/copilot-trial' },
+  { name: 'Eurostat — 20% of EU enterprises use AI technologies (décembre 2025)', url: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2' },
 ]
 
 const articleJsonLd = {
@@ -220,7 +421,7 @@ const articleJsonLd = {
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   mainEntityOfPage: `https://www.master-ia.fr/${SLUG}`,
   datePublished: '2026-08-30',
-  dateModified: '2026-08-30',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   about: [
     { '@type': 'Thing', name: "Retour sur investissement de l'intelligence artificielle" },
@@ -247,6 +448,38 @@ function FaqItem({ q, a }) {
       <div aria-hidden={!open} style={{ maxHeight: open ? 1600 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
         <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.78, padding: '0 0 22px', margin: 0 }}>{a}</p>
       </div>
+    </div>
+  )
+}
+
+function EtudesTable({ rows, head }) {
+  return (
+    <div style={{ overflowX: 'auto', ...cardStyle, marginTop: 8 }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 860 }}>
+        <thead>
+          <tr style={{ background: '#0A0A0A' }}>
+            {head.map(th => (
+              <th key={th} style={{ textAlign: 'left', padding: '15px 20px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff' }}>{th}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((e, i) => (
+            <tr key={e.titre} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB', background: e.highlight ? '#F2F7FF' : i % 2 ? '#F9FAFB' : '#fff' }}>
+              <td style={{ padding: '18px 20px', verticalAlign: 'top' }}>
+                <div style={{ fontWeight: 800, fontSize: 15, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{e.titre}</div>
+                <div style={{ fontSize: 13, color: '#6B7280', marginTop: 3 }}>{e.source}</div>
+              </td>
+              <td style={{ padding: '18px 20px', verticalAlign: 'top' }}>
+                <div style={{ fontWeight: 700, fontSize: 14.5, color: '#0A0A0A' }}>{e.modele}</div>
+                <div style={{ fontSize: 13, color: '#6B7280', marginTop: 3 }}>{e.periode}</div>
+              </td>
+              <td style={{ padding: '18px 20px', verticalAlign: 'top', fontSize: 14.5, color: '#0A0A0A', fontWeight: 600 }}>{e.effet}</td>
+              <td style={{ padding: '18px 20px', verticalAlign: 'top', fontSize: 14, color: '#374151', lineHeight: 1.6 }}>{e.nuance}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -278,7 +511,7 @@ export default function RoiIAEntreprisePage() {
         citations={CITATIONS}
         speakable={['#reponse-directe', '#faq']}
         datePublished="2026-08-30"
-        dateModified="2026-08-30"
+        dateModified="2026-09-03"
         extraJsonLd={[articleJsonLd]}
       />
 
@@ -313,7 +546,7 @@ export default function RoiIAEntreprisePage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           <p id="reponse-directe" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -424,41 +657,24 @@ export default function RoiIAEntreprisePage() {
           <Kicker>Pilier 1 · La preuve</Kicker>
           <h2 style={h2Style}>IA et productivité : les gains sont établis, et mal datés</h2>
           <p style={{ ...pStyle, maxWidth: 880 }}>
-            Quatre essais contrôlés randomisés, publiés dans des revues à comité de lecture, mesurent l&apos;effet de l&apos;IA générative sur la productivité en entreprise. Ils convergent : le gain de productivité est réel, plus fort sur les profils juniors et sur les tâches standardisées.
+            Quatre essais contrôlés randomisés, publiés dans des revues à comité de lecture, mesurent l&apos;effet de l&apos;IA générative sur la productivité en entreprise. Ils convergent : le gain de productivité est réel, plus fort sur les profils juniors et sur les tâches standardisées. Quatre expériences de terrain, menées ensuite dans le travail ordinaire de grandes entreprises, confirment le gain unitaire et mesurent ce qui bouge autour de lui.
           </p>
           <div style={answerStyle}>
             Le point que les reprises omettent presque toujours : <strong>la date de publication n&apos;est pas la date de mesure</strong>. Ces quatre études portent sur des modèles antérieurs à 2024, sans raisonnement, sans exécution de code, sans lecture de corpus longs. Ce sont des planchers, pas des plafonds.
           </div>
 
-          <div style={{ overflowX: 'auto', ...cardStyle, marginTop: 8 }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 860 }}>
-              <thead>
-                <tr style={{ background: '#0A0A0A' }}>
-                  {['Métier étudié', 'Mesuré sur', 'Effet mesuré', "Ce que l'étude nuance"].map(th => (
-                    <th key={th} style={{ textAlign: 'left', padding: '15px 20px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff' }}>{th}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {ETUDES.map((e, i) => (
-                  <tr key={e.metier} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB', background: e.highlight ? '#F2F7FF' : i % 2 ? '#F9FAFB' : '#fff' }}>
-                    <td style={{ padding: '18px 20px', verticalAlign: 'top' }}>
-                      <div style={{ fontWeight: 800, fontSize: 15, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{e.metier}</div>
-                      <div style={{ fontSize: 13, color: '#6B7280', marginTop: 3 }}>{e.revue}</div>
-                    </td>
-                    <td style={{ padding: '18px 20px', verticalAlign: 'top' }}>
-                      <div style={{ fontWeight: 700, fontSize: 14.5, color: '#0A0A0A' }}>{e.modele}</div>
-                      <div style={{ fontSize: 13, color: '#6B7280', marginTop: 3 }}>{e.periode}</div>
-                    </td>
-                    <td style={{ padding: '18px 20px', verticalAlign: 'top', fontSize: 14.5, color: '#0A0A0A', fontWeight: 600 }}>{e.effet}</td>
-                    <td style={{ padding: '18px 20px', verticalAlign: 'top', fontSize: 14, color: '#374151', lineHeight: 1.6 }}>{e.nuance}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <EtudesTable rows={ETUDES} head={['Métier étudié', 'Mesuré sur', 'Effet mesuré', "Ce que l'étude nuance"]} />
           <p style={srcStyle}>
             Les chiffres affichés sont ceux des versions publiées, qui diffèrent parfois des prépublications largement reprises. Les dates indiquées sont celles de la collecte des données, pas de la parution.
+          </p>
+
+          <h3 id="terrain" style={{ ...h3Style, fontSize: 20, margin: '44px 0 12px', scrollMarginTop: 96 }}>Ce que les grandes expériences en entreprise ajoutent</h3>
+          <p style={{ ...pStyle, maxWidth: 880 }}>
+            Les quatre essais ci-dessus mesurent une tâche isolée. Une seconde génération d&apos;études a placé l&apos;outil dans le travail ordinaire de dizaines d&apos;entreprises, pendant des mois, sur des modèles de 2023 et 2024. Le gain unitaire se confirme. Il se confirme aussi que rien ne bouge autour de lui : le temps d&apos;e-mail baisse, le temps de réunion et le volume de documents produits ne changent pas.
+          </p>
+          <EtudesTable rows={TERRAIN} head={['Terrain', 'Mesuré sur', 'Effet mesuré', "Ce que l'étude nuance"]} />
+          <p style={srcStyle}>
+            Les deux premières expériences sont randomisées au niveau individuel ou par équipe. Celle d&apos;Ant Group compare des départements appariés. Celle de Google porte sur une tâche unique. Les quatre mesurent des minutes gagnées au poste de travail, aucune ne mesure un effet sur le compte de résultat.
           </p>
 
           <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
@@ -475,6 +691,24 @@ export default function RoiIAEntreprisePage() {
               <p style={{ fontSize: 15, lineHeight: 1.72, color: '#374151', margin: 0 }}>
                 Entre ces mesures et aujourd&apos;hui, les modèles ont changé plusieurs fois de génération. La part d&apos;entreprises attribuant un effet significatif à leur résultat d&apos;exploitation est restée à 6 % d&apos;une année sur l&apos;autre. Si la capacité du modèle était le facteur limitant, ce chiffre aurait bougé. Il n&apos;a pas bougé, et c&apos;est la meilleure preuve que le goulot est organisationnel.
               </p>
+            </div>
+          </div>
+
+          <div style={{ ...cardStyle, marginTop: 40, padding: 'clamp(22px, 3vw, 30px)', borderColor: '#0A0A0A' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
+              <IconTile icon={Ban} />
+              <div>
+                <h3 style={h3Style}>Quatre chiffres à ne plus citer</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', margin: '4px 0 0' }}>Ils circulent dans les présentations sur le ROI de l&apos;IA. Aucun ne résiste à la lecture de sa source.</p>
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18 }}>
+              {A_NE_PLUS_CITER.map(item => (
+                <div key={item.chiffre} style={{ padding: '16px 18px', background: '#F9FAFB', borderRadius: 12, border: '1px solid #E5E7EB' }}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15, color: '#0A0A0A', textDecoration: 'line-through', textDecorationColor: c, textDecorationThickness: 2, marginBottom: 8 }}>{item.chiffre}</div>
+                  <p style={{ fontSize: 14, lineHeight: 1.65, color: '#374151', margin: 0 }}>{item.pourquoi}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -577,6 +811,59 @@ export default function RoiIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── ANCRE SOMBRE 2 : la qualité ── */}
+      <section id="qualite" style={{ padding: sectionPad, background: '#0A0F1E', color: '#F8FAFC', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qualité</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>La qualité suit la vitesse sur les tâches de création, pas sur les tâches de décision</h2>
+          <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.75, maxWidth: 860, margin: '0 0 12px' }}>
+            Le temps gagné ne dit rien de la valeur du livrable. Six travaux mesurent la qualité elle-même, avec des évaluateurs indépendants ou des indicateurs objectifs. Ils dessinent une ligne nette : quand l&apos;IA produit et que l&apos;humain choisit, la qualité monte. Quand l&apos;IA recommande et que l&apos;humain tranche, le binôme fait souvent moins bien que le meilleur des deux seuls.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 18, marginTop: 30 }}>
+            {QUALITE.map(q => (
+              <div key={q.domaine} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15.5, color: '#F8FAFC' }}>{q.domaine}</div>
+                <div style={{ fontSize: 12.5, color: '#7DA9F0', fontWeight: 700, marginTop: 3 }}>{q.source}</div>
+                <div style={{ fontSize: 13, color: '#7A8699', marginTop: 8, lineHeight: 1.5 }}>Mesuré sur : {q.mesure}</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: '#60A5FA', letterSpacing: '-0.03em', lineHeight: 1, margin: '18px 0 6px' }}>{q.chiffre}</div>
+                <div style={{ fontSize: 14, color: '#E2E8F0', lineHeight: 1.55, fontWeight: 600 }}>{q.unite}</div>
+                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: '14px 0 0', paddingTop: 12, borderTop: '1px solid #1E293B' }}>{q.nuance}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 34, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 18 }}>
+            <div style={{ background: 'rgba(37,99,235,0.10)', border: '1px solid rgba(37,99,235,0.35)', borderRadius: 16, padding: 26 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                <GraduationCap size={20} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 17 }}>Le même outil forme ou désapprend selon la façon dont il est introduit</h3>
+              </div>
+              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: '0 0 10px' }}>
+                Près d&apos;un millier de lycéens, GPT-4, automne 2023, publication dans les <em>PNAS</em> en 2025 : l&apos;accès libre à l&apos;assistant fait monter les résultats de 48 % pendant les exercices et les fait baisser de 17 % à l&apos;examen passé sans IA. La version tuteur, qui guide au lieu de donner la réponse, fait +127 % pendant les exercices et ne dégrade rien à l&apos;examen.
+              </p>
+              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: 0 }}>
+                Chez 52 développeurs (Anthropic, prépublication de janvier 2026, assistant bâti sur GPT-4o), ceux qui ont appris une bibliothèque avec l&apos;assistant comprennent 50 % du code contre 67 % pour les autres, pour un gain de temps non significatif.
+              </p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                <Scale size={20} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 17 }}>Ce que cela change dans un déploiement</h3>
+              </div>
+              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: '0 0 10px' }}>
+                La mesure de qualité se décide avant le pilote, avec un évaluateur qui ne sait pas quel livrable vient de l&apos;IA. Sur les tâches de création, l&apos;indicateur suit le gain de temps. Sur les tâches de décision, il faut un protocole : qui tranche, sur quelle base, et ce qui se passe quand l&apos;outil et la personne ne sont pas d&apos;accord.
+              </p>
+              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: 0 }}>
+                Le garde-fou pédagogique compte autant que l&apos;outil. Un assistant qui donne la réponse produit un gain immédiat et une perte de compétence différée. Un assistant qui fait travailler produit les deux gains. C&apos;est une décision de conception, elle se prend au moment de la <Link to="/formation-ia-entreprise" style={{ color: '#93C5FD', fontWeight: 700 }}>formation des équipes</Link>.
+              </p>
+            </div>
+          </div>
+          <p style={{ ...srcStyle, color: '#7A8699', maxWidth: 860 }}>
+            Sources : Vaccaro, Almaatouq et Malone, <em>Nature Human Behaviour</em>, 2024 ; Doshi et Hauser, <em>Science Advances</em>, 2024 ; Goh et al., <em>JAMA Network Open</em>, 2024 et <em>Nature Medicine</em>, 2025 ; Schwarcz et al., <em>Journal of Law &amp; Empirical Analysis</em>, 2026 ; He et al., Carnegie Mellon, MSR 2026 ; Brynjolfsson, Li et Raymond, <em>QJE</em>, 2025 ; Bastani et al., <em>PNAS</em>, 2025 ; Shen et Tamkin, Anthropic, 2026.
+          </p>
+        </div>
+      </section>
+
       {/* ── MÉTHODE : éditorial asymétrique ── */}
       <section id="mesurer" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ ...wrap, ...editorialGrid }}>
@@ -675,8 +962,39 @@ export default function RoiIAEntreprisePage() {
         </div>
       </section>
 
+      {/* ── ÉCHELLE MACRO ── */}
+      <section id="echelle" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Changement d&apos;échelle</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 900 }}>De 15 à 40 % par tâche à 1 % pour un pays : la chaîne de conversion vue de loin</h2>
+          <p style={{ ...pStyle, maxWidth: 880 }}>
+            Les essais contrôlés mesurent une tâche, chez des personnes qui utilisent l&apos;outil, pendant qu&apos;elles l&apos;utilisent. Les données de registres, les grands panels d&apos;entreprises et les enquêtes de dirigeants mesurent ce qui reste une fois l&apos;adoption partielle, la part des heures concernées et la conversion prises en compte. Le chiffre perd un ordre de grandeur à chaque changement d&apos;échelle, ce qui est exactement ce que prédit la chaîne à cinq étages.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 18, marginTop: 30 }}>
+            {MACRO.map(m => (
+              <div key={m.perimetre} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column', ...(m.highlight ? { borderColor: c, boxShadow: `0 0 0 2px ${cLight}` } : {}) }}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15.5, color: '#0A0A0A' }}>{m.perimetre}</div>
+                <div style={{ fontSize: 12.5, color: c, fontWeight: 700, marginTop: 3 }}>{m.source}</div>
+                <div style={{ fontSize: 13, color: '#6B7280', marginTop: 8, lineHeight: 1.5 }}>Mesuré sur : {m.mesure}</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: c, letterSpacing: '-0.03em', lineHeight: 1, margin: '18px 0 6px' }}>{m.chiffre}</div>
+                <div style={{ fontSize: 14, color: '#0A0A0A', lineHeight: 1.55, fontWeight: 600 }}>{m.unite}</div>
+                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '14px 0 0', paddingTop: 12, borderTop: '1px solid #E5E7EB' }}>{m.nuance}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ ...answerStyle, marginTop: 34, maxWidth: '100%' }}>
+            <strong>La chute d&apos;un ordre de grandeur se calcule.</strong> Une fraction des salariés adopte, sur une fraction de leurs heures, avec un gain net inférieur au gain brut, dont une fraction seulement est convertie. Quatre multiplications par une fraction ramènent un +30 % par tâche à quelques pour cent d&apos;heures, puis à un point de productivité. Les travaux de cadrage macroéconomique arrivent au même ordre de grandeur par une autre voie : entre 0,5 et 0,7 % de productivité globale des facteurs sur dix ans pour Daron Acemoglu (MIT, 2024), entre 0,25 et 0,6 point par an pour l&apos;OCDE (2024), portés à 0,4 à 1,3 point de productivité du travail dans les pays les plus exposés dans sa mise à jour de 2025.
+          </div>
+          <p style={srcStyle}>
+            Les travaux danois et américains reposent sur des gains de temps déclarés par les travailleurs, les effets sur salaires et heures sur des registres administratifs. L&apos;étude BRI-BEI porte sur l&apos;IA au sens large. Les enquêtes de dirigeants et d&apos;administrations sont déclaratives. Aucune de ces sources ne contredit les essais contrôlés : elles mesurent ce qui en reste après conversion.
+          </p>
+        </div>
+      </section>
+
       {/* ── MAILLAGE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Aller plus loin</Kicker>
           <h2 style={h2Style}>Passer du constat à la mesure</h2>
@@ -698,7 +1016,7 @@ export default function RoiIAEntreprisePage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section id="faq" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <Kicker>Questions fréquentes</Kicker>
           <h2 style={h2Style}>Ce qu&apos;on nous demande le plus souvent</h2>
