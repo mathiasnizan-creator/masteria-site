@@ -368,6 +368,7 @@ const MAILLAGE = [
   { to: '/calculateur-roi-ia', title: 'Calculateur de ROI IA', desc: "Chiffrer les cinq étages sur un de vos usages et voir à quel étage la valeur se perd." },
   { to: '/diagnostic-ia', title: 'Diagnostic IA', desc: "Identifier les usages qui méritent d'être mesurés et ceux qui ne le méritent pas." },
   { to: '/audit-ia', title: 'Audit IA', desc: "État des lieux de vos usages, de vos outils et de ce qui se perd entre les deux." },
+  { to: '/blog/strategie-ia-entreprise-guide', title: "Stratégie IA d'entreprise : le guide", desc: "Six composantes, cinq étapes, les chiffres à connaître et les erreurs qui coûtent, pour construire la vôtre." },
   { to: '/conseil-strategie-ia', title: 'Conseil stratégie IA', desc: "Cadrer une trajectoire et arbitrer les investissements par leur convertibilité." },
   { to: '/methode-projet-ia', title: 'Méthode projet IA', desc: "Comment un projet se cadre, se pilote et se mesure du premier jour à la mise à l'échelle." },
   { to: '/formation-ia-entreprise', title: 'Formation IA en entreprise', desc: "Installer les usages là où le gain unitaire est réel, et la vérification là où elle est nécessaire." },

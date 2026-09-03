@@ -711,6 +711,225 @@ export const BLOG_ARTICLES = [
     ],
   },
   {
+    slug: 'strategie-ia-entreprise-guide',
+    tag: 'Stratégie',
+    title: "Stratégie IA d'entreprise : le guide pour la construire, du diagnostic à la feuille de route",
+    metaTitle: "Stratégie IA d'entreprise : le guide 2026 pour la construire",
+    metaDesc: "Stratégie IA d'entreprise : ce que le terme recouvre, à ne pas confondre avec la stratégie nationale, les six composantes, la méthode en cinq étapes, les chiffres à connaître avant d'écrire la vôtre, un exemple sur 90 jours et les erreurs qui coûtent.",
+    date: '3 septembre 2026',
+    datePublished: '2026-09-03',
+    dateModified: '2026-09-03',
+    readTime: '16 min',
+    keywords: ['stratégie ia', "stratégie ia d'entreprise", 'stratégie ia entreprise', 'stratégie intelligence artificielle', 'définir une stratégie ia', 'construire une stratégie ia', 'feuille de route ia', 'stratégie ia générative', 'stratégie ia et data', "stratégie de déploiement d'agents ia", 'exemple stratégie ia', 'stratégie ia pme', 'schéma directeur ia'],
+    excerpt: "Une stratégie IA d'entreprise tient en six composantes et se construit en cinq étapes. Ce guide les détaille, donne les chiffres à connaître avant d'écrire la vôtre, un exemple sur 90 jours dans une PME, et les sept erreurs qui coûtent. À ne pas confondre avec la stratégie nationale pour l'IA.",
+    intro: "Une stratégie IA d'entreprise est le document qui fixe où, comment et dans quel ordre une organisation déploie l'intelligence artificielle : les usages retenus et ceux qu'elle écarte, les données et les outils nécessaires, les règles d'usage, les compétences à construire, le budget, les porteurs, les indicateurs et le calendrier. Elle n'a rien à voir avec la stratégie nationale pour l'intelligence artificielle, le plan public lancé par l'État en 2018, qui occupe la plupart des résultats de recherche sur le sujet. Ce guide s'adresse aux dirigeants et aux directions qui veulent écrire la leur : ce qu'elle contient, comment la construire en cinq étapes, ce que disent les chiffres, un exemple, et les erreurs que nous voyons revenir mission après mission.",
+    blocks: [
+      { type: 'p', text: "Le point de départ est presque toujours le même : des outils déjà utilisés dans les équipes, souvent sur des comptes personnels, une direction qui veut un cap avant d'investir davantage, et aucun document qui dise ce que l'entreprise attend de l'IA. La stratégie sert à écrire ce document, et surtout à prendre les décisions qu'il contient." },
+      { type: 'p', text: "Si vous cherchez la mission qui construit cette stratégie avec votre comité de direction, notre page <a href='/conseil-strategie-ia'>conseil stratégie IA</a> décrit le déroulé et le livrable. Cet article traite du fond, pour ceux qui veulent comprendre la démarche ou la mener eux-mêmes." },
+      {
+        type: 'ul',
+        items: [
+          "<strong>Une stratégie IA d'entreprise tient en six composantes</strong> : ambition et périmètre, cas d'usage priorisés, données et socle outillé, organisation et compétences, cadre d'usage, budget et indicateurs.",
+          "<strong>Elle se construit en cinq étapes</strong> : diagnostic, priorisation, socle, cadre, feuille de route mesurée.",
+          "<strong>Le point de fuite est la conversion</strong> : les salariés gagnent du temps, les entreprises ne le voient pas dans leurs comptes tant que personne n'a décidé quoi faire des heures libérées.",
+          "<strong>Une PME de cinq personnes et un groupe de plusieurs milliers de salariés</strong> ne reçoivent pas le même dispositif, mais la même méthode.",
+          "<strong>Deux obligations s'appliquent déjà</strong> : la littératie IA depuis le 2 février 2025 et la transparence des contenus générés depuis le 2 août 2026. Le reste du règlement européen est reporté à fin 2027 et 2028.",
+        ],
+      },
+
+      { type: 'h2', text: "Stratégie IA : de quoi parle-t-on, et de quoi on ne parle pas" },
+      { type: 'p', text: "Le mot « stratégie IA » désigne trois choses différentes selon qui le prononce. Le tableau les sépare, parce que la confusion coûte du temps à ceux qui cherchent le troisième sens et trouvent les deux premiers." },
+      {
+        type: 'table',
+        headers: ['Expression', 'Qui la porte', 'Ce qu\'elle recouvre'],
+        rows: [
+          ["Stratégie nationale pour l'IA", "L'État français, depuis 2018", "Financement de la recherche, des entreprises et de la formation, infrastructures de calcul, positionnement européen. Un plan public, sans portée directe sur votre organisation."],
+          ["Stratégie IA d'un éditeur", "Microsoft, Google, OpenAI, Anthropic, Mistral", "Le choix d'un fournisseur de mettre l'IA au cœur de ses produits. Elle détermine ce que vos outils feront demain, pas ce que vous en ferez."],
+          ["Stratégie IA d'entreprise", "Votre direction", "Les usages retenus et écartés, les données et outils, les règles, les compétences, le budget, les porteurs, le calendrier et la mesure. Le sujet de ce guide."],
+        ],
+      },
+
+      { type: 'h2', text: "Ce qu'une stratégie IA d'entreprise contient : six composantes" },
+      { type: 'p', text: "Une stratégie qui tient sur dix pages vaut mieux qu'un schéma directeur de quatre-vingts. Elle répond à six questions, et chacune produit un livrable court." },
+      {
+        type: 'table',
+        headers: ['Composante', 'La question à trancher', 'Le livrable'],
+        rows: [
+          ['Ambition et périmètre', "Que voulons-nous obtenir de l'IA d'ici douze mois : absorber plus de volume, éviter un recrutement, réduire une dépense externe, remonter la qualité ? Sur quelles entités et quels métiers ?", "Une page : l'ambition en une phrase, le périmètre, ce qui est hors sujet"],
+          ["Cas d'usage priorisés", "Quelles tâches, avec quel volume, quel gain attendu, quelle difficulté ? Lesquelles écartons-nous, et pourquoi ?", "Une matrice impact et faisabilité à trois mois, avec les cas écartés et leur motif"],
+          ['Données et socle outillé', "De quelles données chaque cas a-t-il besoin, sont-elles disponibles et de qualité ? Quel outil d'équipe, quel hébergement, quels connecteurs vers les logiciels en place ?", "Un socle nommé, administré par l'entreprise, avec son coût par poste"],
+          ['Organisation et compétences', "Qui porte chaque chantier, qui est référent, qui forme qui, dans quel ordre ? Comment un nouvel arrivant est-il formé ?", "Un plan de formation par métier et une liste de porteurs"],
+          ["Cadre d'usage", "Quelles données n'entrent jamais dans un outil d'IA, qui valide ce qui engage l'entreprise, comment un incident remonte, où en sommes-nous face au RGPD et au règlement européen ?", "Une charte d'une page et un positionnement réglementaire"],
+          ['Budget, indicateurs, calendrier', "Combien, pour quoi, et comment saurons-nous que ça marche ?", "Une feuille de route à 90 jours et à 12 mois, cinq indicateurs avec point de départ et cible"],
+        ],
+      },
+
+      { type: 'h2', text: "Les chiffres à connaître avant d'écrire la vôtre" },
+      { type: 'p', text: "Les études sérieuses sur l'IA en entreprise disent deux choses à la fois : les salariés gagnent du temps, et les entreprises ne le voient pas encore dans leurs comptes. Une stratégie IA sert précisément à combler cet écart. Pour chaque chiffre, la période de mesure est indiquée : l'écart entre la date de collecte et la date de publication invalide souvent la lecture." },
+      {
+        type: 'table',
+        headers: ['Ce que dit l\'étude', 'Périmètre et mesure', 'Source'],
+        rows: [
+          ["70 % des entreprises utilisent l'IA à un degré quelconque, 7 % la jugent significative pour leur activité", "Zone euro, 6 000 entreprises, enquête SAFE, juin et décembre 2025", 'Banque centrale européenne, Occasional Paper 395, février 2026'],
+          ["9 dirigeants sur 10 ne constatent aucun effet de l'IA sur leur productivité ni sur leurs effectifs depuis trois ans", "6 000 dirigeants, États-Unis, Royaume-Uni, Allemagne, Australie, panels de novembre 2025 à janvier 2026, déclaratif", 'Bank of England, Stanford et NBER, février 2026'],
+          ["Environ 3 % des heures de travail économisées par les utilisateurs d'assistants IA, effet nul sur les salaires et les heures deux ans après ChatGPT", "Danemark, 25 000 travailleurs de 11 métiers exposés, enquêtes de novembre-décembre 2023 et 2024 appariées aux registres", 'Humlum et Vestergaard, NBER, version de mars 2026'],
+          ["95 % des organisations n'ont pas mesuré de retour sur leur compte de résultat ; dans le même rapport, 80 % des pilotes d'outils généralistes aboutissent, contre un quart des outils sur mesure", "Enquête et entretiens, rapport préliminaire de juillet 2025, non relu par les pairs", 'MIT, projet NANDA, « The GenAI Divide », 2025'],
+          ["10 % de l'effort aux algorithmes, 20 % à la technologie et aux données, 70 % aux personnes et aux processus", "Règle d'allocation d'effort observée sur les programmes d'IA à l'échelle", 'BCG, travaux « AI at scale »'],
+        ],
+      },
+      { type: 'p', text: "La lecture que nous en faisons tient en une phrase : le chiffre d'échec le plus cité n'est pas un chiffre sur l'IA, c'est un chiffre sur la conversion. Le temps gagné existe ; il s'évapore quand personne n'a décidé à quoi il sert. Notre page sur le <a href='/roi-ia-entreprise'>ROI de l'IA en entreprise</a> détaille cette chaîne de conversion en cinq étages, de l'adoption réelle à l'effet sur le résultat, et le <a href='/calculateur-roi-ia'>calculateur de ROI</a> vous la fait parcourir sur vos propres chiffres." },
+      {
+        type: 'callout',
+        title: "Les chiffres à ne plus citer dans une stratégie IA",
+        text: "« 95 % des projets IA échouent » (le rapport dit autre chose), « 37 % du temps gagné est réabsorbé en corrections » (absent de l'article auquel on l'attribue), « +34 % de productivité chez les novices » (chiffre d'un working paper, ramené à +15 % dans la version publiée), « +44 % de découvertes grâce à l'IA » (article retiré d'arXiv en mai 2025). Une stratégie qui s'appuie sur un chiffre faux perd sa crédibilité au premier comité.",
+      },
+
+      { type: 'h2', text: "La méthode en cinq étapes" },
+      { type: 'p', text: "C'est la méthode que nous appliquons en mission, décrite ici pour qu'une direction puisse la mener seule ou savoir ce qu'elle achète. Chaque étape produit une des six composantes." },
+      { type: 'h3', text: "1. Diagnostiquer : où en sommes-nous vraiment ?" },
+      { type: 'p', text: "Avant de décider, regarder. Les usages réels dans les équipes, y compris ceux nés sur des comptes personnels ; les flux de travail où le temps part ; les outils en place et ce qu'ils permettent déjà ; la maturité sur six dimensions : usages, compétences, données, gouvernance, culture, sécurité. Trois formats selon la taille et le besoin : un <a href='/test-maturite-ia'>test de maturité IA</a> en trois minutes pour une première photographie, un <a href='/diagnostic-ia'>diagnostic IA</a> d'une journée quand la question est par où commencer, un <a href='/audit-ia'>audit IA</a> complet quand la direction veut une vision exhaustive avant d'engager des budgets." },
+      { type: 'h3', text: "2. Prioriser : impact, faisabilité, et ce qu'on écarte" },
+      { type: 'p', text: "Chaque gisement identifié se décrit par son volume déclaré, sa difficulté et ses dépendances, puis se positionne dans une matrice impact et faisabilité à trois mois. On commence par le quadrant où le gain est fort et la faisabilité élevée, en général trois chantiers, pas dix. Les cas écartés sont écrits avec leur motif : données insuffisantes, valeur trop faible, risque disproportionné, mauvais moment. Une stratégie qui recommande tout n'a rien priorisé." },
+      { type: 'h3', text: "3. Choisir le socle : un outil d'équipe, des données prêtes" },
+      { type: 'p', text: "La plupart des usages d'IA générative partent de documents, de mails et de fichiers, pas de science des données. Le socle est donc un outil d'équipe administré par l'entreprise, dont le contrat exclut la réutilisation de vos données pour l'entraînement, choisi selon l'environnement en place : Copilot quand les équipes vivent dans Microsoft 365, Claude ou ChatGPT en offre entreprise pour les assistants sur documents, connecteurs vers l'ERP ou le CRM quand un cas l'exige. Pour chaque cas retenu, la donnée nécessaire doit exister, être de qualité et utilisable : c'est le point que notre <a href='/conseil-data-ia'>conseil data et IA</a> vérifie avant de laisser investir." },
+      { type: 'h3', text: "4. Poser le cadre et construire les compétences" },
+      { type: 'p', text: "Une charte d'une page, signée avant la formation : les données qui n'entrent jamais dans un outil d'IA, la relecture humaine avant tout envoi à un tiers, la validation humaine de ce qui engage l'entreprise, un responsable par assistant partagé, un référent IA qui reçoit les signalements. Un plan de formation par métier, pensé pour les arrivées et les départs. Deux obligations du règlement européen s'appliquent déjà à toute organisation qui utilise l'IA : la littératie de l'article 4 depuis le 2 février 2025, la transparence des contenus générés de l'article 50 depuis le 2 août 2026. Les obligations sur les systèmes à haut risque sont reportées au 2 décembre 2027 et au 2 août 2028. Nos pages sur la <a href='/gouvernance-ia'>gouvernance de l'IA</a> et la <a href='/charte-ia-entreprise'>charte IA d'entreprise</a> détaillent ce cadre." },
+      { type: 'h3', text: "5. Écrire la feuille de route et mesurer" },
+      { type: 'p', text: "Quatre jalons à 90 jours : décision, conception, formation et mise en service, bilan à J+30. Puis une trajectoire à douze mois, par vagues. Pour chaque action : un porteur nommé, un ordre de grandeur budgétaire, une échéance, une condition de réussite. Cinq indicateurs avec un point de départ relevé en séance et une cible : délai de traitement d'une demande, temps par tâche, part d'un flux traité sans ressaisie, usage hebdomadaire des assistants, heures libérées et leur destination. Un gain qui n'est pas mesuré s'évapore ; un gain mesuré mais sans destination aussi." },
+
+      { type: 'h2', text: "Un exemple de stratégie IA : une PME de distribution, en 90 jours" },
+      { type: 'p', text: "Un distributeur de solutions photovoltaïques, cinq personnes, trois entrepôts, une gestion sur Odoo. Objectif de la direction : vendre plus sans recruter. Trois entretiens ont suffi à cartographier quatre flux de travail, vendre, livrer et encaisser, développer, piloter, et à identifier douze gisements de temps. Trois ont été retenus pour la première vague : la consultation des transporteurs quinze jours avant chaque livraison, les fichiers d'entrepôt convertis en fichier d'import sans ressaisie, les demandes entrantes transformées en lignes de devis avec des relances généralisées. Un abonnement d'équipe a remplacé les comptes personnels, une charte en huit règles a été signée avant la formation, un référent IA a été nommé, et cinq indicateurs ont reçu un point de départ et une cible à trois mois. Le tout tient en quatorze pages que la direction lit seule. Le détail est dans nos <a href='/etudes-de-cas-ia#photovoltaique'>études de cas</a>, avec trois autres missions, dont la stratégie IA d'un groupe industriel international construite avec son comité de direction." },
+
+      { type: 'h2', text: "Stratégie IA et données : ce qui doit être prêt" },
+      { type: 'p', text: "La question « nos données sont-elles prêtes » a une réponse différente selon le cas d'usage, et c'est la seule bonne façon de la poser. Un assistant qui rédige des courriers à partir de trames n'a besoin que de documents à jour. Un assistant qui répond depuis le catalogue a besoin d'un catalogue tenu, avec un responsable. Un tableau de bord a besoin d'exports fiables de l'ERP, et d'un calcul de marge juste dans l'ERP : l'IA ne corrige pas une donnée fausse, elle la propage plus vite. Une stratégie IA sérieuse liste, cas par cas, la donnée nécessaire, son état et le chantier qui la rend utilisable, avant de chiffrer le gain." },
+
+      { type: 'h2', text: "Stratégie de déploiement d'agents IA : trois stades, et une règle" },
+      { type: 'p', text: "Beaucoup de stratégies IA de 2026 s'écrivent autour du mot « agent ». Trois stades se succèdent, et chacun demande quelque chose de différent. La conversation : vous posez une question, vous jugez la réponse. L'assistant : instructions, documents et ton de l'entreprise sont ajoutés, la réponse devient celle de votre organisation, vous validez encore. L'agent : des outils et une boucle sont ajoutés, il agit dans vos systèmes, revient, corrige, recommence jusqu'au résultat ; c'est lui qui décide de l'étape suivante, dans les limites que vous avez posées. Un agent se justifie pour une tâche enchaînée, récurrente et volumineuse ; il se facture au compteur quand il tourne seul ; et ce qui engage l'entreprise, un prix, une commande, un mouvement de stock, reste validé par une personne avant d'être envoyé. Notre guide des <a href='/agents-ia-entreprise'>agents IA en entreprise</a> détaille les cas et les garde-fous." },
+
+      { type: 'h2', text: "Les sept erreurs qui coûtent" },
+      {
+        type: 'ul',
+        items: [
+          "<strong>Partir de l'outil.</strong> « On a pris des licences, que fait-on avec ? » Une stratégie part des flux de travail, l'outil vient en troisième étape.",
+          "<strong>Recommander tout.</strong> Dix chantiers en parallèle, aucun porteur : rien n'aboutit. Trois chantiers avec un nom chacun aboutissent.",
+          "<strong>Compter les licences comme des usages.</strong> Une licence attribuée n'est pas un usage hebdomadaire sur une tâche identifiée. Mesurer l'adoption réelle.",
+          "<strong>Oublier la destination des heures.</strong> Le temps libéré sans décision de management se dissout dans la journée. Écrire à quoi il sert avant de le libérer.",
+          "<strong>Laisser le cadre pour plus tard.</strong> Les usages nés sur des comptes personnels ne s'arrêtent pas parce qu'on les ignore. La charte se signe avant la formation.",
+          "<strong>Former une fois.</strong> Les équipes tournent, les outils changent de version sans préavis. Le plan de formation prévoit les arrivées et un rituel de partage.",
+          "<strong>Citer des chiffres faux.</strong> Un comité qui découvre qu'un chiffre de la stratégie est inventé ne croit plus le reste.",
+        ],
+      },
+
+      { type: 'h2', text: "Qui porte la stratégie IA dans l'entreprise" },
+      { type: 'p', text: "Un sponsor au comité de direction, qui tranche l'ambition, le budget et les cas écartés. Un référent IA opérationnel, souvent un manager déjà à l'aise avec les outils, qui administre le socle, reçoit les signalements et anime un point mensuel. La direction informatique pour le socle, l'hébergement et les connecteurs ; le DPO pour le cadre ; les ressources humaines pour le plan de formation. Dans une PME, trois de ces rôles tiennent dans deux personnes, et c'est tenable si c'est écrit." },
+
+      { type: 'h2', text: "Par où commencer : trente jours" },
+      {
+        type: 'ol',
+        items: [
+          "<strong>Semaine 1, le diagnostic.</strong> Test de maturité, entretiens avec les personnes qui font le travail, inventaire des outils et des usages nés hors cadre, lecture par flux.",
+          "<strong>Semaine 2, la priorisation.</strong> Gisements décrits et positionnés à trois mois, trois chantiers retenus avec un porteur, les cas écartés écrits avec leur motif.",
+          "<strong>Semaine 3, le socle et le cadre.</strong> Outil d'équipe choisi et administré, charte d'une page signée, référent nommé, positionnement RGPD et règlement européen posé.",
+          "<strong>Semaine 4, la feuille de route.</strong> Quatre jalons à 90 jours, trajectoire à douze mois, budget par action, cinq indicateurs avec point de départ. Présentation au comité de direction, décisions actées.",
+        ],
+      },
+      { type: 'p', text: "Une direction peut mener ces quatre semaines seule avec ce guide. Quand elle préfère un regard extérieur, un cadrage avec le comité de direction ou une feuille de route opposable, c'est l'objet de notre <a href='/conseil-strategie-ia'>conseil stratégie IA</a> ; la <a href='/formation-ia-dirigeants'>formation IA pour dirigeants</a> donne le vocabulaire et les repères pour décider. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, applique cette méthode en mission et l'enseigne." },
+
+      { type: 'h2', text: "Sources et références" },
+      {
+        type: 'ul',
+        items: [
+          "<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj' rel='noopener'>Règlement (UE) 2024/1689 sur l'intelligence artificielle</a>, texte consolidé, dates d'application.",
+          "<a href='https://www.nber.org/papers/w33777' rel='noopener'>Humlum et Vestergaard, « Still Waters, Rapid Currents », NBER Working Paper 33777</a>, version de mars 2026.",
+          "<a href='https://mitsloan.mit.edu/' rel='noopener'>MIT, projet NANDA, « The GenAI Divide: State of AI in Business 2025 »</a>, rapport préliminaire de juillet 2025.",
+          "<a href='https://www.banque-france.fr/fr/actualites/entreprises-francaises-existe-t-il-un-ecart-dadoption-de-lia' rel='noopener'>Banque de France, « Entreprises françaises : existe-t-il un écart d'adoption de l'IA ? »</a>.",
+          "<a href='https://www.insee.fr/fr/statistiques/9025878' rel='noopener'>Insee, « Les technologies de l'information et de la communication dans les entreprises en 2025 »</a>.",
+          "<a href='https://www.cnil.fr/fr/intelligence-artificielle' rel='noopener'>CNIL, intelligence artificielle : recommandations et fiches pratiques</a>.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Quelle différence entre la stratégie IA d'une entreprise et la stratégie nationale pour l'IA ?",
+        a: "La stratégie nationale pour l'intelligence artificielle est le plan public lancé par l'État français en 2018 : financement de la recherche, des entreprises et de la formation, infrastructures de calcul, positionnement européen. La stratégie IA d'une entreprise est un document interne qui fixe ses usages, ses outils, ses règles, ses compétences, son budget et sa mesure. La première n'engage pas votre organisation ; la seconde est la vôtre.",
+      },
+      {
+        q: "Une stratégie IA doit-elle être écrite ?",
+        a: "Oui, courte. Dix pages suffisent : une page d'ambition et de périmètre, une matrice de cas d'usage avec les cas écartés, un socle nommé, un plan de formation, une charte d'une page, une feuille de route avec cinq indicateurs. Ce qui n'est pas écrit n'est pas décidé, et un comité ne peut pas arbitrer sur un exposé oral.",
+      },
+      {
+        q: "Combien de cas d'usage retenir dans une première vague ?",
+        a: "Trois, avec un porteur chacun, choisis dans le quadrant à fort impact et forte faisabilité de la matrice. Les autres attendent le bilan à J+30, écrits avec leur motif de report. Dix chantiers en parallèle sans porteur nommé n'aboutissent pas.",
+      },
+      {
+        q: "Faut-il une charte IA avant la stratégie, ou l'inverse ?",
+        a: "La charte fait partie de la stratégie, à l'étape du cadre, et elle se signe avant la formation des équipes. Quand des usages existent déjà sur des comptes personnels, ce qui est le cas le plus fréquent, la charte peut précéder le reste : elle protège les données de l'entreprise pendant que la stratégie s'écrit.",
+      },
+      {
+        q: "Quel budget prévoir pour une stratégie IA ?",
+        a: "Quatre postes : les licences du socle, par poste et par mois ; la conception des assistants ou des automatisations retenus ; la formation par métier, finançable par votre OPCO ; et le temps interne des porteurs, rarement compté et pourtant décisif. Le conseil, lui, n'est pas finançable par l'OPCO. Notre page sur le prix d'un projet IA donne les ordres de grandeur pour chaque poste.",
+      },
+      {
+        q: "Une stratégie IA doit-elle prévoir des agents ?",
+        a: "Seulement pour une tâche enchaînée, récurrente et volumineuse, une fois les assistants en usage. Un agent agit dans vos systèmes et se facture au compteur quand il tourne seul ; ce qui engage l'entreprise reste validé par une personne. La plupart des premières vagues se font avec des assistants sur documents, et c'est déjà là que le temps se gagne.",
+      },
+      {
+        q: "Comment savoir si la stratégie IA fonctionne ?",
+        a: "Par cinq indicateurs relevés avant la formation et revus à J+30 puis chaque mois : usage hebdomadaire réel sur une tâche identifiée, temps par tâche, part d'un flux traité sans reprise, heures libérées et leur destination, effet sur une ligne du compte de résultat nommée avant le déploiement. Si le quatrième indicateur n'a pas de réponse, le cinquième n'en aura pas non plus.",
+      },
+    ],
+    cta: {
+      title: "Construire votre stratégie IA avec votre comité de direction",
+      desc: "Diagnostic de maturité, cas d'usage priorisés, feuille de route à 90 jours et à 12 mois, cadre d'usage : notre mission de conseil stratégie IA suit les cinq étapes de ce guide, avec votre direction, sur vos flux de travail.",
+      buttons: [
+        { label: "Découvrir le conseil stratégie IA", href: '/conseil-strategie-ia', primary: true },
+        { label: "Faire le test de maturité IA", href: '/test-maturite-ia' },
+      ],
+    },
+    internalLinks: [
+      { label: "Conseil stratégie IA : la mission avec votre comité de direction", href: '/conseil-strategie-ia' },
+      { label: "ROI de l'IA en entreprise : ce que disent les études", href: '/roi-ia-entreprise' },
+      { label: "Calculateur de ROI de l'IA", href: '/calculateur-roi-ia' },
+      { label: "Audit IA d'entreprise : maturité, conformité, plan d'action", href: '/audit-ia' },
+      { label: "Diagnostic IA : la feuille de route en une journée", href: '/diagnostic-ia' },
+      { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
+      { label: "Charte IA d'entreprise : exemples et méthode", href: '/charte-ia-entreprise' },
+      { label: "Formation IA pour dirigeants", href: '/formation-ia-dirigeants' },
+      { label: "Études de cas : quatre missions, méthode et résultats", href: '/etudes-de-cas-ia' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        '@id': 'https://www.master-ia.fr/blog/strategie-ia-entreprise-guide#methode',
+        name: "Construire une stratégie IA d'entreprise en cinq étapes",
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Diagnostiquer', description: "Usages réels, flux de travail, outils en place, maturité sur six dimensions." },
+          { '@type': 'ListItem', position: 2, name: 'Prioriser', description: "Matrice impact et faisabilité à trois mois, trois chantiers avec porteur, cas écartés avec leur motif." },
+          { '@type': 'ListItem', position: 3, name: 'Choisir le socle', description: "Outil d'équipe administré par l'entreprise, données nécessaires vérifiées cas par cas." },
+          { '@type': 'ListItem', position: 4, name: 'Poser le cadre et construire les compétences', description: "Charte d'une page, référent IA, plan de formation par métier, positionnement RGPD et règlement européen." },
+          { '@type': 'ListItem', position: 5, name: 'Écrire la feuille de route et mesurer', description: "Quatre jalons à 90 jours, trajectoire à douze mois, cinq indicateurs avec point de départ et cible." },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/strategie-ia-entreprise-guide#lexique',
+        name: "Lexique de la stratégie IA d'entreprise",
+        hasDefinedTerm: [
+          { '@type': 'DefinedTerm', name: "Stratégie IA d'entreprise", description: "Document interne qui fixe où, comment et dans quel ordre une organisation déploie l'intelligence artificielle : usages retenus et écartés, données et outils, règles, compétences, budget, porteurs, indicateurs, calendrier." },
+          { '@type': 'DefinedTerm', name: "Stratégie nationale pour l'intelligence artificielle", description: "Plan public de l'État français lancé en 2018 : recherche, financement des entreprises, formation, infrastructures de calcul. Sans portée directe sur une organisation privée." },
+          { '@type': 'DefinedTerm', name: 'Feuille de route IA', description: "Suite datée des chantiers retenus, avec un porteur, un budget, une échéance et une condition de réussite par action ; quatre jalons à 90 jours, trajectoire à douze mois." },
+          { '@type': 'DefinedTerm', name: "Matrice impact et faisabilité", description: "Positionnement de chaque cas d'usage selon son impact métier et sa faisabilité à trois mois ; on commence par le quadrant à fort impact et forte faisabilité." },
+          { '@type': 'DefinedTerm', name: 'Chaîne de conversion', description: "Les cinq étages entre un outil déployé et un effet sur le résultat : adoption réelle, gain unitaire net, capacité libérée, capacité convertie, effet sur le compte de résultat. Le point de fuite est le quatrième." },
+          { '@type': 'DefinedTerm', name: 'Littératie IA', description: "Niveau de maîtrise de l'IA que l'article 4 du règlement (UE) 2024/1689 demande aux organisations d'assurer à leur personnel, applicable depuis le 2 février 2025." },
+          { '@type': 'DefinedTerm', name: 'Agent IA', description: "Système qui reçoit un objectif, agit dans des outils, vérifie et recommence jusqu'au résultat, dans des limites fixées ; se justifie pour une tâche enchaînée, récurrente et volumineuse." },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'referencement-aio-strategie-contenu-ia',
     tag: 'GEO / SEO',
     title: "Référencement AIO : ce que recouvre le terme, et la stratégie de contenu qui fait citer votre marque par les IA",
