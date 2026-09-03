@@ -711,6 +711,220 @@ export const BLOG_ARTICLES = [
     ],
   },
   {
+    slug: 'strategie-marketing-ia-humains-social-media',
+    tag: 'Stratégie',
+    title: "Stratégie marketing IA : intégrer l'intelligence artificielle, répartir le travail entre humains et IA, tenir le social media",
+    metaTitle: "Stratégie marketing IA : humains et IA, social media, méthode",
+    metaDesc: "Stratégie marketing et intelligence artificielle : ce qui change, la répartition humains et IA fondée sur les études, cinq décisions pour intégrer l'IA, une méthode pour créer sa stratégie social media avec l'IA, les outils abordables et les erreurs qui coûtent.",
+    date: '3 septembre 2026',
+    datePublished: '2026-09-03',
+    dateModified: '2026-09-03',
+    readTime: '15 min',
+    keywords: ['stratégie marketing ia', 'stratégie marketing intelligence artificielle', 'stratégie marketing humains et ia efficace', 'stratégie marketing hybride humain ia', 'créer stratégie social media ia', 'ia social media', "comment intégrer l'ia dans sa stratégie marketing", "outils d'ia abordables pour les stratégies marketing", 'exemples stratégie marketing ia et humains', 'ia marketing', 'marketing ia générative'],
+    excerpt: "L'IA a mis le coût de production du contenu marketing près de zéro. La stratégie se déplace vers ce qui reste rare : la voix, la preuve, le jugement. Ce guide donne la règle de répartition entre humains et IA, cinq décisions pour intégrer l'IA, une méthode pour le social media, et les erreurs qui coûtent.",
+    intro: "Une stratégie marketing IA est la façon dont une équipe marketing décide ce que l'intelligence artificielle produit, ce que les humains gardent, et comment les deux s'articulent canal par canal : contenu, réseaux sociaux, référencement, emailing, analyse. Elle ne remplace pas la stratégie marketing, elle en change les coûts et les points de différenciation. Ce guide s'adresse aux directions marketing et communication et aux responsables de contenu : ce qui change vraiment, la règle de répartition entre humains et IA que les études permettent d'écrire, cinq décisions pour intégrer l'IA, une méthode pour créer une stratégie social media avec l'IA, les outils abordables, la mesure et les erreurs que nous voyons revenir.",
+    blocks: [
+      { type: 'p', text: "Deux ans après l'arrivée des assistants dans les équipes marketing, le constat de terrain est stable : tout le monde produit plus vite, les contenus se ressemblent davantage, et peu d'équipes savent dire ce que l'IA leur a rapporté. La stratégie sert à sortir de cette situation : décider où l'IA apporte quelque chose, où elle abîme, et comment on le mesure." },
+      { type: 'p', text: "Si vous cherchez la formation qui installe ces pratiques dans une équipe, notre <a href='/formation-ia-marketing'>formation IA marketing</a> couvre les six chantiers d'une équipe : contenu, SEO, réseaux sociaux, emailing, analyse, créativité. Pour déléguer la production, notre <a href='/agence-ia-marketing'>agence IA marketing</a> la prend en charge. Cet article traite du fond." },
+      {
+        type: 'ul',
+        items: [
+          "<strong>L'IA a mis le coût marginal du contenu près de zéro</strong> : la différenciation se déplace vers la voix de marque, la preuve et la distribution.",
+          "<strong>La répartition humains et IA se déduit des études</strong> : l'IA gagne sur les tâches de création, elle perd sur les tâches de jugement. Elle produit, l'humain décide, cadre et signe.",
+          "<strong>Cinq décisions intègrent l'IA dans une stratégie marketing</strong> : voix de marque écrite, corpus de référence, flux par canal, règles de validation et de transparence, mesure.",
+          "<strong>Une stratégie social media avec l'IA</strong> part de trois piliers éditoriaux et d'un calendrier ; l'IA décline, l'humain prend position et répond.",
+          "<strong>Deux textes s'appliquent déjà</strong> : le RGPD pour les données clients et la prospection, la transparence des contenus générés du règlement européen depuis le 2 août 2026.",
+        ],
+      },
+
+      { type: 'h2', text: "Stratégie marketing et intelligence artificielle : ce qui change vraiment" },
+      { type: 'p', text: "Trois déplacements, et aucun ne concerne les outils eux-mêmes." },
+      { type: 'h3', text: "Le coût du contenu tombe, sa valeur avec lui" },
+      { type: 'p', text: "Un article, une série de posts, une séquence d'emails se produisent en une fraction du temps d'avant. Une expérience contrôlée sur 453 cadres, début 2023 avec ChatGPT, mesurait déjà 40 % de temps en moins et 18 % de qualité en plus sur des tâches d'écriture courtes. Le problème vient après : quand tout le monde produit vite, le contenu moyen ne vaut plus rien. Ce qui reste rare, c'est une voix reconnaissable, une preuve que personne d'autre ne peut publier, et une distribution qui atteint les bonnes personnes." },
+      { type: 'h3', text: "Le contenu s'homogénéise, sauf décision contraire" },
+      { type: 'p', text: "Une étude publiée dans Science Advances sur 293 auteurs montre que l'aide de l'IA améliore la créativité individuelle des textes et réduit la diversité collective : les productions assistées se ressemblent entre elles. Pour une marque, la conséquence est directe : un flux de contenu généré sans cadre converge vers le même ton que celui des concurrents qui utilisent les mêmes outils. La voix de marque devient un actif à documenter, pas une intuition." },
+      { type: 'h3', text: "La découverte passe aussi par les IA" },
+      { type: 'p', text: "Une part des prospects ne cherche plus dans Google mais pose une question à ChatGPT, Perplexity ou aux AI Overviews. Le marketing de contenu doit donc aussi se faire citer par ces moteurs de réponse : c'est l'objet de notre guide sur le <a href='/blog/referencement-aio-strategie-contenu-ia'>référencement AIO</a>, et la raison pour laquelle preuves datées, définitions autonomes et présence hors site entrent dans la stratégie marketing." },
+
+      { type: 'h2', text: "Humains et IA : une règle de répartition, pas un pourcentage" },
+      { type: 'p', text: "La question « quelle part du travail confier à l'IA » est mal posée. Les études permettent d'écrire une règle par nature de tâche. Une méta-analyse publiée dans Nature Human Behaviour sur 106 expériences compare les combinaisons humain et IA à la meilleure des deux parties seules : en moyenne, la combinaison fait moins bien que le meilleur des deux, avec une exception nette, les tâches de création, où la combinaison gagne, et une perte marquée sur les tâches de décision. La règle qui en découle pour une équipe marketing : l'IA produit et décline, l'humain décide, cadre, juge et signe." },
+      {
+        type: 'table',
+        headers: ['Tâche marketing', "Ce que l'IA fait", "Ce que l'humain garde", 'Pourquoi'],
+        rows: [
+          ['Rédaction de contenus (articles, posts, emails)', "Premier jet, déclinaisons par format et par canal, variantes à tester, reformulations", "Le brief, l'angle, la preuve apportée, la relecture, la signature", "Tâche de création : la combinaison gagne, à condition que le standard de qualité reste dans la tête de l'humain"],
+          ['Positionnement, messages, offre', "Contradicteur : objections, angles morts, comparaison avec les concurrents", "La décision", "Tâche de jugement : la combinaison perd si l'humain délègue la décision"],
+          ['Réseaux sociaux', "Calendrier, déclinaisons, résumés d'articles en posts, propositions de réponses aux commentaires", "Les prises de position, les réponses publiées, les messages privés, les réactions à chaud", "Une marque parle ; un texte publié engage"],
+          ['Analyse et reporting', "Lecture des exports, synthèses, détection d'écarts, tableaux de bord", "L'interprétation et l'arbitrage budgétaire", "Décision : l'IA prépare, elle ne tranche pas"],
+          ['Créativité et visuels', "Exploration de pistes, moodboards, variantes", "Le choix, la direction artistique, le respect de la charte, la vérification des droits", "Création assistée, décision humaine"],
+          ['Prospection et emailing', "Segmentation proposée, séquences, personnalisation depuis le CRM", "Le consentement, les listes, la validation avant envoi", "RGPD et règles de prospection : responsabilité de l'entreprise"],
+        ],
+      },
+      { type: 'p', text: "Le point qui décide tout tient en une phrase, que nous répétons en formation : un marketeur reste augmenté tant que le standard de qualité vit dans sa tête et que la machine exécute vers ce standard ; il devient réduit quand le standard migre dans la sortie de la machine et que « ça a l'air bien » remplace le jugement. Le geste qui protège ce standard prend deux minutes : écrire ses critères d'acceptation avant de demander quoi que ce soit à l'outil." },
+
+      { type: 'h2', text: "Comment intégrer l'IA dans sa stratégie marketing : cinq décisions" },
+      { type: 'h3', text: "1. Écrire la voix de marque" },
+      { type: 'p', text: "Un document de deux à quatre pages : ce que la marque dit et ne dit pas, son ton, ses mots interdits, ses tournures, trois exemples de textes qui lui ressemblent et trois qui ne lui ressemblent pas. Ce document devient l'instruction permanente des assistants de l'équipe. Sans lui, l'homogénéisation décrite plus haut s'installe en quelques semaines." },
+      { type: 'h3', text: "2. Constituer le corpus de référence" },
+      { type: 'p', text: "Les fiches produits, les études de cas, les offres, les objections et leurs réponses, les chiffres autorisés avec leur source, la charte graphique. Un assistant d'équipe branché sur ce corpus produit des contenus qui parlent de votre entreprise ; le même assistant sans corpus produit des généralités. Un responsable désigné tient le corpus à jour." },
+      { type: 'h3', text: "3. Décrire le flux par canal" },
+      { type: 'p', text: "Pour chaque canal, blog, réseaux sociaux, emailing, site, la chaîne étape par étape : qui brief, ce que l'IA produit, qui relit, qui valide, qui publie, qui mesure. Le flux écrit évite deux dérives : le contenu publié sans relecture, et le contenu relu trois fois par excès de prudence." },
+      { type: 'h3', text: "4. Poser les règles de validation et de transparence" },
+      { type: 'p', text: "Aucun contenu généré ne part vers un client ou vers le public sans relecture par une personne qui le signe. Aucune donnée client dans un outil hors contrat d'entreprise. Depuis le 2 août 2026, l'article 50 du règlement européen sur l'IA demande de signaler les contenus générés ou manipulés qui représentent des personnes ou des faits réels, et les textes générés publiés pour informer le public sur des sujets d'intérêt général quand aucune personne n'en assume la responsabilité éditoriale ; un contenu marketing relu et signé n'entre pas dans ce dernier cas, une image synthétique présentée comme réelle, si. Pour la prospection, le RGPD et les règles de la CNIL sur la prospection par courrier électronique s'appliquent, IA ou pas. Une <a href='/charte-ia-entreprise'>charte IA d'entreprise</a> tient ces règles sur une page." },
+      { type: 'h3', text: "5. Mesurer autre chose que le volume" },
+      { type: 'p', text: "Le nombre de contenus produits est le pire indicateur d'une stratégie marketing IA, parce qu'il monte tout seul. Les indicateurs utiles : le temps par livrable, avant et après ; le rythme de publication tenu ; l'engagement et les leads par canal ; la part de voix de la marque dans les réponses des IA ; et la destination du temps libéré, une campagne de plus, un canal ouvert, une dépense externe évitée. Notre page sur le <a href='/roi-ia-entreprise'>ROI de l'IA en entreprise</a> explique pourquoi ce dernier point décide de tout." },
+
+      { type: 'h2', text: "Créer une stratégie social media avec l'IA : la méthode" },
+      { type: 'p', text: "Les réseaux sociaux sont le canal où l'IA fait gagner le plus de temps et où elle fait le plus de dégâts quand elle publie seule. La méthode ci-dessous tient une présence régulière sans y passer la journée, avec l'humain là où la marque s'engage." },
+      {
+        type: 'table',
+        headers: ['Étape', "Ce que l'IA fait", "Ce que l'humain fait", 'Rythme'],
+        rows: [
+          ['Piliers éditoriaux', "Propose des angles à partir du corpus, des objections clients et des questions fréquentes", "Choisit trois piliers, un par intention : expertise, preuve, coulisses", 'Une fois par trimestre'],
+          ['Calendrier', "Répartit les piliers sur le mois, propose des formats par plateforme", "Arbitre, fixe les temps forts de l'entreprise", 'Une fois par mois'],
+          ['Production', "Décline un article ou une étude de cas en posts, carrousels, scripts vidéo, dans la voix de marque", "Ajoute le fait, le chiffre, l'anecdote que l'IA ne connaît pas ; relit ; signe", 'Une session hebdomadaire de deux heures'],
+          ['Visuels', "Variantes de visuels et de mises en page dans la charte", "Choix et vérification des droits, jamais de personne réelle synthétique sans mention", 'Avec la production'],
+          ['Publication', "Prépare les programmations", "Publie, ou valide la programmation", 'Selon le calendrier'],
+          ['Conversation', "Propose des réponses aux commentaires, résume les échanges", "Répond, en particulier aux critiques et aux messages privés", 'Chaque jour, quinze minutes'],
+          ['Mesure', "Lit les statistiques, signale les posts qui sortent du lot et ceux qui tombent", "Décide de ce qu'on refait et de ce qu'on arrête", 'Une fois par mois'],
+        ],
+      },
+      { type: 'p', text: "Deux règles qui ne se négocient pas. La première : aucune prise de position, aucune réponse à une critique, aucun message privé ne sort d'une IA sans qu'une personne l'ait écrit ou réécrit. La seconde : un post généré à partir d'un article existant vaut mieux qu'un post généré à partir de rien ; le corpus fait la différence entre une marque qui parle et un compte qui remplit." },
+
+      { type: 'h2', text: "Outils d'IA abordables pour une stratégie marketing" },
+      { type: 'p', text: "Une équipe marketing n'a pas besoin de quinze outils. Trois familles suffisent pour la première année, et la première fait l'essentiel du travail." },
+      {
+        type: 'ul',
+        items: [
+          "<strong>Un assistant généraliste d'équipe</strong>, en offre entreprise, avec des espaces partagés où vivent la voix de marque et le corpus : ChatGPT, Claude, Gemini ou Copilot selon l'environnement en place. De l'ordre de vingt à trente euros par poste et par mois. C'est l'outil qui produit, décline, analyse et contredit.",
+          "<strong>Un outil de programmation et de statistiques sociales</strong>, que l'équipe possède en général déjà. L'IA prépare, il publie et mesure.",
+          "<strong>Des automatisations légères</strong> quand un flux devient récurrent : veille concurrentielle résumée chaque semaine, article transformé en posts à la publication, rapport mensuel préparé depuis les exports. Elles se construisent avec des outils sans code ou par un prestataire, une fois le flux stabilisé à la main.",
+        ],
+      },
+      { type: 'p', text: "Ce que nous déconseillons : les générateurs de contenu « en un clic » sans corpus ni voix de marque, et les outils qui publient sans validation. Ils produisent exactement le contenu homogène que les études décrivent." },
+
+      { type: 'h2', text: "Exemples : ce que des équipes font avec cette répartition" },
+      { type: 'p', text: "Une équipe marketing de groupe industriel qui décline une veille concurrentielle en synthèse mensuelle et en supports de revue, à partir de ses propres fichiers, avec un assistant construit en atelier. Un distributeur de cinq personnes qui produit ses plaquettes, ses posts et sa newsletter depuis ses fiches produits, un chantier chiffré dans son diagnostic parmi douze, classé en gain d'appoint parce que d'autres flux rendaient plus de temps. Des équipes formées qui, six semaines après, tiennent un rythme de publication qu'elles n'avaient jamais tenu. Ces cas sont décrits dans nos <a href='/etudes-de-cas-ia'>études de cas</a> et dans notre article sur <a href='/blog/formation-ia-marketing-equipes'>ce que les équipes marketing font différemment après une formation IA</a>." },
+
+      { type: 'h2', text: "Les erreurs qui coûtent" },
+      {
+        type: 'ul',
+        items: [
+          "<strong>Produire sans voix de marque écrite.</strong> Le ton dérive vers celui des concurrents en quelques semaines.",
+          "<strong>Mesurer le volume.</strong> Le nombre de contenus monte tout seul ; le temps par livrable, l'engagement et les leads, non.",
+          "<strong>Laisser l'IA répondre à la place de la marque.</strong> Un commentaire critique traité par un texte générique se voit, et se partage.",
+          "<strong>Saisir des données clients dans un outil personnel.</strong> Le premier risque RGPD des équipes marketing, et le plus fréquent.",
+          "<strong>Publier une image synthétique comme une vraie.</strong> Signalement obligatoire depuis août 2026, et perte de confiance avant même la sanction.",
+          "<strong>Sauter la relecture parce que « ça a l'air bien ».</strong> Le standard a migré dans la machine ; c'est le moment où l'équipe cesse d'être augmentée.",
+          "<strong>Former une fois.</strong> Les outils changent de version sans prévenir ; un point mensuel de trente minutes suffit à garder l'équipe à niveau.",
+        ],
+      },
+
+      { type: 'h2', text: "Par où commencer : trente jours" },
+      {
+        type: 'ol',
+        items: [
+          "<strong>Semaine 1, la voix et le corpus.</strong> Document de voix de marque, corpus de référence rassemblé, responsable désigné, outil d'équipe ouvert à la place des comptes personnels.",
+          "<strong>Semaine 2, un canal.</strong> Le flux écrit pour les réseaux sociaux, trois piliers, un calendrier d'un mois, la première session de production de deux heures.",
+          "<strong>Semaine 3, les règles.</strong> Charte d'une page : relecture, données clients, transparence des contenus générés, qui signe quoi.",
+          "<strong>Semaine 4, la mesure.</strong> Temps par livrable relevé, indicateurs par canal, part de voix dans les IA sur dix questions, décision sur le deuxième canal.",
+        ],
+      },
+      { type: 'p', text: "Nos <a href='/formation-ia-marketing'>formations IA marketing</a> et <a href='/formation-ia-communication'>IA communication</a> installent cette méthode en un ou deux jours, sur les fichiers de l'équipe ; l'<a href='/agence-ia-marketing'>agence IA marketing</a> la prend en charge pour ceux qui préfèrent déléguer. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, forme les équipes marketing et applique cette répartition à sa propre communication." },
+
+      { type: 'h2', text: "Sources et références" },
+      {
+        type: 'ul',
+        items: [
+          "<a href='https://www.nature.com/articles/s41562-024-02024-1' rel='noopener'>Vaccaro, Almaatouq et Malone, « When combinations of humans and AI are useful », Nature Human Behaviour</a> : méta-analyse de 106 expériences, gains sur les tâches de création, pertes sur les tâches de décision.",
+          "<a href='https://www.science.org/doi/10.1126/sciadv.adn5290' rel='noopener'>Doshi et Hauser, « Generative AI enhances individual creativity but reduces the collective diversity of novel content », Science Advances</a> : 293 auteurs.",
+          "<a href='https://www.science.org/doi/10.1126/science.adh2586' rel='noopener'>Noy et Zhang, « Experimental evidence on the productivity effects of generative AI », Science</a> : 453 cadres, début 2023, ChatGPT.",
+          "<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj' rel='noopener'>Règlement (UE) 2024/1689 sur l'intelligence artificielle</a>, article 50 sur la transparence.",
+          "<a href='https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique' rel='noopener'>CNIL, la prospection commerciale par courrier électronique</a>.",
+          "<a href='https://developers.google.com/search/docs/appearance/ai-features' rel='noopener'>Google Search Central, « AI features and your website »</a>.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Qu'est-ce qu'une stratégie marketing IA ?",
+        a: "C'est la façon dont une équipe marketing décide ce que l'intelligence artificielle produit, ce que les humains gardent et comment les deux s'articulent canal par canal. Elle repose sur une voix de marque écrite, un corpus de référence, un flux décrit par canal, des règles de validation et de transparence, et une mesure qui ne se limite pas au volume produit.",
+      },
+      {
+        q: "Comment répartir le travail entre humains et IA en marketing ?",
+        a: "Par nature de tâche. Les études montrent que la combinaison humain et IA gagne sur les tâches de création et perd sur les tâches de décision. L'IA produit, décline, analyse et contredit ; l'humain brief, décide, apporte la preuve, relit et signe. Le standard de qualité reste dans la tête du marketeur, jamais dans la sortie de l'outil.",
+      },
+      {
+        q: "Comment créer une stratégie social media avec l'IA ?",
+        a: "Trois piliers éditoriaux choisis par l'équipe, un calendrier mensuel préparé par l'IA, une session de production hebdomadaire de deux heures où l'IA décline les contenus existants dans la voix de marque et où l'humain ajoute le fait, relit et signe. Les réponses aux commentaires, les critiques et les messages privés restent écrits par une personne.",
+      },
+      {
+        q: "Faut-il signaler un contenu marketing généré par l'IA ?",
+        a: "Depuis le 2 août 2026, le règlement européen demande de signaler les contenus générés ou manipulés qui représentent des personnes ou des faits réels, et les textes générés publiés pour informer le public sur des sujets d'intérêt général sans responsabilité éditoriale humaine. Un contenu marketing relu et signé par une personne n'entre pas dans ce dernier cas ; une image synthétique présentée comme réelle doit être signalée.",
+      },
+      {
+        q: "Quels outils d'IA abordables pour une stratégie marketing ?",
+        a: "Un assistant généraliste d'équipe en offre entreprise, de l'ordre de vingt à trente euros par poste et par mois, avec des espaces partagés pour la voix de marque et le corpus ; l'outil de programmation sociale déjà en place ; des automatisations légères quand un flux est stabilisé. Trois familles suffisent la première année.",
+      },
+      {
+        q: "L'IA rend-elle les contenus marketing tous pareils ?",
+        a: "Sans cadre, oui : une étude sur 293 auteurs montre que l'aide de l'IA réduit la diversité collective des textes produits. Avec une voix de marque écrite, un corpus propre à l'entreprise et une relecture qui ajoute le fait ou l'anecdote, non. La différence se joue dans la préparation, pas dans l'outil.",
+      },
+      {
+        q: "Comment mesurer une stratégie marketing IA ?",
+        a: "Temps par livrable avant et après, rythme de publication tenu, engagement et leads par canal, part de voix de la marque dans les réponses des IA, et destination du temps libéré. Le nombre de contenus produits ne dit rien : il monte tout seul.",
+      },
+    ],
+    cta: {
+      title: "Installer cette répartition dans votre équipe marketing",
+      desc: "Un ou deux jours de formation sur vos propres campagnes, fichiers et réseaux : voix de marque, corpus, flux par canal, social media, mesure. Certifié Qualiopi, finançable par votre OPCO. Pour déléguer la production, l'agence IA marketing prend le relais.",
+      buttons: [
+        { label: "Voir la formation IA marketing", href: '/formation-ia-marketing', primary: true },
+        { label: "Découvrir l'agence IA marketing", href: '/agence-ia-marketing' },
+      ],
+    },
+    internalLinks: [
+      { label: "Formation IA marketing : contenu, SEO, réseaux sociaux, emailing, analyse", href: '/formation-ia-marketing' },
+      { label: "Formation IA communication", href: '/formation-ia-communication' },
+      { label: "Agence IA marketing : production et pilotage augmentés par l'IA", href: '/agence-ia-marketing' },
+      { label: "Ce que les équipes marketing font différemment après une formation IA", href: '/blog/formation-ia-marketing-equipes' },
+      { label: "Référencement AIO : définition et stratégie de contenu", href: '/blog/referencement-aio-strategie-contenu-ia' },
+      { label: "Agence SEO IA : référencement et visibilité IA", href: '/agence-seo-ia' },
+      { label: "Charte IA d'entreprise : exemples et méthode", href: '/charte-ia-entreprise' },
+      { label: "ROI de l'IA en entreprise : ce que disent les études", href: '/roi-ia-entreprise' },
+    ],
+    extraJsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        '@id': 'https://www.master-ia.fr/blog/strategie-marketing-ia-humains-social-media#decisions',
+        name: "Intégrer l'IA dans sa stratégie marketing : cinq décisions",
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Écrire la voix de marque', description: "Deux à quatre pages : ton, mots interdits, tournures, exemples ; l'instruction permanente des assistants." },
+          { '@type': 'ListItem', position: 2, name: 'Constituer le corpus de référence', description: "Fiches produits, études de cas, offres, objections, chiffres autorisés avec leur source, charte graphique ; un responsable désigné." },
+          { '@type': 'ListItem', position: 3, name: 'Décrire le flux par canal', description: "Qui brief, ce que l'IA produit, qui relit, qui valide, qui publie, qui mesure." },
+          { '@type': 'ListItem', position: 4, name: 'Poser les règles de validation et de transparence', description: "Relecture et signature humaines, aucune donnée client hors contrat d'entreprise, article 50 du règlement européen, règles CNIL de prospection." },
+          { '@type': 'ListItem', position: 5, name: 'Mesurer autre chose que le volume', description: "Temps par livrable, rythme tenu, engagement et leads, part de voix dans les IA, destination du temps libéré." },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTermSet',
+        '@id': 'https://www.master-ia.fr/blog/strategie-marketing-ia-humains-social-media#lexique',
+        name: "Lexique de la stratégie marketing IA",
+        hasDefinedTerm: [
+          { '@type': 'DefinedTerm', name: 'Stratégie marketing IA', description: "Répartition décidée, canal par canal, entre ce que l'intelligence artificielle produit et ce que les humains gardent : voix de marque, corpus, flux, règles, mesure." },
+          { '@type': 'DefinedTerm', name: 'Marketeur augmenté', description: "Professionnel qui garde le standard de qualité dans sa tête et fait exécuter la machine vers ce standard ; il devient réduit quand le standard migre dans la sortie de l'outil." },
+          { '@type': 'DefinedTerm', name: 'Voix de marque', description: "Document de deux à quatre pages qui fixe le ton, les mots interdits, les tournures et des exemples ; instruction permanente des assistants d'une équipe marketing." },
+          { '@type': 'DefinedTerm', name: 'Corpus de référence', description: "Ensemble des documents propres à l'entreprise sur lesquels les assistants s'appuient : fiches produits, études de cas, offres, objections, chiffres sourcés." },
+          { '@type': 'DefinedTerm', name: 'Pilier éditorial', description: "Thème récurrent d'une présence sur les réseaux sociaux, choisi par intention ; trois piliers structurent un calendrier." },
+          { '@type': 'DefinedTerm', name: 'Part de voix dans les IA', description: "Poids d'une marque parmi les sources citées par les moteurs de réponse sur un corpus de questions, face à ses concurrents." },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'strategie-ia-entreprise-guide',
     tag: 'Stratégie',
     title: "Stratégie IA d'entreprise : le guide pour la construire, du diagnostic à la feuille de route",
@@ -1121,6 +1335,7 @@ export const BLOG_ARTICLES = [
       { label: "Agence SEO IA : référencement et visibilité IA", href: '/agence-seo-ia' },
       { label: "Audit SEO IA : positions Google, technique, contenu", href: '/audit-seo-ia' },
       { label: "Formation IA pour le SEO", href: '/formation-ia-seo' },
+      { label: "Stratégie marketing IA : humains et IA, social media", href: '/blog/strategie-marketing-ia-humains-social-media' },
     ],
     extraJsonLd: [
       {
@@ -2836,6 +3051,7 @@ export const BLOG_ARTICLES = [
       ],
     },
     internalLinks: [
+      { label: "Stratégie marketing IA : humains et IA, social media, méthode", href: '/blog/strategie-marketing-ia-humains-social-media' },
       { label: "Formation IA pour le marketing", href: '/formation-ia-marketing' },
       { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Former ses équipes à l'IA : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
@@ -5305,6 +5521,7 @@ export const BLOG_ARTICLES = [
     internalLinks: [
       { label: "GEO et IA générative", href: '/blog/geo-referencement-ia-generative-entreprise' },
       { label: "Référencement AIO : définition et stratégie de contenu", href: '/blog/referencement-aio-strategie-contenu-ia' },
+      { label: "Stratégie marketing IA : humains et IA, social media", href: '/blog/strategie-marketing-ia-humains-social-media' },
       { label: "Formation IA marketing", href: '/blog/formation-ia-marketing-equipes' },
       { label: "Custom GPT pour entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },

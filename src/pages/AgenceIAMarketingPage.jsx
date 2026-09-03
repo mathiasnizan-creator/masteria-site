@@ -742,6 +742,7 @@ export default function AgenceIAMarketingPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Stratégie marketing IA : le guide', href: '/blog/strategie-marketing-ia-humains-social-media', tag: 'Guide', desc: "La répartition humains et IA fondée sur les études, cinq décisions, la méthode social media, les outils abordables." },
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Sur mesure', desc: "Conception et développement de bout en bout de vos solutions IA, jusqu'à la production." },
               { label: 'Agence d\'automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Workflows, assistants et agents qui font circuler vos contenus et synchronisent vos outils." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage marketing." },
