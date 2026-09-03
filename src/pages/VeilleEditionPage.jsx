@@ -353,8 +353,8 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 900 }}>
             {ok ? (
               <>
-                {edition.titreEditorial}<br />
-                <span style={{ color: '#60A5FA', fontWeight: 800 }}>{lang === 'en' ? `AI Watch, ${edition.dateLongue}` : `Veille IA du ${edition.dateLongue}`}</span>
+                {lang === 'en' ? `AI Watch, ${edition.dateLongue}` : `Veille IA du ${edition.dateLongue}`}
+                <span style={{ display: 'block', marginTop: 12, fontSize: 'clamp(17px, 2.1vw, 24px)', fontWeight: 700, lineHeight: 1.35, letterSpacing: '-0.01em', color: '#60A5FA', maxWidth: 820 }}>{edition.titreEditorial}</span>
               </>
             ) : `Veille IA du ${lisible}`}
           </h1>
