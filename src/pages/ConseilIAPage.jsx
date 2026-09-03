@@ -56,7 +56,7 @@ const SERVICES = [
   },
   {
     Icon: Target,
-    title: 'Stratégie & gouvernance IA',
+    title: 'Feuille de route & gouvernance IA',
     desc: "Nous vous aidons à définir une vision IA alignée sur votre business, à structurer la gouvernance et à cadrer les usages en interne.",
     deliverables: [
       'Vision et ambition IA à 3 ans',
@@ -341,7 +341,7 @@ const REFERENCES = [
 
 /* ───────── Meta ───────── */
 
-const META_DESC = "Conseil IA pour PME, ETI et grands groupes : audit des usages, stratégie, feuille de route et développement des solutions sur mesure. Cadrage gratuit."
+const META_DESC = "Conseil IA pour PME, ETI et grands groupes : audit des usages, accompagnement au déploiement, gouvernance et développement des solutions sur mesure. Cadrage gratuit."
 const KEYWORDS = "conseil ia, conseil en intelligence artificielle, conseil en ia, conseil intelligence artificielle, accompagnement ia, accompagnement ia entreprise, accompagnement intelligence artificielle, expert conseil ia, transformation ia"
 
 /* ───────── JSON-LD ───────── */
@@ -350,9 +350,9 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Masteria, Cabinet de conseil IA',
-  description: "Cabinet de conseil spécialisé en intelligence artificielle pour entreprises. Audit, stratégie, développement de solutions sur mesure et transformation.",
+  description: "Cabinet de conseil spécialisé en intelligence artificielle pour entreprises. Audit, feuille de route, développement de solutions sur mesure et accompagnement.",
   url: 'https://www.master-ia.fr/conseil-intelligence-artificielle',
-  serviceType: ['Audit IA', 'Stratégie IA', "Développement de solutions IA sur mesure", 'Accompagnement IA', 'Transformation IA'],
+  serviceType: ['Audit IA', 'Feuille de route IA', "Développement de solutions IA sur mesure", 'Accompagnement IA', 'Transformation IA'],
   areaServed: ['France', 'Suisse', 'Belgique'],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
 }
@@ -371,7 +371,7 @@ const articleJsonLd = {
   dateModified: '2026-07-30',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-intelligence-artificielle#webpage' },
-  about: ['Conseil en intelligence artificielle', 'Audit IA', 'Stratégie IA', "Gouvernance de l'IA"],
+  about: ['Conseil en intelligence artificielle', 'Audit IA', 'Accompagnement IA', "Gouvernance de l'IA"],
   // GEO : passages lus/cités en priorité par les assistants vocaux et génératifs.
   speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
   citation: [
@@ -457,7 +457,7 @@ export default function ConseilIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, aide PME, ETI et grands groupes à auditer leurs usages, définir leur stratégie IA et déployer les cas d'usage à fort ROI, en France, en Suisse et en Belgique.</strong>
+            <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, aide PME, ETI et grands groupes à auditer leurs usages, cadrer leur feuille de route et déployer les cas d'usage à fort ROI, en France, en Suisse et en Belgique.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -863,7 +863,7 @@ export default function ConseilIAPage() {
             fontSize: 22, fontWeight: 800,
             color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
           }}>
-            Cadrer la stratégie IA avant de déployer
+            Cadrer votre démarche IA avant de déployer
           </h3>
           <p style={{ marginBottom: 20 }}>
             Plus de 70 % des projets d'IA générative engagés en 2024-2025 n'ont pas dépassé le stade du proof of concept (source : enquêtes McKinsey, BCG, Gartner). La cause principale est <strong style={{ color: INK }}>organisationnelle et stratégique</strong>, bien avant d'être technique. Sans cadrage initial, les équipes se dispersent sur des cas d'usage à faible valeur, dupliquent des outils et accumulent des coûts d'abonnement sans ROI mesurable. Un audit IA hiérarchise les cas d'usage selon leur impact business, leur faisabilité technique et leur niveau de risque réglementaire (RGPD, AI Act européen, sécurité des données), puis fixe une trajectoire d'investissement que le comité de direction peut arbitrer en connaissance de cause.
@@ -914,7 +914,7 @@ export default function ConseilIAPage() {
           </p>
 
           <p style={{ marginBottom: 0 }}>
-            Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité et fait remonter les premiers cas d'usage. Quand la direction veut une vision exhaustive avant d'industrialiser (maturité, données, conformité RGPD et AI Act), notre <Link to="/audit-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> livre le rapport complet et la feuille de route chiffrée. Et quand l'enjeu est de tenir la transformation dans la durée jusqu'aux usages installés, notre <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> couvre le cadrage, le déploiement, la conduite du changement et l'<Link to="/acculturation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>acculturation des équipes</Link>. Si votre besoin relève d'un métier précis, nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> détaillent les leviers prioritaires. Et pour structurer la décision au niveau direction, notre <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil en stratégie IA</Link> formalise une feuille de route arbitrable en COMEX. Pour cadrer le budget en amont, notre repère sur le <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> donne les fourchettes à anticiper. Et si vous comparez plusieurs prestataires, notre guide du <Link to="/prestataire-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prestataire IA</Link> compare les cinq familles d'acteurs, et celui du <Link to="/meilleur-cabinet-conseil-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleur cabinet de conseil en IA</Link> détaille les trois compétences à exiger et les questions à poser. Si votre besoin penche vers le développement, comparez les acteurs dans notre guide de la <Link to="/meilleure-agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleure agence IA</Link>.
+            Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité et fait remonter les premiers cas d'usage. Quand la direction veut une vision exhaustive avant d'industrialiser (maturité, données, conformité RGPD et AI Act), notre <Link to="/audit-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> livre le rapport complet et la feuille de route chiffrée. Et quand l'enjeu est de tenir la transformation dans la durée jusqu'aux usages installés, notre <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> couvre le cadrage, le déploiement, la conduite du changement et l'<Link to="/acculturation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>acculturation des équipes</Link>. Si votre besoin relève d'un métier précis, nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> détaillent les leviers prioritaires. Et pour structurer la décision au niveau direction, notre <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> formalise une feuille de route arbitrable en COMEX. Pour cadrer le budget en amont, notre repère sur le <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> donne les fourchettes à anticiper. Et si vous comparez plusieurs prestataires, notre guide du <Link to="/prestataire-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prestataire IA</Link> compare les cinq familles d'acteurs, et celui du <Link to="/meilleur-cabinet-conseil-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleur cabinet de conseil en IA</Link> détaille les trois compétences à exiger et les questions à poser. Si votre besoin penche vers le développement, comparez les acteurs dans notre guide de la <Link to="/meilleure-agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleure agence IA</Link>.
           </p>
 
           <p style={{ marginBottom: 0, fontStyle: 'italic', color: GREY_700, borderLeft: `3px solid ${BLUE}`, paddingLeft: 16, marginTop: 32 }}>

@@ -518,7 +518,7 @@ export default function DiagnosticIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Le diagnostic s'inscrit dans une logique plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link>. Quand un cas est prêt, il enchaîne naturellement sur le <Link to="/agence-developpement-ia" style={aStyle}>développement sur mesure</Link>.
+                Le diagnostic s'inscrit dans une logique plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil stratégie IA</Link>. Quand un cas est prêt, il enchaîne naturellement sur le <Link to="/agence-developpement-ia" style={aStyle}>développement sur mesure</Link>.
               </p>
             </div>
           </div>

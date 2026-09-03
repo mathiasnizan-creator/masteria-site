@@ -476,7 +476,7 @@ export default function MeilleurCabinetConseilIAPage() {
             Votre besoin penche nettement vers la construction d'un produit ? Notre guide{' '}
             <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA</Link>{' '}
             compare les acteurs sous l'angle build. Pour la trajectoire en amont, la page{' '}
-            <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil en stratégie IA</Link>{' '}
+            <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link>{' '}
             détaille la méthode de feuille de route, et{' '}
             <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>l'IA par secteur</Link>{' '}
             les enjeux propres à votre métier. Votre besoin porte sur la montée en compétences de vos équipes ? Notre guide{' '}

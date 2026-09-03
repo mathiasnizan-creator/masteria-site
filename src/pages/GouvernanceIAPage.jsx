@@ -950,6 +950,7 @@ export default function GouvernanceIAPage() {
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, gouvernance et conformité comprises." },
               { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "L'état des lieux exhaustif : maturité, données, écarts RGPD et AI Act, feuille de route chiffrée." },
+              { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cap avant le dispositif : cas d'usage priorisés, feuille de route à 90 jours et à 12 mois, arbitrages de direction." },
               { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "La mission qui précède la gouvernance : inventaire des systèmes, niveaux de risque, écarts et plan de mise en conformité daté." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Le développement de solutions IA, conçues avec garde-fous, supervision et traçabilité." },
               { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Les enjeux de gouvernance et de conformité propres à chaque secteur d'activité." },

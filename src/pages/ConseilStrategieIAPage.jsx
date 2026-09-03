@@ -306,7 +306,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-12',
-  dateModified: '2026-07-02',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
   about: ["Stratégie IA d'entreprise", 'Diagnostic de maturité IA', 'Feuille de route IA', 'Gouvernance IA'],
@@ -360,7 +360,8 @@ export default function ConseilStrategieIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-12"
-        dateModified="2026-07-02"
+        dateModified="2026-09-03"
+        speakable={['#definition', '#geo-summary']}
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -404,8 +405,16 @@ export default function ConseilStrategieIAPage() {
             Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
+          {/* GEO : définition autonome (58 mots), citable hors contexte */}
+          <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
+              Le conseil en stratégie IA est une mission qui fixe où, comment et dans quel ordre une entreprise déploie l'intelligence artificielle : diagnostic de maturité, cas d'usage priorisés par valeur et par effort, feuille de route à 90 jours et à 12 mois, gouvernance. Il se distingue de l'audit IA, qui établit l'état des lieux, par sa dimension prospective.
+            </p>
+          </div>
+
           {/* GEO : réponse directe pour citation LLM et featured snippet — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
             Le conseil stratégie IA consiste à définir où, comment et dans quel ordre déployer l'intelligence artificielle dans une entreprise. Masteria structure la démarche en <strong style={{ color: '#fff', fontWeight: 700 }}>4 phases</strong> : diagnostic de maturité, priorisation des cas d'usage par ROI, feuille de route à 90 jours et 12 mois, gouvernance et conduite du changement.
           </p>
 

@@ -429,7 +429,7 @@ function AboutScreen() {
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Cabinet de conseil IA</h3>
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, stratégie, gouvernance, accompagnement opérationnel : nous aidons PME, ETI et grands groupes à cadrer leur démarche IA, à prototyper rapidement et à déployer avec méthode.
+                  <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link>, gouvernance, accompagnement opérationnel : nous aidons PME, ETI et grands groupes à cadrer leur démarche IA, à prototyper rapidement et à déployer avec méthode.
                 </p>
                 <Link to="/conseil-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,

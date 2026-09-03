@@ -901,7 +901,7 @@ export default function AuditIAPage() {
             {[
               { label: 'Diagnostic IA en une journée', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Le point d'entrée le plus rapide : cadrage et priorisation en une journée, avant un audit ciblé si besoin." },
               { label: "Guide complet de l'audit IA", href: '/blog/audit-ia-entreprise-methode-prix', tag: 'Guide', desc: "Les trois types d'audit, ce que la loi impose vraiment, les normes publiées et le seul prix public vérifiable." },
-              { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Après l'audit : la trajectoire d'entreprise, les arbitrages COMEX et la feuille de route stratégique." },
+              { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Après l'audit : la trajectoire d'entreprise, les arbitrages COMEX et la feuille de route stratégique." },
               { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "Quand la question est « sommes-nous en règle » : RGPD, AI Act, écarts hiérarchisés et plan daté." },
               { label: 'Audit IA médico-social', href: '/audit-ia-medico-social', tag: 'Secteur', desc: "La déclinaison pour les associations et établissements médico-sociaux : usagers, DUI, HDS, financeurs." },
               { label: "Auditabilité d'un système d'IA", href: '/blog/auditabilite-systeme-ia', tag: 'Guide', desc: "Ce que vous devez pouvoir prouver sur un système d'IA : journaux, documentation, supervision." },

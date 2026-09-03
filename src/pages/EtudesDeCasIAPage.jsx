@@ -457,7 +457,7 @@ export default function EtudesDeCasIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '30px 0 0', maxWidth: 860 }}>
-            Envie du même type de dispositif ? Commencez par un <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> d'une journée ou un <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> complet, voyez notre <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil en stratégie IA</Link> pour un comité de direction, ou comment nous déployons des <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. Pour la montée en compétence des équipes, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils.
+            Envie du même type de dispositif ? Commencez par un <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> d'une journée ou un <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> complet, voyez notre <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> pour un comité de direction, ou comment nous déployons des <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. Pour la montée en compétence des équipes, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils.
           </p>
         </div>
       </section>
