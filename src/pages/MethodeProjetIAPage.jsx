@@ -770,6 +770,7 @@ export default function MethodeProjetIAPage() {
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Agents, automatisations et applications métier sur mesure, de l'idée au déploiement." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Votre feuille de route IA en une journée, à faible engagement, avec un livrable actionnable." },
+              { label: 'IA en gestion de projet', href: '/ia-gestion-de-projet', tag: 'Vos projets', desc: "L'autre sujet : outiller vos chefs de projet et votre PMO avec l'IA, reporting automatisé compris." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>

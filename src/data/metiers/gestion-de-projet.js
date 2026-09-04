@@ -4,8 +4,8 @@
 export default {
  "base": {
   "metaTitle": "Formation IA gestion de projet : cadrage, CR, reporting | Masteria",
-  "metaDesc": "Formation IA gestion de projet, pour chefs de projet et PMO : cadrage, planning, comptes rendus, reporting, risques, sur vos projets réels. Qualiopi, finançable OPCO.",
-  "keywords": "formation ia gestion de projet, formation ia chef de projet, formation intelligence artificielle gestion de projet, formation ia pmo, formation ia pilotage de projet",
+  "metaDesc": "Formation IA gestion de projet, pour chefs de projet et PMO : cadrage, planning, comptes rendus, reporting projet, prompts et automatisations, sur vos projets réels. Qualiopi, finançable OPCO.",
+  "keywords": "formation ia gestion de projet, formation ia chef de projet, formation intelligence artificielle gestion de projet, formation ia pmo, formation ia pilotage de projet, prompt ia gestion de projet, prompts chef de projet, gestion automatisée de projets, reporting projet ia, ia pour chef de projet",
   "h1": "Formation IA gestion de projet : l'IA générative du cadrage au reporting",
   "h1a": "Formation IA gestion de projet :",
   "h1b": "l'IA générative du cadrage au reporting",
@@ -294,6 +294,18 @@ export default {
    "a": "C'est son public premier : la formation chef de projet IA s'adresse aux chefs de projet, PMO, directeurs de projet et responsables de portefeuille qui veulent outiller leur quotidien : cadrage, notes et comptes rendus, plannings, reporting, analyse de risques, préparation de comités. Elle répond aussi à la seconde lecture du terme, le chef de projet intelligence artificielle : celui qui se retrouve à piloter un projet d'IA sans être expert technique ; la journée donne le vocabulaire, les questions à poser aux équipes techniques et les réflexes de suivi. Aucun prérequis : la pratique de la gestion de projet suffit, quel que soit votre outil de pilotage."
   },
   {
+   "q": "Quels prompts IA utiliser en gestion de projet ?",
+   "a": "Ceux qui partent d'un livrable réel et d'un gabarit, jamais d'une page blanche. Les prompts les plus utiles pour un chef de projet sont peu nombreux et se réutilisent : produire une note de cadrage à partir des échanges de lancement et du gabarit maison ; découper un périmètre en lots et en tâches avec dépendances ; transformer des notes brutes ou une transcription en compte rendu avec décisions et actions ; rédiger le commentaire d'avancement hebdomadaire à partir des données de suivi ; lister les risques par analogie avec un projet comparable et proposer un plan de mitigation ; préparer un arbitrage en trois options avec impacts. La formation construit ces prompts avec vous, sur vos projets, et les dépose dans une bibliothèque mutualisée que l'équipe enrichit ensuite. Notre bibliothèque de prompts publique en donne des exemples génériques, à adapter."
+  },
+  {
+   "q": "Peut-on automatiser la gestion de projet avec l'IA ?",
+   "a": "Une partie, celle qui est répétitive et documentaire ; pas le pilotage. La gestion automatisée de projets, telle qu'elle est réaliste aujourd'hui, couvre la génération des comptes rendus à partir des réunions enregistrées, la mise à jour du reporting depuis l'outil de suivi, les relances des actions en retard, la consolidation des points d'avancement de plusieurs lots, la préparation des supports de COPIL. Ces automatisations se branchent sur vos outils (Jira, Planner, Monday, Notion, Teams, Gmail) par des assistants configurés ou des scénarios d'automatisation. Ce qui reste au chef de projet : les arbitrages, l'estimation finale, la relation avec les parties prenantes et la décision de ce qui est vrai dans ce que l'IA a produit. La formation montre où passe cette ligne, cas par cas."
+  },
+  {
+   "q": "Comment produire un reporting projet avec l'IA ?",
+   "a": "En partant des données de suivi, pas d'un texte à réécrire. Le reporting projet avec l'IA suit trois temps : exporter ou connecter les données réelles (avancement par lot, charge consommée, jalons, risques ouverts), demander une synthèse structurée selon votre gabarit de flash projet (faits, écarts, décisions attendues), puis relire et corriger avant diffusion, car l'IA ne sait pas ce qui s'est dit dans le couloir. Avec les versions entreprise des outils, le reporting peut se produire directement dans le tableur ou l'outil de suivi, avec les graphiques prévu/réalisé. La formation consacre un atelier à ce flux, sur votre gabarit de reporting et vos données d'un projet en cours."
+  },
+  {
    "q": "La formation couvre-t-elle les méthodes Agile ?",
    "a": "Oui, en proportion de vos pratiques. Un volet du jour 2 traite la rédaction de user stories, la préparation des sprints et la synthèse des rétrospectives avec l'IA ; pour une équipe entièrement Agile, ce volet peut prendre plus de place au cadrage. Pour une organisation en cycle en V ou en méthode hybride, l'accent se met sur le cadrage, le reporting et les COPIL. Les fondamentaux (demande efficace, vérification, cadre d'usage) sont communs à toutes les méthodes."
   }
@@ -319,7 +331,7 @@ export default {
  "article": {
   "headline": "Formation IA gestion de projet : l'IA générative du cadrage au reporting",
   "datePublished": "2026-06-20",
-  "dateModified": "2026-08-10",
+  "dateModified": "2026-09-03",
   "dateLabel": "août 2026",
   "about": [
    {
@@ -346,6 +358,12 @@ export default {
   }
  ],
  "maillage": [
+  {
+   "label": "IA en gestion de projet : le PMO augmenté",
+   "href": "/ia-gestion-de-projet",
+   "tag": "Conseil et solutions",
+   "desc": "Quand la formation ne suffit pas : assistants configurés sur vos gabarits, reporting automatisé depuis vos outils, agents pour le PMO."
+  },
   {
    "label": "Formation IA management",
    "href": "/formation-ia-management",

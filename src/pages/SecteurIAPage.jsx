@@ -4,6 +4,7 @@ import {
   ArrowRight, Compass, Cpu, Workflow, Check, AlertTriangle, Briefcase,
   ShieldCheck, ServerCog, GraduationCap, Layers, Grid3x3, Stethoscope,
   Landmark, Factory, HeartPulse, Scale, ShoppingCart, Truck, Building2, Plane, Wheat, Server,
+  Gauge, Wrench, ClipboardCheck, TrendingUp,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -14,6 +15,8 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
 const ICONS = {
   Landmark, Factory, HeartPulse, Scale, ShoppingCart, Truck,
   Building2, Briefcase, Plane, Wheat, Server,
+  /* icônes des cartes `deepDive` (section optionnelle par secteur) */
+  Gauge, Wrench, ClipboardCheck, TrendingUp, Layers, ShieldCheck, Workflow, Cpu,
 }
 
 /* Rend l'icône lucide propre au secteur (clé = champ `icon` des données). */
@@ -179,7 +182,7 @@ export default function SecteurIAPage() {
         extraJsonLd={serviceJsonLd}
         keywords={secteur.keywords}
         datePublished={SECTEUR_DATE_PUBLISHED}
-        dateModified={SECTEUR_DATE_MODIFIED}
+        dateModified={secteur.dateModified || SECTEUR_DATE_MODIFIED}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -372,6 +375,45 @@ export default function SecteurIAPage() {
       </section>
 
       {/* ── DÉVELOPPEURS SUR SITE (bandeau filet latéral) ── */}
+      {/* ── DEEP DIVE (optionnel, par secteur) : angle « conseil métier » propre au
+          secteur, alimenté par le champ `deepDive` des données. Absent = rien. ── */}
+      {secteur.deepDive && (
+        <section id="conseil-secteur" style={{ padding: SECTION_PAD, background: '#fff' }}>
+          <div style={WRAP}>
+            <div style={kickerStyle}>{secteur.deepDive.kicker}</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>{secteur.deepDive.h2}</h2>
+            <p style={{ ...answerStyle, background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', margin: '0 0 28px' }}>
+              <strong style={{ color: '#0A0A0A' }}>{secteur.deepDive.answer}</strong>
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
+              {secteur.deepDive.cards.map(card => {
+                const I = ICONS[card.icon] || Briefcase
+                return (
+                  <div key={card.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                      <I size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                      <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }}>{card.title}</h3>
+                    </div>
+                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                  </div>
+                )
+              })}
+            </div>
+            {secteur.deepDive.closing && (
+              <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+                {secteur.deepDive.closing}
+                {(secteur.deepDive.links || []).map(l => (
+                  <span key={l.href}>
+                    {' '}
+                    <Link to={l.href} style={{ color: c, fontWeight: 600 }}>{l.label}</Link>.
+                  </span>
+                ))}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
+
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={WRAP}>
           <div style={{ ...cardStyle, borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>

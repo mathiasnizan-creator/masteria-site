@@ -104,7 +104,7 @@ export const SOLUTIONS = [
     budgetRange: 'Dès ~12 000 € · 100 000 €+ à grande échelle',
     timeline: 'Prototype sur un corpus restreint en quelques semaines, puis indexation complète',
     offTheShelfLabel: 'Moteur de recherche interne classique',
-    alsoKnownAs: ['recherche documentaire IA', 'RAG documentaire', 'base de connaissances IA', 'GED augmentée par IA'],
+    alsoKnownAs: ['recherche documentaire IA', 'RAG documentaire', 'base de connaissances IA', 'GED intelligence artificielle', 'GED augmentée par IA'],
     keyTakeaways: [
       "Vos documents deviennent interrogeables en langage naturel : une question, une réponse synthétique avec les sources citées.",
       "Construit en RAG : chaque réponse est traçable jusqu'au document d'origine, ce qui limite les approximations.",
@@ -116,7 +116,7 @@ export const SOLUTIONS = [
     cardSummary:
       "Un moteur de réponse sur votre base documentaire : vos documents deviennent interrogeables en langage naturel, avec des réponses sourcées.",
     h1: "Assistant documentaire IA : interroger votre base documentaire en langage naturel",
-    metaTitle: 'Assistant documentaire IA (RAG) sur mesure | Masteria',
+    metaTitle: 'Assistant documentaire IA (RAG) et GED intelligente sur mesure | Masteria',
     metaDesc:
       "Assistant documentaire IA (RAG) sur votre base : réponses sourcées, recherche en langage naturel dans vos documents. Code livré. Cadrage gratuit.",
     directAnswer:
@@ -168,6 +168,10 @@ export const SOLUTIONS = [
       {
         q: 'L\'assistant peut-il inventer des réponses ?',
         a: "Le RAG est précisément conçu pour limiter ce risque : les réponses sont générées à partir de passages réels de vos documents et accompagnées des sources, ce qui rend chaque affirmation vérifiable. Sur les sujets sensibles, nous ajoutons des garde-fous et une invitation à vérifier la source. La traçabilité reste le meilleur rempart contre les approximations.",
+      },
+      {
+        q: 'Une GED avec intelligence artificielle remplace-t-elle notre GED actuelle ?',
+        a: "Non, elle s'y ajoute. Votre GED reste le lieu où les documents sont classés, versionnés et soumis à des droits d'accès ; l'assistant documentaire vient au-dessus : il indexe les contenus autorisés, répond aux questions en langage naturel et renvoie vers le document d'origine dans la GED. Les éditeurs de GED proposent de plus en plus une couche d'IA intégrée ; elle convient quand vos documents sont tous dans un seul outil et que vous acceptez la dépendance à cet éditeur. L'assistant sur mesure s'impose quand le fonds est réparti entre plusieurs sources (GED, partages de fichiers, ERP, mails), quand les droits d'accès sont fins, ou quand l'hébergement et le modèle doivent rester sous votre contrôle.",
       },
       {
         q: 'En quoi diffère-t-il d\'un moteur de recherche interne ?',

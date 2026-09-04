@@ -105,7 +105,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-07',
-  dateModified: '2026-08-07',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${PAGE_URL}#webpage` },
   about: ['Bibliothèque de prompts', 'Prompt engineering', 'IA générative en entreprise'],
@@ -198,9 +198,9 @@ export default function BibliothequePromptsPage() {
         slug="bibliotheque-de-prompts"
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        keywords="bibliothèque de prompts, bibliotheque de prompts ia, banque de prompts, prompts chatgpt entreprise, prompts par métier, exemples de prompts professionnels, prompt engineering"
+        keywords="bibliothèque de prompts, bibliotheque de prompts ia, banque de prompts, prompt ia gestion de projet, prompts chef de projet, prompts reporting projet, prompts chatgpt entreprise, prompts par métier, exemples de prompts professionnels, prompt engineering"
         datePublished="2026-08-07"
-        dateModified="2026-08-07"
+        dateModified="2026-09-03"
         speakable={['#geo-summary', '#definition', '#methode']}
         citations={[
           { name: 'CNIL — Intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
@@ -237,7 +237,7 @@ export default function BibliothequePromptsPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 20px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 730, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>

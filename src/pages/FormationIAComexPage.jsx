@@ -750,6 +750,7 @@ export default function FormationIAComexPage() {
             {[
               { label: 'Formation IA dirigeants', href: '/formation-ia-dirigeants', tag: 'Dirigeants', desc: "La journée stratégique du dirigeant et de son CODIR : grille de lecture, ROI, feuille de route 90 jours." },
               { label: 'Formation IA management', href: '/formation-ia-management', tag: 'Managers', desc: "Les réflexes pour piloter des équipes utilisatrices de l'IA : cadrer, faire adopter, suivre." },
+              { label: 'Conférence IA', href: '/conference-ia', tag: 'Format court', desc: "Quand le comité veut une session d'une heure plutôt qu'une matinée : état de l'art, démonstrations sur vos cas, questions." },
               { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Démarche', desc: "La montée en compétence collective qui suit la session COMEX : vagues, référents, charte, mesure." },
               { label: 'Formation IA en entreprise', href: '/formation-ia-entreprise', tag: 'Équipes', desc: "Former les équipes en intra, du sprint de 3 h au parcours par métier, sur leurs cas réels." },
               { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Quand la feuille de route demande un travail de fond : cadrage stratégique, priorisation, gouvernance." },

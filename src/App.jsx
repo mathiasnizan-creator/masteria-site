@@ -111,6 +111,16 @@ const AuditSeoIAPage = lazy(() => import('./pages/AuditSeoIAPage'));
 const AuditGeoIAPage = lazy(() => import('./pages/AuditGeoIAPage'));
 const AccompagnementIAPage = lazy(() => import('./pages/AccompagnementIAPage'));
 const AcculturationIAPage = lazy(() => import('./pages/AcculturationIAPage'));
+const ConferenceIAPage = lazy(() => import('./pages/ConferenceIAPage'));
+const ConseilTransformationIAPage = lazy(() => import('./pages/ConseilTransformationIAPage'));
+const ConseilIAPMEPage = lazy(() => import('./pages/ConseilIAPMEPage'));
+const ChiefAIOfficerPage = lazy(() => import('./pages/ChiefAIOfficerPage'));
+const FormationGouvernanceDonneesPage = lazy(() => import('./pages/FormationGouvernanceDonneesPage'));
+const AtelierIAPage = lazy(() => import('./pages/AtelierIAPage'));
+const ConsultantVisibiliteIAPage = lazy(() => import('./pages/ConsultantVisibiliteIAPage'));
+const SalonsIAPage = lazy(() => import('./pages/SalonsIAPage'));
+const SensibilisationIAPage = lazy(() => import('./pages/SensibilisationIAPage'));
+const IAGestionDeProjetPage = lazy(() => import('./pages/IAGestionDeProjetPage'));
 const FormationIAEntreprisePage = lazy(() => import('./pages/FormationIAEntreprisePage'));
 const PrestataireIAPage = lazy(() => import('./pages/PrestataireIAPage'));
 const CoachingIAPage = lazy(() => import('./pages/CoachingIAPage'));
@@ -231,10 +241,14 @@ function FormationsScreen() {
               ['AI Act', '/formation-ai-act'],
               ['CSE & IA', '/formation-cse-ia'],
               ['Data & IA', '/formation-data-ia'],
+              ['Gouvernance des données', '/formation-gouvernance-donnees'],
               ['IA COMEX', '/formation-ia-comex'],
               ['Dirigeants & CODIR', '/formation-ia-dirigeants'],
               ['IA en entreprise', '/formation-ia-entreprise'],
               ['Acculturation IA', '/acculturation-ia'],
+              ['Conférence IA', '/conference-ia'],
+              ['Ateliers IA', '/atelier-intelligence-artificielle'],
+              ['Sensibilisation IA', '/sensibilisation-ia'],
             ].map(([l, path]) => (
               <Link key={path} to={path} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#1C1C1C', background: '#F0F0F0', borderRadius: 999, padding: '8px 16px', textDecoration: 'none' }}>{l}</Link>
             ))}
@@ -1583,6 +1597,7 @@ export default function App() {
         <Route path="/agence-ia-geneve" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-marseille" element={<AgenceGeoPage />} />
         <Route path="/agence-ia-strasbourg" element={<AgenceGeoPage />} />
+        <Route path="/agence-ia-nantes" element={<AgenceGeoPage />} />
         {/* Cluster secteurs + solutions + offres (juin 2026) */}
         <Route path="/ia-secteurs" element={<SecteursHubPage />} />
         {SECTEUR_SLUGS.map(s => (
@@ -1598,6 +1613,16 @@ export default function App() {
         <Route path="/audit-ia-medico-social" element={<AuditIAMedicoSocialPage />} />
         <Route path="/accompagnement-ia" element={<AccompagnementIAPage />} />
         <Route path="/acculturation-ia" element={<AcculturationIAPage />} />
+        <Route path="/conference-ia" element={<ConferenceIAPage />} />
+        <Route path="/conseil-transformation-ia" element={<ConseilTransformationIAPage />} />
+        <Route path="/conseil-ia-pme" element={<ConseilIAPMEPage />} />
+        <Route path="/chief-ai-officer" element={<ChiefAIOfficerPage />} />
+        <Route path="/formation-gouvernance-donnees" element={<FormationGouvernanceDonneesPage />} />
+        <Route path="/atelier-intelligence-artificielle" element={<AtelierIAPage />} />
+        <Route path="/consultant-visibilite-ia" element={<ConsultantVisibiliteIAPage />} />
+        <Route path="/salons-ia" element={<SalonsIAPage />} />
+        <Route path="/sensibilisation-ia" element={<SensibilisationIAPage />} />
+        <Route path="/ia-gestion-de-projet" element={<IAGestionDeProjetPage />} />
         <Route path="/formation-ia-entreprise" element={<FormationIAEntreprisePage />} />
         <Route path="/prestataire-ia" element={<PrestataireIAPage />} />
         <Route path="/coaching-ia" element={<CoachingIAPage />} />

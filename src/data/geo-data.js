@@ -381,6 +381,7 @@ export const GEO_CITIES = [
     locale: 'fr-FR',
     coordinates: { latitude: 47.2184, longitude: -1.5536 },
     relatedLocal: [
+      { label: 'Agence IA Nantes', href: '/agence-ia-nantes' },
       { label: 'Formation IA Rennes', href: '/formation-ia-rennes' },
       { label: 'Formation IA Paris', href: '/formation-ia-paris' },
     ],

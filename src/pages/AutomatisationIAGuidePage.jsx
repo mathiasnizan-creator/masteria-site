@@ -24,8 +24,8 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Automatisation IA : le guide complet | Masteria"
-const META_DESC = "Automatisation IA : définition, exemples par métier, outils, méthode en 5 étapes et budgets pour automatiser vos processus. Cadrage initial gratuit."
-const KEYWORDS = "automatisation ia, automatisation intelligence artificielle, automatisation des processus ia, automatiser processus, ia automatisation, outils automatisation ia"
+const META_DESC = "Automatisation IA : définition, exemples par métier, outils, méthode en 5 étapes et budgets pour optimiser et automatiser vos processus. Cadrage initial gratuit."
+const KEYWORDS = "automatisation ia, automatisation intelligence artificielle, automatisation des processus ia, automatiser processus, optimiser ses processus avec l'ia, optimisation des processus ia, ia automatisation, outils automatisation ia"
 const H1 = "Automatisation IA : le guide complet pour automatiser vos processus"
 
 const SOMMAIRE = [
@@ -296,6 +296,10 @@ const FAQ = [
     rest: "Ces cas produisent des gains visibles en quelques semaines et créent l'adhésion pour la suite. Gardez les processus sensibles (paie, juridique, décisions client) pour une seconde vague, avec validation humaine systématique.",
   },
   {
+    q: "Comment optimiser ses processus avec l'IA sans tout automatiser ?",
+    a: "En distinguant trois niveaux, et en s'arrêtant au bon. Le premier est l'assistance : une personne garde le processus en main et utilise l'IA pour une étape (rédiger, résumer, classer, vérifier) ; c'est le niveau qui optimise le plus vite, sans projet, dès que les équipes sont formées. Le deuxième est l'automatisation partielle : un scénario enchaîne les étapes répétitives et s'arrête sur une validation humaine avant ce qui engage (un envoi, un paiement, une réponse client). Le troisième est l'automatisation complète, réservée aux processus à règles stables et à faible risque. Optimiser ses processus avec l'IA consiste d'abord à cartographier le flux réel, à mesurer où le temps se perd, puis à choisir le niveau pour chaque étape. La plupart des gains d'une PME viennent des deux premiers niveaux ; le troisième se justifie ensuite, sur les volumes.",
+  },
+  {
     q: "Combien coûte une automatisation IA pour une PME ?",
     strong: "Comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis si vous vous faites aider, et 1 980 € par jour pour former une équipe.",
     rest: "Beaucoup de premières automatisations se construisent avec les abonnements que l'entreprise paie déjà. Le véritable investissement porte sur le temps de cadrage et sur la montée en compétence des équipes.",
@@ -349,7 +353,7 @@ const RELATED = [
 /* ───────── Données de fraîcheur + schema Article (E-E-A-T, GEO) ───────── */
 
 const PUBLISHED = '2026-06-12'
-const UPDATED = '2026-07-02'
+const UPDATED = '2026-09-03'
 
 /* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
 const articleJsonLd = {
@@ -441,7 +445,7 @@ export default function AutomatisationIAGuidePage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}

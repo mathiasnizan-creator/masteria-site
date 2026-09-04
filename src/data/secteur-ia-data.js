@@ -23,7 +23,10 @@
    - modification = dernier commit ayant réellement changé ce que ces pages affichent,
      commit 736eeae du 2026-06-15 sur src/pages/SecteurIAPage.jsx
      (`git log -1 --format=%ad --date=short -- src/pages/SecteurIAPage.jsx`)
-   À remettre à jour uniquement lors d'une vraie modification de contenu. */
+   À remettre à jour uniquement lors d'une vraie modification de contenu.
+   Un secteur peut porter son propre `dateModified` (prioritaire dans le template)
+   quand il est enrichi seul, ainsi qu'un bloc optionnel `deepDive` (angle conseil
+   métier, cartes à icône lucide par nom). */
 export const SECTEUR_DATE_PUBLISHED = '2026-06-13'
 export const SECTEUR_DATE_MODIFIED = '2026-06-15'
 
@@ -35,11 +38,51 @@ export const SECTEURS = [
     nameWithArticle: 'la banque et l\'assurance',
     icon: 'Landmark',
     h1: "IA pour la banque, l'assurance et la finance : agents, automatisations et outils sur mesure",
-    metaTitle: 'IA pour la banque & assurance · conseil & dev | Masteria',
+    metaTitle: 'IA banque & assurance : cabinet conseil IA, dev sur mesure | Masteria',
     metaDesc:
-      "IA pour la banque et l'assurance : synthèse de dossiers, conformité LCB-FT, copilotes souscription. Conseil et dev sur mesure. Cadrage gratuit.",
+      "Cabinet de conseil IA pour la banque, l'assurance et la bancassurance : synthèse de dossiers, conformité LCB-FT, copilotes souscription, chatbot bancaire encadré. Conseil et dev sur mesure. Cadrage gratuit.",
     keywords:
-      "IA banque, IA assurance, intelligence artificielle secteur bancaire, cas d'usage IA finance, agent IA conformité LCB-FT, automatisation KYC, copilote souscription, conseil IA assurance",
+      "IA banque, IA assurance, cabinet conseil secteur bancaire, cabinet de conseil banque, cabinet conseil banque de détail, cabinet de conseil digitalisation des banques, cabinet de conseil bancassurance, chatbot bancaire, big data banque, cabinet conseil corporate and investment banking, intelligence artificielle secteur bancaire, cas d'usage IA finance, agent IA conformité LCB-FT, automatisation KYC, copilote souscription, conseil IA assurance",
+    /* Enrichi le 2026-09-03 (Semrush FR) : grappe « cabinet conseil secteur
+       bancaire » (90), « cabinet de conseil banque » (90 + 90), « cabinet conseil
+       banque de détail » (90), « digitalisation des banques » (70),
+       « bancassurance » (50), « chatbot bancaire » (70), « big data banque » (70),
+       « corporate and investment banking » (50). KD 10 à 15. */
+    dateModified: '2026-09-03',
+    deepDive: {
+      kicker: 'Conseil banque et assurance',
+      h2: "Cabinet de conseil banque et assurance : ce qu'un cabinet IA fait que les grands cabinets ne font pas",
+      answer:
+        "Un cabinet de conseil secteur bancaire classique accompagne la stratégie, la digitalisation des banques et les programmes de transformation, sur des missions longues et des équipes nombreuses. Masteria intervient sur un périmètre plus étroit et plus concret : les processus où l'IA générative rend du temps aux équipes de la banque de détail, de la bancassurance ou de la banque de financement, avec une mise en œuvre qui reste dans votre système d'information.",
+      cards: [
+        {
+          icon: 'Landmark',
+          title: 'Banque de détail et bancassurance : le conseiller augmenté',
+          desc: "Préparer un entretien, synthétiser un dossier, répondre de façon encadrée à une réclamation, comparer des garanties : les cas de la banque de détail et de la bancassurance tiennent dans le quotidien du conseiller. Nous outillons ces gestes sans réinventer le parcours client ni exposer le secret bancaire.",
+        },
+        {
+          icon: 'Workflow',
+          title: "Digitalisation des banques : là où l'IA prend le relais",
+          desc: "La digitalisation a dématérialisé les parcours ; restent les tâches qu'elle n'a pas supprimées : lire, qualifier, contrôler, rédiger. L'IA générative traite ces tâches sur des documents non structurés, en gardant la décision et la traçabilité côté humain.",
+        },
+        {
+          icon: 'Cpu',
+          title: 'Chatbot bancaire : encadré, ou pas du tout',
+          desc: "Un chatbot bancaire qui répond librement engage la banque. Le nôtre répond depuis vos documents et vos règles, refuse hors périmètre, journalise chaque réponse et bascule vers un conseiller quand la question l'exige. C'est la condition pour qu'il passe la conformité et la DSI.",
+        },
+        {
+          icon: 'Layers',
+          title: 'Big data banque et données de référence',
+          desc: "Les banques ont des données en volume ; l'IA générative en demande peu, mais de fiables : fiches client cohérentes, contrats accessibles, historiques exploitables. Nous cadrons ce socle avec la direction des données avant tout cas d'usage, en nous appuyant sur vos plateformes existantes.",
+        },
+      ],
+      closing:
+        "Pour la banque de financement et d'investissement, les cas portent sur l'analyse documentaire (due diligence, contrats, reporting) et suivent la même exigence de cloisonnement. Deux points d'entrée :",
+      links: [
+        { label: 'le conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle' },
+        { label: 'le conseil data et IA pour préparer le socle', href: '/conseil-data-ia' },
+      ],
+    },
     tagline:
       "Synthèse de dossiers, conformité LCB-FT, souscription et relation client, dans un cadre où le secret bancaire et la traçabilité priment.",
     directAnswer:
@@ -102,6 +145,14 @@ export const SECTEURS = [
         a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration au système d'information. Nous fonctionnons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Le cadrage initial est gratuit et débouche sur un devis ferme.",
       },
       {
+        q: "Un cabinet IA peut-il remplacer un cabinet de conseil bancaire classique ?",
+        a: "Non, et ce n'est pas le même travail. Un cabinet de conseil secteur bancaire porte la stratégie, l'organisation et les grands programmes de transformation ou de digitalisation, avec des équipes nombreuses sur des mois. Masteria intervient sur des périmètres courts et concrets : un processus de la banque de détail, un cas de bancassurance, un contrôle de conformité, un chatbot encadré. Les deux se complètent souvent : le programme fixe le cap, nous livrons les outils qui rendent du temps aux équipes, dans votre système d'information.",
+      },
+      {
+        q: "Un chatbot bancaire est-il compatible avec le secret bancaire et la conformité ?",
+        a: "Oui, à trois conditions. Le chatbot répond uniquement depuis vos documents et vos règles, jamais depuis la mémoire générale du modèle, ce qui évite les réponses inventées. Il refuse les questions hors périmètre et bascule vers un conseiller dès qu'une décision, un conseil personnalisé ou une donnée sensible entrent en jeu. Et chaque échange est journalisé, avec ses sources, pour la conformité et l'audit interne. Le modèle et l'hébergement se choisissent avec la DSI et le RSSI ; aucune donnée client ne sert à entraîner un modèle externe.",
+      },
+      {
         q: "Qu'est-ce qui distingue Masteria d'une grande ESN ou d'un éditeur de solution ?",
         a: "Nous sommes un cabinet spécialisé uniquement sur l'IA, indépendant des éditeurs, qui cadre la stratégie puis développe les solutions. Pas de licence à vendre ni de plateforme à imposer : nous choisissons le bon modèle pour votre cas, concevons pour le secret bancaire et la traçabilité, documentons et transférons. Vous restez propriétaire du code et autonome, plutôt que captif d'un outil.",
       },
@@ -116,11 +167,52 @@ export const SECTEURS = [
     nameWithArticle: 'l\'industrie',
     icon: 'Factory',
     h1: "IA pour l'industrie et l'énergie : agents, automatisations et outils sur mesure",
-    metaTitle: "IA pour l'industrie & l'énergie · conseil & dev | Masteria",
+    metaTitle: "IA industrie & énergie : conseil, performance industrielle, dev | Masteria",
     metaDesc:
-      "IA pour l'industrie et l'énergie : documentation technique, maintenance, qualité, appels d'offres. Dev sur mesure, on-premise possible. Cadrage gratuit.",
+      "Conseil IA pour l'industrie et l'énergie : performance industrielle et amélioration continue avec l'IA, documentation technique, maintenance, qualité, appels d'offres. Dev sur mesure, on-premise possible. Cadrage gratuit.",
     keywords:
-      "IA industrie, IA énergie, intelligence artificielle industrielle, cas d'usage IA production, IA documentation technique, IA maintenance industrielle, LLM on-premise industrie, agent IA appels d'offres industriels",
+      "IA industrie, conseil industrie, cabinet de conseil industrie, conseil en industrie, conseil performance industrielle, amélioration performance industrielle, cabinet conseil amélioration continue, accompagnement industriel, solutions pour l'industrie manufacturière, IA énergie, intelligence artificielle industrielle, cas d'usage IA production, IA documentation technique, IA maintenance industrielle, LLM on-premise industrie, agent IA appels d'offres industriels",
+    /* Enrichi le 2026-09-03 (Semrush FR) : grappe « conseil industrie » (140, KD 11,
+       CPC 3,68), « cabinet de conseil industrie » (140, KD 10), « conseil en
+       industrie » (90), « amélioration performance industrielle » (110, KD 8),
+       « conseil performance industrielle » (90 + 70), « cabinet conseil
+       amélioration continue » (70, KD 3), « solutions pour l'industrie
+       manufacturière » (70), « accompagnement industriel » (70). */
+    dateModified: '2026-09-03',
+    deepDive: {
+      kicker: 'Conseil industrie',
+      h2: "Conseil en performance industrielle : ce que l'IA change dans l'amélioration continue",
+      answer:
+        "Un cabinet de conseil industrie classique améliore la performance industrielle par l'organisation : flux, standards, chantiers d'amélioration continue, indicateurs. Masteria vise la même performance par un autre levier : l'IA appliquée aux tâches qui freinent l'atelier et le bureau d'études, la documentation, le diagnostic, le chiffrage, le contrôle documentaire. Les deux se complètent ; le nôtre commence là où le vôtre bute sur le temps passé à chercher, rédiger et ressaisir.",
+      cards: [
+        {
+          icon: 'Gauge',
+          title: 'Où se perd la performance industrielle hors machine',
+          desc: "Les indicateurs d'atelier (TRS, taux de rebut, délai) sont suivis ; le temps passé autour de la production l'est rarement : rechercher une procédure, mettre à jour une gamme, ressaisir un relevé, préparer une revue qualité, répondre à un cahier des charges. C'est là que l'IA rend des heures, sans toucher à la ligne.",
+        },
+        {
+          icon: 'Wrench',
+          title: "Amélioration continue outillée par l'IA",
+          desc: "Un chantier d'amélioration continue vit de données de terrain : relevés, écarts, retours des opérateurs. L'IA structure ces remontées, en tire les récurrences, rédige les fiches d'écart et les standards mis à jour. Les méthodes restent maîtres du chantier ; elles gagnent la partie rédaction et analyse.",
+        },
+        {
+          icon: 'ClipboardCheck',
+          title: 'Accompagnement industriel de bout en bout',
+          desc: "Cadrage sur site avec les méthodes, la maintenance et la qualité ; choix des cas ; prototype en quelques semaines ; déploiement en réseau isolé si nécessaire ; formation des équipes qui feront vivre l'outil. Un accompagnement industriel, pas une démonstration en salle.",
+        },
+        {
+          icon: 'TrendingUp',
+          title: "Solutions pour l'industrie manufacturière, PME et ETI",
+          desc: "Les grands groupes ont des programmes ; les PME et ETI manufacturières ont des équipes réduites et des besoins concrets. Nos solutions se dimensionnent à ces équipes : un assistant de maintenance, un outil de chiffrage, un contrôle documentaire, chacun rattaché à un indicateur de performance que vous suivez déjà.",
+        },
+      ],
+      closing:
+        "Pour mesurer le gain, nous partons de vos indicateurs existants et d'une chaîne de conversion écrite au cadrage : temps rendu, écarts évités, délais raccourcis. Deux points d'entrée :",
+      links: [
+        { label: "mesurer le retour sur investissement de l'IA", href: '/roi-ia-entreprise' },
+        { label: "commencer par un audit IA de vos processus", href: '/audit-ia' },
+      ],
+    },
     tagline:
       "Documentation technique, maintenance, qualité et réponses aux appels d'offres, avec une propriété intellectuelle qui ne quitte pas l'atelier.",
     directAnswer:
@@ -181,6 +273,18 @@ export const SECTEURS = [
       {
         q: "Combien coûte un projet IA pour un industriel ?",
         a: "Le budget se définit au cas par cas selon le périmètre, la sensibilité de la propriété intellectuelle et le besoin éventuel de déploiement on-premise. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype sur un cas prioritaire (documentation, maintenance) reste un engagement mesuré ; l'industrialisation est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Êtes-vous un cabinet de conseil industrie ou un cabinet IA ?",
+        a: "Un cabinet IA qui travaille pour l'industrie. Un cabinet de conseil industrie traite l'organisation de la production : flux, implantation, standards, management de la performance. Nous ne faisons pas ce métier. Nous intervenons sur les tâches qui entourent la production et consomment le temps des méthodes, de la maintenance, de la qualité et du bureau d'études : documentation, diagnostic, chiffrage, contrôle documentaire, réponse aux appels d'offres. Quand un chantier de performance industrielle est déjà en cours, nous nous y greffons plutôt que de le doublonner.",
+      },
+      {
+        q: "L'IA peut-elle améliorer la performance industrielle sans toucher aux machines ?",
+        a: "Oui, et c'est le cas le plus fréquent. La performance d'un site ne se joue pas seulement sur la ligne : elle se perd dans les heures passées à chercher une procédure, mettre à jour une gamme, ressaisir un relevé, préparer une revue qualité ou réassembler une réponse à appel d'offres. Un assistant de maintenance, un outil de chiffrage ou un contrôle documentaire rendent ces heures sans modifier un automate ni un process. Les gains se mesurent sur des indicateurs que vous suivez déjà : délai de traitement, taux de reprise documentaire, temps de réponse aux consultations.",
+      },
+      {
+        q: "Comment l'IA s'articule-t-elle avec un chantier d'amélioration continue ?",
+        a: "Elle en prend la partie rédaction et analyse. Un chantier d'amélioration continue produit des relevés, des écarts, des retours d'opérateurs et des standards à réécrire ; c'est un travail de collecte et de mise en forme qui pèse sur les méthodes. L'IA structure ces remontées, fait ressortir les récurrences, prépare les fiches d'écart et les standards mis à jour, que les méthodes valident. Le chantier garde sa méthode et son animation ; il gagne en vitesse de traitement et en qualité de documentation.",
       },
       {
         q: "Pourquoi un cabinet IA plutôt qu'un intégrateur ou un éditeur de GED ?",
@@ -440,11 +544,49 @@ export const SECTEURS = [
     nameWithArticle: 'la logistique et le transport',
     icon: 'Truck',
     h1: "IA pour la logistique et le transport : agents, automatisations et outils sur mesure",
-    metaTitle: 'IA pour la logistique & transport · conseil & dev | Masteria',
+    metaTitle: 'IA logistique & transport : conseil supply chain, dev sur mesure | Masteria',
     metaDesc:
-      "IA pour la logistique et le transport : tournées, suivi des expéditions, traitement douanier. Dev sur mesure sur TMS/WMS. Cadrage gratuit.",
+      "Conseil IA pour la logistique, le transport et la supply chain : tournées, suivi des expéditions, traitement douanier, litiges, intégration TMS/WMS. Dev sur mesure. Cadrage gratuit.",
     keywords:
-      "IA logistique, IA transport, intelligence artificielle supply chain, IA optimisation des tournées, IA documents douaniers, IA suivi des expéditions, intégration IA TMS WMS, agent IA exploitation transport",
+      "IA logistique, IA transport, cabinet de conseil transport, cabinet de conseil en supply chain, consultant en transport, conseil supply chain IA, conseil logistique IA, intelligence artificielle supply chain, IA optimisation des tournées, IA documents douaniers, IA suivi des expéditions, intégration IA TMS WMS, agent IA exploitation transport",
+    /* Enrichi le 2026-09-03 (Semrush FR) : « cabinet de conseil transport » (140,
+       KD 12), « cabinet de conseil en supply chain » (140, KD 15, CPC 2,56),
+       « consultant en transport » (70, KD 12). */
+    dateModified: '2026-09-03',
+    deepDive: {
+      kicker: 'Conseil transport et supply chain',
+      h2: "Cabinet de conseil en supply chain et transport : ce que l'IA change dans l'exploitation",
+      answer:
+        "Un cabinet de conseil transport ou supply chain classique optimise le réseau, les flux et les contrats : schéma directeur, appels d'offres transport, dimensionnement des entrepôts. Masteria intervient après, ou à côté : sur les tâches d'exploitation que ces schémas laissent aux équipes, la saisie, le suivi, les litiges, les documents, et qui consomment les journées des exploitants et des services clients.",
+      cards: [
+        {
+          icon: 'Truck',
+          title: "Exploitation transport : les heures qu'un consultant en transport ne voit pas",
+          desc: "Confirmer un rendez-vous de livraison, relancer un transporteur, requalifier une anomalie de suivi, répondre à un client sur une expédition : ces gestes se répètent des centaines de fois par jour. Un agent IA branché sur le TMS les prend en charge ; l'exploitant arbitre les exceptions.",
+        },
+        {
+          icon: 'ClipboardCheck',
+          title: 'Documents et douane : lire, contrôler, préparer',
+          desc: "Factures transporteurs, lettres de voiture, déclarations douanières, preuves de livraison : des documents non structurés que l'IA lit, contrôle contre la commande et prépare pour validation. Les litiges transport se traitent pièces à l'appui, sans ressaisie.",
+        },
+        {
+          icon: 'Gauge',
+          title: "Supply chain : de la donnée d'entrepôt à la décision",
+          desc: "Les WMS et TMS produisent des données que personne n'a le temps d'analyser. L'IA en tire des synthèses lisibles pour la direction logistique : taux de service, ruptures, retards par transporteur, et une interrogation en langage naturel de ces données, sans requête à écrire.",
+        },
+        {
+          icon: 'Workflow',
+          title: 'Une intégration sur vos outils, pas une nouvelle plateforme',
+          desc: "Nous n'imposons pas de nouveau logiciel : l'IA s'intègre au TMS, au WMS, à l'ERP et à la messagerie existants, par API ou par connecteurs. C'est ce qui distingue notre accompagnement d'un projet d'éditeur, et ce qui permet de démarrer par un cas en quelques semaines.",
+        },
+      ],
+      closing:
+        "Pour un schéma directeur ou un appel d'offres transport, votre cabinet de conseil en supply chain reste le bon interlocuteur ; pour outiller l'exploitation qui en découle, deux points d'entrée :",
+      links: [
+        { label: 'nos agents IA pour entreprises', href: '/agents-ia-entreprise' },
+        { label: "l'automatisation IA des processus", href: '/automatisation-ia' },
+      ],
+    },
     tagline:
       "Optimisation des tournées, suivi des expéditions et traitement documentaire, branchés sur votre TMS et votre WMS.",
     directAnswer:
@@ -505,6 +647,14 @@ export const SECTEURS = [
       {
         q: "Combien coûte un projet IA en logistique ou en transport ?",
         a: "Le budget se définit selon le périmètre, le nombre de systèmes à connecter (TMS, WMS, télématique) et le volume documentaire à traiter. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Une automatisation documentaire pilote reste un engagement mesuré ; une couche d'exploitation complète est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Êtes-vous un cabinet de conseil transport ou un cabinet IA ?",
+        a: "Un cabinet IA qui travaille pour le transport et la logistique. Nous ne faisons ni schéma directeur logistique, ni appel d'offres transport, ni dimensionnement d'entrepôt : c'est le métier des cabinets de conseil en supply chain. Nous intervenons sur l'exploitation qui en découle : le suivi des expéditions, les relances transporteurs, les litiges, les documents douaniers, le reporting, tout ce qui occupe les exploitants et les services clients une fois le réseau dessiné. Quand un cabinet supply chain est déjà en mission chez vous, nous travaillons à partir de ses conclusions.",
+      },
+      {
+        q: "Faut-il changer de TMS ou de WMS pour utiliser l'IA ?",
+        a: "Non. L'IA se branche sur vos outils existants, par API quand l'éditeur en propose une, par connecteurs ou par lecture des exports sinon. Un agent qui relance les transporteurs, qualifie les anomalies ou prépare les litiges lit et écrit dans votre TMS actuel ; un assistant d'analyse interroge les données de votre WMS sans les déplacer. Changer d'outil est un projet d'éditeur, long et coûteux ; outiller l'exploitation avec l'IA se fait en quelques semaines sur un premier cas.",
       },
       {
         q: "Pourquoi vous plutôt qu'un module IA de notre TMS ?",
@@ -683,11 +833,48 @@ export const SECTEURS = [
     nameWithArticle: 'les services et le conseil',
     icon: 'Briefcase',
     h1: "IA pour les services et cabinets de conseil : agents, automatisations et outils sur mesure",
-    metaTitle: 'IA pour les services & le conseil · conseil & dev | Masteria',
+    metaTitle: 'IA pour les cabinets de conseil : outils, agents, dev sur mesure | Masteria',
     metaDesc:
-      "IA pour les services et cabinets de conseil : livrables, synthèse documentaire, propositions, savoir du cabinet. Dev sur mesure. Cadrage gratuit.",
+      "Outils IA pour le conseil et les services professionnels : livrables, synthèse documentaire, propositions, savoir du cabinet. Agents et dev sur mesure. Cadrage gratuit.",
     keywords:
-      "IA cabinet de conseil, IA services professionnels, intelligence artificielle conseil, IA production de livrables, IA synthèse documentaire, IA propositions commerciales, knowledge management IA, copilote de cabinet",
+      "IA cabinet de conseil, outils ia pour le conseil, outils ia cabinet de conseil, ia pour consultants, IA services professionnels, intelligence artificielle conseil, IA production de livrables, IA synthèse documentaire, IA propositions commerciales, knowledge management IA, copilote de cabinet",
+    /* Enrichi le 2026-09-03 (Semrush FR) : « outils ia pour le conseil » (70, KD 15,
+       pertinence 74, intention commerciale). */
+    dateModified: '2026-09-03',
+    deepDive: {
+      kicker: 'Outils IA pour le conseil',
+      h2: "Quels outils IA pour un cabinet de conseil : ce qu'il faut outiller en premier",
+      answer:
+        "Les outils IA pour le conseil se rangent en trois familles : les assistants du marché en version entreprise pour la production quotidienne, un copilote branché sur le savoir du cabinet pour capitaliser, et des automatisations sur mesure pour l'avant-vente et la veille. L'erreur classique est de commencer par la troisième ; l'ordre qui fonctionne est celui-ci.",
+      cards: [
+        {
+          icon: 'Cpu',
+          title: "1. Les assistants du marché, en version entreprise",
+          desc: "ChatGPT, Claude, Copilot, Gemini ou Mistral en offre entreprise : données non utilisées pour l'entraînement, administration des comptes, projets partagés. C'est l'outil de production des consultants pour rédiger, synthétiser, structurer. Le choix se fait sur votre suite bureautique et vos exigences de confidentialité, pas sur les classements.",
+        },
+        {
+          icon: 'Layers',
+          title: '2. Le copilote branché sur le savoir du cabinet',
+          desc: "Missions passées, méthodologies, propositions gagnées, livrables types : un assistant documentaire qui répond depuis ce fonds, avec les sources, transforme dix ans de missions en matière réutilisable. Cloisonné par client et par équipe, hébergé selon vos engagements de confidentialité.",
+        },
+        {
+          icon: 'Workflow',
+          title: "3. Les automatisations de l'avant-vente et de la veille",
+          desc: "Pré-qualification des appels d'offres, premier jet de proposition à partir de vos briques, veille sectorielle synthétisée chaque matin, préparation des comptes rendus : des scénarios sur mesure, branchés sur votre CRM et votre messagerie, qui rendent des heures aux associés et aux managers.",
+        },
+        {
+          icon: 'ShieldCheck',
+          title: 'Le cadre qui rend tout cela possible',
+          desc: "Une charte d'usage courte (ce qui peut être confié, à quel outil, avec quelle relecture), des comptes administrés, une règle sur les données clients et une formation des consultants sur leurs livrables réels. Sans ce cadre, les outils IA du cabinet restent des usages individuels invisibles, et le risque client avec.",
+        },
+      ],
+      closing:
+        "Nous outillons les cabinets dans cet ordre, en commençant par ce que vos consultants utiliseront demain matin. Pour la formation des équipes :",
+      links: [
+        { label: "la formation IA par métier", href: '/formation-intelligence-artificielle' },
+        { label: "l'assistant documentaire IA sur le savoir du cabinet", href: '/assistant-documentaire-ia' },
+      ],
+    },
     tagline:
       "Production de livrables, synthèse documentaire et propositions commerciales, branchées sur le savoir du cabinet.",
     directAnswer:
@@ -748,6 +935,10 @@ export const SECTEURS = [
       {
         q: "Combien coûte un projet IA pour un cabinet de conseil ?",
         a: "Le budget dépend du périmètre, du volume de matière à capitaliser et du niveau de cloisonnement par client exigé. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote pilote sur un type de livrable reste un engagement contenu ; un socle de savoir branché sur toutes vos missions est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+      },
+      {
+        q: "Quels outils IA choisir pour un cabinet de conseil ?",
+        a: "Trois familles, dans cet ordre. D'abord un assistant du marché en version entreprise (ChatGPT, Claude, Copilot, Gemini ou Mistral) pour la production quotidienne des consultants, choisi selon votre suite bureautique et vos exigences de confidentialité. Ensuite un copilote branché sur le savoir du cabinet, qui répond depuis vos missions passées, vos méthodes et vos propositions, avec les sources et un cloisonnement par client. Enfin des automatisations sur mesure pour l'avant-vente, la veille et les comptes rendus. Le tout tient avec une charte d'usage courte et une formation des consultants sur leurs livrables réels. Nous sommes indépendants des éditeurs : aucun outil n'est imposé, et nous disons quand la version entreprise d'un assistant du marché suffit.",
       },
       {
         q: "Vous êtes vous-mêmes un cabinet : pourquoi vous confier ce sujet ?",

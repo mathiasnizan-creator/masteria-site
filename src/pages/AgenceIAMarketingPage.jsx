@@ -18,6 +18,12 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * Anti-cannibalisation : bloc honnête « déléguer ou former » + lien formation en bas.
  * Maillage : /agence-developpement-ia, /agence-automatisation-ia,
  * /outils-ia-sur-mesure, /conseil-intelligence-artificielle, /formation-ia-marketing.
+ * ENRICHISSEMENT 2026-09-03 (Semrush FR) : grappe « cabinet de conseil marketing
+ * digital » (170 + 210), « conseil en stratégie marketing digital » (260),
+ * « cabinet de conseil marketing » (260), « consultant marketing automation » (70),
+ * « conseil en marketing stratégique » (90). KD 7 à 15. Réponse : section
+ * « Conseil ou exécution » (4 cartes) + 2 FAQ, angle IA et automatisation
+ * uniquement (pas de conseil marketing générique).
  * Design premium charte Masteria (#2563EB), icônes lucide (zéro emoji).
  */
 
@@ -26,8 +32,8 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence IA marketing : contenu, campagnes & SEO | Masteria"
-const META_DESC = "Agence IA marketing : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, emailing et reporting augmentés par l'IA. Done-for-you. FR, CH, BE."
-const KEYWORDS = "agence ia marketing, ia marketing, marketing ia, agence marketing intelligence artificielle, ia pour le marketing"
+const META_DESC = "Agence et cabinet de conseil marketing IA : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, marketing automation et reporting augmentés par l'IA. Done-for-you. FR, CH, BE."
+const KEYWORDS = "agence ia marketing, ia marketing, marketing ia, agence marketing intelligence artificielle, ia pour le marketing, cabinet de conseil marketing digital, cabinet conseil marketing ia, conseil en stratégie marketing digital, consultant marketing automation, conseil marketing ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -200,6 +206,31 @@ const ERREURS = [
 
 /* ───────── FAQ ───────── */
 
+/* ───────── Conseil ou exécution (grappe « cabinet de conseil marketing digital ») ───────── */
+
+const CONSEIL_EXEC = [
+  {
+    icon: Target,
+    title: 'Conseil en stratégie marketing digital, version IA',
+    desc: "Nous ne réécrivons pas votre stratégie marketing : nous disons où l'IA la sert. Quels contenus produire à l'échelle, quels canaux automatiser, quelles données de campagne rendre lisibles, quel cadre poser pour la marque. Le livrable est un plan d'outillage priorisé, chiffré, avec ce qu'il faut écarter.",
+  },
+  {
+    icon: Workflow,
+    title: 'Marketing automation : le consultant qui construit',
+    desc: "Un consultant marketing automation classique paramètre votre outil d'emailing et vos scénarios. Nous allons plus loin : enrichissement des fiches par l'IA, segmentation à partir des comportements, contenus générés par segment, relances rédigées et validées, reporting automatisé. Sur vos outils (HubSpot, Brevo, Mailchimp, votre CRM), sans en imposer un nouveau.",
+  },
+  {
+    icon: Layers,
+    title: 'Cabinet de conseil ou agence : les deux, selon le besoin',
+    desc: "Quand vos équipes peuvent exécuter, nous restons en cabinet de conseil marketing digital : cadrage, choix des outils, gouvernance, formation. Quand elles n'ont pas le temps, l'agence prend la production et le pilotage. Le passage de l'un à l'autre se décide au cadrage, et se révise chaque trimestre.",
+  },
+  {
+    icon: AlertTriangle,
+    title: 'Ce que nous ne faisons pas',
+    desc: "Ni achat média, ni création de marque, ni relations presse : ce sont des métiers d'agences spécialisées, avec qui nous travaillons volontiers. Notre périmètre est l'IA appliquée au marketing : contenu, référencement, automatisation, données. Un cabinet qui prétend tout faire fait tout moyennement.",
+  },
+]
+
 const FAQ = [
   {
     q: "Qu'est-ce qu'une agence IA marketing ?",
@@ -224,6 +255,14 @@ const FAQ = [
   {
     q: "Combien coûte une agence IA marketing ?",
     a: "Le budget dépend du périmètre : canaux pris en charge, volume de production, niveau de pilotage et automatisations à mettre en place. Nous chiffrons sur devis après le cadrage initial, une fois ces éléments clarifiés. La prestation n'est pas finançable par votre OPCO : seule une formation l'est, et nous ne promettons jamais l'inverse. Si vous préférez former vos équipes, la voie finançable est détaillée sur la page formation IA marketing.",
+  },
+  {
+    q: "Êtes-vous un cabinet de conseil marketing digital ?",
+    a: "Sur la partie IA du marketing digital, oui. Nous cadrons la stratégie d'outillage (contenus, référencement, automatisation, données), choisissons les outils avec vous, posons la gouvernance et formons les équipes ; c'est le travail d'un cabinet de conseil. Nous ne faisons pas de conseil marketing généraliste : positionnement de marque, plan média, études de marché restent chez les cabinets et agences spécialisés. Ce périmètre resserré est ce qui nous permet de passer du conseil à l'exécution quand vos équipes n'ont pas le temps.",
+  },
+  {
+    q: "Que fait un consultant marketing automation avec l'IA ?",
+    a: "Il part de vos scénarios existants et de vos données, et il ajoute ce que l'IA rend possible : enrichissement automatique des contacts, segmentation à partir des comportements réels, rédaction de séquences par segment, relances adaptées au contexte, résumé des performances en langage clair. Concrètement, sur HubSpot, Brevo, Mailchimp ou votre CRM, nous construisons les scénarios, les prompts qui produisent les contenus et les contrôles humains avant envoi. Le résultat se mesure sur des indicateurs que vous suivez déjà : taux d'ouverture, réponses, rendez-vous pris, temps de production d'une campagne.",
   },
   {
     q: "Agence marketing IA ou agence IA marketing : est-ce la même chose ?",
@@ -280,7 +319,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-13',
-  dateModified: '2026-07-02',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-ia-marketing#webpage' },
   about: ["Marketing augmenté par l'IA", 'SEO et GEO', 'IA générative', 'Marketing automation'],
@@ -337,7 +376,7 @@ export default function AgenceIAMarketingPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-13"
-        dateModified="2026-07-02"
+        dateModified="2026-09-03"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -382,7 +421,7 @@ export default function AgenceIAMarketingPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
@@ -626,6 +665,36 @@ export default function AgenceIAMarketingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── CONSEIL OU EXÉCUTION (cabinet de conseil marketing digital, marketing automation) ── */}
+      <section id="conseil" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Conseil ou exécution</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Cabinet de conseil marketing digital ou agence : ce que nous faisons, et ce que nous laissons aux autres
+          </h2>
+          <p style={answerStyle}>
+            <strong>Masteria intervient sur le marketing digital par un seul angle, l'IA : conseil en stratégie d'outillage, marketing automation, production et pilotage. Cabinet quand vos équipes exécutent, agence quand elles n'ont pas le temps.</strong> Tout le reste du marketing, nous le laissons aux spécialistes.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
+            {CONSEIL_EXEC.map(card => {
+              const Icon = card.icon
+              return (
+                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+            Pour l'automatisation au-delà du marketing (ventes, administratif, support), voyez notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> ; pour rendre vos équipes autonomes, la <Link to="/formation-ia-marketing" style={aStyle}>formation IA marketing</Link>.
+          </p>
         </div>
       </section>
 

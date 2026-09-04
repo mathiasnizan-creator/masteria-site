@@ -51,10 +51,10 @@ const COMPARATIFS = new Set([
 ]);
 const RESSOURCES = new Set([
   '/glossaire-ia', '/bibliotheque-de-prompts', '/calculateur-roi-ia', '/test-maturite-ia',
-  '/diagnostic-ia', '/quel-opco', '/roi-ia-entreprise', '/cas-usage-ia-entreprise',
+  '/diagnostic-ia', '/quel-opco', '/roi-ia-entreprise', '/cas-usage-ia-entreprise', '/salons-ia',
 ]);
 const FORMATION_EXTRA = new Set([
-  '/acculturation-ia', '/coaching-ia', '/centre-formation-ia-entreprise', '/meilleure-formation-ia',
+  '/acculturation-ia', '/conference-ia', '/atelier-intelligence-artificielle', '/sensibilisation-ia', '/coaching-ia', '/centre-formation-ia-entreprise', '/meilleure-formation-ia',
   '/financement-formation-ia',
 ]);
 const MASTERIA = new Set(['/', '/contact', '/presse', '/etudes-de-cas-ia', '/methode-projet-ia']);

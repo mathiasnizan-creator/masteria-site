@@ -43,6 +43,10 @@ const staticRoutes = [
   { path: '',                                    prio: 1.0, freq: 'weekly',  files: ['src/pages/HomePage.jsx'] },
   { path: 'conseil-intelligence-artificielle',   prio: 0.9, freq: 'monthly', files: ['src/pages/ConseilIAPage.jsx'] },
   { path: 'conseil-strategie-ia',                prio: 0.7, freq: 'monthly', files: ['src/pages/ConseilStrategieIAPage.jsx'] },
+  { path: 'conseil-transformation-ia',           prio: 0.8, freq: 'monthly', files: ['src/pages/ConseilTransformationIAPage.jsx'] },
+  { path: 'conseil-ia-pme',                      prio: 0.8, freq: 'monthly', files: ['src/pages/ConseilIAPMEPage.jsx'] },
+  { path: 'chief-ai-officer',                    prio: 0.8, freq: 'monthly', files: ['src/pages/ChiefAIOfficerPage.jsx'] },
+  { path: 'ia-gestion-de-projet',                prio: 0.8, freq: 'monthly', files: ['src/pages/IAGestionDeProjetPage.jsx'] },
   { path: 'conseil-data-ia',                     prio: 0.75, freq: 'monthly', files: ['src/pages/ConseilDataIAPage.jsx'] },
   { path: 'gouvernance-ia',                       prio: 0.75, freq: 'monthly', files: ['src/pages/GouvernanceIAPage.jsx'] },
   { path: 'charte-ia-entreprise',                 prio: 0.75, freq: 'monthly', files: ['src/pages/CharteIAEntreprisePage.jsx'] },
@@ -73,6 +77,7 @@ const staticRoutes = [
   { path: 'agence-seo-ia',                       prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceSeoIAPage.jsx'] },
   { path: 'audit-seo-ia',                        prio: 0.8, freq: 'monthly', files: ['src/pages/AuditSeoIAPage.jsx'] },
   { path: 'audit-geo-ia',                        prio: 0.8, freq: 'monthly', files: ['src/pages/AuditGeoIAPage.jsx'] },
+  { path: 'consultant-visibilite-ia',            prio: 0.8, freq: 'monthly', files: ['src/pages/ConsultantVisibiliteIAPage.jsx'] },
   { path: 'audit-conformite-ai-act',             prio: 0.8, freq: 'monthly', files: ['src/pages/AuditConformiteAIActPage.jsx'] },
   { path: 'audit-ia-medico-social',              prio: 0.75, freq: 'monthly', files: ['src/pages/AuditIAMedicoSocialPage.jsx'] },
   { path: 'agence-ia-lyon',                      prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
@@ -81,6 +86,7 @@ const staticRoutes = [
   { path: 'agence-ia-geneve',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-marseille',                 prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'agence-ia-strasbourg',                prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
+  { path: 'agence-ia-nantes',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
   { path: 'centre-formation-ia-entreprise',      prio: 0.7, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'contact',                             prio: 0.8, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'blog',                                prio: 0.8, freq: 'weekly',  files: ['src/pages/BlogListPage.jsx', 'src/data/blog-articles.js'] },
@@ -223,6 +229,10 @@ urls.push({ loc: `${SITE}/diagnostic-ia`, lastmod: gitLastMod(['src/pages/Diagno
 urls.push({ loc: `${SITE}/audit-ia`, lastmod: gitLastMod(['src/pages/AuditIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/accompagnement-ia`, lastmod: gitLastMod(['src/pages/AccompagnementIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/acculturation-ia`, lastmod: gitLastMod(['src/pages/AcculturationIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/conference-ia`, lastmod: gitLastMod(['src/pages/ConferenceIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/atelier-intelligence-artificielle`, lastmod: gitLastMod(['src/pages/AtelierIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/sensibilisation-ia`, lastmod: gitLastMod(['src/pages/SensibilisationIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/salons-ia`, lastmod: gitLastMod(['src/pages/SalonsIAPage.jsx']), changefreq: 'monthly', priority: 0.7 });
 urls.push({ loc: `${SITE}/formation-ia-entreprise`, lastmod: gitLastMod(['src/pages/FormationIAEntreprisePage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-agents-ia`, lastmod: gitLastMod(['src/pages/FormationAgentsIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-ia-comex`, lastmod: gitLastMod(['src/pages/FormationIAComexPage.jsx']), changefreq: 'monthly', priority: 0.8 });
@@ -231,6 +241,7 @@ urls.push({ loc: `${SITE}/formation-make`, lastmod: gitLastMod(['src/pages/Forma
 urls.push({ loc: `${SITE}/formation-zapier`, lastmod: gitLastMod(['src/pages/FormationZapierPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-cse-ia`, lastmod: gitLastMod(['src/pages/FormationCseIaPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/formation-data-ia`, lastmod: gitLastMod(['src/pages/FormationDataIaPage.jsx']), changefreq: 'monthly', priority: 0.8 });
+urls.push({ loc: `${SITE}/formation-gouvernance-donnees`, lastmod: gitLastMod(['src/pages/FormationGouvernanceDonneesPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/prestataire-ia`, lastmod: gitLastMod(['src/pages/PrestataireIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/coaching-ia`, lastmod: gitLastMod(['src/pages/CoachingIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/methode-projet-ia`, lastmod: gitLastMod(['src/pages/MethodeProjetIAPage.jsx']), changefreq: 'monthly', priority: 0.6 });

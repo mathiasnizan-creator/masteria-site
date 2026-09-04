@@ -100,6 +100,7 @@ const PHASES = [
     links: [
       { label: 'Diagnostic IA (1 journée)', href: '/diagnostic-ia' },
       { label: 'Audit IA complet', href: '/audit-ia' },
+      { label: 'Conseil en transformation IA', href: '/conseil-transformation-ia' },
     ],
   },
   {

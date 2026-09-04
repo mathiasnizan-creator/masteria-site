@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Lightbulb, Presentation, Users, GraduationCap, MapPin, Check,
   Sparkles, MessagesSquare, Database, ShieldCheck, Landmark, BarChart3,
+  FileSpreadsheet, Layers, Compass,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -18,6 +19,13 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * SERP vérifiée le 2026-08-10 : organismes de formation (Aelion, datacraft),
  * cabinets de management, economie.gouv en tête ; l'AI Overview structure la
  * démarche en sensibiliser → former par les usages → expérimenter → ancrer.
+ * ENRICHISSEMENT 2026-09-03 (Semrush, base FR) : la grappe a grossi et s'est
+ * élargie à la data : « acculturation ia » (390, KD 13, CPC 3,36),
+ * « acculturation intelligence artificielle » (110, KD 14), « acculturation
+ * data » (90, KD 13), « acculturation informatique » (90, KD 12),
+ * « acculturation data et ia » (50, KD 12). Réponse : une section « Data et
+ * IA » dédiée (4 cartes + bloc « partir de loin » pour l'intention
+ * informatique), 3 FAQ, un terme défini, des liens vers les pages data.
  *
  * RÉPARTITION D'INTENTIONS :
  *  - /acculturation-ia = CETTE page : la démarche collective de montée en
@@ -44,9 +52,9 @@ const SLUG = 'acculturation-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Acculturation IA : embarquer toute l'entreprise | Masteria"
-const META_DESC = "Acculturation IA : conférences, ateliers et parcours par métier pour faire comprendre et utiliser l'IA à toutes vos équipes. Certifié Qualiopi, finançable OPCO."
-const KEYWORDS = "acculturation ia, acculturation intelligence artificielle, acculturation ia générative, acculturation ia générative management, conférence acculturation ia, acculturation data et ia, sensibilisation ia"
+const META_TITLE = "Acculturation IA et data : embarquer toute l'entreprise | Masteria"
+const META_DESC = "Acculturation à l'intelligence artificielle et à la data : conférences, ateliers et parcours par métier pour faire comprendre et utiliser l'IA à toutes vos équipes. Certifié Qualiopi, finançable OPCO."
+const KEYWORDS = "acculturation ia, acculturation intelligence artificielle, acculturation ia générative, acculturation ia générative management, conférence acculturation ia, acculturation data et ia, acculturation data, acculturation informatique, acculturation numérique, sensibilisation ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -86,6 +94,7 @@ const EN_BREF = [
   { label: 'Objectif', value: "Faire comprendre et utiliser l'IA par toutes les équipes : un langage commun, des réflexes concrets, un regard critique" },
   { label: 'Formats', value: "Conférence d'acculturation, ateliers découverte, parcours par métier, programme management, référents internes" },
   { label: 'Outils', value: "Multi-outils et indépendant des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral" },
+  { label: 'Data', value: "Un volet acculturation data : quelles données confier à l'IA, comment vérifier un chiffre produit, où passe la limite RGPD" },
   { label: 'Cadre', value: "La littératie IA est une obligation de moyens du règlement européen depuis février 2025 : l'acculturation y répond" },
   { label: 'Financement', value: "Actions de formation certifiées Qualiopi, finançables par votre OPCO ; devis sous 24 h" },
   { label: 'Et après', value: "Des référents formés qui entretiennent la dynamique, et une mesure des usages installés" },
@@ -97,12 +106,14 @@ const FORMATS = [
   {
     icon: Presentation,
     title: "La conférence d'acculturation",
-    desc: "Une à deux heures pour embarquer un large public d'un coup : ce que l'IA générative fait vraiment, ce qu'elle ne fait pas, démonstrations sur vos cas, questions ouvertes. Le format qui lance une démarche, en séminaire, en plénière ou en COMEX.",
+    desc: "Une à deux heures pour embarquer un large public d'un coup : ce que l'IA générative fait vraiment, ce qu'elle ne fait pas, démonstrations sur vos cas, questions ouvertes. Le format qui lance une démarche, en séminaire, en plénière ou en COMEX. Il a sa page : la conférence IA en entreprise.",
+    href: '/conference-ia',
   },
   {
     icon: Lightbulb,
     title: 'Les ateliers découverte',
-    desc: "En petits groupes, les mains sur les outils : chacun manipule, teste sur ses propres situations de travail et repart avec deux ou trois usages installés. C'est là que la curiosité devient réflexe.",
+    desc: "En petits groupes, les mains sur les outils : chacun manipule, teste sur ses propres situations de travail et repart avec deux ou trois usages installés. C'est là que la curiosité devient réflexe. Six formats sont décrits sur la page des ateliers IA.",
+    href: '/atelier-intelligence-artificielle',
   },
   {
     icon: Users,
@@ -117,7 +128,7 @@ const FORMATS = [
   {
     icon: Database,
     title: 'Le volet data et IA',
-    desc: "Comprendre ce que l'IA fait des données : ce qu'on peut lui confier, ce qui relève du RGPD, comment lire une réponse avec esprit critique. Indispensable pour les équipes qui manipulent des données clients ou sensibles.",
+    desc: "L'acculturation data et IA : comprendre ce que l'IA fait des données, ce qu'on peut lui confier, ce qui relève du RGPD, comment lire un chiffre ou une réponse avec esprit critique. Indispensable pour les équipes qui manipulent des données clients ou sensibles, et pour celles qui partent de loin sur l'informatique.",
   },
 ]
 
@@ -196,6 +207,31 @@ const ERREURS = [
   },
 ]
 
+/* ───────── Acculturation data et IA (4 cartes, requêtes « acculturation data ») ───────── */
+
+const DATA_IA = [
+  {
+    icon: Database,
+    title: "Quelles données on peut confier à l'IA",
+    desc: "Trois familles à distinguer dès la première session : les données publiques, les données internes non sensibles, les données personnelles et confidentielles. Chaque famille appelle un outil et un réglage différents (version grand public, version entreprise, entraînement désactivé). Les équipes repartent avec une grille simple, alignée sur votre charte.",
+  },
+  {
+    icon: FileSpreadsheet,
+    title: "Lire et produire un chiffre avec l'IA",
+    desc: "Analyser un tableau, résumer un export CRM, préparer un reporting : l'IA le fait, à condition de savoir vérifier. Les ateliers apprennent à formuler la demande, à contrôler ce qui engage l'entreprise et à repérer une conclusion que les données ne soutiennent pas. C'est la culture data minimale de tout métier, pas seulement des analystes.",
+  },
+  {
+    icon: ShieldCheck,
+    title: 'RGPD, secret des affaires et données sensibles',
+    desc: "Ce qui relève du RGPD, ce qui relève du secret des affaires, ce que dit votre DPO : les règles existent, elles sont rarement connues des équipes. Le volet data les traduit en réflexes : anonymiser avant de coller, distinguer une donnée client d'une donnée agrégée, savoir à qui poser la question.",
+  },
+  {
+    icon: Layers,
+    title: "Les données de l'entreprise comme matière première",
+    desc: "Documents, CRM, ERP, tickets, mails : l'IA prend de la valeur quand elle travaille sur vos données plutôt que sur sa mémoire générale. Comprendre ce qu'est un assistant documentaire, une base connectée ou un agent qui lit votre CRM prépare les équipes aux outils qui arrivent, et évite de leur demander l'impossible.",
+  },
+]
+
 /* ───────── FAQ ───────── */
 
 const FAQ = [
@@ -218,6 +254,18 @@ const FAQ = [
   {
     q: "Sur quels outils d'IA formez-vous ?",
     a: "Sur les outils du marché que vos équipes utiliseront réellement : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral. Nous sommes indépendants des éditeurs : quand votre entreprise a déjà déployé un outil, l'acculturation se fait dessus ; quand le choix reste ouvert, nous comparons sur vos cas d'usage. Les parcours mêlent les fondamentaux valables partout (formuler une demande, vérifier une réponse, protéger les données) et la pratique de l'outil retenu.",
+  },
+  {
+    q: "Qu'est-ce que l'acculturation data et IA ?",
+    a: "C'est le volet de l'acculturation qui porte sur les données : ce que l'intelligence artificielle fait des informations qu'on lui confie, lesquelles on peut lui donner et dans quel outil, comment lire un chiffre ou une analyse qu'elle produit, et où passe la limite du RGPD et du secret des affaires. Il s'adresse à tous les métiers, pas aux seuls analystes : une assistante qui résume un export clients ou un commercial qui prépare un reporting manipulent des données. Chez Masteria, ce volet est intégré aux ateliers découverte et aux parcours par métier ; il peut aussi faire l'objet d'une session dédiée quand une équipe traite des données sensibles au quotidien. Pour aller plus loin sur l'analyse de données, la formation data et IA prend le relais.",
+  },
+  {
+    q: "Faut-il une acculturation informatique avant l'acculturation IA ?",
+    a: "Pas comme un prérequis qui exclut. Une partie des équipes n'est pas à l'aise avec l'informatique elle-même : un tableur, un partage de fichiers ou une messagerie leur demandent déjà un effort. Pour elles, l'acculturation à l'intelligence artificielle commence par une acculturation informatique courte, intégrée aux ateliers : les gestes de base, le vocabulaire, la sécurité des accès, puis l'outil d'IA comme assistant vocal ou aide à la rédaction. Les équipes de terrain et les métiers manuels sont souvent celles qui gagnent le plus, précisément parce que l'IA leur épargne l'informatique qu'elles n'aimaient pas. Notre formation IA débutant est conçue pour ce point de départ.",
+  },
+  {
+    q: "Faut-il former les équipes à la data avant de les former à l'IA ?",
+    a: "Non, les deux se font ensemble. Séparer une formation data d'une formation IA revient à enseigner la théorie des données à des personnes qui n'en voient pas l'usage, puis l'IA à des personnes qui ne savent pas ce qu'elles lui donnent. En pratique, chaque atelier IA est l'occasion d'un réflexe data : quelle donnée je colle, dans quel outil, comment je vérifie le résultat. La question change quand les données elles-mêmes sont en mauvais état (doublons, accès dispersés, pas de référentiel) : là, c'est un travail de préparation des données qui précède, et il relève du conseil, pas de la formation.",
   },
   {
     q: "Combien coûte une démarche d'acculturation IA ?",
@@ -252,7 +300,7 @@ const serviceJsonLd = {
   '@type': ['Service', 'EducationalOrganization'],
   name: 'Acculturation IA — Masteria',
   alternateName: "Programme d'acculturation à l'intelligence artificielle",
-  description: "Démarche d'acculturation à l'IA pour toute l'entreprise : conférence d'acculturation, ateliers découverte, parcours de formation par métier, programme management et référents internes. Multi-outils (ChatGPT, Copilot, Claude, Gemini, Mistral), certifié Qualiopi, finançable OPCO. Répond à l'obligation de littératie IA de l'article 4 du règlement européen.",
+  description: "Démarche d'acculturation à l'intelligence artificielle et à la data pour toute l'entreprise : conférence d'acculturation, ateliers découverte, parcours de formation par métier, volet data et IA, programme management et référents internes. Multi-outils (ChatGPT, Copilot, Claude, Gemini, Mistral), certifié Qualiopi, finançable OPCO. Répond à l'obligation de littératie IA de l'article 4 du règlement européen.",
   url: 'https://www.master-ia.fr/acculturation-ia',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/acculturation-ia#webpage' },
   serviceType: "Acculturation et littératie IA",
@@ -318,6 +366,11 @@ const definitionsJsonLd = {
     },
     {
       '@type': 'DefinedTerm',
+      name: 'Acculturation data et IA',
+      description: "Volet de l'acculturation IA consacré aux données : quelles données confier à l'IA et dans quel outil, comment vérifier un chiffre ou une analyse produite, où passent les limites du RGPD et du secret des affaires. S'adresse à tous les métiers, pas seulement aux analystes.",
+    },
+    {
+      '@type': 'DefinedTerm',
       name: 'Référent IA',
       description: "Collaborateur formé pour être le relais interne de la démarche : il répond aux questions du quotidien, fait remonter les cas d'usage et entretient la dynamique après les formations.",
     },
@@ -335,7 +388,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-10',
-  dateModified: '2026-08-10',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/acculturation-ia#webpage' },
   /* Entités liées à Wikipédia (sameAs) : désambiguïsation pour les moteurs
@@ -405,7 +458,7 @@ export default function AcculturationIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-08-10"
-        dateModified="2026-08-10"
+        dateModified="2026-09-03"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
@@ -442,7 +495,7 @@ export default function AcculturationIAPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026, mis à jour en septembre 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
@@ -517,6 +570,12 @@ export default function AcculturationIAPage() {
                     </div>
                     <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
                     <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                    {item.href && (
+                      <Link to={item.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, marginTop: 12 }}>
+                        Voir le format
+                        <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                      </Link>
+                    )}
                   </div>
                 ))}
                 {/* Carte sombre : l'angle réglementaire, sans sur-vente */}
@@ -669,6 +728,55 @@ export default function AcculturationIAPage() {
         </div>
       </section>
 
+      {/* ── ACCULTURATION DATA ET IA ── */}
+      <section id="data-ia" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Data et IA</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Acculturation data et IA : ce que chaque équipe doit comprendre des données
+          </h2>
+
+          <p style={answerStyle}>
+            <strong>L'acculturation data et IA fait comprendre aux équipes ce que l'intelligence artificielle fait des données : lesquelles on peut lui confier, comment elle les traite, ce que vaut le résultat.</strong> Sans ce volet, l'acculturation à l'intelligence artificielle produit des utilisateurs enthousiastes qui collent un fichier clients dans un outil grand public. Avec lui, chaque équipe sait lire un chiffre produit par l'IA, repérer une donnée sensible et choisir l'outil adapté au niveau de confidentialité.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
+            {DATA_IA.map(card => {
+              const Icon = card.icon
+              return (
+                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+            Ce volet est intégré aux ateliers découverte et aux parcours par métier. Pour les équipes qui analysent des données au quotidien, la <Link to="/formation-data-ia" style={aStyle}>formation data et IA</Link> prend le relais ; pour le cadre juridique, voyez <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>. Quand les données elles-mêmes doivent être préparées avant l'IA (qualité, accès, référentiels), c'est le <Link to="/conseil-data-ia" style={aStyle}>conseil data et IA</Link> qui intervient.
+          </p>
+
+          {/* Intention « acculturation informatique » : les équipes qui partent de loin */}
+          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(24px, 3.5vw, 36px)', marginTop: 40, maxWidth: 880 }}>
+            <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+              <IconTile icon={Compass} />
+              <div>
+                <h3 style={{ ...h3Style, marginBottom: 10 }}>Acculturation informatique : quand les équipes partent de loin</h3>
+                <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: '0 0 12px' }}>
+                  Une partie des équipes n'est pas à l'aise avec l'informatique elle-même : un tableur, un partage de fichiers ou une messagerie leur demandent déjà un effort. Pour elles, l'acculturation IA commence par une acculturation informatique courte, intégrée aux ateliers plutôt que posée en prérequis : les gestes de base, le vocabulaire, la sécurité des accès, puis l'outil d'IA comme assistant vocal ou aide à la rédaction.
+                </p>
+                <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: 0 }}>
+                  Les équipes de terrain, les métiers manuels et les fonctions éloignées du bureau sont souvent celles qui gagnent le plus, précisément parce que l'IA leur épargne l'informatique qu'elles n'aimaient pas. C'est le point de départ de notre <Link to="/formation-ia-debutant" style={aStyle}>formation IA débutant</Link>, sans prérequis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINANCEMENT OPCO ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -736,10 +844,12 @@ export default function AcculturationIAPage() {
             Pour aller plus loin
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            L'acculturation s'articule avec la formation par métier, l'accompagnement dans la durée et le cadre d'usage.
+            L'acculturation s'articule avec la formation par métier, le volet data, l'accompagnement dans la durée et le cadre d'usage.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Sensibilisation IA', href: '/sensibilisation-ia', tag: 'Premier temps', desc: "Conférence, atelier de 3 h ou programme par vagues : le premier temps de la démarche, et le cadre de la littératie IA." },
+              { label: 'Conférence IA en entreprise', href: '/conference-ia', tag: 'Lancement', desc: "Le format d'ouverture : une à deux heures en plénière, séminaire, COMEX ou visio, avec démonstrations sur vos cas." },
               { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "Quand l'acculturation s'inscrit dans une transformation complète : cadrage, outils, changement, mesure." },
               { label: 'Formation intelligence artificielle', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Les parcours par métier qui prolongent l'acculturation : assistanat, commerce, RH, finance, marketing." },
               { label: 'Formation IA COMEX', href: '/formation-ia-comex', tag: 'Comité exécutif', desc: "La session exécutive qui aligne le comité : état de l'art sans jargon, arbitrages, feuille de route." },
@@ -748,6 +858,11 @@ export default function AcculturationIAPage() {
               { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Cadre', desc: "Le cadre d'usage qui sécurise l'expérimentation : ce qu'on peut confier aux outils, et comment." },
               { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Conformité', desc: "Pour aller au fond du règlement européen : obligations réelles, calendrier, mise en conformité." },
               { label: 'Quel outil IA choisir', href: '/quel-outil-ia', tag: 'Outils', desc: "ChatGPT, Copilot, Claude, Gemini ou Mistral : le comparatif pour ancrer l'acculturation sur le bon outil." },
+              { label: 'Formation data et IA', href: '/formation-data-ia', tag: 'Data', desc: "Analyser ses données avec l'IA sans coder : le parcours qui prolonge le volet data de l'acculturation." },
+              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Data', desc: "Pour ceux qui portent la responsabilité des données : patrimoine, rôles, qualité, référentiels." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Données', desc: "Ce qu'on peut confier aux outils, les réglages qui protègent vos données, le rôle du DPO." },
+              { label: 'Formation IA débutant', href: '/formation-ia-debutant', tag: 'Sans prérequis', desc: "Pour les équipes qui partent de loin, y compris sur l'informatique : les bases, sans jargon." },
+              { label: 'Conseil data et IA', href: '/conseil-data-ia', tag: 'Conseil', desc: "Quand les données elles-mêmes doivent être préparées avant l'IA : qualité, accès, gouvernance." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div

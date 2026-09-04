@@ -76,6 +76,10 @@ export const AGENCE_GEO_CITIES = [
         a: "Oui, sans frais de déplacement : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de la métropole. En région Auvergne-Rhône-Alpes, nous intervenons aussi en présentiel à Saint-Étienne, Grenoble, Annecy, Clermont-Ferrand et Valence pour les phases clés, avec le développement et le suivi en distanciel.",
       },
       {
+        q: "Avez-vous un format de conseil IA adapté aux PME lyonnaises ?",
+        a: "Oui, et c'est le plus demandé dans la métropole : un diagnostic d'une journée sur site, le cadrage de l'IA dans vos logiciels actuels avec votre prestataire informatique, deux ou trois processus outillés, le dirigeant puis les équipes formés, et un point par trimestre. Forfait par étape, décision sur le résultat. Ce format a sa propre page, conseil IA pour PME, avec le détail de la méthode et du financement.",
+      },
+      {
         q: 'Proposez-vous aussi la gouvernance IA et la formation des équipes à Lyon ?',
         a: "Oui, c'est le cœur du modèle : le conseil cadre la stratégie et la gouvernance (audit AI Act et RGPD, registre des usages, charte, comité), le développement crée les agents et outils sur mesure, et la formation rend vos équipes autonomes. Le volet formation est certifié Qualiopi et finançable par votre OPCO ; le conseil et le développement restent des prestations de service. Beaucoup de missions lyonnaises combinent les trois, avec un interlocuteur unique.",
       },
@@ -262,7 +266,7 @@ export const AGENCE_GEO_CITIES = [
     coordinates: { latitude: 48.5734, longitude: 7.7521 },
     formationSlug: 'formation-ia-strasbourg',
     metaDesc:
-      "Agence IA à Strasbourg : conseil et gouvernance, agents et outils sur mesure, automatisation, du bilingue FR-DE au réglementaire européen. Cadrage gratuit.",
+      "Intelligence artificielle à Strasbourg : agence IA pour le conseil et la gouvernance, agents et outils sur mesure, automatisation, du bilingue FR-DE au réglementaire européen. Cadrage gratuit.",
     heroSubtitle:
       "Notre métier : aider les entreprises alsaciennes à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre système d'information, avec une attention particulière au travail bilingue français-allemand du bassin rhénan. La formation prolonge la mise en œuvre pour rendre vos équipes autonomes.",
     localEconomy:
@@ -299,6 +303,10 @@ export const AGENCE_GEO_CITIES = [
       {
         q: "Gérez-vous le travail bilingue français-allemand des entreprises du bassin rhénan ?",
         a: "Oui, et c'est souvent le premier gisement que nous outillons à Strasbourg : documentation technique, contrats, correspondance et supports déclinés dans les deux langues, avec des glossaires maison pour tenir la terminologie, et une relecture humaine systématique sur ce qui engage. Les agents et automatisations que nous construisons intègrent cette dimension dès la conception.",
+      },
+      {
+        q: "Par où commencer avec l'intelligence artificielle à Strasbourg : formation ou projet ?",
+        a: "Par ce qui bloque aujourd'hui. Si vos équipes n'utilisent pas encore l'IA ou l'utilisent sans cadre, une formation IA à Strasbourg, par métier et sur vos cas, installe les usages en quelques jours et se finance par votre OPCO. Si un processus précis vous coûte du temps (documentation bilingue, courriers, synthèses de dossiers, veille réglementaire), un cadrage de projet vaut mieux : nous chiffrons un agent ou une automatisation au forfait et nous le livrons en quelques semaines. Beaucoup d'entreprises alsaciennes font les deux, dans cet ordre : d'abord les équipes, puis l'outil qu'elles ont elles-mêmes identifié.",
       },
       {
         q: "Proposez-vous aussi le référencement IA (SEO et GEO) à Strasbourg ?",
@@ -359,6 +367,70 @@ export const AGENCE_GEO_CITIES = [
       {
         q: 'Intervenez-vous au-delà de Marseille, ailleurs en région Sud ?',
         a: "Oui. Au-delà de Marseille et de la métropole Aix-Marseille-Provence, nous accompagnons les entreprises de la région Sud (Provence-Alpes-Côte d'Azur), notamment sur l'axe Aix-en-Provence, Toulon et l'arc méditerranéen. Le présentiel ponctuel se planifie selon les phases clés de la mission ; le développement, les itérations et le suivi se conduisent en distanciel, avec les mêmes livrables qu'en présentiel.",
+      },
+    ],
+  },
+  {
+    slug: 'agence-ia-nantes',
+    citySlug: 'nantes',
+    name: 'Nantes',
+    nameLoc: 'à Nantes',
+    region: 'Pays de la Loire',
+    regionLong: 'Nantes et le Grand Ouest',
+    country: 'France',
+    countryCode: 'FR',
+    locale: 'fr-FR',
+    coordinates: { latitude: 47.2184, longitude: -1.5536 },
+    formationSlug: 'formation-ia-nantes',
+    /* Créée le 2026-09-04 (Semrush 03/09) : « conseil améliorer performance nantes »
+       (70, KD 4), « conseil en stratégie nantes » (70, KD 12) ; la ville avait une page
+       formation mais pas de page agence, seule absente de la série. */
+    metaDesc:
+      "Agence IA à Nantes : conseil en stratégie IA, agents et automatisations sur mesure pour le numérique, l'industrie aéronautique et navale, l'agroalimentaire et le tertiaire nantais. Cadrage gratuit.",
+    heroSubtitle:
+      "Notre métier : aider les directions et les équipes métier nantaises à passer de l'intention aux résultats. Nous cadrons votre stratégie et votre gouvernance IA, puis nous concevons et développons les agents, outils et automatisations qui s'intègrent à votre système d'information. La formation prolonge la mission pour que vos équipes tiennent ce qui a été construit.",
+    localEconomy:
+      "Première métropole du Grand Ouest, Nantes combine un écosystème numérique dense, l'un des premiers labels French Tech, une industrie aéronautique et navale structurante autour d'Airbus Atlantic à Bouguenais et des Chantiers de l'Atlantique à Saint-Nazaire, de grandes coopératives agroalimentaires comme Terrena, et un tertiaire concentré autour d'Euronantes : banques, assurances, conseil, directions régionales. Ce tissu d'ETI, de PME et de scale-up a des processus concrets à outiller et des équipes qui adoptent vite.",
+    whyHere:
+      "Les éditeurs et scale-up nantais industrialisent les usages d'équipe : documentation produit, support client outillé, contenus multilingues. L'industrie aéronautique et navale a des gisements documentaires lourds : procédures qualité, réponses aux consultations, communication multi-sites. Le tertiaire et la santé ont besoin de synthèse de dossiers et de comptes rendus fiables. Pour les PME de la métropole, la question est celle de la performance : où l'IA rend des heures, avec quel outil, dans quelle règle, en quelques semaines.",
+    presence:
+      "L'équipe Masteria est basée à Lyon (presqu'île), à environ 4 heures de Nantes en TGV direct. Nous intervenons en présentiel ponctuel à Nantes et dans la métropole pour les ateliers de cadrage, les comités de pilotage et les passations, et en distanciel pour le développement et le suivi. Selon la mission, un intervenant du réseau Masteria plus proche de vous peut assurer les temps sur site. Nous n'avons pas de bureau à Nantes, et nous ne le prétendons pas.",
+    keyFacts: [
+      { label: 'Offre', value: "Conseil IA et stratégie, développement d'agents et d'outils, automatisation des processus sur mesure, formation des équipes" },
+      { label: 'Présence à Nantes', value: 'Équipe basée à Lyon (≈ 4 h en TGV direct) : présentiel ponctuel pour cadrage et passation, distanciel pour le développement' },
+      { label: 'Secteurs accompagnés', value: 'Numérique et SaaS, aéronautique et navale, agroalimentaire et coopératives, tertiaire et santé' },
+      { label: 'Premier échange', value: 'Cadrage gratuit, réponse sous 24 h, proposition forfaitaire écrite' },
+    ],
+    useCasesLocal: [
+      {
+        sector: 'Numérique et SaaS',
+        usage: "Pour un éditeur ou une scale-up de la métropole, un copilote de support client branché sur la base de connaissances, une automatisation de la qualification des demandes entrantes et une production de documentation produit multilingue relue par les équipes.",
+      },
+      {
+        sector: 'Aéronautique, navale et sous-traitance',
+        usage: "Pour un industriel de Bouguenais ou de Saint-Nazaire, ou un sous-traitant de la filière, un agent de documentation technique et de synthèse des non-conformités, une automatisation des réponses aux consultations, en réseau isolé si la propriété intellectuelle l'exige.",
+      },
+      {
+        sector: 'Tertiaire, santé et agroalimentaire',
+        usage: "Pour une banque régionale, un cabinet d'Euronantes, un établissement de santé ou une coopérative, des assistants de synthèse de dossiers, de préparation de comités et de comptes rendus structurés, avec validation humaine sur tout ce qui engage.",
+      },
+    ],
+    localFaq: [
+      {
+        q: 'Intervenez-vous sur site à Nantes ?',
+        a: "Oui, en présentiel ponctuel. L'équipe est basée à Lyon, à environ 4 heures de Nantes en TGV direct : nous nous déplaçons pour les ateliers de cadrage, les comités de pilotage et les passations, puis conduisons le développement et le suivi en distanciel. Selon la mission, un intervenant du réseau Masteria plus proche de vous assure les temps sur site. Les éventuels frais de déplacement figurent au devis, au réel.",
+      },
+      {
+        q: "Aidez-vous les PME nantaises à améliorer leur performance avec l'IA ?",
+        a: "C'est le format le plus demandé dans la métropole : un diagnostic d'une journée sur vos processus réels, le cadrage de l'IA dans vos logiciels actuels, deux ou trois processus outillés (devis, réponses clients, administratif, comptes rendus), le dirigeant et les équipes formés, puis un point par trimestre. Le gain se mesure sur le temps rendu et sur ce que vous en faites, pas sur un taux d'adoption. Ce format a sa propre page : conseil IA pour PME.",
+      },
+      {
+        q: "Faites-vous du conseil en stratégie IA à Nantes ?",
+        a: "Oui. Pour une ETI ou un groupe de la métropole, la mission de conseil en stratégie IA fixe le cap : diagnostic de maturité, cas d'usage priorisés par gain et faisabilité, feuille de route, gouvernance. Elle se prolonge par le développement des solutions retenues et par la formation des équipes, portés par la même équipe. Le cadrage est gratuit et la proposition, forfaitaire, arrive sous 24 heures.",
+      },
+      {
+        q: "Intervenez-vous au-delà de Nantes, dans le Grand Ouest ?",
+        a: "Oui. Au-delà de Nantes et de la métropole (Saint-Herblain, Carquefou, Rezé, Bouguenais), nous accompagnons les entreprises de Saint-Nazaire, d'Angers, de La Roche-sur-Yon et de Rennes. Le présentiel ponctuel se planifie selon les phases clés de la mission ; le développement, la formation à distance et le suivi ne dépendent pas de la géographie.",
       },
     ],
   },

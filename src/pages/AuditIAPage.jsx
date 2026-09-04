@@ -32,6 +32,11 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * termes génériques (« selon votre profil et votre région ») et se détaillent au
  * cadrage. En DEVIS, les mobiliser reste un levier (mémoire financement conseil).
  *
+ * ENRICHISSEMENT 2026-09-03 (Semrush FR) : « audit intelligence artificielle »
+ * (110, KD 14, CPC 4,05), « audit ia entreprise » (70, KD 4), « audit ia pour
+ * entreprises » (70, KD 9). Réponse : section « Par taille d'entreprise » (PME,
+ * ETI, groupe multi-entités) + 2 FAQ, sans prix ni durée chiffrée nouvelle.
+ *
  * Design premium cabinet identique à /diagnostic-ia : kickers, icônes lucide,
  * cartes radius 16, réponses directes citables en gras, accent #2563EB, une ancre
  * sombre pivot, CTA final sombre. Pas d'OPCO/Qualiopi en bandeau (offre conseil).
@@ -45,7 +50,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Audit IA d'entreprise : maturité, conformité, plan d'action | Masteria"
 const META_DESC = "Audit IA d'entreprise par un cabinet spécialisé en intelligence artificielle : maturité, processus, conformité RGPD et AI Act, feuille de route chiffrée. Cadrage gratuit."
-const KEYWORDS = "audit ia, audit ia entreprise, audit intelligence artificielle, cabinet d'audit ia, audit de maturité ia, audit des processus ia, audit de conformité ia"
+const KEYWORDS = "audit ia, audit ia entreprise, audit ia pour entreprises, audit ia pme, audit ia eti, audit intelligence artificielle, cabinet d'audit ia, audit de maturité ia, audit des processus ia, audit de conformité ia"
 
 /* ───────── Styles partagés (calque /diagnostic-ia) ───────── */
 
@@ -324,6 +329,14 @@ const FAQ = [
     a: "Non, et personne ne le peut à ce jour : aucune norme harmonisée n'a été citée au Journal officiel de l'Union européenne au titre du règlement IA, la présomption de conformité n'est donc pas disponible. La seule certification existante dans le domaine est ISO/IEC 42001, sur le système de management de l'IA, délivrée par un organisme accrédité sur un périmètre déclaré. Un cabinet de conseil ne certifie pas : les règles d'impartialité interdisent à un certificateur de conseiller le client qu'il certifie. Nous vous préparons à une certification si c'est votre objectif, et l'organisme accrédité reste distinct de nous.",
   },
   {
+    q: "Un audit intelligence artificielle a-t-il un sens pour une PME ?",
+    a: "Oui, à condition de le dimensionner. Une PME n'a pas besoin d'un audit exhaustif de ses systèmes : elle a besoin de savoir quels processus l'IA peut soulager en premier, quels outils ses équipes utilisent déjà sans cadre, et quelles données sont réellement mobilisables. L'audit se resserre alors sur quelques processus et débouche sur un plan que le dirigeant peut porter seul. Quand la question tient en une journée, nous le disons au cadrage et nous orientons vers le diagnostic IA plutôt que vers l'audit.",
+  },
+  {
+    q: "Comment l'audit IA s'adapte-t-il à une ETI ou à un groupe multi-entités ?",
+    a: "Par le périmètre et par la grille. Dans une ETI, l'audit cartographie les initiatives déjà lancées direction par direction, mesure la maturité de chacune et propose une gouvernance commune : référents, cadre d'usage, priorités arbitrées, conformité. Dans un groupe multi-entités, il applique la même grille à chaque entité pour les comparer, distingue les cas d'usage mutualisables des cas locaux, et sépare ce qui relève du siège (données de référence, outils, conformité) de ce qui reste aux filiales. Le nombre d'entités et de processus fixe le forfait, ligne à ligne.",
+  },
+  {
     q: "Qui participe côté entreprise, et la mission se fait-elle sur site ?",
     a: "Un sponsor côté direction, un référent DSI ou données pour les questions techniques, et les opérationnels qui vivent les processus au quotidien : ce sont les entretiens métier qui font la qualité de l'audit. Le volume de temps demandé à chacun reste limité et se planifie au cadrage. Masteria est basée à Lyon et intervient dans toute la France, en Suisse et en Belgique ; les entretiens et la restitution se tiennent sur site ou à distance, au choix, sans effet sur le livrable.",
   },
@@ -334,6 +347,26 @@ const FAQ = [
   {
     q: "Et si l'audit conclut qu'il ne faut rien lancer ?",
     a: "Alors le rapport le dit, et il vous explique pourquoi : c'est une conclusion utile, qui vous évite des dépenses stériles. Il existe aussi des situations où l'audit lui-même est inutile : premier cas d'usage déjà connu, problème qui relève des données et non de l'IA, décision déjà prise, organisation trop petite pour l'exercice. Nous les vérifions dès le cadrage gratuit, et nous vous réorientons vers un diagnostic d'une journée ou un cadrage court quand c'est la bonne réponse. Un audit vendu à quelqu'un qui n'en a pas besoin est une dépense inutile, et cela se voit toujours à la fin.",
+  },
+]
+
+/* ───────── Par taille d'entreprise (requête « audit ia pour entreprises ») ───────── */
+
+const TAILLES = [
+  {
+    icon: Users,
+    title: 'PME : un audit resserré, sur les processus qui comptent',
+    desc: "Une PME n'a ni DSI étoffée ni programme IA : l'audit se concentre sur trois à cinq processus où le temps se perd (administratif, commercial, production documentaire), sur les outils déjà utilisés sans cadre par les équipes, et sur les données réellement disponibles. Le livrable tient en un plan d'action que le dirigeant peut porter seul, avec un premier cas d'usage à lancer et ce qu'il faut écarter.",
+  },
+  {
+    icon: Building2,
+    title: 'ETI : plusieurs métiers, une gouvernance à poser',
+    desc: "Dans une ETI, les usages de l'IA existent déjà, dispersés entre les directions : le marketing a son outil, la finance ses macros, la production ses essais. L'audit intelligence artificielle cartographie ces initiatives, mesure la maturité par direction, met en cohérence les données et les outils, et propose une gouvernance légère : référents, cadre d'usage, arbitrage des priorités, conformité au règlement européen.",
+  },
+  {
+    icon: Landmark,
+    title: 'Groupe et multi-entités : comparer, prioriser, mutualiser',
+    desc: "Pour un groupe ou une organisation multi-sites, l'audit compare les entités sur une grille commune, identifie les cas d'usage mutualisables et ceux qui restent locaux, et distingue ce qui relève du siège (données de référence, outils, conformité) de ce qui reste aux filiales. Le périmètre se justifie entité par entité au devis, et la restitution s'adresse au comité de direction.",
   },
 ]
 
@@ -699,6 +732,33 @@ export default function AuditIAPage() {
       </section>
 
       {/* ── REPÈRES DATÉS (faits sourcés, citables — GEO) ── */}
+      {/* ── PAR TAILLE D'ENTREPRISE ── */}
+      <section id="tailles" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Par taille d'entreprise</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Audit IA pour entreprises de toute taille : PME, ETI, groupe
+          </h2>
+          <p style={answerStyle}>
+            <strong>Le même audit intelligence artificielle ne s'applique pas à une PME de quarante personnes et à un groupe de dix entités : la grille est commune, le périmètre et la profondeur changent.</strong> C'est au cadrage gratuit que se décide ce qui est examiné, et c'est ce périmètre, écrit, qui fixe le forfait.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
+            {TAILLES.map(card => {
+              const Icon = card.icon
+              return (
+                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       <section id="reperes" style={{ padding: sectionPad, background: '#fff', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
         <div style={wrap}>
           <Kicker>Repères datés</Kicker>

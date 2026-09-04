@@ -5,7 +5,7 @@ export default {
  "base": {
   "metaTitle": "Formation IA marché public : répondre et acheter avec l'IA | Masteria",
   "metaDesc": "Formation IA marché public sur vos vrais dossiers : analyser un DCE, structurer un mémoire technique, préparer les pièces, et côté acheteur rédiger et analyser dans le cadre de la commande publique. Qualiopi.",
-  "keywords": "formation ia marché public, formation ia marchés publics, formation ia appel d'offres, formation ia réponse appel d'offres, formation ia commande publique, ia mémoire technique, formation ia acheteur public",
+  "keywords": "formation ia marché public, formation ia marchés publics, formation ia appel d'offres, formation ia réponse appel d'offres, formation ia commande publique, ia mémoire technique, formation ia acheteur public, appel d'offre intelligence artificielle, appel d'offres ia, marché public intelligence artificielle, acheter une solution ia en marché public",
   "h1": "Formation IA marché public : répondre aux appels d'offres et acheter avec l'IA",
   "h1a": "Formation IA marché public :",
   "h1b": "répondre aux appels d'offres et acheter avec l'IA",
@@ -290,6 +290,10 @@ export default {
    "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un seul versant : répondre aux marchés (jour 1) ou acheter avec l'IA (jour 2). Un accompagnement individuel est possible pour un responsable appels d'offres ou un acheteur seul sur sa fonction. Les journées pleines alternent apports courts et ateliers sur vos dossiers réels."
   },
   {
+   "q": "Comment cadrer un appel d'offres sur l'intelligence artificielle ?",
+   "a": "Un acheteur public qui lance un appel d'offres sur l'intelligence artificielle, pour une solution, une formation ou un accompagnement, doit cadrer trois points que les DCE oublient souvent. Le besoin réel, exprimé en cas d'usage et en résultats attendus plutôt qu'en technologie : ce que les agents doivent pouvoir faire, sur quelles données, avec quel niveau de contrôle humain. Les exigences de données et d'hébergement : localisation, réversibilité, absence d'entraînement des modèles sur les données de la collectivité, conformité au RGPD et au règlement européen sur l'IA. Et les critères d'analyse : démonstration sur un cas réel de la collectivité, méthode de déploiement et de formation, mesure des usages après mise en service. Côté répondants, la même grille sert à lire un DCE sur l'IA et à décider du go/no go. La formation traite les deux faces, acheteurs et candidats."
+  },
+  {
    "q": "Combien coûte une formation IA marché public ?",
    "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT. Pour un organisme public, nous établissons le devis dans les formes attendues (le cas échéant, dans le cadre de vos propres règles d'achat de formation). Certifiée Qualiopi, la formation est finançable par votre OPCO pour les entreprises ; pour le secteur public, selon votre plan de formation. Devis détaillé sous 24 heures."
   }
@@ -315,7 +319,7 @@ export default {
  "article": {
   "headline": "Formation IA marché public : répondre aux appels d'offres et acheter avec l'IA, dans le cadre de la commande publique",
   "datePublished": "2026-08-10",
-  "dateModified": "2026-08-10",
+  "dateModified": "2026-09-03",
   "dateLabel": "août 2026",
   "about": [
    {

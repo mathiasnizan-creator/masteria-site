@@ -721,6 +721,7 @@ export default function AuditGeoIAPage() {
             {[
               { label: 'Référencement AIO : le guide', href: '/blog/referencement-aio-strategie-contenu-ia', tag: 'Guide', desc: "AIO, GEO, AEO face au SEO, les AI Overviews de Google et la stratégie de contenu en cinq décisions." },
               { label: 'Audit SEO IA', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "Les deux fronts dans un seul rapport : référencement Google et visibilité dans les IA." },
+              { label: 'Consultant visibilité IA', href: '/consultant-visibilite-ia', tag: 'Le métier', desc: "Ce que fait le consultant qui mène l'audit et la suite, comment le choisir, ce qu'il ne promet pas." },
               { label: 'Agence SEO IA', href: '/agence-seo-ia', tag: 'Accompagnement', desc: "L'accompagnement qui suit l'audit : contenu citable, technique, GEO et suivi des citations." },
               { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "La surveillance en continu des citations et de la part de voix, branchée sur vos outils." },
               { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Marketing', desc: "Le marketing assisté par IA au-delà de la visibilité : contenu, acquisition, growth." },

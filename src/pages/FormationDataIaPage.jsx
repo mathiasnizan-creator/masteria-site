@@ -738,6 +738,7 @@ export default function FormationDataIaPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
+              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Gouverner', desc: "Avant d'analyser : cartographier le patrimoine, nommer les rôles, gérer les données de référence." },
               { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Missions', desc: "Quand les fichiers ne suffisent plus : audit du patrimoine de données, mise en qualité, projets sur mesure." },
               { label: 'Formation IA finance', href: '/formation-ia-finance', tag: 'Métier', desc: "Le parcours complet des équipes finance : reporting, analyses, clôtures, avec le même socle data." },
               { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Métier', desc: "Campagnes, audiences et verbatims : l'analyse de données appliquée au quotidien marketing." },

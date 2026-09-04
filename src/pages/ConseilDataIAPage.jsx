@@ -26,6 +26,16 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * prix inventé. On décrit compétences, méthode, livrables. Le conseil pur n'est pas
  * finançable OPCO ; seule la formation associée l'est (bloc secondaire).
  *
+ * ENRICHISSEMENT 2026-09-03 (Semrush FR, export « conseil ») : la page absorbe
+ * la grappe « data management » : « data consulting » (320, KD 11), « agence
+ * conseil data » (170, KD 12), « cabinet de conseil data management » (140,
+ * KD 11), « consultant big data » (140, CPC 6), « conseil data management »
+ * (110, KD 7), « conseil big data » (90), « conseil en gestion des données »
+ * (70), « gestion des données de référence » (210, KD 15), « quelles données
+ * constituent le patrimoine informationnel d'une entreprise » (140, KD 15).
+ * Réponse : section « Data management » (4 cartes + clarification des
+ * appellations), 3 FAQ, offre JSON-LD, liens vers acculturation et formation data.
+ *
  * Design premium identique à /agence-developpement-ia et /agence-seo-ia : icônes
  * lucide (zéro emoji), kickers, réponses directes citables, accent #2563EB.
  */
@@ -34,9 +44,9 @@ const SLUG = 'conseil-data-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Conseil data & IA : préparer vos données à l'IA | Masteria"
-const META_DESC = "Conseil data & IA pour entreprises : audit, gouvernance et qualité de vos données pour des projets d'IA fiables (RAG, agents, analytics). Cadrage gratuit."
-const KEYWORDS = "conseil data ia, conseil data, data et ia, gouvernance des données, qualité des données, audit data, préparation des données ia"
+const META_TITLE = "Conseil data & IA : data management et données prêtes pour l'IA | Masteria"
+const META_DESC = "Cabinet de conseil data & IA (data consulting, data management) : audit, gouvernance, qualité et données de référence pour des projets d'IA fiables (RAG, agents, analytics). Cadrage gratuit."
+const KEYWORDS = "conseil data ia, conseil data, data consulting, conseil data management, cabinet de conseil data management, agence conseil data, conseil big data, consultant big data, conseil en gestion des données, gestion des données de référence, patrimoine informationnel, gouvernance des données, qualité des données, audit data, préparation des données ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -171,6 +181,31 @@ const WHY = [
 
 /* ───────── FAQ ───────── */
 
+/* ───────── Data management (grappe « conseil data management », « données de référence ») ───────── */
+
+const DATA_MANAGEMENT = [
+  {
+    icon: Database,
+    title: 'Données de référence : un seul client, un seul produit',
+    desc: "Clients, produits, fournisseurs, sites, articles : les données de référence sont celles que tous les systèmes partagent. Quand elles existent en trois versions dans le CRM, l'ERP et un tableur, l'IA répond faux avec assurance. La gestion des données de référence fixe une source unique, un propriétaire et des règles de mise à jour avant tout projet d'IA.",
+  },
+  {
+    icon: Layers,
+    title: 'Gouvernance et gestion des données au quotidien',
+    desc: "Qui est propriétaire de quelle donnée, qui peut la modifier, combien de temps on la garde, comment on mesure sa qualité : la gouvernance répond à ces questions une fois pour toutes. Nous la dimensionnons à votre taille : trois rôles et un catalogue tenu à jour font plus qu'un comité qui ne se réunit jamais.",
+  },
+  {
+    icon: Server,
+    title: 'Big data ou données dispersées ? Le bon diagnostic',
+    desc: "La plupart des PME et ETI n'ont pas un problème de volume mais de dispersion : des données utiles, réparties entre logiciels, boîtes mail et fichiers partagés. Un conseil big data classique répond par une architecture ; nous répondons d'abord par un inventaire, et nous ne recommandons une plateforme que si un cas d'usage IA la justifie.",
+  },
+  {
+    icon: FileText,
+    title: 'Le patrimoine informationnel, cartographié',
+    desc: "Données structurées des logiciels métier, documents et contrats, mails, données de capteurs ou de production, données personnelles, savoir-faire non écrit : voilà ce qui constitue le patrimoine informationnel d'une entreprise. Nous le cartographions par source, sensibilité et valeur pour l'IA, ce qui donne la liste des chantiers et leur ordre.",
+  },
+]
+
 const FAQ = [
   {
     q: "Qu'est-ce que le conseil data & IA ?",
@@ -187,6 +222,18 @@ const FAQ = [
   {
     q: "Comment gérez-vous la conformité RGPD et l'AI Act sur les données ?",
     a: "La conformité est intégrée dès le cadrage. Nous cartographions les données sensibles, posons les règles d'accès et de cloisonnement, et documentons les usages au regard du RGPD et de l'AI Act européen. Un hébergement dans l'Union européenne est possible selon vos exigences. L'objectif est un socle data exploitable par l'IA sans créer de risque réglementaire ni de fuite de données.",
+  },
+  {
+    q: "Quelles données constituent le patrimoine informationnel d'une entreprise ?",
+    a: "Six familles, en pratique. Les données structurées des logiciels métier : clients, commandes, factures, stocks, ressources humaines, dans le CRM, l'ERP ou la paie. Les documents : contrats, procédures, offres, rapports, plans, souvent dans des dossiers partagés. Les échanges : mails, tickets, comptes rendus, messageries. Les données techniques : capteurs, machines, logs, mesures de production. Les données personnelles, qui traversent les familles précédentes et relèvent du RGPD. Et le savoir-faire non écrit, celui des personnes expérimentées, que l'IA ne peut exploiter que s'il est formalisé. Une mission de conseil data & IA commence par cartographier ces familles, source par source, avec leur qualité, leur sensibilité et leur valeur pour un cas d'usage IA.",
+  },
+  {
+    q: "Qu'est-ce que la gestion des données de référence, et pourquoi compte-t-elle pour l'IA ?",
+    a: "Les données de référence sont celles que plusieurs systèmes partagent : la fiche client, la fiche produit, la fiche fournisseur, la liste des sites ou des articles. Les gérer, c'est décider d'une source unique pour chacune, d'un propriétaire, de règles de création et de mise à jour, et d'un contrôle de qualité régulier. Pour l'IA, c'est décisif : un agent qui lit trois fiches client contradictoires, ou un RAG qui trouve deux tarifs pour le même produit, produit des réponses fausses avec une parfaite assurance. La gestion des données de référence n'exige pas forcément un outil dédié : pour une PME, un référentiel tenu dans le logiciel principal et des règles écrites suffisent souvent.",
+  },
+  {
+    q: "Faut-il un consultant big data pour un projet d'IA ?",
+    a: "Rarement, pour une PME ou une ETI. Le big data désigne des volumes, des vitesses et des variétés de données qui dépassent les outils classiques : c'est le cas des plateformes grand public, des télécoms ou de l'industrie fortement instrumentée. La majorité des entreprises ont un problème différent : des données de taille raisonnable mais dispersées, incomplètes ou contradictoires. Un consultant big data répond par une architecture de plateforme ; le conseil data & IA répond par un inventaire, une gouvernance et une préparation ciblée sur le cas d'usage. Quand le volume justifie réellement une plateforme, nous le disons et nous cadrons le besoin avant que vous n'engagiez un intégrateur.",
   },
   {
     q: "Combien coûte une mission de conseil data & IA ?",
@@ -294,6 +341,7 @@ const serviceJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Préparation des données pour l'IA", description: "Nettoyage, structuration et mise en forme pour exploitation par les modèles." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'RAG & exploitation par l\'IA', description: "Réponses sourcées ancrées dans vos documents et vos bases." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Analytics & dataviz augmentés par l\'IA', description: "Reporting et analyse interrogeables par les équipes métier." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Conseil en data management et données de référence', description: "Gestion des données de référence, gouvernance dimensionnée, cartographie du patrimoine informationnel." } },
     ],
   },
 }
@@ -309,10 +357,10 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-14',
-  dateModified: '2026-07-02',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-data-ia#webpage' },
-  about: ['Conseil data & IA', 'Gouvernance des données', 'Qualité des données', 'RAG (retrieval-augmented generation)'],
+  about: ['Conseil data & IA', 'Data management', 'Gouvernance des données', 'Gestion des données de référence', 'Qualité des données', 'Patrimoine informationnel', 'RAG (retrieval-augmented generation)'],
 }
 
 /* ───────── Composants ───────── */
@@ -366,7 +414,7 @@ export default function ConseilDataIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-14"
-        dateModified="2026-07-02"
+        dateModified="2026-09-03"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -406,7 +454,7 @@ export default function ConseilDataIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
@@ -593,6 +641,45 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
+      {/* ── DATA MANAGEMENT (données de référence, gouvernance, big data, patrimoine informationnel) ── */}
+      <section id="data-management" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Data management</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Conseil en data management : gouverner les données de référence avant l'IA
+          </h2>
+
+          <p style={answerStyle}>
+            <strong>Le data management, c'est l'ensemble des décisions qui rendent vos données fiables, accessibles et gouvernées : données de référence, propriété, qualité, cycle de vie.</strong> C'est le socle que tout projet d'IA suppose acquis, et qui ne l'est presque jamais. Notre conseil en data management vise ce socle, dimensionné à votre taille et rattaché à un cas d'usage IA précis, sans programme data hors sol.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
+            {DATA_MANAGEMENT.map(card => {
+              const Icon = card.icon
+              return (
+                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+
+          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(24px, 3.5vw, 36px)', marginTop: 40, maxWidth: 880 }}>
+            <h3 style={{ ...h3Style, marginBottom: 10 }}>Data consulting, agence conseil data, cabinet de data management : trois noms, une question</h3>
+            <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: '0 0 12px' }}>
+              Les appellations varient, la question du client est la même : mes données sont-elles prêtes pour ce que je veux en faire ? Un cabinet de data consulting vend du diagnostic et de la gouvernance. Une agence conseil data ajoute souvent la mise en œuvre technique. Un cabinet de data management se concentre sur les référentiels et la qualité dans la durée.
+            </p>
+            <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: 0 }}>
+              Masteria couvre les trois, avec une différence de départ : nous partons du cas d'usage IA, et nous ne traitons que les données qu'il réclame. Pour former vos équipes à lire et vérifier ce que l'IA produit à partir de ces données, le volet data de notre <Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> et la <Link to="/formation-data-ia" style={aStyle}>formation data et IA</Link> prennent le relais.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── FORMATION (bloc secondaire) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
@@ -724,6 +811,9 @@ export default function ConseilDataIAPage() {
               { label: 'Intégration LLM / RAG', href: '/integration-llm-rag', tag: 'RAG', desc: "Rendre vos données interrogeables par un modèle, avec des réponses sourcées." },
               { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'GenAI', desc: "Ce que vos données fiabilisées rendent possible : assistants et contenus générés ancrés dans votre réalité." },
               { label: 'Assistant documentaire IA', href: '/assistant-documentaire-ia', tag: 'Solution', desc: "Interroger votre base documentaire en langage naturel, une fois le socle data prêt." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "Le volet data et IA de l'acculturation : quelles données confier à l'IA, comment vérifier un chiffre produit." },
+              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Formation', desc: "Deux jours pour cartographier le patrimoine informationnel, poser les rôles et gérer les données de référence." },
+              { label: 'Formation data et IA', href: '/formation-data-ia', tag: 'Formation', desc: "Analyser ses données avec l'IA sans coder, une fois le socle data en place." },
               { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Les principes RGPD appliqués à l'IA, l'AIPD et les garanties à vérifier outil par outil." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Conception et développement des solutions IA qui s'appuient sur vos données." },

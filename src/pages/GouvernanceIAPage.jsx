@@ -29,6 +29,10 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * avant (la page n'est pas une page formation). Seule la formation associée (lien
  * vers /formation-ai-act) relève du financement.
  *
+ * ENRICHISSEMENT 2026-09-03 (Semrush FR) : « monitoring ia » (110, KD 7) et
+ * « outil de gouvernance des modèles » (110, KD 9). Réponse : section « Monitoring
+ * et outillage » (4 cartes) + 2 FAQ. Aucun éditeur d'outil nommé (indépendance).
+ *
  * Design premium identique à /agence-developpement-ia et /conseil-data-ia : hero
  * sombre, icônes lucide (zéro emoji), kickers, réponses directes citables, accent
  * #2563EB uniquement, une ancre sombre sur la section technique (classification des
@@ -40,8 +44,8 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Gouvernance de l'IA & conformité AI Act | Masteria"
-const META_DESC = "Gouvernance de l'IA en entreprise : mise en conformité AI Act, audit, registre des usages, politique IA, comité, gouvernance des données. Cadrage gratuit."
-const KEYWORDS = "gouvernance ia, gouvernance de l'intelligence artificielle, conformité ia, conformité ia entreprise, ai act entreprise, ia act, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia, calendrier ai act, calendrier ia act"
+const META_DESC = "Gouvernance de l'IA en entreprise : mise en conformité AI Act, audit, registre des usages, politique IA, comité, monitoring des systèmes et outils de gouvernance des modèles. Cadrage gratuit."
+const KEYWORDS = "gouvernance ia, monitoring ia, outil de gouvernance des modèles, gouvernance des modèles ia, supervision des systèmes ia, gouvernance de l'intelligence artificielle, conformité ia, conformité ia entreprise, ai act entreprise, ia act, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia, calendrier ai act, calendrier ia act"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
@@ -214,6 +218,31 @@ const DATA_GOUV = [
   },
 ]
 
+/* ───────── Monitoring IA et outillage de la gouvernance des modèles ───────── */
+
+const MONITORING = [
+  {
+    icon: Eye,
+    title: 'Monitoring IA : surveiller ce que les systèmes produisent',
+    desc: "Un système d'IA validé un jour ne le reste pas : le modèle change de version, les données dérivent, les usages s'étendent. Le monitoring IA suit dans le temps la qualité des réponses, les refus et les erreurs signalées, les incidents, les volumes et les coûts. Les indicateurs diffèrent selon l'usage : un assistant documentaire se surveille sur la justesse des sources, un agent sur les actions qu'il déclenche, un modèle prédictif sur la dérive de ses résultats.",
+  },
+  {
+    icon: ListChecks,
+    title: 'Le registre des usages, colonne vertébrale de l\'outillage',
+    desc: "Avant tout outil de gouvernance des modèles, il faut un registre : pour chaque système, son propriétaire, sa finalité, son niveau de risque, les données mobilisées, le fournisseur et la version du modèle, la date de la dernière revue. C'est ce registre qui dit quoi surveiller et à quel rythme ; un outil qui n'en découle pas produit des tableaux de bord que personne ne lit.",
+  },
+  {
+    icon: Gauge,
+    title: 'Quel outil de gouvernance des modèles choisir ?',
+    desc: "Trois niveaux, selon le nombre de systèmes et leur risque. Un registre partagé et des revues planifiées suffisent à une PME qui utilise quelques assistants du marché. Une plateforme de gouvernance, souvent celle de votre fournisseur cloud, s'impose quand les modèles se multiplient et que la traçabilité doit être automatisée. Une instrumentation sur mesure (journalisation par API, alertes, tableaux de bord) convient aux systèmes développés en interne. Nous restons indépendants des éditeurs : l'outil suit le dispositif, jamais l'inverse.",
+  },
+  {
+    icon: ScrollText,
+    title: 'Journalisation et supervision humaine',
+    desc: "Conserver les prompts et les réponses des usages sensibles, tracer qui a validé quoi, poser des points de contrôle humain sur les décisions qui engagent l'organisation, déclencher une alerte quand un indicateur sort de sa plage : c'est la grille que le règlement européen prévoit pour les systèmes à haut risque, dont le calendrier a été reporté, et qui donne dès aujourd'hui la bonne structure à tout dispositif.",
+  },
+]
+
 /* ───────── Pourquoi maintenant (4 raisons) ───────── */
 
 const WHY = [
@@ -283,6 +312,14 @@ const FAQ = [
   {
     q: "La gouvernance de l'IA concerne-t-elle aussi le secteur public ?",
     a: "Oui. L'AI Act s'applique aux administrations, collectivités, établissements publics et hôpitaux qui déploient des systèmes d'IA, au même titre qu'aux entreprises privées. Le secteur public est même particulièrement exposé : beaucoup de ses usages touchent des domaines que le règlement classe à haut risque (accès aux services essentiels, éducation, santé, emploi public) et la transparence attendue vis-à-vis des citoyens y est plus forte. Registre des usages, supervision humaine et gouvernance des données s'y appliquent pleinement. L'accompagnement s'adapte à ce cadre : périmètre, instances existantes, contraintes de l'achat public.",
+  },
+  {
+    q: "Qu'est-ce que le monitoring IA, et que faut-il surveiller ?",
+    a: "Le monitoring IA est la surveillance dans le temps des systèmes d'IA en production : ce qu'ils produisent, à quel coût, avec quels incidents. Quatre familles d'indicateurs couvrent la plupart des cas. La qualité : justesse des réponses sur un échantillon relu, taux de sources correctes pour un assistant documentaire, erreurs signalées par les utilisateurs. La sécurité : refus contournés, données sensibles détectées dans les prompts, accès anormaux. L'usage : volumes par équipe, cas d'usage réellement actifs, adoption. Et l'économie : coût par requête et par cas d'usage. Pour un modèle prédictif s'ajoute la dérive : l'écart entre les prédictions et la réalité observée. Le rythme de revue se fixe dans le registre des usages, système par système.",
+  },
+  {
+    q: "Faut-il un outil de gouvernance des modèles pour être conforme ?",
+    a: "Non, pas dans la plupart des situations. La conformité repose sur un dispositif : un registre des usages, des rôles, des règles de validation, des revues, une documentation. Un outil de gouvernance des modèles automatise ce dispositif quand les systèmes se multiplient ou quand la traçabilité doit être produite à la demande, ce qui concerne d'abord les systèmes à haut risque et les modèles développés en interne. Une PME qui utilise quelques assistants du marché tient sa gouvernance avec un registre partagé et des revues planifiées. Nous ne vendons aucun outil : nous dimensionnons l'outillage à votre dispositif, et nous le disons quand un tableur suffit.",
   },
   {
     q: "Combien de temps pour mettre en place un dispositif de gouvernance IA ?",
@@ -398,7 +435,7 @@ const articleJsonLd = {
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-06-15',
-  dateModified: '2026-07-02',
+  dateModified: '2026-09-03',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
   about: ["Gouvernance de l'intelligence artificielle", 'Conformité AI Act', "Gouvernance des données pour l'IA", 'RGPD'],
@@ -465,7 +502,7 @@ export default function GouvernanceIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-15"
-        dateModified="2026-07-02"
+        dateModified="2026-09-03"
         extraJsonLd={[serviceJsonLd, definedTermSetJsonLd, articleJsonLd]}
       />
 
@@ -503,7 +540,7 @@ export default function GouvernanceIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
@@ -805,6 +842,36 @@ export default function GouvernanceIAPage() {
         </div>
       </section>
 
+      {/* ── MONITORING IA & OUTILLAGE (requêtes « monitoring ia », « outil de gouvernance des modèles ») ── */}
+      <section id="monitoring" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Monitoring et outillage</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Monitoring IA et outils de gouvernance des modèles : surveiller après avoir cadré
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>La gouvernance ne s'arrête pas à la charte et au comité : elle suppose un monitoring IA des systèmes en production et un outillage proportionné, du registre partagé à la plateforme de gouvernance des modèles.</strong> Nous dimensionnons cet outillage à votre dispositif et à vos risques, sans vendre de plateforme.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
+            {MONITORING.map(card => {
+              const Icon = card.icon
+              return (
+                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+            Le monitoring se prépare dès le cadrage du dispositif et se met en place avec le comité ; pour les systèmes développés sur mesure, il s'intègre au projet lui-même, voyez notre <Link to="/methode-projet-ia" style={aStyle}>méthode projet IA</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── CONTEXTE & REPÈRES : stats sourcées + définitions + sources (SEO + GEO) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
@@ -951,6 +1018,7 @@ export default function GouvernanceIAPage() {
               { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, gouvernance et conformité comprises." },
               { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "L'état des lieux exhaustif : maturité, données, écarts RGPD et AI Act, feuille de route chiffrée." },
               { label: "Stratégie IA d'entreprise : le guide", href: '/blog/strategie-ia-entreprise-guide', tag: 'Guide', desc: "Six composantes, cinq étapes, un exemple sur 90 jours : ce que contient une stratégie IA et comment l'écrire." },
+              { label: 'Chief AI Officer', href: '/chief-ai-officer', tag: 'Rôle', desc: "Qui tient la gouvernance : le rôle, ses missions, et l'option à temps partagé quand le poste n'existe pas encore." },
               { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cap avant le dispositif : cas d'usage priorisés, feuille de route à 90 jours et à 12 mois, arbitrages de direction." },
               { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "La mission qui précède la gouvernance : inventaire des systèmes, niveaux de risque, écarts et plan de mise en conformité daté." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Le développement de solutions IA, conçues avec garde-fous, supervision et traçabilité." },

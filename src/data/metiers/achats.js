@@ -5,7 +5,7 @@ export default {
  "base": {
   "metaTitle": "Formation IA achats : sourcing, appels d'offres, fournisseurs | Masteria",
   "metaDesc": "Formation IA achats sur vos vraies consultations : sourcing et veille marché, cahiers des charges, analyse d'offres, négociation, contrats, suivi fournisseurs et risques. ChatGPT, Copilot, Claude. Qualiopi, OPCO.",
-  "keywords": "formation ia achats, formation ia acheteur, formation intelligence artificielle achats, formation ia direction achats, ia sourcing fournisseurs, ia analyse d'offres, formation ia approvisionnement",
+  "keywords": "formation ia achats, formation ia acheteur, formation intelligence artificielle achats, formation ia direction achats, ia sourcing fournisseurs, ia analyse d'offres, formation ia approvisionnement, procurement transformation, transformation de la fonction achats ia, digitalisation achats ia, ia achats pme",
   "h1": "Formation IA achats : l'IA générative du sourcing au suivi fournisseurs",
   "h1a": "Formation IA achats :",
   "h1b": "l'IA générative du sourcing au suivi fournisseurs",
@@ -290,6 +290,10 @@ export default {
    "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes de la fonction achats. Une version d'une journée existe pour un périmètre resserré, centré sur la consultation et l'analyse d'offres. Un accompagnement individuel est possible pour un directeur achats ou un acheteur seul sur sa fonction. Les journées pleines alternent apports courts et ateliers sur vos dossiers réels."
   },
   {
+   "q": "L'IA peut-elle porter la transformation de la fonction achats ?",
+   "a": "Elle en est aujourd'hui le levier le plus accessible, à condition de commencer par les tâches et non par un programme. Ce que les cabinets appellent procurement transformation, la transformation de la fonction achats, passait par des outils de source-to-pay lourds et des projets de plusieurs années. L'IA générative permet une autre trajectoire : outiller d'abord les gestes quotidiens des acheteurs, l'analyse des offres, la recherche fournisseurs, la relecture des contrats, la préparation des négociations, puis mesurer le temps rendu et étendre. La formation est le premier pas de cette trajectoire : elle installe les usages et le cadre, et fait remonter les cas qui justifient ensuite une automatisation ou un agent achats. Pour la suite, notre équipe conseil accompagne le cadrage et la mise en œuvre."
+  },
+  {
    "q": "Combien coûte une formation IA achats, et est-elle finançable ?",
    "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous et notre outil Quel OPCO ? identifie votre opérateur. La formation n'est pas éligible au CPF. Devis sous 24 heures."
   }
@@ -315,7 +319,7 @@ export default {
  "article": {
   "headline": "Formation IA achats : l'IA générative du sourcing au suivi fournisseurs, dans un cadre de confidentialité",
   "datePublished": "2026-05-11",
-  "dateModified": "2026-08-10",
+  "dateModified": "2026-09-03",
   "dateLabel": "août 2026",
   "about": [
    {

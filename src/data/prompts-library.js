@@ -1050,6 +1050,68 @@ Aucune diapositive ne doit contenir plus de 25 mots.`,
     ],
   },
   {
+    slug: 'gestion-de-projet',
+    label: 'Gestion de projet',
+    hub: '/formation-ia-gestion-de-projet',
+    intro: "Cadrage, comptes rendus, reporting, risques : les prompts IA de gestion de projet les plus utiles partent d'un livrable réel et d'un gabarit maison, jamais d'une page blanche. Le chef de projet garde l'arbitrage ; l'IA prend la mise en forme et la première analyse.",
+    prompts: [
+      {
+        t: 'Rédiger la note de cadrage à partir des échanges de lancement',
+        p: `Tu es chef de projet. Voici les notes et mails échangés lors du lancement : [COLLER]. Voici notre gabarit de note de cadrage : [COLLER LE GABARIT].
+
+Rédige la note de cadrage en respectant le gabarit, section par section : objectifs, périmètre (inclus / exclu), parties prenantes et rôles, hypothèses, contraintes, risques initiaux, jalons pressentis.
+
+Pour chaque élément que les échanges ne permettent pas de renseigner, écris À CONFIRMER et formule la question à poser au sponsor. N'invente aucune date ni aucun budget.`,
+        w: "Le gabarit impose la structure, les échanges imposent le contenu : la note sort dans votre format, et les trous deviennent une liste de questions au lieu d'inventions plausibles.",
+      },
+      {
+        t: 'Transformer des notes brutes en compte rendu avec décisions et actions',
+        p: `Voici mes notes prises pendant la réunion (ou la transcription) : [COLLER]. Participants : [LISTE].
+
+Produis un compte rendu en trois parties : 1) décisions prises (une ligne chacune, formulée au passé), 2) actions à mener sous forme de tableau : action, responsable, échéance, 3) points restés ouverts.
+
+Ne reformule pas les discussions, ne rajoute aucune décision qui ne figure pas dans mes notes. Si un responsable ou une échéance manque, laisse la case vide plutôt que de deviner.`,
+        w: "Séparer décisions, actions et points ouverts est ce que les participants attendent d'un compte rendu ; interdire l'ajout évite que le modèle « complète » la réunion avec ce qu'il imagine.",
+      },
+      {
+        t: 'Produire le flash projet hebdomadaire depuis les données de suivi',
+        p: `Tu es PMO. Voici l'export de notre outil de suivi pour la semaine (lots, avancement en %, jalons, charge consommée, risques ouverts) : [COLLER]. Voici le flash de la semaine précédente : [COLLER].
+
+Rédige le flash projet de cette semaine selon notre gabarit : météo globale (vert / orange / rouge, justifiée par les données), avancement par lot avec l'écart prévu / réalisé, jalons de la période, trois risques principaux, décisions attendues de la direction.
+
+Compare avec la semaine précédente et signale explicitement ce qui a changé. Toute affirmation doit être rattachée à une donnée de l'export ; sinon, ne l'écris pas.`,
+        w: "Donner le flash précédent et l'export brut force une lecture des écarts plutôt qu'un résumé général, et rattacher chaque phrase à une donnée bloque les commentaires de complaisance.",
+      },
+      {
+        t: 'Identifier les risques par analogie et préparer le plan de mitigation',
+        p: `Voici la note de cadrage du projet : [COLLER]. Contexte : [SECTEUR, TAILLE DE L'ÉQUIPE, MÉTHODE, CONTRAINTES CONNUES].
+
+Liste dix risques plausibles pour un projet de ce type, classés par familles (périmètre, planning, ressources, technique, parties prenantes, conformité). Pour chacun : probabilité (faible / moyenne / forte), impact, signal d'alerte précoce, action de mitigation, responsable pressenti.
+
+Distingue clairement les risques déduits de ma note (cite le passage) de ceux qui viennent de ton expérience générale des projets comparables.`,
+        w: "L'analogie est ce que le modèle fait le mieux ; exiger la distinction entre risques lus dans la note et risques génériques évite de prendre une liste standard pour une analyse du projet.",
+      },
+      {
+        t: 'Préparer un arbitrage en trois options pour le COPIL',
+        p: `Situation à arbitrer : [DÉCRIRE LE PROBLÈME, LES CONTRAINTES ET CE QUI A DÉJÀ ÉTÉ TENTÉ]. Données disponibles : [COLLER : budget restant, charge, jalons, engagements clients].
+
+Prépare une note d'arbitrage d'une page pour le comité de pilotage : rappel du problème en trois lignes, trois options (y compris « ne rien changer »), pour chacune : impact sur le périmètre, le délai, le budget et les équipes, risques, conditions de réussite. Termine par une recommandation argumentée et par la décision précise demandée au comité.
+
+Chiffre uniquement à partir des données fournies ; sinon écris « à estimer ».`,
+        w: "Le format en trois options dont le statu quo est celui qu'un comité sait lire ; demander la décision attendue en dernière ligne évite les notes qui décrivent sans conclure.",
+      },
+      {
+        t: 'Découper un périmètre en lots et en tâches avec dépendances',
+        p: `Voici le périmètre validé du projet : [COLLER]. Méthode de travail : [CYCLE EN V / AGILE / HYBRIDE]. Équipe : [RÔLES ET DISPONIBILITÉS].
+
+Propose un découpage en lots puis en tâches, sous forme de tableau : lot, tâche, livrable, dépendance(s), rôle responsable, ordre de grandeur de charge (petite / moyenne / grande, sans chiffre). Signale les tâches sur le chemin critique et les dépendances externes (fournisseurs, validations, autres projets).
+
+Ne produis aucune date : l'estimation et la planification se font ensuite avec l'équipe, à partir de cette structure.`,
+        w: "Interdire les dates et les chiffres de charge cantonne le modèle à ce qu'il fait bien, structurer et repérer les dépendances, et laisse l'estimation à ceux qui engagent leur parole.",
+      },
+    ],
+  },
+  {
     slug: 'direction',
     label: 'Direction générale',
     hub: null,

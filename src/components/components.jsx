@@ -136,6 +136,7 @@ const FORMATIONS_THEMATIQUES = [
   { label: 'Formation vibe coding',         path: '/formation-vibe-coding',        Icon: Code2 },
   { label: 'Formation Claude Code',         path: '/formation-claude-code',        Icon: Terminal },
   { label: 'Formation data IA',             path: '/formation-data-ia',            Icon: Database },
+  { label: 'Formation gouvernance des données', path: '/formation-gouvernance-donnees', Icon: Database },
   { label: 'Formation AI Act',              path: '/formation-ai-act',             Icon: Scale },
 ]
 
@@ -292,12 +293,12 @@ export function MasteriaHeader() {
 
   const formationsActive = location.pathname.startsWith('/formation') || location.pathname === '/acculturation-ia' || location.pathname === '/coaching-ia';
   const CONSEIL_PATHS = [
-    '/conseil-intelligence-artificielle', '/conseil-strategie-ia',
+    '/conseil-intelligence-artificielle', '/conseil-strategie-ia', '/conseil-transformation-ia', '/conseil-ia-pme', '/chief-ai-officer', '/ia-gestion-de-projet',
     '/agence-developpement-ia', '/outils-ia-sur-mesure', '/agence-automatisation-ia',
     '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing', '/agence-seo-ia',
     '/automatisation-ia', '/meilleure-agence-ia', '/meilleur-cabinet-conseil-ia',
     '/gouvernance-ia', '/prix-projet-ia', '/ia-generative-entreprise', '/cas-usage-ia-entreprise',
-    '/audit-ia', '/audit-seo-ia', '/audit-geo-ia', '/accompagnement-ia', '/prestataire-ia',
+    '/audit-ia', '/audit-seo-ia', '/audit-geo-ia', '/consultant-visibilite-ia', '/accompagnement-ia', '/prestataire-ia',
   ];
   const conseilActive = CONSEIL_PATHS.includes(location.pathname);
   const veilleActive = location.pathname.startsWith('/veille-ia');
@@ -1044,6 +1045,7 @@ export function MasteriaFooter() {
               ['Élus CSE & dialogue social', '/formation-cse-ia'],
               ['Finance', '/formation-ia-finance'],
               ['Data & analyse', '/formation-data-ia'],
+              ['Gouvernance des données', '/formation-gouvernance-donnees'],
               ['Communication', '/formation-ia-communication'],
               ['Management', '/formation-ia-management'],
               ['Gestion de projet', '/formation-ia-gestion-de-projet'],
@@ -1102,6 +1104,10 @@ export function MasteriaFooter() {
               ['Prestataire IA : le guide', '/prestataire-ia'],
               ['Cabinet de conseil IA', '/conseil-intelligence-artificielle'],
               ['Conseil stratégie IA', '/conseil-strategie-ia'],
+              ['Conseil transformation IA', '/conseil-transformation-ia'],
+              ['Conseil IA pour PME', '/conseil-ia-pme'],
+              ['Chief AI Officer à temps partagé', '/chief-ai-officer'],
+              ['IA en gestion de projet (PMO augmenté)', '/ia-gestion-de-projet'],
               ['Conseil data & IA', '/conseil-data-ia'],
               ['Gouvernance & AI Act', '/gouvernance-ia'],
               ['IA générative en entreprise', '/ia-generative-entreprise'],
@@ -1120,6 +1126,7 @@ export function MasteriaFooter() {
               ['Agence SEO IA', '/agence-seo-ia'],
               ['Audit SEO IA', '/audit-seo-ia'],
               ['Audit GEO', '/audit-geo-ia'],
+              ['Consultant visibilité IA', '/consultant-visibilite-ia'],
               ['Agence IA Paris', '/agence-ia-paris'],
               ['Agence IA Annecy', '/agence-ia-annecy'],
               ['Agence IA Genève', '/agence-ia-geneve'],
