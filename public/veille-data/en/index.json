@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-03",
-    "totalEditions": 13,
-    "totalItems": 180,
-    "totalSources": 242
+    "derniereDate": "2026-09-07",
+    "totalEditions": 15,
+    "totalItems": 208,
+    "totalSources": 282
   },
   "editions": [
+    {
+      "date": "2026-09-07",
+      "dateAffichee": "7 September 2026",
+      "dateCourte": "Mon 7 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-04",
+      "dateAffichee": "4 September 2026",
+      "dateCourte": "Fri 4 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
+      "nbItems": 14,
+      "nbSources": 26,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-03",
       "dateAffichee": "3 September 2026",

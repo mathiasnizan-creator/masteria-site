@@ -3,12 +3,251 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-03",
-    "totalEditions": 27,
-    "totalItems": 369,
-    "totalSources": 537
+    "derniereDate": "2026-09-07",
+    "totalEditions": 29,
+    "totalItems": 397,
+    "totalSources": 577
   },
   "editions": [
+    {
+      "date": "2026-09-07",
+      "dateCourte": "lun. 7 sept.",
+      "dateAffichee": "7 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Moody's estime que les entreprises chinoises tirent plus de puissance de calcul par dollar dépensé que les géants américains ; le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour droit d'auteur pendant que le partage de l'accord Anthropic oppose auteurs et éditeurs ; Jakub Pachocki, directeur scientifique d'OpenAI, décrit une « intelligence étrangère » et réclame des garde-fous ; et des candidats américains cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
+      "chapeau": "Un rapport de Moody's estime que la Chine obtient davantage de puissance de calcul par dollar dépensé, ce qui brouille la lecture d'une course à l'IA jusqu'ici mesurée en milliards investis. Le même jour, les procès pour droit d'auteur s'accumulent contre OpenAI et Anthropic, et le recrutement automatisé montre sa faille : une candidature américaine sur cent cache déjà des instructions pour tromper l'IA qui la lit.",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "South China Morning Post",
+        "Le Monde",
+        "ZDNet",
+        "Clubic",
+        "OpenAI",
+        "The Verge",
+        "TechCrunch",
+        "arXiv",
+        "Nikkei Asia",
+        "Bloomberg"
+      ],
+      "items": [
+        {
+          "t": "La Chine tire plus de puissance de calcul par dollar dépensé, selon Moody's",
+          "z": "une",
+          "id": "la-chine-tire-plus-de-puissance-de-calcul-par-dollar"
+        },
+        {
+          "t": "Les affiches générées par IA envahissent l'espace public, la contestation s'organise en ligne",
+          "z": "europe",
+          "id": "les-affiches-generees-par-ia-envahissent-l-espace-public-la"
+        },
+        {
+          "t": "AMD présente une station de travail capable de faire tourner des modèles à mille milliards de paramètres",
+          "z": "europe",
+          "id": "amd-presente-une-station-de-travail-capable-de-faire"
+        },
+        {
+          "t": "Des candidats cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
+          "z": "europe",
+          "id": "des-candidats-cachent-des-instructions-dans-leur-cv-pour"
+        },
+        {
+          "t": "Jakub Pachocki (OpenAI) décrit une « intelligence étrangère » et appelle à des garde-fous renforcés",
+          "z": "international",
+          "id": "jakub-pachocki-openai-decrit-une-intelligence-etrangere-et"
+        },
+        {
+          "t": "Le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour violation du droit d'auteur",
+          "z": "international",
+          "id": "le-seattle-times-et-newsday-poursuivent-openai-et-microsoft"
+        },
+        {
+          "t": "Le partage de l'accord Anthropic oppose auteurs, éditeurs et agents littéraires",
+          "z": "international",
+          "id": "le-partage-de-l-accord-anthropic-oppose-auteurs-editeurs-et"
+        },
+        {
+          "t": "Huawei affirme avoir résolu la surchauffe de ses puces, avant le lancement du Kirin 2026",
+          "z": "chine",
+          "id": "huawei-affirme-avoir-resolu-la-surchauffe-de-ses-puces"
+        },
+        {
+          "t": "SenseTime redevient rentable en misant sur les tâches d'entreprise plutôt que sur la taille des modèles",
+          "z": "chine",
+          "id": "sensetime-redevient-rentable-en-misant-sur-les-taches-d"
+        },
+        {
+          "t": "Un meilleur modèle peut rendre le système plus risqué",
+          "z": "recherche",
+          "id": "un-meilleur-modele-peut-rendre-le-systeme-plus-risque"
+        },
+        {
+          "t": "Une revue de recherche cartographie la bascule vers les agents de recrutement",
+          "z": "recherche",
+          "id": "une-revue-de-recherche-cartographie-la-bascule-vers-les"
+        },
+        {
+          "t": "Nvidia a placé 99 milliards de dollars dans d'autres entreprises technologiques en deux ans",
+          "z": "bref",
+          "id": "nvidia-a-place-99-milliards-de-dollars-dans-d-autres"
+        },
+        {
+          "t": "Le Japon prévoit de quadrupler ses centres de données pour l'IA d'ici 2033",
+          "z": "bref",
+          "id": "le-japon-prevoit-de-quadrupler-ses-centres-de-donnees-pour"
+        },
+        {
+          "t": "Le boom des centres de données menace de pousser les taux d'intérêt à la hausse en Australie",
+          "z": "bref",
+          "id": "le-boom-des-centres-de-donnees-menace-de-pousser-les-taux-d"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "dateCourte": "ven. 4 sept.",
+      "dateAffichee": "4 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI lance GPT-6 Astra, premier modèle classé au seuil cyber « critique » et présenté comme l'entrée dans l'« ère de l'AGI », le jour où ChatGPT, Claude et Grok tombent en panne presque en même temps ; Nvidia rachète la plateforme franco-américaine Hugging Face pour 12,9 milliards de dollars, le G20 adopte une approche pro-IA portée par Washington, et la Chine multiplie les introductions en Bourse avec Enflame sursouscrite 4 073 fois et Moonshot en route vers Hong Kong",
+      "chapeau": "OpenAI a lancé GPT-6 Astra, présenté comme son modèle le plus puissant et le premier classé au seuil de risque cyber « critique », le jour même où ChatGPT, Claude et Grok sont tombés en panne presque en même temps. Dans le même mouvement, Nvidia rachète la plateforme franco-américaine Hugging Face pour 12,9 milliards de dollars et le G20 s'accorde sur une régulation allégée de l'IA.",
+      "nbItems": 14,
+      "nbSources": 26,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "TechCrunch",
+        "Wired",
+        "Next.ink",
+        "ZDNet",
+        "Numerama",
+        "Google DeepMind",
+        "South China Morning Post",
+        "Journal du Net",
+        "arXiv",
+        "Clubic",
+        "Bloomberg"
+      ],
+      "items": [
+        {
+          "t": "OpenAI lance GPT-6 Astra et proclame l'entrée dans l'« ère de l'AGI »",
+          "z": "une",
+          "id": "openai-lance-gpt-6-astra-et-proclame-l-entree-dans-l-ere-de"
+        },
+        {
+          "t": "Nvidia rachète Hugging Face pour 12,9 milliards de dollars",
+          "z": "europe",
+          "id": "nvidia-rachete-hugging-face-pour-12-9-milliards-de-dollars"
+        },
+        {
+          "t": "La CNIL publie un outil pour retrouver la généalogie des modèles d'IA ouverts",
+          "z": "europe",
+          "id": "la-cnil-publie-un-outil-pour-retrouver-la-genealogie-des"
+        },
+        {
+          "t": "LibreOffice 26.8 mise sur le « zéro IA » et séduit les directions informatiques",
+          "z": "europe",
+          "id": "libreoffice-26-8-mise-sur-le-zero-ia-et-seduit-les"
+        },
+        {
+          "t": "ChatGPT, Claude et Grok tombent en panne presque en même temps",
+          "z": "international",
+          "id": "chatgpt-claude-et-grok-tombent-en-panne-presque-en-meme"
+        },
+        {
+          "t": "OpenAI coupe l'accès à Cursor, un client à un milliard de dollars, pour éviter Elon Musk",
+          "z": "international",
+          "id": "openai-coupe-l-acces-a-cursor-un-client-a-un-milliard-de"
+        },
+        {
+          "t": "Google DeepMind lance WeatherNext 3, son modèle météo le plus précis",
+          "z": "international",
+          "id": "google-deepmind-lance-weathernext-3-son-modele-meteo-le"
+        },
+        {
+          "t": "Meta paie les utilisateurs de son nouveau modèle en échange de leurs données",
+          "z": "international",
+          "id": "meta-paie-les-utilisateurs-de-son-nouveau-modele-en-echange"
+        },
+        {
+          "t": "Le fondeur chinois Enflame voit son introduction en Bourse sursouscrite 4 073 fois",
+          "z": "chine",
+          "id": "le-fondeur-chinois-enflame-voit-son-introduction-en-bourse"
+        },
+        {
+          "t": "Moonshot AI, créateur du modèle Kimi K3, dépose un dossier d'introduction en Bourse à Hong Kong",
+          "z": "chine",
+          "id": "moonshot-ai-createur-du-modele-kimi-k3-depose-un-dossier-d"
+        },
+        {
+          "t": "Les modèles de pointe savent souvent qu'on les teste",
+          "z": "recherche",
+          "id": "les-modeles-de-pointe-savent-souvent-qu-on-les-teste"
+        },
+        {
+          "t": "Le fossé des compétences en IA se creuse plus vite que prévu",
+          "z": "bref",
+          "id": "le-fosse-des-competences-en-ia-se-creuse-plus-vite-que-prevu"
+        },
+        {
+          "t": "Avec l'IA, les managers produisent plus, mais managent-ils mieux",
+          "z": "bref",
+          "id": "avec-l-ia-les-managers-produisent-plus-mais-managent-ils"
+        },
+        {
+          "t": "New York et Los Angeles restreignent l'IA générative à l'école",
+          "z": "bref",
+          "id": "new-york-et-los-angeles-restreignent-l-ia-generative-a-l"
+        }
+      ]
+    },
     {
       "date": "2026-09-03",
       "dateCourte": "jeu. 3 sept.",

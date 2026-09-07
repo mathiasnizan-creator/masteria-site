@@ -1,0 +1,290 @@
+{
+  "schema": 2,
+  "date": "2026-09-07",
+  "dateAffichee": "7 September 2026",
+  "dateLongue": "Monday 7 September 2026",
+  "dateCourte": "Mon 7 Sep",
+  "jourSemaine": "Monday",
+  "titre": "AI Watch - Monday 7 September 2026",
+  "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+  "chapeau": "A Moody's report finds that China gets more compute per dollar spent, which muddies a reading of the AI race so far measured in billions invested. The same day, copyright lawsuits pile up against OpenAI and Anthropic, and automated recruitment shows its flaw: one in a hundred US applications already hides instructions to fool the AI that reads it.",
+  "une": {
+    "titre": "China gets more compute per dollar spent, according to Moody's",
+    "texteHtml": "<p>The AI spending gap between US and Chinese giants does not buy the expected advantage, finds a report from the ratings agency Moody's Ratings, reported by the South China Morning Post. US hyperscalers (the cloud giants that build data centers) have spent far more than their Chinese counterparts, but the gap in compute capacity actually installed is much smaller than those budgets suggested. Two reasons explain it: lower domestic costs and heavy backing from the Chinese state, which let local companies get more power for every dollar. The finding muddies the dominant reading, which counts the AI race in billions invested. For anyone tracking the US-China balance of power, the capacity actually in service weighs more than the headline bill.</p>",
+    "sources": [
+      {
+        "nom": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/big-tech/article/3366407/punching-above-their-weight-how-chinas-ai-giants-stretch-each-dollar-compute-race"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "china-gets-more-compute-per-dollar-spent-according-to-moody"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "AI-generated posters flood public spaces, and the backlash organizes online",
+          "texteHtml": "<p>School fair programs, restaurant menus, concert announcements: posters produced by artificial intelligence have sprung up in the streets this summer, reports Le Monde. The proliferation is being called out online, especially by professional graphic designers, who see it as a direct threat to their trade. The movement reflects a broader distrust of these tools, as their use becomes commonplace in local communication.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/07/face-au-deferlement-des-affiches-utilisant-l-ia-dans-l-espace-public-la-resistance-en-ligne-s-organise_6767774_4408996.html"
+            }
+          ],
+          "rang": 2,
+          "id": "ai-generated-posters-flood-public-spaces-and-the-backlash"
+        },
+        {
+          "titre": "AMD unveils a workstation that can run trillion-parameter models",
+          "texteHtml": "<p>AMD has unveiled the Threadripper Halo Station, which pairs a 96-core Ryzen Threadripper PRO 9995WX processor with Instinct MI350P accelerators, reports ZDNet. The machine is aimed at running huge AI models locally, without going through the cloud. For an organization keen to keep its data in-house, running a model of this size on a workstation sitting under the desk becomes a real option.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/amd-presente-une-station-de-travail-capable-de-faire-tourner-des-ia-a-mille-milliards-de-parametres-502877.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "amd-unveils-a-workstation-that-can-run-trillion-parameter"
+        },
+        {
+          "titre": "Job seekers hide instructions in their resumes to trick recruiters' AI",
+          "texteHtml": "<p>By slipping in a few lines of white text, invisible to the eye but read by the machine, a candidate can make the recruiter's AI believe they deserve the top spot, reports Clubic. The practice already affects one in a hundred applications in the United States, according to a recent academic study. It is spreading as resume shortlisting is handed over to automated software.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628402-des-candidats-cachent-des-instructions-dans-leur-cv-pour-pieger-les-ia-des-recruteurs.html"
+            }
+          ],
+          "rang": 4,
+          "id": "job-seekers-hide-instructions-in-their-resumes-to-trick"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Jakub Pachocki (OpenAI) describes an alien mind and calls for stronger guardrails",
+          "texteHtml": "<p>In an essay published on 6 September, OpenAI's chief scientist, Jakub Pachocki, voices concern about increasingly capable models whose reasoning drifts from our own, to the point of resembling an alien mind. His argument comes down to one idea: the more capable a system becomes, the harder it is to guarantee that it pursues the goals assigned to it, what researchers call alignment. He argues for stronger safeguards and international coordination, along the lines of what exists for other high-risk technologies. The text comes from an OpenAI executive, a stakeholder who sells these models and raises funds on their promise; the call for caution sits alongside the commercial argument. It is worth reading for what it reveals about how the lab itself sees the trajectory of its systems.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/an-alien-mind"
+            }
+          ],
+          "rang": 5,
+          "id": "jakub-pachocki-openai-describes-an-alien-mind-and-calls-for"
+        },
+        {
+          "titre": "The Seattle Times and Newsday sue OpenAI and Microsoft for copyright infringement",
+          "texteHtml": "<p>The two American newspapers accuse OpenAI and Microsoft of using their articles as training data without permission, and fault their models for reproducing entire passages of their reporting in the answers given to users, reports The Verge. The complaint joins an already crowded series, opened notably by the New York Times. The publishers are seeking recognition that training on their protected content, then reproducing it near-verbatim, goes beyond fair use. The outcome of these cases will set the price the labs will have to pay for the raw textual material of their models, in America and, by extension, elsewhere.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft"
+            }
+          ],
+          "rang": 6,
+          "id": "the-seattle-times-and-newsday-sue-openai-and-microsoft-for"
+        },
+        {
+          "titre": "The split of the Anthropic settlement pits authors, publishers and literary agents against each other",
+          "texteHtml": "<p>The authors who were to benefit from the settlement Anthropic reached to close out its use of books in training its models are contesting the share now claimed by publishers and literary agents, reports TechCrunch. In their view, the publishers are demanding more than their fair share of the sums set aside. The dispute is over how to divide a payout between those who wrote the books and those who published or represented them. It raises a new question: when an AI is trained on a work, who, the author or the publishing chain, holds the right to be compensated, and in what proportion.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/"
+            }
+          ],
+          "rang": 7,
+          "id": "the-split-of-the-anthropic-settlement-pits-authors"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Huawei says it has solved its chips' overheating, ahead of the Kirin 2026 launch",
+          "texteHtml": "<p>Huawei has published a research paper showing that its semiconductor architecture based on the Tau Scaling Law avoids overheating, a technical obstacle seen as decisive for its next smartphone chip, the Kirin 2026, reports the South China Morning Post. The paper is authored by He Tingbo, chair of Huawei's scientific committee and head of its semiconductor business. In it she rejects the idea that stacking logic circuits vertically would create an insurmountable thermal bottleneck. The stakes go beyond the phone: deprived of the most advanced chips by US restrictions, China is trying to prove it can design cutting-edge components on its own. A research paper is not a shipped product, and the chip has yet to prove itself in mass production.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366543/huawei-paper-shows-tau-scaling-law-chip-solves-overheating-ahead-kirin-2026-launch"
+            }
+          ],
+          "rang": 8,
+          "id": "huawei-says-it-has-solved-its-chips-overheating-ahead-of"
+        },
+        {
+          "titre": "SenseTime returns to profit by betting on enterprise tasks rather than model size",
+          "texteHtml": "<p>Chinese AI pioneer SenseTime posted a net profit of 617.3 million yuan (about $92 million) in the first half of 2026, while several of its Chinese rivals struggle, reports the South China Morning Post. Its leaders, including CEO Xu Li and CFO Wang Zheng, attribute the turnaround to a choice: stop chasing ever-larger models and focus on concrete use cases that help clients get their business tasks done. The bet reverses the race for size that dominates the sector. It suggests that a model well tuned to a business need is sometimes worth more, commercially, than a giant model sold as a feat. For an organization deploying AI, the message matches a truth from the field: value comes from use tuned to the need, not from headline performance.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3366436/how-generative-ai-helps-sensetime-turn-profit-even-chinese-peers-struggle"
+            }
+          ],
+          "rang": 9,
+          "id": "sensetime-returns-to-profit-by-betting-on-enterprise-tasks"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "A better model can make the system riskier",
+          "texteHtml": "<p>A team shows on arXiv that improving the capability of a single model can degrade the outcome for the system as a whole. The hypothesis: models trained in similar ways behave more alike as they improve, their decisions correlate, and that correlation creates a floor of risk that cannot be diversified away. The authors verify it on language agents deployed in financial markets, but the reasoning holds for any use where many players rely on the same models for a comparable decision.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.04373"
+            }
+          ],
+          "rang": 10,
+          "id": "a-better-model-can-make-the-system-riskier"
+        },
+        {
+          "titre": "A survey maps the shift toward recruitment agents",
+          "texteHtml": "<p>A survey published on arXiv traces the move, in automated recruitment, from simple profile matching to agents able to search for evidence, compare candidates and sometimes take actions. The authors catalog the methods, their evaluation modes and the governance questions this growing autonomy raises, up to work from September 2026. The document serves as a reference for anyone wanting to understand where AI stands in the selection of people, and what remains to be governed.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.04286"
+            }
+          ],
+          "rang": 11,
+          "id": "a-survey-maps-the-shift-toward-recruitment-agents"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Nvidia put $99 billion into other tech companies in two years",
+          "texteHtml": "<p>The value of Nvidia's equity holdings rose from $2.2 billion in 2024 to $99 billion as of 26 July 2026, a 45-fold increase that benefits Intel, SpaceX and a dozen other companies, which Michael Burry and Mark Cuban denounce as an unhealthy financial dependence across the sector, reports Clubic.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628447-nvidia-a-investi-99-milliards-de-dollars-dans-la-tech-en-deux-ans-mais-ou-va-son-argent.html"
+            }
+          ],
+          "rang": 12,
+          "id": "nvidia-put-99-billion-into-other-tech-companies-in-two-years"
+        },
+        {
+          "titre": "Japan plans to quadruple its AI data centers by 2033",
+          "texteHtml": "<p>The country is reportedly committing $60 billion to quadruple the capacity of its AI-dedicated data centers by 2033, reports Nikkei Asia.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-ai-data-centers-set-to-quadruple-by-2033-with-60bn-investment"
+            }
+          ],
+          "rang": 13,
+          "id": "japan-plans-to-quadruple-its-ai-data-centers-by-2033"
+        },
+        {
+          "titre": "The data center boom threatens to push interest rates higher in Australia",
+          "texteHtml": "<p>Building AI data centers risks pushing demand past the supply capacity of the Australian economy, which would fuel inflation and force the central bank to keep rates high, according to James McIntyre of Bloomberg Economics.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-07/australia-s-ai-boom-risks-demand-surge-and-higher-rates-be-says"
+            }
+          ],
+          "rang": 14,
+          "id": "the-data-center-boom-threatens-to-push-interest-rates"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "One in a hundred US applications already hides instructions to fool the AI that reads resumes, on the day two arXiv papers show that improving a single model can degrade the collective outcome when everyone relies on the same correlated models: the skill that gains value is keeping independent judgment over decisions that sort people, a second path built differently and a named person who answers for the choice, rather than handing hiring, credit or admission to a single model whose blind spot becomes an entire market's",
+    "these": "One in a hundred applications in the United States already contains instructions hidden in white text, written to fool the AI that reads the resume and push it to the top of the pile. The figure comes from an academic study relayed by Clubic. As soon as sorting people runs through a machine, both sides learn to work it: recruiters delegate shortlisting to agents that read, compare and sometimes decide on their own, as a survey published this week on arXiv documents, and candidates respond by trapping the reader. The cheating is the visible symptom. The underlying risk lies in uniformity. Two research papers published the same day give the mechanism. The first shows that improving a single model can degrade the overall outcome: when everyone relies on models trained the same way, their decisions look alike, correlate, and that correlation does not diversify away. The second shows that a model revises its answer under peer pressure, to the point of breaking statistical guarantees once thought secure. Apply it to recruitment: if a whole market filters resumes with the same handful of models, the profile one filter rejects is rejected everywhere, at once, for the same invisible reason. The skill that gains value in a French organization is keeping independent judgment over decisions that sort people. Take a decision where AI already plays a part: hiring, granting credit, admission. Do not let a single model be its only gate. Keep a second path, built differently: another model, or a human with distinct criteria, who reviews what the machine rejects. Name the person who answers for the choice and can explain it, which the GDPR already requires for any fully automated decision that binds someone (Article 22). A filter everyone shares has a blind spot everyone shares. Diversity of judgment protects against a single error that would spread across an entire market. The machine speeds up the sorting. Deciding who deserves a second look remains a craft. The Masteria editorial team.",
+    "html": "<p>One in a hundred applications in the United States already contains instructions hidden in white text, written to fool the AI that reads the resume and push it to the top of the pile. The figure comes from an academic study relayed by Clubic. As soon as sorting people runs through a machine, both sides learn to work it: recruiters delegate shortlisting to agents that read, compare and sometimes decide on their own, as a survey published this week on arXiv documents, and candidates respond by trapping the reader.</p>\n<p>The cheating is the visible symptom. The underlying risk lies in uniformity. Two research papers published the same day give the mechanism. The first shows that improving a single model can degrade the overall outcome: when everyone relies on models trained the same way, their decisions look alike, correlate, and that correlation does not diversify away. The second shows that a model revises its answer under peer pressure, to the point of breaking statistical guarantees once thought secure. Apply it to recruitment: if a whole market filters resumes with the same handful of models, the profile one filter rejects is rejected everywhere, at once, for the same invisible reason.</p>\n<p>The skill that gains value in a French organization is keeping independent judgment over decisions that sort people. Take a decision where AI already plays a part: hiring, granting credit, admission. Do not let a single model be its only gate. Keep a second path, built differently: another model, or a human with distinct criteria, who reviews what the machine rejects. Name the person who answers for the choice and can explain it, which the GDPR already requires for any fully automated decision that binds someone (Article 22).</p>\n<p>A filter everyone shares has a blind spot everyone shares. Diversity of judgment protects against a single error that would spread across an entire market. The machine speeds up the sorting. Deciding who deserves a second look remains a craft.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>One in a hundred applications in the United States already contains instructions hidden in white text, written to fool the AI that reads the resume and push it to the top of the pile. The figure comes from an academic study relayed by Clubic. As soon as sorting people runs through a machine, both sides learn to work it: recruiters delegate shortlisting to agents that read, compare and sometimes decide on their own, as a survey published this week on arXiv documents, and candidates respond by trapping the reader.</p>\n<p>The cheating is the visible symptom. The underlying risk lies in uniformity. Two research papers published the same day give the mechanism. The first shows that improving a single model can degrade the overall outcome: when everyone relies on models trained the same way, their decisions look alike, correlate, and that correlation does not diversify away. The second shows that a model revises its answer under peer pressure, to the point of breaking statistical guarantees once thought secure. Apply it to recruitment: if a whole market filters resumes with the same handful of models, the profile one filter rejects is rejected everywhere, at once, for the same invisible reason.</p>",
+    "itemsCites": [
+      4,
+      10,
+      11
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-04",
+    "dateLongue": "Friday 4 September 2026",
+    "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 14,
+  "nbSignes": 9049,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "South China Morning Post",
+    "Le Monde",
+    "ZDNet",
+    "Clubic",
+    "OpenAI",
+    "The Verge",
+    "TechCrunch",
+    "arXiv",
+    "Nikkei Asia",
+    "Bloomberg"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 58,
+  "publieLe": "2026-09-07T07:28:13+02:00",
+  "publieLeAffiche": "7h28"
+}

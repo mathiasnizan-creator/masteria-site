@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-03",
-    "totalEditions": 13,
-    "totalItems": 180,
-    "totalSources": 242
+    "derniereDate": "2026-09-07",
+    "totalEditions": 15,
+    "totalItems": 208,
+    "totalSources": 282
   },
   "recentes": [
+    {
+      "date": "2026-09-07",
+      "dateAffichee": "7 September 2026",
+      "dateCourte": "Mon 7 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-04",
+      "dateAffichee": "4 September 2026",
+      "dateCourte": "Fri 4 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
+      "nbItems": 14,
+      "nbSources": 26,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-03",
       "dateAffichee": "3 September 2026",
@@ -155,39 +177,27 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-09-03",
-    "dateAffichee": "3 September 2026",
-    "dateLongue": "Thursday 3 September 2026",
-    "dateCourte": "Thu 3 Sep",
-    "jourSemaine": "Thursday",
-    "titre": "AI Watch - Thursday 3 September 2026",
-    "titreEditorial": "Washington backs OpenAI against the New York Times",
-    "chapeau": "The US Justice Department sided with OpenAI in the New York Times lawsuit, ruling that training its models on the paper's archives is 'fair use' and serves 'national security.' The same day, the G20 agreed on light-touch AI rules proposed by Washington, the French state tightened its alliance with Mistral, and both Meta and Google shipped new models.",
+    "date": "2026-09-07",
+    "dateAffichee": "7 September 2026",
+    "dateLongue": "Monday 7 September 2026",
+    "dateCourte": "Mon 7 Sep",
+    "jourSemaine": "Monday",
+    "titre": "AI Watch - Monday 7 September 2026",
+    "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+    "chapeau": "A Moody's report finds that China gets more compute per dollar spent, which muddies a reading of the AI race so far measured in billions invested. The same day, copyright lawsuits pile up against OpenAI and Anthropic, and automated recruitment shows its flaw: one in a hundred US applications already hides instructions to fool the AI that reads it.",
     "une": {
-      "titre": "The US government sides with OpenAI in the New York Times lawsuit",
-      "texteHtml": "<p>The US Justice Department intervened on Wednesday 2 September in the complaint the New York Times filed against OpenAI in December 2023, a case in which the paper is claiming \"billions of dollars\" for having its articles used to train ChatGPT. In a brief submitted to the court, the Trump administration backs OpenAI's argument: training a model on copyrighted works is \"fair use,\" the US doctrine of fair dealing, and caused the paper neither commercial harm nor any clear copyright violation. \"The United States has a strong interest in continuing to develop a robust and competitive artificial intelligence industry that sets the global standard,\" the government writes, also invoking competition with China and \"national security.\" A state arguing, in a private dispute, for the right of its champions to harvest the press without paying shifts the front line of copyright into the age of models. For European publishers waging similar battles, the signal from Washington will weigh on the negotiations to come.</p>",
+      "titre": "China gets more compute per dollar spent, according to Moody's",
+      "texteHtml": "<p>The AI spending gap between US and Chinese giants does not buy the expected advantage, finds a report from the ratings agency Moody's Ratings, reported by the South China Morning Post. US hyperscalers (the cloud giants that build data centers) have spent far more than their Chinese counterparts, but the gap in compute capacity actually installed is much smaller than those budgets suggested. Two reasons explain it: lower domestic costs and heavy backing from the Chinese state, which let local companies get more power for every dollar. The finding muddies the dominant reading, which counts the AI race in billions invested. For anyone tracking the US-China balance of power, the capacity actually in service weighs more than the headline bill.</p>",
       "sources": [
         {
-          "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/economie/article/2026/09/03/ia-l-administration-trump-defend-le-droit-d-openai-a-utiliser-les-archives-du-new-york-times-sans-verser-de-droits-d-auteur_6764810_3234.html"
-        },
-        {
-          "nom": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/988344/trump-administration-new-york-times-openai-lawsuit"
-        },
-        {
-          "nom": "Wired",
-          "url": "https://www.wired.com/story/trump-administration-sides-with-ai-giants-new-york-times-lawsuit/"
-        },
-        {
-          "nom": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/02/u-s-government-sides-with-openai-on-issue-of-training-llms-on-copyrighted-material/"
+          "nom": "South China Morning Post",
+          "url": "https://www.scmp.com/tech/big-tech/article/3366407/punching-above-their-weight-how-chinas-ai-giants-stretch-each-dollar-compute-race"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "the-us-government-sides-with-openai-in-the-new-york-times"
+      "id": "china-gets-more-compute-per-dollar-spent-according-to-moody"
     },
     "sections": [
       {
@@ -197,56 +207,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The French state deepens its partnership with Mistral and seconds engineers into ministries",
-            "texteHtml": "<p>The French state is tightening its alliance with Mistral and launching new pilots inside government departments, Le Monde reports. The start-up is to second engineers directly into public services to deploy AI on three sensitive fronts: cybersecurity, fraud prevention and justice. Placing a supplier's teams at the heart of ministries speeds up adoption, but ties the workings of the state more closely to a private company, national though it may be.</p>",
+            "titre": "AI-generated posters flood public spaces, and the backlash organizes online",
+            "texteHtml": "<p>School fair programs, restaurant menus, concert announcements: posters produced by artificial intelligence have sprung up in the streets this summer, reports Le Monde. The proliferation is being called out online, especially by professional graphic designers, who see it as a direct threat to their trade. The movement reflects a broader distrust of these tools, as their use becomes commonplace in local communication.</p>",
             "sources": [
               {
                 "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/pixels/article/2026/09/03/intelligence-artificielle-l-etat-renforce-son-partenariat-avec-mistral-et-lance-de-nouvelles-experimentations-dans-des-ministeres_6764672_4408996.html"
+                "url": "https://www.lemonde.fr/pixels/article/2026/09/07/face-au-deferlement-des-affiches-utilisant-l-ia-dans-l-espace-public-la-resistance-en-ligne-s-organise_6767774_4408996.html"
               }
             ],
             "rang": 2,
-            "id": "the-french-state-deepens-its-partnership-with-mistral-and"
+            "id": "ai-generated-posters-flood-public-spaces-and-the-backlash"
           },
           {
-            "titre": "According to RSF, the major chatbots still relay sanctioned Russian media",
-            "texteHtml": "<p>An investigation by Reporters Without Borders (RSF) finds that ChatGPT, Claude and Grok reproduce content from Russian outlets targeted by European Union sanctions, accused of serving Kremlin \"disinformation,\" Le Monde and Clubic report. Only Meta AI refuses to do so, explicitly citing the sanctions in force. The finding confronts providers with a concrete responsibility: their models rebroadcast sources that European law forbids from spreading, without adequate filtering.</p>",
+            "titre": "AMD unveils a workstation that can run trillion-parameter models",
+            "texteHtml": "<p>AMD has unveiled the Threadripper Halo Station, which pairs a 96-core Ryzen Threadripper PRO 9995WX processor with Instinct MI350P accelerators, reports ZDNet. The machine is aimed at running huge AI models locally, without going through the cloud. For an organization keen to keep its data in-house, running a model of this size on a workstation sitting under the desk becomes a real option.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/pixels/article/2026/09/02/ia-des-chatbots-donnent-acces-aux-contenus-de-medias-russes-sanctionnes-par-l-union-europeenne-selon-une-enquete-de-rsf_6764323_4408996.html"
-              },
-              {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-627910-malgre-les-sanctions-europeennes-les-grandes-ia-reprennent-toujours-les-medias-russes.html"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/amd-presente-une-station-de-travail-capable-de-faire-tourner-des-ia-a-mille-milliards-de-parametres-502877.htm"
               }
             ],
             "rang": 3,
-            "id": "according-to-rsf-the-major-chatbots-still-relay-sanctioned"
+            "id": "amd-unveils-a-workstation-that-can-run-trillion-parameter"
           },
           {
-            "titre": "Alex Karp, head of Palantir, warns France over its digital sovereignty",
-            "texteHtml": "<p>The American chief executive of Palantir said on Wednesday 2 September that France would \"hurt itself\" with a sovereignty he sees as an illusion, Le Monde reports. He was reacting to the decision Paris took in June to do without his company's services for domestic intelligence. The remark illustrates the tension between France's ambition to regain control of its critical tools and the persistent dependence on foreign platforms already in place.</p>",
+            "titre": "Job seekers hide instructions in their resumes to trick recruiters' AI",
+            "texteHtml": "<p>By slipping in a few lines of white text, invisible to the eye but read by the machine, a candidate can make the recruiter's AI believe they deserve the top spot, reports Clubic. The practice already affects one in a hundred applications in the United States, according to a recent academic study. It is spreading as resume shortlisting is handed over to automated software.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/economie/article/2026/09/03/ia-le-patron-de-palantir-alex-karp-met-en-garde-la-france-au-sujet-de-sa-souverainete-numerique_6764606_3234.html"
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-628402-des-candidats-cachent-des-instructions-dans-leur-cv-pour-pieger-les-ia-des-recruteurs.html"
               }
             ],
             "rang": 4,
-            "id": "alex-karp-head-of-palantir-warns-france-over-its-digital"
-          },
-          {
-            "titre": "AI speeds up junior work, and threatens to strip away what trains them",
-            "texteHtml": "<p>The Journal du Net points to a blind spot in productivity: by handing models the entry-level tasks, you deprive beginners of the situations where they used to learn to judge, decide and become the experts of tomorrow. The time saved is immediate and measurable; the loss of skill is deferred and invisible. A firm, an IT department or a newsroom that automates its lower rungs gains speed today and weakens its bench strength five years out.</p>",
-            "sources": [
-              {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1554277-ia-et-juniors-l-angle-mort-de-la-productivite/"
-              }
-            ],
-            "rang": 5,
-            "id": "ai-speeds-up-junior-work-and-threatens-to-strip-away-what"
+            "id": "job-seekers-hide-instructions-in-their-resumes-to-trick"
           }
         ]
       },
@@ -257,68 +251,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The G20 adopts light-touch AI principles proposed by Washington",
-            "texteHtml": "<p>Representatives of the world's largest economies unanimously approved guidelines put forward by the United States, which argue for a flexible governance of artificial intelligence and emerging technologies, Bloomberg reports. The deal, reached at a G20 ministerial meeting on innovation held in the United States, hands a win to the Trump administration and to Silicon Valley, both in favour of a minimal framework. At the same time, China's science and technology minister, Yin Hejun, called there for global cooperation \"rather than rivalry,\" a few weeks ahead of an announced meeting between Xi Jinping and Donald Trump. Two positions coexist: Washington wants to ease the constraint, Beijing wants the rules set collectively. The European Union, with its binding AI Act, finds itself isolated on the hard line just as the international consensus slides towards leniency.</p>",
+            "titre": "Jakub Pachocki (OpenAI) describes an alien mind and calls for stronger guardrails",
+            "texteHtml": "<p>In an essay published on 6 September, OpenAI's chief scientist, Jakub Pachocki, voices concern about increasingly capable models whose reasoning drifts from our own, to the point of resembling an alien mind. His argument comes down to one idea: the more capable a system becomes, the harder it is to guarantee that it pursues the goals assigned to it, what researchers call alignment. He argues for stronger safeguards and international coordination, along the lines of what exists for other high-risk technologies. The text comes from an OpenAI executive, a stakeholder who sells these models and raises funds on their promise; the call for caution sits alongside the commercial argument. It is worth reading for what it reveals about how the lab itself sees the trajectory of its systems.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-02/us-strikes-light-touch-ai-regulation-accord-with-g20-members"
-              },
-              {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-war/article/3366143/china-urges-global-ai-cooperation-not-rivalry-ahead-xi-trump-summit"
+                "nom": "OpenAI",
+                "url": "https://openai.com/index/an-alien-mind"
               }
             ],
-            "rang": 6,
-            "id": "the-g20-adopts-light-touch-ai-principles-proposed-by"
+            "rang": 5,
+            "id": "jakub-pachocki-openai-describes-an-alien-mind-and-calls-for"
           },
           {
-            "titre": "Meta ships its most powerful model and eases the pressure on its staff",
-            "texteHtml": "<p>Meta has released its most advanced AI model to date, whose chief scientist claims its capabilities are \"closing in\" on the best rivals, Bloomberg reports. In parallel, the company is pushing a new agent called Hatch to its employees, while easing the pressure that pushed them to burn through AI tokens en masse, an internal race nicknamed \"tokenmaxxing,\" Wired reports. The twin move captures the sector's frame of mind: catch the leading pack on model performance, and stop measuring adoption by raw volume of use. After months when the only instruction was to use AI at any cost, Meta is correcting towards more measured use. The signal matters, coming from the company that bet hardest on replacing teams with agents.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-02/meta-releases-more-powerful-ai-model-edging-closer-to-rivals"
-              },
-              {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/meta-pushes-its-new-ai-agent-on-employees-but-eases-off-on-tokenmaxxing/"
-              }
-            ],
-            "rang": 7,
-            "id": "meta-ships-its-most-powerful-model-and-eases-the-pressure"
-          },
-          {
-            "titre": "Google launches Gemini 3.8 Flash, its third Flash model in six weeks",
-            "texteHtml": "<p>Google unveiled Gemini 3.8 Flash on 2 September, only a few weeks after its predecessor, The Verge and Frandroid report. The model \"works harder\" than Gemini 3.7 Flash, according to Google: it chains more reasoning steps on complex tasks and calls its tools iteratively (it triggers several successive actions instead of one). The introductory price stays the same as the previous version, $0.75 per million tokens in and $3.75 out, but only until 31 December. Google released at the same time a \"3.8 Flash Cyber\" variant, geared towards cybersecurity. The pace, three Flash models in six weeks, shows an industrialisation of releases that makes the \"new model\" routine and shifts the difficulty onto the choice: for a team, keeping up with this rhythm of iterations becomes a job in itself.</p>",
+            "titre": "The Seattle Times and Newsday sue OpenAI and Microsoft for copyright infringement",
+            "texteHtml": "<p>The two American newspapers accuse OpenAI and Microsoft of using their articles as training data without permission, and fault their models for reproducing entire passages of their reporting in the answers given to users, reports The Verge. The complaint joins an already crowded series, opened notably by the New York Times. The publishers are seeking recognition that training on their protected content, then reproducing it near-verbatim, goes beyond fair use. The outcome of these cases will set the price the labs will have to pay for the raw textual material of their models, in America and, by extension, elsewhere.</p>",
             "sources": [
               {
                 "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/988742/google-gemini-3-8-flash"
-              },
-              {
-                "nom": "Google DeepMind",
-                "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/"
-              },
-              {
-                "nom": "Frandroid",
-                "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/google-gemini/3231265_gemini-3-8-flash-google-sort-son-troisieme-modele-flash-en-six-semaines"
+                "url": "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft"
               }
             ],
-            "rang": 8,
-            "id": "google-launches-gemini-3-8-flash-its-third-flash-model-in"
+            "rang": 6,
+            "id": "the-seattle-times-and-newsday-sue-openai-and-microsoft-for"
           },
           {
-            "titre": "A nuclear engineer sounds the alarm: AI's efficiency threatens the next generation of experts",
-            "texteHtml": "<p>In IEEE Spectrum, an engineer who led the design of the first fully digital control system for a US nuclear plant recounts a counter-intuitive choice: he deliberately left manual steps in sequences the system could run on its own. The reason came down to a precise problem. \"An operator who only supervises the automation slowly stops being an operator. The hands go cold,\" he writes. His thesis, applied to AI: optimising every task to the hilt deprives beginners of the chances to learn the trade by practice, and dries up the training of tomorrow's experts. The author does not dispute the efficiency gains; he reminds us that a human skill is maintained through exercise, and that an organisation that forgets this discovers the shortfall when it is too late to fill it.</p>",
+            "titre": "The split of the Anthropic settlement pits authors, publishers and literary agents against each other",
+            "texteHtml": "<p>The authors who were to benefit from the settlement Anthropic reached to close out its use of books in training its models are contesting the share now claimed by publishers and literary agents, reports TechCrunch. In their view, the publishers are demanding more than their fair share of the sums set aside. The dispute is over how to divide a payout between those who wrote the books and those who published or represented them. It raises a new question: when an AI is trained on a work, who, the author or the publishing chain, holds the right to be compensated, and in what proportion.</p>",
             "sources": [
               {
-                "nom": "IEEE Spectrum",
-                "url": "https://spectrum.ieee.org/ai-engineer-skills"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/"
               }
             ],
-            "rang": 9,
-            "id": "a-nuclear-engineer-sounds-the-alarm-ai-s-efficiency"
+            "rang": 7,
+            "id": "the-split-of-the-anthropic-settlement-pits-authors"
           }
         ]
       },
@@ -329,28 +295,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Foundry Hua Hong invests $2 billion in a new fab for AI",
-            "texteHtml": "<p>Hua Hong Grace Semiconductor, China's second-largest contract chipmaker, is injecting $2 billion into a capacity expansion in Wuxi, in eastern China, to meet domestic demand for AI infrastructure and to work around US technology restrictions, the South China Morning Post reports. The funds will finance a new 12-inch wafer production line, the group's third site in the city, according to a filing submitted on Tuesday to the Hong Kong stock exchange. The move illustrates China's strategy of scaling up on mature chips: producing at volume, at home, what sanctions make hard to import. The bet is on the ability to supply domestic data centres en masse with mature chips, where leading-edge lithography remains out of reach.</p>",
+            "titre": "Huawei says it has solved its chips' overheating, ahead of the Kirin 2026 launch",
+            "texteHtml": "<p>Huawei has published a research paper showing that its semiconductor architecture based on the Tau Scaling Law avoids overheating, a technical obstacle seen as decisive for its next smartphone chip, the Kirin 2026, reports the South China Morning Post. The paper is authored by He Tingbo, chair of Huawei's scientific committee and head of its semiconductor business. In it she rejects the idea that stacking logic circuits vertically would create an insurmountable thermal bottleneck. The stakes go beyond the phone: deprived of the most advanced chips by US restrictions, China is trying to prove it can design cutting-edge components on its own. A research paper is not a shipped product, and the chip has yet to prove itself in mass production.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3366104/chinas-no-2-foundry-hua-hong-invests-us2b-new-fab-meet-surging-ai-driven-demand"
+                "url": "https://www.scmp.com/tech/big-tech/article/3366543/huawei-paper-shows-tau-scaling-law-chip-solves-overheating-ahead-kirin-2026-launch"
               }
             ],
-            "rang": 10,
-            "id": "foundry-hua-hong-invests-2-billion-in-a-new-fab-for-ai"
+            "rang": 8,
+            "id": "huawei-says-it-has-solved-its-chips-overheating-ahead-of"
           },
           {
-            "titre": "Beijing launches a campaign against AI-generated \"slop.\"",
-            "texteHtml": "<p>The Cyberspace Administration of China (CAC) announced on Wednesday a sweeping offensive against \"slop,\" the low-quality synthetic content produced en masse that clutters social networks and news feeds, the South China Morning Post reports. The regulator says it has removed more than 5.61 million pieces of content judged harmful or illegal and shut down some 49,000 accounts during its campaign, which targets WeChat, RedNote and Douyin. The operation targets deepfakes and auto-generated clickbait, symptoms of a saturation China is treating through regulatory coercion. The same problem runs across the whole of the global internet; Beijing chooses to answer it with large-scale administrative cleanup.</p>",
+            "titre": "SenseTime returns to profit by betting on enterprise tasks rather than model size",
+            "texteHtml": "<p>Chinese AI pioneer SenseTime posted a net profit of 617.3 million yuan (about $92 million) in the first half of 2026, while several of its Chinese rivals struggle, reports the South China Morning Post. Its leaders, including CEO Xu Li and CFO Wang Zheng, attribute the turnaround to a choice: stop chasing ever-larger models and focus on concrete use cases that help clients get their business tasks done. The bet reverses the race for size that dominates the sector. It suggests that a model well tuned to a business need is sometimes worth more, commercially, than a giant model sold as a feat. For an organization deploying AI, the message matches a truth from the field: value comes from use tuned to the need, not from headline performance.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/article/3366096/china-cracks-down-ai-deepfakes-and-clickbait-cluttering-wechat-rednote-douyin"
+                "url": "https://www.scmp.com/tech/tech-trends/article/3366436/how-generative-ai-helps-sensetime-turn-profit-even-chinese-peers-struggle"
               }
             ],
-            "rang": 11,
-            "id": "beijing-launches-a-campaign-against-ai-generated-slop"
+            "rang": 9,
+            "id": "sensetime-returns-to-profit-by-betting-on-enterprise-tasks"
           }
         ]
       },
@@ -361,16 +327,28 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "An arXiv paper shows the limits of judging an agent on its result alone",
-            "texteHtml": "<p>The most common evaluation in production is to show a \"judge\" the user's request and the agent's final answer, then rule on whether the matter was handled well. This method is structurally blind to an agent that reaches the right result by a bad path, explain the authors of \"trajectory-judge.\" To prove it, they build a deterministic customer-support environment, a resolution policy that always succeeds, and a fault injector that breaks a single link at a known moment. The setup measures exactly what result-based evaluation lets through: the cases where the customer gets the right answer while the agent broke a rule along the way. For any company deploying agents, the lesson is direct: checking the output is not enough, you have to inspect the trajectory.</p>",
+            "titre": "A better model can make the system riskier",
+            "texteHtml": "<p>A team shows on arXiv that improving the capability of a single model can degrade the outcome for the system as a whole. The hypothesis: models trained in similar ways behave more alike as they improve, their decisions correlate, and that correlation creates a floor of risk that cannot be diversified away. The authors verify it on language agents deployed in financial markets, but the reasoning holds for any use where many players rely on the same models for a comparable decision.</p>",
             "sources": [
               {
                 "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2609.00038"
+                "url": "https://arxiv.org/abs/2609.04373"
               }
             ],
-            "rang": 12,
-            "id": "an-arxiv-paper-shows-the-limits-of-judging-an-agent-on-its"
+            "rang": 10,
+            "id": "a-better-model-can-make-the-system-riskier"
+          },
+          {
+            "titre": "A survey maps the shift toward recruitment agents",
+            "texteHtml": "<p>A survey published on arXiv traces the move, in automated recruitment, from simple profile matching to agents able to search for evidence, compare candidates and sometimes take actions. The authors catalog the methods, their evaluation modes and the governance questions this growing autonomy raises, up to work from September 2026. The document serves as a reference for anyone wanting to understand where AI stands in the selection of people, and what remains to be governed.</p>",
+            "sources": [
+              {
+                "nom": "arXiv",
+                "url": "https://arxiv.org/abs/2609.04286"
+              }
+            ],
+            "rang": 11,
+            "id": "a-survey-maps-the-shift-toward-recruitment-agents"
           }
         ]
       },
@@ -381,65 +359,78 @@
         "format": "bref",
         "items": [
           {
-            "titre": "ChatGPT now shows ads, with targeting you can switch off",
-            "texteHtml": "<p>OpenAI is introducing advertising in ChatGPT, including personalised ads, except for paying subscribers; the targeting can be turned off in the settings.</p>",
+            "titre": "Nvidia put $99 billion into other tech companies in two years",
+            "texteHtml": "<p>The value of Nvidia's equity holdings rose from $2.2 billion in 2024 to $99 billion as of 26 July 2026, a 45-fold increase that benefits Intel, SpaceX and a dozen other companies, which Michael Burry and Mark Cuban denounce as an unhealthy financial dependence across the sector, reports Clubic.</p>",
             "sources": [
               {
-                "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2322589-chatgpt-affiche-des-publicites-comment-desactiver-le-ciblage-publicitaire.html"
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-628447-nvidia-a-investi-99-milliards-de-dollars-dans-la-tech-en-deux-ans-mais-ou-va-son-argent.html"
+              }
+            ],
+            "rang": 12,
+            "id": "nvidia-put-99-billion-into-other-tech-companies-in-two-years"
+          },
+          {
+            "titre": "Japan plans to quadruple its AI data centers by 2033",
+            "texteHtml": "<p>The country is reportedly committing $60 billion to quadruple the capacity of its AI-dedicated data centers by 2033, reports Nikkei Asia.</p>",
+            "sources": [
+              {
+                "nom": "Nikkei Asia",
+                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-ai-data-centers-set-to-quadruple-by-2033-with-60bn-investment"
               }
             ],
             "rang": 13,
-            "id": "chatgpt-now-shows-ads-with-targeting-you-can-switch-off"
+            "id": "japan-plans-to-quadruple-its-ai-data-centers-by-2033"
           },
           {
-            "titre": "The IPO of Enflame, backed by Tencent, oversubscribed 4,073 times",
-            "texteHtml": "<p>Chinese AI-chip foundry Shanghai Enflame, the last of the \"four little dragons\" to go public, saw retail demand exceed by 4,073 times the offering reserved for them.</p>",
+            "titre": "The data center boom threatens to push interest rates higher in Australia",
+            "texteHtml": "<p>Building AI data centers risks pushing demand past the supply capacity of the Australian economy, which would fuel inflation and force the central bank to keep rates high, according to James McIntyre of Bloomberg Economics.</p>",
             "sources": [
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-02/tencent-backed-enflame-s-ipo-draws-4-073-times-retail-demand"
+                "url": "https://www.bloomberg.com/news/articles/2026-09-07/australia-s-ai-boom-risks-demand-surge-and-higher-rates-be-says"
               }
             ],
             "rang": 14,
-            "id": "the-ipo-of-enflame-backed-by-tencent-oversubscribed-4-073"
+            "id": "the-data-center-boom-threatens-to-push-interest-rates"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "When automation erases the workshop where expertise is made",
-      "these": "A control-systems engineer deliberately left manual steps in the digital operation of a US nuclear plant, even though the machine could run them on its own. He tells the story this week in IEEE Spectrum, and his reason fits in one sentence: 'An operator who only supervises the automation slowly stops being an operator. The hands go cold.' The same day, the Journal du Net describes the same mechanism in the office: AI absorbs the simple tasks through which a junior learned to judge, decide, make mistakes and correct them. Two distant worlds, one shared signal. Remove the thankless steps and you also remove the workshop where expertise is made. The calculation that appeals every quarter is the trap. Handing a model the contract review, the first draft of code, the summary of a case file wins hours you can see right away. Training an expert takes ten to fifteen years, and those saved hours are exactly the ones in which they were being trained. An organisation that automates without thinking mortgages its reserve of seniors for 2035, without ever seeing it register on a dashboard. For a French organisation, the task is to treat learning as an asset you cultivate, like a machine you maintain. Identify, role by role, the tasks where judgement is formed: the diagnosis you make alone before you check it, the error you catch, the edge case no procedure covers. Keep your juniors on them, even when AI would be faster, and make the machine a partner that comments on their work and corrects it while they keep their hands on it. The plant engineer did not slow his machine out of nostalgia; he knew that a control room without seasoned operators ends up costing more than it earns. So does a company without the experts of tomorrow. Efficiency is measured this quarter. Skill is cultivated over a decade, and nothing buys it back once the chain is broken. The Masteria editorial team.",
-      "html": "<p>A control-systems engineer deliberately left manual steps in the digital operation of a US nuclear plant, even though the machine could run them on its own. He tells the story this week in IEEE Spectrum, and his reason fits in one sentence: \"An operator who only supervises the automation slowly stops being an operator. The hands go cold.\" The same day, the Journal du Net describes the same mechanism in the office: AI absorbs the simple tasks through which a junior learned to judge, decide, make mistakes and correct them. Two distant worlds, one shared signal. Remove the thankless steps and you also remove the workshop where expertise is made.</p>\n<p>The calculation that appeals every quarter is the trap. Handing a model the contract review, the first draft of code, the summary of a case file wins hours you can see right away. Training an expert takes ten to fifteen years, and those saved hours are exactly the ones in which they were being trained. An organisation that automates without thinking mortgages its reserve of seniors for 2035, without ever seeing it register on a dashboard.</p>\n<p>For a French organisation, the task is to treat learning as an asset you cultivate, like a machine you maintain. Identify, role by role, the tasks where judgement is formed: the diagnosis you make alone before you check it, the error you catch, the edge case no procedure covers. Keep your juniors on them, even when AI would be faster, and make the machine a partner that comments on their work and corrects it while they keep their hands on it. The plant engineer did not slow his machine out of nostalgia; he knew that a control room without seasoned operators ends up costing more than it earns. So does a company without the experts of tomorrow. Efficiency is measured this quarter. Skill is cultivated over a decade, and nothing buys it back once the chain is broken.</p>\n<p>The Masteria editorial team.</p>",
-      "htmlExtrait": "<p>A control-systems engineer deliberately left manual steps in the digital operation of a US nuclear plant, even though the machine could run them on its own. He tells the story this week in IEEE Spectrum, and his reason fits in one sentence: \"An operator who only supervises the automation slowly stops being an operator. The hands go cold.\" The same day, the Journal du Net describes the same mechanism in the office: AI absorbs the simple tasks through which a junior learned to judge, decide, make mistakes and correct them. Two distant worlds, one shared signal. Remove the thankless steps and you also remove the workshop where expertise is made.</p>\n<p>The calculation that appeals every quarter is the trap. Handing a model the contract review, the first draft of code, the summary of a case file wins hours you can see right away. Training an expert takes ten to fifteen years, and those saved hours are exactly the ones in which they were being trained. An organisation that automates without thinking mortgages its reserve of seniors for 2035, without ever seeing it register on a dashboard.</p>",
+      "titre": "One in a hundred US applications already hides instructions to fool the AI that reads resumes, on the day two arXiv papers show that improving a single model can degrade the collective outcome when everyone relies on the same correlated models: the skill that gains value is keeping independent judgment over decisions that sort people, a second path built differently and a named person who answers for the choice, rather than handing hiring, credit or admission to a single model whose blind spot becomes an entire market's",
+      "these": "One in a hundred applications in the United States already contains instructions hidden in white text, written to fool the AI that reads the resume and push it to the top of the pile. The figure comes from an academic study relayed by Clubic. As soon as sorting people runs through a machine, both sides learn to work it: recruiters delegate shortlisting to agents that read, compare and sometimes decide on their own, as a survey published this week on arXiv documents, and candidates respond by trapping the reader. The cheating is the visible symptom. The underlying risk lies in uniformity. Two research papers published the same day give the mechanism. The first shows that improving a single model can degrade the overall outcome: when everyone relies on models trained the same way, their decisions look alike, correlate, and that correlation does not diversify away. The second shows that a model revises its answer under peer pressure, to the point of breaking statistical guarantees once thought secure. Apply it to recruitment: if a whole market filters resumes with the same handful of models, the profile one filter rejects is rejected everywhere, at once, for the same invisible reason. The skill that gains value in a French organization is keeping independent judgment over decisions that sort people. Take a decision where AI already plays a part: hiring, granting credit, admission. Do not let a single model be its only gate. Keep a second path, built differently: another model, or a human with distinct criteria, who reviews what the machine rejects. Name the person who answers for the choice and can explain it, which the GDPR already requires for any fully automated decision that binds someone (Article 22). A filter everyone shares has a blind spot everyone shares. Diversity of judgment protects against a single error that would spread across an entire market. The machine speeds up the sorting. Deciding who deserves a second look remains a craft. The Masteria editorial team.",
+      "html": "<p>One in a hundred applications in the United States already contains instructions hidden in white text, written to fool the AI that reads the resume and push it to the top of the pile. The figure comes from an academic study relayed by Clubic. As soon as sorting people runs through a machine, both sides learn to work it: recruiters delegate shortlisting to agents that read, compare and sometimes decide on their own, as a survey published this week on arXiv documents, and candidates respond by trapping the reader.</p>\n<p>The cheating is the visible symptom. The underlying risk lies in uniformity. Two research papers published the same day give the mechanism. The first shows that improving a single model can degrade the overall outcome: when everyone relies on models trained the same way, their decisions look alike, correlate, and that correlation does not diversify away. The second shows that a model revises its answer under peer pressure, to the point of breaking statistical guarantees once thought secure. Apply it to recruitment: if a whole market filters resumes with the same handful of models, the profile one filter rejects is rejected everywhere, at once, for the same invisible reason.</p>\n<p>The skill that gains value in a French organization is keeping independent judgment over decisions that sort people. Take a decision where AI already plays a part: hiring, granting credit, admission. Do not let a single model be its only gate. Keep a second path, built differently: another model, or a human with distinct criteria, who reviews what the machine rejects. Name the person who answers for the choice and can explain it, which the GDPR already requires for any fully automated decision that binds someone (Article 22).</p>\n<p>A filter everyone shares has a blind spot everyone shares. Diversity of judgment protects against a single error that would spread across an entire market. The machine speeds up the sorting. Deciding who deserves a second look remains a craft.</p>\n<p>The Masteria editorial team.</p>",
+      "htmlExtrait": "<p>One in a hundred applications in the United States already contains instructions hidden in white text, written to fool the AI that reads the resume and push it to the top of the pile. The figure comes from an academic study relayed by Clubic. As soon as sorting people runs through a machine, both sides learn to work it: recruiters delegate shortlisting to agents that read, compare and sometimes decide on their own, as a survey published this week on arXiv documents, and candidates respond by trapping the reader.</p>\n<p>The cheating is the visible symptom. The underlying risk lies in uniformity. Two research papers published the same day give the mechanism. The first shows that improving a single model can degrade the overall outcome: when everyone relies on models trained the same way, their decisions look alike, correlate, and that correlation does not diversify away. The second shows that a model revises its answer under peer pressure, to the point of breaking statistical guarantees once thought secure. Apply it to recruitment: if a whole market filters resumes with the same handful of models, the profile one filter rejects is rejected everywhere, at once, for the same invisible reason.</p>",
       "itemsCites": [
-        5,
-        9
+        4,
+        10,
+        11
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-09-02",
-      "dateLongue": "Wednesday 2 September 2026",
-      "titreEditorial": "OpenAI rates Astra at critical cyber capability",
+      "date": "2026-09-04",
+      "dateLongue": "Friday 4 September 2026",
+      "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
       "nbItems": 14
     },
     "suivante": null,
     "nbItems": 14,
-    "nbSources": 22,
-    "nbSignes": 10404,
-    "tempsLecture": 9,
+    "nbSources": 14,
+    "nbSignes": 9049,
+    "tempsLecture": 8,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe and France",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "international",
         "libelle": "International",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "chine",
@@ -449,29 +440,29 @@
       {
         "cle": "recherche",
         "libelle": "Research and papers",
-        "nb": 1
+        "nb": 2
       },
       {
         "cle": "bref",
         "libelle": "In brief",
-        "nb": 2
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
-      "Le Monde",
-      "The Verge",
-      "Wired",
-      "TechCrunch",
-      "Clubic",
-      "Journal du Net",
-      "Bloomberg",
       "South China Morning Post",
-      "Google DeepMind",
-      "Frandroid"
+      "Le Monde",
+      "ZDNet",
+      "Clubic",
+      "OpenAI",
+      "The Verge",
+      "TechCrunch",
+      "arXiv",
+      "Nikkei Asia",
+      "Bloomberg"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 145,
-    "publieLe": "2026-09-03T05:10:32+02:00",
-    "publieLeAffiche": "5h10"
+    "nbArticlesCollectes": 58,
+    "publieLe": "2026-09-07T07:28:13+02:00",
+    "publieLeAffiche": "7h28"
   }
 }

@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-03",
-    "totalEditions": 27,
-    "totalItems": 369,
-    "totalSources": 537
+    "derniereDate": "2026-09-07",
+    "totalEditions": 29,
+    "totalItems": 397,
+    "totalSources": 577
   },
   "editions": [
+    {
+      "date": "2026-09-07",
+      "dateAffichee": "7 septembre 2026",
+      "dateCourte": "lun. 7 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Moody's estime que les entreprises chinoises tirent plus de puissance de calcul par dollar dépensé que les géants américains ; le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour droit d'auteur pendant que le partage de l'accord Anthropic oppose auteurs et éditeurs ; Jakub Pachocki, directeur scientifique d'OpenAI, décrit une « intelligence étrangère » et réclame des garde-fous ; et des candidats américains cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-04",
+      "dateAffichee": "4 septembre 2026",
+      "dateCourte": "ven. 4 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI lance GPT-6 Astra, premier modèle classé au seuil cyber « critique » et présenté comme l'entrée dans l'« ère de l'AGI », le jour où ChatGPT, Claude et Grok tombent en panne presque en même temps ; Nvidia rachète la plateforme franco-américaine Hugging Face pour 12,9 milliards de dollars, le G20 adopte une approche pro-IA portée par Washington, et la Chine multiplie les introductions en Bourse avec Enflame sursouscrite 4 073 fois et Moonshot en route vers Hong Kong",
+      "nbItems": 14,
+      "nbSources": 26,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-09-03",
       "dateAffichee": "3 septembre 2026",

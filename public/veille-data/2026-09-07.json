@@ -1,0 +1,291 @@
+{
+  "schema": 2,
+  "date": "2026-09-07",
+  "dateAffichee": "7 septembre 2026",
+  "dateLongue": "lundi 7 septembre 2026",
+  "dateCourte": "lun. 7 sept.",
+  "jourSemaine": "lundi",
+  "titre": "Veille IA du lundi 7 septembre 2026",
+  "titreEditorial": "Moody's estime que les entreprises chinoises tirent plus de puissance de calcul par dollar dépensé que les géants américains ; le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour droit d'auteur pendant que le partage de l'accord Anthropic oppose auteurs et éditeurs ; Jakub Pachocki, directeur scientifique d'OpenAI, décrit une « intelligence étrangère » et réclame des garde-fous ; et des candidats américains cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
+  "chapeau": "Un rapport de Moody's estime que la Chine obtient davantage de puissance de calcul par dollar dépensé, ce qui brouille la lecture d'une course à l'IA jusqu'ici mesurée en milliards investis. Le même jour, les procès pour droit d'auteur s'accumulent contre OpenAI et Anthropic, et le recrutement automatisé montre sa faille : une candidature américaine sur cent cache déjà des instructions pour tromper l'IA qui la lit.",
+  "une": {
+    "titre": "La Chine tire plus de puissance de calcul par dollar dépensé, selon Moody's",
+    "texteHtml": "<p>L'écart de dépenses en intelligence artificielle entre géants américains et chinois n'achète pas l'avantage attendu, estime un rapport de l'agence de notation Moody's Ratings, rapporté par le South China Morning Post. Les hyperscalers américains (les géants du cloud qui bâtissent les centres de données) ont dépensé bien plus que leurs homologues chinois, mais l'écart de capacité de calcul réellement installée reste nettement inférieur à ce que ces budgets laissaient attendre. Deux raisons l'expliquent : des coûts domestiques plus bas et un soutien massif de l'État chinois, qui permettent aux entreprises locales d'obtenir davantage de puissance pour chaque dollar. Le constat brouille la lecture dominante, qui compte la course à l'IA en milliards investis. Pour qui suit le rapport de force sino-américain, la capacité réellement en service pèse plus lourd que la facture affichée.</p>",
+    "sources": [
+      {
+        "nom": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/big-tech/article/3366407/punching-above-their-weight-how-chinas-ai-giants-stretch-each-dollar-compute-race"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "la-chine-tire-plus-de-puissance-de-calcul-par-dollar"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les affiches générées par IA envahissent l'espace public, la contestation s'organise en ligne",
+          "texteHtml": "<p>Programmes de kermesses, menus de restaurants, annonces de concerts : les affiches produites par intelligence artificielle ont fleuri dans les rues cet été, rapporte Le Monde. La prolifération est dénoncée en ligne, en particulier par les graphistes professionnels, qui y voient une menace directe pour leur métier. Le mouvement traduit une défiance plus large envers ces outils, au moment où leur usage se banalise dans la communication de proximité.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/07/face-au-deferlement-des-affiches-utilisant-l-ia-dans-l-espace-public-la-resistance-en-ligne-s-organise_6767774_4408996.html"
+            }
+          ],
+          "rang": 2,
+          "id": "les-affiches-generees-par-ia-envahissent-l-espace-public-la"
+        },
+        {
+          "titre": "AMD présente une station de travail capable de faire tourner des modèles à mille milliards de paramètres",
+          "texteHtml": "<p>AMD a dévoilé la Threadripper Halo Station, qui associe un processeur Ryzen Threadripper PRO 9995WX à 96 cœurs et des accélérateurs Instinct MI350P, rapporte ZDNet. La machine vise l'exécution locale de modèles d'IA immenses, sans passer par le cloud. Pour une organisation soucieuse de garder ses données en interne, faire tourner un modèle de cette taille sur une station posée sous le bureau devient une option concrète.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/amd-presente-une-station-de-travail-capable-de-faire-tourner-des-ia-a-mille-milliards-de-parametres-502877.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "amd-presente-une-station-de-travail-capable-de-faire"
+        },
+        {
+          "titre": "Des candidats cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
+          "texteHtml": "<p>En glissant quelques lignes de texte blanc, invisibles à l'œil mais lues par la machine, un candidat peut faire croire à l'IA du recruteur qu'il mérite la première place, rapporte Clubic. La pratique touche déjà une candidature sur cent aux États-Unis, selon une étude universitaire récente. Elle prospère à mesure que la présélection des CV se délègue à des logiciels automatiques.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628402-des-candidats-cachent-des-instructions-dans-leur-cv-pour-pieger-les-ia-des-recruteurs.html"
+            }
+          ],
+          "rang": 4,
+          "id": "des-candidats-cachent-des-instructions-dans-leur-cv-pour"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Jakub Pachocki (OpenAI) décrit une « intelligence étrangère » et appelle à des garde-fous renforcés",
+          "texteHtml": "<p>Dans un essai publié le 6 septembre, le directeur scientifique d'OpenAI, Jakub Pachocki, s'inquiète de modèles de plus en plus capables dont le raisonnement s'éloigne du nôtre, au point de ressembler à une « intelligence étrangère » (an alien mind). Son argument tient en une idée : plus un système gagne en capacité, plus il devient difficile de garantir qu'il poursuit les objectifs qu'on lui assigne, ce que les chercheurs nomment l'alignement. Il plaide pour des protections plus solides et une coordination internationale, à l'image de ce qui existe pour d'autres technologies à risque. Le texte vient d'un dirigeant d'OpenAI, partie prenante qui vend ces modèles et lève des fonds sur leur promesse ; l'appel à la prudence y côtoie l'argument commercial. Il vaut d'être lu pour ce qu'il révèle de la façon dont le laboratoire lui-même perçoit la trajectoire de ses systèmes.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/an-alien-mind"
+            }
+          ],
+          "rang": 5,
+          "id": "jakub-pachocki-openai-decrit-une-intelligence-etrangere-et"
+        },
+        {
+          "titre": "Le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour violation du droit d'auteur",
+          "texteHtml": "<p>Les deux titres de presse américains accusent OpenAI et Microsoft d'avoir utilisé leurs articles comme données d'entraînement, sans autorisation, et reprochent à leurs modèles de reproduire des passages entiers de leurs reportages dans les réponses fournies aux utilisateurs, rapporte The Verge. La plainte rejoint une série déjà nourrie, ouverte notamment par le New York Times. Les éditeurs cherchent à faire reconnaître que l'entraînement sur leurs contenus protégés, puis leur restitution quasi littérale, dépasse l'usage loyal. L'issue de ces procès fixera le prix que les laboratoires devront payer pour la matière première textuelle de leurs modèles, en Amérique comme, par ricochet, ailleurs.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft"
+            }
+          ],
+          "rang": 6,
+          "id": "le-seattle-times-et-newsday-poursuivent-openai-et-microsoft"
+        },
+        {
+          "titre": "Le partage de l'accord Anthropic oppose auteurs, éditeurs et agents littéraires",
+          "texteHtml": "<p>Les auteurs qui devaient bénéficier de l'accord conclu par Anthropic pour solder l'usage de livres dans l'entraînement de ses modèles contestent la part que revendiquent désormais éditeurs et agents littéraires, rapporte TechCrunch. Selon eux, les éditeurs réclament davantage que leur juste part des sommes prévues. Le litige porte sur la répartition d'une indemnité entre ceux qui ont écrit les livres et ceux qui les ont publiés ou représentés. Il pose une question neuve : quand une IA est entraînée sur une œuvre, qui, de l'auteur ou de la chaîne éditoriale, détient le droit d'être indemnisé, et dans quelle proportion.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/"
+            }
+          ],
+          "rang": 7,
+          "id": "le-partage-de-l-accord-anthropic-oppose-auteurs-editeurs-et"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Huawei affirme avoir résolu la surchauffe de ses puces, avant le lancement du Kirin 2026",
+          "texteHtml": "<p>Huawei a publié un article de recherche montrant que son architecture de semi-conducteurs fondée sur la « loi d'échelle Tau » (Tau Scaling Law) évite la surchauffe, obstacle technique jugé décisif pour sa prochaine puce de smartphone, le Kirin 2026, rapporte le South China Morning Post. L'article est signé He Tingbo, présidente du comité scientifique de Huawei et responsable de son activité semi-conducteurs. Elle y réfute l'idée qu'empiler verticalement des circuits logiques créerait un goulet d'étranglement thermique impossible à franchir. L'enjeu dépasse le téléphone : privée des puces les plus avancées par les restrictions américaines, la Chine cherche à prouver qu'elle sait concevoir seule des composants de pointe. Un article de recherche n'est pas un produit livré, et il reste à voir la puce tenir ses promesses en série.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366543/huawei-paper-shows-tau-scaling-law-chip-solves-overheating-ahead-kirin-2026-launch"
+            }
+          ],
+          "rang": 8,
+          "id": "huawei-affirme-avoir-resolu-la-surchauffe-de-ses-puces"
+        },
+        {
+          "titre": "SenseTime redevient rentable en misant sur les tâches d'entreprise plutôt que sur la taille des modèles",
+          "texteHtml": "<p>Le pionnier chinois de l'IA SenseTime a dégagé un bénéfice net de 617,3 millions de yuans (environ 92 millions de dollars) au premier semestre 2026, quand plusieurs de ses concurrents chinois peinent, rapporte le South China Morning Post. Ses dirigeants, dont le PDG Xu Li et le directeur financier Wang Zheng, expliquent ce redressement par un choix : cesser de courir après des modèles toujours plus gros et se concentrer sur des cas d'usage concrets qui aident les clients à accomplir leurs tâches métier. Le pari inverse la course à la taille qui domine le secteur. Il suggère qu'un modèle bien ajusté à un besoin d'entreprise vaut parfois mieux, commercialement, qu'un modèle géant vendu comme prouesse. Pour une organisation qui déploie l'IA, le message rejoint une évidence de terrain : la valeur naît de l'usage réglé sur le besoin, pas de la performance affichée.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3366436/how-generative-ai-helps-sensetime-turn-profit-even-chinese-peers-struggle"
+            }
+          ],
+          "rang": 9,
+          "id": "sensetime-redevient-rentable-en-misant-sur-les-taches-d"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Un meilleur modèle peut rendre le système plus risqué",
+          "texteHtml": "<p>Une équipe montre sur arXiv qu'améliorer la capacité d'un modèle pris isolément peut dégrader le résultat à l'échelle du système entier. L'hypothèse : des modèles entraînés de façon proche se comportent de manière plus semblable à mesure qu'ils progressent, leurs décisions se corrèlent, et cette corrélation crée un plancher de risque qu'on ne peut pas diversifier. Les auteurs le vérifient sur des agents de langage déployés dans des marchés financiers, mais le raisonnement vaut pour tout usage où de nombreux acteurs s'appuient sur les mêmes modèles pour une décision comparable.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.04373"
+            }
+          ],
+          "rang": 10,
+          "id": "un-meilleur-modele-peut-rendre-le-systeme-plus-risque"
+        },
+        {
+          "titre": "Une revue de recherche cartographie la bascule vers les agents de recrutement",
+          "texteHtml": "<p>Un panorama publié sur arXiv retrace le passage, dans le recrutement automatisé, de simples appariements de profils à des agents capables de rechercher des preuves, de comparer des candidats et parfois d'exécuter des actions. Les auteurs recensent les méthodes, leurs modes d'évaluation et les questions de gouvernance que soulève cette autonomie croissante, jusqu'à des travaux de septembre 2026. Le document sert de repère à qui veut comprendre où en est l'IA dans la sélection des personnes, et ce qui reste à encadrer.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.04286"
+            }
+          ],
+          "rang": 11,
+          "id": "une-revue-de-recherche-cartographie-la-bascule-vers-les"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Nvidia a placé 99 milliards de dollars dans d'autres entreprises technologiques en deux ans",
+          "texteHtml": "<p>La valeur des participations en actions de Nvidia est passée de 2,2 milliards de dollars en 2024 à 99 milliards au 26 juillet 2026, un montant multiplié par 45 qui profite à Intel, SpaceX et une dizaine d'autres sociétés, ce que Michael Burry et Mark Cuban dénoncent comme une dépendance financière malsaine du secteur, rapporte Clubic.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628447-nvidia-a-investi-99-milliards-de-dollars-dans-la-tech-en-deux-ans-mais-ou-va-son-argent.html"
+            }
+          ],
+          "rang": 12,
+          "id": "nvidia-a-place-99-milliards-de-dollars-dans-d-autres"
+        },
+        {
+          "titre": "Le Japon prévoit de quadrupler ses centres de données pour l'IA d'ici 2033",
+          "texteHtml": "<p>Le pays engagerait 60 milliards de dollars pour quadrupler d'ici 2033 la capacité de ses centres de données dédiés à l'IA, rapporte Nikkei Asia.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-ai-data-centers-set-to-quadruple-by-2033-with-60bn-investment"
+            }
+          ],
+          "rang": 13,
+          "id": "le-japon-prevoit-de-quadrupler-ses-centres-de-donnees-pour"
+        },
+        {
+          "titre": "Le boom des centres de données menace de pousser les taux d'intérêt à la hausse en Australie",
+          "texteHtml": "<p>La construction de centres de données pour l'IA risque de faire dépasser à la demande la capacité d'offre de l'économie australienne, ce qui alimenterait l'inflation et forcerait la banque centrale à maintenir des taux élevés, selon James McIntyre, de Bloomberg Economics.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-07/australia-s-ai-boom-risks-demand-surge-and-higher-rates-be-says"
+            }
+          ],
+          "rang": 14,
+          "id": "le-boom-des-centres-de-donnees-menace-de-pousser-les-taux-d"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Une candidature américaine sur cent cache déjà des instructions pour tromper l'IA qui lit les CV, le jour où deux articles d'arXiv montrent qu'améliorer un modèle isolé peut dégrader le résultat collectif quand tout le monde s'appuie sur les mêmes modèles corrélés : la compétence qui prend de la valeur est de garder du jugement indépendant sur les décisions qui trient des personnes, une seconde voie bâtie autrement et une personne nommée qui répond du choix, plutôt que de confier embauche, crédit ou admission à un modèle unique dont l'angle mort devient celui de tout un marché",
+    "these": "Une candidature sur cent, aux États-Unis, contient déjà des instructions cachées en texte blanc, écrites pour tromper l'IA qui lit le CV et le faire remonter en tête de pile. Le chiffre vient d'une étude universitaire relayée par Clubic. Dès qu'un tri de personnes passe par une machine, les deux côtés apprennent à la manœuvrer : les recruteurs délèguent la présélection à des agents qui lisent, comparent et parfois tranchent seuls, comme le documente une revue parue cette semaine sur arXiv, et les candidats répondent en piégeant le lecteur. La triche est le symptôme visible. Le risque de fond tient à l'uniformité. Deux travaux de recherche publiés le même jour en donnent le mécanisme. Le premier montre qu'améliorer un modèle pris isolément peut dégrader le résultat d'ensemble : quand chacun s'appuie sur des modèles entraînés de la même façon, leurs décisions se ressemblent, se corrèlent, et cette corrélation ne se diversifie pas. Le second montre qu'un modèle révise sa réponse sous la pression de ses pairs, au point de faire sauter des garanties statistiques qu'on croyait acquises. Transposez au recrutement : si tout un marché filtre les CV avec la même poignée de modèles, le profil qu'un filtre écarte est écarté partout, en même temps, pour la même raison invisible. La compétence qui prend de la valeur dans une organisation française est de garder du jugement indépendant sur les décisions qui trient des personnes. Prenez une décision où l'IA entre déjà : embauche, octroi d'un crédit, admission. Ne laissez pas un seul modèle en être la porte unique. Gardez une seconde voie, bâtie autrement : un autre modèle, ou un humain aux critères distincts, qui revoit ce que la machine rejette. Nommez la personne qui répond du choix et sait l'expliquer, ce que le RGPD exige déjà pour toute décision entièrement automatisée qui engage quelqu'un (article 22). Un filtre que tout le monde partage a un angle mort que tout le monde partage. La diversité du jugement protège d'une même erreur qui se répandrait à l'échelle d'un marché entier. La machine accélère le tri. Décider qui mérite un second regard reste un métier. L'équipe éditoriale Masteria.",
+    "html": "<p>Une candidature sur cent, aux États-Unis, contient déjà des instructions cachées en texte blanc, écrites pour tromper l'IA qui lit le CV et le faire remonter en tête de pile. Le chiffre vient d'une étude universitaire relayée par Clubic. Dès qu'un tri de personnes passe par une machine, les deux côtés apprennent à la manœuvrer : les recruteurs délèguent la présélection à des agents qui lisent, comparent et parfois tranchent seuls, comme le documente une revue parue cette semaine sur arXiv, et les candidats répondent en piégeant le lecteur.</p>\n<p>La triche est le symptôme visible. Le risque de fond tient à l'uniformité. Deux travaux de recherche publiés le même jour en donnent le mécanisme. Le premier montre qu'améliorer un modèle pris isolément peut dégrader le résultat d'ensemble : quand chacun s'appuie sur des modèles entraînés de la même façon, leurs décisions se ressemblent, se corrèlent, et cette corrélation ne se diversifie pas. Le second montre qu'un modèle révise sa réponse sous la pression de ses pairs, au point de faire sauter des garanties statistiques qu'on croyait acquises. Transposez au recrutement : si tout un marché filtre les CV avec la même poignée de modèles, le profil qu'un filtre écarte est écarté partout, en même temps, pour la même raison invisible.</p>\n<p>La compétence qui prend de la valeur dans une organisation française est de garder du jugement indépendant sur les décisions qui trient des personnes. Prenez une décision où l'IA entre déjà : embauche, octroi d'un crédit, admission. Ne laissez pas un seul modèle en être la porte unique. Gardez une seconde voie, bâtie autrement : un autre modèle, ou un humain aux critères distincts, qui revoit ce que la machine rejette. Nommez la personne qui répond du choix et sait l'expliquer, ce que le RGPD exige déjà pour toute décision entièrement automatisée qui engage quelqu'un (article 22).</p>\n<p>Un filtre que tout le monde partage a un angle mort que tout le monde partage. La diversité du jugement protège d'une même erreur qui se répandrait à l'échelle d'un marché entier. La machine accélère le tri. Décider qui mérite un second regard reste un métier.</p>",
+    "htmlExtrait": "<p>Une candidature sur cent, aux États-Unis, contient déjà des instructions cachées en texte blanc, écrites pour tromper l'IA qui lit le CV et le faire remonter en tête de pile. Le chiffre vient d'une étude universitaire relayée par Clubic. Dès qu'un tri de personnes passe par une machine, les deux côtés apprennent à la manœuvrer : les recruteurs délèguent la présélection à des agents qui lisent, comparent et parfois tranchent seuls, comme le documente une revue parue cette semaine sur arXiv, et les candidats répondent en piégeant le lecteur.</p>\n<p>La triche est le symptôme visible. Le risque de fond tient à l'uniformité. Deux travaux de recherche publiés le même jour en donnent le mécanisme. Le premier montre qu'améliorer un modèle pris isolément peut dégrader le résultat d'ensemble : quand chacun s'appuie sur des modèles entraînés de la même façon, leurs décisions se ressemblent, se corrèlent, et cette corrélation ne se diversifie pas. Le second montre qu'un modèle révise sa réponse sous la pression de ses pairs, au point de faire sauter des garanties statistiques qu'on croyait acquises. Transposez au recrutement : si tout un marché filtre les CV avec la même poignée de modèles, le profil qu'un filtre écarte est écarté partout, en même temps, pour la même raison invisible.</p>",
+    "itemsCites": [
+      4,
+      10,
+      11
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-04",
+    "dateLongue": "vendredi 4 septembre 2026",
+    "titreEditorial": "OpenAI lance GPT-6 Astra, premier modèle classé au seuil cyber « critique » et présenté comme l'entrée dans l'« ère de l'AGI », le jour où ChatGPT, Claude et Grok tombent en panne presque en même temps ; Nvidia rachète la plateforme franco-américaine Hugging Face pour 12,9 milliards de dollars, le G20 adopte une approche pro-IA portée par Washington, et la Chine multiplie les introductions en Bourse avec Enflame sursouscrite 4 073 fois et Moonshot en route vers Hong Kong",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 14,
+  "nbSignes": 10051,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "South China Morning Post",
+    "Le Monde",
+    "ZDNet",
+    "Clubic",
+    "OpenAI",
+    "The Verge",
+    "TechCrunch",
+    "arXiv",
+    "Nikkei Asia",
+    "Bloomberg"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 58,
+  "publieLe": "2026-09-07T07:25:59+02:00",
+  "publieLeAffiche": "7h25",
+  "ogImage": "/veille-data/og/2026-09-07.png"
+}

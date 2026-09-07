@@ -270,7 +270,12 @@
     "titreEditorial": "OpenAI classe Astra au seuil « critique » de capacité cyber, premier de ses modèles reconnu apte à pénétrer des systèmes, et alerte sur des attaques par essaims d'IA d'ici quelques mois ; Nvidia s'approche d'un rachat de Hugging Face à 14 milliards de dollars, Anthropic lance Claude Fable 5.1 jusqu'à 45 % moins cher, et Meta renonce à une coupe massive de ses effectifs pour devenir « IA native »",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-04",
+    "dateLongue": "vendredi 4 septembre 2026",
+    "titreEditorial": "OpenAI lance GPT-6 Astra, premier modèle classé au seuil cyber « critique » et présenté comme l'entrée dans l'« ère de l'AGI », le jour où ChatGPT, Claude et Grok tombent en panne presque en même temps ; Nvidia rachète la plateforme franco-américaine Hugging Face pour 12,9 milliards de dollars, le G20 adopte une approche pro-IA portée par Washington, et la Chine multiplie les introductions en Bourse avec Enflame sursouscrite 4 073 fois et Moonshot en route vers Hong Kong",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 22,
   "nbSignes": 11374,

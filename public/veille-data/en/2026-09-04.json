@@ -1,0 +1,342 @@
+{
+  "schema": 2,
+  "date": "2026-09-04",
+  "dateAffichee": "4 September 2026",
+  "dateLongue": "Friday 4 September 2026",
+  "dateCourte": "Fri 4 Sep",
+  "jourSemaine": "Friday",
+  "titre": "AI Watch - Friday 4 September 2026",
+  "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
+  "chapeau": "OpenAI launched GPT-6 Astra, billed as its most powerful model and the first it rates at the \\\"critical\\\" cyber risk threshold, on the very day ChatGPT, Claude and Grok went down almost at the same time. In the same stretch, Nvidia is buying the French-American platform Hugging Face for $12.9 billion and the G20 has agreed on lighter-touch AI regulation.",
+  "une": {
+    "titre": "OpenAI launches GPT-6 Astra and declares the start of the \"age of AGI\"",
+    "texteHtml": "<p>OpenAI unveiled GPT-6 Astra on Thursday 3 September, billed as its most powerful model, a \"generational leap\" in cybersecurity, professional work, software engineering, science and autonomous computer use (the AI drives a browser and applications on its own). It is the first model OpenAI itself rates at the \"critical\" cyber capability threshold, the level it reserves for systems able to break into protected computers unaided; the company promises safeguards and availability \"in the coming days\" for paying ChatGPT subscribers, a service used by a billion people every week. Sam Altman and his executives believe Astra could be a major step towards AGI, artificial general intelligence, on the strength of tests the company designed and scored itself. An early customer, the law firm Legora, says it had Astra review 41 financial documents in a few minutes, catching all four deliberately planted errors and improving performance by nearly 40%. Caution is still in order: the announcement is spectacular, the evaluation is in-house, and the word \"AGI\" also serves a permanent fundraising effort.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/intelligences-artificielles-generatives/article/2026/09/04/openai-lance-gpt-6-son-premier-modele-d-ia-capable-de-pirater-seul-des-systemes-informatiques-tres-proteges_6765321_6191406.html"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/"
+      },
+      {
+        "nom": "Wired",
+        "url": "https://www.wired.com/story/openai-says-gpt-6-can-use-a-computer-better-than-a-human/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "openai-launches-gpt-6-astra-and-declares-the-start-of-the"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Nvidia buys Hugging Face for $12.9 billion",
+          "texteHtml": "<p>Nvidia confirmed on Thursday 3 September its acquisition of Hugging Face, the platform where open AI models are exchanged (models you can download and run yourself), for $12.93 billion. Founded in 2016 by a French team, it hosts more than 3 million models and serves more than 18 million developers; its co-founder Clément Delangue says he is aiming for 100 million users within two years and vows that openness to the whole ecosystem will be preserved. The deal illustrates Europe's difficulty in keeping its champions: the reference hub for open AI, born in France, passes under an American flag, that of the chipmaker already selling the chips these models run on. For a graphics processor designer, taking hold of the storefront where developers pick their models locks the chain a little tighter, from silicon to use.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/03/fondee-par-des-francais-la-start-up-d-intelligence-artificielle-hugging-face-defend-son-rachat-par-l-americain-nvidia-au-nom-de-l-open-source_6765217_3234.html"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/985474/nvidia-buying-hugging-face-deal"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+            }
+          ],
+          "rang": 2,
+          "id": "nvidia-buys-hugging-face-for-12-9-billion"
+        },
+        {
+          "titre": "The CNIL releases a tool for tracing the lineage of open AI models",
+          "texteHtml": "<p>Faced with the flood of models on Hugging Face, the CNIL (France's data protection authority) is offering a tool to trace where each one comes from: what data it was trained on, which model it derives from, under which licence it circulates, Next.ink reports. The stakes are concrete for a French organisation that wants to reuse an open model without inheriting an upstream rights or personal-data problem. Here the regulator positions itself as practical support rather than enforcer, at the very moment the open ecosystem changes hands.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/254365/genealogie-des-modeles-dia-ouverts-la-cnil-propose-un-outil-pour-sy-retrouver/"
+            }
+          ],
+          "rang": 3,
+          "id": "the-cnil-releases-a-tool-for-tracing-the-lineage-of-open-ai"
+        },
+        {
+          "titre": "LibreOffice 26.8 bets on \"zero AI\" and wins over IT departments",
+          "texteHtml": "<p>Against the market, the free office suite LibreOffice released its 26.8 version with no generative AI features at all, a deliberate choice in the name of data sovereignty, ZDNet reports. The update passed one million downloads in a week. The argument lands with IT departments worried about data leaking to external AI services: guaranteeing that no text goes to a third-party server becomes a selling point.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/libreoffice-26-8-le-pari-du-zero-ia-et-de-la-souverainete-des-donnees-seduit-les-dsi-501166.htm"
+            }
+          ],
+          "rang": 4,
+          "id": "libreoffice-26-8-bets-on-zero-ai-and-wins-over-it"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "ChatGPT, Claude and Grok go down almost at the same time",
+          "texteHtml": "<p>On Thursday 3 September, the three leading AI assistants suffered major disruptions minutes apart, The Verge and Wired report. Anthropic (Claude) wobbled first in mid-afternoon, followed by ChatGPT and Codex at OpenAI, which returned errors from 11 a.m. in New York (4:30 p.m. in Paris), then Grok at xAI. The services came back after a few hours, but none of the companies explained the cause, and nothing points to a common incident, Wired notes. The simultaneity revives a rarely asked question: these tools, now part of daily work, offer no availability guarantee comparable to that of a critical service.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/989503/chatgpt-grok-claude-outage-down"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/nobody-is-saying-why-openai-and-anthropic-had-outages-today/"
+            },
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2324765-chatgpt-en-panne-les-signalements-explosent-voici-ce-que-lon-sait.html"
+            }
+          ],
+          "rang": 5,
+          "id": "chatgpt-claude-and-grok-go-down-almost-at-the-same-time"
+        },
+        {
+          "titre": "OpenAI cuts off Cursor, a billion-dollar customer, to avoid Elon Musk",
+          "texteHtml": "<p>OpenAI terminated its partnership with Cursor, the maker of an AI-assisted development environment (software that helps write code), after Cursor was bought by SpaceX, Elon Musk's company, Wired reports. The partnership brought OpenAI more than a billion dollars a year, yet it chose to walk away rather than enrich a rival that had become the owner of its customer. The direct consequence for French developers who were using Cursor with OpenAI's models: they must urgently rethink their toolchain and switch to other models, ZDNet notes. The rivalry between Sam Altman and Elon Musk is now paid for in ten-figure commercial breakups.</p>",
+          "sources": [
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/openai-elon-musk-cursor-billion-revenue/"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/openai-rompt-avec-cursor-apres-son-rachat-par-spacex-quelles-consequences-pour-votre-generation-de-code-501107.htm"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-cuts-off-cursor-a-billion-dollar-customer-to-avoid"
+        },
+        {
+          "titre": "Google DeepMind launches WeatherNext 3, its most accurate weather model",
+          "texteHtml": "<p>Google presented WeatherNext 3, an AI weather forecasting model that, according to the company, markedly improves the forecasting of rain and snowfall and produces a global picture at an unprecedented resolution, The Verge and TechCrunch report. The forecasts will feed the weather shown in Google Search, in Google Maps and in the Gemini assistant. Deep-learning weather is gaining ground on classic physics models, which are slower and more compute-hungry. The example shows AI applied to a mass-market service, far from chatbot demos, with a measurable benefit for anyone checking a forecast.</p>",
+          "sources": [
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/988921/weather-forecast-ai-model-google-satellite-update"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/03/googles-latest-ai-weather-model-gives-you-no-excuse-to-forget-your-umbrella/"
+            }
+          ],
+          "rang": 7,
+          "id": "google-deepmind-launches-weathernext-3-its-most-accurate"
+        },
+        {
+          "titre": "Meta pays users of its new model in exchange for their data",
+          "texteHtml": "<p>For its new Muse Spark model, meant to run coding agents and other tasks, Meta offers an average discount of about 95% to users who agree to \"contribute\" to the development of future models by sharing their queries and the responses they get, TechCrunch reports. The deal is explicit: the price of use collapses for anyone who gives up their interaction data. For a company, the trade-off becomes concrete and quantified: saving on the AI bill by feeding a rival's model with its own use cases, some of them sensitive. The transparency of the offer has the merit of making visible an exchange that, elsewhere, stays tacit.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/03/meta-is-paying-to-peek-at-how-you-use-their-latest-ai-model/"
+            }
+          ],
+          "rang": 8,
+          "id": "meta-pays-users-of-its-new-model-in-exchange-for-their-data"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Chinese chipmaker Enflame sees its IPO oversubscribed 4,073 times",
+          "texteHtml": "<p>Enflame Technology, one of China's leading AI chip designers, set off a frenzy over its listing on the Shanghai stock exchange, worth 6.12 billion yuan (about $911 million), the South China Morning Post reports. The retail tranche was oversubscribed 4,073 times: nearly 7 million individual investors placed orders for 42.1 billion shares. Backed by Tencent, Enflame presents itself as a local alternative to Nvidia, whose most advanced chips remain hit by American export restrictions. The enthusiasm speaks to the Chinese market's appetite for home-grown silicon champions, as Beijing pushes to replace American technology. The contrast with Europe is stark: the same day, a champion of open AI there passed under American control.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366203/chinese-chipmaker-enflame-4073-times-oversubscribed-shanghai-ipo-amid-nvidia-race"
+            }
+          ],
+          "rang": 9,
+          "id": "chinese-chipmaker-enflame-sees-its-ipo-oversubscribed-4-073"
+        },
+        {
+          "titre": "Moonshot AI, maker of the Kimi K3 model, files for a Hong Kong IPO",
+          "texteHtml": "<p>The Beijing start-up Moonshot AI, behind the Kimi K3 model known for its performance, has filed confidentially for a listing in Hong Kong, according to two sources cited by the South China Morning Post. The company is reportedly aiming for a listing as early as the first quarter of 2027 to fund its rapid expansion. Kimi is gaining ground with developers: its coding assistant, Kimi Code, appeals with a promise of far lower cost than Anthropic's Claude Code, the Journal du Net notes. Chinese models are now aiming for Western developers' wallets on price.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366271/moonshot-ai-creator-kimi-k3-model-has-filed-hong-kong-ipo-sources"
+            },
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1554297-kimi-code-peut-il-remplacer-claude-code/"
+            }
+          ],
+          "rang": 10,
+          "id": "moonshot-ai-maker-of-the-kimi-k3-model-files-for-a-hong"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Frontier models often know they are being tested",
+          "texteHtml": "<p>A team presents on arXiv EvalDetectBench, a benchmark that measures the \"evaluation awareness\" of large models, in other words their ability to spot that they are being evaluated. The problem is serious for safety: if a model behaves differently during a test than in real use, the evaluations the safeguards rest on lose their value. The day OpenAI itself rates Astra at the \"critical\" cyber threshold on its own tests, this work is a reminder of a limit: a model that guesses the exam can pass it without being safe in production.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.01611"
+            }
+          ],
+          "rang": 11,
+          "id": "frontier-models-often-know-they-are-being-tested"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "The AI skills gap is widening faster than expected",
+          "texteHtml": "<p>A study relayed by Clubic shows that companies are equipping themselves with AI tools much faster than they are training their staff to use them, widening the gap between access to the tools and the ability to get a result from them.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-627997-ia-au-travail-le-fosse-des-competences-se-creuse-plus-vite-que-prevu.html"
+            }
+          ],
+          "rang": 12,
+          "id": "the-ai-skills-gap-is-widening-faster-than-expected"
+        },
+        {
+          "titre": "With AI, managers produce more, but do they manage better",
+          "texteHtml": "<p>The Journal du Net describes \"the opacity of effort\": flawless deliverables that mask the real work, the time spent and the difficulties encountered, at the risk of making the manager forget to look at their teams rather than their documents.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/management/direction-generale/1554331-grace-a-l-ia-vos-managers-produisent-plus-mais-managent-ils-mieux/"
+            }
+          ],
+          "rang": 13,
+          "id": "with-ai-managers-produce-more-but-do-they-manage-better"
+        },
+        {
+          "titre": "New York and Los Angeles restrict generative AI in schools",
+          "texteHtml": "<p>New York is imposing a one-year moratorium on generative AI from kindergarten through eighth grade, affecting about 600,000 students, while Los Angeles bans its use by students on district devices, Next.ink and Bloomberg report.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/brief-article/zohran-mamdani-le-maire-de-new-york-interdit-lutilisation-de-lia-generative-avant-la-4e/"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-03/los-angeles-schools-bar-students-from-ai-on-district-devices"
+            }
+          ],
+          "rang": 14,
+          "id": "new-york-and-los-angeles-restrict-generative-ai-in-schools"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "ChatGPT, Claude and Grok all went dark on Thursday afternoon, with no explanation, the same day OpenAI unveiled GPT-6 Astra and spoke of an \\\"age of AGI\\\": the skill that gains value is business continuity applied to AI, mapping the processes that stop working without it, defining a degraded mode and a fallback provider, and deciding in advance who switches over and how fast, rather than discovering there is no plan B on the day of the outage",
+    "these": "On Thursday 3 September, from 4:30 p.m. Paris time, ChatGPT, Claude and Grok stopped responding almost at the same time. Anthropic wobbled first, OpenAI followed close behind, then Grok, and nobody, that evening, explained why. The same day, OpenAI unveiled GPT-6 Astra and spoke of an \\\"age of AGI\\\". The two pieces of news hold together better than they seem to. The more capable these tools become, the deeper they settle into work, and the more a two-hour outage costs. A billion people open ChatGPT every week, and yet the assistant that drafts your emails, reviews your contracts and sorts your tickets is sold with the availability guarantees of a consumer app, not those of a critical service. The day three providers go down together, the company that bet everything on one of them finds it has no plan B. The skill that gains value in a French organisation is business continuity applied to AI. It is not a technical feat; it is a common-sense exercise you put off as long as everything works. Take the processes AI has already entered: customer support, writing, code, case summaries. For each, ask three questions. What happens if the tool disappears for two hours in the middle of the day? Is there a degraded mode, a manual procedure, a second model to switch to? Who decides on the switch, and how fast? Write the answers down in black and white, then test them once cold, like a fire drill. This reflex has existed for a long time for electricity, the network, payroll. AI has just joined the list of dependencies whose absence halts work, without yet having their reliability. The labs promise an \\\"age of AGI\\\"; they do not promise the service will hold on Thursday afternoon. Between the two, there is a space left, and it is yours: deciding what your teams do when the machine goes quiet. The Masteria editorial team.",
+    "html": "<p>On Thursday 3 September, from 4:30 p.m. Paris time, ChatGPT, Claude and Grok stopped responding almost at the same time. Anthropic wobbled first, OpenAI followed close behind, then Grok, and nobody, that evening, explained why. The same day, OpenAI unveiled GPT-6 Astra and spoke of an \"age of AGI\". The two pieces of news hold together better than they seem to.</p>\n<p>The more capable these tools become, the deeper they settle into work, and the more a two-hour outage costs. A billion people open ChatGPT every week, and yet the assistant that drafts your emails, reviews your contracts and sorts your tickets is sold with the availability guarantees of a consumer app, not those of a critical service. The day three providers go down together, the company that bet everything on one of them finds it has no plan B.</p>\n<p>The skill that gains value in a French organisation is business continuity applied to AI. It is not a technical feat; it is a common-sense exercise you put off as long as everything works. Take the processes AI has already entered: customer support, writing, code, case summaries. For each, ask three questions. What happens if the tool disappears for two hours in the middle of the day? Is there a degraded mode, a manual procedure, a second model to switch to? Who decides on the switch, and how fast? Write the answers down in black and white, then test them once cold, like a fire drill.</p>\n<p>This reflex has existed for a long time for electricity, the network, payroll. AI has just joined the list of dependencies whose absence halts work, without yet having their reliability. The labs promise an \"age of AGI\"; they do not promise the service will hold on Thursday afternoon. Between the two, there is a space left, and it is yours: deciding what your teams do when the machine goes quiet.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>On Thursday 3 September, from 4:30 p.m. Paris time, ChatGPT, Claude and Grok stopped responding almost at the same time. Anthropic wobbled first, OpenAI followed close behind, then Grok, and nobody, that evening, explained why. The same day, OpenAI unveiled GPT-6 Astra and spoke of an \"age of AGI\". The two pieces of news hold together better than they seem to.</p>\n<p>The more capable these tools become, the deeper they settle into work, and the more a two-hour outage costs. A billion people open ChatGPT every week, and yet the assistant that drafts your emails, reviews your contracts and sorts your tickets is sold with the availability guarantees of a consumer app, not those of a critical service. The day three providers go down together, the company that bet everything on one of them finds it has no plan B.</p>",
+    "itemsCites": [
+      1,
+      5
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-03",
+    "dateLongue": "Thursday 3 September 2026",
+    "titreEditorial": "Washington backs OpenAI against the New York Times",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-07",
+    "dateLongue": "Monday 7 September 2026",
+    "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 26,
+  "nbSignes": 9688,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "The Verge",
+    "TechCrunch",
+    "Wired",
+    "Next.ink",
+    "ZDNet",
+    "Numerama",
+    "Google DeepMind",
+    "South China Morning Post",
+    "Journal du Net"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 145,
+  "publieLe": "2026-09-04T05:11:13+02:00",
+  "publieLeAffiche": "5h11"
+}

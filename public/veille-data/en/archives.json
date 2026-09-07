@@ -3,12 +3,251 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-03",
-    "totalEditions": 13,
-    "totalItems": 180,
-    "totalSources": 242
+    "derniereDate": "2026-09-07",
+    "totalEditions": 15,
+    "totalItems": 208,
+    "totalSources": 282
   },
   "editions": [
+    {
+      "date": "2026-09-07",
+      "dateCourte": "Mon 7 Sep",
+      "dateAffichee": "7 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+      "chapeau": "A Moody's report finds that China gets more compute per dollar spent, which muddies a reading of the AI race so far measured in billions invested. The same day, copyright lawsuits pile up against OpenAI and Anthropic, and automated recruitment shows its flaw: one in a hundred US applications already hides instructions to fool the AI that reads it.",
+      "nbItems": 14,
+      "nbSources": 14,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "South China Morning Post",
+        "Le Monde",
+        "ZDNet",
+        "Clubic",
+        "OpenAI",
+        "The Verge",
+        "TechCrunch",
+        "arXiv",
+        "Nikkei Asia",
+        "Bloomberg"
+      ],
+      "items": [
+        {
+          "t": "China gets more compute per dollar spent, according to Moody's",
+          "z": "une",
+          "id": "china-gets-more-compute-per-dollar-spent-according-to-moody"
+        },
+        {
+          "t": "AI-generated posters flood public spaces, and the backlash organizes online",
+          "z": "europe",
+          "id": "ai-generated-posters-flood-public-spaces-and-the-backlash"
+        },
+        {
+          "t": "AMD unveils a workstation that can run trillion-parameter models",
+          "z": "europe",
+          "id": "amd-unveils-a-workstation-that-can-run-trillion-parameter"
+        },
+        {
+          "t": "Job seekers hide instructions in their resumes to trick recruiters' AI",
+          "z": "europe",
+          "id": "job-seekers-hide-instructions-in-their-resumes-to-trick"
+        },
+        {
+          "t": "Jakub Pachocki (OpenAI) describes an alien mind and calls for stronger guardrails",
+          "z": "international",
+          "id": "jakub-pachocki-openai-describes-an-alien-mind-and-calls-for"
+        },
+        {
+          "t": "The Seattle Times and Newsday sue OpenAI and Microsoft for copyright infringement",
+          "z": "international",
+          "id": "the-seattle-times-and-newsday-sue-openai-and-microsoft-for"
+        },
+        {
+          "t": "The split of the Anthropic settlement pits authors, publishers and literary agents against each other",
+          "z": "international",
+          "id": "the-split-of-the-anthropic-settlement-pits-authors"
+        },
+        {
+          "t": "Huawei says it has solved its chips' overheating, ahead of the Kirin 2026 launch",
+          "z": "chine",
+          "id": "huawei-says-it-has-solved-its-chips-overheating-ahead-of"
+        },
+        {
+          "t": "SenseTime returns to profit by betting on enterprise tasks rather than model size",
+          "z": "chine",
+          "id": "sensetime-returns-to-profit-by-betting-on-enterprise-tasks"
+        },
+        {
+          "t": "A better model can make the system riskier",
+          "z": "recherche",
+          "id": "a-better-model-can-make-the-system-riskier"
+        },
+        {
+          "t": "A survey maps the shift toward recruitment agents",
+          "z": "recherche",
+          "id": "a-survey-maps-the-shift-toward-recruitment-agents"
+        },
+        {
+          "t": "Nvidia put $99 billion into other tech companies in two years",
+          "z": "bref",
+          "id": "nvidia-put-99-billion-into-other-tech-companies-in-two-years"
+        },
+        {
+          "t": "Japan plans to quadruple its AI data centers by 2033",
+          "z": "bref",
+          "id": "japan-plans-to-quadruple-its-ai-data-centers-by-2033"
+        },
+        {
+          "t": "The data center boom threatens to push interest rates higher in Australia",
+          "z": "bref",
+          "id": "the-data-center-boom-threatens-to-push-interest-rates"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "dateCourte": "Fri 4 Sep",
+      "dateAffichee": "4 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
+      "chapeau": "OpenAI launched GPT-6 Astra, billed as its most powerful model and the first it rates at the \\\"critical\\\" cyber risk threshold, on the very day ChatGPT, Claude and Grok went down almost at the same time. In the same stretch, Nvidia is buying the French-American platform Hugging Face for $12.9 billion and the G20 has agreed on lighter-touch AI regulation.",
+      "nbItems": 14,
+      "nbSources": 26,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "TechCrunch",
+        "Wired",
+        "Next.ink",
+        "ZDNet",
+        "Numerama",
+        "Google DeepMind",
+        "South China Morning Post",
+        "Journal du Net",
+        "arXiv",
+        "Clubic",
+        "Bloomberg"
+      ],
+      "items": [
+        {
+          "t": "OpenAI launches GPT-6 Astra and declares the start of the \"age of AGI\"",
+          "z": "une",
+          "id": "openai-launches-gpt-6-astra-and-declares-the-start-of-the"
+        },
+        {
+          "t": "Nvidia buys Hugging Face for $12.9 billion",
+          "z": "europe",
+          "id": "nvidia-buys-hugging-face-for-12-9-billion"
+        },
+        {
+          "t": "The CNIL releases a tool for tracing the lineage of open AI models",
+          "z": "europe",
+          "id": "the-cnil-releases-a-tool-for-tracing-the-lineage-of-open-ai"
+        },
+        {
+          "t": "LibreOffice 26.8 bets on \"zero AI\" and wins over IT departments",
+          "z": "europe",
+          "id": "libreoffice-26-8-bets-on-zero-ai-and-wins-over-it"
+        },
+        {
+          "t": "ChatGPT, Claude and Grok go down almost at the same time",
+          "z": "international",
+          "id": "chatgpt-claude-and-grok-go-down-almost-at-the-same-time"
+        },
+        {
+          "t": "OpenAI cuts off Cursor, a billion-dollar customer, to avoid Elon Musk",
+          "z": "international",
+          "id": "openai-cuts-off-cursor-a-billion-dollar-customer-to-avoid"
+        },
+        {
+          "t": "Google DeepMind launches WeatherNext 3, its most accurate weather model",
+          "z": "international",
+          "id": "google-deepmind-launches-weathernext-3-its-most-accurate"
+        },
+        {
+          "t": "Meta pays users of its new model in exchange for their data",
+          "z": "international",
+          "id": "meta-pays-users-of-its-new-model-in-exchange-for-their-data"
+        },
+        {
+          "t": "Chinese chipmaker Enflame sees its IPO oversubscribed 4,073 times",
+          "z": "chine",
+          "id": "chinese-chipmaker-enflame-sees-its-ipo-oversubscribed-4-073"
+        },
+        {
+          "t": "Moonshot AI, maker of the Kimi K3 model, files for a Hong Kong IPO",
+          "z": "chine",
+          "id": "moonshot-ai-maker-of-the-kimi-k3-model-files-for-a-hong"
+        },
+        {
+          "t": "Frontier models often know they are being tested",
+          "z": "recherche",
+          "id": "frontier-models-often-know-they-are-being-tested"
+        },
+        {
+          "t": "The AI skills gap is widening faster than expected",
+          "z": "bref",
+          "id": "the-ai-skills-gap-is-widening-faster-than-expected"
+        },
+        {
+          "t": "With AI, managers produce more, but do they manage better",
+          "z": "bref",
+          "id": "with-ai-managers-produce-more-but-do-they-manage-better"
+        },
+        {
+          "t": "New York and Los Angeles restrict generative AI in schools",
+          "z": "bref",
+          "id": "new-york-and-los-angeles-restrict-generative-ai-in-schools"
+        }
+      ]
+    },
     {
       "date": "2026-09-03",
       "dateCourte": "Thu 3 Sep",

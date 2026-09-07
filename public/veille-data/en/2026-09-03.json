@@ -270,7 +270,12 @@
     "titreEditorial": "OpenAI rates Astra at critical cyber capability",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-04",
+    "dateLongue": "Friday 4 September 2026",
+    "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 22,
   "nbSignes": 10404,
