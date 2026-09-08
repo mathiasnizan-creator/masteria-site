@@ -2,11 +2,13 @@ import { useLocation, Link } from 'react-router-dom'
 import {
   BadgeCheck, Wallet, MapPin, Clock, ArrowRight, CheckCircle2,
   ChevronDown, Building2, Users, Phone, Briefcase, Sparkles,
-  Train, GraduationCap, Globe,
+  Train, GraduationCap, Globe, FileCheck, Newspaper, Star,
 } from 'lucide-react'
 import { useState } from 'react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import CaseStudyCards from '../components/CaseStudyCards'
+import FounderNote from '../components/FounderNote'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
@@ -15,6 +17,10 @@ import { METIERS } from '../data/catalog-meta'
 
 // ToolLogo attend 'chatgpt' ou 'claude' — notre slug est 'claude-ia' (URL friendly)
 const toolLogoSlug = (slug) => slug === 'claude-ia' ? 'claude' : slug
+
+// Icônes des cartes « organisme vérifiable » (city.proof), nommées dans geo-data.js
+const PROOF_ICONS = { MapPin, BadgeCheck, FileCheck, Newspaper, Star }
+const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false)
@@ -79,6 +85,15 @@ export default function GeoIAGenericPage() {
     duration: 'PT14H',
     level: 'Tous niveaux',
     locationName: `Masteria — formation IA ${city.nameLoc} (présentiel) ou distanciel`,
+    // Compétences visées et sujets (rich result Course) : le socle est le même dans
+    // toutes les villes, seuls les cas travaillés changent.
+    teaches: [
+      'Formuler une demande efficace à ChatGPT, Claude, Copilot, Gemini ou Mistral',
+      "Rédiger, synthétiser et analyser les documents de son métier avec l'IA générative",
+      "Vérifier les réponses et protéger les données de l'entreprise (RGPD, AI Act)",
+      "Construire une bibliothèque de prompts et un plan d'action à 30 jours",
+    ],
+    about: ['Intelligence artificielle générative', 'ChatGPT', 'Claude', 'Microsoft Copilot', 'Google Gemini', 'Mistral AI'],
   }
 
   // Meta keywords localisés (le fallback SEOHead liste des mots-clés formation génériques)
@@ -87,7 +102,10 @@ export default function GeoIAGenericPage() {
 
   // E-E-A-T : auteur identifié + fraîcheur datée (Article JSON-LD + byline visible)
   const PUBLISHED = '2026-05-11'
-  const MODIFIED = '2026-08-05'
+  // Une ville peut porter sa propre date de mise à jour (geo-data.js) ; les autres
+  // gardent celle de la dernière passe commune sur le template.
+  const MODIFIED = city.dateModified || '2026-08-05'
+  const modifiedLabel = `${MOIS_FR[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}`
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -158,16 +176,33 @@ export default function GeoIAGenericPage() {
         latitude: city.coordinates.latitude,
         longitude: city.coordinates.longitude,
       },
-    } : {}),
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: city.region,
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: city.coordinates.latitude,
-        longitude: city.coordinates.longitude,
+      // Signaux d'entité locale (E-E-A-T) : fiche Google (hasMap), entité Knowledge
+      // Graph et page LinkedIn (sameAs), fondation, fondateur, certification Qualiopi.
+      ...(city.office.mapUrl ? { hasMap: city.office.mapUrl } : {}),
+      ...(city.office.sameAs ? { sameAs: city.office.sameAs } : {}),
+      foundingDate: '2022',
+      founder: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'Certification Qualiopi',
+        credentialCategory: 'Actions de formation',
+        identifier: '725311-1',
+        recognizedBy: { '@type': 'Organization', name: 'France Compétences' },
       },
-    },
+    } : {}),
+    areaServed: [
+      {
+        '@type': 'AdministrativeArea',
+        name: city.region,
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: city.coordinates.latitude,
+          longitude: city.coordinates.longitude,
+        },
+      },
+      // Communes de la zone d'intervention directe, quand la ville les déclare
+      ...(city.servedCities || []).map(name => ({ '@type': 'City', name })),
+    ],
     parentOrganization: { '@id': 'https://www.master-ia.fr/#organization' },
   } : null
 
@@ -181,7 +216,7 @@ export default function GeoIAGenericPage() {
     },
     {
       q: `Quels métiers sont couverts par vos formations IA ${city.nameLoc} ?`,
-      a: `Nous proposons des programmes spécialisés pour 13 fonctions : marketing, ressources humaines, commercial, finance, communication, management, assistante de direction, SEO, service client, informatique, pédagogique, achats et formats transverses pour tous publics. Chaque programme est conçu pour la fonction visée, avec des cas d'usage et des exercices pratiques tirés du quotidien de ces métiers.`,
+      a: `Nous proposons 24 programmes métier : marketing, ressources humaines, finance, commercial, communication, management, assistanat de direction, SEO, service client, informatique, formation, achats, QSE, gestion de projet, marchés publics, immobilier, commerce, santé, juridique, comptabilité, assurance, BTP, tourisme, et un socle transverse pour tous publics. Chaque programme est conçu pour la fonction visée, avec des cas d'usage et des exercices pratiques tirés du quotidien de ces métiers.`,
     },
     {
       q: `La formation IA ${city.nameLoc} est-elle finançable OPCO ?`,
@@ -267,7 +302,7 @@ export default function GeoIAGenericPage() {
           </div>
 
           <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
-            {`Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 13 fonctions métier. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis personnalisé sous 24 h.`}
+            {city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis personnalisé sous 24 h.`}
           </p>
 
           <h1 style={{
@@ -281,16 +316,19 @@ export default function GeoIAGenericPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
           </p>
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
             {[
+              city.situations ? ['Pour qui', '#pour-qui'] : null,
               city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
               ['Outils', '#outils'],
               ['Métiers', '#metiers'],
               ['Programme & tarifs', '#programme'],
+              city.proof ? ['Organisme', '#organisme'] : null,
+              city.caseStudies ? ['Références', '#etudes-de-cas'] : null,
               ['Financement', '#financement'],
               ['FAQ', '#geo-faq'],
             ].filter(Boolean).map(([label, href]) => (
@@ -368,6 +406,53 @@ export default function GeoIAGenericPage() {
         </div>
       </section>
 
+      {/* ── POUR QUI : la même requête, des besoins différents (villes qui déclarent `situations`) ── */}
+      {city.situations && (
+        <section id="pour-qui" style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#fff', borderBottom: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 980, margin: '0 auto' }}>
+            <FadeIn>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>{city.situations.kicker}</div>
+              <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
+                {city.situations.h2}
+              </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>
+                {city.situations.intro}
+              </p>
+            </FadeIn>
+            <FadeIn delay={80}>
+              <div style={{ overflowX: 'auto', background: '#fff', borderRadius: 14, border: '1px solid #E5E7EB' }}>
+                <table aria-label={`Quelle formation IA ${city.nameLoc} selon votre situation`} style={{ width: '100%', minWidth: 720, borderCollapse: 'collapse', fontSize: 13.5 }}>
+                  <thead>
+                    <tr style={{ background: '#F9FAFB' }}>
+                      {['Votre situation', 'Ce que vous cherchez', 'La réponse'].map(h => (
+                        <th key={h} scope="col" style={{ textAlign: 'left', padding: '12px 16px', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 12.5, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB' }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {city.situations.rows.map(row => (
+                      <tr key={row.who} style={{ background: row.masteria ? '#fff' : '#FAFAF7' }}>
+                        <th scope="row" style={{ textAlign: 'left', padding: '14px 16px', color: '#0A0A0A', fontWeight: 700, lineHeight: 1.5, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top', fontFamily: 'DM Sans, sans-serif', minWidth: 200 }}>{row.who}</th>
+                        <td style={{ padding: '14px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{row.need}</td>
+                        <td style={{ padding: '14px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>
+                          <span style={{ display: 'inline-block', marginBottom: 6, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: row.masteria ? '#1E40AF' : '#6B7280', background: row.masteria ? '#DBEAFE' : '#F3F4F6', borderRadius: 6, padding: '3px 8px' }}>
+                            {row.masteria ? 'Masteria' : 'Hors périmètre Masteria'}
+                          </span>
+                          <div>{row.answer}</div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {city.situations.note && (
+                <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '10px 0 0' }}>{city.situations.note}</p>
+              )}
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
       {/* ── INDUSTRIES & TISSU LOCAL ── */}
       {city.industriesDeep && city.industriesDeep.length > 0 && (
         <section id="secteurs" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
@@ -375,10 +460,10 @@ export default function GeoIAGenericPage() {
             <FadeIn>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Tissu économique {city.nameLoc}</div>
               <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.01em' }}>
-                Les secteurs où l'IA fait la différence {city.nameLoc}
+                Les secteurs où l'IA rend le plus de temps aux équipes {city.nameLoc}
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 28, maxWidth: 760 }}>
-                Notre programme est calibré pour les enjeux concrets des entreprises {city.nameLoc}. Voici les quatre secteurs où nous voyons les gains les plus rapides en 2026.
+                Notre programme est calibré sur les enjeux concrets des entreprises {city.nameLoc}. Les secteurs ci-dessous sont ceux où les gains arrivent le plus vite en 2026.
               </p>
             </FadeIn>
             <FadeIn delay={80}>
@@ -505,7 +590,7 @@ export default function GeoIAGenericPage() {
               Formation IA par métier {city.nameLoc}
             </h2>
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 32, maxWidth: 760 }}>
-              Chaque programme est construit autour des cas d'usage réels de la fonction visée. Marketing, RH, commerciaux, finance, communication, management, assistantes de direction, SEO, service client, informatique, pédagogique, achats et formats transverses pour tous publics.
+              Chaque programme est construit autour des cas d'usage réels de la fonction visée : marketing, ressources humaines, finance, commercial, communication, management, assistanat de direction, SEO, service client, informatique, formation, achats, QSE, gestion de projet, marchés publics, immobilier, commerce, santé, juridique, comptabilité, assurance, BTP, tourisme, et un socle transverse pour tous publics.
             </p>
           </FadeIn>
           <FadeIn delay={80}>
@@ -535,7 +620,7 @@ export default function GeoIAGenericPage() {
               Programme, durée et tarifs de la formation IA {city.nameLoc}
             </h2>
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 28, maxWidth: 760 }}>
-              Un format court et opérationnel : en une journée, vos équipes repartent autonomes sur les cas d'usage IA de leur métier. Voici le déroulé type et les tarifs {city.nameLoc}.
+              Un format court et opérationnel : en une journée, vos équipes repartent autonomes sur les cas d'usage IA de leur métier. Le déroulé type et les tarifs {city.nameLoc} sont détaillés ci-dessous.
             </p>
           </FadeIn>
           <FadeIn delay={80}>
@@ -556,7 +641,7 @@ export default function GeoIAGenericPage() {
                   ].map(([t, d]) => (
                     <li key={t} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>
                       <CheckCircle2 size={15} color="#2563EB" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 2 }} />
-                      <span><strong style={{ color: '#0A0A0A' }}>{t} —</strong> {d}</span>
+                      <span><strong style={{ color: '#0A0A0A' }}>{t} :</strong> {d}</span>
                     </li>
                   ))}
                 </ul>
@@ -638,6 +723,56 @@ export default function GeoIAGenericPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ── ORGANISME VÉRIFIABLE (E-E-A-T) : preuves contrôlables hors du site (villes qui déclarent `proof`) ── */}
+      {city.proof && (
+        <section id="organisme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 980, margin: '0 auto' }}>
+            <FadeIn>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>{city.proof.kicker}</div>
+              <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
+                {city.proof.h2}
+              </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 28, maxWidth: 760 }}>
+                {city.proof.intro}
+              </p>
+            </FadeIn>
+            <FadeIn delay={80}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
+                {city.proof.items.map(item => {
+                  const Icon = PROOF_ICONS[item.icon] || BadgeCheck
+                  return (
+                    <div key={item.label} style={{ background: '#F9FAFB', borderRadius: 14, padding: '22px 24px', border: '1px solid #E5E7EB', display: 'flex', flexDirection: 'column', gap: 10 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                        <div style={{ width: 32, height: 32, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <Icon size={16} color="#1E40AF" strokeWidth={2.2} />
+                        </div>
+                        <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{item.label}</h3>
+                      </div>
+                      <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0, flex: 1 }}>{item.value}</p>
+                      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+                        {(item.links || []).map(l => {
+                          const style = { display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 13, fontWeight: 700, color: '#2563EB', textDecoration: 'none' }
+                          const interne = l.href.startsWith('/') && !l.href.startsWith('/assets/')
+                          return interne
+                            ? <Link key={l.href} to={l.href} style={style}>{l.label} <ArrowRight size={13} /></Link>
+                            : <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" style={style}>{l.label} <ArrowRight size={13} /></a>
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {/* ── RÉFÉRENCES DOCUMENTÉES + FONDATEUR (villes qui les déclarent) ── */}
+      {city.caseStudies && (
+        <CaseStudyCards ids={city.caseStudies.ids} kicker={city.caseStudies.kicker || 'Références'} title={city.caseStudies.title} intro={city.caseStudies.intro} bg="#F9FAFB" />
+      )}
+      {city.founderNote && <FounderNote bg="#fff" />}
 
       {/* ── CAS D'USAGE LOCAUX ── */}
       {city.localCases && city.localCases.length > 0 && (
@@ -746,7 +881,7 @@ export default function GeoIAGenericPage() {
                 Acteurs de référence dans la région
               </h2>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 18, maxWidth: 720 }}>
-                Notre programme s'inscrit dans l'écosystème IA local. Nous échangeons régulièrement avec les acteurs suivants pour rester à jour sur les enjeux régionaux.
+                {city.ecosystemIntro || "Notre programme s'inscrit dans l'écosystème IA local. Nous échangeons régulièrement avec les acteurs suivants pour rester à jour sur les enjeux régionaux."}
               </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {city.localExperts.map((e, i) => (

@@ -79,84 +79,224 @@ export const GEO_CITIES = [
     country: 'France',
     countryCode: 'FR',
     locale: 'fr-FR',
-    // Lyon est le siège de Masteria : la page vise le couple de requêtes en se
-    // répartissant les emplacements — « formation ia lyon » (260/mois) en tête de
-    // title, « formation intelligence artificielle lyon » (90/mois) contiguë dans le H1.
-    metaTitleOverride: 'Formation intelligence artificielle Lyon · Qualiopi | Masteria',
-    h1Override: 'Formation intelligence artificielle à Lyon : ChatGPT, Claude et plus de 100 programmes par métier',
-    metaDescOverride: "Formation intelligence artificielle à Lyon : ChatGPT, Claude, des programmes par métier dans vos locaux. Organisme lyonnais certifié Qualiopi, finançable OPCO.",
+    // Lyon est la ville de Masteria. Les deux requêtes se répartissent sur les deux
+    // emplacements : « formation ia lyon » (390/mois, tête de requête) ouvre le title,
+    // « formation intelligence artificielle lyon » (140/mois) reste contiguë dans le H1.
+    // Passe SEO + E-E-A-T + GEO du 2026-09-08 : la page était en position 56 sur la
+    // tête de requête ; les preuves (proof), le tableau « pour qui » (situations), les
+    // études de cas et le bloc fondateur ne sont rendus que pour les villes qui les portent.
+    metaTitleOverride: 'Formation IA Lyon : intelligence artificielle | Masteria',
+    h1Override: 'Formation intelligence artificielle à Lyon : vos équipes formées sur leurs cas réels, dans vos locaux',
+    metaDescOverride: "Formation IA à Lyon : ChatGPT, Claude, Copilot, Gemini et Mistral sur vos cas réels, dans vos locaux. Organisme lyonnais Qualiopi, finançable OPCO.",
+    dateModified: '2026-09-08',
+    // Réponse directe citable par les moteurs génératifs : l'entité, le lieu, l'offre et
+    // le prix en un paragraphe (id geo-summary, déclaré speakable sur l'Article).
+    geoSummary: "Masteria est un organisme de formation en intelligence artificielle basé à Lyon, en presqu'île (17 rue d'Algérie, Lyon 1ᵉʳ), certifié Qualiopi. Il forme les équipes des entreprises de la métropole à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, dans leurs locaux ou à distance, sur leurs propres dossiers : 1 980 € HT la journée, finançable par votre OPCO, devis sous 24 h.",
     // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
-    // l'adresse du ProfessionalService + la ligne « Organisme » de l'encart En bref.
+    // l'adresse du ProfessionalService, la ligne « Organisme » de l'encart En bref,
+    // la carte Google (hasMap) et l'entité Knowledge Graph (sameAs).
     office: {
       streetAddress: "17 rue d'Algérie",
       postalCode: '69001',
       addressLocality: 'Lyon',
       addressRegion: 'Auvergne-Rhône-Alpes',
-      note: "Organisme de formation lyonnais : bureaux en presqu'île (Lyon 1ᵉʳ), fondé à Lyon en 2022",
+      note: "Organisme de formation lyonnais : bureaux en presqu'île (Lyon 1ᵉʳ, quartier des Terreaux), fondé à Lyon en 2022",
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Masteria&query_place_id=ChIJQy4tZWu-LkMR2Z9YXKI7SZE',
+      sameAs: [
+        'https://www.google.com/search?kgmid=/g/11ys7st9c3',
+        'https://www.linkedin.com/company/masteria-conseil-et-formation-ia/',
+      ],
     },
+    // Communes desservies déclarées dans areaServed (schema) : celles de la zone d'intervention directe.
+    servedCities: ['Lyon', 'Villeurbanne', 'Grenoble', 'Saint-Étienne', 'Clermont-Ferrand', 'Annecy', 'Chambéry', 'Valence'],
+    // Preuves vérifiables hors du site (E-E-A-T) : chaque carte renvoie vers une source
+    // extérieure ou un document téléchargeable. Certificat Qualiopi lu sur le PDF publié
+    // (n° 725311-1, Certifopac, validité 29/01/2026 → 28/01/2029).
+    proof: {
+      kicker: 'Organisme vérifiable',
+      h2: 'Un organisme de formation lyonnais, vérifiable en quatre clics',
+      intro: "Avant de confier une journée à un formateur, vérifiez qui il est. Chaque élément ci-dessous se contrôle depuis une source extérieure à ce site.",
+      items: [
+        {
+          icon: 'MapPin',
+          label: 'Bureaux',
+          value: "17 rue d'Algérie, 69001 Lyon, quartier des Terreaux (presqu'île, métro Hôtel de Ville). Les cadrages et les accompagnements individuels s'y tiennent ; les sessions de groupe ont lieu chez vous.",
+          links: [{ label: 'Voir la fiche Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=Masteria&query_place_id=ChIJQy4tZWu-LkMR2Z9YXKI7SZE' }],
+        },
+        {
+          icon: 'BadgeCheck',
+          label: 'Certification Qualiopi',
+          value: "Certificat n° 725311-1 délivré par Certifopac pour les actions de formation, valable du 29 janvier 2026 au 28 janvier 2029. C'est la condition de la prise en charge par votre OPCO.",
+          links: [{ label: 'Télécharger le certificat (PDF)', href: '/assets/qualiopi-certificat-masteria.pdf' }],
+        },
+        {
+          icon: 'FileCheck',
+          label: "Déclaration d'activité",
+          value: "Numéro 84 69 23218 69, enregistré auprès du préfet de la région Auvergne-Rhône-Alpes. Cet enregistrement ne vaut pas agrément de l'État.",
+          links: [{ label: 'Liste publique des organismes de formation', href: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail' }],
+        },
+        {
+          icon: 'Newspaper',
+          label: 'Fondateur et presse',
+          value: "Mathias Nizan a fondé Masteria à Lyon en 2022 et anime les sessions lyonnaises. Il est cité par Les Échos sur le choix d'une IA adaptée à chaque métier ; la fiche Google de Masteria (adresse, itinéraire, avis) est publique.",
+          links: [
+            { label: "Lire l'article des Échos", href: 'https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741' },
+            { label: 'Profil LinkedIn', href: 'https://www.linkedin.com/in/mathias-nizan/' },
+          ],
+        },
+      ],
+    },
+    // La SERP « formation ia lyon » mêle écoles, universités et organismes pour entreprises :
+    // le tableau répond à chaque situation, y compris celles que Masteria ne couvre pas.
+    // Les établissements sont cités à titre d'information, sans classement (à faire valider).
+    situations: {
+      kicker: 'Quelle formation pour qui',
+      h2: 'Formation IA à Lyon : quelle option selon votre situation',
+      intro: "La même recherche « formation IA Lyon » cache des besoins très différents. Chaque situation a sa réponse, chez Masteria ou ailleurs.",
+      rows: [
+        {
+          who: 'Une équipe ou un service en entreprise (PME, ETI, grand groupe)',
+          need: 'Gagner du temps sur les tâches du poste avec les outils déjà déployés',
+          answer: "Journée intra Masteria dans vos locaux, jusqu'à 12 participants, programme monté par métier. 1 980 € HT, finançable par votre OPCO.",
+          masteria: true,
+        },
+        {
+          who: 'Un dirigeant, un expert métier, un profil stratégique',
+          need: 'Un programme personnel, à son rythme, sur ses propres dossiers',
+          answer: 'Accompagnement individuel Masteria, en présentiel dans nos bureaux des Terreaux ou à distance, 1 980 € HT la journée, séquençable en demi-journées.',
+          masteria: true,
+        },
+        {
+          who: 'Tout un site à sensibiliser',
+          need: 'Donner un socle commun à 30, 50 ou 100 personnes avant d\'approfondir par métier',
+          answer: "Sprint IA de 3 heures, jusqu'à 100 participants par session, puis journées par équipe sur les cas de chaque fonction.",
+          masteria: true,
+        },
+        {
+          who: "Un salarié en reconversion, un étudiant, un demandeur d'emploi",
+          need: 'Un diplôme, un titre RNCP ou un parcours long financé par le CPF ou France Travail',
+          answer: "Hors périmètre Masteria. À Lyon : le master Intelligence artificielle de l'Université Claude Bernard Lyon 1, la formation continue de l'École Centrale de Lyon et de CPE Lyon, les programmes executive d'emlyon business school, ou les bootcamps (Jedha, Le Wagon, Simplon).",
+          masteria: false,
+        },
+      ],
+      note: "Les établissements cités le sont à titre d'information, sans classement ni partenariat : ils répondent à des besoins que Masteria ne couvre pas.",
+    },
+    // Références documentées (src/data/etudes-de-cas.js) : trois missions de formation,
+    // dont un cabinet formé sur ses sites de Paris et de Lyon.
+    caseStudies: {
+      ids: ['conseil-financier', 'distribution', 'industrie'],
+      title: 'Des déploiements documentés, menés depuis Lyon',
+      intro: "Masteria travaille depuis Lyon pour des organisations de toute la France. Trois missions de formation, décrites en six temps avec leurs résultats : un cabinet de conseil financier formé sur ses deux sites de Paris et de Lyon, une force de vente de 58 commerciaux, et le déploiement de Copilot d'un groupe industriel international.",
+    },
+    founderNote: true,
+    ecosystemIntro: "Nos programmes s'appuient sur le tissu de recherche et d'innovation de la métropole. Ces acteurs structurent l'écosystème IA lyonnais.",
     // Maillage local complémentaire (rendu dans la section maillage interne)
     relatedLocal: [
       { label: 'Agence IA Lyon : conseil & développement', href: '/agence-ia-lyon' },
       { label: 'Formation IA Grenoble', href: '/formation-ia-grenoble' },
       { label: 'Formation IA Annecy', href: '/formation-ia-annecy' },
-      { label: "Études de cas IA en entreprise", href: '/etudes-de-cas-ia' },
+      { label: 'Études de cas IA en entreprise', href: '/etudes-de-cas-ia' },
+      { label: 'Qualiopi : ce que la certification garantit', href: '/formation-ia-qualiopi' },
+      { label: 'Financer sa formation IA (OPCO)', href: '/financement-formation-ia' },
     ],
     coordinates: { latitude: 45.7676, longitude: 4.8317 },
     population: '522 000 habitants intra-muros',
     metroArea: 'Métropole de Lyon : 1,4 million d\'habitants, deuxième pôle économique français',
     intraOnly: false,
-    sectors: "pharma, biotech, finance, industrie, numérique et services B2B",
-    desc: "Deuxième pôle économique de France, Lyon est le siège historique de Masteria. Lyon abrite notre siège et concentre une part importante de nos interventions intra-entreprise dans la région, en complément des accompagnements individuels sur mesure réalisés en présentiel ou en distanciel. Lyon est aussi un hub IA reconnu (LabIA, ENS Lyon, Inria Lyon) avec un tissu d'entreprises pharma, industrie et services en pleine accélération sur le sujet.",
+    sectors: "pharma, biotech, banque et assurance, industrie, numérique et services B2B",
+    desc: "Lyon est la ville de Masteria depuis 2022 : nos bureaux sont en presqu'île, à deux pas de la place des Terreaux, et une part importante de nos sessions intra se tient dans la métropole, de la Part-Dieu à Gerland et Villeurbanne. Deuxième pôle économique français, l'agglomération réunit des sièges pharma, industrie, banque et numérique dont les équipes déploient l'IA générative ; nos programmes sont construits sur ces métiers.",
     introPitch: "Lyon est notre base, et la formation intelligence artificielle y est notre métier depuis 2022 : sessions intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure en présentiel à Lyon ou en distanciel. Grenoble, Saint-Étienne, Clermont-Ferrand et Annecy sont également couverts en intra.",
-    opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture). Masteria est référencé auprès des OPCO de la région depuis 2022. Délai de traitement moyen : 5 à 10 jours ouvrés.",
+    opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers, numérique), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture), OPCO Santé (établissements sanitaires et médico-sociaux). Masteria monte les dossiers OPCO de ses clients lyonnais depuis 2022. Délai de traitement moyen : 5 à 10 jours ouvrés.",
     zones: "Lyon (1er au 9e arrondissement), Villeurbanne, Caluire-et-Cuire, Saint-Priest, Bron, Vénissieux, Grenoble, Saint-Étienne, Clermont-Ferrand, Annecy, Chambéry, Valence",
+    // Acteurs cités comme repères du tissu économique local, jamais comme clients.
     industriesDeep: [
       {
         sector: 'Commerce, e-commerce & grande consommation',
-        companies: 'Groupe SEB (Écully), LDLC (Limonest), Aoste, Panzani, GL Events',
+        companies: 'Groupe SEB (Écully), LDLC (Limonest), Panzani, Aoste, GL events',
         focus: "Fiches produits et contenus multilingues, réponses aux avis clients, analyse d'exports de ventes, préparation des opérations commerciales et des salons : les équipes marketing, e-commerce et relation client de la région lyonnaise concentrent des usages IA à gain rapide.",
       },
-
-      { sector: 'Pharma & biotech', companies: 'Sanofi Pasteur, BioMérieux, Boiron, Mérieux NutriSciences, BD Medical, Aguettant', focus: 'Veille réglementaire (ANSM, EMA), rédaction de dossiers AMM, synthèse d\'essais cliniques, communication scientifique.' },
-      { sector: 'Banque & assurance', companies: 'Crédit Agricole Centre-Est, La Banque Postale, BNP Paribas Lyon, AÉSIO Mutuelle, Apicil, April', focus: 'Analyse de risque, rédaction de contrats, gestion des sinistres, conformité LCB-FT, communication conseiller.' },
-      { sector: 'Industrie & énergie', companies: 'Renault Trucks, Iveco Group, Volvo Group, EDF Hydroélectrique, Framatome, SEB Group', focus: 'Documentation technique, maintenance prédictive, rédaction de cahiers des charges, support qualité, formation interne.' },
-      { sector: 'Tech & numérique', companies: 'OL Groupe / OL Cloud, Eatech, BlaBlaCar (R&D Lyon), Algoan, Datacore, Lifen', focus: 'Documentation produit, code review, rédaction de spécifications fonctionnelles, support client niveau 1.' },
+      {
+        sector: 'Pharma & biotech',
+        companies: "Sanofi (Marcy-l'Étoile), bioMérieux, Boiron, Mérieux NutriSciences, Aguettant",
+        focus: "Veille réglementaire (ANSM, EMA), rédaction de dossiers, synthèse d'essais cliniques, communication scientifique : des usages cadrés par la confidentialité des données, traitée en premier.",
+      },
+      {
+        sector: 'Banque & assurance',
+        companies: 'Crédit Agricole Centre-Est, CIC Lyonnaise de Banque, Apicil, April, Groupama Rhône-Alpes Auvergne',
+        focus: 'Analyse de risque, rédaction de contrats, gestion des sinistres, conformité LCB-FT, communication conseiller.',
+      },
+      {
+        sector: 'Industrie & énergie',
+        companies: 'Renault Trucks (Saint-Priest), Framatome, EDF Hydro, Arkema (Pierre-Bénite) et la Vallée de la Chimie',
+        focus: 'Documentation technique, maintenance prédictive, rédaction de cahiers des charges, support qualité, formation interne.',
+      },
+      {
+        sector: 'Tech & numérique',
+        companies: 'Cegid, Esker, Sogelink, Visiativ et les scale-ups de French Tech One Lyon Saint-Étienne',
+        focus: 'Documentation produit, spécifications fonctionnelles, revue de code assistée, support client de niveau 1.',
+      },
     ],
-    localCases: [
-      { profile: 'Direction qualité — laboratoire pharma 350 collaborateurs (Lyon 8e)', usage: 'Synthèse d\'audits internes, rédaction de procédures qualité, mise à jour des fiches sécurité produit (FSP) sur 40 références.' },
-      { profile: 'Service client — courtier en assurance (Lyon Part-Dieu)', usage: 'Réponses standardisées aux 200 demandes hebdomadaires, rédaction de notes d\'expertise, scripts d\'appels sortants pour la prospection.' },
-      { profile: 'Direction R&D — équipementier automobile ETI (Bron)', usage: 'Rédaction de cahiers des charges techniques, traduction multilingue (FR / EN / DE), synthèse de brevets concurrents.' },
-    ],
+    // Les profils types ont laissé la place aux études de cas documentées (caseStudies).
+    localCases: [],
     localFacts: [
-      "La Part-Dieu est le deuxième quartier d'affaires de France : la densité de sièges et de directions régionales fait de Lyon un terrain naturel pour les formations intra multi-équipes.",
-
-      'Lyon abrite le pôle de compétitivité Lyonbiopôle, leader européen en santé et bio-industries.',
-      'L\'écosystème IA lyonnais s\'appuie sur l\'ENS Lyon, Inria Grenoble Rhône-Alpes et le LabIA, hub de recherche IA appliquée.',
-      'OPCO 2i (industrie) et ATLAS (services financiers) couvrent 80 % des financements formation IA Masteria à Lyon.',
-      'Masteria a ses bureaux au 17 rue d\'Algérie, dans le 1er arrondissement de Lyon (presqu\'île).',
+      "La Part-Dieu est le deuxième quartier d'affaires de France : sièges et directions régionales y concentrent des équipes à former par métier, souvent sur plusieurs services d'un même site.",
+      'Lyonbiopôle, pôle de compétitivité santé, fédère les laboratoires et biotechs de la région, où la rédaction réglementaire et la veille scientifique sont des usages IA prioritaires.',
+      "La recherche en IA s'appuie sur l'ENS de Lyon, l'INSA Lyon, l'Université Claude Bernard Lyon 1 et le centre Inria de Lyon.",
+      'OPCO 2i (industrie, chimie, pharma) et ATLAS (banque, assurance, conseil, numérique) sont les deux opérateurs que nous rencontrons le plus souvent dans les dossiers lyonnais.',
+      "Masteria a ses bureaux au 17 rue d'Algérie, dans le 1ᵉʳ arrondissement (presqu'île), et sa déclaration d'activité est enregistrée auprès du préfet de la région Auvergne-Rhône-Alpes.",
     ],
-    transportAccess: "Nos bureaux sont en presqu'île (Lyon 1er) et les formations intra se déroulent dans vos locaux, partout dans la métropole : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne. Depuis la gare TGV Lyon Part-Dieu (métro B, tram T1 / T3 / T4), l'ensemble de l'agglomération est accessible en quelques minutes. En région, nous intervenons à Grenoble (1 h 15 en TER), Saint-Étienne (45 min), Clermont-Ferrand (1 h 30 en TER ou autoroute) et Annecy (1 h 45). Aucun frais de déplacement supplémentaire dans la métropole de Lyon.",
+    transportAccess: "Nos bureaux sont en presqu'île, quartier des Terreaux (métro Hôtel de Ville, lignes A et C), et les formations intra se déroulent dans vos locaux, partout dans la métropole : Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne. Depuis la gare de Lyon Part-Dieu (métro B, tram T1, T3, T4), l'ensemble de l'agglomération est accessible en quelques minutes. En région, nous intervenons à Grenoble (1 h 15 en TER), Saint-Étienne (45 min), Clermont-Ferrand (1 h 30 en TER ou par l'autoroute) et Annecy (1 h 45). Aucun frais de déplacement supplémentaire dans la métropole de Lyon.",
     localExperts: [
-      { name: 'Lyonbiopôle', type: 'Pôle de compétitivité santé et bio-industries' },
-      { name: 'ENS Lyon — LabIA', type: 'Recherche IA appliquée' },
-      { name: 'Inria Grenoble Rhône-Alpes', type: 'Centre de recherche IA' },
+      { name: 'Lyonbiopôle', type: 'Pôle de compétitivité santé' },
+      { name: 'ENS de Lyon', type: 'Recherche en informatique et IA' },
+      { name: 'Centre Inria de Lyon', type: 'Recherche publique en sciences du numérique' },
+      { name: 'French Tech One Lyon Saint-Étienne', type: 'Réseau des startups et scale-ups de la métropole' },
     ],
     additionalFAQ: [
-      { q: "Comment choisir sa formation intelligence artificielle à Lyon ?",
-        a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, l'organisme est-il certifié Qualiopi (condition du financement OPCO), et le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral). Masteria est un organisme lyonnais fondé en 2022 : le cadrage se fait avec vous, le programme est monté par métier, et la session a lieu dans vos locaux de la métropole ou à distance.",
+      {
+        q: 'Comment choisir sa formation intelligence artificielle à Lyon ?',
+        a: "Vérifiez trois points avant de signer : le programme part de vos dossiers plutôt que d'exemples génériques ; l'organisme est certifié Qualiopi, condition du financement OPCO ; le formateur pratique les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral). Masteria est un organisme lyonnais fondé en 2022 : le cadrage se fait avec vous, le programme est monté par métier et la session a lieu dans vos locaux de la métropole ou à distance.",
       },
       {
-        q: "Proposez-vous une formation intelligence artificielle pour débutants à Lyon ?",
-        a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, apprendre à formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
+        q: 'Masteria est-il un organisme de formation basé à Lyon ?',
+        a: "Oui. Masteria est une entreprise lyonnaise fondée en 2022 par Mathias Nizan, déclarée comme organisme de formation auprès du préfet de la région Auvergne-Rhône-Alpes (numéro 84 69 23218 69) et certifiée Qualiopi (certificat n° 725311-1). Les bureaux sont au 17 rue d'Algérie, dans le 1ᵉʳ arrondissement, quartier des Terreaux.",
       },
       {
-        q: "Quelle différence entre l'intra-entreprise et l'accompagnement individuel à Lyon ?", a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions." },
-      { q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?', a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry / Valence. Les modalités sont identiques à celles de Lyon." },
-      { q: 'Où se déroulent les formations IA à Lyon ?', a: "En intra-entreprise : le formateur vient chez vous, partout dans la métropole de Lyon (Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de l'agglomération). Les bureaux de Masteria sont en presqu'île (Lyon 1er). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace : c'est celui que nous recommandons. Le distanciel reste disponible pour les équipes dispersées." },
-      { q: 'Pourquoi choisir un organisme de formation IA lyonnais ?', a: "La proximité change le déroulé : cadrage en présentiel dans vos locaux, connaissance du tissu économique régional (pharma, industrie, banque, numérique) et des OPCO qui financent en Auvergne-Rhône-Alpes, interventions de suivi faciles à planifier. Masteria est fondé et basé à Lyon depuis 2022 ; une partie de nos références vient de la métropole, ce qui donne des cas d'usage directement comparables aux vôtres." },
-      { q: 'Quel délai pour organiser une formation IA à Lyon ?', a: "Comptez 3 à 4 semaines entre le premier échange et la session quand un financement OPCO est demandé : devis et programme sous 24 h ouvrées, instruction OPCO (ATLAS, OPCO 2i, AKTO ou AFDAS selon votre branche) en 5 à 10 jours ouvrés, puis calage de la date avec vos équipes. Sans dossier de financement, le délai se réduit au calage d'agenda. Nos bureaux en presqu'île permettent un cadrage en présentiel rapide partout dans la métropole." },
-      { q: 'Pouvez-vous former plusieurs équipes ou tout un site à Lyon ?', a: "Oui. Le déploiement se fait par vagues : un Sprint IA de 3 heures sensibilise jusqu'à 100 participants par session, puis des journées intra par métier (jusqu'à 12 participants) approfondissent les cas d'usage de chaque fonction. Ce format convient aux PME comme aux ETI et grands groupes lyonnais qui veulent aligner tout un site, des équipes opérationnelles au comité de direction." },
-      { q: 'La formation a-t-elle lieu dans vos bureaux lyonnais ou chez nous ?', a: "Nos bureaux du 1ᵉʳ arrondissement accueillent les cadrages et les accompagnements individuels. Pour les groupes, la formation se tient dans vos locaux : vos équipes travaillent sur leurs postes, avec leurs outils et leurs documents, ce qui ancre les réflexes dès la première journée. En distanciel, la classe virtuelle reprend la même pédagogie, exercices guidés compris." },
+        q: 'Qui anime les formations IA à Lyon ?',
+        a: "Mathias Nizan, fondateur de Masteria, anime les sessions lyonnaises et construit chaque programme au cadrage. Pour les déploiements sur plusieurs sites ou plusieurs équipes en parallèle, des formateurs indépendants expérimentés du réseau Masteria interviennent avec la même méthode et les mêmes supports.",
+      },
+      {
+        q: "Quelle différence entre l'intra-entreprise et l'accompagnement individuel à Lyon ?",
+        a: "L'intra-entreprise se déroule dans vos locaux ou en distanciel : tout le programme est construit sur vos cas d'usage, vos outils, vos documents (anonymisés si besoin), pour un groupe jusqu'à 12 participants. L'accompagnement individuel sur mesure (1-to-1) cible les profils dirigeants, experts métier ou stratégiques avec un programme co-construit et un suivi entre les sessions.",
+      },
+      {
+        q: 'Vos formations IA à Lyon sont-elles éligibles au CPF ?',
+        a: "Non. Le CPF finance des formations certifiantes enregistrées auprès de France compétences. Nos programmes sont des actions de formation pour les équipes en poste, financées par l'OPCO de votre entreprise, son plan de développement des compétences ou l'entreprise elle-même. Un particulier qui cherche un parcours certifiant à Lyon se tournera vers les diplômes et titres cités dans le tableau des situations, plus haut sur cette page.",
+      },
+      {
+        q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?',
+        a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry ou Valence. Les modalités sont identiques à celles de Lyon.",
+      },
+      {
+        q: 'Où se déroulent les formations IA à Lyon ?',
+        a: "En intra-entreprise : le formateur vient chez vous, partout dans la métropole de Lyon (Part-Dieu, Confluence, Gerland, Vaise, Villeurbanne et l'ensemble des communes de l'agglomération). Les bureaux de Masteria sont en presqu'île, quartier des Terreaux (Lyon 1ᵉʳ). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace : c'est celui que nous recommandons. Le distanciel reste disponible pour les équipes dispersées.",
+      },
+      {
+        q: 'Pourquoi choisir un organisme de formation IA lyonnais ?',
+        a: "La proximité change le déroulé : cadrage en présentiel dans vos locaux, connaissance du tissu économique régional (pharma, industrie, banque, numérique) et des OPCO qui financent en Auvergne-Rhône-Alpes, interventions de suivi faciles à planifier. Masteria est fondé et basé à Lyon depuis 2022 ; une partie de nos références vient de la métropole, ce qui donne des cas d'usage directement comparables aux vôtres.",
+      },
+      {
+        q: 'Quel délai pour organiser une formation IA à Lyon ?',
+        a: "Comptez 3 à 4 semaines entre le premier échange et la session quand un financement OPCO est demandé : devis et programme sous 24 h ouvrées, instruction OPCO (ATLAS, OPCO 2i, AKTO ou AFDAS selon votre branche) en 5 à 10 jours ouvrés, puis calage de la date avec vos équipes. Sans dossier de financement, le délai se réduit au calage d'agenda. Nos bureaux en presqu'île permettent un cadrage en présentiel rapide partout dans la métropole.",
+      },
+      {
+        q: 'Pouvez-vous former plusieurs équipes ou tout un site à Lyon ?',
+        a: "Oui. Le déploiement se fait par vagues : un Sprint IA de 3 heures sensibilise jusqu'à 100 participants par session, puis des journées intra par métier (jusqu'à 12 participants) approfondissent les cas d'usage de chaque fonction. Ce format convient aux PME comme aux ETI et grands groupes lyonnais qui veulent aligner tout un site, des équipes opérationnelles au comité de direction.",
+      },
+      {
+        q: 'La formation a-t-elle lieu dans vos bureaux lyonnais ou chez nous ?',
+        a: "Nos bureaux du 1ᵉʳ arrondissement accueillent les cadrages et les accompagnements individuels. Pour les groupes, la formation se tient dans vos locaux : vos équipes travaillent sur leurs postes, avec leurs outils et leurs documents, ce qui ancre les réflexes dès la première journée. En distanciel, la classe virtuelle reprend la même pédagogie, exercices guidés compris.",
+      },
     ],
   },
   {

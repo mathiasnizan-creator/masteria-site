@@ -57,7 +57,11 @@ function cleanQuery(q) {
 let pagefindPromise = null;
 function loadPagefind() {
   if (!pagefindPromise) {
-    pagefindPromise = import(/* @vite-ignore */ '/pagefind/pagefind.js')
+    // Spécificateur passé par une variable : l'index n'existe qu'après le build
+    // (scripts/build-search-index.mjs), et l'analyse d'imports de Vite en dev
+    // refusait la chaîne littérale, ce qui cassait tout le serveur de dev.
+    const pagefindUrl = '/pagefind/pagefind.js';
+    pagefindPromise = import(/* @vite-ignore */ pagefindUrl)
       .then(async pf => {
         // La langue est déduite par Pagefind de <html lang> (fr-FR retombe sur l'index fr).
         await pf.options({ excerptLength: 22 });
