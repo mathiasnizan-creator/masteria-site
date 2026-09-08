@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-08</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-08T08:11:15+02:00</news:publication_date>
+      <news:title>Veille IA du 8 septembre 2026 : Mistral AI lève 3 milliards d&#x27;euros à une valorisation de 21 milliards dans un tour mené par Samsung ; le juriste Jean-Emmanuel Ray rappelle que l&#x27;AI Act oblige les employeurs à recenser leurs systèmes d&#x27;IA à haut risque et à informer les salariés d&#x27;ici fin 2027, pendant que BPCE monte son AI Factory et que Bercy renégocie les contrats informatiques de l&#x27;État ; la Chine vise 9 800 eflops de puissance de calcul et Huawei lance sa première puce à circuits empilés ; Revolut réalise le premier paiement initié par une IA en France</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-09-07</loc>
     <news:news>
       <news:publication>

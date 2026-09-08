@@ -1,0 +1,295 @@
+{
+  "schema": 2,
+  "date": "2026-09-08",
+  "dateAffichee": "8 septembre 2026",
+  "dateLongue": "mardi 8 septembre 2026",
+  "dateCourte": "mar. 8 sept.",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA du mardi 8 septembre 2026",
+  "titreEditorial": "Mistral AI lève 3 milliards d'euros à une valorisation de 21 milliards dans un tour mené par Samsung ; le juriste Jean-Emmanuel Ray rappelle que l'AI Act oblige les employeurs à recenser leurs systèmes d'IA à haut risque et à informer les salariés d'ici fin 2027, pendant que BPCE monte son AI Factory et que Bercy renégocie les contrats informatiques de l'État ; la Chine vise 9 800 eflops de puissance de calcul et Huawei lance sa première puce à circuits empilés ; Revolut réalise le premier paiement initié par une IA en France",
+  "chapeau": "Mistral AI signe la plus grosse levée européenne de l'IA, 3 milliards d'euros menés par Samsung, au moment où sa stratégie est contestée. Le même jour, la France voit l'IA passer en production partout à la fois, dans une banque, à Bercy, chez Revolut, quand l'AI Act commence à compter les mois avant ses premières obligations envers les salariés.",
+  "une": {
+    "titre": "Mistral AI lève 3 milliards d'euros, valorisée à plus de 21 milliards, Samsung entre au capital",
+    "texteHtml": "<p>La start-up française annonce sa plus grosse levée de fonds, 3 milliards d'euros (environ 3,5 milliards de dollars), dans un tour de table mené par Samsung Electronics, rapportent Le Monde et Bloomberg. La valorisation dépasse 21 milliards d'euros, un record pour une entreprise d'IA en Europe. L'opération arrive alors que plusieurs experts reprochent à Mistral d'avoir quitté la course aux modèles de pointe pour se concentrer sur les centres de données et le déploiement industriel. Son PDG Arthur Mensch conteste ce procès, affirme que l'entreprise continue de produire des modèles de premier plan et se dit encore sous-valorisé, misant sur la victoire à terme des modèles à poids ouverts (qu'on peut télécharger et faire tourner soi-même). L'entrée de Samsung, industriel coréen, aux côtés d'investisseurs européens, ancre un pari : bâtir en Europe l'infrastructure de calcul et les usages, sans dépendre des géants américains et chinois.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/09/08/mistral-ai-une-levee-de-fonds-a-3-milliards-d-euros-en-reponse-aux-doutes-sur-l-evolution-de-sa-strategie_6768110_3234.html"
+      },
+      {
+        "nom": "La Tribune",
+        "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/67103949154838/mistral-signe-une-nouvelle-mega-levee-et-espere-deployer-massivement-lia-en-europe"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "mistral-ai-leve-3-milliards-d-euros-valorisee-a-plus-de-21"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "L'AI Act obligera les employeurs à recenser leurs IA à haut risque et à informer les salariés d'ici fin 2027",
+          "texteHtml": "<p>Dans sa chronique au Monde, le juriste Jean-Emmanuel Ray conseille aux services de ressources humaines de ne pas attendre : d'ici la fin 2027, ils devront recenser et clarifier les systèmes d'intelligence artificielle utilisés dans leurs services, puis en informer les salariés. Il revient sur le volet travail de l'AI Act, le règlement européen sur l'IA, dont les obligations se rapprochent. Le message est de prendre l'inventaire maintenant, avant que l'échéance ne le transforme en urgence.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/emploi/article/2026/09/08/pourquoi-les-employeurs-ne-doivent-pas-attendre-pour-identifier-et-reguler-les-systemes-d-ia-a-haut-risque_6768102_1698637.html"
+            }
+          ],
+          "rang": 2,
+          "id": "l-ai-act-obligera-les-employeurs-a-recenser-leurs-ia-a-haut"
+        },
+        {
+          "titre": "BPCE veut son AI Factory opérationnelle avant fin 2026",
+          "texteHtml": "<p>Le groupe bancaire BPCE disposera d'une AI Factory (une structure interne chargée d'industrialiser les usages de l'IA) dès cette année, sous la supervision d'Yves Tyrode, directeur général IA, Digital et Paiements, rapporte ZDNet. Sa mission est de simplifier la diffusion de l'IA dans les différents métiers de la banque, du conseiller au back-office. L'annonce illustre le passage des banques françaises d'expérimentations éparses à une organisation dédiée.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/bpce-disposera-dune-ai-factory-dici-fin-2026-502936.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "bpce-veut-son-ai-factory-operationnelle-avant-fin-2026"
+        },
+        {
+          "titre": "Bercy demande aux ministères de renégocier leurs contrats informatiques au nom des gains de l'IA",
+          "texteHtml": "<p>David Amiel, ministre du Budget et de la Fonction publique, invite les ministères à rouvrir les contrats signés avec les prestataires informatiques de l'État, rapporte Clubic. L'argument : grâce à l'IA générative, ces prestataires produisent davantage en moins de temps, et Bercy veut que cette économie profite aussi aux finances publiques. La démarche pose une question qui déborde le secteur public, celle du partage des gains de productivité entre le client qui paie et le fournisseur qui automatise.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628672-avec-l-ia-bercy-veut-faire-payer-moins-cher-les-prestations-informatiques-de-l-etat.html"
+            }
+          ],
+          "rang": 4,
+          "id": "bercy-demande-aux-ministeres-de-renegocier-leurs-contrats"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Astra facturé jusqu'à 33 dollars pour un seul prompt",
+          "texteHtml": "<p>GPT-6 Astra, le nouveau modèle d'OpenAI présenté comme une étape vers l'AGI (intelligence artificielle générale), coûte jusqu'à 33 dollars pour une seule requête, et il n'est pas le tarif le plus élevé du catalogue d'OpenAI, rapporte Next.ink. Depuis sa sortie, plusieurs utilisateurs constatent qu'il épuise à vive allure leurs quotas d'utilisation. Le chiffre donne une idée du coût réel du raisonnement de pointe : une seule question adressée au meilleur modèle peut valoir le prix d'un abonnement mensuel entier. Pour une organisation qui calcule un budget d'inférence (le coût de faire tourner le modèle une fois entraîné), l'écart de prix entre un modèle courant et Astra change l'équation avant même de parler de valeur produite.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/255028/gpt-6-astra-jusqua-33-dollars-pour-un-prompt-et-ce-nest-pas-le-plus-cher-dopenai/"
+            }
+          ],
+          "rang": 5,
+          "id": "astra-facture-jusqu-a-33-dollars-pour-un-seul-prompt"
+        },
+        {
+          "titre": "Anthropic renonce à racheter Decart AI pour 6 milliards de dollars",
+          "texteHtml": "<p>Anthropic a décidé de ne pas acquérir la start-up d'IA Decart AI, un projet d'acquisition évalué à environ 6 milliards de dollars, selon des sources proches du dossier citées par Bloomberg. L'information repose sur des témoignages anonymes et n'a pas été confirmée officiellement par les deux entreprises. Le recul intervient dans un secteur où les laboratoires multiplient les rapprochements pour capter équipes et technologies. Il suggère qu'Anthropic préfère, à ce stade, préserver sa trésorerie plutôt que payer une prime élevée pour croître par acquisition.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-08/anthropic-said-to-walk-away-from-6-billion-decart-acquisition"
+            }
+          ],
+          "rang": 6,
+          "id": "anthropic-renonce-a-racheter-decart-ai-pour-6-milliards-de"
+        },
+        {
+          "titre": "Les dirigeants de l'IA décrivent désormais l'AGI comme une cible mouvante",
+          "texteHtml": "<p>Atteindre le point où l'IA accomplit la plupart des tâches mieux qu'un humain passait pour un jalon mesurable ; les responsables des grands laboratoires le présentent maintenant comme un objectif flou, dont la définition se dérobe à mesure qu'on s'en approche, rapporte Bloomberg. Le glissement de vocabulaire compte : tant que l'AGI restait un seuil chiffrable, on pouvait débattre d'une date ; devenue notion élastique, elle sert surtout à entretenir la promesse. Pour le lecteur professionnel, la leçon est de juger ces systèmes sur ce qu'ils font aujourd'hui dans un métier précis, pas sur l'horizon qu'on leur prête.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/newsletters/2026-09-07/when-will-we-achieve-agi-ai-leaders-now-say-it-s-a-fuzzy-target"
+            }
+          ],
+          "rang": 7,
+          "id": "les-dirigeants-de-l-ia-decrivent-desormais-l-agi-comme-une"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La Chine vise 9 800 eflops de puissance de calcul d'ici 2030, avec des grappes de 100 000 cartes",
+          "texteHtml": "<p>Le ministère chinois de l'Industrie et des Technologies de l'information a publié lundi un plan quinquennal fixant un objectif de 9 800 eflops de capacité de calcul intelligent d'ici 2030, soit un quadruplement, rapporte le South China Morning Post. Le plan prévoit le déploiement de grappes de calcul contenant chacune 100 000 accélérateurs et un investissement de 3 800 milliards de yuans, environ 532 milliards de dollars. L'effort vise l'infrastructure qui soutient les ambitions du pays en IA, à un moment où les restrictions américaines limitent son accès aux puces les plus avancées. Pékin répond par le volume et la planification d'État là où l'accès aux composants de pointe lui est fermé. Le montant annoncé, plus de 500 milliards de dollars sur cinq ans, dépasse le budget que consacrent la plupart des États à l'ensemble de leur recherche publique.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/policy/article/3366733/china-targets-fourfold-boost-ai-computing-capacity-2030-major-tech-push"
+            }
+          ],
+          "rang": 8,
+          "id": "la-chine-vise-9-800-eflops-de-puissance-de-calcul-d-ici"
+        },
+        {
+          "titre": "Huawei lance le Kirin 9050 Pro, première puce commerciale à circuits empilés",
+          "texteHtml": "<p>Huawei a présenté lundi à Guangzhou le Kirin 9050 Pro, décrit par Richard Yu Chengdong, patron de sa branche grand public, comme sa puce Kirin la plus puissante à ce jour, rapporte le South China Morning Post. Le composant inaugure l'architecture LogicFolding, qui empile verticalement les circuits logiques pour gagner en performance sans dépendre de la seule miniaturisation des transistors, hors de portée pour la Chine sous sanctions. Il concrétise la loi d'échelle Tau que Huawei défendait la semaine dernière sur le papier. L'enjeu dépasse le smartphone, lancé en version pliable en trois : prouver que le pays sait concevoir seul des composants de pointe malgré le blocage américain sur les équipements. Un premier produit en série ne dit encore rien de la fiabilité à grande échelle ni des rendements de fabrication, deux points où la démonstration reste à faire.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366669/huaweis-new-kirin-chip-puts-logic-folding-test-bigger-ambitions-ai"
+            }
+          ],
+          "rang": 9,
+          "id": "huawei-lance-le-kirin-9050-pro-premiere-puce-commerciale-a"
+        },
+        {
+          "titre": "La Corée du Sud vise la troisième place mondiale de l'IA et fusionne ses énergéticiens pour l'alimenter",
+          "texteHtml": "<p>Séoul veut se hisser au rang de troisième grand acteur mondial de l'intelligence artificielle, derrière les États-Unis et la Chine, à coups d'investissements massifs et de réformes, rapporte Le Monde. L'ambition se heurte à des résistances internes, sur l'avenir du marché du travail comme sur les besoins énergétiques que le pays peine à couvrir. Signe de cette tension, le gouvernement prévoit de regrouper cinq entreprises publiques d'électricité pour préparer la demande de courant des centres de données et des usines de puces, rapporte Nikkei Asia. Le cas coréen montre que la course à l'IA se joue autant sur les réacteurs et les lignes à haute tension que sur les modèles. Un pays qui veut entraîner et faire tourner des IA géantes doit d'abord produire l'électricité qui les nourrit.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/07/en-coree-du-sud-l-ia-s-impose-au-c-ur-des-evolutions-economiques-et-societales_6767934_3234.html"
+            }
+          ],
+          "rang": 10,
+          "id": "la-coree-du-sud-vise-la-troisieme-place-mondiale-de-l-ia-et"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Un médicament découvert par IA inverserait des marqueurs du vieillissement",
+          "texteHtml": "<p>Un traitement expérimental contre une maladie pulmonaire, conçu à l'aide de l'intelligence artificielle, a montré des signes prometteurs pour inverser des marqueurs biologiques du vieillissement, selon le laboratoire qui le développe, rapporte Bloomberg. Le résultat provient d'une étude portée par le fabricant lui-même, à un stade précoce, et demande confirmation par des travaux indépendants avant toute conclusion. L'intérêt tient à la méthode : une molécule dont la cible thérapeutique a été identifiée par des modèles, dans un domaine, la biologie du vieillissement, où les essais restent longs et incertains. La prudence s'impose sur une annonce d'entreprise, mais elle illustre la place croissante de l'IA dans la découverte de médicaments.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-07/ai-discovered-drug-reverses-aging-markers-in-study-biotech-says"
+            }
+          ],
+          "rang": 11,
+          "id": "un-medicament-decouvert-par-ia-inverserait-des-marqueurs-du"
+        },
+        {
+          "titre": "Le CNRS alerte sur l'IA générative qui menace l'intégrité des publications scientifiques",
+          "texteHtml": "<p>Face à l'explosion d'études dopées à l'IA et aux rétractations en série, le CNRS tire la sonnette d'alarme sur le risque d'effondrement de la fiabilité des publications scientifiques mondiales, rapporte Clubic. L'organisme français annonce des mesures pour préserver l'intégrité de la recherche et freiner une dérive éditoriale qu'il juge difficile à contenir. Le sujet touche directement les entreprises et les administrations qui s'appuient sur la littérature scientifique pour décider.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628540-le-cnrs-alerte-sur-l-ia-generative-qui-menace-de-faire-s-effondrer-les-publications-scientifiques-mondiales.html"
+            }
+          ],
+          "rang": 12,
+          "id": "le-cnrs-alerte-sur-l-ia-generative-qui-menace-l-integrite"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Premier paiement initié par une IA en France",
+          "texteHtml": "<p>Revolut, en collaboration avec Visa, annonce avoir réalisé le premier paiement en ligne décidé et exécuté par une intelligence artificielle en France, un test présenté comme un avant-goût de l'achat sans clic.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/07/revolut-realise-le-premier-paiement-par-ia-en-france-avec-visa/"
+            }
+          ],
+          "rang": 13,
+          "id": "premier-paiement-initie-par-une-ia-en-france"
+        },
+        {
+          "titre": "Astra boucle un jeu de captchas conçu pour démasquer les machines",
+          "texteHtml": "<p>Un ingénieur d'OpenAI affirme que GPT-6 Astra a validé les 48 niveaux de « I'm Not a Robot », le jeu de neal.fun qui multiplie les épreuves anti-robot, soit une machine qui réussit un test inventé pour la reconnaître.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2326999-je-ne-suis-pas-un-robot-gpt-6-astra-a-valide-les-48-niveaux-dun-jeu-de-captchas-concus-pour-sarracher-les-cheveux.html"
+            }
+          ],
+          "rang": 14,
+          "id": "astra-boucle-un-jeu-de-captchas-concu-pour-demasquer-les"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le juriste Jean-Emmanuel Ray rappelle que l'AI Act obligera tout employeur à recenser ses systèmes d'IA à haut risque et à en informer les salariés d'ici fin 2027, le jour où BPCE annonce son AI Factory, où Bercy renégocie ses contrats au nom des gains de l'IA et où Revolut lance en France le premier paiement décidé par une IA seule : la compétence qui prend de la valeur est de piloter l'entrée sociale de l'IA autant que son entrée technique, écrire pour chaque système qui il concerne et si ces personnes en ont été informées, et porter le sujet au comité social et économique avant que la loi n'impose le calendrier",
+    "these": "Jean-Emmanuel Ray prévient dans Le Monde : d'ici fin 2027, tout employeur devra recenser les systèmes d'intelligence artificielle à haut risque utilisés dans ses services et en informer les salariés. La date paraît lointaine. Elle ne l'est pas. Le même jour, BPCE annonce une AI Factory opérationnelle avant fin 2026 pour diffuser l'IA dans tous ses métiers, Bercy demande aux ministères de renégocier leurs contrats informatiques au motif que l'IA rend les prestataires plus productifs, et Revolut réalise en France le premier paiement lancé par une IA seule. L'IA quitte le laboratoire pour la production, service après service, souvent plus vite que la direction ne le mesure. L'AI Act ajoute une obligation que peu anticipent : informer les personnes soumises à ces systèmes. Pas seulement les classer, les documenter, les sécuriser. Dire aux salariés qu'une machine trie leurs candidatures internes, note leurs dossiers, oriente leurs tâches. Cette obligation déplace l'introduction de l'IA du terrain technique vers le dialogue social. Un déploiement qui se décidait entre une direction et un prestataire devient un sujet de comité social et économique. La compétence qui prend de la valeur dans une organisation française est de piloter l'entrée sociale de l'IA autant que son entrée technique. Prenez chaque système d'IA déjà en usage dans un flux de travail. Écrivez qui il concerne, quelle décision il touche pour ces personnes, et si elles en ont été informées. Portez le sujet au comité social et économique avant que la loi ne vous y oblige, quand vous gardez le choix du calendrier et du récit. Un tableau vide n'annonce pas une conformité repoussée. Il signale un angle mort qui grandit à chaque outil ajouté. Entre le moment où l'outil fonctionne et celui où la loi impose de l'expliquer, il reste une fenêtre. La confiance s'y gagne ou s'y perd. Un salarié accepte une IA qu'on lui a présentée ; il se défie de celle qu'il découvre. Fin 2027 fixe une échéance juridique. Le climat d'une équipe, lui, se joue bien avant. L'équipe éditoriale Masteria.",
+    "html": "<p>Jean-Emmanuel Ray prévient dans Le Monde : d'ici fin 2027, tout employeur devra recenser les systèmes d'intelligence artificielle à haut risque utilisés dans ses services et en informer les salariés. La date paraît lointaine. Elle ne l'est pas. Le même jour, BPCE annonce une AI Factory opérationnelle avant fin 2026 pour diffuser l'IA dans tous ses métiers, Bercy demande aux ministères de renégocier leurs contrats informatiques au motif que l'IA rend les prestataires plus productifs, et Revolut réalise en France le premier paiement lancé par une IA seule. L'IA quitte le laboratoire pour la production, service après service, souvent plus vite que la direction ne le mesure.</p>\n<p>L'AI Act ajoute une obligation que peu anticipent : informer les personnes soumises à ces systèmes. Pas seulement les classer, les documenter, les sécuriser. Dire aux salariés qu'une machine trie leurs candidatures internes, note leurs dossiers, oriente leurs tâches. Cette obligation déplace l'introduction de l'IA du terrain technique vers le dialogue social. Un déploiement qui se décidait entre une direction et un prestataire devient un sujet de comité social et économique.</p>\n<p>La compétence qui prend de la valeur dans une organisation française est de piloter l'entrée sociale de l'IA autant que son entrée technique. Prenez chaque système d'IA déjà en usage dans un flux de travail. Écrivez qui il concerne, quelle décision il touche pour ces personnes, et si elles en ont été informées. Portez le sujet au comité social et économique avant que la loi ne vous y oblige, quand vous gardez le choix du calendrier et du récit. Un tableau vide n'annonce pas une conformité repoussée. Il signale un angle mort qui grandit à chaque outil ajouté.</p>\n<p>Entre le moment où l'outil fonctionne et celui où la loi impose de l'expliquer, il reste une fenêtre. La confiance s'y gagne ou s'y perd. Un salarié accepte une IA qu'on lui a présentée ; il se défie de celle qu'il découvre. Fin 2027 fixe une échéance juridique. Le climat d'une équipe, lui, se joue bien avant.</p>",
+    "htmlExtrait": "<p>Jean-Emmanuel Ray prévient dans Le Monde : d'ici fin 2027, tout employeur devra recenser les systèmes d'intelligence artificielle à haut risque utilisés dans ses services et en informer les salariés. La date paraît lointaine. Elle ne l'est pas. Le même jour, BPCE annonce une AI Factory opérationnelle avant fin 2026 pour diffuser l'IA dans tous ses métiers, Bercy demande aux ministères de renégocier leurs contrats informatiques au motif que l'IA rend les prestataires plus productifs, et Revolut réalise en France le premier paiement lancé par une IA seule. L'IA quitte le laboratoire pour la production, service après service, souvent plus vite que la direction ne le mesure.</p>\n<p>L'AI Act ajoute une obligation que peu anticipent : informer les personnes soumises à ces systèmes. Pas seulement les classer, les documenter, les sécuriser. Dire aux salariés qu'une machine trie leurs candidatures internes, note leurs dossiers, oriente leurs tâches. Cette obligation déplace l'introduction de l'IA du terrain technique vers le dialogue social. Un déploiement qui se décidait entre une direction et un prestataire devient un sujet de comité social et économique.</p>",
+    "itemsCites": [
+      2,
+      3,
+      4,
+      13
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-07",
+    "dateLongue": "lundi 7 septembre 2026",
+    "titreEditorial": "Moody's estime que les entreprises chinoises tirent plus de puissance de calcul par dollar dépensé que les géants américains ; le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour droit d'auteur pendant que le partage de l'accord Anthropic oppose auteurs et éditeurs ; Jakub Pachocki, directeur scientifique d'OpenAI, décrit une « intelligence étrangère » et réclame des garde-fous ; et des candidats américains cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 15,
+  "nbSignes": 10539,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 3
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "La Tribune",
+    "ZDNet",
+    "Clubic",
+    "Next.ink",
+    "Bloomberg",
+    "South China Morning Post",
+    "Maddyness",
+    "Numerama"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 70,
+  "publieLe": "2026-09-08T08:11:15+02:00",
+  "publieLeAffiche": "8h11",
+  "ogImage": "/veille-data/og/2026-09-08.png"
+}

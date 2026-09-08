@@ -239,7 +239,12 @@
     "titreEditorial": "OpenAI ships GPT-6 Astra as three assistants go dark",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-08",
+    "dateLongue": "Tuesday 8 September 2026",
+    "titreEditorial": "Mistral AI raises €3 billion at a €21 billion valuation in a round led by Samsung; the labor-law scholar Jean-Emmanuel Ray reminds employers that the AI Act requires them to inventory their high-risk AI systems and inform staff by the end of 2027, while BPCE stands up its AI Factory and Bercy renegotiates the French state's IT contracts; China targets 9,800 eflops of compute and Huawei launches its first stacked-circuit chip; Revolut completes the first AI-initiated payment in France",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 14,
   "nbSignes": 9049,

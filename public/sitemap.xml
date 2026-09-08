@@ -479,7 +479,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -975,7 +975,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch.jpg</image:loc></image:image>
@@ -1290,7 +1290,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/publications</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--publications.jpg</image:loc></image:image>
@@ -2171,6 +2171,12 @@
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--a-propos.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-08</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-09-07</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>yearly</changefreq>
@@ -2346,10 +2352,16 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/publications</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--publications.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-09-08</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-09-07</loc>

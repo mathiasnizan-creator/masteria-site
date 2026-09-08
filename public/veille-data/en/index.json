@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-07",
-    "totalEditions": 15,
-    "totalItems": 208,
-    "totalSources": 282
+    "derniereDate": "2026-09-08",
+    "totalEditions": 16,
+    "totalItems": 222,
+    "totalSources": 297
   },
   "editions": [
+    {
+      "date": "2026-09-08",
+      "dateAffichee": "8 September 2026",
+      "dateCourte": "Tue 8 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Mistral AI raises €3 billion at a €21 billion valuation in a round led by Samsung; the labor-law scholar Jean-Emmanuel Ray reminds employers that the AI Act requires them to inventory their high-risk AI systems and inform staff by the end of 2027, while BPCE stands up its AI Factory and Bercy renegotiates the French state's IT contracts; China targets 9,800 eflops of compute and Huawei launches its first stacked-circuit chip; Revolut completes the first AI-initiated payment in France",
+      "nbItems": 14,
+      "nbSources": 15,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-07",
       "dateAffichee": "7 September 2026",

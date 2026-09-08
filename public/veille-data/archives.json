@@ -3,12 +3,129 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-07",
-    "totalEditions": 29,
-    "totalItems": 397,
-    "totalSources": 577
+    "derniereDate": "2026-09-08",
+    "totalEditions": 30,
+    "totalItems": 411,
+    "totalSources": 592
   },
   "editions": [
+    {
+      "date": "2026-09-08",
+      "dateCourte": "mar. 8 sept.",
+      "dateAffichee": "8 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Mistral AI lève 3 milliards d'euros à une valorisation de 21 milliards dans un tour mené par Samsung ; le juriste Jean-Emmanuel Ray rappelle que l'AI Act oblige les employeurs à recenser leurs systèmes d'IA à haut risque et à informer les salariés d'ici fin 2027, pendant que BPCE monte son AI Factory et que Bercy renégocie les contrats informatiques de l'État ; la Chine vise 9 800 eflops de puissance de calcul et Huawei lance sa première puce à circuits empilés ; Revolut réalise le premier paiement initié par une IA en France",
+      "chapeau": "Mistral AI signe la plus grosse levée européenne de l'IA, 3 milliards d'euros menés par Samsung, au moment où sa stratégie est contestée. Le même jour, la France voit l'IA passer en production partout à la fois, dans une banque, à Bercy, chez Revolut, quand l'AI Act commence à compter les mois avant ses premières obligations envers les salariés.",
+      "nbItems": 14,
+      "nbSources": 15,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "ZDNet",
+        "Clubic",
+        "Next.ink",
+        "Bloomberg",
+        "South China Morning Post",
+        "Maddyness",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Mistral AI lève 3 milliards d'euros, valorisée à plus de 21 milliards, Samsung entre au capital",
+          "z": "une",
+          "id": "mistral-ai-leve-3-milliards-d-euros-valorisee-a-plus-de-21"
+        },
+        {
+          "t": "L'AI Act obligera les employeurs à recenser leurs IA à haut risque et à informer les salariés d'ici fin 2027",
+          "z": "europe",
+          "id": "l-ai-act-obligera-les-employeurs-a-recenser-leurs-ia-a-haut"
+        },
+        {
+          "t": "BPCE veut son AI Factory opérationnelle avant fin 2026",
+          "z": "europe",
+          "id": "bpce-veut-son-ai-factory-operationnelle-avant-fin-2026"
+        },
+        {
+          "t": "Bercy demande aux ministères de renégocier leurs contrats informatiques au nom des gains de l'IA",
+          "z": "europe",
+          "id": "bercy-demande-aux-ministeres-de-renegocier-leurs-contrats"
+        },
+        {
+          "t": "Astra facturé jusqu'à 33 dollars pour un seul prompt",
+          "z": "international",
+          "id": "astra-facture-jusqu-a-33-dollars-pour-un-seul-prompt"
+        },
+        {
+          "t": "Anthropic renonce à racheter Decart AI pour 6 milliards de dollars",
+          "z": "international",
+          "id": "anthropic-renonce-a-racheter-decart-ai-pour-6-milliards-de"
+        },
+        {
+          "t": "Les dirigeants de l'IA décrivent désormais l'AGI comme une cible mouvante",
+          "z": "international",
+          "id": "les-dirigeants-de-l-ia-decrivent-desormais-l-agi-comme-une"
+        },
+        {
+          "t": "La Chine vise 9 800 eflops de puissance de calcul d'ici 2030, avec des grappes de 100 000 cartes",
+          "z": "chine",
+          "id": "la-chine-vise-9-800-eflops-de-puissance-de-calcul-d-ici"
+        },
+        {
+          "t": "Huawei lance le Kirin 9050 Pro, première puce commerciale à circuits empilés",
+          "z": "chine",
+          "id": "huawei-lance-le-kirin-9050-pro-premiere-puce-commerciale-a"
+        },
+        {
+          "t": "La Corée du Sud vise la troisième place mondiale de l'IA et fusionne ses énergéticiens pour l'alimenter",
+          "z": "chine",
+          "id": "la-coree-du-sud-vise-la-troisieme-place-mondiale-de-l-ia-et"
+        },
+        {
+          "t": "Un médicament découvert par IA inverserait des marqueurs du vieillissement",
+          "z": "recherche",
+          "id": "un-medicament-decouvert-par-ia-inverserait-des-marqueurs-du"
+        },
+        {
+          "t": "Le CNRS alerte sur l'IA générative qui menace l'intégrité des publications scientifiques",
+          "z": "recherche",
+          "id": "le-cnrs-alerte-sur-l-ia-generative-qui-menace-l-integrite"
+        },
+        {
+          "t": "Premier paiement initié par une IA en France",
+          "z": "bref",
+          "id": "premier-paiement-initie-par-une-ia-en-france"
+        },
+        {
+          "t": "Astra boucle un jeu de captchas conçu pour démasquer les machines",
+          "z": "bref",
+          "id": "astra-boucle-un-jeu-de-captchas-concu-pour-demasquer-les"
+        }
+      ]
+    },
     {
       "date": "2026-09-07",
       "dateCourte": "lun. 7 sept.",

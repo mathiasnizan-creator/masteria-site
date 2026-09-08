@@ -239,7 +239,12 @@
     "titreEditorial": "OpenAI lance GPT-6 Astra, premier modèle classé au seuil cyber « critique » et présenté comme l'entrée dans l'« ère de l'AGI », le jour où ChatGPT, Claude et Grok tombent en panne presque en même temps ; Nvidia rachète la plateforme franco-américaine Hugging Face pour 12,9 milliards de dollars, le G20 adopte une approche pro-IA portée par Washington, et la Chine multiplie les introductions en Bourse avec Enflame sursouscrite 4 073 fois et Moonshot en route vers Hong Kong",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-08",
+    "dateLongue": "mardi 8 septembre 2026",
+    "titreEditorial": "Mistral AI lève 3 milliards d'euros à une valorisation de 21 milliards dans un tour mené par Samsung ; le juriste Jean-Emmanuel Ray rappelle que l'AI Act oblige les employeurs à recenser leurs systèmes d'IA à haut risque et à informer les salariés d'ici fin 2027, pendant que BPCE monte son AI Factory et que Bercy renégocie les contrats informatiques de l'État ; la Chine vise 9 800 eflops de puissance de calcul et Huawei lance sa première puce à circuits empilés ; Revolut réalise le premier paiement initié par une IA en France",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 14,
   "nbSignes": 10051,

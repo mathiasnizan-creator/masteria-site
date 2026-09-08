@@ -3,12 +3,129 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-07",
-    "totalEditions": 15,
-    "totalItems": 208,
-    "totalSources": 282
+    "derniereDate": "2026-09-08",
+    "totalEditions": 16,
+    "totalItems": 222,
+    "totalSources": 297
   },
   "editions": [
+    {
+      "date": "2026-09-08",
+      "dateCourte": "Tue 8 Sep",
+      "dateAffichee": "8 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Mistral AI raises €3 billion at a €21 billion valuation in a round led by Samsung; the labor-law scholar Jean-Emmanuel Ray reminds employers that the AI Act requires them to inventory their high-risk AI systems and inform staff by the end of 2027, while BPCE stands up its AI Factory and Bercy renegotiates the French state's IT contracts; China targets 9,800 eflops of compute and Huawei launches its first stacked-circuit chip; Revolut completes the first AI-initiated payment in France",
+      "chapeau": "Mistral AI signs the largest European AI raise, €3 billion led by Samsung, at the moment its strategy is being questioned. The same day, France sees AI move into production everywhere at once, in a bank, at Bercy, at Revolut, as the AI Act starts counting the months before its first obligations toward employees.",
+      "nbItems": 14,
+      "nbSources": 15,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "ZDNet",
+        "Clubic",
+        "Next.ink",
+        "Bloomberg",
+        "South China Morning Post",
+        "Maddyness",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "Mistral AI raises €3 billion, valued at more than €21 billion, with Samsung taking a stake",
+          "z": "une",
+          "id": "mistral-ai-raises-3-billion-valued-at-more-than-21-billion"
+        },
+        {
+          "t": "The AI Act will require employers to inventory their high-risk AI and inform staff by the end of 2027",
+          "z": "europe",
+          "id": "the-ai-act-will-require-employers-to-inventory-their-high"
+        },
+        {
+          "t": "BPCE wants its AI Factory operational before the end of 2026",
+          "z": "europe",
+          "id": "bpce-wants-its-ai-factory-operational-before-the-end-of-2026"
+        },
+        {
+          "t": "Bercy asks ministries to renegotiate their IT contracts in the name of AI-driven savings",
+          "z": "europe",
+          "id": "bercy-asks-ministries-to-renegotiate-their-it-contracts-in"
+        },
+        {
+          "t": "Astra billed up to $33 for a single prompt",
+          "z": "international",
+          "id": "astra-billed-up-to-33-for-a-single-prompt"
+        },
+        {
+          "t": "Anthropic walks away from buying Decart AI for $6 billion",
+          "z": "international",
+          "id": "anthropic-walks-away-from-buying-decart-ai-for-6-billion"
+        },
+        {
+          "t": "AI leaders now describe AGI as a moving target",
+          "z": "international",
+          "id": "ai-leaders-now-describe-agi-as-a-moving-target"
+        },
+        {
+          "t": "China targets 9,800 eflops of compute by 2030, with clusters of 100,000 cards",
+          "z": "chine",
+          "id": "china-targets-9-800-eflops-of-compute-by-2030-with-clusters"
+        },
+        {
+          "t": "Huawei launches the Kirin 9050 Pro, its first commercial stacked-circuit chip",
+          "z": "chine",
+          "id": "huawei-launches-the-kirin-9050-pro-its-first-commercial"
+        },
+        {
+          "t": "South Korea aims for third place in world AI and merges its power utilities to feed it",
+          "z": "chine",
+          "id": "south-korea-aims-for-third-place-in-world-ai-and-merges-its"
+        },
+        {
+          "t": "An AI-discovered drug reportedly reverses aging markers",
+          "z": "recherche",
+          "id": "an-ai-discovered-drug-reportedly-reverses-aging-markers"
+        },
+        {
+          "t": "The CNRS warns that generative AI threatens the integrity of scientific publishing",
+          "z": "recherche",
+          "id": "the-cnrs-warns-that-generative-ai-threatens-the-integrity"
+        },
+        {
+          "t": "First AI-initiated payment in France",
+          "z": "bref",
+          "id": "first-ai-initiated-payment-in-france"
+        },
+        {
+          "t": "Astra clears a set of captchas built to unmask machines",
+          "z": "bref",
+          "id": "astra-clears-a-set-of-captchas-built-to-unmask-machines"
+        }
+      ]
+    },
     {
       "date": "2026-09-07",
       "dateCourte": "Mon 7 Sep",
