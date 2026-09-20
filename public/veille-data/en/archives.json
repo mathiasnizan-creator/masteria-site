@@ -4,9 +4,9 @@
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
     "derniereDate": "2026-09-18",
-    "totalEditions": 23,
-    "totalItems": 317,
-    "totalSources": 446
+    "totalEditions": 24,
+    "totalItems": 331,
+    "totalSources": 471
   },
   "editions": [
     {
@@ -842,6 +842,130 @@
           "t": "Alibaba lets its \"digital employees\" be deployed at its rivals: its QoderWake tool can generate an agent from a simple job description, then put it to work in the apps of ByteDance or Tencent",
           "z": "bref",
           "id": "alibaba-lets-its-digital-employees-be-deployed-at-its"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "dateCourte": "Wed 9 Sep",
+      "dateAffichee": "9 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI claims a Navier-Stokes proof, then a credit fight erupts",
+      "chapeau": "OpenAI says an AI solved a maths problem that stayed open for nearly ninety years, and the feat vanishes within a day under a fight over credit. Meta hands an agent access to your email, the labs raise alarms about their own models, and the CNIL is a reminder that a forgotten right costs €300,000.",
+      "nbItems": 14,
+      "nbSources": 25,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "Le Monde",
+        "Clubic",
+        "TechCrunch",
+        "CNIL",
+        "Wired",
+        "ZDNet",
+        "Platformer",
+        "01net",
+        "Frandroid",
+        "Bloomberg",
+        "South China Morning Post",
+        "Google DeepMind",
+        "The Verge",
+        "IEEE Spectrum",
+        "Ars Technica"
+      ],
+      "items": [
+        {
+          "t": "OpenAI says it solved the Navier-Stokes problem, and the announcement turns straight into a fight over authorship",
+          "z": "une",
+          "id": "openai-says-it-solved-the-navier-stokes-problem-and-the"
+        },
+        {
+          "t": "The CNIL fines EXTIA €300,000 for failing to honour the right to erasure",
+          "z": "europe",
+          "id": "the-cnil-fines-extia-300-000-for-failing-to-honour-the"
+        },
+        {
+          "t": "Le Monde documents the business of AI-generated reactionary content on Facebook",
+          "z": "europe",
+          "id": "le-monde-documents-the-business-of-ai-generated-reactionary"
+        },
+        {
+          "t": "After its record raise, is Mistral still a French company",
+          "z": "europe",
+          "id": "after-its-record-raise-is-mistral-still-a-french-company"
+        },
+        {
+          "t": "Meta launches Muse, a personal agent that asks for access to your email, your calendar and your payments",
+          "z": "international",
+          "id": "meta-launches-muse-a-personal-agent-that-asks-for-access-to"
+        },
+        {
+          "t": "The security warnings now come from inside the labs",
+          "z": "international",
+          "id": "the-security-warnings-now-come-from-inside-the-labs"
+        },
+        {
+          "t": "Qualcomm lands Amazon as a customer for its AI chips",
+          "z": "international",
+          "id": "qualcomm-lands-amazon-as-a-customer-for-its-ai-chips"
+        },
+        {
+          "t": "Cognition reaches $48 billion, and AI coding stays an open market",
+          "z": "international",
+          "id": "cognition-reaches-48-billion-and-ai-coding-stays-an-open"
+        },
+        {
+          "t": "The United States accuses Alibaba and DeepSeek of siphoning off American models",
+          "z": "chine",
+          "id": "the-united-states-accuses-alibaba-and-deepseek-of-siphoning"
+        },
+        {
+          "t": "Z.ai and MiniMax could stay loss-making until 2030 despite sharply rising revenue",
+          "z": "chine",
+          "id": "z-ai-and-minimax-could-stay-loss-making-until-2030-despite"
+        },
+        {
+          "t": "Google DeepMind maps the effects of 9 billion DNA variants",
+          "z": "recherche",
+          "id": "google-deepmind-maps-the-effects-of-9-billion-dna-variants"
+        },
+        {
+          "t": "AI changes how engineers review code",
+          "z": "recherche",
+          "id": "ai-changes-how-engineers-review-code"
+        },
+        {
+          "t": "Microsoft patches 972 flaws in a single Patch Tuesday, a record",
+          "z": "bref",
+          "id": "microsoft-patches-972-flaws-in-a-single-patch-tuesday-a"
+        },
+        {
+          "t": "Hackers are stealing the Claude tokens of Anthropic subscribers",
+          "z": "bref",
+          "id": "hackers-are-stealing-the-claude-tokens-of-anthropic"
         }
       ]
     },

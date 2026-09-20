@@ -1,0 +1,338 @@
+{
+  "schema": 2,
+  "date": "2026-09-09",
+  "dateAffichee": "9 September 2026",
+  "dateLongue": "Wednesday 9 September 2026",
+  "dateCourte": "Wed 9 Sep",
+  "jourSemaine": "Wednesday",
+  "titre": "AI Watch - Wednesday 9 September 2026",
+  "titreEditorial": "OpenAI claims a Navier-Stokes proof, then a credit fight erupts",
+  "chapeau": "OpenAI says an AI solved a maths problem that stayed open for nearly ninety years, and the feat vanishes within a day under a fight over credit. Meta hands an agent access to your email, the labs raise alarms about their own models, and the CNIL is a reminder that a forgotten right costs €300,000.",
+  "une": {
+    "titre": "OpenAI says it solved the Navier-Stokes problem, and the announcement turns straight into a fight over authorship",
+    "texteHtml": "<p>The lab claimed on Tuesday 8 September that one of its models produced a solution to the Navier-Stokes problem, one of the seven Millennium Prize problems, the mathematical puzzles each carrying a one-million-dollar reward. The solution was published with a write-up and a formal proof verified in Lean (a language in which the machine checks every step of the reasoning), and OpenAI is not claiming the prize. Within hours, the feat gave way to an accusation. Tristan Buckmaster, a mathematician at New York University, blames the lab for producing a competing proof after learning of his own research project. According to Clubic, Sebastian Bubeck, who leads mathematical research at OpenAI, then reportedly asked for Levent Alpöge, a researcher at Anthropic, to be removed from the list of authors. The exact scope of the result remains disputed, with several sources describing a partial advance rather than a complete solution.</p>",
+    "sources": [
+      {
+        "nom": "OpenAI",
+        "url": "https://openai.com/index/navier-stokes-solution"
+      },
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/sciences/article/2026/09/09/openai-dit-avoir-resolu-un-probleme-de-maths-majeur-mais-cree-des-vagues_6768688_1650684.html"
+      },
+      {
+        "nom": "Clubic",
+        "url": "https://www.clubic.com/actualite-628879-openai-accuse-d-avoir-double-des-chercheurs-sur-un-probleme-mathematique-hors-norme.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "openai-says-it-solved-the-navier-stokes-problem-and-the"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The CNIL fines EXTIA €300,000 for failing to honour the right to erasure",
+          "texteHtml": "<p>The Commission nationale de l'informatique et des libertés (the CNIL, France's data protection authority) imposed a €300,000 fine on 21 July 2026 on the consulting firm EXTIA, for several breaches of individuals' rights, in particular the right to erasure of data, or right to be forgotten. The decision, published this week, is a reminder that this right stays among those the regulator monitors most closely. The signal reaches beyond EXTIA: as organisations multiply their data processing to feed their AI tools, the ability to erase a piece of data on request becomes a concrete technical constraint, not a clause of principle.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/sanction-non-respect-droits-personnes-extia"
+            }
+          ],
+          "rang": 2,
+          "id": "the-cnil-fines-extia-300-000-for-failing-to-honour-the"
+        },
+        {
+          "titre": "Le Monde documents the business of AI-generated reactionary content on Facebook",
+          "texteHtml": "<p>Hundreds of pages push far-right content mass-produced by AI to French audiences, often run from Sri Lanka, Algeria or Venezuela, Le Monde reports. These pages capture large audiences for profit, funded by advertising revenue sharing. The investigation shows a disinformation economy in which generative AI lowers to almost nothing the cost of producing a constant stream of images and text calibrated for outrage.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/09/sur-facebook-le-lucratif-business-des-contenus-reactionnaires-generes-par-ia_6768826_4408996.html"
+            }
+          ],
+          "rang": 3,
+          "id": "le-monde-documents-the-business-of-ai-generated-reactionary"
+        },
+        {
+          "titre": "After its record raise, is Mistral still a French company",
+          "texteHtml": "<p>The day after the largest raise ever completed by a European technology company, €3 billion led by South Korea's Samsung, Clubic examines the ownership structure of Mistral AI. Behind the \"French champion\" label, a growing share of the funds comes from foreign investors, which reopens the debate over the sovereignty of a company now valued at more than €21 billion. The question goes beyond Mistral: it touches every European start-up that has to raise on a global scale to stay in the race without diluting itself off the continent.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628750-mistral-ai-est-elle-encore-une-entreprise-francaise-enquete-sur-qui-sont-ses-investisseurs-d-ici-et-d-ailleurs.html"
+            }
+          ],
+          "rang": 4,
+          "id": "after-its-record-raise-is-mistral-still-a-french-company"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Meta launches Muse, a personal agent that asks for access to your email, your calendar and your payments",
+          "texteHtml": "<p>Meta unveils Muse, an AI agent (software that acts on your behalf, not only one that answers) able to shop online, book a plane ticket or make an appointment. To work, it asks for access to the user's email, calendar, payment methods and health services, and runs on a dedicated virtual machine in the cloud. It is Meta's most committing consumer bet in AI, and a direct test of trust: the company is wagering that users will hand it data they have refused it so far, after several years of distrust over privacy. Muse takes on rival agents such as OpenClaw and Instinct.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/meta-releases-muse-a-personal-ai-agent-with-privacy-built-into-it/"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/muse-meta-devoile-son-agent-ia-personnel-pour-les-taches-du-quotidien-503111.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "meta-launches-muse-a-personal-agent-that-asks-for-access-to"
+        },
+        {
+          "titre": "The security warnings now come from inside the labs",
+          "texteHtml": "<p>Jakub Pachocki, OpenAI's chief scientist, says \"nobody is prepared\" for the consequences of AI progress in cybersecurity, admits that the lab's internal safeguards are losing their effectiveness and calls on the sector to slow down, 01net reports. At Anthropic, researcher Jacob Coxon announced his resignation, accusing the industry of \"gambling with our lives\" and stating that \"no other human activity poses such a danger\". The same day, Cisco, OpenAI and Anthropic co-signed an open letter warning that AI-assisted cyberattacks will become widespread, the same tools that help people work also serving to attack \"at machine scale\", according to Cisco president Jeetu Patel. These warnings come from the very players building the models, which invites caution about their motives without making them safe to ignore.</p>",
+          "sources": [
+            {
+              "nom": "Platformer",
+              "url": "https://www.platformer.news/openai-astra-warning-alignment-monitoring-pachocki/"
+            },
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/personne-prepare-openai-admet-perdre-controle-ia.html"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/3239997_aucune-autre-activite-humaine-ne-represente-un-tel-danger-une-nouvelle-demission-chez-anthropic-reactive-le-recit-dune-ia-terminator"
+            }
+          ],
+          "rang": 6,
+          "id": "the-security-warnings-now-come-from-inside-the-labs"
+        },
+        {
+          "titre": "Qualcomm lands Amazon as a customer for its AI chips",
+          "texteHtml": "<p>Qualcomm has signed a deal making Amazon a customer and an investor in its data-center chips, Bloomberg reports. The agreement covers custom chips for the infrastructure of AWS, Amazon's cloud arm, and marks a breakthrough for Qualcomm in a market dominated by Nvidia. Chief financial officer Akash Palkhiwala sees it as a foothold to capture a share of the enormous spending that cloud giants devote to AI. For Amazon, it is a way to diversify its silicon suppliers and contain the bill of a line item that weighs more and more heavily.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-08/qualcomm-signs-deal-to-provide-amazon-with-custom-ai-chips"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628858-qualcomm-et-amazon-veulent-deja-reinventer-les-data-centers-de-l-intelligence-artificielle.html"
+            }
+          ],
+          "rang": 7,
+          "id": "qualcomm-lands-amazon-as-a-customer-for-its-ai-chips"
+        },
+        {
+          "titre": "Cognition reaches $48 billion, and AI coding stays an open market",
+          "texteHtml": "<p>The start-up Cognition, maker of the coding agent Devin, reaches a $48 billion valuation, TechCrunch reports. The valuation multiple exceeds the one Cursor showed before its acquisition by SpaceX, a sign that investors do not believe in a market where a single player takes it all. Several makers of AI-assisted coding tools keep raising at high levels, each betting on a durable slice of the pie. The message for corporate customers: the sector stays competitive, which keeps pressure on prices and leaves the choice open.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/"
+            }
+          ],
+          "rang": 8,
+          "id": "cognition-reaches-48-billion-and-ai-coding-stays-an-open"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The United States accuses Alibaba and DeepSeek of siphoning off American models",
+          "texteHtml": "<p>US security agencies accuse the leading Chinese AI companies, including DeepSeek and Moonshot AI (the maker of Kimi), of having \"systematically\" extracted the know-how of American companies, Bloomberg reports. The authorities are calling on Silicon Valley developers to better protect their work. The technique in question is said to be distillation, in which a Chinese model learns by querying an American model on a massive scale to copy its answers, a method already suspected when DeepSeek launched in early 2025. The accusation comes as the use of Chinese models, cheaper per token (the billed unit of text), is rising sharply worldwide. It reignites the regulatory standoff between Washington and Beijing, this time over intellectual property rather than semiconductors alone.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-09/us-says-alibaba-deepseek-have-systematically-siphoned-ai-models"
+            }
+          ],
+          "rang": 9,
+          "id": "the-united-states-accuses-alibaba-and-deepseek-of-siphoning"
+        },
+        {
+          "titre": "Z.ai and MiniMax could stay loss-making until 2030 despite sharply rising revenue",
+          "texteHtml": "<p>The Chinese AI companies Z.ai and MiniMax risk losing money until 2030, even with revenue that is jumping, estimates Ellie Jiang, head of internet and software research for Asia at Macquarie, quoted by the South China Morning Post. The cause lies in the cost of the computing power needed to train and run frontier models. According to her, the compute shortage in China is two to three times more severe than elsewhere, driven by US controls on chip exports. The finding tempers the story of a Chinese AI unbeatable on cost: the low prices per token hide heavy losses that investors are funding while they wait for scale.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3366784/chinese-ai-firms-zai-and-minimax-could-remain-loss-making-until-2030-macquarie-says"
+            }
+          ],
+          "rang": 10,
+          "id": "z-ai-and-minimax-could-stay-loss-making-until-2030-despite"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Google DeepMind maps the effects of 9 billion DNA variants",
+          "texteHtml": "<p>DeepMind presents AlphaGenome Atlas, a predictive map of the molecular effect of every possible single-letter change in human DNA, roughly 9 billion variants. The tool aims to predict how a mutation, even in the so-called non-coding regions of DNA (those that do not directly make proteins but regulate gene activity), alters genetic regulation. Understanding these effects \"is fundamental to understanding most diseases\", sums up one of the researchers quoted by IEEE Spectrum. The stated goal is to speed up research and open the way to new treatments, in the lineage of AlphaFold on proteins.</p>",
+          "sources": [
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/991180/google-launches-alpha-genome-atlas"
+            },
+            {
+              "nom": "IEEE Spectrum",
+              "url": "https://spectrum.ieee.org/alphagenome-atlas"
+            }
+          ],
+          "rang": 11,
+          "id": "google-deepmind-maps-the-effects-of-9-billion-dna-variants"
+        },
+        {
+          "titre": "AI changes how engineers review code",
+          "texteHtml": "<p>An IEEE Spectrum review describes how AI coding tools, able to generate thousands of lines in a few minutes, force companies to rethink code review. The code produced looks clean on the surface but conceals false assumptions, security flaws or subtle errors that only appear after deployment. Fixing these problems can wipe out the promised productivity gains, which pushes teams to invent new review strategies centred on verification rather than writing.</p>",
+          "sources": [
+            {
+              "nom": "IEEE Spectrum",
+              "url": "https://spectrum.ieee.org/ai-code-review-software-engineers"
+            }
+          ],
+          "rang": 12,
+          "id": "ai-changes-how-engineers-review-code"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Microsoft patches 972 flaws in a single Patch Tuesday, a record",
+          "texteHtml": "<p>The company released the largest security update in its history, 972 vulnerabilities including 112 critical ones and two zero-day flaws already exploited, some of them identified with the help of generative AI, report Ars Technica and 01net.</p>",
+          "sources": [
+            {
+              "nom": "Ars Technica",
+              "url": "https://arstechnica.com/security/2026/09/microsoft-patches-a-record-972-vulnerabilities-112-of-them-critical/"
+            },
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/record-historique-sur-windows-microsoft-corrige-pres-de-1000-failles-en-un-seul-patch-tuesday.html"
+            }
+          ],
+          "rang": 13,
+          "id": "microsoft-patches-972-flaws-in-a-single-patch-tuesday-a"
+        },
+        {
+          "titre": "Hackers are stealing the Claude tokens of Anthropic subscribers",
+          "texteHtml": "<p>A user found that their account was consuming tokens without their doing any work; Anthropic has since warned its subscribers about thefts of access tokens, resold on a parallel market, TechCrunch reports.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/"
+            }
+          ],
+          "rang": 14,
+          "id": "hackers-are-stealing-the-claude-tokens-of-anthropic"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "OpenAI announces that an AI produced a proof for the Navier-Stokes problem and the argument immediately turns on the authors' names, while an IEEE Spectrum review shows generated code that looks clean on the surface and is wrong underneath: the skill that gains value is tracing the provenance of AI-assisted work, writing for every deliverable that commits you what the machine produced, who checked it and who signs it, rather than letting authorship and responsibility dissolve as production speeds up",
+    "these": "OpenAI announced on Tuesday that one of its models produced a solution to the Navier-Stokes problem, one of the seven Millennium Prize problems, each carrying a one-million-dollar reward, with a formal proof verified in Lean. Within twenty-four hours, the feat disappeared under a fight over authorship. Tristan Buckmaster, of New York University, accuses the lab of racing onto his turf after learning of his research project. Sebastian Bubeck, who leads mathematical research at OpenAI, is said to have demanded the removal of a co-author, Levent Alpöge, a researcher at Anthropic. A machine may have started to crack a problem that stayed open for nearly ninety years, and the first battle is over the names at the bottom of the page. That battle is coming to your workplace soon, in a quieter form. The moment a model drafts a contract, a piece of code, an analysis note, the same question arises: who is the author, what the machine produced, what the human validated, who answers for it. A review published this week in IEEE Spectrum shows it on the software side: generated code looks clean on the surface and hides errors that only appear after deployment, to the point that teams are rewriting how they review. Validation work becomes the real work. The skill that gains value in a French organisation is tracing the provenance of AI-assisted work. Take a deliverable that commits the company: a contract, a report handed to a client, a reasoned decision. Write down what the model produced, what a human reworked and checked, and name the person who signs it. A signature commits you: it assumes you know what you are signing. This reflex already exists in accounting, where you keep a record of who entered a figure and who approved it. Text, code and analysis join the list of materials whose origin has to stay legible. The mathematicians' debate seems far from your offices. It raises the question every team will meet: when production costs almost nothing, value moves to what can be verified and attributed. A proof with no recognised author is worth no more than a false proof. Neither is work with no provenance. The Masteria editorial team.",
+    "html": "<p>OpenAI announced on Tuesday that one of its models produced a solution to the Navier-Stokes problem, one of the seven Millennium Prize problems, each carrying a one-million-dollar reward, with a formal proof verified in Lean. Within twenty-four hours, the feat disappeared under a fight over authorship. Tristan Buckmaster, of New York University, accuses the lab of racing onto his turf after learning of his research project. Sebastian Bubeck, who leads mathematical research at OpenAI, is said to have demanded the removal of a co-author, Levent Alpöge, a researcher at Anthropic. A machine may have started to crack a problem that stayed open for nearly ninety years, and the first battle is over the names at the bottom of the page.</p>\n<p>That battle is coming to your workplace soon, in a quieter form. The moment a model drafts a contract, a piece of code, an analysis note, the same question arises: who is the author, what the machine produced, what the human validated, who answers for it. A review published this week in IEEE Spectrum shows it on the software side: generated code looks clean on the surface and hides errors that only appear after deployment, to the point that teams are rewriting how they review. Validation work becomes the real work.</p>\n<p>The skill that gains value in a French organisation is tracing the provenance of AI-assisted work. Take a deliverable that commits the company: a contract, a report handed to a client, a reasoned decision. Write down what the model produced, what a human reworked and checked, and name the person who signs it. A signature commits you: it assumes you know what you are signing. This reflex already exists in accounting, where you keep a record of who entered a figure and who approved it. Text, code and analysis join the list of materials whose origin has to stay legible.</p>\n<p>The mathematicians' debate seems far from your offices. It raises the question every team will meet: when production costs almost nothing, value moves to what can be verified and attributed. A proof with no recognised author is worth no more than a false proof. Neither is work with no provenance.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>OpenAI announced on Tuesday that one of its models produced a solution to the Navier-Stokes problem, one of the seven Millennium Prize problems, each carrying a one-million-dollar reward, with a formal proof verified in Lean. Within twenty-four hours, the feat disappeared under a fight over authorship. Tristan Buckmaster, of New York University, accuses the lab of racing onto his turf after learning of his research project. Sebastian Bubeck, who leads mathematical research at OpenAI, is said to have demanded the removal of a co-author, Levent Alpöge, a researcher at Anthropic. A machine may have started to crack a problem that stayed open for nearly ninety years, and the first battle is over the names at the bottom of the page.</p>\n<p>That battle is coming to your workplace soon, in a quieter form. The moment a model drafts a contract, a piece of code, an analysis note, the same question arises: who is the author, what the machine produced, what the human validated, who answers for it. A review published this week in IEEE Spectrum shows it on the software side: generated code looks clean on the surface and hides errors that only appear after deployment, to the point that teams are rewriting how they review. Validation work becomes the real work.</p>",
+    "itemsCites": [
+      1,
+      12
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-08",
+    "dateLongue": "Tuesday 8 September 2026",
+    "titreEditorial": "Mistral AI raises €3 billion at a €21 billion valuation in a round led by Samsung; the labor-law scholar Jean-Emmanuel Ray reminds employers that the AI Act requires them to inventory their high-risk AI systems and inform staff by the end of 2027, while BPCE stands up its AI Factory and Bercy renegotiates the French state's IT contracts; China targets 9,800 eflops of compute and Huawei launches its first stacked-circuit chip; Revolut completes the first AI-initiated payment in France",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-10",
+    "dateLongue": "Thursday 10 September 2026",
+    "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+    "nbItems": 13
+  },
+  "nbItems": 14,
+  "nbSources": 25,
+  "nbSignes": 10021,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "OpenAI",
+    "Le Monde",
+    "Clubic",
+    "TechCrunch",
+    "CNIL",
+    "Wired",
+    "ZDNet",
+    "Platformer",
+    "01net",
+    "Frandroid"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 102,
+  "publieLe": "2026-09-09T08:30:00+02:00",
+  "publieLeAffiche": "8h30"
+}

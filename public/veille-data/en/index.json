@@ -4,9 +4,9 @@
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
     "derniereDate": "2026-09-18",
-    "totalEditions": 23,
-    "totalItems": 317,
-    "totalSources": 446
+    "totalEditions": 24,
+    "totalItems": 331,
+    "totalSources": 471
   },
   "editions": [
     {
@@ -85,6 +85,17 @@
       "nbItems": 13,
       "nbSources": 20,
       "tempsLecture": 7
+    },
+    {
+      "date": "2026-09-09",
+      "dateAffichee": "9 September 2026",
+      "dateCourte": "Wed 9 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI claims a Navier-Stokes proof, then a credit fight erupts",
+      "nbItems": 14,
+      "nbSources": 25,
+      "tempsLecture": 8
     },
     {
       "date": "2026-09-08",
