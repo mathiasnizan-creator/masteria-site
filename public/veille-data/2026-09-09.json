@@ -1,0 +1,339 @@
+{
+  "schema": 2,
+  "date": "2026-09-09",
+  "dateAffichee": "9 septembre 2026",
+  "dateLongue": "mercredi 9 septembre 2026",
+  "dateCourte": "mer. 9 sept.",
+  "jourSemaine": "mercredi",
+  "titre": "Veille IA du mercredi 9 septembre 2026",
+  "titreEditorial": "OpenAI affirme qu'un de ses modèles a résolu le problème de Navier-Stokes, preuve formelle en Lean à l'appui, et l'annonce sombre aussitôt dans une querelle de paternité (Tristan Buckmaster accuse, Sebastian Bubeck aurait fait retirer un co-auteur) ; Meta lance Muse, un agent personnel qui réclame l'accès aux courriels, à l'agenda et aux paiements ; Jakub Pachocki et un démissionnaire d'Anthropic multiplient les alertes de sécurité venues de l'intérieur des laboratoires ; la CNIL sanctionne EXTIA de 300 000 euros pour le droit à l'oubli ; les États-Unis accusent Alibaba et DeepSeek de siphonner les modèles américains",
+  "chapeau": "OpenAI dit avoir fait résoudre par une IA un problème de maths resté ouvert près de quatre-vingt-dix ans, et l'exploit disparaît en un jour sous une bataille de crédit. Meta confie à un agent l'accès à vos courriels, les laboratoires s'alarment de leurs propres modèles, et la CNIL rappelle qu'un droit oublié coûte 300 000 euros.",
+  "une": {
+    "titre": "OpenAI dit avoir résolu le problème de Navier-Stokes, l'annonce vire aussitôt à la querelle de paternité",
+    "texteHtml": "<p>Le laboratoire affirme mardi 8 septembre qu'un de ses modèles a produit une solution au problème de Navier-Stokes, l'un des sept problèmes du millénaire, ces énigmes mathématiques dotées d'un million de dollars chacune. La solution est publiée avec un compte rendu et une preuve formelle vérifiée en Lean (un langage où la machine contrôle chaque étape du raisonnement), et OpenAI ne réclame pas le prix. En quelques heures, l'exploit s'efface derrière une accusation. Tristan Buckmaster, mathématicien à l'université de New York, reproche au laboratoire d'avoir produit une preuve concurrente après avoir eu connaissance de son propre projet de recherche. Selon Clubic, Sebastian Bubeck, qui dirige la recherche mathématique d'OpenAI, aurait ensuite demandé que Levent Alpöge, chercheur chez Anthropic, soit retiré de la liste des auteurs. La portée exacte du résultat reste discutée, plusieurs sources parlant d'une avancée partielle plutôt que d'une résolution complète.</p>",
+    "sources": [
+      {
+        "nom": "OpenAI",
+        "url": "https://openai.com/index/navier-stokes-solution"
+      },
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/sciences/article/2026/09/09/openai-dit-avoir-resolu-un-probleme-de-maths-majeur-mais-cree-des-vagues_6768688_1650684.html"
+      },
+      {
+        "nom": "Clubic",
+        "url": "https://www.clubic.com/actualite-628879-openai-accuse-d-avoir-double-des-chercheurs-sur-un-probleme-mathematique-hors-norme.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "openai-dit-avoir-resolu-le-probleme-de-navier-stokes-l"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La CNIL sanctionne EXTIA de 300 000 euros pour non-respect du droit à l'oubli",
+          "texteHtml": "<p>La Commission nationale de l'informatique et des libertés a infligé le 21 juillet 2026 une amende de 300 000 euros à la société de conseil EXTIA, pour plusieurs manquements au respect des droits des personnes, en particulier le droit à l'effacement des données, ou droit à l'oubli. La décision, publiée cette semaine, rappelle que ce droit reste l'un des plus contrôlés par le régulateur. Le signal vaut au-delà d'EXTIA : à mesure que les organisations multiplient les traitements de données pour alimenter leurs outils d'IA, la capacité à effacer une donnée sur demande devient une contrainte technique concrète, pas une clause de principe.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/sanction-non-respect-droits-personnes-extia"
+            }
+          ],
+          "rang": 2,
+          "id": "la-cnil-sanctionne-extia-de-300-000-euros-pour-non-respect"
+        },
+        {
+          "titre": "Le Monde documente le business des contenus réactionnaires générés par IA sur Facebook",
+          "texteHtml": "<p>Des centaines de pages diffusent vers le public français des contenus d'extrême droite fabriqués à la chaîne par IA, souvent gérées depuis le Sri Lanka, l'Algérie ou le Venezuela, rapporte Le Monde. Ces pages captent des audiences massives dans un but lucratif, financées par le partage de revenus publicitaires. L'enquête montre une économie de la désinformation où l'IA générative abaisse à presque rien le coût de production d'un flux permanent d'images et de textes calibrés pour l'indignation.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/09/sur-facebook-le-lucratif-business-des-contenus-reactionnaires-generes-par-ia_6768826_4408996.html"
+            }
+          ],
+          "rang": 3,
+          "id": "le-monde-documente-le-business-des-contenus-reactionnaires"
+        },
+        {
+          "titre": "Après sa levée record, Mistral reste-t-elle une entreprise française",
+          "texteHtml": "<p>Au lendemain de la plus grosse levée jamais réalisée par une entreprise technologique européenne, 3 milliards d'euros menés par le sud-coréen Samsung, Clubic examine la structure du capital de Mistral AI. Derrière l'étiquette de « champion français », une part croissante des fonds vient d'investisseurs étrangers, ce qui rouvre le débat sur la souveraineté d'une pépite désormais valorisée plus de 21 milliards d'euros. La question dépasse Mistral : elle touche toute start-up européenne qui doit lever à l'échelle mondiale pour rester dans la course sans se diluer hors du continent.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628750-mistral-ai-est-elle-encore-une-entreprise-francaise-enquete-sur-qui-sont-ses-investisseurs-d-ici-et-d-ailleurs.html"
+            }
+          ],
+          "rang": 4,
+          "id": "apres-sa-levee-record-mistral-reste-t-elle-une-entreprise"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Meta lance Muse, un agent personnel qui réclame l'accès à vos courriels, votre agenda et vos paiements",
+          "texteHtml": "<p>Meta présente Muse, un agent d'IA (un logiciel qui agit à votre place, pas seulement qui répond) capable d'acheter en ligne, réserver un billet d'avion ou prendre un rendez-vous. Pour fonctionner, il demande l'accès aux courriels, à l'agenda, aux moyens de paiement et aux services de santé de l'utilisateur, et s'exécute sur une machine virtuelle dédiée dans le cloud. C'est le pari grand public le plus engageant de Meta dans l'IA, et un test direct de la confiance : l'entreprise parie que les utilisateurs lui confieront des données qu'ils lui ont jusqu'ici refusées, après plusieurs années de défiance sur la vie privée. Muse affronte les agents concurrents comme OpenClaw et Instinct.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/meta-releases-muse-a-personal-ai-agent-with-privacy-built-into-it/"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/muse-meta-devoile-son-agent-ia-personnel-pour-les-taches-du-quotidien-503111.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "meta-lance-muse-un-agent-personnel-qui-reclame-l-acces-a"
+        },
+        {
+          "titre": "Les alertes de sécurité viennent maintenant de l'intérieur des laboratoires",
+          "texteHtml": "<p>Jakub Pachocki, directeur scientifique d'OpenAI, estime que « personne n'est préparé » aux conséquences des progrès de l'IA en cybersécurité, admet que les garde-fous internes du laboratoire perdent en efficacité et appelle le secteur à ralentir, rapporte 01net. Chez Anthropic, le chercheur Jacob Coxon annonce sa démission en accusant l'industrie de « jouer avec nos vies », déclarant qu'« aucune autre activité humaine ne représente un tel danger ». Le même jour, Cisco, OpenAI et Anthropic cosignent une lettre ouverte prévenant que les cyberattaques assistées par IA vont se généraliser, les mêmes outils qui aident à travailler servant aussi à attaquer « à l'échelle de la machine », selon le président de Cisco Jeetu Patel. Ces avertissements émanent des acteurs qui construisent les modèles, ce qui invite à la prudence sur leurs motifs, sans pour autant permettre de les ignorer.</p>",
+          "sources": [
+            {
+              "nom": "Platformer",
+              "url": "https://www.platformer.news/openai-astra-warning-alignment-monitoring-pachocki/"
+            },
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/personne-prepare-openai-admet-perdre-controle-ia.html"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/3239997_aucune-autre-activite-humaine-ne-represente-un-tel-danger-une-nouvelle-demission-chez-anthropic-reactive-le-recit-dune-ia-terminator"
+            }
+          ],
+          "rang": 6,
+          "id": "les-alertes-de-securite-viennent-maintenant-de-l-interieur"
+        },
+        {
+          "titre": "Qualcomm décroche Amazon comme client pour ses puces d'IA",
+          "texteHtml": "<p>Qualcomm a signé un accord faisant d'Amazon un client et un investisseur de ses puces destinées aux centres de données, rapporte Bloomberg. L'accord porte sur des puces sur mesure pour l'infrastructure d'AWS, la filiale cloud d'Amazon, et marque une percée pour Qualcomm dans un marché dominé par Nvidia. Le directeur financier Akash Palkhiwala y voit un point d'appui pour capter une part des dépenses colossales que les géants du cloud consacrent à l'IA. Pour Amazon, c'est un moyen de diversifier ses fournisseurs de silicium et de contenir la facture d'un poste qui pèse de plus en plus lourd.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-08/qualcomm-signs-deal-to-provide-amazon-with-custom-ai-chips"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628858-qualcomm-et-amazon-veulent-deja-reinventer-les-data-centers-de-l-intelligence-artificielle.html"
+            }
+          ],
+          "rang": 7,
+          "id": "qualcomm-decroche-amazon-comme-client-pour-ses-puces-d-ia"
+        },
+        {
+          "titre": "Cognition atteint 48 milliards de dollars, l'IA de programmation reste un marché ouvert",
+          "texteHtml": "<p>La start-up Cognition, éditrice de l'agent de programmation Devin, atteint une valorisation de 48 milliards de dollars, rapporte TechCrunch. Le multiple de valorisation dépasse celui qu'affichait Cursor avant son rachat par SpaceX, signe que les investisseurs ne croient pas à un marché où un seul acteur rafle la mise. Plusieurs éditeurs d'outils de codage assisté par IA continuent de lever à des niveaux élevés, chacun pariant sur une part durable du gâteau. Le message pour les entreprises clientes : le secteur reste concurrentiel, ce qui maintient la pression sur les prix et laisse le choix ouvert.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/"
+            }
+          ],
+          "rang": 8,
+          "id": "cognition-atteint-48-milliards-de-dollars-l-ia-de"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les États-Unis accusent Alibaba et DeepSeek de siphonner les modèles américains",
+          "texteHtml": "<p>Des agences de sécurité américaines accusent les principales entreprises chinoises d'IA, dont DeepSeek et Moonshot AI (l'éditeur de Kimi), d'avoir « systématiquement » extrait le savoir-faire d'entreprises américaines, rapporte Bloomberg. Les autorités appellent les développeurs de la Silicon Valley à mieux protéger leurs travaux. La technique visée serait la distillation, où un modèle chinois apprend en interrogeant massivement un modèle américain pour en copier les réponses, un procédé déjà soupçonné lors de la sortie de DeepSeek début 2025. L'accusation intervient alors que l'usage des modèles chinois, moins chers au token (l'unité de texte facturée), progresse fortement à l'échelle mondiale. Elle relance le bras de fer réglementaire entre Washington et Pékin, cette fois sur la propriété intellectuelle plutôt que sur les seuls semi-conducteurs.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-09/us-says-alibaba-deepseek-have-systematically-siphoned-ai-models"
+            }
+          ],
+          "rang": 9,
+          "id": "les-etats-unis-accusent-alibaba-et-deepseek-de-siphonner"
+        },
+        {
+          "titre": "Z.ai et MiniMax pourraient rester déficitaires jusqu'en 2030 malgré des revenus en forte hausse",
+          "texteHtml": "<p>Les entreprises chinoises d'IA Z.ai et MiniMax risquent de perdre de l'argent jusqu'en 2030, même avec des revenus qui bondissent, estime Ellie Jiang, responsable de la recherche internet et logiciel pour l'Asie chez Macquarie, citée par le South China Morning Post. La cause tient au coût de la puissance de calcul nécessaire pour entraîner et faire tourner des modèles de pointe. Selon elle, la pénurie de calcul en Chine est deux à trois fois plus sévère qu'ailleurs, sous l'effet des contrôles américains sur les exports de puces. Le constat nuance le récit d'une IA chinoise imbattable sur les coûts : les prix bas au token cachent des pertes lourdes que les investisseurs financent en attendant l'échelle.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3366784/chinese-ai-firms-zai-and-minimax-could-remain-loss-making-until-2030-macquarie-says"
+            }
+          ],
+          "rang": 10,
+          "id": "z-ai-et-minimax-pourraient-rester-deficitaires-jusqu-en"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Google DeepMind cartographie les effets de 9 milliards de variantes d'ADN",
+          "texteHtml": "<p>DeepMind présente AlphaGenome Atlas, une carte prédictive de l'effet moléculaire de chaque changement possible d'une lettre d'ADN dans le génome humain, soit environ 9 milliards de variants. L'outil vise à prédire comment une mutation, même dans les zones dites non codantes de l'ADN (celles qui ne fabriquent pas directement de protéines mais régulent l'activité des gènes), modifie la régulation génétique. Comprendre ces effets « est fondamental pour comprendre la plupart des maladies », résume l'un des chercheurs cités par IEEE Spectrum. L'objectif affiché est d'accélérer la recherche et d'ouvrir la voie à de nouveaux traitements, dans la lignée d'AlphaFold sur les protéines.</p>",
+          "sources": [
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/991180/google-launches-alpha-genome-atlas"
+            },
+            {
+              "nom": "IEEE Spectrum",
+              "url": "https://spectrum.ieee.org/alphagenome-atlas"
+            }
+          ],
+          "rang": 11,
+          "id": "google-deepmind-cartographie-les-effets-de-9-milliards-de"
+        },
+        {
+          "titre": "L'IA change la façon dont les ingénieurs relisent le code",
+          "texteHtml": "<p>Une revue d'IEEE Spectrum décrit comment les outils de codage par IA, capables de générer des milliers de lignes en quelques minutes, obligent les entreprises à repenser la revue de code. Le code produit paraît propre en surface mais dissimule des hypothèses fausses, des failles de sécurité ou des erreurs subtiles qui n'apparaissent qu'après le déploiement. Corriger ces problèmes peut effacer les gains de productivité promis, ce qui pousse les équipes à inventer de nouvelles stratégies de relecture centrées sur la vérification plutôt que sur l'écriture.</p>",
+          "sources": [
+            {
+              "nom": "IEEE Spectrum",
+              "url": "https://spectrum.ieee.org/ai-code-review-software-engineers"
+            }
+          ],
+          "rang": 12,
+          "id": "l-ia-change-la-facon-dont-les-ingenieurs-relisent-le-code"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Microsoft corrige 972 failles en un seul Patch Tuesday, un record",
+          "texteHtml": "<p>L'éditeur a publié le correctif de sécurité le plus volumineux de son histoire, 972 vulnérabilités dont 112 critiques et deux failles zero-day déjà exploitées, une partie ayant été identifiée à l'aide d'IA générative, rapportent Ars Technica et 01net.</p>",
+          "sources": [
+            {
+              "nom": "Ars Technica",
+              "url": "https://arstechnica.com/security/2026/09/microsoft-patches-a-record-972-vulnerabilities-112-of-them-critical/"
+            },
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/record-historique-sur-windows-microsoft-corrige-pres-de-1000-failles-en-un-seul-patch-tuesday.html"
+            }
+          ],
+          "rang": 13,
+          "id": "microsoft-corrige-972-failles-en-un-seul-patch-tuesday-un"
+        },
+        {
+          "titre": "Des pirates volent les jetons Claude d'abonnés d'Anthropic",
+          "texteHtml": "<p>Un utilisateur a constaté que son compte consommait des jetons sans qu'il travaille ; Anthropic a depuis alerté ses abonnés sur des vols de jetons d'accès, revendus sur un marché parallèle, rapporte TechCrunch.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/"
+            }
+          ],
+          "rang": 14,
+          "id": "des-pirates-volent-les-jetons-claude-d-abonnes-d-anthropic"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "OpenAI annonce qu'une IA a produit une preuve au problème de Navier-Stokes et la querelle porte aussitôt sur les noms des auteurs, pendant qu'une revue d'IEEE Spectrum montre le code généré propre en surface et faux en profondeur : la compétence qui prend de la valeur est de tracer la provenance du travail assisté par IA, écrire pour chaque livrable qui engage ce que la machine a produit, qui l'a vérifié et qui le signe, plutôt que de laisser la paternité et la responsabilité se dissoudre à mesure que la production s'accélère",
+    "these": "OpenAI annonce mardi qu'un de ses modèles a produit une solution au problème de Navier-Stokes, l'un des sept problèmes du millénaire dotés d'un million de dollars chacun, avec une preuve formelle vérifiée en Lean. En vingt-quatre heures, l'exploit disparaît sous une querelle de paternité. Tristan Buckmaster, de l'université de New York, accuse le laboratoire d'avoir couru sur son terrain après avoir eu vent de son projet de recherche. Sebastian Bubeck, qui dirige la recherche mathématique d'OpenAI, aurait réclamé le retrait d'un co-auteur, Levent Alpöge, chercheur chez Anthropic. Une machine a peut-être entamé un problème resté ouvert près de quatre-vingt-dix ans, et la première bataille porte sur les noms au bas de la page. Cette bataille arrive bientôt chez vous, en plus discret. Dès qu'un modèle rédige un contrat, un bout de code, une note d'analyse, la même question se pose : qui en est l'auteur, ce que la machine a produit, ce que l'humain a validé, qui en répond. Une revue parue cette semaine dans IEEE Spectrum le montre côté logiciel : le code généré paraît propre en surface et cache des erreurs qui n'apparaissent qu'après le déploiement, au point que les équipes réécrivent leur manière de relire. Le travail de validation devient le vrai travail. La compétence qui prend de la valeur dans une organisation française est de tracer la provenance du travail assisté par IA. Prenez un livrable qui engage l'entreprise : un contrat, un rapport remis à un client, une décision motivée. Écrivez ce que le modèle a produit, ce qu'un humain a repris et vérifié, et nommez la personne qui le signe. Une signature engage : elle suppose qu'on sache ce qu'on signe. Ce réflexe existe déjà pour la comptabilité, où l'on garde la trace de qui a saisi et qui a validé. Le texte, le code et l'analyse rejoignent la liste des matières dont l'origine doit rester lisible. Le débat des mathématiciens semble loin de vos bureaux. Il pose pourtant la question que chaque équipe va rencontrer : quand la production ne coûte presque plus rien, la valeur passe dans ce qu'on peut vérifier et attribuer. Une preuve sans auteur reconnu ne vaut pas mieux qu'une preuve fausse. Un travail sans provenance non plus. L'équipe éditoriale Masteria.",
+    "html": "<p>OpenAI annonce mardi qu'un de ses modèles a produit une solution au problème de Navier-Stokes, l'un des sept problèmes du millénaire dotés d'un million de dollars chacun, avec une preuve formelle vérifiée en Lean. En vingt-quatre heures, l'exploit disparaît sous une querelle de paternité. Tristan Buckmaster, de l'université de New York, accuse le laboratoire d'avoir couru sur son terrain après avoir eu vent de son projet de recherche. Sebastian Bubeck, qui dirige la recherche mathématique d'OpenAI, aurait réclamé le retrait d'un co-auteur, Levent Alpöge, chercheur chez Anthropic. Une machine a peut-être entamé un problème resté ouvert près de quatre-vingt-dix ans, et la première bataille porte sur les noms au bas de la page.</p>\n<p>Cette bataille arrive bientôt chez vous, en plus discret. Dès qu'un modèle rédige un contrat, un bout de code, une note d'analyse, la même question se pose : qui en est l'auteur, ce que la machine a produit, ce que l'humain a validé, qui en répond. Une revue parue cette semaine dans IEEE Spectrum le montre côté logiciel : le code généré paraît propre en surface et cache des erreurs qui n'apparaissent qu'après le déploiement, au point que les équipes réécrivent leur manière de relire. Le travail de validation devient le vrai travail.</p>\n<p>La compétence qui prend de la valeur dans une organisation française est de tracer la provenance du travail assisté par IA. Prenez un livrable qui engage l'entreprise : un contrat, un rapport remis à un client, une décision motivée. Écrivez ce que le modèle a produit, ce qu'un humain a repris et vérifié, et nommez la personne qui le signe. Une signature engage : elle suppose qu'on sache ce qu'on signe. Ce réflexe existe déjà pour la comptabilité, où l'on garde la trace de qui a saisi et qui a validé. Le texte, le code et l'analyse rejoignent la liste des matières dont l'origine doit rester lisible.</p>\n<p>Le débat des mathématiciens semble loin de vos bureaux. Il pose pourtant la question que chaque équipe va rencontrer : quand la production ne coûte presque plus rien, la valeur passe dans ce qu'on peut vérifier et attribuer. Une preuve sans auteur reconnu ne vaut pas mieux qu'une preuve fausse. Un travail sans provenance non plus.</p>",
+    "htmlExtrait": "<p>OpenAI annonce mardi qu'un de ses modèles a produit une solution au problème de Navier-Stokes, l'un des sept problèmes du millénaire dotés d'un million de dollars chacun, avec une preuve formelle vérifiée en Lean. En vingt-quatre heures, l'exploit disparaît sous une querelle de paternité. Tristan Buckmaster, de l'université de New York, accuse le laboratoire d'avoir couru sur son terrain après avoir eu vent de son projet de recherche. Sebastian Bubeck, qui dirige la recherche mathématique d'OpenAI, aurait réclamé le retrait d'un co-auteur, Levent Alpöge, chercheur chez Anthropic. Une machine a peut-être entamé un problème resté ouvert près de quatre-vingt-dix ans, et la première bataille porte sur les noms au bas de la page.</p>\n<p>Cette bataille arrive bientôt chez vous, en plus discret. Dès qu'un modèle rédige un contrat, un bout de code, une note d'analyse, la même question se pose : qui en est l'auteur, ce que la machine a produit, ce que l'humain a validé, qui en répond. Une revue parue cette semaine dans IEEE Spectrum le montre côté logiciel : le code généré paraît propre en surface et cache des erreurs qui n'apparaissent qu'après le déploiement, au point que les équipes réécrivent leur manière de relire. Le travail de validation devient le vrai travail.</p>",
+    "itemsCites": [
+      1,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-08",
+    "dateLongue": "mardi 8 septembre 2026",
+    "titreEditorial": "Mistral AI lève 3 milliards d'euros à une valorisation de 21 milliards dans un tour mené par Samsung ; le juriste Jean-Emmanuel Ray rappelle que l'AI Act oblige les employeurs à recenser leurs systèmes d'IA à haut risque et à informer les salariés d'ici fin 2027, pendant que BPCE monte son AI Factory et que Bercy renégocie les contrats informatiques de l'État ; la Chine vise 9 800 eflops de puissance de calcul et Huawei lance sa première puce à circuits empilés ; Revolut réalise le premier paiement initié par une IA en France",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-10",
+    "dateLongue": "jeudi 10 septembre 2026",
+    "titreEditorial": "Apple tient la première keynote de John Ternus et dévoile son premier pliable, l'iPhone Duo, une Apple Watch qui écoute en continu et Apple Reference Image, un capteur qui signe chaque pixel pour certifier qu'une photo n'a pas été fabriquée par IA ; un rapport de l'OCDE établit que les élèves qui utilisent l'IA obtiennent de moins bons résultats, sauf ceux formés à en juger l'usage de façon critique ; les dépenses d'IA par salarié ont reculé en août dans les grandes entreprises ; Loft Orbital lève un milliard de dollars émirati avec Mistral ; JD.com vise trois millions de robots et promet de reconvertir ses livreurs ; DeepSeek prépare son entrée en Bourse à Shanghai ; Suno réentraîne son modèle sur de la musique sous licence.",
+    "nbItems": 13
+  },
+  "nbItems": 14,
+  "nbSources": 25,
+  "nbSignes": 10963,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "OpenAI",
+    "Le Monde",
+    "Clubic",
+    "TechCrunch",
+    "CNIL",
+    "Wired",
+    "ZDNet",
+    "Platformer",
+    "01net",
+    "Frandroid"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 102,
+  "publieLe": "2026-09-09T09:11:49+02:00",
+  "publieLeAffiche": "9h11",
+  "ogImage": "/veille-data/og/2026-09-09.png"
+}

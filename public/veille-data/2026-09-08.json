@@ -244,7 +244,12 @@
     "titreEditorial": "Moody's estime que les entreprises chinoises tirent plus de puissance de calcul par dollar dépensé que les géants américains ; le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour droit d'auteur pendant que le partage de l'accord Anthropic oppose auteurs et éditeurs ; Jakub Pachocki, directeur scientifique d'OpenAI, décrit une « intelligence étrangère » et réclame des garde-fous ; et des candidats américains cachent des instructions dans leur CV pour piéger l'IA des recruteurs",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-09",
+    "dateLongue": "mercredi 9 septembre 2026",
+    "titreEditorial": "OpenAI affirme qu'un de ses modèles a résolu le problème de Navier-Stokes, preuve formelle en Lean à l'appui, et l'annonce sombre aussitôt dans une querelle de paternité (Tristan Buckmaster accuse, Sebastian Bubeck aurait fait retirer un co-auteur) ; Meta lance Muse, un agent personnel qui réclame l'accès aux courriels, à l'agenda et aux paiements ; Jakub Pachocki et un démissionnaire d'Anthropic multiplient les alertes de sécurité venues de l'intérieur des laboratoires ; la CNIL sanctionne EXTIA de 300 000 euros pour le droit à l'oubli ; les États-Unis accusent Alibaba et DeepSeek de siphonner les modèles américains",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 15,
   "nbSignes": 10539,

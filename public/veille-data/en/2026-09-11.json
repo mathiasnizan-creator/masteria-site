@@ -1,0 +1,311 @@
+{
+  "schema": 2,
+  "date": "2026-09-11",
+  "dateAffichee": "11 September 2026",
+  "dateLongue": "Friday 11 September 2026",
+  "dateCourte": "Fri 11 Sep",
+  "jourSemaine": "Friday",
+  "titre": "AI Watch - Friday 11 September 2026",
+  "titreEditorial": "AI safety moves from the activist fringe to mainstream debate: Sam Altman says he is ready to slow frontier AI development and is testing whether such a brake would be legal, a former Anthropic researcher warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Anthropic publishes 161 pages of Claude misuse, from Yemeni missiles to fake dating profiles. In Europe, the CNIL sets rules for electronic invoicing and the EU's cybersecurity agency trials Anthropic's most offensive model. In China, DeepSeek reignites the price war with its V4.1 Flash model and chipmaker Enflame jumps 188% on its stock market debut. Microsoft plans 38 gigawatts of data centres and Jensen Huang promises Nvidia 70% growth.",
+  "chapeau": "AI safety leaves the activist fringe for mainstream debate: Sam Altman says he is ready to slow down, a former Anthropic researcher issues a chilling warning, and Anthropic publishes 161 pages on the misuse of Claude. Meanwhile, DeepSeek reignites the price war in China, Enflame soars on the market and Microsoft plans 38 gigawatts of data centres.",
+  "une": {
+    "titre": "Anthropic publishes 161 pages on the misuse of Claude, from missiles to romance scams",
+    "texteHtml": "<p>The threat intelligence report Anthropic released on Thursday 10 September details, across 161 pages, attempts to misuse its Claude model and how the company says it blocked them. The catalogue goes far: research that could help make biological weapons, help with targeting missiles in Yemen, fake profiles run at scale on dating apps, fraud campaigns. Anthropic says it has strengthened the guardrails on its latest models to limit queries touching on sensitive biology. The document also describes \"distillation\" campaigns, in which Chinese competitors (Alibaba, Moonshot AI, DeepSeek) query Claude en masse to copy its behaviour and train their own models more cheaply, a practice said to have intensified in recent months. The company acknowledges a limit: it stops what it sees pass through its servers, not what is already running beyond its reach.</p>",
+    "sources": [
+      {
+        "nom": "Frandroid",
+        "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/anthropic-claude-ai/3243847_anthropic-publie-161-pages-sur-les-detournements-de-claude-et-ca-pique"
+      },
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/09/11/anthropic-dit-avoir-bloque-des-utilisations-malveillantes-de-son-ia-comme-des-recherches-pouvant-faciliter-l-utilisation-d-armes-biologiques_6770214_4408996.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "anthropic-publishes-161-pages-on-the-misuse-of-claude-from"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The CNIL sets rules for data protection in electronic invoicing",
+          "texteHtml": "<p>Since 1 September 2026, the reform of business-to-business electronic invoicing has come into force, requiring every company to issue and receive its invoices in digital form. The Commission nationale de l'informatique et des libertés (France's data protection authority) has published guidance to help companies secure the personal data that moves through these flows, in particular via the approved platforms that centralise exchanges. For finance and legal departments, the technical compliance project comes with a GDPR project that is best opened now.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/facturation-electronique-quels-enjeux"
+            }
+          ],
+          "rang": 2,
+          "id": "the-cnil-sets-rules-for-data-protection-in-electronic"
+        },
+        {
+          "titre": "Hugging Face slips a message to AI agents into its security file",
+          "texteHtml": "<p>The French open-model platform has added to its <code>security.txt</code> file, usually reserved for security researchers, a note addressed to the autonomous agents that crawl its site: no need to try to hack it, the answers to their goals are elsewhere. The wink reflects a new reality for security teams, namely that a site's visitors are no longer only human, and that agents launched by third parties now test defences around the clock.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2330667-pas-besoin-de-nous-pirater-hugging-face-sadresse-directement-aux-agents-ia-sur-son-site.html"
+            }
+          ],
+          "rang": 3,
+          "id": "hugging-face-slips-a-message-to-ai-agents-into-its-security"
+        },
+        {
+          "titre": "The European cybersecurity agency trials Claude Mythos",
+          "texteHtml": "<p>ENISA, the European Union's cybersecurity agency, has been granted access to Mythos, Anthropic's most offensive model for cyber defence, Next.ink reports. In May, OpenAI had already opened up its GPT-5.5-Cyber to the agency. A European public institution is thus equipping itself with the same tools whose misuse Anthropic documents elsewhere, in the hope of strengthening its own defence before attackers make use of them.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/brief-article/lagence-de-cybersecurite-de-la-commission-europeenne-peut-maintenant-utiliser-mythos/"
+            }
+          ],
+          "rang": 4,
+          "id": "the-european-cybersecurity-agency-trials-claude-mythos"
+        },
+        {
+          "titre": "Ed.ai raises €5 million for AI-assisted grading of student work",
+          "texteHtml": "<p>The French start-up Ed.ai has closed a €5 million funding round to develop its grading-support tool, which analyses students' work to produce more precise feedback for teachers. The project aims to lighten the marking load while keeping the teacher at the centre of assessment. French edtech finds here a concrete use case, where AI prepares the work without replacing the teacher's judgment.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/10/ed-ai-leve-5-millions-deuros-pour-aider-les-enseignants-a-mieux-tirer-profit-des-copies-de-leurs-eleves-avec-lia/"
+            }
+          ],
+          "rang": 5,
+          "id": "ed-ai-raises-5-million-for-ai-assisted-grading-of-student"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "AI safety becomes the central debate, and OpenAI says it is ready to slow down",
+          "texteHtml": "<p>Sam Altman told his teams that OpenAI was considering slowing the development of its most advanced models, and that he hoped to see other labs do the same, according to Bloomberg. At the same time, the company is trying to find out whether industry coordination to slow down might fall foul of competition law, Wired reports. The shift comes with a change of mood: Jacob Coxon, who has just left Anthropic, warns that \"AI could kill us all\" in the years ahead, a message picked up by Platformer, Wired and Bloomberg. OpenAI has also added to its foundation's board a researcher known for pessimism about AI risks. The existential question, long confined to a few circles in the San Francisco Bay Area, is settling at the centre of the sector's conversations.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-11/openai-is-open-to-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/openai-wants-to-know-if-an-ai-industry-slowdown-would-even-be-legal/"
+            },
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/09/10/lia-pourrait-tous-nous-tuer-lavertissement-glacant-de-ceux-qui-la-developpent/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629167-openai-un-chercheur-catastrophiste-sur-l-avenir-de-l-ia-rejoint-le-conseil-d-administration.html"
+            }
+          ],
+          "rang": 6,
+          "id": "ai-safety-becomes-the-central-debate-and-openai-says-it-is"
+        },
+        {
+          "titre": "OpenAI launches ChatGPT for Financial Services, built on GPT-6 Astra",
+          "texteHtml": "<p>On 10 September, OpenAI unveiled a version of ChatGPT dedicated to finance, combining built-in financial data with its latest model, GPT-6 Astra, for research, modelling and the production of client-facing documents. The tool is aimed at analysts, bankers and portfolio managers, promising to speed up market analysis and the preparation of materials. The announcement extends OpenAI's strategy of tailoring ChatGPT by sector, with the parallel launch of a \"Data agent\" able to connect a company's data and turn it into dashboards. Finance, a heavy consumer of document synthesis, is becoming a leading commercial target.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/introducing-chatgpt-financial-services"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-launches-chatgpt-for-financial-services-built-on-gpt"
+        },
+        {
+          "titre": "Microsoft plans 38 gigawatts of data centres to absorb demand",
+          "texteHtml": "<p>Short of capacity, Microsoft has had to turn down some AI and cloud orders, Bloomberg reveals. The group now plans to add 26 gigawatts of computing power and bring its fleet to 38 gigawatts of total capacity, the equivalent of some thirty nuclear reactors devoted to its data centres alone. The plan illustrates the current bottleneck, which owes less to chips than to electricity and available land. The AI race is now being run as much among power utilities as among model builders.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/features/2026-09-10/microsoft-ai-focused-data-center-plan-to-add-26-gigawatts-of-compute"
+            }
+          ],
+          "rang": 8,
+          "id": "microsoft-plans-38-gigawatts-of-data-centres-to-absorb"
+        },
+        {
+          "titre": "Jensen Huang promises Nvidia 70% growth and sets his sights on cybersecurity",
+          "texteHtml": "<p>Nvidia's chief executive, Jensen Huang, said his company would grow 70% next year, while rejecting the idea that its deals with customers are \"circular,\" meaning that it funds those who buy its chips, according to TechCrunch. At the Goldman Sachs technology conference, he named cybersecurity as AI's next big market, after coding, citing defence systems running around the clock. Nvidia is already forming partnerships in the field, Clubic reports. The supplier of the chips that train the models is signalling where it intends to sell the next wave.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629233-le-patron-de-nvidia-voit-deja-le-prochain-grand-marche-de-l-ia.html"
+            }
+          ],
+          "rang": 9,
+          "id": "jensen-huang-promises-nvidia-70-growth-and-sets-his-sights"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "DeepSeek unveils V4.1 Flash and reignites the price war",
+          "texteHtml": "<p>On Thursday 10 September, DeepSeek launched its V4.1 Flash model, which it presents as more capable than its previous flagship while cutting the cost of inference (the cost of running a model once it is trained) and gaining speed. The model rests on a new architecture called \"Causal-Encoder-Decoder\" and on 552 billion parameters, with a \"mixture of experts\" system (only a fraction of the network activates on each query, which limits computation), whereas a conventional model draws on the whole network. DeepSeek claims V4.1 Flash beats Moonshot AI's Kimi K3 on cybersecurity and coding benchmarks. The announcement fits China's strategy of aggressive pricing and comparable performance, which is pushing down global AI prices.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3367051/deepseek-says-new-flash-ai-model-beats-kimi-k3-cyber-coding-benchmarks"
+            }
+          ],
+          "rang": 10,
+          "id": "deepseek-unveils-v4-1-flash-and-reignites-the-price-war"
+        },
+        {
+          "titre": "Chinese chipmaker Enflame jumps 188% on its Shanghai stock market debut",
+          "texteHtml": "<p>Enflame Technology, one of Nvidia's main Chinese rivals, saw its share price climb 188% on Friday 11 September in its first trading session in Shanghai. The stock opened at 410 yuan, against an offer price of 142.18 yuan, taking the valuation of this Tencent-backed AI chip designer to 176.4 billion yuan, around $25 billion. Enflame was the last of China's four big AI chip champions to go public. The enthusiastic investor reception confirms the domestic market's appetite for local alternatives to Nvidia, as US export controls push China to build its own supply chain.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3367124/enflame-shares-soar-188-shanghai-debut-nvidia-challenger-taps-investor-fever-ai"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/markets/ipo/chinese-nvidia-challenger-enflame-jumps-188-in-shanghai-market-debut"
+            }
+          ],
+          "rang": 11,
+          "id": "chinese-chipmaker-enflame-jumps-188-on-its-shanghai-stock"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Two public corpora finally make it possible to measure, without guessing, what a model has actually \"memorised.\"",
+          "texteHtml": "<p>A team takes on a question that plagues lawsuits over training data: when a model predicts a sentence with suspicious ease, can you conclude that it was in its training corpus? Almost every test published so far had to guess which sentences were present. The authors remove the guesswork by relying on two model families, OLMo-2 and Pythia, whose corpora are public and indexed, which gives the exact number of times any sentence appears. Their conclusion tempers expectations: the membership signal is detectable only where duplication blurs with other factors, which weakens the methods meant to prove that a text was used for training. This should shed light on ongoing disputes, including the accusation levelled this week against OpenAI over the origin of its mathematical data.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.10830"
+            }
+          ],
+          "rang": 12,
+          "id": "two-public-corpora-finally-make-it-possible-to-measure"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li><strong>Claude Mythos has found 26,000 flaws in five months, fewer than 1% have been fixed.</strong> Five months after its launch, Anthropic's vulnerability-hunting tool shows impressive numbers, but analysts point out that detection is worth nothing without repair, when more than 25,000 flaws remain open. <a href=\"https://www.numerama.com/cyberguerre/2330439-bilan-apres-5-mois-claude-mythos-a-repere-26-000-failles-mais-moins-de-1-ont-ete-reparees.html\" target=\"_blank\" rel=\"noopener noreferrer\">Numerama</a></li>\n<li><strong>Moonshot AI, maker of Kimi, is studying a dual listing in Hong Kong and Shanghai.</strong> The Chinese lab, developer of the Kimi K3 model, is considering a listing on both exchanges to raise capital and gain visibility, after negotiating a Hong Kong entry in July, according to two sources cited by the South China Morning Post.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3367027/kimi-maker-moonshot-ai-explore-dual-hong-kong-and-shanghai-ipos-boost-capital-sources"
+            }
+          ],
+          "rang": 13,
+          "id": "claude-mythos-has-found-26-000-flaws-in-five"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Sam Altman tells his teams that OpenAI is ready to slow frontier AI and is testing the legality of such a brake, while fear of extinction floods the news feeds: the reflex that marks a serious organisation is to build its risk register on the misuse already documented, like Anthropic's 161 pages, and to measure the share of flaws fixed rather than the number found, when Claude Mythos finds 26,000 in five months and fewer than 260 are repaired",
+    "these": "Sam Altman told his teams that OpenAI is ready to slow the development of frontier AI, and the company is already trying to find out whether such a brake would be legal under competition law. In a matter of days, fear of extinction moved from the rationalist circles of the San Francisco Bay Area into mainstream debate: a former Anthropic researcher, Jacob Coxon, warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Wired and Bloomberg devote their podcasts to it. The risk of 2030 fills the news feeds. The risks of this quarter, meanwhile, are already catalogued, dated, and almost never addressed. Anthropic has just published the inventory: 161 pages of Claude misuse, from Yemeni missiles to fake profiles on dating apps. The same day, Numerama recalled a figure that had gone unmentioned. In five months, Anthropic's vulnerability-hunting tool, Claude Mythos, has found 26,000 of them in real software. Fewer than 260 have been fixed. More than 25,000 remain open. The machine finds, no one repairs. That is the real gap, and it is not speculative. An organisation's seriousness shows in its risk register: what is on it, what has been fixed, how long it took. Take every AI system running in your organisation. Test it against the misuse the Anthropic report documents: hidden instruction injection, credential theft delegated to an agent, data exfiltration. Then measure what counts: the share fixed and the time to fix, not the number of flaws found. Name who closes each hole, the way you name someone responsible for payroll. The labs debate the end of the world and ask the law whether they are allowed to slow down. Meanwhile, a workflow running in your organisation is waiting for a fix no one has planned. The distant threat holds attention. The near threat awaits a decision. It is yours to make. The Masteria editorial team.",
+    "html": "<p>Sam Altman told his teams that OpenAI is ready to slow the development of frontier AI, and the company is already trying to find out whether such a brake would be legal under competition law. In a matter of days, fear of extinction moved from the rationalist circles of the San Francisco Bay Area into mainstream debate: a former Anthropic researcher, Jacob Coxon, warns that \"AI could kill us all,\" OpenAI adds a worried researcher to its board, and Wired and Bloomberg devote their podcasts to it. The risk of 2030 fills the news feeds. The risks of this quarter, meanwhile, are already catalogued, dated, and almost never addressed.</p>\n<p>Anthropic has just published the inventory: 161 pages of Claude misuse, from Yemeni missiles to fake profiles on dating apps. The same day, Numerama recalled a figure that had gone unmentioned. In five months, Anthropic's vulnerability-hunting tool, Claude Mythos, has found 26,000 of them in real software. Fewer than 260 have been fixed. More than 25,000 remain open. The machine finds, no one repairs. That is the real gap, and it is not speculative.</p>\n<p>An organisation's seriousness shows in its risk register: what is on it, what has been fixed, how long it took. Take every AI system running in your organisation. Test it against the misuse the Anthropic report documents: hidden instruction injection, credential theft delegated to an agent, data exfiltration. Then measure what counts: the share fixed and the time to fix, not the number of flaws found. Name who closes each hole, the way you name someone responsible for payroll.</p>\n<p>The labs debate the end of the world and ask the law whether they are allowed to slow down. Meanwhile, a workflow running in your organisation is waiting for a fix no one has planned. The distant threat holds attention. The near threat awaits a decision. It is yours to make. The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Sam Altman told his teams that OpenAI is ready to slow the development of frontier AI, and the company is already trying to find out whether such a brake would be legal under competition law. In a matter of days, fear of extinction moved from the rationalist circles of the San Francisco Bay Area into mainstream debate: a former Anthropic researcher, Jacob Coxon, warns that \"AI could kill us all,\" OpenAI adds a worried researcher to its board, and Wired and Bloomberg devote their podcasts to it. The risk of 2030 fills the news feeds. The risks of this quarter, meanwhile, are already catalogued, dated, and almost never addressed.</p>\n<p>Anthropic has just published the inventory: 161 pages of Claude misuse, from Yemeni missiles to fake profiles on dating apps. The same day, Numerama recalled a figure that had gone unmentioned. In five months, Anthropic's vulnerability-hunting tool, Claude Mythos, has found 26,000 of them in real software. Fewer than 260 have been fixed. More than 25,000 remain open. The machine finds, no one repairs. That is the real gap, and it is not speculative.</p>",
+    "itemsCites": [
+      1,
+      6,
+      13
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-10",
+    "dateLongue": "Thursday 10 September 2026",
+    "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-09-14",
+    "dateLongue": "Monday 14 September 2026",
+    "titreEditorial": "AI leaders call for slowing the race, the White House refuses: Dario Amodei argues for \\\"pacing the frontier\\\", Sam Altman, Elon Musk and Demis Hassabis agree, Donald Trump replies that he will not hand his lead to China, and Asian markets fall. Anthropic is eyeing the Nasdaq for a listing that could exceed $86 billion while OpenAI backs away from its own, SoftBank borrows $11.9 billion to fund OpenAI and Christine Lagarde warns about the financial cost of AI. In China, Z.ai returns to raise $5 billion in Hong Kong and the intelligence chief warns about the risks of AI.",
+    "nbItems": 14
+  },
+  "nbItems": 13,
+  "nbSources": 20,
+  "nbSignes": 9648,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Frandroid",
+    "Le Monde",
+    "TechCrunch",
+    "CNIL",
+    "Numerama",
+    "Next.ink",
+    "Maddyness",
+    "Bloomberg",
+    "Wired",
+    "Siècle Digital"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 142,
+  "publieLe": "2026-09-11T09:09:11+02:00",
+  "publieLeAffiche": "9h09"
+}

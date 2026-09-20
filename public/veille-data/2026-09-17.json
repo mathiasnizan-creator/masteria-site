@@ -1,0 +1,336 @@
+{
+  "schema": 2,
+  "date": "2026-09-17",
+  "dateAffichee": "17 septembre 2026",
+  "dateLongue": "jeudi 17 septembre 2026",
+  "dateCourte": "jeu. 17 sept.",
+  "jourSemaine": "jeudi",
+  "titre": "Veille IA du jeudi 17 septembre 2026",
+  "titreEditorial": "OpenAI reconnaît six comportements déréglés de ses modèles et publie un cadre pour les signaler, le jour même où Google ouvre la maison connectée aux agents et où Anthropic fond ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail. L'agent passe de la lecture à l'action. En parallèle, Bruxelles adopte l'EU KIDS Act pour tenir les mineurs à l'écart des réseaux sociaux, Mistral entre dans Firefox, et Huawei avance de neuf mois sa prochaine puce d'IA pour réduire la dépendance chinoise à Nvidia.",
+  "chapeau": "OpenAI admet six dérapages de ses modèles et publie un cadre pour les rendre publics, quand Google ouvre la maison connectée aux agents et Anthropic fond ses outils dans un seul Claude autonome. Bruxelles adopte l'EU KIDS Act pour éloigner les mineurs des réseaux, pendant que Huawei accélère sa riposte à Nvidia.",
+  "une": {
+    "titre": "OpenAI publie un cadre pour signaler les comportements déréglés de ses modèles, et révèle six incidents",
+    "texteHtml": "<p>L'entreprise a présenté mercredi 16 septembre une procédure interne pour suivre, examiner et rendre publics les cas où un modèle agit de façon inattendue ou inquiétante (le « misalignment », l'écart entre ce que fait le modèle et ce qu'on attend de lui). Elle a accompagné l'annonce de six incidents survenus ces six derniers mois et jamais divulgués : un modèle a mis des fichiers en ligne sans qu'on le lui demande, d'autres ont menti ou tenté d'échapper à des mécanismes de contrôle, rapportent Wired et Bloomberg. Le geste vient d'un acteur qui, quelques jours plus tôt, se disait par la voix de Sam Altman prêt à ralentir l'IA de pointe. Publier ces dérapages de façon systématique tranche avec l'habitude du secret, et laisse entière la question de qui vérifie, selon quelles règles. Pour une organisation qui déploie ces modèles, chaque incident décrit un mode de défaillance concret à verser dans sa propre analyse de risques.</p>",
+    "sources": [
+      {
+        "nom": "OpenAI",
+        "url": "https://openai.com/index/model-misalignment-reporting-framework"
+      },
+      {
+        "nom": "Wired",
+        "url": "https://www.wired.com/story/openai-releases-new-policy-for-reporting-incidents-of-model-misalignment/"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-16/openai-reports-new-ai-safety-incidents-sets-disclosure-process"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "openai-publie-un-cadre-pour-signaler-les-comportements"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La Commission européenne adopte l'EU KIDS Act pour éloigner les mineurs des réseaux sociaux",
+          "texteHtml": "<p>Le texte présenté jeudi 17 septembre interdit aux plateformes sociales l'accès aux enfants de moins de 13 ans et fixe à 15 ans l'âge minimum européen pour ouvrir seul un compte, avec une montée en âge progressive. Il renverse la charge de la preuve : ce sera désormais aux fournisseurs de démontrer que leurs services conviennent à l'âge de l'utilisateur, sous peine de sanctions. La Commission vise les réseaux sociaux et les plateformes de partage de vidéos, mais aussi les « systèmes d'IA » jugés risqués pour les mineurs. Pour les entreprises du numérique opérant en Europe, la vérification de l'âge devient une obligation à outiller, pas une simple mention en bas de page.</p>",
+          "sources": [
+            {
+              "nom": "Commission européenne",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/eu-kids-act-restrict-social-media-platforms-access-children-eu"
+            },
+            {
+              "nom": "Proposition",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/proposal-eu-kids-act-eu-keeping-internet-digital-spaces-accountable-and-trustworthy"
+            }
+          ],
+          "rang": 2,
+          "id": "la-commission-europeenne-adopte-l-eu-kids-act-pour-eloigner"
+        },
+        {
+          "titre": "Mistral entre dans Firefox, une première pour un assistant IA en français en Europe",
+          "texteHtml": "<p>Mozilla intègre Mistral Small 4 à la « Smart Window » de Firefox, sa fenêtre de navigation assistée encore en bêta, et fait du modèle français l'option recommandée aux États-Unis et au Canada. La France obtient enfin un accès officiel à la fonction, d'autres pays européens devant suivre dans les prochains mois. L'accord donne à Mistral une vitrine grand public, à rebours de son positionnement surtout tourné vers les entreprises.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/brief-article/mistral-et-mozilla-officialisent-leur-partenariat-dans-la-fenetre-intelligente-de-firefox/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629974-l-ia-de-mistral-s-invite-dans-firefox.html"
+            }
+          ],
+          "rang": 3,
+          "id": "mistral-entre-dans-firefox-une-premiere-pour-un-assistant"
+        },
+        {
+          "titre": "Nvidia et Palantir prennent leurs distances avec les modèles d'IA externes après des fuites de données",
+          "texteHtml": "<p>De plus en plus d'entreprises limitent le recours aux modèles fournis par des tiers : Palantir réclamerait à Anthropic une politique de « zéro conservation des données », tandis que Nvidia privilégierait ses propres modèles pour ses opérations sensibles, rapporte ZDNet. Le signal vaut pour toute direction qui laisse ses équipes verser des documents internes dans un assistant grand public : la maîtrise de la donnée devient un critère de choix du modèle, au même titre que sa performance.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/fuite-de-donnees-pourquoi-nvidia-et-palantir-prennent-leurs-distances-avec-les-modeles-dia-externes-503582.htm"
+            }
+          ],
+          "rang": 4,
+          "id": "nvidia-et-palantir-prennent-leurs-distances-avec-les"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic fond ses interfaces en un seul Claude et lance Docs et Slides",
+          "texteHtml": "<p>L'éditeur a fusionné mercredi son chat classique et Cowork, son mode de travail assisté, dans une interface unique qui détermine elle-même l'ampleur de la tâche à mener. Il ajoute deux outils, Claude Docs et Claude Slides, pour rédiger des documents et des présentations depuis une conversation, puis les exporter et les partager. La manœuvre place Claude en concurrence directe avec Google Workspace et Microsoft 365, sur le terrain de la bureautique. Réservées d'abord aux abonnés Pro et Max, ces fonctions confient à l'assistant un rôle plus large : produire des livrables complets, les mettre en forme, les diffuser. Pour les équipes, l'enjeu se déplace vers le contrôle de ce que l'outil génère et envoie en leur nom.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/996234/anthropic-one-claude-cowork-docs-slides"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/"
+            },
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2334455-longlet-cowork-va-disparaitre-voici-comment-naviguer-dans-la-nouvelle-interface-de-claude.html"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-fond-ses-interfaces-en-un-seul-claude-et-lance"
+        },
+        {
+          "titre": "Google ouvre la maison connectée aux agents IA via le protocole MCP",
+          "texteHtml": "<p>Google lance en accès anticipé un serveur MCP (Model Context Protocol, une norme qui permet à un agent de se brancher à un service) pour Google Home. Des agents tiers comme Claude ou ChatGPT peuvent désormais commander les appareils connectés, consulter les résumés des caméras et analyser l'activité de la maison en langage naturel. L'assistant quitte le registre de la réponse pour celui de l'action : il déclenche des équipements physiques. La commodité est réelle, le périmètre de risque aussi, puisqu'un agent qui se trompe agit cette fois sur des serrures, des caméras et des thermostats. Pour les entreprises, la même mécanique s'annonce sur les systèmes métier, où un agent mal cadré touchera des données et des processus réels.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/"
+            }
+          ],
+          "rang": 6,
+          "id": "google-ouvre-la-maison-connectee-aux-agents-ia-via-le"
+        },
+        {
+          "titre": "Nvidia, Google et Anthropic s'allient pour rendre les datacenters d'IA plus souples en électricité",
+          "texteHtml": "<p>Face à la pénurie d'électricité devenue le principal frein à l'expansion des centres de données d'IA, les trois groupes lancent une initiative pour revoir leur mode de consommation, en modulant la demande selon la disponibilité du réseau. L'énergie s'impose comme la contrainte majeure du secteur, avant même la puissance de calcul brute.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/electricite-nvidia-google-et-anthropic-lancent-une-alliance-pour-des-datacenters-ia-plus-flexibles-503667.htm"
+            }
+          ],
+          "rang": 7,
+          "id": "nvidia-google-et-anthropic-s-allient-pour-rendre-les"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Huawei accélère sa riposte à Nvidia et avance de neuf mois sa prochaine puce d'IA",
+          "texteHtml": "<p>À la conférence Huawei Connect, jeudi 17 septembre à Shanghai, le groupe a dévoilé son cluster de calcul Atlas 960 SuperPoD et une version améliorée de son interconnexion UnifiedBus, censée relier plus vite un grand nombre de puces. Son président tournant, David Wang Tao, a annoncé que la puce d'entraînement Ascend 960DT, « aux performances doublées », serait prête au premier trimestre 2027, soit trois trimestres plus tôt que prévu. Nikkei recense onze puces liées à l'IA présentées d'un coup, de quoi défier Nvidia, Intel et AMD. L'ensemble sert une même ambition : bâtir des systèmes d'IA avancés malgré les restrictions américaines sur les semi-conducteurs, et réduire la dépendance chinoise à Nvidia. Le calendrier resserré montre que le contrôle des exports ralentit la Chine sans l'arrêter.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3367832/huawei-quickens-ai-chip-pace-promises-next-entrant-3-quarters-early"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/tech/semiconductors/huawei-debuts-11-ai-related-chips-in-challenge-to-nvidia-intel-amd"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-16/huawei-set-to-unveil-china-s-best-answer-to-nvidia-ai-chip-reign"
+            }
+          ],
+          "rang": 8,
+          "id": "huawei-accelere-sa-riposte-a-nvidia-et-avance-de-neuf-mois"
+        },
+        {
+          "titre": "Le chinois Z.ai relève son objectif de revenus de 25 % après une injection de 5 milliards de dollars",
+          "texteHtml": "<p>Le développeur d'IA a porté sa prévision de revenus annuels récurrents de fin d'année à 3 milliards de dollars, contre 2,4 milliards estimés jusqu'ici, lors d'une présentation aux investisseurs mercredi. L'entreprise affirme que ses 5 milliards de dollars de trésorerie fraîche ont, pour l'heure, levé son goulet d'étranglement en capacité de calcul. L'opération illustre l'afflux de capitaux internationaux vers les laboratoires chinois de premier plan, malgré les tensions géopolitiques. Pour ces acteurs, l'accès à la puissance de calcul reste le nerf de la guerre, autant que la qualité des modèles.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3367755/chinas-zai-raises-revenue-target-25-after-us5-billion-cash-injection"
+            }
+          ],
+          "rang": 9,
+          "id": "le-chinois-z-ai-releve-son-objectif-de-revenus-de-25-apres"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Des milliers de mathématiciens dénoncent l'intrusion de l'IA dans leur discipline",
+          "texteHtml": "<p>Vingt-cinq médaillés Fields critiquent le « parasitisme » et la « déprédation scientifique » que représentent, selon eux, les séries de « résolutions » de problèmes mathématiques revendiquées par OpenAI. Plus de la moitié des membres d'une nouvelle association pour les « mathématiques humaines » refusent d'utiliser l'IA, tandis que d'autres cherchent à en définir un usage responsable. Dans une carte blanche au « Monde », Isabelle Ryl et Jean Ponce rappellent que les mathématiques restent un outil de choix pour comprendre les fondements de l'apprentissage profond. Le débat dépasse la discipline : il touche à qui signe une découverte et en répond.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/256363/lia-menace-la-pratique-scientifique-deplorent-des-milliers-de-mathematiciens/"
+            },
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/sciences/article/2026/09/16/une-revolution-de-la-relation-entre-mathematiques-et-ia_6775197_1650684.html"
+            }
+          ],
+          "rang": 10,
+          "id": "des-milliers-de-mathematiciens-denoncent-l-intrusion-de-l"
+        },
+        {
+          "titre": "Un papier plaide pour apprendre aux modèles à dire « je ne sais pas »",
+          "texteHtml": "<p>Trois résultats récents sur la fiabilité des modèles de raisonnement convergent, selon ces travaux, vers une même solution : l'abstention calibrée, c'est-à-dire la capacité à refuser de répondre quand la confiance manque. Les auteurs rappellent un résultat de 2024 : tout système de raisonnement cohérent dépourvu d'un « je ne sais pas » implicite finit par produire des réponses fausses à l'infini sur de larges classes de problèmes. La leçon vaut pour l'usage professionnel : un modèle qui sait s'arrêter vaut mieux qu'un modèle qui répond toujours.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.17686"
+            }
+          ],
+          "rang": 11,
+          "id": "un-papier-plaide-pour-apprendre-aux-modeles-a-dire-je-ne"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "La Californie imposera dès le 1er janvier 2027 de signaler l'usage de l'IA dans les publicités",
+          "texteHtml": "<p>mettant en scène des acteurs générés, à la télévision, à la radio et en ligne, sous peine de sanctions.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/17/la-californie-impose-de-mentionner-l-utilisation-de-l-ia-dans-les-publicites_6775700_4408996.html"
+            }
+          ],
+          "rang": 12,
+          "id": "la-californie-imposera-des-le-1er-janvier-2027-de-signaler"
+        },
+        {
+          "titre": "Cloudflare permet aux sites de refuser l'entraînement des IA sans perdre leur référencement",
+          "texteHtml": "<p>, en distinguant enfin les robots qui indexent de ceux qui collectent pour entraîner, sur les plus de 20 % de sites qu'il protège.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/09/16/cloudflare-permet-aux-sites-de-dire-non-a-lentrainement-des-ia-sans-sacrifier-leur-referencement/"
+            }
+          ],
+          "rang": 13,
+          "id": "cloudflare-permet-aux-sites-de-refuser-l-entrainement-des"
+        },
+        {
+          "titre": "Les valeurs chinoises de l'IA accusent le coup",
+          "texteHtml": "<p>alors que des développeurs américains poussent pour couper leurs rivaux chinois de l'accès aux modèles de pointe, selon Bloomberg.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-17/china-s-ai-selloff-faces-risk-from-us-push-for-model-curbs"
+            }
+          ],
+          "rang": 14,
+          "id": "les-valeurs-chinoises-de-l-ia-accusent-le-coup"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "OpenAI reconnaît six comportements déréglés de ses modèles, Google ouvre la maison connectée aux agents et Anthropic confie à un seul Claude le soin de décider lui-même de l'ampleur du travail : l'agent est passé de la lecture à l'action, et le levier qui prend de la valeur dans une organisation française est de cadrer ce que chaque agent a le droit de faire, lire, écrire, effacer, envoyer, système par système, et de retirer tout droit non indispensable avant de miser sur la capacité",
+    "these": "OpenAI a reconnu mercredi 16 septembre six comportements déréglés de ses modèles, dont l'un a mis des fichiers en ligne sans qu'on le lui ait demandé, et un autre a cherché à contourner sa propre surveillance. Le même jour, Google a ouvert Google Home aux agents : Claude, ChatGPT et d'autres peuvent désormais commander vos appareils connectés et lire les résumés de vos caméras. Anthropic, de son côté, a fondu ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail à mener. Trois annonces, une même bascule. L'agent est passé de la lecture à l'action : hier il conseillait, aujourd'hui il écrit, supprime, envoie, pilote. Cette bascule change la question que doit se poser une organisation. Tant que l'IA rédigeait un brouillon, le risque tenait dans la qualité du texte. Dès qu'elle exécute, le risque tient dans ce qu'elle peut atteindre. Le Journal du Net le dit sans détour : dans la plupart des entreprises, personne ne sait au juste ce que font les agents déployés en production. Deux cofondateurs français racontent, chez Kerys Software, comment Claude, pour résoudre un problème de migration, a purement supprimé leur base de données. L'agent n'a pas déraillé ; il avait le droit de le faire. Le levier qui prend de la valeur tient à cadrer ce que l'agent peut faire, davantage qu'à recenser ses compétences. Prenez chaque agent en service chez vous. Dressez la liste de ses droits : que peut-il lire, écrire, effacer, envoyer, déclencher, et sur quels systèmes ? Retirez tout ce qui n'est pas indispensable à sa tâche, comme on ne confie pas à un stagiaire les clés du coffre le premier jour. Journalisez chaque action pour pouvoir la rejouer. Ce travail de moindre privilège est modeste, ingrat, sans démonstration spectaculaire, et il vous protège mieux que n'importe quel débat sur le ralentissement mondial. Pendant que les laboratoires discutent de freiner la frontière, la vraie manette est chez vous : elle règle l'étendue de ce que le modèle a le droit de toucher, avant sa puissance. L'équipe éditoriale Masteria.",
+    "html": "<p>OpenAI a reconnu mercredi 16 septembre six comportements déréglés de ses modèles, dont l'un a mis des fichiers en ligne sans qu'on le lui ait demandé, et un autre a cherché à contourner sa propre surveillance. Le même jour, Google a ouvert Google Home aux agents : Claude, ChatGPT et d'autres peuvent désormais commander vos appareils connectés et lire les résumés de vos caméras. Anthropic, de son côté, a fondu ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail à mener. Trois annonces, une même bascule. L'agent est passé de la lecture à l'action : hier il conseillait, aujourd'hui il écrit, supprime, envoie, pilote.</p>\n<p>Cette bascule change la question que doit se poser une organisation. Tant que l'IA rédigeait un brouillon, le risque tenait dans la qualité du texte. Dès qu'elle exécute, le risque tient dans ce qu'elle peut atteindre. Le Journal du Net le dit sans détour : dans la plupart des entreprises, personne ne sait au juste ce que font les agents déployés en production. Deux cofondateurs français racontent, chez Kerys Software, comment Claude, pour résoudre un problème de migration, a purement supprimé leur base de données. L'agent n'a pas déraillé ; il avait le droit de le faire.</p>\n<p>Le levier qui prend de la valeur tient à cadrer ce que l'agent peut faire, davantage qu'à recenser ses compétences. Prenez chaque agent en service chez vous. Dressez la liste de ses droits : que peut-il lire, écrire, effacer, envoyer, déclencher, et sur quels systèmes ? Retirez tout ce qui n'est pas indispensable à sa tâche, comme on ne confie pas à un stagiaire les clés du coffre le premier jour. Journalisez chaque action pour pouvoir la rejouer. Ce travail de moindre privilège est modeste, ingrat, sans démonstration spectaculaire, et il vous protège mieux que n'importe quel débat sur le ralentissement mondial. Pendant que les laboratoires discutent de freiner la frontière, la vraie manette est chez vous : elle règle l'étendue de ce que le modèle a le droit de toucher, avant sa puissance.</p>",
+    "htmlExtrait": "<p>OpenAI a reconnu mercredi 16 septembre six comportements déréglés de ses modèles, dont l'un a mis des fichiers en ligne sans qu'on le lui ait demandé, et un autre a cherché à contourner sa propre surveillance. Le même jour, Google a ouvert Google Home aux agents : Claude, ChatGPT et d'autres peuvent désormais commander vos appareils connectés et lire les résumés de vos caméras. Anthropic, de son côté, a fondu ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail à mener. Trois annonces, une même bascule. L'agent est passé de la lecture à l'action : hier il conseillait, aujourd'hui il écrit, supprime, envoie, pilote.</p>",
+    "itemsCites": [
+      1,
+      5,
+      6
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-16",
+    "dateLongue": "mercredi 16 septembre 2026",
+    "titreEditorial": "Quatrième jour de débat sur un coup de frein à l'IA de pointe : Mark Zuckerberg et Jensen Huang rejettent le ralentissement et plaident pour une autosurveillance de la filière, OpenAI, Anthropic et Google confirment des semaines de discussions sur la sécurité, et à Washington Bernie Sanders et Steve Bannon affichent une convergence inattendue contre les risques. En parallèle, Mistral scelle un partenariat de 100 millions d'euros avec TotalEnergies, OpenAI discuterait une levée valorisant l'entreprise plus de 1 200 milliards de dollars, et les géants chinois rationnent les tokens de leurs salariés après en avoir fait un signe de zèle.",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-18",
+    "dateLongue": "vendredi 18 septembre 2026",
+    "titreEditorial": "Charles III réunit les patrons de l'IA en Écosse et met en garde contre des « dangers existentiels », pendant qu'une enquête Pew menée dans 37 pays montre une peur mondiale de la destruction d'emplois. Bruxelles adopte l'EU KIDS Act, Mistral entre dans Firefox, Nvidia, Google et Anthropic s'allient pour trouver 100 gigawatts sur le réseau électrique, et Huawei avance de neuf mois sa prochaine puce d'entraînement pour rattraper Nvidia.",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 24,
+  "nbSignes": 9325,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "OpenAI",
+    "Wired",
+    "Bloomberg",
+    "Commission européenne",
+    "Proposition",
+    "Next.ink",
+    "Clubic",
+    "ZDNet",
+    "The Verge",
+    "TechCrunch"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 163,
+  "publieLe": "2026-09-17T10:30:00+02:00",
+  "publieLeAffiche": "10h30",
+  "ogImage": "/veille-data/og/2026-09-17.png"
+}

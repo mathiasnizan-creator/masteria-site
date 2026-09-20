@@ -3,12 +3,89 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-08",
-    "totalEditions": 16,
-    "totalItems": 222,
-    "totalSources": 297
+    "derniereDate": "2026-09-18",
+    "totalEditions": 23,
+    "totalItems": 317,
+    "totalSources": 446
   },
   "editions": [
+    {
+      "date": "2026-09-18",
+      "dateAffichee": "18 September 2026",
+      "dateCourte": "Fri 18 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Charles III gathers AI bosses in Scotland and warns of \\\"existential dangers\\\", while a Pew survey across 37 countries shows a worldwide fear of job destruction. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, Nvidia, Google and Anthropic join forces to find 100 gigawatts on the power grid, and Huawei pulls its next training chip forward by nine months to close the gap with Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-17",
+      "dateAffichee": "17 September 2026",
+      "dateCourte": "Thu 17 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI admits six model misbehaviours and publishes a framework to report them, the same day Google opens the connected home to agents and Anthropic folds its interfaces into a single Claude that decides for itself how much work to take on. The agent moves from reading to acting. Meanwhile Brussels adopts the EU KIDS Act to keep minors off social media, Mistral arrives in Firefox, and Huawei pulls its next AI chip nine months forward to cut China's dependence on Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-09-16",
+      "dateAffichee": "16 September 2026",
+      "dateCourte": "Wed 16 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Silicon Valley refuses to brake, Washington splits",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-15",
+      "dateAffichee": "15 September 2026",
+      "dateCourte": "Tue 15 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI leaders' call to slow down splits the world",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-09-14",
+      "dateAffichee": "14 September 2026",
+      "dateCourte": "Mon 14 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI leaders call for slowing the race, the White House refuses: Dario Amodei argues for \\\"pacing the frontier\\\", Sam Altman, Elon Musk and Demis Hassabis agree, Donald Trump replies that he will not hand his lead to China, and Asian markets fall. Anthropic is eyeing the Nasdaq for a listing that could exceed $86 billion while OpenAI backs away from its own, SoftBank borrows $11.9 billion to fund OpenAI and Christine Lagarde warns about the financial cost of AI. In China, Z.ai returns to raise $5 billion in Hong Kong and the intelligence chief warns about the risks of AI.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-11",
+      "dateAffichee": "11 September 2026",
+      "dateCourte": "Fri 11 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI safety moves from the activist fringe to mainstream debate: Sam Altman says he is ready to slow frontier AI development and is testing whether such a brake would be legal, a former Anthropic researcher warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Anthropic publishes 161 pages of Claude misuse, from Yemeni missiles to fake dating profiles. In Europe, the CNIL sets rules for electronic invoicing and the EU's cybersecurity agency trials Anthropic's most offensive model. In China, DeepSeek reignites the price war with its V4.1 Flash model and chipmaker Enflame jumps 188% on its stock market debut. Microsoft plans 38 gigawatts of data centres and Jensen Huang promises Nvidia 70% growth.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-10",
+      "dateAffichee": "10 September 2026",
+      "dateCourte": "Thu 10 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-08",
       "dateAffichee": "8 September 2026",

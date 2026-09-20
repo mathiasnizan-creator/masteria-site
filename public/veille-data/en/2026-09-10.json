@@ -1,0 +1,310 @@
+{
+  "schema": 2,
+  "date": "2026-09-10",
+  "dateAffichee": "10 September 2026",
+  "dateLongue": "Thursday 10 September 2026",
+  "dateCourte": "Thu 10 Sep",
+  "jourSemaine": "Thursday",
+  "titre": "AI Watch - Thursday 10 September 2026",
+  "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+  "chapeau": "Apple opens the John Ternus era with a foldable iPhone and a sensor meant to prove a photo is not an AI image, while an OECD report shows that AI lowers the results of students who use it without being trained to. AI spending per employee is falling, China advances its pieces from JD.com to DeepSeek, and Suno retrains its model on licensed music.",
+  "une": {
+    "titre": "Apple unveils its first foldable iPhone and a sensor that signs every pixel to counter AI images",
+    "texteHtml": "<p>In his first keynote as head of Apple, on Wednesday 9 September, John Ternus presented the iPhone Duo, the brand's first foldable phone, alongside the iPhone 18 Pro and the Apple Watch Series 12 and Ultra 4 fitted with new health sensors. The novelty that matters for AI is called Apple Reference Image: arriving with the iPhone 18 Pro, this feature uses the camera sensor to \"sign every pixel\" at the moment of capture, to certify that a shot was neither generated nor retouched by an AI. Apple stresses its on-device models (which run on the device, not in the cloud) in the name of privacy. The watches, by contrast, introduce always-listening features, such as Siri Recap and Live Rewind, able to transcribe and summarise ambient conversations; Apple says it does not keep the raw audio, but the promise reopens questions of consent the moment a device can, in principle, always listen. Two directions coexist at Apple that day: proving the authenticity of an image, and normalising objects that capture continuously.</p>",
+    "sources": [
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/09/everything-apple-announced-at-its-fall-iphone-event-from-the-foldable-iphone-duo-to-an-always-listening-apple-watch/"
+      },
+      {
+        "nom": "TechCrunch (Reference Image)",
+        "url": "https://techcrunch.com/2026/09/09/apple-has-a-new-way-prove-your-iphone-photos-arent-ai-slop/"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/tech/992919/apple-siri-ai-audio-intelligence-privacy"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "apple-unveils-its-first-foldable-iphone-and-a-sensor-that"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Loft Orbital raises $1 billion in Emirati funding for an AI satellite constellation, with Mistral",
+          "texteHtml": "<p>On 9 September, the opening day of the international space summit in Paris, the start-up Loft Orbital announced a $1 billion investment from the United Arab Emirates, provided by a subsidiary of the Emirati royal family's conglomerate, to fund an Earth-observation constellation equipped with AI. The project brings together Mistral and the Emirati firm Marlan Space, around some fifty satellites, and describes itself as heralding \"the advent of agentic space AI\". The deal places a French player at the heart of a space programme funded from the Gulf, and shows the entry price of a technological sovereignty that is now playing out in orbit.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/09/les-emirats-engagent-un-milliard-de-dollars-dans-un-projet-francais-d-ia-dans-l-espace_6768866_3234.html"
+            },
+            {
+              "nom": "La Tribune",
+              "url": "https://air-cosmos.latribune.fr/article/espace/19794223548526/sommet-spatial-avec-mistral-loft-orbital-investit-un-milliard-de-dollars-aux-emirats"
+            },
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/09/loft-orbital-50-satellites-ia/"
+            }
+          ],
+          "rang": 2,
+          "id": "loft-orbital-raises-1-billion-in-emirati-funding-for-an-ai"
+        },
+        {
+          "titre": "45% of professionals use \"parallel\" AI tools outside any framework",
+          "texteHtml": "<p>Nearly one employee in two already turns to AI tools their company has not authorised, what's called shadow AI (AI installed in the shadow of the IT department), according to a study relayed by ZDNet. The practice is growing, driven by staff who find the consumer tool faster than the internal solution. The risk is twofold: sensitive data poured into unmanaged services, and compliance that slips out of the organisation's hands. ZDNet details the measures for taking back control without antagonising teams.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/pratique/45-des-professionnels-utilisent-des-outils-dia-paralleles-voici-comment-gerer-les-risques-du-shadow-ai-503166.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "45-of-professionals-use-parallel-ai-tools-outside-any"
+        },
+        {
+          "titre": "Google restarts a shut-down nuclear plant and signs its first nuclear deal in Europe",
+          "texteHtml": "<p>AI's appetite for energy is benefiting the nuclear sector: Google is about to bring back into service a US plant that has been offline for six years to power its data centres, Clubic reports. In the same move, the group signs its first nuclear deal outside the United States, in Finland. Every AI data centre is now measured in reactors, and the big cloud players are securing their electricity over decades before they even build.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-628924-l-offensive-est-en-marche-google-reveille-une-centrale-nucleaire-abandonnee-pour-ses-data-centers.html"
+            }
+          ],
+          "rang": 4,
+          "id": "google-restarts-a-shut-down-nuclear-plant-and-signs-its"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The OECD finds that students who use AI get worse results, except those trained to use it",
+          "texteHtml": "<p>According to data from a global OECD education report, students who lean on AI to study tend to get worse results than those who do without. The picture is more nuanced than it seems: some uses bring a slight gain, particularly among students taught to critically assess what the tool produces and when to be wary of it. Correlation does not tell the whole story, The Verge warns, because struggling students also turn more readily to AI. The signal remains clear: access to the tool is not enough, how you use it decides the result.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/991956/student-ai-use-scores-oecd-pisa"
+            }
+          ],
+          "rang": 5,
+          "id": "the-oecd-finds-that-students-who-use-ai-get-worse-results"
+        },
+        {
+          "titre": "AI spending per employee fell in August at major firms",
+          "texteHtml": "<p>The amounts spent on AI per employee dropped in August at the most advanced firms, TechCrunch reports. Three factors combine: the fall in the price of tokens (the billed unit of text), the arrival of cheaper models, and a declining average spend per employee. The article raises the question without settling it: a simple summer lull, or a first sign that adoption is not following the trajectory infrastructure providers had hoped for. For the cloud giants that built their forecasts on ever-growing consumption, the doubt is uncomfortable. The same volume of work costs less and less, which shifts the value from the price of the tool to the quality of its use.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/09/ai-spend-per-employee-slumped-at-top-firms-in-august-summer-doldrums-or-a-warning-sign/"
+            }
+          ],
+          "rang": 6,
+          "id": "ai-spending-per-employee-fell-in-august-at-major-firms"
+        },
+        {
+          "titre": "Suno retrains its model on licensed music, under pressure from lawsuits",
+          "texteHtml": "<p>Besieged by copyright infringement suits, the music generator Suno has replaced its models with a new one, Suno v6, presented as trained with the help of the record industry and without the data used for previous versions. \"It was trained from scratch, with a dataset that does not include the same data as our previous models,\" Suno's Jack Brody tells The Verge. This time the corpus includes licensed content. The reversal is stark for a company that had until now defended training on unauthorised works, and it marks a path other content generators may have to follow: paying for the raw material rather than hoovering it up.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/09/suno-replaces-its-ai-models-with-a-new-one-trained-on-licensed-music-as-copyright-suits-pile-up/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/991977/suno-releases-its-first-ai-music-model-made-with-record-industry-help"
+            }
+          ],
+          "rang": 7,
+          "id": "suno-retrains-its-model-on-licensed-music-under-pressure"
+        },
+        {
+          "titre": "Microsoft and the main US teachers' union adopt an AI safety standard for schools",
+          "texteHtml": "<p>Microsoft, the American Federation of Teachers (AFT, the second-largest teachers' union in the United States) and its New York affiliate UFT announced a \"National AI Safety &amp; Privacy Standard\" to protect students, families and staff in schools. The agreement sets principles of safety and privacy for the use of AI in the classroom. It comes a week after two large school networks banned AI in direct contact with students, a sign of an education sector split between adoption and wariness. Where the OECD measures the damage of unframed use, these players are trying to write the rules before practice imposes them.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/policy/992359/microsoft-aft-schools-ai-privacy"
+            },
+            {
+              "nom": "Microsoft Source",
+              "url": "https://news.microsoft.com/source/2026/09/09/aft-uft-and-microsoft-announce-national-ai-safety-privacy-standard-for-schools-to-protect-students-families-and-educators/"
+            }
+          ],
+          "rang": 8,
+          "id": "microsoft-and-the-main-us-teachers-union-adopt-an-ai-safety"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "JD.com targets three million robots to automate its logistics and promises to retrain its couriers",
+          "texteHtml": "<p>The Chinese online-commerce giant JD.com is accelerating its shift to robotics: at an event in Beijing on Wednesday 9 September, its logistics arm unveiled its \"Wolf\" line of industrial robots. Over five years, JD Logistics plans to acquire 3 million robots, 1 million driverless vehicles and 100,000 delivery drones to automate its entire national network, the South China Morning Post reports. The company promises to retrain its vast workforce of couriers into technical roles as the machines take over field tasks. The commitment is worth watching in practice: automating three million gestures and training as many people for another job do not happen at the same pace. China's trajectory puts a figure on a question that matters everywhere, namely what to do with the people whose task disappears.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366884/jdcom-deploy-3-million-robots-fully-automate-logistics"
+            }
+          ],
+          "rang": 9,
+          "id": "jd-com-targets-three-million-robots-to-automate-its"
+        },
+        {
+          "titre": "DeepSeek prepares its listing on the \"Chinese Nasdaq\"",
+          "texteHtml": "<p>The AI start-up DeepSeek has retained banks, including Citic Securities, for a stock-market listing on the Star Market of the Shanghai exchange, aiming to launch the process this year, La Tribune reports. The operation becomes the first test of new Chinese rules designed to finance large-model developers even before they turn a profit. It gives Beijing a domestic financing route for its AI champions, away from US markets.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/11994594224724/defiant-wall-street-deepseek-teste-sa-capacite-a-financer-l-ia-sur-le-nasdaq-chinois"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3366948/chinese-ai-firm-deepseek-taps-underwriters-including-citic-securities-ipo-sources"
+            }
+          ],
+          "rang": 10,
+          "id": "deepseek-prepares-its-listing-on-the-chinese-nasdaq"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "IBM releases an open-weight time-series model under a commercial licence",
+          "texteHtml": "<p>IBM has put online Granite Time Series PatchTST-FM-r2, a foundation model for time series presented as state of the art, under a licence favourable to commercial use. Open-weight (downloadable and runnable yourself), it targets forecasting on chronological data: demand anticipation, energy load, predictive maintenance. For a company, this kind of ready-to-use model opens industrial use cases without depending on an external API or exposing its data.</p>",
+          "sources": [
+            {
+              "nom": "Hugging Face",
+              "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series"
+            }
+          ],
+          "rang": 11,
+          "id": "ibm-releases-an-open-weight-time-series-model-under-a"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Trustworthy AI: Numalis and South Korea's ThinkforBL join forces to assess how reliable models are when faced with the unexpected",
+          "texteHtml": "<p>, a critical issue for sectors such as defence and healthcare.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/ia-de-confiance-thinkforbl-et-numalis-renforcent-la-cooperation-franco-coreenne-503116.htm"
+            }
+          ],
+          "rang": 12,
+          "id": "trustworthy-ai-numalis-and-south-korea-s-thinkforbl-join"
+        },
+        {
+          "titre": "Alibaba lets its \"digital employees\" be deployed at its rivals: its QoderWake tool can generate an agent from a simple job description, then put it to work in the apps of ByteDance or Tencent",
+          "texteHtml": "<p>, opening a new front in enterprise AI.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3366919/alibaba-sends-ai-digital-employees-work-rival-apps-bytedance-tencent"
+            }
+          ],
+          "rang": 13,
+          "id": "alibaba-lets-its-digital-employees-be-deployed-at-its"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "The OECD finds that students who use AI get worse results, except those trained to judge its use critically, who improve, on the day when nearly one professional in two already uses AI outside any framework and OpenAI launches GPT-6 Astra: the lever that gains value is training for a verifiable use of AI and knowing who, on the team, can check what the machine produces, rather than betting on access to the most powerful model",
+    "these": "The OECD found that students who use AI to revise get, on average, worse results than those who do without. The same report adds a nuance that changes everything: students trained to judge critically what the machine produces do improve. The sign of the effect flips with training. Same tool, two opposite results, and the only variable is how it is used. This shift goes beyond the classroom. In companies, nearly one professional in two (45%) already uses AI tools outside any framework, what's called shadow AI, according to ZDNet. HR teams, for their part, admit they can no longer tell who has mastered AI from who merely claims to. Meanwhile, OpenAI launches GPT-6 Astra, presented as its most capable model for work. The race concentrates on the power of the models. The measured gain, though, depends on how they are used. For a French organisation, the lever lies in training for a use you can verify, rather than in access to the most powerful model. Take a role AI has already entered: writing, analysis, code, customer relations. Ask two questions. Who, on the team, can check what the model produces, spot a plausible error, name the tool's limits? And how do you know, other than by their own word? Then deal with shadow AI in the open: frame the tools your teams already use in secret, and train for their critical reading rather than banning them. GPT-6 Astra puts unprecedented power one click away. The OECD is a reminder that power poorly handled lowers the result. Between the tool and the gain, a craft remains: knowing how to use it, and proving it. That is where the gap opens between two companies equipped with the same model. The Masteria editorial team.",
+    "html": "<p>The OECD found that students who use AI to revise get, on average, worse results than those who do without. The same report adds a nuance that changes everything: students trained to judge critically what the machine produces do improve. The sign of the effect flips with training. Same tool, two opposite results, and the only variable is how it is used.</p>\n<p>This shift goes beyond the classroom. In companies, nearly one professional in two (45%) already uses AI tools outside any framework, what's called shadow AI, according to ZDNet. HR teams, for their part, admit they can no longer tell who has mastered AI from who merely claims to. Meanwhile, OpenAI launches GPT-6 Astra, presented as its \"most capable model for work\". The race concentrates on the power of the models. The measured gain, though, depends on how they are used.</p>\n<p>For a French organisation, the lever lies in training for a use you can verify, rather than in access to the most powerful model. Take a role AI has already entered: writing, analysis, code, customer relations. Ask two questions. Who, on the team, can check what the model produces, spot a plausible error, name the tool's limits? And how do you know, other than by their own word? Then deal with shadow AI in the open: frame the tools your teams already use in secret, and train for their critical reading rather than banning them.</p>\n<p>GPT-6 Astra puts unprecedented power one click away. The OECD is a reminder that power poorly handled lowers the result. Between the tool and the gain, a craft remains: knowing how to use it, and proving it. That is where the gap opens between two companies equipped with the same model.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>The OECD found that students who use AI to revise get, on average, worse results than those who do without. The same report adds a nuance that changes everything: students trained to judge critically what the machine produces do improve. The sign of the effect flips with training. Same tool, two opposite results, and the only variable is how it is used.</p>\n<p>This shift goes beyond the classroom. In companies, nearly one professional in two (45%) already uses AI tools outside any framework, what's called shadow AI, according to ZDNet. HR teams, for their part, admit they can no longer tell who has mastered AI from who merely claims to. Meanwhile, OpenAI launches GPT-6 Astra, presented as its \"most capable model for work\". The race concentrates on the power of the models. The measured gain, though, depends on how they are used.</p>",
+    "itemsCites": [
+      3,
+      5
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-08",
+    "dateLongue": "Tuesday 8 September 2026",
+    "titreEditorial": "Mistral AI raises €3 billion at a €21 billion valuation in a round led by Samsung; the labor-law scholar Jean-Emmanuel Ray reminds employers that the AI Act requires them to inventory their high-risk AI systems and inform staff by the end of 2027, while BPCE stands up its AI Factory and Bercy renegotiates the French state's IT contracts; China targets 9,800 eflops of compute and Huawei launches its first stacked-circuit chip; Revolut completes the first AI-initiated payment in France",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-11",
+    "dateLongue": "Friday 11 September 2026",
+    "titreEditorial": "AI safety moves from the activist fringe to mainstream debate: Sam Altman says he is ready to slow frontier AI development and is testing whether such a brake would be legal, a former Anthropic researcher warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Anthropic publishes 161 pages of Claude misuse, from Yemeni missiles to fake dating profiles. In Europe, the CNIL sets rules for electronic invoicing and the EU's cybersecurity agency trials Anthropic's most offensive model. In China, DeepSeek reignites the price war with its V4.1 Flash model and chipmaker Enflame jumps 188% on its stock market debut. Microsoft plans 38 gigawatts of data centres and Jensen Huang promises Nvidia 70% growth.",
+    "nbItems": 13
+  },
+  "nbItems": 13,
+  "nbSources": 20,
+  "nbSignes": 8514,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "TechCrunch",
+    "TechCrunch (Reference Image)",
+    "The Verge",
+    "Le Monde",
+    "La Tribune",
+    "Maddyness",
+    "ZDNet",
+    "Clubic",
+    "Microsoft Source",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 143,
+  "publieLe": "2026-09-10T10:01:32+02:00",
+  "publieLeAffiche": "10h01"
+}

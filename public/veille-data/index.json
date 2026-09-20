@@ -3,12 +3,100 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-08",
-    "totalEditions": 30,
-    "totalItems": 411,
-    "totalSources": 592
+    "derniereDate": "2026-09-18",
+    "totalEditions": 38,
+    "totalItems": 520,
+    "totalSources": 766
   },
   "editions": [
+    {
+      "date": "2026-09-18",
+      "dateAffichee": "18 septembre 2026",
+      "dateCourte": "ven. 18 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Charles III réunit les patrons de l'IA en Écosse et met en garde contre des « dangers existentiels », pendant qu'une enquête Pew menée dans 37 pays montre une peur mondiale de la destruction d'emplois. Bruxelles adopte l'EU KIDS Act, Mistral entre dans Firefox, Nvidia, Google et Anthropic s'allient pour trouver 100 gigawatts sur le réseau électrique, et Huawei avance de neuf mois sa prochaine puce d'entraînement pour rattraper Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 9
+    },
+    {
+      "date": "2026-09-17",
+      "dateAffichee": "17 septembre 2026",
+      "dateCourte": "jeu. 17 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI reconnaît six comportements déréglés de ses modèles et publie un cadre pour les signaler, le jour même où Google ouvre la maison connectée aux agents et où Anthropic fond ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail. L'agent passe de la lecture à l'action. En parallèle, Bruxelles adopte l'EU KIDS Act pour tenir les mineurs à l'écart des réseaux sociaux, Mistral entre dans Firefox, et Huawei avance de neuf mois sa prochaine puce d'IA pour réduire la dépendance chinoise à Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-16",
+      "dateAffichee": "16 septembre 2026",
+      "dateCourte": "mer. 16 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Quatrième jour de débat sur un coup de frein à l'IA de pointe : Mark Zuckerberg et Jensen Huang rejettent le ralentissement et plaident pour une autosurveillance de la filière, OpenAI, Anthropic et Google confirment des semaines de discussions sur la sécurité, et à Washington Bernie Sanders et Steve Bannon affichent une convergence inattendue contre les risques. En parallèle, Mistral scelle un partenariat de 100 millions d'euros avec TotalEnergies, OpenAI discuterait une levée valorisant l'entreprise plus de 1 200 milliards de dollars, et les géants chinois rationnent les tokens de leurs salariés après en avoir fait un signe de zèle.",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 9
+    },
+    {
+      "date": "2026-09-15",
+      "dateAffichee": "15 septembre 2026",
+      "dateCourte": "mar. 15 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "L'appel des patrons de l'IA à ralentir la course entre dans sa deuxième journée : Sam Altman rejoint Dario Amodei, Jensen Huang répond à Trump « nous ne laisserons pas cela arriver », la Chine dénonce une manœuvre « intéressée » et les valeurs de semi-conducteurs reculent. Pendant ce temps, Wikipédia en français interdit l'IA générative pour rédiger ses articles, le Conseil national des barreaux s'allie à Jimini AI pour former les avocats, OpenAI renonce à son entrée en Bourse en 2026 quand Anthropic vise le Nasdaq pour un montant record, et Microsoft publie un « code de conduite humaniste » de 37 pages pour ses modèles.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-14",
+      "dateAffichee": "14 septembre 2026",
+      "dateCourte": "lun. 14 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Les patrons de l'IA appellent à ralentir la course, la Maison-Blanche refuse : Dario Amodei plaide pour « caler l'allure de la frontière », Sam Altman, Elon Musk et Demis Hassabis approuvent, Donald Trump répond qu'il ne cédera pas son avance à la Chine, et les Bourses asiatiques reculent. Anthropic vise le Nasdaq pour une entrée en Bourse qui pourrait dépasser les 86 milliards de dollars pendant qu'OpenAI renonce à la sienne, SoftBank emprunte 11,9 milliards pour financer OpenAI et Christine Lagarde alerte sur le coût financier de l'IA. En Chine, Z.ai repart lever 5 milliards à Hong Kong et le chef du renseignement met en garde contre les risques de l'IA.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-11",
+      "dateAffichee": "11 septembre 2026",
+      "dateCourte": "ven. 11 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "La sûreté de l'IA passe du cercle militant au débat de place : Sam Altman se dit prêt à ralentir le développement de l'IA de pointe et fait sonder la légalité d'un tel frein, un ancien d'Anthropic prévient que « l'IA pourrait tous nous tuer », OpenAI accueille un chercheur inquiet à son conseil, et Anthropic publie 161 pages d'usages détournés de Claude, des missiles yéménites aux faux profils de rencontre. En Europe, la CNIL cadre la facturation électronique et l'agence de cybersécurité de l'Union met à l'essai le modèle le plus offensif d'Anthropic. En Chine, DeepSeek relance la guerre des prix avec son modèle V4.1 Flash et le fondeur Enflame bondit de 188 % pour ses débuts en Bourse. Microsoft planifie 38 gigawatts de centres de données et Jensen Huang promet à Nvidia 70 % de croissance.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 9
+    },
+    {
+      "date": "2026-09-10",
+      "dateAffichee": "10 septembre 2026",
+      "dateCourte": "jeu. 10 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Apple tient la première keynote de John Ternus et dévoile son premier pliable, l'iPhone Duo, une Apple Watch qui écoute en continu et Apple Reference Image, un capteur qui signe chaque pixel pour certifier qu'une photo n'a pas été fabriquée par IA ; un rapport de l'OCDE établit que les élèves qui utilisent l'IA obtiennent de moins bons résultats, sauf ceux formés à en juger l'usage de façon critique ; les dépenses d'IA par salarié ont reculé en août dans les grandes entreprises ; Loft Orbital lève un milliard de dollars émirati avec Mistral ; JD.com vise trois millions de robots et promet de reconvertir ses livreurs ; DeepSeek prépare son entrée en Bourse à Shanghai ; Suno réentraîne son modèle sur de la musique sous licence.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-09",
+      "dateAffichee": "9 septembre 2026",
+      "dateCourte": "mer. 9 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI affirme qu'un de ses modèles a résolu le problème de Navier-Stokes, preuve formelle en Lean à l'appui, et l'annonce sombre aussitôt dans une querelle de paternité (Tristan Buckmaster accuse, Sebastian Bubeck aurait fait retirer un co-auteur) ; Meta lance Muse, un agent personnel qui réclame l'accès aux courriels, à l'agenda et aux paiements ; Jakub Pachocki et un démissionnaire d'Anthropic multiplient les alertes de sécurité venues de l'intérieur des laboratoires ; la CNIL sanctionne EXTIA de 300 000 euros pour le droit à l'oubli ; les États-Unis accusent Alibaba et DeepSeek de siphonner les modèles américains",
+      "nbItems": 14,
+      "nbSources": 25,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-09-08",
       "dateAffichee": "8 septembre 2026",

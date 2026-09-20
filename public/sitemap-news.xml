@@ -2,25 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-09-08</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-18</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-09-08T08:11:15+02:00</news:publication_date>
-      <news:title>Veille IA du 8 septembre 2026 : Mistral AI lève 3 milliards d&#x27;euros à une valorisation de 21 milliards dans un tour mené par Samsung ; le juriste Jean-Emmanuel Ray rappelle que l&#x27;AI Act oblige les employeurs à recenser leurs systèmes d&#x27;IA à haut risque et à informer les salariés d&#x27;ici fin 2027, pendant que BPCE monte son AI Factory et que Bercy renégocie les contrats informatiques de l&#x27;État ; la Chine vise 9 800 eflops de puissance de calcul et Huawei lance sa première puce à circuits empilés ; Revolut réalise le premier paiement initié par une IA en France</news:title>
+      <news:publication_date>2026-09-18T05:13:20+02:00</news:publication_date>
+      <news:title>Veille IA du 18 septembre 2026 : Charles III réunit les patrons de l&#x27;IA en Écosse et met en garde contre des « dangers existentiels », pendant qu&#x27;une enquête Pew menée dans 37 pays montre une peur mondiale de la destruction d&#x27;emplois. Bruxelles adopte l&#x27;EU KIDS Act, Mistral entre dans Firefox, Nvidia, Google et Anthropic s&#x27;allient pour trouver 100 gigawatts sur le réseau électrique, et Huawei avance de neuf mois sa prochaine puce d&#x27;entraînement pour rattraper Nvidia.</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-09-07</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-17</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-09-07T07:25:59+02:00</news:publication_date>
-      <news:title>Veille IA du 7 septembre 2026 : Moody&#x27;s estime que les entreprises chinoises tirent plus de puissance de calcul par dollar dépensé que les géants américains ; le Seattle Times et Newsday poursuivent OpenAI et Microsoft pour droit d&#x27;auteur pendant que le partage de l&#x27;accord Anthropic oppose auteurs et éditeurs ; Jakub Pachocki, directeur scientifique d&#x27;OpenAI, décrit une « intelligence étrangère » et réclame des garde-fous ; et des candidats américains cachent des instructions dans leur CV pour piéger l&#x27;IA des recruteurs</news:title>
+      <news:publication_date>2026-09-17T10:30:00+02:00</news:publication_date>
+      <news:title>Veille IA du 17 septembre 2026 : OpenAI reconnaît six comportements déréglés de ses modèles et publie un cadre pour les signaler, le jour même où Google ouvre la maison connectée aux agents et où Anthropic fond ses interfaces en un seul Claude qui décide lui-même de l&#x27;ampleur du travail. L&#x27;agent passe de la lecture à l&#x27;action. En parallèle, Bruxelles adopte l&#x27;EU KIDS Act pour tenir les mineurs à l&#x27;écart des réseaux sociaux, Mistral entre dans Firefox, et Huawei avance de neuf mois sa prochaine puce d&#x27;IA pour réduire la dépendance chinoise à Nvidia.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-16</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-16T07:31:54+02:00</news:publication_date>
+      <news:title>Veille IA du 16 septembre 2026 : Quatrième jour de débat sur un coup de frein à l&#x27;IA de pointe : Mark Zuckerberg et Jensen Huang rejettent le ralentissement et plaident pour une autosurveillance de la filière, OpenAI, Anthropic et Google confirment des semaines de discussions sur la sécurité, et à Washington Bernie Sanders et Steve Bannon affichent une convergence inattendue contre les risques. En parallèle, Mistral scelle un partenariat de 100 millions d&#x27;euros avec TotalEnergies, OpenAI discuterait une levée valorisant l&#x27;entreprise plus de 1 200 milliards de dollars, et les géants chinois rationnent les tokens de leurs salariés après en avoir fait un signe de zèle.</news:title>
     </news:news>
   </url>
 </urlset>

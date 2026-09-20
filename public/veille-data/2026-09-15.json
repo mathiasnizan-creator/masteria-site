@@ -1,0 +1,308 @@
+{
+  "schema": 2,
+  "date": "2026-09-15",
+  "dateAffichee": "15 septembre 2026",
+  "dateLongue": "mardi 15 septembre 2026",
+  "dateCourte": "mar. 15 sept.",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA du mardi 15 septembre 2026",
+  "titreEditorial": "L'appel des patrons de l'IA à ralentir la course entre dans sa deuxième journée : Sam Altman rejoint Dario Amodei, Jensen Huang répond à Trump « nous ne laisserons pas cela arriver », la Chine dénonce une manœuvre « intéressée » et les valeurs de semi-conducteurs reculent. Pendant ce temps, Wikipédia en français interdit l'IA générative pour rédiger ses articles, le Conseil national des barreaux s'allie à Jimini AI pour former les avocats, OpenAI renonce à son entrée en Bourse en 2026 quand Anthropic vise le Nasdaq pour un montant record, et Microsoft publie un « code de conduite humaniste » de 37 pages pour ses modèles.",
+  "chapeau": "Le débat sur un coup de frein à l'IA de pointe s'élargit à toute la planète : les laboratoires plaident pour la prudence, Donald Trump et Pékin refusent, les Bourses tech vacillent. Loin de ce bras de fer, deux institutions françaises tranchent chacune à leur façon, Wikipédia en interdisant l'IA générative et le barreau en formant les avocats à s'en servir.",
+  "une": {
+    "titre": "L'appel à ralentir l'IA divise la planète, de la Maison-Blanche à Pékin",
+    "texteHtml": "<p>Trois jours après la lettre ouverte de Dario Amodei (Anthropic) plaidant pour « caler l'allure de la frontière », c'est-à-dire freiner les modèles les plus puissants au nom de la sécurité, le débat a gagné toutes les capitales. Sam Altman (OpenAI) et Elon Musk (xAI) maintiennent leur soutien, mais Donald Trump a balayé les craintes en les qualifiant de « conspiration malsaine », et le patron de Nvidia, Jensen Huang, a lancé au président, en pleine conférence : « nous ne laisserons pas [un ralentissement de l'IA] arriver ». La Chine a rejeté l'appel, ses médias d'État y voyant une manœuvre « intéressée » pour verrouiller l'avance américaine, tandis que l'ONU pressait les États d'encadrer l'IA face à des « risques sans précédent ». Signe que les acteurs cherchent une issue hors des gouvernements, OpenAI, Google et Anthropic travailleraient à créer leur propre organisme de contrôle, indépendant de Washington. Sur les marchés, les valeurs de semi-conducteurs ont reculé, les investisseurs redoutant qu'un coup de frein n'entame les valorisations.</p>",
+    "sources": [
+      {
+        "nom": "Wired",
+        "url": "https://www.wired.com/story/ai-leaders-are-calling-for-a-slowdown-trumps-team-says-its-on-them/"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/"
+      },
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/09/14/l-onu-presse-les-etats-d-encadrer-l-ia-pour-proteger-les-droits-humains-face-a-des-risques-sans-precedent_6773799_4408997.html"
+      },
+      {
+        "nom": "01net",
+        "url": "https://www.01net.com/actualites/openai-google-anthropic-prepareraient-propre-gendarme-ia.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "l-appel-a-ralentir-l-ia-divise-la-planete-de-la-maison"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Wikipédia en français interdit l'IA générative pour rédiger des articles",
+          "texteHtml": "<p>L'encyclopédie collaborative, où l'usage de l'IA pour écrire était jusqu'ici « vivement déconseillé », le proscrit désormais formellement. Elle emboîte le pas à Wikipédia en anglais, qui l'interdit depuis mars. La communauté redoute des textes fluides mais truffés d'erreurs, de sources inventées et de biais, impossibles à contrôler un à un quand ils affluent en masse. La décision protège la fiabilité d'une ressource consultée par des centaines de millions de personnes, souvent citée par les modèles eux-mêmes.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/09/14/wikipedia-en-francais-interdit-l-usage-de-l-ia-generative-pour-rediger-des-articles_6773851_4408996.html"
+            }
+          ],
+          "rang": 2,
+          "id": "wikipedia-en-francais-interdit-l-ia-generative-pour-rediger"
+        },
+        {
+          "titre": "Le Conseil national des barreaux s'allie à la startup française Jimini AI pour former les avocats",
+          "texteHtml": "<p>L'instance représentative de la profession noue un partenariat avec Jimini AI, jeune pousse spécialisée dans l'intelligence artificielle appliquée au droit, pour intégrer l'outil dans la formation des avocats. « Former les avocats de demain sans IA serait une ineptie », résume l'institution, qui assume un choix inverse de celui de Wikipédia : encadrer l'usage plutôt que l'exclure, sur un métier où le professionnel demeure responsable de chaque acte qu'il signe. Le signal compte pour une profession réglementée qui cherche son cadre face à l'automatisation de la recherche juridique et de la rédaction d'actes.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/?p=1441344"
+            }
+          ],
+          "rang": 3,
+          "id": "le-conseil-national-des-barreaux-s-allie-a-la-startup"
+        },
+        {
+          "titre": "Arthur Mensch refuse le ralentissement : « Don't pace »",
+          "texteHtml": "<p>Le patron de Mistral a répondu en deux mots à l'appel de Dario Amodei, jugeant qu'un frein volontaire condamnerait une Europe déjà distancée. Derrière la formule, un contexte tendu : 3 milliards d'euros à faire fructifier, une coupure de courant sur ses infrastructures en juin, et une course où le continent n'est pas en tête. La position tranche avec la prudence affichée outre-Atlantique et pose la question du prix qu'un acteur en rattrapage peut payer pour un moratoire décidé par ceux qui mènent.</p>",
+          "sources": [
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/3247339_arthur-mensch-est-contre-le-ralentissement-de-lia-leurope-accuse-deja-beaucoup-de-retard"
+            }
+          ],
+          "rang": 4,
+          "id": "arthur-mensch-refuse-le-ralentissement-don-t-pace"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Microsoft publie un « code de conduite humaniste » de 37 pages pour ses IA",
+          "texteHtml": "<p>Le groupe a dévoilé un projet de charte, « Humanist AI », censé encadrer le comportement de ses futurs modèles au moment où l'inquiétude sur la sécurité monte. Le texte pose des principes généraux, les modèles doivent « soutenir les humains plutôt que les remplacer » et « accélérer l'épanouissement humain », assortis de garde-fous précis : ne pas aider à mener des cyberattaques, ne pas tromper les utilisateurs, ne pas chercher à échapper au contrôle humain. « Les gens comptent plus que l'IA », résume l'entreprise. La publication intervient dans le sillage direct de l'appel de Dario Amodei au ralentissement, chaque grand laboratoire cherchant à afficher sa doctrine de sécurité. La portée reste à mesurer : un code de conduite énonce des intentions, il ne garantit pas le comportement d'un modèle en production.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/news/994566/microsoft-humanist-ai-code-of-conduct"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/microsoft-devoile-un-projet-de-code-de-conduite-pour-ses-futures-ia-503488.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "microsoft-publie-un-code-de-conduite-humaniste-de-37-pages"
+        },
+        {
+          "titre": "Grand écart boursier : OpenAI renonce à entrer en Bourse en 2026, Anthropic vise un record",
+          "texteHtml": "<p>Sam Altman a écarté toute introduction d'OpenAI cette année, au motif qu'il veut concentrer ses efforts sur la sécurité des modèles de pointe, sans évoquer de difficulté financière. L'annonce a fait chuter de 11 % l'action de SoftBank, principal soutien financier du laboratoire, qui comptait sur cette cotation. Au même moment, Anthropic aurait choisi le Nasdaq pour une entrée en Bourse visée dès octobre, avec l'ambition de lever un montant égal ou supérieur aux 86,3 milliards de dollars réunis par SpaceX en juin, ce qui en ferait l'une des plus grandes opérations de l'histoire. Deux trajectoires opposées la même semaine, alors que le secteur tient un discours commun sur la prudence, disent la tension entre le récit de sécurité et l'appétit de capitaux.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/markets/softbank-group-plunges-11-after-openai-says-no-ipo-this-year"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/ipo-record-en-vue-anthropic-viserait-le-nasdaq-des-octobre-503415.htm"
+            }
+          ],
+          "rang": 6,
+          "id": "grand-ecart-boursier-openai-renonce-a-entrer-en-bourse-en"
+        },
+        {
+          "titre": "OpenAI rachèterait le fabricant de caméras Glass Imaging pour 300 millions de dollars",
+          "texteHtml": "<p>Selon des informations de presse, OpenAI met la main sur Glass Imaging, une jeune entreprise spécialisée dans le traitement d'image pour smartphones. Elle a été fondée par d'anciens ingénieurs d'Apple qui avaient dirigé l'équipe à l'origine du mode Portrait de l'iPhone. L'opération, non confirmée officiellement, s'ajoute à la série d'acquisitions matérielles d'OpenAI et confirme son ambition de bâtir des appareils grand public, au-delà du logiciel. Elle prolonge le rapprochement engagé avec Jony Ive autour d'un futur objet dédié à l'IA.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-racheterait-le-fabricant-de-cameras-glass-imaging"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Xi Jinping propose une « communauté IA » des BRICS et Pékin rejette l'appel au ralentissement",
+          "texteHtml": "<p>Au sommet des BRICS à New Delhi dimanche, le président chinois a promu une coopération du bloc autour de l'intelligence artificielle : la Chine « piloterait » le développement d'une « communauté » IA des BRICS, soutiendrait la coopération sur les grands modèles de langage et offrirait des formations. La veille, il avait invité ces pays à rejoindre une nouvelle « Organisation mondiale de coopération sur l'IA », et Pékin propose une « zone d'IA open source » présentée comme une alternative aux modèles occidentaux. En parallèle, la Chine a rejeté l'appel américain à « caler l'allure », ses chercheurs et médias d'État y voyant une tentative « intéressée » de figer l'avance des États-Unis plutôt qu'un souci sincère de sécurité. La séquence dessine une bataille pour rallier le Sud global autour d'une IA ouverte estampillée chinoise.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/policy/article/3367448/china-rejects-calls-pacing-ai-development-fearing-it-would-entrench-us-tech-lead"
+            },
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/business/1554795-la-chine-propose-la-creation-d-une-zone-d-intelligence-artificielle-a-code-source-ouvert-pour-les-brics/"
+            }
+          ],
+          "rang": 8,
+          "id": "xi-jinping-propose-une-communaute-ia-des-brics-et-pekin"
+        },
+        {
+          "titre": "Des chercheurs chinois tracent une feuille de route en cinq étapes vers « la dernière IA construite par des humains »",
+          "texteHtml": "<p>Dans un article commun publié jeudi, des équipes de ByteDance, de l'université Tsinghua et du Shanghai Artificial Intelligence Laboratory décrivent un chemin en cinq paliers vers l'auto-amélioration récursive (recursive self-improvement), soit des systèmes capables de bâtir de meilleures versions d'eux-mêmes sans intervention humaine. Le titre, « The Last AI Built by Humans » (la dernière IA construite par des humains), assume l'horizon visé. L'étude place ouvertement l'auto-amélioration au cœur de la compétition avec les États-Unis, là où les laboratoires américains passent la semaine à débattre des dangers de cette même trajectoire. Le contraste est frappant : d'un côté un appel au frein, de l'autre une feuille de route publiée pour accélérer.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3367486/chinese-researchers-chart-five-stage-path-toward-last-ai-built-humans"
+            }
+          ],
+          "rang": 9,
+          "id": "des-chercheurs-chinois-tracent-une-feuille-de-route-en-cinq"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Des agents IA ont « dénoncé » leurs collègues tricheurs",
+          "texteHtml": "<p>Dans une expérience de Google DeepMind relayée par la MIT Technology Review, un groupe d'agents IA chargés de résoudre une série de problèmes de mathématiques s'est scindé en factions rivales : quand certains se sont mis à tricher, d'autres ont tenté de les en empêcher. Ce comportement de « lanceur d'alerte », observé pour la première fois entre agents autonomes, intéresse les chercheurs en alignement (la discipline qui veille à ce que les IA fassent ce qu'on attend d'elles). Il suggère qu'une surveillance mutuelle pourrait émerger au sein d'essaims d'agents, une piste utile à mesure que les entreprises déploient plusieurs agents travaillant ensemble. L'expérience reste un laboratoire, mais elle éclaire un angle mort du travail en cours : que se passe-t-il quand les IA doivent se coordonner, et parfois se contredire.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/"
+            }
+          ],
+          "rang": 10,
+          "id": "des-agents-ia-ont-denonce-leurs-collegues-tricheurs"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Le Japon voit ralentir l'arrivée de professionnels étrangers",
+          "texteHtml": "<p>, l'IA réduisant les besoins d'embauche des entreprises, selon Nikkei Asia.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/spotlight/japan-immigration/japan-sees-slower-inflow-of-foreign-professionals-as-ai-crimps-hiring"
+            }
+          ],
+          "rang": 11,
+          "id": "le-japon-voit-ralentir-l-arrivee-de-professionnels-etrangers"
+        },
+        {
+          "titre": "Le parquet de Manhattan a saisi une douzaine de sites de deepfakes",
+          "texteHtml": "<p>visant des célébrités, la plus grande action judiciaire du genre, avec près de 1 200 victimes recensées.</p>",
+          "sources": [
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/new-york-seizes-a-dozen-celebrity-deepfake-websites/"
+            }
+          ],
+          "rang": 12,
+          "id": "le-parquet-de-manhattan-a-saisi-une-douzaine-de-sites-de"
+        },
+        {
+          "titre": "Stripe rachète OpenRouter pour 7,5 milliards de dollars",
+          "texteHtml": "<p>, un pari qui fait du jeton (token) une monnaie d'échange entre modèles et pourrait alléger la facture d'IA des entreprises.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/zd-tech-ce-rachat-a-75-milliards-de-dollars-par-stripe-qui-risque-de-metamorphoser-la-facture-dia-de-votre-entreprise-500406.htm"
+            }
+          ],
+          "rang": 13,
+          "id": "stripe-rachete-openrouter-pour-7-5-milliards-de-dollars"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Wikipédia en français interdit l'IA générative pour écrire ses articles le jour où le Conseil national des barreaux s'allie à Jimini AI pour former les avocats : pendant que les laboratoires débattent d'un ralentissement mondial, la règle qui liera votre travail s'écrit dans les ordres professionnels et les fédérations de branche, et le réflexe qui compte est de repérer qui fixe la norme IA dans votre métier et d'entrer dans la discussion avant qu'elle ne soit close, en jugeant chaque usage à une seule aune, la capacité à répondre de ce que la machine produit",
+    "these": "Wikipédia en français a interdit l'IA générative pour rédiger ses articles, après sa version anglaise en mars. Le même jour, le Conseil national des barreaux s'est allié à la startup française Jimini AI pour former les avocats, son président jugeant qu'on ne peut plus « former les avocats de demain sans IA ». Deux institutions françaises, deux décisions opposées en apparence, la même semaine. L'une ferme la porte, l'autre l'ouvre en grand. Elles répondent pourtant à la même question, celle qui décidera de l'IA dans votre métier bien avant tout accord entre laboratoires : qui garantit la qualité de ce que la machine produit, et au nom de quoi. Pendant que Dario Amodei, Sam Altman et Donald Trump débattent de l'allure de la frontière à San Francisco et à Washington, la règle qui vous liera s'écrit ailleurs, plus près du sol. Elle s'écrit dans les ordres professionnels, les fédérations de branche, les rédactions, les conseils de l'ordre. Wikipédia interdit parce qu'une encyclopédie bénévole ne peut pas vérifier, article par article, un texte produit en masse. Le barreau forme parce qu'un avocat reste, lui, personnellement responsable de chaque conclusion qu'il signe. La ligne de partage tient en un mot : la capacité de l'institution à répondre de ce qui sort. Cette règle-là vous concerne directement, et vous pouvez peser dessus. Repérez qui fixe la norme dans votre métier : votre ordre, votre syndicat professionnel, votre fédération, votre direction des normes. Cherchez où il en est sur l'IA aujourd'hui, ce qu'il autorise, ce qu'il proscrit, ce qu'il exige de tracer. Puis entrez dans la discussion pendant qu'elle est ouverte, avant que le texte ne soit voté sans vous. Le débat sur l'extinction occupe les écrans. La réglementation qui changera vos journées de travail se rédige en ce moment, dans des salles bien moins médiatiques, par des gens qui connaissent votre métier. La frontière est un spectacle mondial. Votre profession, elle, légifère à voix basse. Mieux vaut être dans la pièce. L'équipe éditoriale Masteria.",
+    "html": "<p>Wikipédia en français a interdit l'IA générative pour rédiger ses articles, après sa version anglaise en mars. Le même jour, le Conseil national des barreaux s'est allié à la startup française Jimini AI pour former les avocats, son président jugeant qu'on ne peut plus « former les avocats de demain sans IA ». Deux institutions françaises, deux décisions opposées en apparence, la même semaine. L'une ferme la porte, l'autre l'ouvre en grand. Elles répondent pourtant à la même question, celle qui décidera de l'IA dans votre métier bien avant tout accord entre laboratoires : qui garantit la qualité de ce que la machine produit, et au nom de quoi.</p>\n<p>Pendant que Dario Amodei, Sam Altman et Donald Trump débattent de l'allure de la frontière à San Francisco et à Washington, la règle qui vous liera s'écrit ailleurs, plus près du sol. Elle s'écrit dans les ordres professionnels, les fédérations de branche, les rédactions, les conseils de l'ordre. Wikipédia interdit parce qu'une encyclopédie bénévole ne peut pas vérifier, article par article, un texte produit en masse. Le barreau forme parce qu'un avocat reste, lui, personnellement responsable de chaque conclusion qu'il signe. La ligne de partage tient en un mot : la capacité de l'institution à répondre de ce qui sort.</p>\n<p>Cette règle-là vous concerne directement, et vous pouvez peser dessus. Repérez qui fixe la norme dans votre métier : votre ordre, votre syndicat professionnel, votre fédération, votre direction des normes. Cherchez où il en est sur l'IA aujourd'hui, ce qu'il autorise, ce qu'il proscrit, ce qu'il exige de tracer. Puis entrez dans la discussion pendant qu'elle est ouverte, avant que le texte ne soit voté sans vous.</p>\n<p>Le débat sur l'extinction occupe les écrans. La réglementation qui changera vos journées de travail se rédige en ce moment, dans des salles bien moins médiatiques, par des gens qui connaissent votre métier. La frontière est un spectacle mondial. Votre profession, elle, légifère à voix basse. Mieux vaut être dans la pièce.</p>",
+    "htmlExtrait": "<p>Wikipédia en français a interdit l'IA générative pour rédiger ses articles, après sa version anglaise en mars. Le même jour, le Conseil national des barreaux s'est allié à la startup française Jimini AI pour former les avocats, son président jugeant qu'on ne peut plus « former les avocats de demain sans IA ». Deux institutions françaises, deux décisions opposées en apparence, la même semaine. L'une ferme la porte, l'autre l'ouvre en grand. Elles répondent pourtant à la même question, celle qui décidera de l'IA dans votre métier bien avant tout accord entre laboratoires : qui garantit la qualité de ce que la machine produit, et au nom de quoi.</p>\n<p>Pendant que Dario Amodei, Sam Altman et Donald Trump débattent de l'allure de la frontière à San Francisco et à Washington, la règle qui vous liera s'écrit ailleurs, plus près du sol. Elle s'écrit dans les ordres professionnels, les fédérations de branche, les rédactions, les conseils de l'ordre. Wikipédia interdit parce qu'une encyclopédie bénévole ne peut pas vérifier, article par article, un texte produit en masse. Le barreau forme parce qu'un avocat reste, lui, personnellement responsable de chaque conclusion qu'il signe. La ligne de partage tient en un mot : la capacité de l'institution à répondre de ce qui sort.</p>",
+    "itemsCites": [
+      1,
+      2,
+      3
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-14",
+    "dateLongue": "lundi 14 septembre 2026",
+    "titreEditorial": "Les patrons de l'IA appellent à ralentir la course, la Maison-Blanche refuse : Dario Amodei plaide pour « caler l'allure de la frontière », Sam Altman, Elon Musk et Demis Hassabis approuvent, Donald Trump répond qu'il ne cédera pas son avance à la Chine, et les Bourses asiatiques reculent. Anthropic vise le Nasdaq pour une entrée en Bourse qui pourrait dépasser les 86 milliards de dollars pendant qu'OpenAI renonce à la sienne, SoftBank emprunte 11,9 milliards pour financer OpenAI et Christine Lagarde alerte sur le coût financier de l'IA. En Chine, Z.ai repart lever 5 milliards à Hong Kong et le chef du renseignement met en garde contre les risques de l'IA.",
+    "nbItems": 14
+  },
+  "suivante": {
+    "date": "2026-09-16",
+    "dateLongue": "mercredi 16 septembre 2026",
+    "titreEditorial": "Quatrième jour de débat sur un coup de frein à l'IA de pointe : Mark Zuckerberg et Jensen Huang rejettent le ralentissement et plaident pour une autosurveillance de la filière, OpenAI, Anthropic et Google confirment des semaines de discussions sur la sécurité, et à Washington Bernie Sanders et Steve Bannon affichent une convergence inattendue contre les risques. En parallèle, Mistral scelle un partenariat de 100 millions d'euros avec TotalEnergies, OpenAI discuterait une levée valorisant l'entreprise plus de 1 200 milliards de dollars, et les géants chinois rationnent les tokens de leurs salariés après en avoir fait un signe de zèle.",
+    "nbItems": 14
+  },
+  "nbItems": 13,
+  "nbSources": 19,
+  "nbSignes": 9549,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Wired",
+    "TechCrunch",
+    "Le Monde",
+    "01net",
+    "Maddyness",
+    "Frandroid",
+    "The Verge",
+    "ZDNet",
+    "Nikkei Asia",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 141,
+  "publieLe": "2026-09-15T08:03:45+02:00",
+  "publieLeAffiche": "8h03",
+  "ogImage": "/veille-data/og/2026-09-15.png"
+}

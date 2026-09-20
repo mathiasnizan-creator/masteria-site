@@ -1,0 +1,316 @@
+{
+  "schema": 2,
+  "date": "2026-09-14",
+  "dateAffichee": "14 September 2026",
+  "dateLongue": "Monday 14 September 2026",
+  "dateCourte": "Mon 14 Sep",
+  "jourSemaine": "Monday",
+  "titre": "AI Watch - Monday 14 September 2026",
+  "titreEditorial": "AI leaders call for slowing the race, the White House refuses: Dario Amodei argues for \\\"pacing the frontier\\\", Sam Altman, Elon Musk and Demis Hassabis agree, Donald Trump replies that he will not hand his lead to China, and Asian markets fall. Anthropic is eyeing the Nasdaq for a listing that could exceed $86 billion while OpenAI backs away from its own, SoftBank borrows $11.9 billion to fund OpenAI and Christine Lagarde warns about the financial cost of AI. In China, Z.ai returns to raise $5 billion in Hong Kong and the intelligence chief warns about the risks of AI.",
+  "chapeau": "The weekend settled the industry's debate: Dario Amodei calls for putting the brakes on frontier AI, Sam Altman, Elon Musk and Demis Hassabis follow, Donald Trump refuses in the name of the race with China, and Asian markets fall. Meanwhile, Anthropic is preparing a record listing, SoftBank borrows $11.9 billion for OpenAI and Christine Lagarde worries about the financial cost of the race.",
+  "une": {
+    "titre": "AI leaders call for slowing the race, the White House refuses",
+    "texteHtml": "<p>Dario Amodei, Anthropic's chief executive, published a long open letter this weekend arguing for \"pacing the frontier\", meaning putting the brakes on the development of the most powerful models so that their capabilities do not outstrip humans' ability to keep control of them. Sam Altman (OpenAI) and Elon Musk (xAI) backed him publicly on X, and Demis Hassabis (Google DeepMind) offered cautious support. Donald Trump and the Speaker of the House, Mike Johnson, replied that the industry is overreacting: the US president said again on Saturday that he refused any pause that would hand the United States' lead to China, while grudgingly conceding the need for \"some regulation\", without specifying any. None of the signatories explained how a slowdown would apply in practice, Clubic notes: a lab that slows down alone loses ground. In the background, Asian markets fell on Monday, with investors fearing that a slowdown would dent the sector's valuations.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/09/14/donald-trump-invoque-la-concurrence-de-la-chine-pour-refuser-une-pause-dans-la-course-a-l-intelligence-artificielle_6773354_3234.html"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/994441/trump-mike-johnson-ai-industry-overreacting"
+      },
+      {
+        "nom": "Frandroid",
+        "url": "https://www.frandroid.com/marques/openai/3245901_aucune-pression-concurrentielle-americaine-ne-devrait-justifier-limprudence-sam-altman-veut-ralentir-lia-la-maison-blanche-prefere-la-course-avec-la-chine"
+      },
+      {
+        "nom": "Clubic",
+        "url": "https://www.clubic.com/actualite-629461-les-patrons-de-lia-veulent-ralentir-la-course-mais-personne-ne-sait-vraiment-comment-faire.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "ai-leaders-call-for-slowing-the-race-the-white-house-refuses"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Christine Lagarde warns about the financial cost of the AI boom",
+          "texteHtml": "<p>In an interview with Ouest-France, the president of the European Central Bank warns that the funding needs of the tech giants are starting to compete with those of states on the bond markets, where governments and companies borrow. When OpenAI, Microsoft or Anthropic raise tens of billions to build their data centres, they capture savings that would otherwise fund public debt, at the risk of making it more expensive. The warning places the AI bill on the terrain of financial stability, beyond innovation alone.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/1315148499529614/christine-lagarde-alerte-sur-le-cout-financier-du-boom-de-l-ia"
+            }
+          ],
+          "rang": 2,
+          "id": "christine-lagarde-warns-about-the-financial-cost-of-the-ai"
+        },
+        {
+          "titre": "Paris enters the global top 10 of cities with the most AI start-ups",
+          "texteHtml": "<p>According to a ranking relayed by Maddyness, the French capital is among the top ten cities in the world by number of start-ups specialising in artificial intelligence. The presence of Mistral, of H Company and of a talent pool from Inria (the French national research institute for digital science) and the grandes écoles feeds this ecosystem. The ranking bolsters France's ambition of a world-class AI hub, even if the funding gap with the San Francisco Bay Area remains wide.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/14/paris-dans-le-top-10-mondial-des-villes-comptant-le-plus-de-startups-ia/"
+            }
+          ],
+          "rang": 3,
+          "id": "paris-enters-the-global-top-10-of-cities-with-the-most-ai"
+        },
+        {
+          "titre": "A French hacker used Claude to attack far-right organisations",
+          "texteHtml": "<p>According to an Anthropic report relayed by Clubic, a French-speaking hacker acting alone targeted around forty organisations linked to the French far right and broke into at least fourteen of them, including an unidentified political party, relying on Claude to build the attack infrastructure. Anthropic says it detected the activity and cut off access, but acknowledges the same blind spot as in its inventory of misuse published last week: it blocks what it sees passing through its servers, not what runs elsewhere. For security teams, the episode confirms that the assistant that helps write code also helps attack.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629464-un-hacker-francais-a-utilise-claude-pour-pirater-des-dizaines-d-organisations-d-extreme-droite.html"
+            }
+          ],
+          "rang": 4,
+          "id": "a-french-hacker-used-claude-to-attack-far-right"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic picks the Nasdaq for a listing that could break records",
+          "texteHtml": "<p>According to Bloomberg, Anthropic has chosen the Nasdaq as its listing venue for an IPO targeted as early as October, with the ambition of raising an amount equal to or greater than the $86.3 billion gathered by SpaceX in June, which would make it one of the largest deals in history. The company also told a small circle of shareholders that it would post an adjusted operating profit this quarter, a second consecutive quarter in the black, the Financial Times reports. This profitability, rare among labs that burn through billions, strengthens the case ahead of the deal. The contrast is sharp with OpenAI, which has just ruled out any listing before 2027 in the name of safety risks.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-13/anthropic-said-to-choose-nasdaq-for-much-anticipated-ipo-listing"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/ipo-record-en-vue-anthropic-viserait-le-nasdaq-des-octobre-503415.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-picks-the-nasdaq-for-a-listing-that-could-break"
+        },
+        {
+          "titre": "SoftBank secures an $11.9 billion loan to fund OpenAI",
+          "texteHtml": "<p>The Japanese group SoftBank has obtained a loan of $11.87 billion, above its initial target of $10 billion, to support its investment in OpenAI, according to sources cited by Bloomberg. The borrowing illustrates the growing use of debt to fuel the AI race, as the amounts exceed what equity can cover. SoftBank, already committed alongside OpenAI in the Stargate infrastructure project, thus increases its exposure to a bet whose return depends on valuations holding up. Christine Lagarde has just warned precisely about these arrangements that load AI onto the debt markets.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-14/softbank-gets-upsized-11-9-billion-loan-in-openai-funding-push"
+            }
+          ],
+          "rang": 6,
+          "id": "softbank-secures-an-11-9-billion-loan-to-fund-openai"
+        },
+        {
+          "titre": "Perplexity hands GPT-6 Astra the end-to-end running of systems",
+          "texteHtml": "<p>OpenAI has published a customer case in which the search engine Perplexity uses its latest model, GPT-6 Astra, to write communications, modify its own software and monitor systems in production, with human oversight far more spaced out than with previous models. The argument put forward: Astra can hold long, chained tasks without close supervision, where earlier generations required frequent human takeover. The example serves OpenAI's commercial thesis, that of autonomous agents able to manage whole swathes of a technical system. It also feeds the weekend's worry: the more a model acts alone, the less a human sees what it is doing.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra"
+            }
+          ],
+          "rang": 7,
+          "id": "perplexity-hands-gpt-6-astra-the-end-to-end-running-of"
+        },
+        {
+          "titre": "Barack Obama presses Democrats to adopt a \"clear plan\" on AI",
+          "texteHtml": "<p>The former US president urged his side to make artificial intelligence one of its \"central priorities\" and to formulate a clear position on its economic effects and its risks, TechCrunch reports. The call comes ahead of the midterm elections, as AI regulation settles in as a political subject in the United States. It breaks with the White House line, which refuses any brake in the name of competition with China.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/13/obama-urges-democrats-to-have-a-clear-plan-for-ai-safeguards/"
+            }
+          ],
+          "rang": 8,
+          "id": "barack-obama-presses-democrats-to-adopt-a-clear-plan-on-ai"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Z.ai returns to raise $5 billion in Hong Kong to shore up its cash",
+          "texteHtml": "<p>The Chinese model developer Z.ai, listed in Hong Kong, is seeking to gather about $2 billion through a placement of 22 million new shares at HK$714 each, and a further $3 billion via a convertible bond issue, according to stock filings cited by the South China Morning Post and Bloomberg. The company, formerly Zhipu AI, returned to the market as soon as its lock-up period expired, a sign of rapid cash burn. Its shares closed at HK$793 on Friday, down 73% from their high. The move shows that China's AI champions face the same equation as their US rivals: training and inference costs (the cost of running a model once it is trained) that force repeated raises.</p>",
+          "sources": [
+            {
+              "nom": "SCMP",
+              "url": "https://www.scmp.com/tech/article/3367364/seeking-cash-ai-chinas-zai-eyes-new-us5b-fundraising-push-after-july-share-sale"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-14/z-ai-s-cash-burn-drives-alibaba-like-hong-kong-fundraising-spree"
+            }
+          ],
+          "rang": 9,
+          "id": "z-ai-returns-to-raise-5-billion-in-hong-kong-to-shore-up"
+        },
+        {
+          "titre": "China's intelligence chief warns about the risks of AI",
+          "texteHtml": "<p>China's top intelligence official delivered one of Beijing's most detailed warnings on artificial intelligence, judging that its rapid progress could threaten the country's political stability and critical infrastructure, according to Bloomberg. The statement echoes, within a few hours, Dario Amodei's call to slow down: on both sides of the Pacific, authorities and labs are expressing the same fear of a technology that escapes control. It qualifies the image of a China racing ahead without restraint, which Donald Trump invokes to refuse any US pause. Beijing encourages its champions while closely watching domestic risks of destabilisation.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-14/china-spy-chief-warns-of-ai-risks-as-us-tech-leaders-urge-brakes"
+            }
+          ],
+          "rang": 10,
+          "id": "china-s-intelligence-chief-warns-about-the-risks-of-ai"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Chinese researchers boost the endurance of an AI memory a hundredfold",
+          "texteHtml": "<p>A Chinese team has demonstrated more than 10 billion write cycles in wurtzite-type ferroelectrics, a class of materials able to switch between two electrical states to store information, roughly a hundred times the lifespan of comparable devices, the South China Morning Post reports. This endurance was among the main obstacles to using these emerging memory chips in high-performance computing and AI systems. The result, if confirmed in production, would help meet the demand for faster and more efficient semiconductors that the rise of AI calls for. The breakthrough is part of China's effort to build a components industry less dependent on US technology.</p>",
+          "sources": [
+            {
+              "nom": "SCMP",
+              "url": "https://www.scmp.com/tech/article/3367354/chinese-researchers-extend-future-memory-endurance-100-fold-semiconductor-advance"
+            }
+          ],
+          "rang": 11,
+          "id": "chinese-researchers-boost-the-endurance-of-an-ai-memory-a"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Stripe buys OpenRouter for $7.5 billion",
+          "texteHtml": "<p>, a move that could reshuffle enterprise AI billing by turning the token into a currency traded between models.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/zd-tech-ce-rachat-a-75-milliards-de-dollars-par-stripe-qui-risque-de-metamorphoser-la-facture-dia-de-votre-entreprise-500406.htm"
+            }
+          ],
+          "rang": 12,
+          "id": "stripe-buys-openrouter-for-7-5-billion"
+        },
+        {
+          "titre": "A developer got Claude running inside Siri",
+          "texteHtml": "<p>by exploiting hidden iOS 27 APIs, proof that the mechanism to change the \"brain\" of Apple's assistant already exists, even though Apple has never shown it.</p>",
+          "sources": [
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/marques/apple/3245943_siri-with-fable-un-developpeur-fait-tourner-claude-dans-siri-grace-a-des-api-cachees-dios-27"
+            }
+          ],
+          "rang": 13,
+          "id": "a-developer-got-claude-running-inside-siri"
+        },
+        {
+          "titre": "NASA and IBM release an open model to spot water ice on the Moon",
+          "texteHtml": "<p>, a resource question for future extended stays, with the mapping of areas to prospect gaining speed.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629290-une-ia-de-la-nasa-et-d-ibm-part-a-la-chasse-a-la-glace-sur-la-lune.html"
+            }
+          ],
+          "rang": 14,
+          "id": "nasa-and-ibm-release-an-open-model-to-spot-water-ice-on-the"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "AI leaders debate a global slowdown that no one knows how to enforce, while SoftBank borrows $11.9 billion for OpenAI and Anthropic eyes a listing above $86 billion: the only pace a French organisation governs is that of its own deployment, to be set use case by use case on a single axis, the reversibility of the decision, moving fast where a mistake can be corrected and keeping a human hand where it is costly",
+    "these": "Dario Amodei published an open letter this weekend to \\\"pace the frontier\\\". Sam Altman, Elon Musk and Demis Hassabis agreed, Donald Trump refused in the name of the race with China, and no one, notes Clubic, knows how such a brake would apply. The reason fits in one sentence: none of these players governs the pace of the others. A lab that slows down alone loses ground; a state that legislates alone moves the race elsewhere. The only pace an organisation controls is its own. This is where the debate leaves San Francisco for your teams. The speed that matters for a French company is that of its own deployment, not that of frontier models. And that speed, you write it yourself. We advise setting it explicitly, use case by use case. Take every place where AI enters a workflow. Rank it on a single axis: is the decision reversible? A draft email, a meeting summary, a first version of code, the mistake there is harmless and corrects itself at once, move fast. A credit refusal, a shortlisting of candidates, a diagnosis, a payment sent with no human review, the mistake there is costly and hard to undo, hold your pace and keep a human hand on the lever. Write down, for each one, who decides to accelerate and who can say stop. That table is worth more than any promise of a global slowdown, because it covers what you control. The frontier, for its part, advances on credit. SoftBank has just borrowed $11.9 billion to fund OpenAI, Anthropic is preparing a listing that would target more than $86 billion, and Christine Lagarde warns that this thirst for capital is starting to compete with states on the debt markets. That engine knows only one speed, the one its financiers impose on it. Yours, you set yourself. Deciding where to move fast and where to hold firm remains a craft, and it cannot be delegated to an open letter. The Masteria editorial team.",
+    "html": "<p>Dario Amodei published an open letter this weekend to \"pace the frontier\". Sam Altman, Elon Musk and Demis Hassabis agreed, Donald Trump refused in the name of the race with China, and no one, notes Clubic, knows how such a brake would apply. The reason fits in one sentence: none of these players governs the pace of the others. A lab that slows down alone loses ground; a state that legislates alone moves the race elsewhere. The only pace an organisation controls is its own.</p>\n<p>This is where the debate leaves San Francisco for your teams. The speed that matters for a French company is that of its own deployment, not that of frontier models. And that speed, you write it yourself.</p>\n<p>We advise setting it explicitly, use case by use case. Take every place where AI enters a workflow. Rank it on a single axis: is the decision reversible? A draft email, a meeting summary, a first version of code, the mistake there is harmless and corrects itself at once, move fast. A credit refusal, a shortlisting of candidates, a diagnosis, a payment sent with no human review, the mistake there is costly and hard to undo, hold your pace and keep a human hand on the lever. Write down, for each one, who decides to accelerate and who can say stop. That table is worth more than any promise of a global slowdown, because it covers what you control.</p>\n<p>The frontier, for its part, advances on credit. SoftBank has just borrowed $11.9 billion to fund OpenAI, Anthropic is preparing a listing that would target more than $86 billion, and Christine Lagarde warns that this thirst for capital is starting to compete with states on the debt markets. That engine knows only one speed, the one its financiers impose on it. Yours, you set yourself. Deciding where to move fast and where to hold firm remains a craft, and it cannot be delegated to an open letter.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Dario Amodei published an open letter this weekend to \"pace the frontier\". Sam Altman, Elon Musk and Demis Hassabis agreed, Donald Trump refused in the name of the race with China, and no one, notes Clubic, knows how such a brake would apply. The reason fits in one sentence: none of these players governs the pace of the others. A lab that slows down alone loses ground; a state that legislates alone moves the race elsewhere. The only pace an organisation controls is its own.</p>\n<p>This is where the debate leaves San Francisco for your teams. The speed that matters for a French company is that of its own deployment, not that of frontier models. And that speed, you write it yourself.</p>",
+    "itemsCites": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-11",
+    "dateLongue": "Friday 11 September 2026",
+    "titreEditorial": "AI safety moves from the activist fringe to mainstream debate: Sam Altman says he is ready to slow frontier AI development and is testing whether such a brake would be legal, a former Anthropic researcher warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Anthropic publishes 161 pages of Claude misuse, from Yemeni missiles to fake dating profiles. In Europe, the CNIL sets rules for electronic invoicing and the EU's cybersecurity agency trials Anthropic's most offensive model. In China, DeepSeek reignites the price war with its V4.1 Flash model and chipmaker Enflame jumps 188% on its stock market debut. Microsoft plans 38 gigawatts of data centres and Jensen Huang promises Nvidia 70% growth.",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-09-15",
+    "dateLongue": "Tuesday 15 September 2026",
+    "titreEditorial": "AI leaders' call to slow down splits the world",
+    "nbItems": 13
+  },
+  "nbItems": 14,
+  "nbSources": 19,
+  "nbSignes": 9095,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "The Verge",
+    "Frandroid",
+    "Clubic",
+    "La Tribune",
+    "Maddyness",
+    "Bloomberg",
+    "ZDNet",
+    "OpenAI",
+    "TechCrunch"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 67,
+  "publieLe": "2026-09-14T09:14:02+02:00",
+  "publieLeAffiche": "9h14"
+}

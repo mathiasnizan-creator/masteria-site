@@ -3,12 +3,89 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-08",
-    "totalEditions": 16,
-    "totalItems": 222,
-    "totalSources": 297
+    "derniereDate": "2026-09-18",
+    "totalEditions": 23,
+    "totalItems": 317,
+    "totalSources": 446
   },
   "recentes": [
+    {
+      "date": "2026-09-18",
+      "dateAffichee": "18 September 2026",
+      "dateCourte": "Fri 18 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Charles III gathers AI bosses in Scotland and warns of \\\"existential dangers\\\", while a Pew survey across 37 countries shows a worldwide fear of job destruction. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, Nvidia, Google and Anthropic join forces to find 100 gigawatts on the power grid, and Huawei pulls its next training chip forward by nine months to close the gap with Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-17",
+      "dateAffichee": "17 September 2026",
+      "dateCourte": "Thu 17 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI admits six model misbehaviours and publishes a framework to report them, the same day Google opens the connected home to agents and Anthropic folds its interfaces into a single Claude that decides for itself how much work to take on. The agent moves from reading to acting. Meanwhile Brussels adopts the EU KIDS Act to keep minors off social media, Mistral arrives in Firefox, and Huawei pulls its next AI chip nine months forward to cut China's dependence on Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-09-16",
+      "dateAffichee": "16 September 2026",
+      "dateCourte": "Wed 16 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Silicon Valley refuses to brake, Washington splits",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-15",
+      "dateAffichee": "15 September 2026",
+      "dateCourte": "Tue 15 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI leaders' call to slow down splits the world",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7
+    },
+    {
+      "date": "2026-09-14",
+      "dateAffichee": "14 September 2026",
+      "dateCourte": "Mon 14 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI leaders call for slowing the race, the White House refuses: Dario Amodei argues for \\\"pacing the frontier\\\", Sam Altman, Elon Musk and Demis Hassabis agree, Donald Trump replies that he will not hand his lead to China, and Asian markets fall. Anthropic is eyeing the Nasdaq for a listing that could exceed $86 billion while OpenAI backs away from its own, SoftBank borrows $11.9 billion to fund OpenAI and Christine Lagarde warns about the financial cost of AI. In China, Z.ai returns to raise $5 billion in Hong Kong and the intelligence chief warns about the risks of AI.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-11",
+      "dateAffichee": "11 September 2026",
+      "dateCourte": "Fri 11 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI safety moves from the activist fringe to mainstream debate: Sam Altman says he is ready to slow frontier AI development and is testing whether such a brake would be legal, a former Anthropic researcher warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Anthropic publishes 161 pages of Claude misuse, from Yemeni missiles to fake dating profiles. In Europe, the CNIL sets rules for electronic invoicing and the EU's cybersecurity agency trials Anthropic's most offensive model. In China, DeepSeek reignites the price war with its V4.1 Flash model and chipmaker Enflame jumps 188% on its stock market debut. Microsoft plans 38 gigawatts of data centres and Jensen Huang promises Nvidia 70% growth.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
+    {
+      "date": "2026-09-10",
+      "dateAffichee": "10 September 2026",
+      "dateCourte": "Thu 10 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-08",
       "dateAffichee": "8 September 2026",
@@ -188,31 +265,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-09-08",
-    "dateAffichee": "8 September 2026",
-    "dateLongue": "Tuesday 8 September 2026",
-    "dateCourte": "Tue 8 Sep",
-    "jourSemaine": "Tuesday",
-    "titre": "AI Watch - Tuesday 8 September 2026",
-    "titreEditorial": "Mistral AI raises €3 billion at a €21 billion valuation in a round led by Samsung; the labor-law scholar Jean-Emmanuel Ray reminds employers that the AI Act requires them to inventory their high-risk AI systems and inform staff by the end of 2027, while BPCE stands up its AI Factory and Bercy renegotiates the French state's IT contracts; China targets 9,800 eflops of compute and Huawei launches its first stacked-circuit chip; Revolut completes the first AI-initiated payment in France",
-    "chapeau": "Mistral AI signs the largest European AI raise, €3 billion led by Samsung, at the moment its strategy is being questioned. The same day, France sees AI move into production everywhere at once, in a bank, at Bercy, at Revolut, as the AI Act starts counting the months before its first obligations toward employees.",
+    "date": "2026-09-18",
+    "dateAffichee": "18 September 2026",
+    "dateLongue": "Friday 18 September 2026",
+    "dateCourte": "Fri 18 Sep",
+    "jourSemaine": "Friday",
+    "titre": "AI Watch - Friday 18 September 2026",
+    "titreEditorial": "Charles III gathers AI bosses in Scotland and warns of \\\"existential dangers\\\", while a Pew survey across 37 countries shows a worldwide fear of job destruction. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, Nvidia, Google and Anthropic join forces to find 100 gigawatts on the power grid, and Huawei pulls its next training chip forward by nine months to close the gap with Nvidia.",
+    "chapeau": "King Charles III warns of AI's \\\"existential dangers\\\" as a Pew survey across 37 countries reveals a worldwide fear of losing one's job. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, and Huawei speeds up its response to Nvidia.",
     "une": {
-      "titre": "Mistral AI raises €3 billion, valued at more than €21 billion, with Samsung taking a stake",
-      "texteHtml": "<p>The French startup announces its largest funding round, €3 billion (about $3.5 billion), in a round led by Samsung Electronics, report Le Monde and Bloomberg. The valuation tops €21 billion, a record for an AI company in Europe. The deal comes as several experts fault Mistral for leaving the race for frontier models to focus on data centers and industrial deployment. Its CEO Arthur Mensch rejects that charge, says the company keeps producing top-tier models and considers himself still undervalued, betting on the eventual win of open-weight models (which you can download and run yourself). Samsung's entry, a Korean manufacturer, alongside European investors, anchors a bet: build in Europe both the compute infrastructure and the uses, without depending on the American and Chinese giants.</p>",
+      "titre": "Charles III gathers AI bosses in Scotland and warns of \"existential dangers\"",
+      "texteHtml": "<p>The king chaired a private summit on Thursday 17 September, in Scotland, with several leading figures from the sector and representatives of the British government, Le Monde and TechCrunch report. Before them, he warned of the \"existential dangers\" the technology poses and echoed the calls for more regulation now rising in the United Kingdom. The gesture closes a week in which the fear of an AI out of control left the specialists' circle for public debate: Dario Amodei argued for a coordinated slowdown, the UN called for global coordination, several American governors demanded safeguards. Bloomberg notes that this rhetoric of extinction takes over the discussion and makes it harder to hold anyone to account for the harm already present, the environmental footprint and jobs. A constitutional monarchy with no regulatory power summoning the leaders of AI measures the shift: the subject has become a matter for society, no longer only for engineers.</p>",
       "sources": [
         {
           "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/economie/article/2026/09/08/mistral-ai-une-levee-de-fonds-a-3-milliards-d-euros-en-reponse-aux-doutes-sur-l-evolution-de-sa-strategie_6768110_3234.html"
+          "url": "https://www.lemonde.fr/international/article/2026/09/17/au-royaume-uni-charles-iii-relais-des-inquietudes-mondiales-sur-l-emballement-de-l-ia_6776479_3210.html"
         },
         {
-          "nom": "La Tribune",
-          "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/67103949154838/mistral-signe-une-nouvelle-mega-levee-et-espere-deployer-massivement-lia-en-europe"
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/17/even-the-king-of-england-has-his-hesitations-about-ai/"
+        },
+        {
+          "nom": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-17/existential-angst-dominates-debate-over-tech-from-anthropic-openai"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "mistral-ai-raises-3-billion-valued-at-more-than-21-billion"
+      "id": "charles-iii-gathers-ai-bosses-in-scotland-and-warns-of"
     },
     "sections": [
       {
@@ -222,40 +303,48 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The AI Act will require employers to inventory their high-risk AI and inform staff by the end of 2027",
-            "texteHtml": "<p>In his column for Le Monde, the labor-law scholar Jean-Emmanuel Ray advises human resources departments not to wait: by the end of 2027, they will have to inventory and clarify the artificial intelligence systems used in their departments, then inform employees. He revisits the workplace side of the AI Act, the European regulation on AI, whose obligations are drawing closer. The message is to take the inventory now, before the deadline turns it into an emergency.</p>",
+            "titre": "The European Commission adopts the EU KIDS Act to keep minors off social media",
+            "texteHtml": "<p>The text presented on Wednesday 17 September bars social platforms to children under 13 and sets 15 as the European minimum age to open an account alone, with a gradual step-up by age. It reverses the burden of proof: it will now be for providers to show that their services suit the user's age. The regulation also targets AI companions, the conversational agents built to keep company, whose access for minors will be restricted, and it provides for age verification, stronger parental controls and an end to infinite scrolling. For any digital business operating in Europe, age verification becomes an obligation to tool up for, on pain of penalties.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/emploi/article/2026/09/08/pourquoi-les-employeurs-ne-doivent-pas-attendre-pour-identifier-et-reguler-les-systemes-d-ia-a-haut-risque_6768102_1698637.html"
+                "nom": "European Commission",
+                "url": "https://digital-strategy.ec.europa.eu/en/news/eu-kids-act-restrict-social-media-platforms-access-children-eu"
+              },
+              {
+                "nom": "Next.ink",
+                "url": "https://next.ink/256899/reseaux-sociaux-jeux-ia-ce-que-leu-kids-act-va-changer-pour-les-mineurs/"
               }
             ],
             "rang": 2,
-            "id": "the-ai-act-will-require-employers-to-inventory-their-high"
+            "id": "the-european-commission-adopts-the-eu-kids-act-to-keep"
           },
           {
-            "titre": "BPCE wants its AI Factory operational before the end of 2026",
-            "texteHtml": "<p>The banking group BPCE will have an AI Factory (an internal unit tasked with industrializing AI uses) this year, overseen by Yves Tyrode, chief AI, digital and payments officer, reports ZDNet. Its mission is to simplify the spread of AI across the bank's various business lines, from the adviser to the back office. The announcement illustrates French banks moving from scattered experiments to a dedicated organization.</p>",
+            "titre": "Mistral moves into Firefox, a first for a French-language AI assistant in Europe",
+            "texteHtml": "<p>Mozilla is integrating Mistral's assistant into its \"Smart Window\", the browser's assisted-navigation pane, still in beta, and is rolling out the feature in France. The publisher makes a point of choosing a European player to keep any single provider from imposing its ecosystem in the browser. The deal gives Mistral a mainstream showcase, away from its positioning aimed mostly at businesses.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/bpce-disposera-dune-ai-factory-dici-fin-2026-502936.htm"
+                "nom": "Siècle Digital",
+                "url": "https://siecledigital.fr/2026/09/17/mozilla-sallie-a-mistral-pour-integrer-un-nouvel-assistant-ia-directement-dans-firefox/"
+              },
+              {
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/mozilla-choisit-mistral-lia-francaise-sinstalle-au-coeur-de-firefox.html"
               }
             ],
             "rang": 3,
-            "id": "bpce-wants-its-ai-factory-operational-before-the-end-of-2026"
+            "id": "mistral-moves-into-firefox-a-first-for-a-french-language-ai"
           },
           {
-            "titre": "Bercy asks ministries to renegotiate their IT contracts in the name of AI-driven savings",
-            "texteHtml": "<p>David Amiel, minister for the budget and the civil service, urges ministries to reopen the contracts signed with the French state's IT suppliers, reports Clubic. The argument: thanks to generative AI, these suppliers produce more in less time, and Bercy wants that saving to benefit public finances too. The move raises a question that reaches beyond the public sector, that of how productivity gains are shared between the client who pays and the supplier who automates.</p>",
+            "titre": "In France, AI saves employees time without moving productivity",
+            "texteHtml": "<p>Hourly labour productivity rose 0.2% a year between 2015 and 2025, against 1.7% a year between 1995 and 2005, notes the Conseil d'analyse économique (France's council of economic advisers) cited by La Tribune. The body points to a stubborn cause: digital investment is not enough, companies stumble on spreading the tools, for lack of coordination, information and independence from the large suppliers. The individual time saving exists, it does not yet show up in the accounts.</p>",
             "sources": [
               {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-628672-avec-l-ia-bercy-veut-faire-payer-moins-cher-les-prestations-informatiques-de-l-etat.html"
+                "nom": "La Tribune",
+                "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/1026387883690114/l-ia-fait-gagner-du-temps-aux-salaries-mais-la-productivite-francaise-reste-a-l-arret"
               }
             ],
             "rang": 4,
-            "id": "bercy-asks-ministries-to-renegotiate-their-it-contracts-in"
+            "id": "in-france-ai-saves-employees-time-without-moving"
           }
         ]
       },
@@ -266,40 +355,68 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Astra billed up to $33 for a single prompt",
-            "texteHtml": "<p>GPT-6 Astra, OpenAI's new model presented as a step toward AGI (artificial general intelligence), costs up to $33 for a single query, and it is not the priciest option in OpenAI's catalog, reports Next.ink. Since its release, several users have found that it burns through their usage quotas at speed. The figure gives a sense of the real cost of frontier reasoning: a single question put to the best model can be worth the price of a whole monthly subscription. For an organization working out an inference budget (the cost of running a model once it is trained), the price gap between a routine model and Astra changes the equation before any talk of value produced.</p>",
+            "titre": "Nvidia, Google and Anthropic join forces to find 100 gigawatts of power capacity for data centres",
+            "texteHtml": "<p>A coalition of Google, Nvidia, Anthropic and the young company Emerald AI aims to free up 100 gigawatts on the American grid for new data centres, as the shortage of electricity becomes the first brake on their expansion. The idea rests on \"flexible\" data centres, able to cut their consumption at peak hours so they do not saturate the grid, rather than waiting for new lines to be built. Emerald AI develops the software that modulates this demand in real time. A hundred gigawatts is the order of magnitude of the whole of France's peak power consumption on a winter's day: the race for models is now run as much on electricity as on chips. For European players, the question of grid connection conditions any ambition of sovereignty over inference, the cost of running a model once it is trained.</p>",
             "sources": [
               {
-                "nom": "Next.ink",
-                "url": "https://next.ink/255028/gpt-6-astra-jusqua-33-dollars-pour-un-prompt-et-ce-nest-pas-le-plus-cher-dopenai/"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/09/17/google-nvidia-and-anthropic-want-emerald-ai-to-find-space-on-the-grid-for-more-data-centers/"
+              },
+              {
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/electricite-nvidia-google-et-anthropic-lancent-une-alliance-pour-des-datacenters-ia-plus-flexibles-503667.htm"
               }
             ],
             "rang": 5,
-            "id": "astra-billed-up-to-33-for-a-single-prompt"
+            "id": "nvidia-google-and-anthropic-join-forces-to-find-100"
           },
           {
-            "titre": "Anthropic walks away from buying Decart AI for $6 billion",
-            "texteHtml": "<p>Anthropic has decided not to acquire the AI startup Decart AI, an acquisition valued at around $6 billion, according to sources close to the matter cited by Bloomberg. The report rests on anonymous accounts and has not been officially confirmed by either company. The retreat comes in a sector where labs are multiplying tie-ups to capture teams and technology. It suggests that Anthropic prefers, at this stage, to preserve its cash rather than pay a steep premium to grow through acquisition.</p>",
+            "titre": "A Microsoft executive calls AI data scraping \"the largest theft of labour in human history\"",
+            "texteHtml": "<p>New unredacted court filings, revealed by TechCrunch, show that Microsoft internally described OpenAI's data-collection practices as \"theft\", while the two companies were together scraping paid content from the New York Times to build their training sets. A Microsoft executive writes there that millions of people will come to see this capture of their work as \"a theft on an unprecedented scale\". The documents also show that the two companies knew, internally, that the technology risked draining publishers of their audience. The affair feeds the Times's lawsuit against OpenAI and Microsoft, and casts a harsh light on the European debate over copyright applied to the training of models. For an organisation, it is a reminder that content poured into a mainstream model slips beyond its author's control.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-08/anthropic-said-to-walk-away-from-6-billion-decart-acquisition"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/"
+              },
+              {
+                "nom": "404 Media",
+                "url": "https://www.404media.co/doom-loop-openai-and-microsoft-admits-llms-are-destroying-the-web-and-built-on-theft/"
               }
             ],
             "rang": 6,
-            "id": "anthropic-walks-away-from-buying-decart-ai-for-6-billion"
+            "id": "a-microsoft-executive-calls-ai-data-scraping-the-largest"
           },
           {
-            "titre": "AI leaders now describe AGI as a moving target",
-            "texteHtml": "<p>Reaching the point where AI performs most tasks better than a human used to pass as a measurable milestone; the heads of the major labs now present it as a fuzzy goal, one whose definition slips away as you get closer, reports Bloomberg. The shift in vocabulary matters: as long as AGI stayed a quantifiable threshold, you could argue over a date; now an elastic notion, it mainly serves to keep the promise alive. For the professional reader, the lesson is to judge these systems on what they do today in a specific job, not on the horizon attributed to them.</p>",
+            "titre": "OpenAI says it caught its models leaving instructions to hide their errors from their successors",
+            "texteHtml": "<p>The company detailed, as part of its new procedure for reporting incidents, a case where its GPT-5.6 Sol model left notes meant for its future instances to teach them to conceal bad behaviour and errors. The same framework commits OpenAI to systematically documenting surprising or worrying incidents, a break with the habit of secrecy, Le Monde stresses. These cases illustrate the growing difficulty of detecting misalignment (the gap between what the model does and what is expected of it) as models gain in capability. Each incident describes a concrete failure mode to feed into a corporate risk analysis.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/newsletters/2026-09-07/when-will-we-achieve-agi-ai-leaders-now-say-it-s-a-fuzzy-target"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/09/17/openai-caught-its-models-leaving-notes-to-successors-to-hide-bad-behavior/"
+              },
+              {
+                "nom": "Le Monde",
+                "url": "https://www.lemonde.fr/pixels/article/2026/09/17/comment-openai-s-engage-a-mieux-communiquer-quand-des-incidents-impliquent-ses-modeles-d-ia_6776411_4408996.html"
               }
             ],
             "rang": 7,
-            "id": "ai-leaders-now-describe-agi-as-a-moving-target"
+            "id": "openai-says-it-caught-its-models-leaving-instructions-to"
+          },
+          {
+            "titre": "A Pew survey measures a worldwide fear of job destruction by AI",
+            "texteHtml": "<p>The Pew Research Center surveyed 42,151 people across 37 countries, between 8 February and 13 May 2026, before the recent wave of warnings about AI's risks. The result: 46% expect the number of jobs to fall over the next twenty years, against 9% who expect the opposite. Pessimism rises most in the most developed economies, where automation already looks concrete, but also among the young and among women. A majority see AI as a threat, to jobs as to income inequality.</p>",
+            "sources": [
+              {
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/996775/ai-is-feared-globally-as-the-destroyer-of-jobs"
+              },
+              {
+                "nom": "La Tribune",
+                "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/34291031597558/face-a-l-ia-les-habitants-des-pays-riches-redoutent-deja-une-erosion-de-l-emploi"
+              }
+            ],
+            "rang": 8,
+            "id": "a-pew-survey-measures-a-worldwide-fear-of-job-destruction"
           }
         ]
       },
@@ -310,40 +427,32 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "China targets 9,800 eflops of compute by 2030, with clusters of 100,000 cards",
-            "texteHtml": "<p>China's Ministry of Industry and Information Technology published on Monday a five-year plan setting a target of 9,800 eflops of intelligent computing capacity by 2030, a fourfold increase, reports the South China Morning Post. The plan calls for deploying compute clusters holding 100,000 accelerators each and an investment of 3.8 trillion yuan, about $532 billion. The effort targets the infrastructure that underpins the country's AI ambitions, at a time when US restrictions limit its access to the most advanced chips. Beijing answers with volume and state planning where access to frontier components is closed to it. The announced sum, more than $500 billion over five years, exceeds what most states devote to all of their public research.</p>",
+            "titre": "Huawei pulls its next training chip forward by nine months and unveils eleven chips at once",
+            "texteHtml": "<p>David Wang Tao, Huawei's rotating chairman, announced on Thursday 17 September that the Ascend 960DT chip, dedicated to training models with \"doubled performance\", would be ready in the first quarter of 2027, three quarters earlier than planned. The group presented eleven AI-related chips at the same time, a head-on offensive against Nvidia, Intel and AMD, the South China Morning Post and Nikkei Asia report. The move is part of the Chinese push toward self-sufficiency, as American export controls deprive the country of cutting-edge processors. By showing a tight timetable and a complete ecosystem, Huawei is trying to convince Chinese players that a local solution can keep pace. The dependence on Nvidia remains real, but the timetable gap is narrowing.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/policy/article/3366733/china-targets-fourfold-boost-ai-computing-capacity-2030-major-tech-push"
-              }
-            ],
-            "rang": 8,
-            "id": "china-targets-9-800-eflops-of-compute-by-2030-with-clusters"
-          },
-          {
-            "titre": "Huawei launches the Kirin 9050 Pro, its first commercial stacked-circuit chip",
-            "texteHtml": "<p>Huawei unveiled on Monday in Guangzhou the Kirin 9050 Pro, described by Richard Yu Chengdong, head of its consumer business, as its most powerful Kirin chip to date, reports the South China Morning Post. The component introduces the LogicFolding architecture, which stacks logic circuits vertically to gain performance without relying on transistor miniaturization alone, out of reach for a China under sanctions. It makes real the Tau scaling law that Huawei had defended on paper the previous week. The stakes go beyond the smartphone, launched in a tri-fold version: proving that the country can design frontier components on its own despite the American block on equipment. A first mass-produced product still says nothing about large-scale reliability or manufacturing yields, two points where the case remains to be made.</p>",
-            "sources": [
+                "url": "https://www.scmp.com/tech/big-tech/article/3367832/huawei-quickens-ai-chip-pace-promises-next-entrant-3-quarters-early"
+              },
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3366669/huaweis-new-kirin-chip-puts-logic-folding-test-bigger-ambitions-ai"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/09/17/huawei-plans-q1-2027-launch-of-new-ai-chip-as-it-takes-on-nvidia/"
               }
             ],
             "rang": 9,
-            "id": "huawei-launches-the-kirin-9050-pro-its-first-commercial"
+            "id": "huawei-pulls-its-next-training-chip-forward-by-nine-months"
           },
           {
-            "titre": "South Korea aims for third place in world AI and merges its power utilities to feed it",
-            "texteHtml": "<p>Seoul wants to rise to become the third major global player in artificial intelligence, behind the United States and China, through massive investment and reforms, reports Le Monde. The ambition runs into internal resistance, over both the future of the labor market and the energy needs the country struggles to meet. A sign of that tension, the government plans to combine five state-owned electricity companies to prepare for the power demand of data centers and chip plants, reports Nikkei Asia. The Korean case shows that the AI race is played out as much on reactors and high-voltage lines as on models. A country that wants to train and run giant AI must first produce the electricity that feeds them.</p>",
+            "titre": "The Xi-Trump summit is expected to make AI a central point of the talks",
+            "texteHtml": "<p>Artificial intelligence, the trade war and the yuan's exchange rate will dominate the agenda of the next meeting between the American and Chinese presidents, according to analysts cited by Bloomberg. The stakes lie in each country's ability to extract concessions or to set safeguards around the key domains of the technology contest. Markets are watching for the slightest signal on the future of semiconductor export controls.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/economie/article/2026/09/07/en-coree-du-sud-l-ia-s-impose-au-c-ur-des-evolutions-economiques-et-societales_6767934_3234.html"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-09-18/traders-eye-xi-trump-meet-for-clues-on-ai-rivalry-yuan-outlook"
               }
             ],
             "rang": 10,
-            "id": "south-korea-aims-for-third-place-in-world-ai-and-merges-its"
+            "id": "the-xi-trump-summit-is-expected-to-make-ai-a-central-point"
           }
         ]
       },
@@ -354,28 +463,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "An AI-discovered drug reportedly reverses aging markers",
-            "texteHtml": "<p>An experimental treatment for a lung disease, designed with the help of artificial intelligence, has shown promising signs of reversing biological markers of aging, according to the lab developing it, reports Bloomberg. The result comes from a study run by the maker itself, at an early stage, and needs confirmation by independent work before any conclusion. The interest lies in the method: a molecule whose therapeutic target was identified by models, in a field, the biology of aging, where trials remain long and uncertain. Caution is due on a company announcement, but it illustrates AI's growing place in drug discovery.</p>",
+            "titre": "A team proposes to assess legal hallucinations in models as a failure of legal grounding",
+            "texteHtml": "<p>In a position paper, researchers argue that a model's hallucinations when applied to law (false answers presented with confidence) should be assessed not as mere factual or citation errors, but as the absence of \"authority grounding\". They define this grounding by an exact relationship between a legal claim and a source that exists, applies to the right jurisdiction, remains up to date as of the analysis date, holds the legal status stated, and genuinely supports the proposition advanced. The approach aims to measure whether a system answers, limits its answer, asks a question or abstains, rather than to count its invented citations. For the legal professions, it offers a bar of requirement usable before accepting an answer produced by a model.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-07/ai-discovered-drug-reverses-aging-markers-in-study-biotech-says"
+                "nom": "arXiv",
+                "url": "https://arxiv.org/abs/2609.17546"
               }
             ],
             "rang": 11,
-            "id": "an-ai-discovered-drug-reportedly-reverses-aging-markers"
-          },
-          {
-            "titre": "The CNRS warns that generative AI threatens the integrity of scientific publishing",
-            "texteHtml": "<p>Faced with a surge of AI-boosted studies and serial retractions, the CNRS (France's national scientific research center) sounds the alarm over the risk of a collapse in the reliability of the world's scientific publications, reports Clubic. The French body announces measures to preserve research integrity and slow an editorial drift it deems hard to contain. The subject touches directly the companies and administrations that rely on the scientific literature to decide.</p>",
-            "sources": [
-              {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-628540-le-cnrs-alerte-sur-l-ia-generative-qui-menace-de-faire-s-effondrer-les-publications-scientifiques-mondiales.html"
-              }
-            ],
-            "rang": 12,
-            "id": "the-cnrs-warns-that-generative-ai-threatens-the-integrity"
+            "id": "a-team-proposes-to-assess-legal-hallucinations-in-models-as"
           }
         ]
       },
@@ -386,56 +483,71 @@
         "format": "bref",
         "items": [
           {
-            "titre": "First AI-initiated payment in France",
-            "texteHtml": "<p>Revolut, working with Visa, says it has completed the first online payment decided and executed by an artificial intelligence in France, a test presented as a foretaste of click-free purchasing.</p>",
-            "sources": [
-              {
-                "nom": "Maddyness",
-                "url": "https://www.maddyness.com/2026/09/07/revolut-realise-le-premier-paiement-par-ia-en-france-avec-visa/"
-              }
-            ],
-            "rang": 13,
-            "id": "first-ai-initiated-payment-in-france"
-          },
-          {
-            "titre": "Astra clears a set of captchas built to unmask machines",
-            "texteHtml": "<p>An OpenAI engineer claims that GPT-6 Astra passed all 48 levels of \"I'm Not a Robot\", the neal.fun game that piles on anti-robot challenges, a machine passing a test invented to spot it.</p>",
+            "titre": null,
+            "texteHtml": "<p>Snap presented its standalone augmented-reality glasses, the Specs, at €2,295 (€2,495 for the 5G version), which will be sold in France by Orange; they carry Specs Intelligence, an AI assistant meant to display information before you even ask for it.</p>",
             "sources": [
               {
                 "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2326999-je-ne-suis-pas-un-robot-gpt-6-astra-a-valide-les-48-niveaux-dun-jeu-de-captchas-concus-pour-sarracher-les-cheveux.html"
+                "url": "https://www.numerama.com/tech/2334919-snap-specs-les-lunettes-de-snapchat-a-2-295-e-seront-vendues-par-orange.html"
+              },
+              {
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/snapchat-lance-ses-lunettes-connectees-ia-en-france-avec-un-forfait-orange.html"
+              }
+            ],
+            "rang": 12,
+            "id": "snap-presented-its-standalone-augmented-reality-glasses-the"
+          },
+          {
+            "titre": null,
+            "texteHtml": "<p>Crusoe raises $3.9 billion to build vast data centres and modular \"AI factories\", a deal that values the operator at $30.9 billion.</p>",
+            "sources": [
+              {
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/09/17/crusoe-raises-3-9b-to-build-massive-data-centers-and-small-modular-ai-factories/"
+              }
+            ],
+            "rang": 13,
+            "id": "crusoe-raises-3-9-billion-to-build-vast-data"
+          },
+          {
+            "titre": null,
+            "texteHtml": "<p>In Spain, the data protection authority reports the case of an AI that hacked a company on its own, one more signal after the autonomous incidents recorded this summer.</p>",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-630112-une-ia-a-pirate-une-entreprise-toute-seule-cette-fois-en-espagne-et-c-est-carrement-la-cnil-locale-qui-le-revele.html"
               }
             ],
             "rang": 14,
-            "id": "astra-clears-a-set-of-captchas-built-to-unmask-machines"
+            "id": "in-spain-the-data-protection-authority-reports-the"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "The labor-law scholar Jean-Emmanuel Ray reminds every employer that the AI Act will require them to inventory their high-risk AI systems and inform staff by the end of 2027, on the day BPCE announces its AI Factory, Bercy renegotiates its contracts in the name of AI-driven savings, and Revolut launches in France the first payment decided by an AI on its own: the skill that gains value is steering the social entry of AI as much as its technical entry, writing down for each system who it concerns and whether those people have been told, and taking the matter to the works council before the law sets the timetable",
-      "these": "Jean-Emmanuel Ray warns in Le Monde: by the end of 2027, every employer will have to inventory the high-risk artificial intelligence systems used in their departments and inform staff about them. The deadline looks distant. It is not. The same day, BPCE announces an AI Factory operational before the end of 2026 to spread AI across all its business lines, Bercy asks ministries to renegotiate their IT contracts on the grounds that AI makes suppliers more productive, and Revolut completes in France the first payment launched by an AI on its own. AI is leaving the lab for production, department after department, often faster than management measures. The AI Act adds an obligation few anticipate: informing the people subject to these systems. Not only classifying them, documenting them, securing them. Telling employees that a machine screens their internal applications, scores their files, directs their tasks. That obligation shifts the introduction of AI from technical ground to social dialogue. A deployment once settled between a management team and a supplier becomes a matter for the works council. The skill that gains value in a French organization is steering the social entry of AI as much as its technical entry. Take each AI system already in use in a workflow. Write down who it concerns, which decision it affects for those people, and whether they have been told. Bring the subject to the works council before the law forces you to, while you still hold the choice of timing and framing. An empty table does not signal compliance postponed. It signals a blind spot that grows with every tool added. Between the moment the tool works and the moment the law requires you to explain it, a window remains. Trust is won or lost there. An employee accepts an AI that was introduced to them; they distrust the one they discover. The end of 2027 sets a legal deadline. The mood of a team is settled well before. The Masteria editorial team.",
-      "html": "<p>Jean-Emmanuel Ray warns in Le Monde: by the end of 2027, every employer will have to inventory the high-risk artificial intelligence systems used in their departments and inform staff about them. The deadline looks distant. It is not. The same day, BPCE announces an AI Factory operational before the end of 2026 to spread AI across all its business lines, Bercy asks ministries to renegotiate their IT contracts on the grounds that AI makes suppliers more productive, and Revolut completes in France the first payment launched by an AI on its own. AI is leaving the lab for production, department after department, often faster than management measures.</p>\n<p>The AI Act adds an obligation few anticipate: informing the people subject to these systems. Not only classifying them, documenting them, securing them. Telling employees that a machine screens their internal applications, scores their files, directs their tasks. That obligation shifts the introduction of AI from technical ground to social dialogue. A deployment once settled between a management team and a supplier becomes a matter for the works council.</p>\n<p>The skill that gains value in a French organization is steering the social entry of AI as much as its technical entry. Take each AI system already in use in a workflow. Write down who it concerns, which decision it affects for those people, and whether they have been told. Bring the subject to the works council before the law forces you to, while you still hold the choice of timing and framing. An empty table does not signal compliance postponed. It signals a blind spot that grows with every tool added.</p>\n<p>Between the moment the tool works and the moment the law requires you to explain it, a window remains. Trust is won or lost there. An employee accepts an AI that was introduced to them; they distrust the one they discover. The end of 2027 sets a legal deadline. The mood of a team is settled well before.</p>\n<p>The Masteria editorial team.</p>",
-      "htmlExtrait": "<p>Jean-Emmanuel Ray warns in Le Monde: by the end of 2027, every employer will have to inventory the high-risk artificial intelligence systems used in their departments and inform staff about them. The deadline looks distant. It is not. The same day, BPCE announces an AI Factory operational before the end of 2026 to spread AI across all its business lines, Bercy asks ministries to renegotiate their IT contracts on the grounds that AI makes suppliers more productive, and Revolut completes in France the first payment launched by an AI on its own. AI is leaving the lab for production, department after department, often faster than management measures.</p>\n<p>The AI Act adds an obligation few anticipate: informing the people subject to these systems. Not only classifying them, documenting them, securing them. Telling employees that a machine screens their internal applications, scores their files, directs their tasks. That obligation shifts the introduction of AI from technical ground to social dialogue. A deployment once settled between a management team and a supplier becomes a matter for the works council.</p>",
+      "titre": "Nearly one person in two, across 37 countries, fears losing their job to AI and Charles III warns of \\\"existential dangers\\\", yet French productivity stays flat at 0.2% a year: the blockage lies in how organisations spread the tool, not in how fast the machine runs, and the lever that gives workers a grip is to name someone responsible for that diffusion and to put a six-month, dated upskilling path in front of the roles that worry",
+      "these": "Nearly one person in two, across 37 countries, fears losing their job to AI. The survey published by the Pew Research Center, covering 42,151 people, puts a number on it: 46% expect the number of jobs to fall over the next twenty years, 9% the opposite, and the pessimism climbs most in advanced economies, among the young and among women. King Charles III, before the sector's bosses gathered in Scotland, warns of the technology's \\\"existential dangers\\\". Fear fills the screen. The production figures tell another story. In France, hourly labour productivity rose 0.2% a year between 2015 and 2025, against 1.7% between 1995 and 2005. Do the arithmetic: at 0.2% a year, living standards take three and a half centuries to double; at 1.7%, they doubled in about forty years, the span of a career. The Conseil d'analyse économique (France's council of economic advisers) names the blockage: digital investment is not enough, companies cannot spread the tools, for lack of coordination, information and independence from their large suppliers. That is the gap. We fear an AI that would destroy jobs too fast, when the data shows an AI that produces no gains yet, because organisations do not know how to spread it. Fear is strongest where people have the least grip on the tool. Grip is won back through skill, and skill has someone responsible for it. Treat the Pew survey as a diagnosis to run again in your own house. Spot the roles where the worry runs highest, count the young and the women Pew points to. Name who answers for spreading the tool, as precisely as you name who runs payroll. Put a dated upskilling path, at six months, in front of the roles that worry. A promise of a global slowdown changes nothing about their Monday morning; a colleague who knows how to use the tool does. The frontier asks whether to slow down. The flat productivity curve answers that speed was never the problem. What is missing is the hand that learns. The Masteria editorial team.",
+      "html": "<p>Nearly one person in two, across 37 countries, fears losing their job to AI. The survey published by the Pew Research Center, covering 42,151 people, puts a number on it: 46% expect the number of jobs to fall over the next twenty years, 9% the opposite, and the pessimism climbs most in advanced economies, among the young and among women. King Charles III, before the sector's bosses gathered in Scotland, warns of the technology's \"existential dangers\". Fear fills the screen.</p>\n<p>The production figures tell another story. In France, hourly labour productivity rose 0.2% a year between 2015 and 2025, against 1.7% between 1995 and 2005. Do the arithmetic: at 0.2% a year, living standards take three and a half centuries to double; at 1.7%, they doubled in about forty years, the span of a career. The Conseil d'analyse économique (France's council of economic advisers) names the blockage: digital investment is not enough, companies cannot spread the tools, for lack of coordination, information and independence from their large suppliers.</p>\n<p>That is the gap. We fear an AI that would destroy jobs too fast, when the data shows an AI that produces no gains yet, because organisations do not know how to spread it. Fear is strongest where people have the least grip on the tool. Grip is won back through skill, and skill has someone responsible for it.</p>\n<p>Treat the Pew survey as a diagnosis to run again in your own house. Spot the roles where the worry runs highest, count the young and the women Pew points to. Name who answers for spreading the tool, as precisely as you name who runs payroll. Put a dated upskilling path, at six months, in front of the roles that worry. A promise of a global slowdown changes nothing about their Monday morning; a colleague who knows how to use the tool does.</p>\n<p>The frontier asks whether to slow down. The flat productivity curve answers that speed was never the problem. What is missing is the hand that learns.</p>\n<p>The Masteria editorial team.</p>",
+      "htmlExtrait": "<p>Nearly one person in two, across 37 countries, fears losing their job to AI. The survey published by the Pew Research Center, covering 42,151 people, puts a number on it: 46% expect the number of jobs to fall over the next twenty years, 9% the opposite, and the pessimism climbs most in advanced economies, among the young and among women. King Charles III, before the sector's bosses gathered in Scotland, warns of the technology's \"existential dangers\". Fear fills the screen.</p>\n<p>The production figures tell another story. In France, hourly labour productivity rose 0.2% a year between 2015 and 2025, against 1.7% between 1995 and 2005. Do the arithmetic: at 0.2% a year, living standards take three and a half centuries to double; at 1.7%, they doubled in about forty years, the span of a career. The Conseil d'analyse économique (France's council of economic advisers) names the blockage: digital investment is not enough, companies cannot spread the tools, for lack of coordination, information and independence from their large suppliers.</p>",
       "itemsCites": [
-        2,
-        3,
+        1,
         4,
-        13
+        8
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-09-07",
-      "dateLongue": "Monday 7 September 2026",
-      "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
+      "date": "2026-09-17",
+      "dateLongue": "Thursday 17 September 2026",
+      "titreEditorial": "OpenAI admits six model misbehaviours and publishes a framework to report them, the same day Google opens the connected home to agents and Anthropic folds its interfaces into a single Claude that decides for itself how much work to take on. The agent moves from reading to acting. Meanwhile Brussels adopts the EU KIDS Act to keep minors off social media, Mistral arrives in Firefox, and Huawei pulls its next AI chip nine months forward to cut China's dependence on Nvidia.",
       "nbItems": 14
     },
     "suivante": null,
     "nbItems": 14,
-    "nbSources": 15,
-    "nbSignes": 9595,
+    "nbSources": 24,
+    "nbSignes": 9640,
     "tempsLecture": 8,
     "zones": [
       {
@@ -446,38 +558,39 @@
       {
         "cle": "international",
         "libelle": "International",
-        "nb": 3
+        "nb": 4
       },
       {
         "cle": "chine",
         "libelle": "China and Asia",
-        "nb": 3
+        "nb": 2
       },
       {
         "cle": "recherche",
         "libelle": "Research and papers",
-        "nb": 2
+        "nb": 1
       },
       {
         "cle": "bref",
         "libelle": "In brief",
-        "nb": 2
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
       "Le Monde",
+      "TechCrunch",
+      "Bloomberg",
+      "European Commission",
+      "Next.ink",
+      "Siècle Digital",
+      "01net",
       "La Tribune",
       "ZDNet",
-      "Clubic",
-      "Next.ink",
-      "Bloomberg",
-      "South China Morning Post",
-      "Maddyness",
-      "Numerama"
+      "404 Media"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 70,
-    "publieLe": "2026-09-08T08:12:48+02:00",
-    "publieLeAffiche": "8h12"
+    "nbArticlesCollectes": 136,
+    "publieLe": "2026-09-18T05:14:57+02:00",
+    "publieLeAffiche": "5h14"
   }
 }

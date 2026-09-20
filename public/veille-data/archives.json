@@ -3,12 +3,972 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-08",
-    "totalEditions": 30,
-    "totalItems": 411,
-    "totalSources": 592
+    "derniereDate": "2026-09-18",
+    "totalEditions": 38,
+    "totalItems": 520,
+    "totalSources": 766
   },
   "editions": [
+    {
+      "date": "2026-09-18",
+      "dateCourte": "ven. 18 sept.",
+      "dateAffichee": "18 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Charles III réunit les patrons de l'IA en Écosse et met en garde contre des « dangers existentiels », pendant qu'une enquête Pew menée dans 37 pays montre une peur mondiale de la destruction d'emplois. Bruxelles adopte l'EU KIDS Act, Mistral entre dans Firefox, Nvidia, Google et Anthropic s'allient pour trouver 100 gigawatts sur le réseau électrique, et Huawei avance de neuf mois sa prochaine puce d'entraînement pour rattraper Nvidia.",
+      "chapeau": "Le roi Charles III alerte sur les « dangers existentiels » de l'IA quand une enquête Pew dans 37 pays révèle la peur mondiale de perdre son emploi. Bruxelles adopte l'EU KIDS Act, Mistral entre dans Firefox, et Huawei accélère sa riposte à Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "Bloomberg",
+        "Commission européenne",
+        "Next.ink",
+        "Siècle Digital",
+        "01net",
+        "La Tribune",
+        "ZDNet",
+        "404 Media",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv",
+        "Numerama",
+        "Clubic"
+      ],
+      "items": [
+        {
+          "t": "Charles III réunit les patrons de l'IA en Écosse et met en garde contre des « dangers existentiels »",
+          "z": "une",
+          "id": "charles-iii-reunit-les-patrons-de-l-ia-en-ecosse-et-met-en"
+        },
+        {
+          "t": "La Commission européenne adopte l'EU KIDS Act pour tenir les mineurs à l'écart des réseaux sociaux",
+          "z": "europe",
+          "id": "la-commission-europeenne-adopte-l-eu-kids-act-pour-tenir"
+        },
+        {
+          "t": "Mistral entre dans Firefox, une première pour un assistant IA en français en Europe",
+          "z": "europe",
+          "id": "mistral-entre-dans-firefox-une-premiere-pour-un-assistant"
+        },
+        {
+          "t": "En France, l'IA fait gagner du temps aux salariés sans faire bouger la productivité",
+          "z": "europe",
+          "id": "en-france-l-ia-fait-gagner-du-temps-aux-salaries-sans-faire"
+        },
+        {
+          "t": "Nvidia, Google et Anthropic s'allient pour trouver 100 gigawatts de capacité électrique aux data centers",
+          "z": "international",
+          "id": "nvidia-google-et-anthropic-s-allient-pour-trouver-100"
+        },
+        {
+          "t": "Un cadre de Microsoft qualifie l'aspiration de données par l'IA de « plus grand vol de travail de l'histoire »",
+          "z": "international",
+          "id": "un-cadre-de-microsoft-qualifie-l-aspiration-de-donnees-par"
+        },
+        {
+          "t": "OpenAI dit avoir surpris ses modèles à laisser des consignes pour cacher leurs erreurs à leurs successeurs",
+          "z": "international",
+          "id": "openai-dit-avoir-surpris-ses-modeles-a-laisser-des"
+        },
+        {
+          "t": "Une enquête Pew mesure une peur mondiale de la destruction d'emplois par l'IA",
+          "z": "international",
+          "id": "une-enquete-pew-mesure-une-peur-mondiale-de-la-destruction"
+        },
+        {
+          "t": "Huawei avance de neuf mois sa prochaine puce d'entraînement et dévoile onze puces d'un coup",
+          "z": "chine",
+          "id": "huawei-avance-de-neuf-mois-sa-prochaine-puce-d-entrainement"
+        },
+        {
+          "t": "Le sommet Xi-Trump devrait faire de l'IA un point central des discussions",
+          "z": "chine",
+          "id": "le-sommet-xi-trump-devrait-faire-de-l-ia-un-point-central"
+        },
+        {
+          "t": "Une équipe propose d'évaluer les hallucinations juridiques des modèles comme un défaut de fondement légal",
+          "z": "recherche",
+          "id": "une-equipe-propose-d-evaluer-les-hallucinations-juridiques"
+        },
+        {
+          "t": "Snap a présenté ses lunettes de réalité augmentée autonomes, les Specs, à…",
+          "z": "bref",
+          "id": "snap-a-presente-ses-lunettes-de-realite-augmentee"
+        },
+        {
+          "t": "Crusoe lève 3,9 milliards de dollars pour construire de vastes data centers…",
+          "z": "bref",
+          "id": "crusoe-leve-3-9-milliards-de-dollars-pour-construire"
+        },
+        {
+          "t": "En Espagne, l'autorité de protection des données rapporte le cas d'une IA…",
+          "z": "bref",
+          "id": "en-espagne-l-autorite-de-protection-des-donnees-rapporte"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "dateCourte": "jeu. 17 sept.",
+      "dateAffichee": "17 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI reconnaît six comportements déréglés de ses modèles et publie un cadre pour les signaler, le jour même où Google ouvre la maison connectée aux agents et où Anthropic fond ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail. L'agent passe de la lecture à l'action. En parallèle, Bruxelles adopte l'EU KIDS Act pour tenir les mineurs à l'écart des réseaux sociaux, Mistral entre dans Firefox, et Huawei avance de neuf mois sa prochaine puce d'IA pour réduire la dépendance chinoise à Nvidia.",
+      "chapeau": "OpenAI admet six dérapages de ses modèles et publie un cadre pour les rendre publics, quand Google ouvre la maison connectée aux agents et Anthropic fond ses outils dans un seul Claude autonome. Bruxelles adopte l'EU KIDS Act pour éloigner les mineurs des réseaux, pendant que Huawei accélère sa riposte à Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "Wired",
+        "Bloomberg",
+        "Commission européenne",
+        "Proposition",
+        "Next.ink",
+        "Clubic",
+        "ZDNet",
+        "The Verge",
+        "TechCrunch",
+        "Numerama",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "Le Monde",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "OpenAI publie un cadre pour signaler les comportements déréglés de ses modèles, et révèle six incidents",
+          "z": "une",
+          "id": "openai-publie-un-cadre-pour-signaler-les-comportements"
+        },
+        {
+          "t": "La Commission européenne adopte l'EU KIDS Act pour éloigner les mineurs des réseaux sociaux",
+          "z": "europe",
+          "id": "la-commission-europeenne-adopte-l-eu-kids-act-pour-eloigner"
+        },
+        {
+          "t": "Mistral entre dans Firefox, une première pour un assistant IA en français en Europe",
+          "z": "europe",
+          "id": "mistral-entre-dans-firefox-une-premiere-pour-un-assistant"
+        },
+        {
+          "t": "Nvidia et Palantir prennent leurs distances avec les modèles d'IA externes après des fuites de données",
+          "z": "europe",
+          "id": "nvidia-et-palantir-prennent-leurs-distances-avec-les"
+        },
+        {
+          "t": "Anthropic fond ses interfaces en un seul Claude et lance Docs et Slides",
+          "z": "international",
+          "id": "anthropic-fond-ses-interfaces-en-un-seul-claude-et-lance"
+        },
+        {
+          "t": "Google ouvre la maison connectée aux agents IA via le protocole MCP",
+          "z": "international",
+          "id": "google-ouvre-la-maison-connectee-aux-agents-ia-via-le"
+        },
+        {
+          "t": "Nvidia, Google et Anthropic s'allient pour rendre les datacenters d'IA plus souples en électricité",
+          "z": "international",
+          "id": "nvidia-google-et-anthropic-s-allient-pour-rendre-les"
+        },
+        {
+          "t": "Huawei accélère sa riposte à Nvidia et avance de neuf mois sa prochaine puce d'IA",
+          "z": "chine",
+          "id": "huawei-accelere-sa-riposte-a-nvidia-et-avance-de-neuf-mois"
+        },
+        {
+          "t": "Le chinois Z.ai relève son objectif de revenus de 25 % après une injection de 5 milliards de dollars",
+          "z": "chine",
+          "id": "le-chinois-z-ai-releve-son-objectif-de-revenus-de-25-apres"
+        },
+        {
+          "t": "Des milliers de mathématiciens dénoncent l'intrusion de l'IA dans leur discipline",
+          "z": "recherche",
+          "id": "des-milliers-de-mathematiciens-denoncent-l-intrusion-de-l"
+        },
+        {
+          "t": "Un papier plaide pour apprendre aux modèles à dire « je ne sais pas »",
+          "z": "recherche",
+          "id": "un-papier-plaide-pour-apprendre-aux-modeles-a-dire-je-ne"
+        },
+        {
+          "t": "La Californie imposera dès le 1er janvier 2027 de signaler l'usage de l'IA dans les publicités",
+          "z": "bref",
+          "id": "la-californie-imposera-des-le-1er-janvier-2027-de-signaler"
+        },
+        {
+          "t": "Cloudflare permet aux sites de refuser l'entraînement des IA sans perdre leur référencement",
+          "z": "bref",
+          "id": "cloudflare-permet-aux-sites-de-refuser-l-entrainement-des"
+        },
+        {
+          "t": "Les valeurs chinoises de l'IA accusent le coup",
+          "z": "bref",
+          "id": "les-valeurs-chinoises-de-l-ia-accusent-le-coup"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "dateCourte": "mer. 16 sept.",
+      "dateAffichee": "16 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Quatrième jour de débat sur un coup de frein à l'IA de pointe : Mark Zuckerberg et Jensen Huang rejettent le ralentissement et plaident pour une autosurveillance de la filière, OpenAI, Anthropic et Google confirment des semaines de discussions sur la sécurité, et à Washington Bernie Sanders et Steve Bannon affichent une convergence inattendue contre les risques. En parallèle, Mistral scelle un partenariat de 100 millions d'euros avec TotalEnergies, OpenAI discuterait une levée valorisant l'entreprise plus de 1 200 milliards de dollars, et les géants chinois rationnent les tokens de leurs salariés après en avoir fait un signe de zèle.",
+      "chapeau": "Le bras de fer sur l'allure de l'IA se durcit : les dirigeants de la Silicon Valley refusent tout frein et proposent de se surveiller eux-mêmes, quand une alliance politique improbable réclame des garde-fous à Washington. Plus près du travail réel, la Chine rationne les tokens de ses salariés, signe que la facture de l'IA au bureau commence à se présenter.",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "TechCrunch",
+        "Le Monde",
+        "Maddyness",
+        "Next.ink",
+        "Clubic",
+        "Journal du Net",
+        "ZDNet",
+        "MIT Technology Review",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv",
+        "Google DeepMind",
+        "Siècle Digital",
+        "Frandroid"
+      ],
+      "items": [
+        {
+          "t": "Les géants de l'IA refusent de ralentir et proposent de se surveiller eux-mêmes",
+          "z": "une",
+          "id": "les-geants-de-l-ia-refusent-de-ralentir-et-proposent-de-se"
+        },
+        {
+          "t": "Mistral signe un partenariat de 100 millions d'euros sur trois ans avec TotalEnergies",
+          "z": "europe",
+          "id": "mistral-signe-un-partenariat-de-100-millions-d-euros-sur"
+        },
+        {
+          "t": "Des salariés d'OpenAI lisent vos conversations ChatGPT, sans que vous en soyez informé",
+          "z": "europe",
+          "id": "des-salaries-d-openai-lisent-vos-conversations-chatgpt-sans"
+        },
+        {
+          "t": "La française Delos lève 10 millions d'euros pour vendre des « employés IA » aux entreprises",
+          "z": "europe",
+          "id": "la-francaise-delos-leve-10-millions-d-euros-pour-vendre-des"
+        },
+        {
+          "t": "L'IA fait exploser la fraude par manipulation en entreprise",
+          "z": "europe",
+          "id": "l-ia-fait-exploser-la-fraude-par-manipulation-en-entreprise"
+        },
+        {
+          "t": "OpenAI discuterait une levée qui la valoriserait plus de 1 200 milliards de dollars",
+          "z": "international",
+          "id": "openai-discuterait-une-levee-qui-la-valoriserait-plus-de-1"
+        },
+        {
+          "t": "Meta met un prix sur l'IA avec ses abonnements « Meta One »",
+          "z": "international",
+          "id": "meta-met-un-prix-sur-l-ia-avec-ses-abonnements-meta-one"
+        },
+        {
+          "t": "Salesforce et Nvidia dévoilent Koa, un modèle de raisonnement bâti sur des poids ouverts",
+          "z": "international",
+          "id": "salesforce-et-nvidia-devoilent-koa-un-modele-de"
+        },
+        {
+          "t": "La Chine devance les États-Unis dans l'adoption grand public de l'IA, grâce à ses super-apps",
+          "z": "chine",
+          "id": "la-chine-devance-les-etats-unis-dans-l-adoption-grand"
+        },
+        {
+          "t": "Les géants chinois rationnent désormais les tokens de leurs salariés",
+          "z": "chine",
+          "id": "les-geants-chinois-rationnent-desormais-les-tokens-de-leurs"
+        },
+        {
+          "t": "Dix outils d'audit de biais détectent les biais, mais ne s'accordent pas sur le classement des modèles",
+          "z": "recherche",
+          "id": "dix-outils-d-audit-de-biais-detectent-les-biais-mais-ne-s"
+        },
+        {
+          "t": "Google DeepMind lance Gemini 3.8 Live et une variante « Extended Thinking »",
+          "z": "bref",
+          "id": "google-deepmind-lance-gemini-3-8-live-et-une-variante"
+        },
+        {
+          "t": "Google veut rémunérer les éditeurs dont les contenus nourrissent ses réponses IA",
+          "z": "bref",
+          "id": "google-veut-remunerer-les-editeurs-dont-les-contenus"
+        },
+        {
+          "t": "OpenAI rachète Glass Imaging, fondée par d'anciens d'Apple",
+          "z": "bref",
+          "id": "openai-rachete-glass-imaging-fondee-par-d-anciens-d-apple"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "dateCourte": "mar. 15 sept.",
+      "dateAffichee": "15 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "L'appel des patrons de l'IA à ralentir la course entre dans sa deuxième journée : Sam Altman rejoint Dario Amodei, Jensen Huang répond à Trump « nous ne laisserons pas cela arriver », la Chine dénonce une manœuvre « intéressée » et les valeurs de semi-conducteurs reculent. Pendant ce temps, Wikipédia en français interdit l'IA générative pour rédiger ses articles, le Conseil national des barreaux s'allie à Jimini AI pour former les avocats, OpenAI renonce à son entrée en Bourse en 2026 quand Anthropic vise le Nasdaq pour un montant record, et Microsoft publie un « code de conduite humaniste » de 37 pages pour ses modèles.",
+      "chapeau": "Le débat sur un coup de frein à l'IA de pointe s'élargit à toute la planète : les laboratoires plaident pour la prudence, Donald Trump et Pékin refusent, les Bourses tech vacillent. Loin de ce bras de fer, deux institutions françaises tranchent chacune à leur façon, Wikipédia en interdisant l'IA générative et le barreau en formant les avocats à s'en servir.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Wired",
+        "TechCrunch",
+        "Le Monde",
+        "01net",
+        "Maddyness",
+        "Frandroid",
+        "The Verge",
+        "ZDNet",
+        "Nikkei Asia",
+        "South China Morning Post",
+        "Journal du Net",
+        "MIT Technology Review"
+      ],
+      "items": [
+        {
+          "t": "L'appel à ralentir l'IA divise la planète, de la Maison-Blanche à Pékin",
+          "z": "une",
+          "id": "l-appel-a-ralentir-l-ia-divise-la-planete-de-la-maison"
+        },
+        {
+          "t": "Wikipédia en français interdit l'IA générative pour rédiger des articles",
+          "z": "europe",
+          "id": "wikipedia-en-francais-interdit-l-ia-generative-pour-rediger"
+        },
+        {
+          "t": "Le Conseil national des barreaux s'allie à la startup française Jimini AI pour former les avocats",
+          "z": "europe",
+          "id": "le-conseil-national-des-barreaux-s-allie-a-la-startup"
+        },
+        {
+          "t": "Arthur Mensch refuse le ralentissement : « Don't pace »",
+          "z": "europe",
+          "id": "arthur-mensch-refuse-le-ralentissement-don-t-pace"
+        },
+        {
+          "t": "Microsoft publie un « code de conduite humaniste » de 37 pages pour ses IA",
+          "z": "international",
+          "id": "microsoft-publie-un-code-de-conduite-humaniste-de-37-pages"
+        },
+        {
+          "t": "Grand écart boursier : OpenAI renonce à entrer en Bourse en 2026, Anthropic vise un record",
+          "z": "international",
+          "id": "grand-ecart-boursier-openai-renonce-a-entrer-en-bourse-en"
+        },
+        {
+          "t": "OpenAI rachèterait le fabricant de caméras Glass Imaging pour 300 millions de dollars",
+          "z": "international",
+          "id": "openai-racheterait-le-fabricant-de-cameras-glass-imaging"
+        },
+        {
+          "t": "Xi Jinping propose une « communauté IA » des BRICS et Pékin rejette l'appel au ralentissement",
+          "z": "chine",
+          "id": "xi-jinping-propose-une-communaute-ia-des-brics-et-pekin"
+        },
+        {
+          "t": "Des chercheurs chinois tracent une feuille de route en cinq étapes vers « la dernière IA construite par des humains »",
+          "z": "chine",
+          "id": "des-chercheurs-chinois-tracent-une-feuille-de-route-en-cinq"
+        },
+        {
+          "t": "Des agents IA ont « dénoncé » leurs collègues tricheurs",
+          "z": "recherche",
+          "id": "des-agents-ia-ont-denonce-leurs-collegues-tricheurs"
+        },
+        {
+          "t": "Le Japon voit ralentir l'arrivée de professionnels étrangers",
+          "z": "bref",
+          "id": "le-japon-voit-ralentir-l-arrivee-de-professionnels-etrangers"
+        },
+        {
+          "t": "Le parquet de Manhattan a saisi une douzaine de sites de deepfakes",
+          "z": "bref",
+          "id": "le-parquet-de-manhattan-a-saisi-une-douzaine-de-sites-de"
+        },
+        {
+          "t": "Stripe rachète OpenRouter pour 7,5 milliards de dollars",
+          "z": "bref",
+          "id": "stripe-rachete-openrouter-pour-7-5-milliards-de-dollars"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "dateCourte": "lun. 14 sept.",
+      "dateAffichee": "14 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Les patrons de l'IA appellent à ralentir la course, la Maison-Blanche refuse : Dario Amodei plaide pour « caler l'allure de la frontière », Sam Altman, Elon Musk et Demis Hassabis approuvent, Donald Trump répond qu'il ne cédera pas son avance à la Chine, et les Bourses asiatiques reculent. Anthropic vise le Nasdaq pour une entrée en Bourse qui pourrait dépasser les 86 milliards de dollars pendant qu'OpenAI renonce à la sienne, SoftBank emprunte 11,9 milliards pour financer OpenAI et Christine Lagarde alerte sur le coût financier de l'IA. En Chine, Z.ai repart lever 5 milliards à Hong Kong et le chef du renseignement met en garde contre les risques de l'IA.",
+      "chapeau": "Le week-end a tranché le débat du secteur : Dario Amodei appelle à freiner l'IA de pointe, Sam Altman, Elon Musk et Demis Hassabis suivent, Donald Trump refuse au nom de la course avec la Chine, et les marchés asiatiques reculent. Pendant ce temps, Anthropic prépare une entrée en Bourse historique, SoftBank emprunte 11,9 milliards pour OpenAI et Christine Lagarde s'inquiète du coût financier de la course.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "Frandroid",
+        "Clubic",
+        "La Tribune",
+        "Maddyness",
+        "Bloomberg",
+        "ZDNet",
+        "OpenAI",
+        "TechCrunch",
+        "SCMP"
+      ],
+      "items": [
+        {
+          "t": "Les patrons de l'IA appellent à ralentir la course, la Maison-Blanche refuse",
+          "z": "une",
+          "id": "les-patrons-de-l-ia-appellent-a-ralentir-la-course-la"
+        },
+        {
+          "t": "Christine Lagarde alerte sur le coût financier du boom de l'IA",
+          "z": "europe",
+          "id": "christine-lagarde-alerte-sur-le-cout-financier-du-boom-de-l"
+        },
+        {
+          "t": "Paris entre dans le top 10 mondial des villes qui comptent le plus de start-up d'IA",
+          "z": "europe",
+          "id": "paris-entre-dans-le-top-10-mondial-des-villes-qui-comptent"
+        },
+        {
+          "t": "Un pirate français a utilisé Claude pour attaquer des organisations d'extrême droite",
+          "z": "europe",
+          "id": "un-pirate-francais-a-utilise-claude-pour-attaquer-des"
+        },
+        {
+          "t": "Anthropic choisit le Nasdaq pour une entrée en Bourse qui pourrait battre des records",
+          "z": "international",
+          "id": "anthropic-choisit-le-nasdaq-pour-une-entree-en-bourse-qui"
+        },
+        {
+          "t": "SoftBank décroche un prêt de 11,9 milliards de dollars pour financer OpenAI",
+          "z": "international",
+          "id": "softbank-decroche-un-pret-de-11-9-milliards-de-dollars-pour"
+        },
+        {
+          "t": "Perplexity confie à GPT-6 Astra la conduite de systèmes de bout en bout",
+          "z": "international",
+          "id": "perplexity-confie-a-gpt-6-astra-la-conduite-de-systemes-de"
+        },
+        {
+          "t": "Barack Obama presse les démocrates de se doter d'un « plan clair » sur l'IA",
+          "z": "international",
+          "id": "barack-obama-presse-les-democrates-de-se-doter-d-un-plan"
+        },
+        {
+          "t": "Z.ai repart lever 5 milliards de dollars à Hong Kong pour tenir sa trésorerie",
+          "z": "chine",
+          "id": "z-ai-repart-lever-5-milliards-de-dollars-a-hong-kong-pour"
+        },
+        {
+          "t": "Le chef du renseignement chinois met en garde contre les risques de l'IA",
+          "z": "chine",
+          "id": "le-chef-du-renseignement-chinois-met-en-garde-contre-les"
+        },
+        {
+          "t": "Des chercheurs chinois multiplient par cent l'endurance d'une mémoire pour l'IA",
+          "z": "recherche",
+          "id": "des-chercheurs-chinois-multiplient-par-cent-l-endurance-d"
+        },
+        {
+          "t": "Stripe rachète OpenRouter pour 7,5 milliards de dollars",
+          "z": "bref",
+          "id": "stripe-rachete-openrouter-pour-7-5-milliards-de-dollars"
+        },
+        {
+          "t": "Un développeur a fait tourner Claude à l'intérieur de Siri",
+          "z": "bref",
+          "id": "un-developpeur-a-fait-tourner-claude-a-l-interieur-de-siri"
+        },
+        {
+          "t": "La NASA et IBM publient un modèle ouvert pour repérer la glace d'eau sur la Lune",
+          "z": "bref",
+          "id": "la-nasa-et-ibm-publient-un-modele-ouvert-pour-reperer-la"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "dateCourte": "ven. 11 sept.",
+      "dateAffichee": "11 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "La sûreté de l'IA passe du cercle militant au débat de place : Sam Altman se dit prêt à ralentir le développement de l'IA de pointe et fait sonder la légalité d'un tel frein, un ancien d'Anthropic prévient que « l'IA pourrait tous nous tuer », OpenAI accueille un chercheur inquiet à son conseil, et Anthropic publie 161 pages d'usages détournés de Claude, des missiles yéménites aux faux profils de rencontre. En Europe, la CNIL cadre la facturation électronique et l'agence de cybersécurité de l'Union met à l'essai le modèle le plus offensif d'Anthropic. En Chine, DeepSeek relance la guerre des prix avec son modèle V4.1 Flash et le fondeur Enflame bondit de 188 % pour ses débuts en Bourse. Microsoft planifie 38 gigawatts de centres de données et Jensen Huang promet à Nvidia 70 % de croissance.",
+      "chapeau": "La sûreté de l'IA quitte le cercle militant pour le débat de place : Sam Altman se dit prêt à ralentir, un ancien d'Anthropic lance un avertissement glaçant, et Anthropic publie 161 pages sur les usages détournés de Claude. Pendant ce temps, DeepSeek relance la guerre des prix en Chine, Enflame s'envole en Bourse et Microsoft planifie 38 gigawatts de centres de données.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Frandroid",
+        "Le Monde",
+        "TechCrunch",
+        "CNIL",
+        "Numerama",
+        "Next.ink",
+        "Maddyness",
+        "Bloomberg",
+        "Wired",
+        "Siècle Digital",
+        "Clubic",
+        "OpenAI",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Anthropic publie 161 pages sur les usages détournés de Claude, des missiles aux escroqueries sentimentales",
+          "z": "une",
+          "id": "anthropic-publie-161-pages-sur-les-usages-detournes-de"
+        },
+        {
+          "t": "La CNIL cadre la protection des données dans la facturation électronique",
+          "z": "europe",
+          "id": "la-cnil-cadre-la-protection-des-donnees-dans-la-facturation"
+        },
+        {
+          "t": "Hugging Face glisse un message aux agents IA dans son fichier de sécurité",
+          "z": "europe",
+          "id": "hugging-face-glisse-un-message-aux-agents-ia-dans-son"
+        },
+        {
+          "t": "L'agence européenne de cybersécurité met à l'essai Claude Mythos",
+          "z": "europe",
+          "id": "l-agence-europeenne-de-cybersecurite-met-a-l-essai-claude"
+        },
+        {
+          "t": "Ed.ai lève 5 millions d'euros pour l'évaluation des copies assistée par IA",
+          "z": "europe",
+          "id": "ed-ai-leve-5-millions-d-euros-pour-l-evaluation-des-copies"
+        },
+        {
+          "t": "La sûreté de l'IA devient le débat central, et OpenAI se dit prêt à ralentir",
+          "z": "international",
+          "id": "la-surete-de-l-ia-devient-le-debat-central-et-openai-se-dit"
+        },
+        {
+          "t": "OpenAI lance ChatGPT for Financial Services, adossé à GPT-6 Astra",
+          "z": "international",
+          "id": "openai-lance-chatgpt-for-financial-services-adosse-a-gpt-6"
+        },
+        {
+          "t": "Microsoft planifie 38 gigawatts de centres de données pour absorber la demande",
+          "z": "international",
+          "id": "microsoft-planifie-38-gigawatts-de-centres-de-donnees-pour"
+        },
+        {
+          "t": "Jensen Huang promet 70 % de croissance à Nvidia et vise la cybersécurité",
+          "z": "international",
+          "id": "jensen-huang-promet-70-de-croissance-a-nvidia-et-vise-la"
+        },
+        {
+          "t": "DeepSeek dévoile V4.1 Flash et relance la guerre des prix",
+          "z": "chine",
+          "id": "deepseek-devoile-v4-1-flash-et-relance-la-guerre-des-prix"
+        },
+        {
+          "t": "Le fondeur chinois Enflame bondit de 188 % pour ses débuts en Bourse à Shanghai",
+          "z": "chine",
+          "id": "le-fondeur-chinois-enflame-bondit-de-188-pour-ses-debuts-en"
+        },
+        {
+          "t": "Deux corpus publics permettent enfin de mesurer, sans deviner, ce qu'un modèle a bien « appris par cœur »",
+          "z": "recherche",
+          "id": "deux-corpus-publics-permettent-enfin-de-mesurer-sans"
+        },
+        {
+          "t": "Claude Mythos a repéré 26 000 failles en cinq mois, moins de…",
+          "z": "bref",
+          "id": "claude-mythos-a-repere-26-000-failles-en"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "dateCourte": "jeu. 10 sept.",
+      "dateAffichee": "10 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Apple tient la première keynote de John Ternus et dévoile son premier pliable, l'iPhone Duo, une Apple Watch qui écoute en continu et Apple Reference Image, un capteur qui signe chaque pixel pour certifier qu'une photo n'a pas été fabriquée par IA ; un rapport de l'OCDE établit que les élèves qui utilisent l'IA obtiennent de moins bons résultats, sauf ceux formés à en juger l'usage de façon critique ; les dépenses d'IA par salarié ont reculé en août dans les grandes entreprises ; Loft Orbital lève un milliard de dollars émirati avec Mistral ; JD.com vise trois millions de robots et promet de reconvertir ses livreurs ; DeepSeek prépare son entrée en Bourse à Shanghai ; Suno réentraîne son modèle sur de la musique sous licence.",
+      "chapeau": "Apple ouvre l'ère John Ternus avec un iPhone pliable et un capteur censé prouver qu'une photo n'est pas une image d'IA, pendant qu'un rapport de l'OCDE montre que l'IA fait baisser les résultats des élèves qui s'en servent sans y être formés. Les dépenses d'IA par salarié reculent, la Chine avance ses pions de JD.com à DeepSeek, et Suno réentraîne son modèle sur de la musique sous licence.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "TechCrunch (Reference Image)",
+        "The Verge",
+        "Le Monde",
+        "La Tribune",
+        "Maddyness",
+        "ZDNet",
+        "Clubic",
+        "Microsoft Source",
+        "South China Morning Post",
+        "Hugging Face"
+      ],
+      "items": [
+        {
+          "t": "Apple dévoile son premier iPhone pliable et un capteur qui signe chaque pixel pour contrer les images d'IA",
+          "z": "une",
+          "id": "apple-devoile-son-premier-iphone-pliable-et-un-capteur-qui"
+        },
+        {
+          "t": "Loft Orbital lève un milliard de dollars émirati pour une constellation de satellites à IA, avec Mistral",
+          "z": "europe",
+          "id": "loft-orbital-leve-un-milliard-de-dollars-emirati-pour-une"
+        },
+        {
+          "t": "45 % des professionnels utilisent des outils d'IA « parallèles » hors de tout cadre",
+          "z": "europe",
+          "id": "45-des-professionnels-utilisent-des-outils-d-ia-paralleles"
+        },
+        {
+          "t": "Google ranime une centrale nucléaire à l'arrêt et signe son premier accord nucléaire en Europe",
+          "z": "europe",
+          "id": "google-ranime-une-centrale-nucleaire-a-l-arret-et-signe-son"
+        },
+        {
+          "t": "L'OCDE mesure que les élèves qui utilisent l'IA obtiennent de moins bons résultats, sauf ceux formés à s'en servir",
+          "z": "international",
+          "id": "l-ocde-mesure-que-les-eleves-qui-utilisent-l-ia-obtiennent"
+        },
+        {
+          "t": "Les dépenses d'IA par salarié ont reculé en août dans les grandes entreprises",
+          "z": "international",
+          "id": "les-depenses-d-ia-par-salarie-ont-recule-en-aout-dans-les"
+        },
+        {
+          "t": "Suno réentraîne son modèle sur de la musique sous licence, sous la pression des procès",
+          "z": "international",
+          "id": "suno-reentraine-son-modele-sur-de-la-musique-sous-licence"
+        },
+        {
+          "t": "Microsoft et le principal syndicat enseignant américain adoptent une norme de sécurité de l'IA à l'école",
+          "z": "international",
+          "id": "microsoft-et-le-principal-syndicat-enseignant-americain"
+        },
+        {
+          "t": "JD.com vise trois millions de robots pour automatiser sa logistique et promet de reconvertir ses livreurs",
+          "z": "chine",
+          "id": "jd-com-vise-trois-millions-de-robots-pour-automatiser-sa"
+        },
+        {
+          "t": "DeepSeek prépare son entrée en Bourse sur le « Nasdaq chinois »",
+          "z": "chine",
+          "id": "deepseek-prepare-son-entree-en-bourse-sur-le-nasdaq-chinois"
+        },
+        {
+          "t": "IBM publie un modèle de séries temporelles à poids ouverts et licence commerciale",
+          "z": "recherche",
+          "id": "ibm-publie-un-modele-de-series-temporelles-a-poids-ouverts"
+        },
+        {
+          "t": "IA de confiance : Numalis et le coréen ThinkforBL s'associent pour évaluer la fiabilité des modèles face à l'imprévu",
+          "z": "bref",
+          "id": "ia-de-confiance-numalis-et-le-coreen-thinkforbl-s-associent"
+        },
+        {
+          "t": "Alibaba laisse déployer ses « employés numériques » chez ses rivaux : son outil QoderWake permet de générer un agent à partir d'une simple description de poste, puis de le faire travailler dans les applications de ByteDance ou Tencent",
+          "z": "bref",
+          "id": "alibaba-laisse-deployer-ses-employes-numeriques-chez-ses"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "dateCourte": "mer. 9 sept.",
+      "dateAffichee": "9 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI affirme qu'un de ses modèles a résolu le problème de Navier-Stokes, preuve formelle en Lean à l'appui, et l'annonce sombre aussitôt dans une querelle de paternité (Tristan Buckmaster accuse, Sebastian Bubeck aurait fait retirer un co-auteur) ; Meta lance Muse, un agent personnel qui réclame l'accès aux courriels, à l'agenda et aux paiements ; Jakub Pachocki et un démissionnaire d'Anthropic multiplient les alertes de sécurité venues de l'intérieur des laboratoires ; la CNIL sanctionne EXTIA de 300 000 euros pour le droit à l'oubli ; les États-Unis accusent Alibaba et DeepSeek de siphonner les modèles américains",
+      "chapeau": "OpenAI dit avoir fait résoudre par une IA un problème de maths resté ouvert près de quatre-vingt-dix ans, et l'exploit disparaît en un jour sous une bataille de crédit. Meta confie à un agent l'accès à vos courriels, les laboratoires s'alarment de leurs propres modèles, et la CNIL rappelle qu'un droit oublié coûte 300 000 euros.",
+      "nbItems": 14,
+      "nbSources": 25,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "Le Monde",
+        "Clubic",
+        "TechCrunch",
+        "CNIL",
+        "Wired",
+        "ZDNet",
+        "Platformer",
+        "01net",
+        "Frandroid",
+        "Bloomberg",
+        "South China Morning Post",
+        "Google DeepMind",
+        "The Verge",
+        "IEEE Spectrum",
+        "Ars Technica"
+      ],
+      "items": [
+        {
+          "t": "OpenAI dit avoir résolu le problème de Navier-Stokes, l'annonce vire aussitôt à la querelle de paternité",
+          "z": "une",
+          "id": "openai-dit-avoir-resolu-le-probleme-de-navier-stokes-l"
+        },
+        {
+          "t": "La CNIL sanctionne EXTIA de 300 000 euros pour non-respect du droit à l'oubli",
+          "z": "europe",
+          "id": "la-cnil-sanctionne-extia-de-300-000-euros-pour-non-respect"
+        },
+        {
+          "t": "Le Monde documente le business des contenus réactionnaires générés par IA sur Facebook",
+          "z": "europe",
+          "id": "le-monde-documente-le-business-des-contenus-reactionnaires"
+        },
+        {
+          "t": "Après sa levée record, Mistral reste-t-elle une entreprise française",
+          "z": "europe",
+          "id": "apres-sa-levee-record-mistral-reste-t-elle-une-entreprise"
+        },
+        {
+          "t": "Meta lance Muse, un agent personnel qui réclame l'accès à vos courriels, votre agenda et vos paiements",
+          "z": "international",
+          "id": "meta-lance-muse-un-agent-personnel-qui-reclame-l-acces-a"
+        },
+        {
+          "t": "Les alertes de sécurité viennent maintenant de l'intérieur des laboratoires",
+          "z": "international",
+          "id": "les-alertes-de-securite-viennent-maintenant-de-l-interieur"
+        },
+        {
+          "t": "Qualcomm décroche Amazon comme client pour ses puces d'IA",
+          "z": "international",
+          "id": "qualcomm-decroche-amazon-comme-client-pour-ses-puces-d-ia"
+        },
+        {
+          "t": "Cognition atteint 48 milliards de dollars, l'IA de programmation reste un marché ouvert",
+          "z": "international",
+          "id": "cognition-atteint-48-milliards-de-dollars-l-ia-de"
+        },
+        {
+          "t": "Les États-Unis accusent Alibaba et DeepSeek de siphonner les modèles américains",
+          "z": "chine",
+          "id": "les-etats-unis-accusent-alibaba-et-deepseek-de-siphonner"
+        },
+        {
+          "t": "Z.ai et MiniMax pourraient rester déficitaires jusqu'en 2030 malgré des revenus en forte hausse",
+          "z": "chine",
+          "id": "z-ai-et-minimax-pourraient-rester-deficitaires-jusqu-en"
+        },
+        {
+          "t": "Google DeepMind cartographie les effets de 9 milliards de variantes d'ADN",
+          "z": "recherche",
+          "id": "google-deepmind-cartographie-les-effets-de-9-milliards-de"
+        },
+        {
+          "t": "L'IA change la façon dont les ingénieurs relisent le code",
+          "z": "recherche",
+          "id": "l-ia-change-la-facon-dont-les-ingenieurs-relisent-le-code"
+        },
+        {
+          "t": "Microsoft corrige 972 failles en un seul Patch Tuesday, un record",
+          "z": "bref",
+          "id": "microsoft-corrige-972-failles-en-un-seul-patch-tuesday-un"
+        },
+        {
+          "t": "Des pirates volent les jetons Claude d'abonnés d'Anthropic",
+          "z": "bref",
+          "id": "des-pirates-volent-les-jetons-claude-d-abonnes-d-anthropic"
+        }
+      ]
+    },
     {
       "date": "2026-09-08",
       "dateCourte": "mar. 8 sept.",

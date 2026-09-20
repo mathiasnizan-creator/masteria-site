@@ -1,0 +1,312 @@
+{
+  "schema": 2,
+  "date": "2026-09-11",
+  "dateAffichee": "11 septembre 2026",
+  "dateLongue": "vendredi 11 septembre 2026",
+  "dateCourte": "ven. 11 sept.",
+  "jourSemaine": "vendredi",
+  "titre": "Veille IA du vendredi 11 septembre 2026",
+  "titreEditorial": "La sûreté de l'IA passe du cercle militant au débat de place : Sam Altman se dit prêt à ralentir le développement de l'IA de pointe et fait sonder la légalité d'un tel frein, un ancien d'Anthropic prévient que « l'IA pourrait tous nous tuer », OpenAI accueille un chercheur inquiet à son conseil, et Anthropic publie 161 pages d'usages détournés de Claude, des missiles yéménites aux faux profils de rencontre. En Europe, la CNIL cadre la facturation électronique et l'agence de cybersécurité de l'Union met à l'essai le modèle le plus offensif d'Anthropic. En Chine, DeepSeek relance la guerre des prix avec son modèle V4.1 Flash et le fondeur Enflame bondit de 188 % pour ses débuts en Bourse. Microsoft planifie 38 gigawatts de centres de données et Jensen Huang promet à Nvidia 70 % de croissance.",
+  "chapeau": "La sûreté de l'IA quitte le cercle militant pour le débat de place : Sam Altman se dit prêt à ralentir, un ancien d'Anthropic lance un avertissement glaçant, et Anthropic publie 161 pages sur les usages détournés de Claude. Pendant ce temps, DeepSeek relance la guerre des prix en Chine, Enflame s'envole en Bourse et Microsoft planifie 38 gigawatts de centres de données.",
+  "une": {
+    "titre": "Anthropic publie 161 pages sur les usages détournés de Claude, des missiles aux escroqueries sentimentales",
+    "texteHtml": "<p>Le rapport de renseignement sur les menaces qu'Anthropic a diffusé jeudi 10 septembre détaille, sur 161 pages, les tentatives d'usage malveillant de son modèle Claude et la façon dont l'entreprise dit les avoir bloquées. Le catalogue va loin : recherches susceptibles de faciliter la fabrication d'armes biologiques, aide au ciblage de missiles au Yémen, faux profils opérés à grande échelle sur des applications de rencontre, campagnes de fraude. Anthropic affirme avoir renforcé les garde-fous de ses derniers modèles pour limiter les requêtes touchant à la biologie sensible. Le document décrit aussi des campagnes de « distillation », où des concurrents chinois (Alibaba, Moonshot AI, DeepSeek) interrogent en masse Claude pour en copier le comportement et entraîner leurs propres modèles à moindre coût, une pratique qui se serait intensifiée ces derniers mois. L'entreprise reconnaît une limite : elle stoppe ce qu'elle voit passer sur ses serveurs, pas ce qui tourne déjà hors de sa portée.</p>",
+    "sources": [
+      {
+        "nom": "Frandroid",
+        "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/anthropic-claude-ai/3243847_anthropic-publie-161-pages-sur-les-detournements-de-claude-et-ca-pique"
+      },
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/09/11/anthropic-dit-avoir-bloque-des-utilisations-malveillantes-de-son-ia-comme-des-recherches-pouvant-faciliter-l-utilisation-d-armes-biologiques_6770214_4408996.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "anthropic-publie-161-pages-sur-les-usages-detournes-de"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La CNIL cadre la protection des données dans la facturation électronique",
+          "texteHtml": "<p>Depuis le 1er septembre 2026, la réforme de la facturation électronique entre entreprises est entrée en vigueur, imposant à chaque société d'émettre et de recevoir ses factures par voie dématérialisée. La Commission nationale de l'informatique et des libertés publie des repères pour aider les entreprises à sécuriser les données personnelles qui transitent dans ces flux, notamment via les plateformes agréées qui centralisent les échanges. Pour les directions financières et juridiques, le chantier de conformité technique double d'un chantier RGPD qu'il vaut mieux ouvrir dès maintenant.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/facturation-electronique-quels-enjeux"
+            }
+          ],
+          "rang": 2,
+          "id": "la-cnil-cadre-la-protection-des-donnees-dans-la-facturation"
+        },
+        {
+          "titre": "Hugging Face glisse un message aux agents IA dans son fichier de sécurité",
+          "texteHtml": "<p>La plateforme française de modèles ouverts a ajouté à son fichier <code>security.txt</code>, d'ordinaire réservé aux chercheurs en sécurité, une note adressée aux agents autonomes qui parcourent son site : inutile de tenter de la pirater, les réponses à leurs objectifs se trouvent ailleurs. Le clin d'œil traduit une réalité nouvelle pour les équipes de sécurité, à savoir que les visiteurs d'un site ne sont plus seulement humains, et que des agents lancés par des tiers testent désormais les défenses en continu.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2330667-pas-besoin-de-nous-pirater-hugging-face-sadresse-directement-aux-agents-ia-sur-son-site.html"
+            }
+          ],
+          "rang": 3,
+          "id": "hugging-face-glisse-un-message-aux-agents-ia-dans-son"
+        },
+        {
+          "titre": "L'agence européenne de cybersécurité met à l'essai Claude Mythos",
+          "texteHtml": "<p>L'ENISA, agence de cybersécurité de l'Union européenne, a obtenu l'accès à Mythos, le modèle le plus offensif d'Anthropic en matière de cyberdéfense, rapporte Next.ink. En mai, OpenAI lui avait déjà ouvert son GPT-5.5-Cyber. Une institution publique européenne s'équipe ainsi des mêmes outils que ceux dont Anthropic documente, par ailleurs, les usages détournés, dans l'espoir de renforcer sa propre défense avant que les attaquants n'en tirent parti.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/brief-article/lagence-de-cybersecurite-de-la-commission-europeenne-peut-maintenant-utiliser-mythos/"
+            }
+          ],
+          "rang": 4,
+          "id": "l-agence-europeenne-de-cybersecurite-met-a-l-essai-claude"
+        },
+        {
+          "titre": "Ed.ai lève 5 millions d'euros pour l'évaluation des copies assistée par IA",
+          "texteHtml": "<p>La start-up française Ed.ai a bouclé un tour de table de 5 millions d'euros pour développer son outil d'aide à la correction, qui analyse les copies des élèves afin d'en tirer un retour plus précis pour les enseignants. Le projet vise à alléger la charge de notation tout en gardant le professeur au centre de l'appréciation. L'edtech française trouve là un cas d'usage concret, où l'IA prépare le travail sans se substituer au jugement pédagogique.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/10/ed-ai-leve-5-millions-deuros-pour-aider-les-enseignants-a-mieux-tirer-profit-des-copies-de-leurs-eleves-avec-lia/"
+            }
+          ],
+          "rang": 5,
+          "id": "ed-ai-leve-5-millions-d-euros-pour-l-evaluation-des-copies"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La sûreté de l'IA devient le débat central, et OpenAI se dit prêt à ralentir",
+          "texteHtml": "<p>Sam Altman a indiqué à ses équipes qu'OpenAI envisageait de freiner le développement de ses modèles les plus avancés, et qu'il espérait voir les autres laboratoires faire de même, selon Bloomberg. Dans le même temps, l'entreprise cherche à savoir si une coordination du secteur pour ralentir ne tomberait pas sous le coup du droit de la concurrence, rapporte Wired. Le virage accompagne une bascule d'ambiance : Jacob Coxon, qui vient de quitter Anthropic, avertit que « l'IA pourrait tous nous tuer » dans les années à venir, un message repris par Platformer, Wired et Bloomberg. OpenAI a par ailleurs accueilli au conseil de sa fondation un chercheur réputé pessimiste sur les risques de l'IA. La question existentielle, longtemps cantonnée à quelques cercles de la baie de San Francisco, s'installe au centre des conversations du secteur.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-11/openai-is-open-to-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/openai-wants-to-know-if-an-ai-industry-slowdown-would-even-be-legal/"
+            },
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/09/10/lia-pourrait-tous-nous-tuer-lavertissement-glacant-de-ceux-qui-la-developpent/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629167-openai-un-chercheur-catastrophiste-sur-l-avenir-de-l-ia-rejoint-le-conseil-d-administration.html"
+            }
+          ],
+          "rang": 6,
+          "id": "la-surete-de-l-ia-devient-le-debat-central-et-openai-se-dit"
+        },
+        {
+          "titre": "OpenAI lance ChatGPT for Financial Services, adossé à GPT-6 Astra",
+          "texteHtml": "<p>OpenAI a présenté le 10 septembre une version de ChatGPT dédiée aux métiers de la finance, qui combine des données financières intégrées et son dernier modèle, GPT-6 Astra, pour la recherche, la modélisation et la production de documents destinés aux clients. L'outil vise analystes, banquiers et gérants, à qui il promet d'accélérer l'analyse de marché et la préparation de supports. L'annonce prolonge la stratégie d'OpenAI, qui décline désormais ChatGPT par secteur, avec le lancement parallèle d'un « Data agent » capable de connecter les données d'une entreprise et d'en tirer des tableaux de bord. La finance, gros consommateur de synthèse documentaire, devient une cible commerciale de premier plan.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/introducing-chatgpt-financial-services"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-lance-chatgpt-for-financial-services-adosse-a-gpt-6"
+        },
+        {
+          "titre": "Microsoft planifie 38 gigawatts de centres de données pour absorber la demande",
+          "texteHtml": "<p>Faute de capacité, Microsoft a dû refuser certaines commandes d'IA et de cloud, révèle Bloomberg. Le groupe prévoit désormais d'ajouter 26 gigawatts de puissance de calcul et de porter son parc à 38 gigawatts de capacité totale, l'équivalent d'une trentaine de réacteurs nucléaires réservés à ses seuls centres de données. Ce plan illustre le goulot d'étranglement du moment, qui tient moins aux puces qu'à l'électricité et aux terrains disponibles. La course à l'IA se joue désormais autant chez les électriciens que chez les concepteurs de modèles.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/features/2026-09-10/microsoft-ai-focused-data-center-plan-to-add-26-gigawatts-of-compute"
+            }
+          ],
+          "rang": 8,
+          "id": "microsoft-planifie-38-gigawatts-de-centres-de-donnees-pour"
+        },
+        {
+          "titre": "Jensen Huang promet 70 % de croissance à Nvidia et vise la cybersécurité",
+          "texteHtml": "<p>Le patron de Nvidia, Jensen Huang, a assuré que son entreprise croîtrait de 70 % l'an prochain, tout en réfutant l'idée que ses accords avec ses clients seraient « circulaires », c'est-à-dire qu'il financerait ceux qui lui achètent ses puces, selon TechCrunch. Lors de la conférence technologique de Goldman Sachs, il a désigné la cybersécurité comme le prochain grand marché de l'IA, après la programmation, en évoquant des systèmes de défense fonctionnant en continu. Nvidia noue déjà des partenariats dans ce domaine, rapporte Clubic. Le fournisseur des puces qui entraînent les modèles annonce ainsi où il compte vendre la prochaine vague.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629233-le-patron-de-nvidia-voit-deja-le-prochain-grand-marche-de-l-ia.html"
+            }
+          ],
+          "rang": 9,
+          "id": "jensen-huang-promet-70-de-croissance-a-nvidia-et-vise-la"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "DeepSeek dévoile V4.1 Flash et relance la guerre des prix",
+          "texteHtml": "<p>DeepSeek a lancé jeudi 10 septembre son modèle V4.1 Flash, qu'il présente comme plus performant que son précédent porte-drapeau tout en réduisant le coût d'inférence (le coût de faire tourner le modèle une fois entraîné) et en gagnant en vitesse. Le modèle repose sur une nouvelle architecture baptisée « Causal-Encoder-Decoder » et sur 552 milliards de paramètres, avec un système de « mélange d'experts » (seule une fraction du réseau s'active à chaque requête, ce qui limite le calcul), là où un modèle classique mobilise l'ensemble du réseau. DeepSeek affirme que V4.1 Flash devance le Kimi K3 de Moonshot AI sur les tests de cybersécurité et de code. L'annonce s'inscrit dans la stratégie chinoise de prix agressifs et de performances comparables, qui pèse à la baisse sur les tarifs mondiaux de l'IA.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3367051/deepseek-says-new-flash-ai-model-beats-kimi-k3-cyber-coding-benchmarks"
+            }
+          ],
+          "rang": 10,
+          "id": "deepseek-devoile-v4-1-flash-et-relance-la-guerre-des-prix"
+        },
+        {
+          "titre": "Le fondeur chinois Enflame bondit de 188 % pour ses débuts en Bourse à Shanghai",
+          "texteHtml": "<p>Enflame Technology, l'un des principaux concurrents chinois de Nvidia, a vu son cours grimper de 188 % le vendredi 11 septembre lors de sa première séance à Shanghai. Le titre a ouvert à 410 yuans, contre un prix d'introduction de 142,18 yuans, portant la capitalisation de ce concepteur de puces IA soutenu par Tencent à 176,4 milliards de yuans, environ 25 milliards de dollars. Enflame était le dernier des quatre grands champions chinois de la puce IA à entrer en Bourse. L'accueil enthousiaste des investisseurs confirme l'appétit du marché domestique pour les alternatives locales à Nvidia, à mesure que les contrôles américains à l'export poussent la Chine à bâtir sa propre filière.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3367124/enflame-shares-soar-188-shanghai-debut-nvidia-challenger-taps-investor-fever-ai"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/markets/ipo/chinese-nvidia-challenger-enflame-jumps-188-in-shanghai-market-debut"
+            }
+          ],
+          "rang": 11,
+          "id": "le-fondeur-chinois-enflame-bondit-de-188-pour-ses-debuts-en"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Deux corpus publics permettent enfin de mesurer, sans deviner, ce qu'un modèle a bien « appris par cœur »",
+          "texteHtml": "<p>Une équipe s'attaque à une question qui empoisonne les procès sur les données d'entraînement : quand un modèle prédit une phrase avec une facilité suspecte, peut-on en déduire qu'elle figurait dans son corpus d'entraînement ? Presque tous les tests publiés jusqu'ici devaient deviner quelles phrases étaient présentes. Les auteurs suppriment la devinette en s'appuyant sur deux familles de modèles, OLMo-2 et Pythia, dont les corpus sont publics et indexés, ce qui donne le nombre exact d'apparitions de n'importe quelle phrase. Leur conclusion tempère les attentes : la trace d'appartenance n'est décelable que là où la duplication se confond avec d'autres facteurs, ce qui fragilise les méthodes censées prouver qu'un texte a servi à l'entraînement. De quoi éclairer les litiges en cours, dont l'accusation portée cette semaine contre OpenAI sur l'origine de ses données mathématiques.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.10830"
+            }
+          ],
+          "rang": 12,
+          "id": "deux-corpus-publics-permettent-enfin-de-mesurer-sans"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li><strong>Claude Mythos a repéré 26 000 failles en cinq mois, moins de 1 % ont été corrigées.</strong> Cinq mois après son lancement, l'outil de chasse aux vulnérabilités d'Anthropic affiche des chiffres impressionnants, mais des analystes soulignent que la détection ne vaut rien sans réparation, quand plus de 25 000 failles restent ouvertes. <a href=\"https://www.numerama.com/cyberguerre/2330439-bilan-apres-5-mois-claude-mythos-a-repere-26-000-failles-mais-moins-de-1-ont-ete-reparees.html\" target=\"_blank\" rel=\"noopener noreferrer\">Numerama</a></li>\n<li><strong>Moonshot AI, créateur de Kimi, étudie une double introduction en Bourse à Hong Kong et Shanghai.</strong> Le laboratoire chinois, développeur du modèle Kimi K3, envisage une cotation sur les deux places pour lever des capitaux et gagner en visibilité, après avoir négocié en juillet une entrée à Hong Kong, selon deux sources citées par le South China Morning Post.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3367027/kimi-maker-moonshot-ai-explore-dual-hong-kong-and-shanghai-ipos-boost-capital-sources"
+            }
+          ],
+          "rang": 13,
+          "id": "claude-mythos-a-repere-26-000-failles-en"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Sam Altman dit à ses équipes qu'OpenAI est prêt à ralentir l'IA de pointe et fait sonder la légalité d'un tel frein, pendant que la peur de l'extinction envahit les fils d'actualité : le réflexe qui distingue une organisation sérieuse est de bâtir son registre des risques sur les usages détournés déjà documentés, comme les 161 pages d'Anthropic, et de mesurer la part de failles corrigées plutôt que le nombre repéré, quand Claude Mythos en trouve 26 000 en cinq mois et que moins de 260 sont réparées",
+    "these": "Sam Altman a dit à ses équipes qu'OpenAI est prêt à ralentir le développement de l'IA de pointe, et l'entreprise cherche déjà à savoir si un tel frein serait légal au regard du droit de la concurrence. En quelques jours, la peur de l'extinction est passée du cercle des rationalistes de la baie de San Francisco au débat de place : un ancien chercheur d'Anthropic, Jacob Coxon, prévient que « l'IA pourrait tous nous tuer », OpenAI accueille un chercheur inquiet à son conseil, Wired et Bloomberg y consacrent leurs podcasts. Le risque de 2030 remplit les fils d'actualité. Les risques de ce trimestre, eux, sont déjà catalogués, datés, et presque jamais traités. Anthropic vient d'en publier l'inventaire : 161 pages d'usages détournés de Claude, des missiles yéménites aux faux profils sur des applications de rencontre. Le même jour, Numerama rappelle un chiffre passé sous silence. En cinq mois, l'outil de chasse aux failles d'Anthropic, Claude Mythos, en a repéré 26 000 dans des logiciels réels. Moins de 260 ont été corrigées. Plus de 25 000 restent ouvertes. La machine trouve, personne ne répare. C'est là l'écart réel, et il n'a rien de spéculatif. La gravité d'une organisation se lit dans son registre des risques : ce qui y figure, ce qui est corrigé, en combien de temps. Prenez chaque système d'IA en service chez vous. Confrontez-le aux usages détournés que documente le rapport d'Anthropic : injection d'instructions cachées, vol d'identifiants délégué à un agent, exfiltration de données. Mesurez ensuite ce qui compte, non le nombre de failles repérées mais la part corrigée et le délai. Nommez qui referme chaque trou, comme on nomme un responsable de la paie. Les laboratoires débattent de la fin du monde et demandent au droit s'ils ont le droit de ralentir. Pendant ce temps, un flux qui tourne chez vous attend un correctif que personne n'a planifié. La menace lointaine occupe les esprits. La menace proche attend une décision. Elle vous appartient. L'équipe éditoriale Masteria.",
+    "html": "<p>Sam Altman a dit à ses équipes qu'OpenAI est prêt à ralentir le développement de l'IA de pointe, et l'entreprise cherche déjà à savoir si un tel frein serait légal au regard du droit de la concurrence. En quelques jours, la peur de l'extinction est passée du cercle des rationalistes de la baie de San Francisco au débat de place : un ancien chercheur d'Anthropic, Jacob Coxon, prévient que « l'IA pourrait tous nous tuer », OpenAI accueille un chercheur inquiet à son conseil, Wired et Bloomberg y consacrent leurs podcasts. Le risque de 2030 remplit les fils d'actualité. Les risques de ce trimestre, eux, sont déjà catalogués, datés, et presque jamais traités.</p>\n<p>Anthropic vient d'en publier l'inventaire : 161 pages d'usages détournés de Claude, des missiles yéménites aux faux profils sur des applications de rencontre. Le même jour, Numerama rappelle un chiffre passé sous silence. En cinq mois, l'outil de chasse aux failles d'Anthropic, Claude Mythos, en a repéré 26 000 dans des logiciels réels. Moins de 260 ont été corrigées. Plus de 25 000 restent ouvertes. La machine trouve, personne ne répare. C'est là l'écart réel, et il n'a rien de spéculatif.</p>\n<p>La gravité d'une organisation se lit dans son registre des risques : ce qui y figure, ce qui est corrigé, en combien de temps. Prenez chaque système d'IA en service chez vous. Confrontez-le aux usages détournés que documente le rapport d'Anthropic : injection d'instructions cachées, vol d'identifiants délégué à un agent, exfiltration de données. Mesurez ensuite ce qui compte, non le nombre de failles repérées mais la part corrigée et le délai. Nommez qui referme chaque trou, comme on nomme un responsable de la paie.</p>\n<p>Les laboratoires débattent de la fin du monde et demandent au droit s'ils ont le droit de ralentir. Pendant ce temps, un flux qui tourne chez vous attend un correctif que personne n'a planifié. La menace lointaine occupe les esprits. La menace proche attend une décision. Elle vous appartient. L'équipe éditoriale Masteria.</p>",
+    "htmlExtrait": "<p>Sam Altman a dit à ses équipes qu'OpenAI est prêt à ralentir le développement de l'IA de pointe, et l'entreprise cherche déjà à savoir si un tel frein serait légal au regard du droit de la concurrence. En quelques jours, la peur de l'extinction est passée du cercle des rationalistes de la baie de San Francisco au débat de place : un ancien chercheur d'Anthropic, Jacob Coxon, prévient que « l'IA pourrait tous nous tuer », OpenAI accueille un chercheur inquiet à son conseil, Wired et Bloomberg y consacrent leurs podcasts. Le risque de 2030 remplit les fils d'actualité. Les risques de ce trimestre, eux, sont déjà catalogués, datés, et presque jamais traités.</p>\n<p>Anthropic vient d'en publier l'inventaire : 161 pages d'usages détournés de Claude, des missiles yéménites aux faux profils sur des applications de rencontre. Le même jour, Numerama rappelle un chiffre passé sous silence. En cinq mois, l'outil de chasse aux failles d'Anthropic, Claude Mythos, en a repéré 26 000 dans des logiciels réels. Moins de 260 ont été corrigées. Plus de 25 000 restent ouvertes. La machine trouve, personne ne répare. C'est là l'écart réel, et il n'a rien de spéculatif.</p>",
+    "itemsCites": [
+      1,
+      6,
+      13
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-10",
+    "dateLongue": "jeudi 10 septembre 2026",
+    "titreEditorial": "Apple tient la première keynote de John Ternus et dévoile son premier pliable, l'iPhone Duo, une Apple Watch qui écoute en continu et Apple Reference Image, un capteur qui signe chaque pixel pour certifier qu'une photo n'a pas été fabriquée par IA ; un rapport de l'OCDE établit que les élèves qui utilisent l'IA obtiennent de moins bons résultats, sauf ceux formés à en juger l'usage de façon critique ; les dépenses d'IA par salarié ont reculé en août dans les grandes entreprises ; Loft Orbital lève un milliard de dollars émirati avec Mistral ; JD.com vise trois millions de robots et promet de reconvertir ses livreurs ; DeepSeek prépare son entrée en Bourse à Shanghai ; Suno réentraîne son modèle sur de la musique sous licence.",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-09-14",
+    "dateLongue": "lundi 14 septembre 2026",
+    "titreEditorial": "Les patrons de l'IA appellent à ralentir la course, la Maison-Blanche refuse : Dario Amodei plaide pour « caler l'allure de la frontière », Sam Altman, Elon Musk et Demis Hassabis approuvent, Donald Trump répond qu'il ne cédera pas son avance à la Chine, et les Bourses asiatiques reculent. Anthropic vise le Nasdaq pour une entrée en Bourse qui pourrait dépasser les 86 milliards de dollars pendant qu'OpenAI renonce à la sienne, SoftBank emprunte 11,9 milliards pour financer OpenAI et Christine Lagarde alerte sur le coût financier de l'IA. En Chine, Z.ai repart lever 5 milliards à Hong Kong et le chef du renseignement met en garde contre les risques de l'IA.",
+    "nbItems": 14
+  },
+  "nbItems": 13,
+  "nbSources": 20,
+  "nbSignes": 10810,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Frandroid",
+    "Le Monde",
+    "TechCrunch",
+    "CNIL",
+    "Numerama",
+    "Next.ink",
+    "Maddyness",
+    "Bloomberg",
+    "Wired",
+    "Siècle Digital"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 142,
+  "publieLe": "2026-09-11T09:04:42+02:00",
+  "publieLeAffiche": "9h04",
+  "ogImage": "/veille-data/og/2026-09-11.png"
+}

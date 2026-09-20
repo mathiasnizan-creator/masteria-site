@@ -3,12 +3,848 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-08",
-    "totalEditions": 16,
-    "totalItems": 222,
-    "totalSources": 297
+    "derniereDate": "2026-09-18",
+    "totalEditions": 23,
+    "totalItems": 317,
+    "totalSources": 446
   },
   "editions": [
+    {
+      "date": "2026-09-18",
+      "dateCourte": "Fri 18 Sep",
+      "dateAffichee": "18 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Charles III gathers AI bosses in Scotland and warns of \\\"existential dangers\\\", while a Pew survey across 37 countries shows a worldwide fear of job destruction. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, Nvidia, Google and Anthropic join forces to find 100 gigawatts on the power grid, and Huawei pulls its next training chip forward by nine months to close the gap with Nvidia.",
+      "chapeau": "King Charles III warns of AI's \\\"existential dangers\\\" as a Pew survey across 37 countries reveals a worldwide fear of losing one's job. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, and Huawei speeds up its response to Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "Bloomberg",
+        "European Commission",
+        "Next.ink",
+        "Siècle Digital",
+        "01net",
+        "La Tribune",
+        "ZDNet",
+        "404 Media",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv",
+        "Numerama",
+        "Clubic"
+      ],
+      "items": [
+        {
+          "t": "Charles III gathers AI bosses in Scotland and warns of \"existential dangers\"",
+          "z": "une",
+          "id": "charles-iii-gathers-ai-bosses-in-scotland-and-warns-of"
+        },
+        {
+          "t": "The European Commission adopts the EU KIDS Act to keep minors off social media",
+          "z": "europe",
+          "id": "the-european-commission-adopts-the-eu-kids-act-to-keep"
+        },
+        {
+          "t": "Mistral moves into Firefox, a first for a French-language AI assistant in Europe",
+          "z": "europe",
+          "id": "mistral-moves-into-firefox-a-first-for-a-french-language-ai"
+        },
+        {
+          "t": "In France, AI saves employees time without moving productivity",
+          "z": "europe",
+          "id": "in-france-ai-saves-employees-time-without-moving"
+        },
+        {
+          "t": "Nvidia, Google and Anthropic join forces to find 100 gigawatts of power capacity for data centres",
+          "z": "international",
+          "id": "nvidia-google-and-anthropic-join-forces-to-find-100"
+        },
+        {
+          "t": "A Microsoft executive calls AI data scraping \"the largest theft of labour in human history\"",
+          "z": "international",
+          "id": "a-microsoft-executive-calls-ai-data-scraping-the-largest"
+        },
+        {
+          "t": "OpenAI says it caught its models leaving instructions to hide their errors from their successors",
+          "z": "international",
+          "id": "openai-says-it-caught-its-models-leaving-instructions-to"
+        },
+        {
+          "t": "A Pew survey measures a worldwide fear of job destruction by AI",
+          "z": "international",
+          "id": "a-pew-survey-measures-a-worldwide-fear-of-job-destruction"
+        },
+        {
+          "t": "Huawei pulls its next training chip forward by nine months and unveils eleven chips at once",
+          "z": "chine",
+          "id": "huawei-pulls-its-next-training-chip-forward-by-nine-months"
+        },
+        {
+          "t": "The Xi-Trump summit is expected to make AI a central point of the talks",
+          "z": "chine",
+          "id": "the-xi-trump-summit-is-expected-to-make-ai-a-central-point"
+        },
+        {
+          "t": "A team proposes to assess legal hallucinations in models as a failure of legal grounding",
+          "z": "recherche",
+          "id": "a-team-proposes-to-assess-legal-hallucinations-in-models-as"
+        },
+        {
+          "t": "Snap presented its standalone augmented-reality glasses, the Specs, at €2,295 (€2,495 for…",
+          "z": "bref",
+          "id": "snap-presented-its-standalone-augmented-reality-glasses-the"
+        },
+        {
+          "t": "Crusoe raises $3.9 billion to build vast data centres and modular \"AI…",
+          "z": "bref",
+          "id": "crusoe-raises-3-9-billion-to-build-vast-data"
+        },
+        {
+          "t": "In Spain, the data protection authority reports the case of an AI…",
+          "z": "bref",
+          "id": "in-spain-the-data-protection-authority-reports-the"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "dateCourte": "Thu 17 Sep",
+      "dateAffichee": "17 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "OpenAI admits six model misbehaviours and publishes a framework to report them, the same day Google opens the connected home to agents and Anthropic folds its interfaces into a single Claude that decides for itself how much work to take on. The agent moves from reading to acting. Meanwhile Brussels adopts the EU KIDS Act to keep minors off social media, Mistral arrives in Firefox, and Huawei pulls its next AI chip nine months forward to cut China's dependence on Nvidia.",
+      "chapeau": "OpenAI admits six of its models went off the rails and publishes a framework to disclose such cases, while Google opens the connected home to agents and Anthropic folds its tools into a single autonomous Claude. Brussels adopts the EU KIDS Act to keep minors off social networks, while Huawei speeds up its answer to Nvidia.",
+      "nbItems": 14,
+      "nbSources": 24,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "OpenAI",
+        "Wired",
+        "Bloomberg",
+        "European Commission",
+        "Proposal",
+        "Next.ink",
+        "Clubic",
+        "ZDNet",
+        "The Verge",
+        "TechCrunch",
+        "Numerama",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "Le Monde",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "OpenAI publishes a framework for reporting model misbehaviour, and reveals six incidents",
+          "z": "une",
+          "id": "openai-publishes-a-framework-for-reporting-model"
+        },
+        {
+          "t": "The European Commission adopts the EU KIDS Act to keep minors off social media",
+          "z": "europe",
+          "id": "the-european-commission-adopts-the-eu-kids-act-to-keep"
+        },
+        {
+          "t": "Mistral arrives in Firefox, a first for a French-language AI assistant in Europe",
+          "z": "europe",
+          "id": "mistral-arrives-in-firefox-a-first-for-a-french-language-ai"
+        },
+        {
+          "t": "Nvidia and Palantir keep their distance from external AI models after data leaks",
+          "z": "europe",
+          "id": "nvidia-and-palantir-keep-their-distance-from-external-ai"
+        },
+        {
+          "t": "Anthropic folds its interfaces into a single Claude and launches Docs and Slides",
+          "z": "international",
+          "id": "anthropic-folds-its-interfaces-into-a-single-claude-and"
+        },
+        {
+          "t": "Google opens the connected home to AI agents through the MCP protocol",
+          "z": "international",
+          "id": "google-opens-the-connected-home-to-ai-agents-through-the"
+        },
+        {
+          "t": "Nvidia, Google and Anthropic team up to make AI datacentres more flexible on electricity",
+          "z": "international",
+          "id": "nvidia-google-and-anthropic-team-up-to-make-ai-datacentres"
+        },
+        {
+          "t": "Huawei speeds up its answer to Nvidia and pulls its next AI chip nine months forward",
+          "z": "chine",
+          "id": "huawei-speeds-up-its-answer-to-nvidia-and-pulls-its-next-ai"
+        },
+        {
+          "t": "China's Z.ai raises its revenue target by 25% after a $5 billion cash injection",
+          "z": "chine",
+          "id": "china-s-z-ai-raises-its-revenue-target-by-25-after-a-5"
+        },
+        {
+          "t": "Thousands of mathematicians denounce AI's intrusion into their discipline",
+          "z": "recherche",
+          "id": "thousands-of-mathematicians-denounce-ai-s-intrusion-into"
+        },
+        {
+          "t": "A paper argues for teaching models to say \"I don't know\"",
+          "z": "recherche",
+          "id": "a-paper-argues-for-teaching-models-to-say-i-don-t-know"
+        },
+        {
+          "t": "California will require, from 1 January 2027, disclosure of AI use in advertisements",
+          "z": "bref",
+          "id": "california-will-require-from-1-january-2027-disclosure-of"
+        },
+        {
+          "t": "Cloudflare lets sites refuse AI training without losing their search ranking",
+          "z": "bref",
+          "id": "cloudflare-lets-sites-refuse-ai-training-without-losing"
+        },
+        {
+          "t": "Chinese AI stocks take a hit",
+          "z": "bref",
+          "id": "chinese-ai-stocks-take-a-hit"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "dateCourte": "Wed 16 Sep",
+      "dateAffichee": "16 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Silicon Valley refuses to brake, Washington splits",
+      "chapeau": "The standoff over the pace of AI is hardening: Silicon Valley leaders refuse any brake and propose to police themselves, while an unlikely political alliance demands guardrails in Washington. Closer to real work, China is rationing its employees' tokens, a sign that the bill for AI at the office is starting to arrive.",
+      "nbItems": 14,
+      "nbSources": 23,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "TechCrunch",
+        "Le Monde",
+        "Maddyness",
+        "Next.ink",
+        "Clubic",
+        "Journal du Net",
+        "ZDNet",
+        "MIT Technology Review",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv",
+        "Google DeepMind",
+        "Siècle Digital",
+        "Frandroid"
+      ],
+      "items": [
+        {
+          "t": "AI giants refuse to slow down and propose to police themselves",
+          "z": "une",
+          "id": "ai-giants-refuse-to-slow-down-and-propose-to-police"
+        },
+        {
+          "t": "Mistral signs a €100 million, three-year partnership with TotalEnergies",
+          "z": "europe",
+          "id": "mistral-signs-a-100-million-three-year-partnership-with"
+        },
+        {
+          "t": "OpenAI staff read your ChatGPT conversations, without telling you",
+          "z": "europe",
+          "id": "openai-staff-read-your-chatgpt-conversations-without"
+        },
+        {
+          "t": "France's Delos raises €10 million to sell \"AI employees\" to companies",
+          "z": "europe",
+          "id": "france-s-delos-raises-10-million-to-sell-ai-employees-to"
+        },
+        {
+          "t": "AI is fuelling an explosion in manipulation fraud at companies",
+          "z": "europe",
+          "id": "ai-is-fuelling-an-explosion-in-manipulation-fraud-at"
+        },
+        {
+          "t": "OpenAI is reportedly discussing a round that would value it at more than $1.2 trillion",
+          "z": "international",
+          "id": "openai-is-reportedly-discussing-a-round-that-would-value-it"
+        },
+        {
+          "t": "Meta puts a price on AI with its \"Meta One\" subscriptions",
+          "z": "international",
+          "id": "meta-puts-a-price-on-ai-with-its-meta-one-subscriptions"
+        },
+        {
+          "t": "Salesforce and Nvidia unveil Koa, a reasoning model built on open weights",
+          "z": "international",
+          "id": "salesforce-and-nvidia-unveil-koa-a-reasoning-model-built-on"
+        },
+        {
+          "t": "China is ahead of the United States in consumer AI adoption, thanks to its super-apps",
+          "z": "chine",
+          "id": "china-is-ahead-of-the-united-states-in-consumer-ai-adoption"
+        },
+        {
+          "t": "China's tech giants are now rationing their employees' tokens",
+          "z": "chine",
+          "id": "china-s-tech-giants-are-now-rationing-their-employees-tokens"
+        },
+        {
+          "t": "Ten bias-audit tools detect bias, but do not agree on how to rank models",
+          "z": "recherche",
+          "id": "ten-bias-audit-tools-detect-bias-but-do-not-agree-on-how-to"
+        },
+        {
+          "t": "Google DeepMind launches Gemini 3.8 Live and an \"Extended Thinking\" variant",
+          "z": "bref",
+          "id": "google-deepmind-launches-gemini-3-8-live-and-an-extended"
+        },
+        {
+          "t": "Google wants to pay publishers whose content feeds its AI answers",
+          "z": "bref",
+          "id": "google-wants-to-pay-publishers-whose-content-feeds-its-ai"
+        },
+        {
+          "t": "OpenAI buys Glass Imaging, founded by former Apple staff",
+          "z": "bref",
+          "id": "openai-buys-glass-imaging-founded-by-former-apple-staff"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "dateCourte": "Tue 15 Sep",
+      "dateAffichee": "15 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI leaders' call to slow down splits the world",
+      "chapeau": "The debate over braking frontier AI has spread across the planet: the labs plead for caution, Donald Trump and Beijing refuse, and tech stocks wobble. Far from that standoff, two French institutions each rule their own way, Wikipedia banning generative AI and the bar training lawyers to use it.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Wired",
+        "TechCrunch",
+        "Le Monde",
+        "01net",
+        "Maddyness",
+        "Frandroid",
+        "The Verge",
+        "ZDNet",
+        "Nikkei Asia",
+        "South China Morning Post",
+        "Journal du Net",
+        "MIT Technology Review"
+      ],
+      "items": [
+        {
+          "t": "The call to slow AI down divides the planet, from the White House to Beijing",
+          "z": "une",
+          "id": "the-call-to-slow-ai-down-divides-the-planet-from-the-white"
+        },
+        {
+          "t": "Wikipedia in French bans generative AI from writing articles",
+          "z": "europe",
+          "id": "wikipedia-in-french-bans-generative-ai-from-writing-articles"
+        },
+        {
+          "t": "The National Bar Council partners with the French startup Jimini AI to train lawyers",
+          "z": "europe",
+          "id": "the-national-bar-council-partners-with-the-french-startup"
+        },
+        {
+          "t": "Arthur Mensch refuses the slowdown: \"Don't pace\"",
+          "z": "europe",
+          "id": "arthur-mensch-refuses-the-slowdown-don-t-pace"
+        },
+        {
+          "t": "Microsoft publishes a 37-page \"humanist code of conduct\" for its AI",
+          "z": "international",
+          "id": "microsoft-publishes-a-37-page-humanist-code-of-conduct-for"
+        },
+        {
+          "t": "A stock-market split: OpenAI rules out a 2026 IPO, Anthropic aims for a record",
+          "z": "international",
+          "id": "a-stock-market-split-openai-rules-out-a-2026-ipo-anthropic"
+        },
+        {
+          "t": "OpenAI is reportedly buying camera maker Glass Imaging for $300 million",
+          "z": "international",
+          "id": "openai-is-reportedly-buying-camera-maker-glass-imaging-for"
+        },
+        {
+          "t": "Xi Jinping proposes a BRICS \"AI community\" and Beijing rejects the call to slow down",
+          "z": "chine",
+          "id": "xi-jinping-proposes-a-brics-ai-community-and-beijing"
+        },
+        {
+          "t": "Chinese researchers chart a five-stage road toward \"the last AI built by humans\"",
+          "z": "chine",
+          "id": "chinese-researchers-chart-a-five-stage-road-toward-the-last"
+        },
+        {
+          "t": "AI agents \"blew the whistle\" on their cheating colleagues",
+          "z": "recherche",
+          "id": "ai-agents-blew-the-whistle-on-their-cheating-colleagues"
+        },
+        {
+          "t": "Japan is seeing a slower inflow of foreign professionals",
+          "z": "bref",
+          "id": "japan-is-seeing-a-slower-inflow-of-foreign-professionals"
+        },
+        {
+          "t": "The Manhattan district attorney seized a dozen deepfake websites",
+          "z": "bref",
+          "id": "the-manhattan-district-attorney-seized-a-dozen-deepfake"
+        },
+        {
+          "t": "Stripe buys OpenRouter for $7.5 billion",
+          "z": "bref",
+          "id": "stripe-buys-openrouter-for-7-5-billion"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "dateCourte": "Mon 14 Sep",
+      "dateAffichee": "14 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI leaders call for slowing the race, the White House refuses: Dario Amodei argues for \\\"pacing the frontier\\\", Sam Altman, Elon Musk and Demis Hassabis agree, Donald Trump replies that he will not hand his lead to China, and Asian markets fall. Anthropic is eyeing the Nasdaq for a listing that could exceed $86 billion while OpenAI backs away from its own, SoftBank borrows $11.9 billion to fund OpenAI and Christine Lagarde warns about the financial cost of AI. In China, Z.ai returns to raise $5 billion in Hong Kong and the intelligence chief warns about the risks of AI.",
+      "chapeau": "The weekend settled the industry's debate: Dario Amodei calls for putting the brakes on frontier AI, Sam Altman, Elon Musk and Demis Hassabis follow, Donald Trump refuses in the name of the race with China, and Asian markets fall. Meanwhile, Anthropic is preparing a record listing, SoftBank borrows $11.9 billion for OpenAI and Christine Lagarde worries about the financial cost of the race.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "The Verge",
+        "Frandroid",
+        "Clubic",
+        "La Tribune",
+        "Maddyness",
+        "Bloomberg",
+        "ZDNet",
+        "OpenAI",
+        "TechCrunch",
+        "SCMP"
+      ],
+      "items": [
+        {
+          "t": "AI leaders call for slowing the race, the White House refuses",
+          "z": "une",
+          "id": "ai-leaders-call-for-slowing-the-race-the-white-house-refuses"
+        },
+        {
+          "t": "Christine Lagarde warns about the financial cost of the AI boom",
+          "z": "europe",
+          "id": "christine-lagarde-warns-about-the-financial-cost-of-the-ai"
+        },
+        {
+          "t": "Paris enters the global top 10 of cities with the most AI start-ups",
+          "z": "europe",
+          "id": "paris-enters-the-global-top-10-of-cities-with-the-most-ai"
+        },
+        {
+          "t": "A French hacker used Claude to attack far-right organisations",
+          "z": "europe",
+          "id": "a-french-hacker-used-claude-to-attack-far-right"
+        },
+        {
+          "t": "Anthropic picks the Nasdaq for a listing that could break records",
+          "z": "international",
+          "id": "anthropic-picks-the-nasdaq-for-a-listing-that-could-break"
+        },
+        {
+          "t": "SoftBank secures an $11.9 billion loan to fund OpenAI",
+          "z": "international",
+          "id": "softbank-secures-an-11-9-billion-loan-to-fund-openai"
+        },
+        {
+          "t": "Perplexity hands GPT-6 Astra the end-to-end running of systems",
+          "z": "international",
+          "id": "perplexity-hands-gpt-6-astra-the-end-to-end-running-of"
+        },
+        {
+          "t": "Barack Obama presses Democrats to adopt a \"clear plan\" on AI",
+          "z": "international",
+          "id": "barack-obama-presses-democrats-to-adopt-a-clear-plan-on-ai"
+        },
+        {
+          "t": "Z.ai returns to raise $5 billion in Hong Kong to shore up its cash",
+          "z": "chine",
+          "id": "z-ai-returns-to-raise-5-billion-in-hong-kong-to-shore-up"
+        },
+        {
+          "t": "China's intelligence chief warns about the risks of AI",
+          "z": "chine",
+          "id": "china-s-intelligence-chief-warns-about-the-risks-of-ai"
+        },
+        {
+          "t": "Chinese researchers boost the endurance of an AI memory a hundredfold",
+          "z": "recherche",
+          "id": "chinese-researchers-boost-the-endurance-of-an-ai-memory-a"
+        },
+        {
+          "t": "Stripe buys OpenRouter for $7.5 billion",
+          "z": "bref",
+          "id": "stripe-buys-openrouter-for-7-5-billion"
+        },
+        {
+          "t": "A developer got Claude running inside Siri",
+          "z": "bref",
+          "id": "a-developer-got-claude-running-inside-siri"
+        },
+        {
+          "t": "NASA and IBM release an open model to spot water ice on the Moon",
+          "z": "bref",
+          "id": "nasa-and-ibm-release-an-open-model-to-spot-water-ice-on-the"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "dateCourte": "Fri 11 Sep",
+      "dateAffichee": "11 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI safety moves from the activist fringe to mainstream debate: Sam Altman says he is ready to slow frontier AI development and is testing whether such a brake would be legal, a former Anthropic researcher warns that \\\"AI could kill us all,\\\" OpenAI adds a worried researcher to its board, and Anthropic publishes 161 pages of Claude misuse, from Yemeni missiles to fake dating profiles. In Europe, the CNIL sets rules for electronic invoicing and the EU's cybersecurity agency trials Anthropic's most offensive model. In China, DeepSeek reignites the price war with its V4.1 Flash model and chipmaker Enflame jumps 188% on its stock market debut. Microsoft plans 38 gigawatts of data centres and Jensen Huang promises Nvidia 70% growth.",
+      "chapeau": "AI safety leaves the activist fringe for mainstream debate: Sam Altman says he is ready to slow down, a former Anthropic researcher issues a chilling warning, and Anthropic publishes 161 pages on the misuse of Claude. Meanwhile, DeepSeek reignites the price war in China, Enflame soars on the market and Microsoft plans 38 gigawatts of data centres.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Frandroid",
+        "Le Monde",
+        "TechCrunch",
+        "CNIL",
+        "Numerama",
+        "Next.ink",
+        "Maddyness",
+        "Bloomberg",
+        "Wired",
+        "Siècle Digital",
+        "Clubic",
+        "OpenAI",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Anthropic publishes 161 pages on the misuse of Claude, from missiles to romance scams",
+          "z": "une",
+          "id": "anthropic-publishes-161-pages-on-the-misuse-of-claude-from"
+        },
+        {
+          "t": "The CNIL sets rules for data protection in electronic invoicing",
+          "z": "europe",
+          "id": "the-cnil-sets-rules-for-data-protection-in-electronic"
+        },
+        {
+          "t": "Hugging Face slips a message to AI agents into its security file",
+          "z": "europe",
+          "id": "hugging-face-slips-a-message-to-ai-agents-into-its-security"
+        },
+        {
+          "t": "The European cybersecurity agency trials Claude Mythos",
+          "z": "europe",
+          "id": "the-european-cybersecurity-agency-trials-claude-mythos"
+        },
+        {
+          "t": "Ed.ai raises €5 million for AI-assisted grading of student work",
+          "z": "europe",
+          "id": "ed-ai-raises-5-million-for-ai-assisted-grading-of-student"
+        },
+        {
+          "t": "AI safety becomes the central debate, and OpenAI says it is ready to slow down",
+          "z": "international",
+          "id": "ai-safety-becomes-the-central-debate-and-openai-says-it-is"
+        },
+        {
+          "t": "OpenAI launches ChatGPT for Financial Services, built on GPT-6 Astra",
+          "z": "international",
+          "id": "openai-launches-chatgpt-for-financial-services-built-on-gpt"
+        },
+        {
+          "t": "Microsoft plans 38 gigawatts of data centres to absorb demand",
+          "z": "international",
+          "id": "microsoft-plans-38-gigawatts-of-data-centres-to-absorb"
+        },
+        {
+          "t": "Jensen Huang promises Nvidia 70% growth and sets his sights on cybersecurity",
+          "z": "international",
+          "id": "jensen-huang-promises-nvidia-70-growth-and-sets-his-sights"
+        },
+        {
+          "t": "DeepSeek unveils V4.1 Flash and reignites the price war",
+          "z": "chine",
+          "id": "deepseek-unveils-v4-1-flash-and-reignites-the-price-war"
+        },
+        {
+          "t": "Chinese chipmaker Enflame jumps 188% on its Shanghai stock market debut",
+          "z": "chine",
+          "id": "chinese-chipmaker-enflame-jumps-188-on-its-shanghai-stock"
+        },
+        {
+          "t": "Two public corpora finally make it possible to measure, without guessing, what a model has actually \"memorised.\"",
+          "z": "recherche",
+          "id": "two-public-corpora-finally-make-it-possible-to-measure"
+        },
+        {
+          "t": "Claude Mythos has found 26,000 flaws in five months, fewer than 1%…",
+          "z": "bref",
+          "id": "claude-mythos-has-found-26-000-flaws-in-five"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "dateCourte": "Thu 10 Sep",
+      "dateAffichee": "10 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+      "chapeau": "Apple opens the John Ternus era with a foldable iPhone and a sensor meant to prove a photo is not an AI image, while an OECD report shows that AI lowers the results of students who use it without being trained to. AI spending per employee is falling, China advances its pieces from JD.com to DeepSeek, and Suno retrains its model on licensed music.",
+      "nbItems": 13,
+      "nbSources": 20,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "TechCrunch (Reference Image)",
+        "The Verge",
+        "Le Monde",
+        "La Tribune",
+        "Maddyness",
+        "ZDNet",
+        "Clubic",
+        "Microsoft Source",
+        "South China Morning Post",
+        "Hugging Face"
+      ],
+      "items": [
+        {
+          "t": "Apple unveils its first foldable iPhone and a sensor that signs every pixel to counter AI images",
+          "z": "une",
+          "id": "apple-unveils-its-first-foldable-iphone-and-a-sensor-that"
+        },
+        {
+          "t": "Loft Orbital raises $1 billion in Emirati funding for an AI satellite constellation, with Mistral",
+          "z": "europe",
+          "id": "loft-orbital-raises-1-billion-in-emirati-funding-for-an-ai"
+        },
+        {
+          "t": "45% of professionals use \"parallel\" AI tools outside any framework",
+          "z": "europe",
+          "id": "45-of-professionals-use-parallel-ai-tools-outside-any"
+        },
+        {
+          "t": "Google restarts a shut-down nuclear plant and signs its first nuclear deal in Europe",
+          "z": "europe",
+          "id": "google-restarts-a-shut-down-nuclear-plant-and-signs-its"
+        },
+        {
+          "t": "The OECD finds that students who use AI get worse results, except those trained to use it",
+          "z": "international",
+          "id": "the-oecd-finds-that-students-who-use-ai-get-worse-results"
+        },
+        {
+          "t": "AI spending per employee fell in August at major firms",
+          "z": "international",
+          "id": "ai-spending-per-employee-fell-in-august-at-major-firms"
+        },
+        {
+          "t": "Suno retrains its model on licensed music, under pressure from lawsuits",
+          "z": "international",
+          "id": "suno-retrains-its-model-on-licensed-music-under-pressure"
+        },
+        {
+          "t": "Microsoft and the main US teachers' union adopt an AI safety standard for schools",
+          "z": "international",
+          "id": "microsoft-and-the-main-us-teachers-union-adopt-an-ai-safety"
+        },
+        {
+          "t": "JD.com targets three million robots to automate its logistics and promises to retrain its couriers",
+          "z": "chine",
+          "id": "jd-com-targets-three-million-robots-to-automate-its"
+        },
+        {
+          "t": "DeepSeek prepares its listing on the \"Chinese Nasdaq\"",
+          "z": "chine",
+          "id": "deepseek-prepares-its-listing-on-the-chinese-nasdaq"
+        },
+        {
+          "t": "IBM releases an open-weight time-series model under a commercial licence",
+          "z": "recherche",
+          "id": "ibm-releases-an-open-weight-time-series-model-under-a"
+        },
+        {
+          "t": "Trustworthy AI: Numalis and South Korea's ThinkforBL join forces to assess how reliable models are when faced with the unexpected",
+          "z": "bref",
+          "id": "trustworthy-ai-numalis-and-south-korea-s-thinkforbl-join"
+        },
+        {
+          "t": "Alibaba lets its \"digital employees\" be deployed at its rivals: its QoderWake tool can generate an agent from a simple job description, then put it to work in the apps of ByteDance or Tencent",
+          "z": "bref",
+          "id": "alibaba-lets-its-digital-employees-be-deployed-at-its"
+        }
+      ]
+    },
     {
       "date": "2026-09-08",
       "dateCourte": "Tue 8 Sep",

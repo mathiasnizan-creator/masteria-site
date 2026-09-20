@@ -244,7 +244,12 @@
     "titreEditorial": "Moody's finds that Chinese companies get more compute per dollar spent than the US giants; the Seattle Times and Newsday sue OpenAI and Microsoft over copyright while the split of the Anthropic settlement pits authors against publishers; Jakub Pachocki, OpenAI's chief scientist, describes an alien mind and calls for guardrails; and US job seekers hide instructions in their resumes to trick recruiters' AI",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-10",
+    "dateLongue": "Thursday 10 September 2026",
+    "titreEditorial": "Apple's first Ternus keynote and the OECD's student warning",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 15,
   "nbSignes": 9595,

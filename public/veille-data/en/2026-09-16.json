@@ -1,0 +1,331 @@
+{
+  "schema": 2,
+  "date": "2026-09-16",
+  "dateAffichee": "16 September 2026",
+  "dateLongue": "Wednesday 16 September 2026",
+  "dateCourte": "Wed 16 Sep",
+  "jourSemaine": "Wednesday",
+  "titre": "AI Watch - Wednesday 16 September 2026",
+  "titreEditorial": "Silicon Valley refuses to brake, Washington splits",
+  "chapeau": "The standoff over the pace of AI is hardening: Silicon Valley leaders refuse any brake and propose to police themselves, while an unlikely political alliance demands guardrails in Washington. Closer to real work, China is rationing its employees' tokens, a sign that the bill for AI at the office is starting to arrive.",
+  "une": {
+    "titre": "AI giants refuse to slow down and propose to police themselves",
+    "texteHtml": "<p>Four days after Dario Amodei (Anthropic) called to \"steady the pace of the frontier\", meaning brake the most powerful models in the name of safety, the industry has closed ranks around a common answer: no brake, self-regulation. Mark Zuckerberg, whose Meta is investing up to $145 billion this year in its infrastructure, rejects the slowdown and bets on independent evaluators to judge the safety of models. Jensen Huang, head of Nvidia, goes further: \"we don't need regulation\", safety being settled in his view product by product. Sam Altman says he is \"confident\" in the industry's ability to control itself, and OpenAI, Anthropic and Google DeepMind confirm they have been discussing a shared oversight body for weeks. In Washington, the political line is blurring: left-wing senator Bernie Sanders and national-populist broadcaster Steve Bannon argued side by side for reining in AI, without agreeing on the means, while a former Google DeepMind researcher added his voice to the warnings about an existential risk.</p>",
+    "sources": [
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-16/meta-s-zuckerberg-favors-evaluators-over-slowdown-for-ai-safety"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/15/we-dont-need-ai-regulation-leave-safety-to-us-nvidias-jensen-huang-says/"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+      },
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/international/article/2026/09/16/etats-unis-face-aux-risques-incontroles-de-l-ia-la-figure-de-la-gauche-bernie-sanders-et-l-imprecateur-maga-steve-bannon-affichent-leur-convergence_6774747_3210.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "ai-giants-refuse-to-slow-down-and-propose-to-police"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Mistral signs a €100 million, three-year partnership with TotalEnergies",
+          "texteHtml": "<p>The French oil group is investing more than €100 million to apply Mistral's models to the exploration and management of its oil and gas reservoirs. The deal anchors Mistral in heavy industrial use, well beyond office assistants alone, and gives the French champion a reference customer in energy. It illustrates Mistral's strategy of seeking documented enterprise deployments to fund a race in which Europe is still catching up.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/15/totalenergies-s-allie-a-mistral-pour-revolutionner-l-exploration-petroliere-grace-a-l-intelligence-artificielle_6774354_3234.html"
+            },
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/15/mistral-ai-signe-un-partenariat-avec-totalenergies-de-100-millions-deuros-sur-trois-ans/"
+            }
+          ],
+          "rang": 2,
+          "id": "mistral-signs-a-100-million-three-year-partnership-with"
+        },
+        {
+          "titre": "OpenAI staff read your ChatGPT conversations, without telling you",
+          "texteHtml": "<p>An investigation reveals an internal setup dubbed \"Project Lily\": about a hundred contractors review real user exchanges to rate the quality of the chatbot's answers, without the people concerned having been informed. Anthropic runs a comparable review, authorised by terms of use that few people read in full. The reminder matters for any French organisation that lets its teams pour customer data or internal documents into a consumer assistant: what you entrust to these tools can be read by humans, and the GDPR applies to that data. A setting lets you limit this review, provided you know it exists.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/256350/oui-anthropic-et-openai-peuvent-lire-vos-conversations-et-depuis-longtemps/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629638-oui-il-y-a-vraiment-des-humains-chez-openai-qui-lisent-vos-conversation-sur-chatgpt.html"
+            }
+          ],
+          "rang": 3,
+          "id": "openai-staff-read-your-chatgpt-conversations-without"
+        },
+        {
+          "titre": "France's Delos raises €10 million to sell \"AI employees\" to companies",
+          "texteHtml": "<p>The startup designs autonomous virtual workers, meant to pursue goals on their own over several months, and plans to use this round to take on the US market. The pitch joins a wave of \"colleague\" agents that several players are pushing at once. It raises the question of control head-on: who answers for the work delivered by an agent that decides its own subtasks, and within what limits.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1554885-delos-leve-10-millions-d-euros-pour-faire-entrer-des-employes-100-ia-dans-les-entreprises/"
+            },
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/?p=1441578"
+            }
+          ],
+          "rang": 4,
+          "id": "france-s-delos-raises-10-million-to-sell-ai-employees-to"
+        },
+        {
+          "titre": "AI is fuelling an explosion in manipulation fraud at companies",
+          "texteHtml": "<p>The annual report of the Observatoire de la sécurité des moyens de paiement (France's payment security watchdog) describes a shift: cybercriminals are dropping technical hacking to manipulate staff directly, with voice and video deepfakes realistic enough to fool control procedures. In response, France's Docaposte and Deloitte have published a white paper built around a \"trust firewall\" meant to secure digital proof against imitations. For finance and procurement departments, a transfer order confirmed \"by voice\" is no longer a guarantee.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/les-raisons-pour-lesquelles-lia-fait-exploser-les-fraudes-par-manipulation-en-entreprise-503553.htm"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-629845-pour-contrer-la-fraude-bancaire-boostee-par-l-ia-docaposte-et-deloitte-devoilent-leur-pare-feu-de-confiance-un-bouclier-prometteur.html"
+            }
+          ],
+          "rang": 5,
+          "id": "ai-is-fuelling-an-explosion-in-manipulation-fraud-at"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI is reportedly discussing a round that would value it at more than $1.2 trillion",
+          "texteHtml": "<p>According to Bloomberg, the company is holding preliminary talks with investors for a funding round that would carry it beyond $1.2 trillion, ahead of a future stock market listing. The figure puts ChatGPT among the highest private valuations ever floated, at a moment when doubt is rising over the solidity of the structure. An analysis in the MIT Technology Review speaks of a \"trillion-dollar bet\" and recalls a fact no longer up for debate: a handful of players concentrate gigantic infrastructure spending whose return has yet to be shown. The stress signals are piling up, from credit default swaps on SoftBank, one of OpenAI's main backers, near a three-year high, to Larry Fink's (BlackRock) warning about access to AI becoming the preserve of large companies. The real question now bears on the gap between the sums committed and the revenue they will produce.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-15/openai-weighing-funding-round-at-over-1-2-trillion-valuation"
+            },
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/09/15/1144028/ai-infrastructure-boom-investment-bubble-risk/"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-is-reportedly-discussing-a-round-that-would-value-it"
+        },
+        {
+          "titre": "Meta puts a price on AI with its \"Meta One\" subscriptions",
+          "texteHtml": "<p>The group is launching paid plans worldwide that combine its app subscriptions with expanded access to its AI tools, across Facebook, Instagram and WhatsApp, with tiers for individuals, creators and businesses. The launch closely follows that of Muse, its new assistant, and marks the shift from free, unlimited AI to a billed service. Meta thus joins OpenAI, which is testing advertising in ChatGPT: after the loss-making conquest phase, the big players are finally working out how to charge for usage. The turn concerns companies that had built uses on free or cheap access and will now have to budget for them.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/995453/meta-one-subscriptions-ai"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/15/meta-expands-subscription-push-with-new-ai-focused-plans/"
+            }
+          ],
+          "rang": 7,
+          "id": "meta-puts-a-price-on-ai-with-its-meta-one-subscriptions"
+        },
+        {
+          "titre": "Salesforce and Nvidia unveil Koa, a reasoning model built on open weights",
+          "texteHtml": "<p>The two groups presented Koa, a reasoning model (which breaks a problem into steps before answering) built on Nemotron, Nvidia's open-weight model, which you can download and run yourself. It is trained for concrete sales, marketing and customer support tasks, Salesforce's natural turf. TechCrunch sees in it \"everything the AI labs should fear\": an application player building a capable model on open weights, without depending on a closed model provider or its price. For companies, the demonstration matters: the reasoning block is becoming commonplace and moving closer to business functions, instead of staying the private preserve of OpenAI or Anthropic.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/"
+            }
+          ],
+          "rang": 8,
+          "id": "salesforce-and-nvidia-unveil-koa-a-reasoning-model-built-on"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "China is ahead of the United States in consumer AI adoption, thanks to its super-apps",
+          "texteHtml": "<p>According to a Morgan Stanley survey published on Monday, 80% of respondents in China use AI personally at least once a week, against 54% in the United States. The bank attributes this lead to Tencent and Alibaba, which embed AI directly in the apps Chinese people already use every day, messaging, payment, commerce, rather than in separate apps to download. US models keep the edge in raw capability, while daily use is progressing faster in China. The finding sheds light on a simple mechanism: a technology spreads first through its ease of access, before its performance. For Europe, the lesson bears on the channels through which AI actually reaches people, as much as on the race for models.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3367601/china-beating-us-consumer-ai-adoption-thanks-super-apps-morgan-stanley"
+            }
+          ],
+          "rang": 9,
+          "id": "china-is-ahead-of-the-united-states-in-consumer-ai-adoption"
+        },
+        {
+          "titre": "China's tech giants are now rationing their employees' tokens",
+          "texteHtml": "<p>When generative AI swept over Chinese tech, the instruction was clear: use AI, and often. Consuming a lot of tokens, the compute unit billed to process text or write code, counted as a badge of zeal and productivity. The South China Morning Post describes a reversal: these compute allowances are tightening sharply, as companies discover the cost of inference at scale. The message sent to staff flips in a few months, from \"consume without counting\" to \"justify every use\". The signal reaches beyond China: it announces the end of the free experimentation phase and the entry into tight management of the cost of AI at work.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3367593/forget-ai-kpis-how-chinas-tech-giants-are-rationing-tokens-employees"
+            }
+          ],
+          "rang": 10,
+          "id": "china-s-tech-giants-are-now-rationing-their-employees-tokens"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Ten bias-audit tools detect bias, but do not agree on how to rank models",
+          "texteHtml": "<p>A team ran ten bias-audit instruments over ten frontier models, on gender bias at work, then on age and social status. The result: eight tools out of ten do detect bias, but their rankings of the models diverge, so much so that the same model can look the most virtuous or one of the worst depending on the tool chosen. The point matters directly for the enforcement of the AI Act, which requires bias audits of high-risk systems and already sees these scores used to compare models. Detection works, the league table does not: basing a purchasing or compliance decision on a single score would amount to picking the tool that gives the answer you want.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.15995"
+            }
+          ],
+          "rang": 11,
+          "id": "ten-bias-audit-tools-detect-bias-but-do-not-agree-on-how-to"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Google DeepMind launches Gemini 3.8 Live and an \"Extended Thinking\" variant",
+          "texteHtml": "<p>The lab announces a real-time conversational version of Gemini, paired with an extended-reasoning mode, in the assistant race against OpenAI.</p>",
+          "sources": [
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/"
+            }
+          ],
+          "rang": 12,
+          "id": "google-deepmind-launches-gemini-3-8-live-and-an-extended"
+        },
+        {
+          "titre": "Google wants to pay publishers whose content feeds its AI answers",
+          "texteHtml": "<p>The group is testing a programme to pay publishers when their content contributes significantly to the answers generated by its AI, even as those answers divert traffic from the source sites.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/09/15/google-veut-remunerer-les-editeurs-dont-les-contenus-contribuent-a-ses-reponses-ia/"
+            }
+          ],
+          "rang": 13,
+          "id": "google-wants-to-pay-publishers-whose-content-feeds-its-ai"
+        },
+        {
+          "titre": "OpenAI buys Glass Imaging, founded by former Apple staff",
+          "texteHtml": "<p>The company snaps up the California startup behind an imaging technology, two of its founders having worked on the iPhone's Portrait mode, without specifying the intended use.</p>",
+          "sources": [
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/marques/openai/3248201_openai-soffre-les-ingenieurs-a-lorigine-du-mode-portrait-de-liphone"
+            }
+          ],
+          "rang": 14,
+          "id": "openai-buys-glass-imaging-founded-by-former-apple-staff"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "China's tech giants ration their employees' tokens after making their consumption a badge of zeal, while a survey reports that AI saves time for the people who use it without saving any for their company",
+    "these": "Alibaba, Tencent and their Chinese rivals are now rationing their employees' tokens, after having made heavy consumption a badge of zeal and productivity. The South China Morning Post describes quotas tightening sharply, at the moment the real cost of inference, the expense of running a model once it is trained, catches up with the enthusiasm. The phase where usage was encouraged without counting is closing. Another reading lands at the same moment, on the results side. A summary in the Journal du Net recalls a stubborn paradox: AI saves time for the person who uses it, without that gain showing up in the company's accounts or in measured productivity. The gap comes down to what you measure. Counting prompts sent, staff \\\"equipped\\\" or tokens consumed describes activity, not value. The discipline that gains value in a French organisation is measuring the net value of a use, not its volume. Take a use case where AI has entered: a customer reply drafted, a report, a piece of code. Lay out three figures. What the task cost before, what it costs now once you add the time to check what the machine produced, and how many errors the checking caught. The net gain lives in that subtraction, never in the number of requests. Set a budget per use case, the way you frame a spending line, and close the ones that return nothing. That rigour beats a dashboard showing adoption curves on the rise. The sheer scale of the sums helps explain the urgency. OpenAI is discussing a round that would value it at more than $1.2 trillion, roughly the gross domestic product of the Netherlands. That money will one day have to read as real operating gains, at the companies paying the subscription. The free token was a commercial promise. Value, for its part, is counted, line by line, at the place that puts it to work. That is where the return on the decade's biggest technology bet will be decided. The Masteria editorial team.",
+    "html": "<p>Alibaba, Tencent and their Chinese rivals are now rationing their employees' tokens, after having made heavy consumption a badge of zeal and productivity. The South China Morning Post describes quotas tightening sharply, at the moment the real cost of inference, the expense of running a model once it is trained, catches up with the enthusiasm. The phase where usage was encouraged without counting is closing.</p>\n<p>Another reading lands at the same moment, on the results side. A summary in the Journal du Net recalls a stubborn paradox: AI saves time for the person who uses it, without that gain showing up in the company's accounts or in measured productivity. The gap comes down to what you measure. Counting prompts sent, staff \"equipped\" or tokens consumed describes activity, not value.</p>\n<p>The discipline that gains value in a French organisation is measuring the net value of a use, not its volume. Take a use case where AI has entered: a customer reply drafted, a report, a piece of code. Lay out three figures. What the task cost before, what it costs now once you add the time to check what the machine produced, and how many errors the checking caught. The net gain lives in that subtraction, never in the number of requests. Set a budget per use case, the way you frame a spending line, and close the ones that return nothing. That rigour beats a dashboard showing adoption curves on the rise.</p>\n<p>The sheer scale of the sums helps explain the urgency. OpenAI is discussing a round that would value it at more than $1.2 trillion, roughly the gross domestic product of the Netherlands. That money will one day have to read as real operating gains, at the companies paying the subscription. The free token was a commercial promise. Value, for its part, is counted, line by line, at the place that puts it to work. That is where the return on the decade's biggest technology bet will be decided.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Alibaba, Tencent and their Chinese rivals are now rationing their employees' tokens, after having made heavy consumption a badge of zeal and productivity. The South China Morning Post describes quotas tightening sharply, at the moment the real cost of inference, the expense of running a model once it is trained, catches up with the enthusiasm. The phase where usage was encouraged without counting is closing.</p>\n<p>Another reading lands at the same moment, on the results side. A summary in the Journal du Net recalls a stubborn paradox: AI saves time for the person who uses it, without that gain showing up in the company's accounts or in measured productivity. The gap comes down to what you measure. Counting prompts sent, staff \"equipped\" or tokens consumed describes activity, not value.</p>",
+    "itemsCites": [
+      6,
+      9,
+      10
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-15",
+    "dateLongue": "Tuesday 15 September 2026",
+    "titreEditorial": "AI leaders' call to slow down splits the world",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-09-17",
+    "dateLongue": "Thursday 17 September 2026",
+    "titreEditorial": "OpenAI admits six model misbehaviours and publishes a framework to report them, the same day Google opens the connected home to agents and Anthropic folds its interfaces into a single Claude that decides for itself how much work to take on. The agent moves from reading to acting. Meanwhile Brussels adopts the EU KIDS Act to keep minors off social media, Mistral arrives in Firefox, and Huawei pulls its next AI chip nine months forward to cut China's dependence on Nvidia.",
+    "nbItems": 14
+  },
+  "nbItems": 14,
+  "nbSources": 23,
+  "nbSignes": 9537,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Bloomberg",
+    "TechCrunch",
+    "Le Monde",
+    "Maddyness",
+    "Next.ink",
+    "Clubic",
+    "Journal du Net",
+    "ZDNet",
+    "MIT Technology Review",
+    "The Verge"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 140,
+  "publieLe": "2026-09-16T07:33:25+02:00",
+  "publieLeAffiche": "7h33"
+}
