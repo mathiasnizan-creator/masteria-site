@@ -1,8 +1,27 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { SLUGS_AVEC_CARTE } from '../data/og-cartes'
 
 const SITE_URL = 'https://www.master-ia.fr'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/logo-horizontal.png`
+
+/* ───── Images de partage et vignettes Google ─────
+   Google recadre EN CARRÉ la vignette affichée à côté d'un résultat. Tant que la
+   seule image déclarée ici était le logo horizontal, ce recadrage coupait le
+   mot-symbole en plein milieu (« Master… ») ; sur les pages où cette image ne lui
+   servait à rien, Google allait chercher le badge Qualiopi de la page, tronqué
+   lui aussi. On déclare donc les trois rapports que demande sa documentation
+   données structurées — 16x9, 4x3, 1x1 — avec un carré composé pour ne jamais
+   être coupé. Cartes produites par scripts/generer-og-cartes.mjs. */
+const OG_CARRE = `${SITE_URL}/og/masteria-1x1.jpg`    // 1200 x 1200
+const OG_4X3 = `${SITE_URL}/og/masteria-4x3.jpg`      // 1200 x 900
+const OG_DEFAUT = `${SITE_URL}/og/masteria-16x9.jpg`  // 1200 x 630
+
+// Une page tout juste créée n'a pas encore sa carte : on retombe alors sur la
+// carte de marque plutôt que de pointer vers un fichier absent.
+const carteDeLaPage = slug =>
+  SLUGS_AVEC_CARTE.has(slug)
+    ? `${SITE_URL}/og/${slug === '' ? 'accueil' : slug.replace(/\//g, '--')}.jpg`
+    : OG_DEFAUT
 
 /**
  * SEOHead — composant central pour les balises SEO, Open Graph, Twitter,
@@ -50,7 +69,17 @@ export default function SEOHead({
   // on la retire dès qu'une page pose la sienne, pour n'avoir qu'une balise.
   useEffect(() => { document.getElementById('meta-default-description')?.remove() }, [])
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
-  const imageUrl = ogImage || DEFAULT_OG_IMAGE
+  const imageUrl = ogImage || carteDeLaPage(slug)
+  // Le carré est commun à tout le site : à la taille d'une vignette de résultat,
+  // seule la marque est lisible, une déclinaison par page rendrait les mêmes pixels.
+  const imagesStructurees = [imageUrl, OG_4X3, OG_CARRE]
+  // La Veille IA fournit ses propres cartes en PNG : on ne peut pas annoncer
+  // image/jpeg pour tout le monde.
+  const imageType = imageUrl.endsWith('.png') ? 'image/png' : 'image/jpeg'
+  // Le title porte déjà « | Masteria » : y ajouter « , Masteria » donnait un alt
+  // qui répétait la marque deux fois.
+  const titreNu = String(title || '').replace(/\s*[|·—–]\s*[^|·—–]*Masteria\s*$/i, '').trim()
+  const imageAlt = titreNu ? `${titreNu} — Masteria` : 'Masteria, formation et conseil IA'
   // Validité du tarif pour le schema Offer (recalculée à chaque build prerender) —
   // évite que Google considère le prix comme expiré. Fin de l'année suivante.
   const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`
@@ -103,6 +132,7 @@ export default function SEOHead({
       width: 512,
       height: 512,
     },
+    image: OG_CARRE,
     description:
       "Centre de formation IA certifié Qualiopi et cabinet de conseil. Formations ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI, finançables OPCO.",
     foundingDate: '2022',
@@ -181,7 +211,9 @@ export default function SEOHead({
     inLanguage: 'fr-FR',
     isPartOf: { '@id': `${SITE_URL}/#website` },
     publisher: { '@id': `${SITE_URL}/#organization` },
-    primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl },
+    primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl, width: 1200, height: 630 },
+    image: imagesStructurees,
+    thumbnailUrl: OG_CARRE,
     // Signal de fraîcheur (émis uniquement si la page fournit une date) — favorise
     // le crawl de re-fraîcheur (SEO) et la citation par les moteurs génératifs (GEO).
     datePublished: datePublished || undefined,
@@ -214,6 +246,7 @@ export default function SEOHead({
         educationalLevel: courseData.level || 'Intermédiaire',
         inLanguage: 'fr-FR',
         url: fullUrl,
+        image: imagesStructurees,
         // Compétences enseignées (objectifs pédagogiques)
         teaches: courseData.teaches || courseData.objectives || undefined,
         // Sujets couverts (rich result Course)
@@ -335,12 +368,8 @@ export default function SEOHead({
         '@id': `${fullUrl}#article`,
         headline: articleData.headline || title,
         description,
-        image: {
-          '@type': 'ImageObject',
-          url: articleData.image || imageUrl,
-          width: 1200,
-          height: 630,
-        },
+        image: articleData.image ? [articleData.image, OG_4X3, OG_CARRE] : imagesStructurees,
+        thumbnailUrl: OG_CARRE,
         datePublished: articleData.datePublished,
         dateModified: articleData.dateModified || articleData.datePublished,
         author: { '@id': `${SITE_URL}/#mathias-nizan` },
@@ -405,16 +434,17 @@ export default function SEOHead({
       <meta property="og:site_name" content="Masteria" />
       <meta property="og:locale" content="fr_FR" />
       <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:type" content={imageType} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={`${title}, Masteria`} />
+      <meta property="og:image:alt" content={imageAlt} />
 
       {/* Twitter (avec site + creator pour SEO authority) */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
-      <meta name="twitter:image:alt" content={`${title}, Masteria`} />
+      <meta name="twitter:image:alt" content={imageAlt} />
       <meta name="twitter:site" content="@masteria_ia" />
       <meta name="twitter:creator" content="@mathias_nizan" />
 

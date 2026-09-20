@@ -17,7 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 const SITE = 'https://www.master-ia.fr';
-const OG_IMAGE = `${SITE}/assets/logo-horizontal.png`;
+const OG_IMAGE = `${SITE}/og/masteria-16x9.jpg`; // cf. scripts/generer-og-cartes.mjs
 
 // ──────────────────────────────────────────────────────────────────────────────
 // 1) Import des données source

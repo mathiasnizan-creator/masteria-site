@@ -301,13 +301,30 @@ if (veilleEditionsEn.length) {
 // Important pour les sites avec budget de crawl limité (domaine jeune).
 urls.sort((a, b) => b.priority - a.priority);
 
+// Carte de partage de la page (scripts/generer-og-cartes.mjs). La déclarer dans
+// le sitemap rattache explicitement l'image à l'URL : Google n'a plus à deviner
+// quelle image de la page représente le résultat. Les pages sans carte dédiée
+// n'émettent rien — répéter la carte de marque 60 fois n'apprendrait rien.
+let SLUGS_AVEC_CARTE = new Set();
+try {
+  ({ SLUGS_AVEC_CARTE } = await import(pathToFileURL(path.join(root, 'src/data/og-cartes.js')).href));
+} catch { /* manifeste pas encore généré : sitemap sans images */ }
+
+function carteDe(loc) {
+  const slug = loc.replace(`${SITE}/`, '').replace(/\/$/, '');
+  if (!SLUGS_AVEC_CARTE.has(slug)) return '';
+  const nom = slug === '' ? 'accueil' : slug.replace(/\//g, '--');
+  return `\n    <image:image><image:loc>${SITE}/og/${nom}.jpg</image:loc></image:image>`;
+}
+
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.map(u => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority.toFixed(2)}</priority>
+    <priority>${u.priority.toFixed(2)}</priority>${carteDe(u.loc)}
   </url>`).join('\n')}
 </urlset>
 `;

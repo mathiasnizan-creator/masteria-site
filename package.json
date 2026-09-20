@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run sitemap && vite build",
-    "build:prerender": "npm run sitemap && vite build && npm run prerender && npm run search:index && npm run vercel:config",
+    "build:prerender": "npm run sitemap && vite build && npm run prerender && npm run og:cartes && npm run search:index && npm run vercel:config",
     "prerender": "node scripts/prerender.mjs",
     "vercel:config": "node scripts/build-vercel-output-config.mjs",
     "lint": "eslint .",
@@ -14,7 +14,8 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "ping:indexnow": "node scripts/ping-indexnow.mjs",
     "prebuild": "node scripts/no-concurrent-prerender.mjs",
-    "search:index": "node scripts/build-search-index.mjs"
+    "search:index": "node scripts/build-search-index.mjs",
+    "og:cartes": "node scripts/generer-og-cartes.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

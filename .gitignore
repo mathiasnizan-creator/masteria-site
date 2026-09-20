@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Cartes de partage : régénérées à chaque build par `npm run og:cartes`
+# (une image de plus par édition de veille, 21 Mo aujourd'hui). Seul le
+# manifeste src/data/og-cartes.js est versionné, SEOHead en dépend.
+public/og/
