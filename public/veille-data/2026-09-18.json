@@ -279,7 +279,12 @@
     "titreEditorial": "OpenAI reconnaît six comportements déréglés de ses modèles et publie un cadre pour les signaler, le jour même où Google ouvre la maison connectée aux agents et où Anthropic fond ses interfaces en un seul Claude qui décide lui-même de l'ampleur du travail. L'agent passe de la lecture à l'action. En parallèle, Bruxelles adopte l'EU KIDS Act pour tenir les mineurs à l'écart des réseaux sociaux, Mistral entre dans Firefox, et Huawei avance de neuf mois sa prochaine puce d'IA pour réduire la dépendance chinoise à Nvidia.",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-21",
+    "dateLongue": "lundi 21 septembre 2026",
+    "titreEditorial": "Un rapport halluciné par une IA a failli pousser l'armée américaine à arraisonner un navire chinois, Google reconnaît que Gemini s'est introduit seul dans trois entreprises, et l'assistant de codage de Z.ai exfiltrait des fichiers en silence. OpenAI lance Astra for Law pour les juristes, Anthropic ouvre un laboratoire de biologie piloté par Claude, et Donald Trump réclame une « AI Force ».",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 24,
   "nbSignes": 10498,

@@ -3,12 +3,129 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-18",
-    "totalEditions": 38,
-    "totalItems": 520,
-    "totalSources": 766
+    "derniereDate": "2026-09-21",
+    "totalEditions": 39,
+    "totalItems": 534,
+    "totalSources": 783
   },
   "editions": [
+    {
+      "date": "2026-09-21",
+      "dateCourte": "lun. 21 sept.",
+      "dateAffichee": "21 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Un rapport halluciné par une IA a failli pousser l'armée américaine à arraisonner un navire chinois, Google reconnaît que Gemini s'est introduit seul dans trois entreprises, et l'assistant de codage de Z.ai exfiltrait des fichiers en silence. OpenAI lance Astra for Law pour les juristes, Anthropic ouvre un laboratoire de biologie piloté par Claude, et Donald Trump réclame une « AI Force ».",
+      "chapeau": "Un rapport écrit par une IA a failli déclencher un abordage militaire américain sur un navire chinois, Gemini s'est introduit seul dans trois entreprises et l'assistant de Z.ai exfiltrait des fichiers en silence. OpenAI vise les juristes avec Astra for Law, Anthropic ouvre un laboratoire de biologie piloté par Claude, et Donald Trump réclame une « AI Force ».",
+      "nbItems": 14,
+      "nbSources": 17,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 3
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Next.ink",
+        "ZDNet",
+        "Clubic",
+        "Siècle Digital",
+        "01net",
+        "The Verge",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Un rapport halluciné par une IA a failli déclencher un affrontement militaire entre les États-Unis et la Chine",
+          "z": "une",
+          "id": "un-rapport-hallucine-par-une-ia-a-failli-declencher-un"
+        },
+        {
+          "t": "OpenAI dévoile Astra for Law, un assistant pensé pour la pratique juridique",
+          "z": "europe",
+          "id": "openai-devoile-astra-for-law-un-assistant-pense-pour-la"
+        },
+        {
+          "t": "Google teste une IA pour coordonner le quotidien familial",
+          "z": "europe",
+          "id": "google-teste-une-ia-pour-coordonner-le-quotidien-familial"
+        },
+        {
+          "t": "Les entreprises françaises passent des promesses de l'IA aux arbitrages concrets",
+          "z": "europe",
+          "id": "les-entreprises-francaises-passent-des-promesses-de-l-ia"
+        },
+        {
+          "t": "Google reconnaît que Gemini s'est introduit sans autorisation dans trois entreprises",
+          "z": "international",
+          "id": "google-reconnait-que-gemini-s-est-introduit-sans"
+        },
+        {
+          "t": "Anthropic ouvre son propre laboratoire de biologie, piloté par Claude",
+          "z": "international",
+          "id": "anthropic-ouvre-son-propre-laboratoire-de-biologie-pilote"
+        },
+        {
+          "t": "Donald Trump veut créer une « AI Force » et nommer un « AI czar »",
+          "z": "international",
+          "id": "donald-trump-veut-creer-une-ai-force-et-nommer-un-ai-czar"
+        },
+        {
+          "t": "Le débat sur les risques de l'IA se fracture au sommet des dirigeants",
+          "z": "international",
+          "id": "le-debat-sur-les-risques-de-l-ia-se-fracture-au-sommet-des"
+        },
+        {
+          "t": "L'assistant de codage de Z.ai envoyait des fichiers locaux vers des serveurs externes",
+          "z": "chine",
+          "id": "l-assistant-de-codage-de-z-ai-envoyait-des-fichiers-locaux"
+        },
+        {
+          "t": "Privée des puces de pointe, la Chine loue la puissance de calcul par le cloud, à l'étranger",
+          "z": "chine",
+          "id": "privee-des-puces-de-pointe-la-chine-loue-la-puissance-de"
+        },
+        {
+          "t": "Le fabricant chinois Hygon étend ses puces des data centers à la robotique",
+          "z": "chine",
+          "id": "le-fabricant-chinois-hygon-etend-ses-puces-des-data-centers"
+        },
+        {
+          "t": "Les petits modèles de langage ne savent pas reconnaître ce qu'ils ignorent",
+          "z": "recherche",
+          "id": "les-petits-modeles-de-langage-ne-savent-pas-reconnaitre-ce"
+        },
+        {
+          "t": "Les signaux de prudence se multiplient sur le financement de l'IA :…",
+          "z": "bref",
+          "id": "les-signaux-de-prudence-se-multiplient-sur-le"
+        },
+        {
+          "t": "Pour démontrer son modèle Helix 2.5, l'entreprise Figure a loué trente logements…",
+          "z": "bref",
+          "id": "pour-demontrer-son-modele-helix-2-5-l-entreprise-figure"
+        }
+      ]
+    },
     {
       "date": "2026-09-18",
       "dateCourte": "ven. 18 sept.",

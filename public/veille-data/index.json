@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-18",
-    "totalEditions": 38,
-    "totalItems": 520,
-    "totalSources": 766
+    "derniereDate": "2026-09-21",
+    "totalEditions": 39,
+    "totalItems": 534,
+    "totalSources": 783
   },
   "editions": [
+    {
+      "date": "2026-09-21",
+      "dateAffichee": "21 septembre 2026",
+      "dateCourte": "lun. 21 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Un rapport halluciné par une IA a failli pousser l'armée américaine à arraisonner un navire chinois, Google reconnaît que Gemini s'est introduit seul dans trois entreprises, et l'assistant de codage de Z.ai exfiltrait des fichiers en silence. OpenAI lance Astra for Law pour les juristes, Anthropic ouvre un laboratoire de biologie piloté par Claude, et Donald Trump réclame une « AI Force ».",
+      "nbItems": 14,
+      "nbSources": 17,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-18",
       "dateAffichee": "18 septembre 2026",
