@@ -1,0 +1,293 @@
+{
+  "schema": 2,
+  "date": "2026-09-22",
+  "dateAffichee": "22 September 2026",
+  "dateLongue": "Tuesday 22 September 2026",
+  "dateCourte": "Tue 22 Sep",
+  "jourSemaine": "Tuesday",
+  "titre": "AI Watch - Tuesday 22 September 2026",
+  "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
+  "chapeau": "More than twenty countries call for stronger human oversight of AI without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon, and British Columbia sues OpenAI after a mass shooting.",
+  "une": {
+    "titre": "More than twenty countries call for stronger human oversight of AI, without the sector's three great powers",
+    "texteHtml": "<p>The leaders of some twenty countries, including Germany and Canada, along with European Commission President Ursula von der Leyen, have signed a joint declaration calling for humans to stay in control, Le Monde reports. The text reflects a concern now shared at the highest levels of government: AI development could outpace our ability to keep it in check. The most telling absence is that of the missing signatories. The United States, China and France, three leading powers in the field, did not add their names. The dividing line is sharp between those betting on coordinated safeguards and those keeping their hands free, each for different reasons. A declaration without the players building the most advanced models works above all as a political signal.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/09/22/intelligence-artificielle-plus-de-vingt-pays-dont-l-allemagne-et-le-canada-appellent-a-une-supervision-humaine-renforcee_6779412_4408996.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "more-than-twenty-countries-call-for-stronger-human"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Article 4 of the AI Act, rewritten, tightens the AI training obligation for SMEs",
+          "texteHtml": "<p>Since 27 July 2026, the European regulation no longer asks for a \"sufficient level\" of AI literacy among employees, but the obligation to act remains fully in force, the Journal du Net analyses. For an SME, the practical question is no longer ticking a compliance box, it is proving that its teams know how to use the tools it deploys and understand their limits.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1554987-article-4-de-l-ai-act-reecrit-ce-qui-change-pour-la-formation-des-salaries-en-pme/"
+            }
+          ],
+          "rang": 2,
+          "id": "article-4-of-the-ai-act-rewritten-tightens-the-ai-training"
+        },
+        {
+          "titre": "Google commits €13 billion in Finland, its largest European investment",
+          "texteHtml": "<p>The sum, planned by 2028, will fund data centres built to absorb global AI demand, ZDNet reports, describing a Finland on its way to becoming a Nordic computing hub. The choice follows low-carbon electricity and a cold climate, two assets for cooling server rooms, and confirms that Europe's AI battle is fought as much over land and energy as over models.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/voici-les-raisons-pour-lesquelles-google-mise-13-milliards-deuros-en-finlande-son-plus-gros-investissement-jamais-realise-en-europe-503925.htm#xtor=RSS-1"
+            }
+          ],
+          "rang": 3,
+          "id": "google-commits-13-billion-in-finland-its-largest-european"
+        },
+        {
+          "titre": "Retailers launch a race to avoid being bypassed by ChatGPT",
+          "texteHtml": "<p>To preserve their online presence, brands are building their own shopping agents and trying to improve their visibility in AI engines, Le Monde describes. The stakes are concrete: when a customer asks an assistant for advice rather than a search engine, the brand missing from the answer drops out of view at the moment of decision.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/economie/article/2026/09/21/le-commerce-face-au-choc-de-l-ia-comment-chatgpt-menace-la-presence-des-marques-sur-le-web_6778984_3234.html"
+            }
+          ],
+          "rang": 4,
+          "id": "retailers-launch-a-race-to-avoid-being-bypassed-by-chatgpt"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Google launches its Googlebook at $899, a bet on the appetite for a computer built for Gemini",
+          "texteHtml": "<p>The US giant unveils a range of laptops where Gemini is stitched into the system: the model is wired to the cursor, dictation, widgets and settings, TechCrunch describes. These machines merge Android and ChromeOS and target the premium market held by Apple's MacBook and Windows PCs. Sameer Samat, president of the Android ecosystem, embraces the pairing with the phone, in the manner of the continuity between the iPhone and the Mac. The bet is clear: convince a user to buy a new device for the assistant that lives on it rather than for raw power. Google had failed to make the Chromebook a mainstream success, and it is trying again with AI as the central argument.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini/"
+            }
+          ],
+          "rang": 5,
+          "id": "google-launches-its-googlebook-at-899-a-bet-on-the-appetite"
+        },
+        {
+          "titre": "Meta's Muse agent tops the charts, gets blocked by Amazon and reveals a serious flaw",
+          "texteHtml": "<p>Muse, Meta's new consumer assistant, drew more downloads and daily active users in the United States and Canada than ChatGPT over the same period after its mobile launch, according to Appfigures estimates cited by TechCrunch. The success hit a wall: Amazon cut off Muse's access to its pages, with a message warning that \"continued access by an unauthorized AI agent violates Amazon's terms of service\", The Verge reports. Meta had not warned Amazon that its agent was coming. At the same time, Ars Technica describes a serious zero-day flaw: a simple ClickFix-style attack is enough to hijack this assistant, which the outlet calls \"extraordinarily privileged\", able to act on the user's behalf. The three-part story sums up the moment: an agent that wins users fast, acts broadly and exposes as much as it helps.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
+            },
+            {
+              "nom": "Ars Technica",
+              "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/"
+            }
+          ],
+          "rang": 6,
+          "id": "meta-s-muse-agent-tops-the-charts-gets-blocked-by-amazon"
+        },
+        {
+          "titre": "British Columbia sues OpenAI after a mass shooting",
+          "texteHtml": "<p>The Canadian province filed a complaint in California against OpenAI, claiming the company could have used ChatGPT conversation logs to alert police and prevent the Tumbler Ridge shooting in February, Bloomberg reports. The attack had killed nine people, including the person behind the tragedy. The grievance fits in one sentence: failing to report threats made on the platform to law enforcement. The case opens new legal ground, that of an AI provider's liability for the danger signals passing through its service. It will weigh on how providers monitor, retain and pass on what users write to their models.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-21/british-columbia-sues-openai-over-canada-mass-shooting-warning-failure"
+            }
+          ],
+          "rang": 7,
+          "id": "british-columbia-sues-openai-after-a-mass-shooting"
+        },
+        {
+          "titre": "The United States and China agree on a dedicated AI warning channel ahead of the Trump-Xi summit",
+          "texteHtml": "<p>The two countries agreed to open an official dialogue on artificial intelligence, paired with a mutual notification mechanism in case of an incident threatening national security, Wired reports. The agreement emerged from eight hours of negotiations in New York between Treasury Secretary Scott Bessent, Trade Representative Jamieson Greer and Chinese Vice Premier He Lifeng, days before Xi Jinping's visit to Washington. Analysts cited by the South China Morning Post see it as a pragmatic step toward crisis prevention, tempered by deep divisions over chip access, model distillation and market dominance. The channel now exists; its effectiveness will depend on what each side agrees to signal to the other.</p>",
+          "sources": [
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/us-and-china-discuss-alerting-each-other-to-ai-national-security-threats/"
+            },
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-war/article/3368281/ai-safety-fears-mount-can-us-china-hotline-prevent-global-crisis?utm_source=rss_feed"
+            }
+          ],
+          "rang": 8,
+          "id": "the-united-states-and-china-agree-on-a-dedicated-ai-warning"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Alibaba unveils its most powerful AI chip, Tencent releases its best image model the same day",
+          "texteHtml": "<p>Alibaba presented what it describes as the highest-performing AI accelerator designed in China, meant to rival Nvidia and to support a massive data-centre rollout of up to 20 gigawatts of capacity by 2032, Bloomberg reports. For scale, 20 gigawatts is close to the output of some twenty nuclear reactors running at full power. The same day, at the opening of Alibaba's AI conference, Tencent launched its most advanced image-generation model to catch up with ByteDance and Alibaba. The two announcements, timed together, signal a Chinese industry pushing its own hardware and software stack while US semiconductor restrictions remain in force. The question of chip exports hangs over this week's Trump-Xi summit.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-22/alibaba-unveils-ai-chip-to-drive-20gw-of-data-centers-by-2032"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-22/tencent-releases-ai-image-model-to-catch-bytedance-alibaba"
+            }
+          ],
+          "rang": 9,
+          "id": "alibaba-unveils-its-most-powerful-ai-chip-tencent-releases"
+        },
+        {
+          "titre": "Moonshot's Kimi K3 model lands on Amazon Bedrock, a real-world test for Chinese open source",
+          "texteHtml": "<p>Chinese start-up Moonshot AI has begun supplying its flagship Kimi K3 model to Amazon Web Services, one of the world's largest cloud hosts, the South China Morning Post reports. The model is now available on Amazon Bedrock, AWS's tool for building generative AI applications, presented by Amazon as \"a powerful new option for code and knowledge work\". The stakes go beyond mere listing: it is a test case for whether open-weight models (which you can download and run yourself) can generate revenue through third-party platforms. A Chinese model distributed by a US cloud giant blurs the usual dividing line between the two ecosystems.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3368274/moonshots-kimi-k3-lands-amazon-key-test-chinese-open-source-ai-revenue?utm_source=rss_feed"
+            }
+          ],
+          "rang": 10,
+          "id": "moonshot-s-kimi-k3-model-lands-on-amazon-bedrock-a-real"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "When AIs grade AIs, scientific judgement collapses",
+          "texteHtml": "<p>A team shows that automated peer review becomes dangerous as soon as it loops back on itself: as AI-generated reviews enter training corpora, later models learn from judgements produced by earlier ones. Starting from Llama 3.1 8B, fine-tuned on real reviews from the ICLR conference between 2018 and 2023, the researchers trained four successor models on 2024 data and observed a decline in discernment, which they call a collapse of scientific judgement. The authors propose ways to slow the spiral. The lesson holds beyond research: handing an AI the task of evaluating another AI's work, without human oversight, gradually impoverishes the measure of quality.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.20942"
+            }
+          ],
+          "rang": 11,
+          "id": "when-ais-grade-ais-scientific-judgement-collapses"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "NewsGuard launches a news assistant that draws only on verified sources",
+          "texteHtml": "<p>The US specialist in rating news sites unveils an AI tool limited to 12,000 vetted sources and returning half its revenue to the outlets it cites, La Tribune reports.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/informatique/26517405274858/marre-des-hallucinations-des-chatbots-newsguard-lance-un-assistant-ia-dedie-dactualite-base-sur-une-information-neutre-et-sourcee"
+            }
+          ],
+          "rang": 12,
+          "id": "newsguard-launches-a-news-assistant-that-draws-only-on"
+        },
+        {
+          "titre": "Suno, target of a new Sony and Universal lawsuit despite its pursuit of deals",
+          "texteHtml": "<p>The AI music-generation start-up, which had unveiled its v6 model on 9 September alongside industry representatives, is now the target of a new action by the two majors, Next.ink reports.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/257036/suno-veut-faire-la-paix-avec-lindustrie-musicale-sony-et-universal-attaquent-de-nouveau/"
+            }
+          ],
+          "rang": 13,
+          "id": "suno-target-of-a-new-sony-and-universal-lawsuit-despite-its"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Amazon blocked Meta's Muse agent, Walmart quietly pulled its ChatGPT integration and retailers are rushing to build their own agents, while 31% of shoppers already prepare a purchase with AI: the moment of advice leaves the brand's own site for the model's answer, and the skill that gains value for a French marketing team is becoming the exact source that ChatGPT, Claude and Gemini cite, by fixing product data and measuring its share of citations rather than its rank in Google alone.",
+    "these": "Amazon blocked Meta's Muse agent and Walmart quietly pulled its ChatGPT integration. Both moves say the same thing, and it speaks directly to French marketing teams: the moment of recommendation, when a customer decides what to buy, leaves the brand's own site for the model's answer. The Journal du Net puts it plainly: the brand keeps its content but loses the monopoly on the staging. It becomes a source that ChatGPT, Claude or Gemini cite or ignore, like any other. The numbers show where the shift stands. According to a survey relayed by ZDNet, 31% of online shoppers already use generative AI to prepare a purchase, while the traffic sent by autonomous agents rarely exceeds 1%. The gap draws the roadmap. Advice runs through AI long before the agent clicks in your place. Visibility in the answer is won today; automated buying will come next, and its plumbing is not yet laid, as shown by the doors that Amazon, Meta and Walmart are closing. The skill that gains value in a French organisation then changes in nature. Take your ten best-selling products. Ask ChatGPT, Claude and Gemini the question a customer would ask before buying, and read the answer. Look at whether your brand is cited, whether the price and specifications are accurate, which source the model opens. Where the information is wrong or missing, the cause almost always lies in poorly structured product data and unverifiable claims on your own pages. Fix the data at the source, not the campaign. Measure your share of citations in the models' answers, as you track your position in Google. The shelf has moved into the sentence the machine generates. The brand absent from that sentence no longer exists at the instant the customer chooses. Yesterday's search optimisation aimed at a results page; the one coming aims at a generated answer, and that answer is won through the accuracy of what you publish about yourself. The Masteria editorial team.",
+    "html": "<p>Amazon blocked Meta's Muse agent and Walmart quietly pulled its ChatGPT integration. Both moves say the same thing, and it speaks directly to French marketing teams: the moment of recommendation, when a customer decides what to buy, leaves the brand's own site for the model's answer. The Journal du Net puts it plainly: the brand keeps its content but loses the monopoly on the staging. It becomes a source that ChatGPT, Claude or Gemini cite or ignore, like any other.</p>\n<p>The numbers show where the shift stands. According to a survey relayed by ZDNet, 31% of online shoppers already use generative AI to prepare a purchase, while the traffic sent by autonomous agents rarely exceeds 1%. The gap draws the roadmap. Advice runs through AI long before the agent clicks in your place. Visibility in the answer is won today; automated buying will come next, and its plumbing is not yet laid, as shown by the doors that Amazon, Meta and Walmart are closing.</p>\n<p>The skill that gains value in a French organisation then changes in nature. Take your ten best-selling products. Ask ChatGPT, Claude and Gemini the question a customer would ask before buying, and read the answer. Look at whether your brand is cited, whether the price and specifications are accurate, which source the model opens. Where the information is wrong or missing, the cause almost always lies in poorly structured product data and unverifiable claims on your own pages. Fix the data at the source, not the campaign. Measure your share of citations in the models' answers, as you track your position in Google.</p>\n<p>The shelf has moved into the sentence the machine generates. The brand absent from that sentence no longer exists at the instant the customer chooses. Yesterday's search optimisation aimed at a results page; the one coming aims at a generated answer, and that answer is won through the accuracy of what you publish about yourself.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Amazon blocked Meta's Muse agent and Walmart quietly pulled its ChatGPT integration. Both moves say the same thing, and it speaks directly to French marketing teams: the moment of recommendation, when a customer decides what to buy, leaves the brand's own site for the model's answer. The Journal du Net puts it plainly: the brand keeps its content but loses the monopoly on the staging. It becomes a source that ChatGPT, Claude or Gemini cite or ignore, like any other.</p>\n<p>The numbers show where the shift stands. According to a survey relayed by ZDNet, 31% of online shoppers already use generative AI to prepare a purchase, while the traffic sent by autonomous agents rarely exceeds 1%. The gap draws the roadmap. Advice runs through AI long before the agent clicks in your place. Visibility in the answer is won today; automated buying will come next, and its plumbing is not yet laid, as shown by the doors that Amazon, Meta and Walmart are closing.</p>",
+    "itemsCites": [
+      4,
+      6
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-18",
+    "dateLongue": "Friday 18 September 2026",
+    "titreEditorial": "Charles III gathers AI bosses in Scotland and warns of \\\"existential dangers\\\", while a Pew survey across 37 countries shows a worldwide fear of job destruction. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, Nvidia, Google and Anthropic join forces to find 100 gigawatts on the power grid, and Huawei pulls its next training chip forward by nine months to close the gap with Nvidia.",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 17,
+  "nbSignes": 8910,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "Journal du Net",
+    "ZDNet",
+    "TechCrunch",
+    "The Verge",
+    "Ars Technica",
+    "Bloomberg",
+    "Wired",
+    "South China Morning Post",
+    "arXiv"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 154,
+  "publieLe": "2026-09-22T05:40:09+02:00",
+  "publieLeAffiche": "5h40"
+}

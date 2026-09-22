@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-21",
-    "totalEditions": 39,
-    "totalItems": 534,
-    "totalSources": 783
+    "derniereDate": "2026-09-22",
+    "totalEditions": 40,
+    "totalItems": 547,
+    "totalSources": 800
   },
   "editions": [
+    {
+      "date": "2026-09-22",
+      "dateAffichee": "22 septembre 2026",
+      "dateCourte": "mar. 22 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
+      "nbItems": 13,
+      "nbSources": 17,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-21",
       "dateAffichee": "21 septembre 2026",

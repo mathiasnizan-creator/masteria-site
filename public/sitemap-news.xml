@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-09-22</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-22T05:37:35+02:00</news:publication_date>
+      <news:title>Veille IA du 22 septembre 2026 : Plus de vingt pays réclament une supervision humaine renforcée de l&#x27;IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d&#x27;alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l&#x27;agent Muse de Meta caracole en tête des classements avant d&#x27;être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-09-21</loc>
     <news:news>
       <news:publication>

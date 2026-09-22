@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-21",
-    "totalEditions": 39,
-    "totalItems": 534,
-    "totalSources": 783
+    "derniereDate": "2026-09-22",
+    "totalEditions": 40,
+    "totalItems": 547,
+    "totalSources": 800
   },
   "editions": [
+    {
+      "date": "2026-09-22",
+      "dateCourte": "mar. 22 sept.",
+      "dateAffichee": "22 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
+      "chapeau": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA sans les États-Unis, la Chine ni la France, tandis que Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
+      "nbItems": 13,
+      "nbSources": 17,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Journal du Net",
+        "ZDNet",
+        "TechCrunch",
+        "The Verge",
+        "Ars Technica",
+        "Bloomberg",
+        "Wired",
+        "South China Morning Post",
+        "arXiv",
+        "La Tribune",
+        "Next.ink"
+      ],
+      "items": [
+        {
+          "t": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les trois grandes puissances du secteur",
+          "z": "une",
+          "id": "plus-de-vingt-pays-reclament-une-supervision-humaine"
+        },
+        {
+          "t": "L'article 4 de l'AI Act, réécrit, resserre l'obligation de formation à l'IA en PME",
+          "z": "europe",
+          "id": "l-article-4-de-l-ai-act-reecrit-resserre-l-obligation-de"
+        },
+        {
+          "t": "Google engage 13 milliards d'euros en Finlande, son plus gros investissement européen",
+          "z": "europe",
+          "id": "google-engage-13-milliards-d-euros-en-finlande-son-plus"
+        },
+        {
+          "t": "Les enseignes se lancent dans une course pour ne pas être court-circuitées par ChatGPT",
+          "z": "europe",
+          "id": "les-enseignes-se-lancent-dans-une-course-pour-ne-pas-etre"
+        },
+        {
+          "t": "Google lance ses Googlebook à 899 dollars, un pari sur l'envie d'un ordinateur pour Gemini",
+          "z": "international",
+          "id": "google-lance-ses-googlebook-a-899-dollars-un-pari-sur-l"
+        },
+        {
+          "t": "L'agent Muse de Meta domine les classements, se fait bloquer par Amazon et révèle une faille grave",
+          "z": "international",
+          "id": "l-agent-muse-de-meta-domine-les-classements-se-fait-bloquer"
+        },
+        {
+          "t": "La Colombie-Britannique poursuit OpenAI après une tuerie de masse",
+          "z": "international",
+          "id": "la-colombie-britannique-poursuit-openai-apres-une-tuerie-de"
+        },
+        {
+          "t": "Les États-Unis et la Chine s'accordent sur un canal d'alerte dédié à l'IA avant le sommet Trump-Xi",
+          "z": "international",
+          "id": "les-etats-unis-et-la-chine-s-accordent-sur-un-canal-d"
+        },
+        {
+          "t": "Alibaba dévoile sa puce IA la plus puissante, Tencent sort son meilleur modèle d'images le même jour",
+          "z": "chine",
+          "id": "alibaba-devoile-sa-puce-ia-la-plus-puissante-tencent-sort"
+        },
+        {
+          "t": "Le modèle Kimi K3 de Moonshot arrive sur Amazon Bedrock, test grandeur nature pour l'open source chinois",
+          "z": "chine",
+          "id": "le-modele-kimi-k3-de-moonshot-arrive-sur-amazon-bedrock"
+        },
+        {
+          "t": "Quand des IA notent des IA, le jugement scientifique s'effondre",
+          "z": "recherche",
+          "id": "quand-des-ia-notent-des-ia-le-jugement-scientifique-s"
+        },
+        {
+          "t": "NewsGuard lance un assistant d'actualité qui ne puise que dans des sources vérifiées",
+          "z": "bref",
+          "id": "newsguard-lance-un-assistant-d-actualite-qui-ne-puise-que"
+        },
+        {
+          "t": "Suno, cible d'une nouvelle plainte de Sony et Universal malgré sa quête d'accords",
+          "z": "bref",
+          "id": "suno-cible-d-une-nouvelle-plainte-de-sony-et-universal"
+        }
+      ]
+    },
     {
       "date": "2026-09-21",
       "dateCourte": "lun. 21 sept.",

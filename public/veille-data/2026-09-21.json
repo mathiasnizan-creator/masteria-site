@@ -252,7 +252,12 @@
     "titreEditorial": "Charles III réunit les patrons de l'IA en Écosse et met en garde contre des « dangers existentiels », pendant qu'une enquête Pew menée dans 37 pays montre une peur mondiale de la destruction d'emplois. Bruxelles adopte l'EU KIDS Act, Mistral entre dans Firefox, Nvidia, Google et Anthropic s'allient pour trouver 100 gigawatts sur le réseau électrique, et Huawei avance de neuf mois sa prochaine puce d'entraînement pour rattraper Nvidia.",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-22",
+    "dateLongue": "mardi 22 septembre 2026",
+    "titreEditorial": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 17,
   "nbSignes": 9295,

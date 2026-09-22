@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-18",
-    "totalEditions": 24,
-    "totalItems": 331,
-    "totalSources": 471
+    "derniereDate": "2026-09-22",
+    "totalEditions": 25,
+    "totalItems": 344,
+    "totalSources": 488
   },
   "editions": [
+    {
+      "date": "2026-09-22",
+      "dateAffichee": "22 September 2026",
+      "dateCourte": "Tue 22 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
+      "nbItems": 13,
+      "nbSources": 17,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-18",
       "dateAffichee": "18 September 2026",

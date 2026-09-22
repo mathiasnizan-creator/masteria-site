@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-18",
-    "totalEditions": 24,
-    "totalItems": 331,
-    "totalSources": 471
+    "derniereDate": "2026-09-22",
+    "totalEditions": 25,
+    "totalItems": 344,
+    "totalSources": 488
   },
   "editions": [
+    {
+      "date": "2026-09-22",
+      "dateCourte": "Tue 22 Sep",
+      "dateAffichee": "22 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
+      "chapeau": "More than twenty countries call for stronger human oversight of AI without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon, and British Columbia sues OpenAI after a mass shooting.",
+      "nbItems": 13,
+      "nbSources": 17,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Journal du Net",
+        "ZDNet",
+        "TechCrunch",
+        "The Verge",
+        "Ars Technica",
+        "Bloomberg",
+        "Wired",
+        "South China Morning Post",
+        "arXiv",
+        "La Tribune",
+        "Next.ink"
+      ],
+      "items": [
+        {
+          "t": "More than twenty countries call for stronger human oversight of AI, without the sector's three great powers",
+          "z": "une",
+          "id": "more-than-twenty-countries-call-for-stronger-human"
+        },
+        {
+          "t": "Article 4 of the AI Act, rewritten, tightens the AI training obligation for SMEs",
+          "z": "europe",
+          "id": "article-4-of-the-ai-act-rewritten-tightens-the-ai-training"
+        },
+        {
+          "t": "Google commits €13 billion in Finland, its largest European investment",
+          "z": "europe",
+          "id": "google-commits-13-billion-in-finland-its-largest-european"
+        },
+        {
+          "t": "Retailers launch a race to avoid being bypassed by ChatGPT",
+          "z": "europe",
+          "id": "retailers-launch-a-race-to-avoid-being-bypassed-by-chatgpt"
+        },
+        {
+          "t": "Google launches its Googlebook at $899, a bet on the appetite for a computer built for Gemini",
+          "z": "international",
+          "id": "google-launches-its-googlebook-at-899-a-bet-on-the-appetite"
+        },
+        {
+          "t": "Meta's Muse agent tops the charts, gets blocked by Amazon and reveals a serious flaw",
+          "z": "international",
+          "id": "meta-s-muse-agent-tops-the-charts-gets-blocked-by-amazon"
+        },
+        {
+          "t": "British Columbia sues OpenAI after a mass shooting",
+          "z": "international",
+          "id": "british-columbia-sues-openai-after-a-mass-shooting"
+        },
+        {
+          "t": "The United States and China agree on a dedicated AI warning channel ahead of the Trump-Xi summit",
+          "z": "international",
+          "id": "the-united-states-and-china-agree-on-a-dedicated-ai-warning"
+        },
+        {
+          "t": "Alibaba unveils its most powerful AI chip, Tencent releases its best image model the same day",
+          "z": "chine",
+          "id": "alibaba-unveils-its-most-powerful-ai-chip-tencent-releases"
+        },
+        {
+          "t": "Moonshot's Kimi K3 model lands on Amazon Bedrock, a real-world test for Chinese open source",
+          "z": "chine",
+          "id": "moonshot-s-kimi-k3-model-lands-on-amazon-bedrock-a-real"
+        },
+        {
+          "t": "When AIs grade AIs, scientific judgement collapses",
+          "z": "recherche",
+          "id": "when-ais-grade-ais-scientific-judgement-collapses"
+        },
+        {
+          "t": "NewsGuard launches a news assistant that draws only on verified sources",
+          "z": "bref",
+          "id": "newsguard-launches-a-news-assistant-that-draws-only-on"
+        },
+        {
+          "t": "Suno, target of a new Sony and Universal lawsuit despite its pursuit of deals",
+          "z": "bref",
+          "id": "suno-target-of-a-new-sony-and-universal-lawsuit-despite-its"
+        }
+      ]
+    },
     {
       "date": "2026-09-18",
       "dateCourte": "Fri 18 Sep",
