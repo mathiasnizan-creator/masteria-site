@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-22",
-    "totalEditions": 40,
-    "totalItems": 547,
-    "totalSources": 800
+    "derniereDate": "2026-09-23",
+    "totalEditions": 41,
+    "totalItems": 561,
+    "totalSources": 818
   },
   "recentes": [
+    {
+      "date": "2026-09-23",
+      "dateAffichee": "23 septembre 2026",
+      "dateCourte": "mer. 23 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Anthropic et OpenAI lancent Claude Opus 5.5 et GPT-6 Sol et Luna à quelques minutes d'intervalle et baissent leurs prix, quelques jours après avoir appelé à ralentir la course. L'Irlande veut faire de l'entraînement des IA sur les données personnelles un intérêt légitime, Alibaba promet un modèle à 10 000 milliards de paramètres et ouvre des centres de données en Europe, et Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-22",
       "dateAffichee": "22 septembre 2026",
@@ -452,27 +463,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-09-22",
-    "dateAffichee": "22 septembre 2026",
-    "dateLongue": "mardi 22 septembre 2026",
-    "dateCourte": "mar. 22 sept.",
-    "jourSemaine": "mardi",
-    "titre": "Veille IA du mardi 22 septembre 2026",
-    "titreEditorial": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
-    "chapeau": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA sans les États-Unis, la Chine ni la France, tandis que Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
+    "date": "2026-09-23",
+    "dateAffichee": "23 septembre 2026",
+    "dateLongue": "mercredi 23 septembre 2026",
+    "dateCourte": "mer. 23 sept.",
+    "jourSemaine": "mercredi",
+    "titre": "Veille IA du mercredi 23 septembre 2026",
+    "titreEditorial": "Anthropic et OpenAI lancent Claude Opus 5.5 et GPT-6 Sol et Luna à quelques minutes d'intervalle et baissent leurs prix, quelques jours après avoir appelé à ralentir la course. L'Irlande veut faire de l'entraînement des IA sur les données personnelles un intérêt légitime, Alibaba promet un modèle à 10 000 milliards de paramètres et ouvre des centres de données en Europe, et Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA.",
+    "chapeau": "Anthropic et OpenAI dévoilent Claude Opus 5.5 et GPT-6 Sol et Luna le même jour, prix en baisse, quelques jours après avoir appelé à ralentir la course à l'IA. L'Irlande veut légitimer l'entraînement des modèles sur les données personnelles, Alibaba promet un modèle à 10 000 milliards de paramètres, et Microsoft démantèle une plateforme criminelle dopée à l'IA.",
     "une": {
-      "titre": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les trois grandes puissances du secteur",
-      "texteHtml": "<p>Les dirigeants d'une vingtaine de pays, dont l'Allemagne et le Canada, ainsi que la présidente de la Commission européenne Ursula von der Leyen, ont signé une déclaration commune appelant à garder l'humain au contrôle, rapporte Le Monde. Le texte traduit une inquiétude désormais partagée au sommet des États : le développement de l'IA pourrait dépasser notre capacité à l'encadrer. L'absence la plus parlante est celle des signataires manquants. Les États-Unis, la Chine et la France, trois puissances de premier plan dans le domaine, n'ont pas apposé leur nom. La ligne de fracture est nette entre ceux qui misent sur des garde-fous coordonnés et ceux qui gardent les mains libres, chacun pour des raisons différentes. Une déclaration sans les acteurs qui fabriquent les modèles les plus avancés vaut surtout comme signal politique.</p>",
+      "titre": "Anthropic et OpenAI lancent de nouveaux modèles le même jour et baissent leurs prix",
+      "texteHtml": "<p>Le mardi 22 septembre, Anthropic a présenté Claude Opus 5.5, qu'elle décrit comme son modèle le plus performant à ce jour, au niveau de son haut de gamme Fable 5.1 pour un coût d'environ 40 % inférieur à celui d'Opus 5 et une vitesse supérieure de 30 %, rapporte TechCrunch. Quelques minutes plus tard, OpenAI a complété sa gamme GPT-6 avec Sol et Luna, deux modèles moins puissants qu'Astra mais taillés pour coûter moins, accompagnés d'un cache de requêtes (la réutilisation des morceaux de consigne déjà traités) amélioré. Numerama souligne le paradoxe : les deux entreprises avaient appelé, quelques jours plus tôt, à ralentir la course à l'IA. La véritable surprise tient aux tarifs, que les deux camps abaissent en même temps. La veille, SpaceXAI avait sorti Grok 4.7, jugé décevant sur les performances mais moins cher que ses rivaux.</p>",
       "sources": [
         {
-          "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/pixels/article/2026/09/22/intelligence-artificielle-plus-de-vingt-pays-dont-l-allemagne-et-le-canada-appellent-a-une-supervision-humaine-renforcee_6779412_4408996.html"
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/"
+        },
+        {
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+        },
+        {
+          "nom": "Numerama",
+          "url": "https://www.numerama.com/tech/2338131-claude-opus-5-5-et-gpt-6-sol-sortent-le-meme-jour-anthropic-et-openai-ont-du-mal-a-ralentir-lia.html"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "En tête d'affiche",
-      "id": "plus-de-vingt-pays-reclament-une-supervision-humaine"
+      "id": "anthropic-et-openai-lancent-de-nouveaux-modeles-le-meme"
     },
     "sections": [
       {
@@ -482,40 +501,52 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "L'article 4 de l'AI Act, réécrit, resserre l'obligation de formation à l'IA en PME",
-            "texteHtml": "<p>Depuis le 27 juillet 2026, le règlement européen ne demande plus de viser un « niveau suffisant » de maîtrise de l'IA parmi les salariés, mais l'obligation d'agir demeure entière, analyse le Journal du Net. Pour une PME, la question pratique n'est plus de cocher une case de conformité, elle est de prouver que ses équipes savent se servir des outils qu'elle déploie et en connaissent les limites.</p>",
+            "titre": "L'Irlande veut faire de l'entraînement des IA sur les données personnelles un « intérêt légitime »",
+            "texteHtml": "<p>Le pays, qui préside le Conseil de l'Union européenne, a proposé de nouvelles modifications au « digital omnibus », le texte censé simplifier le droit numérique européen, rapporte Next. La réécriture rendrait « légitime » l'usage des données personnelles pour entraîner des modèles, ainsi que le dépôt de cookies pour mesurer l'efficacité publicitaire, sans repasser par le consentement des personnes. Pour une organisation française, la base juridique d'un projet d'IA nourri aux données clients pourrait s'en trouver déplacée avant même que la CNIL ne tranche.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1554987-article-4-de-l-ai-act-reecrit-ce-qui-change-pour-la-formation-des-salaries-en-pme/"
+                "nom": "Next",
+                "url": "https://next.ink/257186/europe-menace-sur-le-consentement-pour-lentrainement-des-ia-sur-des-donnees-personnelles/"
               }
             ],
             "rang": 2,
-            "id": "l-article-4-de-l-ai-act-reecrit-resserre-l-obligation-de"
+            "id": "l-irlande-veut-faire-de-l-entrainement-des-ia-sur-les"
           },
           {
-            "titre": "Google engage 13 milliards d'euros en Finlande, son plus gros investissement européen",
-            "texteHtml": "<p>La somme, prévue d'ici 2028, financera des centres de données destinés à absorber la demande mondiale d'IA, rapporte ZDNet, qui décrit une Finlande en passe de devenir un pôle nordique du calcul. Le choix suit l'électricité bas carbone et le climat froid, deux atouts pour refroidir des salles serveurs, et confirme que la bataille européenne de l'IA se joue autant sur le foncier et l'énergie que sur les modèles.</p>",
+            "titre": "Les salaires des professionnels de l'IA s'étalent de 49 700 à 115 800 euros par an",
+            "texteHtml": "<p>Le Journal du Net publie une grille des rémunérations moyennes du secteur : le métier de prompt engineer (concevoir les consignes qui pilotent un modèle) ferme la marche à 49 700 euros bruts annuels, quand les profils les plus recherchés atteignent 115 800 euros. L'écart dessine la hiérarchie qui se met en place entre ceux qui se servent des outils et ceux qui les conçoivent et les intègrent.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/voici-les-raisons-pour-lesquelles-google-mise-13-milliards-deuros-en-finlande-son-plus-gros-investissement-jamais-realise-en-europe-503925.htm#xtor=RSS-1"
+                "nom": "Journal du Net",
+                "url": "https://www.journaldunet.com/intelligence-artificielle/1555235-de-49-700-a-115-800-euros-par-an-decouvrez-les-salaires-moyens-des-professionnels-de-l-ia/"
               }
             ],
             "rang": 3,
-            "id": "google-engage-13-milliards-d-euros-en-finlande-son-plus"
+            "id": "les-salaires-des-professionnels-de-l-ia-s-etalent-de-49-700"
           },
           {
-            "titre": "Les enseignes se lancent dans une course pour ne pas être court-circuitées par ChatGPT",
-            "texteHtml": "<p>Pour préserver leur présence en ligne, les marques développent leurs propres agents d'achat et cherchent à améliorer leur visibilité dans les moteurs d'IA, décrit Le Monde. L'enjeu est concret : quand un client demande conseil à un assistant plutôt qu'à un moteur de recherche, la marque absente de la réponse disparaît du champ au moment de la décision.</p>",
+            "titre": "Dassault Aviation a testé deux IA en vol sur Rafale",
+            "texteHtml": "<p>Le constructeur annonce avoir fait voler deux intelligences artificielles à bord de son chasseur, l'une développée en interne, l'autre fournie avec CortAIx, l'entité IA de Thales, rapporte La Tribune. L'essai fait entrer l'IA embarquée dans l'aviation de combat française, sur un appareil que la France exporte largement.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/economie/article/2026/09/21/le-commerce-face-au-choc-de-l-ia-comment-chatgpt-menace-la-presence-des-marques-sur-le-web_6778984_3234.html"
+                "nom": "La Tribune",
+                "url": "https://air-cosmos.latribune.fr/article/defense/28015933454460/le-rafale-vole-avec-ia"
               }
             ],
             "rang": 4,
-            "id": "les-enseignes-se-lancent-dans-une-course-pour-ne-pas-etre"
+            "id": "dassault-aviation-a-teste-deux-ia-en-vol-sur-rafale"
+          },
+          {
+            "titre": "Le gouvernement annonce un plan pour amener l'IA dans le monde du travail",
+            "texteHtml": "<p>L'exécutif présente un dispositif destiné à accélérer l'adoption de l'intelligence artificielle dans les entreprises et l'administration, rapporte Maddyness. Le détail des moyens engagés et des publics visés dira si l'annonce se traduit en montée en compétence réelle sur le terrain.</p>",
+            "sources": [
+              {
+                "nom": "Maddyness",
+                "url": "https://www.maddyness.com/2026/09/22/le-gouvernement-annonce-un-plan-pour-faire-prendre-le-tournant-de-lia-au-monde-du-travail/"
+              }
+            ],
+            "rang": 5,
+            "id": "le-gouvernement-annonce-un-plan-pour-amener-l-ia-dans-le"
           }
         ]
       },
@@ -526,64 +557,48 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Google lance ses Googlebook à 899 dollars, un pari sur l'envie d'un ordinateur pour Gemini",
-            "texteHtml": "<p>Le géant américain dévoile une gamme de portables où Gemini est cousu au système : le modèle est relié au curseur, à la dictée, aux widgets et aux réglages, décrit TechCrunch. Ces machines fusionnent Android et ChromeOS et visent le marché premium tenu par le MacBook d'Apple et les PC sous Windows. Sameer Samat, président de l'écosystème Android, assume le rapprochement avec le téléphone, à la manière de la continuité entre l'iPhone et le Mac. Le pari est clair : convaincre un utilisateur d'acheter un nouvel appareil non pour sa puissance brute, mais pour l'assistant qui y vit. Google avait échoué à imposer le Chromebook au grand public, il remet une pièce dans la machine avec l'IA comme argument central.</p>",
-            "sources": [
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini/"
-              }
-            ],
-            "rang": 5,
-            "id": "google-lance-ses-googlebook-a-899-dollars-un-pari-sur-l"
-          },
-          {
-            "titre": "L'agent Muse de Meta domine les classements, se fait bloquer par Amazon et révèle une faille grave",
-            "texteHtml": "<p>Muse, le nouvel assistant grand public de Meta, a engrangé plus de téléchargements et d'utilisateurs actifs quotidiens aux États-Unis et au Canada que ChatGPT sur la même période après son lancement mobile, selon les estimations d'Appfigures relayées par TechCrunch. Le succès s'est heurté à un mur : Amazon a coupé l'accès de Muse à ses pages, un message avertissant que « la poursuite de l'accès par un agent d'IA non autorisé viole les conditions d'utilisation d'Amazon », rapporte The Verge. Meta n'avait pas prévenu Amazon de l'arrivée de son agent. Dans le même temps, Ars Technica décrit une faille « zero-day » sérieuse : une simple attaque de type ClickFix suffit à détourner cet assistant que le média qualifie d'« extraordinairement privilégié », capable d'agir à la place de l'utilisateur. Le triptyque résume la période, un agent qui séduit vite, agit large et expose autant qu'il rend service.</p>",
-            "sources": [
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
-              },
-              {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
-              },
-              {
-                "nom": "Ars Technica",
-                "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/"
-              }
-            ],
-            "rang": 6,
-            "id": "l-agent-muse-de-meta-domine-les-classements-se-fait-bloquer"
-          },
-          {
-            "titre": "La Colombie-Britannique poursuit OpenAI après une tuerie de masse",
-            "texteHtml": "<p>La province canadienne a déposé plainte en Californie contre OpenAI, affirmant que l'entreprise aurait pu exploiter les journaux de conversation de ChatGPT pour alerter la police et prévenir la fusillade de Tumbler Ridge, en février, rapporte Bloomberg. L'attaque avait fait neuf morts, dont la personne à l'origine du drame. Le grief tient en une phrase : ne pas avoir signalé aux forces de l'ordre des menaces proférées sur la plateforme. L'affaire ouvre un terrain juridique neuf, celui de la responsabilité d'un fournisseur d'IA face aux signaux de danger qui transitent par son service. Elle pèsera sur la manière dont les éditeurs surveillent, conservent et transmettent ce que les utilisateurs écrivent à leurs modèles.</p>",
+            "titre": "Andreessen Horowitz ouvre une « académie » présentée comme une alternative à l'université",
+            "texteHtml": "<p>Le fonds de capital-risque a16z lance un programme destiné aux jeunes diplômés du secondaire et aux décrocheurs de l'université, pour repérer et former de jeunes talents qui construisent des produits d'IA, rapporte Bloomberg. La « Horowitz Andreessen Academy » démarre avec 42 millions de dollars et dix partenaires : Anduril, Anthropic, Coinbase, Google, Meta, Nvidia, OpenAI, Palantir, Replit et Stripe, détaille The Verge. Le cursus, sans devoirs, se veut une rampe d'accès directe vers une startup de la Silicon Valley. L'initiative pose une question de fond sur la formation : quand les employeurs deviennent formateurs et court-circuitent le diplôme, la valeur d'un parcours se mesure à l'embauche, pas au titre. Elle mérite l'attention de tout acteur français de la formation professionnelle.</p>",
             "sources": [
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-21/british-columbia-sues-openai-over-canada-mass-shooting-warning-failure"
+                "url": "https://www.bloomberg.com/news/articles/2026-09-22/andreessen-horowitz-launches-ai-school-as-a-college-alternative"
+              },
+              {
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy"
+              }
+            ],
+            "rang": 6,
+            "id": "andreessen-horowitz-ouvre-une-academie-presentee-comme-une"
+          },
+          {
+            "titre": "Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA",
+            "texteHtml": "<p>L'éditeur annonce avoir perturbé un service qui automatisait des attaques informatiques de masse et aurait compromis environ 12 000 comptes, rapportent Ars Technica et Microsoft. EvilTokens fournissait une chaîne complète, du hameçonnage au vol d'identifiants, rendant les compromissions de grande ampleur plus rapides et plus faciles pour des acteurs peu qualifiés. Le cas illustre une bascule côté attaquants : l'IA abaisse le coût et le niveau technique requis pour lancer une campagne, autant qu'elle outille la défense. Pour une entreprise française, la parade repose sur des réflexes de base tenus par des équipes formées : double authentification, vérification des demandes, alerte au moindre signal anormal.</p>",
+            "sources": [
+              {
+                "nom": "Ars Technica",
+                "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/"
+              },
+              {
+                "nom": "Microsoft",
+                "url": "https://blogs.microsoft.com/on-the-issues/2026/09/22/disrupting-eviltokens-the-ai-chatbot-built-for-cybercrime/"
               }
             ],
             "rang": 7,
-            "id": "la-colombie-britannique-poursuit-openai-apres-une-tuerie-de"
+            "id": "microsoft-demantele-eviltokens-une-plateforme-criminelle"
           },
           {
-            "titre": "Les États-Unis et la Chine s'accordent sur un canal d'alerte dédié à l'IA avant le sommet Trump-Xi",
-            "texteHtml": "<p>Les deux pays ont convenu d'ouvrir un dialogue officiel sur l'intelligence artificielle, assorti d'un mécanisme de notification mutuelle en cas d'incident menaçant la sécurité nationale, rapporte Wired. L'accord a émergé de huit heures de négociations à New York entre le secrétaire au Trésor Scott Bessent, le représentant au commerce Jamieson Greer et le vice-Premier ministre chinois He Lifeng, à quelques jours de la visite de Xi Jinping à Washington. Les analystes cités par le South China Morning Post y voient un pas pragmatique vers la prévention des crises, tempéré par des divisions de fond sur l'accès aux puces, la distillation des modèles et la domination du marché. Le canal existe désormais, son efficacité dépendra de ce que chaque camp acceptera de signaler à l'autre.</p>",
+            "titre": "« Ne vous laissez pas berner par l'emballement de l'été », préviennent deux voix critiques de l'IA",
+            "texteHtml": "<p>Dans une tribune de la MIT Technology Review, Timnit Gebru, directrice du Distributed AI Research Institute, et Emily Bender, linguiste à l'université de Washington, appellent à la prudence face à une saison d'annonces spectaculaires. Elles rappellent la série de démonstrations récentes, des failles de sécurité exhibées par les laboratoires aux résultats mathématiques revendiqués, et invitent à distinguer les progrès réels du récit promotionnel. Leur argument : la peur d'une IA toute-puissante et la promesse d'une IA miraculeuse nourrissent le même emballement et servent les mêmes intérêts commerciaux. La mise en garde tombe le jour où deux laboratoires baissent leurs prix après avoir appelé à ralentir.</p>",
             "sources": [
               {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/us-and-china-discuss-alerting-each-other-to-ai-national-security-threats/"
-              },
-              {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-war/article/3368281/ai-safety-fears-mount-can-us-china-hotline-prevent-global-crisis?utm_source=rss_feed"
+                "nom": "MIT Technology Review",
+                "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/"
               }
             ],
             "rang": 8,
-            "id": "les-etats-unis-et-la-chine-s-accordent-sur-un-canal-d"
+            "id": "ne-vous-laissez-pas-berner-par-l-emballement-de-l-ete"
           }
         ]
       },
@@ -594,32 +609,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Alibaba dévoile sa puce IA la plus puissante, Tencent sort son meilleur modèle d'images le même jour",
-            "texteHtml": "<p>Alibaba a présenté ce qu'elle décrit comme l'accélérateur d'IA le plus performant conçu en Chine, destiné à concurrencer Nvidia et à soutenir un déploiement massif de centres de données, jusqu'à 20 gigawatts de capacité d'ici 2032, rapporte Bloomberg. Pour donner l'échelle, 20 gigawatts avoisinent la puissance d'une vingtaine de réacteurs nucléaires fonctionnant à plein. Le même jour, à l'ouverture de la conférence IA d'Alibaba, Tencent a lancé son modèle de génération d'images le plus abouti pour rattraper ByteDance et Alibaba. Les deux annonces, coordonnées dans le temps, signalent une industrie chinoise qui pousse sa propre pile matérielle et logicielle pendant que les restrictions américaines sur les semi-conducteurs restent en vigueur. La question des exports de puces plane sur le sommet Trump-Xi de la semaine.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-22/alibaba-unveils-ai-chip-to-drive-20gw-of-data-centers-by-2032"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-22/tencent-releases-ai-image-model-to-catch-bytedance-alibaba"
-              }
-            ],
-            "rang": 9,
-            "id": "alibaba-devoile-sa-puce-ia-la-plus-puissante-tencent-sort"
-          },
-          {
-            "titre": "Le modèle Kimi K3 de Moonshot arrive sur Amazon Bedrock, test grandeur nature pour l'open source chinois",
-            "texteHtml": "<p>La start-up chinoise Moonshot AI a commencé à fournir son modèle phare Kimi K3 à Amazon Web Services, l'un des plus grands hébergeurs cloud du monde, rapporte le South China Morning Post. Le modèle est désormais accessible sur Amazon Bedrock, l'outil d'AWS pour construire des applications d'IA générative, présenté par Amazon comme « une nouvelle option puissante pour le code et le travail de connaissance ». L'enjeu dépasse le simple référencement : c'est un cas d'école pour la capacité des modèles à poids ouverts (qu'on peut télécharger et faire tourner soi-même) à générer des revenus via des plateformes tierces. Un modèle chinois distribué par un géant américain du cloud brouille la ligne de partage habituelle entre les deux écosystèmes.</p>",
+            "titre": "Alibaba promet un modèle à 10 000 milliards de paramètres et revendique la puce IA la plus puissante de Chine",
+            "texteHtml": "<p>À sa conférence annuelle Apsara à Hangzhou, le groupe a annoncé travailler à un modèle pouvant atteindre 10 000 milliards de paramètres, soit un ordre de grandeur au-dessus des plus gros modèles publics actuels, rapporte le South China Morning Post. Le président du groupe, Joe Tsai, a réaffirmé l'ambition d'une superintelligence et un investissement dans une pile complète, des puces aux modèles. L'annonce accompagne le dévoilement d'un accélérateur maison présenté comme le plus performant conçu en Chine, alors que les restrictions américaines sur les semi-conducteurs restent en vigueur. Le nombre de paramètres reste une promesse, mais il fixe le cap que Pékin veut afficher face aux laboratoires américains.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3368274/moonshots-kimi-k3-lands-amazon-key-test-chinese-open-source-ai-revenue?utm_source=rss_feed"
+                "url": "https://www.scmp.com/tech/big-tech/article/3368338/alibaba-teases-10-trillion-parameter-model-debuts-chinas-most-powerful-ai-chip?utm_source=rss_feed"
+              }
+            ],
+            "rang": 9,
+            "id": "alibaba-promet-un-modele-a-10-000-milliards-de-parametres"
+          },
+          {
+            "titre": "Alibaba Cloud ouvre des centres de données en Europe pour capter les entreprises du continent",
+            "texteHtml": "<p>La filiale cloud du groupe lancera des centres aux Pays-Bas, en Turquie et en Finlande dans les douze prochains mois, le premier aux Pays-Bas dès octobre, rapporte le South China Morning Post. L'expansion fait partie d'un déploiement mondial de 20 gigawatts de capacité et vise à vendre une pile « full stack », des puces au cloud jusqu'aux modèles multimodaux. Pour une entreprise européenne, un fournisseur chinois s'ajoute à la courte liste des hébergeurs de calcul IA à grande échelle, aux côtés des américains. Le choix soulèvera des questions de souveraineté et de conformité au RGPD que les directions juridiques devront trancher.</p>",
+            "sources": [
+              {
+                "nom": "South China Morning Post",
+                "url": "https://www.scmp.com/tech/big-tech/article/3368454/alibaba-cloud-set-open-new-data-centres-europe-next-year-overseas-push-speeds?utm_source=rss_feed"
               }
             ],
             "rang": 10,
-            "id": "le-modele-kimi-k3-de-moonshot-arrive-sur-amazon-bedrock"
+            "id": "alibaba-cloud-ouvre-des-centres-de-donnees-en-europe-pour"
           }
         ]
       },
@@ -630,16 +641,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Quand des IA notent des IA, le jugement scientifique s'effondre",
-            "texteHtml": "<p>Une équipe montre que la revue par les pairs automatisée devient dangereuse dès qu'elle se boucle sur elle-même : à mesure que des évaluations générées par IA entrent dans les corpus d'entraînement, les modèles suivants apprennent des jugements produits par les précédents. Partant de Llama 3.1 8B, affiné sur des évaluations réelles de la conférence ICLR de 2018 à 2023, les chercheurs ont entraîné quatre modèles successeurs sur les données de 2024 et observé une dégradation du discernement, qu'ils nomment un effondrement du jugement scientifique. Les auteurs proposent des pistes pour freiner cette spirale. La leçon vaut au-delà de la recherche : confier à une IA le soin d'évaluer le travail d'une autre IA, sans contrôle humain, appauvrit peu à peu la mesure de la qualité.</p>",
+            "titre": "FrontierMath Erdős, un test de 68 problèmes ouverts pour mesurer les IA sans triche",
+            "texteHtml": "<p>Des chercheurs présentent FME, un jeu de 68 conjectures d'Erdős encore non résolues en août 2026, que les systèmes d'IA doivent prouver ou réfuter dans l'assistant de preuve Lean (un logiciel qui vérifie une démonstration ligne à ligne), décrit l'article publié sur arXiv. Le choix de Lean est délibéré : une preuve formelle se contrôle mécaniquement, ce qui coupe court aux résultats revendiqués mais invérifiables. Les problèmes ont été triés parmi 652 questions ouvertes recensées sur erdosproblems.com, pour leur intérêt et leur difficulté. Le test arrive en plein débat sur les annonces mathématiques d'OpenAI, et propose une mesure que personne ne peut contester après coup.</p>",
             "sources": [
               {
                 "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2609.20942"
+                "url": "https://arxiv.org/abs/2609.25050"
               }
             ],
             "rang": 11,
-            "id": "quand-des-ia-notent-des-ia-le-jugement-scientifique-s"
+            "id": "frontiermath-erdos-un-test-de-68-problemes-ouverts-pour"
           }
         ]
       },
@@ -650,65 +661,76 @@
         "format": "bref",
         "items": [
           {
-            "titre": "NewsGuard lance un assistant d'actualité qui ne puise que dans des sources vérifiées",
-            "texteHtml": "<p>Le spécialiste américain de la notation des sites d'information dévoile un outil d'IA limité à 12 000 sources contrôlées et reversant la moitié de ses revenus aux éditeurs cités, rapporte La Tribune.</p>",
+            "titre": "Donald Trump annonce que les États-Unis vont « officiellement » renommer l'intelligence artificielle en « super intelligence », le mot « artificiel » donnant selon lui l'impression d'une intelligence factice, déclaration faite à l'Assemblée générale de l'ONU",
+            "texteHtml": "",
             "sources": [
               {
-                "nom": "La Tribune",
-                "url": "https://www.latribune.fr/article/tech/informatique/26517405274858/marre-des-hallucinations-des-chatbots-newsguard-lance-un-assistant-ia-dedie-dactualite-base-sur-une-information-neutre-et-sourcee"
+                "nom": "Journal du Net",
+                "url": "https://www.journaldunet.com/business/action-publique/1555289-les-etats-unis-vont-officiellement-renommer-l-intelligence-artificielle-en-super-intelligence-annonce-trump-a-l-onu/"
               }
             ],
             "rang": 12,
-            "id": "newsguard-lance-un-assistant-d-actualite-qui-ne-puise-que"
+            "id": "donald-trump-annonce-que-les-etats-unis-vont-officiellement"
           },
           {
-            "titre": "Suno, cible d'une nouvelle plainte de Sony et Universal malgré sa quête d'accords",
-            "texteHtml": "<p>La start-up de génération musicale par IA, qui avait dévoilé son modèle v6 le 9 septembre en associant des représentants de l'industrie, se retrouve visée par une nouvelle action des deux majors, rapporte Next.ink.</p>",
+            "titre": "OpenAI met en place un comité indépendant de mathématiciens de haut niveau pour la conseiller sur ses interactions avec la recherche, après une série de résultats revendiqués qui a tourné à la crise de réputation",
+            "texteHtml": "",
             "sources": [
               {
-                "nom": "Next.ink",
-                "url": "https://next.ink/257036/suno-veut-faire-la-paix-avec-lindustrie-musicale-sony-et-universal-attaquent-de-nouveau/"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel"
               }
             ],
             "rang": 13,
-            "id": "suno-cible-d-une-nouvelle-plainte-de-sony-et-universal"
+            "id": "openai-met-en-place-un-comite-independant-de-mathematiciens"
+          },
+          {
+            "titre": "Proton intègre Apertus 1.5, modèle ouvert conçu par l'ETH Zurich, l'EPFL et le centre de calcul CSCS, à son assistant Lumo, pour une IA suisse souveraine qui s'améliore avec les retours des utilisateurs",
+            "texteHtml": "",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-630568-proton-signe-avec-apertus-pour-une-ia-suisse-souveraine.html"
+              }
+            ],
+            "rang": 14,
+            "id": "proton-integre-apertus-1-5-modele-ouvert-concu-par-l-eth"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Amazon bloque l'agent Muse de Meta, Walmart retire son intégration de ChatGPT et les enseignes se ruent sur leurs propres agents, quand 31 % des acheteurs préparent déjà leur achat avec l'IA : le moment du conseil quitte le site de la marque pour la réponse du modèle, et la compétence qui prend de la valeur pour une équipe marketing française est de devenir la source exacte que ChatGPT, Claude et Gemini citent, en corrigeant la donnée produit et en mesurant sa part de citation plutôt que son seul rang dans Google.",
-      "these": "Amazon a bloqué l'agent Muse de Meta et Walmart a discrètement retiré son intégration de ChatGPT. Les deux gestes disent la même chose, et elle concerne directement les équipes marketing françaises : le moment de la recommandation, celui où un client décide quoi acheter, quitte le site de la marque pour la réponse du modèle. Le Journal du Net le formule sans détour, la marque garde son contenu mais perd le monopole de la mise en scène. Elle devient une source que ChatGPT, Claude ou Gemini citent ou ignorent, au même titre que n'importe quelle autre. Les chiffres disent où en est la bascule. Selon une enquête relayée par ZDNet, 31 % des acheteurs en ligne utilisent déjà l'IA générative pour préparer un achat, quand le trafic envoyé par les agents autonomes dépasse rarement 1 %. L'écart trace la feuille de route. Le conseil passe par l'IA bien avant que l'agent ne clique à votre place. La visibilité dans la réponse se gagne aujourd'hui ; l'achat automatisé viendra ensuite, et son tuyau n'est pas encore posé, comme le montrent les portes que ferment Amazon, Meta et Walmart. La compétence qui prend de la valeur dans une organisation française change alors de nature. Prenez vos dix produits les plus vendus. Posez à ChatGPT, à Claude et à Gemini la question qu'un client poserait avant d'acheter, et lisez la réponse. Regardez si votre marque est citée, si le prix et les caractéristiques sont exacts, quelle source le modèle ouvre. Là où l'information est fausse ou absente, la cause tient presque toujours à des données produit mal structurées et à des affirmations invérifiables sur vos propres pages. Corrigez la donnée à la source, pas la campagne. Mesurez votre part de citation dans les réponses des modèles, comme vous suivez votre position dans Google. Le rayon s'est déplacé dans la phrase que génère la machine. La marque absente de cette phrase n'existe plus à l'instant où le client choisit. Le référencement d'hier visait une page de résultats ; celui qui vient vise une réponse générée, et cette réponse se gagne par l'exactitude de ce que vous publiez sur vous-même. L'équipe éditoriale Masteria.",
-      "html": "<p>Amazon a bloqué l'agent Muse de Meta et Walmart a discrètement retiré son intégration de ChatGPT. Les deux gestes disent la même chose, et elle concerne directement les équipes marketing françaises : le moment de la recommandation, celui où un client décide quoi acheter, quitte le site de la marque pour la réponse du modèle. Le Journal du Net le formule sans détour, la marque garde son contenu mais perd le monopole de la mise en scène. Elle devient une source que ChatGPT, Claude ou Gemini citent ou ignorent, au même titre que n'importe quelle autre.</p>\n<p>Les chiffres disent où en est la bascule. Selon une enquête relayée par ZDNet, 31 % des acheteurs en ligne utilisent déjà l'IA générative pour préparer un achat, quand le trafic envoyé par les agents autonomes dépasse rarement 1 %. L'écart trace la feuille de route. Le conseil passe par l'IA bien avant que l'agent ne clique à votre place. La visibilité dans la réponse se gagne aujourd'hui ; l'achat automatisé viendra ensuite, et son tuyau n'est pas encore posé, comme le montrent les portes que ferment Amazon, Meta et Walmart.</p>\n<p>La compétence qui prend de la valeur dans une organisation française change alors de nature. Prenez vos dix produits les plus vendus. Posez à ChatGPT, à Claude et à Gemini la question qu'un client poserait avant d'acheter, et lisez la réponse. Regardez si votre marque est citée, si le prix et les caractéristiques sont exacts, quelle source le modèle ouvre. Là où l'information est fausse ou absente, la cause tient presque toujours à des données produit mal structurées et à des affirmations invérifiables sur vos propres pages. Corrigez la donnée à la source, pas la campagne. Mesurez votre part de citation dans les réponses des modèles, comme vous suivez votre position dans Google.</p>\n<p>Le rayon s'est déplacé dans la phrase que génère la machine. La marque absente de cette phrase n'existe plus à l'instant où le client choisit. Le référencement d'hier visait une page de résultats ; celui qui vient vise une réponse générée, et cette réponse se gagne par l'exactitude de ce que vous publiez sur vous-même.</p>",
-      "htmlExtrait": "<p>Amazon a bloqué l'agent Muse de Meta et Walmart a discrètement retiré son intégration de ChatGPT. Les deux gestes disent la même chose, et elle concerne directement les équipes marketing françaises : le moment de la recommandation, celui où un client décide quoi acheter, quitte le site de la marque pour la réponse du modèle. Le Journal du Net le formule sans détour, la marque garde son contenu mais perd le monopole de la mise en scène. Elle devient une source que ChatGPT, Claude ou Gemini citent ou ignorent, au même titre que n'importe quelle autre.</p>\n<p>Les chiffres disent où en est la bascule. Selon une enquête relayée par ZDNet, 31 % des acheteurs en ligne utilisent déjà l'IA générative pour préparer un achat, quand le trafic envoyé par les agents autonomes dépasse rarement 1 %. L'écart trace la feuille de route. Le conseil passe par l'IA bien avant que l'agent ne clique à votre place. La visibilité dans la réponse se gagne aujourd'hui ; l'achat automatisé viendra ensuite, et son tuyau n'est pas encore posé, comme le montrent les portes que ferment Amazon, Meta et Walmart.</p>",
+      "titre": "Anthropic et OpenAI sortent Claude Opus 5.5 et GPT-6 le même jour en baissant leurs prix, quelques jours après avoir appelé à ralentir la course : le prix du token s'effondre pendant que la qualité monte, par cycles de quelques semaines, et la valeur durable pour une organisation française tient à des équipes formées sur ce qui survit au changement de modèle (cadrer, consigner, vérifier, juger) et à une architecture qu'on peut faire basculer d'un fournisseur à l'autre en une journée, banc d'essai rejoué chaque trimestre.",
+      "these": null,
+      "html": "<p>Anthropic a sorti Claude Opus 5.5 le mardi 22 septembre, OpenAI a lancé GPT-6 Sol et Luna quelques minutes plus tard. Les deux avaient appelé, quelques jours plus tôt, à ralentir la course. Elles ont fait l'inverse, le même jour, en baissant leurs prix. Opus 5.5 offre le niveau de l'ancien haut de gamme pour environ 40 % moins cher à faire tourner qu'Opus 5 ; les nouveaux GPT-6 sont taillés pour coûter moins. Grok 4.7 est sorti la veille, moins convaincant mais meilleur marché. Le prix du token s'effondre pendant que la qualité monte, par cycles de quelques semaines.</p>\n<p>Cette cadence change le calcul d'une organisation française. Le modèle que vous choisissez aujourd'hui sera dépassé dans un trimestre, et moins cher le mois suivant. Une tâche trop coûteuse à automatiser à grande échelle il y a un an devient abordable avant la fin de l'exercice. La contrainte se déplace du prix vers la capacité à suivre le rythme.</p>\n<p>Deux gestes en découlent. Le premier tient aux compétences. Formez vos équipes sur ce qui survit au changement de modèle : cadrer un problème, écrire une consigne claire, vérifier une sortie, juger si un outil convient à une tâche. Ces savoir-faire tiennent d'une version à l'autre ; la maîtrise des menus d'un modèle donné se périme avec lui.</p>\n<p>Le second tient à l'architecture et à l'achat. Construisez vos projets pour changer de modèle sans tout refaire : une couche d'abstraction entre vos applications et le fournisseur, un contrat qui n'enferme pas, un banc d'essai que vous rejouez chaque trimestre sur vos propres cas. Le jour où un modèle deux fois moins cher atteint votre niveau de qualité, vous devez pouvoir basculer en une journée, pas en un semestre.</p>\n<p>L'appel à ralentir restera lettre morte tant qu'un concurrent peut prendre la place laissée vide en publiant le même jour. La course ne ralentira pas. Ce que vous maîtrisez, c'est ce qui, chez vous, ne dépend pas du modèle du mois : des gens qui savent s'en servir et une plomberie qu'on remplace sans douleur. La valeur durable se loge là, quand le reste se périme en quelques semaines. L'équipe éditoriale Masteria.</p>",
+      "htmlExtrait": "<p>Anthropic a sorti Claude Opus 5.5 le mardi 22 septembre, OpenAI a lancé GPT-6 Sol et Luna quelques minutes plus tard. Les deux avaient appelé, quelques jours plus tôt, à ralentir la course. Elles ont fait l'inverse, le même jour, en baissant leurs prix. Opus 5.5 offre le niveau de l'ancien haut de gamme pour environ 40 % moins cher à faire tourner qu'Opus 5 ; les nouveaux GPT-6 sont taillés pour coûter moins. Grok 4.7 est sorti la veille, moins convaincant mais meilleur marché. Le prix du token s'effondre pendant que la qualité monte, par cycles de quelques semaines.</p>\n<p>Cette cadence change le calcul d'une organisation française. Le modèle que vous choisissez aujourd'hui sera dépassé dans un trimestre, et moins cher le mois suivant. Une tâche trop coûteuse à automatiser à grande échelle il y a un an devient abordable avant la fin de l'exercice. La contrainte se déplace du prix vers la capacité à suivre le rythme.</p>",
       "itemsCites": [
-        4,
-        6
+        1
       ],
       "auteur": "L'équipe éditoriale Masteria",
       "auteurRole": "Sous la direction de Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-09-21",
-      "dateLongue": "lundi 21 septembre 2026",
-      "titreEditorial": "Un rapport halluciné par une IA a failli pousser l'armée américaine à arraisonner un navire chinois, Google reconnaît que Gemini s'est introduit seul dans trois entreprises, et l'assistant de codage de Z.ai exfiltrait des fichiers en silence. OpenAI lance Astra for Law pour les juristes, Anthropic ouvre un laboratoire de biologie piloté par Claude, et Donald Trump réclame une « AI Force ».",
-      "nbItems": 14
+      "date": "2026-09-22",
+      "dateLongue": "mardi 22 septembre 2026",
+      "titreEditorial": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
+      "nbItems": 13
     },
     "suivante": null,
-    "nbItems": 13,
-    "nbSources": 17,
-    "nbSignes": 9996,
-    "tempsLecture": 8,
+    "nbItems": 14,
+    "nbSources": 18,
+    "nbSignes": 8766,
+    "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe et France",
-        "nb": 3
+        "nb": 4
       },
       {
         "cle": "international",
         "libelle": "International",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "chine",
@@ -723,25 +745,25 @@
       {
         "cle": "bref",
         "libelle": "En bref",
-        "nb": 2
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
-      "Le Monde",
-      "Journal du Net",
-      "ZDNet",
       "TechCrunch",
+      "Numerama",
+      "Next",
+      "Journal du Net",
+      "La Tribune",
+      "Maddyness",
+      "Bloomberg",
       "The Verge",
       "Ars Technica",
-      "Bloomberg",
-      "Wired",
-      "South China Morning Post",
-      "arXiv"
+      "Microsoft"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 154,
-    "publieLe": "2026-09-22T05:37:35+02:00",
-    "publieLeAffiche": "5h37",
-    "ogImage": "/veille-data/og/2026-09-22.png"
+    "nbArticlesCollectes": 156,
+    "publieLe": "2026-09-23T07:52:49+02:00",
+    "publieLeAffiche": "7h52",
+    "ogImage": "/veille-data/og/2026-09-23.png"
   }
 }

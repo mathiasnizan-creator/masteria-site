@@ -1,0 +1,304 @@
+{
+  "schema": 2,
+  "date": "2026-09-23",
+  "dateAffichee": "23 September 2026",
+  "dateLongue": "Wednesday 23 September 2026",
+  "dateCourte": "Wed 23 Sep",
+  "jourSemaine": "Wednesday",
+  "titre": "AI Watch - Wednesday 23 September 2026",
+  "titreEditorial": "Anthropic and OpenAI ship on the same day",
+  "chapeau": "Anthropic and OpenAI unveil Claude Opus 5.5 and GPT-6 Sol and Luna on the same day, with lower prices, days after calling for a slower AI race. Ireland wants to make training models on personal data a legitimate interest, Alibaba promises a 10-trillion-parameter model, and Microsoft dismantles an AI-powered criminal platform.",
+  "une": {
+    "titre": "Anthropic and OpenAI launch new models on the same day and cut their prices",
+    "texteHtml": "<p>On Tuesday 22 September, Anthropic presented Claude Opus 5.5, which it describes as its best-performing model to date, on par with its top-tier Fable 5.1 for roughly 40% less than Opus 5 and 30% faster, TechCrunch reports. A few minutes later, OpenAI rounded out its GPT-6 range with Sol and Luna, two models less powerful than Astra but built to cost less, along with an improved prompt cache (the reuse of instruction chunks already processed). Numerama points to the paradox: both companies had called, a few days earlier, for a slower AI race. The real surprise is the pricing, which both camps lower at the same time. The day before, SpaceXAI had released Grok 4.7, judged disappointing on performance but cheaper than its rivals.</p>",
+    "sources": [
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+      },
+      {
+        "nom": "Numerama",
+        "url": "https://www.numerama.com/tech/2338131-claude-opus-5-5-et-gpt-6-sol-sortent-le-meme-jour-anthropic-et-openai-ont-du-mal-a-ralentir-lia.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "anthropic-and-openai-launch-new-models-on-the-same-day-and"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Ireland wants to make training AI on personal data a \"legitimate interest\"",
+          "texteHtml": "<p>The country, which holds the presidency of the Council of the European Union, has proposed new changes to the \"digital omnibus\", the text meant to simplify European digital law, Next reports. The rewrite would make it \"legitimate\" to use personal data to train models, as well as to place cookies to measure advertising effectiveness, without going back through people's consent. For a French organisation, the legal basis of an AI project fed on customer data could shift before the CNIL (France's data protection authority) even rules on it.</p>",
+          "sources": [
+            {
+              "nom": "Next",
+              "url": "https://next.ink/257186/europe-menace-sur-le-consentement-pour-lentrainement-des-ia-sur-des-donnees-personnelles/"
+            }
+          ],
+          "rang": 2,
+          "id": "ireland-wants-to-make-training-ai-on-personal-data-a"
+        },
+        {
+          "titre": "AI professionals' salaries range from €49,700 to €115,800 a year",
+          "texteHtml": "<p>The Journal du Net publishes a grid of average pay in the sector: the prompt engineer role (designing the instructions that drive a model) brings up the rear at €49,700 gross a year, while the most sought-after profiles reach €115,800. The gap sketches the hierarchy taking shape between those who use the tools and those who design and integrate them.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1555235-de-49-700-a-115-800-euros-par-an-decouvrez-les-salaires-moyens-des-professionnels-de-l-ia/"
+            }
+          ],
+          "rang": 3,
+          "id": "ai-professionals-salaries-range-from-49-700-to-115-800-a"
+        },
+        {
+          "titre": "Dassault Aviation has tested two AIs in flight on a Rafale",
+          "texteHtml": "<p>The manufacturer says it flew two artificial intelligences aboard its fighter jet, one developed in-house, the other supplied with CortAIx, the AI arm of Thales, La Tribune reports. The test brings onboard AI into French combat aviation, on an aircraft that France exports widely.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://air-cosmos.latribune.fr/article/defense/28015933454460/le-rafale-vole-avec-ia"
+            }
+          ],
+          "rang": 4,
+          "id": "dassault-aviation-has-tested-two-ais-in-flight-on-a-rafale"
+        },
+        {
+          "titre": "The government announces a plan to bring AI into the workplace",
+          "texteHtml": "<p>The executive is presenting a scheme intended to accelerate the adoption of artificial intelligence in businesses and the public administration, Maddyness reports. The detail of the resources committed and the audiences targeted will tell whether the announcement translates into real skill-building on the ground.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/22/le-gouvernement-annonce-un-plan-pour-faire-prendre-le-tournant-de-lia-au-monde-du-travail/"
+            }
+          ],
+          "rang": 5,
+          "id": "the-government-announces-a-plan-to-bring-ai-into-the"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Andreessen Horowitz opens an \"academy\" pitched as an alternative to university",
+          "texteHtml": "<p>The venture capital firm a16z is launching a programme aimed at recent secondary-school graduates and college dropouts, to spot and train young talent building AI products, Bloomberg reports. The \"Horowitz Andreessen Academy\" starts with $42 million and ten partners: Anduril, Anthropic, Coinbase, Google, Meta, Nvidia, OpenAI, Palantir, Replit and Stripe, The Verge details. The programme, with no homework, is meant to be a direct on-ramp to a Silicon Valley startup. The initiative raises a fundamental question about education: when employers become trainers and bypass the diploma, the value of a course is measured at hiring, not by the title. It deserves the attention of every player in French vocational training.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-22/andreessen-horowitz-launches-ai-school-as-a-college-alternative"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy"
+            }
+          ],
+          "rang": 6,
+          "id": "andreessen-horowitz-opens-an-academy-pitched-as-an"
+        },
+        {
+          "titre": "Microsoft dismantles EvilTokens, a turnkey AI-powered criminal platform",
+          "texteHtml": "<p>The company says it disrupted a service that automated mass cyberattacks and is thought to have compromised around 12,000 accounts, Ars Technica and Microsoft report. EvilTokens supplied a full chain, from phishing to credential theft, making large-scale breaches faster and easier for low-skilled actors. The case shows a shift on the attacker side: AI lowers the cost and the technical bar to launch a campaign as much as it equips the defence. For a French company, the safeguard rests on basic reflexes held by trained teams: two-factor authentication, verifying requests, raising the alarm at the slightest abnormal signal.</p>",
+          "sources": [
+            {
+              "nom": "Ars Technica",
+              "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/"
+            },
+            {
+              "nom": "Microsoft",
+              "url": "https://blogs.microsoft.com/on-the-issues/2026/09/22/disrupting-eviltokens-the-ai-chatbot-built-for-cybercrime/"
+            }
+          ],
+          "rang": 7,
+          "id": "microsoft-dismantles-eviltokens-a-turnkey-ai-powered"
+        },
+        {
+          "titre": "\"Don't be fooled by the summer hype,\" warn two critical voices on AI",
+          "texteHtml": "<p>In an op-ed for the MIT Technology Review, Timnit Gebru, director of the Distributed AI Research Institute, and Emily Bender, a linguist at the University of Washington, call for caution in the face of a season of spectacular announcements. They recall the recent run of demonstrations, from security flaws paraded by the labs to claimed mathematical results, and invite readers to tell real progress from promotional narrative. Their argument: fear of an all-powerful AI and the promise of a miraculous AI feed the same hype and serve the same commercial interests. The warning lands on the day two labs cut their prices after calling for a slowdown.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/"
+            }
+          ],
+          "rang": 8,
+          "id": "don-t-be-fooled-by-the-summer-hype-warn-two-critical-voices"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Alibaba promises a 10-trillion-parameter model and claims China's most powerful AI chip",
+          "texteHtml": "<p>At its annual Apsara conference in Hangzhou, the group announced it is working on a model that could reach 10 trillion parameters, an order of magnitude above today's largest public models, the South China Morning Post reports. The group's chairman, Joe Tsai, restated the ambition of a superintelligence and an investment across the full stack, from chips to models. The announcement comes with the unveiling of an in-house accelerator billed as the most powerful designed in China, while the US restrictions on semiconductors remain in force. The parameter count is still a promise, but it sets the course Beijing wants to display against the US labs.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3368338/alibaba-teases-10-trillion-parameter-model-debuts-chinas-most-powerful-ai-chip?utm_source=rss_feed"
+            }
+          ],
+          "rang": 9,
+          "id": "alibaba-promises-a-10-trillion-parameter-model-and-claims"
+        },
+        {
+          "titre": "Alibaba Cloud opens data centres in Europe to win over the continent's businesses",
+          "texteHtml": "<p>The group's cloud arm will launch centres in the Netherlands, Turkey and Finland over the next twelve months, the first in the Netherlands as early as October, the South China Morning Post reports. The expansion is part of a global rollout of 20 gigawatts of capacity and aims to sell a full-stack offering, from chips to cloud to multimodal models. For a European company, a Chinese provider joins the short list of large-scale AI compute hosts, alongside the Americans. The choice will raise questions of sovereignty and GDPR compliance that legal departments will have to settle.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3368454/alibaba-cloud-set-open-new-data-centres-europe-next-year-overseas-push-speeds?utm_source=rss_feed"
+            }
+          ],
+          "rang": 10,
+          "id": "alibaba-cloud-opens-data-centres-in-europe-to-win-over-the"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "FrontierMath Erdős, a test of 68 open problems to measure AIs without cheating",
+          "texteHtml": "<p>Researchers present FME, a set of 68 Erdős conjectures still unsolved as of August 2026, that AI systems must prove or refute in the Lean proof assistant (software that checks a demonstration line by line), the paper published on arXiv describes. The choice of Lean is deliberate: a formal proof can be checked mechanically, which cuts short claimed but unverifiable results. The problems were selected from 652 open questions catalogued on erdosproblems.com, for their interest and their difficulty. The test arrives in the middle of the debate over OpenAI's mathematical announcements, and offers a measure that no one can contest after the fact.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2609.25050"
+            }
+          ],
+          "rang": 11,
+          "id": "frontiermath-erdos-a-test-of-68-open-problems-to-measure"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Donald Trump announces that the United States will \"officially\" rename artificial intelligence \"super intelligence\", the word \"artificial\" in his view giving the impression of a fake intelligence, in a statement made to the UN General Assembly",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/business/action-publique/1555289-les-etats-unis-vont-officiellement-renommer-l-intelligence-artificielle-en-super-intelligence-annonce-trump-a-l-onu/"
+            }
+          ],
+          "rang": 12,
+          "id": "donald-trump-announces-that-the-united-states-will"
+        },
+        {
+          "titre": "OpenAI sets up an independent panel of top mathematicians to advise it on its interactions with research, after a run of claimed results turned into a reputational crisis",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel"
+            }
+          ],
+          "rang": 13,
+          "id": "openai-sets-up-an-independent-panel-of-top-mathematicians"
+        },
+        {
+          "titre": "Proton integrates Apertus 1.5, an open model built by ETH Zurich, EPFL and the CSCS computing centre, into its Lumo assistant, for a sovereign Swiss AI that improves with user feedback",
+          "texteHtml": "",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-630568-proton-signe-avec-apertus-pour-une-ia-suisse-souveraine.html"
+            }
+          ],
+          "rang": 14,
+          "id": "proton-integrates-apertus-1-5-an-open-model-built-by-eth"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "The token price collapses, skills and plumbing hold",
+    "these": "Anthropic and OpenAI release Claude Opus 5.5 and GPT-6 on the same day while cutting their prices, days after calling for a slower race: the token price collapses as quality rises, in cycles of a few weeks, and the lasting value for a French organisation lies in teams trained on what survives a change of model (framing, documenting, checking, judging) and in an architecture you can switch from one provider to another in a day, with a test bench replayed every quarter.",
+    "html": "<p>Anthropic released Claude Opus 5.5 on Tuesday 22 September, OpenAI launched GPT-6 Sol and Luna a few minutes later. Both had called, a few days earlier, for a slower race. They did the opposite, on the same day, by cutting their prices. Opus 5.5 offers the level of the old top tier for roughly 40% less to run than Opus 5; the new GPT-6 models are built to cost less. Grok 4.7 came out the day before, less convincing but cheaper. The token price collapses as quality rises, in cycles of a few weeks.</p>\n<p>This pace changes the calculation for a French organisation. The model you choose today will be outclassed within a quarter, and cheaper the month after. A task too costly to automate at scale a year ago becomes affordable before the end of the financial year. The constraint moves from price to the ability to keep up with the tempo.</p>\n<p>Two moves follow. The first concerns skills. Train your teams on what survives a change of model: framing a problem, writing a clear instruction, checking an output, judging whether a tool fits a task. That know-how holds from one version to the next; mastery of a given model's menus expires with it.</p>\n<p>The second concerns architecture and procurement. Build your projects to switch models without rebuilding everything: an abstraction layer between your applications and the provider, a contract that does not lock you in, a test bench you replay each quarter on your own cases. The day a model twice as cheap reaches your quality level, you must be able to switch in a day, not in six months.</p>\n<p>The call to slow down will stay a dead letter as long as a competitor can take the vacated place by shipping on the same day. The race will not slow. What you control is what, in your own house, does not depend on the model of the month: people who know how to use it and plumbing you can replace painlessly. The lasting value sits there, while the rest expires in a few weeks. The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Anthropic released Claude Opus 5.5 on Tuesday 22 September, OpenAI launched GPT-6 Sol and Luna a few minutes later. Both had called, a few days earlier, for a slower race. They did the opposite, on the same day, by cutting their prices. Opus 5.5 offers the level of the old top tier for roughly 40% less to run than Opus 5; the new GPT-6 models are built to cost less. Grok 4.7 came out the day before, less convincing but cheaper. The token price collapses as quality rises, in cycles of a few weeks.</p>\n<p>This pace changes the calculation for a French organisation. The model you choose today will be outclassed within a quarter, and cheaper the month after. A task too costly to automate at scale a year ago becomes affordable before the end of the financial year. The constraint moves from price to the ability to keep up with the tempo.</p>",
+    "itemsCites": [
+      1
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-22",
+    "dateLongue": "Tuesday 22 September 2026",
+    "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
+    "nbItems": 13
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 18,
+  "nbSignes": 8045,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "TechCrunch",
+    "Numerama",
+    "Next",
+    "Journal du Net",
+    "La Tribune",
+    "Maddyness",
+    "Bloomberg",
+    "The Verge",
+    "Ars Technica",
+    "Microsoft"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 156,
+  "publieLe": "2026-09-23T07:54:16+02:00",
+  "publieLeAffiche": "7h54"
+}

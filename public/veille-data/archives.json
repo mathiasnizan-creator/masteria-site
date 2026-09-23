@@ -3,12 +3,134 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-22",
-    "totalEditions": 40,
-    "totalItems": 547,
-    "totalSources": 800
+    "derniereDate": "2026-09-23",
+    "totalEditions": 41,
+    "totalItems": 561,
+    "totalSources": 818
   },
   "editions": [
+    {
+      "date": "2026-09-23",
+      "dateCourte": "mer. 23 sept.",
+      "dateAffichee": "23 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Anthropic et OpenAI lancent Claude Opus 5.5 et GPT-6 Sol et Luna à quelques minutes d'intervalle et baissent leurs prix, quelques jours après avoir appelé à ralentir la course. L'Irlande veut faire de l'entraînement des IA sur les données personnelles un intérêt légitime, Alibaba promet un modèle à 10 000 milliards de paramètres et ouvre des centres de données en Europe, et Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA.",
+      "chapeau": "Anthropic et OpenAI dévoilent Claude Opus 5.5 et GPT-6 Sol et Luna le même jour, prix en baisse, quelques jours après avoir appelé à ralentir la course à l'IA. L'Irlande veut légitimer l'entraînement des modèles sur les données personnelles, Alibaba promet un modèle à 10 000 milliards de paramètres, et Microsoft démantèle une plateforme criminelle dopée à l'IA.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "Numerama",
+        "Next",
+        "Journal du Net",
+        "La Tribune",
+        "Maddyness",
+        "Bloomberg",
+        "The Verge",
+        "Ars Technica",
+        "Microsoft",
+        "MIT Technology Review",
+        "South China Morning Post",
+        "arXiv",
+        "Clubic"
+      ],
+      "items": [
+        {
+          "t": "Anthropic et OpenAI lancent de nouveaux modèles le même jour et baissent leurs prix",
+          "z": "une",
+          "id": "anthropic-et-openai-lancent-de-nouveaux-modeles-le-meme"
+        },
+        {
+          "t": "L'Irlande veut faire de l'entraînement des IA sur les données personnelles un « intérêt légitime »",
+          "z": "europe",
+          "id": "l-irlande-veut-faire-de-l-entrainement-des-ia-sur-les"
+        },
+        {
+          "t": "Les salaires des professionnels de l'IA s'étalent de 49 700 à 115 800 euros par an",
+          "z": "europe",
+          "id": "les-salaires-des-professionnels-de-l-ia-s-etalent-de-49-700"
+        },
+        {
+          "t": "Dassault Aviation a testé deux IA en vol sur Rafale",
+          "z": "europe",
+          "id": "dassault-aviation-a-teste-deux-ia-en-vol-sur-rafale"
+        },
+        {
+          "t": "Le gouvernement annonce un plan pour amener l'IA dans le monde du travail",
+          "z": "europe",
+          "id": "le-gouvernement-annonce-un-plan-pour-amener-l-ia-dans-le"
+        },
+        {
+          "t": "Andreessen Horowitz ouvre une « académie » présentée comme une alternative à l'université",
+          "z": "international",
+          "id": "andreessen-horowitz-ouvre-une-academie-presentee-comme-une"
+        },
+        {
+          "t": "Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA",
+          "z": "international",
+          "id": "microsoft-demantele-eviltokens-une-plateforme-criminelle"
+        },
+        {
+          "t": "« Ne vous laissez pas berner par l'emballement de l'été », préviennent deux voix critiques de l'IA",
+          "z": "international",
+          "id": "ne-vous-laissez-pas-berner-par-l-emballement-de-l-ete"
+        },
+        {
+          "t": "Alibaba promet un modèle à 10 000 milliards de paramètres et revendique la puce IA la plus puissante de Chine",
+          "z": "chine",
+          "id": "alibaba-promet-un-modele-a-10-000-milliards-de-parametres"
+        },
+        {
+          "t": "Alibaba Cloud ouvre des centres de données en Europe pour capter les entreprises du continent",
+          "z": "chine",
+          "id": "alibaba-cloud-ouvre-des-centres-de-donnees-en-europe-pour"
+        },
+        {
+          "t": "FrontierMath Erdős, un test de 68 problèmes ouverts pour mesurer les IA sans triche",
+          "z": "recherche",
+          "id": "frontiermath-erdos-un-test-de-68-problemes-ouverts-pour"
+        },
+        {
+          "t": "Donald Trump annonce que les États-Unis vont « officiellement » renommer l'intelligence artificielle en « super intelligence », le mot « artificiel » donnant selon lui l'impression d'une intelligence factice, déclaration faite à l'Assemblée générale de l'ONU",
+          "z": "bref",
+          "id": "donald-trump-annonce-que-les-etats-unis-vont-officiellement"
+        },
+        {
+          "t": "OpenAI met en place un comité indépendant de mathématiciens de haut niveau pour la conseiller sur ses interactions avec la recherche, après une série de résultats revendiqués qui a tourné à la crise de réputation",
+          "z": "bref",
+          "id": "openai-met-en-place-un-comite-independant-de-mathematiciens"
+        },
+        {
+          "t": "Proton intègre Apertus 1.5, modèle ouvert conçu par l'ETH Zurich, l'EPFL et le centre de calcul CSCS, à son assistant Lumo, pour une IA suisse souveraine qui s'améliore avec les retours des utilisateurs",
+          "z": "bref",
+          "id": "proton-integre-apertus-1-5-modele-ouvert-concu-par-l-eth"
+        }
+      ]
+    },
     {
       "date": "2026-09-22",
       "dateCourte": "mar. 22 sept.",

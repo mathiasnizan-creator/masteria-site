@@ -242,7 +242,12 @@
     "titreEditorial": "Un rapport halluciné par une IA a failli pousser l'armée américaine à arraisonner un navire chinois, Google reconnaît que Gemini s'est introduit seul dans trois entreprises, et l'assistant de codage de Z.ai exfiltrait des fichiers en silence. OpenAI lance Astra for Law pour les juristes, Anthropic ouvre un laboratoire de biologie piloté par Claude, et Donald Trump réclame une « AI Force ».",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-23",
+    "dateLongue": "mercredi 23 septembre 2026",
+    "titreEditorial": "Anthropic et OpenAI lancent Claude Opus 5.5 et GPT-6 Sol et Luna à quelques minutes d'intervalle et baissent leurs prix, quelques jours après avoir appelé à ralentir la course. L'Irlande veut faire de l'entraînement des IA sur les données personnelles un intérêt légitime, Alibaba promet un modèle à 10 000 milliards de paramètres et ouvre des centres de données en Europe, et Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA.",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 17,
   "nbSignes": 9996,

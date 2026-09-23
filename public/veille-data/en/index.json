@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-22",
-    "totalEditions": 25,
-    "totalItems": 344,
-    "totalSources": 488
+    "derniereDate": "2026-09-23",
+    "totalEditions": 26,
+    "totalItems": 358,
+    "totalSources": 506
   },
   "editions": [
+    {
+      "date": "2026-09-23",
+      "dateAffichee": "23 September 2026",
+      "dateCourte": "Wed 23 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Anthropic and OpenAI ship on the same day",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-22",
       "dateAffichee": "22 September 2026",

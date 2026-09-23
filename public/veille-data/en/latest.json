@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-22",
-    "totalEditions": 25,
-    "totalItems": 344,
-    "totalSources": 488
+    "derniereDate": "2026-09-23",
+    "totalEditions": 26,
+    "totalItems": 358,
+    "totalSources": 506
   },
   "recentes": [
+    {
+      "date": "2026-09-23",
+      "dateAffichee": "23 September 2026",
+      "dateCourte": "Wed 23 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Anthropic and OpenAI ship on the same day",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-22",
       "dateAffichee": "22 September 2026",
@@ -287,27 +298,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-09-22",
-    "dateAffichee": "22 September 2026",
-    "dateLongue": "Tuesday 22 September 2026",
-    "dateCourte": "Tue 22 Sep",
-    "jourSemaine": "Tuesday",
-    "titre": "AI Watch - Tuesday 22 September 2026",
-    "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
-    "chapeau": "More than twenty countries call for stronger human oversight of AI without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon, and British Columbia sues OpenAI after a mass shooting.",
+    "date": "2026-09-23",
+    "dateAffichee": "23 September 2026",
+    "dateLongue": "Wednesday 23 September 2026",
+    "dateCourte": "Wed 23 Sep",
+    "jourSemaine": "Wednesday",
+    "titre": "AI Watch - Wednesday 23 September 2026",
+    "titreEditorial": "Anthropic and OpenAI ship on the same day",
+    "chapeau": "Anthropic and OpenAI unveil Claude Opus 5.5 and GPT-6 Sol and Luna on the same day, with lower prices, days after calling for a slower AI race. Ireland wants to make training models on personal data a legitimate interest, Alibaba promises a 10-trillion-parameter model, and Microsoft dismantles an AI-powered criminal platform.",
     "une": {
-      "titre": "More than twenty countries call for stronger human oversight of AI, without the sector's three great powers",
-      "texteHtml": "<p>The leaders of some twenty countries, including Germany and Canada, along with European Commission President Ursula von der Leyen, have signed a joint declaration calling for humans to stay in control, Le Monde reports. The text reflects a concern now shared at the highest levels of government: AI development could outpace our ability to keep it in check. The most telling absence is that of the missing signatories. The United States, China and France, three leading powers in the field, did not add their names. The dividing line is sharp between those betting on coordinated safeguards and those keeping their hands free, each for different reasons. A declaration without the players building the most advanced models works above all as a political signal.</p>",
+      "titre": "Anthropic and OpenAI launch new models on the same day and cut their prices",
+      "texteHtml": "<p>On Tuesday 22 September, Anthropic presented Claude Opus 5.5, which it describes as its best-performing model to date, on par with its top-tier Fable 5.1 for roughly 40% less than Opus 5 and 30% faster, TechCrunch reports. A few minutes later, OpenAI rounded out its GPT-6 range with Sol and Luna, two models less powerful than Astra but built to cost less, along with an improved prompt cache (the reuse of instruction chunks already processed). Numerama points to the paradox: both companies had called, a few days earlier, for a slower AI race. The real surprise is the pricing, which both camps lower at the same time. The day before, SpaceXAI had released Grok 4.7, judged disappointing on performance but cheaper than its rivals.</p>",
       "sources": [
         {
-          "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/pixels/article/2026/09/22/intelligence-artificielle-plus-de-vingt-pays-dont-l-allemagne-et-le-canada-appellent-a-une-supervision-humaine-renforcee_6779412_4408996.html"
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/"
+        },
+        {
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+        },
+        {
+          "nom": "Numerama",
+          "url": "https://www.numerama.com/tech/2338131-claude-opus-5-5-et-gpt-6-sol-sortent-le-meme-jour-anthropic-et-openai-ont-du-mal-a-ralentir-lia.html"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "more-than-twenty-countries-call-for-stronger-human"
+      "id": "anthropic-and-openai-launch-new-models-on-the-same-day-and"
     },
     "sections": [
       {
@@ -317,40 +336,52 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Article 4 of the AI Act, rewritten, tightens the AI training obligation for SMEs",
-            "texteHtml": "<p>Since 27 July 2026, the European regulation no longer asks for a \"sufficient level\" of AI literacy among employees, but the obligation to act remains fully in force, the Journal du Net analyses. For an SME, the practical question is no longer ticking a compliance box, it is proving that its teams know how to use the tools it deploys and understand their limits.</p>",
+            "titre": "Ireland wants to make training AI on personal data a \"legitimate interest\"",
+            "texteHtml": "<p>The country, which holds the presidency of the Council of the European Union, has proposed new changes to the \"digital omnibus\", the text meant to simplify European digital law, Next reports. The rewrite would make it \"legitimate\" to use personal data to train models, as well as to place cookies to measure advertising effectiveness, without going back through people's consent. For a French organisation, the legal basis of an AI project fed on customer data could shift before the CNIL (France's data protection authority) even rules on it.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1554987-article-4-de-l-ai-act-reecrit-ce-qui-change-pour-la-formation-des-salaries-en-pme/"
+                "nom": "Next",
+                "url": "https://next.ink/257186/europe-menace-sur-le-consentement-pour-lentrainement-des-ia-sur-des-donnees-personnelles/"
               }
             ],
             "rang": 2,
-            "id": "article-4-of-the-ai-act-rewritten-tightens-the-ai-training"
+            "id": "ireland-wants-to-make-training-ai-on-personal-data-a"
           },
           {
-            "titre": "Google commits €13 billion in Finland, its largest European investment",
-            "texteHtml": "<p>The sum, planned by 2028, will fund data centres built to absorb global AI demand, ZDNet reports, describing a Finland on its way to becoming a Nordic computing hub. The choice follows low-carbon electricity and a cold climate, two assets for cooling server rooms, and confirms that Europe's AI battle is fought as much over land and energy as over models.</p>",
+            "titre": "AI professionals' salaries range from €49,700 to €115,800 a year",
+            "texteHtml": "<p>The Journal du Net publishes a grid of average pay in the sector: the prompt engineer role (designing the instructions that drive a model) brings up the rear at €49,700 gross a year, while the most sought-after profiles reach €115,800. The gap sketches the hierarchy taking shape between those who use the tools and those who design and integrate them.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/voici-les-raisons-pour-lesquelles-google-mise-13-milliards-deuros-en-finlande-son-plus-gros-investissement-jamais-realise-en-europe-503925.htm#xtor=RSS-1"
+                "nom": "Journal du Net",
+                "url": "https://www.journaldunet.com/intelligence-artificielle/1555235-de-49-700-a-115-800-euros-par-an-decouvrez-les-salaires-moyens-des-professionnels-de-l-ia/"
               }
             ],
             "rang": 3,
-            "id": "google-commits-13-billion-in-finland-its-largest-european"
+            "id": "ai-professionals-salaries-range-from-49-700-to-115-800-a"
           },
           {
-            "titre": "Retailers launch a race to avoid being bypassed by ChatGPT",
-            "texteHtml": "<p>To preserve their online presence, brands are building their own shopping agents and trying to improve their visibility in AI engines, Le Monde describes. The stakes are concrete: when a customer asks an assistant for advice rather than a search engine, the brand missing from the answer drops out of view at the moment of decision.</p>",
+            "titre": "Dassault Aviation has tested two AIs in flight on a Rafale",
+            "texteHtml": "<p>The manufacturer says it flew two artificial intelligences aboard its fighter jet, one developed in-house, the other supplied with CortAIx, the AI arm of Thales, La Tribune reports. The test brings onboard AI into French combat aviation, on an aircraft that France exports widely.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/economie/article/2026/09/21/le-commerce-face-au-choc-de-l-ia-comment-chatgpt-menace-la-presence-des-marques-sur-le-web_6778984_3234.html"
+                "nom": "La Tribune",
+                "url": "https://air-cosmos.latribune.fr/article/defense/28015933454460/le-rafale-vole-avec-ia"
               }
             ],
             "rang": 4,
-            "id": "retailers-launch-a-race-to-avoid-being-bypassed-by-chatgpt"
+            "id": "dassault-aviation-has-tested-two-ais-in-flight-on-a-rafale"
+          },
+          {
+            "titre": "The government announces a plan to bring AI into the workplace",
+            "texteHtml": "<p>The executive is presenting a scheme intended to accelerate the adoption of artificial intelligence in businesses and the public administration, Maddyness reports. The detail of the resources committed and the audiences targeted will tell whether the announcement translates into real skill-building on the ground.</p>",
+            "sources": [
+              {
+                "nom": "Maddyness",
+                "url": "https://www.maddyness.com/2026/09/22/le-gouvernement-annonce-un-plan-pour-faire-prendre-le-tournant-de-lia-au-monde-du-travail/"
+              }
+            ],
+            "rang": 5,
+            "id": "the-government-announces-a-plan-to-bring-ai-into-the"
           }
         ]
       },
@@ -361,64 +392,48 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Google launches its Googlebook at $899, a bet on the appetite for a computer built for Gemini",
-            "texteHtml": "<p>The US giant unveils a range of laptops where Gemini is stitched into the system: the model is wired to the cursor, dictation, widgets and settings, TechCrunch describes. These machines merge Android and ChromeOS and target the premium market held by Apple's MacBook and Windows PCs. Sameer Samat, president of the Android ecosystem, embraces the pairing with the phone, in the manner of the continuity between the iPhone and the Mac. The bet is clear: convince a user to buy a new device for the assistant that lives on it rather than for raw power. Google had failed to make the Chromebook a mainstream success, and it is trying again with AI as the central argument.</p>",
-            "sources": [
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini/"
-              }
-            ],
-            "rang": 5,
-            "id": "google-launches-its-googlebook-at-899-a-bet-on-the-appetite"
-          },
-          {
-            "titre": "Meta's Muse agent tops the charts, gets blocked by Amazon and reveals a serious flaw",
-            "texteHtml": "<p>Muse, Meta's new consumer assistant, drew more downloads and daily active users in the United States and Canada than ChatGPT over the same period after its mobile launch, according to Appfigures estimates cited by TechCrunch. The success hit a wall: Amazon cut off Muse's access to its pages, with a message warning that \"continued access by an unauthorized AI agent violates Amazon's terms of service\", The Verge reports. Meta had not warned Amazon that its agent was coming. At the same time, Ars Technica describes a serious zero-day flaw: a simple ClickFix-style attack is enough to hijack this assistant, which the outlet calls \"extraordinarily privileged\", able to act on the user's behalf. The three-part story sums up the moment: an agent that wins users fast, acts broadly and exposes as much as it helps.</p>",
-            "sources": [
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
-              },
-              {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
-              },
-              {
-                "nom": "Ars Technica",
-                "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/"
-              }
-            ],
-            "rang": 6,
-            "id": "meta-s-muse-agent-tops-the-charts-gets-blocked-by-amazon"
-          },
-          {
-            "titre": "British Columbia sues OpenAI after a mass shooting",
-            "texteHtml": "<p>The Canadian province filed a complaint in California against OpenAI, claiming the company could have used ChatGPT conversation logs to alert police and prevent the Tumbler Ridge shooting in February, Bloomberg reports. The attack had killed nine people, including the person behind the tragedy. The grievance fits in one sentence: failing to report threats made on the platform to law enforcement. The case opens new legal ground, that of an AI provider's liability for the danger signals passing through its service. It will weigh on how providers monitor, retain and pass on what users write to their models.</p>",
+            "titre": "Andreessen Horowitz opens an \"academy\" pitched as an alternative to university",
+            "texteHtml": "<p>The venture capital firm a16z is launching a programme aimed at recent secondary-school graduates and college dropouts, to spot and train young talent building AI products, Bloomberg reports. The \"Horowitz Andreessen Academy\" starts with $42 million and ten partners: Anduril, Anthropic, Coinbase, Google, Meta, Nvidia, OpenAI, Palantir, Replit and Stripe, The Verge details. The programme, with no homework, is meant to be a direct on-ramp to a Silicon Valley startup. The initiative raises a fundamental question about education: when employers become trainers and bypass the diploma, the value of a course is measured at hiring, not by the title. It deserves the attention of every player in French vocational training.</p>",
             "sources": [
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-21/british-columbia-sues-openai-over-canada-mass-shooting-warning-failure"
+                "url": "https://www.bloomberg.com/news/articles/2026-09-22/andreessen-horowitz-launches-ai-school-as-a-college-alternative"
+              },
+              {
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy"
+              }
+            ],
+            "rang": 6,
+            "id": "andreessen-horowitz-opens-an-academy-pitched-as-an"
+          },
+          {
+            "titre": "Microsoft dismantles EvilTokens, a turnkey AI-powered criminal platform",
+            "texteHtml": "<p>The company says it disrupted a service that automated mass cyberattacks and is thought to have compromised around 12,000 accounts, Ars Technica and Microsoft report. EvilTokens supplied a full chain, from phishing to credential theft, making large-scale breaches faster and easier for low-skilled actors. The case shows a shift on the attacker side: AI lowers the cost and the technical bar to launch a campaign as much as it equips the defence. For a French company, the safeguard rests on basic reflexes held by trained teams: two-factor authentication, verifying requests, raising the alarm at the slightest abnormal signal.</p>",
+            "sources": [
+              {
+                "nom": "Ars Technica",
+                "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/"
+              },
+              {
+                "nom": "Microsoft",
+                "url": "https://blogs.microsoft.com/on-the-issues/2026/09/22/disrupting-eviltokens-the-ai-chatbot-built-for-cybercrime/"
               }
             ],
             "rang": 7,
-            "id": "british-columbia-sues-openai-after-a-mass-shooting"
+            "id": "microsoft-dismantles-eviltokens-a-turnkey-ai-powered"
           },
           {
-            "titre": "The United States and China agree on a dedicated AI warning channel ahead of the Trump-Xi summit",
-            "texteHtml": "<p>The two countries agreed to open an official dialogue on artificial intelligence, paired with a mutual notification mechanism in case of an incident threatening national security, Wired reports. The agreement emerged from eight hours of negotiations in New York between Treasury Secretary Scott Bessent, Trade Representative Jamieson Greer and Chinese Vice Premier He Lifeng, days before Xi Jinping's visit to Washington. Analysts cited by the South China Morning Post see it as a pragmatic step toward crisis prevention, tempered by deep divisions over chip access, model distillation and market dominance. The channel now exists; its effectiveness will depend on what each side agrees to signal to the other.</p>",
+            "titre": "\"Don't be fooled by the summer hype,\" warn two critical voices on AI",
+            "texteHtml": "<p>In an op-ed for the MIT Technology Review, Timnit Gebru, director of the Distributed AI Research Institute, and Emily Bender, a linguist at the University of Washington, call for caution in the face of a season of spectacular announcements. They recall the recent run of demonstrations, from security flaws paraded by the labs to claimed mathematical results, and invite readers to tell real progress from promotional narrative. Their argument: fear of an all-powerful AI and the promise of a miraculous AI feed the same hype and serve the same commercial interests. The warning lands on the day two labs cut their prices after calling for a slowdown.</p>",
             "sources": [
               {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/us-and-china-discuss-alerting-each-other-to-ai-national-security-threats/"
-              },
-              {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-war/article/3368281/ai-safety-fears-mount-can-us-china-hotline-prevent-global-crisis?utm_source=rss_feed"
+                "nom": "MIT Technology Review",
+                "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/"
               }
             ],
             "rang": 8,
-            "id": "the-united-states-and-china-agree-on-a-dedicated-ai-warning"
+            "id": "don-t-be-fooled-by-the-summer-hype-warn-two-critical-voices"
           }
         ]
       },
@@ -429,32 +444,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Alibaba unveils its most powerful AI chip, Tencent releases its best image model the same day",
-            "texteHtml": "<p>Alibaba presented what it describes as the highest-performing AI accelerator designed in China, meant to rival Nvidia and to support a massive data-centre rollout of up to 20 gigawatts of capacity by 2032, Bloomberg reports. For scale, 20 gigawatts is close to the output of some twenty nuclear reactors running at full power. The same day, at the opening of Alibaba's AI conference, Tencent launched its most advanced image-generation model to catch up with ByteDance and Alibaba. The two announcements, timed together, signal a Chinese industry pushing its own hardware and software stack while US semiconductor restrictions remain in force. The question of chip exports hangs over this week's Trump-Xi summit.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-22/alibaba-unveils-ai-chip-to-drive-20gw-of-data-centers-by-2032"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-09-22/tencent-releases-ai-image-model-to-catch-bytedance-alibaba"
-              }
-            ],
-            "rang": 9,
-            "id": "alibaba-unveils-its-most-powerful-ai-chip-tencent-releases"
-          },
-          {
-            "titre": "Moonshot's Kimi K3 model lands on Amazon Bedrock, a real-world test for Chinese open source",
-            "texteHtml": "<p>Chinese start-up Moonshot AI has begun supplying its flagship Kimi K3 model to Amazon Web Services, one of the world's largest cloud hosts, the South China Morning Post reports. The model is now available on Amazon Bedrock, AWS's tool for building generative AI applications, presented by Amazon as \"a powerful new option for code and knowledge work\". The stakes go beyond mere listing: it is a test case for whether open-weight models (which you can download and run yourself) can generate revenue through third-party platforms. A Chinese model distributed by a US cloud giant blurs the usual dividing line between the two ecosystems.</p>",
+            "titre": "Alibaba promises a 10-trillion-parameter model and claims China's most powerful AI chip",
+            "texteHtml": "<p>At its annual Apsara conference in Hangzhou, the group announced it is working on a model that could reach 10 trillion parameters, an order of magnitude above today's largest public models, the South China Morning Post reports. The group's chairman, Joe Tsai, restated the ambition of a superintelligence and an investment across the full stack, from chips to models. The announcement comes with the unveiling of an in-house accelerator billed as the most powerful designed in China, while the US restrictions on semiconductors remain in force. The parameter count is still a promise, but it sets the course Beijing wants to display against the US labs.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3368274/moonshots-kimi-k3-lands-amazon-key-test-chinese-open-source-ai-revenue?utm_source=rss_feed"
+                "url": "https://www.scmp.com/tech/big-tech/article/3368338/alibaba-teases-10-trillion-parameter-model-debuts-chinas-most-powerful-ai-chip?utm_source=rss_feed"
+              }
+            ],
+            "rang": 9,
+            "id": "alibaba-promises-a-10-trillion-parameter-model-and-claims"
+          },
+          {
+            "titre": "Alibaba Cloud opens data centres in Europe to win over the continent's businesses",
+            "texteHtml": "<p>The group's cloud arm will launch centres in the Netherlands, Turkey and Finland over the next twelve months, the first in the Netherlands as early as October, the South China Morning Post reports. The expansion is part of a global rollout of 20 gigawatts of capacity and aims to sell a full-stack offering, from chips to cloud to multimodal models. For a European company, a Chinese provider joins the short list of large-scale AI compute hosts, alongside the Americans. The choice will raise questions of sovereignty and GDPR compliance that legal departments will have to settle.</p>",
+            "sources": [
+              {
+                "nom": "South China Morning Post",
+                "url": "https://www.scmp.com/tech/big-tech/article/3368454/alibaba-cloud-set-open-new-data-centres-europe-next-year-overseas-push-speeds?utm_source=rss_feed"
               }
             ],
             "rang": 10,
-            "id": "moonshot-s-kimi-k3-model-lands-on-amazon-bedrock-a-real"
+            "id": "alibaba-cloud-opens-data-centres-in-europe-to-win-over-the"
           }
         ]
       },
@@ -465,16 +476,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "When AIs grade AIs, scientific judgement collapses",
-            "texteHtml": "<p>A team shows that automated peer review becomes dangerous as soon as it loops back on itself: as AI-generated reviews enter training corpora, later models learn from judgements produced by earlier ones. Starting from Llama 3.1 8B, fine-tuned on real reviews from the ICLR conference between 2018 and 2023, the researchers trained four successor models on 2024 data and observed a decline in discernment, which they call a collapse of scientific judgement. The authors propose ways to slow the spiral. The lesson holds beyond research: handing an AI the task of evaluating another AI's work, without human oversight, gradually impoverishes the measure of quality.</p>",
+            "titre": "FrontierMath Erdős, a test of 68 open problems to measure AIs without cheating",
+            "texteHtml": "<p>Researchers present FME, a set of 68 Erdős conjectures still unsolved as of August 2026, that AI systems must prove or refute in the Lean proof assistant (software that checks a demonstration line by line), the paper published on arXiv describes. The choice of Lean is deliberate: a formal proof can be checked mechanically, which cuts short claimed but unverifiable results. The problems were selected from 652 open questions catalogued on erdosproblems.com, for their interest and their difficulty. The test arrives in the middle of the debate over OpenAI's mathematical announcements, and offers a measure that no one can contest after the fact.</p>",
             "sources": [
               {
                 "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2609.20942"
+                "url": "https://arxiv.org/abs/2609.25050"
               }
             ],
             "rang": 11,
-            "id": "when-ais-grade-ais-scientific-judgement-collapses"
+            "id": "frontiermath-erdos-a-test-of-68-open-problems-to-measure"
           }
         ]
       },
@@ -485,65 +496,76 @@
         "format": "bref",
         "items": [
           {
-            "titre": "NewsGuard launches a news assistant that draws only on verified sources",
-            "texteHtml": "<p>The US specialist in rating news sites unveils an AI tool limited to 12,000 vetted sources and returning half its revenue to the outlets it cites, La Tribune reports.</p>",
+            "titre": "Donald Trump announces that the United States will \"officially\" rename artificial intelligence \"super intelligence\", the word \"artificial\" in his view giving the impression of a fake intelligence, in a statement made to the UN General Assembly",
+            "texteHtml": "",
             "sources": [
               {
-                "nom": "La Tribune",
-                "url": "https://www.latribune.fr/article/tech/informatique/26517405274858/marre-des-hallucinations-des-chatbots-newsguard-lance-un-assistant-ia-dedie-dactualite-base-sur-une-information-neutre-et-sourcee"
+                "nom": "Journal du Net",
+                "url": "https://www.journaldunet.com/business/action-publique/1555289-les-etats-unis-vont-officiellement-renommer-l-intelligence-artificielle-en-super-intelligence-annonce-trump-a-l-onu/"
               }
             ],
             "rang": 12,
-            "id": "newsguard-launches-a-news-assistant-that-draws-only-on"
+            "id": "donald-trump-announces-that-the-united-states-will"
           },
           {
-            "titre": "Suno, target of a new Sony and Universal lawsuit despite its pursuit of deals",
-            "texteHtml": "<p>The AI music-generation start-up, which had unveiled its v6 model on 9 September alongside industry representatives, is now the target of a new action by the two majors, Next.ink reports.</p>",
+            "titre": "OpenAI sets up an independent panel of top mathematicians to advise it on its interactions with research, after a run of claimed results turned into a reputational crisis",
+            "texteHtml": "",
             "sources": [
               {
-                "nom": "Next.ink",
-                "url": "https://next.ink/257036/suno-veut-faire-la-paix-avec-lindustrie-musicale-sony-et-universal-attaquent-de-nouveau/"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel"
               }
             ],
             "rang": 13,
-            "id": "suno-target-of-a-new-sony-and-universal-lawsuit-despite-its"
+            "id": "openai-sets-up-an-independent-panel-of-top-mathematicians"
+          },
+          {
+            "titre": "Proton integrates Apertus 1.5, an open model built by ETH Zurich, EPFL and the CSCS computing centre, into its Lumo assistant, for a sovereign Swiss AI that improves with user feedback",
+            "texteHtml": "",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-630568-proton-signe-avec-apertus-pour-une-ia-suisse-souveraine.html"
+              }
+            ],
+            "rang": 14,
+            "id": "proton-integrates-apertus-1-5-an-open-model-built-by-eth"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Amazon blocked Meta's Muse agent, Walmart quietly pulled its ChatGPT integration and retailers are rushing to build their own agents, while 31% of shoppers already prepare a purchase with AI: the moment of advice leaves the brand's own site for the model's answer, and the skill that gains value for a French marketing team is becoming the exact source that ChatGPT, Claude and Gemini cite, by fixing product data and measuring its share of citations rather than its rank in Google alone.",
-      "these": "Amazon blocked Meta's Muse agent and Walmart quietly pulled its ChatGPT integration. Both moves say the same thing, and it speaks directly to French marketing teams: the moment of recommendation, when a customer decides what to buy, leaves the brand's own site for the model's answer. The Journal du Net puts it plainly: the brand keeps its content but loses the monopoly on the staging. It becomes a source that ChatGPT, Claude or Gemini cite or ignore, like any other. The numbers show where the shift stands. According to a survey relayed by ZDNet, 31% of online shoppers already use generative AI to prepare a purchase, while the traffic sent by autonomous agents rarely exceeds 1%. The gap draws the roadmap. Advice runs through AI long before the agent clicks in your place. Visibility in the answer is won today; automated buying will come next, and its plumbing is not yet laid, as shown by the doors that Amazon, Meta and Walmart are closing. The skill that gains value in a French organisation then changes in nature. Take your ten best-selling products. Ask ChatGPT, Claude and Gemini the question a customer would ask before buying, and read the answer. Look at whether your brand is cited, whether the price and specifications are accurate, which source the model opens. Where the information is wrong or missing, the cause almost always lies in poorly structured product data and unverifiable claims on your own pages. Fix the data at the source, not the campaign. Measure your share of citations in the models' answers, as you track your position in Google. The shelf has moved into the sentence the machine generates. The brand absent from that sentence no longer exists at the instant the customer chooses. Yesterday's search optimisation aimed at a results page; the one coming aims at a generated answer, and that answer is won through the accuracy of what you publish about yourself. The Masteria editorial team.",
-      "html": "<p>Amazon blocked Meta's Muse agent and Walmart quietly pulled its ChatGPT integration. Both moves say the same thing, and it speaks directly to French marketing teams: the moment of recommendation, when a customer decides what to buy, leaves the brand's own site for the model's answer. The Journal du Net puts it plainly: the brand keeps its content but loses the monopoly on the staging. It becomes a source that ChatGPT, Claude or Gemini cite or ignore, like any other.</p>\n<p>The numbers show where the shift stands. According to a survey relayed by ZDNet, 31% of online shoppers already use generative AI to prepare a purchase, while the traffic sent by autonomous agents rarely exceeds 1%. The gap draws the roadmap. Advice runs through AI long before the agent clicks in your place. Visibility in the answer is won today; automated buying will come next, and its plumbing is not yet laid, as shown by the doors that Amazon, Meta and Walmart are closing.</p>\n<p>The skill that gains value in a French organisation then changes in nature. Take your ten best-selling products. Ask ChatGPT, Claude and Gemini the question a customer would ask before buying, and read the answer. Look at whether your brand is cited, whether the price and specifications are accurate, which source the model opens. Where the information is wrong or missing, the cause almost always lies in poorly structured product data and unverifiable claims on your own pages. Fix the data at the source, not the campaign. Measure your share of citations in the models' answers, as you track your position in Google.</p>\n<p>The shelf has moved into the sentence the machine generates. The brand absent from that sentence no longer exists at the instant the customer chooses. Yesterday's search optimisation aimed at a results page; the one coming aims at a generated answer, and that answer is won through the accuracy of what you publish about yourself.</p>\n<p>The Masteria editorial team.</p>",
-      "htmlExtrait": "<p>Amazon blocked Meta's Muse agent and Walmart quietly pulled its ChatGPT integration. Both moves say the same thing, and it speaks directly to French marketing teams: the moment of recommendation, when a customer decides what to buy, leaves the brand's own site for the model's answer. The Journal du Net puts it plainly: the brand keeps its content but loses the monopoly on the staging. It becomes a source that ChatGPT, Claude or Gemini cite or ignore, like any other.</p>\n<p>The numbers show where the shift stands. According to a survey relayed by ZDNet, 31% of online shoppers already use generative AI to prepare a purchase, while the traffic sent by autonomous agents rarely exceeds 1%. The gap draws the roadmap. Advice runs through AI long before the agent clicks in your place. Visibility in the answer is won today; automated buying will come next, and its plumbing is not yet laid, as shown by the doors that Amazon, Meta and Walmart are closing.</p>",
+      "titre": "The token price collapses, skills and plumbing hold",
+      "these": "Anthropic and OpenAI release Claude Opus 5.5 and GPT-6 on the same day while cutting their prices, days after calling for a slower race: the token price collapses as quality rises, in cycles of a few weeks, and the lasting value for a French organisation lies in teams trained on what survives a change of model (framing, documenting, checking, judging) and in an architecture you can switch from one provider to another in a day, with a test bench replayed every quarter.",
+      "html": "<p>Anthropic released Claude Opus 5.5 on Tuesday 22 September, OpenAI launched GPT-6 Sol and Luna a few minutes later. Both had called, a few days earlier, for a slower race. They did the opposite, on the same day, by cutting their prices. Opus 5.5 offers the level of the old top tier for roughly 40% less to run than Opus 5; the new GPT-6 models are built to cost less. Grok 4.7 came out the day before, less convincing but cheaper. The token price collapses as quality rises, in cycles of a few weeks.</p>\n<p>This pace changes the calculation for a French organisation. The model you choose today will be outclassed within a quarter, and cheaper the month after. A task too costly to automate at scale a year ago becomes affordable before the end of the financial year. The constraint moves from price to the ability to keep up with the tempo.</p>\n<p>Two moves follow. The first concerns skills. Train your teams on what survives a change of model: framing a problem, writing a clear instruction, checking an output, judging whether a tool fits a task. That know-how holds from one version to the next; mastery of a given model's menus expires with it.</p>\n<p>The second concerns architecture and procurement. Build your projects to switch models without rebuilding everything: an abstraction layer between your applications and the provider, a contract that does not lock you in, a test bench you replay each quarter on your own cases. The day a model twice as cheap reaches your quality level, you must be able to switch in a day, not in six months.</p>\n<p>The call to slow down will stay a dead letter as long as a competitor can take the vacated place by shipping on the same day. The race will not slow. What you control is what, in your own house, does not depend on the model of the month: people who know how to use it and plumbing you can replace painlessly. The lasting value sits there, while the rest expires in a few weeks. The Masteria editorial team.</p>",
+      "htmlExtrait": "<p>Anthropic released Claude Opus 5.5 on Tuesday 22 September, OpenAI launched GPT-6 Sol and Luna a few minutes later. Both had called, a few days earlier, for a slower race. They did the opposite, on the same day, by cutting their prices. Opus 5.5 offers the level of the old top tier for roughly 40% less to run than Opus 5; the new GPT-6 models are built to cost less. Grok 4.7 came out the day before, less convincing but cheaper. The token price collapses as quality rises, in cycles of a few weeks.</p>\n<p>This pace changes the calculation for a French organisation. The model you choose today will be outclassed within a quarter, and cheaper the month after. A task too costly to automate at scale a year ago becomes affordable before the end of the financial year. The constraint moves from price to the ability to keep up with the tempo.</p>",
       "itemsCites": [
-        4,
-        6
+        1
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-09-18",
-      "dateLongue": "Friday 18 September 2026",
-      "titreEditorial": "Charles III gathers AI bosses in Scotland and warns of \\\"existential dangers\\\", while a Pew survey across 37 countries shows a worldwide fear of job destruction. Brussels adopts the EU KIDS Act, Mistral moves into Firefox, Nvidia, Google and Anthropic join forces to find 100 gigawatts on the power grid, and Huawei pulls its next training chip forward by nine months to close the gap with Nvidia.",
-      "nbItems": 14
+      "date": "2026-09-22",
+      "dateLongue": "Tuesday 22 September 2026",
+      "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
+      "nbItems": 13
     },
     "suivante": null,
-    "nbItems": 13,
-    "nbSources": 17,
-    "nbSignes": 8910,
+    "nbItems": 14,
+    "nbSources": 18,
+    "nbSignes": 8045,
     "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe and France",
-        "nb": 3
+        "nb": 4
       },
       {
         "cle": "international",
         "libelle": "International",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "chine",
@@ -558,24 +580,24 @@
       {
         "cle": "bref",
         "libelle": "In brief",
-        "nb": 2
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
-      "Le Monde",
-      "Journal du Net",
-      "ZDNet",
       "TechCrunch",
+      "Numerama",
+      "Next",
+      "Journal du Net",
+      "La Tribune",
+      "Maddyness",
+      "Bloomberg",
       "The Verge",
       "Ars Technica",
-      "Bloomberg",
-      "Wired",
-      "South China Morning Post",
-      "arXiv"
+      "Microsoft"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 154,
-    "publieLe": "2026-09-22T05:40:09+02:00",
-    "publieLeAffiche": "5h40"
+    "nbArticlesCollectes": 156,
+    "publieLe": "2026-09-23T07:54:16+02:00",
+    "publieLeAffiche": "7h54"
   }
 }
