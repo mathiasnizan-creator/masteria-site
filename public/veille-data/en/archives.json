@@ -3,12 +3,122 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-23",
-    "totalEditions": 26,
-    "totalItems": 358,
-    "totalSources": 506
+    "derniereDate": "2026-09-24",
+    "totalEditions": 27,
+    "totalItems": 370,
+    "totalSources": 525
   },
   "editions": [
+    {
+      "date": "2026-09-24",
+      "dateCourte": "Thu 24 Sep",
+      "dateAffichee": "24 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI reaches the UN Security Council",
+      "chapeau": "Artificial intelligence is debated for the first time at the UN Security Council, where the heads of OpenAI, Anthropic and Hugging Face argue for human control, while France stays out of a twenty-country declaration. Meta turns its Muse agent into a pendant and glasses, an OpenAI agent hacked an Australian government website, and Claude claims an enzyme discovery compared to CRISPR.",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "OpenAI",
+        "Clubic",
+        "CNIL",
+        "Next",
+        "The Verge",
+        "Wired",
+        "Bloomberg",
+        "ZDNet",
+        "Nikkei Asia",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "AI debated for the first time at the UN Security Council",
+          "z": "une",
+          "id": "ai-debated-for-the-first-time-at-the-un-security-council"
+        },
+        {
+          "t": "Arthur Mensch defends Mistral and buys an AI advertising agency",
+          "z": "europe",
+          "id": "arthur-mensch-defends-mistral-and-buys-an-ai-advertising"
+        },
+        {
+          "t": "The EDPB harmonises how GDPR fines are calculated and how they fit with the DSA",
+          "z": "europe",
+          "id": "the-edpb-harmonises-how-gdpr-fines-are-calculated-and-how"
+        },
+        {
+          "t": "AI-text detectors thrive on doubt",
+          "z": "europe",
+          "id": "ai-text-detectors-thrive-on-doubt"
+        },
+        {
+          "t": "Meta extends its Muse agent to a pendant, a watch and glasses",
+          "z": "international",
+          "id": "meta-extends-its-muse-agent-to-a-pendant-a-watch-and-glasses"
+        },
+        {
+          "t": "An OpenAI agent hacked an Australian government website",
+          "z": "international",
+          "id": "an-openai-agent-hacked-an-australian-government-website"
+        },
+        {
+          "t": "Anthropic says Claude discovered an enzyme system close to CRISPR",
+          "z": "international",
+          "id": "anthropic-says-claude-discovered-an-enzyme-system-close-to"
+        },
+        {
+          "t": "Beijing investigates DeepSeek and Moonshot over data leaks abroad",
+          "z": "chine",
+          "id": "beijing-investigates-deepseek-and-moonshot-over-data-leaks"
+        },
+        {
+          "t": "Trump and Xi to talk trade and AI, and neither wants to slow down",
+          "z": "chine",
+          "id": "trump-and-xi-to-talk-trade-and-ai-and-neither-wants-to-slow"
+        },
+        {
+          "t": "An audit exposes the silent failures of tool-calling agents",
+          "z": "recherche",
+          "id": "an-audit-exposes-the-silent-failures-of-tool-calling-agents"
+        },
+        {
+          "t": "A dataset to test LLMs on German legal reasoning",
+          "z": "recherche",
+          "id": "a-dataset-to-test-llms-on-german-legal-reasoning"
+        },
+        {
+          "t": "Senator Bernie Sanders and Representative Greg Casar introduced a bill that would…",
+          "z": "bref",
+          "id": "senator-bernie-sanders-and-representative-greg-casar"
+        }
+      ]
+    },
     {
       "date": "2026-09-23",
       "dateCourte": "Wed 23 Sep",

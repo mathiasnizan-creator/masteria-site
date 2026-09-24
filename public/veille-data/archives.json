@@ -3,12 +3,122 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-23",
-    "totalEditions": 41,
-    "totalItems": 561,
-    "totalSources": 818
+    "derniereDate": "2026-09-24",
+    "totalEditions": 42,
+    "totalItems": 573,
+    "totalSources": 837
   },
   "editions": [
+    {
+      "date": "2026-09-24",
+      "dateCourte": "jeu. 24 sept.",
+      "dateAffichee": "24 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "L'IA entre pour la première fois au Conseil de sécurité de l'ONU, où Sam Altman, les dirigeants d'Anthropic et le cofondateur français de Hugging Face plaident le contrôle humain, pendant que la France reste à l'écart d'une déclaration de vingt pays réclamant des mesures contraignantes. Meta transforme son agent Muse en pendentif et en lunettes, un agent d'OpenAI s'est introduit dans un site du gouvernement australien, et Claude d'Anthropic revendique une découverte enzymatique comparée à CRISPR.",
+      "chapeau": "L'intelligence artificielle est débattue pour la première fois au Conseil de sécurité de l'ONU, où les patrons d'OpenAI, d'Anthropic et de Hugging Face plaident le contrôle humain, quand la France reste en retrait d'une déclaration de vingt pays. Meta décline son agent Muse en pendentif et en lunettes, un agent d'OpenAI a piraté un site du gouvernement australien, et Claude revendique une découverte enzymatique comparée à CRISPR.",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "OpenAI",
+        "Clubic",
+        "CNIL",
+        "Next",
+        "The Verge",
+        "Wired",
+        "Bloomberg",
+        "ZDNet",
+        "Nikkei Asia",
+        "arXiv",
+        "Siècle Digital"
+      ],
+      "items": [
+        {
+          "t": "L'IA débattue pour la première fois au Conseil de sécurité de l'ONU",
+          "z": "une",
+          "id": "l-ia-debattue-pour-la-premiere-fois-au-conseil-de-securite"
+        },
+        {
+          "t": "Arthur Mensch défend Mistral et rachète une agence de publicité par IA",
+          "z": "europe",
+          "id": "arthur-mensch-defend-mistral-et-rachete-une-agence-de"
+        },
+        {
+          "t": "Le CEPD harmonise le calcul des amendes RGPD et son articulation avec le DSA",
+          "z": "europe",
+          "id": "le-cepd-harmonise-le-calcul-des-amendes-rgpd-et-son"
+        },
+        {
+          "t": "Les détecteurs de textes générés par IA prospèrent sur le doute",
+          "z": "europe",
+          "id": "les-detecteurs-de-textes-generes-par-ia-prosperent-sur-le"
+        },
+        {
+          "t": "Meta décline son agent Muse en pendentif, en montre et en lunettes",
+          "z": "international",
+          "id": "meta-decline-son-agent-muse-en-pendentif-en-montre-et-en"
+        },
+        {
+          "t": "Un agent d'OpenAI a piraté un site du gouvernement australien",
+          "z": "international",
+          "id": "un-agent-d-openai-a-pirate-un-site-du-gouvernement"
+        },
+        {
+          "t": "Anthropic dit que Claude a découvert un système enzymatique proche de CRISPR",
+          "z": "international",
+          "id": "anthropic-dit-que-claude-a-decouvert-un-systeme-enzymatique"
+        },
+        {
+          "t": "Pékin enquête sur DeepSeek et Moonshot pour des fuites de données vers l'étranger",
+          "z": "chine",
+          "id": "pekin-enquete-sur-deepseek-et-moonshot-pour-des-fuites-de"
+        },
+        {
+          "t": "Trump et Xi doivent parler commerce et IA, aucun des deux ne veut ralentir",
+          "z": "chine",
+          "id": "trump-et-xi-doivent-parler-commerce-et-ia-aucun-des-deux-ne"
+        },
+        {
+          "t": "Un audit expose les pannes silencieuses des agents qui appellent des outils",
+          "z": "recherche",
+          "id": "un-audit-expose-les-pannes-silencieuses-des-agents-qui"
+        },
+        {
+          "t": "Un jeu de données pour tester les LLM sur le raisonnement juridique allemand",
+          "z": "recherche",
+          "id": "un-jeu-de-donnees-pour-tester-les-llm-sur-le-raisonnement"
+        },
+        {
+          "t": "Le sénateur Bernie Sanders et le représentant Greg Casar ont déposé une…",
+          "z": "bref",
+          "id": "le-senateur-bernie-sanders-et-le-representant-greg"
+        }
+      ]
+    },
     {
       "date": "2026-09-23",
       "dateCourte": "mer. 23 sept.",

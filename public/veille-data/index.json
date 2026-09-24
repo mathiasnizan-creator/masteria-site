@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-23",
-    "totalEditions": 41,
-    "totalItems": 561,
-    "totalSources": 818
+    "derniereDate": "2026-09-24",
+    "totalEditions": 42,
+    "totalItems": 573,
+    "totalSources": 837
   },
   "editions": [
+    {
+      "date": "2026-09-24",
+      "dateAffichee": "24 septembre 2026",
+      "dateCourte": "jeu. 24 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "L'IA entre pour la première fois au Conseil de sécurité de l'ONU, où Sam Altman, les dirigeants d'Anthropic et le cofondateur français de Hugging Face plaident le contrôle humain, pendant que la France reste à l'écart d'une déclaration de vingt pays réclamant des mesures contraignantes. Meta transforme son agent Muse en pendentif et en lunettes, un agent d'OpenAI s'est introduit dans un site du gouvernement australien, et Claude d'Anthropic revendique une découverte enzymatique comparée à CRISPR.",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-09-23",
       "dateAffichee": "23 septembre 2026",

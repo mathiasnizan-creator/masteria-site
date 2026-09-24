@@ -253,7 +253,12 @@
     "titreEditorial": "Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-24",
+    "dateLongue": "jeudi 24 septembre 2026",
+    "titreEditorial": "L'IA entre pour la première fois au Conseil de sécurité de l'ONU, où Sam Altman, les dirigeants d'Anthropic et le cofondateur français de Hugging Face plaident le contrôle humain, pendant que la France reste à l'écart d'une déclaration de vingt pays réclamant des mesures contraignantes. Meta transforme son agent Muse en pendentif et en lunettes, un agent d'OpenAI s'est introduit dans un site du gouvernement australien, et Claude d'Anthropic revendique une découverte enzymatique comparée à CRISPR.",
+    "nbItems": 12
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 8766,

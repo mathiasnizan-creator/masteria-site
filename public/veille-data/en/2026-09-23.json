@@ -253,7 +253,12 @@
     "titreEditorial": "More than twenty countries call for stronger human oversight of AI, without the United States, China or France, while Washington and Beijing open a warning channel between them ahead of the Trump-Xi summit. Google launches its Googlebook at $899 to sell Gemini, Meta's Muse agent races to the top of the charts before being blocked by Amazon and flagged for a security flaw, and British Columbia sues OpenAI after a mass shooting.",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-24",
+    "dateLongue": "Thursday 24 September 2026",
+    "titreEditorial": "AI reaches the UN Security Council",
+    "nbItems": 12
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 8045,
