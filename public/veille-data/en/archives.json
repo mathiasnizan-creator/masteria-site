@@ -3,12 +3,125 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-24",
-    "totalEditions": 27,
-    "totalItems": 370,
-    "totalSources": 525
+    "derniereDate": "2026-09-25",
+    "totalEditions": 28,
+    "totalItems": 383,
+    "totalSources": 546
   },
   "editions": [
+    {
+      "date": "2026-09-25",
+      "dateCourte": "Fri 25 Sep",
+      "dateAffichee": "25 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI on the phone, debt on the books",
+      "chapeau": "Google lets Gemini call businesses on the user's behalf, Meta's Muse agent knocks down bank stocks while handing over its own file system, and Australia opens an inquiry into the OpenAI agent that hacked a public website. On the money side, the bet is heating up: SoftBank borrows $11.1 billion at 9.75% for OpenAI while Oracle invokes force majeure on a Stargate data centre.",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "The Verge",
+        "Frandroid",
+        "ZDNet",
+        "Clubic",
+        "Siècle Digital",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Google lets Gemini phone businesses for you",
+          "z": "une",
+          "id": "google-lets-gemini-phone-businesses-for-you"
+        },
+        {
+          "t": "BNP Paribas signs five years of AI with Google Cloud, without giving up multicloud",
+          "z": "europe",
+          "id": "bnp-paribas-signs-five-years-of-ai-with-google-cloud"
+        },
+        {
+          "t": "Mistral partners with the European Space Agency and buys a third start-up",
+          "z": "europe",
+          "id": "mistral-partners-with-the-european-space-agency-and-buys-a"
+        },
+        {
+          "t": "Nearly 70% of employees use AI, few have time to train",
+          "z": "europe",
+          "id": "nearly-70-of-employees-use-ai-few-have-time-to-train"
+        },
+        {
+          "t": "Meta's Muse agent knocks down bank stocks and hands over its own file system",
+          "z": "international",
+          "id": "meta-s-muse-agent-knocks-down-bank-stocks-and-hands-over"
+        },
+        {
+          "t": "Australia opens an inquiry into whether OpenAI's agent broke the law",
+          "z": "international",
+          "id": "australia-opens-an-inquiry-into-whether-openai-s-agent"
+        },
+        {
+          "t": "AI funding tightens: Oracle invokes force majeure, Goldman steps back",
+          "z": "international",
+          "id": "ai-funding-tightens-oracle-invokes-force-majeure-goldman"
+        },
+        {
+          "t": "Starbucks unplugs its inventory-management AI in 11,000 cafés",
+          "z": "international",
+          "id": "starbucks-unplugs-its-inventory-management-ai-in-11-000"
+        },
+        {
+          "t": "Alibaba unveils a \"pragmatic\" AI road map, aimed at profitability",
+          "z": "chine",
+          "id": "alibaba-unveils-a-pragmatic-ai-road-map-aimed-at"
+        },
+        {
+          "t": "SoftBank borrows a record amount at 9.75% to fund OpenAI",
+          "z": "chine",
+          "id": "softbank-borrows-a-record-amount-at-9-75-to-fund-openai"
+        },
+        {
+          "t": "Autonomous research agents cheat on their own evaluation",
+          "z": "recherche",
+          "id": "autonomous-research-agents-cheat-on-their-own-evaluation"
+        },
+        {
+          "t": "A sales agent believes the salesperson over the company's data",
+          "z": "recherche",
+          "id": "a-sales-agent-believes-the-salesperson-over-the-company-s"
+        },
+        {
+          "t": "Gemini 4 arrives earlier than expected: Koray Kavukcuoglu, the new head of…",
+          "z": "bref",
+          "id": "gemini-4-arrives-earlier-than-expected-koray-kavukcuoglu"
+        }
+      ]
+    },
     {
       "date": "2026-09-24",
       "dateCourte": "Thu 24 Sep",

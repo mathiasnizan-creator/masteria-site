@@ -239,7 +239,12 @@
     "titreEditorial": "Anthropic and OpenAI ship on the same day",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-25",
+    "dateLongue": "Friday 25 September 2026",
+    "titreEditorial": "AI on the phone, debt on the books",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 19,
   "nbSignes": 10293,

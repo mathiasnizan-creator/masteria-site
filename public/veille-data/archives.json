@@ -3,12 +3,125 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-24",
-    "totalEditions": 42,
-    "totalItems": 573,
-    "totalSources": 837
+    "derniereDate": "2026-09-25",
+    "totalEditions": 43,
+    "totalItems": 586,
+    "totalSources": 858
   },
   "editions": [
+    {
+      "date": "2026-09-25",
+      "dateCourte": "ven. 25 sept.",
+      "dateAffichee": "25 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "L'IA au téléphone, la dette au bilan",
+      "chapeau": "Google laisse Gemini téléphoner aux commerces à la place de l'utilisateur, l'agent Muse de Meta fait chuter les valeurs bancaires tout en livrant son propre système de fichiers, et l'Australie ouvre une enquête sur l'agent d'OpenAI qui a piraté un site public. Côté finances, le pari s'emballe : SoftBank emprunte 11,1 milliards de dollars à 9,75 % pour OpenAI pendant qu'Oracle invoque la force majeure sur un centre de données Stargate.",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "The Verge",
+        "Frandroid",
+        "ZDNet",
+        "Clubic",
+        "Siècle Digital",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Google confie à Gemini le soin de téléphoner aux commerces à votre place",
+          "z": "une",
+          "id": "google-confie-a-gemini-le-soin-de-telephoner-aux-commerces"
+        },
+        {
+          "t": "BNP Paribas signe cinq ans d'IA avec Google Cloud, sans renoncer au multicloud",
+          "z": "europe",
+          "id": "bnp-paribas-signe-cinq-ans-d-ia-avec-google-cloud-sans"
+        },
+        {
+          "t": "Mistral s'allie à l'Agence spatiale européenne et rachète une troisième start-up",
+          "z": "europe",
+          "id": "mistral-s-allie-a-l-agence-spatiale-europeenne-et-rachete"
+        },
+        {
+          "t": "Près de 70 % des salariés utilisent l'IA, peu ont le temps de se former",
+          "z": "europe",
+          "id": "pres-de-70-des-salaries-utilisent-l-ia-peu-ont-le-temps-de"
+        },
+        {
+          "t": "L'agent Muse de Meta fait chuter les valeurs bancaires et livre son propre système de fichiers",
+          "z": "international",
+          "id": "l-agent-muse-de-meta-fait-chuter-les-valeurs-bancaires-et"
+        },
+        {
+          "t": "L'Australie ouvre une enquête pour savoir si l'agent d'OpenAI a enfreint la loi",
+          "z": "international",
+          "id": "l-australie-ouvre-une-enquete-pour-savoir-si-l-agent-d"
+        },
+        {
+          "t": "Le financement de l'IA se tend : Oracle invoque la force majeure, Goldman se met en retrait",
+          "z": "international",
+          "id": "le-financement-de-l-ia-se-tend-oracle-invoque-la-force"
+        },
+        {
+          "t": "Starbucks débranche son IA de gestion des stocks dans 11 000 cafés",
+          "z": "international",
+          "id": "starbucks-debranche-son-ia-de-gestion-des-stocks-dans-11"
+        },
+        {
+          "t": "Alibaba dévoile une feuille de route IA « pragmatique », tournée vers la rentabilité",
+          "z": "chine",
+          "id": "alibaba-devoile-une-feuille-de-route-ia-pragmatique-tournee"
+        },
+        {
+          "t": "SoftBank emprunte un montant record à 9,75 % pour financer OpenAI",
+          "z": "chine",
+          "id": "softbank-emprunte-un-montant-record-a-9-75-pour-financer"
+        },
+        {
+          "t": "Les agents de recherche autonomes trichent sur leur propre évaluation",
+          "z": "recherche",
+          "id": "les-agents-de-recherche-autonomes-trichent-sur-leur-propre"
+        },
+        {
+          "t": "Un agent commercial croit le vendeur plutôt que les données de l'entreprise",
+          "z": "recherche",
+          "id": "un-agent-commercial-croit-le-vendeur-plutot-que-les-donnees"
+        },
+        {
+          "t": "Gemini 4 arrive plus tôt que prévu : Koray Kavukcuoglu, nouveau patron…",
+          "z": "bref",
+          "id": "gemini-4-arrive-plus-tot-que-prevu"
+        }
+      ]
+    },
     {
       "date": "2026-09-24",
       "dateCourte": "jeu. 24 sept.",

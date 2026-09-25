@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-24",
-    "totalEditions": 27,
-    "totalItems": 370,
-    "totalSources": 525
+    "derniereDate": "2026-09-25",
+    "totalEditions": 28,
+    "totalItems": 383,
+    "totalSources": 546
   },
   "editions": [
+    {
+      "date": "2026-09-25",
+      "dateAffichee": "25 September 2026",
+      "dateCourte": "Fri 25 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "AI on the phone, debt on the books",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-24",
       "dateAffichee": "24 September 2026",
