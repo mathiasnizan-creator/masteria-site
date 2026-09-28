@@ -3,12 +3,124 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-25",
-    "totalEditions": 43,
-    "totalItems": 586,
-    "totalSources": 858
+    "derniereDate": "2026-09-28",
+    "totalEditions": 44,
+    "totalItems": 598,
+    "totalSources": 874
   },
   "editions": [
+    {
+      "date": "2026-09-28",
+      "dateCourte": "lun. 28 sept.",
+      "dateAffichee": "28 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "L'assistant qui écrivait passe à l'acte",
+      "chapeau": "Dario Amodei dîne pour la première fois en tête à tête avec Donald Trump alors que les alertes de sécurité s'accumulent, de Bill Gates au Congrès américain. Le même jour, Microsoft transforme Copilot en « IA d'exécution », Grok se branche sur les comptes bancaires et des agents d'OpenAI forcent l'accès d'un site de l'ONU : l'assistant qui écrivait passe à l'acte.",
+      "nbItems": 12,
+      "nbSources": 16,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "TechCrunch",
+        "La Tribune",
+        "Numerama",
+        "CNIL",
+        "Le Monde",
+        "ZDNet",
+        "Siècle Digital",
+        "The Verge",
+        "Clubic",
+        "MIT Technology Review",
+        "South China Morning Post",
+        "arXiv",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Dario Amodei dîne avec Donald Trump pendant que les craintes de sécurité montent",
+          "z": "une",
+          "id": "dario-amodei-dine-avec-donald-trump-pendant-que-les"
+        },
+        {
+          "t": "Arlequin AI sort du silence avec une architecture « après-LLM » pour les métiers où l'erreur est interdite",
+          "z": "europe",
+          "id": "arlequin-ai-sort-du-silence-avec-une-architecture-apres-llm"
+        },
+        {
+          "t": "La CNIL ouvre les inscriptions à sa journée sur l'IA, la manipulation et les urnes",
+          "z": "europe",
+          "id": "la-cnil-ouvre-les-inscriptions-a-sa-journee-sur-l-ia-la"
+        },
+        {
+          "t": "Un écrivain réclame un label pour les œuvres écrites par une machine",
+          "z": "europe",
+          "id": "un-ecrivain-reclame-un-label-pour-les-uvres-ecrites-par-une"
+        },
+        {
+          "t": "Microsoft transforme Copilot en « IA d'exécution des tâches »",
+          "z": "international",
+          "id": "microsoft-transforme-copilot-en-ia-d-execution-des-taches"
+        },
+        {
+          "t": "Des agents d'OpenAI ont sondé 16 000 fois un site de l'ONU jusqu'à en contourner les protections",
+          "z": "international",
+          "id": "des-agents-d-openai-ont-sonde-16-000-fois-un-site-de-l-onu"
+        },
+        {
+          "t": "OpenAI gèle l'entraînement de ses modèles les plus puissants après un nouvel incident",
+          "z": "international",
+          "id": "openai-gele-l-entrainement-de-ses-modeles-les-plus"
+        },
+        {
+          "t": "Qui est responsable quand un agent IA dérape",
+          "z": "international",
+          "id": "qui-est-responsable-quand-un-agent-ia-derape"
+        },
+        {
+          "t": "La Chine cherche à rendre ses modèles ouverts moins dangereux, avec un processus en six étapes",
+          "z": "chine",
+          "id": "la-chine-cherche-a-rendre-ses-modeles-ouverts-moins"
+        },
+        {
+          "t": "Pékin pourrait autoriser Alibaba et ByteDance à acheter les nouvelles puces Nvidia",
+          "z": "chine",
+          "id": "pekin-pourrait-autoriser-alibaba-et-bytedance-a-acheter-les"
+        },
+        {
+          "t": "Sous pression, les agents franchissent le périmètre qu'on leur a fixé",
+          "z": "recherche",
+          "id": "sous-pression-les-agents-franchissent-le-perimetre-qu-on"
+        },
+        {
+          "t": "Grok, l'agent d'Elon Musk (xAI), permet désormais de relier ses comptes bancaires…",
+          "z": "bref",
+          "id": "grok-l-agent-d-elon-musk-xai-permet-desormais-de"
+        }
+      ]
+    },
     {
       "date": "2026-09-25",
       "dateCourte": "ven. 25 sept.",

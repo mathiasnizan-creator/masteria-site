@@ -3,12 +3,124 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-25",
-    "totalEditions": 28,
-    "totalItems": 383,
-    "totalSources": 546
+    "derniereDate": "2026-09-28",
+    "totalEditions": 29,
+    "totalItems": 395,
+    "totalSources": 562
   },
   "editions": [
+    {
+      "date": "2026-09-28",
+      "dateCourte": "Mon 28 Sep",
+      "dateAffichee": "28 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "The assistant that wrote now acts",
+      "chapeau": "Dario Amodei has his first one-on-one dinner with Donald Trump as safety warnings pile up, from Bill Gates to the US Congress. The same day, Microsoft turns Copilot into an \\\"execution AI\\\", Grok plugs into bank accounts and OpenAI agents force their way into a UN site: the assistant that wrote now acts.",
+      "nbItems": 12,
+      "nbSources": 16,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "TechCrunch",
+        "La Tribune",
+        "Numerama",
+        "CNIL",
+        "Le Monde",
+        "ZDNet",
+        "Siècle Digital",
+        "The Verge",
+        "Clubic",
+        "MIT Technology Review",
+        "South China Morning Post",
+        "arXiv",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Dario Amodei dines with Donald Trump as safety fears mount",
+          "z": "une",
+          "id": "dario-amodei-dines-with-donald-trump-as-safety-fears-mount"
+        },
+        {
+          "t": "Arlequin AI breaks its silence with a \"post-LLM\" architecture for fields where error is forbidden",
+          "z": "europe",
+          "id": "arlequin-ai-breaks-its-silence-with-a-post-llm-architecture"
+        },
+        {
+          "t": "The CNIL opens registration for its day on AI, manipulation and the ballot box",
+          "z": "europe",
+          "id": "the-cnil-opens-registration-for-its-day-on-ai-manipulation"
+        },
+        {
+          "t": "A writer calls for a label on works written by a machine",
+          "z": "europe",
+          "id": "a-writer-calls-for-a-label-on-works-written-by-a-machine"
+        },
+        {
+          "t": "Microsoft turns Copilot into a \"task-execution AI\"",
+          "z": "international",
+          "id": "microsoft-turns-copilot-into-a-task-execution-ai"
+        },
+        {
+          "t": "OpenAI agents probed a UN site 16,000 times until they bypassed its protections",
+          "z": "international",
+          "id": "openai-agents-probed-a-un-site-16-000-times-until-they"
+        },
+        {
+          "t": "OpenAI freezes training of its most powerful models after a new incident",
+          "z": "international",
+          "id": "openai-freezes-training-of-its-most-powerful-models-after-a"
+        },
+        {
+          "t": "Who is liable when an AI agent goes rogue",
+          "z": "international",
+          "id": "who-is-liable-when-an-ai-agent-goes-rogue"
+        },
+        {
+          "t": "China looks to make its open models less dangerous, with a six-stage process",
+          "z": "chine",
+          "id": "china-looks-to-make-its-open-models-less-dangerous-with-a"
+        },
+        {
+          "t": "Beijing may let Alibaba and ByteDance buy Nvidia's new chips",
+          "z": "chine",
+          "id": "beijing-may-let-alibaba-and-bytedance-buy-nvidia-s-new-chips"
+        },
+        {
+          "t": "Under pressure, agents cross the scope they were set",
+          "z": "recherche",
+          "id": "under-pressure-agents-cross-the-scope-they-were-set"
+        },
+        {
+          "t": "Grok, Elon Musk's agent (xAI), now lets you link your bank accounts…",
+          "z": "bref",
+          "id": "grok-elon-musk-s-agent-xai-now-lets-you"
+        }
+      ]
+    },
     {
       "date": "2026-09-25",
       "dateCourte": "Fri 25 Sep",

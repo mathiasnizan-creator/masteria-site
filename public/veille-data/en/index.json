@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-25",
-    "totalEditions": 28,
-    "totalItems": 383,
-    "totalSources": 546
+    "derniereDate": "2026-09-28",
+    "totalEditions": 29,
+    "totalItems": 395,
+    "totalSources": 562
   },
   "editions": [
+    {
+      "date": "2026-09-28",
+      "dateAffichee": "28 September 2026",
+      "dateCourte": "Mon 28 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "The assistant that wrote now acts",
+      "nbItems": 12,
+      "nbSources": 16,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-25",
       "dateAffichee": "25 September 2026",

@@ -255,7 +255,12 @@
     "titreEditorial": "AI reaches the UN Security Council",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-28",
+    "dateLongue": "Monday 28 September 2026",
+    "titreEditorial": "The assistant that wrote now acts",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 21,
   "nbSignes": 9345,

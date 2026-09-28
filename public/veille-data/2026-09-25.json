@@ -255,7 +255,12 @@
     "titreEditorial": "L'IA entre au Conseil de sécurité de l'ONU",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-28",
+    "dateLongue": "lundi 28 septembre 2026",
+    "titreEditorial": "L'assistant qui écrivait passe à l'acte",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 21,
   "nbSignes": 10452,
