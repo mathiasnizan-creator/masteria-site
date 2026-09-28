@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, use } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
@@ -9,6 +9,8 @@ import {
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import Pictogram from '../components/Pictogram'
+import TerrainGuide from '../components/TerrainGuide'
+import { spokeGuidePromise } from '../data/terrain-guides'
 import { SPOKES, HUBS } from '../data/seo-pages'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
@@ -93,9 +95,9 @@ const TRAINER = {
 
 // Angles spécifiques par outil (pour éviter le duplicate content sur les 73 spokes)
 const TOOL_ANGLES = {
-  'ChatGPT': "des déploiements ChatGPT en entreprise — de l'abonnement Team aux GPTs personnalisés et à l'API",
+  'ChatGPT': "des déploiements ChatGPT en entreprise, de l'offre Business aux projets partagés et à l'API",
   'Microsoft Copilot': "des déploiements Microsoft 365 Copilot et Copilot Studio chez des clients PME et ETI",
-  'Google Gemini': "des projets Gemini et Gemini for Workspace dans des environnements Google",
+  'Google Gemini': "des projets Gemini dans Google Workspace, de Gmail et Docs à la console d'administration",
   'Claude': "des cas d'usage Claude (Anthropic) pour l'analyse de documents longs et l'écriture de qualité",
   'Mistral AI': "l'intégration de Mistral AI et Vibe (anciennement Le Chat) dans des entreprises françaises attachées à la souveraineté",
   'Multi-outils IA': "la comparaison concrète ChatGPT, Copilot, Gemini, Claude et Mistral sur des cas d'usage réels",
@@ -138,7 +140,25 @@ function buildTrainerBio(spoke) {
 export default function SpokePage() {
   const location = useLocation()
   const spokeSlug = location.pathname.replace(/^\//, '')
-  const spoke = SPOKES.find(s => s.slug === spokeSlug)
+  const baseSpoke = SPOKES.find(s => s.slug === spokeSlug)
+  // Guide terrain propre à la page (src/data/spoke-guides/<slug>.js) : il remplace
+  // meta description, intro et FAQ quand il les fournit.
+  const guidePromise = spokeGuidePromise(spokeSlug)
+  const guide = guidePromise ? use(guidePromise) : null
+  const spoke = baseSpoke && guide
+    ? {
+        ...baseSpoke,
+        metaDesc: guide.metaDesc ?? baseSpoke.metaDesc,
+        intro: guide.intro ?? baseSpoke.intro,
+        faq: guide.faq ?? baseSpoke.faq,
+        audience: guide.audience ?? baseSpoke.audience,
+        useCases: guide.useCases ?? baseSpoke.useCases,
+        modules: guide.modules ?? baseSpoke.modules,
+        objectives: guide.objectives ?? baseSpoke.objectives,
+        updatedAt: guide.updatedAt ?? baseSpoke.updatedAt,
+        updatedLabel: guide.updatedLabel ?? baseSpoke.updatedLabel,
+      }
+    : baseSpoke
 
   if (!spoke) {
     return (
@@ -162,7 +182,7 @@ export default function SpokePage() {
 
   const durationBadge = is3h ? '3 heures' : isOneDay ? '1 jour · 7h' : '2 jours · 14h'
   const programTitle = is3h
-    ? 'Programme du Sprint IA — 3 heures intensives'
+    ? 'Programme du Sprint IA : 3 heures intensives'
     : isOneDay
       ? "Programme, 1 journée de formation pratique"
       : 'Programme, 2 jours de formation pratique'
@@ -239,8 +259,9 @@ export default function SpokePage() {
         dateModified={spoke.updatedAt || spoke.datePublished}
         speakable={['#geo-summary', ...(spoke.faq?.length ? ['#faq'] : [])]}
         citations={[
-          { name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-          { name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+          { name: 'Qualiopi, Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+          { name: 'Les OPCO, Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+          ...(guide?.sources || []),
         ]}
       />
 
@@ -330,6 +351,7 @@ export default function SpokePage() {
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
             {[
+              guide?.guide ? ['Guide terrain', '#guide'] : null,
               spoke.useCases?.length ? ["Cas d'usage", '#cas-usage'] : null,
               (modulesJ1.length > 0 || modulesJ2.length > 0 || spoke.program?.length > 0) ? ['Programme', '#programme'] : null,
               ['Objectifs', '#objectifs'],
@@ -407,6 +429,9 @@ export default function SpokePage() {
           </div>
         </section>
       )}
+
+      {/* ── GUIDE TERRAIN (contenu propre à la page) ── */}
+      <TerrainGuide guide={guide?.guide} color={c} background="#fff" />
 
       {/* ── PROGRAMME (modules enrichis) ── */}
       {(modulesJ1.length > 0 || modulesJ2.length > 0) ? (

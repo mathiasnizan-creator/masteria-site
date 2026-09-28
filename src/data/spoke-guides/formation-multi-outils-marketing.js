@@ -1,0 +1,211 @@
+// Contenu propre à /formation-multi-outils-marketing (guide terrain). Rendu par SpokePage.
+export default {
+  slug: 'formation-multi-outils-marketing',
+  updatedAt: '2026-09-28',
+  updatedLabel: 'Programme à jour · septembre 2026',
+  metaDesc: "Formation IA multi-outils marketing : quel assistant pour la veille, le brief d'agence, les visuels et le bilan de campagne, selon votre suite. Qualiopi.",
+  intro: "Une équipe marketing ouvre souvent trois assistants dans la même journée, et personne n'a fixé de règle pour savoir lequel sert à quoi. Cette formation part de vos livrables (brief d'agence, plan de campagne, déclinaisons, bilan mensuel) et confie chaque étape à l'outil qui la fait le mieux dans votre environnement. Vous repartez avec une matrice de décision et des chaînes d'outils testées sur vos propres dossiers.",
+  audience: [
+    { title: "Responsables et directeurs marketing", desc: "Vous décidez quels outils l'équipe utilise, avec quelles données et sous quelle offre. Vous repartez avec la matrice de décision et les règles à écrire pour l'équipe." },
+    { title: "Chargés de marketing et de contenus", desc: "Vous produisez briefs, déclinaisons et bilans chaque semaine. Vous apprenez quel assistant ouvrir à chaque étape, et comment passer de l'un à l'autre en gardant vos sources." },
+    { title: "Responsables communication et marque", desc: "Vous tenez le ton de marque et validez les visuels publiés. Vous apprenez à régler un espace partagé dans chaque outil et à appliquer les mentions obligatoires sur les images générées." },
+  ],
+  useCases: [
+    { icon: '🔍', title: "Veille concurrentielle sourcée", desc: "Relevé des promesses publiques de vos concurrents avec Deep Research de Gemini, la recherche approfondie de ChatGPT ou l'agent Researcher de Copilot. Chaque affirmation garde le lien de sa page." },
+    { icon: '📋', title: "Brief d'agence", desc: "Brief rédigé dans un projet Claude ou ChatGPT qui contient votre plateforme de marque. Une source est citée après chaque fait." },
+    { icon: '✍️', title: "Déclinaisons multicanal", desc: "Un projet partagé ou un Gem qui contient vos publications validées. Chaque membre de l'équipe part du même socle pour LinkedIn, l'emailing ou un salon." },
+    { icon: '🎨', title: "Visuels de campagne", desc: "Images générées dans ChatGPT, Copilot Chat ou Gemini dans Slides, avec les règles de mention propres aux visages réalistes." },
+    { icon: '🎯', title: "Analyse de vos avis clients", desc: "Des centaines d'avis analysés dans Gemini Notebook, un bloc-notes Copilot ou un projet Claude, avec le passage exact cité pour chaque thème." },
+    { icon: '📊', title: "Bilan mensuel de campagnes", desc: "Export CSV analysé dans Excel avec Copilot ou dans Sheets avec Gemini, puis commentaire rédigé à partir du tableau vérifié." },
+  ],
+  modules: [
+    {
+      day: 1, title: "Module 1 · Cartographier vos outils, vos licences et vos données marketing", duration: '1h30',
+      description: "Partir de l'environnement de l'équipe pour savoir quel assistant a accès à quoi, et sous quelle offre.",
+      items: [
+        "Microsoft 365 Copilot et Copilot Chat gratuit : ce que chacun lit (mails, Teams, SharePoint, ou seulement le web et vos fichiers)",
+        "Gemini dans les forfaits Workspace : Gmail, Docs, Sheets, Slides, Deep Research, Gemini Notebook",
+        "ChatGPT, Claude et Vibe (anciennement Le Chat) : connecteurs vers Drive, SharePoint, Outlook ou Gmail, avec l'accord de l'administrateur",
+        "Offres qui entraînent les modèles par défaut, et réglage qui coupe ce partage",
+      ],
+      exercise: "Remplir la carte de votre équipe : outils disponibles, licences, dossiers accessibles, et types de fichiers marketing autorisés dans chaque outil.",
+    },
+    {
+      day: 1, title: "Module 2 · Mener une veille concurrentielle sourcée", duration: '2h',
+      description: "Comparer les recherches approfondies de plusieurs outils sur la même question, puis vérifier leurs sources.",
+      items: [
+        "Deep Research de Gemini : choisir les sources Web, Drive, Gmail ou Chat",
+        "Recherche approfondie de ChatGPT et agent Researcher de Microsoft 365 Copilot",
+        "Formuler la question : périmètre, concurrents nommés, type de preuve exigé",
+        "Contrôler chaque lien cité, en priorité pour les prix et les tailles de marché",
+      ],
+      exercise: "Lancer la même question sur deux outils à propos de vos cinq principaux concurrents, puis garder les seules affirmations confirmées par une page ouverte.",
+    },
+    {
+      day: 1, title: "Module 3 · Rédiger un brief d'agence ancré sur vos documents", duration: '2h',
+      description: "Construire le brief dans un espace qui contient la plateforme de marque et la veille vérifiée.",
+      items: [
+        "Créer un projet dans Claude ou ChatGPT, ou un Gem dans Gemini, avec la plateforme de marque et la fiche produit",
+        "Structurer le brief : problème, cible, message, preuves, contraintes, livrables",
+        "Exiger la citation du document source et la mention « à compléter » quand une information manque",
+        "Relire les engagements produit avec la personne qui devra les tenir",
+      ],
+      exercise: "Rédiger le brief de votre prochaine campagne à partir de votre plateforme de marque et de la veille du module 2, puis le comparer à votre dernier brief envoyé.",
+    },
+    {
+      day: 1, title: "Module 4 · Analyser vos avis et verbatims clients", duration: '1h30',
+      description: "Faire émerger les thèmes d'un corpus d'avis avec un outil qui cite ses passages.",
+      items: [
+        "Gemini Notebook, bloc-notes Copilot ou projet Claude : des réponses tirées des seules sources déposées",
+        "Retirer noms et e-mails avant le dépôt",
+        "Demander les thèmes, leur nombre d'occurrences et les citations exactes",
+        "Transformer les thèmes en preuves pour vos messages",
+      ],
+      exercise: "Analyser un export de vos avis clients ou de votre dernière enquête de satisfaction, et en tirer trois arguments appuyés sur des citations.",
+    },
+    {
+      day: 2, title: "Module 5 · Produire et encadrer les visuels générés", duration: '1h30',
+      description: "Choisir l'outil qui génère l'image, puis appliquer les règles de mention en vigueur depuis août 2026.",
+      items: [
+        "Génération d'images dans ChatGPT, Copilot Chat et Gemini dans Slides ; Claude ne génère pas d'images",
+        "AI Act, article 50 : signaler une image réaliste qui peut passer pour authentique, depuis le 2 août 2026",
+        "Loi du 9 juin 2023 : la mention « Images virtuelles » pour les visages générés dans un contenu d'influence",
+        "C2PA et SynthID : ce que les outils marquent, et ce que l'export efface",
+      ],
+      exercise: "Produire trois visuels d'ambiance pour votre prochaine campagne et décider, pour chacun, de la mention à apposer.",
+    },
+    {
+      day: 2, title: "Module 6 · Décliner vos contenus depuis un espace partagé", duration: '2h',
+      description: "Donner à chaque outil les mêmes documents de référence pour garder le ton de marque.",
+      items: [
+        "Instructions et exemples validés dans un projet partagé, un Gem ou un agent Copilot",
+        "Tester un prompt sur l'outil cible avant de le partager à l'équipe",
+        "Adapter un message à LinkedIn, à l'emailing et à un salon professionnel",
+        "Faire relire les premières publications par la même personne",
+      ],
+      exercise: "Configurer l'espace partagé de votre équipe avec votre plateforme de marque et dix de vos publications validées, puis décliner un message sur trois canaux.",
+    },
+    {
+      day: 2, title: "Module 7 · Construire le bilan mensuel de vos campagnes", duration: '2h',
+      description: "Passer de l'export brut au bilan présenté en comité, avec un contrôle des chiffres à chaque étape.",
+      items: [
+        "Copilot dans Excel en mode agent : tableaux croisés et graphiques",
+        "Gemini dans Sheets : formules, graphiques et « Remplir avec Gemini »",
+        "Recompter les totaux avant de commenter",
+        "Créer la présentation avec Copilot dans PowerPoint à partir d'un fichier Word, ou avec Gemini dans Slides",
+      ],
+      exercise: "Analyser l'export de vos campagnes du dernier mois et présenter le bilan en cinq diapositives dans le modèle de votre entreprise.",
+    },
+    {
+      day: 2, title: "Module 8 · Écrire les règles d'usage de l'équipe marketing", duration: '1h30',
+      description: "Fixer par écrit qui utilise quel outil, avec quelles données, et qui relit avant publication.",
+      items: [
+        "Données clients : quel outil, sous quelle offre",
+        "Relecture avant publication : textes, visuels, chiffres de marché",
+        "Mentions à apposer sur les contenus générés",
+        "Personne à contacter quand un outil bloque ou qu'une licence manque",
+      ],
+      exercise: "Rédiger la page de règles de votre équipe à partir de la carte du module 1 et des cas traités pendant les deux jours.",
+    },
+  ],
+  objectives: [
+    "Choisir, pour chaque livrable marketing, l'outil adapté à votre environnement et à la sensibilité des données",
+    "Vérifier les sources d'un rapport de recherche approfondie avant de réutiliser un chiffre",
+    "Rédiger un brief d'agence dont chaque affirmation renvoie à un document",
+    "Paramétrer un espace partagé (projet, Gem ou agent) qui porte la plateforme de marque",
+    "Appliquer les mentions obligatoires aux visuels générés par IA",
+    "Produire un bilan de campagne à partir d'un export dont les totaux ont été contrôlés",
+  ],
+  guide: {
+    kicker: "Guide terrain",
+    h2: "Choisir l'assistant étape par étape, du brief au bilan de campagne",
+    lead: "Aucun assistant ne gagne sur toute la chaîne marketing. La recherche sourcée, la rédaction longue, l'image et le tableur n'appellent pas le même outil, et votre suite bureautique a déjà tranché une partie du choix. La bonne question porte sur l'étape : pour chaque livrable, quel outil, avec quelles données, et qui relit avant publication.",
+    sections: [
+      {
+        h3: "Votre suite bureautique fait déjà la moitié du choix",
+        paras: [
+          "Si l'équipe travaille dans Microsoft 365 avec une licence Microsoft 365 Copilot, Copilot lit vos mails, vos réunions Teams et vos fichiers SharePoint. Dans PowerPoint, il crée une présentation à partir d'un document Word et reprend votre charte si vous partez du modèle de l'entreprise. Sans cette licence, le Copilot Chat gratuit répond seulement à partir du web et des fichiers que vous lui donnez.",
+          "Si l'équipe vit dans Google Workspace, Gemini est inclus dans les forfaits Business depuis janvier 2025. Il résume un fil Gmail et génère des images dans Slides. Sa recherche approfondie (Deep Research) peut puiser dans Gmail, Drive et Chat en plus du web. Gemini Notebook, le nouveau nom de NotebookLM depuis juillet 2026, répond uniquement à partir des sources que vous y déposez et cite le passage utilisé.",
+          "ChatGPT, Claude et Vibe (anciennement Le Chat de Mistral) se branchent sur les deux mondes par des connecteurs vers Drive, SharePoint, Outlook ou Gmail, souvent sur les offres payantes et avec l'accord de l'administrateur. Deux trous sont à connaître : l'application Gemini ne lit pas Outlook ni SharePoint, et Copilot en entreprise ne lit pas Gmail.",
+        ],
+      },
+      {
+        h3: "Les données décident du compte à utiliser",
+        paras: [
+          "Un export CRM, un fichier d'avis clients avec des noms ou un bilan de campagne non publié ne passent jamais par un compte personnel. Sur ChatGPT Free, Plus ou Pro, vos conversations servent à entraîner les modèles tant que vous n'avez pas coupé le réglage « Améliorer le modèle pour tous », dans Paramètres puis Contrôles des données. Sur Claude Free, Pro ou Max, chaque utilisateur a dû choisir en octobre 2025. S'il a accepté, Anthropic conserve ses échanges cinq ans.",
+          "Vibe bouscule une idée reçue. Mistral héberge les données en Europe par défaut, mais les comptes Free et Pro partagent leurs échanges pour l'entraînement tant que l'utilisateur ne l'a pas désactivé. Sur l'offre Team, l'administrateur coupe ce partage pour toute l'organisation. Les offres ChatGPT Business, Claude Team et Enterprise, Gemini dans Workspace et Microsoft 365 Copilot n'utilisent pas vos données pour entraîner les modèles.",
+        ],
+      },
+      {
+        h3: "Le visuel et le texte publiés ont désormais des règles écrites",
+        paras: [
+          "Depuis le 2 août 2026, l'article 50 de l'AI Act s'applique. Une image, une vidéo ou un son généré qui ressemble à une personne, un lieu ou un événement existant et pourrait passer pour authentique doit être signalé comme artificiel. Le texte parle d'hypertrucage (deepfake). Un faux témoignage client en photo réaliste entre dans cette case.",
+          "En France, la loi du 9 juin 2023 sur l'influence commerciale ajoute une règle propre aux partenariats. Un visage ou une silhouette produit par IA dans un contenu d'influence porte la mention « Images virtuelles ». La marque qui fournit ce visuel à un créateur doit donc le lui signaler.",
+          "Les outils marquent leurs images. ChatGPT y ajoute des métadonnées C2PA, un standard qui trace l'origine d'un fichier, et Gemini un filigrane invisible appelé SynthID. Les métadonnées disparaissent parfois à l'export ou à la retouche, et elles ne remplacent pas la mention visible. Claude ne génère pas d'images.",
+        ],
+      },
+      {
+        h3: "Trois chaînes d'outils tiennent la route en équipe",
+        paras: [
+          "Chaque chaîne sépare la recherche, la rédaction et la mise en forme, avec une relecture humaine entre deux passages.",
+        ],
+        list: [
+          "Veille concurrentielle : recherche approfondie de ChatGPT ou Deep Research de Gemini sur les pages publiques des concurrents, vérification des liens un par un, puis synthèse dans Claude ou dans le même outil en citant ces liens.",
+          "Bilan mensuel : export des campagnes en CSV, analyse dans Excel avec Copilot (son mode agent construit tableaux croisés et graphiques, en français) ou dans Sheets avec Gemini. Le commentaire se rédige ensuite à partir du tableau vérifié.",
+          "Déclinaisons multicanal : un projet partagé dans ChatGPT, Claude ou Vibe, ou un Gem dans Gemini, qui contient la plateforme de marque et dix publications validées. Chaque membre de l'équipe part du même socle.",
+        ],
+      },
+    ],
+    table: {
+      caption: "Tâche marketing, outil selon votre environnement, point de vigilance",
+      headers: ["Tâche marketing", "Sous Microsoft 365", "Sous Google Workspace ou sans suite", "Vigilance"],
+      rows: [
+        ["Veille concurrentielle sourcée", "Agent Researcher (licence Microsoft 365 Copilot)", "Deep Research de Gemini, ou recherche approfondie de ChatGPT", "Ouvrir chaque lien cité ; une affirmation sans page qui la confirme sort du document."],
+        ["Analyse de 500 avis ou verbatims", "Bloc-notes Copilot, ou projet Claude", "Gemini Notebook, qui cite le passage exact", "Retirer noms et e-mails avant dépôt ; demander le nombre d'occurrences par thème."],
+        ["Brief d'agence", "Claude ou ChatGPT dans un projet, puis Copilot dans Word pour la mise en page", "Gem partagé avec la plateforme de marque, puis Docs", "Un brief sans budget ni calendrier revient avec des idées hors cadre."],
+        ["Visuels de campagne", "Création d'images dans Copilot Chat ou dans ChatGPT", "Gemini dans Slides ou dans l'application", "Mention obligatoire si un visage réaliste peut passer pour authentique."],
+        ["Bilan mensuel de campagnes", "Copilot dans Excel, mode agent", "Gemini dans Sheets", "Refaire un total à la main avant de commenter."],
+      ],
+    },
+    cas: {
+      h3: "Cas pratique : du relevé concurrentiel au brief d'agence en trois outils",
+      contexte: "Prenons une responsable marketing dans une PME qui fabrique du mobilier de bureau. Elle lance une gamme reconditionnée et doit briefer son agence avant vendredi. L'entreprise est sous Google Workspace, et l'équipe dispose d'un compte Claude Team pour la rédaction longue. Ce scénario est pédagogique.",
+      etapes: [
+        "Dans l'application Gemini, ouvrez le menu Outils, choisissez Deep Research et gardez la source Web. Demandez un relevé des promesses publiques de cinq concurrents sur le mobilier reconditionné : prix affichés, garanties, arguments environnementaux, avec le lien de chaque affirmation.",
+        "Ouvrez les liens cités. Supprimez toute affirmation que la page ne confirme pas, puis exportez le rapport dans Google Docs.",
+        "Dans Claude, créez un projet « Lancement gamme reconditionnée ». Déposez dans ses connaissances la plateforme de marque, le rapport vérifié et la fiche produit, puis collez le prompt ci-dessous.",
+        "Relisez le brief avec le chef de produit. Les garanties et les délais doivent correspondre à ce que l'atelier sait tenir.",
+        "Pour l'ambiance visuelle, demandez trois images d'objets et de décors à Gemini dans Slides. Des visages générés dans une publication d'influence imposeraient la mention « Images virtuelles ».",
+      ],
+      prompt: "Vous êtes directeur de création dans une agence qui travaille pour des marques B2B.\n\nContexte : notre entreprise fabrique du mobilier de bureau en France depuis 1987. Nous lançons en novembre une gamme de fauteuils et de bureaux reconditionnés dans notre atelier de Vendée, garantis cinq ans. La cible est l'office manager et le responsable des services généraux d'entreprises de 50 à 500 salariés. Le budget de la campagne est de 40 000 euros HT, production comprise, réparti entre LinkedIn, l'emailing et un salon professionnel en janvier.\n\nDocuments du projet : la plateforme de marque, le relevé concurrentiel vérifié, la fiche produit.\n\nRédigez le brief que nous enverrons à l'agence, dans cet ordre :\n1. Le problème que la campagne doit résoudre, en trois phrases.\n2. La cible, et ce qu'elle pense aujourd'hui du mobilier reconditionné d'après le relevé concurrentiel.\n3. Le message principal en une phrase, puis trois preuves tirées uniquement de la fiche produit.\n4. Ce que disent les concurrents, et l'espace qu'ils laissent libre.\n5. Les contraintes : charte, mentions obligatoires, calendrier, budget.\n6. Les livrables attendus de l'agence et la date de chaque rendu.\n\nRègles : n'inventez aucun chiffre. Si une information manque, écrivez « à compléter » et indiquez quelle fonction de l'entreprise peut la fournir. Après chaque affirmation factuelle, citez entre parenthèses le document d'où elle vient. Ton direct, phrases courtes, deux pages au maximum.",
+      resultat: "Vous obtenez un brief de deux pages dont chaque affirmation renvoie à un document du projet. Avant l'envoi, vérifiez que les garanties et délais ne dépassent pas la fiche produit, que les concurrents cités existent sous ce nom et que le budget écrit est celui validé par la direction. Les mentions « à compléter » montrent ce que l'équipe doit encore trancher.",
+    },
+    pieges: [
+      { titre: "Le même prompt change de forme d'un outil à l'autre", texte: "Un prompt réglé sur ChatGPT perd souvent sa structure dans Copilot ou Gemini, car chaque outil a ses propres consignes de mise en forme. Écrivez la structure attendue dans le prompt et testez-le sur l'outil cible avant de le partager." },
+      { titre: "La recherche approfondie cite des pages qu'elle a mal lues", texte: "Deep Research, Researcher et la recherche approfondie de ChatGPT livrent des rapports longs, avec des liens. Un lien présent ne prouve pas que la page dit ce qu'on lui prête, surtout pour les prix et les tailles de marché. Ouvrez la source de chaque chiffre que vous comptez publier." },
+      { titre: "Les comptes personnels reviennent au moment du rush", texte: "Quand la licence d'équipe manque, quelqu'un colle l'export d'emailing dans son compte gratuit. Fixez une règle courte : les données clients vont seulement dans l'outil de l'entreprise, et une personne nommée débloque les accès quand l'outil coince." },
+    ],
+  },
+  faq: [
+    { q: "Faut-il payer cinq abonnements pour suivre la formation ?", a: "Non. Au cadrage, nous listons les outils et licences dont dispose votre équipe. Les exercices se font sur ces outils, avec vos documents. Les autres assistants sont montrés en démonstration, sur des données fictives, et les fonctions réservées aux offres payantes sont signalées comme telles." },
+    { q: "Quel outil choisir si l'équipe n'a ni Microsoft 365 Copilot ni Gemini ?", a: "ChatGPT Business, Claude Team et Vibe Team sont les trois options courantes. Regardez d'abord où sont rangés vos fichiers, car les connecteurs diffèrent d'un outil à l'autre. Si l'équipe produit beaucoup de visuels, écartez Claude, qui ne génère pas d'images. Si l'hébergement européen compte, Vibe l'assure par défaut, à condition de couper le partage pour l'entraînement." },
+    { q: "Peut-on déposer un export CRM dans un assistant ?", a: "Oui, dans l'offre entreprise de l'outil et avec le minimum de colonnes. Le RGPD demande de ne traiter que les données utiles à la tâche : pour segmenter une base, le nom et l'e-mail ne servent pas. Supprimez-les avant le dépôt et gardez l'identifiant client pour recoller les résultats." },
+    { q: "Faut-il signaler qu'un post LinkedIn a été rédigé avec l'IA ?", a: "L'article 50 de l'AI Act vise les hypertrucages et les textes publiés pour informer le public sur des questions d'intérêt public. Pour ces textes, l'obligation tombe si un humain a relu le contenu et en assume la responsabilité éditoriale. Un post de marque relu par l'équipe n'appelle donc pas de mention en général. Une image réaliste d'une personne qui n'existe pas en appelle une." },
+    { q: "Projet ChatGPT, Gem ou agent Copilot : lequel pour la charte de marque ?", a: "Les trois stockent des instructions et des documents de référence, et se partagent avec l'équipe. Dans l'interface française de Copilot, l'agent s'appelle aussi « assistant ». Choisissez celui de l'outil que l'équipe ouvre tous les jours : un bon réglage que personne n'utilise ne sert à rien." },
+    { q: "Comment savoir si un chiffre de marché trouvé par l'IA est fiable ?", a: "Demandez la source exacte et la date, puis ouvrez-la. Préférez les chiffres publiés par l'INSEE, une fédération professionnelle ou un rapport annuel, dont la méthode est décrite. Un chiffre sans source vérifiable ne va pas dans un support client." },
+    { q: "Comment financer cette formation marketing ?", a: "Masteria est certifié Qualiopi. La formation de deux jours peut donc être prise en charge par l'OPCO de votre entreprise, selon ses règles. En intra, le groupe compte jusqu'à 12 participants, au tarif de 1 980 € HT par jour." },
+  ],
+  sources: [
+    { name: "Microsoft Support : différence entre Copilot gratuit et Microsoft 365 Copilot", url: "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365" },
+    { name: "Microsoft Support : créer une présentation personnalisée à partir d'un fichier", url: "https://support.microsoft.com/fr-fr/powerpoint/copilot-tutorial-create-a-branded-presentation-from-a-file" },
+    { name: "Microsoft Support : Agent Mode in Excel (langues prises en charge)", url: "https://support.microsoft.com/en-us/office/agent-mode-in-excel-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a" },
+    { name: "Google Workspace Updates : Deep Research intègre le contenu Workspace", url: "https://workspaceupdates.googleblog.com/2025/11/gemini-deep-research-integrates-workspace-content.html" },
+    { name: "Google Workspace Updates : NotebookLM devient Gemini Notebook", url: "https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html" },
+    { name: "OpenAI Help Center : signaux de provenance (C2PA, SynthID)", url: "https://help.openai.com/en/articles/8912793-c2pa-in-chatgpt-images" },
+    { name: "OpenAI Help Center : désactiver l'entraînement en gardant l'historique", url: "https://help.openai.com/fr-ca/articles/8983130-what-if-i-want-to-keep-my-history-on-but-disable-model-training" },
+    { name: "Anthropic : mise à jour des conditions grand public (entraînement, conservation)", url: "https://www.anthropic.com/news/updates-to-our-consumer-terms" },
+    { name: "Mistral Help Center : refuser l'usage de ses données pour l'entraînement", url: "https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training" },
+    { name: "Règlement (UE) 2024/1689 sur l'intelligence artificielle, article 50", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" },
+    { name: "Loi n° 2023-451 du 9 juin 2023 sur l'influence commerciale, article 5", url: "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047663211" },
+  ],
+}

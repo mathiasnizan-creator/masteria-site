@@ -99,7 +99,7 @@
     },
     {
       "source": "/formation-ia-et-chatgpt-pour-la-direction-generale",
-      "destination": "/formation-chatgpt-management",
+      "destination": "/formation-ia-dirigeants",
       "permanent": true
     },
     {
@@ -134,7 +134,7 @@
     },
     {
       "source": "/formation-ia-et-chatgpt-pour-la-gestion-de-projet",
-      "destination": "/formation-chatgpt-management",
+      "destination": "/formation-ia-gestion-de-projet",
       "permanent": true
     },
     {
@@ -209,7 +209,7 @@
     },
     {
       "source": "/formation-ia-pour-les-appels-doffres",
-      "destination": "/formation-chatgpt-commercial",
+      "destination": "/formation-ia-marche-public",
       "permanent": true
     },
     {
@@ -753,7 +753,8 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=1800, must-revalidate"
-        }
+        },
+        { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     },
     {

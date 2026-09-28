@@ -1,0 +1,213 @@
+// Contenu propre à /formation-multi-outils-commercial (guide terrain). Rendu par SpokePage.
+export default {
+  slug: 'formation-multi-outils-commercial',
+  updatedAt: '2026-09-28',
+  updatedLabel: 'Programme à jour · septembre 2026',
+  metaDesc: "Formation IA multi-outils commercial : quel assistant pour préparer un rendez-vous, nourrir le CRM et rédiger la proposition, selon votre suite. Qualiopi.",
+  intro: "Un commercial passe d'Outlook ou de Gmail au CRM, puis à Word ou à Docs, plusieurs fois par jour. Cette formation vous apprend à placer le bon assistant à chaque étape du cycle de vente, en tenant compte de vos outils et de la confidentialité de vos conditions tarifaires. Vous travaillez sur vos dossiers clients, vos trames de proposition et vos comptes rendus.",
+  audience: [
+    { title: "Directeurs commerciaux", desc: "Vous décidez des outils de l'équipe et de ce qui peut y entrer. Vous repartez avec la répartition des outils par étape de vente et des règles écrites sur les prix et les données prospects." },
+    { title: "Commerciaux terrain et ingénieurs commerciaux", desc: "Vous préparez des rendez-vous et rédigez des propositions chaque semaine. Vous apprenez à passer du compte rendu à la proposition avec l'outil de votre suite." },
+    { title: "Chargés d'appels d'offres et assistants commerciaux", desc: "Vous montez les dossiers de réponse et tenez le CRM à jour. Vous apprenez à extraire les exigences d'un dossier de consultation avec leur passage source." },
+  ],
+  useCases: [
+    { icon: '🔍', title: "Préparation de rendez-vous", desc: "Actualité publique du prospect avec Deep Research, la recherche approfondie de ChatGPT ou l'agent Researcher, croisée avec l'historique du CRM." },
+    { icon: '🤝', title: "Compte rendu de rendez-vous", desc: "Récapitulatif Copilot dans Teams ou « Prendre des notes pour moi » dans Meet. Chaque besoin est rattaché à la personne qui l'a exprimé." },
+    { icon: '📝', title: "Proposition commerciale", desc: "Votre trame remplie par Copilot dans Word ou par Claude dans un projet. Les cases de prix restent vides jusqu'au report depuis l'outil de devis." },
+    { icon: '💼', title: "Appels d'offres", desc: "Exigences extraites du dossier de consultation dans Gemini Notebook, un bloc-notes Copilot ou un projet Claude, avec le passage source de chacune." },
+    { icon: '🎯', title: "Séquence de prospection", desc: "E-mails personnalisés à partir de vos offres et de vos messages qui ont obtenu des réponses, relus avec la grille CNIL." },
+    { icon: '📊', title: "Revue de pipeline", desc: "Export du CRM analysé dans Excel avec Copilot ou dans Sheets avec Gemini, puis commentaire du responsable des ventes." },
+  ],
+  modules: [
+    {
+      day: 1, title: "Module 1 · Placer chaque information commerciale dans le bon outil", duration: '1h30',
+      description: "Distinguer information publique, historique du compte et conditions tarifaires, et savoir quel outil a le droit d'y accéder.",
+      items: [
+        "Microsoft 365 Copilot : Outlook, Teams et SharePoint ; Copilot Chat gratuit : le web et les fichiers fournis",
+        "Gemini dans Workspace : Gmail, Meet et Drive",
+        "Connecteurs HubSpot de ChatGPT et de Claude, dans la limite des droits de l'utilisateur",
+        "Offres entreprise et comptes personnels : entraînement des modèles et réglages",
+      ],
+      exercise: "Classer les documents de votre dernier dossier client en trois niveaux (public, historique, tarifaire) et noter l'outil autorisé pour chacun.",
+    },
+    {
+      day: 1, title: "Module 2 · Préparer un rendez-vous en une page", duration: '2h',
+      description: "Assembler l'actualité publique du prospect et l'historique du compte dans une fiche datée et sourcée.",
+      items: [
+        "Recherche approfondie sur l'actualité publique : rapport annuel, nominations, offres d'emploi",
+        "Écarter les homonymes avec le numéro SIREN ou le site du prospect",
+        "Dater chaque information et ouvrir les liens des chiffres",
+        "Croiser avec l'historique du CRM et les derniers échanges",
+      ],
+      exercise: "Préparer la fiche d'un de vos prochains rendez-vous et la faire relire par un collègue qui connaît le compte.",
+    },
+    {
+      day: 1, title: "Module 3 · Tirer un compte rendu exploitable du rendez-vous découverte", duration: '2h',
+      description: "Transformer une réunion transcrite en compte rendu structuré, prêt pour le CRM.",
+      items: [
+        "Transcription Teams et récapitulatif Copilot ; « Prendre des notes pour moi » dans Meet, une langue par réunion",
+        "Annoncer la transcription au client et fixer sa durée de conservation",
+        "Extraire besoins, décideurs, calendrier et budget, avec l'auteur de chaque propos",
+        "Lister les questions restées sans réponse",
+      ],
+      exercise: "Transformer la transcription ou les notes d'un de vos rendez-vous récents en compte rendu structuré, puis le ranger dans la fiche du compte.",
+    },
+    {
+      day: 1, title: "Module 4 · Écrire des séquences de prospection conformes", duration: '1h30',
+      description: "Personnaliser la prospection avec l'IA en respectant les règles propres à chaque destinataire.",
+      items: [
+        "Espace partagé avec vos offres et vos e-mails qui ont obtenu des réponses",
+        "B2B : message lié au métier du destinataire, information et opposition simple (CNIL)",
+        "Particuliers : consentement en principe pour l'e-mail, obligatoire pour le téléphone depuis le 11 août 2026",
+        "Relecture avant envoi avec le coaching par Copilot dans Outlook ou l'aide à la rédaction de Gemini dans Gmail",
+      ],
+      exercise: "Rédiger une séquence de trois e-mails pour un de vos segments, puis contrôler chaque message avec la grille CNIL.",
+    },
+    {
+      day: 2, title: "Module 5 · Rédiger la proposition à partir de vos trames", duration: '1h30',
+      description: "Produire une proposition qui reprend vos formulations validées et n'invente aucun engagement.",
+      items: [
+        "Copilot dans Word sur votre trame, ou projet Claude avec vos propositions gagnées",
+        "Reprendre le contexte du client avec ses propres mots",
+        "Laisser vides prix et remises, reportés depuis l'outil de devis",
+        "Interdire dans le prompt tout délai ou garantie absent des sources",
+      ],
+      exercise: "Produire la proposition d'une de vos affaires en cours à partir du compte rendu du module 3 et de votre trame.",
+    },
+    {
+      day: 2, title: "Module 6 · Analyser un dossier de consultation d'appel d'offres", duration: '2h',
+      description: "Extraire les exigences d'un dossier de consultation avec leur source, puis bâtir la matrice de conformité.",
+      items: [
+        "Déposer le dossier dans Gemini Notebook, un bloc-notes Copilot ou un projet Claude",
+        "Extraire chaque exigence avec son passage source",
+        "Construire la matrice de conformité et la contrôler ligne à ligne",
+        "Rédiger le mémoire technique à partir de vos anciens mémoires déposés dans le même espace",
+      ],
+      exercise: "Extraire la matrice de conformité d'un de vos dossiers de consultation récents et la comparer à celle que l'équipe avait montée.",
+    },
+    {
+      day: 2, title: "Module 7 · Suivre le pipeline et nourrir le CRM", duration: '2h',
+      description: "Analyser l'export des affaires en cours et garder le CRM comme source unique.",
+      items: [
+        "Copilot dans Excel en mode agent, ou Gemini dans Sheets, sur l'export des affaires",
+        "Recompter les totaux avant la réunion commerciale",
+        "Connecteurs HubSpot : interroger les fiches, faire valider toute écriture par l'administrateur",
+        "Rédiger le commentaire de la revue de pipeline",
+      ],
+      exercise: "Analyser l'export de votre pipeline et préparer le commentaire de votre prochaine revue commerciale.",
+    },
+    {
+      day: 2, title: "Module 8 · Fixer les règles commerciales de l'équipe", duration: '1h30',
+      description: "Écrire ce que l'équipe fait avec quel outil, et ce qui passe par la direction et les RH.",
+      items: [
+        "Un outil principal, et le CRM comme seul lieu de rangement des comptes rendus",
+        "Données tarifaires et prospects : quel outil, sous quelle offre",
+        "Relecture des engagements par la personne qui les exécute",
+        "Dès 50 salariés, passage par les RH avant de publier une charte, pour la consultation du CSE",
+      ],
+      exercise: "Rédiger la page de règles de votre équipe commerciale et la liste des usages à faire valider par la direction.",
+    },
+  ],
+  objectives: [
+    "Choisir l'outil adapté à chaque étape de vente selon votre suite et la sensibilité des données",
+    "Préparer une fiche de rendez-vous datée et sourcée",
+    "Rédiger un compte rendu de découverte où chaque besoin est attribué à son auteur",
+    "Produire une proposition à partir de vos trames, prix reportés à la main depuis l'outil de devis",
+    "Extraire la matrice de conformité d'un appel d'offres avec le passage source de chaque exigence",
+    "Vérifier la conformité d'une séquence de prospection aux règles CNIL",
+  ],
+  guide: {
+    kicker: "Guide terrain",
+    h2: "Un assistant par étape du cycle de vente, et vos prix restent chez vous",
+    lead: "La vente mélange trois matières : l'information publique sur le prospect, l'historique privé du compte et vos conditions commerciales. Chacune appelle un outil et un niveau de protection différents. Un commercial efficace choisit l'assistant selon l'endroit où vit l'information, puis garde la main sur tout ce qui engage l'entreprise : prix, remises, délais.",
+    sections: [
+      {
+        h3: "L'assistant doit aller chercher l'information là où elle vit",
+        paras: [
+          "Le compte rendu du dernier rendez-vous, les échanges avec l'acheteur et les affaires en cours forment le contexte qui manque à un assistant généraliste. Sous Microsoft 365 avec une licence Microsoft 365 Copilot, ce contexte est déjà accessible. Copilot résume un fil Outlook avec le bouton « Résumé par Copilot » et commente un brouillon grâce au coaching par Copilot. Il répond aussi sur une réunion Teams terminée, à condition que la transcription ait été activée.",
+          "Sous Google Workspace, Gemini résume un fil Gmail. La fonction « Prendre des notes pour moi » de Meet dépose dans Drive un compte rendu en français, avec les prochaines étapes. Elle ne gère qu'une langue par réunion : un rendez-vous qui alterne français et anglais donnera des notes incomplètes.",
+          "Côté CRM, HubSpot propose un connecteur officiel pour ChatGPT et un autre pour Claude. L'assistant interroge alors contacts, entreprises et affaires dans la limite des droits de l'utilisateur dans HubSpot. Pour un autre CRM, consultez le catalogue d'applications de votre assistant avant d'annoncer une intégration à l'équipe.",
+        ],
+      },
+      {
+        h3: "Vos conditions commerciales sont la donnée la plus sensible",
+        paras: [
+          "Une grille de remises, une marge par client ou le prix consenti au concurrent du prospect valent plus que n'importe quel fichier de contacts. Ces données restent dans l'offre entreprise de l'outil : ChatGPT Business, Claude Team ou Enterprise, Microsoft 365 Copilot, Gemini dans Workspace. Sur les comptes personnels de ChatGPT et de Vibe (anciennement Le Chat de Mistral), vos échanges servent à l'entraînement tant que le réglage n'a pas été coupé. Sur Claude Free ou Pro, tout dépend du choix fait par l'utilisateur.",
+          "En équipe, une règle simple fonctionne. L'assistant rédige la proposition avec des cases de prix vides, et le commercial y reporte les montants issus de l'outil de devis de l'entreprise.",
+        ],
+      },
+      {
+        h3: "La prospection suit deux régimes juridiques",
+        paras: [
+          "Un assistant rédige une séquence de prospection personnalisée en quelques minutes. Le droit distingue pourtant les destinataires. Pour un professionnel, la CNIL admet l'e-mail sans consentement préalable si le message concerne son métier, s'il a été informé et s'il peut s'y opposer. Une adresse générique du type contact@ sort de ce cadre.",
+          "Pour un particulier, le démarchage téléphonique exige son consentement préalable depuis le 11 août 2026, en application de la loi du 30 juin 2025. Un script d'appel rédigé par l'IA ne modifie pas cette règle : votre liste d'appel doit contenir la preuve de ce consentement.",
+        ],
+      },
+      {
+        h3: "Trois chaînes d'outils reviennent dans les équipes commerciales",
+        paras: [
+          "Chaque chaîne sépare l'information publique, l'information privée et la rédaction. Une vérification humaine se place entre chaque passage.",
+        ],
+        list: [
+          "Préparer un rendez-vous : recherche approfondie de ChatGPT ou Deep Research de Gemini sur l'actualité publique du prospect (rapport annuel, nominations, offres d'emploi), puis synthèse d'une page croisée avec l'historique du CRM.",
+          "Répondre à un appel d'offres : Gemini Notebook, un bloc-notes Copilot ou un projet Claude sur le dossier de consultation, pour extraire les exigences avec la page de chaque citation. Le mémoire technique s'écrit ensuite à partir de vos anciens mémoires, déposés dans le même espace.",
+          "Suivre le pipeline : export des affaires en cours dans Excel, analyse avec Copilot en mode agent ou dans Sheets avec Gemini, puis commentaire rédigé par le responsable des ventes.",
+        ],
+      },
+    ],
+    table: {
+      caption: "Étape de vente, outil conseillé et point de vigilance",
+      headers: ["Étape de vente", "Outil conseillé", "Pourquoi celui-là", "Vigilance"],
+      rows: [
+        ["Préparer un rendez-vous", "Agent Researcher de Microsoft 365 Copilot, Deep Research de Gemini ou recherche approfondie de ChatGPT", "Il croise le web public et, selon l'outil, vos mails et vos fichiers", "Dater chaque information et ouvrir les liens des chiffres."],
+        ["Compte rendu de rendez-vous", "Copilot dans Teams, ou « Prendre des notes pour moi » dans Meet", "La transcription évite de reconstituer l'échange de mémoire", "Annoncer la transcription au client ; une seule langue par réunion dans Meet."],
+        ["Mise à jour du CRM", "Connecteur HubSpot de ChatGPT ou de Claude", "L'assistant lit les fiches dans la limite de vos droits HubSpot", "Faire valider par l'administrateur toute écriture automatique dans le CRM."],
+        ["Séquence de prospection", "Projet ChatGPT, projet Claude ou Gem, avec vos offres et trois e-mails qui ont marché", "Le ton et les arguments restent ceux de l'équipe", "Règles CNIL en B2B ; consentement préalable pour appeler un particulier."],
+        ["Proposition commerciale", "Copilot dans Word à partir de la trame maison, ou Claude dans un projet avec vos propositions gagnées", "L'outil réutilise vos formulations déjà validées", "Prix et remises saisis à la main depuis l'outil de devis."],
+        ["Appel d'offres", "Gemini Notebook, bloc-notes Copilot ou projet Claude sur le dossier de consultation", "Chaque exigence extraite renvoie à son passage", "Contrôler la matrice de conformité ligne à ligne."],
+        ["Revue de pipeline", "Copilot dans Excel ou Gemini dans Sheets", "Tableaux croisés et graphiques sur l'export du CRM", "Refaire un total à la main avant la réunion."],
+      ],
+    },
+    cas: {
+      h3: "Cas pratique : du rendez-vous découverte à la proposition en 48 heures",
+      contexte: "Prenons un ingénieur commercial d'une société de maintenance industrielle, équipée de Microsoft 365 avec des licences Microsoft 365 Copilot. Il sort d'un rendez-vous découverte d'une heure sur Teams avec le directeur technique d'une laiterie. Il doit envoyer une proposition sous 48 heures. Ce scénario est pédagogique.",
+      etapes: [
+        "Au début de la réunion Teams, activez la transcription et annoncez-la aux participants. Sans transcription, Copilot ne pourra plus répondre sur la réunion une fois celle-ci terminée.",
+        "Après la réunion, ouvrez le récapitulatif dans Teams et demandez à Copilot la liste des besoins exprimés, avec le nom de la personne qui les a formulés.",
+        "Ouvrez Microsoft 365 Copilot Chat. Tapez « / » pour citer la réunion, puis la trame de proposition rangée dans SharePoint, et collez le prompt ci-dessous.",
+        "Ouvrez le brouillon dans Word. Reportez les prix depuis votre outil de devis dans les cases laissées vides.",
+        "Avant l'envoi, passez le mail d'accompagnement au coaching par Copilot dans Outlook, qui commente le ton et la clarté.",
+      ],
+      prompt: "Vous êtes ingénieur commercial dans une société de maintenance industrielle.\n\nSources : la transcription de la réunion d'hier avec le directeur technique de la laiterie, et notre trame de proposition « Contrat de maintenance préventive ».\n\nÉtape 1. Dressez le compte rendu de découverte : situation actuelle du site, problèmes cités avec la phrase exacte du client, conséquences chiffrées si le client en a donné, décideurs mentionnés, calendrier, budget évoqué. Pour chaque point, indiquez qui l'a dit. Si un point n'a pas été abordé, écrivez « non abordé ».\n\nÉtape 2. Listez les questions restées sans réponse que je dois poser avant d'envoyer la proposition.\n\nÉtape 3. Remplissez la trame de proposition : le contexte du client avec ses propres mots, notre compréhension de son besoin, la solution découpée en trois lots, le planning d'intervention. Laissez vides toutes les cases de prix et de remise.\n\nRègles : n'ajoutez aucun engagement absent de la transcription, en particulier sur les délais d'intervention et les garanties. Rédigez en français, au vouvoiement, en phrases courtes.",
+      resultat: "Vous obtenez un compte rendu où chaque besoin porte le nom de son auteur, une liste de questions à poser et une proposition aux prix vides. Vérifiez les délais promis et les citations du client, car une transcription se trompe sur les noms propres et les références techniques. Collez ensuite le compte rendu validé dans la fiche du compte, dans le CRM.",
+    },
+    pieges: [
+      { titre: "L'assistant promet ce que l'atelier ne sait pas tenir", texte: "Sur une proposition, l'IA complète volontiers un délai ou une garantie plausible. Ajoutez la règle « aucun engagement absent des sources » dans chaque prompt, et faites relire les engagements par la personne qui les exécutera." },
+      { titre: "La recherche sur le prospect mélange les homonymes", texte: "Deux sociétés au même nom, un dirigeant parti l'an dernier : la recherche approfondie assemble parfois des faits qui ne vont pas ensemble. Donnez le numéro SIREN ou le site du prospect dans le prompt, et vérifiez les nominations sur une source datée." },
+      { titre: "Une séquence personnalisée reste de la prospection", texte: "Personnaliser cent e-mails avec l'IA ne dispense d'aucune règle : identité de l'expéditeur, moyen simple de s'opposer, objet lié au métier du destinataire. Faites valider la séquence et la liste par la personne qui suit les données personnelles dans l'entreprise." },
+      { titre: "Trois assistants dispersent l'historique client", texte: "Quand chaque commercial utilise l'outil de son choix, les échanges se dispersent et personne ne sait ce qui a été envoyé. Fixez un outil principal pour l'équipe et un seul endroit où ranger le compte rendu validé : le CRM." },
+    ],
+  },
+  faq: [
+    { q: "Copilot ou ChatGPT pour une équipe commerciale sous Microsoft 365 ?", a: "Avec une licence Microsoft 365 Copilot, Copilot lit déjà Outlook, Teams et SharePoint, et intervient dans Word et PowerPoint. ChatGPT Business atteint SharePoint et d'autres sources par ses applications, avec l'accord de l'administrateur, et dispose d'un connecteur HubSpot. Le choix dépend de l'endroit où vit votre information commerciale et du CRM que vous utilisez." },
+    { q: "L'IA peut-elle remplir notre CRM automatiquement ?", a: "HubSpot propose des connecteurs officiels pour ChatGPT et pour Claude, qui respectent les droits de chaque utilisateur. Pour un autre CRM, vérifiez le catalogue d'applications de l'assistant. Une écriture automatique au-delà de ces connecteurs relève d'un projet d'intégration. Dans tous les cas, un humain relit les champs avant validation." },
+    { q: "Peut-on transcrire un rendez-vous client pour que l'IA en fasse le compte rendu ?", a: "Teams et Meet affichent un avertissement quand la transcription démarre. Annoncez-la aussi de vive voix et dites à quoi elle sert. La transcription contient des données personnelles du client : conservez-la selon la durée prévue par votre politique interne, puis supprimez-la." },
+    { q: "Quelles règles pour la prospection par e-mail rédigée avec l'IA ?", a: "En B2B, la CNIL admet l'e-mail sans consentement préalable si le message concerne le métier du destinataire, qui doit être informé et pouvoir s'opposer. Envers un particulier, l'e-mail de prospection demande en principe son consentement. Pour le téléphone, le consentement préalable du particulier est obligatoire depuis le 11 août 2026." },
+    { q: "Quel outil pour les appels d'offres publics ?", a: "Un outil ancré sur les documents du dossier de consultation : Gemini Notebook, un bloc-notes Copilot ou un projet Claude. Leur intérêt tient à l'extraction des exigences avec le passage source. Les bordereaux de prix se remplissent à la main, depuis vos outils de chiffrage." },
+    { q: "Nos commerciaux utilisent déjà ChatGPT sur leur téléphone. Que faire ?", a: "Faites l'inventaire des usages, puis basculez-les vers une offre entreprise. Si l'entreprise compte au moins 50 salariés, parlez-en aux RH avant de publier une charte. La cour d'appel de Paris a jugé le 21 mai 2026 qu'autoriser ChatGPT et l'encadrer par une charte constituait une introduction de technologie, soumise à la consultation du CSE." },
+    { q: "Comment financer cette formation pour une équipe commerciale ?", a: "Masteria est certifié Qualiopi, et la formation de deux jours peut être prise en charge par l'OPCO de l'entreprise, selon ses critères. En intra, nous accueillons jusqu'à 12 participants, au tarif de 1 980 € HT par jour." },
+  ],
+  sources: [
+    { name: "Microsoft Support : résumer une conversation e-mail avec Copilot dans Outlook", url: "https://support.microsoft.com/fr-fr/office/r%C3%A9sumer-une-conversation-e-mail-avec-copilot-dans-outlook-a79873f2-396b-46dc-b852-7fe5947ab640" },
+    { name: "Microsoft Support : coaching par e-mail avec Copilot dans Outlook", url: "https://support.microsoft.com/fr-fr/office/coaching-par-e-mail-avec-microsoft-365-copilot-dans-outlook-91a3cd56-1586-4a31-85c7-2eb8cdb02405" },
+    { name: "Microsoft Support : rattraper les réunions avec Copilot dans Teams", url: "https://support.microsoft.com/fr-fr/office/utiliser-copilot-dans-les-r%C3%A9unions-microsoft-teams-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1" },
+    { name: "Aide Google Meet : fonctionnalité Prendre des notes pour moi", url: "https://support.google.com/meet/answer/14754931?hl=fr" },
+    { name: "Aide Google Meet : langues disponibles pour Workspace avec Gemini", url: "https://support.google.com/meet/answer/14925782?hl=fr" },
+    { name: "HubSpot : connecteur HubSpot pour Claude", url: "https://www.hubspot.com/claude/connector" },
+    { name: "OpenAI Help Center : company knowledge dans ChatGPT Business", url: "https://help.openai.com/en/articles/12628342-company-knowledge-in-chatgpt-business-enterprise-and-edu" },
+    { name: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel" },
+    { name: "economie.gouv.fr : respecter la réglementation sur le démarchage téléphonique", url: "https://www.economie.gouv.fr/entreprises/developper-son-entreprise/innover-et-numeriser-son-entreprise/professionnels-comment-respecter-la-reglementation-sur-le-demarchage" },
+    { name: "Mistral Help Center : refuser l'usage de ses données pour l'entraînement", url: "https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training" },
+    { name: "Village de la Justice : consultation du CSE et outils d'IA, décisions 2025-2026", url: "https://www.village-justice.com/articles/consultation-cse-outils-intelligence-artificielle-que-les-juges-ont-decide-2025,59066.html" },
+  ],
+}

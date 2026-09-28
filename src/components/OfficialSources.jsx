@@ -50,11 +50,11 @@ export default function OfficialSources({ tool, extra }) {
         </p>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
           <li>
-            <a href="https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation" target="_blank" rel="noopener noreferrer" style={linkStyle}>Qualiopi — Ministère du Travail</a>
+            <a href="https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation" target="_blank" rel="noopener noreferrer" style={linkStyle}>Qualiopi, Ministère du Travail</a>
             <span style={noteStyle}> : la certification qualité qui rend nos formations finançables.</span>
           </li>
           <li>
-            <a href="https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco" target="_blank" rel="noopener noreferrer" style={linkStyle}>Les OPCO — Ministère du Travail</a>
+            <a href="https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco" target="_blank" rel="noopener noreferrer" style={linkStyle}>Les OPCO, Ministère du Travail</a>
             <span style={noteStyle}> : le fonctionnement du financement de la formation par votre opérateur de compétences.</span>
           </li>
           {vendor && (

@@ -15,7 +15,9 @@
  *   - Les paragraphes peuvent contenir du HTML inline (strong, a, em).
  */
 
-export const BLOG_ARTICLES = [
+import { BLOG_REFONTE } from './blog-refonte/index.js'
+
+const BLOG_ARTICLES_BASE = [
   {
     slug: 'ia-cabinet-expertise-comptable',
     tag: 'Métier',
@@ -139,7 +141,7 @@ export const BLOG_ARTICLES = [
       { label: "Automatisation documentaire IA", href: '/automatisation-documentaire-ia' },
       { label: "IA pour les services et le conseil", href: '/ia-secteurs/ia-services-conseil' },
       { label: "Audit IA : ce qu'il contient et ce qu'il coûte", href: '/blog/audit-ia-entreprise-methode-prix' },
-      { label: "Formation IA finance, analyse et reporting", href: '/blog/formation-ia-finance-analyse-reporting' },
+      { label: "Formation IA finance, analyse et reporting", href: '/formation-ia-finance' },
     ],
     extraJsonLd: [
       {
@@ -294,7 +296,7 @@ export const BLOG_ARTICLES = [
       { label: "Prix d'un projet IA : les fourchettes", href: '/prix-projet-ia' },
       { label: "Agence de développement IA", href: '/agence-developpement-ia' },
       { label: "Audit IA : ce qu'il contient et ce qu'il coûte", href: '/blog/audit-ia-entreprise-methode-prix' },
-      { label: "Piloter un projet IA en entreprise", href: '/blog/formation-piloter-projet-ia-entreprise' },
+      { label: "Piloter un projet IA en entreprise", href: '/formation-ia-gestion-de-projet' },
     ],
     extraJsonLd: [
       {
@@ -463,7 +465,7 @@ export const BLOG_ARTICLES = [
       { label: "Agence de développement IA", href: '/agence-developpement-ia' },
       { label: "Sécurité de Claude en entreprise", href: '/securite-claude-entreprise' },
       { label: "POC IA : les 5 murs avant la production", href: '/blog/poc-ia-passer-en-production' },
-      { label: "Glossaire IA : 83 termes expliqués", href: '/blog/glossaire-ia' },
+      { label: "Glossaire IA : 83 termes expliqués", href: '/glossaire-ia' },
     ],
     extraJsonLd: [
       {
@@ -1707,7 +1709,7 @@ export const BLOG_ARTICLES = [
       { label: "Agence de développement IA : faire construire vos agents", href: '/agence-developpement-ia' },
       { label: "Chatbot IA sur mesure", href: '/chatbot-ia-sur-mesure' },
       { label: "Agents IA en entreprise : 20 cas d'usage", href: '/agents-ia-entreprise' },
-      { label: "Meilleur agent IA : le comparatif (agents texte)", href: '/blog/meilleur-agent-ia' },
+      { label: "Meilleur agent IA : le comparatif (agents texte)", href: '/meilleur-agent-ia' },
       { label: "Gouvernance de l'IA et conformité AI Act", href: '/gouvernance-ia' },
     ],
     extraJsonLd: [
@@ -2454,7 +2456,7 @@ export const BLOG_ARTICLES = [
       { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
       { label: "Quel outil IA choisir : le comparatif", href: '/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir' },
       { label: "Financer sa formation IA via son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
-      { label: "Formation IA Paris : entreprises, OPCO franciliens", href: '/blog/formation-ia-paris' },
+      { label: "Formation IA Paris : entreprises, OPCO franciliens", href: '/formation-ia-paris' },
       { label: "Nous contacter", href: '/contact' },
     ],
   },
@@ -2930,16 +2932,16 @@ export const BLOG_ARTICLES = [
       title: "Formez vos équipes aux appels d'offres assistés par l'IA",
       desc: "Notre formation dédiée accompagne vos équipes sur leurs propres DCE, de la décision go/no-go à la relecture conformité. Certifiée Qualiopi, finançable OPCO, animée sur vos documents réels.",
       buttons: [
-        { label: "Découvrir la formation", href: '/formation-chatgpt-commercial', primary: true },
+        { label: "Découvrir la formation", href: '/formation-ia-marche-public', primary: true },
         { label: "Nous contacter", href: '/contact' },
       ],
     },
     internalLinks: [
-      { label: "Formation IA pour les appels d'offres", href: '/formation-chatgpt-commercial' },
+      { label: "Formation IA pour les marchés publics et appels d'offres", href: '/formation-ia-marche-public' },
       { label: "Financer une formation IA via son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Custom GPT entreprise : créer ses propres assistants ChatGPT", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
-      { label: "Formation IA commerciaux : prospection, relance, closing", href: '/blog/formation-ia-commerciaux-prospection-relance' },
+      { label: "Formation IA commerciaux : prospection, relance, closing", href: '/formation-ia-commercial' },
     ],
   },
 
@@ -3949,7 +3951,7 @@ export const BLOG_ARTICLES = [
     },
     internalLinks: [
       { label: "Formation IA à Paris (page dédiée)", href: '/formation-ia-paris' },
-      { label: "Formation IA à Lyon", href: '/blog/formation-ia-lyon' },
+      { label: "Formation IA à Lyon", href: '/formation-ia-lyon' },
       { label: "Financer sa formation IA via son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
       { label: "Nous contacter", href: '/contact' },
@@ -5609,10 +5611,10 @@ export const BLOG_ARTICLES = [
     },
     internalLinks: [
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
-      { label: "Formation IA pour les RH", href: '/blog/formation-ia-ressources-humaines' },
+      { label: "Formation IA pour les RH", href: '/formation-ia-ressources-humaines' },
       { label: "Sécurité IA et RGPD en entreprise", href: '/blog/securite-ia-entreprise-rgpd' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
-      { label: "Formation IA dirigeants", href: '/blog/formation-ia-dirigeants-ceo-comex' },
+      { label: "Formation IA dirigeants", href: '/formation-ia-dirigeants' },
     ],
   },
 
@@ -6920,6 +6922,28 @@ export const BLOG_ARTICLES = [
     ],
   },
   */
+
+/* ─── Articles réécrits ──────────────────────────────────────────
+   Les fichiers de ./blog-refonte/ remplacent les champs qu'ils fournissent.
+   Leurs sources sont ajoutées en fin d'article, sous forme de liste de liens. */
+
+function withSources(article) {
+  const { sources, ...rest } = article
+  if (!sources?.length) return rest
+  const escape = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;')
+  return {
+    ...rest,
+    blocks: [
+      ...(rest.blocks || []),
+      { type: 'h2', text: 'Sources' },
+      { type: 'ul', items: sources.map(s => `<a href="${escape(s.url)}" target="_blank" rel="noopener noreferrer">${escape(s.name)}</a>`) },
+    ],
+  }
+}
+
+export const BLOG_ARTICLES = BLOG_ARTICLES_BASE.map(a =>
+  BLOG_REFONTE[a.slug] ? withSources({ ...a, ...BLOG_REFONTE[a.slug] }) : a
+)
 
 /* ─── Helpers ─────────────────────────────────────────────────── */
 

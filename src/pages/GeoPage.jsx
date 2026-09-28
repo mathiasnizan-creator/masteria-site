@@ -4,9 +4,11 @@ import {
   ChevronDown, Building2, Users, Phone, CalendarCheck, FileText,
   Briefcase, GraduationCap, Sparkles, ShieldCheck, Globe, Train,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, use } from 'react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import TerrainGuide from '../components/TerrainGuide'
+import { geoGuidePromise } from '../data/terrain-guides'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
@@ -39,6 +41,9 @@ export default function GeoPage() {
   const location = useLocation()
   const isMobile = useIsMobile()
   const slug = location.pathname.replace(/^\//, '')
+  // Guide terrain propre à la page outil × ville (src/data/geo-guides/<slug>.js)
+  const guidePromise = geoGuidePromise(slug)
+  const guide = guidePromise ? use(guidePromise) : null
 
   const tool = GEO_TOOLS.find(t => slug.startsWith(`formation-${t.slug}-`))
   const city = tool ? GEO_CITIES.find(c => slug === geoSlug(tool.slug, c.slug)) : null
@@ -55,14 +60,14 @@ export default function GeoPage() {
   const isIntraOnly = city.intraOnly
 
   const h1 = isIntraOnly
-    ? `Formation ${tool.shortName} ${city.nameLoc} — intra-entreprise sur mesure`
-    : `Formation ${tool.shortName} ${city.nameLoc} — intra ou accompagnement individuel`
+    ? `Formation ${tool.shortName} ${city.nameLoc} : intra-entreprise sur mesure`
+    : `Formation ${tool.shortName} ${city.nameLoc} : intra ou accompagnement individuel`
   const metaTitle = `Formation ${tool.shortName} ${city.name} | ${isIntraOnly ? 'Intra-entreprise' : 'Intra & individuel'} | Masteria`
   // Formulations calibrées pour rester sous 158 caractères, y compris dans le pire
   // cas « Claude (Anthropic) » + « à Marseille » (sinon troncature en SERP).
-  const metaDesc = isIntraOnly
+  const metaDesc = guide?.metaDesc ?? (isIntraOnly
     ? `Formation ${tool.name} ${city.nameLoc} : intra-entreprise dans vos locaux, programme sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`
-    : `Formation ${tool.name} ${city.nameLoc} : intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`
+    : `Formation ${tool.name} ${city.nameLoc} : intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`)
   const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug).slice(0, 5)
   const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug)
 
@@ -83,7 +88,7 @@ export default function GeoPage() {
   }
 
   // FAQ : combine tool-specific + city-specific
-  const faqItems = [
+  const faqItems = guide?.faq ?? [
     ...tool.faqLocal(city),
     ...(city.additionalFAQ || []),
     {
@@ -149,7 +154,7 @@ export default function GeoPage() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     '@id': `https://www.master-ia.fr/${slug}#service-${city.slug}`,
-    name: `Masteria ${city.nameLoc} — formation ${tool.shortName}`,
+    name: `Masteria ${city.nameLoc}, formation ${tool.shortName}`,
     image: 'https://www.master-ia.fr/assets/logo-square.png',
     url: `https://www.master-ia.fr/${slug}`,
     telephone: '+33667754128',
@@ -288,12 +293,17 @@ export default function GeoPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {guide ? 'septembre' : 'août'} 2026
           </p>
+
+          {guide?.intro && (
+            <p style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 720 }}>{guide.intro}</p>
+          )}
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
             {[
+              guide?.guide ? ['Guide terrain', '#guide'] : null,
               city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
               city.localCases?.length ? ["Cas d'usage", '#cas-usage'] : null,
               ['Programme', '#programme'],
@@ -443,6 +453,9 @@ export default function GeoPage() {
           </div>
         </section>
       )}
+
+      {/* ── GUIDE TERRAIN (contenu propre à la page outil × ville) ── */}
+      <TerrainGuide guide={guide?.guide} color={tool.color} background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
 
       {/* ── PROGRAMME ── */}
       <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
@@ -639,7 +652,7 @@ export default function GeoPage() {
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <FadeIn>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 28, fontWeight: 900, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
-              Questions fréquentes — Formation {tool.shortName} {city.nameLoc}
+              Questions fréquentes : formation {tool.shortName} {city.nameLoc}
             </h2>
             {faqItems.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
           </FadeIn>
