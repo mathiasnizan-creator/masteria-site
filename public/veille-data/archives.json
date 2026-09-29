@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-28",
-    "totalEditions": 44,
-    "totalItems": 598,
-    "totalSources": 874
+    "derniereDate": "2026-09-29",
+    "totalEditions": 45,
+    "totalItems": 611,
+    "totalSources": 893
   },
   "editions": [
+    {
+      "date": "2026-09-29",
+      "dateCourte": "mar. 29 sept.",
+      "dateAffichee": "29 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Vos agents servent aussi ceux qui vous attaquent",
+      "chapeau": "AMD rachète World Labs, la start-up de Fei-Fei Li, pour 8,2 milliards de dollars, Anthropic sort Claude Sonnet 5.5 et OpenAI renonce à publier son modèle Astra pour raisons de sûreté. Le même jour, une voix d'avocat clonée coûte 95 millions d'euros à une banque italienne et des agents volent 600 000 cartes bancaires en quelques heures : l'attaquant dispose désormais des mêmes agents que vos équipes.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "The Verge",
+        "Maddyness",
+        "ZDNet",
+        "Numerama",
+        "Frandroid",
+        "Platformer",
+        "La Tribune",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "Hugging Face"
+      ],
+      "items": [
+        {
+          "t": "AMD rachète World Labs, la start-up de Fei-Fei Li, pour 8,2 milliards de dollars",
+          "z": "une",
+          "id": "amd-rachete-world-labs-la-start-up-de-fei-fei-li-pour-8-2"
+        },
+        {
+          "t": "Mistral ouvre une antenne à Munich pour accélérer son passage à l'échelle industrielle",
+          "z": "europe",
+          "id": "mistral-ouvre-une-antenne-a-munich-pour-accelerer-son"
+        },
+        {
+          "t": "Wikipédia en français interdit désormais l'IA générative pour rédiger ses articles",
+          "z": "europe",
+          "id": "wikipedia-en-francais-interdit-desormais-l-ia-generative"
+        },
+        {
+          "t": "Une voix d'avocat clonée par IA coûte 95 millions d'euros à une banque italienne",
+          "z": "europe",
+          "id": "une-voix-d-avocat-clonee-par-ia-coute-95-millions-d-euros-a"
+        },
+        {
+          "t": "Anthropic lance Claude Sonnet 5.5, plus rapide et moins coûteux",
+          "z": "international",
+          "id": "anthropic-lance-claude-sonnet-5-5-plus-rapide-et-moins"
+        },
+        {
+          "t": "OpenAI renonce à publier son modèle Astra à la veille de sa conférence développeurs",
+          "z": "international",
+          "id": "openai-renonce-a-publier-son-modele-astra-a-la-veille-de-sa"
+        },
+        {
+          "t": "Nvidia lance une plateforme ouverte pour contenir les agents qui déraillent",
+          "z": "international",
+          "id": "nvidia-lance-une-plateforme-ouverte-pour-contenir-les"
+        },
+        {
+          "t": "Bain estime qu'il faudra 6 000 milliards de dollars de revenus annuels pour rentabiliser les data centers de l'IA",
+          "z": "international",
+          "id": "bain-estime-qu-il-faudra-6-000-milliards-de-dollars-de"
+        },
+        {
+          "t": "ByteDance concentre à lui seul un cinquième de la capacité de data centers en Chine",
+          "z": "chine",
+          "id": "bytedance-concentre-a-lui-seul-un-cinquieme-de-la-capacite"
+        },
+        {
+          "t": "Samsung investit un milliard de dollars dans les data centers pour l'IA",
+          "z": "chine",
+          "id": "samsung-investit-un-milliard-de-dollars-dans-les-data"
+        },
+        {
+          "t": "H Company publie Holo4, une famille de modèles pour agents capables d'utiliser un ordinateur",
+          "z": "recherche",
+          "id": "h-company-publie-holo4-une-famille-de-modeles-pour-agents"
+        },
+        {
+          "t": "L'introduction en Bourse du fondeur chinois CanSemi sursouscrite plus de 2 300 fois",
+          "z": "bref",
+          "id": "l-introduction-en-bourse-du-fondeur-chinois-cansemi"
+        },
+        {
+          "t": "Google conteste la tentative de l'UE d'ouvrir Android aux IA concurrentes",
+          "z": "bref",
+          "id": "google-conteste-la-tentative-de-l-ue-d-ouvrir-android-aux"
+        }
+      ]
+    },
     {
       "date": "2026-09-28",
       "dateCourte": "lun. 28 sept.",

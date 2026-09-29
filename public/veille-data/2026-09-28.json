@@ -227,7 +227,12 @@
     "titreEditorial": "L'IA au téléphone, la dette au bilan",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-29",
+    "dateLongue": "mardi 29 septembre 2026",
+    "titreEditorial": "Vos agents servent aussi ceux qui vous attaquent",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 16,
   "nbSignes": 9512,

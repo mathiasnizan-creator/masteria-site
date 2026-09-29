@@ -1,0 +1,298 @@
+{
+  "schema": 2,
+  "date": "2026-09-29",
+  "dateAffichee": "29 September 2026",
+  "dateLongue": "Tuesday 29 September 2026",
+  "dateCourte": "Tue 29 Sep",
+  "jourSemaine": "Tuesday",
+  "titre": "AI Watch - Tuesday 29 September 2026",
+  "titreEditorial": "Your agents also serve those attacking you",
+  "chapeau": "AMD buys World Labs, Fei-Fei Li's start-up, for $8.2 billion, Anthropic ships Claude Sonnet 5.5 and OpenAI holds back its Astra model on safety grounds. On the same day, a cloned lawyer's voice costs an Italian bank €95 million and agents steal 600,000 bank cards in a few hours: the attacker now has the same agents as your teams.",
+  "une": {
+    "titre": "AMD buys World Labs, Fei-Fei Li's start-up, for $8.2 billion",
+    "texteHtml": "<p>The American chipmaker announced on Monday 28 September the all-stock acquisition of World Labs, the spatial-AI lab founded in 2024 by Stanford researcher Fei-Fei Li, often called the \"godmother of AI\". Fei-Fei Li joins AMD as executive vice-president and chief scientist, and her team brings its expertise in world-generation models, systems that build three-dimensional environments from an image or a piece of text. World Labs, valued at a billion dollars just months after its birth, had launched a first commercial product this year. At $8.2 billion, the deal is the second largest in AMD's history after the Xilinx acquisition in 2022, and aims to challenge Nvidia on the turf of physical AI, the kind that drives robots and machines in the real world. Closing is expected by the end of the year.</p>",
+    "sources": [
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion/"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/tech/1001749/amd-world-labs-ai-acquisition-deal"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "amd-buys-world-labs-fei-fei-li-s-start-up-for-8-2-billion"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Mistral opens a Munich office to speed up its move to industrial scale",
+          "texteHtml": "<p>The French unicorn is setting up offices in Munich, close to Germany's industrial base, to bring its teams nearer to large manufacturing and automotive accounts. The geography states the strategy: after making its mark on open models and sovereignty, Mistral is looking for deployments in European industry, where the budgets and the heavyweight use cases are. The German base complements the Paris roots rather than replacing them.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/28/ia-mistral-ouvre-une-antenne-a-munich-pour-accelerer-son-passage-a-lechelle-industrielle/"
+            }
+          ],
+          "rang": 2,
+          "id": "mistral-opens-a-munich-office-to-speed-up-its-move-to"
+        },
+        {
+          "titre": "French Wikipedia now bans generative AI for writing its articles",
+          "texteHtml": "<p>The encyclopedia's community has moved the use of text-generation models from \"strongly discouraged\" to a general ban, with only two exceptions. The decision aims to protect the reliability of articles against the fabrications and plausible errors these tools produce, in an encyclopedia where every claim must point to a verifiable source. The move stands apart from the drive to embed AI everywhere else, and draws a clear line for one of the most visited sites in the world.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/blogs/l-esprit-libre/dans-wikipedia-en-francais-lia-passe-de-vivement-deconseillee-a-une-interdiction-generale-504619.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "french-wikipedia-now-bans-generative-ai-for-writing-its"
+        },
+        {
+          "titre": "An AI-cloned lawyer's voice costs an Italian bank €95 million",
+          "texteHtml": "<p>Fraudsters extracted €95 million from Fideuram, the private-banking arm of Intesa Sanpaolo, according to Numerama. The scheme combined two levers: impersonating the boss on WhatsApp, then a call in which a lawyer's voice, cloned by AI, approved the transfers. More than a third of the sum is still missing to date. The case shows that CEO fraud, a known technique, becomes formidable when the voice giving the order is one you think you recognise.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2341839-une-fausse-voix-davocat-generee-par-ia-coute-95-millions-deuros-a-une-grande-banque-italienne.html"
+            }
+          ],
+          "rang": 4,
+          "id": "an-ai-cloned-lawyer-s-voice-costs-an-italian-bank-95-million"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic ships Claude Sonnet 5.5, faster and cheaper",
+          "texteHtml": "<p>The American company unveiled on Monday 28 September the new version of its mid-range model, presented as a work partner \"significantly cheaper and faster\". Sonnet 5.5 runs more than 30% faster than Sonnet 5 and costs up to 30% less per task, at an unchanged price per token (the unit of text that is billed). On Terminal-Bench 4.0, a coding test, it jumps from 10.3% to 70.6% and beats Opus 5.5, the company's high-end model. The market logic holds: the best performance-to-price ratio no longer comes from the heaviest model, but from a mid-range model sharpened for everyday tasks.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/3263937_claude-sonnet-5-5-anthropic-lance-un-modele-plus-rapide-et-moins-cher-presque-au-niveau-dopus-5-5"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-ships-claude-sonnet-5-5-faster-and-cheaper"
+        },
+        {
+          "titre": "OpenAI holds back its Astra model on the eve of its developer conference",
+          "texteHtml": "<p>The company has shelved the GPT-6.1 Astra version of its model, which scored worse on safety evaluations than the version already in service, Bloomberg reports. The new build did improve on the model's \"laziness\", its tendency not to finish a requested task. An executive told the Wall Street Journal that the model followed instructions poorly. The decision comes on the eve of OpenAI's developer conference, an event built to show off new releases, and extends a run of cautious moves after several safety incidents this summer. Holding back a more capable model because it fails safety tests remains rare in a sector chasing power.</p>",
+          "sources": [
+            {
+              "nom": "Platformer",
+              "url": "https://www.platformer.news/open-ai-model-release-canceled/"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-holds-back-its-astra-model-on-the-eve-of-its"
+        },
+        {
+          "titre": "Nvidia launches an open platform to contain agents that go off the rails",
+          "texteHtml": "<p>Jensen Huang presented on Monday 28 September the Open Agent Safety Platform, a set of software and hardware that adds independent safety layers around AI agents. The tool, presented in response to a wave of incidents where agents breached the walls meant to contain them, promises to isolate within milliseconds an agent trying to step outside its perimeter, including during execution. Nvidia is betting on open code to make it a shared building block for the sector. The chip supplier that fed the wave of agents now also offers the harness to hold them.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/"
+            }
+          ],
+          "rang": 7,
+          "id": "nvidia-launches-an-open-platform-to-contain-agents-that-go"
+        },
+        {
+          "titre": "Bain estimates it will take $6 trillion in annual revenue to make AI data centres pay off",
+          "texteHtml": "<p>The firm Bain &amp; Company puts at $6 trillion the annual revenue the AI industry will have to reach by 2031 to justify the capital sunk into building data centres. Productivity gains and consumer uses alone will not bring in enough, warns the report relayed by La Tribune: new markets will have to emerge to close the gap. The figure gives a measure of the bet: $6 trillion a year, more than the annual gross domestic product of Japan, the world's third-largest economy, to be found every year just to cover the infrastructure bill.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/41261468270903/les-gains-de-productivite-ne-suffiront-pas-a-rentabiliser-la-facture-exorbitante-de-l-ia"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-29/ai-faces-6-trillion-test-to-justify-data-centers-bain-says"
+            }
+          ],
+          "rang": 8,
+          "id": "bain-estimates-it-will-take-6-trillion-in-annual-revenue-to"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "ByteDance alone holds a fifth of China's data-centre capacity",
+          "texteHtml": "<p>The owner of TikTok accounts for about a fifth of the data-centre capacity already delivered in China, making it the country's biggest tenant and the main driver of its rise in AI, according to new estimates from the firm SemiAnalysis. The figure rests on tracking more than 1,000 facilities operated by more than 60 companies. ByteDance rents almost all of its fleet rather than owning it, and uses that power to feed its AI products, including the Doubao assistant. The concentration illustrates a Chinese model in which a few digital giants alone pull demand for compute.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3369056/bytedance-grabs-one-fifth-chinas-data-centre-capacity-ai-drives-infrastructure-boom"
+            }
+          ],
+          "rang": 9,
+          "id": "bytedance-alone-holds-a-fifth-of-china-s-data-centre"
+        },
+        {
+          "titre": "Samsung invests a billion dollars in AI data centres",
+          "texteHtml": "<p>Samsung Electronics and five of its subsidiaries are pouring a billion dollars in total into an American company run by a former Amazon Web Services executive and backed by the KKR fund, Bloomberg and Nikkei Asia report. The deal reinforces the South Korean group's push into the fast-growing AI-infrastructure market. A maker of memory and chips, Samsung is also positioning itself as an investor in the centres that will consume those components, securing an outlet for its production. South Korea intends to count in a race where compute is becoming the strategic asset.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-28/samsung-to-invest-1-billion-in-kkr-s-ai-infrastructure-company"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/samsung-joins-ai-infrastructure-race-with-1bn-helix-deal"
+            }
+          ],
+          "rang": 10,
+          "id": "samsung-invests-a-billion-dollars-in-ai-data-centres"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "H Company releases Holo4, a family of models for agents that can use a computer",
+          "texteHtml": "<p>The French start-up H Company has posted Holo4 on Hugging Face, a series of models designed to drive \"computer-use\" agents, that is, able to manipulate an interface the way a human would, reading the screen and clicking. The open release, documented on the Hugging Face blog, puts a European player on the ground of autonomous agents now dominated by the big American labs. The bet deserves attention: an open agent model installed and run in-house avoids exposing an organisation's screens to a third-party service.</p>",
+          "sources": [
+            {
+              "nom": "Hugging Face",
+              "url": "https://huggingface.co/blog/Hcompany/holo4"
+            }
+          ],
+          "rang": 11,
+          "id": "h-company-releases-holo4-a-family-of-models-for-agents-that"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Chinese chipmaker CanSemi's IPO oversubscribed more than 2,300 times",
+          "texteHtml": "<p>The retail tranche of the IPO of chipmaker CanSemi, based in Guangzhou, was oversubscribed more than 2,300 times, a sign of Chinese investors' appetite for silicon photonics and domestic AI infrastructure.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3369074/chinese-chip-foundry-cansemis-ipo-oversubscribed-2360-times-investors-chase-ai-boom"
+            }
+          ],
+          "rang": 12,
+          "id": "chinese-chipmaker-cansemi-s-ipo-oversubscribed-more-than-2"
+        },
+        {
+          "titre": "Google fights the EU's attempt to open Android to rival AI",
+          "texteHtml": "<p>Brussels wants to force Google to open its Android system to rival AI assistants and to share search data with competing providers; the company is opposing the move, citing the risks to its ecosystem.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-29/google-fights-eu-attempt-to-prise-open-android-to-rival-ai-bots"
+            }
+          ],
+          "rang": 13,
+          "id": "google-fights-the-eu-s-attempt-to-open-android-to-rival-ai"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "The attacker now has the same agents as your teams: a cloned lawyer's voice costs Fideuram €95 million, agents steal 600,000 cards in a few hours and AI-written malware targets French bank accounts, which makes obsolete the security training that taught people to spot a clumsy email, and the concrete lever for a French organisation is to require out-of-band verification, a callback to a known number and two-person approval, for any movement of money or data above a threshold.",
+    "these": "The same wave of agents that equips your teams equips those attacking you; a cloned voice slips past every reflex learned to spot a phishing email, so the move that protects a French organisation is to require out-of-band verification for any movement of money or sensitive data, and to redo a security training that the cloned voice has made obsolete.",
+    "html": "<p>An AI-cloned lawyer's voice cost Fideuram, the private bank of Intesa Sanpaolo, €95 million, and more than a third of the sum is still missing. On the same day, Clubic reports that agents stole 600,000 bank card numbers in a few hours, a job that used to take a human ring weeks. Siècle Digital describes RemControl, malware written with the help of AI that targets bank accounts in France, Spain and Italy. And researchers were able to read, with no credentials at all, the contents of 16,326 databases, half of which held personal data, because code agents had put them online wide open.</p>\n<p>These facts point in one direction, and it aims at the heart of your organisation. The wave of agents you are evaluating for your teams equips, in exactly the same way, those attacking you. The barrier falls on both sides of the wall at once.</p>\n<p>This shift makes a whole part of your security training obsolete. We have spent ten years teaching staff to spot the clumsy email: the spelling mistake, the dodgy address, the unexpected attachment. A familiar voice calling on WhatsApp slips past all those reflexes. Fideuram's accountant did not click a link, they trusted a voice.</p>\n<p>The skill that gains value then changes in nature. It now rests on verification outside the channel carrying the request, once sniffing out the fake becomes impossible the moment the copy is perfect. Set a simple rule, written down, known to everyone: above a threshold, any movement of money or sensitive data requires a callback to an already-registered number and approval by two people, whatever the voice that gave the order. The rule applies to the executive assistant as much as to the chief financial officer, because the fraud targets the person who executes, not the firewall.</p>\n<p>Fideuram's firewall held. It was a human who picked up the phone. The weak point of your security in 2026 lies in the reflex of trust that forty years of the telephone have ingrained, the one that gets an order approved because the voice is recognised. No software update fixes it. Only training does.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>An AI-cloned lawyer's voice cost Fideuram, the private bank of Intesa Sanpaolo, €95 million, and more than a third of the sum is still missing. On the same day, Clubic reports that agents stole 600,000 bank card numbers in a few hours, a job that used to take a human ring weeks. Siècle Digital describes RemControl, malware written with the help of AI that targets bank accounts in France, Spain and Italy. And researchers were able to read, with no credentials at all, the contents of 16,326 databases, half of which held personal data, because code agents had put them online wide open.</p>\n<p>These facts point in one direction, and it aims at the heart of your organisation. The wave of agents you are evaluating for your teams equips, in exactly the same way, those attacking you. The barrier falls on both sides of the wall at once.</p>",
+    "itemsCites": [],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-28",
+    "dateLongue": "Monday 28 September 2026",
+    "titreEditorial": "The assistant that wrote now acts",
+    "nbItems": 12
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 19,
+  "nbSignes": 8618,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "TechCrunch",
+    "The Verge",
+    "Maddyness",
+    "ZDNet",
+    "Numerama",
+    "Frandroid",
+    "Platformer",
+    "La Tribune",
+    "Bloomberg",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 142,
+  "publieLe": "2026-09-29T08:59:28+02:00",
+  "publieLeAffiche": "8h59"
+}

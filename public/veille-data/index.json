@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-28",
-    "totalEditions": 44,
-    "totalItems": 598,
-    "totalSources": 874
+    "derniereDate": "2026-09-29",
+    "totalEditions": 45,
+    "totalItems": 611,
+    "totalSources": 893
   },
   "editions": [
+    {
+      "date": "2026-09-29",
+      "dateAffichee": "29 septembre 2026",
+      "dateCourte": "mar. 29 sept.",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Vos agents servent aussi ceux qui vous attaquent",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-28",
       "dateAffichee": "28 septembre 2026",

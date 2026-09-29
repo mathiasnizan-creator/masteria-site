@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-28",
-    "totalEditions": 29,
-    "totalItems": 395,
-    "totalSources": 562
+    "derniereDate": "2026-09-29",
+    "totalEditions": 30,
+    "totalItems": 408,
+    "totalSources": 581
   },
   "editions": [
+    {
+      "date": "2026-09-29",
+      "dateAffichee": "29 September 2026",
+      "dateCourte": "Tue 29 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Your agents also serve those attacking you",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-28",
       "dateAffichee": "28 September 2026",

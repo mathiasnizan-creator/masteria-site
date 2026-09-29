@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-28",
-    "totalEditions": 29,
-    "totalItems": 395,
-    "totalSources": 562
+    "derniereDate": "2026-09-29",
+    "totalEditions": 30,
+    "totalItems": 408,
+    "totalSources": 581
   },
   "editions": [
+    {
+      "date": "2026-09-29",
+      "dateCourte": "Tue 29 Sep",
+      "dateAffichee": "29 September 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Your agents also serve those attacking you",
+      "chapeau": "AMD buys World Labs, Fei-Fei Li's start-up, for $8.2 billion, Anthropic ships Claude Sonnet 5.5 and OpenAI holds back its Astra model on safety grounds. On the same day, a cloned lawyer's voice costs an Italian bank €95 million and agents steal 600,000 bank cards in a few hours: the attacker now has the same agents as your teams.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "The Verge",
+        "Maddyness",
+        "ZDNet",
+        "Numerama",
+        "Frandroid",
+        "Platformer",
+        "La Tribune",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "Hugging Face"
+      ],
+      "items": [
+        {
+          "t": "AMD buys World Labs, Fei-Fei Li's start-up, for $8.2 billion",
+          "z": "une",
+          "id": "amd-buys-world-labs-fei-fei-li-s-start-up-for-8-2-billion"
+        },
+        {
+          "t": "Mistral opens a Munich office to speed up its move to industrial scale",
+          "z": "europe",
+          "id": "mistral-opens-a-munich-office-to-speed-up-its-move-to"
+        },
+        {
+          "t": "French Wikipedia now bans generative AI for writing its articles",
+          "z": "europe",
+          "id": "french-wikipedia-now-bans-generative-ai-for-writing-its"
+        },
+        {
+          "t": "An AI-cloned lawyer's voice costs an Italian bank €95 million",
+          "z": "europe",
+          "id": "an-ai-cloned-lawyer-s-voice-costs-an-italian-bank-95-million"
+        },
+        {
+          "t": "Anthropic ships Claude Sonnet 5.5, faster and cheaper",
+          "z": "international",
+          "id": "anthropic-ships-claude-sonnet-5-5-faster-and-cheaper"
+        },
+        {
+          "t": "OpenAI holds back its Astra model on the eve of its developer conference",
+          "z": "international",
+          "id": "openai-holds-back-its-astra-model-on-the-eve-of-its"
+        },
+        {
+          "t": "Nvidia launches an open platform to contain agents that go off the rails",
+          "z": "international",
+          "id": "nvidia-launches-an-open-platform-to-contain-agents-that-go"
+        },
+        {
+          "t": "Bain estimates it will take $6 trillion in annual revenue to make AI data centres pay off",
+          "z": "international",
+          "id": "bain-estimates-it-will-take-6-trillion-in-annual-revenue-to"
+        },
+        {
+          "t": "ByteDance alone holds a fifth of China's data-centre capacity",
+          "z": "chine",
+          "id": "bytedance-alone-holds-a-fifth-of-china-s-data-centre"
+        },
+        {
+          "t": "Samsung invests a billion dollars in AI data centres",
+          "z": "chine",
+          "id": "samsung-invests-a-billion-dollars-in-ai-data-centres"
+        },
+        {
+          "t": "H Company releases Holo4, a family of models for agents that can use a computer",
+          "z": "recherche",
+          "id": "h-company-releases-holo4-a-family-of-models-for-agents-that"
+        },
+        {
+          "t": "Chinese chipmaker CanSemi's IPO oversubscribed more than 2,300 times",
+          "z": "bref",
+          "id": "chinese-chipmaker-cansemi-s-ipo-oversubscribed-more-than-2"
+        },
+        {
+          "t": "Google fights the EU's attempt to open Android to rival AI",
+          "z": "bref",
+          "id": "google-fights-the-eu-s-attempt-to-open-android-to-rival-ai"
+        }
+      ]
+    },
     {
       "date": "2026-09-28",
       "dateCourte": "Mon 28 Sep",

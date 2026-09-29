@@ -1,0 +1,299 @@
+{
+  "schema": 2,
+  "date": "2026-09-29",
+  "dateAffichee": "29 septembre 2026",
+  "dateLongue": "mardi 29 septembre 2026",
+  "dateCourte": "mar. 29 sept.",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA du mardi 29 septembre 2026",
+  "titreEditorial": "Vos agents servent aussi ceux qui vous attaquent",
+  "chapeau": "AMD rachète World Labs, la start-up de Fei-Fei Li, pour 8,2 milliards de dollars, Anthropic sort Claude Sonnet 5.5 et OpenAI renonce à publier son modèle Astra pour raisons de sûreté. Le même jour, une voix d'avocat clonée coûte 95 millions d'euros à une banque italienne et des agents volent 600 000 cartes bancaires en quelques heures : l'attaquant dispose désormais des mêmes agents que vos équipes.",
+  "une": {
+    "titre": "AMD rachète World Labs, la start-up de Fei-Fei Li, pour 8,2 milliards de dollars",
+    "texteHtml": "<p>Le fondeur américain a annoncé lundi 28 septembre l'acquisition en actions de World Labs, le laboratoire d'IA spatiale créé en 2024 par la chercheuse de Stanford Fei-Fei Li, souvent surnommée la « marraine de l'IA ». Fei-Fei Li rejoint AMD comme vice-présidente exécutive et directrice scientifique, et son équipe apporte son savoir-faire sur les modèles de génération de mondes, ces systèmes qui construisent des environnements en trois dimensions à partir d'une image ou d'un texte. World Labs, valorisé un milliard de dollars quelques mois après sa naissance, avait lancé un premier produit commercial cette année. À 8,2 milliards de dollars, l'opération est la deuxième plus grosse de l'histoire d'AMD après le rachat de Xilinx en 2022, et vise à contester à Nvidia le terrain de l'IA physique, celle qui pilote robots et machines dans le monde réel. La clôture est attendue d'ici la fin de l'année.</p>",
+    "sources": [
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion/"
+      },
+      {
+        "nom": "The Verge",
+        "url": "https://www.theverge.com/tech/1001749/amd-world-labs-ai-acquisition-deal"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "amd-rachete-world-labs-la-start-up-de-fei-fei-li-pour-8-2"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Mistral ouvre une antenne à Munich pour accélérer son passage à l'échelle industrielle",
+          "texteHtml": "<p>La licorne française installe des bureaux à Munich, au plus près du tissu industriel allemand, pour rapprocher ses équipes des grands comptes manufacturiers et automobiles. Le choix géographique dit la stratégie : après avoir posé sa marque sur les modèles ouverts et la souveraineté, Mistral cherche des déploiements dans l'industrie européenne, là où se trouvent les budgets et les cas d'usage lourds. L'implantation allemande complète l'ancrage parisien plutôt que de le remplacer.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/09/28/ia-mistral-ouvre-une-antenne-a-munich-pour-accelerer-son-passage-a-lechelle-industrielle/"
+            }
+          ],
+          "rang": 2,
+          "id": "mistral-ouvre-une-antenne-a-munich-pour-accelerer-son"
+        },
+        {
+          "titre": "Wikipédia en français interdit désormais l'IA générative pour rédiger ses articles",
+          "texteHtml": "<p>La communauté de l'encyclopédie a fait passer l'usage des modèles de génération de texte du statut « vivement déconseillé » à celui d'interdiction générale, avec deux exceptions seulement. La décision vise à protéger la fiabilité des articles contre les inventions et les erreurs plausibles que produisent ces outils, dans une encyclopédie où chaque affirmation doit renvoyer à une source vérifiable. Le geste tranche avec l'intégration de l'IA partout ailleurs, et pose une frontière nette pour l'un des sites les plus consultés au monde.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/blogs/l-esprit-libre/dans-wikipedia-en-francais-lia-passe-de-vivement-deconseillee-a-une-interdiction-generale-504619.htm"
+            }
+          ],
+          "rang": 3,
+          "id": "wikipedia-en-francais-interdit-desormais-l-ia-generative"
+        },
+        {
+          "titre": "Une voix d'avocat clonée par IA coûte 95 millions d'euros à une banque italienne",
+          "texteHtml": "<p>Des escrocs ont soutiré 95 millions d'euros à Fideuram, la filiale de banque privée d'Intesa Sanpaolo, selon Numerama. Le scénario a combiné deux leviers : l'usurpation de l'identité du patron sur WhatsApp, puis un appel où la voix d'un avocat, clonée par IA, a validé les virements. Plus d'un tiers de la somme reste introuvable à ce jour. L'affaire montre qu'une fraude au président, technique connue, devient redoutable quand la voix qui donne l'ordre est celle qu'on croit reconnaître.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/cyberguerre/2341839-une-fausse-voix-davocat-generee-par-ia-coute-95-millions-deuros-a-une-grande-banque-italienne.html"
+            }
+          ],
+          "rang": 4,
+          "id": "une-voix-d-avocat-clonee-par-ia-coute-95-millions-d-euros-a"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic lance Claude Sonnet 5.5, plus rapide et moins coûteux",
+          "texteHtml": "<p>L'éditeur américain a dévoilé lundi 28 septembre la nouvelle version de son modèle intermédiaire, présentée comme un partenaire de travail « nettement moins cher et plus rapide ». Sonnet 5.5 va plus de 30 % plus vite que Sonnet 5 et coûte jusqu'à 30 % de moins par tâche, à prix inchangé par token (l'unité de texte facturée). Sur Terminal-Bench 4.0, un test de programmation, il bondit de 10,3 % à 70,6 % et dépasse Opus 5.5, le modèle haut de gamme de la maison. La logique du marché se confirme : le meilleur rapport performance-prix ne vient plus du modèle le plus lourd, mais d'un modèle moyen affûté pour les tâches du quotidien.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/"
+            },
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/3263937_claude-sonnet-5-5-anthropic-lance-un-modele-plus-rapide-et-moins-cher-presque-au-niveau-dopus-5-5"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-lance-claude-sonnet-5-5-plus-rapide-et-moins"
+        },
+        {
+          "titre": "OpenAI renonce à publier son modèle Astra à la veille de sa conférence développeurs",
+          "texteHtml": "<p>L'entreprise a mis de côté la version GPT-6.1 Astra de son modèle, qui obtenait de moins bons résultats aux évaluations de sûreté que la version déjà en service, rapporte Bloomberg. La nouvelle mouture progressait pourtant sur la « paresse » du modèle, cette tendance à ne pas terminer une tâche demandée. Un dirigeant a précisé au Wall Street Journal que le modèle suivait mal les instructions. La décision tombe à la veille de la conférence développeurs d'OpenAI, un rendez-vous fait pour montrer des nouveautés, et prolonge une série de gestes de prudence après plusieurs incidents de sécurité cet été. Retenir un modèle plus capable parce qu'il échoue aux tests de sûreté reste rare dans un secteur qui court après la puissance.</p>",
+          "sources": [
+            {
+              "nom": "Platformer",
+              "url": "https://www.platformer.news/open-ai-model-release-canceled/"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-renonce-a-publier-son-modele-astra-a-la-veille-de-sa"
+        },
+        {
+          "titre": "Nvidia lance une plateforme ouverte pour contenir les agents qui déraillent",
+          "texteHtml": "<p>Jensen Huang a présenté lundi 28 septembre l'Open Agent Safety Platform, un ensemble de logiciels et de matériel qui ajoute des couches de sécurité indépendantes autour des agents IA. L'outil, présenté en réponse à une vague d'incidents où des agents ont franchi les cloisons prévues pour les contenir, promet d'isoler en quelques millisecondes un agent qui tente de sortir de son périmètre, y compris pendant l'exécution. Nvidia mise sur l'ouverture du code pour en faire une brique commune du secteur. Le fournisseur de puces qui a nourri la vague d'agents propose désormais aussi le harnais pour les tenir.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/"
+            }
+          ],
+          "rang": 7,
+          "id": "nvidia-lance-une-plateforme-ouverte-pour-contenir-les"
+        },
+        {
+          "titre": "Bain estime qu'il faudra 6 000 milliards de dollars de revenus annuels pour rentabiliser les data centers de l'IA",
+          "texteHtml": "<p>Le cabinet Bain &amp; Company chiffre à 6 000 milliards de dollars les revenus annuels que l'industrie de l'IA devra atteindre d'ici 2031 pour justifier les capitaux engloutis dans la construction de centres de données. Les seuls gains de productivité et les usages grand public ne rapporteront pas assez, prévient le rapport relayé par La Tribune : de nouveaux marchés devront émerger pour combler l'écart. Le chiffre donne une mesure au pari : 6 000 milliards de dollars par an, soit davantage que le produit intérieur brut annuel du Japon, troisième économie mondiale, à trouver chaque année pour amortir la seule facture d'infrastructure.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/41261468270903/les-gains-de-productivite-ne-suffiront-pas-a-rentabiliser-la-facture-exorbitante-de-l-ia"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-29/ai-faces-6-trillion-test-to-justify-data-centers-bain-says"
+            }
+          ],
+          "rang": 8,
+          "id": "bain-estime-qu-il-faudra-6-000-milliards-de-dollars-de"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "ByteDance concentre à lui seul un cinquième de la capacité de data centers en Chine",
+          "texteHtml": "<p>Le propriétaire de TikTok représente environ un cinquième de la capacité de centres de données déjà livrée en Chine, ce qui en fait le premier locataire du pays et le principal moteur de sa montée en puissance dans l'IA, selon de nouvelles estimations du cabinet SemiAnalysis. Le chiffre s'appuie sur le suivi de plus de 1 000 installations exploitées par plus de 60 entreprises. ByteDance loue la quasi-totalité de son parc plutôt que de le posséder, et alimente avec cette puissance ses produits d'IA, dont l'assistant Doubao. La concentration illustre un modèle chinois où quelques géants du numérique tirent seuls la demande en calcul.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3369056/bytedance-grabs-one-fifth-chinas-data-centre-capacity-ai-drives-infrastructure-boom"
+            }
+          ],
+          "rang": 9,
+          "id": "bytedance-concentre-a-lui-seul-un-cinquieme-de-la-capacite"
+        },
+        {
+          "titre": "Samsung investit un milliard de dollars dans les data centers pour l'IA",
+          "texteHtml": "<p>Samsung Electronics et cinq de ses filiales injectent un milliard de dollars au total dans une société américaine dirigée par un ancien patron d'Amazon Web Services, adossée au fonds KKR, rapportent Bloomberg et Nikkei Asia. L'opération renforce l'offensive du groupe sud-coréen sur le marché des infrastructures d'IA, en pleine expansion. Fabricant de mémoire et de puces, Samsung se positionne aussi comme investisseur dans les centres qui consommeront ces composants, et sécurise ainsi un débouché pour sa production. La Corée du Sud entend peser dans une course où le calcul devient l'actif stratégique.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-28/samsung-to-invest-1-billion-in-kkr-s-ai-infrastructure-company"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/samsung-joins-ai-infrastructure-race-with-1bn-helix-deal"
+            }
+          ],
+          "rang": 10,
+          "id": "samsung-investit-un-milliard-de-dollars-dans-les-data"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "H Company publie Holo4, une famille de modèles pour agents capables d'utiliser un ordinateur",
+          "texteHtml": "<p>La start-up française H Company a mis en ligne sur Hugging Face Holo4, une série de modèles conçus pour piloter des agents « à usage d'ordinateur », c'est-à-dire capables de manipuler une interface comme le ferait un humain, en lisant l'écran et en cliquant. La publication ouverte, documentée sur le blog de Hugging Face, place un acteur européen sur le terrain des agents autonomes que dominent aujourd'hui les grands laboratoires américains. Le pari mérite l'attention : un modèle ouvert d'agent installé et exécuté en interne évite d'exposer les écrans d'une organisation à un service tiers.</p>",
+          "sources": [
+            {
+              "nom": "Hugging Face",
+              "url": "https://huggingface.co/blog/Hcompany/holo4"
+            }
+          ],
+          "rang": 11,
+          "id": "h-company-publie-holo4-une-famille-de-modeles-pour-agents"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "L'introduction en Bourse du fondeur chinois CanSemi sursouscrite plus de 2 300 fois",
+          "texteHtml": "<p>La tranche destinée aux particuliers de l'IPO du fondeur CanSemi, basé à Guangzhou, a été sursouscrite plus de 2 300 fois, signe de l'appétit des investisseurs chinois pour la photonique sur silicium et l'infrastructure IA domestique.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3369074/chinese-chip-foundry-cansemis-ipo-oversubscribed-2360-times-investors-chase-ai-boom"
+            }
+          ],
+          "rang": 12,
+          "id": "l-introduction-en-bourse-du-fondeur-chinois-cansemi"
+        },
+        {
+          "titre": "Google conteste la tentative de l'UE d'ouvrir Android aux IA concurrentes",
+          "texteHtml": "<p>Bruxelles veut contraindre Google à ouvrir son système Android aux assistants IA rivaux et à partager des données de recherche avec les fournisseurs concurrents ; l'entreprise s'y oppose, invoquant les risques pour son écosystème.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-29/google-fights-eu-attempt-to-prise-open-android-to-rival-ai-bots"
+            }
+          ],
+          "rang": 13,
+          "id": "google-conteste-la-tentative-de-l-ue-d-ouvrir-android-aux"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "L'attaquant dispose désormais des mêmes agents que vos équipes : une voix d'avocat clonée coûte 95 millions d'euros à Fideuram, des agents volent 600 000 cartes en quelques heures et un logiciel malveillant écrit avec l'IA vise les comptes bancaires français, ce qui rend obsolète la formation sécurité qui apprenait à repérer un courriel maladroit, et le levier concret pour une organisation française est d'instaurer une vérification hors canal, rappel sur un numéro connu et validation à deux personnes, pour tout mouvement d'argent ou de données au-delà d'un seuil.",
+    "these": "La même vague d'agents qui outille vos équipes outille ceux qui vous attaquent ; une voix clonée passe tous les réflexes appris pour repérer un courriel de hameçonnage, donc le geste qui protège une organisation française est d'imposer une vérification hors canal pour tout mouvement d'argent ou de données sensibles, et de refaire une formation sécurité que la voix clonée a périmée.",
+    "html": "<p>Une voix d'avocat clonée par IA a coûté 95 millions d'euros à Fideuram, la banque privée d'Intesa Sanpaolo, et plus d'un tiers de la somme reste introuvable. Le même jour, Clubic rapporte que des agents ont volé 600 000 numéros de carte bancaire en quelques heures, une besogne qui prenait des semaines à un réseau humain. Siècle Digital décrit RemControl, un logiciel malveillant écrit avec l'aide de l'IA qui vise les comptes bancaires en France, en Espagne et en Italie. Et des chercheurs ont pu lire sans aucun identifiant le contenu de 16 326 bases de données, dont la moitié abritaient des données personnelles, parce que des agents de code les avaient mises en ligne ouvertes.</p>\n<p>Ces faits pointent dans une seule direction, et elle vise le cœur de votre organisation. La vague d'agents que vous évaluez pour vos équipes outille exactement de la même façon ceux qui vous attaquent. La barrière tombe des deux côtés du mur en même temps.</p>\n<p>Ce déplacement périme un pan entier de vos formations à la sécurité. Nous avons passé dix ans à apprendre aux salariés à repérer le courriel maladroit : la faute d'orthographe, l'adresse douteuse, la pièce jointe inattendue. Une voix connue qui appelle sur WhatsApp passe tous ces réflexes. Le comptable de Fideuram n'a pas cliqué sur un lien, il a fait confiance à une voix.</p>\n<p>La compétence qui prend de la valeur change alors de nature. Elle tient désormais à la vérification hors du canal qui porte la demande, quand flairer le faux devient impossible dès que la copie est parfaite. Fixez une règle simple, écrite, connue de tous : au-delà d'un seuil, tout mouvement d'argent ou de données sensibles exige un rappel sur un numéro déjà enregistré et la validation de deux personnes, quelle que soit la voix qui a donné l'ordre. La règle vaut pour l'assistante de direction comme pour le directeur financier, car la fraude vise la personne qui exécute, pas le pare-feu.</p>\n<p>Le pare-feu de Fideuram a tenu. C'est un humain qui a décroché le téléphone. Le point faible de votre sécurité en 2026 tient au réflexe de confiance que quarante ans de téléphone ont ancré, celui qui fait valider un ordre parce qu'on reconnaît la voix. Aucune mise à jour logicielle ne le corrige. Seule une formation le fait.</p>",
+    "htmlExtrait": "<p>Une voix d'avocat clonée par IA a coûté 95 millions d'euros à Fideuram, la banque privée d'Intesa Sanpaolo, et plus d'un tiers de la somme reste introuvable. Le même jour, Clubic rapporte que des agents ont volé 600 000 numéros de carte bancaire en quelques heures, une besogne qui prenait des semaines à un réseau humain. Siècle Digital décrit RemControl, un logiciel malveillant écrit avec l'aide de l'IA qui vise les comptes bancaires en France, en Espagne et en Italie. Et des chercheurs ont pu lire sans aucun identifiant le contenu de 16 326 bases de données, dont la moitié abritaient des données personnelles, parce que des agents de code les avaient mises en ligne ouvertes.</p>\n<p>Ces faits pointent dans une seule direction, et elle vise le cœur de votre organisation. La vague d'agents que vous évaluez pour vos équipes outille exactement de la même façon ceux qui vous attaquent. La barrière tombe des deux côtés du mur en même temps.</p>",
+    "itemsCites": [],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-09-28",
+    "dateLongue": "lundi 28 septembre 2026",
+    "titreEditorial": "L'assistant qui écrivait passe à l'acte",
+    "nbItems": 12
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 19,
+  "nbSignes": 9574,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 2
+    }
+  ],
+  "sourcesDuJour": [
+    "TechCrunch",
+    "The Verge",
+    "Maddyness",
+    "ZDNet",
+    "Numerama",
+    "Frandroid",
+    "Platformer",
+    "La Tribune",
+    "Bloomberg",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 142,
+  "publieLe": "2026-09-29T08:57:47+02:00",
+  "publieLeAffiche": "8h57",
+  "ogImage": "/veille-data/og/2026-09-29.png"
+}

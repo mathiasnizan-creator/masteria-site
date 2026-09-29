@@ -227,7 +227,12 @@
     "titreEditorial": "AI on the phone, debt on the books",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-29",
+    "dateLongue": "Tuesday 29 September 2026",
+    "titreEditorial": "Your agents also serve those attacking you",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 16,
   "nbSignes": 8844,
