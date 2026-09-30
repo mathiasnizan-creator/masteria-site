@@ -3,12 +3,134 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-29",
-    "totalEditions": 45,
-    "totalItems": 611,
-    "totalSources": 893
+    "derniereDate": "2026-09-30",
+    "totalEditions": 46,
+    "totalItems": 625,
+    "totalSources": 914
   },
   "editions": [
+    {
+      "date": "2026-09-30",
+      "dateCourte": "mer. 30 sept.",
+      "dateAffichee": "30 septembre 2026",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "Le modèle change chaque semaine, votre organisation doit apprendre au même rythme",
+      "chapeau": "OpenAI transforme ChatGPT en système d'exploitation lors de son DevDay : agents Dots toujours actifs, modèle GPT-6.1 Sol presque aussi puissant qu'Astra pour un cinquième du prix, espace de travail Spaces et abonnement à 500 dollars, plus de vingt lancements en une soirée. Le même jour, Anthropic prépare son entrée en Bourse en avertissant d'un « risque existentiel », Donald Trump refuse toute loi sur l'IA et veut la rebaptiser « super intelligence », pendant que la Chine franchit les 700 millions d'utilisateurs d'IA générative.",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "The Verge",
+        "Commission européenne",
+        "La Tribune",
+        "Next.ink",
+        "Le Monde",
+        "ZDNet",
+        "TechCrunch",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "arXiv",
+        "Clubic",
+        "Siècle Digital",
+        "Bloomberg"
+      ],
+      "items": [
+        {
+          "t": "Au DevDay 2026, OpenAI empile plus de vingt lancements et fait de ChatGPT une plateforme",
+          "z": "une",
+          "id": "au-devday-2026-openai-empile-plus-de-vingt-lancements-et"
+        },
+        {
+          "t": "La Commission européenne ouvre une consultation sur le droit d'auteur face à l'IA",
+          "z": "europe",
+          "id": "la-commission-europeenne-ouvre-une-consultation-sur-le"
+        },
+        {
+          "t": "La start-up lyonnaise Ed.ai vise les universités américaines avec son correcteur de copies",
+          "z": "europe",
+          "id": "la-start-up-lyonnaise-ed-ai-vise-les-universites"
+        },
+        {
+          "t": "Test grandeur nature : 75 détecteurs de textes IA gratuits échouent, un outil payant s'en sort",
+          "z": "europe",
+          "id": "test-grandeur-nature-75-detecteurs-de-textes-ia-gratuits"
+        },
+        {
+          "t": "Anthropic prépare son entrée en Bourse et avertit, dans son prospectus, d'un « risque existentiel »",
+          "z": "international",
+          "id": "anthropic-prepare-son-entree-en-bourse-et-avertit-dans-son"
+        },
+        {
+          "t": "Donald Trump refuse toute loi fédérale sur l'IA et veut la rebaptiser « super intelligence »",
+          "z": "international",
+          "id": "donald-trump-refuse-toute-loi-federale-sur-l-ia-et-veut-la"
+        },
+        {
+          "t": "L'agent Muse de Meta multiplie les fuites de données pendant que le groupe muscle son offre entreprise",
+          "z": "international",
+          "id": "l-agent-muse-de-meta-multiplie-les-fuites-de-donnees"
+        },
+        {
+          "t": "OpenAI s'excuse auprès de l'Australie après que ses agents ont franchi des protections de sites gouvernementaux",
+          "z": "international",
+          "id": "openai-s-excuse-aupres-de-l-australie-apres-que-ses-agents"
+        },
+        {
+          "t": "La Chine franchit les 700 millions d'utilisateurs d'IA générative, plus d'un habitant sur deux",
+          "z": "chine",
+          "id": "la-chine-franchit-les-700-millions-d-utilisateurs-d-ia"
+        },
+        {
+          "t": "La Corée du Sud accélère un plan d'infrastructure IA de 589 milliards de dollars",
+          "z": "chine",
+          "id": "la-coree-du-sud-accelere-un-plan-d-infrastructure-ia-de-589"
+        },
+        {
+          "t": "Un article montre qu'un fournisseur d'IA peut gonfler discrètement le nombre de « chemins de raisonnement » qu'il vous facture",
+          "z": "recherche",
+          "id": "un-article-montre-qu-un-fournisseur-d-ia-peut-gonfler"
+        },
+        {
+          "t": "Claude d'Anthropic tombe en panne dans le monde entier",
+          "z": "bref",
+          "id": "claude-d-anthropic-tombe-en-panne-dans-le-monde-entier"
+        },
+        {
+          "t": "ChatGPT enverrait 22 fois plus de trafic aux sites web que ses concurrents",
+          "z": "bref",
+          "id": "chatgpt-enverrait-22-fois-plus-de-trafic-aux-sites-web-que"
+        },
+        {
+          "t": "Les valeurs matérielles chinoises vers leur pire trimestre boursier",
+          "z": "bref",
+          "id": "les-valeurs-materielles-chinoises-vers-leur-pire-trimestre"
+        }
+      ]
+    },
     {
       "date": "2026-09-29",
       "dateCourte": "mar. 29 sept.",

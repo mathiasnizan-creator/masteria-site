@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-29",
-    "totalEditions": 30,
-    "totalItems": 408,
-    "totalSources": 581
+    "derniereDate": "2026-09-30",
+    "totalEditions": 31,
+    "totalItems": 422,
+    "totalSources": 602
   },
   "editions": [
+    {
+      "date": "2026-09-30",
+      "dateAffichee": "30 September 2026",
+      "dateCourte": "Wed 30 Sep",
+      "mois": "2026-09",
+      "moisAffiche": "Septembre 2026",
+      "titreEditorial": "The model changes weekly, your organisation must learn at the same pace",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-09-29",
       "dateAffichee": "29 September 2026",

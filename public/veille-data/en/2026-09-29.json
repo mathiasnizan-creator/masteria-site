@@ -247,7 +247,12 @@
     "titreEditorial": "The assistant that wrote now acts",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-30",
+    "dateLongue": "Wednesday 30 September 2026",
+    "titreEditorial": "The model changes weekly, your organisation must learn at the same pace",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 19,
   "nbSignes": 8618,

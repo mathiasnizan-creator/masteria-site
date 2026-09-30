@@ -247,7 +247,12 @@
     "titreEditorial": "L'assistant qui écrivait passe à l'acte",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-09-30",
+    "dateLongue": "mercredi 30 septembre 2026",
+    "titreEditorial": "Le modèle change chaque semaine, votre organisation doit apprendre au même rythme",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 19,
   "nbSignes": 9574,
