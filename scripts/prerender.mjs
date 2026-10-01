@@ -191,6 +191,10 @@ async function renderOne(browser, route) {
     if (html.length < MIN_HTML_SIZE || !hasTitle || !hasH1) {
       throw new Error(`empty-shell (size=${html.length}, title=${hasTitle}, h1=${hasH1})`);
     }
+    // Un seul <title> dans le <head> : le titre par défaut du shell est resté
+    // en doublon sur tout le site d'août à octobre 2026 sans que rien ne le signale.
+    const nbTitres = (html.split(/<\/head>/i)[0].match(/<title[\s>]/gi) || []).length;
+    if (nbTitres !== 1) throw new Error(`head-title (${nbTitres} <title> dans le <head>, 1 attendu)`);
 
     const outDir = route === '/' ? dist : path.join(dist, route);
     fs.mkdirSync(outDir, { recursive: true });

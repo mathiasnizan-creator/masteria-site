@@ -23,6 +23,17 @@ const carteDeLaPage = slug =>
     ? `${SITE_URL}/og/${slug === '' ? 'accueil' : slug.replace(/\//g, '--')}.jpg`
     : OG_DEFAUT
 
+/* ───── Un seul <title> par page ─────
+   Sous React 19, react-helmet-async délègue le titre à React, qui insère son
+   <title> DEVANT ceux déjà présents dans le HTML et ne retire jamais ces derniers :
+   le titre par défaut du shell index.html restait donc en second <title> sur les
+   396 pages prérendues (constat du 01/10/2026), et une page prérendue en gagnait
+   un troisième une fois chargée. On relève ces titres avant tout rendu React
+   (ce module est importé par App.jsx) pour les retirer au montage de SEOHead. */
+const TITRES_DU_HTML = typeof document === 'undefined'
+  ? []
+  : Array.from(document.querySelectorAll('head > title'))
+
 /**
  * SEOHead — composant central pour les balises SEO, Open Graph, Twitter,
  * et les données structurées JSON-LD.
@@ -68,6 +79,9 @@ export default function SEOHead({
   // Le shell index.html porte une description par défaut (routes non prérendues) :
   // on la retire dès qu'une page pose la sienne, pour n'avoir qu'une balise.
   useEffect(() => { document.getElementById('meta-default-description')?.remove() }, [])
+  // Idem pour le titre : React 19 insère le <title> de la page devant ceux du HTML
+  // sans les retirer (cf. TITRES_DU_HTML) ; une fois le nôtre posé, on les enlève.
+  useEffect(() => { if (title) TITRES_DU_HTML.forEach((t) => t.remove()) }, [title])
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || carteDeLaPage(slug)
   // Le carré est commun à tout le site : à la taille d'une vignette de résultat,

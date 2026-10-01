@@ -27,6 +27,8 @@ for (const route of ROUTES) {
       await new Promise(r => setTimeout(r, 1800));
       const html = await page.content();
       if (html.length < 20000 || !/<title>[^<]{8,}<\/title>/.test(html) || !/<h1[\s>]/.test(html)) throw new Error('empty-shell ' + html.length);
+      const nbTitres = (html.split(/<\/head>/i)[0].match(/<title[\s>]/gi) || []).length;
+      if (nbTitres !== 1) throw new Error(`head-title ${nbTitres} <title> dans le <head>`);
       const d = path.join(dist, route); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, 'index.html'), html);
       console.log(`✓ ${route} (${html.length}o)`); ok = true;
     } catch (e) { console.log(`  retry ${route}: ${e.message.split('\n')[0]}`); }
