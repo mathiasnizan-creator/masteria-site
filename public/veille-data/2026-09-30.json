@@ -263,7 +263,12 @@
     "titreEditorial": "Vos agents servent aussi ceux qui vous attaquent",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-01",
+    "dateLongue": "jeudi 1 octobre 2026",
+    "titreEditorial": "Le classement des modèles est un argument de vente, votre test maison est la seule base de décision",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 21,
   "nbSignes": 10478,

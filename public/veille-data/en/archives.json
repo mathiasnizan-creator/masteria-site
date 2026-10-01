@@ -3,12 +3,132 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-30",
-    "totalEditions": 31,
-    "totalItems": 422,
-    "totalSources": 602
+    "derniereDate": "2026-10-01",
+    "totalEditions": 32,
+    "totalItems": 436,
+    "totalSources": 620
   },
   "editions": [
+    {
+      "date": "2026-10-01",
+      "dateCourte": "Thu 1 Oct",
+      "dateAffichee": "1 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "The model ranking is a sales pitch, your in-house test is the only basis for a decision",
+      "chapeau": "Google strikes back and unveils Gemini 4 Argon, presented as superior to GPT-6 Astra and Claude Opus 5.5, six months after falling behind and scrapping its Gemini 3.5; its own engineers doubt its coding results and access stays restricted to 'trusted testers'. The same day, Donald Trump had the American giants sign a 'morally binding' self-regulation pact, AMD bought World Labs for $8.2 billion, and DeepSeek equipped Huawei chips to do without Nvidia.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "The Verge",
+        "Bloomberg",
+        "Le Monde",
+        "01net",
+        "ZDNet",
+        "Journal du Net",
+        "Siècle Digital",
+        "MIT Technology Review",
+        "South China Morning Post",
+        "arXiv",
+        "TechCrunch"
+      ],
+      "items": [
+        {
+          "t": "Google unveils Gemini 4 Argon and claims the top spot ahead of OpenAI and Anthropic",
+          "z": "une",
+          "id": "google-unveils-gemini-4-argon-and-claims-the-top-spot-ahead"
+        },
+        {
+          "t": "AI's CO₂ emissions could multiply sixfold between 2025 and 2030, according to the French collective Green IT",
+          "z": "europe",
+          "id": "ai-s-co2-emissions-could-multiply-sixfold-between-2025-and"
+        },
+        {
+          "t": "Google takes the EU to court to avoid opening Android to ChatGPT and Claude",
+          "z": "europe",
+          "id": "google-takes-the-eu-to-court-to-avoid-opening-android-to"
+        },
+        {
+          "t": "For Orange Business France, \"shadow AI\" reveals a data governance flaw",
+          "z": "europe",
+          "id": "for-orange-business-france-shadow-ai-reveals-a-data"
+        },
+        {
+          "t": "The end of hourly billing reshuffles the economics of law",
+          "z": "europe",
+          "id": "the-end-of-hourly-billing-reshuffles-the-economics-of-law"
+        },
+        {
+          "t": "Donald Trump has the AI giants sign a \"morally binding\" self-regulation pact",
+          "z": "international",
+          "id": "donald-trump-has-the-ai-giants-sign-a-morally-binding-self"
+        },
+        {
+          "t": "AMD buys World Labs, Fei-Fei Li's start-up, for $8.2 billion",
+          "z": "international",
+          "id": "amd-buys-world-labs-fei-fei-li-s-start-up-for-8-2-billion"
+        },
+        {
+          "t": "An NGO sues OpenAI after the Hugging Face hack, the first known case of its kind",
+          "z": "international",
+          "id": "an-ngo-sues-openai-after-the-hugging-face-hack-the-first"
+        },
+        {
+          "t": "DeepSeek releases a set of tools to run AI on Huawei chips rather than Nvidia",
+          "z": "chine",
+          "id": "deepseek-releases-a-set-of-tools-to-run-ai-on-huawei-chips"
+        },
+        {
+          "t": "Anthropic warns about GLM-5.3, the Chinese model from Z.ai skilled at hacking and weak on safeguards",
+          "z": "chine",
+          "id": "anthropic-warns-about-glm-5-3-the-chinese-model-from-z-ai"
+        },
+        {
+          "t": "A system prompt does not just add text, it reconfigures the model's internal computation",
+          "z": "recherche",
+          "id": "a-system-prompt-does-not-just-add-text-it-reconfigures-the"
+        },
+        {
+          "t": "An AI tutor held back from a stuck student: 20,462 conversation turns examined",
+          "z": "recherche",
+          "id": "an-ai-tutor-held-back-from-a-stuck-student-20-462"
+        },
+        {
+          "t": "ElevenLabs doubles its valuation to $22 billion",
+          "z": "bref",
+          "id": "elevenlabs-doubles-its-valuation-to-22-billion"
+        },
+        {
+          "t": "China's Manus launches Cue, personal agents, against Meta's Muse",
+          "z": "bref",
+          "id": "china-s-manus-launches-cue-personal-agents-against-meta-s"
+        }
+      ]
+    },
     {
       "date": "2026-09-30",
       "dateCourte": "Wed 30 Sep",

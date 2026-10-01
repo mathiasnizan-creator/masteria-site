@@ -3,12 +3,132 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-09-30",
-    "totalEditions": 46,
-    "totalItems": 625,
-    "totalSources": 914
+    "derniereDate": "2026-10-01",
+    "totalEditions": 47,
+    "totalItems": 639,
+    "totalSources": 932
   },
   "editions": [
+    {
+      "date": "2026-10-01",
+      "dateCourte": "jeu. 1 oct.",
+      "dateAffichee": "1 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Le classement des modèles est un argument de vente, votre test maison est la seule base de décision",
+      "chapeau": "Google riposte et annonce Gemini 4 Argon, présenté comme supérieur à GPT-6 Astra et à Claude Opus 5.5, six mois après avoir été distancé et renoncé à son Gemini 3.5 ; ses propres ingénieurs doutent de ses résultats en programmation et l'accès reste réservé à des « défenseurs de confiance ». Le même jour, Donald Trump fait signer aux géants américains un pacte d'autorégulation « moralement contraignant », AMD s'offre World Labs pour 8,2 milliards de dollars, et DeepSeek outille les puces Huawei pour se passer de Nvidia.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "The Verge",
+        "Bloomberg",
+        "Le Monde",
+        "01net",
+        "ZDNet",
+        "Journal du Net",
+        "Siècle Digital",
+        "MIT Technology Review",
+        "South China Morning Post",
+        "arXiv",
+        "TechCrunch"
+      ],
+      "items": [
+        {
+          "t": "Google annonce Gemini 4 Argon et revendique la première place devant OpenAI et Anthropic",
+          "z": "une",
+          "id": "google-annonce-gemini-4-argon-et-revendique-la-premiere"
+        },
+        {
+          "t": "Les émissions de CO₂ de l'IA pourraient être multipliées par six entre 2025 et 2030, selon le collectif français Green IT",
+          "z": "europe",
+          "id": "les-emissions-de-co2-de-l-ia-pourraient-etre-multipliees"
+        },
+        {
+          "t": "Google saisit la justice européenne pour ne pas ouvrir Android à ChatGPT et Claude",
+          "z": "europe",
+          "id": "google-saisit-la-justice-europeenne-pour-ne-pas-ouvrir"
+        },
+        {
+          "t": "Pour Orange Business France, le « shadow IA » révèle une faille de gouvernance des données",
+          "z": "europe",
+          "id": "pour-orange-business-france-le-shadow-ia-revele-une-faille"
+        },
+        {
+          "t": "La fin de la facturation à l'heure rebat le modèle économique du droit",
+          "z": "europe",
+          "id": "la-fin-de-la-facturation-a-l-heure-rebat-le-modele"
+        },
+        {
+          "t": "Donald Trump fait signer aux géants de l'IA un pacte d'autorégulation « moralement contraignant »",
+          "z": "international",
+          "id": "donald-trump-fait-signer-aux-geants-de-l-ia-un-pacte-d"
+        },
+        {
+          "t": "AMD rachète World Labs, la start-up de Fei-Fei Li, pour 8,2 milliards de dollars",
+          "z": "international",
+          "id": "amd-rachete-world-labs-la-start-up-de-fei-fei-li-pour-8-2"
+        },
+        {
+          "t": "Une ONG assigne OpenAI en justice après le piratage de Hugging Face, première procédure connue du genre",
+          "z": "international",
+          "id": "une-ong-assigne-openai-en-justice-apres-le-piratage-de"
+        },
+        {
+          "t": "DeepSeek ouvre une série d'outils pour faire tourner l'IA sur les puces Huawei plutôt que Nvidia",
+          "z": "chine",
+          "id": "deepseek-ouvre-une-serie-d-outils-pour-faire-tourner-l-ia"
+        },
+        {
+          "t": "Anthropic alerte sur GLM-5.3, le modèle chinois de Z.ai doué pour le piratage et faible en garde-fous",
+          "z": "chine",
+          "id": "anthropic-alerte-sur-glm-5-3-le-modele-chinois-de-z-ai-doue"
+        },
+        {
+          "t": "Un prompt système ne fait pas qu'ajouter du texte, il reconfigure le calcul interne du modèle",
+          "z": "recherche",
+          "id": "un-prompt-systeme-ne-fait-pas-qu-ajouter-du-texte-il"
+        },
+        {
+          "t": "Un tuteur IA bridé face à l'élève bloqué : 20 462 tours de conversation passés au crible",
+          "z": "recherche",
+          "id": "un-tuteur-ia-bride-face-a-l-eleve-bloque-20-462-tours-de"
+        },
+        {
+          "t": "ElevenLabs double sa valorisation à 22 milliards de dollars",
+          "z": "bref",
+          "id": "elevenlabs-double-sa-valorisation-a-22-milliards-de-dollars"
+        },
+        {
+          "t": "La chinoise Manus lance Cue, agents personnels, face au Muse de Meta",
+          "z": "bref",
+          "id": "la-chinoise-manus-lance-cue-agents-personnels-face-au-muse"
+        }
+      ]
+    },
     {
       "date": "2026-09-30",
       "dateCourte": "mer. 30 sept.",

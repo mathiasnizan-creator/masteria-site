@@ -263,7 +263,12 @@
     "titreEditorial": "Your agents also serve those attacking you",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-01",
+    "dateLongue": "Thursday 1 October 2026",
+    "titreEditorial": "The model ranking is a sales pitch, your in-house test is the only basis for a decision",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 21,
   "nbSignes": 9557,

@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-09-30",
-    "totalEditions": 31,
-    "totalItems": 422,
-    "totalSources": 602
+    "derniereDate": "2026-10-01",
+    "totalEditions": 32,
+    "totalItems": 436,
+    "totalSources": 620
   },
   "editions": [
+    {
+      "date": "2026-10-01",
+      "dateAffichee": "1 October 2026",
+      "dateCourte": "Thu 1 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "The model ranking is a sales pitch, your in-house test is the only basis for a decision",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-09-30",
       "dateAffichee": "30 September 2026",
