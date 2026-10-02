@@ -257,7 +257,7 @@ export default function SensibilisationIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>faire comprendre l'IA à toutes les équipes, dans un cadre</span>
           </h1>
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
           </p>
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             La sensibilisation IA est le premier temps d'une montée en compétence : <strong style={{ color: '#fff', fontWeight: 700 }}>faire comprendre à chaque salarié ce que l'IA générative fait, ce qu'elle ne fait pas, quelles données on peut lui confier et dans quel cadre s'en servir</strong>. En conférence, en atelier de trois heures ou en programme par vagues, sur vos cas. Certifiée Qualiopi, finançable par votre OPCO.

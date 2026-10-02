@@ -9,6 +9,7 @@ import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { SOLUTIONS } from '../data/solution-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import CadrageLink from '../components/CadrageLink'
 
 /*
  * Hub « Solutions IA sur mesure » (slug /solutions-ia). Point d'entrée du cluster
@@ -198,7 +199,7 @@ export default function SolutionsHubPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
@@ -211,10 +212,10 @@ export default function SolutionsHubPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Lancer un diagnostic IA gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#solutions" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir les 7 solutions
             </a>
@@ -419,7 +420,7 @@ export default function SolutionsHubPage() {
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
               </p>
-              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+              <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -448,14 +449,14 @@ export default function SolutionsHubPage() {
               Quelle solution IA pour votre entreprise ?
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Pas sûr du type de livrable ? Lancez un diagnostic IA gratuit ou décrivez-nous votre contexte. Nous revenons vers vous sous 24 heures avec une lecture du périmètre et une proposition de cadrage. Vous restez propriétaire de ce que nous développons.
+              Pas sûr du type de livrable ? Réservez 30 minutes de cadrage, offertes, ou décrivez-nous votre contexte. Nous revenons vers vous sous 24 heures avec une lecture du périmètre et une proposition de cadrage. Vous restez propriétaire de ce que nous développons.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
-              <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
-                Lancer un diagnostic IA gratuit
+              <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+                Réserver 30 minutes de cadrage
                 <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-              </Link>
-              <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, border: '1px solid #2A3650' }}>
+              </CadrageLink>
+              <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, border: '1px solid #2A3650' }}>
                 Contacter notre équipe
               </Link>
             </div>

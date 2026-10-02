@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useParams, Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useConsent, readConsent, PREFERENCES_EVENT } from './consent/consentStore';
@@ -87,6 +87,7 @@ const MeilleureFormationIAPage = lazy(() => import('./pages/MeilleureFormationIA
 const ConsultantIAPage = lazy(() => import('./pages/ConsultantIAPage'));
 const EtudesDeCasIAPage = lazy(() => import('./pages/EtudesDeCasIAPage'));
 const PressePage = lazy(() => import('./pages/PressePage'));
+const MathiasNizanPage = lazy(() => import('./pages/MathiasNizanPage'));
 const QuelOpcoPage = lazy(() => import('./pages/QuelOpcoPage'));
 const TestMaturiteIAPage = lazy(() => import('./pages/TestMaturiteIAPage'));
 const QuelOutilIAPage = lazy(() => import('./pages/QuelOutilIAPage'));
@@ -366,8 +367,8 @@ function AboutScreen() {
   return (
     <div>
       <SEOHead
-        title="Masteria, centre de formation IA pour entreprises | À propos"
-        description="Centre de formation IA pour entreprises et cabinet de conseil, certifié Qualiopi, fondé à Lyon en 2022 par Mathias Nizan. Plus de 1 500 professionnels formés en France, Suisse et Belgique. L'IA accessible, concrète et utile."
+        title="À propos de Masteria : cabinet IA et centre de formation à Lyon"
+        description="Masteria, cabinet spécialisé en IA fondé à Lyon en 2022 par Mathias Nizan : audit, conseil, outils sur mesure et centre de formation certifié Qualiopi."
         slug="centre-formation-ia-entreprise"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -506,8 +507,8 @@ function AboutScreen() {
             <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>Chaque accompagnement et chaque programme que nous concevons vise à donner du pouvoir d'agir aux équipes, à simplifier le quotidien, à accélérer la prise de décision, à créer de la valeur.</p>
             <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 20 }}>Chez Masteria, nous croyons en une intelligence artificielle <strong>éthique, utile et profondément humaine</strong>. Nous mettons toute notre énergie à concevoir des formations qui vous donnent les clés pour intégrer l'IA dans votre métier de façon concrète, durable et réellement impactante.</p>
             <div style={{ paddingTop: 16, borderTop: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: 15, fontWeight: 800, color: '#111' }}>Mathias Nizan</div>
-              <div style={{ fontSize: 13, color: '#6B7280', marginTop: 2 }}>Fondateur de Masteria · 10+ ans en transformation digitale</div>
+              <div style={{ fontSize: 15, fontWeight: 800, color: '#111' }}><Link to="/mathias-nizan" style={{ color: '#111', textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link></div>
+              <div style={{ fontSize: 13, color: '#6B7280', marginTop: 2 }}>Fondateur de Masteria · Conseil et architecture de solutions IA</div>
             </div>
           </FadeIn>
         </div>
@@ -739,7 +740,18 @@ function ContactScreen() {
   const isMobile = useIsMobile();
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [demandeType, setDemandeType] = useState('formation'); // 'formation' | 'projet'
+  // Onglet ouvert d'après l'URL : les pages conseil & dev envoient ?type=projet,
+  // le bouton « 30 minutes de cadrage » ajoute &rdv=30 (créneau présélectionné).
+  const [searchParams] = useSearchParams();
+  const typeFromUrl = searchParams.get('type') === 'projet' ? 'projet' : 'formation';
+  const rdvFromUrl = searchParams.get('rdv') === '30';
+  const [demandeType, setDemandeType] = useState(typeFromUrl); // 'formation' | 'projet'
+  const [premierEchange, setPremierEchange] = useState(rdvFromUrl ? 'visio' : 'ecrit');
+  const [lastUrlType, setLastUrlType] = useState(typeFromUrl);
+  if (typeFromUrl !== lastUrlType) {
+    setLastUrlType(typeFromUrl);
+    setDemandeType(typeFromUrl);
+  }
   const [format, setFormat] = useState('inter');
   const [selectedTools, setSelectedTools] = useState([]);
   const [selectedMetiers, setSelectedMetiers] = useState([]);
@@ -756,6 +768,11 @@ function ContactScreen() {
     { value: 'a-definir', label: 'Je ne sais pas encore', Icon: Lightbulb },
   ];
   const besoinsLabel = (vals) => vals.map(v => BESOINS.find(b => b.value === v)?.label || v);
+  const PREMIER_ECHANGE = [
+    { id: 'visio', label: '30 minutes de cadrage en visio' },
+    { id: 'telephone', label: '30 minutes de cadrage par téléphone' },
+    { id: 'ecrit', label: "Une première réponse par e-mail" },
+  ];
 
   const toggleTool = (value) => setSelectedTools(prev =>
     prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]
@@ -787,6 +804,7 @@ function ContactScreen() {
         data.set('format', format);
       } else {
         data.set('besoin', selectedBesoins.length ? besoinsLabel(selectedBesoins).join(', ') : 'À cadrer ensemble');
+        data.set('premier_echange', PREMIER_ECHANGE.find(p => p.id === premierEchange)?.label || premierEchange);
       }
       const res = await fetch('https://formspree.io/f/xzdyjbyn', {
         method: 'POST',
@@ -877,20 +895,32 @@ function ContactScreen() {
             display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap',
             marginTop: 28, fontSize: 13, color: '#6B7280',
           }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <BadgeCheck size={15} color="#059669" /> Certifié Qualiopi
-            </span>
-            {demandeType === 'formation' && (
+            {demandeType === 'formation' ? (
+              <>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  <BadgeCheck size={15} color="#059669" /> Certifié Qualiopi
+                </span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  <Wallet size={15} color="#2563EB" /> Finançable OPCO
+                </span>
+              </>
+            ) : (
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                <Wallet size={15} color="#2563EB" /> Finançable OPCO
+                <Calendar size={15} color="#2563EB" /> 30 minutes de cadrage offertes
               </span>
             )}
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <MapPin size={15} color="#D97706" /> France · Suisse · Belgique
             </span>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <UsersIcon size={15} color="#7C3AED" /> +1 500 professionnels formés
-            </span>
+            {demandeType === 'formation' ? (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <UsersIcon size={15} color="#7C3AED" /> +1 500 professionnels formés
+              </span>
+            ) : (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <ShieldCheck size={15} color="#7C3AED" /> Le code et les livrables vous appartiennent
+              </span>
+            )}
           </div>
         </div>
       </section>
@@ -957,7 +987,8 @@ function ContactScreen() {
               })}
             </div>
 
-            {/* Carte réassurance financement */}
+            {/* Carte réassurance : financement (formation) ou déroulé (projet) */}
+            {demandeType === 'formation' ? (
             <div style={{
               background: '#fff', border: '1px solid #E5E7EB',
               borderRadius: 16, padding: 24,
@@ -980,6 +1011,41 @@ function ContactScreen() {
                 Nos formations sont éligibles à une prise en charge par votre OPCO. Nous vous accompagnons dans les démarches administratives pour simplifier votre dossier.
               </p>
             </div>
+            ) : (
+            <div style={{
+              background: '#fff', border: '1px solid #E5E7EB',
+              borderTop: '3px solid #2563EB',
+              borderRadius: 16, padding: 24,
+            }}>
+              <h3 style={{
+                fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800,
+                color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em',
+              }}>
+                Comment démarre un projet
+              </h3>
+              {[
+                { n: '1', title: '30 minutes de cadrage, offertes', desc: "En visio ou par téléphone : votre contexte, vos processus, ce que vous attendez de l'IA." },
+                { n: '2', title: "Le Diagnostic IA, une journée", desc: "Ateliers avec vos équipes et feuille de route priorisée. Forfait chiffré lors du cadrage." },
+                { n: '3', title: 'Le projet', desc: "Audit, construction de l'outil ou accompagnement, au forfait ou en régie. Le code et les livrables vous appartiennent." },
+              ].map(s => (
+                <div key={s.n} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
+                  <span style={{
+                    width: 24, height: 24, borderRadius: '50%', flexShrink: 0,
+                    background: '#DBEAFE', color: '#2563EB',
+                    fontSize: 12, fontWeight: 800,
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  }}>{s.n}</span>
+                  <div>
+                    <div style={{ fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 2 }}>{s.title}</div>
+                    <p style={{ fontSize: 13, color: '#4B5563', lineHeight: 1.55, margin: 0 }}>{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+              <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.55, margin: '6px 0 0' }}>
+                Accord de confidentialité sur demande, avant tout échange de documents.
+              </p>
+            </div>
+            )}
           </div>
 
           {/* ── Colonne droite : formulaire ── */}
@@ -1371,6 +1437,38 @@ function ContactScreen() {
                     </select>
                   </div>
                 </div>
+
+                {/* Premier échange : 30 minutes de cadrage offertes */}
+                <div style={grp}>
+                  <label style={lbl}>
+                    Premier échange{' '}
+                    <span style={{ fontWeight: 500, color: '#6B7280' }}>(30 minutes de cadrage offertes)</span>
+                  </label>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 8 }}>
+                    {PREMIER_ECHANGE.map(p => {
+                      const active = premierEchange === p.id;
+                      return (
+                        <button key={p.id} type="button" onClick={() => setPremierEchange(p.id)} aria-pressed={active} style={{
+                          background: active ? '#EFF6FF' : '#fff',
+                          border: `1.5px solid ${active ? '#2563EB' : '#E5E7EB'}`,
+                          borderRadius: 10, padding: '11px 14px',
+                          cursor: 'pointer', textAlign: 'left',
+                          fontFamily: 'DM Sans, sans-serif',
+                          fontSize: 13, fontWeight: active ? 800 : 600,
+                          color: active ? '#2563EB' : '#0A0A0A',
+                          transition: 'all 150ms',
+                        }}>
+                          {p.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  {premierEchange !== 'ecrit' && (
+                    <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.5, margin: '8px 0 0' }}>
+                      Indiquez vos disponibilités dans le message : nous vous proposons un créneau sous 24 h ouvrées.
+                    </p>
+                  )}
+                </div>
                 </>
                 )}
 
@@ -1579,6 +1677,7 @@ export default function App() {
         <Route path="/consultant-ia" element={<ConsultantIAPage />} />
         <Route path="/etudes-de-cas-ia" element={<EtudesDeCasIAPage />} />
         <Route path="/presse" element={<PressePage />} />
+        <Route path="/mathias-nizan" element={<MathiasNizanPage />} />
         <Route path="/quel-opco" element={<QuelOpcoPage />} />
         <Route path="/test-maturite-ia" element={<TestMaturiteIAPage />} />
         <Route path="/quel-outil-ia" element={<QuelOutilIAPage />} />

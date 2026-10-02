@@ -1,30 +1,34 @@
-# Masteria — Centre de formation IA & cabinet de conseil IA
+# Masteria : cabinet spécialisé en intelligence artificielle (audit, conseil, développement, formation)
 
-> Masteria est un centre de formation et cabinet de conseil français spécialisé en intelligence artificielle pour entreprises. Certifié Qualiopi, fondé en 2022 par Mathias Nizan à Lyon. Plus de 1 500 professionnels formés à ChatGPT, Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. Interventions en France, Suisse et Belgique, en présentiel et distanciel, finançables par les OPCO.
+> Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, audite les processus des entreprises, les conseille sur leur stratégie IA, construit les outils et agents IA dont leurs équipes ont besoin et forme ces équipes à s'en servir. Formation certifiée Qualiopi : plus de 1 500 professionnels formés à ChatGPT, Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI depuis 2022. PME, ETI et grands groupes, en France, en Suisse, en Belgique et à l'international en anglais.
 
 ## Informations clés
 
-- **Nom légal** : Masteria
+- **Nom légal** : Mathias NIZAN, entrepreneur individuel (nom commercial : Masteria)
 - **Site web** : https://www.master-ia.fr
-- **Fondateur** : Mathias Nizan (https://www.linkedin.com/in/mathias-nizan/)
+- **Fondateur** : Mathias Nizan, conseil et architecture de solutions IA (https://www.master-ia.fr/mathias-nizan, https://www.linkedin.com/in/mathias-nizan/)
+- **Équipe** : Mathias Nizan pilote chaque mission, avec un réseau d'indépendants expérimentés mobilisés selon le projet : une dizaine de consultants IA, environ cinq développeurs IA et une vingtaine de formateurs
 - **Siège social** : 11 rue Barodet, 69004 Lyon, France
 - **Bureaux** : 17 rue d'Algérie, 69001 Lyon, France
 - **Certification** : Qualiopi (Actions de formation)
 - **Numéro de déclaration d'activité (NDA)** : 84 69 23218 69, enregistré auprès du préfet de région Auvergne-Rhône-Alpes (vérifiable sur la Liste Publique des Organismes de Formation)
 - **SIRET** : 919 252 403 00028
 - **Année de création** : 2022
-- **Tarifs** : Intra-entreprise 1 980 €/jour (jusqu'à 12 participants) · Accompagnement individuel sur mesure 1 980 €/jour
-- **Financement** : OPCO, entreprise, plan de développement des compétences
-- **Zones d'intervention** : France · Suisse · Belgique
+- **Offre d'entrée (conseil et développement)** : 30 minutes de cadrage offertes, puis un diagnostic IA d'une journée, au forfait chiffré lors du cadrage
+- **Tarifs** : conseil, audit et développement au forfait après cadrage (projets de quelques milliers à plusieurs centaines de milliers d'euros selon le périmètre) · Formation intra-entreprise 1 980 € HT/jour (jusqu'à 12 participants) · Accompagnement individuel 1 980 € HT/jour
+- **Financement** : formation finançable par les OPCO et le plan de développement des compétences
+- **Zones d'intervention** : France · Suisse · Belgique · international en anglais
 - **Modalités** : présentiel, distanciel, formats hybrides
 
 ## Activités principales
 
-Masteria propose deux activités complémentaires :
+Masteria exerce trois métiers, menés par la même équipe :
 
-1. **Formation IA pour entreprises** — programmes de 1 à 2 jours, adaptés à chaque métier (marketing, RH, commercial, finance, juridique, communication, management, assistante, SEO, service client, informatique, pédagogique) et à chaque outil (ChatGPT, Copilot, Gemini, Claude, Mistral), ou formations multi-outils "panorama" pour les entreprises qui n'ont pas encore choisi leur outil.
+1. **Audit, conseil et accompagnement IA** : audit IA, diagnostic d'une journée, stratégie et feuille de route, gouvernance et conformité (AI Act, RGPD), accompagnement du déploiement dans la durée. Pour PME, ETI et grands groupes.
 
-2. **Conseil en intelligence artificielle** — audit IA, stratégie, accompagnement opérationnel, transformation. Pour PME, ETI et grands groupes.
+2. **Développement d'outils et d'agents IA sur mesure** : agents IA, assistants branchés sur les documents de l'entreprise (RAG), automatisations de processus, applications métier et intégrations au système d'information (CRM, ERP, MCP). Au forfait ou en régie ; le code et les livrables appartiennent au client.
+
+3. **Formation IA pour entreprises** : programmes de 1 à 2 jours par métier (marketing, RH, commercial, finance, juridique, communication, management, assistante, SEO, service client, informatique, pédagogique) et par outil (ChatGPT, Copilot, Gemini, Claude, Mistral), ou formations multi-outils « panorama ». Certifiées Qualiopi, finançables OPCO.
 
 ## Pages principales
 
@@ -106,6 +110,7 @@ Masteria propose deux activités complémentaires :
 - [Meilleure formation IA](https://www.master-ia.fr/meilleure-formation-ia) — Guide de choix 2026 (angle transmission, distinct du conseil et de l'agence) : 3 exigences (cadre, contenu, suivi), paysage des organismes, tarifs, méthode en 4 étapes, sans classement nominatif
 - [Consultant IA : métier, compétences, TJM et salaire](https://www.master-ia.fr/consultant-ia) — Guide métier : rôle et missions, compétences, salaire et TJM 2026, comment devenir consultant IA (tunnel formation) ou en recruter un (freelance vs cabinet vs interne, tunnel conseil)
 - [Études de cas IA en entreprise](https://www.master-ia.fr/etudes-de-cas-ia) — 4 missions anonymisées avec la méthode en six temps (cadrer, cartographier, prioriser, concevoir sur les fichiers de l'entreprise, former par métier, mesurer) et les résultats pour les équipes et l'organisation : comité de direction, 24 managers pilotes et déploiement international (États-Unis, Inde, Mexique) d'un groupe industriel ; 4 assistants d'appels d'offres par pôle d'un cabinet de conseil financier ; diagnostic par flux, 12 gisements, 3 chantiers et plan à 90 jours d'un distributeur photovoltaïque ; 58 commerciaux formés et 11 assistants Claude chez un distributeur IT B2B
+- [Mathias Nizan, fondateur](https://www.master-ia.fr/mathias-nizan) : conseil et architecture de solutions IA ; conduit les missions d'audit et de conseil, conçoit l'architecture des outils et agents IA construits par Masteria, pilote l'équipe de consultants, développeurs et formateurs ; cité par Les Échos
 - [Espace presse](https://www.master-ia.fr/presse) — contact journalistes (réponse sous 24 h ouvrées), bio et photos HD de Mathias Nizan, fondateur cité par Les Échos, chiffres vérifiables et sujets d'expertise IA
 - [Quel est mon OPCO ? (simulateur)](https://www.master-ia.fr/quel-opco) — outil gratuit : secteur → opérateur de compétences officiel, étapes du dossier de financement, les 11 OPCO détaillés, cas hors OPCO (ANFH, fonction publique, FAF des indépendants)
 - [Test de maturité IA](https://www.master-ia.fr/test-maturite-ia) — outil gratuit : 8 questions, score sur 24, 4 profils de maturité (Découverte, Exploration, Structuration, Déploiement) avec priorités concrètes ; aucune donnée collectée

@@ -668,7 +668,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria{enrichi?.article?.dateModified ? ` · Mise à jour ${enrichi.article.dateLabel || ''}` : ''}
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria{enrichi?.article?.dateModified ? ` · Mise à jour ${enrichi.article.dateLabel || ''}` : ''}
           </p>
 
           {enrichi?.base?.geo ? (

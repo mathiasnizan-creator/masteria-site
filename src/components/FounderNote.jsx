@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { BadgeCheck } from 'lucide-react'
 
 /* LinkedIn n'existe pas dans lucide-react (icônes de marque retirées) : SVG inline. */
@@ -95,7 +96,7 @@ export default function FounderNote({ quote = DEFAULT_QUOTE, bg = '#F9FAFB' }) {
               Mathias Nizan
             </h2>
             <p style={{ fontSize: 14, color: ACCENT, fontWeight: 600, margin: '0 0 18px' }}>
-              Fondateur de Masteria, cabinet de conseil et développement IA
+              Fondateur de Masteria, conseil et architecture de solutions IA
             </p>
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 720 }}>
               Mathias Nizan a fondé Masteria en 2022 à Lyon. Cabinet spécialisé uniquement sur l'intelligence artificielle et indépendant des éditeurs, Masteria a formé plus de 1 500 professionnels et accompagne PME, ETI et grands groupes, du cadrage stratégique au développement des solutions sur mesure, en France, en Suisse et en Belgique.
@@ -111,6 +112,12 @@ export default function FounderNote({ quote = DEFAULT_QUOTE, bg = '#F9FAFB' }) {
                   <BadgeCheck size={14} strokeWidth={2.4} aria-hidden="true" /> {cred}
                 </span>
               ))}
+              <Link
+                to="/mathias-nizan"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, color: ACCENT, textDecoration: 'none', padding: '5px 4px' }}
+              >
+                Son parcours
+              </Link>
               <a
                 href="https://www.linkedin.com/in/mathias-nizan/"
                 target="_blank" rel="noopener noreferrer"

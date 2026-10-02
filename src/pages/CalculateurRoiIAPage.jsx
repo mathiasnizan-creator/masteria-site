@@ -400,7 +400,7 @@ export default function CalculateurRoiIAPage() {
             <p style={{ color: '#CBD5E1', fontSize: 15.5, lineHeight: 1.7, margin: '0 auto 30px', maxWidth: 640 }}>
               Les curseurs de cette page valent ce que valent vos hypothèses. Nous relevons les vôtres sur un panel réel, tâche par tâche, et nous vous rendons les cinq étages chiffrés avec les indicateurs qui manquent.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 15.5, fontWeight: 800 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 15.5, fontWeight: 800 }}>
               Faire le point sur vos usages
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>

@@ -1140,13 +1140,13 @@ export default function BlogArticlePage() {
               fontFamily: 'DM Sans, sans-serif', fontSize: 13,
               color: '#374151', fontWeight: 600, marginBottom: 8,
             }}>
-              Fondateur de Masteria · Formateur principal
+              Fondateur de Masteria · Conseil et architecture de solutions IA
             </div>
             <div style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 13,
               color: '#6B7280', lineHeight: 1.6, marginBottom: 14,
             }}>
-              Cabinet de conseil et centre de formation IA certifié Qualiopi. Plus de 1 500 professionnels formés depuis 2022 à ChatGPT, Claude, Microsoft Copilot, Gemini et Mistral AI.
+              Masteria, cabinet spécialisé en IA à Lyon : audit, conseil, outils sur mesure et formation certifiée Qualiopi. Plus de 1 500 professionnels formés depuis 2022 à ChatGPT, Claude, Microsoft Copilot, Gemini et Mistral AI.
             </div>
             {/* Badges crédibilité */}
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 14 }}>
@@ -1165,6 +1165,13 @@ export default function BlogArticlePage() {
               ))}
             </div>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+              <Link to="/mathias-nizan" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 5,
+                fontFamily: 'DM Sans, sans-serif', fontSize: 13,
+                fontWeight: 700, color: '#2563EB', textDecoration: 'none',
+              }}>
+                Le parcours de l'auteur <ArrowRight size={12} />
+              </Link>
               <Link to="/centre-formation-ia-entreprise" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 5,
                 fontFamily: 'DM Sans, sans-serif', fontSize: 13,

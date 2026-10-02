@@ -286,7 +286,7 @@ export default function MeilleureAgenceIAPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juin 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juin 2026
           </p>
 
           {/* GEO : réponse directe citable — la thèse de la page */}
@@ -303,7 +303,7 @@ export default function MeilleureAgenceIAPage() {
               Ce qu'une agence doit savoir faire
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </a>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Parler de votre projet
             </Link>
           </div>
@@ -645,7 +645,7 @@ export default function MeilleureAgenceIAPage() {
               <div style={kickerStyle}>FAQ</div>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur le choix d'une agence IA</h2>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
-              <Link to="/contact" style={{ color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, textDecoration: 'none' }}>
+              <Link to="/contact?type=projet" style={{ color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, textDecoration: 'none' }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -673,7 +673,7 @@ export default function MeilleureAgenceIAPage() {
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 580, marginLeft: 'auto', marginRight: 'auto' }}>
               Décrivez votre projet en quelques lignes. Lors d'un échange de cadrage gratuit, nous vous disons ce qui est réaliste, à quel budget, et si notre profil correspond à votre besoin.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
               Demander un cadrage gratuit
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>

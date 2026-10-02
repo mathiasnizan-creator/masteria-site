@@ -1,7 +1,7 @@
 {
   "name": "Masteria",
   "short_name": "Masteria",
-  "description": "Centre de formation IA certifié Qualiopi.",
+  "description": "Cabinet spécialisé en IA à Lyon : audit, conseil, outils sur mesure et formation certifiée Qualiopi.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",

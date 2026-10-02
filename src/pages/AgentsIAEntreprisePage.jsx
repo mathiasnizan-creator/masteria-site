@@ -599,7 +599,7 @@ export default function AgentsIAEntreprisePage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
@@ -612,7 +612,7 @@ export default function AgentsIAEntreprisePage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Faire développer vos agents sur mesure
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -855,7 +855,7 @@ export default function AgentsIAEntreprisePage() {
           </div>
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
               Discutons de votre projet
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -882,7 +882,7 @@ export default function AgentsIAEntreprisePage() {
               Réponse sous 24 h · Cadrage sur vos processus réels · Organisme certifié Qualiopi
             </p>
           </div>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: c, padding: '14px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
+          <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: c, padding: '14px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
             Parler à notre équipe
             <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
           </Link>
@@ -987,7 +987,7 @@ export default function AgentsIAEntreprisePage() {
 
           <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 8 }}>Avancer avec Masteria</h3>
           <p style={{ ...pStyle, marginBottom: 28 }}>
-            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA gratuit</Link> identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
+            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link> d'une journée identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {NEXT_STEPS.map(item => (
@@ -1030,7 +1030,7 @@ export default function AgentsIAEntreprisePage() {
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
               </p>
-              <Link to="/contact" style={{ ...linkStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+              <Link to="/contact?type=projet" style={{ ...linkStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -1058,7 +1058,7 @@ export default function AgentsIAEntreprisePage() {
               <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 560 }}>
                 Décrivez-nous le processus qui consomme le plus de temps dans vos équipes. On revient vers vous sous 24 heures avec un avis honnête : agent, workflow, ou simple formation des équipes.
               </p>
-              <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 28 }}>
+              <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 28 }}>
                 Contacter notre équipe
                 <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
               </Link>

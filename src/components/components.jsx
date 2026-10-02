@@ -195,11 +195,16 @@ const VEILLE_LINKS = [
 // de cas étaient jusque-là accessibles depuis le seul pied de page, alors que
 // c'est la page que les prospects cherchent avant de nous contacter.
 const APROPOS_LINKS = [
-  { label: 'À propos de Masteria', desc: 'Le centre de formation et le cabinet', path: '/centre-formation-ia-entreprise', Icon: Info },
-  { label: 'Études de cas IA',     desc: 'Trois déploiements, résultats mesurés', path: '/etudes-de-cas-ia',                Icon: BadgeCheck },
+  { label: 'À propos de Masteria', desc: "Le cabinet et l'organisme de formation", path: '/centre-formation-ia-entreprise', Icon: Info },
+  { label: 'Mathias Nizan',        desc: 'Le fondateur et son parcours',         path: '/mathias-nizan',                    Icon: UserRound },
+  { label: 'Études de cas IA',     desc: 'Quatre missions, méthode et résultats', path: '/etudes-de-cas-ia',                Icon: BadgeCheck },
   { label: 'Certification Qualiopi', desc: 'Portée et financement OPCO',         path: '/formation-ia-qualiopi',            Icon: Award },
   { label: 'Financement',          desc: 'OPCO et plan de développement',        path: '/financement-formation-ia',         Icon: Wallet },
 ];
+
+/* Pages conseil, audit, accompagnement et développement : le formulaire s'y ouvre
+ * sur l'onglet « Conseil & projet sur mesure ». */
+const PROJET_PATH_RE = /^\/(agence|conseil|consultant-|meilleur-cabinet|meilleure-agence|outils-ia|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia|audit-|accompagnement-ia|prestataire-ia|chief-ai-officer|etudes-de-cas-ia|roi-ia|calculateur-roi-ia|charte-ia|mathias-nizan)/;
 
 export function MasteriaHeader() {
   const location = useLocation();
@@ -301,6 +306,8 @@ export function MasteriaHeader() {
     '/audit-ia', '/audit-seo-ia', '/audit-geo-ia', '/consultant-visibilite-ia', '/accompagnement-ia', '/prestataire-ia',
   ];
   const conseilActive = CONSEIL_PATHS.includes(location.pathname);
+  // Sur les pages conseil & dev, « Demander un devis » ouvre l'onglet projet du formulaire.
+  const devisHref = conseilActive || PROJET_PATH_RE.test(location.pathname) ? '/contact?type=projet' : '/contact';
   const veilleActive = location.pathname.startsWith('/veille-ia');
   const aproposActive = APROPOS_LINKS.some(l => l.path === location.pathname);
 
@@ -327,7 +334,7 @@ export function MasteriaHeader() {
             />
             <img
               src="/assets/logo-horizontal@400w.jpg"
-              alt="Masteria, Centre de formation IA certifié Qualiopi"
+              alt="Masteria, cabinet IA à Lyon : audit, conseil, développement et formation"
               width="400" height="225"
               fetchPriority="high" decoding="sync"
               style={{ height: isMobile ? 40 : 56, width: 'auto', display: 'block' }}
@@ -636,7 +643,7 @@ export function MasteriaHeader() {
 
             <SearchButton compact={!wideNav} />
 
-            <Link to="/contact" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, background: '#2563EB', color: '#fff', borderRadius: 7, padding: '10px 20px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(37,99,235,0.30)', whiteSpace: 'nowrap', textAlign: 'center' }}>
+            <Link to={devisHref} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, background: '#2563EB', color: '#fff', borderRadius: 7, padding: '10px 20px', textDecoration: 'none', transition: 'all 150ms', boxShadow: '0 2px 8px rgba(37,99,235,0.30)', whiteSpace: 'nowrap', textAlign: 'center' }}>
               Demander un devis
             </Link>
           </nav>
@@ -646,7 +653,7 @@ export function MasteriaHeader() {
         {isMobile && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <SearchButton compact style={{ height: 34, padding: '0 7px' }} />
-            <Link to="/contact" style={{
+            <Link to={devisHref} style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 12.5, fontWeight: 700,
               background: '#2563EB', color: '#fff', borderRadius: 7,
               padding: '8px 14px', textDecoration: 'none',
@@ -898,7 +905,7 @@ export function MasteriaHeader() {
             </Link>
           ))}
 
-          <Link to="/contact" style={{
+          <Link to={devisHref} style={{
             display: 'block', marginTop: 24, textAlign: 'center',
             fontFamily: 'DM Sans, sans-serif', fontSize: 15, fontWeight: 700,
             background: '#2563EB', color: '#fff', borderRadius: 10,
@@ -944,7 +951,8 @@ export function MasteriaHeader() {
         ]
           // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
           // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).
-          .filter(b => b.label !== 'Finançable OPCO' || !/^\/(agence|conseil|meilleur-cabinet|meilleure-agence|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia|audit-|accompagnement-ia|prestataire-ia)/.test(location.pathname))
+          // Idem sur la home, qui présente d'abord le cabinet (refonte du 02/10/2026) et la page fondateur.
+          .filter(b => b.label !== 'Finançable OPCO' || !(location.pathname === '/' || PROJET_PATH_RE.test(location.pathname) || /^\/(agence|conseil|meilleur-cabinet|meilleure-agence|outils|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia|audit-|accompagnement-ia|prestataire-ia)/.test(location.pathname)))
           .map(({ Icon, label, shortLabel }, i) => (
           <span key={i} style={{
             display: 'inline-flex', alignItems: 'center', gap: isMobile ? 5 : 6,
@@ -997,13 +1005,13 @@ export function MasteriaFooter() {
                 src="/assets/logo-horizontal@400w.png"
                 srcSet="/assets/logo-horizontal@400w.png 400w, /assets/logo-horizontal@800w.png 800w"
                 sizes="160px"
-                alt="Masteria, Centre de formation IA certifié Qualiopi"
+                alt="Masteria, cabinet IA à Lyon : audit, conseil, développement et formation"
                 width="400" height="225"
                 loading="lazy" decoding="async"
                 style={{ filter: 'invert(1)', marginBottom: 14, height: 44, width: 'auto', display: 'block' }}
               />
             </picture>
-            <p style={{ fontSize: 13, color: '#888', lineHeight: 1.75, maxWidth: 260 }}>Centre de formation certifié Qualiopi. L'IA au service des hommes, pas l'inverse.</p>
+            <p style={{ fontSize: 13, color: '#888', lineHeight: 1.75, maxWidth: 260 }}>Cabinet spécialisé en IA : audit, conseil, outils sur mesure et formation certifiée Qualiopi. L'IA au service des hommes, pas l'inverse.</p>
             <p style={{ fontSize: 12, color: '#666', lineHeight: 1.6, maxWidth: 260, marginTop: 10 }}>Déclaration d'activité n° 84 69 23218 69 enregistrée auprès du préfet de région Auvergne-Rhône-Alpes</p>
             <a
               href="/assets/qualiopi-certificat-masteria.pdf"

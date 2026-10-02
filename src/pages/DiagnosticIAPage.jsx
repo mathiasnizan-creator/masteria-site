@@ -10,6 +10,7 @@ import CaseStudyCards from '../components/CaseStudyCards'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import CadrageLink from '../components/CadrageLink'
 
 /*
  * Page de conversion high-ticket — offre d'entrée productisée « Diagnostic IA »
@@ -34,7 +35,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
-const META_DESC = "Diagnostic IA en une journée : audit de vos processus automatisables, cas d'usage priorisés et feuille de route chiffrée livrée. Cadrage gratuit, sans engagement."
+const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée. Premier échange de 30 minutes offert."
 // Répartition des intentions « audit » (depuis 2026-08-10) : la requête
 // transactionnelle « audit ia » est portée par la money page /audit-ia ;
 // l'intention informationnelle (méthode, normes, prix) reste à l'article
@@ -77,7 +78,9 @@ const HERO_BADGES = [
 /* ───────── En bref (synthèse citable — GEO) ───────── */
 
 const EN_BREF = [
+  { label: 'Premier échange', value: "30 minutes de cadrage, offertes, en visio ou par téléphone" },
   { label: 'Format', value: "Une journée de travail, préparation et restitution incluses" },
+  { label: 'Tarif', value: "Forfait d'une journée, chiffré lors du cadrage selon le périmètre" },
   { label: 'Livrable', value: "Feuille de route IA priorisée, estimations de budget et de délai, quick wins" },
   { label: 'Engagement', value: "Faible, sans suite obligatoire ; le livrable vous appartient" },
   { label: 'Pour qui', value: "COMEX, DSI et directions métier · PME, ETI et grands groupes" },
@@ -197,7 +200,7 @@ const DEROULE = [
     num: '01',
     phase: 'Avant',
     title: 'Préparation et collecte',
-    desc: "Un court échange préalable cadre le périmètre et identifie les bons interlocuteurs. Nous récupérons les éléments utiles (organigramme des processus concernés, contraintes connues) pour arriver préparés et ne pas perdre votre journée en mise en contexte.",
+    desc: "Les 30 minutes de cadrage, offertes, fixent le périmètre et identifient les bons interlocuteurs. Nous récupérons les éléments utiles (organigramme des processus concernés, contraintes connues) pour arriver préparés et ne pas perdre votre journée en mise en contexte.",
   },
   {
     num: '02',
@@ -238,7 +241,7 @@ const DEBLOQUE = [
 const FAQ = [
   {
     q: "Combien coûte un diagnostic IA ?",
-    a: "Cela dépend du périmètre. Pour un cadrage simple sur un périmètre restreint, le premier échange de cadrage est gratuit et sans engagement. Pour un diagnostic approfondi mobilisant une journée complète avec vos équipes, des ateliers et un livrable formalisé, l'intervention se chiffre au forfait court, établi après définition du périmètre. Nous ne publions pas de prix type et ne vendons rien à l'aveugle : le périmètre se fixe avant le devis.",
+    a: "Le diagnostic est une prestation payante, au forfait : une journée de travail avec vos équipes, préparation et restitution incluses. Le forfait est chiffré lors du premier échange, selon le périmètre (nombre de processus, d'équipes et de sites concernés). Ce premier échange, 30 minutes de cadrage en visio ou par téléphone, est offert et sans engagement. Nous ne vendons rien à l'aveugle : le périmètre est écrit avant le devis.",
   },
   {
     q: "Que se passe-t-il si nous ne donnons pas suite après le diagnostic ?",
@@ -281,7 +284,7 @@ const serviceJsonLd = {
   '@type': ['Service', 'ProfessionalService'],
   name: 'Diagnostic IA — Masteria',
   alternateName: 'Diagnostic intelligence artificielle',
-  description: "Diagnostic IA productisé en une journée : cadrage des usages, cartographie des processus automatisables, priorisation impact/effort. Livrable : feuille de route priorisée, estimations de budget et de délai, quick wins. Offre d'entrée à faible engagement, sans suite obligatoire.",
+  description: "Diagnostic IA productisé en une journée : cadrage des usages, cartographie des processus automatisables, priorisation impact/effort. Livrable : feuille de route priorisée, estimations de budget et de délai, quick wins. Offre d'entrée à faible engagement, sans suite obligatoire : premier échange de cadrage de 30 minutes offert, puis forfait d'une journée chiffré lors du cadrage.",
   url: 'https://www.master-ia.fr/diagnostic-ia',
   serviceType: "Diagnostic et feuille de route IA",
   category: "Conseil en intelligence artificielle",
@@ -430,7 +433,7 @@ export default function DiagnosticIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
           {/* GEO : définition autonome (58 mots), citable hors contexte */}
@@ -451,10 +454,10 @@ export default function DiagnosticIAPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un diagnostic
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#livrable" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir le livrable
             </a>
@@ -751,7 +754,7 @@ export default function DiagnosticIAPage() {
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
               </p>
-              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+              <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -823,14 +826,14 @@ export default function DiagnosticIAPage() {
               Commencez par un diagnostic
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Décrivez-nous votre contexte et les processus que vous voulez examiner. Nous revenons vers vous sous 24 heures pour cadrer le périmètre du diagnostic et convenir d'une date. Vous repartez de la journée avec une feuille de route claire, que vous donniez suite ou non.
+              Tout commence par 30 minutes de cadrage, offertes : votre contexte, les processus à examiner, le périmètre de la journée. Vous recevez ensuite le forfait du diagnostic et une date. Vous repartez de la journée avec une feuille de route claire, que vous donniez suite ou non.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un diagnostic IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Faible engagement · Livrable actionnable · Lyon, France, Suisse, Belgique
+              Cadrage offert · Forfait d'une journée · Livrable actionnable · Lyon, France, Suisse, Belgique
             </p>
           </div>
         </div>

@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import CadrageLink from '../components/CadrageLink'
 
 /*
  * Page offre « agence IA marketing » (slug /agence-ia-marketing).
@@ -421,7 +422,7 @@ export default function AgenceIAMarketingPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
@@ -434,7 +435,7 @@ export default function AgenceIAMarketingPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Discutons de votre marketing
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -785,7 +786,7 @@ export default function AgenceIAMarketingPage() {
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
               </p>
-              <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+              <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -807,7 +808,7 @@ export default function AgenceIAMarketingPage() {
             Pour aller plus loin
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément. Pour cadrer le périmètre avant de démarrer, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA gratuit</Link> situe vos priorités marketing en une vingtaine de minutes.
+            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément. Pour cadrer le périmètre avant de démarrer, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> situent vos priorités marketing ; le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> d'une journée les transforme en feuille de route.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
@@ -857,7 +858,7 @@ export default function AgenceIAMarketingPage() {
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
               Décrivez-nous vos objectifs et les canaux à prendre en charge. Nous revenons vers vous sous 24 heures avec un créneau de cadrage : périmètre, dispositif de production et indicateurs de suivi. Vous validez, nous produisons et pilotons.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Discutons de votre projet
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>

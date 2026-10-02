@@ -88,7 +88,7 @@ const WHY_MASTERIA = [
 
 const TRAINER = {
   name: 'Mathias Nizan',
-  role: 'Fondateur & formateur principal, Masteria',
+  role: 'Fondateur de Masteria, conseil et architecture de solutions IA',
   quote: "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel.",
   credentials: ['Expert IA certifié', '+1 500 professionnels formés', 'Fondateur Masteria', 'Certification Qualiopi'],
 }

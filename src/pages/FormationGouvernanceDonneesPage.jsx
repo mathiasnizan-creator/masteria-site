@@ -275,7 +275,7 @@ export default function FormationGouvernanceDonneesPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>gouverner votre patrimoine informationnel avant l'IA</span>
           </h1>
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
           </p>
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             La formation gouvernance des données de Masteria apprend en deux jours à <strong style={{ color: '#fff', fontWeight: 700 }}>cartographier le patrimoine informationnel, nommer les rôles, mesurer la qualité, gérer les données de référence et préparer les données pour l'IA</strong>, sur vos données réelles. Certifiée Qualiopi, finançable par votre OPCO.

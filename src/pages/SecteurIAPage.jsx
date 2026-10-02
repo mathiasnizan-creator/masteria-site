@@ -242,7 +242,7 @@ export default function SecteurIAPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Demander un cadrage gratuit
               <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -476,7 +476,7 @@ export default function SecteurIAPage() {
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
               </p>
-              <Link to="/contact" style={{ color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+              <Link to="/contact?type=projet" style={{ color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -541,7 +541,7 @@ export default function SecteurIAPage() {
             <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Layers size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> Agence de développement IA
             </Link>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: c, border: `1px solid ${c}`, borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 700, color: '#fff', textDecoration: 'none' }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: c, border: `1px solid ${c}`, borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 700, color: '#fff', textDecoration: 'none' }}>
               Demander un cadrage gratuit
               <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -563,7 +563,7 @@ export default function SecteurIAPage() {
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
               Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, contraintes de données. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit et sans engagement.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Contacter notre équipe
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>

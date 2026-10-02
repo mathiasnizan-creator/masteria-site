@@ -91,7 +91,7 @@ export const GEO_CITIES = [
     dateModified: '2026-09-08',
     // Réponse directe citable par les moteurs génératifs : l'entité, le lieu, l'offre et
     // le prix en un paragraphe (id geo-summary, déclaré speakable sur l'Article).
-    geoSummary: "Masteria est un organisme de formation en intelligence artificielle basé à Lyon, en presqu'île (17 rue d'Algérie, Lyon 1ᵉʳ), certifié Qualiopi. Il forme les équipes des entreprises de la métropole à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, dans leurs locaux ou à distance, sur leurs propres dossiers : 1 980 € HT la journée, finançable par votre OPCO, devis sous 24 h.",
+    geoSummary: "Masteria est un cabinet spécialisé en intelligence artificielle basé à Lyon, en presqu'île (17 rue d'Algérie, Lyon 1ᵉʳ), certifié Qualiopi. Il forme les équipes des entreprises de la métropole à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, dans leurs locaux ou à distance, sur leurs propres dossiers : 1 980 € HT la journée, finançable par votre OPCO, devis sous 24 h.",
     // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
     // l'adresse du ProfessionalService, la ligne « Organisme » de l'encart En bref,
     // la carte Google (hasMap) et l'entité Knowledge Graph (sameAs).

@@ -67,6 +67,7 @@ const staticRoutes = [
   { path: 'consultant-ia',                       prio: 0.8, freq: 'monthly', files: ['src/pages/ConsultantIAPage.jsx'] },
   { path: 'etudes-de-cas-ia',                    prio: 0.85, freq: 'monthly', files: ['src/pages/EtudesDeCasIAPage.jsx'] },
   { path: 'presse',                              prio: 0.5,  freq: 'monthly', files: ['src/pages/PressePage.jsx'] },
+  { path: 'mathias-nizan',                       prio: 0.7,  freq: 'monthly', files: ['src/pages/MathiasNizanPage.jsx'] },
   { path: 'quel-opco',                           prio: 0.7,  freq: 'monthly', files: ['src/pages/QuelOpcoPage.jsx'] },
   { path: 'test-maturite-ia',                    prio: 0.6,  freq: 'monthly', files: ['src/pages/TestMaturiteIAPage.jsx'] },
   { path: 'quel-outil-ia',                       prio: 0.7,  freq: 'monthly', files: ['src/pages/QuelOutilIAPage.jsx'] },

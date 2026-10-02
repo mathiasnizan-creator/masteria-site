@@ -33,7 +33,7 @@ const ECHOS_ARTICLE_URL = 'https://www.lesechos.fr/travailler-mieux/travailler-a
 const ECHOS_ARTICLE_TITLE = "ChatGPT, Claude, Copilot, Gemini, Mistral : comment choisir l'IA la plus adaptée à son métier"
 
 /* Bio courte copiable telle quelle par un journaliste. */
-const BIO = "Mathias Nizan fonde Masteria à Lyon en 2022, après dix ans passés sur les enjeux digitaux des entreprises. L'organisme, certifié Qualiopi, a formé plus de 1 500 professionnels à l'IA générative (ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI) et accompagne PME, ETI et grands groupes, du conseil stratégique au développement d'outils sur mesure. Cité par Les Échos sur le choix des outils d'IA en entreprise, il publie chaque matin ouvré une veille IA sur master-ia.fr."
+const BIO = "Mathias Nizan fonde Masteria à Lyon en 2022, après dix ans passés sur les enjeux digitaux des entreprises. Le cabinet audite, conseille et construit des outils d'IA sur mesure pour des PME, des ETI et des grands groupes, et forme leurs équipes : plus de 1 500 professionnels formés à l'IA générative (ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI), formation certifiée Qualiopi. Cité par Les Échos sur le choix des outils d'IA en entreprise, il publie chaque matin ouvré une veille IA sur master-ia.fr."
 
 const EXPERTISE = [
   { icon: TrendingUp, title: "Adoption de l'IA en PME et ETI", desc: "Ce qui marche et ce qui bloque, observé depuis les salles de formation et les missions de conseil, pas depuis les slides." },
@@ -49,7 +49,7 @@ const CHIFFRES = [
   { label: 'Certification', value: 'Qualiopi (actions de formation) · NDA 84 69 23218 69, vérifiable sur la Liste publique des organismes de formation' },
   { label: 'Formés', value: 'Plus de 1 500 professionnels · 98 % de satisfaction' },
   { label: 'Catalogue', value: '5 outils · 24 métiers · des programmes par outil et par fonction' },
-  { label: 'Activités', value: "Formation, conseil en stratégie IA, développement d'agents et d'outils sur mesure" },
+  { label: 'Activités', value: "Audit et conseil en stratégie IA, développement d'agents et d'outils sur mesure, formation" },
   { label: 'Zone', value: 'France, Suisse, Belgique · présentiel et distanciel' },
   { label: 'Références', value: 'Études de cas publiées, anonymisées à la demande des clients, vérifiables sous NDA' },
 ]
@@ -111,7 +111,7 @@ export default function PressePage() {
 
           {/* GEO : réponse directe (citable LLM) */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {"Masteria est un organisme de formation et cabinet de conseil en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, cité par Les Échos sur le choix des outils d'IA en entreprise. "}
+            {"Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est cité par Les Échos sur le choix des outils d'IA en entreprise. "}
             <strong style={{ color: '#fff', fontWeight: 700 }}>Interview, citation, données de terrain : réponse aux journalistes sous 24 h ouvrées.</strong>
           </p>
 
@@ -193,6 +193,9 @@ export default function PressePage() {
                 <a href="https://www.linkedin.com/in/mathias-nizan/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
                   LinkedIn
                 </a>
+                <Link to="/mathias-nizan" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                  Son parcours <ArrowRight size={13} aria-hidden="true" />
+                </Link>
                 <Link to="/centre-formation-ia-entreprise" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
                   À propos de Masteria <ArrowRight size={13} aria-hidden="true" />
                 </Link>

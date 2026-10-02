@@ -402,7 +402,7 @@ export default function ConseilStrategieIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
           {/* GEO : définition autonome (58 mots), citable hors contexte */}
@@ -423,7 +423,7 @@ export default function ConseilStrategieIAPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Contacter notre équipe
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
@@ -636,7 +636,7 @@ export default function ConseilStrategieIAPage() {
               Réponse sous 24 h · Cadrage gratuit de 30 minutes · Mission sur devis
             </p>
           </div>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap', boxShadow: '0 4px 14px rgba(37,99,235,0.25)' }}>
+          <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap', boxShadow: '0 4px 14px rgba(37,99,235,0.25)' }}>
             Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
@@ -675,7 +675,7 @@ export default function ConseilStrategieIAPage() {
             La stratégie débouche sur du build, pas seulement sur un rapport
           </h2>
           <p style={{ color: GREY_700, fontSize: 16, marginBottom: 36, maxWidth: 800, lineHeight: 1.75 }}>
-            Une feuille de route ne produit ses effets que si elle est exécutée. Masteria prolonge la mission stratégique par un <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> dans la durée, porté par la même équipe, et par un <Link to="/conseil-transformation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil en transformation IA</Link> quand l'organisation elle-même doit changer (processus, rôles, pilotage) : conception et développement des solutions sur mesure par notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link>, automatisation des processus, puis montée en compétences des équipes. En amont, un <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA gratuit</Link> objective votre maturité, et nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> alimentent la phase de priorisation. Conseil et développement se chiffrent sur devis ; seule la formation associée est finançable OPCO.
+            Une feuille de route ne produit ses effets que si elle est exécutée. Masteria prolonge la mission stratégique par un <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> dans la durée, porté par la même équipe, et par un <Link to="/conseil-transformation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil en transformation IA</Link> quand l'organisation elle-même doit changer (processus, rôles, pilotage) : conception et développement des solutions sur mesure par notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link>, automatisation des processus, puis montée en compétences des équipes. En amont, un <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> d'une journée objective votre maturité, et nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> alimentent la phase de priorisation. Conseil et développement se chiffrent sur devis ; seule la formation associée est finançable OPCO.
            Pour comprendre la démarche avant de nous appeler, ou la mener vous-même, lisez notre <Link to="/blog/strategie-ia-entreprise-guide" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>guide de la stratégie IA d'entreprise</Link>.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             <Link to="/agence-developpement-ia" style={{ textDecoration: 'none' }}>
@@ -795,7 +795,7 @@ export default function ConseilStrategieIAPage() {
           </div>
 
           <p style={{ marginBottom: 0 }}>
-            Une stratégie IA bien menée transforme ces contraintes en avantage : elle priorise les chantiers à plus fort ROI, intègre la conformité dès la conception et prépare l'organisation au déploiement à l'échelle. Une fois la trajectoire fixée, la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>gouvernance de l'IA</Link> en prolonge le cadre dans la durée : comité de pilotage, charte d'usage et conformité RGPD et AI Act. Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link> évalue gratuitement votre maturité ; pour un état des lieux exhaustif avant d'industrialiser, notre <Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> couvre maturité, données et conformité ; et pour le périmètre conseil complet (accompagnement, transformation), consultez notre <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>.
+            Une stratégie IA bien menée transforme ces contraintes en avantage : elle priorise les chantiers à plus fort ROI, intègre la conformité dès la conception et prépare l'organisation au déploiement à l'échelle. Une fois la trajectoire fixée, la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>gouvernance de l'IA</Link> en prolonge le cadre dans la durée : comité de pilotage, charte d'usage et conformité RGPD et AI Act. Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link>, en une journée, évalue votre maturité ; pour un état des lieux exhaustif avant d'industrialiser, notre <Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> couvre maturité, données et conformité ; et pour le périmètre conseil complet (accompagnement, transformation), consultez notre <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>.
           </p>
 
           {/* Définitions clés — ancrage d'entités */}
@@ -846,7 +846,7 @@ export default function ConseilStrategieIAPage() {
               <p style={{ color: GREY_700, fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
                 Vous ne trouvez pas votre réponse ici ?
               </p>
-              <Link to="/contact" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5 }}>
+              <Link to="/contact?type=projet" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5 }}>
                 Posez-nous votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
@@ -911,7 +911,7 @@ export default function ConseilStrategieIAPage() {
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
               Décrivez-nous votre organisation, vos premiers usages et vos échéances. Nous revenons vers vous sous 24 heures avec une proposition de cadrage, après un premier échange gratuit de 30 minutes.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '15px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800 }}>
               Contacter notre équipe <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', marginTop: 24, marginBottom: 0 }}>

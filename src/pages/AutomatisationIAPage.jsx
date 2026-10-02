@@ -93,7 +93,7 @@ const RELATED = [
 
 const TRAINER = {
   name: 'Mathias Nizan',
-  role: 'Fondateur & formateur principal, Masteria',
+  role: 'Fondateur de Masteria, conseil et architecture de solutions IA',
   quote: "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel.",
   credentials: ['Expert IA certifié', '+1 500 professionnels formés', 'Fondateur Masteria', 'Certification Qualiopi'],
   bio: "Mathias Nizan a fondé Masteria en 2022 après 10 ans passés à accompagner des entreprises sur leurs enjeux digitaux. Il conçoit et anime des formations à l'automatisation par l'IA : workflows no-code, agents et intégration de l'IA dans les outils métier. Pour ce programme, il s'appuie sur des déploiements réels chez des PME et ETI, avec une exigence constante de sécurité et de conformité.",

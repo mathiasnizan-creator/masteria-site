@@ -280,7 +280,7 @@ export default function SalonsIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>l'agenda des salons data, IA et industrie en France</span>
           </h1>
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Dates vérifiées le {VERIFIED_ON}
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Dates vérifiées le {VERIFIED_ON}
           </p>
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             Huit rendez-vous pour la saison 2026-2027, vérifiés sur les sites officiels : <strong style={{ color: '#fff', fontWeight: 700 }}>Big Data & AI Paris, SIDO Lyon, le Salon de la Data et de l'IA de Nantes, le World AI Cannes Festival, Global Industrie, All4Customer, Documation et VivaTech</strong>. Avec, pour chacun, à qui il s'adresse, et une méthode pour en tirer une décision plutôt qu'une journée.

@@ -247,7 +247,7 @@ export default function AtelierIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>les mains sur les outils, sur vos cas</span>
           </h1>
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
           </p>
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             Un atelier intelligence artificielle Masteria dure de trois heures à une journée, réunit au plus douze personnes, chacune devant son écran, et <strong style={{ color: '#fff', fontWeight: 700 }}>installe deux ou trois usages sur les documents réels des participants</strong>. Six formats : découverte, métier, prompts, cas d'usage, managers, Excel et données. Certifiés Qualiopi, finançables par votre OPCO.

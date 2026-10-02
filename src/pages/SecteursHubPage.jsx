@@ -193,7 +193,7 @@ export default function SecteursHubPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
@@ -343,7 +343,7 @@ export default function SecteursHubPage() {
                 <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, découvrez l'apport de l'{' '}
                 <Link to="/ia-generative-entreprise" style={{ color: c, fontWeight: 600 }}>IA générative en entreprise</Link>, explorez{' '}
                 <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>toutes nos solutions IA</Link> ou{' '}
-                <Link to="/contact" style={{ color: c, fontWeight: 600 }}>contactez notre équipe</Link>.
+                <Link to="/contact?type=projet" style={{ color: c, fontWeight: 600 }}>contactez notre équipe</Link>.
               </p>
             </div>
             <div>
@@ -370,7 +370,7 @@ export default function SecteursHubPage() {
               Notre méthode s'applique à tout secteur B2B. Décrivez votre activité et vos enjeux : nous revenons vers vous sous 24 heures avec une première lecture des cas d'usage et une proposition de cadrage gratuit.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
-              <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+              <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
                 Contacter notre équipe
                 <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
               </Link>

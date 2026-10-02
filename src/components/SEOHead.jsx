@@ -16,6 +16,19 @@ const OG_CARRE = `${SITE_URL}/og/masteria-1x1.jpg`    // 1200 x 1200
 const OG_4X3 = `${SITE_URL}/og/masteria-4x3.jpg`      // 1200 x 900
 const OG_DEFAUT = `${SITE_URL}/og/masteria-16x9.jpg`  // 1200 x 630
 
+/* Offres déclarées dans le schéma Organization (hasOfferCatalog) : conseil et
+   développement d'abord, la formation en dernier. */
+const ORG_OFFRES = [
+  { name: 'Audit IA', path: '/audit-ia', desc: "État des lieux documenté des usages, des données, des risques et de la conformité, avec un plan d'action priorisé." },
+  { name: 'Diagnostic IA', path: '/diagnostic-ia', desc: "Une journée de travail avec vos équipes pour prioriser les cas d'usage et repartir avec une feuille de route chiffrée." },
+  { name: 'Conseil en stratégie IA', path: '/conseil-intelligence-artificielle', desc: 'Priorisation des cas d\'usage, feuille de route, gouvernance et conformité (AI Act, RGPD).' },
+  { name: 'Accompagnement IA', path: '/accompagnement-ia', desc: "Pilotage du déploiement dans la durée, de la feuille de route à l'usage installé dans les équipes." },
+  { name: "Développement d'outils et d'agents IA sur mesure", path: '/agence-developpement-ia', desc: 'Agents, assistants branchés sur vos documents (RAG), applications et intégrations à votre système d\'information. Le code vous appartient.' },
+  { name: 'Automatisation des processus par IA', path: '/agence-automatisation-ia', desc: 'Workflows et automatisations métier reliés à vos outils.' },
+  { name: 'Gouvernance et conformité IA', path: '/gouvernance-ia', desc: 'Charte, rôles, registre des usages et mise en conformité AI Act et RGPD.' },
+  { name: 'Formation IA certifiée Qualiopi', path: '/formation-intelligence-artificielle', desc: 'Formations par outil et par métier (ChatGPT, Microsoft Copilot, Google Gemini, Claude, Mistral AI), finançables OPCO.' },
+]
+
 // Une page tout juste créée n'a pas encore sa carte : on retombe alors sur la
 // carte de marque plutôt que de pointer vers un fichier absent.
 const carteDeLaPage = slug =>
@@ -75,6 +88,7 @@ export default function SEOHead({
   alternates,       // { fr, en } slugs de la MÊME page dans les deux langues → hreflang croisés.
                     // Utilisé par la Veille IA, bilingue depuis août 2026.
   htmlLang = 'fr',  // valeur de <html lang> : 'fr' par défaut, 'en' sur les pages anglaises
+  mainEntityId,     // @id de l'entité principale de la page (ex. ProfilePage → '#mathias-nizan')
 }) {
   // Le shell index.html porte une description par défaut (routes non prérendues) :
   // on la retire dès qu'une page pose la sienne, pour n'avoir qu'une balise.
@@ -93,7 +107,7 @@ export default function SEOHead({
   // Le title porte déjà « | Masteria » : y ajouter « , Masteria » donnait un alt
   // qui répétait la marque deux fois.
   const titreNu = String(title || '').replace(/\s*[|·—–]\s*[^|·—–]*Masteria\s*$/i, '').trim()
-  const imageAlt = titreNu ? `${titreNu} — Masteria` : 'Masteria, formation et conseil IA'
+  const imageAlt = titreNu ? `${titreNu} — Masteria` : 'Masteria, cabinet IA : audit, conseil, développement et formation'
   // Validité du tarif pour le schema Offer (recalculée à chaque build prerender) —
   // évite que Google considère le prix comme expiré. Fin de l'année suivante.
   const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`
@@ -106,21 +120,23 @@ export default function SEOHead({
     name: 'Mathias Nizan',
     givenName: 'Mathias',
     familyName: 'Nizan',
-    jobTitle: 'Fondateur & formateur principal',
+    jobTitle: 'Fondateur de Masteria, conseil et architecture de solutions IA',
     worksFor: { '@id': `${SITE_URL}/#organization` },
-    url: `${SITE_URL}/centre-formation-ia-entreprise`,
+    url: `${SITE_URL}/mathias-nizan`,
+    mainEntityOfPage: `${SITE_URL}/mathias-nizan`,
     image: `${SITE_URL}/assets/mathias-nizan@240.jpg`,
     sameAs: [
       'https://www.linkedin.com/in/mathias-nizan/',
       'https://www.linkedin.com/company/masteria-conseil-et-formation-ia/',
     ],
     knowsAbout: [
+      'Audit IA', 'Conseil en stratégie IA', 'Architecture de solutions IA',
+      'Développement de solutions IA sur mesure', 'Agents IA',
+      'RAG (retrieval-augmented generation)', 'Intégration de l\'IA au système d\'information',
+      'Automatisation des processus par IA', 'Gouvernance et conformité IA (RGPD, AI Act)',
       'Intelligence artificielle générative',
       'ChatGPT', 'Microsoft Copilot', 'Google Gemini', 'Claude (Anthropic)', 'Mistral AI',
-      'Prompt engineering', 'Formation professionnelle IA', 'Transformation par l\'IA',
-      'Conseil en stratégie IA', 'Développement de solutions IA sur mesure',
-      'Agents IA', 'Automatisation des processus par IA', 'RAG (retrieval-augmented generation)',
-      'Gouvernance et conformité IA (RGPD, AI Act)',
+      'Formation professionnelle IA',
     ],
     // Citation presse vérifiable (E-E-A-T) : Mathias Nizan cité par Les Échos.
     subjectOf: {
@@ -129,13 +145,15 @@ export default function SEOHead({
       url: 'https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741',
       publisher: { '@type': 'NewsMediaOrganization', name: 'Les Échos', url: 'https://www.lesechos.fr' },
     },
-    description: "Fondateur de Masteria, cabinet de conseil et développement IA et centre de formation certifié Qualiopi. Accompagne PME, ETI et grands groupes sur la stratégie, le développement de solutions IA sur mesure et la formation, depuis 2022. Cité par Les Échos.",
+    description: "Fondateur de Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022. Conduit les missions d'audit, de conseil et d'architecture de solutions IA (agents, RAG, intégration au système d'information) et forme les équipes qui les utilisent. Dix ans de conseil en transformation digitale avant de se consacrer à l'IA générative. Cité par Les Échos.",
   }
 
   /* ───── JSON-LD Organization (référence globale) ───── */
   const jsonLdOrg = {
     '@context': 'https://schema.org',
-    '@type': ['Organization', 'EducationalOrganization'],
+    // ProfessionalService d'abord : Masteria est un cabinet (audit, conseil, développement) ;
+    // EducationalOrganization reste, la certification Qualiopi couvrant la formation.
+    '@type': ['ProfessionalService', 'EducationalOrganization'],
     '@id': `${SITE_URL}/#organization`,
     name: 'Masteria',
     alternateName: 'Master IA',
@@ -148,7 +166,20 @@ export default function SEOHead({
     },
     image: OG_CARRE,
     description:
-      "Centre de formation IA certifié Qualiopi et cabinet de conseil. Formations ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI, finançables OPCO.",
+      "Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan : audit IA, conseil, accompagnement, développement d'outils et d'agents IA sur mesure, et formation des équipes certifiée Qualiopi (ChatGPT, Microsoft Copilot, Google Gemini, Claude, Mistral AI).",
+    knowsAbout: [
+      'Audit IA', 'Stratégie IA', 'Gouvernance et conformité IA (AI Act, RGPD)',
+      'Agents IA', 'RAG (retrieval-augmented generation)', 'Automatisation des processus par IA',
+      'Intégration de l\'IA au système d\'information', 'Formation professionnelle IA',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Offres Masteria',
+      itemListElement: ORG_OFFRES.map(o => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: o.name, url: `${SITE_URL}${o.path}`, description: o.desc },
+      })),
+    },
     foundingDate: '2022',
     founder: { '@id': `${SITE_URL}/#mathias-nizan` },
     address: {
@@ -228,6 +259,7 @@ export default function SEOHead({
     primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl, width: 1200, height: 630 },
     image: imagesStructurees,
     thumbnailUrl: OG_CARRE,
+    mainEntity: mainEntityId ? { '@id': mainEntityId } : undefined,
     // Signal de fraîcheur (émis uniquement si la page fournit une date) — favorise
     // le crawl de re-fraîcheur (SEO) et la citation par les moteurs génératifs (GEO).
     datePublished: datePublished || undefined,
@@ -463,7 +495,7 @@ export default function SEOHead({
       <meta name="twitter:creator" content="@mathias_nizan" />
 
       {/* Keywords (utile pour Bing/Yandex + meilleure pertinence sémantique) */}
-      <meta name="keywords" content={keywords || "formation IA entreprise, formation ChatGPT, formation Claude IA, formation Microsoft Copilot, formation Google Gemini, formation Mistral AI, IA en entreprise, certifié Qualiopi, finançable OPCO, Lyon"} />
+      <meta name="keywords" content={keywords || "cabinet IA, audit IA, conseil IA, développement IA sur mesure, agents IA, formation IA entreprise, formation ChatGPT, formation Microsoft Copilot, certifié Qualiopi, Lyon"} />
 
       {/* Pragma : pas de cache pour navigation entre pages prerendées */}
       <meta httpEquiv="content-language" content="fr-FR" />
