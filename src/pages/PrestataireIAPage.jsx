@@ -458,7 +458,7 @@ export default function PrestataireIAPage() {
             </table>
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, marginTop: 20, maxWidth: 880 }}>
-            Pour approfondir par type : notre guide du choix d'une <Link to="/meilleure-agence-ia" style={aStyle}>agence IA</Link> et celui du <Link to="/meilleur-cabinet-conseil-ia" style={aStyle}>cabinet de conseil en IA</Link> détaillent les critères propres à chaque famille. Pour explorer largement le marché français, la <a href="https://www.francenum.gouv.fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={aStyle}>cartographie France Num</a> recense les acteurs référencés.
+            Pour approfondir par type : notre guide du choix d'une <Link to="/meilleure-agence-ia" style={aStyle}>agence IA</Link> et celui du <Link to="/meilleur-cabinet-conseil-ia" style={aStyle}>meilleur cabinet IA</Link> détaillent les critères propres à chaque famille. Pour explorer largement le marché français, la <a href="https://www.francenum.gouv.fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={aStyle}>cartographie France Num</a> recense les acteurs référencés.
           </p>
         </div>
       </section>

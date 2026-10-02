@@ -341,8 +341,8 @@ const REFERENCES = [
 
 /* ───────── Meta ───────── */
 
-const META_DESC = "Conseil IA pour PME, ETI et grands groupes : audit des usages, accompagnement au déploiement, gouvernance et développement des solutions sur mesure. Cadrage gratuit."
-const KEYWORDS = "conseil ia, conseil en intelligence artificielle, conseil en ia, conseil intelligence artificielle, accompagnement ia, accompagnement ia entreprise, accompagnement intelligence artificielle, expert conseil ia, transformation ia"
+const META_DESC = "Cabinet conseil IA pour PME, ETI et grands groupes : audit des usages, accompagnement au déploiement, gouvernance et solutions sur mesure. Cadrage offert."
+const KEYWORDS = "conseil ia, cabinet conseil ia, cabinet de conseil ia, cabinet de conseil en intelligence artificielle, conseil en intelligence artificielle, conseil en ia, conseil intelligence artificielle, accompagnement ia, accompagnement ia entreprise, accompagnement intelligence artificielle, expert conseil ia, transformation ia"
 
 /* ───────── JSON-LD ───────── */
 
@@ -362,7 +362,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/conseil-intelligence-artificielle#article',
-  headline: "Le cabinet de conseil en intelligence artificielle qui forme vos équipes",
+  headline: "Cabinet de conseil en intelligence artificielle : de l'audit à l'outil en production",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
@@ -445,9 +445,9 @@ export default function ConseilIAPage() {
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
-            Le cabinet de conseil en
+            Cabinet de conseil en intelligence artificielle&nbsp;:
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>intelligence artificielle qui forme vos équipes</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>de l'audit à l'outil en production</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
@@ -910,11 +910,11 @@ export default function ConseilIAPage() {
             Quels résultats attendre d'une mission de conseil IA ?
           </h3>
           <p style={{ marginBottom: 20 }}>
-            Sur les missions menées en 2024-2025, nos clients constatent en moyenne : <strong style={{ color: INK }}>6 heures gagnées par semaine et par collaborateur formé</strong> sur des tâches récurrentes (rédaction, synthèse, analyse documentaire, préparation de réunions, traitement d'emails), une réduction de 30 à 50 % du temps de traitement sur certains processus identifiés (réponse aux appels d'offres, comptes-rendus, analyse de contrats), et une montée en autonomie progressive permettant de réduire la dépendance aux prestataires externes pour les usages courants. Ces gains se mesurent dès les 3 premiers mois post-formation, à condition d'avoir cadré les indicateurs en amont.
+            Des outils en service, des équipes qui s'en servent et des indicateurs suivis. Chez un distributeur, 58 commerciaux sont formés et <strong style={{ color: INK }}>onze assistants branchés sur l'ERP et le CRM</strong>, dont les relances de devis, déjà en production. Dans un cabinet de conseil, chaque pôle dispose d'assistants d'appels d'offres nourris des mémoires les mieux notés. Dans une PME du photovoltaïque, le diagnostic par flux a livré trois chantiers et des cibles écrites avant la formation, comme un devis envoyé sous douze heures. Les indicateurs sont fixés au cadrage, relevés au démarrage, puis revus à J+30. Le détail figure dans nos <Link to="/etudes-de-cas-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>études de cas IA</Link>.
           </p>
 
           <p style={{ marginBottom: 0 }}>
-            Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link>, une journée de travail avec vos équipes, évalue votre maturité et fait remonter les premiers cas d'usage. Le premier échange de cadrage, 30 minutes, est offert. Quand la direction veut une vision exhaustive avant d'industrialiser (maturité, données, conformité RGPD et AI Act), notre <Link to="/audit-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> livre le rapport complet et la feuille de route chiffrée. Et quand l'enjeu est de tenir la transformation dans la durée jusqu'aux usages installés, notre <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> couvre le cadrage, le déploiement, la conduite du changement et l'<Link to="/acculturation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>acculturation des équipes</Link>. Si votre besoin relève d'un métier précis, nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> détaillent les leviers prioritaires. Et pour structurer la décision au niveau direction, notre <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> formalise une feuille de route arbitrable en COMEX. Pour cadrer le budget en amont, notre repère sur le <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> donne les fourchettes à anticiper. Et si vous comparez plusieurs prestataires, notre guide du <Link to="/prestataire-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prestataire IA</Link> compare les cinq familles d'acteurs, et celui du <Link to="/meilleur-cabinet-conseil-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleur cabinet de conseil en IA</Link> détaille les trois compétences à exiger et les questions à poser. Si votre besoin penche vers le développement, comparez les acteurs dans notre guide de la <Link to="/meilleure-agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleure agence IA</Link>.
+            Pour situer votre point de départ avant tout engagement, notre <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>diagnostic IA</Link>, une journée de travail avec vos équipes, évalue votre maturité et fait remonter les premiers cas d'usage. Le premier échange de cadrage, 30 minutes, est offert. Quand la direction veut une vision exhaustive avant d'industrialiser (maturité, données, conformité RGPD et AI Act), notre <Link to="/audit-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> livre le rapport complet et la feuille de route chiffrée. Et quand l'enjeu est de tenir la transformation dans la durée jusqu'aux usages installés, notre <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> couvre le cadrage, le déploiement, la conduite du changement et l'<Link to="/acculturation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>acculturation des équipes</Link>. Si votre besoin relève d'un métier précis, nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cas d'usage de l'IA par secteur</Link> détaillent les leviers prioritaires. Et pour structurer la décision au niveau direction, notre <Link to="/conseil-strategie-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link> formalise une feuille de route arbitrable en COMEX. Pour cadrer le budget en amont, notre repère sur le <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> donne les fourchettes à anticiper. Et si vous comparez plusieurs prestataires, notre guide du <Link to="/prestataire-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>prestataire IA</Link> compare les cinq familles d'acteurs, et celui du <Link to="/meilleur-cabinet-conseil-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleur cabinet IA</Link> détaille les trois compétences à exiger et les questions à poser. Si votre besoin penche vers le développement, comparez les acteurs dans notre guide de la <Link to="/meilleure-agence-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>meilleure agence IA</Link>.
           </p>
 
           <p style={{ marginBottom: 0, fontStyle: 'italic', color: GREY_700, borderLeft: `3px solid ${BLUE}`, paddingLeft: 16, marginTop: 32 }}>

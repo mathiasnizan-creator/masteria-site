@@ -29,6 +29,10 @@ for (const route of ROUTES) {
       if (html.length < 20000 || !/<title>[^<]{8,}<\/title>/.test(html) || !/<h1[\s>]/.test(html)) throw new Error('empty-shell ' + html.length);
       const nbTitres = (html.split(/<\/head>/i)[0].match(/<title[\s>]/gi) || []).length;
       if (nbTitres !== 1) throw new Error(`head-title ${nbTitres} <title> dans le <head>`);
+      const tete = html.split(/<\/head>/i)[0];
+      const nbDesc = (tete.match(/<meta[^>]+name="description"/gi) || []).length;
+      const nbCanon = (tete.match(/<link[^>]+rel="canonical"/gi) || []).length;
+      if (nbDesc !== 1 || nbCanon !== 1) throw new Error(`head-meta ${nbDesc} description, ${nbCanon} canonical`);
       const d = path.join(dist, route); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, 'index.html'), html);
       console.log(`✓ ${route} (${html.length}o)`); ok = true;
     } catch (e) { console.log(`  retry ${route}: ${e.message.split('\n')[0]}`); }

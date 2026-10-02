@@ -160,7 +160,7 @@ const CONSEIL_COLS = [
   {
     head: 'Développement sur mesure',
     items: [
-      { label: 'Agence développement IA', desc: 'Conception et intégration sur mesure', slug: 'agence-developpement-ia', Icon: Code2 },
+      { label: 'Agence de développement IA', desc: 'Conception et intégration sur mesure', slug: 'agence-developpement-ia', Icon: Code2 },
       { label: 'Solutions IA sur mesure', desc: 'Copilotes, agents, RAG, automatisations', slug: 'solutions-ia',         Icon: Boxes },
       { label: 'Outils IA sur mesure',    desc: 'Applications et copilotes métier',     slug: 'outils-ia-sur-mesure',  Icon: Wrench },
       { label: 'Agence automatisation IA',desc: 'Workflows et automatisations métier',   slug: 'agence-automatisation-ia', Icon: Workflow },
@@ -478,11 +478,22 @@ export function MasteriaHeader() {
               )}
             </div>
 
-            {/* ── Conseil & Développement + méga-menu ── */}
-            <div ref={conseilRef} onMouseEnter={handleConseilEnter} onMouseLeave={handleConseilLeave} style={{ position: 'relative' }}>
-              <button
+            {/* ── Conseil & Développement + méga-menu ──
+                Le libellé est un vrai lien vers la page pilier, et le panneau reste
+                dans le DOM, masqué par l'attribut hidden : ses liens figurent ainsi
+                dans le HTML prérendu, que lisent les robots qui n'exécutent pas le
+                JavaScript (moteurs génératifs). Le focus clavier ouvre le panneau. */}
+            <div ref={conseilRef} onMouseEnter={handleConseilEnter} onMouseLeave={handleConseilLeave}
+              onFocus={handleConseilEnter}
+              onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) handleConseilLeave() }}
+              style={{ position: 'relative' }}>
+              <Link
+                to="/conseil-intelligence-artificielle"
+                onClick={() => setConseilOpen(false)}
+                aria-haspopup="true"
+                aria-expanded={conseilOpen}
                 style={{
-                  fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500, background: 'none', border: 'none',
+                  fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 500, textDecoration: 'none',
                   cursor: 'pointer', padding: '4px 0', display: 'flex', alignItems: 'center', gap: 5, whiteSpace: 'nowrap',
                   color: conseilActive ? '#111' : '#717171',
                   borderBottom: conseilActive ? '2px solid #111' : '2px solid transparent',
@@ -490,61 +501,59 @@ export function MasteriaHeader() {
                 }}
               >
                 Conseil &amp; Développement
-                <svg width="11" height="7" viewBox="0 0 11 7" fill="none" style={{ transform: conseilOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms', marginTop: 1 }}>
+                <svg aria-hidden="true" width="11" height="7" viewBox="0 0 11 7" fill="none" style={{ transform: conseilOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms', marginTop: 1 }}>
                   <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
+              </Link>
 
-              {conseilOpen && (
-                <div style={{
-                  position: 'fixed', top: 84, left: '50%', transform: 'translateX(-50%)',
-                  background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
-                  padding: '20px 24px 24px', width: 880, maxWidth: 'calc(100vw - 32px)',
-                  zIndex: 300,
-                }}>
+              <div hidden={!conseilOpen} style={{
+                position: 'fixed', top: 84, left: '50%', transform: 'translateX(-50%)',
+                background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
+                padding: '20px 24px 24px', width: 880, maxWidth: 'calc(100vw - 32px)',
+                zIndex: 300,
+              }}>
 
-                  {/* Bannière "Agence IA" */}
-                  <Link to="/agence-ia" onClick={() => setConseilOpen(false)}
-                    style={{ textDecoration: 'none', borderRadius: 10, padding: '12px 14px', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 12, background: '#DBEAFE', border: '1px solid #BFDBFE', transition: 'transform 120ms' }}
-                    onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
-                    onMouseLeave={e => e.currentTarget.style.transform = 'none'}
-                  >
-                    <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Cpu size={18} color="#2563EB" strokeWidth={2.2} />
-                    </div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Agence IA · conseil, développement &amp; automatisation</div>
-                      <div style={{ fontSize: 12, color: '#1E40AF' }}>Du cadrage stratégique à la mise en production de vos outils IA</div>
-                    </div>
-                    <span style={{ fontSize: 16, color: '#1E40AF', fontWeight: 700 }}>→</span>
-                  </Link>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24 }}>
-                    {CONSEIL_COLS.map(col => (
-                      <div key={col.head}>
-                        <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 12 }}>{col.head}</p>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                          {col.items.map(it => (
-                            <Link key={it.slug} to={`/${it.slug}`} onClick={() => setConseilOpen(false)}
-                              style={{ textDecoration: 'none', borderRadius: 8, padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 10, transition: 'background 120ms' }}
-                              onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
-                              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                            >
-                              <div style={{ width: 34, height: 34, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                <it.Icon size={18} color="#2563EB" strokeWidth={2.2} />
-                              </div>
-                              <div>
-                                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#111' }}>{it.label}</div>
-                                <div style={{ fontSize: 11, color: '#6B7280' }}>{it.desc}</div>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                {/* Bannière "Agence IA" */}
+                <Link to="/agence-ia" onClick={() => setConseilOpen(false)}
+                  style={{ textDecoration: 'none', borderRadius: 10, padding: '12px 14px', marginBottom: 18, display: 'flex', alignItems: 'center', gap: 12, background: '#DBEAFE', border: '1px solid #BFDBFE', transition: 'transform 120ms' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'none'}
+                >
+                  <div style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Cpu size={18} color="#2563EB" strokeWidth={2.2} />
                   </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 800, color: '#111' }}>Agence IA · conseil, développement &amp; automatisation</div>
+                    <div style={{ fontSize: 12, color: '#1E40AF' }}>Du cadrage stratégique à la mise en production de vos outils IA</div>
+                  </div>
+                  <span style={{ fontSize: 16, color: '#1E40AF', fontWeight: 700 }}>→</span>
+                </Link>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24 }}>
+                  {CONSEIL_COLS.map(col => (
+                    <div key={col.head}>
+                      <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 12 }}>{col.head}</p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                        {col.items.map(it => (
+                          <Link key={it.slug} to={`/${it.slug}`} onClick={() => setConseilOpen(false)}
+                            style={{ textDecoration: 'none', borderRadius: 8, padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 10, transition: 'background 120ms' }}
+                            onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
+                            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                          >
+                            <div style={{ width: 34, height: 34, borderRadius: 8, background: '#DBEAFE', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <it.Icon size={18} color="#2563EB" strokeWidth={2.2} />
+                            </div>
+                            <div>
+                              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#111' }}>{it.label}</div>
+                              <div style={{ fontSize: 11, color: '#6B7280' }}>{it.desc}</div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              )}
+              </div>
             </div>
 
             {/* ── Veille IA + déroulant ── */}
@@ -1121,7 +1130,7 @@ export function MasteriaFooter() {
               ['IA générative en entreprise', '/ia-generative-entreprise'],
               ['Cas d\'usage de l\'IA', '/cas-usage-ia-entreprise'],
               ['Prix d\'un projet IA', '/prix-projet-ia'],
-              ['Agence développement IA', '/agence-developpement-ia'],
+              ['Agence de développement IA', '/agence-developpement-ia'],
               ['Solutions IA sur mesure', '/solutions-ia'],
               ['Agents IA en entreprise', '/agents-ia-entreprise'],
               ['Agence automatisation IA', '/agence-automatisation-ia'],

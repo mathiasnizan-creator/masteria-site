@@ -31,9 +31,9 @@ const SLUG = 'outils-ia-sur-mesure'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Outils IA sur mesure : applications & copilotes | Masteria"
+const META_TITLE = "Développement IA sur mesure : outils et copilotes | Masteria"
 const META_DESC = "Outils IA sur mesure : copilotes internes, assistants documentaires et applications métier pour vos processus. Code et données qui vous appartiennent."
-const KEYWORDS = "outils ia sur mesure, outil ia personnalisé, solution ia sur mesure, développement outil ia, logiciel ia sur mesure"
+const KEYWORDS = "développement ia sur mesure, ia sur mesure, outils ia sur mesure, outil ia personnalisé, solution ia sur mesure, développement outil ia, logiciel ia sur mesure"
 
 /* ───────── Styles partagés ───────── */
 
@@ -294,7 +294,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/outils-ia-sur-mesure#article',
-  headline: 'Outils IA sur mesure : applications et copilotes métier conçus pour vous',
+  headline: 'Développement IA sur mesure : des outils et copilotes métier conçus pour vous',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
@@ -412,14 +412,14 @@ export default function OutilsIASurMesurePage() {
               <Code2 size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Développement sur mesure
+              Outils IA sur mesure
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
-            Outils IA sur mesure :
+            Développement IA sur mesure&nbsp;:
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>applications et copilotes métier conçus pour vous</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>des outils et copilotes métier conçus pour vous</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}

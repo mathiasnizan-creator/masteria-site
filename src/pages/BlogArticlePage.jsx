@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead'
 import { getArticleBySlug, getRelatedArticles, BLOG_ARTICLES } from '../data/blog-articles'
 import { getTagColor } from '../data/tag-colors'
 import { useIsMobile } from '../hooks/useMediaQuery'
+import ApresLaFormation from '../components/ApresLaFormation'
 
 const SITE_URL = 'https://www.master-ia.fr'
 const LINKEDIN_URL = 'https://www.linkedin.com/in/mathias-nizan/'
@@ -877,6 +878,11 @@ export default function BlogArticlePage() {
         </section>
         );
       })()}
+
+      <ApresLaFormation
+        kicker="Passer à la pratique"
+        intro="Masteria cadre votre besoin, construit l'outil adapté, assistant ou agent branché sur vos documents et vos logiciels, puis forme vos équipes à s'en servir."
+      />
 
       {/* ── Formations correspondantes ──
           Maillage interne blog → hubs/spokes : 3 formations Masteria mappées au tag de l'article.

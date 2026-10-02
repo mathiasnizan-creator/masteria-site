@@ -27,7 +27,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = 'Meilleure agence IA : comment choisir en 2026 | Masteria'
 const META_DESC = "Meilleure agence IA : comment choisir celle qui met votre projet en production. Propriété du code, paysage des acteurs et budgets 2026."
-const KEYWORDS = 'meilleure agence ia, agence ia 2026, agence intelligence artificielle, agence developpement ia, comparatif agences ia, agence ia france, agence ia lyon, agence automatisation ia'
+const KEYWORDS = 'meilleure agence ia, agence ia 2026, agence intelligence artificielle, comparatif agences ia, classement agences ia, agence ia france, agence ia lyon, agence automatisation ia'
 
 /* ── Design system local (aligné sur les pages money) ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -169,7 +169,7 @@ const serviceJsonLd = {
 const definedTermSetJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
-  name: 'Glossaire des agences et du développement IA',
+  name: 'Glossaire des agences et des projets IA',
   hasDefinedTerm: GLOSSARY.map(g => ({ '@type': 'DefinedTerm', name: g.term, description: g.def })),
 }
 
@@ -550,7 +550,7 @@ export default function MeilleureAgenceIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={{ ...kickerStyle, marginBottom: 10 }}>Définitions</div>
-              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Le vocabulaire du développement IA</h3>
+              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Le vocabulaire des projets IA</h3>
               <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
                 Quatre termes reviennent dans toute discussion avec une agence IA.
               </p>

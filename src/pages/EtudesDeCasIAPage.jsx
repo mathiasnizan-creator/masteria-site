@@ -26,8 +26,8 @@ const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Études de cas IA : 4 missions de conseil et de formation | Masteria'
-const META_DESC = "Études de cas IA anonymisées : comité de direction et déploiement international d'un groupe industriel, assistants d'appels d'offres d'un cabinet de conseil, diagnostic et feuille de route d'un distributeur photovoltaïque, force de vente outillée. Méthode en six temps, résultats pour les équipes et l'organisation."
+const META_TITLE = 'Études de cas IA : 4 missions en entreprise | Masteria'
+const META_DESC = "Quatre missions IA anonymisées : Copilot dans l'industrie, assistants d'appels d'offres, diagnostic d'une PME, force de vente outillée. Méthode, résultats."
 const KEYWORDS = "étude de cas ia, études de cas ia entreprise, cas client ia, exemple déploiement ia entreprise, étude de cas conseil ia, exemple audit ia, retour d'expérience ia, assistants ia entreprise, projet ia entreprise exemple, adoption ia entreprise"
 
 /* ── Design system local (aligné sur les pages money) ── */
@@ -37,6 +37,30 @@ const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 
 const leadStyle = { fontSize: 'clamp(16.5px, 2vw, 18px)', color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }
 const mutedStyle = { fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 28 }
+
+/* Offre mobilisée sur chaque pilier de mission (même ordre que k.pillars : Conseil, Construction, Formation). */
+const PILIER_LIENS = {
+  distribution: [
+    { to: '/conseil-intelligence-artificielle', label: 'Conseil en IA' },
+    { to: '/agent-commercial-ia', label: 'Agent commercial IA' },
+    { to: '/formation-claude-commercial', label: 'Formation Claude pour les commerciaux' },
+  ],
+  industrie: [
+    { to: '/conseil-strategie-ia', label: 'Conseil stratégie IA' },
+    { to: '/copilote-ia-interne', label: 'Copilote IA interne' },
+    { to: '/formation-microsoft-copilot', label: 'Formation Microsoft Copilot' },
+  ],
+  'conseil-financier': [
+    { to: '/charte-ia-entreprise', label: 'Charte IA en entreprise' },
+    { to: '/outils-ia-sur-mesure', label: 'Outils IA sur mesure' },
+    { to: '/formation-ia-marche-public', label: 'Formation IA pour les marchés publics' },
+  ],
+  photovoltaique: [
+    { to: '/diagnostic-ia', label: 'Diagnostic IA' },
+    { to: '/agence-developpement-ia', label: 'Agence de développement IA' },
+    { to: '/formation-intelligence-artificielle', label: 'Formations IA en entreprise' },
+  ],
+}
 
 const FAQ = [
   {
@@ -263,6 +287,12 @@ function CaseSection({ k, index, isDesktop }) {
                     <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: ink }}>{p.t}</span>
                   </div>
                   <p style={{ fontSize: 13.5, color: body, lineHeight: 1.65, margin: 0 }}>{p.d}</p>
+                  {PILIER_LIENS[k.id]?.[pi] && (
+                    <Link to={PILIER_LIENS[k.id][pi].to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 13.5, fontWeight: 700, color: accent, textDecoration: 'none' }}>
+                      {PILIER_LIENS[k.id][pi].label}
+                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
@@ -457,7 +487,7 @@ export default function EtudesDeCasIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '30px 0 0', maxWidth: 860 }}>
-            Envie du même type de dispositif ? Commencez par un <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> d'une journée ou un <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> complet, voyez notre <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> pour un comité de direction, ou comment nous déployons des <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. Pour la montée en compétence des équipes, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils.
+            Envie du même type de dispositif ? Commencez par un <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> d'une journée ou un <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> complet, voyez notre <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> pour un comité de direction, notre <Link to="/accompagnement-ia" style={{ color: c, fontWeight: 600 }}>accompagnement IA</Link> pour un déploiement par paliers, ou comment nous déployons des <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. Pour situer le budget, nos repères sur le <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link> donnent les fourchettes. Pour la montée en compétence des équipes, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils, avec un format dédié à la <Link to="/formation-ia-comex" style={{ color: c, fontWeight: 600 }}>formation IA du comité de direction</Link>.
           </p>
         </div>
       </section>

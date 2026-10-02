@@ -195,6 +195,11 @@ async function renderOne(browser, route) {
     // en doublon sur tout le site d'août à octobre 2026 sans que rien ne le signale.
     const nbTitres = (html.split(/<\/head>/i)[0].match(/<title[\s>]/gi) || []).length;
     if (nbTitres !== 1) throw new Error(`head-title (${nbTitres} <title> dans le <head>, 1 attendu)`);
+    // Idem pour la description et le canonical (doublons constatés le 02/10/2026).
+    const tete = html.split(/<\/head>/i)[0];
+    const nbDesc = (tete.match(/<meta[^>]+name="description"/gi) || []).length;
+    const nbCanon = (tete.match(/<link[^>]+rel="canonical"/gi) || []).length;
+    if (nbDesc !== 1 || nbCanon !== 1) throw new Error(`head-meta (${nbDesc} description, ${nbCanon} canonical, 1 attendu)`);
 
     const outDir = route === '/' ? dist : path.join(dist, route);
     fs.mkdirSync(outDir, { recursive: true });

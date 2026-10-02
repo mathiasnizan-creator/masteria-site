@@ -42,10 +42,27 @@ const carteDeLaPage = slug =>
    le titre par défaut du shell index.html restait donc en second <title> sur les
    396 pages prérendues (constat du 01/10/2026), et une page prérendue en gagnait
    un troisième une fois chargée. On relève ces titres avant tout rendu React
-   (ce module est importé par App.jsx) pour les retirer au montage de SEOHead. */
-const TITRES_DU_HTML = typeof document === 'undefined'
+   (ce module est importé par App.jsx) pour les retirer au montage de SEOHead.
+   Même mécanisme pour les meta et les link de SEOHead : constat du 02/10/2026,
+   description, canonical, hreflang, robots, keywords, Open Graph et Twitter
+   étaient tous en double dans le DOM vivant des pages prérendues, et après une
+   navigation interne le canonical de la première page chargée restait à côté
+   de celui de la page affichée. Le JSON-LD, rendu dans <main>, n'est pas
+   concerné : React remplace le contenu de #root au premier rendu. */
+const BALISES_DU_HTML = typeof document === 'undefined'
   ? []
-  : Array.from(document.querySelectorAll('head > title'))
+  : Array.from(document.querySelectorAll([
+      'head > title',
+      'head > meta[name="description"]',
+      'head > meta[name="keywords"]',
+      'head > meta[name="robots"]',
+      'head > meta[http-equiv="content-language"]',
+      'head > meta[property^="og:"]',
+      'head > meta[property^="article:"]',
+      'head > meta[name^="twitter:"]',
+      'head > link[rel="canonical"]',
+      'head > link[rel="alternate"][hreflang]',
+    ].join(', ')))
 
 /**
  * SEOHead — composant central pour les balises SEO, Open Graph, Twitter,
@@ -90,12 +107,10 @@ export default function SEOHead({
   htmlLang = 'fr',  // valeur de <html lang> : 'fr' par défaut, 'en' sur les pages anglaises
   mainEntityId,     // @id de l'entité principale de la page (ex. ProfilePage → '#mathias-nizan')
 }) {
-  // Le shell index.html porte une description par défaut (routes non prérendues) :
-  // on la retire dès qu'une page pose la sienne, pour n'avoir qu'une balise.
-  useEffect(() => { document.getElementById('meta-default-description')?.remove() }, [])
-  // Idem pour le titre : React 19 insère le <title> de la page devant ceux du HTML
-  // sans les retirer (cf. TITRES_DU_HTML) ; une fois le nôtre posé, on les enlève.
-  useEffect(() => { if (title) TITRES_DU_HTML.forEach((t) => t.remove()) }, [title])
+  // React 19 insère les balises de la page sans retirer celles du HTML (titre et
+  // description par défaut du shell, jeu complet des pages prérendues, cf.
+  // BALISES_DU_HTML) : une fois les nôtres posées, on enlève les anciennes.
+  useEffect(() => { if (title) BALISES_DU_HTML.forEach((b) => b.remove()) }, [title])
   const fullUrl = slug ? `${SITE_URL}/${slug}` : `${SITE_URL}/`
   const imageUrl = ogImage || carteDeLaPage(slug)
   // Le carré est commun à tout le site : à la taille d'une vignette de résultat,

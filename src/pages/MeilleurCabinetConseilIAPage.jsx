@@ -25,9 +25,9 @@ const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Meilleur cabinet de conseil en IA : comment choisir | Masteria'
-const META_DESC = "Cabinet conseil IA ou consultant indépendant : les 3 compétences à exiger, le paysage des acteurs nommés et les honoraires 2026 pour bien choisir."
-const KEYWORDS = 'cabinet conseil ia, cabinet de conseil en intelligence artificielle, cabinet de conseil ia, meilleur cabinet de conseil en intelligence artificielle, meilleur cabinet conseil ia, cabinet conseil intelligence artificielle, consultant ia, consultant intelligence artificielle, conseil intelligence artificielle, conseil en ia entreprise, cabinet conseil ia paris, cabinet conseil ia lyon, conseil strategie ia'
+const META_TITLE = 'Meilleur cabinet IA : comparatif et critères 2026 | Masteria'
+const META_DESC = "Comparatif 2026 pour choisir un cabinet IA ou un consultant : les 3 compétences à exiger, le panorama des acteurs du marché et les honoraires constatés."
+const KEYWORDS = 'meilleur cabinet ia, meilleur cabinet conseil ia, meilleur cabinet de conseil en intelligence artificielle, comparatif cabinets ia, choisir un cabinet ia, cabinet ou consultant ia, honoraires conseil ia, tjm consultant ia, classement cabinets ia'
 
 /* ── Design system local (aligné sur les pages money) ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -204,7 +204,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: 'Meilleur cabinet de conseil en intelligence artificielle : comment choisir',
+  headline: 'Meilleur cabinet IA en 2026 : comment reconnaître celui qui livre vraiment',
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
@@ -276,7 +276,7 @@ export default function MeilleurCabinetConseilIAPage() {
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
     { name: 'Conseil en IA', slug: 'conseil-intelligence-artificielle' },
-    { name: 'Meilleur cabinet de conseil en IA', slug: SLUG },
+    { name: 'Meilleur cabinet IA', slug: SLUG },
   ]
 
   return (
@@ -303,7 +303,7 @@ export default function MeilleurCabinetConseilIAPage() {
             <span style={{ color: '#3A4658' }}>/</span>
             <Link to="/conseil-intelligence-artificielle" style={{ color: '#94A3B8' }}>Conseil en IA</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <span style={{ color: '#93C5FD', fontWeight: 600 }} aria-current="page">Meilleur cabinet de conseil en IA</span>
+            <span style={{ color: '#93C5FD', fontWeight: 600 }} aria-current="page">Meilleur cabinet IA</span>
           </nav>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 22 }}>
@@ -316,7 +316,7 @@ export default function MeilleurCabinetConseilIAPage() {
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.7vw, 48px)', fontWeight: 900, lineHeight: 1.06, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 860 }}>
-            Meilleur cabinet de conseil en intelligence artificielle
+            Meilleur cabinet IA en 2026&nbsp;:
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>comment reconnaître celui qui livre vraiment</span>
           </h1>
@@ -331,7 +331,7 @@ export default function MeilleurCabinetConseilIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous cherchez le bon cabinet conseil IA, ou vous hésitez entre un cabinet et un <Link to="/consultant-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>consultant indépendant</Link> ? Vous trouverez ici les trois compétences à exiger, un panorama factuel des acteurs du marché avec leurs noms, les honoraires et TJM constatés en 2026 et de quoi décider. Le panorama situe les acteurs par catégorie : il ne les note pas et n'en classe aucun.
+            Vous cherchez le bon <Link to="/conseil-intelligence-artificielle" style={{ color: '#93C5FD', fontWeight: 600 }}>cabinet conseil IA</Link>, ou vous hésitez entre un cabinet et un <Link to="/consultant-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>consultant indépendant</Link> ? Vous trouverez ici les trois compétences à exiger, un panorama factuel des acteurs du marché avec leurs noms, les honoraires et TJM constatés en 2026 et de quoi décider. Le panorama situe les acteurs par catégorie : il ne les note pas et n'en classe aucun.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>

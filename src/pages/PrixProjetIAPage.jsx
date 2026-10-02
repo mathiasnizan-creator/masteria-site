@@ -515,7 +515,7 @@ export default function PrixProjetIAPage() {
           </div>
 
           <p style={{ color: '#94A3B8', fontSize: 13.5, marginTop: 18, lineHeight: 1.7, maxWidth: 880 }}>
-            Montants hors taxes, à titre indicatif. Pour le détail de ce que recouvre chaque livrable, voyez notre <Link to="/agence-developpement-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence de développement IA</Link> et nos <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link>.
+            Montants hors taxes, à titre indicatif. Ce que recouvre chaque livrable est détaillé sur nos pages <Link to="/agence-developpement-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence de développement IA</Link> et <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>développement IA sur mesure</Link>.
           </p>
         </div>
       </section>

@@ -12,6 +12,7 @@ import Pictogram from '../components/Pictogram'
 import TerrainGuide from '../components/TerrainGuide'
 import { spokeGuidePromise } from '../data/terrain-guides'
 import { SPOKES, HUBS } from '../data/seo-pages'
+import ApresLaFormation from '../components/ApresLaFormation'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
 const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
@@ -714,6 +715,8 @@ export default function SpokePage() {
       )}
 
       {/* ── FAQ ── */}
+      <ApresLaFormation metierSlug={spoke.metierSlug} outil={spoke.tool} />
+
       {spoke.faq?.length > 0 && (
         <section id="faq" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
@@ -761,7 +764,7 @@ export default function SpokePage() {
                 {' '}ou explorer{' '}
                 <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>les formations par métier</Link>.
                 {' '}Pour juger sur pièces, lisez nos{' '}
-                <Link to="/etudes-de-cas-ia" style={{ color: '#2563EB', fontWeight: 600 }}>études de cas IA</Link>, avec des résultats de formation mesurés en entreprise.
+                <Link to="/etudes-de-cas-ia" style={{ color: '#2563EB', fontWeight: 600 }}>études de cas IA</Link>, quatre missions documentées en entreprise, du conseil à la formation.
                 {' '}Et pour commencer dès aujourd'hui, piochez dans notre{' '}
                 <Link to={promptLibHref(spoke.metierSlug)} style={{ color: '#2563EB', fontWeight: 600 }}>bibliothèque de prompts</Link>.
               </p>

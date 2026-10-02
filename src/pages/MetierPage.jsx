@@ -33,6 +33,7 @@ const PROMPT_LIB_SLUGS = [
   'pedagogique', 'achats',
 ]
 import { METIER_FAQ } from '../data/metier-faq'
+import ApresLaFormation from '../components/ApresLaFormation'
 
 // Icônes SVG par métier (lucide-react)
 const METIER_ICONS = {
@@ -1096,6 +1097,8 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           </div>
         </section>
       )}
+
+      <ApresLaFormation metierSlug={metier} />
 
       {/* ── FAQ ── */}
       {faqItems.length > 0 && (
