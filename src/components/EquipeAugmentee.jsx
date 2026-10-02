@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Bot, Check, ReceiptText, UserSearch, Scale, NotebookPen, ChartColumn, Cpu, GraduationCap, Briefcase, Users, Gavel, ListChecks, Landmark } from 'lucide-react'
+import { ArrowRight, Bot, Check, BadgeCheck, ReceiptText, UserSearch, Scale, NotebookPen, ChartColumn, Cpu, GraduationCap, Briefcase, Users, Gavel, ListChecks, Landmark } from 'lucide-react'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import ToolLogo from './ToolLogo'
 
@@ -70,7 +70,7 @@ function Silhouette({ tone }) {
   )
 }
 
-function Etiquette({ Icon, tint, index, titre, lien, children }) {
+function Etiquette({ Icon, tint, index, titre, lien, aCote, children }) {
   const accent = tint === 'orange' ? ORANGE_TEXT : BLUE
   return (
     <div>
@@ -80,11 +80,14 @@ function Etiquette({ Icon, tint, index, titre, lien, children }) {
         </span>
         {index}
       </div>
-      <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, lineHeight: 1.3, marginBottom: 6 }}>{titre}</div>
+      <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: INK, lineHeight: 1.3, marginBottom: 6 }}>{titre}</div>
       {children}
-      <Link to={lien[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, color: accent, textDecoration: 'none' }}>
-        {lien[0]} <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-      </Link>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+        <Link to={lien[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, color: accent, textDecoration: 'none' }}>
+          {lien[0]} <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+        </Link>
+        {aCote}
+      </div>
     </div>
   )
 }
@@ -108,7 +111,15 @@ function TousLesLLM() {
 
 const ETIQUETTE_CONSEIL = <Etiquette Icon={Cpu} tint="blue" index="01 · Conseil & développement" titre="Nous construisons vos outils IA" lien={['Le conseil', '/conseil-intelligence-artificielle']} />
 const ETIQUETTE_FORMATION = (
-  <Etiquette Icon={GraduationCap} tint="orange" index="02 · Formation" titre="Nous formons ceux qui s'en servent" lien={['Les formations', '/formation-intelligence-artificielle']}>
+  <Etiquette
+    Icon={GraduationCap} tint="orange" index="02 · Formation" titre="Nous formons ceux qui s'en servent" lien={['Les formations', '/formation-intelligence-artificielle']}
+    aCote={(
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12.5, fontWeight: 700, color: INK }}>
+        <BadgeCheck size={14} strokeWidth={2.2} style={{ color: ORANGE, flexShrink: 0 }} aria-hidden="true" />
+        Certifié Qualiopi
+      </span>
+    )}
+  >
     <TousLesLLM />
   </Etiquette>
 )
@@ -144,7 +155,7 @@ export default function EquipeAugmentee() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? '250px minmax(0, 1fr)' : '1fr', gap: isDesktop ? 44 : 26 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? '296px minmax(0, 1fr)' : '1fr', gap: isDesktop ? 40 : 26 }}>
           {/* Les deux expertises : à gauche sur desktop (alignées sur les deux rangées),
               au-dessus et en dessous de l'animation sur mobile */}
           {isDesktop ? (
@@ -184,22 +195,14 @@ export default function EquipeAugmentee() {
                         <Bot size={10} strokeWidth={2.4} style={{ color: '#fff' }} />
                       </span>
                     </span>
-                    {isDesktop && (
-                      <span style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: 13.5, fontWeight: 700, color: INK, lineHeight: 1.25, minWidth: 0 }}>
-                        <p.RoleIcon size={14} strokeWidth={2} style={{ color: MUTED, flexShrink: 0, marginTop: 1 }} />
-                        {p.role}
-                      </span>
-                    )}
                   </div>
-                  {!isDesktop && (
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 5, fontSize: 12.5, fontWeight: 700, color: INK, lineHeight: 1.25, marginBottom: 6 }}>
-                      <p.RoleIcon size={13} strokeWidth={2} style={{ color: MUTED, flexShrink: 0, marginTop: 1 }} />
-                      {p.role}
-                    </div>
-                  )}
-                  <div style={{ position: 'relative', height: isDesktop ? 18 : 32, marginBottom: 8 }}>
-                    <span className="aug-task" style={{ ...delay(i), position: 'absolute', inset: 0, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, color: MUTED, whiteSpace: isDesktop ? 'nowrap' : 'normal', overflow: 'hidden', textOverflow: 'ellipsis', opacity: 0 }}>{p.tache}</span>
-                    <span className="aug-status" style={{ ...delay(i), position: 'absolute', inset: 0, display: 'flex', alignItems: isDesktop ? 'center' : 'flex-start', gap: 5, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, fontWeight: 700, color: ORANGE_TEXT, whiteSpace: isDesktop ? 'nowrap' : 'normal', overflow: 'hidden' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: isDesktop ? 13.5 : 12.5, fontWeight: 700, color: INK, lineHeight: 1.25, marginBottom: 6 }}>
+                    <p.RoleIcon size={isDesktop ? 14 : 13} strokeWidth={2} style={{ color: MUTED, flexShrink: 0, marginTop: 1 }} />
+                    {p.role}
+                  </div>
+                  <div style={{ position: 'relative', height: 32, marginBottom: 8 }}>
+                    <span className="aug-task" style={{ ...delay(i), position: 'absolute', inset: 0, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, color: MUTED, whiteSpace: 'normal', overflow: 'hidden', opacity: 0 }}>{p.tache}</span>
+                    <span className="aug-status" style={{ ...delay(i), position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-start', gap: 5, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, fontWeight: 700, color: ORANGE_TEXT, whiteSpace: 'normal', overflow: 'hidden' }}>
                       <Check size={13} strokeWidth={2.8} style={{ flexShrink: 0 }} /> <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{p.fait}</span>
                     </span>
                   </div>

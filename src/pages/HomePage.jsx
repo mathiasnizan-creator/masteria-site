@@ -328,6 +328,17 @@ export default function HomePage() {
                   Nos formations <ArrowRight size={15} strokeWidth={2.4} style={{ color: o }} aria-hidden="true" />
                 </Link>
               </div>
+              {/* Organisme de formation certifié Qualiopi (logo officiel avec la mention de catégorie) */}
+              <Link to="/formation-ia-qualiopi" style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 22, paddingTop: 18, borderTop: `1px solid ${LINE}`, textDecoration: 'none' }}>
+                <picture>
+                  <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
+                  <img src="/assets/qualiopi-logo.png" alt="Qualiopi, processus certifié, République française" width="76" height="46" decoding="async" style={{ height: 46, width: 'auto', display: 'block', flexShrink: 0 }} />
+                </picture>
+                <span style={{ lineHeight: 1.4 }}>
+                  <span style={{ display: 'block', fontSize: 14.5, fontWeight: 800, color: INK }}>Organisme de formation certifié Qualiopi</span>
+                  <span style={{ display: 'block', fontSize: 13, color: MUTED }}>Au titre des actions de formation · finançable OPCO</span>
+                </span>
+              </Link>
             </div>
           </div>
         </div>
