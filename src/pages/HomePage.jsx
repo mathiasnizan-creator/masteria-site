@@ -35,7 +35,10 @@ const INK = '#0A0A0A'
 const TEXT = '#374151'
 const MUTED = '#6B7280'
 const LINE = '#E5E7EB'
-const DARK = '#0A0F1E'
+const o = '#EA580C'
+const oText = '#C2410C'
+const oLight = '#FFEDD5'
+const BEIGE = '#F5F3EE'
 const SECTION_PAD = 'clamp(72px, 10vw, 120px) clamp(18px, 4vw, 32px)'
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 900, letterSpacing: '-0.025em', color: INK, lineHeight: 1.12, margin: '0 0 18px' }
 const leadStyle = { fontSize: 17, color: TEXT, lineHeight: 1.75, margin: 0 }
@@ -95,6 +98,7 @@ const PILIERS = [
   {
     Icon: Compass,
     num: '01',
+    tint: 'blue',
     kicker: 'Conseil & développement',
     title: 'Auditer et conseiller',
     desc: "Où l'IA crée de la valeur chez vous, dans quel ordre, avec quels garde-fous. Nous lisons vos processus flux par flux, chiffrons les gisements, puis posons la stratégie, la gouvernance et le cadre de conformité.",
@@ -111,6 +115,7 @@ const PILIERS = [
   {
     Icon: Cpu,
     num: '02',
+    tint: 'blue',
     kicker: 'Conseil & développement',
     title: 'Développer vos outils',
     desc: "Agents IA, assistants branchés sur vos documents, automatisations et applications métier reliées à votre CRM, à votre ERP et à vos outils internes. Au forfait ou en régie, avec des développeurs détachables sur site.",
@@ -126,6 +131,7 @@ const PILIERS = [
   {
     Icon: GraduationCap,
     num: '03',
+    tint: 'orange',
     kicker: 'Formation',
     title: 'Former vos équipes',
     desc: "Un outil ne vaut que par ceux qui s'en servent. Nous formons sur tous les LLM du marché, par outil et par métier, à partir des dossiers de vos équipes, en présentiel ou à distance.",
@@ -172,8 +178,7 @@ const TESTIMONIALS = [
 
 /* ─── Éléments de composition ─── */
 
-function Kicker({ children, dark = false }) {
-  const color = dark ? '#60A5FA' : c
+function Kicker({ children, color = c }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color, marginBottom: 16 }}>
       <span aria-hidden="true" style={{ width: 22, height: 2, background: color }} />
@@ -277,8 +282,8 @@ export default function HomePage() {
     })),
   }
 
-  const btnPrimary = { display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '15px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15.5, fontWeight: 700 }
-  const btnGhostDark = { display: 'inline-flex', alignItems: 'center', gap: 8, color: '#E2E8F0', padding: '15px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }
+  const btnPrimary = { display: 'inline-flex', alignItems: 'center', gap: 9, background: o, color: '#fff', padding: '15px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15.5, fontWeight: 800, boxShadow: '0 8px 22px -8px rgba(234,88,12,0.55)' }
+  const btnGhost = { display: 'inline-flex', alignItems: 'center', gap: 8, color: INK, background: '#fff', padding: '15px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700, border: `1px solid ${LINE}` }
 
   return (
     <>
@@ -292,41 +297,35 @@ export default function HomePage() {
         extraJsonLd={[jsonLdServiceList, jsonLdCourseList]}
       />
 
-      {/* ════════════════════════ HERO sombre + double expertise pleine largeur ════════════════════════ */}
-      <section style={{ position: 'relative', background: DARK, color: '#F8FAFC', overflow: 'hidden' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c, zIndex: 1 }} />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
-        <div aria-hidden="true" style={{ position: 'absolute', top: -200, right: -140, width: 680, height: 680, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.22), rgba(37,99,235,0) 66%)', pointerEvents: 'none' }} />
-
-        <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative', padding: 'clamp(36px, 4.5vw, 56px) clamp(18px, 4vw, 32px) clamp(48px, 5vw, 60px)' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 20 }}>
-            <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Compass size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+      {/* ════════════════════════ HERO clair + équipes augmentées par l'IA ════════════════════════ */}
+      <section style={{ position: 'relative', backgroundColor: '#FAFAF7', backgroundImage: 'radial-gradient(circle 560px at 8% 0%, rgba(37,99,235,0.10), transparent 70%), radial-gradient(circle 620px at 96% 96%, rgba(234,88,12,0.09), transparent 70%)', backgroundRepeat: 'no-repeat', color: INK, overflow: 'hidden', borderBottom: `1px solid ${LINE}` }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative', padding: 'clamp(36px, 4.5vw, 56px) clamp(18px, 4vw, 32px) clamp(44px, 5vw, 56px)' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 22, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '5px 14px 5px 5px' }}>
+            <span aria-hidden="true" style={{ width: 26, height: 26, borderRadius: '50%', background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Compass size={15} strokeWidth={2.2} style={{ color: c }} />
             </span>
-            <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Cabinet IA · Lyon · depuis 2022
-            </span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>Cabinet IA à Lyon depuis 2022</span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1.25fr) minmax(0, 1fr)' : '1fr', gap: 'clamp(24px, 5vw, 72px)', alignItems: 'end' }}>
-            <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(32px, 3.9vw, 50px)', fontWeight: 900, lineHeight: 1.05, margin: 0, color: '#F8FAFC', letterSpacing: '-0.035em' }}>
+            <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(32px, 3.9vw, 50px)', fontWeight: 900, lineHeight: 1.05, margin: 0, color: INK, letterSpacing: '-0.035em' }}>
               Cabinet spécialisé en intelligence artificielle
               <br />
-              <span style={{ color: '#60A5FA', fontWeight: 800 }}>audit, conseil, outils sur mesure et formation</span>
+              <span style={{ color: c, fontWeight: 800 }}>audit, conseil, outils sur mesure et formation</span>
             </h1>
 
             <div>
               {/* GEO : définition citable (formule d'entité canonique) */}
-              <p id="definition" style={{ fontSize: 'clamp(16px, 1.6vw, 18px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 26px', paddingLeft: 18, borderLeft: `3px solid ${c}` }}>
-                Masteria est un cabinet spécialisé en intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Nous auditons vos processus, construisons vos <strong style={{ color: '#fff', fontWeight: 700 }}>outils et agents IA</strong>, puis formons vos équipes à s'en servir au quotidien.
+              <p id="definition" style={{ fontSize: 'clamp(16px, 1.6vw, 18px)', fontWeight: 500, color: TEXT, lineHeight: 1.6, margin: '0 0 26px', paddingLeft: 18, borderLeft: `3px solid ${o}` }}>
+                Masteria est un cabinet spécialisé en intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Nous auditons vos processus, construisons vos <strong style={{ color: INK, fontWeight: 700 }}>outils et agents IA</strong>, puis formons vos équipes à s'en servir au quotidien.
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-                <CadrageLink style={{ ...btnPrimary, padding: '13px 22px', fontSize: 15, boxShadow: '0 10px 30px -8px rgba(37,99,235,0.6)' }}>
+                <CadrageLink style={{ ...btnPrimary, padding: '13px 22px', fontSize: 15 }}>
                   Réserver 30 minutes de cadrage
                   <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
                 </CadrageLink>
-                <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: '#E2E8F0', fontSize: 15, fontWeight: 600, textDecoration: 'none', padding: '13px 6px' }}>
-                  Nos formations <ArrowRight size={15} strokeWidth={2.4} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: INK, fontSize: 15, fontWeight: 700, textDecoration: 'none', padding: '13px 6px' }}>
+                  Nos formations <ArrowRight size={15} strokeWidth={2.4} style={{ color: o }} aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -400,13 +399,13 @@ export default function HomePage() {
           </div>
 
           <div>
-            {PILIERS.map(({ Icon, num, kicker, title, desc, recoit, links, cta }, i) => (
+            {PILIERS.map(({ Icon, num, tint, kicker, title, desc, recoit, links, cta }, i) => (
               <article key={title} style={{ padding: i === 0 ? '0 0 44px' : '44px 0', borderBottom: i < PILIERS.length - 1 ? `1px solid ${LINE}` : 'none' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 13, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={22} strokeWidth={1.9} style={{ color: c }} />
+                  <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 13, background: tint === 'orange' ? oLight : cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon size={22} strokeWidth={1.9} style={{ color: tint === 'orange' ? o : c }} />
                   </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: tint === 'orange' ? oText : c, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     {num} · {kicker}
                   </span>
                 </div>
@@ -418,7 +417,7 @@ export default function HomePage() {
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 9 }}>
                       {recoit.map(r => (
                         <li key={r} style={{ display: 'flex', gap: 10, fontSize: 14.5, color: INK, lineHeight: 1.45 }}>
-                          <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {r}
+                          <Check size={16} strokeWidth={2.6} style={{ color: tint === 'orange' ? o : c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {r}
                         </li>
                       ))}
                     </ul>
@@ -432,7 +431,7 @@ export default function HomePage() {
                         </li>
                       ))}
                     </ul>
-                    <Link to={cta[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
+                    <Link to={cta[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: tint === 'orange' ? oText : c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                       {cta[0]} <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                     </Link>
                   </div>
@@ -470,42 +469,40 @@ export default function HomePage() {
       {/* ════════════════════════ L'ÉQUIPE ════════════════════════ */}
       <EquipeMasteria bg="#fff" />
 
-      {/* ════════════════════════ PAR OÙ COMMENCER (ancre sombre) ════════════════════════ */}
-      <section style={{ position: 'relative', background: DARK, color: '#F8FAFC', padding: SECTION_PAD, overflow: 'hidden' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
-        <div aria-hidden="true" style={{ position: 'absolute', bottom: -200, left: -140, width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 66%)', pointerEvents: 'none' }} />
+      {/* ════════════════════════ PAR OÙ COMMENCER (fond beige) ════════════════════════ */}
+      <section style={{ position: 'relative', background: BEIGE, padding: SECTION_PAD, overflow: 'hidden' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', bottom: -220, left: -160, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(234,88,12,0.10), rgba(234,88,12,0) 66%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) minmax(0, 1fr)' : '1fr', gap: 'clamp(16px, 4vw, 64px)', alignItems: 'end', marginBottom: 56 }}>
             <div>
-              <Kicker dark>Par où commencer</Kicker>
-              <h2 style={{ ...h2Style, color: '#F8FAFC', margin: 0 }}>Trente minutes pour savoir par où commencer</h2>
+              <Kicker>Par où commencer</Kicker>
+              <h2 style={{ ...h2Style, margin: 0 }}>Trente minutes pour savoir par où commencer</h2>
             </div>
-            <p style={{ ...leadStyle, color: '#B4C0D3' }}>
+            <p style={leadStyle}>
               Vous savez que l'IA peut vous aider sans savoir par où commencer&nbsp;: c'est le cas de la plupart de nos clients au premier échange.
             </p>
           </div>
 
           <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 56px', display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : '1fr', gap: isDesktop ? 32 : 28, position: 'relative' }}>
-            {isDesktop && <span aria-hidden="true" style={{ position: 'absolute', top: 23, left: 24, right: '33%', height: 1, background: 'linear-gradient(90deg, rgba(96,165,250,0.6), rgba(96,165,250,0.15))' }} />}
+            {isDesktop && <span aria-hidden="true" style={{ position: 'absolute', top: 23, left: 24, right: '33%', height: 2, borderRadius: 2, background: '#D1D5DB' }} />}
             {ETAPES.map(({ n, badge, title, desc }, i) => (
               <li key={n} style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-                  <span style={{ width: 48, height: 48, borderRadius: '50%', background: i === 0 ? c : DARK, border: `1.5px solid ${i === 0 ? c : 'rgba(96,165,250,0.5)'}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: '#fff', position: 'relative', zIndex: 1 }}>{n}</span>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: i === 0 ? '#fff' : '#93C5FD', background: i === 0 ? 'rgba(37,99,235,0.35)' : DARK, border: `1px solid ${i === 0 ? 'rgba(96,165,250,0.6)' : '#2A3650'}`, borderRadius: 99, padding: '4px 11px', position: 'relative', zIndex: 1 }}>{badge}</span>
+                  <span style={{ width: 48, height: 48, borderRadius: '50%', background: i === 0 ? o : '#fff', border: `1.5px solid ${i === 0 ? o : '#D1D5DB'}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: i === 0 ? '#fff' : c, position: 'relative', zIndex: 1, boxShadow: i === 0 ? '0 8px 20px -8px rgba(234,88,12,0.6)' : 'none' }}>{n}</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: i === 0 ? oText : MUTED, background: i === 0 ? oLight : '#fff', border: `1px solid ${i === 0 ? '#FED7AA' : LINE}`, borderRadius: 99, padding: '4px 11px', position: 'relative', zIndex: 1 }}>{badge}</span>
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 21, fontWeight: 800, color: '#F8FAFC', margin: '0 0 10px' }}>{title}</h3>
-                <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: 0, maxWidth: 340 }}>{desc}</p>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 21, fontWeight: 800, color: INK, margin: '0 0 10px' }}>{title}</h3>
+                <p style={{ fontSize: 15, color: TEXT, lineHeight: 1.7, margin: 0, maxWidth: 340 }}>{desc}</p>
               </li>
             ))}
           </ol>
 
-          <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(4, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', borderTop: '1px solid #1E293B', borderBottom: '1px solid #1E293B', marginBottom: 40 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(4, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', borderTop: '1px solid #DDD9CF', borderBottom: '1px solid #DDD9CF', marginBottom: 40 }}>
             {ENGAGEMENTS.map(({ Icon, title, desc }, i) => (
-              <div key={title} style={{ padding: '24px 22px', paddingLeft: isDesktop && i > 0 ? 22 : 0, borderLeft: isDesktop && i > 0 ? '1px solid #1E293B' : 'none' }}>
-                <Icon size={20} strokeWidth={1.8} style={{ color: '#60A5FA', marginBottom: 12 }} aria-hidden="true" />
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#F8FAFC', marginBottom: 6 }}>{title}</div>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+              <div key={title} style={{ padding: '24px 22px', paddingLeft: isDesktop && i > 0 ? 22 : 0, borderLeft: isDesktop && i > 0 ? '1px solid #DDD9CF' : 'none' }}>
+                <Icon size={20} strokeWidth={1.8} style={{ color: c, marginBottom: 12 }} aria-hidden="true" />
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 6 }}>{title}</div>
+                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.6, margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -515,7 +512,7 @@ export default function HomePage() {
               Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
-            <Link to="/diagnostic-ia" style={btnGhostDark}>
+            <Link to="/diagnostic-ia" style={btnGhost}>
               Le Diagnostic IA en détail
             </Link>
           </div>
@@ -527,7 +524,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 400px) 1fr' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'start' }}>
             <div style={isDesktop ? { position: 'sticky', top: 130 } : undefined}>
-              <Kicker>Former vos équipes</Kicker>
+              <Kicker color={oText}>Former vos équipes</Kicker>
               <h2 style={h2Style}>Tous les LLM du marché, plus de 100 programmes</h2>
               <p style={{ ...leadStyle, marginBottom: 24 }}>
                 ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI&nbsp;: nous formons vos équipes sur tous les LLM du marché, par outil et par métier, à partir de leurs propres dossiers. En présentiel ou à distance, en intra-entreprise ou en accompagnement individuel. Plus de 1 500 professionnels formés depuis 2022.
@@ -754,15 +751,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════ CTA FINAL sombre ════════════════════════ */}
-      <section style={{ position: 'relative', background: DARK, color: '#F8FAFC', padding: 'clamp(64px, 9vw, 104px) clamp(18px, 4vw, 32px)', overflow: 'hidden' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
-        <div aria-hidden="true" style={{ position: 'absolute', top: -180, right: -100, width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.2), rgba(37,99,235,0) 66%)', pointerEvents: 'none' }} />
+      {/* ════════════════════════ CTA FINAL (fond beige) ════════════════════════ */}
+      <section style={{ position: 'relative', background: BEIGE, padding: 'clamp(64px, 9vw, 104px) clamp(18px, 4vw, 32px)', overflow: 'hidden', borderTop: `1px solid ${LINE}` }}>
+        <div aria-hidden="true" style={{ position: 'absolute', top: -200, right: -120, width: 620, height: 620, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.12), rgba(37,99,235,0) 66%)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 420px' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
           <div>
-            <Kicker dark>Contact</Kicker>
-            <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Parlons de votre projet IA</h2>
-            <p style={{ fontSize: 17, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
+            <Kicker>Contact</Kicker>
+            <h2 style={h2Style}>Parlons de votre projet IA</h2>
+            <p style={{ fontSize: 17, color: TEXT, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
               Trente minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic d'une journée, outil sur mesure ou formation de vos équipes. L'échange est offert.
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -771,33 +767,33 @@ export default function HomePage() {
                 { Icon: BadgeCheck, label: 'Formation certifiée Qualiopi' },
                 { Icon: MapPin, label: 'France · Suisse · Belgique' },
               ].map(({ Icon, label }) => (
-                <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
-                  <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#111827', background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '7px 14px' }}>
+                  <Icon size={14} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
                   {label}
                 </span>
               ))}
             </div>
           </div>
 
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', marginBottom: 6 }}>Prendre rendez-vous</div>
-            <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6, margin: '0 0 20px' }}>En visio ou par téléphone, avec Mathias Nizan.</p>
+          <div style={{ background: '#fff', border: `1px solid ${LINE}`, borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', boxShadow: '0 24px 60px -32px rgba(10,15,30,0.35)' }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: INK, marginBottom: 6 }}>Prendre rendez-vous</div>
+            <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.6, margin: '0 0 20px' }}>En visio ou par téléphone, avec Mathias Nizan.</p>
             <CadrageLink style={{ ...btnPrimary, width: '100%', justifyContent: 'center', boxSizing: 'border-box', marginBottom: 20 }}>
               Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 18, borderTop: '1px solid rgba(255,255,255,0.10)' }}>
-              <a href="tel:+33667754128" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: '#E2E8F0', fontSize: 14.5, fontWeight: 600, textDecoration: 'none' }}>
-                <Phone size={16} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" /> 06 67 75 41 28
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 18, borderTop: `1px solid ${LINE}` }}>
+              <a href="tel:+33667754128" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: INK, fontSize: 14.5, fontWeight: 600, textDecoration: 'none' }}>
+                <Phone size={16} strokeWidth={2} style={{ color: c }} aria-hidden="true" /> 06 67 75 41 28
               </a>
-              <a href="mailto:mathias.nizan@master-ia.fr" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: '#E2E8F0', fontSize: 14.5, fontWeight: 600, textDecoration: 'none' }}>
-                <Mail size={16} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" /> mathias.nizan@master-ia.fr
+              <a href="mailto:mathias.nizan@master-ia.fr" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: INK, fontSize: 14.5, fontWeight: 600, textDecoration: 'none' }}>
+                <Mail size={16} strokeWidth={2} style={{ color: c }} aria-hidden="true" /> mathias.nizan@master-ia.fr
               </a>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: '#94A3B8', fontSize: 13.5 }}>
-                <Clock size={16} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" /> Réponse sous 24 h ouvrées
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: MUTED, fontSize: 13.5 }}>
+                <Clock size={16} strokeWidth={2} style={{ color: c }} aria-hidden="true" /> Réponse sous 24 h ouvrées
               </span>
             </div>
-            <Link to="/contact?type=formation" style={{ display: 'block', marginTop: 18, fontSize: 13.5, color: '#93C5FD', fontWeight: 600, textDecoration: 'none' }}>
+            <Link to="/contact?type=formation" style={{ display: 'block', marginTop: 18, fontSize: 13.5, color: oText, fontWeight: 700, textDecoration: 'none' }}>
               Un besoin de formation ? Demander un devis
             </Link>
           </div>
