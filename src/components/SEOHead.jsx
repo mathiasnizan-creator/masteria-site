@@ -249,7 +249,7 @@ export default function SEOHead({
     '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
     name: 'Masteria',
-    description: "Centre de formation IA certifié Qualiopi et cabinet de conseil.",
+    description: "Cabinet spécialisé en intelligence artificielle : audit, conseil, outils et agents IA sur mesure, formation des équipes certifiée Qualiopi.",
     inLanguage: 'fr-FR',
     publisher: { '@id': `${SITE_URL}/#organization` },
   }
