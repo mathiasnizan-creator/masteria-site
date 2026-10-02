@@ -21,8 +21,11 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * Masteria s'y présente comme un cabinet IA à trois métiers, dans cet ordre :
  * penser (audit, conseil), construire (outils et agents sur mesure), transmettre
  * (formation certifiée Qualiopi). Composition éditoriale : colonnes asymétriques,
- * filets, chiffres tirés des études de cas publiées, un seul accent (#2563EB).
- * Sombres : le hero, l'ancre « Par où commencer » et le CTA final.
+ * filets, chiffres tirés des études de cas publiées. Fond clair, un seul accent
+ * (le bleu #2563EB) ; l'orange #EA580C ne sert qu'aux boutons principaux, comme
+ * sur l'ancienne home (Mathias, 02/10 : « trop bariolé entre le bleu et le orange »).
+ * Logo Qualiopi : fichier officiel, largeur fixée et hauteur libre (jamais
+ * déformé), 23 mm de large au minimum selon la charte, soit 87 px ou plus.
  * INTÉGRITÉ : tous les chiffres viennent de src/data/etudes-de-cas.js ou de faits
  * déjà publiés ; aucun nom de client.
  */
@@ -35,9 +38,7 @@ const INK = '#0A0A0A'
 const TEXT = '#374151'
 const MUTED = '#6B7280'
 const LINE = '#E5E7EB'
-const o = '#EA580C'
-const oText = '#C2410C'
-const oLight = '#FFEDD5'
+const o = '#EA580C' // orange : réservé aux boutons principaux, comme sur l'ancienne home
 const BEIGE = '#F5F3EE'
 const SECTION_PAD = 'clamp(72px, 10vw, 120px) clamp(18px, 4vw, 32px)'
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 900, letterSpacing: '-0.025em', color: INK, lineHeight: 1.12, margin: '0 0 18px' }
@@ -98,7 +99,6 @@ const PILIERS = [
   {
     Icon: Compass,
     num: '01',
-    tint: 'blue',
     kicker: 'Conseil & développement',
     title: 'Auditer et conseiller',
     desc: "Où l'IA crée de la valeur chez vous, dans quel ordre, avec quels garde-fous. Nous lisons vos processus flux par flux, chiffrons les gisements, puis posons la stratégie, la gouvernance et le cadre de conformité.",
@@ -115,7 +115,6 @@ const PILIERS = [
   {
     Icon: Cpu,
     num: '02',
-    tint: 'blue',
     kicker: 'Conseil & développement',
     title: 'Développer vos outils',
     desc: "Agents IA, assistants branchés sur vos documents, automatisations et applications métier reliées à votre CRM, à votre ERP et à vos outils internes. Au forfait ou en régie, avec des développeurs détachables sur site.",
@@ -131,7 +130,6 @@ const PILIERS = [
   {
     Icon: GraduationCap,
     num: '03',
-    tint: 'orange',
     kicker: 'Formation',
     title: 'Former vos équipes',
     desc: "Un outil ne vaut que par ceux qui s'en servent. Nous formons sur tous les LLM du marché, par outil et par métier, à partir des dossiers de vos équipes, en présentiel ou à distance.",
@@ -297,50 +295,53 @@ export default function HomePage() {
         extraJsonLd={[jsonLdServiceList, jsonLdCourseList]}
       />
 
-      {/* ════════════════════════ HERO clair + équipes augmentées par l'IA ════════════════════════ */}
-      <section style={{ position: 'relative', backgroundColor: '#FAFAF7', backgroundImage: 'radial-gradient(circle 560px at 8% 0%, rgba(37,99,235,0.10), transparent 70%), radial-gradient(circle 620px at 96% 96%, rgba(234,88,12,0.09), transparent 70%)', backgroundRepeat: 'no-repeat', color: INK, overflow: 'hidden', borderBottom: `1px solid ${LINE}` }}>
-        <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative', padding: 'clamp(36px, 4.5vw, 56px) clamp(18px, 4vw, 32px) clamp(44px, 5vw, 56px)' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 22, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '5px 14px 5px 5px' }}>
-            <span aria-hidden="true" style={{ width: 26, height: 26, borderRadius: '50%', background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Compass size={15} strokeWidth={2.2} style={{ color: c }} />
-            </span>
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>Cabinet IA à Lyon depuis 2022</span>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1.25fr) minmax(0, 1fr)' : '1fr', gap: 'clamp(24px, 5vw, 72px)', alignItems: 'end' }}>
+      {/* ════════════════════════ HERO clair + équipes augmentées par l'IA ════════════════════════
+          Un seul bloc de lecture à gauche (titre, définition, actions) et, à droite,
+          la carte Qualiopi. Bleu = seul accent ; l'orange est réservé aux boutons. */}
+      <section style={{ position: 'relative', background: '#FAFAF7', color: INK, overflow: 'hidden', borderBottom: `1px solid ${LINE}` }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative', padding: 'clamp(40px, 5.5vw, 72px) clamp(18px, 4vw, 32px) clamp(40px, 5vw, 64px)', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 380px' : '1fr', gap: isDesktop ? 'clamp(40px, 5vw, 72px)' : 32, alignItems: 'center' }}>
+          <div>
             <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(32px, 3.9vw, 50px)', fontWeight: 900, lineHeight: 1.05, margin: 0, color: INK, letterSpacing: '-0.035em' }}>
               Cabinet spécialisé en intelligence artificielle
               <br />
               <span style={{ color: c, fontWeight: 800 }}>audit, conseil, outils sur mesure et formation</span>
             </h1>
 
-            <div>
-              {/* GEO : définition citable (formule d'entité canonique) */}
-              <p id="definition" style={{ fontSize: 'clamp(16px, 1.6vw, 18px)', fontWeight: 500, color: TEXT, lineHeight: 1.6, margin: '0 0 26px', paddingLeft: 18, borderLeft: `3px solid ${o}` }}>
-                Masteria est un cabinet spécialisé en intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Nous auditons vos processus, construisons vos <strong style={{ color: INK, fontWeight: 700 }}>outils et agents IA</strong>, puis formons vos équipes à s'en servir au quotidien.
-              </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-                <CadrageLink style={{ ...btnPrimary, padding: '13px 22px', fontSize: 15 }}>
-                  Réserver 30 minutes de cadrage
-                  <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
-                </CadrageLink>
-                <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: INK, fontSize: 15, fontWeight: 700, textDecoration: 'none', padding: '13px 6px' }}>
-                  Nos formations <ArrowRight size={15} strokeWidth={2.4} style={{ color: o }} aria-hidden="true" />
-                </Link>
-              </div>
-              {/* Organisme de formation certifié Qualiopi (logo officiel avec la mention de catégorie) */}
-              <Link to="/formation-ia-qualiopi" style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 22, paddingTop: 18, borderTop: `1px solid ${LINE}`, textDecoration: 'none' }}>
-                <picture>
-                  <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
-                  <img src="/assets/qualiopi-logo.png" alt="Qualiopi, processus certifié, République française" width="76" height="46" decoding="async" style={{ height: 46, width: 'auto', display: 'block', flexShrink: 0 }} />
-                </picture>
-                <span style={{ lineHeight: 1.4 }}>
-                  <span style={{ display: 'block', fontSize: 14.5, fontWeight: 800, color: INK }}>Organisme de formation certifié Qualiopi</span>
-                  <span style={{ display: 'block', fontSize: 13, color: MUTED }}>Au titre des actions de formation · finançable OPCO</span>
-                </span>
+            {/* GEO : définition citable (formule d'entité canonique) */}
+            <p id="definition" style={{ fontSize: 'clamp(16px, 1.6vw, 18.5px)', fontWeight: 500, color: TEXT, lineHeight: 1.65, margin: '24px 0 30px', maxWidth: 640 }}>
+              Masteria est un cabinet spécialisé en intelligence artificielle, fondé à Lyon en 2022 par Mathias Nizan. Nous auditons vos processus, construisons vos <strong style={{ color: INK, fontWeight: 700 }}>outils et agents IA</strong>, puis formons vos équipes à s'en servir au quotidien.
+            </p>
+
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+              <CadrageLink style={{ ...btnPrimary, padding: '14px 24px', fontSize: 15.5 }}>
+                Réserver 30 minutes de cadrage
+                <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
+              </CadrageLink>
+              <Link to="/formation-intelligence-artificielle" style={{ ...btnGhost, padding: '14px 22px' }}>
+                Nos formations <ArrowRight size={15} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
               </Link>
             </div>
           </div>
+
+          {/* Organisme de formation certifié Qualiopi. Charte de la marque : logo officiel
+              jamais déformé (largeur fixée, hauteur libre), 23 mm de large au minimum (ici
+              168 px, environ 44 mm), fond blanc, marge au moins égale à la hauteur du Q,
+              mention de la catégorie d'action toujours lisible à côté du logo. */}
+          <Link to="/formation-ia-qualiopi" style={{ display: 'block', background: '#fff', border: `1px solid ${LINE}`, borderRadius: 18, padding: isDesktop ? '28px 30px' : '24px 22px', textDecoration: 'none', boxShadow: '0 1px 2px rgba(0,0,0,0.04), 0 18px 40px -28px rgba(15,23,42,0.28)' }}>
+            <picture style={{ display: 'block', width: 168, marginBottom: 20 }}>
+              <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
+              <img src="/assets/qualiopi-logo.png" alt="Qualiopi, processus certifié, République française" width="842" height="509" decoding="async" style={{ display: 'block', width: '100%', height: 'auto' }} />
+            </picture>
+            <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 17.5, fontWeight: 800, color: INK, lineHeight: 1.3, marginBottom: 8 }}>
+              Organisme de formation certifié Qualiopi
+            </span>
+            <span style={{ display: 'block', fontSize: 13.5, color: MUTED, lineHeight: 1.6, marginBottom: 18 }}>
+              La certification qualité a été délivrée au titre de la catégorie d'action suivante&nbsp;: actions de formation.
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14, fontWeight: 700, color: c }}>
+              Formations finançables par votre OPCO <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+            </span>
+          </Link>
         </div>
 
         {/* Des équipes augmentées par l'IA : agents construits (conseil et développement) reliés aux personnes formées (formation) */}
@@ -410,13 +411,13 @@ export default function HomePage() {
           </div>
 
           <div>
-            {PILIERS.map(({ Icon, num, tint, kicker, title, desc, recoit, links, cta }, i) => (
+            {PILIERS.map(({ Icon, num, kicker, title, desc, recoit, links, cta }, i) => (
               <article key={title} style={{ padding: i === 0 ? '0 0 44px' : '44px 0', borderBottom: i < PILIERS.length - 1 ? `1px solid ${LINE}` : 'none' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 13, background: tint === 'orange' ? oLight : cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={22} strokeWidth={1.9} style={{ color: tint === 'orange' ? o : c }} />
+                  <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 13, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon size={22} strokeWidth={1.9} style={{ color: c }} />
                   </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: tint === 'orange' ? oText : c, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                     {num} · {kicker}
                   </span>
                 </div>
@@ -428,7 +429,7 @@ export default function HomePage() {
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 9 }}>
                       {recoit.map(r => (
                         <li key={r} style={{ display: 'flex', gap: 10, fontSize: 14.5, color: INK, lineHeight: 1.45 }}>
-                          <Check size={16} strokeWidth={2.6} style={{ color: tint === 'orange' ? o : c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {r}
+                          <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {r}
                         </li>
                       ))}
                     </ul>
@@ -442,7 +443,7 @@ export default function HomePage() {
                         </li>
                       ))}
                     </ul>
-                    <Link to={cta[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: tint === 'orange' ? oText : c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
+                    <Link to={cta[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                       {cta[0]} <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                     </Link>
                   </div>
@@ -482,7 +483,6 @@ export default function HomePage() {
 
       {/* ════════════════════════ PAR OÙ COMMENCER (fond beige) ════════════════════════ */}
       <section style={{ position: 'relative', background: BEIGE, padding: SECTION_PAD, overflow: 'hidden' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', bottom: -220, left: -160, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(234,88,12,0.10), rgba(234,88,12,0) 66%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) minmax(0, 1fr)' : '1fr', gap: 'clamp(16px, 4vw, 64px)', alignItems: 'end', marginBottom: 56 }}>
             <div>
@@ -499,8 +499,8 @@ export default function HomePage() {
             {ETAPES.map(({ n, badge, title, desc }, i) => (
               <li key={n} style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-                  <span style={{ width: 48, height: 48, borderRadius: '50%', background: i === 0 ? o : '#fff', border: `1.5px solid ${i === 0 ? o : '#D1D5DB'}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: i === 0 ? '#fff' : c, position: 'relative', zIndex: 1, boxShadow: i === 0 ? '0 8px 20px -8px rgba(234,88,12,0.6)' : 'none' }}>{n}</span>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: i === 0 ? oText : MUTED, background: i === 0 ? oLight : '#fff', border: `1px solid ${i === 0 ? '#FED7AA' : LINE}`, borderRadius: 99, padding: '4px 11px', position: 'relative', zIndex: 1 }}>{badge}</span>
+                  <span style={{ width: 48, height: 48, borderRadius: '50%', background: i === 0 ? c : '#fff', border: `1.5px solid ${i === 0 ? c : '#D1D5DB'}`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: i === 0 ? '#fff' : c, position: 'relative', zIndex: 1, boxShadow: i === 0 ? '0 8px 20px -8px rgba(37,99,235,0.55)' : 'none' }}>{n}</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: i === 0 ? '#1D4ED8' : MUTED, background: i === 0 ? cLight : '#fff', border: `1px solid ${i === 0 ? '#BFDBFE' : LINE}`, borderRadius: 99, padding: '4px 11px', position: 'relative', zIndex: 1 }}>{badge}</span>
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 21, fontWeight: 800, color: INK, margin: '0 0 10px' }}>{title}</h3>
                 <p style={{ fontSize: 15, color: TEXT, lineHeight: 1.7, margin: 0, maxWidth: 340 }}>{desc}</p>
@@ -535,18 +535,18 @@ export default function HomePage() {
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 400px) 1fr' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'start' }}>
             <div style={isDesktop ? { position: 'sticky', top: 130 } : undefined}>
-              <Kicker color={oText}>Former vos équipes</Kicker>
+              <Kicker>Former vos équipes</Kicker>
               <h2 style={h2Style}>Tous les LLM du marché, plus de 100 programmes</h2>
               <p style={{ ...leadStyle, marginBottom: 24 }}>
                 ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI&nbsp;: nous formons vos équipes sur tous les LLM du marché, par outil et par métier, à partir de leurs propres dossiers. En présentiel ou à distance, en intra-entreprise ou en accompagnement individuel. Plus de 1 500 professionnels formés depuis 2022.
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 18px', border: `1px solid ${LINE}`, borderRadius: 14, marginBottom: 26 }}>
-                <picture>
+                <picture style={{ display: 'block', width: 120, flexShrink: 0 }}>
                   <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
-                  <img src="/assets/qualiopi-logo.png" alt="Certification Qualiopi des actions de formation de Masteria" width="80" height="60" loading="lazy" decoding="async" style={{ height: 48, width: 'auto', flexShrink: 0 }} />
+                  <img src="/assets/qualiopi-logo.png" alt="Certification Qualiopi des actions de formation de Masteria" width="842" height="509" loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: 'auto' }} />
                 </picture>
                 <p style={{ fontSize: 13.5, color: TEXT, lineHeight: 1.55, margin: 0 }}>
-                  Formation certifiée Qualiopi, finançable par votre OPCO. 1 980 € HT la journée.
+                  Certification qualité délivrée au titre des actions de formation. Finançable par votre OPCO, 1&nbsp;980&nbsp;€ HT la journée.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap' }}>
@@ -804,7 +804,7 @@ export default function HomePage() {
                 <Clock size={16} strokeWidth={2} style={{ color: c }} aria-hidden="true" /> Réponse sous 24 h ouvrées
               </span>
             </div>
-            <Link to="/contact?type=formation" style={{ display: 'block', marginTop: 18, fontSize: 13.5, color: oText, fontWeight: 700, textDecoration: 'none' }}>
+            <Link to="/contact?type=formation" style={{ display: 'block', marginTop: 18, fontSize: 13.5, color: c, fontWeight: 700, textDecoration: 'none' }}>
               Un besoin de formation ? Demander un devis
             </Link>
           </div>

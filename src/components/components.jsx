@@ -212,7 +212,9 @@ export function MasteriaHeader() {
   // elle débordait de l'écran et venait coller le logo (scroll horizontal parasite
   // entre 768 et 1023 px) : on bascule sur le menu burger dès cette largeur.
   const isMobile = useMediaQuery('(max-width: 1023px)');
-  const wideNav = useMediaQuery('(min-width: 1200px)');
+  // Nav large (gouttières pleines, recherche détaillée) à partir de 1280 px : entre 1200
+  // et 1260 px elle débordait de l'écran (constat du 02/10/2026).
+  const wideNav = useMediaQuery('(min-width: 1280px)');
   const [menuOpen, setMenuOpen] = useState(false);
   const [conseilOpen, setConseilOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -318,7 +320,9 @@ export function MasteriaHeader() {
         padding: isMobile ? '0 18px' : '0 32px',
         height: isMobile ? 64 : 80,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        gap: isMobile ? 12 : 48, // gouttière minimale entre le logo et la nav
+        // gouttière minimale entre le logo et la nav ; resserrée sous 1280 px, où la nav
+        // débordait de 20 px à 1024 px (défilement horizontal constaté le 02/10/2026)
+        gap: isMobile ? 12 : (wideNav ? 48 : 24),
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <picture>
@@ -344,7 +348,7 @@ export function MasteriaHeader() {
 
         {/* ═════════════ NAV DESKTOP ═════════════ */}
         {!isMobile && (
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: wideNav ? 22 : 15 }}>
 
             {/* ── Formations + méga-menu ── */}
             <div ref={menuRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} style={{ position: 'relative' }}>

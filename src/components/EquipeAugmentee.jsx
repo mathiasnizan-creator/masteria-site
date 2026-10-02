@@ -1,23 +1,23 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Bot, Check, BadgeCheck, ReceiptText, UserSearch, Scale, NotebookPen, ChartColumn, Cpu, GraduationCap, Briefcase, Users, Gavel, ListChecks, Landmark } from 'lucide-react'
-import { useIsDesktop } from '../hooks/useMediaQuery'
+import { useIsDesktop, useMediaQuery } from '../hooks/useMediaQuery'
 import ToolLogo from './ToolLogo'
 
 /*
  * « Des équipes augmentées par l'IA » : bandeau animé en bas du hero (clair) de la home.
- * Code couleur : le bleu pour l'IA, le conseil et le développement (les agents en haut) ;
- * l'orange pour l'humain et la formation (les personnes en bas, qui s'illuminent quand
- * leur agent les épaule). En boucle, une impulsion descend de chaque agent vers sa
- * personne : son avatar s'entoure d'orange, sa tâche avance d'un coup et passe à
- * « prêt ». Les colonnes s'enchaînent en vague.
+ * Un seul accent, le bleu (Mathias, 02/10 : « trop bariolé entre le bleu et le orange ») :
+ * les agents en haut, et le liseré bleu qui gagne la personne quand son agent l'épaule.
+ * En boucle, une impulsion descend de chaque agent vers sa personne : son avatar
+ * s'entoure de bleu, sa tâche avance d'un coup et passe à « prêt ». Les colonnes
+ * s'enchaînent en vague. Toutes les cartes ont la même taille : pastilles d'agent
+ * pleine largeur, rôle sur deux lignes réservées, tâche calée en bas de carte.
  * Les styles de base décrivent l'état « augmenté » : c'est ce qui s'affiche, figé,
  * quand le visiteur demande moins de mouvement.
  * Scènes illustratives : aucun chiffre, aucun client.
  */
 
 const BLUE = '#2563EB'
-const ORANGE = '#EA580C'
-const ORANGE_TEXT = '#C2410C'
+const BLUE_TEXT = '#1D4ED8'
 const INK = '#0A0A0A'
 const MUTED = '#6B7280'
 const LINE = '#E5E7EB'
@@ -40,9 +40,9 @@ const CSS = `
 .aug-beam{animation:aug-beam ${CYCLE}s infinite}
 @keyframes aug-beam{0%,8%{opacity:.35}12%,24%{opacity:1}32%,100%{opacity:.35}}
 .aug-ring{animation:aug-ring ${CYCLE}s infinite}
-@keyframes aug-ring{0%,21%{border-color:${LINE};box-shadow:none}26%,82%{border-color:${ORANGE};box-shadow:0 0 0 4px rgba(234,88,12,.15),0 0 18px rgba(234,88,12,.30)}92%,100%{border-color:${LINE};box-shadow:none}}
+@keyframes aug-ring{0%,21%{border-color:${LINE};box-shadow:none}26%,82%{border-color:${BLUE};box-shadow:0 0 0 4px rgba(37,99,235,.14),0 0 16px rgba(37,99,235,.26)}92%,100%{border-color:${LINE};box-shadow:none}}
 .aug-card{animation:aug-card ${CYCLE}s infinite}
-@keyframes aug-card{0%,21%{border-color:${LINE};background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}28%,82%{border-color:#FDBA74;background:#FFF7ED;box-shadow:0 10px 24px -14px rgba(234,88,12,.45)}92%,100%{border-color:${LINE};background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}}
+@keyframes aug-card{0%,21%{border-color:${LINE};background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}28%,82%{border-color:#BFDBFE;background:#F5F8FF;box-shadow:0 10px 24px -16px rgba(37,99,235,.40)}92%,100%{border-color:${LINE};background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}}
 .aug-badge{animation:aug-badge ${CYCLE}s infinite}
 @keyframes aug-badge{0%,23%{transform:scale(0)}28%,82%{transform:scale(1)}90%,100%{transform:scale(0)}}
 .aug-bar{animation:aug-bar ${CYCLE}s infinite}
@@ -70,13 +70,13 @@ function Silhouette({ tone }) {
   )
 }
 
-function Etiquette({ Icon, tint, index, titre, lien, aCote, children }) {
-  const accent = tint === 'orange' ? ORANGE_TEXT : BLUE
+function Etiquette({ Icon, index, titre, lien, aCote, children }) {
+  const accent = BLUE
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accent, marginBottom: 6 }}>
-        <span aria-hidden="true" style={{ width: 26, height: 26, borderRadius: 8, background: tint === 'orange' ? '#FFEDD5' : '#DBEAFE', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-          <Icon size={14} strokeWidth={2.2} style={{ color: tint === 'orange' ? ORANGE : BLUE }} />
+        <span aria-hidden="true" style={{ width: 26, height: 26, borderRadius: 8, background: '#DBEAFE', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <Icon size={14} strokeWidth={2.2} style={{ color: BLUE }} />
         </span>
         {index}
       </div>
@@ -109,13 +109,13 @@ function TousLesLLM() {
   )
 }
 
-const ETIQUETTE_CONSEIL = <Etiquette Icon={Cpu} tint="blue" index="01 · Conseil & développement" titre="Nous construisons vos outils IA" lien={['Le conseil', '/conseil-intelligence-artificielle']} />
+const ETIQUETTE_CONSEIL = <Etiquette Icon={Cpu} index="01 · Conseil & développement" titre="Nous construisons vos outils IA" lien={['Le conseil', '/conseil-intelligence-artificielle']} />
 const ETIQUETTE_FORMATION = (
   <Etiquette
-    Icon={GraduationCap} tint="orange" index="02 · Formation" titre="Nous formons ceux qui s'en servent" lien={['Les formations', '/formation-intelligence-artificielle']}
+    Icon={GraduationCap} index="02 · Formation" titre="Nous formons ceux qui s'en servent" lien={['Les formations', '/formation-intelligence-artificielle']}
     aCote={(
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12.5, fontWeight: 700, color: INK }}>
-        <BadgeCheck size={14} strokeWidth={2.2} style={{ color: ORANGE, flexShrink: 0 }} aria-hidden="true" />
+        <BadgeCheck size={14} strokeWidth={2.2} style={{ color: BLUE, flexShrink: 0 }} aria-hidden="true" />
         Certifié Qualiopi
       </span>
     )}
@@ -126,7 +126,12 @@ const ETIQUETTE_FORMATION = (
 
 export default function EquipeAugmentee() {
   const isDesktop = useIsDesktop()
-  const equipe = isDesktop ? EQUIPE : EQUIPE.slice(0, 3)
+  // Cinq colonnes à partir de 1280 px, quatre entre 1024 et 1279 px (à cinq, les noms
+  // d'agents étaient tronqués et les cartes trop étroites), trois sur mobile, deux
+  // sous 360 px.
+  const isWide = useMediaQuery('(min-width: 1280px)')
+  const isTiny = useMediaQuery('(max-width: 359px)')
+  const equipe = isWide ? EQUIPE : EQUIPE.slice(0, isDesktop ? 4 : (isTiny ? 2 : 3))
   const delay = i => ({ animationDelay: `${(i * STEP - CYCLE).toFixed(2)}s` })
 
   return (
@@ -142,10 +147,10 @@ export default function EquipeAugmentee() {
         <div style={{ display: 'flex', alignItems: isDesktop ? 'flex-end' : 'flex-start', justifyContent: 'space-between', gap: isDesktop ? 32 : 10, flexDirection: isDesktop ? 'row' : 'column', marginBottom: isDesktop ? 28 : 24 }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.4vw, 30px)', fontWeight: 900, color: INK, letterSpacing: '-0.02em', lineHeight: 1.2, margin: 0 }}>
             Des équipes{' '}
-            <span style={{ position: 'relative', display: 'inline-block', color: ORANGE }}>
+            <span style={{ position: 'relative', display: 'inline-block', color: BLUE }}>
               augmentées
-              <span aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, bottom: -6, height: 3, borderRadius: 99, background: '#FED7AA', overflow: 'hidden' }}>
-                <span className="aug-underline" style={{ display: 'block', height: '100%', width: '100%', borderRadius: 99, background: ORANGE }} />
+              <span aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, bottom: -6, height: 3, borderRadius: 99, background: '#DBEAFE', overflow: 'hidden' }}>
+                <span className="aug-underline" style={{ display: 'block', height: '100%', width: '100%', borderRadius: 99, background: BLUE }} />
               </span>
             </span>{' '}
             par l'IA
@@ -168,7 +173,7 @@ export default function EquipeAugmentee() {
             </div>
           ) : ETIQUETTE_CONSEIL}
 
-          {/* Animation : agents en haut (bleu), équipe en bas (orange quand augmentée) */}
+          {/* Animation : agents en haut, équipe en bas ; cartes de même taille (colonnes étirées) */}
           <div aria-hidden="true" style={{ position: 'relative', display: 'grid', gridTemplateColumns: `repeat(${equipe.length}, minmax(0, 1fr))`, gap: isDesktop ? 16 : 10 }}>
             {/* Bus IA qui relie les agents */}
             <span style={{ position: 'absolute', top: 17, left: `${50 / equipe.length}%`, right: `${50 / equipe.length}%`, height: 1, background: '#BFDBFE', zIndex: 0 }}>
@@ -176,38 +181,38 @@ export default function EquipeAugmentee() {
             </span>
 
             {equipe.map((p, i) => (
-              <div key={p.role} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 0 }}>
-                <span className="aug-agent" style={{ ...delay(i), position: 'relative', zIndex: 1, display: 'inline-flex', alignItems: 'center', gap: 6, maxWidth: '100%', height: 34, padding: isDesktop ? '0 12px' : '0 10px', borderRadius: 99, border: '1px solid #BFDBFE', background: '#EFF6FF', color: '#1E3A8A', fontSize: isDesktop ? 12.5 : 11.5, fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              <div key={p.role} style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', minWidth: 0 }}>
+                <span className="aug-agent" style={{ ...delay(i), position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, boxSizing: 'border-box', width: '100%', height: 34, padding: isDesktop ? '0 12px' : '0 10px', borderRadius: 99, border: '1px solid #BFDBFE', background: '#EFF6FF', color: '#1E3A8A', fontSize: isDesktop ? 12.5 : 11.5, fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                   <p.Icon size={14} strokeWidth={2} style={{ color: BLUE, flexShrink: 0 }} />
                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{isDesktop ? p.agent : p.court}</span>
                 </span>
 
-                <span style={{ position: 'relative', width: 1, height: isDesktop ? 46 : 36 }}>
+                <span style={{ position: 'relative', alignSelf: 'center', width: 1, height: isDesktop ? 46 : 36 }}>
                   <span className="aug-beam" style={{ ...delay(i), position: 'absolute', inset: 0, background: '#93C5FD', opacity: 0.35 }} />
                   <span className="aug-dot" style={{ ...delay(i), position: 'absolute', left: -3, width: 7, height: 7, marginTop: -3.5, borderRadius: '50%', background: BLUE, boxShadow: '0 0 10px 2px rgba(37,99,235,0.45)', opacity: 0 }} />
                 </span>
 
-                <div className="aug-card" style={{ ...delay(i), width: '100%', boxSizing: 'border-box', borderRadius: 16, border: '1px solid #FDBA74', background: '#FFF7ED', boxShadow: '0 10px 24px -14px rgba(234,88,12,0.45)', padding: isDesktop ? '14px 14px 13px' : '12px 10px 11px' }}>
+                <div className="aug-card" style={{ ...delay(i), flex: 1, display: 'flex', flexDirection: 'column', width: '100%', boxSizing: 'border-box', borderRadius: 16, border: '1px solid #BFDBFE', background: '#F5F8FF', boxShadow: '0 10px 24px -16px rgba(37,99,235,0.40)', padding: isDesktop ? '14px 14px 13px' : '12px 8px 11px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10, minWidth: 0 }}>
-                    <span className="aug-ring" style={{ ...delay(i), position: 'relative', flexShrink: 0, width: 40, height: 40, borderRadius: '50%', border: `2px solid ${ORANGE}`, boxShadow: '0 0 0 4px rgba(234,88,12,0.15), 0 0 18px rgba(234,88,12,0.30)' }}>
+                    <span className="aug-ring" style={{ ...delay(i), position: 'relative', flexShrink: 0, width: 40, height: 40, borderRadius: '50%', border: `2px solid ${BLUE}`, boxShadow: '0 0 0 4px rgba(37,99,235,0.14), 0 0 16px rgba(37,99,235,0.26)' }}>
                       <Silhouette tone={p.tone} />
                       <span className="aug-badge" style={{ ...delay(i), position: 'absolute', right: -4, bottom: -4, width: 18, height: 18, borderRadius: '50%', background: BLUE, border: '2px solid #fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', transform: 'scale(1)' }}>
                         <Bot size={10} strokeWidth={2.4} style={{ color: '#fff' }} />
                       </span>
                     </span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: isDesktop ? 13.5 : 12.5, fontWeight: 700, color: INK, lineHeight: 1.25, marginBottom: 6 }}>
-                    <p.RoleIcon size={isDesktop ? 14 : 13} strokeWidth={2} style={{ color: MUTED, flexShrink: 0, marginTop: 1 }} />
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 6, fontSize: isDesktop ? 13.5 : 12, fontWeight: 700, color: INK, lineHeight: 1.25, minHeight: isDesktop ? 34 : 30, marginBottom: 6 }}>
+                    {isDesktop && <p.RoleIcon size={14} strokeWidth={2} style={{ color: MUTED, flexShrink: 0, marginTop: 1 }} />}
                     {p.role}
                   </div>
-                  <div style={{ position: 'relative', height: 32, marginBottom: 8 }}>
+                  <div style={{ position: 'relative', marginTop: 'auto', height: isDesktop ? 33 : 47, marginBottom: 8 }}>
                     <span className="aug-task" style={{ ...delay(i), position: 'absolute', inset: 0, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, color: MUTED, whiteSpace: 'normal', overflow: 'hidden', opacity: 0 }}>{p.tache}</span>
-                    <span className="aug-status" style={{ ...delay(i), position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-start', gap: 5, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, fontWeight: 700, color: ORANGE_TEXT, whiteSpace: 'normal', overflow: 'hidden' }}>
+                    <span className="aug-status" style={{ ...delay(i), position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-start', gap: 5, fontSize: isDesktop ? 12 : 11.5, lineHeight: 1.35, fontWeight: 700, color: BLUE_TEXT, whiteSpace: 'normal', overflow: 'hidden' }}>
                       <Check size={13} strokeWidth={2.8} style={{ flexShrink: 0 }} /> <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{p.fait}</span>
                     </span>
                   </div>
                   <div style={{ height: 4, borderRadius: 99, background: '#F3F4F6', overflow: 'hidden' }}>
-                    <span className="aug-bar" style={{ ...delay(i), display: 'block', height: '100%', width: '100%', borderRadius: 99, background: ORANGE }} />
+                    <span className="aug-bar" style={{ ...delay(i), display: 'block', height: '100%', width: '100%', borderRadius: 99, background: BLUE }} />
                   </div>
                 </div>
               </div>
