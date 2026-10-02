@@ -3,12 +3,125 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-01",
-    "totalEditions": 32,
-    "totalItems": 436,
-    "totalSources": 620
+    "derniereDate": "2026-10-02",
+    "totalEditions": 33,
+    "totalItems": 449,
+    "totalSources": 638
   },
   "editions": [
+    {
+      "date": "2026-10-02",
+      "dateCourte": "Fri 2 Oct",
+      "dateAffichee": "2 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Measure who can actually use AI before you name an owner or buy a platform",
+      "chapeau": "OpenAI dismisses three researchers from its safety teams over suspected leaks to an outside evaluation group, as the FTC prepares its first subpoenas. The same day, France launches its Arcadia project to take on Palantir over NATO's networks, Anthropic cuts off access to Claude from Hong Kong, and a PwC study shows that executives and technical leaders cannot say who, inside their own company, answers for AI risk.",
+      "nbItems": 13,
+      "nbSources": 18,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "ZDNet",
+        "Clubic",
+        "Bloomberg",
+        "The Verge",
+        "OpenAI",
+        "South China Morning Post",
+        "MIT Technology Review",
+        "Maddyness"
+      ],
+      "items": [
+        {
+          "t": "OpenAI removes three researchers from its safety teams, accused of sharing confidential information",
+          "z": "une",
+          "id": "openai-removes-three-researchers-from-its-safety-teams"
+        },
+        {
+          "t": "France launches the Arcadia project to challenge the Americans over NATO's classified networks",
+          "z": "europe",
+          "id": "france-launches-the-arcadia-project-to-challenge-the"
+        },
+        {
+          "t": "Airbus buys Quarkslab, the French firm that protects software against AI",
+          "z": "europe",
+          "id": "airbus-buys-quarkslab-the-french-firm-that-protects"
+        },
+        {
+          "t": "Executives and technical leaders do not agree on who answers for AI risk, according to PwC",
+          "z": "europe",
+          "id": "executives-and-technical-leaders-do-not-agree-on-who"
+        },
+        {
+          "t": "Pearson buys Workera to measure AI skills in the workplace",
+          "z": "europe",
+          "id": "pearson-buys-workera-to-measure-ai-skills-in-the-workplace"
+        },
+        {
+          "t": "OpenAI and Meta push their agents to the general public for sensitive tasks",
+          "z": "international",
+          "id": "openai-and-meta-push-their-agents-to-the-general-public-for"
+        },
+        {
+          "t": "Albertsons rolls out ChatGPT Enterprise and the OpenAI API in its supermarkets",
+          "z": "international",
+          "id": "albertsons-rolls-out-chatgpt-enterprise-and-the-openai-api"
+        },
+        {
+          "t": "Anthropic rents up to $42 billion of chips from Broadcom, Amazon moves $8 billion of servers off its balance sheet",
+          "z": "international",
+          "id": "anthropic-rents-up-to-42-billion-of-chips-from-broadcom"
+        },
+        {
+          "t": "A federal judge dismisses the antitrust complaints against Google's AI Overviews",
+          "z": "international",
+          "id": "a-federal-judge-dismisses-the-antitrust-complaints-against"
+        },
+        {
+          "t": "Anthropic tightens access to Claude from Hong Kong, including via VPN",
+          "z": "chine",
+          "id": "anthropic-tightens-access-to-claude-from-hong-kong"
+        },
+        {
+          "t": "Washington tightens its grip on Nvidia chips diverted to China",
+          "z": "chine",
+          "id": "washington-tightens-its-grip-on-nvidia-chips-diverted-to"
+        },
+        {
+          "t": "An AI tool reconstructs what you are looking at from a brain scan",
+          "z": "recherche",
+          "id": "an-ai-tool-reconstructs-what-you-are-looking-at-from-a"
+        },
+        {
+          "t": "Grok reportedly advised Donald Trump to capture Venezuelan president Nicolás Maduro, the…",
+          "z": "bref",
+          "id": "grok-reportedly-advised-donald-trump-to-capture-venezuelan"
+        }
+      ]
+    },
     {
       "date": "2026-10-01",
       "dateCourte": "Thu 1 Oct",

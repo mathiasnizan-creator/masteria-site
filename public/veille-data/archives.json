@@ -3,12 +3,125 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-01",
-    "totalEditions": 47,
-    "totalItems": 639,
-    "totalSources": 932
+    "derniereDate": "2026-10-02",
+    "totalEditions": 48,
+    "totalItems": 652,
+    "totalSources": 950
   },
   "editions": [
+    {
+      "date": "2026-10-02",
+      "dateCourte": "ven. 2 oct.",
+      "dateAffichee": "2 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme",
+      "chapeau": "OpenAI licencie trois chercheurs de ses équipes de sécurité pour des fuites présumées vers un groupe d'évaluation externe, alors que la FTC prépare ses premières assignations. Le même jour, la France lance son projet Arcadia contre Palantir sur les réseaux de l'OTAN, Anthropic coupe l'accès à Claude depuis Hong Kong, et une étude PwC montre que dirigeants et responsables techniques ne savent pas dire qui, chez eux, répond des risques de l'IA.",
+      "nbItems": 13,
+      "nbSources": 18,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "ZDNet",
+        "Clubic",
+        "Bloomberg",
+        "The Verge",
+        "OpenAI",
+        "South China Morning Post",
+        "MIT Technology Review",
+        "Maddyness"
+      ],
+      "items": [
+        {
+          "t": "OpenAI écarte trois chercheurs de ses équipes de sécurité, accusés d'avoir partagé des informations confidentielles",
+          "z": "une",
+          "id": "openai-ecarte-trois-chercheurs-de-ses-equipes-de-securite"
+        },
+        {
+          "t": "La France lance le projet Arcadia pour disputer aux Américains les réseaux classifiés de l'OTAN",
+          "z": "europe",
+          "id": "la-france-lance-le-projet-arcadia-pour-disputer-aux"
+        },
+        {
+          "t": "Airbus rachète Quarkslab, le français qui protège les logiciels contre l'IA",
+          "z": "europe",
+          "id": "airbus-rachete-quarkslab-le-francais-qui-protege-les"
+        },
+        {
+          "t": "Dirigeants et responsables techniques ne s'accordent pas sur qui répond des risques de l'IA, selon PwC",
+          "z": "europe",
+          "id": "dirigeants-et-responsables-techniques-ne-s-accordent-pas"
+        },
+        {
+          "t": "Pearson rachète Workera pour mesurer les compétences IA en entreprise",
+          "z": "europe",
+          "id": "pearson-rachete-workera-pour-mesurer-les-competences-ia-en"
+        },
+        {
+          "t": "OpenAI et Meta poussent leurs agents vers le grand public pour des tâches sensibles",
+          "z": "international",
+          "id": "openai-et-meta-poussent-leurs-agents-vers-le-grand-public"
+        },
+        {
+          "t": "Albertsons déploie ChatGPT Enterprise et l'API OpenAI dans ses supermarchés",
+          "z": "international",
+          "id": "albertsons-deploie-chatgpt-enterprise-et-l-api-openai-dans"
+        },
+        {
+          "t": "Anthropic loue jusqu'à 42 milliards de dollars de puces à Broadcom, Amazon sort 8 milliards de serveurs de son bilan",
+          "z": "international",
+          "id": "anthropic-loue-jusqu-a-42-milliards-de-dollars-de-puces-a"
+        },
+        {
+          "t": "Un juge fédéral rejette les plaintes antitrust contre les AI Overviews de Google",
+          "z": "international",
+          "id": "un-juge-federal-rejette-les-plaintes-antitrust-contre-les"
+        },
+        {
+          "t": "Anthropic durcit l'accès à Claude depuis Hong Kong, y compris via VPN",
+          "z": "chine",
+          "id": "anthropic-durcit-l-acces-a-claude-depuis-hong-kong-y"
+        },
+        {
+          "t": "Washington resserre sur les puces Nvidia détournées vers la Chine",
+          "z": "chine",
+          "id": "washington-resserre-sur-les-puces-nvidia-detournees-vers-la"
+        },
+        {
+          "t": "Un outil d'IA reconstruit ce que vous regardez à partir d'un scanner cérébral",
+          "z": "recherche",
+          "id": "un-outil-d-ia-reconstruit-ce-que-vous-regardez-a-partir-d"
+        },
+        {
+          "t": "Grok aurait conseillé à Donald Trump de capturer le président vénézuélien Nicolás…",
+          "z": "bref",
+          "id": "grok-aurait-conseille-a-donald-trump-de-capturer"
+        }
+      ]
+    },
     {
       "date": "2026-10-01",
       "dateCourte": "jeu. 1 oct.",

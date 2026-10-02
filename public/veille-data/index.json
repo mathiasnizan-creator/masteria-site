@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-01",
-    "totalEditions": 47,
-    "totalItems": 639,
-    "totalSources": 932
+    "derniereDate": "2026-10-02",
+    "totalEditions": 48,
+    "totalItems": 652,
+    "totalSources": 950
   },
   "editions": [
+    {
+      "date": "2026-10-02",
+      "dateAffichee": "2 octobre 2026",
+      "dateCourte": "ven. 2 oct.",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme",
+      "nbItems": 13,
+      "nbSources": 18,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-01",
       "dateAffichee": "1 octobre 2026",

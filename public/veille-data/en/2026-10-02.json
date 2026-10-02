@@ -1,0 +1,294 @@
+{
+  "schema": 2,
+  "date": "2026-10-02",
+  "dateAffichee": "2 October 2026",
+  "dateLongue": "Friday 2 October 2026",
+  "dateCourte": "Fri 2 Oct",
+  "jourSemaine": "Friday",
+  "titre": "AI Watch - Friday 2 October 2026",
+  "titreEditorial": "Measure who can actually use AI before you name an owner or buy a platform",
+  "chapeau": "OpenAI dismisses three researchers from its safety teams over suspected leaks to an outside evaluation group, as the FTC prepares its first subpoenas. The same day, France launches its Arcadia project to take on Palantir over NATO's networks, Anthropic cuts off access to Claude from Hong Kong, and a PwC study shows that executives and technical leaders cannot say who, inside their own company, answers for AI risk.",
+  "une": {
+    "titre": "OpenAI removes three researchers from its safety teams, accused of sharing confidential information",
+    "texteHtml": "<p>The company ended its work with three researchers after an internal inquiry found several failures in the handling of sensitive information, according to the Wall Street Journal. One case involves material passed to an outside group tasked with evaluating the safety of AI models, exactly the kind of independent body meant to scrutinise the labs from the outside. The departure comes in a tense climate: the Federal Trade Commission, the US consumer protection authority, is looking into agents going off the rails and could issue its first subpoenas to OpenAI and Anthropic within a few weeks. The same month, tech bosses signed a \"morally binding\" self-regulation pact proposed by Donald Trump, with no legal force. For an organisation that relies on these models, the signal matters: outside verification of safety is tightening at the moment when usage is widening.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/10/02/openai-exclut-trois-chercheurs-en-securite-de-l-ia-accuses-de-fuites-d-informations-sensibles_6786658_4408996.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/"
+      },
+      {
+        "nom": "ZDNet",
+        "url": "https://www.zdnet.fr/actualites/openai-licencie-trois-chercheurs-en-securite-pour-fuite-presumee-dinformations-confidentielles-505004.htm"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "openai-removes-three-researchers-from-its-safety-teams"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "France launches the Arcadia project to challenge the Americans over NATO's classified networks",
+          "texteHtml": "<p>Unveiled on 29 September, Arcadia aims to merge French military data on a large scale to gain an operational edge, Le Monde reports. The stakes go beyond the technology: at issue is the place of the American groups Palantir and Anduril in the modernisation of the Atlantic Alliance's structures, where France intends to offer a sovereign solution. The file squarely raises the question of who holds and processes European defence data.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/international/article/2026/10/01/ia-militaire-la-france-a-l-assaut-de-la-domination-americaine-sur-les-reseaux-classifies-de-l-otan_6786550_3210.html"
+            }
+          ],
+          "rang": 2,
+          "id": "france-launches-the-arcadia-project-to-challenge-the"
+        },
+        {
+          "titre": "Airbus buys Quarkslab, the French firm that protects software against AI",
+          "texteHtml": "<p>The group completed on Thursday its acquisition of this cybersecurity company, known for QShield, a product that hardens software against AI-assisted analysis and reverse-engineering techniques, according to Clubic. The deal, announced in April, strengthens Airbus's cyber arm and keeps a sensitive software security component in Europe. It illustrates a quiet move by the continent's big industrial groups to consolidate France's cyber gems.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-632095-airbus-met-la-main-sur-quarkslab-le-francais-qui-protege-les-logiciels-contre-l-ia.html"
+            }
+          ],
+          "rang": 3,
+          "id": "airbus-buys-quarkslab-the-french-firm-that-protects"
+        },
+        {
+          "titre": "Executives and technical leaders do not agree on who answers for AI risk, according to PwC",
+          "texteHtml": "<p>The firm's study highlights a growing need to designate a clear AI owner inside the company, failing which responsibility for incidents stays unassigned, ZDNet reports. Executives tend to send the subject back to the technical teams, who send it back to senior management. The gap widens at the moment when uses are multiplying and an agent going off the rails acts rather than merely writing.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/qui-est-responsable-des-risques-lies-a-lia-au-travail-dirigeants-dentreprise-et-responsables-techniques-ne-sont-pas-daccord-selon-pwc-504975.htm"
+            }
+          ],
+          "rang": 4,
+          "id": "executives-and-technical-leaders-do-not-agree-on-who"
+        },
+        {
+          "titre": "Pearson buys Workera to measure AI skills in the workplace",
+          "texteHtml": "<p>The publishing and training group has reached an agreement to acquire Workera, whose product assesses employees' real level of AI competence and directs training to where it is missing, ZDNet reports. The purchase makes the measurement of AI skills a market in its own right, separate from selling courses. For a management team, the logic flips: you first seek to know who can do what, before deciding what to teach.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/pearson-achete-workera-vers-la-formation-a-lia-en-entreprise-504904.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "pearson-buys-workera-to-measure-ai-skills-in-the-workplace"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI and Meta push their agents to the general public for sensitive tasks",
+          "texteHtml": "<p>The two groups are trying to convince individuals to entrust their agents with actions more committing than mere writing, purchases and administrative steps included, Bloomberg writes. At its DevDay conference, OpenAI unveiled Dots, a \"serious\" agent powered by GPT-6 Astra, to answer Meta, whose agent platform Muse has had a noticed start, The Verge reports. The shift is clear: after the assistant that suggests comes the agent that executes and pays in your place. These tools, designed for individuals, will enter organisations through employees before any internal policy. The vendors' bet is that public trust will follow convenience; nothing guarantees it will follow as fast as the features.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/newsletters/2026-10-01/openai-and-meta-push-ahead-with-ai-agents-testing-public-s-trust"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle"
+            }
+          ],
+          "rang": 6,
+          "id": "openai-and-meta-push-their-agents-to-the-general-public-for"
+        },
+        {
+          "titre": "Albertsons rolls out ChatGPT Enterprise and the OpenAI API in its supermarkets",
+          "texteHtml": "<p>The US chain, one of the country's largest grocery retailers, says it uses these tools to speed up its teams' work and simplify the shopping of millions of customers, according to OpenAI, TechCrunch and ZDNet. The announcement matters less for the technical feat than for the scale: a mass-retail player is industrialising generative AI across its internal processes. This is the kind of documented rollout that gives a concrete measure of enterprise adoption, far from demos. It remains to be seen what quantified gains the retailer will publish once it has enough hindsight.</p>",
+          "sources": [
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/albertsons-reimagining-retail"
+            }
+          ],
+          "rang": 7,
+          "id": "albertsons-rolls-out-chatgpt-enterprise-and-the-openai-api"
+        },
+        {
+          "titre": "Anthropic rents up to $42 billion of chips from Broadcom, Amazon moves $8 billion of servers off its balance sheet",
+          "texteHtml": "<p>Clubic describes a deal under which Anthropic commits to rent $42 billion of AI chips supplied by Broadcom, an example of those arrangements where the same players finance each other in a circle. The same day, Amazon is studying a transfer of around $8 billion of high-end Nvidia chips off its accounting balance sheet, according to the Financial Times as relayed by Bloomberg. The two operations tell the same strain: AI infrastructure costs so much that it pushes towards ever more acrobatic financial arrangements. For anyone buying AI services, these tens-of-billions commitments end up weighing on the price billed.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-632200-anthropic-obtient-de-broadcom-jusqu-a-42-milliards-de-dollars-pour-louer-ses-puces-d-ia.html"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-02/amazon-seeks-to-move-8-billion-of-chips-off-its-books-ft-says"
+            }
+          ],
+          "rang": 8,
+          "id": "anthropic-rents-up-to-42-billion-of-chips-from-broadcom"
+        },
+        {
+          "titre": "A federal judge dismisses the antitrust complaints against Google's AI Overviews",
+          "texteHtml": "<p>Judge Amit Mehta threw out two actions filed by Chegg and Penske Media, parent company of Rolling Stone, which accused Google of capturing web traffic with its AI-generated search summaries, according to The Verge, citing Reuters. The ruling sides with Google on this specific ground. For the publishers who see their audience shrink as search engines answer in place of websites, the legal route closes and leaves the economic problem untouched.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed"
+            }
+          ],
+          "rang": 9,
+          "id": "a-federal-judge-dismisses-the-antitrust-complaints-against"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic tightens access to Claude from Hong Kong, including via VPN",
+          "texteHtml": "<p>Many Hong Kong users saw their account suspended without notice after connecting through a virtual private network (VPN), a tool that hides the real location, the South China Morning Post reports. A wave of complaints appeared on Thursday on X and Reddit, from accounts active for months. Anthropic applies geographic restrictions to its models, and is strengthening its detection of workarounds. The measure is a reminder that access to the big American models depends on a shifting political map, and that a team based in a restricted zone can lose its tool overnight.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-war/article/3369526/hong-kong-users-caught-offguard-anthropic-tightens-vpn-access-claude"
+            }
+          ],
+          "rang": 10,
+          "id": "anthropic-tightens-access-to-claude-from-hong-kong"
+        },
+        {
+          "titre": "Washington tightens its grip on Nvidia chips diverted to China",
+          "texteHtml": "<p>Federal prosecutors arrested on Thursday a Californian accused of shipping to China servers containing $300 million of Nvidia chips, in violation of export controls, according to Bloomberg. In parallel, a financing company owned by several Chinese local authorities documented the purchase of Blackwell chips that are nonetheless restricted, a sign of public support for trade that Washington deems illicit. The two cases show export controls that hold poorly: the hardware gets through despite the barriers, and players tied to the Chinese state organise its acquisition. The question put to the US authorities is why the warning signs were not seen earlier.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-02/man-charged-by-us-with-illegally-shipping-nvidia-chips-to-china"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-01/chinese-state-backed-firm-disclosed-nvidia-blackwell-chips-deal"
+            }
+          ],
+          "rang": 11,
+          "id": "washington-tightens-its-grip-on-nvidia-chips-diverted-to"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "An AI tool reconstructs what you are looking at from a brain scan",
+          "texteHtml": "<p>Researchers describe in MIT Technology Review a model able to guess the image a person is viewing by analysing their brain activity, then recreate it with notable accuracy. The system also works in reverse: predicting brain activity from the image being viewed. The published demonstrations compare the real image and its reconstruction, often close. Beyond the feat, the work raises concrete questions about protecting the most intimate data there is, that of neural activity, as imaging and AI move closer together.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/10/01/1145588/ai-mind-reading-reconstructs-what-youre-looking-at/"
+            }
+          ],
+          "rang": 12,
+          "id": "an-ai-tool-reconstructs-what-you-are-looking-at-from-a"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li>Grok reportedly advised Donald Trump to capture Venezuelan president Nicolás Maduro, the head of state having sought the opinion of Elon Musk's chatbot before an operation, according to a TechCrunch article presented as a report not confirmed by those involved. <a href=\"https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></li>\n<li>The Opus 5.5 model betrays its writing through the word \"dependable\", twenty-three times more frequent than in human texts, according to an analysis of AI stylistic tells noted by TechCrunch. <a href=\"https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></li>\n<li>Carried by Mistral AI, French Tech records its biggest month of fundraising since 2023, Maddyness reports.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/10/01/portee-par-mistral-ai-la-french-tech-signe-son-plus-gros-mois-de-levees-de-fonds-depuis-2023/"
+            }
+          ],
+          "rang": 13,
+          "id": "grok-reportedly-advised-donald-trump-to-capture-venezuelan"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "PwC shows that executives and technical leaders pass AI risk back and forth without deciding, on the day Pearson buys Workera to measure employees' AI skills and \\\"citizen developers\\\" build applications with agents: what changes for a French organisation is that the scarce resource is no longer access to the tool but an honest map of who can actually do what with it, and the concrete lever is to measure real AI skill through a test on your own tasks, not on self-reporting, then make it a line in the job description rather than a side project.",
+    "these": "The scarce resource is no longer access to the models, which are becoming commonplace, but an honest map of who, inside the organisation, can do what with them; the move that sets a French company apart is to measure its teams' real AI skill through a test on their own tasks, write it into the job descriptions, and base adoption and governance on that proof, before naming an owner or buying a platform.",
+    "html": "<p>PwC asked companies a simple question: who, inside your organisation, answers for AI risk? Executives point to the technical leadership, technical leaders point back to senior management, and the firm concludes there is a glaring need to finally designate an owner. The same day, Pearson buys Workera, whose business is to measure employees' real level of AI competence. Put these two facts together, add the \"citizen developers\" that the Journal du Net sees building applications with agents without going through the IT department, and a signal emerges. What is becoming scarce inside the organisation is no longer access to the models, now ordinary and cheap, but an honest map of who can actually do what with them.</p>\n<p>As long as that map does not exist, two failures are in the making. You name an AI owner without knowing what the teams can do, and the post becomes a lightning rod with no grip on the ground. You buy a platform or a training plan calibrated on assumed skills, declared in an internal survey, never verified. Self-reporting always lies in the same direction: everyone thinks they are at ease with a tool they barely touch.</p>\n<p>The move that sets a French company apart comes down to a measurement, not an org chart. Take fifteen real tasks from your lines of business, a contract to review, a customer reply to draft, a spreadsheet to analyse, and have a sample of employees handle them with and without AI. You get an observed skill, not a feeling. Then write it into the job descriptions, on the same footing as a language or a piece of software, so it is maintained and assessed. Governance will follow, because you only entrust a scope of actions to people whose level you know.</p>\n<p>The wave of consumer agents from OpenAI and Meta will enter your walls through employees, whether a policy allows it or not. The company that has measured before deciding will keep control. The others will discover their skills on the day of an incident.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>PwC asked companies a simple question: who, inside your organisation, answers for AI risk? Executives point to the technical leadership, technical leaders point back to senior management, and the firm concludes there is a glaring need to finally designate an owner. The same day, Pearson buys Workera, whose business is to measure employees' real level of AI competence. Put these two facts together, add the \"citizen developers\" that the Journal du Net sees building applications with agents without going through the IT department, and a signal emerges. What is becoming scarce inside the organisation is no longer access to the models, now ordinary and cheap, but an honest map of who can actually do what with them.</p>\n<p>As long as that map does not exist, two failures are in the making. You name an AI owner without knowing what the teams can do, and the post becomes a lightning rod with no grip on the ground. You buy a platform or a training plan calibrated on assumed skills, declared in an internal survey, never verified. Self-reporting always lies in the same direction: everyone thinks they are at ease with a tool they barely touch.</p>",
+    "itemsCites": [],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-01",
+    "dateLongue": "Thursday 1 October 2026",
+    "titreEditorial": "The model ranking is a sales pitch, your in-house test is the only basis for a decision",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 18,
+  "nbSignes": 9209,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "TechCrunch",
+    "ZDNet",
+    "Clubic",
+    "Bloomberg",
+    "The Verge",
+    "OpenAI",
+    "South China Morning Post",
+    "MIT Technology Review",
+    "Maddyness"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 138,
+  "publieLe": "2026-10-02T08:03:18+02:00",
+  "publieLeAffiche": "8h03"
+}

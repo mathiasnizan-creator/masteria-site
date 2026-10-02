@@ -251,7 +251,12 @@
     "titreEditorial": "Le modèle change chaque semaine, votre organisation doit apprendre au même rythme",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-02",
+    "dateLongue": "vendredi 2 octobre 2026",
+    "titreEditorial": "Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 9382,

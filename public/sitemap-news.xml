@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-10-02</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-02T08:01:39+02:00</news:publication_date>
+      <news:title>Veille IA du 2 octobre 2026 : Mesurez qui sait réellement se servir de l&#x27;IA avant de nommer un responsable ou d&#x27;acheter une plateforme</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-10-01</loc>
     <news:news>
       <news:publication>
@@ -10,28 +21,6 @@
       </news:publication>
       <news:publication_date>2026-10-01T06:08:07+02:00</news:publication_date>
       <news:title>Veille IA du 1 octobre 2026 : Le classement des modèles est un argument de vente, votre test maison est la seule base de décision</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-09-30</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-30T05:16:35+02:00</news:publication_date>
-      <news:title>Veille IA du 30 septembre 2026 : Le modèle change chaque semaine, votre organisation doit apprendre au même rythme</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-09-29</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-29T08:57:47+02:00</news:publication_date>
-      <news:title>Veille IA du 29 septembre 2026 : Vos agents servent aussi ceux qui vous attaquent</news:title>
     </news:news>
   </url>
 </urlset>

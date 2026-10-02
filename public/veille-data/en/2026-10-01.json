@@ -251,7 +251,12 @@
     "titreEditorial": "The model changes weekly, your organisation must learn at the same pace",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-02",
+    "dateLongue": "Friday 2 October 2026",
+    "titreEditorial": "Measure who can actually use AI before you name an owner or buy a platform",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 8617,
