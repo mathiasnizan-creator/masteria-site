@@ -121,7 +121,7 @@ const FAQ = [
   },
   {
     q: "La formation Google Gemini est-elle vraiment finançable OPCO ?",
-    a: "Oui, intégralement. La certification Qualiopi de Masteria rend toutes nos formations éligibles au financement OPCO. Selon votre secteur, vous pouvez financer la totalité du coût via Atlas, Constructys, Uniformation, Opcommerce ou votre propre OPCO. Notre équipe vous accompagne dans la constitution du dossier de A à Z.",
+    a: "Oui, intégralement. La certification Qualiopi de Masteria rend toutes nos formations éligibles au financement OPCO. Selon votre secteur, vous pouvez financer la totalité du coût via Atlas, Constructys, Uniformation, Opcommerce ou votre propre OPCO. Nous préparons avec vous le programme et la convention ; votre entreprise dépose la demande auprès de son OPCO avant la session.",
   },
   {
     q: "Peut-on former plusieurs équipes de métiers différents ?",
@@ -192,7 +192,7 @@ export default function GeminiPage() {
     <>
       <SEOHead
         title="Formation Google Gemini en entreprise | Masteria, Qualiopi"
-        description="Vos équipes maîtrisent Google Gemini et Workspace IA en 1 à 2 jours. Formation certifiée Qualiopi, 100 % finançable OPCO. Présentiel et distanciel partout en France."
+        description="Vos équipes maîtrisent Google Gemini et Workspace IA en 1 à 2 jours. Formation certifiée Qualiopi, finançable OPCO. Présentiel et distanciel partout en France."
         slug="formation-gemini-entreprise"
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -218,7 +218,7 @@ export default function GeminiPage() {
           </h1>
 
           <p style={{ fontSize: 18, color: '#4B5563', lineHeight: 1.75, marginBottom: 40, maxWidth: 680 }}>
-            Vos équipes utilisent déjà Gmail, Google Docs et Google Sheets. Cette formation leur apprend à y intégrer Gemini concrètement, sur leurs propres fichiers, avec un formateur dédié à leur métier. Certifiée Qualiopi, finançable à 100 % via votre OPCO.
+            Vos équipes utilisent déjà Gmail, Google Docs et Google Sheets. Cette formation leur apprend à y intégrer Gemini concrètement, sur leurs propres fichiers, avec un formateur dédié à leur métier. Certifiée Qualiopi, finançable via votre OPCO.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
@@ -425,7 +425,7 @@ export default function GeminiPage() {
             </div>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, maxWidth: 700 }}>
-            Masteria est certifié Qualiopi pour les actions de formation. Toutes nos formations sont finançables à 100 % via votre OPCO. Notre équipe vous accompagne dans la constitution du dossier. Chaque participant repart avec un support de formation complet et les 40 prompts professionnels prêts à l'emploi.
+            Masteria est certifié Qualiopi pour les actions de formation. Toutes nos formations sont finançables via votre OPCO. Notre équipe vous accompagne dans la constitution du dossier. Chaque participant repart avec un support de formation complet et les 40 prompts professionnels prêts à l'emploi.
           </p>
         </div>
       </section>

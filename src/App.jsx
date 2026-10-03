@@ -261,7 +261,7 @@ function FormationsScreen() {
               <span style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}><Check size={16} color="#fff" strokeWidth={3} /></span>
             </div>
             <div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#111', marginBottom: 4 }}>100% finançable via votre OPCO</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#111', marginBottom: 4 }}>Finançable via votre OPCO</div>
               <div style={{ fontSize: 13, color: '#717171', lineHeight: 1.6 }}>Masteria est certifié Qualiopi. Toutes nos formations peuvent être prises en charge par votre OPCO. Nous vous accompagnons dans les démarches administratives.</div>
             </div>
           </div>
@@ -374,6 +374,12 @@ function AboutScreen() {
           { name: 'Accueil', slug: '' },
           { name: 'À propos', slug: 'centre-formation-ia-entreprise' },
         ]}
+        faqItems={FAQ_GENERAL}
+        dateModified="2026-10-03"
+        citations={[
+          { name: 'Annuaire des entreprises : MASTERIA (SIREN 919 252 403)', url: 'https://annuaire-entreprises.data.gouv.fr/entreprise/919252403' },
+          { name: 'Liste publique des organismes de formation (data.gouv.fr)', url: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail' },
+        ]}
       />
 
       {/* HERO clair */}
@@ -469,7 +475,7 @@ function AboutScreen() {
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Centre de formation Qualiopi</h3>
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  Formations ChatGPT, Copilot, Gemini, Claude et programmes par métier. Certifié Qualiopi, finançable à 100 % via votre OPCO. +1 500 professionnels formés avec 98 % de satisfaction.
+                  Formations ChatGPT, Copilot, Gemini, Claude et programmes par métier. Certifié Qualiopi, finançable via votre OPCO. +1 500 professionnels formés avec 98 % de satisfaction.
                 </p>
                 <Link to="/formation-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -673,15 +679,29 @@ function AboutScreen() {
         </div>
       </section>
 
-      {/* CERTIFICATIONS */}
-      <section style={{ padding: '64px 32px', background: '#fff', textAlign: 'center' }}>
+      {/* ORGANISME VÉRIFIABLE (E-E-A-T) : chaque élément se contrôle hors de ce site */}
+      <section style={{ padding: '64px 32px', background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Certifications & labels</div>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 800, color: '#111', marginBottom: 32 }}>Une qualité reconnue</h2>
-            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              {['Certifié Qualiopi', 'Finançable OPCO', 'Europe · États-Unis · Inde'].map((c, i) => (
-                <div key={i} style={{ padding: '13px 22px', background: '#F5F5F5', borderRadius: 10, fontSize: 14, fontWeight: 600, color: '#1C1C1C' }}>{c}</div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, textAlign: 'center' }}>Organisme vérifiable</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 800, color: '#111', marginBottom: 12, textAlign: 'center' }}>Qui sommes-nous, au registre et chez le certificateur</h2>
+            <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, maxWidth: 720, margin: '0 auto 32px', textAlign: 'center' }}>
+              Avant de confier un projet ou une formation, vérifiez à qui vous parlez. Chaque information ci-dessous renvoie à une source publique, extérieure à ce site. Mis à jour en octobre 2026.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+              {[
+                { Icon: Building2, label: 'Entreprise', value: 'MASTERIA, entreprise individuelle de Mathias Nizan. SIRET 919 252 403 00028, TVA FR79 919 252 403.', href: 'https://annuaire-entreprises.data.gouv.fr/entreprise/919252403', link: "Fiche à l'Annuaire des entreprises" },
+                { Icon: CheckCircle2, label: "Déclaration d'activité", value: "Organisme de formation enregistré sous le n° 84 69 23218 69 auprès du préfet de la région Auvergne-Rhône-Alpes. Cet enregistrement ne vaut pas agrément de l'État.", href: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail', link: 'Liste publique des organismes de formation' },
+                { Icon: BadgeCheck, label: 'Certification Qualiopi', value: 'Certificat n° 725311-1 délivré par Certifopac au titre des actions de formation, valable du 29 janvier 2026 au 28 janvier 2029.', href: '/assets/qualiopi-certificat-masteria.pdf', link: 'Télécharger le certificat (PDF)' },
+                { Icon: MapPin, label: 'Bureaux', value: "17 rue d'Algérie, 69001 Lyon (presqu'île). Les ateliers de cadrage s'y tiennent ; les formations de groupe ont lieu dans vos locaux ou à distance.", href: 'https://www.google.com/maps/search/?api=1&query=Masteria&query_place_id=ChIJQy4tZWu-LkMR2Z9YXKI7SZE', link: 'Voir la fiche Google Maps' },
+              ].map(({ Icon, label, value, href, link }) => (
+                <div key={label} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 14, padding: 22, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, fontFamily: 'Nunito, sans-serif', fontSize: 15, color: '#0A0A0A' }}>
+                    <Icon size={17} color="#2563EB" aria-hidden="true" /> {label}
+                  </div>
+                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0, flex: 1 }}>{value}</p>
+                  <a href={href} target={href.startsWith('/') ? undefined : '_blank'} rel={href.startsWith('/') ? undefined : 'noopener noreferrer'} style={{ fontSize: 13.5, fontWeight: 700, color: '#2563EB', textDecoration: 'none' }}>{link} →</a>
+                </div>
               ))}
             </div>
           </FadeIn>
@@ -999,7 +1019,7 @@ function ContactScreen() {
                 borderRadius: 8, padding: '6px 10px', marginBottom: 14,
                 fontSize: 12, fontWeight: 700, color: '#059669',
               }}>
-                <BadgeCheck size={13} /> 100 % finançable OPCO
+                <BadgeCheck size={13} /> finançable OPCO
               </div>
               <h3 style={{
                 fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800,

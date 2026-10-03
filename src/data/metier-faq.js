@@ -114,7 +114,7 @@ export const METIER_FAQ = {
     },
     {
       q: "Claude est-il meilleur que ChatGPT pour les équipes juridiques ?",
-      a: "Claude (Anthropic) présente des avantages structurels pour les équipes juridiques, notamment une fenêtre de contexte nettement plus grande (jusqu'à 200 000 tokens dans les versions récentes), ce qui permet d'analyser des contrats longs, des dossiers multi-documents ou des corpus de jurisprudence en une seule session. Claude est également reconnu pour sa prudence rédactionnelle et sa tendance à signaler ses incertitudes, qualité essentielle en contexte juridique. ChatGPT reste très compétitif pour la rédaction de clauses types et la reformulation. Notre formation aborde les deux outils côte à côte sur des cas pratiques juridiques réels.",
+      a: "Claude (Anthropic) présente des avantages structurels pour les équipes juridiques, notamment une fenêtre de contexte nettement plus grande (jusqu'à un million de tokens sur les modèles actuels des offres payantes), ce qui permet d'analyser des contrats longs, des dossiers multi-documents ou des corpus de jurisprudence en une seule session. Claude est également reconnu pour sa prudence rédactionnelle et sa tendance à signaler ses incertitudes, qualité essentielle en contexte juridique. ChatGPT reste très compétitif pour la rédaction de clauses types et la reformulation. Notre formation aborde les deux outils côte à côte sur des cas pratiques juridiques réels.",
     },
     {
       q: "La formation IA juridique est-elle finançable par l'OPCO ?",

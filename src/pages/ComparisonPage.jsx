@@ -172,6 +172,10 @@ export default function ComparisonPage({ slug: propSlug }) {
           />
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: 13, color: '#6B7280' }}>
+            {/* Byline E-E-A-T : auteur identifié, lien vers sa page */}
+            <span>
+              Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria
+            </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <Calendar size={14} />
               {data.dateModified ? (
@@ -188,7 +192,6 @@ export default function ComparisonPage({ slug: propSlug }) {
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <Clock size={14} /> Lecture : {data.readTime}
             </span>
-            <span>Par les formateurs Masteria</span>
           </div>
         </div>
       </section>
@@ -806,7 +809,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 700, margin: '0 auto 56px',
             }}>
-              {data.realCases.length} scénarios professionnels concrets exploitant les fonctionnalités avancées des forfaits entreprise (Projects, Artifacts, Code Interpreter, Custom GPTs, Microsoft Graph, Researcher, Operator, MCP).
+              {data.realCases.length} scénarios professionnels concrets exploitant les fonctionnalités des offres professionnelles (projets, artefacts, analyse de données, connecteurs et MCP, agents de recherche).
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -986,7 +989,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              Combien ça coûte vraiment ?
+              Combien ça coûte ?
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
@@ -1054,8 +1057,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               <span style={{ display: 'inline-flex', verticalAlign: 'text-bottom', marginRight: 6 }}>
                 <Pictogram emoji="\u{1F4A1}" size={15} color="#1E3A8A" />
               </span>
-              <strong>À retenir :</strong> les abonnements représentent ~5-10 % du coût total. Le ROI vient de la formation (~165 €/personne pour un intra de 12, soit 1 980 € pour le groupe) et de l'adoption.
-              Le retour sur investissement typique est de moins d'1 mois pour les profils cadres formés.
+              <strong>À retenir :</strong> le coût d'un outil ne se limite pas à l'abonnement. La formation d'une équipe (1 980 € HT la journée pour un groupe de 12 au plus en intra) et l'adoption au quotidien décident du retour sur investissement, qui se mesure sur vos propres tâches.
             </div>
           </div>
         </section>

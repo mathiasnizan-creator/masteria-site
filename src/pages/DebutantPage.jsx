@@ -115,7 +115,7 @@ export default function DebutantPage() {
               { icon: Clock, title: 'Une seule journée', desc: 'Sept heures pour acquérir des réflexes durables, sans étalement fatigant sur plusieurs semaines.' },
               { icon: Users, title: 'Sans prérequis', desc: 'Aucune compétence technique nécessaire. Si vous savez utiliser un mail, vous saurez utiliser l\'IA.' },
               { icon: Target, title: 'Cas concrets métier', desc: 'Les exercices sont construits à partir de situations réelles : rédiger un mail, synthétiser un compte-rendu, préparer une réunion.' },
-              { icon: ShieldCheck, title: 'Certifié Qualiopi', desc: 'Formation finançable à 100 % par votre OPCO. Nous vous accompagnons dans le dossier.' },
+              { icon: ShieldCheck, title: 'Certifié Qualiopi', desc: 'Formation finançable par votre OPCO. Nous vous accompagnons dans le dossier.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} style={{
                 padding: 24, background: '#FAFAF7', borderRadius: 12,

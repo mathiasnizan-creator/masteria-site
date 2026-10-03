@@ -384,7 +384,7 @@ export const GLOSSARY_TERMS = [
     term: 'Context window (Fenêtre de contexte)',
     category: 'donnees',
     definition:
-      "Quantité maximale de tokens (input + output) qu'un modèle peut traiter en une seule requête. Claude Sonnet 5 : 200k tokens. Gemini 3 Pro : jusqu'à 2M tokens. Les modèles récents dépassent souvent 128k à 1M tokens selon l'éditeur. Détermine la taille des documents analysables.",
+      "Quantité maximale de tokens (input + output) qu'un modèle peut traiter en une seule requête. Sur les offres payantes de Claude, Opus 5.5 et Sonnet 5.5 lisent jusqu'à un million de tokens en conversation (octobre 2026) ; la valeur varie selon l'éditeur, le modèle et l'offre. Détermine la taille des documents analysables.",
   },
   {
     id: 'embedding',

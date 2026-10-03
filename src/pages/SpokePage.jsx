@@ -92,7 +92,7 @@ const TRAINER = {
   name: 'Mathias Nizan',
   role: 'Fondateur de Masteria, conseil et architecture de solutions IA',
   quote: "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel.",
-  credentials: ['Expert IA certifié', '+1 500 professionnels formés', 'Fondateur Masteria', 'Certification Qualiopi'],
+  credentials: ['Conseil et formation IA depuis 2022', '+1 500 professionnels formés', 'Fondateur Masteria', 'Certification Qualiopi'],
 }
 
 // Angles spécifiques par outil (pour éviter le duplicate content sur les 73 spokes)
@@ -133,10 +133,41 @@ function lowerMetier(metier) {
   return metier.split(' ').map(w => (/^[A-Z]{2,}[,;.]?$/.test(w) ? w : w.toLowerCase())).join(' ')
 }
 
+// Public visé, accordé (« votre équipe commerciale », « vos managers ») ; une fiche peut le
+// fixer elle-même avec `audienceCta` (formations thématiques ouvertes à tous les métiers).
+const EQUIPE_PAR_METIER = {
+  'Assistanat de direction': 'vos assistantes et assistants de direction',
+  Commercial: 'votre équipe commerciale',
+  'Conformité & Gouvernance': 'vos équipes conformité et gouvernance',
+  'DPO, DSI & Direction': 'votre DPO, votre DSI et votre direction',
+  'Dirigeants & CODIR': 'votre comité de direction',
+  'Développement & IT': 'vos équipes de développement et IT',
+  'Informatique / DSI': 'vos équipes informatiques',
+  Management: 'vos managers',
+  'Ressources Humaines': 'votre équipe RH',
+  'Rédaction & contenu': 'votre équipe rédaction et contenu',
+  'Service Client': 'votre service client',
+  'Tous métiers': 'vos équipes',
+  'Tous publics': 'vos équipes',
+  'Word & Excel': 'vos équipes',
+  'Équipes Pédagogiques': 'vos équipes pédagogiques',
+}
+function equipeCible(spoke) {
+  if (spoke.audienceCta) return spoke.audienceCta
+  if (!spoke.metier) return 'vos équipes'
+  return EQUIPE_PAR_METIER[spoke.metier] || `votre équipe ${lowerMetier(spoke.metier)}`
+}
+// Nom de la formation dans les titres : libellé propre (`label`) pour les formations
+// thématiques, sinon l'outil (et le métier).
+function nomFormation(spoke, avecMetier = false) {
+  if (spoke.label) return `formation ${spoke.label}`
+  return avecMetier && spoke.metier ? `Formation ${spoke.tool} ${spoke.metier}` : `formation ${spoke.tool}`
+}
+
 function buildTrainerBio(spoke) {
   const toolAngle = TOOL_ANGLES[spoke.tool] || `des projets ${spoke.tool} en entreprise`
   const metierAngle = METIER_ANGLES[spoke.metierSlug] || `les missions des équipes ${lowerMetier(spoke.metier)}`
-  return `Mathias Nizan a fondé Masteria en 2022 après 10 ans passés à accompagner des entreprises sur leurs enjeux digitaux. Spécialisé sur ${spoke.tool}, il maîtrise ${toolAngle}. Pour concevoir le programme de cette formation ${spoke.tool} × ${spoke.metier}, il s'est entouré d'experts métier qui connaissent ${metierAngle}. Sa conviction : l'IA ne remplace pas les humains, elle décuple leur potentiel.`
+  return `Mathias Nizan a fondé Masteria en 2022 après 10 ans passés à accompagner des entreprises sur leurs enjeux digitaux. Spécialisé sur ${spoke.tool}, il maîtrise ${toolAngle}. Pour concevoir le programme de cette ${spoke.label ? `formation ${spoke.label}` : `formation ${spoke.tool} × ${spoke.metier}`}, il s'est entouré d'experts métier qui connaissent ${metierAngle}. Sa conviction : l'IA ne remplace pas les humains, elle décuple leur potentiel.`
 }
 
 export default function SpokePage() {
@@ -204,10 +235,10 @@ export default function SpokePage() {
       ? `Cas d'usage ${lowerMetier(spoke.metier)} concrets, travaillés sur vos propres fichiers pendant la journée.`
       : `6 cas d'usage ${lowerMetier(spoke.metier)} concrets, travaillés sur vos propres fichiers pendant les 2 jours.`
   const heroSentence = is3h
-    ? <>Le <strong>Sprint IA {spoke.metier}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
+    ? <>Le <strong>{spoke.label || `Sprint IA ${spoke.metier}`}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Finançable par votre OPCO selon votre branche. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
     : isOneDay
-      ? <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
-      : <>La formation <strong>{spoke.tool} pour {spoke.metier}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Programme opérationnel dès le lundi matin.</>
+      ? <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
+      : <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
 
   // Modules grouped by day
   const modulesJ1 = spoke.modules?.filter(m => m.day === 1) || []
@@ -229,7 +260,7 @@ export default function SpokePage() {
     teaches: spoke.objectives, // compétences enseignées
     objectives: spoke.objectives,
     modules: spoke.modules, // pour HowTo schema
-    about: `Formation ${spoke.tool} pour les équipes ${spoke.metier} en entreprise`,
+    about: spoke.label ? `Formation ${spoke.label} en entreprise` : `Formation ${spoke.tool} pour les équipes ${spoke.metier} en entreprise`,
     prerequisites: 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
   }
 
@@ -335,11 +366,11 @@ export default function SpokePage() {
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 12 }}>En bref</div>
             <dl style={{ margin: 0 }}>
               {[
-                { label: 'Formation', value: `${spoke.tool} pour ${spoke.metier}` },
+                { label: 'Formation', value: spoke.label ? `Formation ${spoke.label}` : `${spoke.tool} pour ${spoke.metier}` },
                 { label: 'Durée', value: is3h ? '3 heures (Sprint IA)' : isOneDay ? '1 jour (7 h de formation effective)' : '2 jours (14 h de formation effective)' },
                 { label: 'Formats', value: "Intra-entreprise dans vos locaux (jusqu'à 12 participants), accompagnement individuel sur mesure, présentiel ou distanciel" },
                 { label: 'Tarif', value: is3h ? '1 980 € HT par session, intra comme individuel · devis sous 24 h' : '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
-                { label: 'Financement', value: "Organisme certifié Qualiopi, finançable OPCO jusqu'à 100 %, dossier monté par Masteria" },
+                { label: 'Financement', value: "Organisme certifié Qualiopi, finançable par votre OPCO selon votre branche ; programme et convention préparés avec vous" },
                 { label: 'Prérequis', value: 'Aucun prérequis technique, maîtrise des outils bureautiques courants' },
               ].map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
@@ -377,8 +408,8 @@ export default function SpokePage() {
         {[
           { num: '+1 500', label: "professionnels formés à l'IA" },
           { num: '98 %', label: 'de taux de satisfaction' },
-          { num: '100 %', label: 'finançable via votre OPCO' },
-          { num: '+6 h', label: 'gagnées par semaine' },
+          { num: '24', label: 'métiers couverts' },
+          { num: '5', label: 'outils IA du marché' },
         ].map(s => (
           <div key={s.num} style={{ textAlign: 'center' }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: useLightHero ? '#0A0A0A' : '#fff', margin: 0, lineHeight: 1 }}>{s.num}</p>
@@ -395,7 +426,7 @@ export default function SpokePage() {
               À qui s'adresse cette formation ?
             </h2>
             <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
-              Cette formation est conçue pour les professionnels {lowerMetier(spoke.metier)} qui veulent des résultats concrets, pas une initiation théorique.
+              Cette formation s'adresse à {equipeCible(spoke)}, avec un objectif : repartir avec des résultats concrets sur vos propres dossiers.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
               {spoke.audience.map((profile, i) => (
@@ -446,7 +477,7 @@ export default function SpokePage() {
               {isSprint || isOneDay ? programIntro : "14h de formation effective. Chaque module alterne démonstration en direct et exercice sur vos vrais fichiers métier."}
             </p>
 
-            {[{ label: 'Jour 1', modules: modulesJ1 }, { label: 'Jour 2', modules: modulesJ2 }].filter(day => day.modules.length > 0).map(day => (
+            {[{ label: isSprint ? 'Session de 3 heures' : (isOneDay ? 'La journée' : 'Jour 1'), modules: modulesJ1 }, { label: 'Jour 2', modules: modulesJ2 }].filter(day => day.modules.length > 0).map(day => (
               <div key={day.label} style={{ marginBottom: 56 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
                   <div style={{ background: c, color: '#fff', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, padding: '6px 18px', borderRadius: 99 }}>{day.label}</div>
@@ -521,7 +552,7 @@ export default function SpokePage() {
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
             <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
-              Prêt à former votre équipe {lowerMetier(spoke.metier)}&nbsp;?
+              Prêt à former {equipeCible(spoke)}&nbsp;?
             </h2>
             <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
               Réponse sous 24h · Programme adapté à votre contexte · Finançable OPCO
@@ -601,7 +632,7 @@ export default function SpokePage() {
             </div>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>
-            Masteria est certifié Qualiopi. Toutes nos formations sont finançables à 100 % via votre OPCO (Atlas, Afdas, Akto, Constructys, Opco 2i…). Notre équipe vous accompagne dans la constitution du dossier de A à Z. Chaque participant repart avec un support de formation complet et une bibliothèque de prompts prête à l'emploi.
+            Masteria est certifié Qualiopi : vos formations peuvent être prises en charge par votre OPCO (Atlas, Afdas, Akto, Constructys, Opco 2i…), selon votre branche et vos fonds. Nous préparons avec vous le programme et la convention ; depuis le 1er octobre 2026, la plupart des OPCO remboursent l'entreprise après paiement au lieu de régler l'organisme directement. Chaque participant repart avec un support de formation complet et une bibliothèque de prompts prête à l'emploi.
           </p>
         </div>
       </section>
@@ -641,7 +672,7 @@ export default function SpokePage() {
       <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
-            Pourquoi Masteria pour cette formation {spoke.tool} ?
+            Pourquoi Masteria pour cette {nomFormation(spoke)} ?
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
             {WHY_MASTERIA.map(card => (
@@ -673,7 +704,7 @@ export default function SpokePage() {
         <section id="faq" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
-              Questions fréquentes, Formation {spoke.tool} {spoke.metier}
+              Questions fréquentes, {nomFormation(spoke, true)}
             </h2>
             <div>
               {spoke.faq.map((item, i) => (
@@ -729,7 +760,7 @@ export default function SpokePage() {
       <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 580, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
-            Parlons de votre équipe {lowerMetier(spoke.metier)}
+            Parlons de {equipeCible(spoke)}
           </h2>
           <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
             Dites-nous combien de personnes vous souhaitez former et leur niveau actuel. On revient vers vous sous 24 heures avec {is3h ? 'un Sprint IA adapté à vos équipes' : isOneDay ? 'un programme adapté sur 1 journée' : 'un programme adapté sur 2 jours'}.

@@ -103,7 +103,7 @@ const WHY_MASTERIA = [
   { icon: '\uD83C\uDFAF', title: "Spécialisés à 100 % sur l'IA", desc: "Masteria ne fait que ça. Chaque formateur automatise au quotidien dans des contextes professionnels réels. La différence se sent dans les cas choisis et les pièges anticipés." },
   { icon: '\uD83D\uDCC1', title: 'On travaille sur vos tâches', desc: "Zéro cas fictif. Chaque participant automatise ses propres tâches répétitives. Ce qu'on construit en formation tourne encore le lendemain au bureau." },
   { icon: '\uD83D\uDEE1\uFE0F', title: 'Automatisation sous contrôle', desc: "Nous intégrons systématiquement la supervision, la traçabilité et la conformité RGPD. Une automatisation maîtrisée, pas une boîte noire." },
-  { icon: '\uD83D\uDCB3', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO. Masteria prend en charge le montage du dossier de A à Z." },
+  { icon: '\uD83D\uDCB3', title: 'Finançable par votre OPCO', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO, selon votre branche et vos fonds. Nous préparons avec vous le programme et la convention." },
 ]
 
 const AUTOMATION_CASES = [
@@ -505,7 +505,7 @@ export default function AutomatisationIAPage() {
             </div>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>
-            Masteria est certifié Qualiopi. Toutes nos formations sont finançables à 100 % via votre OPCO (Atlas, Afdas, Akto, Constructys, Opco 2i…). Notre équipe vous accompagne dans la constitution du dossier de A à Z. Chaque participant repart avec ses automatisations fonctionnelles et une bibliothèque de modèles prête à l'emploi.
+            Masteria est certifié Qualiopi : vos formations peuvent être prises en charge par votre OPCO (Atlas, Afdas, Akto, Constructys, Opco 2i…), selon votre branche et vos fonds. Nous préparons avec vous le programme et la convention ; depuis le 1er octobre 2026, la plupart des OPCO remboursent l'entreprise après paiement au lieu de régler l'organisme directement. Chaque participant repart avec ses automatisations fonctionnelles et une bibliothèque de modèles prête à l'emploi.
           </p>
         </div>
       </section>

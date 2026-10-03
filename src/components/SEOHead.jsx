@@ -400,7 +400,7 @@ export default function SEOHead({
         funder: {
           '@type': 'Organization',
           name: 'OPCO (financement professionnel)',
-          description: 'Formation 100% finançable par les Opérateurs de Compétences (OPCO Atlas, AKTO, OPCO EP, etc.)',
+          description: 'Formation finançable par les Opérateurs de Compétences (OPCO Atlas, AKTO, OPCO EP, etc.)',
         },
       }
     : null

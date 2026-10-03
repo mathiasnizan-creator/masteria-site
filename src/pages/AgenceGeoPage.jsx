@@ -769,7 +769,9 @@ export default function AgenceGeoPage() {
             <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>expertise IA par secteur</Link> et notre panorama de{' '}
             <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>solutions IA par cas d'usage</Link>. Le déroulé d'une mission, du cadrage au transfert, est détaillé dans notre{' '}
             <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet IA</Link>. Et si vous hésitez sur le périmètre, le{' '}
-            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> est l'offre d'entrée qui cadre le besoin avant tout développement. Une question précise ?{' '}
+            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> est l'offre d'entrée qui cadre le besoin avant tout développement. Pour une PME ou une TPE, le format dédié est décrit dans notre page{' '}
+            <Link to="/conseil-ia-pme" style={{ color: c, fontWeight: 600 }}>conseil IA pour PME</Link>, et la gouvernance à temps partagé dans la page{' '}
+            <Link to="/chief-ai-officer" style={{ color: c, fontWeight: 600 }}>Chief AI Officer</Link>. Une question précise ?{' '}
             <Link to="/contact?type=projet" style={{ color: c, fontWeight: 600 }}>Contactez notre équipe</Link>.
           </p>
         </div>

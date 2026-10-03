@@ -731,6 +731,26 @@
       "source": "/quisommesnous",
       "destination": "/centre-formation-ia-entreprise",
       "permanent": true
+    },
+    {
+      "source": "/blog/formation-creativite-ia-brainstorming",
+      "destination": "/formation-ia-creativite",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-veille-ia-organiser-entreprise",
+      "destination": "/formation-ia-veille",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-analyse-donnees-ia-excel-chatgpt",
+      "destination": "/formation-ia-analyse-donnees",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ecrits-pro-ia-redaction",
+      "destination": "/formation-ia-ecrits-pro",
+      "permanent": true
     }
   ],
   "headers": [
@@ -754,7 +774,10 @@
           "key": "Cache-Control",
           "value": "public, max-age=1800, must-revalidate"
         },
-        { "key": "X-Robots-Tag", "value": "noindex" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
       ]
     },
     {

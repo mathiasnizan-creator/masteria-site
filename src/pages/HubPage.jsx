@@ -252,7 +252,7 @@ export default function HubPage() {
       }}>
         {[
           { label: '+1 500 formés', sub: 'depuis 2022' },
-          { label: '100% finançable', sub: 'via OPCO' },
+          { label: 'finançable', sub: 'via OPCO' },
           { label: '98% satisfaction', sub: 'taux moyen' },
           { label: 'Qualiopi', sub: 'certifié' },
         ].map(b => (

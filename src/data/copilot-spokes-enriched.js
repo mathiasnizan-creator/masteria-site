@@ -1393,7 +1393,7 @@ export const COPILOT_SPOKES = [
       { q: "Researcher est-il vraiment utile pour la communication ?", a: "Oui, surtout pour les revues de presse et la veille concurrentielle. Researcher scanne automatiquement les documents SharePoint et produit des synthèses structurées." },
       { q: "Mes communications confidentielles sont-elles protégées ?", a: "Oui, elles restent dans votre tenant Microsoft 365, sous votre gouvernance." },
       { q: "Peut-on travailler sur nos vrais discours pendant la formation ?", a: "Oui, c'est la philosophie Masteria. Vous repartez avec des livrables exploitables." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi, finançable à 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi, finançable par les OPCO." },
     ],
     relatedSpokes: ['formation-copilot-marketing', 'formation-claude-communication', 'formation-chatgpt-communication'],
   },

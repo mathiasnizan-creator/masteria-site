@@ -574,6 +574,11 @@ export default function SecteurIAPage() {
             <Link to="/ia-secteurs" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }}>
               <Grid3x3 size={14} aria-hidden="true" /> Tous les secteurs
             </Link>
+            {(secteur.extraLinks || []).map(lnk => (
+              <Link key={lnk.href} to={lnk.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                <ArrowRight size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> {lnk.label}
+              </Link>
+            ))}
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Stethoscope size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> Faire un diagnostic IA
             </Link>

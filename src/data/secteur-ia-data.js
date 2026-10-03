@@ -296,6 +296,8 @@ export const SECTEURS = [
 
   {
     slug: 'ia-sante-pharma',
+    // Liens de maillage propres au secteur (bloc « secteurs liés »)
+    extraLinks: [{ label: 'Audit IA du médico-social', href: '/audit-ia-medico-social' }],
     name: 'Santé & pharma',
     nameShort: 'santé & pharma',
     nameWithArticle: 'la santé et la pharma',
@@ -747,6 +749,8 @@ export const SECTEURS = [
 
   {
     slug: 'ia-secteur-public',
+    // Liens de maillage propres au secteur (bloc « secteurs liés »)
+    extraLinks: [{ label: 'Audit IA du médico-social', href: '/audit-ia-medico-social' }],
     name: 'Secteur public & collectivités',
     nameShort: 'secteur public',
     nameWithArticle: 'le secteur public',
@@ -828,6 +832,8 @@ export const SECTEURS = [
 
   {
     slug: 'ia-services-conseil',
+    // Liens de maillage propres au secteur (bloc « secteurs liés »)
+    extraLinks: [{ label: 'Conseil IA pour les PME', href: '/conseil-ia-pme' }],
     name: 'Services & cabinets de conseil',
     nameShort: 'services & conseil',
     nameWithArticle: 'les services et le conseil',
@@ -1112,6 +1118,8 @@ export const SECTEURS = [
 
   {
     slug: 'ia-tech-saas',
+    // Liens de maillage propres au secteur (bloc « secteurs liés »)
+    extraLinks: [{ label: 'Chief AI Officer à temps partagé', href: '/chief-ai-officer' }],
     name: 'Tech & éditeurs SaaS',
     nameShort: 'tech & SaaS',
     nameWithArticle: 'la tech et les éditeurs SaaS',

@@ -25,31 +25,15 @@ export default function ComparisonsHubPage() {
     },
   }
 
+  // FAQ JSON-LD : même contenu que la FAQ visible (champ `text` de FAQ_ITEMS)
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: "Quelle est la meilleure IA pour une entreprise en 2026 ?",
-        acceptedAnswer: { '@type': 'Answer', text: "La meilleure IA dépend de 3 critères : votre stack (Microsoft 365 → Copilot, Google Workspace → Gemini), votre cas d'usage dominant (créatif → ChatGPT, code/analyse → Claude) et vos contraintes de souveraineté (secteur sensible → Mistral). Beaucoup d'entreprises matures combinent 2 outils." },
-      },
-      {
-        '@type': 'Question',
-        name: "Quelle est la différence entre ChatGPT, Claude, Copilot, Gemini et Mistral ?",
-        acceptedAnswer: { '@type': 'Answer', text: "ChatGPT (OpenAI) : polyvalent, écosystème mature. Claude (Anthropic) : excellence en code et analyse longue. Copilot (Microsoft) : intégré à Office 365 avec accès à vos données entreprise. Gemini (Google) : intégré à Workspace, multimodal puissant. Mistral (français) : souveraineté, hébergement européen." },
-      },
-      {
-        '@type': 'Question',
-        name: "Faut-il utiliser une seule IA ou plusieurs en parallèle ?",
-        acceptedAnswer: { '@type': 'Answer', text: "Plusieurs outils en parallèle est recommandé. Le coût marginal est faible (~50 €/utilisateur/mois pour 2-3 outils), et le gain de productivité justifie largement l'investissement. Combinaison fréquente : Copilot ou Gemini pour la productivité quotidienne + ChatGPT ou Claude pour les tâches créatives ou complexes." },
-      },
-      {
-        '@type': 'Question',
-        name: "Comment former mes équipes à choisir entre les outils IA ?",
-        acceptedAnswer: { '@type': 'Answer', text: "Notre formation panorama de 2 jours permet de tester les 5 outils sur les cas d'usage réels de vos équipes avant de décider. 1 980 €/jour en intra-entreprise comme en individuel, finançable OPCO. Idéale avant un déploiement à l'échelle." },
-      },
-    ],
+    mainEntity: FAQ_ITEMS.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.text },
+    })),
   }
 
   const breadcrumbs = [
@@ -61,9 +45,11 @@ export default function ComparisonsHubPage() {
     <>
       <SEOHead
         title="Quelle est la meilleure IA en 2026 ? | Masteria"
-        description="Quelle est la meilleure IA en 2026 ? Réponse selon votre profil : ChatGPT, Claude, Copilot, Gemini ou Mistral. Arbre de décision + comparatifs."
+        description="Quelle est la meilleure IA en 2026 ? La réponse selon votre profil : ChatGPT, Claude, Copilot, Gemini ou Mistral, avec des comparatifs vérifiés le 3 octobre 2026."
         slug="quelle-est-la-meilleure-ia"
         breadcrumbs={breadcrumbs}
+        dateModified={HUB_DATE_MODIFIED}
+        citations={HUB_SOURCES.flatMap(group => group.items)}
         extraJsonLd={[itemListSchema, faqSchema]}
       />
 
@@ -95,10 +81,15 @@ export default function ComparisonsHubPage() {
 
           <p style={{
             fontSize: 'clamp(16px, 2vw, 19px)', color: '#374151',
-            lineHeight: 1.65, maxWidth: 720, margin: '0 auto 32px',
+            lineHeight: 1.65, maxWidth: 720, margin: '0 auto 18px',
           }}>
-            La meilleure IA dépend de votre stack, votre métier et vos contraintes.
-            ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI : voici la méthode pour décider en 3 minutes, et tous nos comparatifs détaillés.
+            La meilleure IA dépend de votre suite bureautique, de votre métier et de vos contraintes.
+            Pour ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, cette page donne une méthode de décision en trois minutes et l'accès à tous nos comparatifs détaillés.
+          </p>
+
+          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible, comme sur les comparatifs */}
+          <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, maxWidth: 720, margin: '0 auto 32px' }}>
+            Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour le <time dateTime={HUB_DATE_MODIFIED}>3 octobre 2026</time>, modèles et tarifs vérifiés sur les <a href="#sources-officielles" style={{ color: '#2563EB', fontWeight: 600 }}>pages officielles des éditeurs</a>
           </p>
 
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -207,7 +198,7 @@ export default function ComparisonsHubPage() {
             fontSize: 16, color: '#6B7280', lineHeight: 1.6,
             textAlign: 'center', maxWidth: 640, margin: '0 auto 56px',
           }}>
-            Guides détaillés pour chaque face-à-face stratégique, mis à jour en continu par les formateurs Masteria.
+            Un guide par face-à-face, chacun daté et sourcé. Dernière vérification des modèles et des tarifs : 3 octobre 2026.
           </p>
 
           {/* Hero comparatif (panorama 5 outils) */}
@@ -380,7 +371,7 @@ export default function ComparisonsHubPage() {
         </div>
       </section>
 
-      {/* ═════════════ MÉTHODE — 5 QUESTIONS ═════════════ */}
+      {/* ═════════════ MÉTHODE : 5 QUESTIONS ═════════════ */}
       <section style={{
         padding: 'clamp(48px, 7vw, 96px) clamp(18px, 4vw, 32px)',
         background: '#FAFAF7',
@@ -461,7 +452,7 @@ export default function ComparisonsHubPage() {
             fontSize: 16, color: '#6B7280', lineHeight: 1.6,
             textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
           }}>
-            Ce que nous voyons régulièrement dans les déploiements IA en entreprise.
+            Les pièges qui reviennent au moment de choisir un outil d'IA.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -537,6 +528,51 @@ export default function ComparisonsHubPage() {
         </div>
       </section>
 
+      {/* ═════════════ SOURCES OFFICIELLES (mêmes URL que WebPage.citation) ═════════════ */}
+      <section id="sources-officielles" aria-labelledby="sources-officielles-titre" style={{
+        padding: 'clamp(40px, 6vw, 64px) clamp(18px, 4vw, 32px)',
+        background: '#fff',
+        borderTop: '1px solid #E5E7EB',
+        scrollMarginTop: 80,
+      }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-officielles-titre" style={{
+            fontFamily: 'Nunito, sans-serif',
+            fontSize: 22, fontWeight: 800, color: '#0A0A0A',
+            margin: '0 0 8px',
+          }}>
+            Sources officielles
+          </h2>
+          <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.6, margin: '0 0 24px' }}>
+            Les modèles, prix et fenêtres de contexte cités sur cette page ont été vérifiés le <time dateTime={HUB_DATE_MODIFIED}>3 octobre 2026</time> sur les pages officielles ci-dessous.
+            Les offres changent vite : la page de l'éditeur fait foi, et chaque comparatif détaillé liste ses propres sources.
+          </p>
+          <div style={{ display: 'grid', gap: 22 }}>
+            {HUB_SOURCES.map(({ group, items }) => (
+              <div key={group}>
+                <h3 style={{
+                  fontFamily: 'Nunito, sans-serif',
+                  fontSize: 15.5, fontWeight: 800, color: '#0A0A0A',
+                  margin: '0 0 10px',
+                }}>
+                  {group}
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8, fontSize: 14.5, lineHeight: 1.55 }}>
+                  {items.map(({ name, url }) => (
+                    <li key={url}>
+                      {/* Liens éditoriaux vers des sources de référence : suivis volontairement (pas de nofollow) */}
+                      <a href={url} target="_blank" rel="noopener" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>
+                        {name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═════════════ CTA FORMATION ═════════════ */}
       <section style={{
         background: '#0A0A0A', color: '#fff',
@@ -555,7 +591,7 @@ export default function ComparisonsHubPage() {
             fontSize: 17, color: '#D1D5DB', lineHeight: 1.65,
             marginBottom: 36, maxWidth: 600, margin: '0 auto 36px',
           }}>
-            Notre formation panorama de 2 jours permet à vos collaborateurs de tester les 5 outils sur leurs cas réels avant de décider. Certifié Qualiopi, finançable OPCO.
+            Notre formation multi-outils de deux jours fait tester les cinq outils à vos collaborateurs, sur leurs cas réels, avant de décider. Masteria est certifié Qualiopi : selon votre branche, votre OPCO peut financer la session.
           </p>
 
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
@@ -565,7 +601,7 @@ export default function ComparisonsHubPage() {
               padding: '16px 32px', borderRadius: 10,
               textDecoration: 'none', fontSize: 16, fontWeight: 800,
             }}>
-              Voir la formation panorama <ArrowRight size={16} />
+              Voir la formation multi-outils <ArrowRight size={16} />
             </Link>
             <Link to="/contact" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
@@ -604,48 +640,109 @@ export default function ComparisonsHubPage() {
 
 // ═════════════════ DATA STATIC ═════════════════
 
+// Date de la dernière vérification des faits de la page (format ISO, affichée en clair dans le texte)
+const HUB_DATE_MODIFIED = '2026-10-03'
+
+// Sources officielles consultées le 3 octobre 2026 : bloc visible + WebPage.citation (SEOHead)
+const HUB_SOURCES = [
+  {
+    group: "OpenAI (ChatGPT)",
+    items: [
+      { name: "Tarifs de ChatGPT, page France", url: "https://chatgpt.com/fr-FR/pricing/" },
+      { name: "GPT-5.6 et GPT-6 Pro dans ChatGPT (centre d'aide)", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
+      { name: "Présentation de ChatGPT Business (centre d'aide)", url: "https://help.openai.com/en/articles/8792828-chatgpt-business-overview" },
+      { name: "Résidence des données et de l'inférence (centre d'aide)", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
+      { name: "Notes de version de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+    ],
+  },
+  {
+    group: "Anthropic (Claude)",
+    items: [
+      { name: "Offres et tarifs de Claude", url: "https://claude.com/pricing" },
+      { name: "Fenêtre de contexte des offres payantes (centre d'aide)", url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans" },
+      { name: "Vue d'ensemble des modèles Claude", url: "https://platform.claude.com/docs/en/about-claude/models/overview" },
+      { name: "Cowork et la conversation réunis dans Claude (16 septembre 2026)", url: "https://claude.com/blog/cowork-is-now-claude" },
+      { name: "Résidence des données (documentation de la plateforme)", url: "https://platform.claude.com/docs/en/manage-claude/data-residency" },
+    ],
+  },
+  {
+    group: "Microsoft (Copilot)",
+    items: [
+      { name: "Tarifs de Microsoft 365 Copilot pour les grandes entreprises, page France", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
+      { name: "Microsoft 365 Copilot Business pour les PME, page France", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
+      { name: "Présentation de Microsoft Copilot (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
+      { name: "Modèles d'Anthropic dans les services Microsoft (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
+    ],
+  },
+  {
+    group: "Google (Gemini)",
+    items: [
+      { name: "Tarifs de Google Workspace, page France", url: "https://workspace.google.com/intl/fr/pricing" },
+      { name: "Application Gemini avec un compte professionnel, limites par édition", url: "https://support.google.com/gemini/answer/14620100?hl=en&co=DASHER._Family%3DBusiness-Enterprise" },
+      { name: "Gemini Notebook par édition de Workspace", url: "https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/turn-gemini-notebook-on-or-off-for-users" },
+      { name: "Gemini Enterprise (Google Cloud)", url: "https://cloud.google.com/gemini-enterprise" },
+    ],
+  },
+  {
+    group: "Mistral AI (Vibe)",
+    items: [
+      { name: "Tarifs de Mistral AI", url: "https://mistral.ai/pricing" },
+      { name: "Le Chat devient Vibe (centre d'aide)", url: "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" },
+      { name: "Lieu de stockage des données (centre d'aide)", url: "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
+      { name: "Utilisation des données pour l'entraînement (centre d'aide)", url: "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
+    ],
+  },
+  {
+    group: "Réglementation européenne",
+    items: [
+      { name: "Règlement (UE) 2024/1689 sur l'intelligence artificielle (EUR-Lex)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+      { name: "Règlement (UE) 2026/1744, nouvel article 4 de l'AI Act (EUR-Lex)", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+    ],
+  },
+]
+
 const DECISION_PROFILES = [
   {
-    profile: 'Entreprise sur Microsoft 365',
-    tool: 'Microsoft Copilot',
-    color: '#0078D4',
-    why: "Intégré dans Word, Excel, Outlook, Teams. Données dans votre tenant. ROI rapide pour la productivité quotidienne.",
-    deepLink: '/copilot-vs-chatgpt',
+    profile: "Entreprise sur Microsoft 365",
+    tool: "Microsoft Copilot",
+    color: "#0078D4",
+    why: "Intégré à Word, Excel, Outlook et Teams, avec vos mails, fichiers et réunions via Microsoft Graph. 26 € HT par utilisateur et par mois, ou 18,20 € HT en Copilot Business jusqu'à 300 utilisateurs, en plus de Microsoft 365.",
+    deepLink: "/copilot-vs-chatgpt",
   },
   {
-    profile: 'Entreprise sur Google Workspace',
-    tool: 'Google Gemini',
-    color: '#4285F4',
-    why: "Même logique que Copilot, mais pour la stack Google : Gmail, Docs, Sheets, Drive.",
-    deepLink: '/meilleure-ia-entreprise-2026',
+    profile: "Entreprise sur Google Workspace",
+    tool: "Google Gemini",
+    color: "#4285F4",
+    why: "Inclus dans les forfaits Workspace. Dès Business Standard, l'application Gemini lit un million de tokens et Gemini Notebook interroge 300 sources par carnet.",
+    deepLink: "/gemini-vs-copilot",
   },
   {
-    profile: 'Marketing, communication, créatif',
-    tool: 'ChatGPT',
-    color: '#10A37F',
-    why: "Écosystème le plus complet : DALL-E, GPTs, agents. Idéal pour la production de contenu et la créativité.",
-    deepLink: '/chatgpt-vs-claude',
+    profile: "Marketing, communication, création",
+    tool: "ChatGPT",
+    color: "#10A37F",
+    why: "ChatGPT Images 2.5 pour les visuels, ChatGPT Work pour les livrables complets, agents d'équipe montés en langage naturel.",
+    deepLink: "/chatgpt-vs-claude",
   },
   {
-    profile: 'Code, dev, analyse complexe',
-    tool: 'Claude',
-    color: '#D97706',
-    why: "Référence du marché 2026 sur le code. Fenêtre de 200k tokens permettant l'analyse de larges documents.",
-    deepLink: '/chatgpt-vs-claude',
+    profile: "Code, développement, documents longs",
+    tool: "Claude",
+    color: "#D97706",
+    why: "Un million de tokens par conversation sur les offres payantes avec Opus 5.5, Sonnet 5.5 et Fable 5.1, et Claude Code inclus dès l'offre Pro.",
+    deepLink: "/chatgpt-vs-claude",
   },
   {
-    profile: 'Souveraineté, secteur sensible (santé, défense, public)',
-    tool: 'Mistral AI',
-    color: '#FA500F',
-    why: "Hébergement français, modèles open-weight pour le self-hosting, conformité GDPR native.",
-    deepLink: '/meilleure-ia-entreprise-2026',
+    profile: "Données à garder en Europe (santé, défense, secteur public)",
+    tool: "Mistral AI",
+    color: "#FA500F",
+    why: "Données hébergées dans l'Union européenne par défaut et modèles à poids ouverts déployables chez vous. Hors offre Enterprise, désactivez l'entraînement sur les échanges.",
+    deepLink: "/mistral-vs-chatgpt",
   },
   {
-    profile: "Vous n'êtes encore sur aucune stack précise",
-    tool: 'ChatGPT Team',
-    color: '#10A37F',
-    why: "Ticket d'entrée le plus bas (25 €/mois), polyvalent, équipes formées en 1 jour. Vous évaluerez les compléments dans 3-6 mois.",
-    deepLink: '/chatgpt-vs-claude',
+    profile: "Vous n'êtes encore sur aucune suite précise",
+    tool: "ChatGPT Business",
+    color: "#10A37F",
+    why: "21 € par utilisateur et par mois en facturation annuelle, couverture large. Réévaluez les compléments au bout de trois à six mois.",
+    deepLink: "/meilleure-ia-entreprise-2026",
   },
 ]
 
@@ -653,88 +750,93 @@ const METHOD_QUESTIONS = [
   {
     question: "Sur quel environnement vos équipes travaillent-elles déjà ?",
     explanation:
-      "C'est le critère n°1. Un outil intégré à votre stack existante (Microsoft 365 → Copilot, Google Workspace → Gemini) a un taux d'adoption 3 à 5 fois supérieur à un outil externe. La friction d'adoption tue plus de projets IA que la qualité du modèle.",
+      "C'est le premier critère. Un outil intégré à la suite que vos équipes ouvrent chaque matin (Microsoft 365 pour Copilot, Google Workspace pour Gemini) travaille sur leurs mails, leurs fichiers et leurs réunions sans copier-coller. Un outil externe demande des connecteurs et un changement d'habitude : cette friction pèse souvent plus lourd que l'écart entre deux modèles.",
   },
   {
-    question: "Quel est le cas d'usage dominant que vous voulez couvrir ?",
+    question: "Quel cas d'usage dominant voulez-vous couvrir ?",
     explanation:
-      "Marketing/contenu créatif → ChatGPT. Code et analyse complexe → Claude. Productivité Office au quotidien → Copilot. Réception/envoi mails massif → Gemini ou Copilot. Veille et brainstorming → ChatGPT ou Claude. Le bon outil dépend du métier dominant qui sera formé.",
+      "Création visuelle et agents d'équipe : ChatGPT. Code et documents longs : Claude. Productivité dans Office : Copilot. Courriels et réunions dans Gmail et Meet : Gemini. Le bon outil suit le métier dominant de l'équipe à former.",
   },
   {
-    question: "Avez-vous des contraintes de souveraineté ou de confidentialité strictes ?",
+    question: "Avez-vous des contraintes d'hébergement ou de confidentialité strictes ?",
     explanation:
-      "Secteur public, défense, santé, finance régulée : la souveraineté change la donne. Mistral (français, hébergement Europe) ou Copilot (données dans votre tenant Microsoft) sont les options recommandées. ChatGPT et Claude proposent des versions Enterprise EU mais avec un coût plus élevé.",
+      "Secteur public, défense, santé, finance régulée : l'hébergement des données pèse sur le choix. Mistral héberge dans l'Union européenne par défaut et publie des modèles à poids ouverts ; Copilot garde le trafic des utilisateurs européens dans l'EU Data Boundary, le périmètre européen de traitement de Microsoft ; ChatGPT Enterprise propose stockage et inférence en Europe aux clients éligibles ; Claude n'a pas de région européenne.",
   },
   {
     question: "Quel est votre budget par utilisateur et par mois ?",
     explanation:
-      "Plans pro : ChatGPT 25 €, Claude 30 €, Copilot 30 $ + M365, Gemini 25 €, Mistral 15-25 €. La vraie question est rarement le coût (les abonnements représentent <5 % du gain de productivité) mais le ticket d'entrée acceptable pour démarrer un pilote.",
+      "Offres équipe au 3 octobre 2026 : ChatGPT Business à 21 € en annuel, Claude Team à 20 $ en annuel, Microsoft 365 Copilot à 26 € HT ou Copilot Business à 18,20 € HT en plus de Microsoft 365, Gemini inclus dans Workspace (Business Standard à 13,60 € HT), Mistral Team à 29,99 € TTC. L'arbitrage porte sur le ticket d'entrée acceptable pour un pilote, et sur les crédits d'usage des agents.",
   },
   {
     question: "Une seule IA ou plusieurs en parallèle ?",
     explanation:
-      "En 2026, les entreprises matures combinent souvent 2-3 outils : un pour la productivité quotidienne (Copilot ou Gemini selon la stack), un pour les tâches créatives ou complexes (ChatGPT ou Claude), parfois Mistral pour les cas sensibles. Le coût marginal est faible face au gain de complémentarité.",
+      "Une configuration possible associe deux outils : le copilote de votre suite (Copilot ou Gemini) pour le quotidien, un assistant généraliste (ChatGPT ou Claude) pour les tâches créatives ou longues, et parfois Mistral pour les flux sensibles. Réévaluez chaque année : le marché change à chaque trimestre.",
   },
 ]
 
 const CLUSTER_MISTAKES = [
   {
-    title: "Choisir l'IA \"la plus connue\" plutôt que la plus adaptée",
-    desc: "Beaucoup d'entreprises adoptent ChatGPT par défaut parce que c'est l'outil dont tout le monde parle. Or, si toute votre stack est sur Microsoft 365, Copilot vous fera gagner 3-5x plus de temps au quotidien (intégration native dans Outlook, Word, Excel, Teams). La notoriété d'un outil n'est pas un critère de choix.",
+    title: "Choisir l'IA « la plus connue » plutôt que la plus adaptée",
+    desc: "ChatGPT s'impose souvent par défaut parce que tout le monde en parle. Si toute votre activité tourne sur Microsoft 365, Copilot travaille là où vos équipes passent leurs journées, avec leurs mails, leurs fichiers et leurs réunions. La notoriété d'un outil ne dit rien de son adéquation à votre contexte.",
   },
   {
     title: "Ne tester qu'un seul outil avant de décider",
-    desc: "Pour décider entre 2-3 IA, il faut les tester sur 2-3 cas d'usage métier réels (pas sur des prompts joués type \"écris un sonnet\"). Notre formation panorama de 2 jours est conçue exactement pour ça : tester ChatGPT, Claude, Copilot, Gemini, Mistral sur les vrais cas de votre équipe avant de trancher.",
+    desc: "Pour départager deux ou trois outils, testez-les sur deux ou trois cas d'usage métier réels, jamais sur des demandes jouées du type « écris un poème ». Notre formation multi-outils de deux jours sert à cela : tester ChatGPT, Claude, Copilot, Gemini et Mistral sur les vrais cas de votre équipe avant de trancher.",
   },
   {
     title: "Sous-estimer la formation et l'accompagnement",
-    desc: "Acheter 50 abonnements ChatGPT Team à 25 €/mois sans former les équipes, c'est dépenser 15 000 €/an pour un outil utilisé à 20 % de son potentiel. Le ROI vient de la formation : +6 h/semaine en moyenne par collaborateur formé, vs ~+1 h/semaine pour ceux qui découvrent seuls.",
+    desc: "Cinquante sièges ChatGPT Business coûtent 12 600 € par an en facturation annuelle (50 × 21 € × 12). Sans formation, une bonne part de ce budget finance un outil sous-exploité. Le retour sur investissement vient de l'appropriation : formulation des demandes, choix du bon mode, vérification des sorties.",
   },
   {
-    title: "Vouloir un seul outil \"définitif\" pour 5 ans",
-    desc: "Le marché de l'IA évolue tous les 6 mois. Claude était derrière en 2023, est devenu la référence en code en 2025. Microsoft a multiplié les fonctionnalités Copilot en 18 mois. La bonne stratégie : équiper vos équipes de 2 outils complémentaires, et réévaluer chaque année.",
+    title: "Vouloir un seul outil « définitif » pour cinq ans",
+    desc: "Le marché change à chaque trimestre : en septembre 2026, Anthropic a sorti trois modèles et OpenAI a lancé la famille GPT-6. Équipez vos équipes de deux outils complémentaires et réévaluez chaque année.",
   },
   {
-    title: "Oublier les contraintes de souveraineté de votre secteur",
-    desc: "Si vous êtes dans la santé, la défense, la finance régulée ou le secteur public, les contraintes RGPD et de souveraineté changent radicalement le bon choix. Mistral AI ou un déploiement self-hosted devient quasi obligatoire. ChatGPT Enterprise et Claude Pro proposent des options EU mais avec un coût qui peut multiplier le budget par 2-3.",
+    title: "Oublier les contraintes d'hébergement de votre secteur",
+    desc: "En santé, défense, finance régulée ou secteur public, l'hébergement des données change le bon choix. Mistral héberge dans l'Union européenne par défaut et propose le déploiement sur site ; ChatGPT Enterprise offre stockage et inférence en Europe aux clients éligibles ; Anthropic ne propose pas de région européenne pour Claude.",
   },
 ]
 
+// `a` : réponse affichée (JSX possible) ; `text` : même réponse en texte brut pour le JSON-LD FAQPage
 const FAQ_ITEMS = [
   {
     q: "Quelle est la meilleure IA pour une entreprise en 2026 ?",
+    text: "La meilleure IA dépend de trois critères : votre suite (Microsoft 365 pour Copilot, Google Workspace pour Gemini), votre cas d'usage dominant (création visuelle pour ChatGPT, code et documents longs pour Claude) et vos contraintes d'hébergement (données à garder dans l'Union européenne pour Mistral). Combiner deux outils est souvent la meilleure option. Pour un guide complet, consultez notre panorama des 5 outils.",
     a: (
       <>
-        La meilleure IA dépend de 3 critères :{' '}
-        <strong>votre stack</strong> (Microsoft 365 → Copilot, Google Workspace → Gemini),{' '}
-        <strong>votre cas d'usage dominant</strong> (créatif → ChatGPT, code/analyse → Claude){' '}
-        et <strong>vos contraintes de souveraineté</strong> (secteur sensible → Mistral).
-        Beaucoup d'entreprises matures combinent 2 outils.
+        La meilleure IA dépend de trois critères :{' '}
+        <strong>votre suite</strong> (Microsoft 365 → Copilot, Google Workspace → Gemini),{' '}
+        <strong>votre cas d'usage dominant</strong> (création visuelle → ChatGPT, code et documents longs → Claude){' '}
+        et <strong>vos contraintes d'hébergement</strong> (données à garder dans l'Union européenne → Mistral).
+        Combiner deux outils est souvent la meilleure option.
         Pour un guide complet, consultez notre <Link to="/meilleure-ia-entreprise-2026" style={{ color: '#2563EB', fontWeight: 700 }}>panorama des 5 outils</Link>.
       </>
     ),
   },
   {
     q: "Quelle est la différence entre ChatGPT, Claude, Copilot, Gemini et Mistral ?",
+    text: "ChatGPT (OpenAI) : le généraliste le plus complet, avec la génération d'images, ChatGPT Work et des agents d'équipe. Claude (Anthropic) : un million de tokens par conversation sur les offres payantes et Claude Code. Copilot (Microsoft) : intégré à Microsoft 365, avec accès à vos mails, fichiers et réunions via Microsoft Graph. Gemini (Google) : inclus dans Workspace, avec un million de tokens et Gemini Notebook dès Business Standard. Mistral (France) : données hébergées dans l'Union européenne par défaut et modèles à poids ouverts.",
     a: (
       <>
-        <strong>ChatGPT</strong> (OpenAI) : polyvalent, écosystème mature, leader grand public.{' '}
-        <strong>Claude</strong> (Anthropic) : excellence en code et analyse de longs documents.{' '}
-        <strong>Copilot</strong> (Microsoft) : intégré à Office 365 avec accès à vos données entreprise.{' '}
-        <strong>Gemini</strong> (Google) : intégré à Workspace, multimodal puissant.{' '}
-        <strong>Mistral</strong> (français) : souveraineté, hébergement européen.
+        <strong>ChatGPT</strong> (OpenAI) : le généraliste le plus complet, avec la génération d'images, ChatGPT Work et des agents d'équipe.{' '}
+        <strong>Claude</strong> (Anthropic) : un million de tokens par conversation sur les offres payantes et Claude Code.{' '}
+        <strong>Copilot</strong> (Microsoft) : intégré à Microsoft 365, avec accès à vos mails, fichiers et réunions via Microsoft Graph.{' '}
+        <strong>Gemini</strong> (Google) : inclus dans Workspace, avec un million de tokens et Gemini Notebook dès Business Standard.{' '}
+        <strong>Mistral</strong> (France) : données hébergées dans l'Union européenne par défaut et modèles à poids ouverts.
       </>
     ),
   },
   {
     q: "Faut-il utiliser une seule IA ou plusieurs en parallèle ?",
-    a: "Plusieurs outils en parallèle est recommandé en 2026. Le coût marginal est faible (~50 €/utilisateur/mois pour 2-3 outils), et le gain de productivité justifie largement l'investissement. Combinaison fréquente : Copilot ou Gemini pour la productivité quotidienne + ChatGPT ou Claude pour les tâches créatives ou complexes.",
+    text: "Plusieurs outils en parallèle se justifient souvent : le copilote de votre suite (Copilot ou Gemini) pour la productivité quotidienne, ChatGPT ou Claude pour les tâches créatives ou longues. Chiffrez le surcoût : un assistant généraliste en offre équipe coûte autour de 20 à 25 par siège et par mois, soit 21 € chez ChatGPT Business et 20 $ chez Claude Team en facturation annuelle.",
+    a: "Plusieurs outils en parallèle se justifient souvent : le copilote de votre suite (Copilot ou Gemini) pour la productivité quotidienne, ChatGPT ou Claude pour les tâches créatives ou longues. Chiffrez le surcoût : un assistant généraliste en offre équipe coûte autour de 20 à 25 par siège et par mois, soit 21 € chez ChatGPT Business et 20 $ chez Claude Team en facturation annuelle.",
   },
   {
-    q: "ChatGPT vs Claude : lequel est meilleur en français ?",
+    q: "ChatGPT ou Claude : lequel est meilleur en français ?",
+    text: "Les deux rédigent un français professionnel de bon niveau. Dans nos mises en situation, Claude tient mieux la structure des contenus longs, ChatGPT varie plus vite les formats courts. Pour un comparatif détaillé, voyez notre comparatif ChatGPT vs Claude.",
     a: (
       <>
-        Les deux sont excellents en français. Claude est parfois perçu comme légèrement plus naturel sur les contenus longs.
+        Les deux rédigent un français professionnel de bon niveau. Dans nos mises en situation, Claude tient mieux la structure des contenus longs, ChatGPT varie plus vite les formats courts.
         Pour un comparatif détaillé, voyez notre{' '}
         <Link to="/chatgpt-vs-claude" style={{ color: '#2563EB', fontWeight: 700 }}>comparatif ChatGPT vs Claude</Link>.
       </>
@@ -742,9 +844,10 @@ const FAQ_ITEMS = [
   },
   {
     q: "Microsoft Copilot remplace-t-il ChatGPT ?",
+    text: "Pas entièrement. Copilot excelle dans Office et sur vos données internes ; ChatGPT garde l'avantage sur l'image, le code et les tâches hors Microsoft 365. Voyez notre comparatif Copilot vs ChatGPT pour les détails.",
     a: (
       <>
-        Pas vraiment. Copilot est complémentaire : excellent dans Office, mais limité hors M365. Beaucoup d'entreprises utilisent les deux.
+        Pas entièrement. Copilot excelle dans Office et sur vos données internes ; ChatGPT garde l'avantage sur l'image, le code et les tâches hors Microsoft 365.
         Voyez notre{' '}
         <Link to="/copilot-vs-chatgpt" style={{ color: '#2563EB', fontWeight: 700 }}>comparatif Copilot vs ChatGPT</Link>{' '}
         pour les détails.
@@ -752,11 +855,13 @@ const FAQ_ITEMS = [
     ),
   },
   {
-    q: "Comment former mes équipes à choisir entre les outils IA ?",
-    a: "Notre formation panorama de 2 jours permet de tester les 5 outils sur les cas d'usage réels de vos équipes avant de décider. 1 980 €/jour en intra-entreprise comme en individuel, finançable OPCO. Idéale avant un déploiement à l'échelle.",
+    q: "Comment former mes équipes à choisir entre les outils d'IA ?",
+    text: "Notre formation multi-outils de deux jours fait tester les cinq outils sur les cas d'usage réels de vos équipes avant de décider. Tarif : 1 980 € HT la journée en intra pour le groupe (jusqu'à 12 participants), au même tarif en individuel, TVA de 20 % en sus. Selon votre branche, votre OPCO peut financer la session.",
+    a: "Notre formation multi-outils de deux jours fait tester les cinq outils sur les cas d'usage réels de vos équipes avant de décider. Tarif : 1 980 € HT la journée en intra pour le groupe (jusqu'à 12 participants), au même tarif en individuel, TVA de 20 % en sus. Selon votre branche, votre OPCO peut financer la session.",
   },
   {
-    q: "Et l'IA chinoise (DeepSeek, Qwen) ?",
-    a: "Performante techniquement, mais déconseillée en entreprise française pour des raisons de souveraineté des données et de conformité GDPR. Pour les particuliers et la veille techno, oui ; pour des données d'entreprise, non.",
+    q: "Et l'IA chinoise (DeepSeek, Qwen) pour une entreprise française ?",
+    text: "Posez les mêmes questions qu'à tout éditeur : lieu de traitement des données, droit applicable, garanties contractuelles, usage des échanges pour l'entraînement. Un modèle à poids ouverts exécuté sur votre propre infrastructure n'envoie rien à l'éditeur, quel que soit son pays d'origine ; une application en ligne, si.",
+    a: "Posez les mêmes questions qu'à tout éditeur : lieu de traitement des données, droit applicable, garanties contractuelles, usage des échanges pour l'entraînement. Un modèle à poids ouverts exécuté sur votre propre infrastructure n'envoie rien à l'éditeur, quel que soit son pays d'origine ; une application en ligne, si.",
   },
 ]

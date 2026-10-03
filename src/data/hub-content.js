@@ -331,7 +331,7 @@ export const HUB_CONTENT = {
     why: [
       {
         title: 'Traiter des documents longs et complexes avec une précision inégalée',
-        body: "Claude est aujourd'hui le seul assistant IA grand public capable d'ingérer et d'analyser en un seul appel des documents allant jusqu'à 200 000 tokens, soit environ 150 000 mots, l'équivalent d'un contrat de 600 pages, d'un rapport annuel complet ou de 10 études sectorielles combinées. Pour les métiers qui traitent de gros volumes documentaires (juridique, finance, compliance, conseil), cette capacité représente un gain de productivité sans équivalent.",
+        body: "Sur les offres payantes, Claude ingère et analyse en une seule conversation jusqu'à un million de tokens avec ses modèles actuels (Opus 5.5, Sonnet 5.5) : de quoi lire un contrat de plusieurs centaines de pages, un rapport annuel complet ou une série d'études sectorielles. Pour les métiers qui traitent de gros volumes documentaires (juridique, finance, compliance, conseil), cette capacité représente un gain de productivité sans équivalent.",
       },
       {
         title: 'Obtenir des réponses plus nuancées, prudentes et calibrées pour un usage professionnel',
@@ -352,7 +352,7 @@ export const HUB_CONTENT = {
         day: 1,
         title: 'Claude Opus 4.8 et fonctionnalités enterprise (Projects, Skills, Artifacts)',
         items: [
-          'Panorama 2026 : différences Claude Free, Pro, Team, Enterprise (sécurité, fenêtre de contexte 200k vs 1M tokens)',
+          'Panorama 2026 : différences Claude Free, Pro, Team, Enterprise (sécurité, administration, fenêtre de contexte selon le modèle)',
           'Claude Opus 4.8 vs Sonnet 5 vs Haiku 4.5 : choisir le bon modèle selon la tâche (analyse profonde, équilibre, rapidité)',
           'Extended Thinking : activer le raisonnement étendu pour problèmes complexes (juridique, financier, code, stratégie)',
           'Projects : créer un espace persistant avec base documentaire dédiée (charte, brand voice, FAQ interne, références)',
@@ -369,7 +369,7 @@ export const HUB_CONTENT = {
           'MCP (Model Context Protocol) : standard ouvert pour connecter Claude à vos outils internes (CRM, base de données, API)',
           'Claude Code en CLI : agent autonome pour développeurs (refactor, debug, génération de tests, code review)',
           'Sub-agents : déléguer des sous-tâches à plusieurs Claude spécialisés en parallèle (recherche, rédaction, analyse)',
-          'Fenêtre 200k tokens : digérer rapports annuels (300+ pages), contrats longs, codebases entières en une requête',
+          'Fenêtre d\'un million de tokens sur les modèles actuels : rapports annuels, contrats longs, bases de code entières en une conversation',
           'API Anthropic : intégrer Claude dans vos outils internes (cas concrets sans compétence dev avancée)',
           'Comparatif Claude / GitHub Copilot / Cursor pour le code : quand utiliser chaque outil selon la tâche',
           'Plan d\'action 30 jours : industrialiser Claude dans les rituels d\'équipe, gouvernance des données, bibliothèque de Projects et Skills',
@@ -391,7 +391,7 @@ export const HUB_CONTENT = {
     faq: [
       {
         q: 'Qu\'est-ce que Claude (Anthropic) et en quoi est-il différent de ChatGPT ?',
-        a: "Claude est l'assistant IA développé par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI (l'éditeur de ChatGPT). Claude et ChatGPT sont tous deux des assistants IA de grande qualité, mais avec des points forts distincts. Claude se distingue par sa fenêtre contextuelle très large (jusqu'à 200 000 tokens selon la version), ses performances supérieures sur les tâches de rédaction professionnelle longue et d'analyse de documents, et une approche de sécurité particulièrement rigoureuse développée sous le nom de \"Constitutional AI\". ChatGPT dispose d'un écosystème de plugins plus riche et d'une intégration DALL-E pour la génération d'images.",
+        a: "Claude est l'assistant IA développé par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI (l'éditeur de ChatGPT). Claude et ChatGPT sont tous deux des assistants IA de grande qualité, mais avec des points forts distincts. Claude se distingue par sa fenêtre contextuelle très large (jusqu'à un million de tokens sur les modèles actuels des offres payantes), ses performances supérieures sur les tâches de rédaction professionnelle longue et d'analyse de documents, et une approche de sécurité particulièrement rigoureuse développée sous le nom de \"Constitutional AI\". ChatGPT dispose d'un écosystème de plugins plus riche et d'une intégration DALL-E pour la génération d'images.",
       },
       {
         q: 'Pourquoi se former à Claude plutôt qu\'à ChatGPT ?',
@@ -411,7 +411,7 @@ export const HUB_CONTENT = {
       },
       {
         q: 'Claude peut-il vraiment analyser des documents de 100 pages ?',
-        a: "Oui. Claude Sonnet 5 et Claude Opus 4.8 disposent d'une fenêtre contextuelle de 200 000 tokens, ce qui correspond à environ 150 000 mots ou 500 à 600 pages de texte selon la mise en forme. En pratique, on peut soumettre un contrat de 100 pages et demander à Claude d'en extraire toutes les clauses de résiliation, d'identifier les obligations des parties ou de comparer deux versions du même document. Cette capacité est vérifiée et testée en formation Masteria sur des documents réels fournis par les participants. La précision diminue légèrement sur les documents les plus volumineux, la formation inclut les stratégies pour maintenir la qualité.",
+        a: "Oui. Sur les offres payantes, Claude Opus 5.5 et Claude Sonnet 5.5 disposent en conversation d'une fenêtre contextuelle d'un million de tokens ; Anthropic estime que 200 000 tokens représentent environ 500 pages. En pratique, on peut soumettre un contrat de 100 pages et demander à Claude d'en extraire toutes les clauses de résiliation, d'identifier les obligations des parties ou de comparer deux versions du même document. Cette capacité est vérifiée et testée en formation Masteria sur des documents réels fournis par les participants. La précision diminue légèrement sur les documents les plus volumineux, la formation inclut les stratégies pour maintenir la qualité.",
       },
       {
         "q": "Claude s'entraîne-t-il sur nos conversations ?",

@@ -2603,7 +2603,7 @@ const BASE_SPOKES = [
       { q: "Est-ce que l'IA peut remplacer un acheteur ?", a: "Non. La négociation, la relation fournisseur et l'arbitrage stratégique restent humains. L'IA prend en charge l'analyse et la préparation, qui représentent 40 à 60 % du temps d'un acheteur." },
       { q: "Peut-on coller des cahiers des charges confidentiels ?", a: "Pas dans la version gratuite. Avec ChatGPT Enterprise, Copilot ou Mistral entreprise, vos données ne servent pas à entraîner les modèles. Cette règle est rappelée en formation." },
       { q: "Pourquoi former si on a déjà Ivalua ou Coupa ?", a: "Parce que 60 à 80 % du travail acheteur se fait hors plateforme : Word, Excel, mails, recherche web. Là où ChatGPT et Copilot apportent les gains les plus rapides." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-ia-ecrits-pro', 'formation-ia-analyse-donnees'],
   },
@@ -2611,6 +2611,8 @@ const BASE_SPOKES = [
   // ── Multi-outils × Veille (transversal / Marketing) ─────────────────────
   {
     slug: 'formation-ia-veille',
+    label: "veille avec l'IA",
+    audienceCta: "vos équipes",
     duration: '1j',
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Marketing', metierSlug: 'marketing', hubSlug: 'formation-intelligence-artificielle', priority: false,
@@ -2634,7 +2636,7 @@ const BASE_SPOKES = [
       { q: "Quels outils utiliser ?", a: "Le combo gagnant 2026 : Feedly (capture) + ChatGPT/Claude (filtrage et synthèse) + Perplexity (recherche approfondie). Ces 3 outils couvrent 80 % des cas." },
       { q: "Faut-il payer Perplexity ?", a: "La version gratuite suffit pour 80 % des cas. Perplexity Pro (20 €/mois) débloque la recherche approfondie : très rentable pour un veilleur professionnel." },
       { q: "Comment éviter les hallucinations ?", a: "Croisez 2 sources sur les sujets à enjeu (ChatGPT + Perplexity, ou Claude + Perplexity). La formation enseigne 4 contre-mesures pour minimiser le risque." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-ia-ecrits-pro', 'formation-multi-outils-marketing', 'formation-sprint-ia-veille'],
   },
@@ -2642,6 +2644,8 @@ const BASE_SPOKES = [
   // ── Multi-outils × Analyse de données (Finance) ─────────────────────────
   {
     slug: 'formation-ia-analyse-donnees',
+    label: "analyse de données avec l'IA",
+    audienceCta: "vos équipes",
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Finance', metierSlug: 'finance', hubSlug: 'formation-intelligence-artificielle', priority: false,
     metaTitle: "Formation analyse de données IA : Excel + ChatGPT | Masteria",
@@ -2665,7 +2669,7 @@ const BASE_SPOKES = [
       { q: "Faut-il Microsoft Copilot ?", a: "C'est un gros plus. Le Jour 2 fonctionne sans (ChatGPT seul), mais le Jour 1 perd 30 % de son intérêt sans Copilot dans Excel." },
       { q: "Différence avec une formation Power BI ?", a: "Power BI est un outil de dashboarding. Cette formation est plus large : structurer, analyser, raconter, restituer. Power BI peut être un module complémentaire." },
       { q: "Données confidentielles ?", a: "Avec ChatGPT Enterprise / Copilot, oui. Avec ChatGPT gratuit, non. La formation rappelle ces règles le matin du Jour 1." },
-      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-copilot-finance', 'formation-multi-outils-finance', 'formation-sprint-ia-excel'],
   },
@@ -2673,12 +2677,14 @@ const BASE_SPOKES = [
   // ── Multi-outils × Créativité (Marketing) ───────────────────────────────
   {
     slug: 'formation-ia-creativite',
+    label: "créativité avec l'IA",
+    audienceCta: "vos équipes",
     duration: '1j',
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Marketing', metierSlug: 'marketing', hubSlug: 'formation-intelligence-artificielle', priority: false,
     metaTitle: "Formation créativité avec l'IA (1 jour) | Masteria",
     metaDesc: "Formation 1 jour pour utiliser l'IA en idéation, brainstorming, naming, copywriting créatif. ChatGPT, Claude. OPCO, Qualiopi.",
-    h1: "Booster sa créativité avec l'IA",
+    h1: "Développer sa créativité avec l'IA",
     intro: "L'IA générative ne tue pas la créativité, elle la décuple, à condition de savoir prompter. Beaucoup d'équipes utilisent ChatGPT pour brainstormer et obtiennent... des idées plates. Cette formation 1 jour donne 6 méthodes éprouvées pour transformer ChatGPT et Claude en partenaires d'idéation, de naming, de campagnes et de copywriting.",
     useCases: [
       { icon: '💡', title: 'Brainstorming structuré', desc: "6 méthodes (contraintes, angles opposés, persona, SCAMPER, analogies, itératif)." },
@@ -2696,7 +2702,7 @@ const BASE_SPOKES = [
       { q: "Réservée aux créatifs ?", a: "Non. Marketing, communication, RH, R&D, innovation, dirigeants : tous ceux qui produisent des idées au quotidien." },
       { q: "L'IA va-t-elle voler les idées ?", a: "Non si on utilise ChatGPT/Claude Pro ou Enterprise. Sur les versions gratuites, ne jamais coller un projet stratégique confidentiel." },
       { q: "Quelle IA est la plus créative ?", a: "Claude (Anthropic) est souvent jugé plus subtil que ChatGPT pour le brainstorming et le copywriting. ChatGPT reste excellent et plus polyvalent." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-claude-marketing', 'formation-multi-outils-marketing', 'formation-ia-ecrits-pro'],
   },
@@ -2704,6 +2710,8 @@ const BASE_SPOKES = [
   // ── Multi-outils × Écrits pro (Communication) ───────────────────────────
   {
     slug: 'formation-ia-ecrits-pro',
+    label: "écrits professionnels avec l'IA",
+    audienceCta: "vos équipes",
     duration: '1j',
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Communication', metierSlug: 'communication', hubSlug: 'formation-intelligence-artificielle', priority: false,
@@ -2727,7 +2735,7 @@ const BASE_SPOKES = [
       { q: "Style très spécifique (médical) ?", a: "C'est un avantage : plus le style est codifié, mieux l'IA le reproduit. La formation inclut un module sur la réplication de styles métiers." },
       { q: "Comment éviter le ChatGPT-style ?", a: "C'est précisément ce qu'enseigne le matin : prompts d'imitation, intégration de tics personnels, contrôle du registre. Mails IA indétectables à la fin de la journée." },
       { q: "Faut-il Microsoft Copilot ?", a: "Pas obligatoire. ChatGPT seul couvre 80 % des cas. Copilot ajoute la fluidité d'avoir l'IA directement dans Outlook, Word et Teams." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-chatgpt-redaction', 'formation-multi-outils-communication', 'formation-ia-creativite'],
   },
@@ -2735,6 +2743,7 @@ const BASE_SPOKES = [
   // ── Multi-outils × Plan compétences DRH (RH) ────────────────────────────
   {
     slug: 'formation-ia-drh-plan-competences',
+    label: "plan de compétences IA pour les DRH",
     tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
     metier: 'Ressources Humaines', metierSlug: 'ressources-humaines', hubSlug: 'formation-intelligence-artificielle', priority: true,
     metaTitle: "Formation DRH plan de compétences IA (2 jours) | Masteria",
@@ -2758,7 +2767,7 @@ const BASE_SPOKES = [
       { q: "Comment financer un plan IA ?", a: "OPCO en majorité (jusqu'à 100 % pour les TPE/PME), CPF (formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
       { q: "Quelle obligation AI Act pour les RH ?", a: "L'article 4 impose que toute personne utilisant un système d'IA dispose d'un niveau de littératie IA suffisant. Cela ouvre une responsabilité de l'employeur, détaillée dans la formation." },
       { q: "Comment mesurer l'impact ?", a: "3 niveaux : opérationnel (gain de temps, qualité), business (ROI, satisfaction), stratégique (capacité IA de l'entreprise). Le Jour 2 fournit des grilles concrètes." },
-      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 DRH/RRH) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 DRH/RRH) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-multi-outils-ressources-humaines'],
   },
@@ -2770,6 +2779,7 @@ const BASE_SPOKES = [
   // ── Sprint IA × Sensibilisation ─────────────────────────────────────────
   {
     slug: 'formation-sprint-ia-sensibilisation',
+    label: "Sprint IA Sensibilisation",
     tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
     metier: 'Tous publics', metierSlug: 'transverse', hubSlug: 'formation-sprint-ia', priority: true,
     metaTitle: "Sprint IA Sensibilisation : l'atelier de 3 h pour acculturer vos équipes | Masteria",
@@ -2795,7 +2805,7 @@ const BASE_SPOKES = [
       { q: "Est-ce finançable OPCO ?", a: "Oui, comme toute formation Masteria (organisme certifié Qualiopi). Le format court n'a aucune incidence négative sur le financement." },
       { q: "Sensibilisation IA ou formation IA : quelle différence ?", a: "La sensibilisation IA ouvre le sujet : en 3 heures, les participants comprennent ce que l'IA générative fait et ne fait pas, manipulent sur leurs cas et repartent avec quelques usages à tester et un cadre. La formation installe des compétences sur un ou deux jours, par métier, avec des exercices sur les livrables réels et une évaluation des acquis. La sensibilisation est le bon point d'entrée pour un large public ou une organisation qui démarre ; la formation prend le relais pour les équipes qui vont utiliser l'IA chaque jour. Les deux s'enchaînent dans une démarche d'acculturation IA complète." },
       { q: "Comment organiser une sensibilisation à l'IA pour toute l'entreprise ?", a: "Par vagues, avec un même contenu et des exemples adaptés à chaque public. Le schéma courant : une session pour le comité de direction en premier, pour qu'il porte la démarche et fixe le cadre ; puis des sessions par métier ou par site, en présentiel pour ceux qui manipulent, en webinar pour les grands effectifs ; enfin un relais interne (référents) et une mesure simple des usages à un mois. Un cadrage de 30 minutes avec vous suffit pour caler les publics, les outils déjà disponibles et le calendrier ; les packages dégressifs couvrent les déploiements à partir de 5 sessions." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants, 3 h) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements grande échelle. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants, 3 h) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements grande échelle. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-sprint-ia-prompts', 'formation-intelligence-artificielle'],
   },
@@ -2803,6 +2813,7 @@ const BASE_SPOKES = [
   // ── Sprint IA × Prompts ─────────────────────────────────────────────────
   {
     slug: 'formation-sprint-ia-prompts',
+    label: "Sprint IA Prompts",
     tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
     metier: 'Tous publics', metierSlug: 'transverse', hubSlug: 'formation-sprint-ia', priority: true,
     metaTitle: "Sprint IA Prompts (3 h) | Masteria",
@@ -2825,7 +2836,7 @@ const BASE_SPOKES = [
       { q: "Pré-requis ?", a: "Avoir déjà ouvert ChatGPT ou Copilot au moins une fois. Pas besoin d'être expert : c'est justement le but du Sprint." },
       { q: "Marche pour Copilot autant que ChatGPT ?", a: "Oui. La méthode CRTF est universelle. La bibliothèque produite est adaptée à l'outil utilisé par les participants." },
       { q: "Format présentiel ou distanciel ?", a: "Les deux fonctionnent. Le distanciel marche très bien pour ce format court car les ateliers sont individuels avec partage." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-prompt-engineering', 'formation-sprint-ia-sensibilisation', 'formation-ia-ecrits-pro'],
   },
@@ -2833,11 +2844,13 @@ const BASE_SPOKES = [
   // ── Sprint IA × Excel ───────────────────────────────────────────────────
   {
     slug: 'formation-sprint-ia-excel',
+    label: "Sprint IA Excel",
+    audienceCta: "vos équipes",
     tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
     metier: 'Finance', metierSlug: 'finance', hubSlug: 'formation-sprint-ia', priority: true,
     metaTitle: "Sprint IA Excel (3 h) | Masteria",
     metaDesc: "Sprint IA Excel : 3 heures pour utiliser l'IA dans Excel — tableaux croisés, analyses, formules en langage naturel. OPCO, Qualiopi.",
-    h1: "Sprint IA Excel, 3 heures pour booster Excel avec l'IA",
+    h1: "Sprint IA Excel : 3 heures pour mieux travailler dans Excel avec l'IA",
     intro: "Sprint IA Excel s'adresse aux populations finance, contrôle de gestion, RH et achats — là où Excel est l'outil central. En 3 heures, les participants passent de pilotes Excel manuels à utilisateurs IA autonomes : tableaux croisés en 10 minutes, formules en langage naturel, détection d'anomalies, mini-dashboards. ROI direct : 1 à 2 heures gagnées par jour. Adaptable selon votre stack (Microsoft Copilot pour Excel ou ChatGPT + Excel).",
     useCases: [
       { icon: '📊', title: 'Tableaux croisés', desc: "Pivots et analyses en langage naturel, 10× plus vite." },
@@ -2855,7 +2868,7 @@ const BASE_SPOKES = [
       { q: "Faut-il avoir Microsoft 365 Copilot ?", a: "Non, le Sprint s'adapte à votre stack. Avec Copilot dans Excel (env. 30 €/mois/utilisateur), tout se passe nativement. Sans Copilot, on travaille avec ChatGPT côté à côte d'Excel : 90 % des cas d'usage restent couverts." },
       { q: "Niveau Excel requis ?", a: "Niveau intermédiaire : tableaux croisés, fonctions de base. Le Sprint ne forme pas à Excel, il forme à l'IA appliquée à Excel." },
       { q: "Sur ses propres fichiers ?", a: "Oui, c'est le mode opératoire. Chaque participant apporte un fichier Excel professionnel et l'utilise pendant l'atelier." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-copilot-finance', 'formation-ia-analyse-donnees', 'formation-sprint-ia-prompts'],
   },
@@ -2863,6 +2876,7 @@ const BASE_SPOKES = [
   // ── Sprint IA × Managers ────────────────────────────────────────────────
   {
     slug: 'formation-sprint-ia-managers',
+    label: "Sprint IA Managers",
     tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
     metier: 'Management', metierSlug: 'management', hubSlug: 'formation-sprint-ia', priority: true,
     metaTitle: "Sprint IA Managers (3 h) | Masteria",
@@ -2885,7 +2899,7 @@ const BASE_SPOKES = [
       { q: "Différence avec la formation 2 jours ?", a: "Le Sprint donne les bons réflexes. La formation 2 jours forme en profondeur. On peut les combiner : 2 jours pour les 20 managers clés, Sprint 3 h pour les 200 autres." },
       { q: "Format présentiel ou distanciel ?", a: "Les deux fonctionnent. Pour les managers de proximité dispersés géographiquement, le distanciel est souvent plus efficace pour atteindre toute la ligne." },
       { q: "Combien de managers par session ?", a: "12 à 15 maximum pour conserver l'interaction. Pour des déploiements à 100+ managers, on enchaîne 8 à 10 sessions sur 3 à 4 semaines." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements managériaux. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements managériaux. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-multi-outils-management'],
   },
@@ -2893,6 +2907,8 @@ const BASE_SPOKES = [
   // ── Sprint IA × Veille ──────────────────────────────────────────────────
   {
     slug: 'formation-sprint-ia-veille',
+    label: "Sprint IA Veille",
+    audienceCta: "vos équipes",
     tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
     metier: 'Communication', metierSlug: 'communication', hubSlug: 'formation-sprint-ia', priority: false,
     metaTitle: "Sprint IA Veille (3 h) | Masteria",
@@ -2914,7 +2930,7 @@ const BASE_SPOKES = [
     faq: [
       { q: "Faut-il payer Perplexity Pro ?", a: "La version gratuite suffit pour 80 % des cas. Pro (20 €/mois) débloque la recherche approfondie : très rentable pour un veilleur professionnel." },
       { q: "Repart-on avec une vraie synthèse ?", a: "Oui. C'est même l'objectif : la première synthèse de veille est produite pendant le Sprint, sur un sujet réel choisi par le participant." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. Finançable OPCO." },
       { q: "Différence avec la formation Veille 1 jour ?", a: "Le Sprint donne le combo et la première synthèse. La journée complète va plus loin : automatisation, dashboards, articulation avec stratégie marketing." },
     ],
     relatedSpokes: ['formation-ia-veille', 'formation-sprint-ia-prompts', 'formation-multi-outils-marketing'],
@@ -2923,9 +2939,10 @@ const BASE_SPOKES = [
   // ── Sprint IA × AI Act ──────────────────────────────────────────────────
   {
     slug: 'formation-sprint-ia-ai-act',
+    label: "Sprint IA AI Act",
     tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
     metier: 'Tous publics', metierSlug: 'transverse', hubSlug: 'formation-sprint-ia', priority: true,
-    metaTitle: "Sprint IA AI Act (3 h) — Conformité IA Act flash | Masteria",
+    metaTitle: "Sprint IA AI Act (3 h) : la conformité AI Act express | Masteria",
     metaDesc: "Sprint IA AI Act : 3 h pour comprendre l'AI Act, l'article 4, les classifications de risque et le calendrier 2026. Qualiopi, OPCO.",
     h1: "Sprint IA AI Act, 3 heures pour la conformité IA Act",
     intro: "Sprint IA AI Act est le format flash signé Masteria pour mettre toute une organisation en conformité avec le règlement européen sur l'intelligence artificielle (AI Act). En 3 heures, les participants comprennent le périmètre du règlement, les classifications de risque, l'article 4 sur la littératie IA, le calendrier 2026 / 2027 et les obligations concrètes pour leur métier. Cible : DSI, DPO, juristes, RH, managers, dirigeants. Combinable avec Sprint IA Sensibilisation pour couvrir l'obligation de littératie IA à l'échelle d'une entreprise.",
@@ -2946,7 +2963,7 @@ const BASE_SPOKES = [
       { q: "Pour qui ce Sprint AI Act ?", a: "DSI, DPO, juristes, responsables conformité, RH, managers et dirigeants qui doivent piloter la conformité IA Act dans leur périmètre. Aucun prérequis juridique : la formation explique les notions clés à partir d'exemples concrets." },
       { q: "Qu'est-ce que l'article 4 sur la littératie IA ?", a: "L'article 4 de l'AI Act impose à toute organisation utilisant un système d'IA de garantir que ses collaborateurs disposent d'un niveau de connaissances suffisant. Il s'agit d'une obligation de moyens, pas de résultat, mais qui ouvre la responsabilité de l'employeur. Sprint IA AI Act + Sprint IA Sensibilisation couvrent ensemble cette obligation." },
       { q: "Comment articuler avec le RGPD ?", a: "L'AI Act et le RGPD se cumulent : un système d'IA traitant des données personnelles doit respecter les deux. Le Sprint explique comment construire un dossier de conformité unifié plutôt que deux silos parallèles." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions, particulièrement pertinent pour cascader la conformité dans une grande organisation. 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions, particulièrement pertinent pour cascader la conformité dans une grande organisation. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-ai-act', 'formation-sprint-ia-sensibilisation', 'formation-sprint-ia-managers'],
   },
@@ -3072,6 +3089,7 @@ const BASE_SPOKES = [
   // ── Prompt Engineering × Tous métiers ────────────────────────────────────
   {
     slug: 'formation-prompt-engineering',
+    label: "prompt engineering",
     tool: 'Prompt Engineering',
     toolSlug: 'prompt-engineering',
     toolColor: '#2563EB',
@@ -3187,6 +3205,7 @@ const BASE_SPOKES = [
   // ── IA × Dirigeants ──────────────────────────────────────────────────────
   {
     slug: 'formation-ia-dirigeants',
+    label: "IA pour dirigeants",
     tool: 'IA',
     toolSlug: 'ia-strategie',
     toolColor: '#2563EB',
@@ -3237,6 +3256,7 @@ const BASE_SPOKES = [
   // ── AI Act × Conformité ──────────────────────────────────────────────────
   {
     slug: 'formation-ai-act',
+    label: "AI Act",
     tool: 'AI Act',
     toolSlug: 'ai-act',
     toolColor: '#2563EB',
@@ -3288,6 +3308,7 @@ const BASE_SPOKES = [
   // ── Gouvernance IA × Pilotage ────────────────────────────────────────────
   {
     slug: 'formation-gouvernance-ia',
+    label: "gouvernance IA",
     tool: 'Gouvernance IA',
     toolSlug: 'gouvernance-ia',
     toolColor: '#2563EB',
@@ -3365,7 +3386,7 @@ const BASE_SPOKES = [
       { q: "Peut-on utiliser l'IA sur des données d'accidents du travail ?", a: "Avec des précautions strictes : les données de santé sont des données sensibles au sens du RGPD. La formation pose les règles : anonymisation avant tout traitement, offre entreprise avec accord de traitement des données, jamais de données nominatives dans un outil grand public. Les cas pratiques travaillent sur des données anonymisées." },
       { q: 'La formation couvre-t-elle les normes ISO 9001, 14001 et 45001 ?', a: "Oui, les cas pratiques s'appuient sur les processus de ces référentiels : préparation d'audits internes, revues de direction, gestion des non-conformités et des actions correctives. L'IA accélère la préparation documentaire, l'auditeur garde la main sur l'évaluation." },
       { q: 'Quels outils sont utilisés pendant la journée ?', a: "La formation suit notre méthode multi-outils : ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI sont comparés sur vos cas QSE, puis la journée se concentre sur les outils disponibles dans votre environnement. Vous repartez avec des critères de choix clairs." },
-      { q: 'Combien ça coûte ?', a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: 'Combien ça coûte ?', a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
     relatedSpokes: ['formation-ia-achats', 'formation-ia-analyse-donnees', 'formation-ia-ecrits-pro'],
   },

@@ -80,9 +80,9 @@ const SPECIALS = {
 
 const ETAPES = [
   ['Identifiez votre OPCO', "Avec le sélecteur ci-dessus, ou officiellement via votre numéro de convention collective (IDCC) sur cfadock.fr, mentionné sur vos bulletins de paie."],
-  ['Demandez devis et programme', 'Masteria fournit sous 24 h ouvrées le devis, le programme détaillé, la convention et l\'attestation Qualiopi : le dossier complet attendu par votre OPCO.'],
+  ['Demandez devis et programme', 'Masteria fournit sous 24 h ouvrées le devis et le programme détaillé, puis la convention et le certificat Qualiopi : les pièces que votre OPCO demande.'],
   ['Déposez AVANT le début de la formation', "La demande de prise en charge se dépose sur l'espace en ligne de votre OPCO avant le premier jour de formation. Un dossier déposé après coup est refusé."],
-  ['Recevez l\'accord et formez', "Instruction en 5 à 10 jours ouvrés chez la plupart des OPCO. Une fois l'accord reçu, la session se tient ; l'OPCO règle selon votre branche, jusqu'à 100 % du coût pédagogique."],
+  ['Recevez l\'accord et formez', "Le délai d'instruction dépend de l'OPCO. Une fois l'accord reçu, la session se tient. Depuis le 1er octobre 2026, la plupart des OPCO remboursent l'entreprise après paiement de la facture ; le paiement direct à l'organisme (subrogation) devient l'exception."],
 ]
 
 /* Lexique express (ancrage d'entités GEO → DefinedTermSet) */
@@ -99,9 +99,9 @@ const FAQ = [
   { q: "L'OPCO finance-t-il aussi le conseil ou l'accompagnement ?", a: "Non. Les OPCO financent des actions de formation dispensées par un organisme certifié Qualiopi, avec programme, objectifs et émargements. Une mission de conseil ou de développement sur mesure reste une prestation de service, à financer sur budget propre (d'autres dispositifs existent, comme les aides à la transformation numérique selon les régions)." },
   { q: 'Quel montant mon OPCO prend-il en charge ?', a: "Les plafonds varient selon la branche, la taille de l'entreprise et l'année : ils sont votés par chaque branche et évoluent. Les entreprises de moins de 50 salariés sont les mieux couvertes, jusqu'à 100 % du coût pédagogique dans de nombreuses branches. Le montant exact figure sur votre espace adhérent OPCO ; nous le vérifions avec vous au moment du devis." },
   { q: 'La certification Qualiopi est-elle obligatoire pour être financé ?', a: "Oui. Depuis le 1ᵉʳ janvier 2022, seuls les organismes certifiés Qualiopi ouvrent droit aux financements mutualisés (OPCO, plan de développement des compétences). Masteria est certifié Qualiopi pour les actions de formation (NDA 84 69 23218 69, vérifiable sur la Liste publique des organismes de formation)." },
-  { q: 'Puis-je utiliser mon CPF pour une formation Masteria ?', a: "Non. Nos formations se financent par l'OPCO de votre entreprise ou son plan de développement des compétences, pas par le CPF individuel. Pour une équipe, le financement OPCO est en pratique plus avantageux : il couvre le groupe entier et Masteria monte le dossier." },
-  { q: 'Combien de temps prévoir entre la demande et la formation ?', a: "Comptez 3 à 4 semaines : devis et programme sous 24 h ouvrées, instruction OPCO en 5 à 10 jours ouvrés selon les opérateurs, puis calage de la date. Les dossiers déposés tôt passent mieux, surtout en fin d'année quand les enveloppes s'épuisent." },
-  { q: 'Masteria gère-t-il le dossier à ma place ?', a: "Oui, l'intégralité : devis, programme, convention, attestation Qualiopi, émargements, attestation de fin de formation. Votre seule action est le dépôt sur votre espace adhérent, guidé pas à pas, ou par votre service formation." },
+  { q: 'Puis-je utiliser mon CPF pour une formation Masteria ?', a: "Non. Nos formations se financent par l'OPCO de votre entreprise ou son plan de développement des compétences, pas par le CPF individuel. Pour une équipe, le financement OPCO est en pratique plus avantageux : il couvre le groupe entier, et nous préparons le dossier avec vous." },
+  { q: 'Combien de temps prévoir entre la demande et la formation ?', a: "Comptez 3 à 4 semaines : devis et programme sous 24 h ouvrées, instruction par l'OPCO selon ses délais, puis calage de la date. Les dossiers déposés tôt passent mieux, surtout en fin d'année quand les enveloppes s'épuisent." },
+  { q: 'Masteria gère-t-il le dossier OPCO à ma place ?', a: "Nous fournissons toutes les pièces : devis, programme, convention, certificat Qualiopi, émargements, certificat de réalisation. La demande de prise en charge, elle, est déposée par votre entreprise sur son espace adhérent, avant le premier jour de formation ; nous vous guidons pas à pas." },
 ]
 
 function FaqItem({ q, a }) {
@@ -179,7 +179,7 @@ export default function QuelOpcoPage() {
         faqItems={FAQ}
         keywords="quel opco, quel est mon opco, trouver son opco, opco formation, opco par secteur, financement formation opco, opco formation ia"
         datePublished="2026-08-06"
-        dateModified="2026-08-07"
+        dateModified="2026-10-03"
         speakable={['#geo-summary', '#liste-opco']}
         citations={[
           { name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
@@ -213,7 +213,7 @@ export default function QuelOpcoPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 20px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en octobre 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
@@ -331,13 +331,13 @@ export default function QuelOpcoPage() {
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>Et pour une formation IA ?</div>
-          <h2 style={h2Style}>Un dossier OPCO monté pour vous, de A à Z</h2>
+          <h2 style={h2Style}>Un dossier OPCO préparé avec vous</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', margin: '0 0 20px' }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi (condition du financement)' },
               { icon: Wallet, label: "Jusqu'à 100 % pris en charge selon la branche" },
               { icon: Clock, label: 'Devis et dossier complet sous 24 h ouvrées' },
-              { icon: CheckCircle2, label: 'Référencé auprès des principaux OPCO depuis 2022' },
+              { icon: CheckCircle2, label: 'Certifié Qualiopi depuis janvier 2026 (n° 725311-1)' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 99, padding: '8px 15px', fontSize: 13, fontWeight: 600, color: '#374151' }}>
                 <Icon size={14} color={c} strokeWidth={2.4} aria-hidden="true" /> {label}

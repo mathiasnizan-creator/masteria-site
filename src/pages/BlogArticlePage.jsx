@@ -950,7 +950,7 @@ export default function BlogArticlePage() {
             color: '#6B7280', lineHeight: 1.7, marginBottom: 32,
             maxWidth: 620,
           }}>
-            Trois programmes Masteria pour traduire ce que vous venez de lire en compétences concrètes pour vos équipes. Certifié Qualiopi · 100 % finançable OPCO.
+            Trois programmes Masteria pour traduire ce que vous venez de lire en compétences concrètes pour vos équipes. Certifié Qualiopi · Finançable OPCO.
           </p>
           <div style={{
             display: 'grid',

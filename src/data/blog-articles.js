@@ -1103,6 +1103,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Chief AI Officer : qui pilote l'IA dans l'entreprise", href: '/chief-ai-officer' },
       { label: "Conseil stratégie IA : la mission avec votre comité de direction", href: '/conseil-strategie-ia' },
       { label: "ROI de l'IA en entreprise : ce que disent les études", href: '/roi-ia-entreprise' },
       { label: "Calculateur de ROI de l'IA", href: '/calculateur-roi-ia' },
@@ -1331,6 +1332,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Consultant en visibilité IA", href: '/consultant-visibilite-ia' },
       { label: "Audit GEO IA : mesurer votre taux de citation dans les IA", href: '/audit-geo-ia' },
       { label: "GEO : se rendre visible dans ChatGPT, Perplexity et Gemini", href: '/blog/geo-referencement-ia-generative-entreprise' },
       { label: "SEO et IA : réinventer sa stratégie de contenu", href: '/blog/seo-ia-strategie-content-2026' },
@@ -1937,7 +1939,7 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Claude (Anthropic) : pour les documents longs et le travail analytique" },
       { type: 'p', text: "Claude est souvent moins connu que ChatGPT ou Gemini dans les équipes qui découvrent l'IA. C'est dommage, parce qu'il a une caractéristique qui le distingue clairement sur un type de tâche précis : il traite des documents très longs avec une précision et une cohérence que les autres outils n'atteignent pas systématiquement." },
-      { type: 'p', text: "Sa fenêtre de contexte atteint jusqu'à 200 000 tokens dans les versions standard, soit environ 150 000 mots, l'équivalent d'un rapport de 500 pages. En version beta, cette fenêtre monte à 1 million de tokens. Concrètement, un directeur juridique peut importer un contrat de 80 pages et poser des questions précises sur des clauses spécifiques. Un consultant peut soumettre une étude de marché complète et demander une synthèse structurée selon ses critères. Les réponses restent cohérentes avec l'ensemble du document, pas seulement avec les derniers échanges." },
+      { type: 'p', text: "Sur les offres payantes, les modèles actuels (Claude Opus 5.5 et Sonnet 5.5) lisent jusqu'à un million de tokens dans une conversation ; Anthropic estime que 200 000 tokens représentent environ 500 pages, un million en représente donc de l'ordre de 2 500. Concrètement, un directeur juridique peut importer un contrat de 80 pages et poser des questions précises sur des clauses spécifiques. Un consultant peut soumettre une étude de marché complète et demander une synthèse structurée selon ses critères. Les réponses restent cohérentes avec l'ensemble du document, pas seulement avec les derniers échanges." },
       { type: 'p', text: "Claude est également reconnu pour la qualité de sa rédaction en français : le style est précis, le registre s'adapte bien aux instructions, et les hallucinations sont moins fréquentes sur les tâches de synthèse documentaire." },
       { type: 'h3', text: "Où Claude est clairement le bon choix" },
       {
@@ -2163,6 +2165,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Formation IA pour le CSE et la direction", href: '/formation-cse-ia' },
       { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Formation IA pour entreprise (initiation)", href: '/formation-intelligence-artificielle' },
       { label: "Financer sa formation IA avec son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
@@ -2434,8 +2437,8 @@ const BLOG_ARTICLES_BASE = [
         a: "Un appel de 20 à 30 minutes avec Mathias ou son équipe pour comprendre le contexte de votre organisation, les outils déjà en place, le niveau de familiarité de vos équipes avec l'IA, et les 2 à 3 tâches où le gain de temps serait le plus immédiat. À partir de là, on construit le programme et on envoie une proposition. Aucun engagement n'est demandé à ce stade.",
       },
       {
-        q: "Les formations Masteria à Lyon sont-elles finançables à 100 % ?",
-        a: "Masteria est certifié Qualiopi pour les actions de formation, ce qui rend toutes nos formations éligibles au financement OPCO. Selon votre OPCO, la prise en charge peut couvrir l'intégralité des coûts pédagogiques. Notre équipe vous accompagne dans la constitution du dossier. Pour les entreprises de moins de 50 salariés, la prise en charge à 100 % est fréquente via les fonds mutualisés.",
+        q: "Les formations Masteria à Lyon sont-elles finançables ?",
+        a: "Masteria est certifié Qualiopi pour les actions de formation, ce qui rend toutes nos formations éligibles au financement OPCO. Selon votre OPCO, la prise en charge peut couvrir l'intégralité des coûts pédagogiques. Nous préparons avec vous le programme et la convention ; votre entreprise dépose la demande auprès de son OPCO avant la session.",
       },
       {
         q: "Masteria forme-t-il aussi les équipes des collectivités ou des structures publiques lyonnaises ?",
@@ -2816,6 +2819,8 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Conseil IA pour les PME", href: '/conseil-ia-pme' },
+      { label: "Chief AI Officer à temps partagé", href: '/chief-ai-officer' },
       { label: "Notre offre de conseil IA", href: '/conseil-intelligence-artificielle' },
       { label: "Former ses équipes à l'IA : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
       { label: "À propos de Masteria", href: '/centre-formation-ia-entreprise' },
@@ -3470,7 +3475,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Chaque mois, les contrôleurs de gestion rédigent des commentaires d'écart entre le réalisé et le budget. Ce travail de mise en mots de chiffres est chronophage et peu valorisant. ChatGPT ou Claude peut générer un premier jet de ces commentaires à partir des données chiffrées, que le contrôleur affine en 10 minutes. Le gain : 1 à 2 heures par closing mensuel." },
 
       { type: 'h2', text: "Cas d'usage 2 : analyse de documents financiers longs" },
-      { type: 'p', text: "Claude (Anthropic) excelle dans la lecture et l'analyse de documents longs : rapports annuels, prospectus d'émission, contrats de financement, due diligence M&A. Avec une fenêtre de contexte de 200 000 tokens, il peut lire un document de 400 pages et en extraire les informations clés, les risques identifiés ou les clauses spécifiques demandées. Ce qui prenait 3 heures à un analyste junior prend 10 minutes." },
+      { type: 'p', text: "Claude (Anthropic) excelle dans la lecture et l'analyse de documents longs : rapports annuels, prospectus d'émission, contrats de financement, due diligence M&A. Avec une fenêtre de contexte d'un million de tokens sur ses modèles actuels, il peut lire un document de 400 pages et en extraire les informations clés, les risques identifiés ou les clauses spécifiques demandées. Ce qui prenait 3 heures à un analyste junior prend 10 minutes." },
 
       { type: 'h2', text: "Cas d'usage 3 : automatisation du reporting réglementaire" },
       { type: 'p', text: "CSRD, Pilier 3, SFDR, DORA : les obligations de reporting réglementaire explosent. L'IA aide à structurer les réponses aux questionnaires de conformité, à rédiger les narratifs ESG à partir de données brutes, et à vérifier la cohérence entre les différentes sections d'un rapport. Ce cas d'usage est particulièrement fort avec Mistral AI, qui est hébergé en Europe et minimise les risques liés au transfert de données hors UE." },
@@ -3496,7 +3501,7 @@ const BLOG_ARTICLES_BASE = [
         headers: ['Cas d\'usage', 'Outil recommandé', 'Raison'],
         rows: [
           ['Commentaires de clôture', 'ChatGPT Team / Claude for Work', 'Rédaction fluide et rapide'],
-          ['Analyse de documents longs', 'Claude (200k tokens)', 'Meilleure gestion des longs documents'],
+          ['Analyse de documents longs', 'Claude (1 million de tokens)', 'Meilleure gestion des longs documents'],
           ['Reporting réglementaire (données sensibles)', 'Mistral AI', 'Hébergement Europe, conformité RGPD'],
           ['Excel, Power BI, M365', 'Microsoft Copilot', 'Intégration native dans la suite Microsoft'],
           ['Synthèse de données variées', 'ChatGPT Enterprise', 'Polyvalence et connexion aux données'],
@@ -3573,7 +3578,7 @@ const BLOG_ARTICLES_BASE = [
           ['Reporting COPIL mensuel', '2 h', '30 min', 'ChatGPT Team'],
           ['Registre des risques (atelier)', '2 h', '40 min', 'ChatGPT / Claude'],
           ['Email de recadrage prestataire', '20 min', '5 min', 'ChatGPT / Claude'],
-          ['Synthèse appel d\'offres (50p)', '4 h', '15 min', 'Claude (200k tokens)'],
+          ['Synthèse appel d\'offres (50p)', '4 h', '15 min', 'Claude (1 million de tokens)'],
         ],
       },
       { type: 'p', text: "Sur une base de 8 livrables documentaires par semaine, un chef de projet formé à l'IA gagne en moyenne 6 à 8 heures hebdomadaires — soit l'équivalent d'une journée par semaine réinvestie sur le pilotage et les parties prenantes." },
@@ -3879,7 +3884,7 @@ const BLOG_ARTICLES_BASE = [
         rows: [
           ['OPCO Atlas', 'Banque, assurance, conseil', 'Fonds dédié transformation digitale, dossier dématérialisé'],
           ['OPCO 2i', 'Industrie, métallurgie, plasturgie', 'Programme « Industrie du futur » qui finance la formation IA'],
-          ['Akto', 'Services à compétences spécifiques (HCR, propreté, prévention)', 'Plan TPE-PME finançable à 100 %'],
+          ['Akto', 'Services à compétences spécifiques (HCR, propreté, prévention)', 'Plan TPE-PME finançable'],
           ['OPCO EP', 'Professions libérales, avocats, experts-comptables', 'Forfaits forfaitaires journaliers'],
           ['Constructys', 'BTP', 'Plan FNE-Formation + plan de développement'],
           ['Afdas', 'Médias, presse, télécoms, communication', 'Très actif sur l\'IA générative à Paris'],
@@ -3937,13 +3942,13 @@ const BLOG_ARTICLES_BASE = [
     faq: [
       { q: "Quelle est la durée standard d'une formation IA à Paris ?", a: "La durée standard est d'une journée (7 heures), en présentiel ou distanciel. Pour des sessions plus approfondies ou multi-outils, nous proposons des parcours de 2 à 3 jours répartis sur plusieurs semaines pour permettre la pratique entre les sessions." },
       { q: "Faut-il avoir des prérequis techniques pour une formation IA à Paris ?", a: "Non. Nos formations s'adaptent à tous les niveaux, du grand débutant qui n'a jamais utilisé ChatGPT au profil avancé qui veut maîtriser le prompt engineering. Le niveau du groupe est calibré lors de l'audit préalable." },
-      { q: "Une formation IA à Paris est-elle finançable à 100 % ?", a: "Oui, dans la grande majorité des cas. Masteria est certifié Qualiopi, ce qui rend nos formations éligibles aux financements OPCO. Selon votre OPCO et votre taille d'entreprise, la prise en charge peut couvrir 100 % du coût pédagogique. Notre équipe vous accompagne dans le montage du dossier." },
+      { q: "Une formation IA à Paris est-elle finançable ?", a: "Oui, par votre OPCO. Masteria est certifié Qualiopi, ce qui rend nos formations éligibles aux financements OPCO. La part prise en charge dépend de votre OPCO, de votre branche et de la taille de l'entreprise ; depuis le 1er octobre 2026, la plupart des OPCO remboursent l'entreprise après paiement. Nous préparons avec vous le programme et la convention." },
       { q: "Où se déroule la formation IA à Paris ?", a: "Soit dans vos locaux à Paris ou Île-de-France (option la plus fréquente), soit en distanciel synchrone via Teams ou Zoom. Si vos locaux ne le permettent pas, nous pouvons proposer des salles de formation dans les 1er, 8e ou 15e arrondissements." },
       { q: "Pouvez-vous former simultanément Paris et province ?", a: "Oui, le format distanciel synchrone permet de réunir simultanément des collaborateurs de plusieurs sites (Paris, Lyon, Bordeaux, etc.) dans la même session, avec des exercices adaptés au format à distance. C'est une option fréquente pour les groupes multi-sites." },
     ],
     cta: {
       title: "Organiser une formation IA à Paris avec Masteria",
-      desc: "Devis sous 24h. Présentiel dans vos locaux à Paris ou en distanciel synchrone. Certifié Qualiopi, finançable à 100 % par votre OPCO.",
+      desc: "Devis sous 24h. Présentiel dans vos locaux à Paris ou en distanciel synchrone. Certifié Qualiopi, finançable par votre OPCO.",
       buttons: [
         { label: "Demander un devis", href: '/contact', primary: true },
         { label: "Voir les formations IA", href: '/formation-intelligence-artificielle' },
@@ -4254,7 +4259,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Comment former une équipe commerciale qui n'a jamais utilisé l'IA ?", a: "Format recommandé : 1 journée d'initiation suivie d'un suivi à 30 jours pour vérifier l'ancrage. La journée combine fondamentaux (prompt engineering) et cas pratiques sur les vrais prospects/propositions. Le suivi à 30 jours mesure l'adoption réelle et corrige les blocages." },
       { q: "L'IA peut-elle remplacer un commercial ?", a: "Non. L'IA accélère les tâches préparatoires (recherche, rédaction, mise en forme) mais ne remplace ni la relation client, ni la négociation, ni le closing. Les équipes formées vendent plus parce qu'elles passent plus de temps en contact direct, pas parce que l'IA vend à leur place." },
       { q: "Comment éviter que les commerciaux utilisent l'IA pour des tâches inappropriées ?", a: "Une charte d'usage IA spécifique aux fonctions commerciales doit définir : ce qui peut être collé dans l'IA (informations publiques, données anonymisées) versus ce qui ne doit pas l'être (contrats signés, données nominatives clients, prix négociés). La formation inclut systématiquement ce volet sécurité." },
-      { q: "Combien coûte une formation IA pour une équipe de 10 commerciaux ?", a: "En intra à Paris ou en distanciel : 1 980 €/jour pour le groupe (jusqu'à 12 personnes), soit 150 €/personne. Souvent finançable à 100 % par votre OPCO (Atlas pour le conseil/banque, Akto pour les services, Afdas pour les médias)." },
+      { q: "Combien coûte une formation IA pour une équipe de 10 commerciaux ?", a: "En intra à Paris ou en distanciel : 1 980 €/jour pour le groupe (jusqu'à 12 personnes), soit 150 €/personne. Souvent finançable par votre OPCO (Atlas pour le conseil/banque, Akto pour les services, Afdas pour les médias)." },
     ],
     cta: {
       title: "Former vos commerciaux à l'IA",
@@ -4708,6 +4713,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Formation IA pour le CSE", href: '/formation-cse-ia' },
       { label: "Conseil en intelligence artificielle", href: '/conseil-intelligence-artificielle' },
       { label: "Formation IA débutant", href: '/formation-ia-debutant' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
@@ -4912,7 +4918,7 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Cas d'usage réels : quelle voie de financement choisir ?" },
       { type: 'h3', text: "Cas 1 — Salarié dans une PME, l'employeur veut former l'équipe" },
-      { type: 'p', text: "Voie : <strong>OPCO via plan de développement des compétences</strong>. L'employeur monte le dossier (ou Masteria le monte pour lui), prise en charge jusqu'à 100 %, formation sur le temps de travail, programme construit sur les vrais cas d'usage de l'entreprise." },
+      { type: 'p', text: "Voie : <strong>OPCO via plan de développement des compétences</strong>. L'employeur dépose la demande (Masteria prépare avec lui le programme et la convention), prise en charge jusqu'à 100 %, formation sur le temps de travail, programme construit sur les vrais cas d'usage de l'entreprise." },
       { type: 'h3', text: "Cas 2 — Indépendant ou freelance qui veut se former" },
       { type: 'p', text: "Voie : <strong>FAF (Fonds d'Assurance Formation)</strong> selon votre statut — FIF-PL pour professions libérales, AGEFICE pour commerçants, FAFCEA pour artisans. Prise en charge variable mais souvent intéressante. Le CPF reste une option si la certification ciblée est éligible." },
       { type: 'h3', text: "Cas 3 — Demandeur d'emploi en reconversion vers les métiers de l'IA" },
@@ -5444,6 +5450,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Consultant en visibilité IA : être cité par les moteurs de réponse", href: '/consultant-visibilite-ia' },
       { label: "SEO + IA : la nouvelle stratégie content", href: '/blog/seo-ia-strategie-content-2026' },
       { label: "Formation IA marketing", href: '/blog/formation-ia-marketing-equipes' },
       { label: "Formation IA générative", href: '/blog/formation-ia-generative-chatgpt-midjourney' },
@@ -5521,6 +5528,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Consultant en visibilité IA (GEO)", href: '/consultant-visibilite-ia' },
       { label: "GEO et IA générative", href: '/blog/geo-referencement-ia-generative-entreprise' },
       { label: "Référencement AIO : définition et stratégie de contenu", href: '/blog/referencement-aio-strategie-contenu-ia' },
       { label: "Stratégie marketing IA : humains et IA, social media", href: '/blog/strategie-marketing-ia-humains-social-media' },
@@ -5610,6 +5618,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Former les élus du CSE et la direction à l'IA", href: '/formation-cse-ia' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
       { label: "Formation IA pour les RH", href: '/formation-ia-ressources-humaines' },
       { label: "Sécurité IA et RGPD en entreprise", href: '/blog/securite-ia-entreprise-rgpd' },
@@ -5761,7 +5770,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Faut-il avoir déjà utilisé ChatGPT ?", a: "Non. La formation part du niveau zéro et est calibrée pour des profils non techniques. À la fin de la journée, chaque participante a créé ses propres prompts adaptés à ses dossiers." },
       { q: "Microsoft Copilot est-il obligatoire ?", a: "Non, mais il est très recommandé. Si l'entreprise utilise Microsoft 365, déployer Copilot sur les postes des assistantes a un retour sur investissement très rapide. Sinon, ChatGPT seul couvre déjà 70 % des cas." },
       { q: "Quelle est la durée idéale ?", a: "1 jour pour les fondamentaux. Nous recommandons un Sprint IA complémentaire (3h) 4 à 6 semaines après pour consolider les usages et résoudre les blocages." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. Finançable à 100 % via OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. Finançable via OPCO." },
       { q: "Est-ce que ça remplace l'assistante ?", a: "Non. L'IA automatise les tâches répétitives mais n'a ni jugement, ni relationnel, ni capacité d'arbitrage. Elle libère du temps pour ce qui demande vraiment une assistante humaine : anticipation, sens politique, relations dirigeants." },
       { q: "Y a-t-il un suivi après la formation ?", a: "Oui : accès à une bibliothèque de prompts métier, un canal Slack de questions/réponses pendant 30 jours, et une session de retour d'expérience optionnelle." },
     ],
@@ -5837,7 +5846,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Peut-on coller des cahiers des charges confidentiels dans ChatGPT ?", a: "Pas dans la version gratuite. Avec ChatGPT Enterprise, Copilot ou Mistral en mode entreprise, vos données ne sont pas réutilisées pour entraîner les modèles. Une partie de la formation est dédiée à ces règles." },
       { q: "Les outils Achats spécialisés (Ivalua, Coupa) ont déjà de l'IA, pourquoi former ?", a: "Parce que 60 à 80 % du travail de l'acheteur se fait hors de ces plateformes : Word, Excel, mails, recherche web. Là où ChatGPT et Copilot apportent le plus de gains immédiats." },
       { q: "Quelle est la durée idéale ?", a: "1 jour pour les acheteurs opérationnels. 2 jours pour les responsables Achats / direction Achats qui doivent aussi piloter le déploiement IA dans leur équipe." },
-      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. 100 % finançable via OPCO." },
+      { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel sur mesure. Finançable via OPCO." },
     ],
     cta: {
       title: "Former votre direction Achats à l'IA",
@@ -5910,7 +5919,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "L'IA va-t-elle remplacer les conseillers ?", a: "Non. Les conseillers humains restent indispensables sur les cas complexes, émotionnels et à enjeu. L'IA prend en charge le L1 (questions répétitives) et augmente le conseiller sur le L2/L3 via la suggestion de réponse." },
       { q: "Faut-il un outil spécifique avant de former ?", a: "Pas nécessairement. La formation peut être un préalable au choix de l'outil. Une journée d'audit IA permet de cadrer les besoins et de prioriser les cas d'usage avant tout investissement." },
       { q: "Combien de temps pour voir les résultats ?", a: "Sur un copilote conseiller bien déployé : 4 à 8 semaines pour mesurer le gain de productivité. Sur un chatbot client : 6 à 12 semaines pour atteindre un taux de résolution acceptable (>50 %)." },
-      { q: "Quel coût ?", a: "3 960 € pour 2 jours (soit 1 980 € / jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. 100 % finançable OPCO." },
+      { q: "Quel coût ?", a: "3 960 € pour 2 jours (soit 1 980 € / jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
       { q: "Comment éviter qu'un chatbot raconte n'importe quoi ?", a: "C'est l'objet du Jour 2 : architecture RAG, validation de la base de connaissances, évaluation de la qualité, garde-fous (guardrails). Un chatbot 'lâché' sans cadrage est presque toujours un échec." },
       { q: "Et la formation des superviseurs ?", a: "Elle est intégrée au Jour 2. Un module spécifique aide les superviseurs à manager une équipe augmentée par l'IA : objectifs, contrôle qualité, plan de formation continue." },
     ],
@@ -5989,7 +5998,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Quelle est la différence avec une formation managériale classique ?", a: "Cette formation se concentre sur la dimension IA : pilotage des usages, objectifs, conformité, accompagnement spécifique. Elle ne remplace pas une formation au management mais la complète." },
       { q: "Et si certains de mes collaborateurs refusent l'IA ?", a: "Le Jour 2 inclut un module sur les 4 profils de résistance au changement et les leviers managériaux pour chacun (rationnel, émotionnel, identitaire, politique)." },
       { q: "Faut-il rendre l'usage de l'IA obligatoire ?", a: "La réponse rapide : non, mais il faut le rendre légitime, sécurisé et soutenu. Imposer crée de la défiance ; cadrer et outiller crée de l'adoption." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 managers, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable via OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 managers, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). Finançable via OPCO." },
     ],
     cta: {
       title: "Former vos managers à piloter l'IA",
@@ -6002,312 +6011,6 @@ const BLOG_ARTICLES_BASE = [
       { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
-    ],
-  },
-  {
-    slug: 'formation-veille-ia-organiser-entreprise',
-    tag: 'Productivité',
-    title: "Organiser sa veille avec l'IA : formation 1 jour pour ne plus jamais manquer une info",
-    metaTitle: "Formation veille avec l'IA – 1 jour | Masteria",
-    metaDesc: "Formation 1 jour pour structurer sa veille avec l'IA : Perplexity, ChatGPT, agrégateurs, alertes, synthèses hebdo. OPCO, Qualiopi.",
-    date: '26 avril 2026',
-    datePublished: '2026-04-26',
-    dateModified: '2026-04-26',
-    readTime: '9 min',
-    excerpt: "La veille est le métier dans lequel l'IA générative apporte le plus de gains immédiats. Voici une formation d'1 jour pour structurer une veille intelligente, automatisée et exploitable.",
-    intro: "Tout le monde fait de la veille. Peu de gens la font bien. Et presque personne ne la fait avec l'IA en 2026, alors que c'est probablement le cas d'usage le plus rentable de ChatGPT et Perplexity en entreprise. Cette formation d'1 jour donne une méthode complète pour mettre en place une veille IA qui produit, chaque semaine, une synthèse exploitable pour le management.",
-    blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-veille' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Veille avec l'IA →</a>" },
-      { type: 'h2', text: "Pourquoi (presque) tout le monde rate sa veille" },
-      { type: 'ul', items: [
-        "Trop de sources, lues superficiellement",
-        "Pas de méthode de tri et de qualification",
-        "Pas de format restitution clair",
-        "Pas de fréquence régulière",
-        "Pas d'outil d'aide : on lit tout à la main",
-      ] },
-
-      { type: 'h2', text: "La veille IA en 4 briques" },
-      {
-        type: 'table',
-        headers: ['Brique', 'Outils', 'Objectif'],
-        rows: [
-          ['Capter', 'Feedly, Google Alertes, agrégateurs RSS', 'Avoir un flux de sources fiables'],
-          ['Filtrer', 'ChatGPT / Claude (résumés, qualification)', 'Garder 10 % du flux : ce qui mérite attention'],
-          ['Synthétiser', 'Perplexity / Claude (notes structurées)', 'Produire une note de 1-2 pages exploitable'],
-          ['Diffuser', 'Newsletter interne, canal Slack/Teams, mémo dirigeant', 'Rendre la veille utile pour les décideurs'],
-        ],
-      },
-
-      { type: 'h2', text: "Programme d'1 jour" },
-      { type: 'h3', text: "Matin — Structurer sa veille" },
-      { type: 'ul', items: [
-        "Diagnostiquer sa veille actuelle : sources, fréquence, restitution",
-        "Choisir 5 à 10 sources fiables sur son secteur",
-        "Mettre en place un agrégateur (Feedly ou alternative)",
-        "Qualifier ses signaux faibles avec ChatGPT",
-      ] },
-      { type: 'h3', text: "Après-midi — Automatiser et restituer" },
-      { type: 'ul', items: [
-        "Construire un prompt de synthèse hebdomadaire",
-        "Utiliser Perplexity pour creuser un sujet en 20 minutes",
-        "Mettre en forme une note de veille pour le COMEX",
-        "Diffuser en interne (newsletter, canal Slack, mémo)",
-      ] },
-
-      { type: 'callout', text: "À la fin de la journée, chaque participant repart avec sa propre veille IA opérationnelle, personnalisée à son secteur, et un planning de production de notes hebdomadaires." },
-
-      { type: 'h2', text: "Pour qui ?" },
-      { type: 'ul', items: [
-        "Chargés de veille, knowledge managers",
-        "Responsables marketing et communication",
-        "Chefs de produit, business developers",
-        "Consultants, auditeurs, analystes",
-        "Tout dirigeant ou cadre dirigeant qui veut professionnaliser sa veille",
-      ] },
-    ],
-    faq: [
-      { q: "Quels outils utiliser ?", a: "Le combo gagnant en 2026 : Feedly (capture) + ChatGPT ou Claude (filtrage + synthèse) + Perplexity (recherche approfondie). On peut faire 80 % du travail avec ces 3 outils." },
-      { q: "Faut-il payer Perplexity ?", a: "La version gratuite suffit pour 80 % des cas. La version Pro (20 €/mois) débloque la recherche approfondie (deep research) et est très rentable pour un veilleur professionnel." },
-      { q: "Comment éviter de dépendre d'une seule IA ?", a: "Croisez 2 sources sur les sujets à enjeu : ChatGPT + Perplexity, ou Claude + Perplexity. Vous obtenez des angles différents et limitez les hallucinations." },
-      { q: "Est-ce que l'IA peut halluciner sur ma veille ?", a: "Oui, et c'est un vrai risque. La formation enseigne 4 contre-mesures : sources liées explicitement, demande de citation, vérification croisée, retour à la source." },
-      { q: "Combien ça coûte ?", a: "1 980 € / jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel. 100 % finançable OPCO." },
-    ],
-    cta: {
-      title: "Mettre en place une veille IA chez vous",
-      text: "Formation 1 jour, méthode opérationnelle, présentiel ou distanciel.",
-      buttonLabel: "Demander un devis",
-      buttonHref: '/contact',
-    },
-    internalLinks: [
-      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
-      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
-      { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
-      { label: "GEO : référencement IA générative", href: '/blog/geo-referencement-ia-generative-entreprise' },
-    ],
-  },
-  {
-    slug: 'formation-analyse-donnees-ia-excel-chatgpt',
-    tag: 'Data',
-    title: "Analyser ses données avec l'IA : Excel + ChatGPT, formation 2 jours",
-    metaTitle: "Formation analyse de données IA Excel + ChatGPT | Masteria",
-    metaDesc: "Formation 2 jours pour analyser des données avec Excel, Copilot et ChatGPT. Tableaux croisés, scripts, visualisations. OPCO, Qualiopi.",
-    date: '26 avril 2026',
-    datePublished: '2026-04-26',
-    dateModified: '2026-04-26',
-    readTime: '11 min',
-    excerpt: "Pas besoin d'être data scientist pour analyser des données en 2026. Avec Excel, Copilot et ChatGPT, n'importe quel cadre peut produire une analyse propre, visuelle et exploitable.",
-    intro: "L'analyse de données reste, dans la plupart des PME et ETI, un goulot d'étranglement : on a les données, on n'a pas le temps. Avec ChatGPT et Microsoft Copilot dans Excel, ce goulot s'effondre : un cadre formé peut, en 2 heures, produire un tableau croisé, une analyse de tendance et un graphique exploitable. Cette formation de 2 jours est conçue pour des profils non-data.",
-    blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-analyse-donnees' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Analyse de données IA Excel + ChatGPT →</a>" },
-      { type: 'h2', text: "Programme 2 jours" },
-      { type: 'h3', text: "Jour 1 — Excel + Copilot pour les non-experts" },
-      { type: 'ul', items: [
-        "Bonnes pratiques de structuration de données dans Excel",
-        "Tableaux croisés dynamiques en 10 minutes avec Copilot",
-        "Formules avancées générées en langage naturel",
-        "Nettoyage de données automatique avec Copilot",
-      ] },
-      { type: 'h3', text: "Jour 2 — ChatGPT pour analyser et raconter" },
-      { type: 'ul', items: [
-        "Analyser un fichier CSV avec ChatGPT (Advanced Data Analysis)",
-        "Demander à ChatGPT de générer des visualisations",
-        "Faire raconter une histoire à ses données : insight, narratif, recommandation",
-        "Créer un dashboard simple sous Power BI ou Looker Studio",
-      ] },
-
-      { type: 'h2', text: "5 cas d'usage concrets" },
-      {
-        type: 'table',
-        headers: ['Cas d\'usage', 'Outil', 'Temps avant / après'],
-        rows: [
-          ['Analyser un fichier de ventes (10 000 lignes)', 'ChatGPT + Excel', '2 jours → 1 h'],
-          ['Construire un dashboard hebdo', 'Excel Copilot', '1 demi-journée → 30 min'],
-          ['Détecter des anomalies sur un budget', 'ChatGPT', '1 j → 20 min'],
-          ['Générer un rapport mensuel', 'ChatGPT + Word Copilot', '1 demi-journée → 45 min'],
-          ['Préparer un cohort analysis simple', 'ChatGPT', '2 j → 2 h'],
-        ],
-      },
-
-      { type: 'h2', text: "Pour qui ?" },
-      { type: 'ul', items: [
-        "Contrôleurs de gestion, financiers, comptables",
-        "Marketers, growth, CRM managers",
-        "Commerciaux pilotant un portefeuille",
-        "Chargés d'études et chefs de projet",
-        "Toute personne ayant des données à analyser sans être data analyst",
-      ] },
-
-      { type: 'callout', text: "Pré-requis : maîtriser Excel à un niveau intermédiaire (tableaux croisés, fonctions de base). Pas de pré-requis technique au-delà." },
-    ],
-    faq: [
-      { q: "Faut-il savoir coder ?", a: "Non. La formation est calibrée pour des profils non techniques. Tout passe par le langage naturel : on demande, ChatGPT et Copilot exécutent." },
-      { q: "Faut-il avoir Microsoft Copilot ?", a: "C'est un gros plus. Le Jour 2 fonctionne aussi sans Copilot (avec ChatGPT seul), mais le Jour 1 perd 30 % de son intérêt sans Copilot dans Excel." },
-      { q: "Quelle est la différence avec une formation Power BI ?", a: "Power BI est un outil de dashboarding. Cette formation est plus large : structurer, analyser, raconter, restituer. Power BI peut être un module complémentaire après." },
-      { q: "Est-ce qu'on peut analyser des données confidentielles ?", a: "Avec ChatGPT Enterprise / Copilot, oui. Avec ChatGPT gratuit, non. La formation rappelle ces règles le matin du Jour 1." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 personnes, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable OPCO." },
-    ],
-    cta: {
-      title: "Former vos équipes à l'analyse de données IA",
-      text: "Formation 2 jours, sur cas réels, présentiel ou distanciel.",
-      buttonLabel: "Demander un devis",
-      buttonHref: '/contact',
-    },
-    internalLinks: [
-      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
-      { label: "Microsoft Copilot, le guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
-      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
-      { label: "Sprint IA Excel", href: '/blog/sprint-ia-formations-courtes-entreprise' },
-    ],
-  },
-  {
-    slug: 'formation-creativite-ia-brainstorming',
-    tag: 'Productivité',
-    title: "Booster sa créativité avec l'IA : formation 1 jour pour brainstorming, idéation, naming",
-    metaTitle: "Formation créativité avec l'IA – 1 jour | Masteria",
-    metaDesc: "Formation 1 jour pour utiliser l'IA en idéation, brainstorming, naming, copywriting créatif. ChatGPT, Claude, méthodologies. OPCO, Qualiopi.",
-    date: '26 avril 2026',
-    datePublished: '2026-04-26',
-    dateModified: '2026-04-26',
-    readTime: '8 min',
-    excerpt: "L'IA générative ne tue pas la créativité, elle la décuple. Encore faut-il savoir l'utiliser comme un partenaire de brainstorming et non comme une machine à idées plates.",
-    intro: "Beaucoup d'équipes utilisent ChatGPT pour générer des idées et obtiennent... des idées banales. Le problème n'est pas l'IA : c'est la manière de la prompter. Cette formation d'1 jour donne 6 méthodes éprouvées pour transformer ChatGPT et Claude en partenaires d'idéation, de naming, de campagnes, de copywriting, de scénarios.",
-    blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-creativite' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Créativité avec l'IA →</a>" },
-      { type: 'h2', text: "Pourquoi vos brainstormings IA sont plats" },
-      { type: 'ul', items: [
-        "Vous demandez '10 idées pour…' sans contexte → l'IA tape dans la moyenne",
-        "Vous n'imposez pas de contraintes → idées convergentes",
-        "Vous ne demandez pas d'angles opposés → manque de tension créative",
-        "Vous arrêtez à la première version → vous prenez la moins originale",
-      ] },
-
-      { type: 'h2', text: "6 méthodes de brainstorming IA" },
-      {
-        type: 'table',
-        headers: ['Méthode', 'Principe', 'Cas d\'usage'],
-        rows: [
-          ['Brainstorming par contraintes', 'Imposer 3-5 contraintes fortes', 'Naming, slogans'],
-          ['Brainstorming par angles opposés', 'Demander 3 angles radicalement différents', 'Stratégie, campagnes'],
-          ['Brainstorming par persona', 'Faire répondre 5 profils différents', 'UX, marketing'],
-          ['Brainstorming SCAMPER (avec IA)', 'Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse', 'Innovation produit'],
-          ['Brainstorming par analogie', 'Demander des analogies hors secteur', 'Storytelling, pitch'],
-          ['Brainstorming itératif', 'Critiquer puis raffiner 3-4 fois', 'Idées finales'],
-        ],
-      },
-
-      { type: 'h2', text: "Programme 1 jour" },
-      { type: 'h3', text: "Matin — Méthodes de prompting créatif" },
-      { type: 'ul', items: [
-        "Bases : pourquoi ChatGPT donne des idées plates par défaut",
-        "Les 6 méthodes de brainstorming IA",
-        "Choisir entre ChatGPT, Claude et Mistral selon le besoin",
-      ] },
-      { type: 'h3', text: "Après-midi — Cas pratiques" },
-      { type: 'ul', items: [
-        "Trouver un nom de produit en 30 minutes (au lieu d'1 mois)",
-        "Construire une campagne marketing avec 3 angles opposés",
-        "Générer un pitch en 5 versions",
-        "Faire jouer 5 personas critiques sur un projet",
-      ] },
-
-      { type: 'callout', text: "Cette formation n'a pas pour but de remplacer les créatifs. Elle vise à augmenter leur productivité et à élargir leur exploration créative en début de projet." },
-    ],
-    faq: [
-      { q: "Cette formation est-elle réservée aux créatifs ?", a: "Non. Elle s'adresse à tous ceux qui produisent des idées : marketing, communication, RH, R&D, innovation, dirigeants." },
-      { q: "Est-ce que l'IA va voler les idées ?", a: "Non si on utilise les versions Pro / Enterprise. Sur ChatGPT gratuit, ne jamais coller un projet stratégique confidentiel : la formation rappelle ces règles." },
-      { q: "Quelle IA est la plus créative ?", a: "Claude (Anthropic) est souvent jugé plus nuancé et plus subtil que ChatGPT pour le brainstorming et le copywriting. ChatGPT reste excellent et plus polyvalent. Mistral progresse vite." },
-      { q: "Combien ça coûte ?", a: "1 980 € / jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel. 100 % finançable OPCO." },
-      { q: "Quelle complémentarité avec une formation copywriting ?", a: "Très forte. Cette formation peut être un module amont (idéation) ou aval (raffinage) d'une formation copywriting plus complète." },
-    ],
-    cta: {
-      title: "Booster la créativité de vos équipes",
-      text: "Formation 1 jour pour transformer ChatGPT et Claude en partenaires de brainstorming.",
-      buttonLabel: "Demander un devis",
-      buttonHref: '/contact',
-    },
-    internalLinks: [
-      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
-      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
-      { label: "Sprint IA, les formations courtes", href: '/blog/sprint-ia-formations-courtes-entreprise' },
-      { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
-    ],
-  },
-  {
-    slug: 'formation-ecrits-pro-ia-redaction',
-    tag: 'Productivité',
-    title: "Optimiser ses écrits professionnels avec l'IA : formation 1 jour",
-    metaTitle: "Formation écrits pro avec l'IA – 1 jour | Masteria",
-    metaDesc: "Formation 1 jour pour écrire plus vite avec l’IA : mails, rapports, comptes-rendus et propositions soignés grâce à ChatGPT et Copilot. OPCO, Qualiopi.",
-    date: '26 avril 2026',
-    datePublished: '2026-04-26',
-    dateModified: '2026-04-26',
-    readTime: '8 min',
-    excerpt: "Mails, comptes-rendus, rapports, propositions, notes : 30 à 50 % du temps des cadres se passe à l'écrit. L'IA générative permet de diviser ce temps par deux, sans perdre en qualité.",
-    intro: "Cette formation d'1 jour s'adresse aux cadres et collaborateurs qui passent une part importante de leur temps à écrire (mails, rapports, comptes-rendus, propositions commerciales, notes internes). Objectif : rédiger 2x plus vite, avec plus de clarté, sans tomber dans le ChatGPT-style générique reconnaissable à 100 mètres.",
-    blocks: [
-      { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-ecrits-pro' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Écrits professionnels avec l'IA →</a>" },
-      { type: 'h2', text: "Le piège du ChatGPT-style" },
-      { type: 'p', text: "Les textes 100 % ChatGPT sont aujourd'hui détectés instantanément par les lecteurs : phrases lisses, vocabulaire prévisible, structures stéréotypées. La formation enseigne comment éviter ce piège en gardant son ton, son vocabulaire métier et ses tics de style — tout en gagnant un temps fou." },
-
-      { type: 'h2', text: "5 types d'écrits couverts" },
-      {
-        type: 'table',
-        headers: ['Type d\'écrit', 'Outil principal', 'Gain de temps moyen'],
-        rows: [
-          ['Mail professionnel (commercial, RH, interne)', 'Copilot Outlook / ChatGPT', '70 %'],
-          ['Compte-rendu de réunion', 'ChatGPT + Whisper / Copilot Teams', '80 %'],
-          ['Rapport ou note interne', 'ChatGPT', '40-50 %'],
-          ['Proposition commerciale', 'ChatGPT + Word Copilot', '50 %'],
-          ['Article de blog ou newsletter', 'ChatGPT + Claude', '60 %'],
-        ],
-      },
-
-      { type: 'h2', text: "Programme 1 jour" },
-      { type: 'h3', text: "Matin — Bases du prompting pour la rédaction" },
-      { type: 'ul', items: [
-        "Donner du contexte à l'IA : qui parle, à qui, dans quel but",
-        "Imposer son ton et son vocabulaire métier",
-        "Faire reformuler, raccourcir, structurer un texte existant",
-        "Détecter et éviter le ChatGPT-style",
-      ] },
-      { type: 'h3', text: "Après-midi — Cas pratiques" },
-      { type: 'ul', items: [
-        "Mail commercial difficile (relance, refus, négociation)",
-        "Compte-rendu de réunion à partir d'un enregistrement",
-        "Rapport de 5 pages structuré en 30 minutes",
-        "Proposition commerciale sur mesure en 1 heure",
-      ] },
-
-      { type: 'callout', text: "Bonus : chaque participant repart avec sa bibliothèque de 15 prompts métier prêts à l'emploi, calibrés sur son ton et ses dossiers." },
-
-      { type: 'h2', text: "Pour qui ?" },
-      { type: 'ul', items: [
-        "Cadres dirigeants et middle management",
-        "Commerciaux et business developers",
-        "RH, communication, marketing",
-        "Chefs de projet, consultants, avocats, experts-comptables",
-        "Toute personne dont 30 % du temps ou plus est consacré à l'écrit",
-      ] },
-    ],
-    faq: [
-      { q: "Et si mon métier exige un style très spécifique (juridique, médical) ?", a: "C'est un avantage : plus le style est codifié, plus l'IA peut le reproduire fidèlement avec le bon prompt. La formation inclut un module sur la réplication de styles métiers." },
-      { q: "Comment éviter que mes mails ressemblent à du ChatGPT ?", a: "C'est précisément ce qu'enseigne le matin de la formation : prompts d'imitation de style, intégration de tics personnels, contrôle du registre. À la fin de la journée, vos mails IA sont indétectables." },
-      { q: "Faut-il Microsoft Copilot ?", a: "Pas obligatoire. Avec ChatGPT seul, on couvre 80 % des cas. Copilot ajoute la fluidité d'avoir l'IA directement dans Outlook, Word et Teams." },
-      { q: "Quelle complémentarité avec une formation à l'écriture professionnelle ?", a: "Cette formation complète une formation rédactionnelle classique : la première donne les bases du bien-écrire, celle-ci donne le levier pour bien-écrire vite avec l'IA." },
-      { q: "Combien ça coûte ?", a: "1 980 € / jour, en intra-entreprise (jusqu'à 12 personnes) comme en accompagnement individuel. 100 % finançable OPCO." },
-    ],
-    cta: {
-      title: "Former vos équipes à mieux écrire avec l'IA",
-      text: "Formation 1 jour, ROI immédiat sur les mails, comptes-rendus et propositions.",
-      buttonLabel: "Demander un devis",
-      buttonHref: '/contact',
-    },
-    internalLinks: [
-      { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
-      { label: "Microsoft Copilot, le guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
-      { label: "ChatGPT en entreprise", href: '/blog/automatiser-taches-repetitives-chatgpt' },
-      { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
     ],
   },
   {
@@ -6373,7 +6076,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Quelle différence avec une formation gestion de projet classique ?", a: "Les projets IA ont des spécificités fortes : qualité de la donnée, AI Act, MLOps, mesure d'impact, conduite du changement très spécifique. Une formation gestion de projet généraliste ne couvre rien de tout cela." },
       { q: "Faut-il déjà avoir un projet IA en cours ?", a: "C'est un plus, pas une obligation. Si oui, la formation devient un accélérateur direct. Sinon, elle prépare au lancement du premier projet." },
       { q: "Et l'AI Act ?", a: "Couvert au Jour 1 : classification des usages, obligations selon le niveau de risque, articulations avec le RGPD. Suffisant pour piloter ; non suffisant pour qualifier juridiquement seul (un juriste reste nécessaire en parallèle)." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours espacés (jusqu'à 12 participants, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours espacés (jusqu'à 12 participants, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). Finançable OPCO." },
     ],
     cta: {
       title: "Former vos chefs de projet IA",
@@ -6457,7 +6160,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Comment financer un plan IA ?", a: "OPCO en majorité (jusqu'à 100 % pour les TPE/PME), CPF (sur les formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
       { q: "Quelle est l'obligation AI Act pour les RH ?", a: "L'article 4 de l'AI Act impose que toute personne utilisant un système d'IA dans son travail dispose d'un niveau de littératie IA suffisant. Cela ne définit pas une formation obligatoire stricto sensu, mais ouvre une responsabilité de l'employeur. La formation détaille les implications pratiques." },
       { q: "Comment mesurer l'impact ?", a: "3 niveaux de mesure : opérationnel (gain de temps, qualité), business (ROI, satisfaction client), stratégique (capacité IA de l'entreprise). Le Jour 2 donne des grilles concrètes par niveau." },
-      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 DRH/RRH, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). 100 % finançable OPCO." },
+      { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 DRH/RRH, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). Finançable OPCO." },
     ],
     cta: {
       title: "Construire votre plan IA RH",
@@ -6792,6 +6495,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Conseil IA pour les PME", href: '/conseil-ia-pme' },
       { label: "Automatisation IA : le guide complet", href: '/automatisation-ia' },
       { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia' },
       { label: "Formation automatisation IA", href: '/formation-automatisation-ia' },

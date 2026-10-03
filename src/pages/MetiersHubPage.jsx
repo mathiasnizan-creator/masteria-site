@@ -59,7 +59,7 @@ const FAQ_IA = [
   },
   {
     q: "Les formations sont-elles finançables par un OPCO ?",
-    a: "Oui, toutes nos formations intelligence artificielle sont finançables à 100 % par les OPCO (Opérateurs de Compétences) au titre du plan de développement des compétences. Nous fournissons un devis, un programme détaillé, une convention de formation et une attestation de présence, documents nécessaires à toute prise en charge. Notre équipe accompagne les entreprises dans le montage des dossiers.",
+    a: "Oui, toutes nos formations intelligence artificielle sont finançables par les OPCO (Opérateurs de Compétences) au titre du plan de développement des compétences. Nous fournissons un devis, un programme détaillé, une convention de formation et une attestation de présence, documents nécessaires à toute prise en charge. Notre équipe accompagne les entreprises dans le montage des dossiers.",
   },
   {
     q: "Combien coûte une formation IA en entreprise ?",
@@ -655,7 +655,7 @@ export default function MetiersHubPage() {
               {
                 icon: ShieldCheck, color: '#10a37f',
                 title: 'Organisme certifié Qualiopi',
-                desc: "Formation inscrite au Répertoire Spécifique et finançable à 100 % par les OPCO. Certification Qualiopi délivrée pour 3 ans, avec audit de mi-parcours après 18 mois.",
+                desc: "Certificat Qualiopi n° 725311-1 délivré par Certifopac au titre des actions de formation, valable jusqu'au 28 janvier 2029 avec un audit de surveillance à mi-parcours. Vos formations sont finançables par votre OPCO, selon votre branche et vos fonds.",
               },
               {
                 icon: UserCheck, color: '#2563EB',

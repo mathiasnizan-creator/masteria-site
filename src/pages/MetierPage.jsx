@@ -85,7 +85,7 @@ const METIER_CONTENT = {
     metaTitle: 'Formation IA Marketing | Qualiopi | Masteria',
     metaDesc: 'Formation IA marketing : ChatGPT, Copilot, Gemini appliqués à vos contenus, campagnes et reporting. Certifiée Qualiopi, finançable OPCO. Devis sous 24 h.',
     h1: "Formation IA Marketing : formez vos équipes à l'intelligence artificielle",
-    intro: "Notre formation IA marketing forme vos équipes à l'intelligence artificielle générative appliquée à leur métier : production de contenus, SEO, réseaux sociaux, emailing, publicité et analyse de performance. En 1 à 2 jours, certifiée Qualiopi et 100 % finançable OPCO, elle transforme ChatGPT, Copilot, Gemini, Claude ou Mistral en assistants opérationnels, avec des livrables produits sur vos propres campagnes et une bibliothèque de prompts adaptée à votre marque.",
+    intro: "Notre formation IA marketing forme vos équipes à l'intelligence artificielle générative appliquée à leur métier : production de contenus, SEO, réseaux sociaux, emailing, publicité et analyse de performance. En 1 à 2 jours, certifiée Qualiopi et finançable OPCO, elle transforme ChatGPT, Copilot, Gemini, Claude ou Mistral en assistants opérationnels, avec des livrables produits sur vos propres campagnes et une bibliothèque de prompts adaptée à votre marque.",
     deepDiveTitle: "L'intelligence artificielle appliquée à chaque fonction marketing",
     deepDiveIntro: "Une formation IA marketing utile ne se limite pas à « savoir prompter ». Elle montre comment l'intelligence artificielle générative s'intègre concrètement dans chaque mission de votre équipe, avec des cas d'usage testés sur vos propres projets.",
     deepDive: [
