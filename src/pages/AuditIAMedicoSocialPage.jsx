@@ -692,7 +692,7 @@ export default function AuditIAMedicoSocialPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Notre façon de chiffrer</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le nombre d'établissements et de services fait le prix. Une association de trois établissements sur un département se traite en quelques jours d'expertise ; un groupe régional multi-activités demande davantage, et le devis l'explique ligne à ligne. Quand une journée de diagnostic suffit, nous vous le disons au cadrage.
+                Le nombre d'établissements et de services fait le prix. Une association de trois établissements sur un département se traite en quelques jours d'expertise ; un groupe régional multi-activités demande davantage, et le devis l'explique ligne à ligne. Quand un diagnostic court suffit, nous vous le disons au cadrage.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
@@ -752,7 +752,7 @@ export default function AuditIAMedicoSocialPage() {
               { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Conformité', desc: "Les questions de données personnelles que soulève chaque usage d'IA générative." },
               { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le document d'usage qui suit l'audit : ce que les équipes peuvent faire, avec quels outils et quelles données." },
               { label: 'IA dans la santé et la pharma', href: '/ia-sante-pharma', tag: 'Secteur', desc: "Le panorama des usages de l'IA dans le secteur sanitaire, au-delà du médico-social." },
-              { label: 'Diagnostic IA en une journée', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Quand un seul établissement veut savoir par où commencer, avant un audit plus large." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Quand un seul établissement veut savoir par où commencer, avant un audit plus large." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -822,7 +822,7 @@ export default function AuditIAMedicoSocialPage() {
               Cadrons l'audit IA de vos établissements
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre association : établissements, services, ce qui motive la demande, une échéance de financement s'il y en a une. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit, qui fixe le périmètre et vous dit si une journée de diagnostic suffit.
+              Décrivez-nous votre association : établissements, services, ce qui motive la demande, une échéance de financement s'il y en a une. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit, qui fixe le périmètre et vous dit si un diagnostic plus léger suffit.
             </p>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un audit IA médico-social

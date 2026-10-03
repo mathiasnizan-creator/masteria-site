@@ -657,7 +657,7 @@ export default function ConseilTransformationIAPage() {
             {[
               { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Le cap', desc: "Diagnostic de maturité, cas d'usage priorisés, feuille de route : ce qui précède la transformation." },
               { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "La présence pendant le déploiement : cadrage, choix des outils, adoption, mesure." },
-              { label: 'Conseil IA pour PME', href: '/conseil-ia-pme', tag: 'PME et TPE', desc: "Le format court : un diagnostic d'une journée, deux ou trois processus, le dirigeant qui décide." },
+              { label: 'Conseil IA pour PME', href: '/conseil-ia-pme', tag: 'PME et TPE', desc: "Le format court : un diagnostic resserré, deux ou trois processus, le dirigeant qui décide." },
               { label: 'Audit IA', href: '/audit-ia', tag: 'État des lieux', desc: "L'évaluation complète, maturité, données, outils, conformité, quand la direction veut une vision opposable." },
               { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "La montée en compétence collective qui ouvre et soutient le programme : conférence, ateliers, référents." },
               { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Cadre', desc: "Registre des usages, politique IA, comité, conformité au règlement européen : le cadre du programme." },

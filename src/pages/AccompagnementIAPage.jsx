@@ -96,9 +96,9 @@ const PHASES = [
   {
     num: '01',
     title: 'Cadrer : où l\'IA crée de la valeur chez vous',
-    desc: "État des lieux de vos usages, de vos processus et de vos contraintes, priorisation par impact et par effort. Selon la profondeur voulue, cette phase prend la forme de notre diagnostic d'une journée ou d'un audit complet.",
+    desc: "État des lieux de vos usages, de vos processus et de vos contraintes, priorisation par impact et par effort. Selon la profondeur voulue, cette phase prend la forme de notre diagnostic IA, une intervention courte, ou d'un audit complet.",
     links: [
-      { label: 'Diagnostic IA (1 journée)', href: '/diagnostic-ia' },
+      { label: 'Diagnostic IA', href: '/diagnostic-ia' },
       { label: 'Audit IA complet', href: '/audit-ia' },
       { label: 'Conseil en transformation IA', href: '/conseil-transformation-ia' },
     ],
@@ -249,7 +249,7 @@ const FAQ = [
   },
   {
     q: "Quelle est la différence entre conseil IA et accompagnement IA ?",
-    a: "Le conseil éclaire une décision : audit, stratégie, feuille de route, arbitrages. Il se termine par un livrable. L'accompagnement prend la suite et porte la transformation dans la durée : déploiement des outils, conduite du changement, formation des équipes, mesure de l'adoption. Beaucoup de nos accompagnements commencent par une mission de conseil courte (un diagnostic d'une journée ou un audit) qui fixe le cap ; l'accompagnement transforme ensuite ce cap en usages réels.",
+    a: "Le conseil éclaire une décision : audit, stratégie, feuille de route, arbitrages. Il se termine par un livrable. L'accompagnement prend la suite et porte la transformation dans la durée : déploiement des outils, conduite du changement, formation des équipes, mesure de l'adoption. Beaucoup de nos accompagnements commencent par une mission de conseil courte (un diagnostic ou un audit) qui fixe le cap ; l'accompagnement transforme ensuite ce cap en usages réels.",
   },
   {
     q: "Comment se conduit le changement autour de l'IA ?",
@@ -792,7 +792,7 @@ export default function AccompagnementIAPage() {
             {[
               { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "La montée en compétence collective : conférences, ateliers et parcours métier, finançables OPCO." },
               { label: 'Coaching IA individuel', href: '/coaching-ia', tag: 'Individuel', desc: "Pour les dirigeants et profils clés : le tête-à-tête sur leurs cas réels, au rythme de leur agenda." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Le cadrage en une journée qui ouvre la plupart de nos accompagnements." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Le cadrage court qui ouvre la plupart de nos accompagnements." },
               { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "L'état des lieux complet quand la direction veut une vision exhaustive avant d'engager." },
               { label: 'Méthode & modèles d\'engagement', href: '/methode-projet-ia', tag: 'Méthode', desc: "Forfait, régie ou accompagnement : comment nous contractualisons la présence dans la durée." },
               { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le cadre d'usage qui sécurise l'adoption : ce que les équipes peuvent faire, et comment." },

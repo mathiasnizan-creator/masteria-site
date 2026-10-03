@@ -45,7 +45,7 @@ const METIERS = [
     icon: Compass,
     kicker: 'Penser',
     title: 'Auditer et conseiller',
-    desc: "Il conduit lui-même les audits IA, les diagnostics d'une journée et les missions de stratégie\u00a0: cartographie des processus, priorisation des cas d'usage, gouvernance et conformité (AI Act, RGPD). Il présente les conclusions devant les comités de direction, en français ou en anglais.",
+    desc: "Il conduit lui-même les audits IA, les diagnostics IA et les missions de stratégie\u00a0: cartographie des processus, priorisation des cas d'usage, gouvernance et conformité (AI Act, RGPD). Il présente les conclusions devant les comités de direction, en français ou en anglais.",
     links: [['Audit IA', '/audit-ia'], ['Diagnostic IA', '/diagnostic-ia'], ['Conseil en stratégie IA', '/conseil-intelligence-artificielle']],
   },
   {
@@ -302,7 +302,7 @@ export default function MathiasNizanPage() {
             Parlons de votre projet
           </h2>
           <p style={{ fontSize: 16.5, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 30px' }}>
-            30 minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic d'une journée, outil sur mesure ou formation. L'échange est offert.
+            30 minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic court, outil sur mesure ou formation. L'échange est offert.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 30px', borderRadius: 11, textDecoration: 'none', fontSize: 15.5, fontWeight: 700 }}>

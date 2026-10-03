@@ -17,7 +17,7 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * dont la SERP est tenue par des pages de service (Mister IA, PredexIA, Vaultinum).
  * L'intention informationnelle reste à l'article /blog/audit-ia-entreprise-methode-prix
  * (guide : méthode, normes, prix vérifiés), qui renvoie ici pour la mission.
- * Position dans l'offre : entre le /diagnostic-ia (1 journée) et le programme de
+ * Position dans l'offre : entre le /diagnostic-ia (format court, durée fixée au cadrage) et le programme de
  * transformation — c'est la colonne « Audit IA complet » du tableau de /diagnostic-ia.
  *
  * INTÉGRITÉ (alignée sur l'article, ne pas dévier) : trois types d'audit distincts ;
@@ -134,7 +134,7 @@ const COMPARATIF = [
   {
     critere: 'Durée',
     test: "Trois minutes, en ligne",
-    diagnostic: "Une journée (préparation et restitution incluses)",
+    diagnostic: "Courte, dimensionnée au cadrage selon votre périmètre",
     audit: "De quelques jours à quelques semaines",
   },
   {
@@ -152,7 +152,7 @@ const COMPARATIF = [
   {
     critere: 'Prix',
     test: "Gratuit",
-    diagnostic: "Forfait d'une journée",
+    diagnostic: "Forfait chiffré lors du cadrage",
     audit: "Forfait fixé après un cadrage gratuit",
   },
   {
@@ -314,11 +314,11 @@ const FAQ = [
   },
   {
     q: "Combien de temps dure un audit IA ?",
-    a: "De quelques jours à quelques semaines selon le périmètre, entretiens et restitution compris. Comptez quelques jours d'expertise pour une organisation de taille moyenne sur un périmètre net, étalés sur quelques semaines pour caler les entretiens ; un audit multi-entités ou multi-pays prend davantage, et cela se justifie ligne à ligne dans le devis. Si votre besoin tient en une journée de cadrage, c'est notre diagnostic IA qu'il vous faut, pas un audit.",
+    a: "De quelques jours à quelques semaines selon le périmètre, entretiens et restitution compris. Comptez quelques jours d'expertise pour une organisation de taille moyenne sur un périmètre net, étalés sur quelques semaines pour caler les entretiens ; un audit multi-entités ou multi-pays prend davantage, et cela se justifie ligne à ligne dans le devis. Si votre besoin se limite à un cadrage court, c'est notre diagnostic IA qu'il vous faut, pas un audit.",
   },
   {
     q: "Quelle est la différence entre le diagnostic IA et l'audit IA ?",
-    a: "Le diagnostic est une intervention d'une journée : il cadre vos usages et priorise les cas d'usage pour savoir par où commencer. L'audit évalue en profondeur votre maturité, vos processus, vos données, vos outils et votre conformité, sur plusieurs jours ou semaines, et débouche sur un rapport complet et une feuille de route chiffrée. Le diagnostic est le point d'entrée le plus rapide ; l'audit convient quand vous voulez une vision exhaustive avant d'industrialiser, ou quand la conformité fait partie de la question. Un diagnostic peut précéder un audit ciblé sur les cas retenus.",
+    a: "Le diagnostic est une intervention courte, dont la durée dépend de votre périmètre : il cadre vos usages et priorise les cas d'usage pour savoir par où commencer. L'audit évalue en profondeur votre maturité, vos processus, vos données, vos outils et votre conformité, sur plusieurs jours ou semaines, et débouche sur un rapport complet et une feuille de route chiffrée. Le diagnostic est le point d'entrée le plus rapide ; l'audit convient quand vous voulez une vision exhaustive avant d'industrialiser, ou quand la conformité fait partie de la question. Un diagnostic peut précéder un audit ciblé sur les cas retenus.",
   },
   {
     q: "Le règlement européen sur l'IA impose-t-il de faire auditer nos systèmes ?",
@@ -330,7 +330,7 @@ const FAQ = [
   },
   {
     q: "Un audit intelligence artificielle a-t-il un sens pour une PME ?",
-    a: "Oui, à condition de le dimensionner. Une PME n'a pas besoin d'un audit exhaustif de ses systèmes : elle a besoin de savoir quels processus l'IA peut soulager en premier, quels outils ses équipes utilisent déjà sans cadre, et quelles données sont réellement mobilisables. L'audit se resserre alors sur quelques processus et débouche sur un plan que le dirigeant peut porter seul. Quand la question tient en une journée, nous le disons au cadrage et nous orientons vers le diagnostic IA plutôt que vers l'audit.",
+    a: "Oui, à condition de le dimensionner. Une PME n'a pas besoin d'un audit exhaustif de ses systèmes : elle a besoin de savoir quels processus l'IA peut soulager en premier, quels outils ses équipes utilisent déjà sans cadre, et quelles données sont réellement mobilisables. L'audit se resserre alors sur quelques processus et débouche sur un plan que le dirigeant peut porter seul. Quand un format plus court suffit, nous le disons au cadrage et nous orientons vers le diagnostic IA plutôt que vers l'audit.",
   },
   {
     q: "Comment l'audit IA s'adapte-t-il à une ETI ou à un groupe multi-entités ?",
@@ -346,7 +346,7 @@ const FAQ = [
   },
   {
     q: "Et si l'audit conclut qu'il ne faut rien lancer ?",
-    a: "Alors le rapport le dit, et il vous explique pourquoi : c'est une conclusion utile, qui vous évite des dépenses stériles. Il existe aussi des situations où l'audit lui-même est inutile : premier cas d'usage déjà connu, problème qui relève des données et non de l'IA, décision déjà prise, organisation trop petite pour l'exercice. Nous les vérifions dès le cadrage gratuit, et nous vous réorientons vers un diagnostic d'une journée ou un cadrage court quand c'est la bonne réponse. Un audit vendu à quelqu'un qui n'en a pas besoin est une dépense inutile, et cela se voit toujours à la fin.",
+    a: "Alors le rapport le dit, et il vous explique pourquoi : c'est une conclusion utile, qui vous évite des dépenses stériles. Il existe aussi des situations où l'audit lui-même est inutile : premier cas d'usage déjà connu, problème qui relève des données et non de l'IA, décision déjà prise, organisation trop petite pour l'exercice. Nous les vérifions dès le cadrage gratuit, et nous vous réorientons vers un diagnostic IA ou un cadrage court quand c'est la bonne réponse. Un audit vendu à quelqu'un qui n'en a pas besoin est une dépense inutile, et cela se voit toujours à la fin.",
   },
 ]
 
@@ -560,7 +560,7 @@ export default function AuditIAPage() {
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
             <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Un audit IA est l'état des lieux structuré de l'intelligence artificielle dans une organisation : usages réels, données, outils, organisation et conformité, évalués par un tiers indépendant et conclus par une feuille de route priorisée. Il se distingue du diagnostic d'une journée par sa profondeur, et du test de maturité par la présence d'un auditeur.
+              Un audit IA est l'état des lieux structuré de l'intelligence artificielle dans une organisation : usages réels, données, outils, organisation et conformité, évalués par un tiers indépendant et conclus par une feuille de route priorisée. Il se distingue du diagnostic, plus court, par sa profondeur, et du test de maturité par la présence d'un auditeur.
             </p>
           </div>
 
@@ -570,7 +570,7 @@ export default function AuditIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            C'est la mission qui précède l'industrialisation : quand un cadrage d'une journée ne suffit plus et que la direction veut une vision exhaustive, documentée et opposable, avant d'engager des budgets. Conduite par un cabinet spécialisé sur l'intelligence artificielle depuis 2022, qui audite, construit et forme, et qui vous le dit quand un audit ne servirait à rien.
+            C'est la mission qui précède l'industrialisation : quand un diagnostic court ne suffit plus et que la direction veut une vision exhaustive, documentée et opposable, avant d'engager des budgets. Conduite par un cabinet spécialisé sur l'intelligence artificielle depuis 2022, qui audite, construit et forme, et qui vous le dit quand un audit ne servirait à rien.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -662,7 +662,7 @@ export default function AuditIAPage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Trois niveaux, du plus léger au plus profond. Le test de maturité IA situe votre profil en trois minutes, gratuitement. Le diagnostic IA cadre vos usages et priorise vos cas en une journée. L'audit IA évalue en profondeur maturité, données, conformité et trajectoire, sur plusieurs jours ou semaines. Le cadrage gratuit sert à choisir la bonne mission, y compris quand c'est la moins chère.</strong>
+            <strong style={{ color: '#fff' }}>Trois niveaux, du plus léger au plus profond. Le test de maturité IA situe votre profil en trois minutes, gratuitement. Le diagnostic IA, intervention courte, cadre vos usages et priorise vos cas. L'audit IA évalue en profondeur maturité, données, conformité et trajectoire, sur plusieurs jours ou semaines. Le cadrage gratuit sert à choisir la bonne mission, y compris quand c'est la moins chère.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -688,7 +688,7 @@ export default function AuditIAPage() {
             </table>
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Commencez par le <Link to="/test-maturite-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>test de maturité IA</Link> si vous voulez une première photographie, ou par le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>diagnostic IA d'une journée</Link> : beaucoup de nos audits commencent là, sur un périmètre que le diagnostic a fait émerger. Quand un cas d'usage est déjà identifié, un POC le valide en conditions réelles : c'est un projet de développement, pas un audit.
+            Commencez par le <Link to="/test-maturite-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>test de maturité IA</Link> si vous voulez une première photographie, ou par le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>diagnostic IA</Link> : beaucoup de nos audits commencent là, sur un périmètre que le diagnostic a fait émerger. Quand un cas d'usage est déjà identifié, un POC le valide en conditions réelles : c'est un projet de développement, pas un audit.
           </p>
         </div>
       </section>
@@ -894,7 +894,7 @@ export default function AuditIAPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Notre façon de chiffrer</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le périmètre se fixe avant le devis : entités, processus, systèmes, profondeur du volet conformité. Nous ne vendons pas de pack à l'aveugle et nous ne publions pas de fourchette de marché : celles qui circulent en ligne viennent de cabinets qui vendent la prestation, sans méthode ni échantillon. Quand un diagnostic d'une journée suffit, nous vous le disons au cadrage.
+                Le périmètre se fixe avant le devis : entités, processus, systèmes, profondeur du volet conformité. Nous ne vendons pas de pack à l'aveugle et nous ne publions pas de fourchette de marché : celles qui circulent en ligne viennent de cabinets qui vendent la prestation, sans méthode ni échantillon. Quand un diagnostic court suffit, nous vous le disons au cadrage.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
@@ -959,7 +959,7 @@ export default function AuditIAPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Diagnostic IA en une journée', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Le point d'entrée le plus rapide : cadrage et priorisation en une journée, avant un audit ciblé si besoin." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Le point d'entrée le plus rapide : cadrage et priorisation sur un format court, avant un audit ciblé si besoin." },
               { label: "Guide complet de l'audit IA", href: '/blog/audit-ia-entreprise-methode-prix', tag: 'Guide', desc: "Les trois types d'audit, ce que la loi impose vraiment, les normes publiées et le seul prix public vérifiable." },
               { label: "Stratégie IA d'entreprise : le guide", href: '/blog/strategie-ia-entreprise-guide', tag: 'Guide', desc: "Ce que contient une stratégie IA, la méthode en cinq étapes et les chiffres à connaître avant de l'écrire." },
               { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Après l'audit : la trajectoire d'entreprise, les arbitrages COMEX et la feuille de route stratégique." },

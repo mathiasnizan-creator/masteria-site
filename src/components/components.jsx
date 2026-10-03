@@ -5,7 +5,7 @@ import { openCookiePreferences } from '../consent/consentStore';
 import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, Wallet, MapPin, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
+  BadgeCheck, Wallet, Globe, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
   Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award, Database, Cpu, Boxes,
   MessageSquare, Share2, Terminal, UserRound,
   Newspaper, Library, Info,
@@ -145,7 +145,7 @@ const CONSEIL_COLS = [
   {
     head: 'Conseil & stratégie',
     items: [
-      { label: 'Diagnostic IA',         desc: 'Audit + feuille de route en 1 journée', slug: 'diagnostic-ia',                Icon: Search },
+      { label: 'Diagnostic IA',         desc: 'Cas d\'usage priorisés, feuille de route', slug: 'diagnostic-ia',             Icon: Search },
       { label: 'Audit IA',              desc: 'Maturité, conformité, plan d\'action',   slug: 'audit-ia',                     Icon: Target },
       { label: 'Audit de conformité IA', desc: 'RGPD et AI Act : écarts, plan daté',      slug: 'audit-conformite-ai-act',      Icon: Scale },
       { label: 'Audit IA médico-social', desc: 'Usages, données d\'usagers, cadre',       slug: 'audit-ia-medico-social',       Icon: Users },
@@ -960,7 +960,7 @@ export function MasteriaHeader() {
         {[
           { Icon: BadgeCheck, label: 'Certifié Qualiopi',          shortLabel: 'Qualiopi' },
           { Icon: Wallet,     label: 'Finançable OPCO',            shortLabel: 'OPCO' },
-          { Icon: MapPin,     label: 'France · Suisse · Belgique', shortLabel: 'FR · CH · BE' },
+          { Icon: Globe,      label: 'Europe · États-Unis · Inde', shortLabel: 'Europe · USA · Inde' },
         ]
           // Le conseil et le développement sur mesure ne sont pas finançables OPCO :
           // on masque ce badge sur les pages service/agence/conseil/dev (honnêteté + positionnement high-ticket).

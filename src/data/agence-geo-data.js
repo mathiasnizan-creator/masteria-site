@@ -77,7 +77,7 @@ export const AGENCE_GEO_CITIES = [
       },
       {
         q: "Avez-vous un format de conseil IA adapté aux PME lyonnaises ?",
-        a: "Oui, et c'est le plus demandé dans la métropole : un diagnostic d'une journée sur site, le cadrage de l'IA dans vos logiciels actuels avec votre prestataire informatique, deux ou trois processus outillés, le dirigeant puis les équipes formés, et un point par trimestre. Forfait par étape, décision sur le résultat. Ce format a sa propre page, conseil IA pour PME, avec le détail de la méthode et du financement.",
+        a: "Oui, et c'est le plus demandé dans la métropole : un diagnostic court sur site, le cadrage de l'IA dans vos logiciels actuels avec votre prestataire informatique, deux ou trois processus outillés, le dirigeant puis les équipes formés, et un point par trimestre. Forfait par étape, décision sur le résultat. Ce format a sa propre page, conseil IA pour PME, avec le détail de la méthode et du financement.",
       },
       {
         q: 'Proposez-vous aussi la gouvernance IA et la formation des équipes à Lyon ?',
@@ -422,7 +422,7 @@ export const AGENCE_GEO_CITIES = [
       },
       {
         q: "Aidez-vous les PME nantaises à améliorer leur performance avec l'IA ?",
-        a: "C'est le format le plus demandé dans la métropole : un diagnostic d'une journée sur vos processus réels, le cadrage de l'IA dans vos logiciels actuels, deux ou trois processus outillés (devis, réponses clients, administratif, comptes rendus), le dirigeant et les équipes formés, puis un point par trimestre. Le gain se mesure sur le temps rendu et sur ce que vous en faites, pas sur un taux d'adoption. Ce format a sa propre page : conseil IA pour PME.",
+        a: "C'est le format le plus demandé dans la métropole : un diagnostic court, mené sur vos processus réels, le cadrage de l'IA dans vos logiciels actuels, deux ou trois processus outillés (devis, réponses clients, administratif, comptes rendus), le dirigeant et les équipes formés, puis un point par trimestre. Le gain se mesure sur le temps rendu et sur ce que vous en faites, pas sur un taux d'adoption. Ce format a sa propre page : conseil IA pour PME.",
       },
       {
         q: "Faites-vous du conseil en stratégie IA à Nantes ?",

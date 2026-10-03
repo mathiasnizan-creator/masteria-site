@@ -4,7 +4,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   FileSpreadsheet, BadgeCheck, Wallet, MonitorSmartphone, Building2,
-  Check, Star,
+  Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -13,6 +13,7 @@ import TerrainGuide from '../components/TerrainGuide'
 import { spokeGuidePromise } from '../data/terrain-guides'
 import { SPOKES, HUBS } from '../data/seo-pages'
 import ApresLaFormation from '../components/ApresLaFormation'
+import AvisGoogle from '../components/AvisGoogle'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
 const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
@@ -660,63 +661,14 @@ export default function SpokePage() {
         </div>
       </section>
 
-      {/* ── TÉMOIGNAGES ── */}
-      {spoke.testimonials?.length > 0 && (
-        <section style={{ padding: '80px 40px', background: '#F5F3EE' }}>
-          <div style={{ maxWidth: 960, margin: '0 auto' }}>
-            <div style={{ marginBottom: 48 }}>
-              <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-                Ce qu'ils disent de la formation
-              </h2>
-              <p style={{ color: '#6B7280', fontSize: 15, margin: 0 }}>
-                Retours d'expérience de professionnels formés par Masteria, entreprises réelles, postes réels.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
-              {spoke.testimonials.map((t, i) => (
-                <div key={i} style={{ background: '#fff', borderRadius: 14, padding: 28, border: '1px solid #E5E7EB', display: 'flex', flexDirection: 'column', gap: 20 }}>
-                  {/* Étoiles */}
-                  <div style={{ display: 'flex', gap: 3 }}>
-                    {[1,2,3,4,5].map(s => (
-                      <Star key={s} size={14} color="#FBBF24" fill="#FBBF24" aria-hidden="true" />
-                    ))}
-                  </div>
-                  {/* Texte */}
-                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0, flex: 1, fontStyle: 'italic' }}>
-                    "{t.text}"
-                  </p>
-                  {/* Auteur */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 16, borderTop: '1px solid #E5E7EB' }}>
-                    <div style={{
-                      width: 40, height: 40, borderRadius: '50%',
-                      background: c, color: '#fff',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 13, fontWeight: 800, fontFamily: 'Nunito, sans-serif',
-                      flexShrink: 0,
-                    }}>
-                      {t.initials}
-                    </div>
-                    <div>
-                      <p style={{ fontSize: 14, fontWeight: 700, color: '#0A0A0A', margin: 0, fontFamily: 'Nunito, sans-serif' }}>{t.name}</p>
-                      <p style={{ fontSize: 12, color: '#6B7280', margin: '2px 0 0', lineHeight: 1.4 }}>{t.role}</p>
-                      <p style={{ fontSize: 12, color: '#6B7280', margin: '1px 0 0', lineHeight: 1.4 }}>{t.company}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ marginTop: 40, textAlign: 'center' }}>
-              <p style={{ fontSize: 14, color: '#6B7280' }}>
-                Formation certifiée Qualiopi · <span style={{ display: 'inline-flex', gap: 2, verticalAlign: 'middle' }}>{[1,2,3,4,5].map(s => <Star key={s} size={13} color="#FBBF24" fill="#FBBF24" aria-hidden="true" />)}</span> <span style={{ color: '#6B7280' }}>98 % de satisfaction (+1 500 professionnels formés)</span>
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ── AVIS GOOGLE ── note de la fiche et avis qui défilent ; remplacent les témoignages
+          rédigés de data/testimonials.js, retirés le 03/10/2026 (faux avis = pratique trompeuse). */}
+      <AvisGoogle bg="#F5F3EE" />
 
-      {/* ── FAQ ── */}
+      {/* ── APRÈS LA FORMATION ── pont vers le conseil et le développement */}
       <ApresLaFormation metierSlug={spoke.metierSlug} outil={spoke.tool} />
 
+      {/* ── FAQ ── */}
       {spoke.faq?.length > 0 && (
         <section id="faq" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>

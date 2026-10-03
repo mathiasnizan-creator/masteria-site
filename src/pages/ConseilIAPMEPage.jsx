@@ -17,8 +17,8 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * en stratégie pme » (50), « conseil tpe » (50, commercial).
  *
  * RÉPARTITION D'INTENTIONS : /conseil-intelligence-artificielle = le cabinet et
- * ses quatre pôles, tous formats ; CETTE page = le format PME/TPE : une journée
- * de diagnostic, deux ou trois processus, un dirigeant qui décide, un budget
+ * ses quatre pôles, tous formats ; CETTE page = le format PME/TPE : un diagnostic
+ * court (durée fixée au cadrage), deux ou trois processus, un dirigeant qui décide, un budget
  * maîtrisé, et l'ancrage Auvergne-Rhône-Alpes. Les requêtes « conseil gestion /
  * financier pme » sont hors métier : dit explicitement (carte « ce que nous ne
  * faisons pas »).
@@ -35,7 +35,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Conseil IA pour PME et TPE : un cabinet à votre taille | Masteria"
-const META_DESC = "Conseil IA pour PME et TPE : un diagnostic d'une journée, deux ou trois processus outillés, le dirigeant et les équipes formés, un suivi léger. Cabinet spécialisé IA à Lyon, Auvergne-Rhône-Alpes et toute la France. Cadrage gratuit."
+const META_DESC = "Conseil IA pour PME et TPE : un diagnostic court, deux ou trois processus outillés, le dirigeant et les équipes formés, un suivi léger. Cabinet spécialisé IA à Lyon, Auvergne-Rhône-Alpes et toute la France. Cadrage gratuit."
 const KEYWORDS = "conseil ia pme, conseil pme, conseil aux pme, conseil tpe, conseil si pme, conseil en stratégie pme, conseil pme rhone alpes, cabinet conseil pme lyon, conseil intelligence artificielle pme, accompagnement ia pme, conseil ia tpe"
 
 /* ───────── Styles partagés ───────── */
@@ -65,7 +65,7 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: Building2, label: 'TPE, PME et petites ETI' },
-  { icon: Compass, label: "Diagnostic d'une journée pour commencer" },
+  { icon: Compass, label: 'Un diagnostic court pour commencer' },
   { icon: Wallet, label: 'Forfaits par étape, budget maîtrisé' },
   { icon: MapPin, label: 'Lyon · Auvergne-Rhône-Alpes · toute la France' },
 ]
@@ -74,7 +74,7 @@ const HERO_BADGES = [
 
 const EN_BREF = [
   { label: 'Pour qui', value: "Dirigeants de TPE, de PME et de petites ETI, de 5 à 250 personnes, avec ou sans service informatique" },
-  { label: 'Mission', value: "Un diagnostic d'une journée, deux ou trois processus outillés, le dirigeant et les équipes formés, un suivi trimestriel léger" },
+  { label: 'Mission', value: "Un diagnostic court, deux ou trois processus outillés, le dirigeant et les équipes formés, un suivi trimestriel léger" },
   { label: 'Ce qui change', value: "Pas de programme de grand groupe : des décisions rapides, un premier gain en quelques semaines, un budget par étape" },
   { label: 'SI existant', value: "Nous cadrons l'IA dans vos outils et vos données actuels, avec votre prestataire informatique, sans les remplacer" },
   { label: 'Prix', value: "Forfait par étape après un cadrage gratuit ; le conseil n'est pas finançable par l'OPCO, la formation l'est" },
@@ -86,8 +86,8 @@ const EN_BREF = [
 const PRESTATIONS = [
   {
     icon: ClipboardCheck,
-    title: "Le diagnostic IA d'une journée",
-    desc: "Une journée sur site ou à distance : vos processus, vos outils, ce que les équipes font déjà avec l'IA, où le temps se perd. Vous repartez avec trois cas d'usage priorisés, ce qu'il faut écarter, et un ordre de grandeur de budget. Pour beaucoup de PME, c'est le seul conseil dont elles ont besoin avant d'agir.",
+    title: 'Le diagnostic IA',
+    desc: "Une intervention courte, sur site ou à distance, dimensionnée au cadrage : vos processus, vos outils, ce que les équipes font déjà avec l'IA, où le temps se perd. Vous repartez avec trois cas d'usage priorisés, ce qu'il faut écarter, et un ordre de grandeur de budget. Pour beaucoup de PME, c'est le seul conseil dont elles ont besoin avant d'agir.",
   },
   {
     icon: Server,
@@ -114,7 +114,7 @@ const PRESTATIONS = [
 /* ───────── Grand compte vs PME (tableau sombre) ───────── */
 
 const TABLE = [
-  { critere: 'Point de départ', sans: 'Un audit de plusieurs semaines, multi-entités', avec: "Un diagnostic d'une journée, sur vos processus réels" },
+  { critere: 'Point de départ', sans: 'Un audit de plusieurs semaines, multi-entités', avec: "Un diagnostic court, sur vos processus réels" },
   { critere: 'Décision', sans: 'Comité, arbitrages, budget annuel', avec: 'Le dirigeant décide, souvent le jour même' },
   { critere: 'Premier résultat', sans: 'Après une phase de cadrage de plusieurs mois', avec: 'Un processus outillé en quelques semaines' },
   { critere: 'Équipe de conseil', sans: 'Une équipe de consultants, une pyramide', avec: 'Un intervenant senior, le réseau à la demande' },
@@ -124,8 +124,8 @@ const TABLE = [
 /* ───────── Méthode ───────── */
 
 const METHODE = [
-  { periode: 'Jour 1', title: 'Le diagnostic', desc: "Une journée avec le dirigeant et les personnes clés : processus, outils, données, usages déjà présents. Restitution le jour même : trois cas priorisés, ce qu'on écarte, l'ordre de grandeur de budget, et si le sujet relève plutôt de la formation seule." },
-  { periode: 'Semaines 2-4', title: 'Cadrage SI et premier processus', desc: "Choix de l'outil dans votre système d'information, réglages de données et d'accès avec votre prestataire informatique, règle d'usage en une page, puis conception du premier processus avec les personnes qui le vivent." },
+  { periode: 'Au départ', title: 'Le diagnostic', desc: "Un temps de travail avec le dirigeant et les personnes clés, sur une durée fixée au cadrage : processus, outils, données, usages déjà présents. À la restitution : trois cas priorisés, ce qu'on écarte, l'ordre de grandeur de budget, et si le sujet relève plutôt de la formation seule." },
+  { periode: 'Le mois suivant', title: 'Cadrage SI et premier processus', desc: "Choix de l'outil dans votre système d'information, réglages de données et d'accès avec votre prestataire informatique, règle d'usage en une page, puis conception du premier processus avec les personnes qui le vivent." },
   { periode: 'Mois 2-3', title: 'Mise en production et formation', desc: "Le premier processus tourne, le dirigeant est formé, puis les équipes sur leurs cas. Un deuxième ou troisième processus s'enchaîne si le premier tient. La mesure se fait sur le temps rendu et sur ce que vous en faites." },
   { periode: 'Chaque trimestre', title: 'Le point de suivi', desc: "Une demi-journée : ce qui a pris, ce qui bloque, le prochain processus, les outils à considérer ou à ignorer. La démarche appartient à l'entreprise ; nous restons disponibles, sans abonnement imposé." },
 ]
@@ -133,7 +133,7 @@ const METHODE = [
 /* ───────── Erreurs ───────── */
 
 const ERREURS = [
-  { title: 'Copier le grand groupe', desc: "Un programme, un comité, un schéma directeur : la PME s'épuise en cadrage et ne met rien en production. La bonne échelle : une journée de diagnostic, un processus, un résultat, puis le suivant." },
+  { title: 'Copier le grand groupe', desc: "Un programme, un comité, un schéma directeur : la PME s'épuise en cadrage et ne met rien en production. La bonne échelle : un diagnostic resserré, un processus, un résultat, puis le suivant." },
   { title: 'Acheter des licences pour tout le monde', desc: "Trente comptes payants distribués sans cas d'usage ni règle : cinq personnes s'en servent, souvent mal. Commencez par les processus et les personnes qui gagnent le plus, puis étendez." },
   { title: 'Confier le sujet au prestataire informatique seul', desc: "Votre prestataire sécurise les outils et les accès ; il ne connaît pas vos processus métier et n'a pas vocation à les redessiner. L'IA se cadre avec lui, elle se décide avec vous." },
   { title: 'Commencer par le chatbot client', desc: "Le premier cas visible est rarement le plus rentable, et c'est celui qui expose le plus l'entreprise. Les gains d'une PME sont d'abord internes : devis, administratif, réponses, comptes rendus." },
@@ -153,7 +153,7 @@ const REGION = [
 const WHY = [
   { icon: Cpu, title: "Un cabinet qui ne fait que de l'IA", desc: "Pas de conseil en gestion, en finance ou en organisation générale : de l'intelligence artificielle appliquée à votre travail, depuis 2022. Nous savons ce que les outils font vraiment et ce qu'une PME peut leur confier." },
   { icon: Workflow, title: 'Nous conseillons et nous construisons', desc: "Quand un processus demande un assistant configuré, une automatisation ou un agent, nous le réalisons. Le diagnostic ne reste pas un document ; il devient un outil qui tourne." },
-  { icon: Target, title: 'Un format à la taille de la PME', desc: "Une journée, un processus, un forfait par étape, un intervenant senior. Vous décidez de la suite sur le résultat, jamais sur un engagement pluriannuel." },
+  { icon: Target, title: 'Un format à la taille de la PME', desc: "Un diagnostic court, un processus, un forfait par étape, un intervenant senior. Vous décidez de la suite sur le résultat, jamais sur un engagement pluriannuel." },
   { icon: ShieldCheck, title: 'Indépendant des éditeurs', desc: "Aucune licence à vendre : nous recommandons l'outil déjà dans votre suite quand il suffit, et nous le disons quand il ne suffit pas." },
 ]
 
@@ -162,19 +162,19 @@ const WHY = [
 const FAQ = [
   {
     q: "Qu'est-ce que le conseil IA pour une PME ?",
-    a: "C'est un accompagnement dimensionné à une entreprise de 5 à 250 personnes : un diagnostic d'une journée qui dit où l'IA rend du temps chez vous, un cadrage de l'outil dans votre système d'information existant, deux ou trois processus outillés et mis en production, le dirigeant et les équipes formés sur leurs cas, puis un suivi trimestriel léger. Il se distingue du conseil aux grands comptes par l'échelle : pas de programme ni de comité, des décisions rapides, un forfait par étape et un premier résultat en quelques semaines. Masteria le mène depuis Lyon, en Auvergne-Rhône-Alpes et dans toute la France.",
+    a: "C'est un accompagnement dimensionné à une entreprise de 5 à 250 personnes : un diagnostic court qui dit où l'IA rend du temps chez vous, un cadrage de l'outil dans votre système d'information existant, deux ou trois processus outillés et mis en production, le dirigeant et les équipes formés sur leurs cas, puis un suivi trimestriel léger. Il se distingue du conseil aux grands comptes par l'échelle : pas de programme ni de comité, des décisions rapides, un forfait par étape et un premier résultat en quelques semaines. Masteria le mène depuis Lyon, en Auvergne-Rhône-Alpes et dans toute la France.",
   },
   {
     q: "À partir de quelle taille d'entreprise le conseil IA a-t-il un sens ?",
-    a: "Dès qu'il y a des processus répétitifs et quelqu'un pour décider. Une entreprise de cinq personnes avec des devis, des mails clients et de l'administratif a de quoi gagner plusieurs heures par semaine et par personne ; le conseil s'y résume souvent à une journée de diagnostic et à une formation du dirigeant. En dessous, pour un indépendant seul, l'accompagnement individuel ou la formation suffisent, et nous vous le dirons. Au-dessus de 250 personnes, le format évolue vers l'audit et le programme, avec des directions à aligner.",
+    a: "Dès qu'il y a des processus répétitifs et quelqu'un pour décider. Une entreprise de cinq personnes avec des devis, des mails clients et de l'administratif a de quoi gagner plusieurs heures par semaine et par personne ; le conseil s'y résume souvent à un diagnostic court et à une formation du dirigeant. En dessous, pour un indépendant seul, l'accompagnement individuel ou la formation suffisent, et nous vous le dirons. Au-dessus de 250 personnes, le format évolue vers l'audit et le programme, avec des directions à aligner.",
   },
   {
     q: "Accompagnez-vous les TPE ?",
-    a: "Oui, avec un format encore plus court : une demi-journée de diagnostic, souvent à distance, puis une formation du dirigeant en accompagnement individuel sur ses propres cas, et un ou deux processus outillés avec les outils déjà en place. Une TPE n'a pas besoin de conseil au sens classique ; elle a besoin de savoir quoi faire lundi, avec quel outil et quelle règle. Le financement de la formation dépend du statut du dirigeant : OPCO pour une entreprise avec des salariés, fonds de formation pour un indépendant ; nous vous orientons au cadrage.",
+    a: "Oui, avec un format encore plus léger : un diagnostic resserré sur l'essentiel, souvent à distance, puis une formation du dirigeant en accompagnement individuel sur ses propres cas, et un ou deux processus outillés avec les outils déjà en place. Une TPE n'a pas besoin de conseil au sens classique ; elle a besoin de savoir quoi faire lundi, avec quel outil et quelle règle. Le financement de la formation dépend du statut du dirigeant : OPCO pour une entreprise avec des salariés, fonds de formation pour un indépendant ; nous vous orientons au cadrage.",
   },
   {
     q: "Combien coûte le conseil IA pour une PME ?",
-    a: "Au forfait, par étape : le diagnostic d'une journée a son prix fixe, annoncé sur devis après un échange gratuit de trente minutes ; le cadrage et chaque processus outillé se chiffrent ensuite selon leur périmètre, et vous décidez de la suite sur le résultat de l'étape précédente. Nous ne vendons pas de programme pluriannuel à une PME. Les frais de déplacement s'ajoutent au réel en dehors de Lyon ; le distanciel n'en comporte pas.",
+    a: "Au forfait, par étape : la durée et le prix du diagnostic sont fixés sur devis, après un échange gratuit de trente minutes ; le cadrage et chaque processus outillé se chiffrent ensuite selon leur périmètre, et vous décidez de la suite sur le résultat de l'étape précédente. Nous ne vendons pas de programme pluriannuel à une PME. Les frais de déplacement s'ajoutent au réel en dehors de Lyon ; le distanciel n'en comporte pas.",
   },
   {
     q: "Le conseil IA est-il finançable pour une PME ?",
@@ -190,7 +190,7 @@ const FAQ = [
   },
   {
     q: "Combien de temps faut-il pour voir un premier résultat ?",
-    a: "Quelques semaines. Le diagnostic prend une journée ; le premier processus outillé est en production entre deux et six semaines plus tard selon sa complexité et la disponibilité de vos équipes ; la formation du dirigeant se cale dans le même temps. Le résultat se mesure sur ce processus : temps rendu, erreurs évitées, délai raccourci. C'est ce résultat qui décide du processus suivant, pas un plan écrit d'avance.",
+    a: "Quelques semaines. Le diagnostic est court et sa durée se fixe au cadrage ; le premier processus outillé est en production entre deux et six semaines plus tard selon sa complexité et la disponibilité de vos équipes ; la formation du dirigeant se cale dans le même temps. Le résultat se mesure sur ce processus : temps rendu, erreurs évitées, délai raccourci. C'est ce résultat qui décide du processus suivant, pas un plan écrit d'avance.",
   },
   {
     q: "Par quel processus une PME doit-elle commencer ?",
@@ -209,7 +209,7 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Conseil IA pour PME et TPE (Masteria)',
   alternateName: 'Conseil en intelligence artificielle pour petites et moyennes entreprises',
-  description: "Conseil IA pour PME et TPE : diagnostic d'une journée, cadrage de l'IA dans le système d'information existant, deux ou trois processus outillés, formation du dirigeant et des équipes, suivi trimestriel. Cabinet spécialisé IA basé à Lyon, Auvergne-Rhône-Alpes et toute la France.",
+  description: "Conseil IA pour PME et TPE : diagnostic court, cadrage de l'IA dans le système d'information existant, deux ou trois processus outillés, formation du dirigeant et des équipes, suivi trimestriel. Cabinet spécialisé IA basé à Lyon, Auvergne-Rhône-Alpes et toute la France.",
   url: 'https://www.master-ia.fr/conseil-ia-pme',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-ia-pme#webpage' },
   serviceType: 'Conseil en intelligence artificielle pour PME',
@@ -361,7 +361,7 @@ export default function ConseilIAPMEPage() {
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le conseil IA pour PME de {ENTITY.split(',')[0]} tient en quatre temps : <strong style={{ color: '#fff', fontWeight: 700 }}>un diagnostic d'une journée, deux ou trois processus outillés dans vos logiciels actuels, le dirigeant et les équipes formés, un suivi trimestriel léger</strong>. Depuis Lyon, en Auvergne-Rhône-Alpes et dans toute la France.
+            Le conseil IA pour PME de {ENTITY.split(',')[0]} tient en quatre temps : <strong style={{ color: '#fff', fontWeight: 700 }}>un diagnostic court, deux ou trois processus outillés dans vos logiciels actuels, le dirigeant et les équipes formés, un suivi trimestriel léger</strong>. Depuis Lyon, en Auvergne-Rhône-Alpes et dans toute la France.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -411,7 +411,7 @@ export default function ConseilIAPMEPage() {
                 Que fait un cabinet de conseil IA pour une PME ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Cinq choses, dans cet ordre : un diagnostic d'une journée, le cadrage de l'IA dans votre système d'information, deux ou trois processus outillés, la formation du dirigeant puis des équipes, et un point par trimestre. Chaque étape a son forfait ; vous décidez de la suivante sur le résultat.</strong>
+                <strong>Cinq choses, dans cet ordre : un diagnostic court, le cadrage de l'IA dans votre système d'information, deux ou trois processus outillés, la formation du dirigeant puis des équipes, et un point par trimestre. Chaque étape a son forfait ; vous décidez de la suivante sur le résultat.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Pour une organisation plus grande, avec plusieurs directions à aligner, voyez notre <Link to="/audit-ia" style={aStyle}>audit IA</Link> et notre <Link to="/conseil-transformation-ia" style={aStyle}>conseil en transformation IA</Link>.
@@ -459,7 +459,7 @@ export default function ConseilIAPMEPage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>La PME a un avantage que le grand groupe n'a pas : la décision est à portée de main. Un conseil dimensionné pour elle exploite cet avantage au lieu de le neutraliser sous un programme. Une journée, un processus, un résultat, la suite.</strong>
+            <strong style={{ color: '#fff' }}>La PME a un avantage que le grand groupe n'a pas : la décision est à portée de main. Un conseil dimensionné pour elle exploite cet avantage au lieu de le neutraliser sous un programme. Un diagnostic à sa mesure, un processus, un résultat, la suite.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -493,7 +493,7 @@ export default function ConseilIAPMEPage() {
             Comment se déroule le conseil IA dans une PME ?
           </h2>
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Un diagnostic d'une journée, un cadrage SI et un premier processus dans le mois qui suit, la mise en production et la formation sur le deuxième et le troisième mois, puis un point par trimestre. Le calendrier se cale sur la disponibilité de vos équipes, pas sur un plan de programme.</strong>
+            <strong>Un diagnostic court, un cadrage SI et un premier processus dans le mois qui suit, la mise en production et la formation sur le deuxième et le troisième mois, puis un point par trimestre. Le calendrier se cale sur la disponibilité de vos équipes, pas sur un plan de programme.</strong>
           </p>
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -511,7 +511,7 @@ export default function ConseilIAPMEPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Le diagnostic d'une journée a sa propre page : <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link>. Pour mesurer ce que l'IA rend, la chaîne de conversion est décrite sur <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link>.
+            Le diagnostic a sa propre page : <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link>. Pour mesurer ce que l'IA rend, la chaîne de conversion est décrite sur <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link>.
           </p>
         </div>
       </section>
@@ -654,7 +654,7 @@ export default function ConseilIAPMEPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Point d'entrée", desc: "La journée qui cadre vos usages et priorise les cas : le premier pas de toute PME." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Point d'entrée", desc: "L'intervention courte qui cadre vos usages et priorise les cas : le premier pas de toute PME." },
               { label: 'Audit IA', href: '/audit-ia', tag: 'Plus large', desc: "Quand plusieurs directions sont concernées : maturité, données, outils, conformité, feuille de route." },
               { label: 'Conseil en transformation IA', href: '/conseil-transformation-ia', tag: 'Organisation', desc: "Quand l'organisation elle-même doit changer : processus reconçus, rôles, pilotage du programme." },
               { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'Dirigeants', desc: "Le programme qui installe le dirigeant comme premier utilisateur et premier sponsor." },
@@ -694,10 +694,10 @@ export default function ConseilIAPMEPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Conseil IA pour PME</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Commençons par une journée chez vous
+              Commençons par un diagnostic chez vous
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Dites-nous votre activité, votre effectif et les outils que vous utilisez. Nous revenons vers vous sous 24 heures avec une date de diagnostic, son forfait, et ce que nous pensons pouvoir trouver chez vous.
+              Dites-nous votre activité, votre effectif et les outils que vous utilisez. Nous revenons vers vous sous 24 heures avec une proposition de diagnostic (durée, forfait, dates) et ce que nous pensons pouvoir trouver chez vous.
             </p>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un diagnostic IA

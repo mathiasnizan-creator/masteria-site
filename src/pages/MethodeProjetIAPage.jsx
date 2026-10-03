@@ -715,7 +715,7 @@ export default function MethodeProjetIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Pour le détail de notre capacité de développement, consultez notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> et nos <Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link>. Si votre besoin commence en amont, notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> cadre la stratégie. Et pour dé-risquer la première étape, le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> pose la feuille de route en une journée.
+                Pour le détail de notre capacité de développement, consultez notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> et nos <Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link>. Si votre besoin commence en amont, notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> cadre la stratégie. Et pour dé-risquer la première étape, le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> pose la feuille de route lors d'une intervention courte.
               </p>
             </div>
           </div>
@@ -769,7 +769,7 @@ export default function MethodeProjetIAPage() {
             {[
               { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Agents, automatisations et applications métier sur mesure, de l'idée au déploiement." },
               { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Votre feuille de route IA en une journée, à faible engagement, avec un livrable actionnable." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Offre d\'entrée', desc: "Votre feuille de route IA sur un format court, à faible engagement, avec un livrable actionnable." },
               { label: 'IA en gestion de projet', href: '/ia-gestion-de-projet', tag: 'Vos projets', desc: "L'autre sujet : outiller vos chefs de projet et votre PMO avec l'IA, reporting automatisé compris." },
               { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
             ].map(rel => (

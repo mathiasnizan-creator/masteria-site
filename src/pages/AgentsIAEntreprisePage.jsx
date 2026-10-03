@@ -987,7 +987,7 @@ export default function AgentsIAEntreprisePage() {
 
           <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 8 }}>Avancer avec Masteria</h3>
           <p style={{ ...pStyle, marginBottom: 28 }}>
-            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link> d'une journée identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
+            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link>, intervention courte, identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {NEXT_STEPS.map(item => (

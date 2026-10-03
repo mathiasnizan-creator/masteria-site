@@ -4,13 +4,14 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, MapPin, ShieldCheck, Layers, Compass, Cpu, Phone, Mail,
-  ArrowRight, Quote, ShoppingCart, Handshake, Code2, Check, Plus, Clock,
+  ArrowRight, ShoppingCart, Handshake, Code2, Check, Plus, Clock, Globe,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
 import CadrageLink from '../components/CadrageLink'
 import EquipeMasteria from '../components/EquipeMasteria'
 import EquipeAugmentee from '../components/EquipeAugmentee'
+import AvisGoogle from '../components/AvisGoogle'
 import { HUBS, METIERS } from '../data/catalog-meta'
 import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
 import { FAQ_GENERAL } from '../components/screens2'
@@ -72,19 +73,15 @@ const TOOL_LIGNES = {
   'multi-outils': 'Comparer les cinq IA sur vos cas avant de choisir',
 }
 
-/* Reconnaissances, mises en avant juste sous le hero (logos), puis deux chiffres. */
-const RECONNAISSANCES = [
-  { id: 'qualiopi', label: 'Certifié Qualiopi au titre des actions de formation', to: '/formation-ia-qualiopi' },
-  { id: 'francenum', label: 'Référencé pour accompagner les TPE et PME dans leur transition numérique' },
-  { id: 'lesechos', label: "Mathias Nizan cité sur le choix des outils d'IA en entreprise", to: '/presse' },
+/* Bandeau sous le hero (Mathias, 02/10/2026) : deux reconnaissances (badge officiel
+   Activateur France Num, logo Les Échos) et deux repères avec picto. Qualiopi n'y figure
+   plus : la carte du hero le porte déjà. */
+const BANDEAU = [
+  { id: 'francenum', href: 'https://www.francenum.gouv.fr/activateurs/masteria', label: 'Référencé pour accompagner les TPE et PME dans leur transition numérique' },
+  { id: 'lesechos', to: '/presse', label: "Mathias Nizan cité sur le choix des outils d'IA en entreprise" },
+  { id: 'programmes', Icon: GraduationCap, titre: 'Plus de 100 programmes', to: '/formation-intelligence-artificielle', label: 'de formation IA, par outil et par métier' },
+  { id: 'international', Icon: Globe, titre: 'International', label: 'Présents en Europe, aux États-Unis et en Inde' },
 ]
-const CHIFFRES = [
-  { value: '2022', label: 'Cabinet fondé à Lyon par Mathias Nizan' },
-  { value: '≈ 35', label: 'consultants, développeurs et formateurs' },
-]
-/* Badge officiel « Activateur France Num » (kit activateur) : à déposer dans public/assets
-   puis à renseigner ici. Tant qu'il est vide, un badge typographique sobre le remplace. */
-const FRANCE_NUM_BADGE = ''
 
 /* Logos clients, affichés à la demande de Mathias (02/10/2026). Hauteurs réglées à l'œil. */
 const CLIENTS = [
@@ -105,7 +102,7 @@ const PILIERS = [
     recoit: ['Cartographie des flux et des données', 'Matrice impact et faisabilité', 'Feuille de route chiffrée', "Charte d'usage, registre, AI Act et RGPD"],
     links: [
       ['Audit IA', '/audit-ia'],
-      ["Diagnostic IA d'une journée", '/diagnostic-ia'],
+      ['Diagnostic IA', '/diagnostic-ia'],
       ['Conseil en stratégie IA', '/conseil-strategie-ia'],
       ['Gouvernance et AI Act', '/gouvernance-ia'],
       ['Accompagnement IA', '/accompagnement-ia'],
@@ -150,7 +147,7 @@ const CAS_LISTE = ['industrie', 'photovoltaique', 'conseil-financier', 'distribu
 /* Par où commencer : l'offre d'entrée, identique sur tout le site (data/offre-entree.js). */
 const ETAPES = [
   { n: '1', badge: 'Offert', title: '30 minutes de cadrage', desc: "En visio ou par téléphone\u00a0: votre contexte, vos processus, ce que vous attendez de l'IA. Vous savez ensuite par où commencer." },
-  { n: '2', badge: '1 journée', title: 'Le Diagnostic IA', desc: "Ateliers avec vos équipes, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Forfait chiffré lors du cadrage." },
+  { n: '2', badge: 'Au forfait', title: 'Le Diagnostic IA', desc: "Ateliers avec vos équipes, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Durée et forfait fixés lors du cadrage, selon votre périmètre." },
   { n: '3', badge: 'Forfait ou régie', title: 'Le projet', desc: "Audit approfondi, construction de l'outil, accompagnement ou formation. Le code et les livrables vous appartiennent." },
 ]
 
@@ -163,16 +160,11 @@ const ENGAGEMENTS = [
 
 /* Questions conseil & développement d'abord, puis les questions formation. */
 const FAQ_CONSEIL = [
-  { q: "Combien coûte un projet d'IA avec Masteria\u00a0?", a: "Le premier échange, 30 minutes de cadrage, est offert. Le Diagnostic IA d'une journée est un forfait chiffré lors de ce cadrage. Un audit ou un développement se chiffre au forfait, après cadrage\u00a0: à partir de quelques milliers d'euros pour un premier outil, jusqu'à 100 000 € et plus pour un déploiement à l'échelle. Les formations sont à 1 980 € HT la journée, finançables par votre OPCO." },
+  { q: "Combien coûte un projet d'IA avec Masteria\u00a0?", a: "Le premier échange, 30 minutes de cadrage, est offert. Le Diagnostic IA est un forfait dont la durée et le prix se fixent lors de ce cadrage, selon votre périmètre. Un audit ou un développement se chiffre au forfait, après cadrage\u00a0: à partir de quelques milliers d'euros pour un premier outil, jusqu'à 100 000 € et plus pour un déploiement à l'échelle. Les formations sont à 1 980 € HT la journée, finançables par votre OPCO." },
   { q: 'À qui appartient le code des outils que vous développez ?', a: "À vous. Le code, les prompts, la documentation et les livrables vous sont remis. Vos équipes sont formées à l'outil, et vous restez libres de le faire évoluer en interne ou avec un autre prestataire." },
   { q: 'Combien de temps pour un premier outil en production ?', a: "Un prototype ou une première version utile se construit généralement en quelques semaines, selon la complexité et la disponibilité de vos données. Nous livrons d'abord le cas prioritaire, puis nous élargissons." },
 ]
 
-const TESTIMONIALS = [
-  { name: 'Sophie M.', role: 'DRH, PME industrielle', quote: "En 2 jours, mon équipe a compris comment l'IA peut transformer notre quotidien RH. Concret et immédiatement applicable." },
-  { name: 'Laurent B.', role: 'Directeur Marketing', quote: "Masteria a adapté la formation à nos enjeux. Nos campagnes sont maintenant 3× plus rapides à produire." },
-  { name: 'Claire D.', role: 'Responsable RH, groupe 800 salariés', quote: "Pédagogie excellente. Nos équipes utilisent l'IA au quotidien, sans aucun prérequis technique." },
-]
 
 /* ─── Éléments de composition ─── */
 
@@ -185,26 +177,27 @@ function Kicker({ children, color = c }) {
   )
 }
 
-/* Logo d'une reconnaissance (Qualiopi, France Num, Les Échos), à hauteur commune. */
-function Reconnaissance({ id }) {
-  if (id === 'qualiopi') {
+/* Visuel d'une cellule du bandeau, sur une hauteur commune de 80 px. Logos officiels :
+   largeur libre, hauteur fixée, jamais déformés. */
+function VisuelBandeau({ item }) {
+  if (item.id === 'francenum') {
     return (
-      <picture>
-        <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
-        <img src="/assets/qualiopi-logo.png" alt="Qualiopi, processus certifié" width="99" height="60" loading="lazy" decoding="async" style={{ height: 60, width: 'auto', display: 'block' }} />
+      <picture style={{ display: 'block' }}>
+        <source type="image/webp" srcSet="/assets/activateur-france-num.webp" />
+        <img src="/assets/activateur-france-num.png" alt="Activateur France Num" width="580" height="528" loading="lazy" decoding="async" style={{ display: 'block', height: 80, width: 'auto' }} />
       </picture>
     )
   }
-  if (id === 'lesechos') {
-    return <img src="/assets/lesechos-logo.png" alt="Les Échos" width="133" height="34" loading="lazy" decoding="async" style={{ height: 34, width: 'auto', display: 'block' }} />
+  if (item.id === 'lesechos') {
+    return <img src="/assets/lesechos-logo.png" alt="Les Échos" width="251" height="64" loading="lazy" decoding="async" style={{ display: 'block', height: 46, width: 'auto' }} />
   }
-  if (FRANCE_NUM_BADGE) {
-    return <img src={FRANCE_NUM_BADGE} alt="Activateur France Num" height="60" loading="lazy" decoding="async" style={{ height: 60, width: 'auto', display: 'block' }} />
-  }
+  const { Icon } = item
   return (
-    <span style={{ display: 'inline-flex', flexDirection: 'column', justifyContent: 'center', border: `1px solid ${LINE}`, borderRadius: 12, padding: '8px 16px', lineHeight: 1.1 }}>
-      <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: MUTED }}>Activateur</span>
-      <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 21, fontWeight: 900, color: INK, letterSpacing: '-0.01em' }}>France Num</span>
+    <span style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+      <span aria-hidden="true" style={{ width: 52, height: 52, borderRadius: 14, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+        <Icon size={24} strokeWidth={1.7} style={{ color: c }} />
+      </span>
+      <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 900, color: INK, letterSpacing: '-0.01em', lineHeight: 1.2 }}>{item.titre}</span>
     </span>
   )
 }
@@ -351,27 +344,21 @@ export default function HomePage() {
       {/* ════════════════════════ RECONNAISSANCES ET CLIENTS ════════════════════════ */}
       <section aria-label="Reconnaissances et clients" style={{ background: '#fff', borderBottom: `1px solid ${LINE}`, padding: 'clamp(32px, 4.5vw, 48px) clamp(18px, 4vw, 32px)' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? '1.15fr 1.15fr 1.15fr 0.8fr 0.8fr' : 'repeat(auto-fit, minmax(160px, 1fr))', rowGap: 28 }}>
-            {RECONNAISSANCES.map((r, i) => {
+          <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(4, minmax(0, 1fr))' : 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', rowGap: 30 }}>
+            {BANDEAU.map((item, i) => {
               const inner = (
                 <>
-                  <div style={{ height: 60, display: 'flex', alignItems: 'center', marginBottom: 12 }}>
-                    <Reconnaissance id={r.id} />
+                  <div style={{ height: 80, display: 'flex', alignItems: 'center', marginBottom: 14 }}>
+                    <VisuelBandeau item={item} />
                   </div>
-                  <div style={{ fontSize: 13.5, color: MUTED, lineHeight: 1.5 }}>{r.label}</div>
+                  <div style={{ fontSize: 14, color: MUTED, lineHeight: 1.55 }}>{item.label}</div>
                 </>
               )
               const cell = { display: 'block', textDecoration: 'none', padding: isDesktop ? `0 28px 0 ${i === 0 ? 0 : 28}px` : '0 16px 0 0', borderLeft: isDesktop && i > 0 ? `1px solid ${LINE}` : 'none' }
-              return r.to
-                ? <Link key={r.id} to={r.to} style={cell}>{inner}</Link>
-                : <div key={r.id} style={cell}>{inner}</div>
+              if (item.href) return <a key={item.id} href={item.href} target="_blank" rel="noopener noreferrer" style={cell} aria-label="Masteria sur France Num, page activateur (nouvel onglet)">{inner}</a>
+              if (item.to) return <Link key={item.id} to={item.to} style={cell}>{inner}</Link>
+              return <div key={item.id} style={cell}>{inner}</div>
             })}
-            {CHIFFRES.map(f => (
-              <div key={f.label} style={{ padding: isDesktop ? '0 0 0 28px' : '0 16px 0 0', borderLeft: isDesktop ? `1px solid ${LINE}` : 'none' }}>
-                <div style={{ height: 60, display: 'flex', alignItems: 'center', marginBottom: 12, fontFamily: 'Nunito, sans-serif', fontSize: 34, fontWeight: 900, color: INK, letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}>{f.value}</div>
-                <div style={{ fontSize: 13.5, color: MUTED, lineHeight: 1.5 }}>{f.label}</div>
-              </div>
-            ))}
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: isDesktop ? 40 : 22, flexWrap: 'wrap', marginTop: 32, paddingTop: 26, borderTop: `1px solid ${LINE}` }}>
@@ -463,7 +450,7 @@ export default function HomePage() {
               <h2 style={{ ...h2Style, margin: 0 }}>Six temps, les mêmes sur chaque mission</h2>
             </div>
             <p style={leadStyle}>
-              Qu'il s'agisse d'un diagnostic d'une journée ou d'un déploiement international, chaque mission avance dans cet ordre. C'est ce qui rend les résultats comparables, et la suite facile à décider.
+              Qu'il s'agisse d'un diagnostic court ou d'un déploiement international, chaque mission avance dans cet ordre. C'est ce qui rend les résultats comparables, et la suite facile à décider.
             </p>
           </div>
           <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${LINE}`, borderLeft: isDesktop ? `1px solid ${LINE}` : 'none' }}>
@@ -546,7 +533,7 @@ export default function HomePage() {
                   <img src="/assets/qualiopi-logo.png" alt="Certification Qualiopi des actions de formation de Masteria" width="842" height="509" loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: 'auto' }} />
                 </picture>
                 <p style={{ fontSize: 13.5, color: TEXT, lineHeight: 1.55, margin: 0 }}>
-                  Certification qualité délivrée au titre des actions de formation. Finançable par votre OPCO, 1&nbsp;980&nbsp;€ HT la journée.
+                  Certification qualité délivrée au titre des actions de formation. Finançable par votre OPCO.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap' }}>
@@ -598,18 +585,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Témoignages d'équipes formées */}
+          {/* Avis Google (note de la fiche, avis qui défilent) : remplacent les témoignages rédigés */}
           <div style={{ marginTop: 'clamp(56px, 7vw, 80px)', paddingTop: 32, borderTop: `1px solid ${LINE}` }}>
-            <h3 style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, margin: '0 0 22px' }}>Ce que disent les équipes formées</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(20px, 3vw, 40px)' }}>
-              {TESTIMONIALS.map(t => (
-                <figure key={t.name} style={{ margin: 0 }}>
-                  <Quote size={22} strokeWidth={1.8} style={{ color: c, marginBottom: 10 }} aria-hidden="true" />
-                  <blockquote style={{ margin: '0 0 14px', fontSize: 15.5, color: INK, lineHeight: 1.7 }}>{t.quote}</blockquote>
-                  <figcaption style={{ fontSize: 13.5, color: MUTED }}><strong style={{ color: INK }}>{t.name}</strong> · {t.role}</figcaption>
-                </figure>
-              ))}
-            </div>
+            <AvisGoogle variant="bloc" />
           </div>
         </div>
       </section>
@@ -770,7 +748,7 @@ export default function HomePage() {
             <Kicker>Contact</Kicker>
             <h2 style={h2Style}>Parlons de votre projet IA</h2>
             <p style={{ fontSize: 17, color: TEXT, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
-              Trente minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic d'une journée, outil sur mesure ou formation de vos équipes. L'échange est offert.
+              Trente minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic, outil sur mesure ou formation de vos équipes. L'échange est offert.
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[

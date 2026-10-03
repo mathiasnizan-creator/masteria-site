@@ -14,7 +14,7 @@
 - **Numéro de déclaration d'activité (NDA)** : 84 69 23218 69, enregistré auprès du préfet de région Auvergne-Rhône-Alpes (vérifiable sur la Liste Publique des Organismes de Formation)
 - **SIRET** : 919 252 403 00028
 - **Année de création** : 2022
-- **Offre d'entrée (conseil et développement)** : 30 minutes de cadrage offertes, puis un diagnostic IA d'une journée, au forfait chiffré lors du cadrage
+- **Offre d'entrée (conseil et développement)** : 30 minutes de cadrage offertes, puis un diagnostic IA court, dont la durée et le forfait sont fixés lors du cadrage selon le périmètre
 - **Tarifs** : conseil, audit et développement au forfait après cadrage (projets de quelques milliers à plusieurs centaines de milliers d'euros selon le périmètre) · Formation intra-entreprise 1 980 € HT/jour (jusqu'à 12 participants) · Accompagnement individuel 1 980 € HT/jour
 - **Financement** : formation finançable par les OPCO et le plan de développement des compétences
 - **Zones d'intervention** : France · Suisse · Belgique · international en anglais
@@ -24,7 +24,7 @@
 
 Masteria exerce trois métiers, menés par la même équipe :
 
-1. **Audit, conseil et accompagnement IA** : audit IA, diagnostic d'une journée, stratégie et feuille de route, gouvernance et conformité (AI Act, RGPD), accompagnement du déploiement dans la durée. Pour PME, ETI et grands groupes.
+1. **Audit, conseil et accompagnement IA** : audit IA, diagnostic IA court, stratégie et feuille de route, gouvernance et conformité (AI Act, RGPD), accompagnement du déploiement dans la durée. Pour PME, ETI et grands groupes.
 
 2. **Développement d'outils et d'agents IA sur mesure** : agents IA, assistants branchés sur les documents de l'entreprise (RAG), automatisations de processus, applications métier et intégrations au système d'information (CRM, ERP, MCP). Au forfait ou en régie ; le code et les livrables appartiennent au client.
 
@@ -80,7 +80,7 @@ Masteria exerce trois métiers, menés par la même équipe :
 
 ## Engagement et offre d'entrée
 
-- [Diagnostic IA](https://www.master-ia.fr/diagnostic-ia) — Offre d'entrée : audit et feuille de route priorisée en une journée
+- [Diagnostic IA](https://www.master-ia.fr/diagnostic-ia) — Offre d'entrée : intervention courte qui priorise les cas d'usage et livre une feuille de route, durée et forfait fixés au cadrage
 - [Audit IA](https://www.master-ia.fr/audit-ia) — État des lieux complet : maturité, processus, données, conformité RGPD/AI Act, feuille de route chiffrée et actions écartées motivées
 - [Audit de conformité IA](https://www.master-ia.fr/audit-conformite-ai-act) — Inventaire des systèmes d'IA, qualification par niveau de risque AI Act, écarts RGPD, obligations applicables (pratiques interdites, littératie, transparence), plan de mise en conformité daté ; aucune certification promise
 - [Audit IA médico-social](https://www.master-ia.fr/audit-ia-medico-social) — Audit IA pour associations et établissements médico-sociaux : usages réels des équipes, données d'usagers et DUI, hébergement HDS, RGPD et AI Act, cadre d'usage, plan d'outillage et de formation par métier, dossier pour les financeurs

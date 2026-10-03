@@ -42,7 +42,7 @@ const IDEES = {
 const IDEE_PAR_DEFAUT = "un assistant ou un agent qui travaille sur vos propres documents"
 
 const OFFRES = [
-  { Icon: FileSearch, label: "Diagnostic IA d'une journée", to: '/diagnostic-ia', desc: "Repérer les tâches à confier à l'IA en priorité" },
+  { Icon: FileSearch, label: "Diagnostic IA", to: '/diagnostic-ia', desc: "Repérer les tâches à confier à l'IA en priorité" },
   { Icon: Wrench, label: 'Outils IA sur mesure', to: '/outils-ia-sur-mesure', desc: 'Assistants et agents branchés sur vos documents' },
   { Icon: Code2, label: 'Agence de développement IA', to: '/agence-developpement-ia', desc: 'Applications et intégrations, le code vous appartient' },
   { Icon: ClipboardCheck, label: 'Audit IA', to: '/audit-ia', desc: 'État des lieux complet, conformité AI Act et RGPD comprise' },

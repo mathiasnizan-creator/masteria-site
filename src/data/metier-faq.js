@@ -289,7 +289,7 @@ export const METIER_FAQ = {
     },
     {
       q: "Faut-il déjà avoir un outil IA en place avant de former les équipes ?",
-      a: "Pas nécessairement. La formation peut très bien précéder le choix de l'outil, et c'est souvent plus sain. Des équipes formées posent les bonnes questions aux éditeurs, évaluent les démos avec un regard critique et évitent d'acheter une solution qui ne colle pas à leurs flux. Pour ceux qui partent de zéro, une journée d'audit IA cadre les cas d'usage prioritaires, mesure les volumes par motif et identifie où le gain sera réel avant tout investissement. À l'inverse, si un copilote ou un chatbot est déjà déployé, la formation porte directement sur sa supervision et son amélioration. Dans les deux cas, l'objectif reste le même : des conseillers et des managers capables de piloter l'IA, pas de la subir.",
+      a: "Pas nécessairement. La formation peut très bien précéder le choix de l'outil, et c'est souvent plus sain. Des équipes formées posent les bonnes questions aux éditeurs, évaluent les démos avec un regard critique et évitent d'acheter une solution qui ne colle pas à leurs flux. Pour ceux qui partent de zéro, un diagnostic IA court cadre les cas d'usage prioritaires, mesure les volumes par motif et identifie où le gain sera réel avant tout investissement. À l'inverse, si un copilote ou un chatbot est déjà déployé, la formation porte directement sur sa supervision et son amélioration. Dans les deux cas, l'objectif reste le même : des conseillers et des managers capables de piloter l'IA, pas de la subir.",
     },
   ],
 

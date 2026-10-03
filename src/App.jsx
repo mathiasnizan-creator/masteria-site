@@ -1025,7 +1025,7 @@ function ContactScreen() {
               </h3>
               {[
                 { n: '1', title: '30 minutes de cadrage, offertes', desc: "En visio ou par téléphone : votre contexte, vos processus, ce que vous attendez de l'IA." },
-                { n: '2', title: "Le Diagnostic IA, une journée", desc: "Ateliers avec vos équipes et feuille de route priorisée. Forfait chiffré lors du cadrage." },
+                { n: '2', title: "Le Diagnostic IA", desc: "Ateliers avec vos équipes et feuille de route priorisée. Durée et forfait fixés lors du cadrage." },
                 { n: '3', title: 'Le projet', desc: "Audit, construction de l'outil ou accompagnement, au forfait ou en régie. Le code et les livrables vous appartiennent." },
               ].map(s => (
                 <div key={s.n} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>

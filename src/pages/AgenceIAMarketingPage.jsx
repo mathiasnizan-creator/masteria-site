@@ -808,7 +808,7 @@ export default function AgenceIAMarketingPage() {
             Pour aller plus loin
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément. Pour cadrer le périmètre avant de démarrer, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> situent vos priorités marketing ; le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> d'une journée les transforme en feuille de route.
+            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément. Pour cadrer le périmètre avant de démarrer, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> situent vos priorités marketing ; le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> les transforme ensuite en feuille de route.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[

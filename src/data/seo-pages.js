@@ -6,7 +6,6 @@ import { GEMINI_SPOKES } from './gemini-spokes-enriched.js'
 import { CLAUDE_SPOKES } from './claude-spokes-enriched.js'
 import { MISTRAL_SPOKES } from './mistral-spokes-enriched.js'
 import { MULTI_OUTILS_SPOKES } from './multi-outils-spokes.js'
-import { TESTIMONIALS } from './testimonials.js'
 import { SPOKE_DATES } from './spoke-dates.js'
 
 import { HUBS, METIERS } from './catalog-meta.js'
@@ -3385,7 +3384,7 @@ export const SPOKES = ALL_BASE_SPOKES.map(spoke => {
   const enriched = ALL_ENRICHED.find(e => e.slug === spoke.slug)
   // Dates git (spoke-dates.js) : un spoke qui déclare les siennes garde la priorité.
   const dates = { ...SPOKE_DATES[spoke.slug], ...pick(spoke, ['datePublished', 'updatedAt', 'updatedLabel']) }
-  if (!enriched) return { ...spoke, ...dates, testimonials: TESTIMONIALS[spoke.slug] ?? [] }
+  if (!enriched) return { ...spoke, ...dates }
   return {
     ...spoke,
     ...dates,
@@ -3402,7 +3401,6 @@ export const SPOKES = ALL_BASE_SPOKES.map(spoke => {
     faq: enriched.faq ?? spoke.faq,
     // prefer enriched useCases if they exist as plain strings, keep base icon-based ones otherwise
     useCasesRaw: enriched.useCases,
-    testimonials: TESTIMONIALS[spoke.slug] ?? [],
   }
 })
 

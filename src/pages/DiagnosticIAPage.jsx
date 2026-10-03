@@ -15,8 +15,10 @@ import CadrageLink from '../components/CadrageLink'
 /*
  * Page de conversion high-ticket — offre d'entrée productisée « Diagnostic IA »
  * (slug /diagnostic-ia). Objectif : dé-risquer la première étape d'un acheteur
- * high-ticket (COMEX, DSI, directions métier) avec un livrable actionnable en
- * une journée, faible engagement, sans suite obligatoire.
+ * high-ticket (COMEX, DSI, directions métier) avec un livrable actionnable au
+ * terme d'une intervention courte, faible engagement, sans suite obligatoire.
+ * DURÉE : aucune durée chiffrée sur la page ; la durée et le forfait se fixent
+ * au cadrage, selon le périmètre (consigne de Mathias du 03/10/2026).
  *
  * INTÉGRITÉ : posture orientée capacité. Aucun cas client nommé, aucun chiffre
  * de résultat fabriqué, aucun prix ferme inventé. Le « 1 500 / 98 % » n'est PAS
@@ -34,8 +36,8 @@ const SLUG = 'diagnostic-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Diagnostic IA : feuille de route en 1 journée | Masteria"
-const META_DESC = "Diagnostic IA en une journée : processus automatisables, cas d'usage priorisés et feuille de route chiffrée. Premier échange de 30 minutes offert."
+const META_TITLE = "Diagnostic IA : cas d'usage et feuille de route | Masteria"
+const META_DESC = "Diagnostic IA : processus automatisables, cas d'usage priorisés, feuille de route chiffrée. Durée et forfait fixés lors d'un cadrage de 30 minutes offert."
 // Répartition des intentions « audit » (depuis 2026-08-10) : la requête
 // transactionnelle « audit ia » est portée par la money page /audit-ia ;
 // l'intention informationnelle (méthode, normes, prix) reste à l'article
@@ -69,7 +71,7 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Calendar, label: 'Une journée' },
+  { icon: Calendar, label: 'Intervention courte' },
   { icon: FileText, label: 'Feuille de route livrée' },
   { icon: ShieldCheck, label: 'Sans engagement de suite' },
   { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
@@ -79,8 +81,8 @@ const HERO_BADGES = [
 
 const EN_BREF = [
   { label: 'Premier échange', value: "30 minutes de cadrage, offertes, en visio ou par téléphone" },
-  { label: 'Format', value: "Une journée de travail, préparation et restitution incluses" },
-  { label: 'Tarif', value: "Forfait d'une journée, chiffré lors du cadrage selon le périmètre" },
+  { label: 'Format', value: "Intervention courte avec vos équipes, préparation et restitution incluses ; durée fixée au cadrage" },
+  { label: 'Tarif', value: "Forfait chiffré lors du cadrage, selon le périmètre" },
   { label: 'Livrable', value: "Feuille de route IA priorisée, estimations de budget et de délai, quick wins" },
   { label: 'Engagement', value: "Faible, sans suite obligatoire ; le livrable vous appartient" },
   { label: 'Pour qui', value: "COMEX, DSI et directions métier · PME, ETI et grands groupes" },
@@ -99,7 +101,7 @@ const COMPARATIF = [
   },
   {
     critere: 'Durée',
-    diagnostic: "Une journée (préparation et restitution incluses)",
+    diagnostic: "Courte, fixée au cadrage selon votre périmètre",
     audit: "De quelques jours à quelques semaines",
     poc: "Quelques semaines de développement",
   },
@@ -111,7 +113,7 @@ const COMPARATIF = [
   },
   {
     critere: 'Engagement',
-    diagnostic: "Faible : une journée, sans suite obligatoire",
+    diagnostic: "Faible : un forfait connu d'avance, sans suite obligatoire",
     audit: "Moyen : mission de conseil cadrée",
     poc: "Projet de développement engagé sur un cas",
   },
@@ -200,13 +202,13 @@ const DEROULE = [
     num: '01',
     phase: 'Avant',
     title: 'Préparation et collecte',
-    desc: "Les 30 minutes de cadrage, offertes, fixent le périmètre et identifient les bons interlocuteurs. Nous récupérons les éléments utiles (organigramme des processus concernés, contraintes connues) pour arriver préparés et ne pas perdre votre journée en mise en contexte.",
+    desc: "Les 30 minutes de cadrage, offertes, fixent le périmètre et identifient les bons interlocuteurs. Nous récupérons les éléments utiles (organigramme des processus concernés, contraintes connues) pour arriver préparés et consacrer tout le temps des ateliers au fond du sujet.",
   },
   {
     num: '02',
     phase: 'Pendant',
-    title: 'La journée de diagnostic',
-    desc: "Une journée de travail avec vos équipes : ateliers de cartographie, identification des cas d'usage, lecture des contraintes, priorisation à chaud. Conduite par un spécialiste IA, en présentiel ou en distanciel selon votre préférence.",
+    title: 'Les ateliers de diagnostic',
+    desc: "Des ateliers avec vos équipes, sur la durée fixée au cadrage : cartographie, identification des cas d'usage, lecture des contraintes, priorisation à chaud. Ils sont conduits par un spécialiste IA, en présentiel ou en distanciel selon votre préférence.",
   },
   {
     num: '03',
@@ -241,7 +243,7 @@ const DEBLOQUE = [
 const FAQ = [
   {
     q: "Combien coûte un diagnostic IA ?",
-    a: "Le diagnostic est une prestation payante, au forfait : une journée de travail avec vos équipes, préparation et restitution incluses. Le forfait est chiffré lors du premier échange, selon le périmètre (nombre de processus, d'équipes et de sites concernés). Ce premier échange, 30 minutes de cadrage en visio ou par téléphone, est offert et sans engagement. Nous ne vendons rien à l'aveugle : le périmètre est écrit avant le devis.",
+    a: "Le diagnostic est une prestation payante, au forfait : une intervention courte avec vos équipes, préparation et restitution incluses. Sa durée et son forfait sont fixés lors du premier échange, selon le périmètre (nombre de processus, d'équipes et de sites concernés). Ce premier échange, 30 minutes de cadrage en visio ou par téléphone, est offert et sans engagement. Nous ne vendons rien à l'aveugle : le périmètre est écrit avant le devis.",
   },
   {
     q: "Que se passe-t-il si nous ne donnons pas suite après le diagnostic ?",
@@ -257,11 +259,11 @@ const FAQ = [
   },
   {
     q: "Le diagnostic se fait-il sur site ou à distance ?",
-    a: "Les deux sont possibles. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'en Suisse et en Belgique. La journée de diagnostic peut se tenir sur site, ce qui facilite les ateliers et l'implication des équipes, ou en distanciel en visio. La préparation et la restitution se conduisent très bien à distance dans tous les cas.",
+    a: "Les deux sont possibles. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Les séances de travail peuvent se tenir sur site, ce qui facilite les ateliers et l'implication des équipes, ou en distanciel en visio. La préparation et la restitution se conduisent très bien à distance dans tous les cas.",
   },
   {
     q: "Quelle est la différence entre un diagnostic IA et un audit IA ?",
-    a: "Le diagnostic IA est une intervention courte, d'une journée, qui cadre vos usages et priorise les cas d'usage à plus forte valeur pour savoir par où commencer. L'audit IA va plus loin : il évalue en détail votre maturité, vos données, vos outils et votre organisation, sur plusieurs jours ou semaines, et débouche sur un rapport complet et un plan de transformation. Le diagnostic est le point d'entrée le plus rapide et le moins engageant ; l'audit convient quand vous voulez une vision exhaustive avant d'industrialiser. Les deux se complètent : un diagnostic peut précéder un audit ciblé sur les cas retenus.",
+    a: "Le diagnostic IA est une intervention courte qui cadre vos usages et priorise les cas d'usage à plus forte valeur pour savoir par où commencer. L'audit IA va plus loin : il évalue en détail votre maturité, vos données, vos outils et votre organisation, sur plusieurs jours ou semaines, et débouche sur un rapport complet et un plan de transformation. Le diagnostic est le point d'entrée le plus rapide et le moins engageant ; l'audit convient quand vous voulez une vision exhaustive avant d'industrialiser. Les deux se complètent : un diagnostic peut précéder un audit ciblé sur les cas retenus.",
   },
   {
     q: "Le diagnostic IA convient-il à une PME ?",
@@ -273,7 +275,7 @@ const FAQ = [
   },
   {
     q: "Combien de temps faut-il entre la demande et la restitution du livrable ?",
-    a: "Comptez le plus souvent de une à trois semaines entre le premier échange de cadrage et la restitution, selon vos disponibilités et celles de vos équipes. La journée de diagnostic se planifie à une date convenue ensemble ; la préparation en amont et la formalisation du livrable en aval s'organisent autour. Après votre demande, nous revenons vers vous sous 24 heures pour fixer le périmètre et la date.",
+    a: "Le calendrier se fixe lors du premier échange de cadrage, selon le périmètre retenu et les disponibilités de vos équipes. Les séances de travail se planifient à des dates convenues ensemble ; la préparation en amont et la formalisation du livrable en aval s'organisent autour. Après votre demande, nous revenons vers vous sous 24 heures pour fixer le périmètre et le calendrier.",
   },
 ]
 
@@ -284,7 +286,7 @@ const serviceJsonLd = {
   '@type': ['Service', 'ProfessionalService'],
   name: 'Diagnostic IA — Masteria',
   alternateName: 'Diagnostic intelligence artificielle',
-  description: "Diagnostic IA productisé en une journée : cadrage des usages, cartographie des processus automatisables, priorisation impact/effort. Livrable : feuille de route priorisée, estimations de budget et de délai, quick wins. Offre d'entrée à faible engagement, sans suite obligatoire : premier échange de cadrage de 30 minutes offert, puis forfait d'une journée chiffré lors du cadrage.",
+  description: "Diagnostic IA productisé, sous la forme d'une intervention courte : cadrage des usages, cartographie des processus automatisables, priorisation impact/effort. Livrable : feuille de route priorisée, estimations de budget et de délai, quick wins. Offre d'entrée à faible engagement, sans suite obligatoire : premier échange de cadrage de 30 minutes offert, au cours duquel la durée et le forfait sont fixés selon le périmètre.",
   url: 'https://www.master-ia.fr/diagnostic-ia',
   serviceType: "Diagnostic et feuille de route IA",
   category: "Conseil en intelligence artificielle",
@@ -329,7 +331,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/diagnostic-ia#article',
-  headline: 'Diagnostic IA : votre feuille de route en une journée',
+  headline: "Diagnostic IA : vos cas d'usage priorisés et votre feuille de route",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
@@ -428,7 +430,7 @@ export default function DiagnosticIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Diagnostic IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>votre feuille de route en une journée</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>vos cas d'usage priorisés et votre feuille de route</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
@@ -440,13 +442,13 @@ export default function DiagnosticIAPage() {
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
             <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Un diagnostic IA est une intervention d'une journée qui cadre les usages de l'intelligence artificielle dans une organisation : processus automatisables, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Il se distingue de l'audit IA par sa durée et son périmètre, et du test de maturité par l'intervention d'un consultant sur vos processus réels.
+              Un diagnostic IA est une intervention courte et ciblée qui cadre les usages de l'intelligence artificielle dans une organisation : processus automatisables, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Il se distingue de l'audit IA par sa durée et son périmètre, et du test de maturité par l'intervention d'un consultant sur vos processus réels.
             </p>
           </div>
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le Diagnostic IA de Masteria est une journée de travail qui cadre vos usages, cartographie vos processus automatisables et les priorise par impact et par effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>livrable concret</strong> : une feuille de route priorisée, des estimations de budget et de délai et des quick wins activables, sans engagement de suite.
+            Le Diagnostic IA de Masteria réunit vos équipes sur un format court, calibré selon votre périmètre, pour cadrer vos usages, cartographier vos processus automatisables et les prioriser par impact et par effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>livrable concret</strong> : une feuille de route priorisée, des estimations de budget et de délai et des quick wins activables, sans engagement de suite.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -501,7 +503,7 @@ export default function DiagnosticIAPage() {
                 Qu'est-ce que le Diagnostic IA de Masteria ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Le Diagnostic IA est une intervention d'une journée qui cadre vos usages, réalise un audit de vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
+                <strong>Le Diagnostic IA est une intervention courte, dimensionnée selon votre périmètre, qui cadre vos usages, réalise un audit de vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. C'est un audit des processus, pas un audit de maturité : il regarde ce que vos équipes font chaque semaine et ce qui peut être automatisé, sans évaluer toute l'organisation. Il couvre quatre dimensions. Pour une première photographie en 3 minutes, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> gratuit situe votre profil avant même l'échange de cadrage.
@@ -541,7 +543,7 @@ export default function DiagnosticIAPage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le diagnostic IA, l'audit IA et le POC répondent à trois besoins distincts. Le diagnostic cadre et priorise vos usages en une journée. L'audit évalue en profondeur votre maturité et vos données. Le POC prouve la valeur d'un cas précis en conditions réelles. Pour un premier pas, le diagnostic est le point d'entrée le plus rapide et le moins engageant.</strong>
+            <strong style={{ color: '#fff' }}>Le diagnostic IA, l'audit IA et le POC répondent à trois besoins distincts. Le diagnostic cadre et priorise vos usages, sur un format court. L'audit évalue en profondeur votre maturité et vos données. Le POC prouve la valeur d'un cas précis en conditions réelles. Pour un premier pas, le diagnostic est le point d'entrée le plus rapide et le moins engageant.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -642,7 +644,7 @@ export default function DiagnosticIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le diagnostic se déroule en trois temps : avant, une préparation et une collecte d'éléments pour arriver cadrés ; pendant, une journée d'ateliers avec vos équipes ; après, la formalisation et la restitution du livrable. Vous ne perdez pas votre journée en mise en contexte, le travail est utile de bout en bout.</strong>
+            <strong>Le diagnostic se déroule en trois temps : avant, une préparation et une collecte d'éléments pour arriver cadrés ; pendant, des ateliers avec vos équipes, calibrés selon le périmètre ; après, la formalisation et la restitution du livrable. Le temps d'atelier ne se perd pas en mise en contexte : le travail est utile de bout en bout.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -715,7 +717,7 @@ export default function DiagnosticIAPage() {
                 Repartir avec de la valeur, même sans suite
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le diagnostic est volontairement conçu comme un point d'entrée à faible risque. Vous engagez une journée, vous repartez avec un livrable exploitable, et vous restez libre de la suite. C'est la façon la plus saine de tester une collaboration avec un cabinet : sur un résultat tangible, pas sur une promesse commerciale.
+                Le diagnostic est volontairement conçu comme un point d'entrée à faible risque. Vous engagez une intervention courte, au forfait fixé d'avance, vous repartez avec un livrable exploitable, et vous restez libre de la suite. C'est la façon la plus saine de tester une collaboration avec un cabinet : sur un résultat tangible, pas sur une promesse commerciale.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -826,14 +828,14 @@ export default function DiagnosticIAPage() {
               Commencez par un diagnostic
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Tout commence par 30 minutes de cadrage, offertes : votre contexte, les processus à examiner, le périmètre de la journée. Vous recevez ensuite le forfait du diagnostic et une date. Vous repartez de la journée avec une feuille de route claire, que vous donniez suite ou non.
+              Tout commence par 30 minutes de cadrage, offertes : votre contexte, les processus à examiner, le périmètre du diagnostic. Vous recevez ensuite sa durée, son forfait et des dates. Vous repartez avec une feuille de route claire, que vous donniez suite ou non.
             </p>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un diagnostic IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Cadrage offert · Forfait d'une journée · Livrable actionnable · Lyon, France, Suisse, Belgique
+              Cadrage offert · Forfait selon le périmètre · Livrable actionnable · Lyon, France, Suisse, Belgique
             </p>
           </div>
         </div>

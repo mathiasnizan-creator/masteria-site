@@ -70,7 +70,7 @@ const LEXIQUE = [
 const FAQ = [
   { q: 'Comment le score est-il calculé ?', a: "Huit questions couvrent les dimensions qui déterminent la maturité IA d'une organisation : usages réels, outillage, formation, cas d'usage, cadre, confidentialité, mesure et portage par la direction. Chaque réponse vaut de 0 à 3 points, soit un score sur 24, rattaché à l'un des quatre profils. Le test qualifie une situation en 3 minutes ; il ne remplace pas un audit." },
   { q: "Combien de temps faut-il pour passer au niveau suivant ?", a: "Cela dépend du point de départ et des moyens engagés, mais l'ordre de grandeur observé en mission tient en trimestres, pas en années : poser un cadre et former une première équipe se fait en quelques semaines ; structurer la mesure et les actifs partagés demande un ou deux trimestres ; le déploiement outillé (agents, intégrations) est un chantier continu. Le facteur décisif est moins la taille de l'entreprise que le portage par la direction." },
-  { q: 'Ce test remplace-t-il un audit de maturité IA ?', a: "Non. Le test photographie la situation en 8 questions déclaratives ; un audit examine les processus, les données, les outils et les usages réels sur pièces et sur entretiens. Utilisez le test pour situer le point de départ et cadrer la discussion, le diagnostic IA d'une journée pour obtenir une feuille de route engageante." },
+  { q: 'Ce test remplace-t-il un audit de maturité IA ?', a: "Non. Le test photographie la situation en 8 questions déclaratives ; un audit examine les processus, les données, les outils et les usages réels sur pièces et sur entretiens. Utilisez le test pour situer le point de départ et cadrer la discussion, le diagnostic IA pour obtenir une feuille de route engageante." },
   { q: 'Mes réponses sont-elles enregistrées ?', a: 'Non. Le test fonctionne entièrement dans votre navigateur : aucune réponse ne quitte votre poste, aucun compte ni email n\'est demandé pour voir le résultat.' },
   { q: 'Que faire de mon résultat ?', a: "Chaque profil vient avec trois priorités concrètes et l'offre Masteria correspondante : sensibilisation pour le profil Découverte, diagnostic pour l'Exploration, conseil pour la Structuration, développement sur mesure pour le Déploiement. Le premier échange de cadrage est gratuit." },
   { q: 'Le test vaut-il pour une PME comme pour un grand groupe ?', a: "Oui, les dimensions évaluées sont les mêmes ; seule l'ampleur des réponses change. Une PME de 30 personnes atteint le profil Structuration avec des moyens légers, là où un groupe devra outiller chaque direction. Les recommandations s'adaptent lors du cadrage." },
@@ -208,7 +208,7 @@ export default function TestMaturiteIAPage() {
                 ['Format', '8 questions fermées, 3 minutes, sans compte ni email'],
                 ['Résultat', 'Score sur 24, profil parmi 4 niveaux, 3 priorités concrètes'],
                 ['Confidentialité', 'Aucune réponse ne quitte votre navigateur'],
-                ['Et après', "Un diagnostic IA d'une journée transforme le score en feuille de route"],
+                ['Et après', 'Un diagnostic IA transforme le score en feuille de route'],
               ].map(([label, value], i) => (
                 <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
@@ -303,7 +303,7 @@ export default function TestMaturiteIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '22px 0 0' }}>
-            Pour transformer le score en plan d'action chiffré : le <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre vos cas d'usage, votre gouvernance et votre feuille de route en quelques jours.
+            Pour transformer le score en plan d'action chiffré : le <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> cadre, sur un format court, vos cas d'usage, votre gouvernance et votre feuille de route.
           </p>
         </div>
       </section>

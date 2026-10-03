@@ -20,7 +20,7 @@ const OG_DEFAUT = `${SITE_URL}/og/masteria-16x9.jpg`  // 1200 x 630
    développement d'abord, la formation en dernier. */
 const ORG_OFFRES = [
   { name: 'Audit IA', path: '/audit-ia', desc: "État des lieux documenté des usages, des données, des risques et de la conformité, avec un plan d'action priorisé." },
-  { name: 'Diagnostic IA', path: '/diagnostic-ia', desc: "Une journée de travail avec vos équipes pour prioriser les cas d'usage et repartir avec une feuille de route chiffrée." },
+  { name: 'Diagnostic IA', path: '/diagnostic-ia', desc: "Une intervention courte avec vos équipes, dimensionnée au cadrage, pour prioriser les cas d'usage et repartir avec une feuille de route chiffrée." },
   { name: 'Conseil en stratégie IA', path: '/conseil-intelligence-artificielle', desc: 'Priorisation des cas d\'usage, feuille de route, gouvernance et conformité (AI Act, RGPD).' },
   { name: 'Accompagnement IA', path: '/accompagnement-ia', desc: "Pilotage du déploiement dans la durée, de la feuille de route à l'usage installé dans les équipes." },
   { name: "Développement d'outils et d'agents IA sur mesure", path: '/agence-developpement-ia', desc: 'Agents, assistants branchés sur vos documents (RAG), applications et intégrations à votre système d\'information. Le code vous appartient.' },

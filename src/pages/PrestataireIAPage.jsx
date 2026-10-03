@@ -602,7 +602,7 @@ export default function PrestataireIAPage() {
               { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les ordres de grandeur par type de projet, pour lire un devis en connaissance de cause." },
               { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "L'accompagnement personnalisé : cadrage, déploiement, conduite du changement, adoption." },
               { label: 'Solutions IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Ce que recouvre le développement sur mesure : copilotes, agents, RAG, automatisations." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Une journée pour cadrer vos usages avant de consulter des prestataires : le brief s'écrit tout seul." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un format court pour cadrer vos usages avant de consulter des prestataires : le brief s'écrit tout seul." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div

@@ -865,7 +865,7 @@ export default function SolutionIAPage() {
               <Wrench size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Outils IA par métier
             </Link>
             <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
-              <Check size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Diagnostic IA d'une journée
+              <Check size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Diagnostic IA
             </Link>
             <Link to="/prix-projet-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Coins size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Prix d'un projet IA
