@@ -311,7 +311,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier de la comptabilité.",
   "audience": "Cabinets d'expertise comptable (experts-comptables, chefs de mission, collaborateurs, assistants) et services comptables d'entreprise",
-  "locationName": "Masteria, intra-entreprise : présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria, intra-entreprise : présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA comptabilité : l'IA générative de la révision à l'annexe, les écritures restent chez vous",

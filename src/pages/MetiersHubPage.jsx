@@ -71,7 +71,7 @@ const FAQ_IA = [
   },
   {
     q: "Les formations sont-elles dispensées en présentiel ou en distanciel ?",
-    a: "Les deux formats sont possibles. Nous animons les formations intra-entreprise en présentiel dans vos locaux et en distanciel via visioconférence interactive. Les sessions intra-entreprises se déroulent au choix en présentiel dans vos locaux (France, Suisse, Belgique) ou en distanciel. Le contenu, le rythme et les exercices sont identiques dans les deux cas.",
+    a: "Les deux formats sont possibles. Nous animons les formations intra-entreprise en présentiel dans vos locaux et en distanciel via visioconférence interactive. Les sessions intra-entreprises se déroulent au choix en présentiel dans vos locaux (Europe, États-Unis, Inde) ou en distanciel. Le contenu, le rythme et les exercices sont identiques dans les deux cas.",
   },
   {
     q: "Quelle est la durée d'une formation intelligence artificielle chez Masteria ?",
@@ -675,7 +675,7 @@ export default function MetiersHubPage() {
               {
                 icon: MapPin, color: '#dc2626',
                 title: 'Présentiel partout en France',
-                desc: "Formations animées dans vos locaux en France, Suisse et Belgique, ou en distanciel pour les équipes dispersées.",
+                desc: "Formations animées dans vos locaux, en France comme à l'international (Europe, États-Unis, Inde), ou en distanciel pour les équipes dispersées.",
               },
               {
                 icon: Clock, color: '#6366F1',
@@ -792,7 +792,7 @@ export default function MetiersHubPage() {
               Formation IA dans votre ville
             </h2>
             <p style={{ fontSize: 15, color: '#6B7280', maxWidth: 720, lineHeight: 1.65 }}>
-              Pages dédiées avec contenu local : tissu économique, OPCO régional, cas d'usage par secteur, accès et zones desservies. Toutes nos formations sont aussi disponibles en distanciel partout en France, en Suisse et en Belgique.
+              Pages dédiées avec contenu local : tissu économique, OPCO régional, cas d'usage par secteur, accès et zones desservies. Toutes nos formations sont aussi disponibles en distanciel, partout en France et à l'international (Europe, États-Unis, Inde).
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>

@@ -78,7 +78,7 @@ const EN_BREF = [
   { label: 'Engagement', value: "Forfait au projet (prix fixé au cadrage) ou régie (développeurs IA détachés, facturés au TJM)" },
   { label: 'Ce qui fait le prix', value: "Complexité, intégrations, volume de données, niveau d'autonomie de l'IA et besoins de run/maintenance" },
   { label: 'Propriété', value: "Le code développé appartient au client, sans licence captive" },
-  { label: 'Délai & zone', value: "Prototype en quelques semaines · France, Suisse, Belgique · sur site ou à distance" },
+  { label: 'Délai & zone', value: "Prototype en quelques semaines · Europe, États-Unis, Inde · sur site ou à distance" },
 ]
 
 /* ───────── Tableau de fourchettes par livrable (plafond ouvert) ───────── */
@@ -249,8 +249,8 @@ const FAQ = [
     a: "Le devis de développement couvre la conception, le build, la documentation et le transfert à vos équipes. Le run (hébergement, supervision, évolutions et coûts d'usage des modèles) est un poste distinct, que nous chiffrons à part selon vos besoins. Comme le code vous appartient, vous restez libre d'assurer la maintenance en interne, avec nous au forfait ou en régie, ou avec un autre prestataire. Nous précisons ces coûts récurrents dès le cadrage pour qu'il n'y ait pas de surprise après la mise en production.",
   },
   {
-    q: "Intervenez-vous en France, en Suisse et en Belgique ?",
-    a: "Oui. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le développement et le suivi se conduisent très bien à distance, en visio et par points réguliers ; les phases de cadrage, de régie sur site et de transfert peuvent se tenir chez vous selon vos préférences. Les fourchettes de prix de cette page valent comme ordre de grandeur quel que soit le pays, le devis final étant établi en fonction de votre périmètre.",
+    q: "Intervenez-vous hors de Lyon et à l'international ?",
+    a: "Oui. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Le développement et le suivi se conduisent très bien à distance, en visio et par points réguliers ; les phases de cadrage, de régie sur site et de transfert peuvent se tenir chez vous selon vos préférences. Les fourchettes de prix de cette page valent comme ordre de grandeur quel que soit le pays, le devis final étant établi en fonction de votre périmètre.",
   },
 ]
 
@@ -258,7 +258,7 @@ const FAQ = [
 
 /* Service (ProfessionalService) avec AggregateOffer à lowPrice SANS highPrice :
    le plafond ouvert reflète l'intégrité tarifaire (fourchettes larges, jamais de
-   prix ferme). areaServed FR/CH/BE, brand Masteria, mainEntityOfPage. Pas de
+   prix ferme). areaServed FR/CH/BE/US/IN, brand Masteria, mainEntityOfPage. Pas de
    courseData (réservé formations), pas de HowTo. */
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -274,6 +274,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   offers: {
     '@type': 'AggregateOffer',
@@ -287,6 +289,8 @@ const serviceJsonLd = {
       { '@type': 'Country', name: 'France' },
       { '@type': 'Country', name: 'Suisse' },
       { '@type': 'Country', name: 'Belgique' },
+      { '@type': 'Country', name: 'États-Unis' },
+      { '@type': 'Country', name: 'Inde' },
     ],
   },
   hasOfferCatalog: {
@@ -795,7 +799,7 @@ export default function PrixProjetIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Forfait ou régie · Code propriété client · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Forfait ou régie · Code propriété client · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -818,7 +822,7 @@ export default function PrixProjetIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

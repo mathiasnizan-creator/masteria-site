@@ -277,7 +277,7 @@ export default function VeilleAProposPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Organisme certifié Qualiopi · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Organisme certifié Qualiopi · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

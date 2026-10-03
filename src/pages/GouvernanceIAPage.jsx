@@ -89,7 +89,7 @@ const EN_BREF = [
   { label: 'Livrables', value: "Audit de conformité, cartographie et registre des usages IA, politique et charte IA, dispositif de comité de gouvernance, plan de mise en conformité" },
   { label: 'Ce que nous faisons', value: "Conseil et accompagnement : cadrage, audit, mise en place du dispositif et supervision humaine, pas une formation" },
   { label: 'Posture', value: "Capacité et méthode : nous décrivons l'accompagnement, sans cas client ni résultat inventé" },
-  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel ponctuel" },
+  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel ponctuel" },
   { label: 'Formation associée', value: "Le volet montée en compétences passe par notre formation AI Act, distincte du conseil" },
 ]
 
@@ -409,6 +409,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -1073,7 +1075,7 @@ export default function GouvernanceIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Audit, registre, comité IA · AI Act & RGPD · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Audit, registre, comité IA · AI Act & RGPD · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -1096,7 +1098,7 @@ export default function GouvernanceIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

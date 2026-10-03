@@ -61,7 +61,7 @@ function IconBox({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: Cog,    label: 'Développement sur mesure' },
   { icon: Plug,   label: 'Intégré à vos outils (API, MCP)' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
   { icon: Key,    label: 'Vous restez propriétaire du système' },
 ]
 
@@ -170,7 +170,7 @@ const WHY_MASTERIA = [
   { icon: Target, title: "Spécialisés à 100 % sur l'IA", desc: "Masteria travaille sur l'intelligence artificielle depuis 2022, du conseil en automatisation IA au développement. Les outils, les pièges et les raccourcis du sujet font notre quotidien." },
   { icon: Cog, title: "De la conception à la production", desc: "Nous ne nous arrêtons pas au schéma : nous développons, intégrons via API et MCP, fiabilisons et déployons. Vous récupérez un système qui tourne, pas un prototype." },
   { icon: Key, title: "Vous restez propriétaire", desc: "Code, configurations et documentation vous appartiennent. Vos référents peuvent reprendre la main, et nous les formons en complément s'ils le souhaitent." },
-  { icon: MapPin, title: 'Lyon, France entière, Suisse et Belgique', desc: "Basés à Lyon, nous intervenons sur site dans toute la France ainsi qu'en Suisse et en Belgique, et à distance pour le suivi." },
+  { icon: MapPin, title: "Lyon, la France entière et l'international", desc: "Basés à Lyon, nous intervenons sur site dans toute la France ainsi qu'à l'international (Europe, États-Unis, Inde), et à distance pour le suivi." },
 ]
 
 /* ───────── FAQ ───────── */
@@ -194,7 +194,7 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous à distance ou sur site ?",
-    a: "Les deux. Masteria est basée à Lyon et intervient sur site dans toute la France, en Suisse et en Belgique, ainsi qu'à distance. Le format se choisit selon vos contraintes : les audits et les formations gagnent souvent à se faire sur site, le suivi de déploiement fonctionne très bien en visio.",
+    a: "Les deux. Masteria est basée à Lyon et intervient sur site dans toute la France et à l'international (Europe, États-Unis, Inde), ainsi qu'à distance. Le format se choisit selon vos contraintes : les audits et les formations gagnent souvent à se faire sur site, le suivi de déploiement fonctionne très bien en visio.",
   },
   {
     q: "Avec quels outils travaillez-vous ?",
@@ -232,6 +232,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
     { '@type': 'City', name: 'Lyon' },
   ],
   audience: { '@type': 'BusinessAudience', name: 'PME, ETI et grands comptes' },
@@ -391,7 +393,7 @@ export default function AgenceAutomatisationIAPage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Le no-code seul ne suffit pas à fiabiliser un processus qui compte : il faut concevoir l'architecture, raccorder vos outils, gérer les cas limites et poser les garde-fous. Nous prenons en charge cette ingénierie de bout en bout et vous livrons des automatisations en production, documentées et supervisées. Masteria travaille sur l'IA depuis 2022 et a accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique.
+            Le no-code seul ne suffit pas à fiabiliser un processus qui compte : il faut concevoir l'architecture, raccorder vos outils, gérer les cas limites et poser les garde-fous. Nous prenons en charge cette ingénierie de bout en bout et vous livrons des automatisations en production, documentées et supervisées. Masteria travaille sur l'IA depuis 2022, a accompagné plus de 1 500 professionnels et intervient en France comme à l'international (Europe, États-Unis, Inde).
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -628,7 +630,7 @@ export default function AgenceAutomatisationIAPage() {
                 Pourquoi choisir Masteria comme agence d'automatisation IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, là où beaucoup de prestataires s'arrêtent aux recommandations. Spécialisés sur l'IA depuis 2022, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique, et vous restez propriétaire du système livré.</strong>
+                <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, là où beaucoup de prestataires s'arrêtent aux recommandations. Spécialisés sur l'IA depuis 2022 et présents en Europe, aux États-Unis et en Inde, nous avons accompagné plus de 1 500 professionnels, et vous restez propriétaire du système livré.</strong>
               </p>
             </div>
 
@@ -793,7 +795,7 @@ export default function AgenceAutomatisationIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · +1 500 professionnels formés · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Certifié Qualiopi · +1 500 professionnels formés · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -816,7 +818,7 @@ export default function AgenceAutomatisationIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

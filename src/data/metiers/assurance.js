@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier de l'assurance.",
   "audience": "Compagnies et mutuelles, courtiers et agents généraux, gestionnaires de sinistres, souscripteurs, équipes relation assurés et back-office",
-  "locationName": "Masteria, intra-entreprise : présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria, intra-entreprise : présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA assurance : l'IA générative du sinistre à la relation assurés, la décision reste au gestionnaire",

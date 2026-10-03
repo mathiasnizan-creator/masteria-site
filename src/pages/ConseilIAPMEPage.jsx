@@ -219,6 +219,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: { '@type': 'BusinessAudience', audienceType: 'TPE, PME et petites ETI', numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 250 } },
   hasOfferCatalog: {

@@ -72,7 +72,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
   { icon: Target, label: "Calendrier post-Omnibus à jour (juillet 2026)" },
-  { icon: MapPin, label: 'Présentiel & distanciel · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Présentiel & distanciel · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -239,7 +239,7 @@ const COURSE_DATA = {
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis juridique ou technique.',
   audience: 'DPO, conformité, DSI, RH, directions, chefs de projet IA',
-  locationName: 'Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel',
+  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
 }
 /* Programme en ItemList (séquence citable — GEO). */
 const programmeJsonLd = {

@@ -64,7 +64,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Zap, label: 'Sans code : des Zaps utiles dès le matin' },
   { icon: Building2, label: '1 jour en intra, dans vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -222,7 +222,7 @@ const FAQ = [
   },
   {
     q: 'Peut-on suivre la formation à distance ?',
-    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; la même journée se tient à distance en classe virtuelle, souvent en deux demi-journées. Partout en France, en Suisse et en Belgique.",
+    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; la même journée se tient à distance en classe virtuelle, souvent en deux demi-journées. Partout en France et à l'international, en Europe, aux États-Unis et en Inde.",
   },
   {
     q: 'Et si Zapier ne suffit plus dans six mois ?',
@@ -248,7 +248,7 @@ const COURSE_DATA = {
   duration: 'PT7H',
   prerequisites: "Aucun prérequis technique.",
   audience: 'Assistanat, marketing, RH, ADV, TPE et PME, équipes non techniques',
-  locationName: 'Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel',
+  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
 }
 
 /* Le programme en ItemList (séquence citable — GEO). */
@@ -650,7 +650,7 @@ export default function FormationZapierPage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['Qualiopi', 'actions de formation certifiées'],
-                ['FR · CH · BE', 'intra sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -774,7 +774,7 @@ export default function FormationZapierPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

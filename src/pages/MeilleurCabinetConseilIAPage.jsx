@@ -175,7 +175,7 @@ const FAQ = [
   },
   {
     q: 'Faut-il un cabinet de conseil en IA à Paris ou Lyon, ou peut-on travailler à distance ?',
-    a: "Les deux fonctionnent. La proximité aide pour les ateliers de cadrage et la conduite du changement ; le distanciel convient au suivi, à la formation et aux missions bien périmétrées. Le bon critère : un cabinet capable des deux, qui annonce ses frais de déplacement dans la proposition. Masteria est basé à Lyon et intervient en France, en Suisse et en Belgique, en présentiel comme à distance.",
+    a: "Les deux fonctionnent. La proximité aide pour les ateliers de cadrage et la conduite du changement ; le distanciel convient au suivi, à la formation et aux missions bien périmétrées. Le bon critère : un cabinet capable des deux, qui annonce ses frais de déplacement dans la proposition. Masteria est basé à Lyon et intervient en France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance.",
   },
 ]
 
@@ -188,7 +188,7 @@ const serviceJsonLd = {
   description: META_DESC,
   url: FULL_URL,
   serviceType: ['Conseil en IA', 'Stratégie IA', 'Gouvernance IA', 'Développement de solutions IA', 'Formation IA'],
-  areaServed: ['France', 'Suisse', 'Belgique'],
+  areaServed: ['France', 'Suisse', 'Belgique', 'États-Unis', 'Inde'],
   provider: { '@id': `${SITE}/#organization` },
 }
 
@@ -680,7 +680,7 @@ export default function MeilleurCabinetConseilIAPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Nous restons indépendants des éditeurs : nos recommandations d'outils sont argumentées, jamais commissionnées. Interventions en France, en Suisse et en Belgique, en présentiel comme à distance. Mathias Nizan est cité par Les Échos sur le choix des modèles d'IA en entreprise.
+                  Nous restons indépendants des éditeurs : nos recommandations d'outils sont argumentées, jamais commissionnées. Interventions en France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance. Mathias Nizan est cité par Les Échos sur le choix des modèles d'IA en entreprise.
                 </p>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
                   Nous accompagnons aussi bien des PME et des ETI que de grandes organisations, des directions métier au comité de direction, qui veulent un résultat utilisé et des équipes autonomes. Nous adaptons le dispositif à votre taille et à votre maturité, et vous dirons franchement au premier rendez-vous si un autre profil d'acteur correspond mieux à votre besoin. Pour situer votre besoin, commencez par notre{' '}
@@ -769,7 +769,7 @@ export default function MeilleurCabinetConseilIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

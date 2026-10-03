@@ -69,7 +69,7 @@ const HERO_BADGES = [
   { icon: UserRound, label: 'Un formateur humain, en face à face' },
   { icon: Target, label: 'Vos cas réels, vos outils, votre rythme' },
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: MapPin, label: 'À distance et sur site · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'À distance et sur site · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -78,7 +78,7 @@ const EN_BREF = [
   { label: 'Format', value: "Sessions individuelles avec un formateur humain, sur vos situations de travail réelles" },
   { label: 'Pour qui', value: "Dirigeants, managers, professionnels en poste ou en transition, indépendants" },
   { label: 'Outils', value: "Multi-outils selon votre contexte : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral" },
-  { label: 'Où', value: "En visio partout en France, Suisse et Belgique ; sur site selon les villes (Paris, Lyon, Marseille, Toulouse, Annecy...)" },
+  { label: 'Où', value: "En visio partout en France et à l'international (Europe, États-Unis, Inde) ; sur site selon les villes (Paris, Lyon, Marseille, Toulouse, Annecy...)" },
   { label: 'Financement', value: "Structuré en action de formation individuelle : certifié Qualiopi, finançable par votre OPCO" },
   { label: 'Objectif', value: "L'autonomie : repartir avec des usages installés dans votre quotidien, pas des notes" },
 ]
@@ -226,7 +226,7 @@ const FAQ = [
   },
   {
     q: "Proposez-vous un coaching individuel IA à Paris, Marseille, Toulouse ou Annecy ?",
-    a: "Oui, avec une organisation transparente : Masteria est basée à Lyon et le coaching individuel se déroule d'abord en visio, un format qui se prête très bien au travail en tête-à-tête sur écran partagé. Des sessions sur site se planifient à Paris, Lyon, Marseille, Toulouse, Annecy et dans les autres métropoles selon les agendas, ainsi qu'en Suisse et en Belgique. Beaucoup de parcours combinent une première session sur site et la suite à distance. La qualité de l'accompagnement ne dépend pas du lieu : elle dépend du travail sur vos cas réels.",
+    a: "Oui, avec une organisation transparente : Masteria est basée à Lyon et le coaching individuel se déroule d'abord en visio, un format qui se prête très bien au travail en tête-à-tête sur écran partagé. Des sessions sur site se planifient à Paris, Lyon, Marseille, Toulouse, Annecy et dans les autres métropoles selon les agendas, ainsi qu'à l'international (Europe, États-Unis, Inde). Beaucoup de parcours combinent une première session sur site et la suite à distance. La qualité de l'accompagnement ne dépend pas du lieu : elle dépend du travail sur vos cas réels.",
   },
   {
     q: "Sur quels outils le coaching porte-t-il ?",
@@ -255,7 +255,7 @@ const FAQ = [
 /* Le schema Course (avec Offer 1 980 €/j) est généré par SEOHead via courseData. */
 const COURSE_DATA = {
   name: 'Coaching IA individuel — Masteria',
-  description: "Accompagnement individuel à l'intelligence artificielle avec un formateur humain : sessions personnalisées sur les cas réels du participant, multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral), programme et objectifs définis au cadrage, évaluation des acquis. En visio partout en France, Suisse et Belgique, sur site selon les villes. Certifié Qualiopi, finançable OPCO.",
+  description: "Accompagnement individuel à l'intelligence artificielle avec un formateur humain : sessions personnalisées sur les cas réels du participant, multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral), programme et objectifs définis au cadrage, évaluation des acquis. En visio partout en France et à l'international (Europe, États-Unis, Inde), sur site selon les villes. Certifié Qualiopi, finançable OPCO.",
   level: 'Tous niveaux',
   teaches: [
     "Formuler des demandes efficaces et structurer un raisonnement avec l'IA",
@@ -268,7 +268,7 @@ const COURSE_DATA = {
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
   audience: 'Dirigeants, managers, professionnels et indépendants',
-  locationName: 'Masteria — visio (France, Suisse, Belgique) ou sur site selon les villes',
+  locationName: 'Masteria — visio (Europe, États-Unis, Inde) ou sur site selon les villes',
 }
 
 /* Déroulé en ItemList (séquence citable — GEO). */
@@ -614,7 +614,7 @@ export default function CoachingIAPage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>Le coaching individuel IA se déroule d'abord en visio, un format taillé pour le tête-à-tête sur écran partagé, partout en France, en Suisse et en Belgique. Des sessions sur site se planifient à Paris, Lyon, Marseille, Toulouse, Annecy et dans les autres métropoles selon les agendas. Beaucoup de parcours combinent une première rencontre sur site et la suite à distance.</strong>
+            <strong>Le coaching individuel IA se déroule d'abord en visio, un format taillé pour le tête-à-tête sur écran partagé, partout en France et à l'international (Europe, États-Unis, Inde). Des sessions sur site se planifient à Paris, Lyon, Marseille, Toulouse, Annecy et dans les autres métropoles selon les agendas. Beaucoup de parcours combinent une première rencontre sur site et la suite à distance.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
@@ -744,7 +744,7 @@ export default function CoachingIAPage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['Indépendant', 'des éditeurs de solutions'],
-                ['FR · CH · BE', 'sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

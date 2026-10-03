@@ -270,7 +270,7 @@ export default {
   "duration": "PT7H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier QSE / HSE.",
   "audience": "Responsables et animateurs QSE / HSE, préventeurs, responsables qualité et environnement",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA pour responsable QSE / HSE : la veille, le DUERP, les analyses et les audits avec l'IA",

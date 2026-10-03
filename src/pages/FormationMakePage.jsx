@@ -64,7 +64,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Network, label: 'Sans code : ateliers sur vos processus réels' },
   { icon: Building2, label: '2 jours en intra, dans vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -257,7 +257,7 @@ const FAQ = [
   },
   {
     q: 'Peut-on suivre la formation à distance ?',
-    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; le même programme se tient à distance en classe virtuelle, souvent en demi-journées. En individuel, un référent avance en tête-à-tête sur ses propres processus. Partout en France, en Suisse et en Belgique.",
+    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; le même programme se tient à distance en classe virtuelle, souvent en demi-journées. En individuel, un référent avance en tête-à-tête sur ses propres processus. Partout en France et à l'international, en Europe, aux États-Unis et en Inde.",
   },
   {
     q: "Que reste-t-il dans l'entreprise après les 2 jours ?",
@@ -287,7 +287,7 @@ const COURSE_DATA = {
   duration: 'PT14H',
   prerequisites: "Aucun prérequis technique ; être à l'aise avec ses outils numériques du quotidien.",
   audience: 'Équipes marketing, ventes, ADV, ops, RH, référents IA',
-  locationName: 'Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel',
+  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
 }
 
 /* Le programme en ItemList (séquence citable — GEO). */
@@ -711,7 +711,7 @@ export default function FormationMakePage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['Qualiopi', 'actions de formation certifiées'],
-                ['FR · CH · BE', 'intra sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -835,7 +835,7 @@ export default function FormationMakePage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

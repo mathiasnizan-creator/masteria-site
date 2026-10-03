@@ -148,7 +148,7 @@ const FAQ = [
   },
   {
     q: "Un consultant IA intervient-il à Paris, à Lyon ou à distance ?",
-    a: "Les deux fonctionnent. La proximité aide pour les ateliers de cadrage et la conduite du changement ; le distanciel convient au suivi, à la formation et aux missions bien périmétrées. Masteria est basé à Lyon et intervient à Paris, dans toute la France, ainsi qu'en Suisse et en Belgique, en présentiel comme à distance.",
+    a: "Les deux fonctionnent. La proximité aide pour les ateliers de cadrage et la conduite du changement ; le distanciel convient au suivi, à la formation et aux missions bien périmétrées. Masteria est basé à Lyon et intervient à Paris, dans toute la France, ainsi qu'à l'international (Europe, États-Unis, Inde), en présentiel comme à distance.",
   },
 ]
 
@@ -685,7 +685,7 @@ export default function ConsultantIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

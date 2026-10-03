@@ -69,7 +69,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
   { icon: Target, label: "Toutes nos formations sont certifiées Qualiopi" },
-  { icon: MapPin, label: 'Présentiel & distanciel · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Présentiel & distanciel · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -238,7 +238,7 @@ const FAQ = [
 
 const COURSE_DATA = {
   name: 'Formations IA certifiées Qualiopi — Masteria',
-  description: "Catalogue de formations à l'intelligence artificielle générative certifiées Qualiopi (actions de formation, NDA 84 69 23218 69) : par métier (marketing, commercial, finance, RH, gestion de projet, communication, management, assistanat, service client, achats, QSE), par outil (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, multi-outils) et thématiques (AI Act, dirigeants, acculturation, coaching). Éligibles à la prise en charge OPCO. Intra-entreprise, présentiel ou distanciel, France, Suisse, Belgique.",
+  description: "Catalogue de formations à l'intelligence artificielle générative certifiées Qualiopi (actions de formation, NDA 84 69 23218 69) : par métier (marketing, commercial, finance, RH, gestion de projet, communication, management, assistanat, service client, achats, QSE), par outil (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, multi-outils) et thématiques (AI Act, dirigeants, acculturation, coaching). Éligibles à la prise en charge OPCO. Intra-entreprise, présentiel ou distanciel, Europe, États-Unis, Inde.",
   level: 'Tous niveaux',
   teaches: [
     "Appliquer l'IA générative aux situations réelles de son métier",
@@ -251,7 +251,7 @@ const COURSE_DATA = {
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis technique.',
   audience: 'Salariés, managers et dirigeants d\'entreprises et d\'organisations',
-  locationName: 'Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel',
+  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
 }
 /* Programme en ItemList (séquence citable — GEO). */
 const programmeJsonLd = {

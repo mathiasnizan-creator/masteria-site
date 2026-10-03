@@ -35,7 +35,7 @@ const EN_BREF = [
   { icon: Building2, label: 'Fonction', value: `Fondateur de Masteria · ${TITRE}` },
   { icon: CalendarClock, label: 'Parcours', value: "Dix ans de conseil en transformation digitale, IA générative depuis 2020, Masteria depuis 2022" },
   { icon: MapPin, label: 'Basé à', value: "Lyon, bureaux en presqu'île (Lyon 1ᵉʳ)" },
-  { icon: Languages, label: 'Interventions', value: "France, Suisse, Belgique, et à l'international en anglais" },
+  { icon: Languages, label: 'Interventions', value: "Europe, États-Unis et Inde, en français et en anglais" },
   { icon: Newspaper, label: 'Presse', value: "Cité par Les Échos sur le choix des outils d'IA en entreprise" },
 ]
 

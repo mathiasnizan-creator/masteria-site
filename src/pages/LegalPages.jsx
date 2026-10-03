@@ -122,7 +122,7 @@ export function MentionsLegalesPage() {
             Déclaration d'activité enregistrée sous le numéro <strong>84 69 23218 69</strong> auprès du préfet de la région Auvergne-Rhône-Alpes. Cet enregistrement ne vaut pas agrément de l'État (article L.6352-12 du Code du travail).
           </p>
           <p style={s.p}>
-            Les sessions de formation se déroulent en distanciel par visioconférence, ou dans les locaux de nos clients (France, Suisse, Belgique) pour les formats intra-entreprises.
+            Les sessions de formation se déroulent en distanciel par visioconférence, ou dans les locaux de nos clients (en France et à l'international) pour les formats intra-entreprises.
           </p>
 
           <h2 style={s.h2}>3. Hébergement du site</h2>

@@ -183,7 +183,7 @@ const FAQ = [
   },
   {
     q: 'Faut-il suivre sa formation IA à Lyon, à Paris, ou est-ce possible à distance ?',
-    a: "Les deux fonctionnent. La proximité aide pour la cohésion d'équipe et les ateliers pratiques ; le distanciel convient au suivi et aux sessions bien cadrées. Masteria est basé à Lyon et intervient dans toute la France, en Suisse et en Belgique, en présentiel comme à distance.",
+    a: "Les deux fonctionnent. La proximité aide pour la cohésion d'équipe et les ateliers pratiques ; le distanciel convient au suivi et aux sessions bien cadrées. Masteria est basé à Lyon et intervient dans toute la France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance.",
   },
 ]
 
@@ -733,7 +733,7 @@ export default function MeilleureFormationIAPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Nous restons indépendants des éditeurs : nos recommandations d'outils sont argumentées, jamais commissionnées. Interventions en France, en Suisse et en Belgique, en présentiel comme à distance. Mathias Nizan est cité par Les Échos sur le choix des modèles d'IA en entreprise.
+                  Nous restons indépendants des éditeurs : nos recommandations d'outils sont argumentées, jamais commissionnées. Interventions en France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance. Mathias Nizan est cité par Les Échos sur le choix des modèles d'IA en entreprise.
                 </p>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
                   Nous formons aussi bien des équipes en PME que des directions dans de grandes organisations, du service opérationnel au comité de direction. Le format s'adapte à la taille et à la maturité de chaque structure. Pour voir le détail de nos programmes, consultez notre{' '}

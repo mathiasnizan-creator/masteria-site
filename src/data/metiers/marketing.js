@@ -314,7 +314,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique du métier marketing ou communication.",
   "audience": "Équipes marketing, communication et contenu",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA marketing : l'IA générative sur vos campagnes, du contenu à l'analyse",

@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique de la relation client.",
   "audience": "Conseillers et chargés de clientèle, superviseurs, SAV et support, responsables qualité",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA service client : des réponses justes et humaines à grande échelle, dans le cadre du RGPD",

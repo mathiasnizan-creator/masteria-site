@@ -65,7 +65,7 @@ const EN_BREF = [
   { label: 'Gain pour l\'équipe', value: "Moins de ressaisie et de tâches répétitives, plus de temps sur ce qui demande du jugement humain" },
   { label: 'Du cas à l\'usage', value: "Un cas d'usage devient utile par un pilote cadré sur un processus réel, mesuré avant d'être étendu" },
   { label: 'Posture', value: "Panorama informationnel, neutre sur les outils ; renvoie vers les solutions adaptées à chaque cas" },
-  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel ponctuel" },
+  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel ponctuel" },
 ]
 
 /* ───────── Cas d'usage par FONCTION (8 fonctions, 24 cas) ───────── */
@@ -841,7 +841,7 @@ export default function CasUsageIAEntreprisePage() {
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
               <ShieldCheck size={14} strokeWidth={2.2} style={{ color: '#60A5FA', verticalAlign: 'text-bottom', marginRight: 6 }} aria-hidden="true" />
-              Réponse sous 24 h · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -864,7 +864,7 @@ export default function CasUsageIAEntreprisePage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

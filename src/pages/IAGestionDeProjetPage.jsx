@@ -67,7 +67,7 @@ const HERO_BADGES = [
   { icon: Workflow, label: 'Sur vos outils : Jira, Planner, Monday, Notion, Teams' },
   { icon: Users, label: 'Chefs de projet, PMO, directions de programme' },
   { icon: Compass, label: 'Cabinet spécialisé IA depuis 2022' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 const EN_BREF = [
@@ -153,7 +153,7 @@ const serviceJsonLd = {
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/ia-gestion-de-projet#webpage' },
   serviceType: "Outillage de la fonction projet par l'intelligence artificielle",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
-  areaServed: [{ '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Suisse' }, { '@type': 'Country', name: 'Belgique' }],
+  areaServed: [{ '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Suisse' }, { '@type': 'Country', name: 'Belgique' }, { '@type': 'Country', name: 'États-Unis' }, { '@type': 'Country', name: 'Inde' }],
   audience: { '@type': 'BusinessAudience', audienceType: 'Chefs de projet, PMO, directions de programme' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -536,7 +536,7 @@ export default function IAGestionDeProjetPage() {
               Demander un cadrage gratuit
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, France, Suisse, Belgique</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, Europe, États-Unis, Inde</p>
           </div>
         </div>
       </section>
@@ -552,7 +552,7 @@ export default function IAGestionDeProjetPage() {
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
-            {[['Depuis 2022', 'spécialisé uniquement IA'], ['+1 500', 'professionnels formés'], ['Indépendant', 'des éditeurs de solutions'], ['FR · CH · BE', 'sur site ou à distance']].map(([k, v]) => (
+            {[['Depuis 2022', 'spécialisé uniquement IA'], ['+1 500', 'professionnels formés'], ['Indépendant', 'des éditeurs de solutions'], ['International', 'Europe, États-Unis, Inde']].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>

@@ -66,7 +66,7 @@ const HERO_BADGES = [
   { icon: Calendar, label: 'De quelques jours à quelques semaines' },
   { icon: FileText, label: 'Plan de mise en conformité daté' },
   { icon: ShieldCheck, label: 'Aucune certification promise' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -291,7 +291,7 @@ const FAQ = [
   },
   {
     q: "Combien de temps dure la mission, et qui doit y participer ?",
-    a: "De quelques jours à quelques semaines selon le nombre d'entités et de systèmes. Côté entreprise : un sponsor de direction, le DPO ou la personne qui en tient le rôle, un référent DSI, et les responsables des services qui utilisent l'IA. Les entretiens et la restitution se tiennent sur site ou à distance, sans effet sur le livrable. Masteria est basée à Lyon et intervient en France, en Suisse et en Belgique.",
+    a: "De quelques jours à quelques semaines selon le nombre d'entités et de systèmes. Côté entreprise : un sponsor de direction, le DPO ou la personne qui en tient le rôle, un référent DSI, et les responsables des services qui utilisent l'IA. Les entretiens et la restitution se tiennent sur site ou à distance, sans effet sur le livrable. Masteria est basée à Lyon et intervient en France et à l'international, en Europe, aux États-Unis et en Inde.",
   },
   {
     q: "L'audit de conformité peut-il être financé ?",
@@ -316,6 +316,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: {
     '@type': 'BusinessAudience',
@@ -854,7 +856,7 @@ export default function AuditConformiteAIActPage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['Indépendant', 'des éditeurs de solutions'],
-                ['FR · CH · BE', 'sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -887,7 +889,7 @@ export default function AuditConformiteAIActPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Aucune certification promise · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Cadrage gratuit · Aucune certification promise · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

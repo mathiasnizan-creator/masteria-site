@@ -270,7 +270,7 @@ export default {
   "duration": "PT7H",
   "prerequisites": "Aucun prérequis technique. Exercice dans un établissement, un cabinet ou une structure de santé ou médico-sociale.",
   "audience": "Directions et cadres d'établissements, qualité et gestion des risques, secrétariats, coordination, communication, cabinets et médico-social",
-  "locationName": "Masteria — intra-établissement, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-établissement, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA santé : les usages non cliniques de l'IA générative, dans le cadre du secret médical et de l'HDS",

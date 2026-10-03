@@ -353,7 +353,7 @@ const serviceJsonLd = {
   description: "Cabinet de conseil spécialisé en intelligence artificielle pour entreprises. Audit, feuille de route, développement de solutions sur mesure et accompagnement.",
   url: 'https://www.master-ia.fr/conseil-intelligence-artificielle',
   serviceType: ['Audit IA', 'Feuille de route IA', "Développement de solutions IA sur mesure", 'Accompagnement IA', 'Transformation IA'],
-  areaServed: ['France', 'Suisse', 'Belgique'],
+  areaServed: ['France', 'Suisse', 'Belgique', 'États-Unis', 'Inde'],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
 }
 
@@ -457,7 +457,7 @@ export default function ConseilIAPage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, aide PME, ETI et grands groupes à auditer leurs usages, cadrer leur feuille de route et déployer les cas d'usage à fort ROI, en France, en Suisse et en Belgique.</strong>
+            <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, aide PME, ETI et grands groupes à auditer leurs usages, cadrer leur feuille de route et déployer les cas d'usage à fort ROI, en France et à l'international (Europe, États-Unis, Inde).</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -1036,7 +1036,7 @@ export default function ConseilIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

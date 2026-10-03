@@ -85,7 +85,7 @@ const EN_BREF = [
   { label: 'AIPD', value: "Analyse d'impact requise quand le traitement présente un risque élevé pour les droits et libertés des personnes, un cas fréquent sur les projets d'IA" },
   { label: 'Ce que nous faisons', value: "Conseil data & IA : audit des flux, qualification des traitements, mise en conformité (prestation de service, non finançable OPCO). Formations certifiées Qualiopi, finançables" },
   { label: 'Sources', value: "CNIL (dossier intelligence artificielle), RGPD (Règlement UE 2016/679), AI Act (Règlement UE 2024/1689)" },
-  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel" },
+  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel" },
 ]
 
 /* ───────── Principes RGPD appliqués à l'IA (6 cartes) ───────── */
@@ -787,7 +787,7 @@ export default function IAEtRGPDPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Audit des flux, AIPD, DPA · RGPD & AI Act · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Audit des flux, AIPD, DPA · RGPD & AI Act · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

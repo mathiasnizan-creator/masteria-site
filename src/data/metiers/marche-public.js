@@ -314,7 +314,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique des marchés publics, côté répondant ou côté acheteur.",
   "audience": "Responsables appels d'offres, bid managers, dirigeants de PME, acheteurs publics, services marchés",
-  "locationName": "Masteria — intra-entreprise et intra-administration, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise et intra-administration, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA marché public : répondre aux appels d'offres et acheter avec l'IA, dans le cadre de la commande publique",

@@ -380,7 +380,7 @@ export default function SecteursHubPage() {
               </Link>
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              IA par secteur · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+              IA par secteur · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

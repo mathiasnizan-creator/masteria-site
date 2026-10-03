@@ -1181,7 +1181,7 @@ export function MasteriaFooter() {
             ))}
             <div style={{ marginTop: 16, fontSize: 13, color: '#888', lineHeight: 1.9 }}>
               <div>mathias.nizan@master-ia.fr</div>
-              <div>France · Suisse · Belgique</div>
+              <div>Europe · États-Unis · Inde</div>
             </div>
           </div>
         </div>

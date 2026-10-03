@@ -20,7 +20,7 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * Positionnement high-ticket : cabinet/agence IA française dont
  * le cœur d'offre est le conseil et le développement d'outils & agents sur
  * mesure ; l'automatisation prolonge le build et la formation reste une offre
- * secondaire mais visible. Interventions France/CH/BE.
+ * secondaire mais visible. Interventions Europe, États-Unis, Inde.
  * Design premium cabinet : kickers, icônes lucide (zéro emoji), cartes radius 16,
  * CTA final sombre. Accent bleu Masteria (#2563EB), pas d'orange.
  */
@@ -30,7 +30,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Agence IA : conseil, agents sur mesure & formation | Masteria'
-const META_DESC = "Agence IA : conseil et gouvernance, création d'agents IA sur mesure, automatisation, formation des équipes. Fondée à Lyon, intervient en France, Suisse, Belgique."
+const META_DESC = "Agence IA : conseil et gouvernance, création d'agents IA sur mesure, automatisation, formation des équipes. Fondée à Lyon, intervient en Europe, aux États-Unis et en Inde."
 const KEYWORDS = "agence ia, agence intelligence artificielle, agence ia france, agence ia française, prestataire ia, société spécialisée ia, agence agents ia, agence conseil ia"
 
 /* ── Design system local : kickers, titres, cartes, pastilles d'icônes ── */
@@ -45,7 +45,7 @@ const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 
 const HERO_BADGES = [
   { icon: BadgeCheck, label: 'Certifié Qualiopi' },
   { icon: Building2, label: 'Fondée à Lyon en 2022' },
-  { icon: Globe, label: 'France · Suisse · Belgique' },
+  { icon: Globe, label: 'Europe · États-Unis · Inde' },
   { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
 ]
 
@@ -137,7 +137,7 @@ const FAQ = [
   },
   {
     q: 'Où intervenez-vous ?',
-    a: "Oui. Les bureaux de Masteria sont à Lyon (presqu'île) et nos consultants interviennent en présentiel dans toute la France, ainsi qu'en Suisse et en Belgique. Les frais de déplacement éventuels figurent en clair dans la proposition commerciale. Toutes nos missions de conseil, d'automatisation et de formation existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
+    a: "Les bureaux de Masteria sont à Lyon (presqu'île) et nos consultants interviennent en présentiel dans toute la France, ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Les frais de déplacement éventuels figurent en clair dans la proposition commerciale. Toutes nos missions de conseil, d'automatisation et de formation existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
   },
   {
     q: 'Quelle différence entre une agence IA et un cabinet de conseil IA ?',
@@ -165,7 +165,7 @@ const FAQ = [
   },
   {
     q: 'Êtes-vous une agence IA française ?',
-    a: "Oui. Masteria est une agence IA française, fondée à Lyon en 2022, avec une équipe basée en France. Nous intervenons dans toute la France en présentiel et en distanciel, ainsi qu'en Suisse et en Belgique. Vos données peuvent être traitées dans l'Union européenne selon le besoin, et nos contrats relèvent du droit français. Pour les équipes situées hors de France, nous adaptons le cadre (facturation, financement) au pays concerné, sans promettre de dispositif qui n'existe pas localement.",
+    a: "Oui. Masteria est une agence IA française, fondée à Lyon en 2022, avec une équipe basée en France. Nous intervenons dans toute la France en présentiel et en distanciel, ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Vos données peuvent être traitées dans l'Union européenne selon le besoin, et nos contrats relèvent du droit français. Pour les équipes situées hors de France, nous adaptons le cadre (facturation, financement) au pays concerné, sans promettre de dispositif qui n'existe pas localement.",
   },
   {
     q: "Accompagnez-vous les entreprises sur l'ensemble du projet, du conseil au développement ?",
@@ -198,6 +198,8 @@ const LOCAL_BUSINESS_JSONLD = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   knowsAbout: [
     'Intelligence artificielle générative',
@@ -335,7 +337,7 @@ export default function AgenceIAPage() {
               <MapPin size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Agence IA · France · Suisse · Belgique
+              Agence IA · Europe · États-Unis · Inde
             </span>
           </div>
 
@@ -352,7 +354,7 @@ export default function AgenceIAPage() {
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence IA française fondée à Lyon en 2022. Son cœur d'offre : le <strong style={{ color: '#fff', fontWeight: 700 }}>conseil en stratégie et gouvernance IA et la création d'agents et d'outils sur mesure</strong>, prolongés par l'automatisation des processus et la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France, en Suisse et en Belgique, en présentiel comme en distanciel.
+            Masteria est une agence IA française fondée à Lyon en 2022. Son cœur d'offre : le <strong style={{ color: '#fff', fontWeight: 700 }}>conseil en stratégie et gouvernance IA et la création d'agents et d'outils sur mesure</strong>, prolongés par l'automatisation des processus et la formation des équipes. Plus de 1 500 professionnels formés, 98 % de satisfaction, des interventions dans toute la France et à l'international (Europe, États-Unis, Inde), en présentiel comme en distanciel.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -390,7 +392,7 @@ export default function AgenceIAPage() {
           { num: '2022', label: 'année de fondation à Lyon' },
           { num: '+1 500', label: "professionnels formés à l'IA" },
           { num: '98 %', label: 'de taux de satisfaction' },
-          { num: '3 pays', label: 'France, Suisse, Belgique' },
+          { num: 'International', label: 'Europe, États-Unis, Inde' },
         ].map(s => (
           <div key={s.num} style={{ textAlign: 'center' }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: '#0A0A0A', margin: 0, lineHeight: 1, letterSpacing: '-0.01em' }}>{s.num}</p>
@@ -462,7 +464,7 @@ export default function AgenceIAPage() {
               <div style={kickerStyle}>Ancrage terrain</div>
               <h2 style={h2Style}>Une agence IA française, présente sur le terrain</h2>
               <p style={{ ...answerStyle, maxWidth: 'none' }}>
-                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA aux bureaux bien réels, au 17 rue d'Algérie à Lyon (presqu'île), avec des interventions en présentiel dans toute la France, en Suisse et en Belgique.</strong>{' '}
+                <strong style={{ color: '#0A0A0A' }}>Masteria est une agence IA aux bureaux bien réels, au 17 rue d'Algérie à Lyon (presqu'île), avec des interventions en présentiel dans toute la France et à l'international, en Europe, aux États-Unis et en Inde.</strong>{' '}
                 La présence sur le terrain accélère ce qui se joue dans vos locaux : ateliers de cadrage, observation des processus, conduite du changement.
               </p>
               <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
@@ -488,9 +490,9 @@ export default function AgenceIAPage() {
                 <Building2 size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
               </div>
               <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Interventions France, Suisse et Belgique</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Interventions en Europe, aux États-Unis et en Inde</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
-                  Présentiel pour les phases clés (cadrage, observation des processus, passation) partout en France, en Suisse romande et en Belgique francophone ; distanciel pour le développement, les itérations et le suivi.
+                  Présentiel pour les phases clés (cadrage, observation des processus, passation) partout en France, ailleurs en Europe, aux États-Unis et en Inde ; distanciel pour le développement, les itérations et le suivi.
                 </p>
               </div>
             </div>
@@ -517,10 +519,10 @@ export default function AgenceIAPage() {
             </div>
             <div>
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>
-                Au-delà de la région : toute la France, la Suisse et la Belgique
+                Au-delà de la région : toute la France et l'international
               </h3>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Nos consultants et formateurs se déplacent dans toute la France, en Suisse et en Belgique. Les éventuels frais de déplacement figurent en clair dans la proposition commerciale : aucun supplément découvert en cours de mission. Toutes nos missions et formations existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.
+                Nos consultants et formateurs se déplacent dans toute la France et à l'international, en Europe, aux États-Unis et en Inde. Les éventuels frais de déplacement figurent en clair dans la proposition commerciale : aucun supplément découvert en cours de mission. Toutes nos missions et formations existent aussi en distanciel, avec les mêmes contenus et les mêmes livrables.
               </p>
             </div>
           </div>
@@ -702,7 +704,7 @@ export default function AgenceIAPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Agence IA · Conseil, gouvernance, agents sur mesure, automatisation, formation · France, Suisse, Belgique
+              Agence IA · Conseil, gouvernance, agents sur mesure, automatisation, formation · Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -725,7 +727,7 @@ export default function AgenceIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

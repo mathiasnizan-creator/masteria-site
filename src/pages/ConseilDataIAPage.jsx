@@ -77,7 +77,7 @@ const HERO_BADGES = [
   { icon: Database,    label: 'Audit & gouvernance data' },
   { icon: Search,      label: 'RAG sur vos données' },
   { icon: ShieldCheck, label: 'RGPD & AI Act' },
-  { icon: MapPin,      label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin,      label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── Prestations (6 cartes) ───────── */
@@ -241,7 +241,7 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous à Lyon et à distance ?",
-    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'en Suisse et en Belgique. L'essentiel du travail data se mène à distance ; les phases de cadrage, d'ateliers de gouvernance ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
+    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. L'essentiel du travail data se mène à distance ; les phases de cadrage, d'ateliers de gouvernance ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
   },
   {
     q: "Qu'est-ce que le RAG et pourquoi a-t-il besoin de données préparées ?",
@@ -331,6 +331,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -867,7 +869,7 @@ export default function ConseilDataIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Audit, gouvernance, RAG · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Audit, gouvernance, RAG · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -890,7 +892,7 @@ export default function ConseilDataIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

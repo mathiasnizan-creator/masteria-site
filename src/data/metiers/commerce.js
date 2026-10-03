@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier du commerce ou de la distribution.",
   "audience": "Enseignes, réseaux de magasins, e-commerçants, category managers, marketing retail, responsables de magasin",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA commerce et e-commerce : l'IA générative du catalogue au client, sur vos vrais produits",

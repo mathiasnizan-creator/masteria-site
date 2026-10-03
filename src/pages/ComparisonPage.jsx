@@ -1300,7 +1300,7 @@ export default function ComparisonPage({ slug: propSlug }) {
             {[
               { Icon: BadgeCheck, label: 'Certifié Qualiopi' },
               { Icon: Wallet,     label: 'Finançable OPCO' },
-              { Icon: MapPin,     label: 'France · Suisse · Belgique' },
+              { Icon: MapPin,     label: 'Europe · États-Unis · Inde' },
             ].map(({ Icon, label }) => (
               <span key={label} style={{
                 display: 'inline-flex', alignItems: 'center', gap: 7,

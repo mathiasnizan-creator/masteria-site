@@ -270,7 +270,7 @@ export default {
   "duration": "PT7H",
   "prerequisites": "Aucun prérequis. Bureautique courante.",
   "audience": "Toutes les équipes, tous métiers, managers et collaborateurs",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA tous publics : un socle commun pour toutes vos équipes, du sprint de 3 heures au parcours complet",
