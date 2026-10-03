@@ -10,7 +10,7 @@ import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
 import CadrageLink from '../components/CadrageLink'
 import EquipeMasteria from '../components/EquipeMasteria'
-import EquipeAugmentee from '../components/EquipeAugmentee'
+import ParcoursExpertises from '../components/ParcoursExpertises'
 import AvisGoogle from '../components/AvisGoogle'
 import { HUBS, METIERS } from '../data/catalog-meta'
 import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
@@ -41,6 +41,7 @@ const MUTED = '#6B7280'
 const LINE = '#E5E7EB'
 const o = '#EA580C' // orange : réservé aux boutons principaux, comme sur l'ancienne home
 const BEIGE = '#F5F3EE'
+const BLEU_FILET = '#BFDBFE' // filets des sections sur fond bleu clair
 const SECTION_PAD = 'clamp(72px, 10vw, 120px) clamp(18px, 4vw, 32px)'
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 900, letterSpacing: '-0.025em', color: INK, lineHeight: 1.12, margin: '0 0 18px' }
 const leadStyle = { fontSize: 17, color: TEXT, lineHeight: 1.75, margin: 0 }
@@ -288,9 +289,11 @@ export default function HomePage() {
         extraJsonLd={[jsonLdServiceList, jsonLdCourseList]}
       />
 
-      {/* ════════════════════════ HERO clair + équipes augmentées par l'IA ════════════════════════
+      {/* ════════════════════════ HERO clair ════════════════════════
           Un seul bloc de lecture à gauche (titre, définition, actions) et, à droite,
-          la carte Qualiopi. Bleu = seul accent ; l'orange est réservé aux boutons. */}
+          la carte Qualiopi. Bleu = seul accent ; l'orange est réservé aux boutons.
+          Suivent le bandeau des reconnaissances, puis le parcours des expertises
+          (qui remplace depuis le 03/10/2026 le bandeau « équipes augmentées par l'IA »). */}
       <section style={{ position: 'relative', background: '#FAFAF7', color: INK, overflow: 'hidden', borderBottom: `1px solid ${LINE}` }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative', padding: 'clamp(40px, 5.5vw, 72px) clamp(18px, 4vw, 32px) clamp(40px, 5vw, 64px)', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 380px' : '1fr', gap: isDesktop ? 'clamp(40px, 5vw, 72px)' : 32, alignItems: 'center' }}>
           <div>
@@ -336,9 +339,6 @@ export default function HomePage() {
             </span>
           </Link>
         </div>
-
-        {/* Des équipes augmentées par l'IA : agents construits (conseil et développement) reliés aux personnes formées (formation) */}
-        <EquipeAugmentee />
       </section>
 
       {/* ════════════════════════ RECONNAISSANCES ET CLIENTS ════════════════════════ */}
@@ -382,6 +382,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ════════════════════════ PARCOURS DES EXPERTISES (ancre sombre) ════════════════════════ */}
+      <ParcoursExpertises />
 
       {/* ════════════════════════ TROIS MÉTIERS (éditorial asymétrique) ════════════════════════ */}
       <section style={{ background: '#fff', padding: SECTION_PAD }}>
@@ -442,7 +445,7 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════ MÉTHODE EN SIX TEMPS ════════════════════════ */}
-      <section style={{ background: '#F9FAFB', padding: SECTION_PAD, borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
+      <section style={{ background: '#EFF6FF', padding: SECTION_PAD, borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) minmax(0, 1fr)' : '1fr', gap: 'clamp(16px, 4vw, 64px)', alignItems: 'end', marginBottom: 48 }}>
             <div>
@@ -453,9 +456,9 @@ export default function HomePage() {
               Qu'il s'agisse d'un diagnostic court ou d'un déploiement international, chaque mission avance dans cet ordre. C'est ce qui rend les résultats comparables, et la suite facile à décider.
             </p>
           </div>
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${LINE}`, borderLeft: isDesktop ? `1px solid ${LINE}` : 'none' }}>
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${BLEU_FILET}`, borderLeft: isDesktop ? `1px solid ${BLEU_FILET}` : 'none' }}>
             {METHODE_COMMUNE.map(m => (
-              <li key={m.num} style={{ padding: 'clamp(22px, 3vw, 32px)', borderRight: isDesktop ? `1px solid ${LINE}` : 'none', borderBottom: `1px solid ${LINE}` }}>
+              <li key={m.num} style={{ padding: 'clamp(22px, 3vw, 32px)', borderRight: isDesktop ? `1px solid ${BLEU_FILET}` : 'none', borderBottom: `1px solid ${BLEU_FILET}` }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: '50%', border: `1.5px solid ${c}`, color: c, fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 900, marginBottom: 16, fontVariantNumeric: 'tabular-nums' }}>{m.num}</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: '0 0 8px' }}>{m.title}</h3>
                 <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
@@ -622,8 +625,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════ LE FONDATEUR ════════════════════════ */}
-      <section style={{ background: '#fff', padding: SECTION_PAD, borderTop: `1px solid ${LINE}` }}>
+      {/* ════════════════════════ LE FONDATEUR (fond beige) ════════════════════════ */}
+      <section style={{ background: BEIGE, padding: SECTION_PAD }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? '380px 1fr' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
           <div style={{ maxWidth: isDesktop ? 'none' : 320 }}>
             <picture>
@@ -667,7 +670,7 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════ FAQ (éditorial) ════════════════════════ */}
-      <section id="faq" style={{ background: '#F9FAFB', padding: SECTION_PAD, borderTop: `1px solid ${LINE}` }}>
+      <section id="faq" style={{ background: '#fff', padding: SECTION_PAD, borderTop: `1px solid ${LINE}` }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 360px) 1fr' : '1fr', gap: 'clamp(32px, 6vw, 88px)' }}>
           <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : undefined}>
             <Kicker>Questions fréquentes</Kicker>
@@ -684,7 +687,7 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════ EXPLORER MASTERIA (maillage interne SEO) ════════════════════════ */}
-      <section style={{ background: '#fff', padding: 'clamp(56px, 8vw, 88px) clamp(18px, 4vw, 32px)', borderTop: `1px solid ${LINE}` }}>
+      <section style={{ background: '#F9FAFB', padding: 'clamp(56px, 8vw, 88px) clamp(18px, 4vw, 32px)', borderTop: `1px solid ${LINE}` }}>
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: INK, margin: '0 0 32px' }}>Explorer Masteria</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32 }}>
@@ -740,31 +743,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════ CTA FINAL (fond beige) ════════════════════════ */}
-      <section style={{ position: 'relative', background: BEIGE, padding: 'clamp(64px, 9vw, 104px) clamp(18px, 4vw, 32px)', overflow: 'hidden', borderTop: `1px solid ${LINE}` }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: -200, right: -120, width: 620, height: 620, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.12), rgba(37,99,235,0) 66%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'relative', maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 420px' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
+      {/* ════════════════════════ CTA FINAL (carte sombre sur fond clair) ════════════════════════
+          Comme sur les pages d'offre : une section pleine largeur sombre se confondait
+          avec le pied de page, sombre lui aussi. */}
+      <section style={{ background: '#fff', padding: 'clamp(56px, 8vw, 96px) clamp(18px, 4vw, 32px)', borderTop: `1px solid ${LINE}` }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', background: '#0A0F1E', borderRadius: 24, padding: 'clamp(32px, 5vw, 64px)', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 420px' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
           <div>
-            <Kicker>Contact</Kicker>
-            <h2 style={h2Style}>Parlons de votre projet IA</h2>
-            <p style={{ fontSize: 17, color: TEXT, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
+            <Kicker color="#60A5FA">Contact</Kicker>
+            <h2 style={{ ...h2Style, color: '#fff' }}>Parlons de votre projet IA</h2>
+            <p style={{ fontSize: 17, color: '#CBD5E1', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
               Trente minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic, outil sur mesure ou formation de vos équipes. L'échange est offert.
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[
                 { Icon: Code2, label: 'Le code vous appartient' },
                 { Icon: BadgeCheck, label: 'Formation certifiée Qualiopi' },
-                { Icon: MapPin, label: 'France · Suisse · Belgique' },
+                { Icon: Globe, label: 'Europe · États-Unis · Inde' },
               ].map(({ Icon, label }) => (
-                <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#111827', background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '7px 14px' }}>
-                  <Icon size={14} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#E2E8F0', background: 'rgba(255,255,255,0.05)', border: '1px solid #1E293B', borderRadius: 99, padding: '7px 14px' }}>
+                  <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                   {label}
                 </span>
               ))}
             </div>
           </div>
 
-          <div style={{ background: '#fff', border: `1px solid ${LINE}`, borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', boxShadow: '0 24px 60px -32px rgba(10,15,30,0.35)' }}>
+          <div style={{ background: '#fff', borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', boxShadow: '0 30px 70px -30px rgba(0,0,0,0.6)' }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: INK, marginBottom: 6 }}>Prendre rendez-vous</div>
             <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.6, margin: '0 0 20px' }}>En visio ou par téléphone, avec Mathias Nizan.</p>
             <CadrageLink style={{ ...btnPrimary, width: '100%', justifyContent: 'center', boxSizing: 'border-box', marginBottom: 20 }}>
