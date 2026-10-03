@@ -291,7 +291,7 @@ const serviceJsonLd = {
   description: META_DESC,
   url: `https://www.master-ia.fr/${SLUG}`,
   serviceType: ['Conseil stratégie IA', 'Diagnostic de maturité IA', 'Feuille de route IA', 'Gouvernance IA', "Déploiement et développement de solutions IA"],
-  areaServed: ['France', 'Suisse', 'Belgique'],
+  areaServed: ['France', 'Suisse', 'Belgique', 'États-Unis', 'Inde'],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
 }
 
@@ -453,7 +453,7 @@ export default function ConseilStrategieIAPage() {
           { num: '+1 500', label: "professionnels formés à l'IA" },
           { num: '98 %', label: 'de taux de satisfaction' },
           { num: '2022', label: 'année de fondation à Lyon' },
-          { num: 'FR · CH · BE', label: "zones d'intervention" },
+          { num: 'International', label: 'Europe, États-Unis, Inde' },
         ].map(s => (
           <div key={s.num} style={{ textAlign: 'center' }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: INK, margin: 0, lineHeight: 1 }}>{s.num}</p>
@@ -878,7 +878,7 @@ export default function ConseilStrategieIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

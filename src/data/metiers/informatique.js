@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Culture technique du poste. Aucun prérequis en développement pour les usages assistés.",
   "audience": "DSI, RSI, responsables IT, support et exploitation, chefs de projet SI, développeurs, RSSI",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA informatique / DSI : outiller les équipes IT et piloter les usages de l'IA dans l'entreprise",

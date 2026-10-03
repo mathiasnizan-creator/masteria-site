@@ -33,7 +33,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence IA marketing : contenu, campagnes & SEO | Masteria"
-const META_DESC = "Agence et cabinet de conseil marketing IA : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, marketing automation et reporting augmentés par l'IA. Done-for-you. FR, CH, BE."
+const META_DESC = "Agence et cabinet de conseil marketing IA : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, marketing automation et reporting augmentés par l'IA. Done-for-you. Europe, États-Unis, Inde."
 const KEYWORDS = "agence ia marketing, ia marketing, marketing ia, agence marketing intelligence artificielle, ia pour le marketing, cabinet de conseil marketing digital, cabinet conseil marketing ia, conseil en stratégie marketing digital, consultant marketing automation, conseil marketing ia"
 
 /* ───────── Styles partagés ───────── */
@@ -64,7 +64,7 @@ function IconBox({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: Layers, label: 'Prestation clé en main (done-for-you)' },
   { icon: Sparkles, label: 'Multi-LLM (ChatGPT, Claude, Gemini, Copilot)' },
-  { icon: MapPin, label: 'France · Suisse romande · Belgique' },
+  { icon: MapPin, label: 'Europe · États-Unis · Inde' },
   { icon: Target, label: 'Vous validez, nous produisons et pilotons' },
 ]
 
@@ -296,7 +296,7 @@ const serviceJsonLd = {
   description: "Prestation clé en main de marketing augmenté par l'IA : production de contenu, SEO et GEO, campagnes et publicité, social media, emailing et CRM, reporting et analyse. Masteria produit et pilote pour vous, avec une approche multi-LLM et des automatisations sur mesure.",
   url: 'https://www.master-ia.fr/agence-ia-marketing',
   serviceType: "Marketing augmenté par l'IA",
-  areaServed: ['France', 'Suisse', 'Belgique'],
+  areaServed: ['France', 'Suisse', 'Belgique', 'États-Unis', 'Inde'],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -427,7 +427,7 @@ export default function AgenceIAMarketingPage() {
 
           {/* GEO : réponse directe pour citation LLM — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence IA marketing qui produit et pilote vos actions à votre place : contenu, SEO et GEO, campagnes et publicité, social media, emailing et reporting, augmentés par l'intelligence artificielle. C'est une prestation clé en main, multi-LLM, avec <strong style={{ color: '#fff', fontWeight: 700 }}>relecture humaine sur chaque livrable</strong>. Vous cadrez et validez, nous exécutons. Interventions en France, Suisse romande et Belgique.
+            Masteria est une agence IA marketing qui produit et pilote vos actions à votre place : contenu, SEO et GEO, campagnes et publicité, social media, emailing et reporting, augmentés par l'intelligence artificielle. C'est une prestation clé en main, multi-LLM, avec <strong style={{ color: '#fff', fontWeight: 700 }}>relecture humaine sur chaque livrable</strong>. Vous cadrez et validez, nous exécutons. Interventions en France et à l'international (Europe, États-Unis, Inde).
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -760,7 +760,7 @@ export default function AgenceIAMarketingPage() {
               { icon: Sparkles, title: "Spécialistes de l'IA depuis 2022", desc: "L'IA générative est notre cœur de métier : nous connaissons les forces, les pièges et les bons réglages de chaque modèle, et nous le mettons au service de votre marketing." },
               { icon: PenLine, title: 'Exigence éditoriale', desc: "Votre marque est encodée dans nos prompts, chaque livrable est relu par un consultant. L'IA accélère, l'humain arbitre : rien ne sort sous votre nom sans validation." },
               { icon: Workflow, title: 'Du contenu aux automatisations', desc: "Nous ne livrons pas que des textes : nous mettons en place les workflows et intégrations qui font tourner votre dispositif marketing de bout en bout." },
-              { icon: MapPin, title: 'France, Suisse romande et Belgique', desc: "Basés à Lyon, nous intervenons à distance pour la production et le pilotage, et en présentiel ponctuel pour les temps de cadrage qui le justifient." },
+              { icon: MapPin, title: 'Europe, États-Unis et Inde', desc: "Basés à Lyon, nous intervenons à distance pour la production et le pilotage, et en présentiel ponctuel pour les temps de cadrage qui le justifient." },
             ].map(card => (
               <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
                 <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
@@ -863,7 +863,7 @@ export default function AgenceIAMarketingPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Multi-LLM · Relecture humaine · France, Suisse romande, Belgique
+              Réponse sous 24 h · Multi-LLM · Relecture humaine · Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -886,7 +886,7 @@ export default function AgenceIAMarketingPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

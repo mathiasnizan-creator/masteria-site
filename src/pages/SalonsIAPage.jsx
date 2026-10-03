@@ -493,7 +493,7 @@ export default function SalonsIAPage() {
               Demander un cadrage gratuit
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, France, Suisse, Belgique</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, Europe, États-Unis, Inde</p>
           </div>
         </div>
       </section>

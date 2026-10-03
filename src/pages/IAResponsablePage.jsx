@@ -83,7 +83,7 @@ const EN_BREF = [
   { label: 'Référentiels', value: "AI Act (Règlement UE 2024/1689), RGPD et recommandations CNIL, ISO/IEC 42001:2023, lignes directrices européennes pour une IA digne de confiance (2019)" },
   { label: 'Méthode', value: "Cinq étapes : cartographier les usages, définir les principes applicables, poser la supervision et les contrôles, mesurer, améliorer en continu" },
   { label: 'Notre rôle', value: "Conseil en gouvernance IA (prestation de service, non finançable OPCO) et formations certifiées Qualiopi (finançables)" },
-  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel" },
+  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel" },
 ]
 
 /* ───────── Les six principes de l'IA responsable (cartes) ───────── */
@@ -781,7 +781,7 @@ export default function IAResponsablePage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Principes, supervision, mesure · AI Act, RGPD, ISO/IEC 42001 · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Principes, supervision, mesure · AI Act, RGPD, ISO/IEC 42001 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

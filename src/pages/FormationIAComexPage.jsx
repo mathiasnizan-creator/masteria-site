@@ -280,7 +280,7 @@ const COURSE_DATA = {
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis technique.',
   audience: 'Comités exécutifs, comités de direction, directions générales (PME, ETI, groupes)',
-  locationName: 'Masteria — dans vos locaux ou hors site (France, Suisse, Belgique) ou distanciel',
+  locationName: 'Masteria — dans vos locaux ou hors site (Europe, États-Unis, Inde) ou distanciel',
   /* Grille exécutive propre à cette page (≠ intra équipes) : prix d'entrée
      porté par l'Offer, détail des deux formats dans la priceSpecification. */
   price: '1980',
@@ -698,7 +698,7 @@ export default function FormationIAComexPage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['FR · EN', 'sessions dans les deux langues'],
-                ['FR · CH · BE', 'sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -802,7 +802,7 @@ export default function FormationIAComexPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Français ou anglais · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Certifié Qualiopi · Français ou anglais · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

@@ -59,7 +59,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Users, label: 'Petits groupes, jusqu\'à 12 personnes' },
   { icon: Sparkles, label: 'Multi-outils : ChatGPT, Copilot, Claude, Gemini, Mistral' },
-  { icon: MapPin, label: 'Sur site, à distance · France, Suisse, Belgique' },
+  { icon: MapPin, label: 'Sur site, à distance · Europe, États-Unis, Inde' },
 ]
 
 const EN_BREF = [
@@ -138,7 +138,7 @@ const serviceJsonLd = {
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/atelier-intelligence-artificielle#webpage' },
   serviceType: "Atelier pratique d'intelligence artificielle générative",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
-  areaServed: [{ '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Suisse' }, { '@type': 'Country', name: 'Belgique' }],
+  areaServed: [{ '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Suisse' }, { '@type': 'Country', name: 'Belgique' }, { '@type': 'Country', name: 'États-Unis' }, { '@type': 'Country', name: 'Inde' }],
   audience: { '@type': 'EducationalAudience', educationalRole: 'Équipes opérationnelles, managers, directions', audienceType: 'B2B' },
   offers: { '@type': 'Offer', price: '1980', priceCurrency: 'EUR', description: "1 980 € HT la session pour le groupe (jusqu'à 12 participants), 3 heures ou une journée", availability: 'https://schema.org/InStock' },
   hasOfferCatalog: {
@@ -487,7 +487,7 @@ export default function AtelierIAPage() {
               Demander un atelier IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, France, Suisse, Belgique, ou à distance</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde, ou à distance</p>
           </div>
         </div>
       </section>

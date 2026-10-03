@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier de la fonction finance.",
   "audience": "Directions financières, contrôle de gestion, comptabilité, trésorerie, FP&A",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA finance : l'IA générative d'Excel au reporting, jusqu'à la clôture",

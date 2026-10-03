@@ -79,7 +79,7 @@ const EN_BREF = [
   { label: 'Facturation', value: "Au forfait, au temps passé (régie) ou mixte selon le périmètre" },
   { label: 'Propriété', value: "Le code développé appartient au client" },
   { label: "Modèles d'IA", value: "Multi-LLM (Claude, GPT, Gemini, Mistral, Copilot), indépendants des éditeurs" },
-  { label: 'Modalité', value: "Sur site ou à distance · Lyon, France, Suisse, Belgique" },
+  { label: 'Modalité', value: "Sur site ou à distance · Lyon, Europe, États-Unis, Inde" },
 ]
 
 /* ───────── Forfait vs régie vs conseil (tableau de décision citable — GEO) ───────── */
@@ -256,7 +256,7 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous sur site, ou seulement à distance ?",
-    a: "Les deux. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le développement et le suivi se conduisent très bien à distance, en visio et par points réguliers. Mais nous intervenons aussi sur site : c'est même un mode privilégié pour la régie, les phases de cadrage et les transferts aux équipes. Vous choisissez selon vos contraintes de sécurité et vos préférences.",
+    a: "Les deux. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Le développement et le suivi se conduisent très bien à distance, en visio et par points réguliers. Mais nous intervenons aussi sur site : c'est même un mode privilégié pour la régie, les phases de cadrage et les transferts aux équipes. Vous choisissez selon vos contraintes de sécurité et vos préférences.",
   },
   {
     q: "Comment choisir entre forfait, régie et accompagnement conseil ?",
@@ -304,6 +304,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -816,7 +818,7 @@ export default function MethodeProjetIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Forfait · Régie · Conseil · Code propriété client · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Forfait · Régie · Conseil · Code propriété client · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -839,7 +841,7 @@ export default function MethodeProjetIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

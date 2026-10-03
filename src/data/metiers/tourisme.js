@@ -274,7 +274,7 @@ export default {
   "duration": "PT7H",
   "prerequisites": "Aucun prérequis technique. Exercice dans un hébergement, un restaurant, un office de tourisme, une agence ou une structure d'activités touristiques.",
   "audience": "Hôtels, campings et hébergements, restaurants et traiteurs, offices de tourisme et destinations, agences et prestataires d'activités : direction, réception, salle, communication, accueil",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA tourisme : l'IA générative appliquée aux avis clients, aux fiches et au multilingue de l'hôtellerie-restauration",

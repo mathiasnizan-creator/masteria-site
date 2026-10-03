@@ -65,7 +65,7 @@ function IconBox({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: KeyRound,   label: 'Code et données qui vous appartiennent' },
   { icon: ShieldCheck, label: 'Hébergement UE possible' },
-  { icon: MapPin,     label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin,     label: 'Lyon · Europe · États-Unis · Inde' },
   { icon: Building2,  label: 'Spécialisés IA depuis 2022' },
 ]
 
@@ -77,7 +77,7 @@ const EN_BREF = [
   { label: 'Propriété', value: "Code source et données au client, aucun enfermement chez un éditeur" },
   { label: 'Confidentialité', value: "Données non utilisées pour entraîner des modèles tiers · hébergement UE possible" },
   { label: 'Maintenance', value: "TMA (corrections, évolutions, montée de version des modèles) ou transfert à vos équipes" },
-  { label: 'Délai', value: "Premier prototype en quelques semaines · France, Suisse, Belgique" },
+  { label: 'Délai', value: "Premier prototype en quelques semaines · Europe, États-Unis, Inde" },
 ]
 
 /* ───────── 1. Quels outils IA construit-on ? (6 cartes IconBox) ───────── */
@@ -272,6 +272,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   mainEntityOfPage: 'https://www.master-ia.fr/outils-ia-sur-mesure',
@@ -433,7 +435,7 @@ export default function OutilsIASurMesurePage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Les solutions du marché couvrent les besoins standards. Dès que votre processus, vos données ou votre niveau de confidentialité sortent du cadre, il faut un outil pensé pour vous. Nous le construisons de l'idée à la mise en service, puis nous le faisons vivre. Spécialistes de l'IA depuis 2022, basés à Lyon, nous intervenons en France, en Suisse et en Belgique.
+            Les solutions du marché couvrent les besoins standards. Dès que votre processus, vos données ou votre niveau de confidentialité sortent du cadre, il faut un outil pensé pour vous. Nous le construisons de l'idée à la mise en service, puis nous le faisons vivre. Spécialistes de l'IA depuis 2022, basés à Lyon, nous intervenons en France et à l'international, en Europe, aux États-Unis et en Inde.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -772,7 +774,7 @@ export default function OutilsIASurMesurePage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Code et données qui vous appartiennent · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Code et données qui vous appartiennent · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -795,7 +797,7 @@ export default function OutilsIASurMesurePage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

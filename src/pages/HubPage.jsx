@@ -677,7 +677,7 @@ export default function HubPage() {
               }}>
                 <MapPin size={18} color="#2563EB" strokeWidth={2.5} style={{ flexShrink: 0 }} />
                 <p style={{ margin: 0, fontSize: 14, color: '#1E40AF', lineHeight: 1.55 }}>
-                  <strong>Votre ville ne figure pas dans la liste ?</strong> Nos formateurs se déplacent dans toute la France, en Belgique et en Suisse. Nous intervenons directement dans vos locaux, où que vous soyez.{' '}
+                  <strong>Votre ville ne figure pas dans la liste ?</strong> Nos formateurs se déplacent dans toute la France et à l'international, en Europe, aux États-Unis et en Inde. Nous intervenons directement dans vos locaux, où que vous soyez.{' '}
                   <Link to="/contact" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'underline' }}>Contactez-nous pour un devis.</Link>
                 </p>
               </div>
@@ -752,7 +752,7 @@ export default function HubPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Qualiopi', 'actions de formation certifiées'],
-              ['FR · CH · BE', 'intra sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

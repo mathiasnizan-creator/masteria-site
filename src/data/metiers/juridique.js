@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier du droit.",
   "audience": "Directions juridiques, juristes d'entreprise, avocats, notaires, assistants juridiques et paralegals",
-  "locationName": "Masteria, intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria, intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA juridique : l'IA générative du contrat à la recherche, l'avis reste au juriste",

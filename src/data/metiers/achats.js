@@ -314,7 +314,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier des achats.",
   "audience": "Acheteurs, directeurs achats, approvisionneurs, category managers, juristes achats",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA achats : l'IA générative du sourcing au suivi fournisseurs, dans un cadre de confidentialité",

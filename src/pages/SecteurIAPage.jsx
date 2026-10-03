@@ -165,6 +165,8 @@ export default function SecteurIAPage() {
       { '@type': 'Country', name: 'France' },
       { '@type': 'Country', name: 'Suisse' },
       { '@type': 'Country', name: 'Belgique' },
+      { '@type': 'Country', name: 'États-Unis' },
+      { '@type': 'Country', name: 'Inde' },
     ],
     audience: { '@type': 'BusinessAudience', name: secteur.name },
     hasOfferCatalog: {
@@ -637,7 +639,7 @@ export default function SecteurIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

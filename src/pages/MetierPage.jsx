@@ -702,7 +702,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
               { icon: BadgeCheck, label: 'Certifié Qualiopi · Finançable OPCO' },
               { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
               { icon: Target, label: enrichi?.base?.badge3 || 'Sur vos cas réels' },
-              { icon: MapPin, label: 'Présentiel & distanciel · France · Suisse · Belgique' },
+              { icon: MapPin, label: 'Présentiel & distanciel · Europe · États-Unis · Inde' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
                 <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
@@ -1085,7 +1085,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                   ['Depuis 2022', 'spécialisé uniquement IA'],
                   ['+1 500', 'professionnels formés'],
                   ['Qualiopi', 'actions de formation certifiées'],
-                  ['FR · CH · BE', 'intra sur site ou à distance'],
+                  ['International', 'Europe, États-Unis, Inde'],
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

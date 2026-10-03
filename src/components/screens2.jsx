@@ -7,7 +7,7 @@ export const FAQ_GENERAL = [
   { q: "Comment financer ma formation via mon OPCO ?", a: "Toutes nos formations sont éligibles à une prise en charge par votre OPCO (opérateur de compétences). Nous vous accompagnons dans les démarches : identification de votre OPCO, constitution du dossier et suivi de la demande. Contactez-nous pour qu'on vous guide." },
   { q: "Faut-il des prérequis techniques ?", a: "Non. Nos formations sont conçues pour des professionnels de tous niveaux, sans aucun prérequis technique. La seule condition : utiliser un ordinateur et avoir envie d'apprendre." },
   { q: "Vos formations se déroulent-elles en présentiel ou à distance ?", a: "Les deux. Nous proposons des sessions en présentiel (dans vos locaux ou dans notre salle) et à distance via des outils de visioconférence interactifs. Le format est choisi lors du devis selon vos préférences." },
-  { q: "Dans quels pays intervenez-vous ?", a: "Nous intervenons en France (toutes régions), en Suisse et en Belgique. Pour les formations intra-entreprise, nous nous déplaçons dans vos locaux." },
+  { q: "Dans quels pays intervenez-vous ?", a: "Nous intervenons en France (toutes régions) et à l'international, en Europe, aux États-Unis et en Inde. Pour les formations intra-entreprise, nous nous déplaçons dans vos locaux." },
   { q: "Quel est le délai pour organiser une formation ?", a: "Pour un accompagnement individuel sur mesure, organisable sous 1 à 2 semaines. Pour une formation intra-entreprise, comptez 2 à 4 semaines pour le cadrage et l'organisation." },
 ];
 

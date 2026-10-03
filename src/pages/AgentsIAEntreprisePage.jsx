@@ -987,7 +987,7 @@ export default function AgentsIAEntreprisePage() {
 
           <h3 style={{ ...h3Style, fontSize: 22, marginBottom: 8 }}>Avancer avec Masteria</h3>
           <p style={{ ...pStyle, marginBottom: 28 }}>
-            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022 et basés à Lyon, nous avons accompagné plus de 1 500 professionnels, en France, en Suisse et en Belgique. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link>, intervention courte, identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
+            Masteria conçoit, développe et déploie vos agents IA sur mesure, comme détaillé ci-dessus. Spécialisés sur l'IA depuis 2022, basés à Lyon et présents en Europe, aux États-Unis et en Inde, nous avons accompagné plus de 1 500 professionnels. Pour une vue d'ensemble de nos accompagnements, notre <Link to="/agence-ia" style={linkStyle}>agence IA à Lyon</Link> rassemble le tout, et un <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link>, intervention courte, identifie le premier agent à déployer chez vous. Vos équipes peuvent aussi se former en complément.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {NEXT_STEPS.map(item => (
@@ -1063,7 +1063,7 @@ export default function AgentsIAEntreprisePage() {
                 <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
               </Link>
               <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-                Organisme certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction · France, Suisse, Belgique
+                Organisme certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction · Europe, États-Unis, Inde
               </p>
             </div>
           </div>
@@ -1087,7 +1087,7 @@ export default function AgentsIAEntreprisePage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

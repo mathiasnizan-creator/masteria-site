@@ -201,7 +201,7 @@ export default function DebutantPage() {
             Prêt à former votre équipe à l'IA ?
           </h2>
           <p style={{ color: '#374151', fontSize: 17, marginBottom: 32 }}>
-            Devis personnalisé sous 24h. Présentiel ou distanciel, partout en France, Suisse et Belgique.
+            Devis personnalisé sous 24h. Présentiel ou distanciel, partout en France et à l'international (Europe, États-Unis, Inde).
           </p>
           <Link to="/contact" style={{
             display: 'inline-flex', alignItems: 'center', gap: 10,

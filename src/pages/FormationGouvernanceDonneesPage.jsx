@@ -64,7 +64,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Database, label: 'Sur vos données réelles, pas sur un cas d\'école' },
   { icon: Users, label: 'Responsables data, SI, DAF, DPO, managers métier' },
-  { icon: MapPin, label: 'Intra, sur site ou à distance · France, Suisse, Belgique' },
+  { icon: MapPin, label: 'Intra, sur site ou à distance · Europe, États-Unis, Inde' },
 ]
 
 const EN_BREF = [
@@ -450,7 +450,7 @@ export default function FormationGouvernanceDonneesPage() {
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
-            {[['Depuis 2022', 'spécialisé uniquement IA'], ['+1 500', 'professionnels formés'], ['Qualiopi', 'formation finançable OPCO'], ['FR · CH · BE', 'sur site ou à distance']].map(([k, v]) => (
+            {[['Depuis 2022', 'spécialisé uniquement IA'], ['+1 500', 'professionnels formés'], ['Qualiopi', 'formation finançable OPCO'], ['International', 'Europe, États-Unis, Inde']].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
@@ -528,7 +528,7 @@ export default function FormationGouvernanceDonneesPage() {
               Demander un devis
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, France, Suisse, Belgique</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde</p>
           </div>
         </div>
       </section>

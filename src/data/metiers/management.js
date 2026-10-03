@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique du management d'équipe.",
   "audience": "Managers de proximité et intermédiaires, chefs de service, directeurs opérationnels",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA management : piloter une équipe augmentée, sans perdre le pilotage",

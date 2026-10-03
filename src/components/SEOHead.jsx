@@ -220,10 +220,13 @@ export default function SEOHead({
       addressLocality: 'Lyon',
       addressCountry: 'FR',
     },
+    // Zones d'intervention : Europe (France, Suisse, Belgique), États-Unis, Inde (03/10/2026)
     areaServed: [
       { '@type': 'Country', name: 'France' },
       { '@type': 'Country', name: 'Suisse' },
       { '@type': 'Country', name: 'Belgique' },
+      { '@type': 'Country', name: 'États-Unis' },
+      { '@type': 'Country', name: 'Inde' },
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -231,7 +234,7 @@ export default function SEOHead({
       telephone: '+33-6-67-75-41-28',
       email: 'mathias.nizan@master-ia.fr',
       availableLanguage: ['fr', 'en'],
-      areaServed: ['FR', 'CH', 'BE'],
+      areaServed: ['FR', 'CH', 'BE', 'US', 'IN'],
     },
     sameAs: [
       'https://www.linkedin.com/company/masteria-conseil-et-formation-ia/',

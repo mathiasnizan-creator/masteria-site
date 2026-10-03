@@ -74,7 +74,7 @@ const HERO_BADGES = [
   { icon: Calendar, label: 'Intervention courte' },
   { icon: FileText, label: 'Feuille de route livrée' },
   { icon: ShieldCheck, label: 'Sans engagement de suite' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -86,7 +86,7 @@ const EN_BREF = [
   { label: 'Livrable', value: "Feuille de route IA priorisée, estimations de budget et de délai, quick wins" },
   { label: 'Engagement', value: "Faible, sans suite obligatoire ; le livrable vous appartient" },
   { label: 'Pour qui', value: "COMEX, DSI et directions métier · PME, ETI et grands groupes" },
-  { label: 'Modalité', value: "Sur site ou à distance · Lyon, France, Suisse, Belgique" },
+  { label: 'Modalité', value: "Sur site ou à distance · Lyon, Europe, États-Unis, Inde" },
   { label: 'Et après', value: "Enchaînement possible sur POC, développement sur mesure ou régie" },
 ]
 
@@ -259,7 +259,7 @@ const FAQ = [
   },
   {
     q: "Le diagnostic se fait-il sur site ou à distance ?",
-    a: "Les deux sont possibles. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Les séances de travail peuvent se tenir sur site, ce qui facilite les ateliers et l'implication des équipes, ou en distanciel en visio. La préparation et la restitution se conduisent très bien à distance dans tous les cas.",
+    a: "Les deux sont possibles. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Les séances de travail peuvent se tenir sur site, ce qui facilite les ateliers et l'implication des équipes, ou en distanciel en visio. La préparation et la restitution se conduisent très bien à distance dans tous les cas.",
   },
   {
     q: "Quelle est la différence entre un diagnostic IA et un audit IA ?",
@@ -295,6 +295,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: {
     '@type': 'BusinessAudience',
@@ -835,7 +837,7 @@ export default function DiagnosticIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Cadrage offert · Forfait selon le périmètre · Livrable actionnable · Lyon, France, Suisse, Belgique
+              Cadrage offert · Forfait selon le périmètre · Livrable actionnable · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -858,7 +860,7 @@ export default function DiagnosticIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

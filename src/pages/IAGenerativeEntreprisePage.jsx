@@ -73,7 +73,7 @@ const EN_BREF = [
   { label: 'Déploiement', value: "Quatre temps : cadrage des cas d'usage, POC sur un périmètre réel, mise en production intégrée, gouvernance dans la durée" },
   { label: 'Garde-fous', value: "Confidentialité des données, contrôle des hallucinations, validation humaine, conformité RGPD et AI Act (règlement 2024/1689)" },
   { label: 'Masteria', value: "Conseil, développement de solutions sur mesure et formation des équipes, du cas d'usage au déploiement maîtrisé" },
-  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel ponctuel" },
+  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel ponctuel" },
 ]
 
 /* ───────── Ce qu'elle change (gains / limites honnêtes) ───────── */
@@ -264,6 +264,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -406,7 +408,7 @@ export default function IAGenerativeEntreprisePage() {
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon par Mathias Nizan. Nous cadrons les usages, développons les solutions sur mesure et formons les équipes, en France, en Suisse et en Belgique.
+            Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon par Mathias Nizan. Nous cadrons les usages, développons les solutions sur mesure et formons les équipes, en France et à l'international (Europe, États-Unis, Inde).
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -878,7 +880,7 @@ export default function IAGenerativeEntreprisePage() {
               </Link>
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Spécialistes IA depuis 2022 · Multi-modèle · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Spécialistes IA depuis 2022 · Multi-modèle · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -901,7 +903,7 @@ export default function IAGenerativeEntreprisePage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

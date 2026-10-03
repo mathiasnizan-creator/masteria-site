@@ -71,7 +71,7 @@ const HERO_BADGES = [
   { icon: Compass, label: 'Cabinet spécialisé IA depuis 2022' },
   { icon: Workflow, label: 'Processus, rôles, pilotage' },
   { icon: Users, label: 'Du COMEX aux équipes terrain' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -251,6 +251,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: { '@type': 'BusinessAudience', audienceType: 'PME, ETI et groupes' },
   hasOfferCatalog: {
@@ -708,7 +710,7 @@ export default function ConseilTransformationIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -731,7 +733,7 @@ export default function ConseilTransformationIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

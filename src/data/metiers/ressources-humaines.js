@@ -314,7 +314,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier des ressources humaines.",
   "audience": "DRH, RRH, chargés de recrutement, gestionnaires RH, responsables formation",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA ressources humaines : l'IA générative du recrutement au plan de compétences, dans le cadre du RGPD",

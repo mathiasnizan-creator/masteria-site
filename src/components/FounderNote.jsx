@@ -16,7 +16,7 @@ function LinkedInGlyph({ size = 16 }) {
  * INTÉGRITÉ : aucun élément inventé. Photo réelle (/assets/mathias-nizan), citation
  * établie de Mathias Nizan, LinkedIn réel, faits déjà affichés sur le site (cabinet
  * spécialisé IA depuis 2022 fondé à Lyon, +1 500 professionnels formés, indépendant
- * des éditeurs, FR/CH/BE). Réutilise les jetons de design des pages money (#2563EB).
+ * des éditeurs, Europe/États-Unis/Inde). Réutilise les jetons de design des pages money (#2563EB).
  */
 
 const ACCENT = '#2563EB'
@@ -26,7 +26,7 @@ const CREDENTIALS = [
   'Spécialiste IA depuis 2022',
   '+1 500 professionnels formés',
   'Cabinet indépendant des éditeurs',
-  'Lyon · France · Suisse · Belgique',
+  'Lyon · Europe · États-Unis · Inde',
 ]
 
 const DEFAULT_QUOTE = "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel."
@@ -99,7 +99,7 @@ export default function FounderNote({ quote = DEFAULT_QUOTE, bg = '#F9FAFB' }) {
               Fondateur de Masteria, conseil et architecture de solutions IA
             </p>
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 720 }}>
-              Mathias Nizan a fondé Masteria en 2022 à Lyon. Cabinet spécialisé uniquement sur l'intelligence artificielle et indépendant des éditeurs, Masteria a formé plus de 1 500 professionnels et accompagne PME, ETI et grands groupes, du cadrage stratégique au développement des solutions sur mesure, en France, en Suisse et en Belgique.
+              Mathias Nizan a fondé Masteria en 2022 à Lyon. Cabinet spécialisé uniquement sur l'intelligence artificielle et indépendant des éditeurs, Masteria a formé plus de 1 500 professionnels et accompagne PME, ETI et grands groupes, du cadrage stratégique au développement des solutions sur mesure, en Europe, aux États-Unis et en Inde.
             </p>
             <blockquote style={{ borderLeft: `3px solid ${ACCENT}`, paddingLeft: 18, margin: '0 0 20px' }}>
               <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 700, color: '#0A0A0A', fontStyle: 'italic', margin: 0, lineHeight: 1.55 }}>

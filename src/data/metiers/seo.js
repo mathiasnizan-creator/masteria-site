@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique du SEO, du contenu ou du marketing digital.",
   "audience": "Équipes SEO et contenu, acquisition, marketing digital, consultants SEO",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation SEO IA : le référencement outillé par l'IA et le GEO, sur vos propres pages",

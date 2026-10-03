@@ -313,6 +313,8 @@ export default function SolutionIAPage() {
       { '@type': 'Country', name: 'France' },
       { '@type': 'Country', name: 'Suisse' },
       { '@type': 'Country', name: 'Belgique' },
+      { '@type': 'Country', name: 'États-Unis' },
+      { '@type': 'Country', name: 'Inde' },
     ],
     audience: { '@type': 'BusinessAudience', name: 'PME, ETI et grands groupes' },
     serviceOutput: {
@@ -335,6 +337,8 @@ export default function SolutionIAPage() {
         { '@type': 'Country', name: 'France' },
         { '@type': 'Country', name: 'Suisse' },
         { '@type': 'Country', name: 'Belgique' },
+        { '@type': 'Country', name: 'États-Unis' },
+        { '@type': 'Country', name: 'Inde' },
       ],
     },
     hasOfferCatalog: {
@@ -431,7 +435,7 @@ export default function SolutionIAPage() {
               { icon: Cpu, label: 'Multi-LLM (Claude, GPT, Mistral)' },
               { icon: Database, label: 'RAG sur vos données' },
               { icon: KeyRound, label: 'Code livré au client' },
-              { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+              { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
                 <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
@@ -955,7 +959,7 @@ export default function SolutionIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -978,7 +982,7 @@ export default function SolutionIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

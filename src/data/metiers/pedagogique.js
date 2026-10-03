@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique de la formation ou de l'ingénierie pédagogique.",
   "audience": "Formateurs, ingénieurs pédagogiques, responsables de formation, concepteurs e-learning, enseignants",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA équipes pédagogiques : concevoir, animer et évaluer avec l'IA générative, dans le cadre des droits et de l'intégrité",

@@ -69,7 +69,7 @@ const HERO_BADGES = [
   { icon: Search,  label: 'SEO + GEO' },
   { icon: Bot,     label: 'Visible dans ChatGPT, Perplexity, Gemini' },
   { icon: Cpu,     label: "SEO outillé par l'IA" },
-  { icon: MapPin,  label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin,  label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── Ce que fait une agence SEO IA (6 cartes) ───────── */
@@ -200,11 +200,11 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous à Lyon et à distance ?",
-    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le travail de SEO et de GEO se mène très bien à distance, par points réguliers ; les phases de cadrage ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
+    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Le travail de SEO et de GEO se mène très bien à distance, par points réguliers ; les phases de cadrage ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
   },
   {
     q: "Proposez-vous du référencement IA à Lyon ?",
-    a: "Oui. Masteria est une agence de référencement IA basée à Lyon : nous accompagnons les entreprises de la métropole lyonnaise et de la région Auvergne-Rhône-Alpes sur le référencement naturel augmenté par l'IA et sur le GEO, en présentiel pour les temps de cadrage et en distanciel pour la production et le suivi. Le référencement IA ne se limite pas à une zone : nous travaillons aussi dans toute la France, en Suisse et en Belgique, la visibilité dans Google comme dans les moteurs de réponse n'ayant pas de frontière géographique.",
+    a: "Oui. Masteria est une agence de référencement IA basée à Lyon : nous accompagnons les entreprises de la métropole lyonnaise et de la région Auvergne-Rhône-Alpes sur le référencement naturel augmenté par l'IA et sur le GEO, en présentiel pour les temps de cadrage et en distanciel pour la production et le suivi. Le référencement IA ne se limite pas à une zone : nous travaillons aussi dans toute la France et à l'international (Europe, États-Unis, Inde), la visibilité dans Google comme dans les moteurs de réponse n'ayant pas de frontière géographique.",
   },
   {
     q: "Combien de temps pour voir des résultats en SEO IA ?",
@@ -230,6 +230,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -689,7 +691,7 @@ export default function AgenceSeoIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · SEO + GEO · Spécialistes IA depuis 2022 · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · SEO + GEO · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -712,7 +714,7 @@ export default function AgenceSeoIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

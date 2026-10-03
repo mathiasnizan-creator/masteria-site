@@ -68,7 +68,7 @@ const HERO_BADGES = [
   { icon: Presentation, label: '1 h à 2 h · de 20 à plusieurs centaines de personnes' },
   { icon: Sparkles, label: 'Démonstrations en direct sur vos cas' },
   { icon: Users, label: 'COMEX, plénière, séminaire, convention' },
-  { icon: MapPin, label: 'Sur site en France, Suisse, Belgique, ou en visio' },
+  { icon: MapPin, label: 'Sur site en Europe, aux États-Unis et en Inde, ou en visio' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -252,6 +252,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: {
     '@type': 'EducationalAudience',
@@ -815,7 +817,7 @@ export default function ConferenceIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Lyon, France, Suisse, Belgique, ou en visio
+              Réponse sous 24 h · Certifié Qualiopi · Lyon, Europe, États-Unis, Inde, ou en visio
             </p>
           </div>
         </div>

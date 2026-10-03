@@ -61,7 +61,7 @@ const HERO_BADGES = [
   { icon: Calendar, label: 'De quelques jours à quelques semaines' },
   { icon: Lock, label: "Aucune donnée d'usager saisie pendant l'audit" },
   { icon: FileText, label: 'Rapport lisible par un conseil d\'administration' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -253,7 +253,7 @@ const FAQ = [
   },
   {
     q: "Combien de temps dure l'audit, et pour combien d'établissements ?",
-    a: "De quelques jours à quelques semaines selon le nombre d'établissements et de services. Une association avec trois établissements sur un même département se traite en quelques jours d'expertise, étalés pour caler les entretiens ; un groupe régional multi-activités demande davantage, et le devis l'explique ligne à ligne. Les entretiens se tiennent sur site ou à distance, sans effet sur le livrable. Masteria est basée à Lyon et intervient en France, en Suisse et en Belgique.",
+    a: "De quelques jours à quelques semaines selon le nombre d'établissements et de services. Une association avec trois établissements sur un même département se traite en quelques jours d'expertise, étalés pour caler les entretiens ; un groupe régional multi-activités demande davantage, et le devis l'explique ligne à ligne. Les entretiens se tiennent sur site ou à distance, sans effet sur le livrable. Masteria est basée à Lyon et intervient en France et à l'international, en Europe, aux États-Unis et en Inde.",
   },
   {
     q: "Et après l'audit ?",
@@ -278,6 +278,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: {
     '@type': 'BusinessAudience',
@@ -796,7 +798,7 @@ export default function AuditIAMedicoSocialPage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['Indépendant', 'des éditeurs de solutions'],
-                ['FR · CH · BE', 'sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -829,7 +831,7 @@ export default function AuditIAMedicoSocialPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Devis HT et TTC · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Cadrage gratuit · Devis HT et TTC · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

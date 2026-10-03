@@ -461,7 +461,7 @@ export default function SolutionsHubPage() {
               </Link>
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

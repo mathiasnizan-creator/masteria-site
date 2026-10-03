@@ -76,7 +76,7 @@ const HERO_BADGES = [
   { icon: RouteIcon, label: 'Du cadrage à l\'adoption' },
   { icon: GraduationCap, label: 'Volet formation Qualiopi, finançable OPCO' },
   { icon: HeartHandshake, label: 'Un interlocuteur, dans la durée' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -310,6 +310,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: {
     '@type': 'BusinessAudience',
@@ -844,7 +846,7 @@ export default function AccompagnementIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Multi-outils, indépendants des éditeurs · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Cadrage gratuit · Multi-outils, indépendants des éditeurs · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

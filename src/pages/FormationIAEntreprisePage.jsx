@@ -68,7 +68,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Sparkles, label: 'Multi-outils : ChatGPT, Copilot, Claude, Gemini, Mistral' },
   { icon: Building2, label: 'En intra : vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · France · Suisse · Belgique' },
+  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
 /* ───────── En bref (synthèse citable — GEO) ───────── */
@@ -78,7 +78,7 @@ const EN_BREF = [
   { label: 'Pour qui', value: "Dirigeants, DRH et responsables formation qui veulent former leurs équipes, du COMEX au terrain" },
   { label: 'Outils', value: "Selon votre environnement : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, en versions entreprise" },
   { label: 'Méthode', value: "Sessions en intra sur les cas réels de chaque équipe : vos documents, vos processus, vos règles" },
-  { label: 'Déploiement', value: "Dans vos locaux ou à distance, par vagues d'équipes, partout en France, en Suisse et en Belgique" },
+  { label: 'Déploiement', value: "Dans vos locaux ou à distance, par vagues d'équipes, partout en France et à l'international (Europe, États-Unis, Inde)" },
   { label: 'Financement', value: "Actions de formation certifiées Qualiopi, finançables par votre OPCO ; devis sous 24 h" },
 ]
 
@@ -259,7 +259,7 @@ const VAGUES = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une formation IA en entreprise ?",
-    a: "C'est une formation dispensée en intra : le groupe est composé de vos collaborateurs, la session se tient dans vos locaux ou à distance, et le programme est construit au cadrage sur les cas réels de chaque équipe. Elle se distingue de l'inter-entreprises, où chaque participant rejoint un groupe venu d'organisations différentes sur un programme standard. Chez Masteria, la formation IA en entreprise va du sprint de 3 h au parcours par métier, sur ChatGPT, Microsoft Copilot, Claude, Gemini ou Mistral selon votre environnement, partout en France, en Suisse et en Belgique.",
+    a: "C'est une formation dispensée en intra : le groupe est composé de vos collaborateurs, la session se tient dans vos locaux ou à distance, et le programme est construit au cadrage sur les cas réels de chaque équipe. Elle se distingue de l'inter-entreprises, où chaque participant rejoint un groupe venu d'organisations différentes sur un programme standard. Chez Masteria, la formation IA en entreprise va du sprint de 3 h au parcours par métier, sur ChatGPT, Microsoft Copilot, Claude, Gemini ou Mistral selon votre environnement, partout en France et à l'international (Europe, États-Unis, Inde).",
   },
   {
     q: 'Combien de personnes peut-on former par session ?',
@@ -310,7 +310,7 @@ const serviceJsonLd = {
   '@type': ['Service', 'EducationalOrganization'],
   name: 'Formation IA en entreprise',
   alternateName: "Formation IA intra-entreprise pour former ses équipes",
-  description: "Formation IA en entreprise, en intra : sessions dans vos locaux ou à distance, sur les cas réels de chaque équipe, multi-outils selon votre environnement (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). Du sprint de 3 h au parcours par métier avec référents internes. Certifié Qualiopi, finançable OPCO. France, Suisse, Belgique.",
+  description: "Formation IA en entreprise, en intra : sessions dans vos locaux ou à distance, sur les cas réels de chaque équipe, multi-outils selon votre environnement (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). Du sprint de 3 h au parcours par métier avec référents internes. Certifié Qualiopi, finançable OPCO. Europe, États-Unis, Inde.",
   url: 'https://www.master-ia.fr/formation-ia-entreprise',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-entreprise#webpage' },
   serviceType: 'Formation IA en entreprise (intra-entreprise)',
@@ -320,6 +320,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   audience: {
     '@type': 'EducationalAudience',
@@ -511,7 +513,7 @@ export default function FormationIAEntreprisePage() {
 
           {/* GEO : réponse directe citable — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA en entreprise forme vos équipes en intra, dans vos locaux ou à distance, <strong style={{ color: '#fff', fontWeight: 700 }}>sur les cas réels de chaque équipe et sur les outils de votre environnement</strong> : ChatGPT, Microsoft Copilot, Claude, Gemini ou Mistral. Du sprint de 3 h au parcours par métier, chaque session est certifiée Qualiopi et finançable par votre OPCO, partout en France, en Suisse et en Belgique.
+            Une formation IA en entreprise forme vos équipes en intra, dans vos locaux ou à distance, <strong style={{ color: '#fff', fontWeight: 700 }}>sur les cas réels de chaque équipe et sur les outils de votre environnement</strong> : ChatGPT, Microsoft Copilot, Claude, Gemini ou Mistral. Du sprint de 3 h au parcours par métier, chaque session est certifiée Qualiopi et finançable par votre OPCO. Nous formons partout en France et à l'international (Europe, États-Unis, Inde).
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -890,7 +892,7 @@ export default function FormationIAEntreprisePage() {
                 ['Depuis 2022', 'spécialisé uniquement IA'],
                 ['+1 500', 'professionnels formés'],
                 ['Qualiopi', 'actions de formation certifiées'],
-                ['FR · CH · BE', 'intra sur site ou à distance'],
+                ['International', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -995,7 +997,7 @@ export default function FormationIAEntreprisePage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

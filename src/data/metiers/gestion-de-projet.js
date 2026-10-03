@@ -326,7 +326,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique de la conduite de projet.",
   "audience": "Chefs de projet, PMO, directeurs de programme, product owners",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA gestion de projet : l'IA générative du cadrage au reporting",

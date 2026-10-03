@@ -50,7 +50,7 @@ const CHIFFRES = [
   { label: 'Formés', value: 'Plus de 1 500 professionnels · 98 % de satisfaction' },
   { label: 'Catalogue', value: '5 outils · 24 métiers · des programmes par outil et par fonction' },
   { label: 'Activités', value: "Audit et conseil en stratégie IA, développement d'agents et d'outils sur mesure, formation" },
-  { label: 'Zone', value: 'France, Suisse, Belgique · présentiel et distanciel' },
+  { label: 'Zone', value: 'Europe, États-Unis, Inde · présentiel et distanciel' },
   { label: 'Références', value: 'Études de cas publiées, anonymisées à la demande des clients, vérifiables sous NDA' },
 ]
 

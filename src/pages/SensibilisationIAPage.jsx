@@ -64,7 +64,7 @@ const HERO_BADGES = [
   { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
   { icon: Users, label: "De vingt personnes à toute l'organisation" },
   { icon: Sparkles, label: 'Multi-outils : ChatGPT, Copilot, Claude, Gemini, Mistral' },
-  { icon: MapPin, label: 'Sur site, en visio · France, Suisse, Belgique' },
+  { icon: MapPin, label: 'Sur site, en visio · Europe, États-Unis, Inde' },
 ]
 
 const EN_BREF = [
@@ -139,7 +139,7 @@ const serviceJsonLd = {
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/sensibilisation-ia#webpage' },
   serviceType: "Sensibilisation à l'intelligence artificielle générative",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
-  areaServed: [{ '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Suisse' }, { '@type': 'Country', name: 'Belgique' }],
+  areaServed: [{ '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Suisse' }, { '@type': 'Country', name: 'Belgique' }, { '@type': 'Country', name: 'États-Unis' }, { '@type': 'Country', name: 'Inde' }],
   audience: { '@type': 'EducationalAudience', educationalRole: "Dirigeants, managers, équipes opérationnelles", audienceType: 'B2B' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -504,7 +504,7 @@ export default function SensibilisationIAPage() {
               Demander une sensibilisation IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, France, Suisse, Belgique, ou en visio</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde, ou en visio</p>
           </div>
         </div>
       </section>

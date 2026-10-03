@@ -74,7 +74,7 @@ const EN_BREF = [
   { label: 'Engagement', value: "Forfait au projet ou régie : un ou plusieurs développeurs IA détachés dans vos équipes, sur site ou à distance" },
   { label: 'Stack', value: "Multi-LLM (Claude, GPT, Mistral), RAG, agents et connecteurs MCP ; no-code quand il suffit, code quand la robustesse l'exige" },
   { label: 'Propriété', value: "Code et données au client, transfert de compétence aux équipes en fin de mission" },
-  { label: 'Zone', value: "Lyon, France, Suisse, Belgique · distanciel et présentiel ponctuel" },
+  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel ponctuel" },
   { label: 'Démarrage', value: "Réponse sous 24 h, cadrage puis devis au forfait" },
 ]
 
@@ -244,7 +244,7 @@ const FAQ = [
   },
   {
     q: "Intervenez-vous à distance ou hors de Lyon ?",
-    a: "Les deux. Masteria est basée à Lyon, au 17 rue d'Algérie, et intervient dans toute la France ainsi qu'en Suisse et en Belgique. Le développement et le suivi se font très bien à distance, en visio et par points réguliers ; les phases de cadrage ou de transfert peuvent se tenir sur site selon vos préférences.",
+    a: "Les deux. Masteria est basée à Lyon, au 17 rue d'Algérie, et intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Le développement et le suivi se font très bien à distance, en visio et par points réguliers ; les phases de cadrage ou de transfert peuvent se tenir sur site selon vos préférences.",
   },
 ]
 
@@ -263,6 +263,8 @@ const serviceJsonLd = {
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
     { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Country', name: 'États-Unis' },
+    { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -813,7 +815,7 @@ export default function AgenceDeveloppementIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Spécialistes IA depuis 2022 · Multi-LLM · Lyon, France, Suisse, Belgique
+              Réponse sous 24 h · Spécialistes IA depuis 2022 · Multi-LLM · Lyon, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
@@ -836,7 +838,7 @@ export default function AgenceDeveloppementIAPage() {
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
-              ['FR · CH · BE', 'sur site ou à distance'],
+              ['International', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>

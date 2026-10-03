@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier de l'immobilier.",
   "audience": "Agents et négociateurs, gestionnaires locatifs, syndics, promoteurs, dirigeants d'agence et de réseau",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA immobilier : l'IA générative de l'annonce à la gestion, sur vos vrais mandats",

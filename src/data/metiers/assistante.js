@@ -310,7 +310,7 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Maîtrise de la bureautique courante.",
   "audience": "Assistants et assistantes de direction, office managers, secrétariats, assistants d'équipe",
-  "locationName": "Masteria — intra-entreprise, présentiel (France, Suisse, Belgique) ou distanciel"
+  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
  },
  "article": {
   "headline": "Formation IA assistante de direction : l'IA générative sur tout le quotidien de l'assistanat, dans un cadre de confidentialité strict",

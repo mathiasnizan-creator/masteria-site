@@ -680,7 +680,7 @@ function AboutScreen() {
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Certifications & labels</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 800, color: '#111', marginBottom: 32 }}>Une qualité reconnue</h2>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-              {['Certifié Qualiopi', 'Finançable OPCO', 'France · Suisse · Belgique'].map((c, i) => (
+              {['Certifié Qualiopi', 'Finançable OPCO', 'Europe · États-Unis · Inde'].map((c, i) => (
                 <div key={i} style={{ padding: '13px 22px', background: '#F5F5F5', borderRadius: 10, fontSize: 14, fontWeight: 600, color: '#1C1C1C' }}>{c}</div>
               ))}
             </div>
@@ -842,7 +842,7 @@ function ContactScreen() {
     <>
       <SEOHead
         title="Contact & devis : formation ou projet IA | Masteria"
-        description="Contactez Masteria pour un devis : formation IA, conseil et audit, ou développement sur mesure. Réponse sous 24 h. France, Suisse, Belgique."
+        description="Contactez Masteria pour un devis : formation IA, conseil et audit, ou développement sur mesure. Réponse sous 24 h. Europe, États-Unis, Inde."
         slug="contact"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
@@ -910,7 +910,7 @@ function ContactScreen() {
               </span>
             )}
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <MapPin size={15} color="#D97706" /> France · Suisse · Belgique
+              <MapPin size={15} color="#D97706" /> Europe · États-Unis · Inde
             </span>
             {demandeType === 'formation' ? (
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
@@ -949,7 +949,7 @@ function ContactScreen() {
                 { Icon: Phone,    label: 'Téléphone', value: '06 67 75 41 28', href: 'tel:+33667754128' },
                 { Icon: MapPin,   label: 'Adresse',   value: "17 rue d'Algérie, 69001 Lyon · formation IA à Lyon", href: '/formation-ia-lyon' },
                 { Icon: Clock,    label: 'Délai de réponse', value: 'Sous 24 h ouvrées' },
-                { Icon: Calendar, label: 'Modalités', value: 'Présentiel ou distanciel · France, Suisse, Belgique' },
+                { Icon: Calendar, label: 'Modalités', value: 'Présentiel ou distanciel · Europe, États-Unis, Inde' },
               ].map((c, i, arr) => {
                 const content = (
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
