@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, MapPin, ShieldCheck, Layers, Compass, Cpu, Phone, Mail,
-  ArrowRight, ShoppingCart, Handshake, Code2, Check, Plus, Clock, Globe,
+  BadgeCheck, ShieldCheck, Layers, Phone, Mail,
+  ArrowRight, ShoppingCart, Handshake, Code2, Plus, Clock, Globe,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
 import CadrageLink from '../components/CadrageLink'
 import EquipeMasteria from '../components/EquipeMasteria'
-import EquipeAugmentee from '../components/EquipeAugmentee'
+import ParcoursExpertises from '../components/ParcoursExpertises'
 import AvisGoogle from '../components/AvisGoogle'
 import { HUBS, METIERS } from '../data/catalog-meta'
 import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
@@ -41,6 +41,7 @@ const MUTED = '#6B7280'
 const LINE = '#E5E7EB'
 const o = '#EA580C' // orange : réservé aux boutons principaux, comme sur l'ancienne home
 const BEIGE = '#F5F3EE'
+const BLEU_FILET = '#BFDBFE' // filets des sections sur fond bleu clair
 const SECTION_PAD = 'clamp(72px, 10vw, 120px) clamp(18px, 4vw, 32px)'
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 900, letterSpacing: '-0.025em', color: INK, lineHeight: 1.12, margin: '0 0 18px' }
 const leadStyle = { fontSize: 17, color: TEXT, lineHeight: 1.75, margin: 0 }
@@ -91,54 +92,19 @@ const CLIENTS = [
 ]
 const SECTEURS_LIGNE = "et des PME, ETI et grands groupes de l'industrie, de la distribution, de l'énergie, de l'immobilier, de l'assurance, du conseil et de la santé"
 
-/* Les trois métiers, conseil et développement d'abord. */
-const PILIERS = [
-  {
-    Icon: Compass,
-    num: '01',
-    kicker: 'Conseil & développement',
-    title: 'Auditer et conseiller',
-    desc: "Où l'IA crée de la valeur chez vous, dans quel ordre, avec quels garde-fous. Nous lisons vos processus flux par flux, chiffrons les gisements, puis posons la stratégie, la gouvernance et le cadre de conformité.",
-    recoit: ['Cartographie des flux et des données', 'Matrice impact et faisabilité', 'Feuille de route chiffrée', "Charte d'usage, registre, AI Act et RGPD"],
-    links: [
-      ['Audit IA', '/audit-ia'],
-      ['Diagnostic IA', '/diagnostic-ia'],
-      ['Conseil en stratégie IA', '/conseil-strategie-ia'],
-      ['Gouvernance et AI Act', '/gouvernance-ia'],
-      ['Accompagnement IA', '/accompagnement-ia'],
-    ],
-    cta: ['Le conseil en intelligence artificielle', '/conseil-intelligence-artificielle'],
-  },
-  {
-    Icon: Cpu,
-    num: '02',
-    kicker: 'Conseil & développement',
-    title: 'Développer vos outils',
-    desc: "Agents IA, assistants branchés sur vos documents, automatisations et applications métier reliées à votre CRM, à votre ERP et à vos outils internes. Au forfait ou en régie, avec des développeurs détachables sur site.",
-    recoit: ['Assistants et agents en production', 'Intégrations CRM, ERP et connecteurs MCP', 'Code source et documentation', "Guide d'utilisation et règles de mise à jour"],
-    links: [
-      ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
-      ['Agents IA en entreprise', '/agents-ia-entreprise'],
-      ["Agence d'automatisation IA", '/agence-automatisation-ia'],
-      ['Solutions IA par type de livrable', '/solutions-ia'],
-    ],
-    cta: ['Agence de développement IA', '/agence-developpement-ia'],
-  },
-  {
-    Icon: GraduationCap,
-    num: '03',
-    kicker: 'Formation',
-    title: 'Former vos équipes',
-    desc: "Un outil ne vaut que par ceux qui s'en servent. Nous formons sur tous les LLM du marché, par outil et par métier, à partir des dossiers de vos équipes, en présentiel ou à distance.",
-    recoit: ['Ateliers sur vos propres fichiers', 'Prompts et assistants prêts à l\'emploi', 'Supports accessibles après la formation', 'Attestation, formation certifiée Qualiopi'],
-    links: [
-      ['Formation ChatGPT', '/formation-chatgpt'],
-      ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
-      ['Formation Claude', '/formation-claude-ia'],
-      ['Formation Google Gemini', '/formation-gemini-entreprise'],
-    ],
-    cta: ['Toutes les formations IA', '/formation-intelligence-artificielle'],
-  },
+/* Offres conseil et développement, déclarées en ItemList (JSON-LD) ; les liens visibles
+   sont portés par le parcours des expertises et la section « Explorer Masteria ». */
+const SERVICES_CONSEIL_DEV = [
+  ['Audit IA', '/audit-ia'],
+  ['Diagnostic IA', '/diagnostic-ia'],
+  ['Conseil en stratégie IA', '/conseil-strategie-ia'],
+  ['Gouvernance et AI Act', '/gouvernance-ia'],
+  ['Accompagnement IA', '/accompagnement-ia'],
+  ['Agence de développement IA', '/agence-developpement-ia'],
+  ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
+  ['Agents IA en entreprise', '/agents-ia-entreprise'],
+  ["Agence d'automatisation IA", '/agence-automatisation-ia'],
+  ['Solutions IA par type de livrable', '/solutions-ia'],
 ]
 
 /* Études de cas, présentées en liste discrète plus bas dans la page. */
@@ -245,7 +211,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Audit, conseil et développement IA',
-    itemListElement: [...PILIERS[0].links, ...PILIERS[1].links].map(([name, href], i) => ({
+    itemListElement: SERVICES_CONSEIL_DEV.map(([name, href], i) => ({
       '@type': 'ListItem',
       position: i + 1,
       item: {
@@ -288,9 +254,11 @@ export default function HomePage() {
         extraJsonLd={[jsonLdServiceList, jsonLdCourseList]}
       />
 
-      {/* ════════════════════════ HERO clair + équipes augmentées par l'IA ════════════════════════
+      {/* ════════════════════════ HERO clair ════════════════════════
           Un seul bloc de lecture à gauche (titre, définition, actions) et, à droite,
-          la carte Qualiopi. Bleu = seul accent ; l'orange est réservé aux boutons. */}
+          la carte Qualiopi. Bleu = seul accent ; l'orange est réservé aux boutons.
+          Suivent le bandeau des reconnaissances, puis le parcours des expertises
+          (qui remplace depuis le 03/10/2026 le bandeau « équipes augmentées par l'IA »). */}
       <section style={{ position: 'relative', background: '#FAFAF7', color: INK, overflow: 'hidden', borderBottom: `1px solid ${LINE}` }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', position: 'relative', padding: 'clamp(40px, 5.5vw, 72px) clamp(18px, 4vw, 32px) clamp(40px, 5vw, 64px)', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 380px' : '1fr', gap: isDesktop ? 'clamp(40px, 5vw, 72px)' : 32, alignItems: 'center' }}>
           <div>
@@ -336,9 +304,6 @@ export default function HomePage() {
             </span>
           </Link>
         </div>
-
-        {/* Des équipes augmentées par l'IA : agents construits (conseil et développement) reliés aux personnes formées (formation) */}
-        <EquipeAugmentee />
       </section>
 
       {/* ════════════════════════ RECONNAISSANCES ET CLIENTS ════════════════════════ */}
@@ -383,66 +348,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════ TROIS MÉTIERS (éditorial asymétrique) ════════════════════════ */}
-      <section style={{ background: '#fff', padding: SECTION_PAD }}>
-        <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 360px) 1fr' : '1fr', gap: 'clamp(36px, 6vw, 88px)' }}>
-          <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : undefined}>
-            <Kicker>Nos expertises</Kicker>
-            <h2 style={h2Style}>Deux expertises, une même équipe</h2>
-            <p style={{ ...leadStyle, marginBottom: 24 }}>
-              Le conseil et le développement d'un côté, la formation de l'autre. Nous pensons et construisons vos outils IA, puis nous formons les équipes qui vont s'en servir&nbsp;: un projet d'IA se joue sur la marche entre la décision et l'usage, et nos deux expertises la couvrent en entier.
-            </p>
-            <p style={{ fontSize: 14.5, color: MUTED, lineHeight: 1.7, margin: 0 }}>
-              Un budget à anticiper ? Voir le <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> et notre dossier sur le <Link to="/roi-ia-entreprise" style={{ color: c, fontWeight: 700, textDecoration: 'none' }}>ROI de l'IA en entreprise</Link>.
-            </p>
-          </div>
-
-          <div>
-            {PILIERS.map(({ Icon, num, kicker, title, desc, recoit, links, cta }, i) => (
-              <article key={title} style={{ padding: i === 0 ? '0 0 44px' : '44px 0', borderBottom: i < PILIERS.length - 1 ? `1px solid ${LINE}` : 'none' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 13, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={22} strokeWidth={1.9} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                    {num} · {kicker}
-                  </span>
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.4vw, 28px)', fontWeight: 900, color: INK, margin: '0 0 12px', letterSpacing: '-0.015em' }}>{title}</h3>
-                <p style={{ fontSize: 16, color: TEXT, lineHeight: 1.75, margin: '0 0 26px', maxWidth: 680 }}>{desc}</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
-                  <div style={{ background: '#F9FAFB', border: `1px solid ${LINE}`, borderRadius: 14, padding: '18px 20px' }}>
-                    <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: 12 }}>Ce que vous recevez</div>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 9 }}>
-                      {recoit.map(r => (
-                        <li key={r} style={{ display: 'flex', gap: 10, fontSize: 14.5, color: INK, lineHeight: 1.45 }}>
-                          <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {r}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div style={{ padding: '18px 4px' }}>
-                    <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: 12 }}>Nos offres</div>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexDirection: 'column', gap: 9 }}>
-                      {links.map(([label, href]) => (
-                        <li key={href}>
-                          <Link to={href} style={{ fontSize: 14.5, color: INK, fontWeight: 600, textDecoration: 'none', borderBottom: `1px solid ${LINE}`, paddingBottom: 1 }}>{label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to={cta[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
-                      {cta[0]} <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ════════════════════════ PARCOURS DES EXPERTISES (ancre sombre) ════════════════════════ */}
+      <ParcoursExpertises />
 
       {/* ════════════════════════ MÉTHODE EN SIX TEMPS ════════════════════════ */}
-      <section style={{ background: '#F9FAFB', padding: SECTION_PAD, borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
+      <section style={{ background: '#EFF6FF', padding: SECTION_PAD, borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) minmax(0, 1fr)' : '1fr', gap: 'clamp(16px, 4vw, 64px)', alignItems: 'end', marginBottom: 48 }}>
             <div>
@@ -453,9 +363,9 @@ export default function HomePage() {
               Qu'il s'agisse d'un diagnostic court ou d'un déploiement international, chaque mission avance dans cet ordre. C'est ce qui rend les résultats comparables, et la suite facile à décider.
             </p>
           </div>
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${LINE}`, borderLeft: isDesktop ? `1px solid ${LINE}` : 'none' }}>
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${BLEU_FILET}`, borderLeft: isDesktop ? `1px solid ${BLEU_FILET}` : 'none' }}>
             {METHODE_COMMUNE.map(m => (
-              <li key={m.num} style={{ padding: 'clamp(22px, 3vw, 32px)', borderRight: isDesktop ? `1px solid ${LINE}` : 'none', borderBottom: `1px solid ${LINE}` }}>
+              <li key={m.num} style={{ padding: 'clamp(22px, 3vw, 32px)', borderRight: isDesktop ? `1px solid ${BLEU_FILET}` : 'none', borderBottom: `1px solid ${BLEU_FILET}` }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: '50%', border: `1.5px solid ${c}`, color: c, fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 900, marginBottom: 16, fontVariantNumeric: 'tabular-nums' }}>{m.num}</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: '0 0 8px' }}>{m.title}</h3>
                 <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
@@ -622,8 +532,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════ LE FONDATEUR ════════════════════════ */}
-      <section style={{ background: '#fff', padding: SECTION_PAD, borderTop: `1px solid ${LINE}` }}>
+      {/* ════════════════════════ LE FONDATEUR (fond beige) ════════════════════════ */}
+      <section style={{ background: BEIGE, padding: SECTION_PAD }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? '380px 1fr' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
           <div style={{ maxWidth: isDesktop ? 'none' : 320 }}>
             <picture>
@@ -667,7 +577,7 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════ FAQ (éditorial) ════════════════════════ */}
-      <section id="faq" style={{ background: '#F9FAFB', padding: SECTION_PAD, borderTop: `1px solid ${LINE}` }}>
+      <section id="faq" style={{ background: '#fff', padding: SECTION_PAD, borderTop: `1px solid ${LINE}` }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 360px) 1fr' : '1fr', gap: 'clamp(32px, 6vw, 88px)' }}>
           <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : undefined}>
             <Kicker>Questions fréquentes</Kicker>
@@ -684,7 +594,7 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════ EXPLORER MASTERIA (maillage interne SEO) ════════════════════════ */}
-      <section style={{ background: '#fff', padding: 'clamp(56px, 8vw, 88px) clamp(18px, 4vw, 32px)', borderTop: `1px solid ${LINE}` }}>
+      <section style={{ background: '#F9FAFB', padding: 'clamp(56px, 8vw, 88px) clamp(18px, 4vw, 32px)', borderTop: `1px solid ${LINE}` }}>
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: INK, margin: '0 0 32px' }}>Explorer Masteria</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32 }}>
@@ -704,6 +614,7 @@ export default function HomePage() {
                 ['Automatisation IA', '/agence-automatisation-ia'],
                 ['Agence IA à Lyon', '/agence-ia'],
                 ["Prix d'un projet IA", '/prix-projet-ia'],
+                ["ROI de l'IA en entreprise", '/roi-ia-entreprise'],
               ] },
               { title: 'Formation par outil', links: [
                 ['Formation ChatGPT', '/formation-chatgpt'],
@@ -740,31 +651,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════ CTA FINAL (fond beige) ════════════════════════ */}
-      <section style={{ position: 'relative', background: BEIGE, padding: 'clamp(64px, 9vw, 104px) clamp(18px, 4vw, 32px)', overflow: 'hidden', borderTop: `1px solid ${LINE}` }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: -200, right: -120, width: 620, height: 620, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.12), rgba(37,99,235,0) 66%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'relative', maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 420px' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
+      {/* ════════════════════════ CTA FINAL (carte sombre sur fond clair) ════════════════════════
+          Comme sur les pages d'offre : une section pleine largeur sombre se confondait
+          avec le pied de page, sombre lui aussi. */}
+      <section style={{ background: '#fff', padding: 'clamp(56px, 8vw, 96px) clamp(18px, 4vw, 32px)', borderTop: `1px solid ${LINE}` }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', background: '#0A0F1E', borderRadius: 24, padding: 'clamp(32px, 5vw, 64px)', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 1fr) 420px' : '1fr', gap: 'clamp(36px, 6vw, 80px)', alignItems: 'center' }}>
           <div>
-            <Kicker>Contact</Kicker>
-            <h2 style={h2Style}>Parlons de votre projet IA</h2>
-            <p style={{ fontSize: 17, color: TEXT, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
+            <Kicker color="#60A5FA">Contact</Kicker>
+            <h2 style={{ ...h2Style, color: '#fff' }}>Parlons de votre projet IA</h2>
+            <p style={{ fontSize: 17, color: '#CBD5E1', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
               Trente minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic, outil sur mesure ou formation de vos équipes. L'échange est offert.
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[
                 { Icon: Code2, label: 'Le code vous appartient' },
                 { Icon: BadgeCheck, label: 'Formation certifiée Qualiopi' },
-                { Icon: MapPin, label: 'France · Suisse · Belgique' },
+                { Icon: Globe, label: 'Europe · États-Unis · Inde' },
               ].map(({ Icon, label }) => (
-                <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#111827', background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '7px 14px' }}>
-                  <Icon size={14} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#E2E8F0', background: 'rgba(255,255,255,0.05)', border: '1px solid #1E293B', borderRadius: 99, padding: '7px 14px' }}>
+                  <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                   {label}
                 </span>
               ))}
             </div>
           </div>
 
-          <div style={{ background: '#fff', border: `1px solid ${LINE}`, borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', boxShadow: '0 24px 60px -32px rgba(10,15,30,0.35)' }}>
+          <div style={{ background: '#fff', borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', boxShadow: '0 30px 70px -30px rgba(0,0,0,0.6)' }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: INK, marginBottom: 6 }}>Prendre rendez-vous</div>
             <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.6, margin: '0 0 20px' }}>En visio ou par téléphone, avec Mathias Nizan.</p>
             <CadrageLink style={{ ...btnPrimary, width: '100%', justifyContent: 'center', boxSizing: 'border-box', marginBottom: 20 }}>

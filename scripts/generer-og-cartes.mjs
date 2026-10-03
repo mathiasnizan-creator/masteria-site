@@ -87,13 +87,13 @@ async function preparerMarque(browser) {
 
 /* ─── Surtitre : la famille de pages, déduite du slug ─── */
 function surtitre(slug) {
-  if (slug === '') return 'Formation & conseil IA';
+  if (slug === '') return 'Conseil & formation IA';
   const s = slug.replace(/^en\//, '');
   if (/^ai-watch(\/|$)/.test(s)) return 'AI Watch';
   if (/^veille-ia(\/|$)/.test(s)) return 'Veille IA';
   if (/^blog(\/|$)/.test(s)) return 'Blog Masteria';
   if (/^formation|^bootcamp|^ai-training|^training/.test(s)) return 'Formation IA';
-  if (/^conseil|^chief-ai-officer|^prestataire|^agence|^cabinet|^consultant|consulting/.test(s)) return 'Conseil IA';
+  if (/^conseil|^diagnostic|^chief-ai-officer|^prestataire|^agence|^cabinet|^consultant|consulting/.test(s)) return 'Conseil IA';
   if (/^gouvernance|rgpd|^charte|^ia-responsable|ai-act|^conformite|^audit/.test(s)) return 'Gouvernance & conformité';
   if (/^solutions-ia|^outils-ia-sur-mesure|^automatisation|^agents?-ia|^developpement|^integration/.test(s)) return 'Solutions IA';
   if (/^roi|^prix|^calculateur|^test-maturite|^quel|^quelle|vs-|^comparatif|^methode/.test(s)) return 'Repères & outils';
@@ -278,7 +278,10 @@ try {
 
   async function rendre(html, w, h, sortie) {
     await page.setViewport({ width: w, height: h });
-    await page.setContent(html, { waitUntil: 'domcontentloaded', timeout: 20000 });
+    // « load » attend la feuille Google Fonts : avec « domcontentloaded », la première
+    // carte d'un lot partait avant elle, en police de secours (constat du 03/10/2026
+    // sur accueil.jpg, toujours rendue la première).
+    await page.setContent(html, { waitUntil: 'load', timeout: 20000 });
     // Les polices viennent de Google Fonts : hors ligne, on part au bout de 5 s
     // avec la police de secours plutôt que de bloquer le build.
     await Promise.race([
