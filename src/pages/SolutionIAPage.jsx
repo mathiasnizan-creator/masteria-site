@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, use } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle,
@@ -6,6 +6,10 @@ import {
   MapPin, Users, Wrench, Clock, Coins, X, FileCode2, Sparkles, Tag, KeyRound,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CadrageLink from '../components/CadrageLink'
+import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
+import TerrainGuide from '../components/TerrainGuide'
+import { solutionGuidePromise } from '../data/terrain-guides'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { SOLUTIONS, getSolution } from '../data/solution-ia-data'
@@ -56,6 +60,9 @@ const COMPARISON_ROWS = [
 /* ── Sections communes du gabarit (typologies, déroulé, erreurs, budget, FAQ transverses).
  * Contenu générique valable pour les 7 solutions : il situe chaque livrable dans le
  * panorama et répond aux questions transverses que le cadrage soulève toujours. */
+
+// Mise en ligne du cluster solutions (commit 4933274)
+const SOLUTIONS_PUBLISHED = '2026-06-13'
 
 /* a) Typologies : quelle solution pour quelle situation de départ. */
 const SITUATION_TYPES = [
@@ -239,6 +246,11 @@ export default function SolutionIAPage() {
   const location = useLocation()
   const slug = location.pathname.replace(/^\//, '')
   const solution = getSolution(slug)
+  // Texte propre à la page (src/data/solution-guides/<slug>.js) : quand il existe, il
+  // remplace tous les blocs communs du gabarit (typologies, déroulé, erreurs, comparatif,
+  // budget, régie, FAQ transverse) par un contenu écrit pour cette solution seule.
+  const guidePromise = solutionGuidePromise(slug)
+  const guide = guidePromise ? use(guidePromise) : null
 
   if (!solution) {
     return (
@@ -255,10 +267,13 @@ export default function SolutionIAPage() {
     .filter(Boolean)
 
   // FAQ affichée (et JSON-LD) = questions propres à la solution + transverses non déjà couvertes.
-  const faqItems = [
+  const faqItems = guide?.faq ?? [
     ...solution.faq,
     ...GENERIC_FAQ.filter(g => !solution.faq.some(f => g.overlap.test(f.q))).map(({ q, a }) => ({ q, a })),
   ]
+  const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+  const MODIFIED = guide?.dateModified
+  const modifiedLabel = MODIFIED ? `${MOIS[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}` : null
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -342,6 +357,9 @@ export default function SolutionIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={faqItems}
         extraJsonLd={serviceJsonLd}
+        datePublished={guide ? SOLUTIONS_PUBLISHED : undefined}
+        dateModified={MODIFIED}
+        citations={guide?.sources}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -387,11 +405,21 @@ export default function SolutionIAPage() {
             <strong style={{ color: '#fff', fontWeight: 700 }}>{solution.directAnswer}</strong>
           </p>
 
+          {guide && (
+            <>
+              {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
+              <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 18px' }}>
+                Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
+              </p>
+              {guide.intro && <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 30px', maxWidth: 700 }}>{guide.intro}</p>}
+            </>
+          )}
+
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un cadrage gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#methode" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Comment nous le construisons
             </a>
@@ -481,59 +509,61 @@ export default function SolutionIAPage() {
       </section>
 
       {/* ── QUELLE SOLUTION POUR QUELLE SITUATION (typologies) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
-        <div style={wrap}>
-          <div style={kickerStyle}>Typologies</div>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Quelle solution IA pour quelle situation ?
-          </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le bon livrable se déduit de la situation de départ : une connaissance dispersée appelle un assistant documentaire, un flux répétitif appelle une automatisation, une préparation qui mobilise plusieurs outils appelle un agent. Six familles couvrent la grande majorité des projets ; le cadrage sert à identifier la vôtre.</strong>
-          </p>
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 36px', maxWidth: 880 }}>
-            Chaque carte suit la même lecture : à quoi la solution sert, ce qu'elle suppose de votre côté (données, licences, accès) et le signal qui indique que vous êtes devant ce cas. Ces repères viennent de nos cadrages : la plupart des demandes arrivent formulées en outil (« il nous faut un chatbot ») et repartent formulées en situation, avec un livrable adapté au flux de travail concerné.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {SITUATION_TYPES.map(st => (
-              <div key={st.title} style={{ ...cardStyle, padding: 28, display: 'flex', flexDirection: 'column', gap: 14 }}>
-                <IconTile icon={st.icon} />
-                <h3 style={{ ...h3Style, fontSize: 16.5 }}>{st.title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{st.serves}</p>
-                <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: 12 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 4 }}>Ce que ça suppose</div>
-                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{st.requires}</p>
+      {!guide && (
+        <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>Typologies</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>
+              Quelle solution IA pour quelle situation ?
+            </h2>
+            <p style={{ ...answerStyle, background: '#fff' }}>
+              <strong>Le bon livrable se déduit de la situation de départ : une connaissance dispersée appelle un assistant documentaire, un flux répétitif appelle une automatisation, une préparation qui mobilise plusieurs outils appelle un agent. Six familles couvrent la grande majorité des projets ; le cadrage sert à identifier la vôtre.</strong>
+            </p>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 36px', maxWidth: 880 }}>
+              Chaque carte suit la même lecture : à quoi la solution sert, ce qu'elle suppose de votre côté (données, licences, accès) et le signal qui indique que vous êtes devant ce cas. Ces repères viennent de nos cadrages : la plupart des demandes arrivent formulées en outil (« il nous faut un chatbot ») et repartent formulées en situation, avec un livrable adapté au flux de travail concerné.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
+              {SITUATION_TYPES.map(st => (
+                <div key={st.title} style={{ ...cardStyle, padding: 28, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <IconTile icon={st.icon} />
+                  <h3 style={{ ...h3Style, fontSize: 16.5 }}>{st.title}</h3>
+                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{st.serves}</p>
+                  <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: 12 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 4 }}>Ce que ça suppose</div>
+                    <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{st.requires}</p>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>Le signal que c'est la bonne</div>
+                    <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: 0 }}>{st.signal}</p>
+                  </div>
+                  {st.link && (
+                    <Link to={st.link.href} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 'auto' }}>
+                      {st.link.label}
+                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
-                <div>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>Le signal que c'est la bonne</div>
-                  <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: 0 }}>{st.signal}</p>
-                </div>
-                {st.link && (
-                  <Link to={st.link.href} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 'auto' }}>
-                    {st.link.label}
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </Link>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
+            <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
+              Ces familles se combinent dans un même programme : un assistant documentaire sert souvent de socle, une automatisation s'y adosse, un agent orchestre l'ensemble. Le cadrage arbitre l'ordre de construction, en commençant par le livrable qui rend service le plus vite. Si aucune carte ne correspond à votre besoin, le premier échange sert justement à qualifier la situation avant de parler livrable.
+            </p>
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Ces familles se combinent dans un même programme : un assistant documentaire sert souvent de socle, une automatisation s'y adosse, un agent orchestre l'ensemble. Le cadrage arbitre l'ordre de construction, en commençant par le livrable qui rend service le plus vite. Si aucune carte ne correspond à votre besoin, le premier échange sert justement à qualifier la situation avant de parler livrable.
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── DÉROULÉ D'UN PROJET (cinq étapes, une décision par palier) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={kickerStyle}>Déroulé</div>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Le déroulé d'un projet solution IA
+            {guide?.etapes ? `Le déroulé d'un projet de ${solution.name.toLowerCase()}` : "Le déroulé d'un projet solution IA"}
           </h2>
-          <p style={answerStyle}>
+          {!guide?.etapes && <p style={answerStyle}>
             <strong>Un projet solution IA avance en cinq étapes : cadrage sur un cas d'usage priorisé, maquette ou POC sur vos données réelles, décision d'industrialisation sur critères, construction et intégration, puis run avec mesure et gouvernance. Chaque étape se conclut par une décision, prise sur des éléments concrets.</strong>
-          </p>
+          </p>}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 16, marginBottom: 28 }}>
-            {PROJECT_STAGES.map((step, i) => (
+            {(guide?.etapes || PROJECT_STAGES).map((step, i) => (
               <div key={step.title} style={{ ...cardStyle, padding: 22 }}>
                 <div aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 9, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                   <span style={{ fontSize: 13.5, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{String(i + 1).padStart(2, '0')}</span>
@@ -543,14 +573,18 @@ export default function SolutionIAPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
-            Chaque étape remet un livrable qui sert la décision suivante : la note de cadrage fixe le périmètre et le critère, le POC produit des mesures, la construction s'accompagne de la documentation et des tests, le run s'appuie sur un tableau de bord d'usage. Vous savez en permanence où en est le projet et ce qui reste à décider.
-          </p>
-          <div style={{ ...cardStyle, borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 880 }}>
-            <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-              Un POC qui ne passe pas son critère s'arrête à la maquette, et cet arrêt est un résultat : vous savez, pour un engagement limité, qu'il faut revoir le périmètre ou renoncer, avant d'avoir mobilisé le budget d'une industrialisation. Les enseignements restent acquis (qualité des données, réactions des utilisateurs, coûts d'exploitation constatés) et servent au cas d'usage suivant.
+          {!guide?.etapes && (
+            <>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
+              Chaque étape remet un livrable qui sert la décision suivante : la note de cadrage fixe le périmètre et le critère, le POC produit des mesures, la construction s'accompagne de la documentation et des tests, le run s'appuie sur un tableau de bord d'usage. Vous savez en permanence où en est le projet et ce qui reste à décider.
             </p>
-          </div>
+            <div style={{ ...cardStyle, borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 880 }}>
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+                Un POC qui ne passe pas son critère s'arrête à la maquette, et cet arrêt est un résultat : vous savez, pour un engagement limité, qu'il faut revoir le périmètre ou renoncer, avant d'avoir mobilisé le budget d'une industrialisation. Les enseignements restent acquis (qualité des données, réactions des utilisateurs, coûts d'exploitation constatés) et servent au cas d'usage suivant.
+              </p>
+            </div>
+            </>
+          )}
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Quand les cas d'usage candidats sont nombreux, un <Link to="/audit-ia" style={aStyle}>audit IA</Link> structure l'inventaire et la priorisation avant d'engager le premier POC.
           </p>
@@ -564,9 +598,11 @@ export default function SolutionIAPage() {
           <h2 style={h2Style}>
             Comment nous construisons votre {solution.name.toLowerCase()}
           </h2>
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Quatre étapes, un livrable à chaque palier : cadrage du périmètre, prototype sur un cas réel, développement et intégration à vos outils, puis déploiement et transfert. Vous décidez à chaque étape, sur des éléments concrets, et vous repartez propriétaire du code.</strong>
-          </p>
+          {!guide && (
+            <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
+              <strong>Quatre étapes, un livrable à chaque palier : cadrage du périmètre, prototype sur un cas réel, développement et intégration à vos outils, puis déploiement et transfert. Vous décidez à chaque étape, sur des éléments concrets, et vous repartez propriétaire du code.</strong>
+            </p>
+          )}
           <div style={{ position: 'relative' }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {solution.howWeBuild.map((step, i) => (
@@ -658,32 +694,37 @@ export default function SolutionIAPage() {
         </div>
       </section>
 
+      {/* ── GUIDE : contenu propre à la solution (solution-guides/<slug>.js) ── */}
+      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={c} background="#fff" padding={sectionPad} />
+
       {/* ── ERREURS DES PROJETS SOLUTIONS IA (quatre causes d'échec) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
-        <div style={wrap}>
-          <div style={kickerStyle}>À éviter</div>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Les erreurs des projets solutions IA
-          </h2>
-          <p style={answerStyle}>
-            <strong>Quatre causes d'échec reviennent dans les projets de solutions IA : partir de l'outil au lieu du cas d'usage, sous-estimer la préparation des données, industrialiser sans critère de succès mesuré au POC, et oublier le run. Les quatre se traitent au cadrage, avant d'écrire la moindre ligne de code.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
-            {PROJECT_MISTAKES.map(m => (
-              <div key={m.title} style={{ ...cardStyle, padding: 28 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: '#F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                  <X size={22} strokeWidth={2.2} style={{ color: '#6B7280' }} />
+      {!guide && (
+        <section style={{ padding: sectionPad, background: '#fff' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>À éviter</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>
+              Les erreurs des projets solutions IA
+            </h2>
+            <p style={answerStyle}>
+              <strong>Quatre causes d'échec reviennent dans les projets de solutions IA : partir de l'outil au lieu du cas d'usage, sous-estimer la préparation des données, industrialiser sans critère de succès mesuré au POC, et oublier le run. Les quatre se traitent au cadrage, avant d'écrire la moindre ligne de code.</strong>
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
+              {PROJECT_MISTAKES.map(m => (
+                <div key={m.title} style={{ ...cardStyle, padding: 28 }}>
+                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: '#F3F4F6', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <X size={22} strokeWidth={2.2} style={{ color: '#6B7280' }} />
+                  </div>
+                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 10 }}>{m.title}</h3>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
                 </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 10 }}>{m.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+            <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
+              Ces quatre risques se neutralisent par la méthode : le critère de succès s'écrit au cadrage, le chantier de préparation des données se chiffre avant de construire, la décision d'industrialisation se prend sur les mesures du POC, et le propriétaire de la solution est nommé avant la mise en production. C'est l'objet des cinq étapes décrites plus haut.
+            </p>
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Ces quatre risques se neutralisent par la méthode : le critère de succès s'écrit au cadrage, le chantier de préparation des données se chiffre avant de construire, la décision d'industrialisation se prend sur les mesures du POC, et le propriétaire de la solution est nommé avant la mise en production. C'est l'objet des cinq étapes décrites plus haut.
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── COMPARATIF : SUR ÉTAGÈRE VS SUR MESURE (ancre sombre — GEO snippet) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
@@ -697,7 +738,11 @@ export default function SolutionIAPage() {
             {`${solution.offTheShelfLabel} ou ${solution.name.replace(/\s+sur mesure$/i, '')} sur mesure ?`}
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est branchée sur vos données et vos outils, adopte votre métier et vous en êtes propriétaire : le code vous est livré.</strong>
+            {guide?.comparatif?.intro ? <strong style={{ color: '#fff' }}>{guide.comparatif.intro}</strong> : (
+              <>
+              <strong style={{ color: '#fff' }}>Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est branchée sur vos données et vos outils, adopte votre métier et vous en êtes propriétaire : le code vous est livré.</strong>
+              </>
+            )}
           </p>
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label={`Comparatif entre ${solution.offTheShelfLabel} et une solution ${solution.name} sur mesure développée par Masteria`} style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
@@ -712,7 +757,7 @@ export default function SolutionIAPage() {
                 </tr>
               </thead>
               <tbody>
-                {COMPARISON_ROWS.map((row, i) => (
+                {(guide?.comparatif?.rows || COMPARISON_ROWS).map((row, i) => (
                   <tr key={i} style={{ borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                     <th scope="row" style={{ padding: '14px 18px', fontSize: 14, color: '#F8FAFC', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5 }}>{row.aspect}</th>
                     <td style={{ padding: '14px 18px', fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.65, verticalAlign: 'top' }}>
@@ -740,16 +785,27 @@ export default function SolutionIAPage() {
         <div style={wrap}>
           <div style={kickerStyle}>Budget</div>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Combien coûte une solution IA ?
+            {guide?.cout ? `Combien coûte un projet ${/^[aeiouéèh]/i.test(solution.name) ? "d'" : 'de '}${solution.name.charAt(0).toLowerCase()}${solution.name.slice(1)} ?` : 'Combien coûte une solution IA ?'}
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un POC se chiffre en milliers d'euros, un déploiement en production en dizaines de milliers, et un programme complet (plusieurs métiers, intégrations multiples, équipe dédiée) peut dépasser 100 000 €. Le devis est établi après le cadrage, sur un périmètre écrit ; le premier échange est gratuit.</strong>
-          </p>
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
-            Les fourchettes restent larges parce que le prix d'une solution IA dépend du périmètre davantage que de la technologie. Le budget s'engage par paliers : le POC mobilise un montant limité, et la décision d'industrialiser se prend avec ses résultats en main. Quatre facteurs font varier le devis.
-          </p>
+          {guide?.cout ? (
+            <>
+              <p style={{ ...answerStyle, background: '#fff' }}><strong>{guide.cout.lead}</strong></p>
+              {(guide.cout.paras || []).map((para, k) => (
+                <p key={k} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }}>{para}</p>
+              ))}
+            </>
+          ) : (
+            <>
+              <p style={{ ...answerStyle, background: '#fff' }}>
+                <strong>Un POC se chiffre en milliers d'euros, un déploiement en production en dizaines de milliers, et un programme complet (plusieurs métiers, intégrations multiples, équipe dédiée) peut dépasser 100 000 €. Le devis est établi après le cadrage, sur un périmètre écrit ; le premier échange est gratuit.</strong>
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
+                Les fourchettes restent larges parce que le prix d'une solution IA dépend du périmètre davantage que de la technologie. Le budget s'engage par paliers : le POC mobilise un montant limité, et la décision d'industrialiser se prend avec ses résultats en main. Quatre facteurs font varier le devis.
+              </p>
+            </>
+          )}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 32 }}>
-            {COST_FACTORS.map(f => (
+            {(guide?.cout?.facteurs ? guide.cout.facteurs.map((f, k) => ({ ...f, icon: COST_FACTORS[k % COST_FACTORS.length].icon })) : COST_FACTORS).map(f => (
               <div key={f.title} style={{ ...cardStyle, padding: 26 }}>
                 <div style={{ marginBottom: 14 }}>
                   <IconTile icon={f.icon} />
@@ -759,9 +815,11 @@ export default function SolutionIAPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }}>
-            Le devis qui suit le cadrage décrit un périmètre écrit : les livrables de chaque palier, les hypothèses retenues (sources connectées, volumes, environnements) et ce qui reste hors périmètre. Un chiffre annoncé avant d'avoir vu vos données et vos systèmes a peu de valeur ; le devis engage sur un périmètre décrit noir sur blanc. Les montants de cette page sont des repères d'échelle, le devis remis après cadrage fait foi.
-          </p>
+          {!guide?.cout && (
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }}>
+              Le devis qui suit le cadrage décrit un périmètre écrit : les livrables de chaque palier, les hypothèses retenues (sources connectées, volumes, environnements) et ce qui reste hors périmètre. Un chiffre annoncé avant d'avoir vu vos données et vos systèmes a peu de valeur ; le devis engage sur un périmètre décrit noir sur blanc. Les montants de cette page sont des repères d'échelle, le devis remis après cadrage fait foi.
+            </p>
+          )}
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Les ordres de grandeur détaillés, les modèles d'engagement et la façon de lire un devis sont expliqués sur notre page <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>.
           </p>
@@ -780,9 +838,13 @@ export default function SolutionIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Des développeurs IA chez vous, sur site ou à distance
               </h2>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                {solution.onsiteDevNote || "Au-delà du forfait au projet, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, en régie ou en équipe dédiée. Ce modèle convient aux environnements sensibles, où le code doit rester dans votre périmètre, et aux contextes de montée en charge où vous voulez accélérer sans recruter dans l'urgence. Nos développeurs travaillent avec vos équipes, transfèrent la compétence et documentent au fil de l'eau."}
-              </p>
+              {guide?.regie ? guide.regie.map((para, k) => (
+                <p key={k} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>{para}</p>
+              )) : (
+                <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
+                  {solution.onsiteDevNote || "Au-delà du forfait au projet, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, en régie ou en équipe dédiée. Ce modèle convient aux environnements sensibles, où le code doit rester dans votre périmètre, et aux contextes de montée en charge où vous voulez accélérer sans recruter dans l'urgence. Nos développeurs travaillent avec vos équipes, transfèrent la compétence et documentent au fil de l'eau."}
+                </p>
+              )}
               <Link to="/methode-projet-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Voir notre méthode de projet IA
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
@@ -881,17 +943,17 @@ export default function SolutionIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Premier échange gratuit</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               {`Parlons de votre ${solution.name.toLowerCase()}`}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
               Décrivez votre contexte et vos contraintes. Nous revenons vers vous sous 24 heures avec une lecture du périmètre, un premier prototype envisageable et une proposition de cadrage. Vous repartez avec une vision claire de ce qu'il est possible de développer, et vous restez propriétaire du code.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un cadrage gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
               Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, France, Suisse, Belgique
             </p>

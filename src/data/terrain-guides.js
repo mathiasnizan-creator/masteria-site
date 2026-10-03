@@ -8,6 +8,10 @@
 
 const SPOKE_LOADERS = import.meta.glob('./spoke-guides/*.js', { import: 'default' })
 const GEO_LOADERS = import.meta.glob('./geo-guides/*.js', { import: 'default' })
+// Pages conseil et développement : tout le texte propre à la page (le gabarit masque ses blocs communs)
+const AGENCE_LOADERS = import.meta.glob('./agence-guides/*.js', { import: 'default' })
+const SOLUTION_LOADERS = import.meta.glob('./solution-guides/*.js', { import: 'default' })
+const SECTEUR_LOADERS = import.meta.glob('./secteur-guides/*.js', { import: 'default' })
 
 // Une promesse par guide, gardée en cache : use() exige une promesse stable entre deux rendus.
 const cache = new Map()
@@ -25,4 +29,16 @@ export function spokeGuidePromise(slug) {
 
 export function geoGuidePromise(slug) {
   return load(GEO_LOADERS, `./geo-guides/${slug}.js`)
+}
+
+export function agenceGuidePromise(slug) {
+  return load(AGENCE_LOADERS, `./agence-guides/${slug}.js`)
+}
+
+export function solutionGuidePromise(slug) {
+  return load(SOLUTION_LOADERS, `./solution-guides/${slug}.js`)
+}
+
+export function secteurGuidePromise(slug) {
+  return load(SECTEUR_LOADERS, `./secteur-guides/${slug}.js`)
 }

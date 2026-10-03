@@ -23,9 +23,9 @@ export const GEO_CITIES = [
     metroArea: 'Métropole du Grand Paris : 7,2 millions d\'habitants, première agglomération économique d\'Europe continentale',
     intraOnly: true,
     sectors: "finance, conseil stratégique, tech, médias, retail et grands groupes du CAC 40",
-    desc: "Capitale économique française, Paris concentre 25 sièges sociaux du CAC 40, l'écosystème conseil le plus dense d'Europe et le plus grand bassin tech français. La demande en formation IA y est particulièrement forte dans les secteurs finance, conseil, tech et médias. Masteria intervient directement dans vos locaux parisiens, sans frais de déplacement supplémentaires.",
+    desc: "Capitale économique française, Paris concentre les sièges des grands groupes, un écosystème de conseil très dense et le premier bassin tech du pays. La demande en formation IA y est particulièrement forte dans les secteurs finance, conseil, tech et médias. Masteria intervient directement dans vos locaux parisiens ; les modalités de déplacement sont confirmées au devis.",
     introPitch: "La formation intelligence artificielle à Paris se fait chez vous : nous nous déplaçons dans vos bureaux, en intra-muros ou en proche couronne, pour former vos équipes dans leur environnement de travail habituel. Programme construit sur vos cas d'usage réels, vos outils internes, vos processus métier.",
-    opco: "OPCO principaux en Île-de-France : ATLAS (conseil, services financiers, banque, assurance), AKTO (hôtellerie, propreté, services à la personne, sécurité), CONSTRUCTYS (BTP), AFDAS (médias, culture, tourisme), OPCO 2i (industrie). Prise en charge jusqu'à 100 % selon votre convention collective. Délai de traitement OPCO en Île-de-France : 5 à 10 jours ouvrés en moyenne.",
+    opco: "OPCO principaux en Île-de-France : ATLAS (conseil, services financiers, banque, assurance), AKTO (hôtellerie, propreté, services à la personne, sécurité), CONSTRUCTYS (BTP), AFDAS (médias, culture, tourisme), OPCO 2i (industrie). La prise en charge dépend de votre branche et de vos fonds disponibles ; nous préparons le dossier avec vous, la demande est déposée avant la session.",
     zones: "Paris intra-muros (75) et l'ensemble de l'Île-de-France : La Défense, Massy, Saint-Denis, Issy-les-Moulineaux, Boulogne, Versailles, Cergy, Marne-la-Vallée, Roissy",
     industriesDeep: [
       {
@@ -38,23 +38,14 @@ export const GEO_CITIES = [
       { sector: 'Tech & numérique', companies: 'Capgemini, Atos, OVHcloud, Doctolib, Mirakl, Aircall, Datadog Paris, Criteo', focus: 'Documentation technique, code review assistée, communication produit, support client multilingue.' },
       { sector: 'Médias & retail', companies: 'Vivendi, Publicis, Havas, JC Decaux, LVMH, Kering, Carrefour, Decathlon', focus: 'Production éditoriale multi-canaux, segmentation client, brief créatif, rédaction de fiches produit, communication interne.' },
     ],
-    localCases: [
-      { profile: 'Direction RH, ETI conseil 600 collaborateurs (8e arr.)', usage: 'Tri de candidatures, rédaction de fiches de poste, communication interne post-réorganisation, refonte du parcours d\'onboarding.' },
-      { profile: 'Pôle marketing, agence média indépendante (10e arr.)', usage: 'Production de contenus pour 12 marques clientes, brief créatif, déclinaison multi-canaux LinkedIn / newsletter / blog.' },
-      { profile: 'Direction financière, groupe industriel CAC 40 (La Défense)', usage: 'Synthèse de rapports trimestriels, analyse comparative de filiales, préparation de board international en anglais.' },
-    ],
     localFacts: [
       "La Défense est le premier quartier d'affaires d'Europe : directions financières, juridiques et RH y concentrent des usages IA à gain rapide sur l'écrit et l'analyse.",
-      '25 sièges sociaux du CAC 40 sont situés à Paris ou à La Défense.',
-      'Le bassin d\'emploi parisien regroupe 6,2 millions de cadres, soit 38 % des cadres français.',
-      '92 % des grandes entreprises franciliennes ont lancé un programme IA générative en 2025 (étude PwC France).',
-      'L\'OPCO ATLAS, principal financeur en Île-de-France pour le conseil, l\'audit et la banque, traite environ 70 % des dossiers IA Masteria sur Paris.',
     ],
-    transportAccess: "Notre formateur se déplace partout en Île-de-France. Accès rapide à La Défense (RER A, métro 1), à la Gare de Lyon (RER A et D), à Saint-Lazare et à Roissy CDG (RER B, 30 min). Pour les sessions en proche couronne, nous ne facturons aucun frais de déplacement supplémentaire.",
+    transportAccess: "Notre formateur se déplace partout en Île-de-France. Accès rapide à La Défense (RER A, métro 1), à la Gare de Lyon (RER A et D), à Saint-Lazare et à Roissy CDG (RER B, 30 min). Les modalités de déplacement sont confirmées au devis.",
     localExperts: [
       { name: 'Pôle de compétitivité Cap Digital', type: 'Innovation numérique Île-de-France' },
       { name: 'Institut Polytechnique de Paris', type: 'Recherche IA (Polytechnique, Télécom Paris, ENSAE)' },
-      { name: 'Station F', type: 'Plus grand campus de startups au monde, partenaire formation IA' },
+      { name: 'Station F', type: 'Campus de startups (Paris 13e)' },
     ],
     additionalFAQ: [
       {
@@ -65,10 +56,8 @@ export const GEO_CITIES = [
         q: "Proposez-vous une formation intelligence artificielle pour débutants à Paris ?",
         a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
       },
-      { q: 'Intervenez-vous aussi en proche couronne (92, 93, 94) ?', a: "Oui. Nous nous déplaçons sans frais supplémentaires partout en Île-de-France : Hauts-de-Seine (La Défense, Boulogne, Issy-les-Moulineaux), Seine-Saint-Denis (Saint-Denis, Aubervilliers, Plaine Commune), Val-de-Marne (Créteil, Charenton, Villejuif). Préciser l'adresse exacte au moment du cadrage permet d'optimiser la logistique." },
       { q: 'Quels sont les délais d\'instruction OPCO ATLAS en Île-de-France ?', a: "Compter 5 à 10 jours ouvrés en moyenne pour une réponse OPCO ATLAS, premier financeur du conseil et des services financiers en Île-de-France. Masteria fournit le dossier complet (devis, programme, convention, attestation Qualiopi) sous 24 h ouvrées après acceptation du devis, ce qui permet une mise en formation en 3 à 4 semaines." },
       { q: 'Où se déroulent les formations IA à Paris ?', a: "En intra-entreprise : le formateur vient dans vos bureaux, partout dans Paris intra-muros et en Île-de-France (La Défense, les quartiers d'affaires de l'ouest parisien, Boulogne, Issy-les-Moulineaux, Saint-Denis, Marne-la-Vallée). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace. Le distanciel reste disponible pour les équipes réparties sur plusieurs sites." },
-      { q: 'Pourquoi choisir Masteria pour une formation IA à Paris ?', a: "Le programme se construit sur vos cas d'usage réels et Masteria connaît les secteurs qui dominent le marché parisien : finance, conseil, tech, médias et retail. La certification Qualiopi ouvre le financement OPCO (ATLAS en tête pour le conseil et la finance francilienne), le formateur se déplace sans frais dans toute l'Île-de-France, et le dossier de prise en charge est géré pour vous." },
     ],
   },
   {
@@ -200,13 +189,13 @@ export const GEO_CITIES = [
       { label: 'Financer sa formation IA (OPCO)', href: '/financement-formation-ia' },
     ],
     coordinates: { latitude: 45.7676, longitude: 4.8317 },
-    population: '522 000 habitants intra-muros',
+    population: "519 000 habitants (Insee 2023)",
     metroArea: 'Métropole de Lyon : 1,4 million d\'habitants, deuxième pôle économique français',
     intraOnly: false,
     sectors: "pharma, biotech, banque et assurance, industrie, numérique et services B2B",
     desc: "Lyon est la ville de Masteria depuis 2022 : nos bureaux sont en presqu'île, à deux pas de la place des Terreaux, et une part importante de nos sessions intra se tient dans la métropole, de la Part-Dieu à Gerland et Villeurbanne. Deuxième pôle économique français, l'agglomération réunit des sièges pharma, industrie, banque et numérique dont les équipes déploient l'IA générative ; nos programmes sont construits sur ces métiers.",
     introPitch: "Lyon est notre base, et la formation intelligence artificielle y est notre métier depuis 2022 : sessions intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure en présentiel à Lyon ou en distanciel. Grenoble, Saint-Étienne, Clermont-Ferrand et Annecy sont également couverts en intra.",
-    opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers, numérique), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture), OPCO Santé (établissements sanitaires et médico-sociaux). Masteria monte les dossiers OPCO de ses clients lyonnais depuis 2022. Délai de traitement moyen : 5 à 10 jours ouvrés.",
+    opco: "OPCO principaux en Auvergne-Rhône-Alpes : ATLAS (conseil, banque, assurance, services financiers, numérique), OPCO 2i (industrie, métallurgie, chimie, plasturgie, pharma), AKTO (services), AFDAS (médias et culture), OPCO Santé (établissements sanitaires et médico-sociaux). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, la demande est déposée avant la session.",
     zones: "Lyon (1er au 9e arrondissement), Villeurbanne, Caluire-et-Cuire, Saint-Priest, Bron, Vénissieux, Grenoble, Saint-Étienne, Clermont-Ferrand, Annecy, Chambéry, Valence",
     // Acteurs cités comme repères du tissu économique local, jamais comme clients.
     industriesDeep: [
@@ -232,12 +221,11 @@ export const GEO_CITIES = [
       },
       {
         sector: 'Tech & numérique',
-        companies: 'Cegid, Esker, Sogelink, Visiativ et les scale-ups de French Tech One Lyon Saint-Étienne',
+        companies: 'Cegid, Esker, Sogelink, Visiativ et les scale-ups de French Tech Saint-Étienne Lyon',
         focus: 'Documentation produit, spécifications fonctionnelles, revue de code assistée, support client de niveau 1.',
       },
     ],
     // Les profils types ont laissé la place aux études de cas documentées (caseStudies).
-    localCases: [],
     localFacts: [
       "La Part-Dieu est le deuxième quartier d'affaires de France : sièges et directions régionales y concentrent des équipes à former par métier, souvent sur plusieurs services d'un même site.",
       'Lyonbiopôle, pôle de compétitivité santé, fédère les laboratoires et biotechs de la région, où la rédaction réglementaire et la veille scientifique sont des usages IA prioritaires.',
@@ -250,7 +238,7 @@ export const GEO_CITIES = [
       { name: 'Lyonbiopôle', type: 'Pôle de compétitivité santé' },
       { name: 'ENS de Lyon', type: 'Recherche en informatique et IA' },
       { name: 'Centre Inria de Lyon', type: 'Recherche publique en sciences du numérique' },
-      { name: 'French Tech One Lyon Saint-Étienne', type: 'Réseau des startups et scale-ups de la métropole' },
+      { name: 'French Tech Saint-Étienne Lyon', type: 'Réseau des startups et scale-ups de la métropole' },
     ],
     additionalFAQ: [
       {
@@ -272,10 +260,6 @@ export const GEO_CITIES = [
       {
         q: 'Vos formations IA à Lyon sont-elles éligibles au CPF ?',
         a: "Non. Le CPF finance des formations certifiantes enregistrées auprès de France compétences. Nos programmes sont des actions de formation pour les équipes en poste, financées par l'OPCO de votre entreprise, son plan de développement des compétences ou l'entreprise elle-même. Un particulier qui cherche un parcours certifiant à Lyon se tournera vers les diplômes et titres cités dans le tableau des situations, plus haut sur cette page.",
-      },
-      {
-        q: 'Couvrez-vous Grenoble, Saint-Étienne et Annecy en intra ?',
-        a: "Oui, sans frais de déplacement supplémentaires. Nous intervenons régulièrement à Grenoble (ETI, recherche, deeptech), à Saint-Étienne (industrie, design), à Annecy (banque privée, sport et outdoor) et à Chambéry ou Valence. Les modalités sont identiques à celles de Lyon.",
       },
       {
         q: 'Où se déroulent les formations IA à Lyon ?',
@@ -321,8 +305,8 @@ export const GEO_CITIES = [
     intraOnly: true,
     sectors: "logistique portuaire, tourisme, services, santé, biotech, défense et industrie maritime",
     desc: "Premier port français de Méditerranée et deuxième ville française par sa population, Marseille est un hub méditerranéen avec un tissu d'ETI et de PME en forte transformation numérique. Le Grand Port Maritime de Marseille (GPMM), Airbus Helicopters, CMA CGM, Onet et l'AP-HM y dessinent une économie tournée vers la mer, la santé et les services. Masteria intervient en intra-entreprise dans vos locaux marseillais pour former vos équipes à l'IA, avec un programme adapté aux réalités du marché provençal.",
-    introPitch: "La formation intelligence artificielle à Marseille se construit sur vos enjeux métier, dans vos bureaux. Masteria connaît les spécificités du tissu économique provençal : logistique portuaire, tourisme, santé, défense, et adapte le programme en conséquence. Nos formateurs se déplacent depuis Lyon en TGV (3 h 15) sans frais supplémentaires.",
-    opco: "OPCO principaux en Provence-Alpes-Côte d'Azur : ATLAS (services financiers, conseil), AKTO (services, hôtellerie, propreté), AFDAS (tourisme, médias, sport, loisirs), OPCO 2i (industrie, défense), OPCO Santé (établissements sanitaires et sociaux). Délai d'instruction OPCO en région PACA : 7 à 12 jours ouvrés.",
+    introPitch: "La formation intelligence artificielle à Marseille se construit sur vos enjeux métier, dans vos bureaux. Masteria connaît les spécificités du tissu économique provençal : logistique portuaire, tourisme, santé, défense, et adapte le programme en conséquence. Nos formateurs viennent de Lyon en TGV direct (environ 1 h 40) ; les modalités de déplacement sont confirmées au devis.",
+    opco: "OPCO principaux en Provence-Alpes-Côte d'Azur : ATLAS (services financiers, conseil), AKTO (services, hôtellerie, propreté), AFDAS (tourisme, médias, sport, loisirs), OPCO 2i (industrie, défense), OPCO Santé (établissements sanitaires et sociaux). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, la demande est déposée avant la session.",
     zones: "Marseille (1er au 16e arrondissement), Aix-en-Provence, Aubagne, Vitrolles, Salon-de-Provence, La Ciotat, Cassis, Martigues, Plan-de-Campagne",
     industriesDeep: [
       {
@@ -333,25 +317,19 @@ export const GEO_CITIES = [
       { sector: 'Logistique & maritime', companies: 'CMA CGM, GPMM, Eurogate, Eurofos, Hapag-Lloyd, Bolloré Logistics', focus: 'Suivi de conteneurs, communication client multilingue, douane et conformité, automatisation des EDI, rédaction de bordereaux.' },
       { sector: 'Tourisme & hôtellerie', companies: 'Pierre & Vacances, Club Med, Accor région Sud, Sofitel Vieux-Port, Mama Shelter, Marseille Tourisme', focus: 'Réponses aux avis clients, contenus éditoriaux multilingues, gestion des réservations, support client 24/7.' },
       { sector: 'Santé & biotech', companies: 'AP-HM (CHU de Marseille), Innate Pharma, Inserm Marseille', focus: 'Synthèse de protocoles cliniques, codification ICD-10, communication patient, rédaction de comptes rendus médicaux.' },
-      { sector: 'Défense & aérospatial', companies: 'Naval Group, Airbus Helicopters (Eurocopter), Thales Alenia Space, MBDA', focus: 'Documentation technique, veille concurrentielle, rédaction d\'appels d\'offres défense, traitement multilingue de spécifications.' },
-    ],
-    localCases: [
-      { profile: 'Direction commerciale, armateur maritime ETI (Joliette)', usage: 'Réponses aux 150 demandes de cotation hebdomadaires, traduction FR/EN/AR, suivi des emails client par compte stratégique.' },
-      { profile: 'Service support, chaîne hôtelière 28 établissements (Vieux-Port)', usage: 'Réponses aux avis Booking et TripAdvisor, scripts d\'accueil multilingues, formation continue du personnel saisonnier.' },
-      { profile: 'Direction qualité, laboratoire d\'analyses médicales régional (Aix-en-Provence)', usage: 'Synthèse de protocoles, mise à jour des procédures HAS, rédaction de comptes rendus structurés pour les médecins prescripteurs.' },
+      { sector: 'Défense & aérospatial', companies: 'Airbus Helicopters (Marignane) et sa chaîne de sous-traitance', focus: 'Documentation technique, veille concurrentielle, rédaction d\'appels d\'offres défense, traitement multilingue de spécifications.' },
     ],
     localFacts: [
-      "Le grand port maritime de Marseille-Fos est le premier port de France : documentation de flux, déclarations et correspondances multilingues sont un terrain naturel pour l'IA générative.",
-      'Le port de Marseille-Fos est le premier port français de Méditerranée.',
-      'L\'AP-HM (Assistance publique des Hôpitaux de Marseille) est le 4e CHU de France et emploie plus de 15 000 personnes.',
+      "Le grand port maritime de Marseille-Fos est le deuxième port français et le premier de Méditerranée : documentation de flux, déclarations et correspondances multilingues sont un terrain naturel pour l'IA générative.",
+      "L'AP-HM (Assistance publique des Hôpitaux de Marseille) est l'un des plus grands CHU de France.",
       'CMA CGM, leader mondial du transport maritime, a son siège social à Marseille (La Joliette).',
-      'Le pôle Aix-Marseille Université forme 80 000 étudiants, dont la première école d\'ingénieurs de la région (École Centrale Méditerranée, ex-Centrale Marseille).',
+      "Aix-Marseille Université accueille environ 80 000 étudiants, et l'École Centrale Méditerranée (ex-Centrale Marseille) forme des ingénieurs au technopôle de Château-Gombert.",
     ],
-    transportAccess: "Notre formateur arrive depuis Lyon en TGV direct (environ 1 h 40) et se déplace librement dans Marseille intra-muros et la métropole. Aucun frais de déplacement supplémentaire pour Marseille, Aix-en-Provence, Aubagne ou Vitrolles. Pour La Ciotat et Cassis, prévoir 30 min de trajet en plus.",
+    transportAccess: "Notre formateur arrive depuis Lyon en TGV direct (environ 1 h 40) et se déplace librement dans Marseille intra-muros et la métropole. Les modalités de déplacement sont confirmées au devis.",
     localExperts: [
       { name: 'Pôle Mer Méditerranée', type: 'Cluster filière maritime et navale' },
-      { name: 'Aix-Marseille Université, Institut Archimède', type: 'Recherche IA et mathématiques appliquées' },
-      { name: 'The Camp', type: 'Campus innovation Sud, partenaire formation tech' },
+      { name: 'Aix-Marseille Université, laboratoire LIS', type: 'Recherche IA et mathématiques appliquées' },
+      { name: 'The Camp', type: 'Campus d\'innovation (Aix-en-Provence)' },
     ],
     additionalFAQ: [
       {
@@ -363,9 +341,7 @@ export const GEO_CITIES = [
         a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
       },
       { q: 'Quels formats proposez-vous à Marseille ?', a: "Nous privilégions l'intra-entreprise à Marseille : programme construit sur vos cas réels, exemples tirés de votre activité, équipe formée ensemble. Pour les profils dirigeants ou experts souhaitant une approche personnalisée, l'accompagnement individuel sur mesure (1-to-1) est disponible en présentiel à Marseille ou en distanciel." },
-      { q: 'Vous formez aussi à Aix-en-Provence et sur la côte ?', a: "Oui. Nous intervenons régulièrement à Aix-en-Provence (banque privée, conseil, étudiants des écoles AMU), à Aubagne (industrie, agroalimentaire), à La Ciotat (chantier naval, tech) et à Cassis. Aucun frais de déplacement supplémentaire dans toute la métropole Aix-Marseille-Provence." },
       { q: 'Où se déroulent les formations IA à Marseille ?', a: "En intra-entreprise : le formateur vient chez vous, du Vieux-Port à La Joliette et dans les seize arrondissements, ainsi que dans toute la métropole (Aix-en-Provence, Aubagne, Vitrolles, Martigues). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace. Le distanciel reste disponible pour les équipes réparties entre plusieurs sites." },
-      { q: 'Pourquoi choisir Masteria pour une formation IA à Marseille ?', a: "Le programme se construit sur vos cas d'usage réels et Masteria connaît les filières qui structurent l'économie provençale : logistique portuaire, tourisme, santé, défense et industrie maritime. La certification Qualiopi ouvre le financement OPCO (ATLAS, AKTO, AFDAS, OPCO 2i et OPCO Santé en PACA), le formateur arrive de Lyon en TGV direct sans frais supplémentaires, et le dossier de prise en charge est géré pour vous." },
     ],
   },
   {
@@ -380,13 +356,13 @@ export const GEO_CITIES = [
     countryCode: 'CH',
     locale: 'fr-CH',
     coordinates: { latitude: 46.2044, longitude: 6.1432 },
-    population: '203 000 habitants en ville',
-    metroArea: 'Grand Genève : 1 million d\'habitants (Genève, Vaud, Ain, Haute-Savoie)',
+    population: "environ 210 000 habitants (OCSTAT 2025)",
+    metroArea: "Grand Genève : environ un million d'habitants (Genève, Vaud, Ain, Haute-Savoie)",
     intraOnly: true,
     sectors: "finance internationale, organisations internationales (ONU, OMS, CICR), pharma, négoce de matières premières, private equity",
-    desc: "Capitale mondiale de la finance internationale et siège de plus de 40 organisations internationales (ONU, OMS, OMC, CICR, HCR), Genève concentre un tissu d'entreprises à très haute valeur ajoutée. Avec plus de 1 200 banques privées et trading houses, c'est aussi le premier centre mondial de négoce de matières premières. Masteria intervient en intra-entreprise dans vos locaux genevois pour former vos équipes à l'IA, avec une attention particulière aux exigences de confidentialité du secteur financier suisse et à la conformité FINMA.",
+    desc: "Grande place financière et siège de nombreuses organisations internationales (ONU, OMS, OMC, CICR, HCR), Genève concentre un tissu d'entreprises à très haute valeur ajoutée, où la banque privée et le négoce de matières premières forment deux piliers. Masteria intervient en intra-entreprise dans vos locaux genevois pour former vos équipes à l'IA, avec une attention particulière aux exigences de confidentialité du secteur financier suisse et à la conformité FINMA.",
     introPitch: "La formation intelligence artificielle à Genève se fait sur mesure, dans vos bureaux ou à distance. Masteria adapte le programme aux contraintes spécifiques de votre secteur : conformité FINMA, confidentialité bancaire, exigences des organisations internationales, environnement multilingue. Tout le contenu est construit sur vos cas d'usage réels, dans le respect du secret professionnel.",
-    opco: "En Suisse, la formation continue est financée via le plan de formation de l'entreprise, les contributions sectorielles cantonales (Fonds genevois pour la formation et le perfectionnement professionnels, FFPP), les conventions collectives de travail (CCT), ou les budgets de développement RH des organisations internationales. Masteria vous accompagne dans l'identification des dispositifs disponibles dans le canton de Genève et propose des factures conformes pour le remboursement.",
+    opco: "En Suisse, il n'existe pas d'OPCO : la formation continue se finance d'abord sur le budget de l'entreprise. À Genève, la Fondation pour la formation professionnelle et continue (FFPC) subventionne des cours validés par son conseil, surtout certifiants (CFC, brevets et diplômes fédéraux). Masteria établit un devis et un programme détaillés, utilisables pour votre budget formation et pour les dispositifs auxquels votre entreprise a droit.",
     zones: "Canton de Genève intra (Genève, Carouge, Vernier, Lancy, Meyrin, Onex), canton de Vaud frontalier (Nyon, Morges), région du Grand Genève (Annemasse, Saint-Julien, pays de Gex côté français)",
     industriesDeep: [
       {
@@ -396,22 +372,15 @@ export const GEO_CITIES = [
       },
       { sector: 'Banque privée & wealth management', companies: 'Pictet, Lombard Odier, Mirabaud, UBP, Edmond de Rothschild, Bordier, Banque Heritage, Reyl', focus: 'Reporting client confidentiel, analyse de portefeuille, conformité FINMA et LBA, due diligence M&A, communication multilingue.' },
       { sector: 'Organisations internationales', companies: 'ONU (Palais des Nations), OMS, OMC, CICR, HCR, OIT, CERN (proche), Aga Khan Foundation', focus: 'Rédaction multilingue (FR/EN/ES/AR/RU), synthèse de rapports volumineux, traduction structurée, communication institutionnelle.' },
-      { sector: 'Négoce de matières premières', companies: 'Trafigura, Cargill International, Mercuria, Vitol, Glencore, Louis Dreyfus, Gunvor, Kolmar Group', focus: 'Rapports de marché commodities, communication broker / trader, gestion KYC, traduction technique, suivi opérationnel logistique.' },
-      { sector: 'Pharma & santé', companies: 'Firmenich (DSM-Firmenich), Givaudan, Merck Serono, Roche Diagnostics Genève, HUG (Hôpitaux universitaires)', focus: 'Veille réglementaire Swissmedic / EMA, recherche clinique, communication scientifique, formation continue technique.' },
-    ],
-    localCases: [
-      { profile: 'Compliance, banque privée 200 collaborateurs (Rue du Rhône)', usage: 'Synthèse de dossiers KYC complexes, rédaction de mémos compliance, veille réglementaire FINMA, traduction structurée FR/EN/DE.' },
-      { profile: 'Communications, organisation internationale (Palais des Nations)', usage: 'Rédaction de rapports multilingues, synthèse de réunions, brief presse en 4 langues, mise en forme de documents diplomatiques.' },
-      { profile: 'Recherche & développement, pharma (Plan-les-Ouates)', usage: 'Synthèse de littérature scientifique, mise à jour de fiches produit en 8 langues, support documentation réglementaire EMA.' },
+      { sector: 'Négoce de matières premières', companies: 'Trafigura, Cargill International, Mercuria, Vitol, Louis Dreyfus, Gunvor', focus: 'Rapports de marché commodities, communication broker / trader, gestion KYC, traduction technique, suivi opérationnel logistique.' },
+      { sector: 'Arômes, parfums & santé', companies: 'DSM-Firmenich (Satigny), Givaudan (Vernier), HUG (Hôpitaux universitaires de Genève)', focus: 'Veille réglementaire Swissmedic / EMA, recherche clinique, communication scientifique, formation continue technique.' },
     ],
     localFacts: [
       "Genève abrite le siège européen de l'ONU et de nombreuses organisations internationales : le travail multilingue et la confidentialité y structurent tous les usages de l'IA.",
-      'Genève abrite plus de 40 organisations internationales et 750 ONG, plus grande concentration mondiale.',
-      'La place financière genevoise gère plus de 2 000 milliards de CHF d\'actifs sous gestion.',
-      'Le canton de Genève emploie 100 000 frontaliers français (Haute-Savoie, Ain), couverts par les CCT suisses.',
-      'Masteria facture en CHF ou en EUR selon votre préférence, avec TVA suisse (8,1 %) si applicable.',
+      "Plus de 100 000 frontaliers travaillent dans le canton de Genève, en majorité depuis la Haute-Savoie et l'Ain.",
+      "Masteria facture en euros hors taxes ; le traitement de la TVA est précisé au devis."
     ],
-    transportAccess: "Notre formateur arrive depuis Lyon en train direct (1 h 50 via TGV Lyria) ou en avion (50 min jusqu'à l'aéroport de Genève). Aucun frais de déplacement supplémentaire pour Genève canton et le Grand Genève. Pour Lausanne, Nyon ou les régions vaudoises proches, le déplacement est inclus. Devis en CHF ou EUR au choix.",
+    transportAccess: "Notre formateur vient de Lyon en train direct (environ 2 h) et intervient dans vos locaux du canton de Genève, du Grand Genève et de l'arc lémanique ; les modalités de déplacement sont confirmées au devis, établi en euros hors taxes. Le distanciel reste disponible pour les équipes réparties.",
     localExperts: [
       { name: 'Geneva Finance Research Institute', type: 'Recherche académique finance et IA' },
       { name: 'EPFL Lausanne (campus Innovation Park)', type: 'Recherche IA, à 40 min de Genève' },
@@ -426,8 +395,6 @@ export const GEO_CITIES = [
         q: "Proposez-vous une formation intelligence artificielle pour débutants à Genève ?",
         a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
       },
-      { q: 'La formation est-elle facturée en EUR ou en CHF ?', a: "Au choix. Masteria propose une facturation en EUR ou en CHF selon votre préférence comptable. Le tarif intra de référence est 1 980 € HT par jour ou environ 1 600 CHF HT (taux indicatif, cours du jour appliqué à la facturation). La TVA suisse (8,1 %) est ajoutée si vous êtes assujetti en Suisse." },
-      { q: 'Comment finance-t-on une formation IA en Suisse ?', a: "Plusieurs voies : 1) le plan de formation de votre entreprise (déductible fiscalement), 2) le Fonds genevois pour la formation et le perfectionnement professionnels (FFPP) pour les entreprises soumises à une CCT genevoise, 3) les budgets formation de votre convention collective sectorielle (banque, finance, IT), 4) pour les organisations internationales, les budgets internes RH et développement professionnel. Nous fournissons toutes les factures et certifications nécessaires." },
       { q: 'Comment respectez-vous la confidentialité bancaire suisse ?', a: "Nos formateurs signent un accord de confidentialité avant chaque mission. Les exemples utilisés en formation sont systématiquement anonymisés (vous fournissez les versions caviardées). Pour les sessions sur cas réels en environnement bancaire, nous travaillons à partir de documents fictifs structurellement équivalents aux vôtres. Aucun document n'est conservé après la formation." },
       { q: 'Où se déroulent les formations IA à Genève ?', a: "En intra-entreprise : le formateur vient dans vos bureaux, dans tout le canton (Genève, Carouge, Vernier, Lancy, Meyrin, Onex) et le Grand Genève, Nyon et Morges comprises. Former l'équipe sur son poste de travail, avec ses vrais outils et ses documents anonymisés, est le format le plus efficace, en particulier dans les environnements soumis au secret professionnel. Le distanciel reste disponible pour les équipes réparties entre plusieurs sites." },
     ],
@@ -450,32 +417,26 @@ export const GEO_CITIES = [
     sectors: "institutions européennes, services financiers, conseil et lobbying, pharmaceutique, tech et startups",
     desc: "Capitale de l'Union européenne et hub économique de la Belgique, Bruxelles accueille les principales institutions européennes (Commission, Parlement, Conseil, Service Européen pour l'Action Extérieure), des multinationales, un tissu dense de cabinets de conseil et de lobbying, ainsi que les sièges belges de la pharma et des services financiers. La transformation IA y est tirée par les exigences de l'AI Act et la modernisation des administrations européennes. Masteria intervient en intra-entreprise dans vos locaux bruxellois, entièrement en français.",
     introPitch: "La formation intelligence artificielle à Bruxelles se fait dans vos bureaux ou à distance, entièrement en français. Masteria adapte le programme aux spécificités du marché belge : réglementations européennes, AI Act, secteur financier, environnement multilingue. Nos formateurs se déplacent chez vous (depuis Lyon en TGV via Paris, 4 h 30), sans contrainte logistique pour vos équipes.",
-    opco: "En Belgique francophone, la formation professionnelle est cofinancée par les fonds sectoriels paritaires : CEFORA (commission paritaire 200, secteur tertiaire), FOPAS (services financiers), Constructiv (BTP), IFAPME pour les indépendants, et le Forem (service public de l'emploi et de la formation wallonne) pour la Wallonie. Masteria vous accompagne dans l'identification du fonds applicable et fournit les justificatifs au format belge (TVA BE, attestations).",
-    zones: "Bruxelles-Capitale (19 communes), Brabant wallon (Louvain-la-Neuve, Wavre, Nivelles), Brabant flamand francophone (Vilvorde, Halle), région de Mons-Charleroi, Namur",
+    opco: "En Belgique francophone, la formation professionnelle est cofinancée par les fonds sectoriels paritaires : CEFORA (commission paritaire 200, secteur tertiaire), FOPAS (services financiers), Constructiv (BTP), IFAPME pour les indépendants, et le Forem (service public de l'emploi et de la formation wallonne) pour la Wallonie. Masteria vous accompagne dans l'identification du fonds applicable et fournit le devis, le programme et les attestations de présence demandés.",
+    zones: "Bruxelles-Capitale (19 communes), Brabant wallon (Louvain-la-Neuve, Wavre, Nivelles), Brabant flamand (Vilvorde, Hal) pour les équipes francophones, région de Mons-Charleroi, Namur",
     industriesDeep: [
       {
         sector: 'Industrie, énergie & distribution',
         companies: 'Solvay, Engie, Delhaize, Colruyt',
         focus: "Procédures et communication interne bilingues FR/NL, veille réglementaire européenne lue à la source, documentation qualité et sécurité, relation fournisseurs : des usages IA transverses aux sièges belges et à leurs réseaux.",
       },
-      { sector: 'Institutions européennes', companies: 'Commission européenne (DG CONNECT, DG TAXUD, DG SANTE), Parlement européen, SEAE, Banque centrale européenne (BCE Bruxelles), AESA, EuroParl', focus: 'Rédaction multilingue (24 langues UE), synthèse de directives et règlements, AI Act et conformité, traduction structurée, communication institutionnelle.' },
+      { sector: 'Institutions européennes', companies: 'Commission européenne (DG CONNECT, DG TAXUD, DG SANTE), Parlement européen, Conseil de l\'UE, SEAE', focus: 'Rédaction multilingue (24 langues UE), synthèse de directives et règlements, AI Act et conformité, traduction structurée, communication institutionnelle.' },
       { sector: 'Conseil & lobbying', companies: 'McKinsey EU, BCG Brussels, FleishmanHillard, Edelman, Hill+Knowlton Strategies, Burson Cohn & Wolfe, Brunswick', focus: 'Notes de position, communication publique, analyse politique européenne, briefings clients, surveillance réglementaire.' },
       { sector: 'Services financiers', companies: 'BNP Paribas Fortis, KBC, ING Belgium, Belfius, Euroclear, Bourse de Bruxelles, Mastercard Brussels HQ', focus: 'Conformité MiFID II et AML, reporting trimestriel, communication client multilingue, gestion KYC, automatisation back-office.' },
       { sector: 'Pharma & tech', companies: 'UCB, GSK Belgium, Pfizer Belgium, Janssen Belgium, Materialise, Showpad, Odoo, Collibra', focus: 'Documentation produit, communication scientifique, support client SaaS, rédaction technique, marketing produit.' },
     ],
-    localCases: [
-      { profile: 'Affaires européennes, cabinet de lobbying 50 collaborateurs (Schuman)', usage: 'Notes de position sur les directives en discussion, suivi des amendements PE/Conseil, briefings clients hebdomadaires, traduction multilingue.' },
-      { profile: 'Service compliance, banque belge (Marolles)', usage: 'Veille réglementaire BCE / FSMA, rédaction de procédures internes, traitement des cas KYC complexes, communication interne sur l\'AI Act.' },
-      { profile: 'Communications, institution européenne (Berlaymont)', usage: 'Rédaction de communiqués en 4 langues, synthèse de réunions multilingues, mise en forme de documents officiels en cohérence avec le manuel d\'identité visuelle européen.' },
-    ],
     localFacts: [
       "La communication d'entreprise bruxelloise est couramment bilingue français-néerlandais, souvent trilingue avec l'anglais : la déclinaison multilingue est l'un des premiers gains de l'IA générative sur place.",
-      'Bruxelles abrite 32 000 lobbyistes accrédités, plus grande concentration mondiale après Washington.',
-      'L\'AI Act européen, adopté en 2024, impose une obligation de littératie IA à toute organisation utilisant un système d\'IA depuis février 2025.',
+      "Depuis février 2025, l'AI Act (article 4) demande aux organisations qui utilisent un système d'IA de soutenir la maîtrise de l'IA de leurs équipes ; le règlement (UE) 2026/1744 a précisé qu'aucun certificat n'est exigé.",
       'Les 24 langues officielles de l\'UE rendent les outils IA multilingues particulièrement stratégiques pour les institutions européennes.',
-      'Le canton de Bruxelles-Capitale rassemble 19 communes, soit la plus grande densité urbaine francophone d\'Europe occidentale.',
+      "La Région de Bruxelles-Capitale rassemble 19 communes, où se croisent le français, le néerlandais et l'anglais de travail.",
     ],
-    transportAccess: "Notre formateur arrive depuis Lyon en TGV via Paris (4 h 30 porte-à-porte) ou en avion (1 h 30). Sur place, nous nous déplaçons librement dans Bruxelles-Capitale et le Brabant wallon. Aucun frais de déplacement supplémentaire pour Bruxelles, Louvain-la-Neuve, Namur ou Wavre. Devis en EUR avec TVA belge (21 %) si applicable.",
+    transportAccess: "Notre formateur arrive depuis Lyon en TGV via Paris (4 h 30 porte-à-porte) ou en avion (1 h 30). Sur place, nous nous déplaçons librement dans Bruxelles-Capitale et le Brabant wallon. Les modalités de déplacement sont confirmées au devis, établi en euros hors taxes.",
     localExperts: [
       { name: 'Cluster.brussels, Hub.brussels', type: 'Agence régionale de promotion économique' },
       { name: 'KU Leuven, KIRO (AI for media)', type: 'Recherche IA appliquée' },
@@ -490,9 +451,6 @@ export const GEO_CITIES = [
         q: "Proposez-vous une formation intelligence artificielle pour débutants à Bruxelles ?",
         a: "Oui. La journée socle commun s'adresse aux équipes qui partent de zéro : comprendre ce que fait l'IA générative, formuler une demande, vérifier les réponses, protéger les données, puis appliquer sur les documents de son poste. Aucun prérequis technique : la pratique du métier suffit. Les équipes plus avancées enchaînent sur les formations par métier ou par outil.",
       },
-      { q: 'Comment fonctionne le financement par CEFORA pour une formation IA ?', a: "CEFORA finance les formations professionnelles des employés de la commission paritaire 200 (secteur tertiaire belge), soit la plus grande commission paritaire du pays. Les formations doivent être suivies par un employé en CDI déclaré sur la commission paritaire 200, et le dossier est instruit en 2 à 4 semaines. Masteria fournit les attestations au format CEFORA (devis, programme, convention, présence) sous 24 h ouvrées. Le remboursement peut atteindre 100 % selon le profil de l'employé et le budget annuel restant." },
-      { q: 'Vous formez aussi à Anvers, Gand ou Liège ?', a: "Pour les sessions en français, nous couvrons toute la Belgique francophone (Bruxelles, Wallonie). Pour les missions à Anvers ou Gand, nous pouvons intervenir en français si vos équipes sont francophones, mais la majorité des entreprises flamandes préfèrent le néerlandais ou l'anglais, que nous ne dispensons pas en formation. Pour Liège, oui : nous nous déplaçons sans frais supplémentaires." },
-      { q: 'Quelles sont les obligations de l\'AI Act pour mon entreprise belge ?', a: "L'AI Act s'applique uniformément dans toute l'UE depuis 2025. Les obligations principales : 1) inventorier vos systèmes d'IA et leur niveau de risque, 2) garantir la littératie IA des collaborateurs (article 4, en vigueur depuis février 2025), 3) tenir un registre interne pour les systèmes à haut risque, 4) anticiper les obligations de transparence (chatbots, contenus générés). Notre Sprint IA AI Act (3 h, finançable CEFORA) couvre cette mise en conformité." },
       { q: 'Où se déroulent les formations IA à Bruxelles ?', a: "En intra-entreprise : le formateur vient dans vos bureaux, dans les dix-neuf communes de Bruxelles-Capitale (du quartier européen de Schuman au centre) et dans le Brabant wallon (Louvain-la-Neuve, Wavre, Nivelles). Former l'équipe sur son poste de travail, avec ses vrais outils et ses vrais documents, est le format le plus efficace. Le distanciel reste disponible pour les équipes réparties entre plusieurs implantations." },
     ],
   },
@@ -526,7 +484,7 @@ export const GEO_CITIES = [
       { label: 'Formation IA Paris', href: '/formation-ia-paris' },
     ],
     population: "environ 320 000 habitants",
-    metroArea: "Nantes Métropole : environ 650 000 habitants, première métropole du Grand Ouest",
+    metroArea: "Nantes Métropole : près de 690 000 habitants (Insee 2023), première métropole du Grand Ouest",
     intraOnly: true,
     sectors: "numérique et SaaS, industrie aéronautique et navale, agroalimentaire, tertiaire et santé",
     desc: "Première métropole du Grand Ouest, Nantes combine un écosystème numérique dense (l'un des premiers labels French Tech), une industrie aéronautique et navale structurante autour d'Airbus Atlantic et de Saint-Nazaire, de grandes coopératives agroalimentaires et un tertiaire en croissance autour d'Euronantes. Ce tissu d'ETI, de PME et de scale-up fait de la métropole nantaise un terrain naturel pour des formations IA par métier, du marketing à la production.",
@@ -539,10 +497,6 @@ export const GEO_CITIES = [
       { sector: 'Agroalimentaire & coopératives', companies: "Terrena (Ancenis) et les coopératives du Grand Ouest", focus: "Fiches produits, qualité et traçabilité documentaire, communication adhérents, analyse d'exports de ventes : l'IA au service des sièges et des réseaux terrain." },
       { sector: 'Tertiaire & santé', companies: "les banques, assurances et cabinets d'Euronantes, le CHU de Nantes", focus: "Rédaction et synthèse de dossiers, préparation de comités, communication client, comptes rendus structurés : les gains rapides des équipes tertiaires." },
     ],
-    localCases: [
-      { profile: "Équipe marketing, éditeur SaaS nantais", usage: "Production de contenus multilingues, déclinaisons multicanal, analyse de verbatims clients, bibliothèque de prompts au ton de la marque." },
-      { profile: "Direction industrielle, sous-traitant aéronautique de la métropole", usage: "Rédaction de documentation technique, synthèse de non-conformités, préparation de réponses aux consultations, communication multi-ateliers." },
-    ],
     localFacts: [
       "Nantes porte l'un des premiers labels French Tech de France : la densité de startups et de scale-up y tire les usages IA des équipes marketing, produit et support.",
       "Airbus Atlantic à Bouguenais et les Chantiers de l'Atlantique à Saint-Nazaire structurent une filière aéronautique et navale majeure dans la métropole.",
@@ -551,8 +505,8 @@ export const GEO_CITIES = [
     ],
     transportAccess: "Nous intervenons dans vos locaux partout dans la métropole nantaise et jusqu'à Saint-Nazaire ou Angers, avec Mathias ou un formateur du réseau selon la région ; les modalités de déplacement sont confirmées au devis, sans surprise. Le distanciel en classe virtuelle reste disponible pour les équipes réparties, avec la même pédagogie sur cas réels.",
     localExperts: [
-      { name: 'La Cantine, French Tech Nantes', type: 'Communauté numérique nantaise' },
-      { name: 'Université de Nantes, LS2N', type: 'Laboratoire des sciences du numérique' },
+      { name: 'La Cantine Nantes', type: 'Communauté numérique nantaise' },
+      { name: 'Nantes Université, LS2N', type: 'Laboratoire des sciences du numérique' },
     ],
     additionalFAQ: [
       { q: "Comment choisir sa formation IA à Nantes ?", a: "Trois critères font la différence : le programme travaille-t-il sur vos cas réels plutôt que sur des exemples génériques, le formateur connaît-il les outils réellement déployés chez vous (ChatGPT, Copilot, Gemini, Claude, Mistral), et l'organisme est-il certifié Qualiopi, condition du financement OPCO. À Nantes, nous adaptons les programmes aux filières dominantes : numérique, industrie, agroalimentaire, tertiaire." },
@@ -579,23 +533,19 @@ export const GEO_CITIES = [
       { label: 'Formation IA Marseille', href: '/formation-ia-marseille' },
       { label: 'Formation IA Aix-en-Provence', href: '/formation-ia-aix-en-provence' },
     ],
-    population: "environ 340 000 habitants",
-    metroArea: "Métropole Nice Côte d'Azur : environ 550 000 habitants, au cœur d'un bassin azuréen d'un million d'habitants",
+    population: "environ 358 000 habitants",
+    metroArea: "Métropole Nice Côte d'Azur : environ 575 000 habitants, dans un bassin azuréen d'un million d'habitants",
     intraOnly: true,
     sectors: "tourisme et hôtellerie, technologies (Sophia Antipolis), santé, immobilier, événementiel et services",
     desc: "Cinquième ville de France et cœur de la Côte d'Azur, Nice vit d'une économie de services à forte intensité relationnelle : tourisme et hôtellerie haut de gamme, immobilier, événementiel, santé. À vingt minutes, la technopole de Sophia Antipolis, première d'Europe, regroupe des milliers d'ingénieurs autour du logiciel, du voyage et des télécoms. Deux mondes qui partagent le même besoin : des équipes formées à un usage professionnel et cadré de l'IA.",
     introPitch: "La formation IA à Nice se fait dans vos locaux, de la Promenade des Anglais à Sophia Antipolis : programmes par métier construits sur vos cas réels (relation client multilingue, contenus, réservation, documentation produit), sur les outils que vos équipes utilisent vraiment. Journée socle commun, formations par métier ou sprint de 3 h selon votre besoin.",
-    opco: "OPCO fréquents sur la Côte d'Azur : AKTO (hôtellerie, restauration, services), AFDAS (tourisme, culture, événementiel), ATLAS (conseil, banque, assurance), OPCO 2i et Atlas côté tech selon les conventions. La prise en charge dépend de votre branche ; nous préparons le dossier avec vous et le dépôt se fait avant le début de la formation.",
+    opco: "OPCO fréquents sur la Côte d'Azur : AKTO (hôtellerie, restauration, services), AFDAS (tourisme, culture, événementiel), ATLAS (conseil, banque, assurance), Atlas (numérique, conseil) et Afdas (télécoms) côté tech, OPCO EP pour l'immobilier, OPCO Santé pour les cliniques et l'ANFH pour le CHU. La prise en charge dépend de votre branche ; nous préparons le dossier avec vous et le dépôt se fait avant le début de la formation.",
     zones: "Nice et la métropole, Sophia Antipolis, Antibes, Cagnes-sur-Mer, Saint-Laurent-du-Var, Cannes, Grasse, Menton ; interventions à Monaco sur demande",
     industriesDeep: [
       { sector: 'Tourisme & hôtellerie', companies: "les groupes hôteliers et palaces de la Côte d'Azur, les offices et réceptifs", focus: "Réponses aux avis clients, correspondance multilingue, contenus éditoriaux, préparation des saisons : des gains immédiats pour des équipes au contact d'une clientèle internationale." },
       { sector: 'Tech & logiciel (Sophia Antipolis)', companies: "Amadeus et l'écosystème de la première technopole d'Europe", focus: "Documentation produit, support client international, spécifications, communication technique : des équipes déjà outillées qui cherchent la méthode et le cadre." },
       { sector: 'Santé', companies: "le CHU de Nice et les cliniques du bassin azuréen", focus: "Comptes rendus structurés, synthèses de dossiers, communication patient, procédures qualité : des usages cadrés par la confidentialité des données de santé." },
       { sector: 'Immobilier & événementiel', companies: "les agences, promoteurs et organisateurs d'événements de la Côte", focus: "Annonces et dossiers multilingues, réponses aux demandes entrantes, préparation d'événements, communication commerciale au ton de la maison." },
-    ],
-    localCases: [
-      { profile: "Direction d'un groupe hôtelier azuréen", usage: "Réponses aux avis en quatre langues, gabarits de correspondance client, préparation des briefs de saison, formation des équipes de réception." },
-      { profile: "Équipe produit, éditeur de logiciels à Sophia Antipolis", usage: "Documentation produit bilingue, synthèse de tickets support, rédaction de spécifications, bibliothèque de prompts d'équipe." },
     ],
     localFacts: [
       "Sophia Antipolis, à vingt minutes de Nice, est la première technopole d'Europe : logiciel, voyage et télécoms y concentrent des milliers d'ingénieurs.",
@@ -638,17 +588,13 @@ export const GEO_CITIES = [
     sectors: "retail et distribution, e-commerce et VAD, agroalimentaire, numérique, banque et assurance",
     desc: "Berceau de la grande distribution française, la métropole lilloise concentre les sièges et centrales d'enseignes majeures du retail (Auchan, Decathlon, Leroy Merlin, Kiabi), l'héritage de la vente à distance autour de Roubaix, de grands noms de l'agroalimentaire (Bonduelle, Lesaffre) et un écosystème numérique structuré autour d'EuraTechnologies. Des équipes marketing, e-commerce, achats et relation client denses : le terrain idéal pour des formations IA par métier.",
     introPitch: "La formation IA à Lille se fait dans vos locaux, sur les cas réels de vos équipes : fiches produits, contenus e-commerce, relation client, achats, analyse de ventes. Programmes par métier sur ChatGPT, Copilot, Claude, Gemini ou Mistral selon votre environnement, journée socle commun pour embarquer tout le monde, sprint de 3 h pour démarrer vite.",
-    opco: "OPCO fréquents dans les Hauts-de-France : OPCOMMERCE (distribution et commerce), AKTO (services), OCAPIAT (agroalimentaire), ATLAS (banque, assurance, conseil), OPCO 2i (industrie). La prise en charge dépend de votre branche et de votre budget formation ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
+    opco: "OPCO fréquents dans les Hauts-de-France : L'Opcommerce (distribution et commerce), AKTO (services), OCAPIAT (agroalimentaire), ATLAS (banque, assurance, conseil), OPCO 2i (industrie). La prise en charge dépend de votre branche et de votre budget formation ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Lille, Villeneuve-d'Ascq, Roubaix, Tourcoing, Marcq-en-Barœul, Wasquehal, Lesquin et toute la métropole ; Arras, Lens et Dunkerque pour les sessions en région",
     industriesDeep: [
       { sector: 'Retail & distribution', companies: "Auchan, Decathlon, Leroy Merlin, Kiabi et les enseignes de la métropole", focus: "Fiches produits à grande échelle, contenus omnicanaux, réponses aux avis, analyse d'exports de ventes, communication magasins : les centrales et sièges lillois ont des volumes qui rendent l'IA immédiatement rentable." },
       { sector: 'E-commerce & VAD', companies: "La Redoute (Roubaix) et l'écosystème e-commerce nordiste", focus: "Descriptions produits multilingues, service client outillé, segmentation des campagnes, gestion des retours : l'héritage VAD fait de la métropole un territoire e-commerce dense." },
       { sector: 'Agroalimentaire', companies: "Bonduelle (Villeneuve-d'Ascq), Lesaffre (Marcq-en-Barœul) et la filière régionale", focus: "Qualité et procédures multi-sites, fiches techniques, communication interne d'usines, veille réglementaire : des usages IA cadrés pour l'agro." },
       { sector: 'Numérique & tertiaire', companies: "EuraTechnologies et le tertiaire d'Euralille", focus: "Documentation produit, avant-vente, support, rédaction de dossiers : startups et directions régionales partagent le même besoin de méthode." },
-    ],
-    localCases: [
-      { profile: "Équipe e-commerce, enseigne de distribution de la métropole", usage: "Production de fiches produits au gabarit maison, déclinaisons par canal, réponses aux avis clients, analyse des ventes par rayon." },
-      { profile: "Direction des achats, centrale nordiste", usage: "Synthèse de dossiers fournisseurs, préparation de négociations, comparaison d'offres, comptes rendus structurés." },
     ],
     localFacts: [
       "La métropole lilloise est le berceau de la grande distribution française : les sièges d'Auchan, Decathlon, Leroy Merlin et Kiabi y concentrent des équipes marketing, achats et e-commerce nombreuses.",
@@ -685,23 +631,19 @@ export const GEO_CITIES = [
     relatedLocal: [
       { label: 'Formation IA Toulouse', href: '/formation-ia-toulouse' },
     ],
-    population: "environ 260 000 habitants",
-    metroArea: "Bordeaux Métropole : environ 820 000 habitants, capitale économique de la Nouvelle-Aquitaine",
+    population: "environ 268 000 habitants",
+    metroArea: "Bordeaux Métropole : environ 855 000 habitants (Insee 2023), capitale économique de la Nouvelle-Aquitaine",
     intraOnly: true,
     sectors: "vins et spiritueux, aéronautique-spatial-défense, numérique et e-commerce, tertiaire et santé",
     desc: "Capitale économique de la Nouvelle-Aquitaine, Bordeaux tient un équilibre rare : la filière vins et spiritueux (négoce, châteaux, œnotourisme), un pôle aéronautique-spatial-défense dense à l'ouest de la métropole (Dassault Aviation, ArianeGroup, Thales), un écosystème numérique et e-commerce affirmé (Betclic, Cdiscount) et un tertiaire en croissance autour de l'opération Euratlantique. Autant d'équipes aux besoins IA très différents, que les programmes par métier adressent précisément.",
     introPitch: "La formation IA à Bordeaux se fait dans vos locaux, sur les cas réels de vos équipes : contenus et export pour le vin, documentation et conformité pour l'industrie, marketing et data pour le numérique. Sur les outils que vos équipes utilisent vraiment, du socle commun aux fonctionnalités avancées, avec le cadre de confidentialité posé d'emblée.",
-    opco: "OPCO fréquents en Nouvelle-Aquitaine : OCAPIAT (vins, spiritueux, agroalimentaire), OPCO 2i (industrie, aéronautique, défense), ATLAS (banque, conseil), AKTO et OPCOMMERCE (services et commerce). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
+    opco: "OPCO fréquents en Nouvelle-Aquitaine : OCAPIAT (vins, spiritueux, agroalimentaire), OPCO 2i (industrie, aéronautique, défense), ATLAS (banque, conseil), AKTO et L'Opcommerce (services et commerce), l'ANFH pour le CHU et les hôpitaux publics. La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Bordeaux, Mérignac, Pessac, Bègles, Le Haillan, Saint-Médard-en-Jalles, Blanquefort et toute la métropole ; le vignoble (Médoc, Libournais, Graves) et Arcachon pour les sessions en région",
     industriesDeep: [
       { sector: 'Vins & spiritueux', companies: "les maisons de négoce, châteaux et acteurs de l'œnotourisme bordelais", focus: "Fiches et argumentaires multilingues, correspondance export, contenus œnotouristiques, préparation des campagnes primeurs : l'IA au ton de la maison, avec un cadre strict sur ce qui engage." },
       { sector: 'Aéronautique, spatial & défense', companies: "Dassault Aviation (Mérignac), ArianeGroup (Saint-Médard-en-Jalles), Thales et leur chaîne de sous-traitance", focus: "Documentation technique, qualité, réponses aux consultations, communication multi-sites : des usages IA cadrés pour des environnements sensibles, confidentialité en tête." },
       { sector: 'Numérique & e-commerce', companies: "Betclic, Cdiscount et la French Tech Bordeaux", focus: "Contenus et campagnes, service client à volume, analyse de données, documentation produit : des équipes déjà à l'aise qui cherchent la méthode et l'industrialisation." },
       { sector: 'Tertiaire & santé', companies: "le tertiaire d'Euratlantique, le CHU de Bordeaux", focus: "Rédaction et synthèse de dossiers, préparation de comités, comptes rendus structurés, communication interne : les gains rapides des fonctions support." },
-    ],
-    localCases: [
-      { profile: "Direction export, maison de négoce bordelaise", usage: "Correspondance multilingue avec les importateurs, fiches produits par marché, préparation des salons, synthèse des retours campagne." },
-      { profile: "Service qualité, sous-traitant aéronautique de Mérignac", usage: "Mise à jour de procédures, synthèse d'audits, rédaction de réponses aux non-conformités, documentation de formation interne." },
     ],
     localFacts: [
       "L'ouest de la métropole bordelaise (Mérignac, Le Haillan, Saint-Médard-en-Jalles) concentre un pôle aéronautique-spatial-défense majeur autour de Dassault Aviation, Thales et ArianeGroup.",
@@ -738,13 +680,13 @@ export const GEO_CITIES = [
     relatedLocal: [
       { label: 'Formation IA Bordeaux', href: '/formation-ia-bordeaux' },
     ],
-    population: "environ 500 000 habitants",
-    metroArea: "Toulouse Métropole : environ 800 000 habitants, au cœur d'une aire urbaine de 1,4 million",
+    population: "environ 515 000 habitants",
+    metroArea: "Toulouse Métropole : environ 840 000 habitants (Insee 2023), dans une aire d'attraction de 1,5 million d'habitants",
     intraOnly: true,
     sectors: "aéronautique et spatial, santé et oncologie, numérique, services et enseignement supérieur",
     desc: "Capitale européenne de l'aéronautique et du spatial, Toulouse concentre Airbus et sa chaîne de sous-traitance, ATR, Thales Alenia Space et le CNES, un pôle santé structuré autour de l'Oncopole et un écosystème numérique dense. La métropole aligne des milliers d'ingénieurs, de fonctions support et d'équipes projet : un terrain où la formation IA par métier prend tout son sens, du bureau d'études à la communication.",
     introPitch: "La formation IA pour les entreprises à Toulouse se fait dans vos locaux, sur les cas réels de vos équipes : documentation technique et qualité côté industrie, dossiers et comptes rendus côté santé et services, contenus et data côté numérique. Sur vos outils réels (ChatGPT, Copilot, Claude, Gemini, Mistral), avec le cadre de confidentialité posé d'emblée, une exigence naturelle dans l'écosystème aéronautique et défense.",
-    opco: "OPCO fréquents en Occitanie : OPCO 2i (industrie, aéronautique, spatial), ATLAS (conseil, ingénierie, banque), AKTO (services), OPCO Santé (établissements sanitaires et médico-sociaux). La prise en charge dépend de votre branche et de votre budget formation ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
+    opco: "OPCO fréquents en Occitanie : OPCO 2i (industrie, aéronautique, spatial), ATLAS (conseil, ingénierie, banque), AKTO (services), OPCO Santé (établissements de santé privés), l'ANFH pour le CHU et les hôpitaux publics. La prise en charge dépend de votre branche et de votre budget formation ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Toulouse, Blagnac, Colomiers, Labège, Balma, Ramonville et toute la métropole ; Montauban et Albi pour les sessions en région",
     industriesDeep: [
       { sector: 'Aéronautique & spatial', companies: "Airbus (Blagnac), ATR, Thales Alenia Space, le CNES et la chaîne de sous-traitance", focus: "Documentation technique, qualité et conformité, synthèse d'exigences, réponses aux consultations, communication multi-sites et multilingue : des usages IA cadrés pour des environnements exigeants sur la confidentialité." },
@@ -752,12 +694,8 @@ export const GEO_CITIES = [
       { sector: 'Numérique & ingénierie', companies: "la French Tech Toulouse, les ESN et bureaux d'études de la métropole", focus: "Spécifications, documentation produit, avant-vente, support : des équipes techniques qui cherchent la méthode, les garde-fous et l'industrialisation." },
       { sector: 'Services & enseignement', companies: "le tertiaire toulousain et l'un des premiers pôles universitaires de France", focus: "Rédaction et synthèse de dossiers, préparation de comités, supports pédagogiques, communication interne : les gains rapides des fonctions support." },
     ],
-    localCases: [
-      { profile: "Bureau d'études, sous-traitant aéronautique de Blagnac", usage: "Synthèse d'exigences client, documentation technique bilingue, préparation de revues de projet, capitalisation des retours d'expérience." },
-      { profile: "Direction communication, acteur santé toulousain", usage: "Communication patient et interne, synthèses de publications, préparation d'événements, gabarits éditoriaux au ton de l'établissement." },
-    ],
     localFacts: [
-      "Toulouse est la capitale européenne de l'aéronautique et du spatial : Airbus, ATR, Thales Alenia Space et le CNES y structurent l'emploi qualifié.",
+      "Airbus, ATR, Thales Alenia Space et le CNES structurent l'emploi qualifié de l'aéronautique et du spatial toulousains.",
       "L'Oncopole fait de Toulouse un pôle d'oncologie de référence, avec un tissu santé et biotech dense.",
       "La métropole toulousaine est l'un des premiers pôles étudiants et ingénieurs de France, ce qui tire le niveau des équipes formées.",
       "Toulouse est reliée à Paris en avion en 1 h 10 et à Bordeaux en train en un peu plus de 2 h.",
@@ -792,7 +730,7 @@ export const GEO_CITIES = [
       { label: 'Formation IA Paris', href: '/formation-ia-paris' },
     ],
     population: "environ 290 000 habitants",
-    metroArea: "Eurométropole de Strasbourg : environ 500 000 habitants, au cœur du bassin rhénan franco-allemand",
+    metroArea: "Eurométropole de Strasbourg : environ 520 000 habitants, dans le bassin rhénan franco-allemand",
     intraOnly: true,
     sectors: "banque et assurance mutualistes, institutions européennes, industrie et pharma, services transfrontaliers",
     desc: "Siège du Parlement européen et du Conseil de l'Europe, Strasbourg est aussi une place bancaire mutualiste de premier plan (le Crédit Mutuel y a son ancrage historique), un pôle industriel et pharmaceutique alsacien et un bassin d'emploi transfrontalier tourné vers l'Allemagne. Le multilinguisme franco-allemand et la culture de conformité y font de l'IA générative un levier immédiat pour les fonctions rédactionnelles, juridiques et relation client.",
@@ -804,10 +742,6 @@ export const GEO_CITIES = [
       { sector: 'Institutions & affaires européennes', companies: "le Parlement européen, le Conseil de l'Europe et l'écosystème qui gravite autour", focus: "Synthèse de textes volumineux, rédaction multilingue, préparation de sessions, veille réglementaire lue à la source : le travail documentaire est le terrain naturel de l'IA générative." },
       { sector: 'Industrie & pharma', companies: "le tissu industriel et pharmaceutique alsacien, de l'Eurométropole à Haguenau", focus: "Procédures et qualité, documentation technique bilingue, veille réglementaire, communication de sites : des usages cadrés pour la production." },
       { sector: 'Services transfrontaliers', companies: "les entreprises du bassin rhénan travaillant avec l'Allemagne et la Suisse", focus: "Correspondance et contrats bilingues français-allemand, préparation de réunions transfrontalières, déclinaison des supports dans les deux langues : le multilinguisme est le premier gain mesurable." },
-    ],
-    localCases: [
-      { profile: "Service clientèle, acteur bancaire mutualiste alsacien", usage: "Courriers et réponses types au ton de la maison, synthèses de dossiers, préparation d'entretiens conseillers, règles d'usage écrites pour l'équipe." },
-      { profile: "Direction commerciale, PME industrielle du Bas-Rhin", usage: "Offres et correspondance bilingues français-allemand, fiches techniques, préparation de salons, suivi des demandes entrantes." },
     ],
     localFacts: [
       "Strasbourg accueille le Parlement européen et le Conseil de l'Europe : le travail documentaire multilingue structure une partie de l'emploi qualifié local.",
@@ -846,8 +780,8 @@ export const GEO_CITIES = [
     relatedLocal: [
       { label: 'Formation IA Nantes', href: '/formation-ia-nantes' },
     ],
-    population: "environ 225 000 habitants",
-    metroArea: "Rennes Métropole : environ 460 000 habitants, capitale économique de la Bretagne",
+    population: "environ 231 000 habitants (Insee 2023)",
+    metroArea: "Rennes Métropole : environ 480 000 habitants (Insee 2023), capitale économique de la Bretagne",
     intraOnly: true,
     sectors: "numérique et cybersécurité, agroalimentaire, automobile, santé et services",
     desc: "Capitale bretonne, Rennes cumule un pôle numérique historique (télécoms, image, cybersécurité autour du Pôle d'excellence cyber et des laboratoires installés dans la métropole), une filière agroalimentaire puissante dans tout le bassin, une implantation automobile majeure à La Janais et un tertiaire dense. La culture cybersécurité locale rejoint naturellement notre approche : des usages IA utiles, avec des garde-fous écrits.",
@@ -859,10 +793,6 @@ export const GEO_CITIES = [
       { sector: 'Agroalimentaire', companies: "les coopératives, industriels et marques du bassin breton, dont le groupe Le Duff à Rennes", focus: "Qualité et traçabilité documentaire, fiches techniques, communication multi-sites, réponses aux cahiers des charges distributeurs : des volumes documentaires où l'IA rend des heures chaque semaine." },
       { sector: 'Automobile & industrie', companies: "le site de La Janais et la chaîne de sous-traitance bretonne", focus: "Procédures, documentation de production, synthèse de non-conformités, formation interne : des usages IA concrets pour les fonctions méthodes et qualité." },
       { sector: 'Tertiaire & santé', companies: "les banques et assurances régionales, le CHU de Rennes", focus: "Rédaction et synthèse de dossiers, comptes rendus structurés, préparation de comités, communication interne : les gains rapides des fonctions support." },
-    ],
-    localCases: [
-      { profile: "Équipe qualité, industriel agroalimentaire du bassin rennais", usage: "Mise à jour des procédures, réponses aux cahiers des charges distributeurs, synthèses d'audits, fiches techniques au gabarit maison." },
-      { profile: "Direction technique, éditeur numérique de Cesson-Sévigné", usage: "Documentation produit, synthèse de tickets, rédaction de spécifications, règles d'usage IA écrites pour l'équipe." },
     ],
     localFacts: [
       "Rennes abrite le Pôle d'excellence cyber : la culture sécurité du bassin rejoint l'exigence de garde-fous que nous posons dans chaque formation.",
@@ -899,7 +829,7 @@ export const GEO_CITIES = [
       { label: 'Formation IA Lyon', href: '/formation-ia-lyon' },
       { label: 'Formation IA Annecy', href: '/formation-ia-annecy' },
     ],
-    population: "environ 158 000 habitants",
+    population: "environ 156 000 habitants (Insee 2023)",
     metroArea: "Grenoble-Alpes Métropole : environ 450 000 habitants, au pied des massifs alpins",
     intraOnly: true,
     sectors: "microélectronique et semi-conducteurs, recherche et deeptech, énergie et équipements, services numériques",
@@ -913,20 +843,16 @@ export const GEO_CITIES = [
       { sector: 'Énergie & équipements', companies: "Schneider Electric et le tissu d'équipementiers grenoblois", focus: "Documentation produit, réponses aux consultations, qualité, formation interne : des usages IA concrets pour les fonctions techniques et commerciales." },
       { sector: 'Services & numérique', companies: "les ESN, éditeurs et cabinets d'Inovallée et du centre", focus: "Avant-vente, documentation, support, contenus : des équipes déjà utilisatrices qui veulent fiabiliser et industrialiser." },
     ],
-    localCases: [
-      { profile: "Fonctions support, équipementier industriel du Grésivaudan", usage: "Synthèse de dossiers, préparation de revues, comptes rendus structurés, gabarits de correspondance : les usages transverses installés en une journée." },
-      { profile: "Équipe marketing, éditeur de logiciels d'Inovallée", usage: "Contenus produit bilingues, déclinaisons multicanal, analyse de retours clients, bibliothèque de prompts d'équipe." },
-    ],
     localFacts: [
       "Grenoble est la capitale française de la microélectronique : STMicroelectronics à Crolles, Soitec à Bernin et le CEA-Leti à Minatec structurent la filière.",
       "Le polygone scientifique et Minatec concentrent l'une des plus fortes densités de chercheurs de France.",
       "Inovallée, à Meylan et Montbonnot, regroupe des centaines d'entreprises numériques et deeptech.",
-      "Grenoble est à 1 h 15 de Lyon en TER : Masteria intervient sans frais de déplacement supplémentaires, comme dans toute la région lyonnaise.",
+      "Grenoble est à 1 h 15 de Lyon en TER : Masteria y intervient sans frais de déplacement supplémentaires."
     ],
     transportAccess: "Grenoble fait partie de notre zone d'intervention directe depuis Lyon : nous venons dans vos locaux partout dans la métropole (centre, Inovallée, Crolles, Bernin, Échirolles) sans frais de déplacement supplémentaires, en TER (1 h 15) ou par l'autoroute. Le distanciel reste disponible pour les équipes réparties entre plusieurs sites.",
     localExperts: [
       { name: 'Minatec, CEA-Leti', type: 'Campus européen des micro et nanotechnologies' },
-      { name: 'Université Grenoble Alpes, MIAI', type: "Institut interdisciplinaire d'intelligence artificielle" },
+      { name: 'Université Grenoble Alpes, MIAI', type: "Pôle IA (MIAI Cluster) coordonné par l'Université Grenoble Alpes" },
     ],
     additionalFAQ: [
       { q: "Proposez-vous une formation IA pour les entreprises à Grenoble même, ou faut-il venir à Lyon ?", a: "Nous venons chez vous. Grenoble est dans notre zone d'intervention directe depuis le siège lyonnais : sessions en intra dans vos locaux, partout dans la métropole et le Grésivaudan, sans frais de déplacement supplémentaires. Le distanciel reste disponible si vos équipes sont réparties. Aucune raison de déplacer douze personnes à Lyon quand le formateur peut venir à Grenoble." },
@@ -953,13 +879,13 @@ export const GEO_CITIES = [
       { label: 'Formation IA Lyon', href: '/formation-ia-lyon' },
       { label: 'Formation IA Genève', href: '/formation-ia-geneve' },
     ],
-    population: "environ 130 000 habitants",
-    metroArea: "Grand Annecy : environ 210 000 habitants, entre lac et montagnes, à 40 minutes de Genève",
+    population: "environ 132 000 habitants",
+    metroArea: "Grand Annecy : environ 213 000 habitants, entre lac et montagnes, à 40 minutes de Genève",
     intraOnly: true,
     sectors: "outdoor et sport, mécatronique et industrie de précision, tourisme, banque et services",
     desc: "Annecy combine un tissu industriel de précision (la mécatronique autour de NTN-SNR), des marques outdoor de rayonnement mondial (Salomon y a son siège), un tourisme quatre saisons et des services financiers tournés vers les Savoie et Genève. Des PME et ETI exportatrices, des équipes marketing et techniques exigeantes : le profil type des entreprises qui tirent vite parti d'une formation IA par métier.",
     introPitch: "La formation IA pour les entreprises à Annecy se fait dans vos locaux, sur les cas réels de vos équipes : contenus et export côté marques, documentation technique côté industrie, relation client côté tourisme et services. Annecy est dans notre zone d'intervention directe depuis Lyon : présentiel sans frais de déplacement supplémentaires, ou distanciel.",
-    opco: "OPCO fréquents dans le bassin annécien : OPCO 2i (industrie, mécatronique, décolletage), AKTO et AFDAS (tourisme, hôtellerie, sport), ATLAS (banque, conseil), OPCOMMERCE (commerce et marques). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
+    opco: "OPCO fréquents dans le bassin annécien : OPCO 2i (industrie, mécatronique, décolletage), AKTO et AFDAS (tourisme, hôtellerie, sport), ATLAS (banque, conseil), L'Opcommerce (commerce et marques). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Annecy et le Grand Annecy (Cran-Gevrier, Seynod, Metz-Tessy, Annecy-le-Vieux), Rumilly, la vallée de l'Arve (Cluses, Bonneville) et Chambéry pour les sessions en région",
     industriesDeep: [
       { sector: 'Outdoor & sport', companies: "Salomon (siège à Annecy) et les marques outdoor du bassin alpin", focus: "Contenus produit multilingues, storytelling au ton de la marque, préparation des saisons et des salons, analyse des retours marchés : des équipes marketing internationales qui industrialisent vite." },
@@ -967,20 +893,16 @@ export const GEO_CITIES = [
       { sector: 'Tourisme & hôtellerie', companies: "les acteurs du lac et de la montagne, hôtellerie et activités quatre saisons", focus: "Réponses aux avis, correspondance multilingue, contenus saisonniers, préparation des pics d'activité : des gains immédiats pour des équipes au contact." },
       { sector: 'Banque & services', companies: "les banques régionales des Savoie et les cabinets du bassin annécien", focus: "Synthèses de dossiers, courriers et comptes rendus, préparation d'entretiens : les gains rapides des fonctions support, dans un cadre de confidentialité posé d'emblée." },
     ],
-    localCases: [
-      { profile: "Équipe marketing, marque outdoor du bassin annécien", usage: "Déclinaison des contenus produit en plusieurs langues, gabarits au ton de la marque, préparation des lancements saisonniers, analyse de verbatims." },
-      { profile: "ADV et export, industriel de précision haut-savoyard", usage: "Correspondance export, réponses aux demandes entrantes, fiches techniques, synthèses de réunions fournisseurs." },
-    ],
     localFacts: [
       "Salomon a son siège à Annecy et NTN-SNR y ancre la mécatronique : le bassin combine marques mondiales et industrie de précision.",
       "Annecy est à 40 minutes de Genève : beaucoup d'entreprises du bassin travaillent en environnement franco-suisse.",
       "La vallée de l'Arve voisine est la capitale mondiale du décolletage, avec un tissu de PME industrielles exportatrices.",
-      "Annecy est à 1 h 45 de Lyon : Masteria intervient sans frais de déplacement supplémentaires, comme dans toute la région.",
+      "Annecy est à 1 h 45 de Lyon : Masteria y intervient sans frais de déplacement supplémentaires.",
     ],
-    transportAccess: "Annecy fait partie de notre zone d'intervention directe depuis Lyon : nous venons dans vos locaux partout dans le Grand Annecy et jusqu'à la vallée de l'Arve sans frais de déplacement supplémentaires. Pour les entreprises à cheval sur Genève, la page Genève décrit le cadre suisse ; le distanciel reste disponible pour les équipes réparties.",
+    transportAccess: "Annecy fait partie de notre zone d'intervention directe depuis Lyon : nous venons dans vos locaux partout dans le Grand Annecy sans frais de déplacement supplémentaires ; au-delà (Rumilly, vallée de l'Arve), les modalités sont confirmées au devis. Pour les entreprises à cheval sur Genève, la page Genève décrit le cadre suisse ; le distanciel reste disponible pour les équipes réparties.",
     localExperts: [
       { name: 'OSV, Outdoor Sports Valley', type: "Filière outdoor du bassin annécien" },
-      { name: 'Mont-Blanc Industries', type: 'Pôle de compétitivité mécatronique et décolletage' },
+      { name: 'Université Savoie Mont Blanc, LISTIC', type: "Laboratoire d'informatique, systèmes, traitement de l'information et de la connaissance" },
     ],
     additionalFAQ: [
       { q: "Proposez-vous une formation IA pour les entreprises à Annecy même ?", a: "Oui, chez vous : Annecy est dans notre zone d'intervention directe depuis le siège lyonnais, sans frais de déplacement supplémentaires. Sessions en intra dans vos locaux du Grand Annecy, de Rumilly à la vallée de l'Arve, ou en distanciel. Notre agence IA d'Annecy couvre par ailleurs les projets de conseil et de développement sur mesure." },
@@ -1006,13 +928,13 @@ export const GEO_CITIES = [
       { label: 'Formation IA Marseille', href: '/formation-ia-marseille' },
       { label: 'Formation IA Nice', href: '/formation-ia-nice' },
     ],
-    population: "environ 145 000 habitants",
+    population: "environ 150 000 habitants (Insee 2023)",
     metroArea: "Pays d'Aix, au sein de la métropole Aix-Marseille-Provence : 1,9 million d'habitants",
     intraOnly: true,
     sectors: "microélectronique, tertiaire et conseil, énergie et recherche, juridique et services",
     desc: "Pôle tertiaire du sud de la France, Aix-en-Provence conjugue un site microélectronique majeur à Rousset (STMicroelectronics), des zones d'activités denses (la Duranne, l'Arbois, les Milles), un écosystème juridique et de conseil autour de la cour d'appel, et la proximité des grands programmes énergie de Cadarache (CEA, ITER). Un tissu d'entreprises de services et d'industries technologiques qui se prête particulièrement bien aux formations IA par métier.",
     introPitch: "La formation IA pour les entreprises à Aix-en-Provence se fait dans vos locaux, sur les cas réels de vos équipes : dossiers et synthèses côté tertiaire et juridique, documentation et qualité côté industrie, contenus côté marketing. Aix fait partie de la métropole que nous couvrons avec Marseille : mêmes modalités, mêmes programmes, dans vos bureaux du Pays d'Aix.",
-    opco: "OPCO fréquents dans le Pays d'Aix : ATLAS (conseil, banque, juridique), OPCO 2i (industrie, microélectronique), AKTO (services), OPCO EP (professions libérales et cabinets). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
+    opco: "OPCO fréquents dans le Pays d'Aix : ATLAS (conseil, ingénierie, banque, assurance), OPCO EP (cabinets d'avocats et professions libérales), OPCO 2i (industrie, microélectronique), AKTO (services). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Aix-en-Provence (centre, la Duranne, les Milles, l'Arbois), Rousset, Gardanne, Venelles, Pertuis et le Pays d'Aix ; Marseille et toute la métropole via notre page dédiée",
     industriesDeep: [
       { sector: 'Microélectronique', companies: "STMicroelectronics (Rousset) et la filière régionale", focus: "Documentation technique, procédures, synthèses, communication multi-sites : des environnements exigeants où le périmètre de confidentialité se fixe avant tout usage." },
@@ -1020,20 +942,16 @@ export const GEO_CITIES = [
       { sector: 'Juridique', companies: "l'écosystème d'avocats et d'experts autour de la cour d'appel d'Aix", focus: "Synthèse de pièces, préparation de conclusions, recherches structurées, courriers : des usages cadrés par le secret professionnel, traité en premier." },
       { sector: 'Énergie & recherche', companies: "la proximité de Cadarache (CEA, ITER) et ses sous-traitants", focus: "Documentation de projets, réponses aux consultations, synthèses techniques multilingues : des usages IA concrets pour les bureaux d'études et fonctions support." },
     ],
-    localCases: [
-      { profile: "Cabinet de conseil, la Duranne", usage: "Propositions commerciales, synthèses de mission, préparation d'ateliers clients, capitalisation des livrables dans une bibliothèque de prompts." },
-      { profile: "Fonctions support, industriel du bassin de Rousset", usage: "Procédures et qualité, synthèses de réunions, correspondance fournisseurs, documentation de formation interne." },
-    ],
     localFacts: [
       "Rousset, aux portes d'Aix, est l'un des grands sites microélectroniques français autour de STMicroelectronics.",
       "La Duranne et les Milles concentrent l'un des plus grands parcs d'activités tertiaires du sud de la France.",
       "La cour d'appel d'Aix-en-Provence est l'une des plus importantes de France, avec un écosystème juridique dense.",
       "Aix est à 30 minutes de Marseille : nos interventions couvrent toute la métropole Aix-Marseille-Provence sans distinction.",
     ],
-    transportAccess: "Aix-en-Provence est couverte avec la métropole Aix-Marseille-Provence : nous venons dans vos locaux au centre, à la Duranne, aux Milles, à Rousset ou Gardanne, dans les mêmes conditions que pour Marseille (TGV depuis Lyon, gare d'Aix TGV à 15 minutes). Le distanciel reste disponible pour les équipes réparties.",
+    transportAccess: "Aix-en-Provence est couverte avec la métropole Aix-Marseille-Provence : nous venons dans vos locaux au centre, à la Duranne, aux Milles, à Rousset ou Gardanne, avec Mathias ou un formateur du réseau ; les modalités de déplacement sont confirmées au devis. Le distanciel reste disponible pour les équipes réparties.",
     localExperts: [
       { name: "Technopôle de l'Arbois, Environnement", type: "Technopôle du Pays d'Aix" },
-      { name: 'Aix-Marseille Université', type: "Premier pôle universitaire francophone" },
+      { name: 'Aix-Marseille Université', type: "Université de 84 000 étudiants sur cinq campus" },
     ],
     additionalFAQ: [
       { q: "Proposez-vous une formation IA pour les entreprises à Aix-en-Provence même ?", a: "Oui, chez vous : sessions en intra dans vos locaux du centre, de la Duranne, des Milles ou de Rousset, dans les mêmes conditions que pour Marseille (Aix fait partie de la métropole que nous couvrons d'un bloc). Le distanciel reste disponible pour les équipes réparties entre plusieurs sites." },
@@ -1065,17 +983,13 @@ export const GEO_CITIES = [
     sectors: "agroalimentaire et viticulture, logistique, santé, services et tourisme",
     desc: "Au carrefour de l'arc méditerranéen, Nîmes s'appuie sur une filière agroalimentaire et viticole solide (les Costières, la proximité du siège de Royal Canin à Aimargues), une position logistique stratégique sur l'axe A9, un CHU structurant et un tissu de PME de services. Des entreprises de taille intermédiaire, souvent multi-sites entre Nîmes, Montpellier et Avignon : le format intra dans vos locaux et le distanciel y répondent bien.",
     introPitch: "La formation IA pour les entreprises à Nîmes se fait dans vos locaux, sur les cas réels de vos équipes : fiches et contrats côté agro et viticulture, plannings et correspondance côté logistique, dossiers et comptes rendus côté santé et services. Sur vos outils réels, en une journée socle, en programme métier ou en sprint de 3 h.",
-    opco: "OPCO fréquents dans le Gard : OCAPIAT (agroalimentaire, viticulture), AKTO (services, propreté, transport léger), OPCO Mobilités (transport et logistique), OPCO Santé (établissements sanitaires et médico-sociaux), ATLAS (banque, conseil). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
+    opco: "OPCO fréquents dans le Gard : OCAPIAT (agroalimentaire, viticulture), AKTO (services, propreté), OPCO Mobilités (transport et logistique), OPCO Santé (établissements de santé privés), l'ANFH pour le CHU et les hôpitaux publics, ATLAS (banque, conseil). La prise en charge dépend de votre branche ; nous préparons le dossier avec vous, le dépôt se fait avant le début.",
     zones: "Nîmes et sa métropole, Marguerittes, Milhaud, l'axe A9 (Aimargues, Vauvert), Alès, Avignon et Arles pour les sessions en région",
     industriesDeep: [
       { sector: 'Agroalimentaire & viticulture', companies: "les caves et domaines des Costières, les industriels agro du Gard, la proximité de Royal Canin (Aimargues)", focus: "Fiches produits et contrats, correspondance export, qualité et traçabilité, contenus œnotouristiques : des usages IA immédiats pour des équipes commerciales et qualité." },
       { sector: 'Logistique & transport', companies: "les plateformes et transporteurs de l'axe A9", focus: "Correspondance client, litiges et réclamations, consignes multilingues, synthèses d'exploitation : des gains rapides pour l'ADV et l'exploitation." },
       { sector: 'Santé', companies: "le CHU de Nîmes et les établissements du Gard", focus: "Comptes rendus structurés, synthèses de dossiers, procédures qualité, communication interne : des usages cadrés par la confidentialité des données de santé." },
       { sector: 'Services & tourisme', companies: "les PME de services nîmoises et les acteurs du tourisme (Arènes, Pont du Gard)", focus: "Réponses aux demandes entrantes, contenus multilingues, préparation de la saison, communication locale : le socle commun installe les réflexes en une journée." },
-    ],
-    localCases: [
-      { profile: "Direction commerciale, négoce viticole des Costières", usage: "Fiches et argumentaires par marché, correspondance export, préparation des salons, synthèse des retours campagne." },
-      { profile: "Exploitation, plateforme logistique de l'axe A9", usage: "Réponses aux réclamations, consignes et procédures, synthèses de réunions d'exploitation, correspondance transporteurs." },
     ],
     localFacts: [
       "Les Costières de Nîmes ancrent une filière viticole et agroalimentaire exportatrice dans toute la plaine gardoise.",
@@ -1086,7 +1000,7 @@ export const GEO_CITIES = [
     transportAccess: "Nous intervenons dans vos locaux à Nîmes et dans le Gard, ainsi qu'à Avignon, Arles ou Alès, avec Mathias ou un formateur du réseau selon la zone ; Nîmes est à 1 h 20 de Lyon en TGV direct et les modalités de déplacement sont confirmées au devis. Le distanciel reste disponible, apprécié des organisations multi-sites entre Nîmes et Montpellier.",
     localExperts: [
       { name: 'CCI Gard', type: 'Réseau économique gardois' },
-      { name: 'Université de Nîmes', type: 'Pôle universitaire local' },
+      { name: 'Nîmes Université', type: 'Pôle universitaire local' },
     ],
     additionalFAQ: [
       { q: "Proposez-vous une formation IA pour les entreprises à Nîmes même ?", a: "Oui, chez vous : sessions en intra dans vos locaux à Nîmes, dans la métropole et sur l'axe A9, jusqu'à Alès, Avignon ou Arles. Nîmes est à 1 h 20 de Lyon en TGV direct ; les modalités de déplacement sont confirmées au devis, et le distanciel reste disponible pour les équipes réparties." },
@@ -1113,9 +1027,9 @@ export const GEO_TOOLS = [
       "Automatisation des tâches répétitives par métier (devis, comptes-rendus, FAQ)",
       "Génération de scripts, présentations, slides de CODIR et supports de formation",
       "Intégration dans les workflows existants (Microsoft 365, Google Workspace, Notion, Zapier)",
-      "Prompt engineering avancé : méthode CRTF, system prompts, GPTs personnalisés",
+      "Prompt engineering avancé : méthode CRTF, instructions de projet, projets partagés et compétences",
     ],
-    deepValue: "ChatGPT s'impose comme la lingua franca de l'IA en entreprise : un collaborateur formé peut transférer 80 % de ses compétences à n'importe quel autre LLM. Pour la majorité des cas d'usage transverses (rédaction, synthèse, brainstorming, analyse de tableaux), c'est l'outil au meilleur rapport puissance / facilité d'adoption.",
+    deepValue: "ChatGPT s'impose comme la lingua franca de l'IA en entreprise : un collaborateur formé transfère l'essentiel de sa méthode à n'importe quel autre LLM. Pour la majorité des cas d'usage transverses (rédaction, synthèse, brainstorming, analyse de tableaux), c'est l'outil au meilleur rapport puissance / facilité d'adoption.",
     faqLocal: (city) => [
       {
         q: `Combien de participants peut accueillir une formation ChatGPT en intra ${city.nameLoc} ?`,
@@ -1131,7 +1045,7 @@ export const GEO_TOOLS = [
       },
       {
         q: `Quels métiers bénéficient le plus d'une formation ChatGPT ${city.nameLoc} ?`,
-        a: `Tous les métiers à forte intensité documentaire et rédactionnelle. Dans notre expérience ${city.nameLoc}, les gains les plus rapides apparaissent en : marketing (production de contenus ×3), RH (tri de candidatures, fiches de poste), service client (réponses standardisées), commercial (rédaction de propositions), management (synthèses, comptes-rendus). Pour le juridique et la santé, nous recommandons plutôt Claude (analyse documentaire longue) ou Mistral (souveraineté).`,
+        a: `Tous les métiers à forte intensité documentaire et rédactionnelle. Les gains les plus rapides apparaissent en général en : marketing (production de contenus), RH (tri de candidatures, fiches de poste), service client (réponses standardisées), commercial (rédaction de propositions), management (synthèses, comptes-rendus). Pour le juridique et la santé, nous recommandons plutôt Claude (analyse documentaire longue) ou Mistral (souveraineté).`,
       },
     ],
   },
@@ -1142,8 +1056,8 @@ export const GEO_TOOLS = [
     shortName: 'Claude IA',
     color: '#d97706',
     colorLight: '#fef3c7',
-    pitch: "fenêtre de contexte 200 000 tokens, raisonnement structuré, rédaction longue de qualité professionnelle",
-    differentiator: "Claude excelle dans les tâches complexes : analyse de longs documents, rédaction rigoureuse, raisonnement juridique ou financier, traitement structuré de données. Sa fenêtre de contexte étendue (200 000 tokens, soit environ 500 pages) en fait l'outil de référence pour les équipes qui manipulent de la documentation volumineuse. Son avantage face à ChatGPT est particulièrement visible sur les cas d'usage à fort volume de texte ou nécessitant un raisonnement étape par étape.",
+    pitch: "fenêtre de contexte d'un million de tokens sur les modèles actuels, raisonnement structuré, rédaction longue de qualité professionnelle",
+    differentiator: "Claude excelle dans les tâches complexes : analyse de longs documents, rédaction rigoureuse, raisonnement juridique ou financier, traitement structuré de données. Sa fenêtre de contexte (un million de tokens sur les modèles actuels des offres payantes, Claude Opus 5.5 et Sonnet 5.5) en fait l'outil de référence pour les équipes qui manipulent de la documentation volumineuse. Son avantage face à ChatGPT est particulièrement visible sur les cas d'usage à fort volume de texte ou nécessitant un raisonnement étape par étape.",
     useCases: [
       "Analyse et synthèse de contrats longs (200 à 500 pages en une session)",
       "Rédaction de rapports structurés et mémos exécutifs (10-30 pages)",
@@ -1168,7 +1082,7 @@ export const GEO_TOOLS = [
       },
       {
         q: `Pourquoi choisir Claude plutôt que ChatGPT ${city.nameLoc} ?`,
-        a: `Claude est préféré pour les cas d'usage à forte intensité documentaire : analyse de contrats, due diligence, rapports d'audit, mémoires techniques, recherche jurisprudentielle. Sa fenêtre de contexte de 200 000 tokens permet de traiter en une fois ce qui demanderait 5 à 10 sessions ChatGPT. Pour les usages courants (emails, brainstorming, productivité quotidienne), ChatGPT reste plus polyvalent. Une formation multi-outils ${city.nameLoc} permet de comparer concrètement les deux sur vos vrais cas.`,
+        a: `Claude est préféré pour les cas d'usage à forte intensité documentaire : analyse de contrats, due diligence, rapports d'audit, mémoires techniques, recherche jurisprudentielle. Sa fenêtre de contexte (un million de tokens sur les modèles actuels des offres payantes) lui permet de traiter un très long dossier dans une seule conversation. Pour les usages courants (emails, brainstorming, productivité quotidienne), ChatGPT reste plus polyvalent. Une formation multi-outils ${city.nameLoc} permet de comparer concrètement les deux sur vos vrais cas.`,
       },
     ],
   },

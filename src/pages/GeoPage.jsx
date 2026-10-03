@@ -58,6 +58,8 @@ export default function GeoPage() {
   }
 
   const isIntraOnly = city.intraOnly
+  // Pas d'OPCO ni de Qualiopi côté suisse ou belge (Genève, Bruxelles)
+  const isFrance = city.countryCode === 'FR'
 
   const h1 = isIntraOnly
     ? `Formation ${tool.shortName} ${city.nameLoc} : intra-entreprise sur mesure`
@@ -66,8 +68,8 @@ export default function GeoPage() {
   // Formulations calibrées pour rester sous 158 caractères, y compris dans le pire
   // cas « Claude (Anthropic) » + « à Marseille » (sinon troncature en SERP).
   const metaDesc = guide?.metaDesc ?? (isIntraOnly
-    ? `Formation ${tool.name} ${city.nameLoc} : intra-entreprise dans vos locaux, programme sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`
-    : `Formation ${tool.name} ${city.nameLoc} : intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi, finançable OPCO. Devis sous 24 h.`)
+    ? `Formation ${tool.name} ${city.nameLoc} : intra-entreprise dans vos locaux, programme sur mesure. Certifié Qualiopi${isFrance ? ', finançable OPCO' : ''}. Devis sous 24 h.`
+    : `Formation ${tool.name} ${city.nameLoc} : intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi${isFrance ? ', finançable OPCO' : ''}. Devis sous 24 h.`)
   const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug).slice(0, 5)
   const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug)
 
@@ -91,9 +93,12 @@ export default function GeoPage() {
   const faqItems = guide?.faq ?? [
     ...tool.faqLocal(city),
     ...(city.additionalFAQ || []),
-    {
+    isFrance ? {
       q: "La formation est-elle éligible au financement OPCO ?",
-      a: `Oui. Masteria est certifié Qualiopi, condition requise pour la prise en charge par votre OPCO en ${city.region}. ${city.opco} Nous gérons l'intégralité du dossier de financement à votre place.`,
+      a: `Oui. Masteria est certifié Qualiopi, condition requise pour la prise en charge par votre OPCO en ${city.region}. ${city.opco} Nous préparons le dossier avec vous ; la demande est déposée avant la session.`,
+    } : {
+      q: `Comment financer une formation ${tool.shortName} ${city.nameLoc} ?`,
+      a: city.opco,
     },
     {
       q: "Quels sont les pré-requis pour participer ?",
@@ -196,7 +201,10 @@ export default function GeoPage() {
   // Le speakable vit sur ce nœud Article : l'ancien nœud WebPage dédié dupliquait
   // le @id #webpage émis par SEOHead et brouillait l'entité primaire (audit 2026-05-21).
   const PUBLISHED = '2026-05-11'
-  const MODIFIED = '2026-08-05'
+  // Une page dotée d'un guide terrain porte la date de ce guide.
+  const MODIFIED = guide?.dateModified || (guide ? '2026-09-28' : '2026-08-05')
+  const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+  const modifiedLabel = `${MOIS[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}`
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -218,6 +226,7 @@ export default function GeoPage() {
     citation: [
       { '@type': 'CreativeWork', name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
       { '@type': 'CreativeWork', name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+      ...(guide?.sources || []).map(s => ({ '@type': 'CreativeWork', name: s.name, url: s.url })),
     ],
   }
 
@@ -277,8 +286,8 @@ export default function GeoPage() {
           {/* GEO first-paragraph (sans pricing) */}
           <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
             {isIntraOnly
-              ? `Masteria forme vos équipes à ${tool.name} directement dans vos locaux ${city.nameLoc}. Programme construit sur vos cas d'usage réels, jusqu'à 12 participants, certifié Qualiopi et financé jusqu'à 100 % par votre OPCO en ${city.region}. Devis personnalisé sous 24 h.`
-              : `La formation ${tool.name} ${city.nameLoc} se décline en intra-entreprise dans vos locaux (jusqu'à 12 participants) ou en accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis personnalisé sous 24 h.`
+              ? `Masteria forme vos équipes à ${tool.name} directement dans vos locaux ${city.nameLoc}. Programme construit sur vos cas d'usage réels, jusqu'à 12 participants, ${isFrance ? `certifié Qualiopi et finançable jusqu'à 100 % par votre OPCO en ${city.region}` : 'facturé hors taxes sur devis détaillé'}. Devis personnalisé sous 24 h.`
+              : `La formation ${tool.name} ${city.nameLoc} se décline en intra-entreprise dans vos locaux (jusqu'à 12 participants) ou en accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Certifié Qualiopi${isFrance ? ", finançable jusqu'à 100 % par votre OPCO" : ''}. Devis personnalisé sous 24 h.`
             }
           </p>
 
@@ -293,7 +302,7 @@ export default function GeoPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {guide ? 'septembre' : 'août'} 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
           </p>
 
           {guide?.intro && (
@@ -305,7 +314,6 @@ export default function GeoPage() {
             {[
               guide?.guide ? ['Guide terrain', '#guide'] : null,
               city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
-              city.localCases?.length ? ["Cas d'usage", '#cas-usage'] : null,
               ['Programme', '#programme'],
               ['Formats', '#formats'],
               ['Financement', '#financement'],
@@ -327,7 +335,7 @@ export default function GeoPage() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
-              { icon: Wallet,     label: '100 % OPCO' },
+              isFrance ? { icon: Wallet, label: '100 % OPCO' } : { icon: Globe, label: 'Intra ou distanciel' },
               { icon: Users,      label: isIntraOnly ? 'Intra-entreprise' : 'Intra & individuel' },
               { icon: Clock,      label: 'Devis sous 24 h' },
             ].map(({ icon: Icon, label }) => (
@@ -422,40 +430,8 @@ export default function GeoPage() {
         </div>
       </section>
 
-      {/* ── CAS D'USAGE LOCAUX ── */}
-      {city.localCases && city.localCases.length > 0 && (
-        <section id="cas-usage" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
-          <div style={{ maxWidth: 980, margin: '0 auto' }}>
-            <FadeIn>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Cas d'usage observés</div>
-              <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
-                Trois équipes formées à {tool.shortName} {city.nameLoc}
-              </h2>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, marginBottom: 28, maxWidth: 720 }}>
-                Profils anonymisés, tous accompagnés par Masteria sur les 12 derniers mois. Les cas d'usage reflètent les vrais enjeux des entreprises {city.nameLoc} aujourd'hui.
-              </p>
-            </FadeIn>
-            <FadeIn delay={80}>
-              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
-                {city.localCases.map((c, i) => (
-                  <div key={i} style={{ background: '#fff', borderRadius: 14, padding: 24, border: '1px solid #E5E7EB' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 8 }}>Cas {i + 1}</div>
-                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 10, lineHeight: 1.35 }}>
-                      {c.profile}
-                    </h3>
-                    <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.65, margin: 0 }}>
-                      {c.usage}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-      )}
-
       {/* ── GUIDE TERRAIN (contenu propre à la page outil × ville) ── */}
-      <TerrainGuide guide={guide?.guide} color={tool.color} background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
+      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={tool.color} background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
 
       {/* ── PROGRAMME ── */}
       <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
@@ -602,12 +578,14 @@ export default function GeoPage() {
               {city.opco}
             </p>
             <p style={{ fontSize: 14, color: '#6B7280', marginBottom: 20, maxWidth: 700 }}>
-              Masteria gère l'intégralité du dossier de financement à votre place. Vous n'avez aucune démarche administrative à faire.
+              {isFrance
+                ? "Nous préparons avec vous le dossier de prise en charge (programme, convention) ; la demande est déposée auprès de votre OPCO avant la session."
+                : "Pas d'OPCO hors de France : nous établissons un devis et un programme détaillés, utilisables pour votre budget formation et pour les dispositifs locaux auxquels votre entreprise a droit."}
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 18 }}>
               {(city.countryCode === 'FR'
-                ? ["OPCO (jusqu'à 100 %)", 'Plan de développement des compétences', 'CPF collectif', 'Autofinancement']
-                : ['Plan de formation entreprise', 'Fonds sectoriels cantonaux', 'Conventions collectives', 'Autofinancement']
+                ? ["OPCO (jusqu'à 100 %)", 'Plan de développement des compétences', 'Autofinancement']
+                : ["Budget formation de l'entreprise", 'Dispositifs locaux selon éligibilité', 'Autofinancement']
               ).map(f => (
                 <span key={f} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 99, padding: '7px 14px', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>
                   <CheckCircle2 size={13} color="#2563EB" strokeWidth={2.5} /> {f}
@@ -631,7 +609,7 @@ export default function GeoPage() {
                 Acteurs de référence dans la région
               </h2>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 18, maxWidth: 720 }}>
-                Notre programme s'inscrit dans l'écosystème IA local. Nous échangeons régulièrement avec les acteurs suivants pour rester à jour sur les enjeux régionaux.
+                Les acteurs qui structurent l'écosystème IA local, utiles pour prolonger la formation : recherche, communautés et accompagnement des entreprises.
               </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {city.localExperts.map((e, i) => (
@@ -717,8 +695,8 @@ export default function GeoPage() {
           </h2>
           <p style={{ fontSize: 16, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 28 }}>
             {isIntraOnly
-              ? `Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. Financement OPCO en ${city.region} pris en charge par Masteria.`
-              : `Formation intra-entreprise dans vos locaux ou accompagnement individuel sur mesure. Devis sous 24 h, financement OPCO inclus.`}
+              ? `Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. ${isFrance ? `Finançable par votre OPCO en ${city.region}.` : 'Intra dans vos locaux ou distanciel.'}`
+              : `Formation intra-entreprise dans vos locaux ou accompagnement individuel sur mesure. Devis sous 24 h, finançable par votre OPCO.`}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', padding: '15px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, fontFamily: 'DM Sans, sans-serif' }}>

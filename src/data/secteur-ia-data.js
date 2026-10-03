@@ -40,7 +40,7 @@ export const SECTEURS = [
     h1: "IA pour la banque, l'assurance et la finance : agents, automatisations et outils sur mesure",
     metaTitle: 'IA banque & assurance : cabinet conseil IA, dev sur mesure | Masteria',
     metaDesc:
-      "Cabinet de conseil IA pour la banque, l'assurance et la bancassurance : synthèse de dossiers, conformité LCB-FT, copilotes souscription, chatbot bancaire encadré. Conseil et dev sur mesure. Cadrage gratuit.",
+      "IA pour la banque et l'assurance : synthèse de dossiers, conformité LCB-FT, copilotes de souscription. Conseil et dev sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA banque, IA assurance, cabinet conseil secteur bancaire, cabinet de conseil banque, cabinet conseil banque de détail, cabinet de conseil digitalisation des banques, cabinet de conseil bancassurance, chatbot bancaire, big data banque, cabinet conseil corporate and investment banking, intelligence artificielle secteur bancaire, cas d'usage IA finance, agent IA conformité LCB-FT, automatisation KYC, copilote souscription, conseil IA assurance",
     /* Enrichi le 2026-09-03 (Semrush FR) : grappe « cabinet conseil secteur
@@ -123,7 +123,7 @@ export const SECTEURS = [
     ],
     constraints: {
       title: 'Secret bancaire, conformité et traçabilité',
-      desc: "La banque et l'assurance opèrent sous secret bancaire, secret des affaires et supervision de l'ACPR. Les données de crédit, de sinistre et de relation client ne peuvent ni alimenter un modèle public ni sortir d'un périmètre maîtrisé. Nous concevons les solutions pour rester dans votre système d'information ou dans un hébergement souverain, avec journalisation des accès, validation humaine sur les décisions et pistes d'audit. La conformité RGPD, LCB-FT et le cadre de l'AI Act sont des critères de conception, pas une couche ajoutée après coup.",
+      desc: "La banque opère sous secret bancaire (article L511-33 du code monétaire et financier), l'assurance sous ses propres obligations de confidentialité, et toutes deux sous la supervision de l'ACPR et le règlement DORA sur la résilience opérationnelle numérique. Les données de crédit, de sinistre et de relation client ne peuvent ni alimenter un modèle public ni sortir d'un périmètre maîtrisé. Nous concevons les solutions pour rester dans votre système d'information ou dans un hébergement souverain, avec journalisation des accès, validation humaine sur les décisions et pistes d'audit. La conformité RGPD, LCB-FT et le cadre de l'AI Act sont des critères de conception, pas une couche ajoutée après coup.",
     },
     onsiteDev:
       "Quand les données de crédit, de sinistre ou de relation client ne doivent pas quitter votre système d'information, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou en environnement maîtrisé, pour développer derrière votre pare-feu et au contact de vos contraintes de sécurité et de conformité.",
@@ -169,7 +169,7 @@ export const SECTEURS = [
     h1: "IA pour l'industrie et l'énergie : agents, automatisations et outils sur mesure",
     metaTitle: "IA industrie & énergie : conseil, performance industrielle, dev | Masteria",
     metaDesc:
-      "Conseil IA pour l'industrie et l'énergie : performance industrielle et amélioration continue avec l'IA, documentation technique, maintenance, qualité, appels d'offres. Dev sur mesure, on-premise possible. Cadrage gratuit.",
+      "IA pour l'industrie et l'énergie : documentation technique, maintenance, qualité, appels d'offres. Dev sur mesure, on-premise. 30 min de cadrage offertes.",
     keywords:
       "IA industrie, conseil industrie, cabinet de conseil industrie, conseil en industrie, conseil performance industrielle, amélioration performance industrielle, cabinet conseil amélioration continue, accompagnement industriel, solutions pour l'industrie manufacturière, IA énergie, intelligence artificielle industrielle, cas d'usage IA production, IA documentation technique, IA maintenance industrielle, LLM on-premise industrie, agent IA appels d'offres industriels",
     /* Enrichi le 2026-09-03 (Semrush FR) : grappe « conseil industrie » (140, KD 11,
@@ -198,7 +198,7 @@ export const SECTEURS = [
         {
           icon: 'ClipboardCheck',
           title: 'Accompagnement industriel de bout en bout',
-          desc: "Cadrage sur site avec les méthodes, la maintenance et la qualité ; choix des cas ; prototype en quelques semaines ; déploiement en réseau isolé si nécessaire ; formation des équipes qui feront vivre l'outil. Un accompagnement industriel, pas une démonstration en salle.",
+          desc: "Cadrage sur site avec les méthodes, la maintenance et la qualité ; choix des cas ; prototype sur un premier cas ; déploiement en réseau isolé si nécessaire ; formation des équipes qui feront vivre l'outil. Un accompagnement industriel, pas une démonstration en salle.",
         },
         {
           icon: 'TrendingUp',
@@ -303,7 +303,7 @@ export const SECTEURS = [
     h1: "IA pour la santé et la pharma : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour la santé & la pharma · conseil & dev | Masteria',
     metaDesc:
-      "IA pour la santé et la pharma : protocoles, pharmacovigilance, affaires réglementaires. Dev sur mesure, hébergement HDS. Cadrage gratuit.",
+      "IA pour la santé et la pharma : protocoles, pharmacovigilance, affaires réglementaires. Dev sur hébergement certifié HDS. 30 min de cadrage offertes.",
     keywords:
       "IA santé, IA pharmaceutique, intelligence artificielle secteur médical, IA pharmacovigilance, IA affaires réglementaires, hébergement HDS IA, IA protocoles et procédures, conseil IA santé",
     tagline:
@@ -346,7 +346,7 @@ export const SECTEURS = [
     ],
     constraints: {
       title: 'Données de santé, hébergement HDS et RGPD',
-      desc: "Les données de santé à caractère personnel relèvent d'un cadre strict : RGPD renforcé, hébergement certifié HDS (hébergeur de données de santé) en France, exigences équivalentes en Suisse et en Belgique, traçabilité complète. Aucun outil grand public non conforme n'a sa place dans ce périmètre. Nous concevons les solutions pour respecter ce cadre : hébergement conforme, cloisonnement, journalisation, et surtout validation humaine systématique. L'IA assiste la documentation et la veille, elle ne prend jamais de décision clinique ou réglementaire à la place des professionnels.",
+      desc: "Les données de santé à caractère personnel relèvent d'un cadre strict : RGPD renforcé, hébergement certifié HDS (hébergeur de données de santé) en France, données de santé classées sensibles par la loi suisse sur la protection des données, traçabilité complète. Aucun outil grand public non conforme n'a sa place dans ce périmètre. Nous concevons les solutions pour respecter ce cadre : hébergement conforme, cloisonnement, journalisation, et surtout validation humaine systématique. L'IA assiste la documentation et la veille, elle ne prend jamais de décision clinique ou réglementaire à la place des professionnels.",
     },
     onsiteDev:
       "Pour les environnements où les données de santé ne doivent pas quitter un périmètre certifié, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, au contact de vos contraintes HDS et de vos processus qualité, afin de développer dans votre environnement conforme plutôt que d'y exporter des données.",
@@ -384,15 +384,15 @@ export const SECTEURS = [
     h1: "IA pour le juridique et les professions du droit : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour le juridique & le droit · conseil & dev | Masteria',
     metaDesc:
-      "IA pour le juridique : analyse de contrats, recherche jurisprudentielle, rédaction d'actes. Dev sur mesure, secret professionnel préservé. Cadrage gratuit.",
+      "IA pour le juridique : analyse de contrats, recherche de jurisprudence, rédaction d'actes, secret professionnel préservé. 30 min de cadrage offertes.",
     keywords:
       "IA juridique, IA cabinet d'avocats, intelligence artificielle droit, IA analyse de contrats, IA recherche jurisprudentielle, legaltech sur mesure, IA direction juridique, secret professionnel IA",
     tagline:
       "Analyse de contrats, recherche jurisprudentielle et rédaction assistée, dans le respect strict du secret professionnel.",
     directAnswer:
-      "Pour le juridique et les professions du droit, Masteria développe des outils IA sur mesure : analyse et comparaison de contrats, recherche jurisprudentielle, aide à la rédaction d'actes, due diligence documentaire. Le secret professionnel est préservé par conception, avec des sources citées et une relecture systématique par le juriste.",
+      "Pour le juridique et les professions du droit, Masteria développe des outils IA sur mesure : analyse et comparaison de contrats, recherche jurisprudentielle, aide à la rédaction d'actes, due diligence documentaire. L'architecture se décide d'abord selon le secret qui s'applique (avocat, notaire, juriste d'entreprise), avec des sources citées et une relecture systématique par le juriste.",
     context:
-      "Les cabinets d'avocats, directions juridiques et professions réglementées du droit (notaires, experts) vivent du traitement de la matière documentaire : contrats, actes, jurisprudence, doctrine, échanges, dossiers de contentieux. Le temps facturable est précieux et une part importante est absorbée par la lecture, la recherche, la comparaison et la première rédaction. L'IA générative crée de la valeur sur ce travail préparatoire : retrouver une clause, comparer des versions, faire une première synthèse d'un dossier volumineux, préparer un brouillon d'acte à partir de modèles. La frontière est claire : l'IA prépare, le juriste arbitre, relit et engage sa responsabilité. La fiabilité passe par des réponses sourcées, ancrées dans vos documents et dans des bases fiables, pour éviter toute approximation sur le droit applicable.",
+      "Les cabinets d'avocats, directions juridiques et professions réglementées du droit (notaires, commissaires de justice) vivent du traitement de la matière documentaire : contrats, actes, jurisprudence, doctrine, échanges, dossiers de contentieux. Le temps facturable est précieux et une part importante est absorbée par la lecture, la recherche, la comparaison et la première rédaction. L'IA générative crée de la valeur sur ce travail préparatoire : retrouver une clause, comparer des versions, faire une première synthèse d'un dossier volumineux, préparer un brouillon d'acte à partir de modèles. La frontière est claire : l'IA prépare, le juriste arbitre, relit et engage sa responsabilité. La fiabilité passe par des réponses sourcées, ancrées dans vos documents et dans des bases fiables, pour éviter toute approximation sur le droit applicable.",
     painPoints: [
       "Revue et comparaison de contrats chronophages : repérer les clauses sensibles, les écarts par rapport à un standard, les risques, sur des volumes importants.",
       "Recherche jurisprudentielle et documentaire qui mobilise un temps facturable élevé, avec un risque d'approximation si la source n'est pas maîtrisée.",
@@ -465,7 +465,7 @@ export const SECTEURS = [
     h1: "IA pour le retail et l'e-commerce : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour le retail & l'e-commerce · conseil & dev | Masteria",
     metaDesc:
-      "IA pour le retail et l'e-commerce : fiches produits, support client, contenus multilingues. Dev sur mesure sur votre catalogue. Cadrage gratuit.",
+      "IA pour le retail et l'e-commerce : fiches produits, support client, contenus multilingues. Dev sur mesure sur votre catalogue. 30 min de cadrage offertes.",
     keywords:
       "IA retail, IA e-commerce, intelligence artificielle distribution, IA fiches produits, IA support client e-commerce, IA merchandising, recherche sémantique catalogue, IA contenus marketing",
     tagline:
@@ -508,7 +508,7 @@ export const SECTEURS = [
     ],
     constraints: {
       title: 'Données client, RGPD et image de marque',
-      desc: "Le retail et l'e-commerce manipulent des données client (commandes, comportements, contacts) soumises au RGPD, et une image de marque qui ne tolère ni l'approximation ni le hors-ton. Nous concevons les solutions pour respecter le cadre des données personnelles, encadrer les générations par votre charte éditoriale et vos règles, et garder une validation humaine sur ce qui est publié. L'objectif est d'industrialiser la production sans diluer la marque ni exposer les données client.",
+      desc: "Le retail et l'e-commerce manipulent des données client (commandes, comportements, contacts) soumises au RGPD, et une image de marque qui ne tolère ni l'approximation ni le hors-ton. Nous concevons les solutions pour respecter le cadre des données personnelles, encadrer les générations par votre charte éditoriale et vos règles, et garder une validation humaine sur ce qui est publié. L'objectif est d'industrialiser la production en gardant la voix de la marque et en protégeant les données client.",
     },
     onsiteDev:
       "Pour les enseignes et pure players qui veulent intégrer l'IA au plus près de leur plateforme e-commerce, de leur PIM et de leur CRM, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, afin de construire au contact direct de votre stack et de vos données produit et client.",
@@ -546,7 +546,7 @@ export const SECTEURS = [
     h1: "IA pour la logistique et le transport : agents, automatisations et outils sur mesure",
     metaTitle: 'IA logistique & transport : conseil supply chain, dev sur mesure | Masteria',
     metaDesc:
-      "Conseil IA pour la logistique, le transport et la supply chain : tournées, suivi des expéditions, traitement douanier, litiges, intégration TMS/WMS. Dev sur mesure. Cadrage gratuit.",
+      "IA pour la logistique et le transport : expéditions, douane, litiges, intégration TMS et WMS. Conseil et dev sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA logistique, IA transport, cabinet de conseil transport, cabinet de conseil en supply chain, consultant en transport, conseil supply chain IA, conseil logistique IA, intelligence artificielle supply chain, IA optimisation des tournées, IA documents douaniers, IA suivi des expéditions, intégration IA TMS WMS, agent IA exploitation transport",
     /* Enrichi le 2026-09-03 (Semrush FR) : « cabinet de conseil transport » (140,
@@ -577,7 +577,7 @@ export const SECTEURS = [
         {
           icon: 'Workflow',
           title: 'Une intégration sur vos outils, pas une nouvelle plateforme',
-          desc: "Nous n'imposons pas de nouveau logiciel : l'IA s'intègre au TMS, au WMS, à l'ERP et à la messagerie existants, par API ou par connecteurs. C'est ce qui distingue notre accompagnement d'un projet d'éditeur, et ce qui permet de démarrer par un cas en quelques semaines.",
+          desc: "Nous n'imposons pas de nouveau logiciel : l'IA s'intègre au TMS, au WMS, à l'ERP et à la messagerie existants, par API ou par connecteurs. C'est ce qui distingue notre accompagnement d'un projet d'éditeur, et ce qui permet de démarrer par un premier cas mesurable.",
         },
       ],
       closing:
@@ -590,11 +590,11 @@ export const SECTEURS = [
     tagline:
       "Optimisation des tournées, suivi des expéditions et traitement documentaire, branchés sur votre TMS et votre WMS.",
     directAnswer:
-      "Pour la logistique et le transport, Masteria développe des agents et des outils IA sur mesure : aide à l'optimisation des tournées, suivi et qualification des expéditions, traitement documentaire (CMR, douane, factures), copilotes pour l'exploitation et le service client transporteur. Le tout branché sur votre TMS et votre WMS.",
+      "Pour la logistique et le transport, Masteria développe des agents et des outils IA sur mesure : aide à l'optimisation des tournées, suivi et qualification des expéditions, traitement documentaire (lettres de voiture, douane, factures), copilotes pour l'exploitation et le service client transporteur. Le tout branché sur votre TMS et votre WMS.",
     context:
-      "La logistique et le transport sont des métiers de flux, de délais et de documents. L'exploitation jongle avec les tournées, les aléas, les retards et un flux documentaire dense : bons de transport, CMR, documents douaniers, factures, réclamations. Les marges sont serrées et le temps d'exploitation est précieux. L'IA générative et l'automatisation créent de la valeur sur le traitement documentaire (extraction, contrôle, rapprochement), sur l'assistance à l'exploitation (qualification des aléas, préparation des décisions) et sur la relation avec les clients chargeurs et les transporteurs (suivi, réponses au statut). L'optimisation fine des tournées relève d'algorithmes spécialisés, que l'IA générative complète sur la partie interface, décision assistée et communication. Les données circulent déjà dans le TMS et le WMS : l'enjeu est de les exploiter mieux.",
+      "La logistique et le transport sont des métiers de flux, de délais et de documents. L'exploitation jongle avec les tournées, les aléas, les retards et un flux documentaire dense : bons de transport, lettres de voiture, documents douaniers, factures, réclamations. Les marges sont serrées et le temps d'exploitation est précieux. L'IA générative et l'automatisation créent de la valeur sur le traitement documentaire (extraction, contrôle, rapprochement), sur l'assistance à l'exploitation (qualification des aléas, préparation des décisions) et sur la relation avec les clients chargeurs et les transporteurs (suivi, réponses au statut). L'optimisation fine des tournées relève d'algorithmes spécialisés, que l'IA générative complète sur la partie interface, décision assistée et communication. Les données circulent déjà dans le TMS et le WMS : l'enjeu est de les exploiter mieux.",
     painPoints: [
-      "Flux documentaire dense et manuel : bons de transport, CMR, documents douaniers, factures à saisir, contrôler et rapprocher.",
+      "Flux documentaire dense et manuel : lettres de voiture (CMR à l'international), documents douaniers, factures à contrôler et à rapprocher.",
       "Exploitation sous pression des aléas : retards, ruptures, réclamations à qualifier et à traiter vite, avec une information dispersée.",
       "Relation chargeurs et transporteurs chronophage : demandes de statut, suivi des expéditions, réponses répétitives au quotidien.",
       "Données réparties entre TMS, WMS, télématique et e-mails, peu exploitées de manière unifiée.",
@@ -602,7 +602,7 @@ export const SECTEURS = [
     useCases: [
       {
         title: 'Traitement documentaire transport et douane',
-        desc: "Une automatisation qui extrait et contrôle les informations des documents de transport (CMR, bons, documents douaniers, factures), les rapproche de vos systèmes et signale les écarts, pour réduire la saisie et les erreurs.",
+        desc: "Une automatisation qui extrait et contrôle les informations des documents de transport (lettres de voiture, bons, documents douaniers, factures), les rapproche de vos systèmes et signale les écarts, pour réduire la saisie et les erreurs.",
       },
       {
         title: "Assistant d'exploitation et de qualification des aléas",
@@ -654,7 +654,7 @@ export const SECTEURS = [
       },
       {
         q: "Faut-il changer de TMS ou de WMS pour utiliser l'IA ?",
-        a: "Non. L'IA se branche sur vos outils existants, par API quand l'éditeur en propose une, par connecteurs ou par lecture des exports sinon. Un agent qui relance les transporteurs, qualifie les anomalies ou prépare les litiges lit et écrit dans votre TMS actuel ; un assistant d'analyse interroge les données de votre WMS sans les déplacer. Changer d'outil est un projet d'éditeur, long et coûteux ; outiller l'exploitation avec l'IA se fait en quelques semaines sur un premier cas.",
+        a: "Non. L'IA se branche sur vos outils existants, par API quand l'éditeur en propose une, par connecteurs ou par lecture des exports sinon. Un agent qui relance les transporteurs, qualifie les anomalies ou prépare les litiges lit et écrit dans votre TMS actuel ; un assistant d'analyse interroge les données de votre WMS sans les déplacer. Changer d'outil est un projet d'éditeur, long et coûteux ; outiller l'exploitation avec l'IA commence par un premier cas au périmètre court.",
       },
       {
         q: "Pourquoi vous plutôt qu'un module IA de notre TMS ?",
@@ -673,7 +673,7 @@ export const SECTEURS = [
     h1: "IA pour l'immobilier et le BTP : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour l'immobilier & le BTP · conseil & dev | Masteria",
     metaDesc:
-      "IA pour l'immobilier et le BTP : annonces, analyse de baux, marchés (DCE/CCTP), suivi de chantier. Conseil et dev sur mesure. Cadrage gratuit.",
+      "IA pour l'immobilier et le BTP : annonces, analyse de baux, marchés (DCE/CCTP), suivi de chantier. Conseil et dev sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA immobilier, IA BTP, intelligence artificielle construction, IA rédaction d'annonces immobilières, IA analyse de baux, IA appels d'offres DCE CCTP, IA suivi de chantier, IA estimation immobilière",
     tagline:
@@ -730,7 +730,7 @@ export const SECTEURS = [
         a: "En outillant le bureau d'études : une automatisation dépouille le DCE, recense les exigences du CCTP et du règlement de consultation, et assemble un projet de mémoire technique à partir de vos références existantes. Le temps de dépouillement et de réassemblage baisse, et vos experts se concentrent sur l'argumentaire et l'arbitrage.",
       },
       {
-        q: "Peut-on faire analyser des baux et contrats par l'IA en toute sécurité ?",
+        q: "Peut-on faire analyser des baux et des contrats par l'IA sans exposer les données ?",
         a: "L'IA prépare l'analyse (repérage des clauses sensibles, écarts par rapport à votre standard, synthèse) avec des réponses renvoyant aux passages d'origine. La validation et l'engagement restent du ressort du gestionnaire ou du juriste. Les données restent dans un périmètre maîtrisé et conforme au RGPD.",
       },
       {
@@ -754,7 +754,7 @@ export const SECTEURS = [
     h1: "IA pour le secteur public et les collectivités : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour le secteur public · conseil & dev | Masteria',
     metaDesc:
-      "IA pour le secteur public : demandes usagers, rédaction administrative, recherche réglementaire, souveraineté des données. Dev sur mesure. Cadrage gratuit.",
+      "IA pour le secteur public : demandes des usagers, rédaction administrative, veille réglementaire, souveraineté. Dev sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA secteur public, IA collectivités territoriales, intelligence artificielle administration, IA demandes usagers, IA rédaction administrative, IA marchés publics, souveraineté numérique IA, conseil IA service public",
     tagline:
@@ -762,7 +762,7 @@ export const SECTEURS = [
     directAnswer:
       "Pour le secteur public et les collectivités, Masteria développe des outils IA sur mesure : traitement et orientation des demandes usagers, aide à la rédaction administrative, recherche réglementaire sourcée, synthèse de délibérations. Le tout dans un cadre de souveraineté des données, de RGPD et de commande publique.",
     context:
-      "Les administrations, collectivités et établissements publics traitent un volume important de demandes d'usagers, produisent une masse de documents administratifs (courriers, délibérations, rapports, marchés) et travaillent sur un socle réglementaire dense et mouvant. La pression est double : améliorer le service rendu à l'usager tout en maîtrisant les moyens. L'IA générative crée de la valeur sur l'orientation et la première réponse aux demandes, sur l'aide à la rédaction administrative, sur la recherche dans la réglementation et les actes, et sur la synthèse documentaire. La spécificité du secteur public est la souveraineté : les données et les modèles doivent rester sous contrôle, l'hébergement et le choix des outils répondent à des exigences renforcées, et la commande publique encadre la manière d'acheter ces prestations. La transparence et l'explicabilité des traitements y sont des attentes fortes.",
+      "Les administrations, collectivités et établissements publics traitent un volume important de demandes d'usagers, produisent une masse de documents administratifs (courriers, délibérations, rapports, marchés) et travaillent sur un socle réglementaire dense et mouvant. La pression est double : améliorer le service rendu à l'usager tout en maîtrisant les moyens. L'IA générative crée de la valeur sur l'orientation et la première réponse aux demandes, sur l'aide à la rédaction administrative, sur la recherche dans la réglementation et les actes, et sur la synthèse documentaire. La spécificité du secteur public est la souveraineté : les données et les modèles doivent rester sous contrôle, l'hébergement et le choix des outils répondent à des exigences renforcées, et la commande publique encadre la manière d'acheter ces prestations. La transparence des traitements algorithmiques y est une obligation légale (code des relations entre le public et l'administration, articles L311-3-1 et L312-1-3).",
     painPoints: [
       "Demandes usagers nombreuses et répétitives : orientation, première réponse, recherche de la bonne information dans une administration cloisonnée.",
       "Production documentaire administrative lourde : courriers, délibérations, rapports, comptes rendus à rédiger et à mettre en forme.",
@@ -835,7 +835,7 @@ export const SECTEURS = [
     h1: "IA pour les services et cabinets de conseil : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour les cabinets de conseil : outils, agents, dev sur mesure | Masteria',
     metaDesc:
-      "Outils IA pour le conseil et les services professionnels : livrables, synthèse documentaire, propositions, savoir du cabinet. Agents et dev sur mesure. Cadrage gratuit.",
+      "IA pour le conseil et les services : livrables, synthèse documentaire, propositions, savoir du cabinet. Agents sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA cabinet de conseil, outils ia pour le conseil, outils ia cabinet de conseil, ia pour consultants, IA services professionnels, intelligence artificielle conseil, IA production de livrables, IA synthèse documentaire, IA propositions commerciales, knowledge management IA, copilote de cabinet",
     /* Enrichi le 2026-09-03 (Semrush FR) : « outils ia pour le conseil » (70, KD 15,
@@ -930,7 +930,7 @@ export const SECTEURS = [
       },
       {
         q: "Peut-on outiller l'avant-vente et les propositions commerciales ?",
-        a: "Oui. Une automatisation assemble un projet de proposition à partir de vos références, méthodologies et éléments de chiffrage, adapté au contexte du prospect. Le temps de réassemblage baisse nettement, et vos associés se concentrent sur la stratégie de réponse et la relation, pas sur la mise en forme.",
+        a: "Oui. Une automatisation assemble un projet de proposition à partir de vos références, méthodologies et éléments de chiffrage, adapté au contexte du prospect. Le temps de réassemblage se mesure avant et après, et vos associés gardent leur temps pour la stratégie de réponse et la relation.",
       },
       {
         q: "Combien coûte un projet IA pour un cabinet de conseil ?",
@@ -957,7 +957,7 @@ export const SECTEURS = [
     h1: "IA pour le tourisme et l'hôtellerie : agents, automatisations et outils sur mesure",
     metaTitle: "IA tourisme & hôtellerie · conseil & dev | Masteria",
     metaDesc:
-      "IA pour le tourisme et l'hôtellerie : relation client multilingue, avis, contenus, réservation. Dev sur mesure sur PMS. Cadrage gratuit.",
+      "IA pour le tourisme et l'hôtellerie : relation client multilingue, avis, contenus, réservation. Dev sur mesure sur PMS. 30 min de cadrage offertes.",
     keywords:
       "IA tourisme, IA hôtellerie, intelligence artificielle hospitality, IA relation client multilingue, IA gestion des avis clients, IA réservation hôtelière, IA contenus touristiques, intégration IA PMS",
     tagline:
@@ -965,7 +965,7 @@ export const SECTEURS = [
     directAnswer:
       "Pour le tourisme et l'hôtellerie, Masteria développe des outils IA sur mesure : assistance à la relation client multilingue, gestion et réponse aux avis, production de contenus et d'offres, support à la réservation. Le tout branché sur votre PMS et vos canaux de distribution, dans le respect des données client.",
     context:
-      "Le tourisme et l'hôtellerie sont des métiers de relation client, de saisonnalité et de multicanal. Les établissements et acteurs du voyage gèrent des demandes en plusieurs langues, un flux continu d'avis clients, une production éditoriale importante (descriptifs, offres, e-mails, contenus de destination) et une distribution éclatée entre site direct, OTA et canaux partenaires. L'IA générative crée de la valeur sur la relation client multilingue (réponses cohérentes, disponibles à toute heure), sur la gestion des avis (analyse, réponses personnalisées), sur la production de contenus et d'offres, et sur l'assistance à la réservation. La donnée client et la donnée de réservation sont déjà dans le PMS et le CRM : l'enjeu est d'outiller les équipes pour mieux servir sans alourdir la masse salariale, en gardant la chaleur de la relation propre à l'hospitalité.",
+      "Le tourisme et l'hôtellerie sont des métiers de relation client, de saisonnalité et de multicanal. Les établissements et acteurs du voyage gèrent des demandes en plusieurs langues, un flux continu d'avis clients, une production éditoriale importante (descriptifs, offres, e-mails, contenus de destination) et une distribution éclatée entre site direct, agences de voyage en ligne (OTA) et canaux partenaires. L'IA générative crée de la valeur sur la relation client multilingue (réponses cohérentes, disponibles à toute heure), sur la gestion des avis (analyse, réponses personnalisées), sur la production de contenus et d'offres, et sur l'assistance à la réservation. La donnée client et la donnée de réservation sont déjà dans le PMS et le CRM : l'enjeu est d'outiller les équipes pour mieux servir à effectif constant, en gardant la chaleur de la relation propre à l'hospitalité.",
     painPoints: [
       "Relation client multilingue et continue : demandes avant, pendant et après séjour, en plusieurs langues, à toute heure.",
       "Flux d'avis clients à analyser et à traiter : réponses personnalisées attendues, impact direct sur la réputation et la distribution.",
@@ -1038,7 +1038,7 @@ export const SECTEURS = [
     h1: "IA pour l'agroalimentaire : agents, automatisations et outils sur mesure",
     metaTitle: "IA pour l'agroalimentaire · conseil & dev | Masteria",
     metaDesc:
-      "IA pour l'agroalimentaire : qualité et conformité (HACCP, INCO), traçabilité, fiches techniques, R&D. Dev sur mesure. Cadrage gratuit.",
+      "IA pour l'agroalimentaire : qualité et conformité (HACCP, INCO), traçabilité, fiches techniques, R&D. Dev sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA agroalimentaire, IA industrie alimentaire, intelligence artificielle qualité HACCP, IA étiquetage INCO, IA fiches techniques produit, IA traçabilité alimentaire, IA veille réglementaire sanitaire, IA R&D formulation",
     tagline:
@@ -1046,9 +1046,9 @@ export const SECTEURS = [
     directAnswer:
       "Pour l'agroalimentaire, Masteria développe des agents et des outils IA sur mesure : aide à la qualité et à la conformité réglementaire, traçabilité documentaire, génération de fiches techniques et de mentions d'étiquetage, appui à la R&D produit. Le tout branché sur vos référentiels, avec une validation humaine sur les éléments réglementaires.",
     context:
-      "L'agroalimentaire combine production industrielle, exigences sanitaires et réglementaires strictes (HACCP, IFS/BRC, réglementation INCO sur l'étiquetage, allergènes) et une intensité documentaire forte : fiches techniques, cahiers des charges, spécifications fournisseurs, dossiers qualité, étiquetages. Les équipes qualité, R&D et réglementaires passent un temps important à vérifier la conformité, mettre à jour des fiches, recouper des spécifications et suivre les évolutions normatives. L'IA générative crée de la valeur sur cette matière documentaire : retrouver et comparer des spécifications, préparer une fiche technique, contrôler la cohérence d'un étiquetage par rapport à la réglementation, synthétiser une veille réglementaire. La frontière est claire : l'IA prépare et accélère, la validation réglementaire et sanitaire reste celle des responsables qualité et réglementaires, avec la traçabilité que ces métiers exigent.",
+      "L'agroalimentaire combine production industrielle, exigences sanitaires et réglementaires strictes (HACCP, règlement INCO sur l'étiquetage, allergènes), complétées par les référentiels privés que la distribution exige (IFS, BRCGS), et une intensité documentaire forte : fiches techniques, cahiers des charges, spécifications fournisseurs, dossiers qualité, étiquetages. Les équipes qualité, R&D et réglementaires passent un temps important à vérifier la conformité, mettre à jour des fiches, recouper des spécifications et suivre les évolutions normatives. L'IA générative crée de la valeur sur cette matière documentaire : retrouver et comparer des spécifications, préparer une fiche technique, contrôler la cohérence d'un étiquetage par rapport à la réglementation, synthétiser une veille réglementaire. La frontière est claire : l'IA prépare et accélère, la validation réglementaire et sanitaire reste celle des responsables qualité et réglementaires, avec la traçabilité que ces métiers exigent.",
     painPoints: [
-      "Conformité réglementaire et qualité exigeantes : HACCP, IFS/BRC, réglementation INCO, allergènes, à vérifier et à documenter en permanence.",
+      "Conformité réglementaire (HACCP, règlement INCO, allergènes) et référentiels qualité exigés par la distribution (IFS, BRCGS), à vérifier et à documenter en permanence.",
       "Fiches techniques et étiquetages nombreux à produire et à maintenir à jour, avec un risque réglementaire réel en cas d'erreur.",
       "Spécifications fournisseurs et cahiers des charges hétérogènes à recouper, comparer et tenir cohérents.",
       "Veille réglementaire dense et évolutive, difficile à suivre de manière homogène entre produits et marchés.",
@@ -1081,7 +1081,7 @@ export const SECTEURS = [
     ],
     constraints: {
       title: 'Sécurité sanitaire, conformité réglementaire et traçabilité',
-      desc: "L'agroalimentaire engage la sécurité sanitaire des consommateurs et opère sous des référentiels stricts (HACCP, IFS/BRC, INCO). Une erreur d'étiquetage ou de conformité a des conséquences réglementaires et sanitaires directes. Nous concevons les solutions pour que l'IA prépare et contrôle, mais que la validation réglementaire et sanitaire reste humaine, avec une traçabilité complète et des réponses ancrées dans vos référentiels. La propriété des formulations et des données produit reste sous votre contrôle, avec un déploiement adapté à vos exigences de confidentialité.",
+      desc: "L'agroalimentaire engage la sécurité sanitaire des consommateurs et opère sous des règles et des référentiels stricts (HACCP, INCO, IFS, BRCGS). Une erreur d'étiquetage ou de conformité a des conséquences réglementaires et sanitaires directes. Nous concevons les solutions pour que l'IA prépare et contrôle, mais que la validation réglementaire et sanitaire reste humaine, avec une traçabilité complète et des réponses ancrées dans vos référentiels. La propriété des formulations et des données produit reste sous votre contrôle, avec un déploiement adapté à vos exigences de confidentialité.",
     },
     onsiteDev:
       "Pour les industriels dont les formulations et données produit ne doivent pas sortir du site, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, au contact de vos services qualité, R&D et réglementaires, afin de développer au plus près de vos référentiels et de vos contraintes de confidentialité.",
@@ -1104,7 +1104,7 @@ export const SECTEURS = [
       },
       {
         q: "Qu'apportez-vous de plus qu'un module qualité avec une option IA ?",
-        a: "Un module qualité ajoute une fonction limitée à son périmètre ; nous concevons une solution sur mesure branchée sur vos référentiels (HACCP, IFS/BRC, INCO) et vos données produit, qui prépare et contrôle tout en laissant la validation à vos responsables. Indépendants des éditeurs, nous gardons vos formulations sous votre contrôle, documentons et transférons. Le code vous appartient.",
+        a: "Un module qualité ajoute une fonction limitée à son périmètre ; nous concevons une solution sur mesure branchée sur vos plans HACCP, vos exigences INCO, vos référentiels IFS ou BRCGS et vos données produit, qui prépare et contrôle tout en laissant la validation à vos responsables. Indépendants des éditeurs, nous gardons vos formulations sous votre contrôle, documentons et transférons. Le code vous appartient.",
       },
     ],
     relatedSectors: ['ia-industrie', 'ia-retail-ecommerce', 'ia-logistique-transport'],
@@ -1119,7 +1119,7 @@ export const SECTEURS = [
     h1: "IA pour la tech et les éditeurs SaaS : agents, automatisations et outils sur mesure",
     metaTitle: 'IA pour la tech & le SaaS · conseil & dev | Masteria',
     metaDesc:
-      "IA pour la tech et le SaaS : fonctionnalités IA produit, support technique, documentation, copilotes internes. Dev sur mesure, LLM/RAG. Cadrage gratuit.",
+      "IA pour la tech et le SaaS : fonctions IA produit, support technique, documentation, copilotes internes. Dev sur mesure. 30 min de cadrage offertes.",
     keywords:
       "IA SaaS, IA éditeur de logiciels, intelligence artificielle produit tech, fonctionnalité IA embarquée, intégration LLM RAG, agents et connecteurs MCP, IA support technique, évaluation et garde-fous LLM",
     tagline:
@@ -1127,9 +1127,9 @@ export const SECTEURS = [
     directAnswer:
       "Pour la tech et les éditeurs SaaS, Masteria conçoit et développe des fonctionnalités IA embarquées dans votre produit, des copilotes de support technique, de l'aide à la documentation et des assistants internes. Intégrations LLM/RAG, agents et connecteurs MCP, avec une attention forte à la qualité, au coût des modèles et à la confidentialité.",
     context:
-      "Les éditeurs de logiciels et acteurs de la tech sont à la fois utilisateurs et intégrateurs d'IA. Côté produit, l'enjeu est d'embarquer des fonctionnalités IA réellement utiles (recherche, assistants, génération, classification) sans dégrader l'expérience ni exploser les coûts. Côté interne, le support technique, la documentation et les opérations sont des terrains à fort potentiel d'automatisation. La spécificité de ce secteur est la maturité technique : les équipes savent coder, mais l'IA générative a ses propres règles (choix des modèles, RAG, garde-fous, évaluation, coût au token, latence) que beaucoup découvrent en cours de route. Masteria apporte la spécialisation IA en complément des équipes produit et engineering : cadrage de la fonctionnalité, prototype, architecture LLM/RAG, garde-fous et passation, pour aller vite sans dette technique ni dérive de coût.",
+      "Les éditeurs de logiciels et acteurs de la tech sont utilisateurs et intégrateurs d'IA. Côté produit, l'enjeu est d'embarquer des fonctionnalités IA réellement utiles (recherche, assistants, génération, classification) sans dégrader l'expérience ni exploser les coûts. Côté interne, le support technique, la documentation et les opérations sont des terrains à fort potentiel d'automatisation. La spécificité de ce secteur est la maturité technique : les équipes savent coder, mais l'IA générative a ses propres règles (choix des modèles, RAG, garde-fous, évaluation, coût au token, latence) que beaucoup découvrent en cours de route. Masteria apporte la spécialisation IA en complément des équipes produit et engineering : cadrage de la fonctionnalité, prototype, architecture LLM/RAG, garde-fous et passation, pour aller vite sans dette technique ni dérive de coût.",
     painPoints: [
-      "Embarquer des fonctionnalités IA dans le produit sans dégrader l'expérience, ni la latence, ni maîtriser le coût au token.",
+      "Embarquer des fonctionnalités IA dans le produit en préservant l'expérience et la latence, et en maîtrisant le coût au token.",
       "Support technique sous volume : tickets répétitifs, recherche dans une documentation dense, temps de première réponse à réduire.",
       "Documentation produit et technique à maintenir à jour en continu, souvent en retard sur le rythme des releases.",
       "Maîtrise IA inégale dans les équipes : le code est maîtrisé, mais le RAG, les garde-fous, l'évaluation et le coût des modèles s'apprennent en marchant.",

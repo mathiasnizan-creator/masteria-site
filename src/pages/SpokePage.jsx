@@ -433,7 +433,7 @@ export default function SpokePage() {
       )}
 
       {/* ── GUIDE TERRAIN (contenu propre à la page) ── */}
-      <TerrainGuide guide={guide?.guide} color={c} background="#fff" />
+      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={c} background="#fff" />
 
       {/* ── PROGRAMME (modules enrichis) ── */}
       {(modulesJ1.length > 0 || modulesJ2.length > 0) ? (

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, use } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, Building2, Check, Compass, Cpu, Globe,
@@ -6,8 +6,12 @@ import {
   Workflow, Briefcase, Landmark,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CadrageLink from '../components/CadrageLink'
+import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
+import TerrainGuide from '../components/TerrainGuide'
+import { agenceGuidePromise } from '../data/terrain-guides'
 import { AGENCE_GEO_CITIES, getAgenceGeoCity } from '../data/agence-geo-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
@@ -100,6 +104,10 @@ export default function AgenceGeoPage() {
   const isDesktop = useIsDesktop()
   const slug = location.pathname.replace(/^\//, '')
   const city = getAgenceGeoCity(slug)
+  // Texte propre à la page (src/data/agence-guides/<slug>.js) : quand il existe, il
+  // remplace tous les blocs de texte communs du gabarit (offres, déroulé, formation, FAQ).
+  const guidePromise = agenceGuidePromise(slug)
+  const guide = guidePromise ? use(guidePromise) : null
 
   // Patron éditorial asymétrique réutilisable (offres / FAQ)
   const editorialGrid = isDesktop
@@ -136,7 +144,9 @@ export default function AgenceGeoPage() {
 
   // E-E-A-T : byline visible + Article JSON-LD (auteur identifié, fraîcheur datée)
   const PUBLISHED = '2026-06-12'
-  const MODIFIED = '2026-08-05'
+  const MODIFIED = guide?.dateModified || '2026-08-05'
+  const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+  const modifiedLabel = `${MOIS[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}`
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -160,6 +170,7 @@ export default function AgenceGeoPage() {
     citation: [
       { '@type': 'CreativeWork', name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
       { '@type': 'CreativeWork', name: 'CNIL — Intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+      ...(guide?.sources || []).map(src => ({ '@type': 'CreativeWork', name: src.name, url: src.url })),
     ],
   }
 
@@ -203,14 +214,14 @@ export default function AgenceGeoPage() {
       a: "Des livrables qui ne dépendent plus de nous : une feuille de route et ses arbitrages écrits pour le conseil, un outil documenté avec son code et ses accès pour le développement, des équipes formées et des supports réutilisables pour la formation. La passation fait partie de chaque mission, et la documentation est rédigée pour être reprise par vos équipes ou par un autre prestataire si vous le décidez.",
     },
   ]
-  const faqItems = [...city.localFaq, ...commonFaq]
+  const faqItems = guide?.faq ?? [...city.localFaq, ...commonFaq]
 
   /* ── Déroulé d'une mission (générique, ancré ville via nameLoc) ── */
   const missionSteps = [
     {
       num: '01',
       title: 'Cadrage',
-      desc: `Un premier échange gratuit, sur site ${city.nameLoc} ou en visio, pour poser le contexte : votre activité, vos processus, vos outils, ce qui coûte du temps aux équipes. Il débouche sur une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire.`,
+      desc: `Trente minutes de cadrage offertes, sur site ${city.nameLoc} ou en visio, pour poser le contexte : votre activité, vos processus, vos outils, ce qui coûte du temps aux équipes. Il débouche sur une proposition écrite avec périmètre, livrables, calendrier et budget forfaitaire.`,
     },
     {
       num: '02',
@@ -366,13 +377,17 @@ export default function AgenceGeoPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 24px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
           </p>
 
           {/* GEO : réponse directe en gras (citable LLM) — accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {`Masteria est une agence IA qui intervient ${city.nameLoc} : conseil en stratégie IA et développement d'agents, d'outils et d'automatisations sur mesure, prolongés par la formation des équipes. L'équipe est basée à Lyon et se déplace ${city.nameLoc} en présentiel pour le cadrage et les passations, le reste de la mission se conduisant en distanciel. `}
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Plus de 1 500 professionnels formés, 98 % de satisfaction.</strong>
+            {guide?.intro ? guide.intro : (
+              <>
+                {`Masteria est une agence IA qui intervient ${city.nameLoc} : conseil en stratégie IA et développement d'agents, d'outils et d'automatisations sur mesure, prolongés par la formation des équipes. L'équipe est basée à Lyon et se déplace ${city.nameLoc} en présentiel pour le cadrage et les passations, le reste de la mission se conduisant en distanciel. `}
+                <strong style={{ color: '#fff', fontWeight: 700 }}>Plus de 1 500 professionnels formés, 98 % de satisfaction.</strong>
+              </>
+            )}
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
@@ -380,10 +395,10 @@ export default function AgenceGeoPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un cadrage gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#offres" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir nos offres
             </a>
@@ -429,17 +444,25 @@ export default function AgenceGeoPage() {
               <div style={kickerStyle}>Nos expertises</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Ce que fait notre agence IA {city.nameLoc}</h2>
               <p style={{ ...answerStyle, background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong style={{ color: '#0A0A0A' }}>Masteria couvre trois expertises de cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'agents et d'outils sur mesure, et l'automatisation des processus.</strong>{' '}
+                {guide?.offresIntro ? <strong style={{ color: '#0A0A0A' }}>{guide.offresIntro[0]}</strong> : (
+                  <>
+                  <strong style={{ color: '#0A0A0A' }}>Masteria couvre trois expertises de cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'agents et d'outils sur mesure, et l'automatisation des processus.</strong>{' '}
                 Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
+                  </>
+                )}
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Trois offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
+                {guide?.offresIntro ? guide.offresIntro[1] : (
+                  <>
+                  Trois offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
+                  </>
+                )}
               </p>
             </div>
 
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20, marginBottom: 24 }}>
-                {OFFERS.map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
+                {OFFERS.map((offer, oi) => ({ ...offer, ...(guide?.offres?.[oi] || {}) })).map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
                   <div key={href} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
                     <div style={{ ...iconBoxStyle, marginBottom: 18 }}>
                       <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
@@ -532,6 +555,9 @@ export default function AgenceGeoPage() {
         </div>
       </section>
 
+      {/* ── GUIDE : contenu propre à la page (agence-guides/<slug>.js) ── */}
+      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={c} background="#fff" padding={SECTION_PAD} />
+
       {/* ── FORMATION (offre secondaire, bandeau filet latéral) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
@@ -542,18 +568,27 @@ export default function AgenceGeoPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <div style={kickerStyle}>Et la formation des équipes ?</div>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Ancrer les usages après le déploiement</h2>
-              <p style={answerStyle}>
-                <strong style={{ color: '#0A0A0A' }}>Au-delà du conseil et du développement sur mesure, Masteria forme vos équipes pour qu'elles sachent faire fonctionner, corriger et étendre ce qui a été construit.</strong>{' '}
-                Les programmes existent par métier et par outil (ChatGPT, Claude, Copilot, Gemini), en intra-entreprise ou en accompagnement individuel, en présentiel comme en distanciel.
-              </p>
-              {isFR ? (
-                <p style={mutedStyle}>
-                  Le volet formation est certifié Qualiopi et finançable par votre OPCO en {city.region}. À noter : le conseil et le développement sur mesure restent des prestations de service, non finançables par l'OPCO.
-                </p>
+              {guide?.formation ? (
+                <>
+                  <p style={answerStyle}><strong style={{ color: '#0A0A0A' }}>{guide.formation[0]}</strong></p>
+                  {guide.formation[1] && <p style={mutedStyle}>{guide.formation[1]}</p>}
+                </>
               ) : (
-                <p style={mutedStyle}>
-                  La formation se conduit en français pour vos équipes du marché romand, en présentiel sur le bassin lémanique ou en distanciel. Facturation selon le cadre suisse, en CHF ou en EUR.
-                </p>
+                <>
+                  <p style={answerStyle}>
+                    <strong style={{ color: '#0A0A0A' }}>Au-delà du conseil et du développement sur mesure, Masteria forme vos équipes pour qu'elles sachent faire fonctionner, corriger et étendre ce qui a été construit.</strong>{' '}
+                    Les programmes existent par métier et par outil (ChatGPT, Claude, Copilot, Gemini), en intra-entreprise ou en accompagnement individuel, en présentiel comme en distanciel.
+                  </p>
+                  {isFR ? (
+                    <p style={mutedStyle}>
+                      Le volet formation est certifié Qualiopi et finançable par votre OPCO en {city.region}. À noter : le conseil et le développement sur mesure restent des prestations de service, non finançables par l'OPCO.
+                    </p>
+                  ) : (
+                    <p style={mutedStyle}>
+                      La formation se conduit en français pour vos équipes du marché romand, en présentiel sur le bassin lémanique ou en distanciel. Facturation selon le cadre suisse, en CHF ou en EUR.
+                    </p>
+                  )}
+                </>
               )}
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap', alignItems: 'center' }}>
                 {city.formationSlug && (
@@ -577,21 +612,25 @@ export default function AgenceGeoPage() {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <div style={kickerStyle}>Méthode</div>
           <h2 style={h2Style}>Le déroulé d'une mission {city.nameLoc}</h2>
-          <p style={{ ...answerStyle, background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 'none' }}>
-            <strong style={{ color: '#0A0A0A' }}>Une mission suit cinq étapes : un cadrage sur site ou en visio, un audit des usages et des données, une recommandation indépendante des éditeurs, la construction ou la formation selon le besoin, puis le suivi et la mesure.</strong>{' '}
-            Chaque étape produit un livrable écrit et vous gardez la décision entre chacune.
-          </p>
-          <p style={mutedStyle}>
-            Le budget se chiffre sur devis après le cadrage, avec des fourchettes larges selon le périmètre : un audit court et le développement d'un outil complet ne mobilisent ni les mêmes profils ni la même durée.
-          </p>
+          {!guide?.etapes && (
+            <>
+            <p style={{ ...answerStyle, background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 'none' }}>
+              <strong style={{ color: '#0A0A0A' }}>Une mission suit cinq étapes : un cadrage sur site ou en visio, un audit des usages et des données, une recommandation indépendante des éditeurs, la construction ou la formation selon le besoin, puis le suivi et la mesure.</strong>{' '}
+              Chaque étape produit un livrable écrit et vous gardez la décision entre chacune.
+            </p>
+            <p style={mutedStyle}>
+              Le budget se chiffre sur devis après le cadrage, avec des fourchettes larges selon le périmètre : un audit court et le développement d'un outil complet ne mobilisent ni les mêmes profils ni la même durée.
+            </p>
+            </>
+          )}
           <div style={{ position: 'relative' }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
-            {missionSteps.map((step, i) => (
+            {(guide?.etapes ? guide.etapes.map((e, k) => ({ num: String(k + 1).padStart(2, '0'), ...e })) : missionSteps).map((step, i, steps) => (
               <div
                 key={step.num}
                 style={{
                   display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
-                  padding: i === 0 ? '0 0 16px' : (i === missionSteps.length - 1 ? '16px 0 0' : '16px 0'),
+                  padding: i === 0 ? '0 0 16px' : (i === steps.length - 1 ? '16px 0 0' : '16px 0'),
                 }}
               >
                 <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
@@ -608,72 +647,76 @@ export default function AgenceGeoPage() {
       </section>
 
       {/* ── AGENCE SPÉCIALISÉE VS ESN (ancre sombre — pivot preuve) ── */}
-      <section style={{ position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
-        <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
+      {!guide && (
+        <section style={{ position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
-        <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Spécialisation</div>
-          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Pourquoi une agence spécialisée IA plutôt qu'une ESN généraliste ?</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 780 }}>
-            <strong style={{ color: '#fff' }}>Une agence spécialisée IA consacre l'intégralité de sa veille, de ses méthodes et de ses références à une seule discipline.</strong>{' '}
-            Une ESN généraliste reste pertinente pour un grand chantier d'intégration SI ou un renfort en régie. Pour cadrer une stratégie, développer des agents sur mesure et rendre les équipes autonomes, la spécialisation avance plus vite, avec des budgets plus serrés.
-          </p>
-          <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }}>
-            Beaucoup d'entreprises confient leurs projets IA à leur prestataire informatique habituel. Cela fonctionne pour l'intégration technique. Pour la stratégie, les usages métier et l'adoption par les équipes, la spécialisation change les résultats.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginBottom: 32 }}>
-            {SPECIALIST_POINTS.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+          <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Spécialisation</div>
+            <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Pourquoi une agence spécialisée IA plutôt qu'une ESN généraliste ?</h2>
+            <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 780 }}>
+              <strong style={{ color: '#fff' }}>Une agence spécialisée IA consacre l'intégralité de sa veille, de ses méthodes et de ses références à une seule discipline.</strong>{' '}
+              Une ESN généraliste reste pertinente pour un grand chantier d'intégration SI ou un renfort en régie. Pour cadrer une stratégie, développer des agents sur mesure et rendre les équipes autonomes, la spécialisation avance plus vite, avec des budgets plus serrés.
+            </p>
+            <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }}>
+              Beaucoup d'entreprises confient leurs projets IA à leur prestataire informatique habituel. Cela fonctionne pour l'intégration technique. Pour la stratégie, les usages métier et l'adoption par les équipes, la spécialisation change les résultats.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginBottom: 32 }}>
+              {SPECIALIST_POINTS.map(card => {
+                const Icon = card.icon
+                return (
+                  <div key={card.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
+                    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
+                      <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+                    </div>
+                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#F8FAFC', marginBottom: 8, letterSpacing: '-0.01em' }}>{card.title}</h3>
+                    <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
                   </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#F8FAFC', marginBottom: 8, letterSpacing: '-0.01em' }}>{card.title}</h3>
-                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
+            <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 780 }}>
+              La spécialisation pèse aussi sur la gouvernance : choix des modèles, encadrement des usages, conformité RGPD et AI Act évoluent chaque trimestre. Un cabinet dédié arbitre ces questions en continu pour l'ensemble de ses clients. Notre page{' '}
+              <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
+              détaille cette approche du cadrage, de la gouvernance et de la trajectoire.
+            </p>
           </div>
-          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 780 }}>
-            La spécialisation pèse aussi sur la gouvernance : choix des modèles, encadrement des usages, conformité RGPD et AI Act évoluent chaque trimestre. Un cabinet dédié arbitre ces questions en continu pour l'ensemble de ses clients. Notre page{' '}
-            <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
-            détaille cette approche du cadrage, de la gouvernance et de la trajectoire.
-          </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── CONSEIL / DÉVELOPPEMENT / FORMATION : QUI FAIT QUOI ── */}
-      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Trois briques complémentaires</div>
-          <h2 style={h2Style}>Conseil, développement ou formation : qui fait quoi ?</h2>
-          <p style={answerStyle}>
-            <strong style={{ color: '#0A0A0A' }}>Les trois offres répondent à trois questions différentes : le conseil décide, le développement construit, la formation installe les usages.</strong>{' '}
-            Une mission peut mobiliser une seule de ces briques ou les enchaîner ; le cadrage initial dit laquelle ouvre la trajectoire.
-          </p>
-          <p style={mutedStyle}>
-            Un besoin encore flou commence par le conseil, un besoin déjà cadré part directement en construction, une équipe déjà équipée passe à la formation. Rien n'oblige à tout prendre : chaque brique se contracte séparément, avec son propre devis.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {rolesCards.map(({ icon: Icon, title, href, cta, desc }) => (
-              <div key={title} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${c}` }}>
-                <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+      {!guide && (
+        <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+          <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+            <div style={kickerStyle}>Trois briques complémentaires</div>
+            <h2 style={h2Style}>Conseil, développement ou formation : qui fait quoi ?</h2>
+            <p style={answerStyle}>
+              <strong style={{ color: '#0A0A0A' }}>Les trois offres répondent à trois questions différentes : le conseil décide, le développement construit, la formation installe les usages.</strong>{' '}
+              Une mission peut mobiliser une seule de ces briques ou les enchaîner ; le cadrage initial dit laquelle ouvre la trajectoire.
+            </p>
+            <p style={mutedStyle}>
+              Un besoin encore flou commence par le conseil, un besoin déjà cadré part directement en construction, une équipe déjà équipée passe à la formation. Rien n'oblige à tout prendre : chaque brique se contracte séparément, avec son propre devis.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+              {rolesCards.map(({ icon: Icon, title, href, cta, desc }) => (
+                <div key={title} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', borderTop: `3px solid ${c}` }}>
+                  <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
+                    <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+                  </div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
+                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>{desc}</p>
+                  <Link to={href} style={{ marginTop: 'auto', color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    {cta}
+                    <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>{desc}</p>
-                <Link to={href} style={{ marginTop: 'auto', color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  {cta}
-                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section id="geo-faq" style={{ padding: SECTION_PAD, background: '#F9FAFB', scrollMarginTop: 96 }}>
@@ -739,12 +782,12 @@ export default function AgenceGeoPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Premier échange gratuit</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               Parlons de votre projet IA {city.nameLoc}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
-              Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, stratégie à cadrer. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit et sans engagement.
+              Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, stratégie à cadrer. Nous revenons vers vous sous 24 heures et vous proposons 30 minutes de cadrage, offertes et sans engagement.
             </p>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
               Contacter notre équipe

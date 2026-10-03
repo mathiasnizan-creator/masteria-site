@@ -1,8 +1,10 @@
 // Contenu propre à /formation-claude-ia-marseille (guide terrain). Rendu par GeoPage.
+// 03/10/2026 : fenêtre de contexte mise à jour (support.claude.com, « How large is the context window on paid Claude plans? »).
 // Fonctions Claude vérifiées sur support.claude.com, claude.com/docs et platform.claude.com le 28/09/2026.
 // Données économiques : Métropole Aix-Marseille-Provence, pages « Les filières d'excellence » consultées le 28/09/2026.
 export default {
   slug: 'formation-claude-ia-marseille',
+  dateModified: '2026-10-03',
   metaDesc: "Formation Claude IA à Marseille : spécifications techniques, devis Excel, dossiers industriels de Fos, santé et données HDS. Intra, Qualiopi, OPCO.",
   intro: "Dans la métropole Aix-Marseille-Provence, les documents qui pèsent arrivent souvent de l'extérieur : la spécification d'un armateur, un arrêté préfectoral, un protocole de recherche, le cahier des charges d'un donneur d'ordres de l'aéronautique. Claude sait lire ces documents longs et en tirer un tableau exploitable. Masteria, basé à Lyon, forme vos équipes marseillaises dans vos locaux ou à distance, sur vos propres fichiers, avec les règles de prudence que ces documents imposent.",
   guide: {
@@ -20,7 +22,7 @@ export default {
       {
         h3: "Au chantier naval, la spécification devient un devis dans Excel",
         paras: [
-          "Une spécification d'arrêt technique liste des dizaines de postes de travaux, rédigés en anglais par l'armateur. Dans un projet Claude, cette spécification rejoint la base de connaissances avec la grille de prix interne et deux devis passés. Claude en extrait un tableau poste par poste, avec les quantités, les unités et les ambiguïtés à lever avant de chiffrer. La fenêtre de contexte de l'offre Team est de 200 000 tokens ; au-delà, la base de connaissances d'un projet payant bascule en mode de recherche documentaire.",
+          "Une spécification d'arrêt technique liste des dizaines de postes de travaux, rédigés en anglais par l'armateur. Dans un projet Claude, cette spécification rejoint la base de connaissances avec la grille de prix interne et deux devis passés. Claude en extrait un tableau poste par poste, avec les quantités, les unités et les ambiguïtés à lever avant de chiffrer. Sur les offres payantes, la fenêtre de contexte des modèles actuels atteint un million de tokens ; au-delà, la base de connaissances d'un projet bascule en mode de recherche documentaire.",
           "Claude pour Excel prend ensuite le relais dans le modèle de devis de l'entreprise. Il remplit un modèle existant en conservant les formules, prévient avant d'écraser une donnée et cite les cellules qu'il a modifiées. Anthropic le déconseille pour un livrable client final sans relecture humaine et pour les calculs critiques sans vérification. Le chargé d'affaires reste l'auteur du prix.",
         ],
       },
@@ -73,7 +75,7 @@ export default {
     ],
   },
   faq: [
-    { q: "Claude peut-il lire une spécification technique de plusieurs centaines de pages ?", a: "L'offre Team dispose d'une fenêtre de contexte de 200 000 tokens. Un document plus volumineux se range dans la base de connaissances d'un projet, et Claude passe en mode de recherche documentaire sur les offres payantes. Demandez toujours le numéro de page ou de paragraphe de chaque information extraite, pour la vérifier." },
+    { q: "Claude peut-il lire une spécification technique de plusieurs centaines de pages ?", a: "Sur les offres payantes, Claude Opus 5.5 et Claude Sonnet 5.5 disposent en conversation d'une fenêtre de contexte d'un million de tokens. Un corpus plus volumineux se range dans la base de connaissances d'un projet, et Claude passe en mode de recherche documentaire sur les offres payantes. Demandez toujours le numéro de page ou de paragraphe de chaque information extraite, pour la vérifier." },
     { q: "Pouvons-nous utiliser Claude avec des données de santé ?", a: "Pas avec des données de patients identifiantes, qui exigent en France un hébergeur certifié HDS. La documentation de Claude consultée en septembre 2026 ne mentionne pas cette certification, et la configuration HIPAA de l'offre Enterprise relève du droit américain. Les usages de recherche, de rédaction et de synthèse sur des documents sans donnée de patient restent ouverts." },
     { q: "Le complément Excel fonctionne-t-il sur les tablettes de nos équipes terrain ?", a: "Non. Claude pour Excel ne fonctionne ni sur Excel pour iPad ni sur Android. Il fonctionne sur Excel pour le web, sur Windows avec Microsoft 365 et sur Mac à partir de la version 16.46. Le travail avec Claude se prépare au bureau, la consultation sur tablette reste possible." },
     { q: "Nos dossiers réglementaires de site industriel peuvent-ils passer dans Claude ?", a: "Les documents publics, comme un arrêté préfectoral publié, oui. Pour les documents internes, la décision revient à la direction HSE et à la DSI, en tenant compte de l'absence d'hébergement européen chez Anthropic en septembre 2026. Une DSI qui exige un traitement en Europe peut passer par Amazon Bedrock ou Google Cloud Vertex AI." },

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Copy, Check, AlertTriangle } from 'lucide-react'
 
 /* Guide terrain : contenu propre à une page (src/data/spoke-guides/<slug>.js ou
@@ -34,8 +35,11 @@ function PromptBlock({ prompt, color }) {
   )
 }
 
-export default function TerrainGuide({ guide, color = '#2563EB', background = '#fff', padding = '80px 40px' }) {
+export default function TerrainGuide({ guide, sources: sourcesProp, color = '#2563EB', background = '#fff', padding = '80px 40px' }) {
   if (!guide) return null
+  // Les fichiers de guide portent leurs sources au premier niveau (à côté de `guide`) :
+  // la page les transmet par la prop `sources`.
+  const sources = guide.sources?.length ? guide.sources : (sourcesProp || [])
   const c = color
   const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }
   const pStyle = { fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 14px' }
@@ -112,7 +116,14 @@ export default function TerrainGuide({ guide, color = '#2563EB', background = '#
             {guide.cas.prompt && <PromptBlock prompt={guide.cas.prompt} color={c} />}
             {guide.cas.resultat && (
               <p style={{ ...pStyle, margin: '18px 0 0' }}>
-                <strong style={{ color: '#0A0A0A' }}>Ce que vous obtenez. </strong>{guide.cas.resultat}
+                <strong style={{ color: '#0A0A0A' }}>{guide.cas.resultatLabel || (/^Retour de mission/.test(guide.cas.h3 || '') ? 'Ce qui en ressort.' : 'Ce que vous obtenez.')} </strong>{guide.cas.resultat}
+              </p>
+            )}
+            {guide.cas.lien?.href && (
+              <p style={{ margin: '14px 0 0' }}>
+                <Link to={guide.cas.lien.href} style={{ color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
+                  {guide.cas.lien.label || "Lire l'étude de cas complète"} →
+                </Link>
               </p>
             )}
           </div>
@@ -135,10 +146,10 @@ export default function TerrainGuide({ guide, color = '#2563EB', background = '#
           </div>
         )}
 
-        {guide.sources?.length > 0 && (
+        {sources.length > 0 && (
           <div style={{ marginTop: 36, fontSize: 13, color: '#6B7280', lineHeight: 1.7 }}>
             <strong style={{ color: '#374151' }}>Sources consultées : </strong>
-            {guide.sources.map((s, i) => (
+            {sources.map((s, i) => (
               <span key={s.url}>
                 {i > 0 && ' · '}
                 <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#4B5563' }}>{s.name}</a>

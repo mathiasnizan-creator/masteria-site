@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, use } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import {
   ArrowRight, Compass, Cpu, Workflow, Check, AlertTriangle, Briefcase,
@@ -7,7 +7,11 @@ import {
   Gauge, Wrench, ClipboardCheck, TrendingUp,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import CadrageLink from '../components/CadrageLink'
+import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import OfficialSources from '../components/OfficialSources'
+import TerrainGuide from '../components/TerrainGuide'
+import { secteurGuidePromise } from '../data/terrain-guides'
 import { getSecteur, SECTEUR_DATE_PUBLISHED, SECTEUR_DATE_MODIFIED } from '../data/secteur-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
@@ -41,6 +45,7 @@ function SectorGlyph({ name, size, color = '#2563EB' }) {
  */
 
 const SITE = 'https://www.master-ia.fr'
+const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
@@ -120,6 +125,12 @@ export default function SecteurIAPage() {
   const location = useLocation()
   const slug = location.pathname.replace(/^\//, '')
   const secteur = getSecteur(slug)
+  // Texte propre à la page (src/data/secteur-guides/<slug>.js) : quand il existe, il
+  // remplace les blocs communs du gabarit (offres, régie, formation, FAQ).
+  const guidePromise = secteurGuidePromise(slug)
+  const guide = guidePromise ? use(guidePromise) : null
+  // FAQ affichée et FAQ balisée (JSON-LD) : la même liste, celle du fichier propre si elle existe
+  const faqItems = guide?.faq ?? secteur?.faq ?? []
 
   if (!secteur) {
     return (
@@ -178,11 +189,12 @@ export default function SecteurIAPage() {
         slug={secteur.slug}
         type="article"
         breadcrumbs={breadcrumbs}
-        faqItems={secteur.faq}
+        faqItems={faqItems}
         extraJsonLd={serviceJsonLd}
         keywords={secteur.keywords}
         datePublished={SECTEUR_DATE_PUBLISHED}
-        dateModified={secteur.dateModified || SECTEUR_DATE_MODIFIED}
+        dateModified={guide?.dateModified || secteur.dateModified || SECTEUR_DATE_MODIFIED}
+        citations={guide?.sources}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -237,15 +249,25 @@ export default function SecteurIAPage() {
             <strong style={{ color: '#fff', fontWeight: 700 }}>{secteur.directAnswer}</strong>
           </p>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            {secteur.tagline} Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan : nous cadrons votre stratégie, puis nous concevons et développons les solutions, en restant indépendants des éditeurs.
-          </p>
+          {guide ? (
+            <>
+              {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
+              <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 18px' }}>
+                Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {MOIS[Number(guide.dateModified.slice(5, 7)) - 1]} {guide.dateModified.slice(0, 4)}
+              </p>
+              <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>{guide.intro}</p>
+            </>
+          ) : (
+            <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
+              {secteur.tagline} Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan : nous cadrons votre stratégie, puis nous concevons et développons les solutions, en restant indépendants des éditeurs.
+            </p>
+          )}
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un cadrage gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#secteur" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Les enjeux du secteur
             </a>
@@ -274,16 +296,24 @@ export default function SecteurIAPage() {
               <div style={kickerStyle}>Nos expertises</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Ce que nous faisons pour {secteur.nameWithArticle}</h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 14px' }}>
-                <strong style={{ color: '#0A0A0A' }}>Masteria couvre trois expertises de cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'agents et d'outils sur mesure, et l'automatisation des processus.</strong>{' '}
+                {guide?.offresIntro ? <strong style={{ color: '#0A0A0A' }}>{guide.offresIntro[0]}</strong> : (
+                  <>
+                  <strong style={{ color: '#0A0A0A' }}>Masteria couvre trois expertises de cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'agents et d'outils sur mesure, et l'automatisation des processus.</strong>{' '}
                 Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
+                  </>
+                )}
               </p>
               <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
-                Trois offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
+                {guide?.offresIntro ? guide.offresIntro[1] : (
+                  <>
+                  Trois offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
+                  </>
+                )}
               </p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
-              {OFFERS.map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
+              {OFFERS.map((offer, oi) => ({ ...offer, ...(guide?.offres?.[oi] || {}) })).map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
                 <div key={href} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ ...iconBoxStyle, marginBottom: 18 }}>
                     <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
@@ -374,6 +404,9 @@ export default function SecteurIAPage() {
         </div>
       </section>
 
+      {/* ── GUIDE : contenu propre au secteur (secteur-guides/<slug>.js) ── */}
+      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={c} background="#fff" padding={SECTION_PAD} />
+
       {/* ── DÉVELOPPEURS SUR SITE (bandeau filet latéral) ── */}
       {/* ── DEEP DIVE (optionnel, par secteur) : angle « conseil métier » propre au
           secteur, alimenté par le champ `deepDive` des données. Absent = rien. ── */}
@@ -428,9 +461,13 @@ export default function SecteurIAPage() {
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 820 }}>
                 <strong style={{ color: '#0A0A0A' }}>{secteur.onsiteDev}</strong>
               </p>
-              <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }}>
-                Au-delà du forfait au projet, nous proposons un modèle d'engagement en régie ou en équipe dédiée : un ou plusieurs développeurs IA intégrés à vos équipes, sur site ou à distance, pour les environnements sensibles ou une montée en charge rapide. Le périmètre, la durée et les modalités sont cadrés et écrits avant de démarrer.
-              </p>
+              {guide?.regie ? guide.regie.map((para, k) => (
+                <p key={k} style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }}>{para}</p>
+              )) : (
+                <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }}>
+                  Au-delà du forfait au projet, nous proposons un modèle d'engagement en régie ou en équipe dédiée : un ou plusieurs développeurs IA intégrés à vos équipes, sur site ou à distance, pour les environnements sensibles ou une montée en charge rapide. Le périmètre, la durée et les modalités sont cadrés et écrits avant de démarrer.
+                </p>
+              )}
               <Link to="/methode-projet-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                 Voir notre méthode et nos modèles d'engagement
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
@@ -450,13 +487,22 @@ export default function SecteurIAPage() {
             <div style={{ flex: 1, minWidth: 300 }}>
               <div style={kickerStyle}>Et la formation des équipes ?</div>
               <h2 style={{ ...h2Style, fontSize: 'clamp(22px, 2.8vw, 30px)' }}>Ancrer les usages après le déploiement</h2>
-              <p style={answerStyle}>
-                <strong style={{ color: '#0A0A0A' }}>Au-delà du conseil et du développement sur mesure, Masteria forme vos équipes pour qu'elles sachent faire fonctionner, corriger et étendre ce qui a été construit.</strong>{' '}
-                Les programmes existent par métier et par outil (ChatGPT, Claude, Copilot, Gemini, Mistral), adaptés aux usages de votre secteur, en intra-entreprise ou en accompagnement individuel.
-              </p>
-              <p style={mutedStyle}>
-                Le volet formation est certifié Qualiopi et finançable par votre OPCO en France. À noter : le conseil et le développement sur mesure restent des prestations de service, non finançables par l'OPCO.
-              </p>
+              {guide?.formation ? (
+                <>
+                  <p style={answerStyle}><strong style={{ color: '#0A0A0A' }}>{guide.formation[0]}</strong></p>
+                  {guide.formation[1] && <p style={mutedStyle}>{guide.formation[1]}</p>}
+                </>
+              ) : (
+                <>
+                  <p style={answerStyle}>
+                    <strong style={{ color: '#0A0A0A' }}>Au-delà du conseil et du développement sur mesure, Masteria forme vos équipes pour qu'elles sachent faire fonctionner, corriger et étendre ce qui a été construit.</strong>{' '}
+                    Les programmes existent par métier et par outil (ChatGPT, Claude, Copilot, Gemini, Mistral), adaptés aux usages de votre secteur, en intra-entreprise ou en accompagnement individuel.
+                  </p>
+                  <p style={mutedStyle}>
+                    Le volet formation est certifié Qualiopi et finançable par votre OPCO en France. À noter : le conseil et le développement sur mesure restent des prestations de service, non finançables par l'OPCO.
+                  </p>
+                </>
+              )}
               <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                 Découvrir les formations IA
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
@@ -482,7 +528,7 @@ export default function SecteurIAPage() {
               </Link>
             </div>
             <div>
-              {secteur.faq.map((item, i) => (
+              {faqItems.map((item, i) => (
                 <FAQItem key={i} q={item.q} a={item.a} color={c} />
               ))}
             </div>
@@ -541,10 +587,10 @@ export default function SecteurIAPage() {
             <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Layers size={14} style={{ color: '#6B7280' }} aria-hidden="true" /> Agence de développement IA
             </Link>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: c, border: `1px solid ${c}`, borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 700, color: '#fff', textDecoration: 'none' }}>
-              Demander un cadrage gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: c, border: `1px solid ${c}`, borderRadius: 8, padding: '9px 16px', fontSize: 13.5, fontWeight: 700, color: '#fff', textDecoration: 'none' }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
           </div>
         </div>
       </section>
@@ -556,12 +602,12 @@ export default function SecteurIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Premier échange gratuit</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               Parlons de votre projet IA pour {secteur.nameWithArticle}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-              Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, contraintes de données. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit et sans engagement.
+              Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, contraintes de données. Nous revenons vers vous sous 24 heures et vous proposons 30 minutes de cadrage, offertes et sans engagement.
             </p>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Contacter notre équipe

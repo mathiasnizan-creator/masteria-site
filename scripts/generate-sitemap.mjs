@@ -81,13 +81,13 @@ const staticRoutes = [
   { path: 'consultant-visibilite-ia',            prio: 0.8, freq: 'monthly', files: ['src/pages/ConsultantVisibiliteIAPage.jsx'] },
   { path: 'audit-conformite-ai-act',             prio: 0.8, freq: 'monthly', files: ['src/pages/AuditConformiteAIActPage.jsx'] },
   { path: 'audit-ia-medico-social',              prio: 0.75, freq: 'monthly', files: ['src/pages/AuditIAMedicoSocialPage.jsx'] },
-  { path: 'agence-ia-lyon',                      prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
-  { path: 'agence-ia-annecy',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
-  { path: 'agence-ia-paris',                     prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
-  { path: 'agence-ia-geneve',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
-  { path: 'agence-ia-marseille',                 prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
-  { path: 'agence-ia-strasbourg',                prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
-  { path: 'agence-ia-nantes',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js'] },
+  { path: 'agence-ia-lyon',                      prio: 0.8, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-lyon.js'] },
+  { path: 'agence-ia-annecy',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-annecy.js'] },
+  { path: 'agence-ia-paris',                     prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-paris.js'] },
+  { path: 'agence-ia-geneve',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-geneve.js'] },
+  { path: 'agence-ia-marseille',                 prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-marseille.js'] },
+  { path: 'agence-ia-strasbourg',                prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-strasbourg.js'] },
+  { path: 'agence-ia-nantes',                    prio: 0.75, freq: 'monthly', files: ['src/pages/AgenceGeoPage.jsx', 'src/data/agence-geo-data.js', 'src/data/agence-guides/agence-ia-nantes.js'] },
   { path: 'centre-formation-ia-entreprise',      prio: 0.7, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'contact',                             prio: 0.8, freq: 'monthly', files: ['src/App.jsx'] },
   { path: 'blog',                                prio: 0.8, freq: 'weekly',  files: ['src/pages/BlogListPage.jsx', 'src/data/blog-articles.js'] },
@@ -214,20 +214,24 @@ const geoLastMod = s => fs.existsSync(path.join(root, `src/data/geo-guides/${s}.
   ? [GEO_LASTMOD, gitLastMod([`src/data/geo-guides/${s}.js`])].sort().pop()
   : GEO_LASTMOD;
 for (const s of geoSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: geoLastMod(s),  changefreq: 'monthly', priority: 0.6 });
-for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: GEO_LASTMOD,    changefreq: 'monthly', priority: s === 'formation-ia-lyon' ? 0.8 : 0.7 });
+for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: geoLastMod(s),    changefreq: 'monthly', priority: s === 'formation-ia-lyon' ? 0.8 : 0.7 });
 const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia'];
 for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: TOPIC_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 for (const s of boostedSlugs) urls.push({ loc: `${SITE}/${s}`,          lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 // Cluster « IA par secteur » : hub + 12 secteurs (conseil/dev high-ticket).
 const SECTEUR_LASTMOD = gitLastMod(['src/data/secteur-ia-data.js', 'src/pages/SecteurIAPage.jsx', 'src/pages/SecteursHubPage.jsx']);
 const secteurSlugs = ['ia-banque-assurance','ia-industrie','ia-sante-pharma','ia-juridique','ia-retail-ecommerce','ia-logistique-transport','ia-immobilier-btp','ia-secteur-public','ia-services-conseil','ia-tourisme-hotellerie','ia-agroalimentaire','ia-tech-saas'];
-urls.push({ loc: `${SITE}/ia-secteurs`, lastmod: SECTEUR_LASTMOD, changefreq: 'monthly', priority: 0.8 });
-for (const s of secteurSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SECTEUR_LASTMOD, changefreq: 'monthly', priority: 0.7 });
+// Une page dotée de son fichier de texte propre (secteur-guides, solution-guides) prend aussi sa date.
+const pageFileLastMod = (dir, s, base) => fs.existsSync(path.join(root, `src/data/${dir}/${s}.js`))
+  ? [base, gitLastMod([`src/data/${dir}/${s}.js`])].sort().pop()
+  : base;
+urls.push({ loc: `${SITE}/ia-secteurs`, lastmod: pageFileLastMod('secteur-guides', 'ia-secteurs', SECTEUR_LASTMOD), changefreq: 'monthly', priority: 0.8 });
+for (const s of secteurSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: pageFileLastMod('secteur-guides', s, SECTEUR_LASTMOD), changefreq: 'monthly', priority: 0.7 });
 // Cluster « solutions IA sur mesure » : hub + 7 solutions.
 const SOLUTION_LASTMOD = gitLastMod(['src/data/solution-ia-data.js', 'src/pages/SolutionIAPage.jsx', 'src/pages/SolutionsHubPage.jsx']);
 const solutionSlugs = ['copilote-ia-interne','assistant-documentaire-ia','agent-support-client-ia','automatisation-documentaire-ia','agent-commercial-ia','chatbot-ia-sur-mesure','integration-llm-rag'];
 urls.push({ loc: `${SITE}/solutions-ia`, lastmod: SOLUTION_LASTMOD, changefreq: 'monthly', priority: 0.8 });
-for (const s of solutionSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: SOLUTION_LASTMOD, changefreq: 'monthly', priority: 0.7 });
+for (const s of solutionSlugs) urls.push({ loc: `${SITE}/${s}`, lastmod: pageFileLastMod('solution-guides', s, SOLUTION_LASTMOD), changefreq: 'monthly', priority: 0.7 });
 // Offres de conversion high-ticket.
 urls.push({ loc: `${SITE}/diagnostic-ia`, lastmod: gitLastMod(['src/pages/DiagnosticIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });
 urls.push({ loc: `${SITE}/audit-ia`, lastmod: gitLastMod(['src/pages/AuditIAPage.jsx']), changefreq: 'monthly', priority: 0.8 });

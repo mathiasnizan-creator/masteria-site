@@ -4,11 +4,13 @@ import {
   ChevronDown, Building2, Users, Phone, Briefcase, Sparkles,
   Train, GraduationCap, Globe, FileCheck, Newspaper, Star,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, use } from 'react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import CaseStudyCards from '../components/CaseStudyCards'
 import FounderNote from '../components/FounderNote'
+import TerrainGuide from '../components/TerrainGuide'
+import { geoGuidePromise } from '../data/terrain-guides'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
@@ -48,6 +50,10 @@ export default function GeoIAGenericPage() {
   const slug = location.pathname.replace(/^\//, '')
   const citySlug = slug.replace(/^formation-ia-/, '')
   const city = GEO_DESTINATIONS.find(c => c.slug === citySlug)
+  // Guide terrain propre à la ville (src/data/geo-guides/formation-ia-<ville>.js) :
+  // intro, sections, cas pratique, pièges, FAQ et sources écrits pour cette page seule.
+  const guidePromise = geoGuidePromise(slug)
+  const guide = guidePromise ? use(guidePromise) : null
 
   if (!city) {
     return (
@@ -69,7 +75,7 @@ export default function GeoIAGenericPage() {
   const financePhrase = isFrance
     ? "Certifié Qualiopi, finançable OPCO jusqu'à 100 %."
     : 'Certifié Qualiopi, formation finançable.'
-  const metaDesc = city.metaDescOverride || `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et plus de 100 programmes par métier. ${financePhrase} Devis sous 24 h.`
+  const metaDesc = guide?.metaDesc || city.metaDescOverride || `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et plus de 100 programmes par métier. ${financePhrase} Devis sous 24 h.`
 
   const breadcrumbs = [
     { name: 'Accueil', slug: '' },
@@ -104,7 +110,7 @@ export default function GeoIAGenericPage() {
   const PUBLISHED = '2026-05-11'
   // Une ville peut porter sa propre date de mise à jour (geo-data.js) ; les autres
   // gardent celle de la dernière passe commune sur le template.
-  const MODIFIED = city.dateModified || '2026-08-05'
+  const MODIFIED = guide?.dateModified || city.dateModified || '2026-08-05'
   const modifiedLabel = `${MOIS_FR[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}`
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -131,6 +137,7 @@ export default function GeoIAGenericPage() {
       { '@type': 'CreativeWork', name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
       { '@type': 'CreativeWork', name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
       { '@type': 'CreativeWork', name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+      ...(guide?.sources || []).map(src => ({ '@type': 'CreativeWork', name: src.name, url: src.url })),
     ],
   }
 
@@ -209,7 +216,9 @@ export default function GeoIAGenericPage() {
   // Speakable retiré (cf. audit SEO 2026-05-21) : non supporté hors US/EN
   // et créait un second @type WebPage qui brouillait l'entité primaire.
 
-  const faqItems = [
+  // Avec un guide terrain, sa FAQ (écrite pour la ville) remplace la FAQ gabarit,
+  // identique d'une ville à l'autre, et les additionalFAQ.
+  const faqItems = guide?.faq ?? [
     {
       q: `Quels outils IA sont couverts dans vos formations ${city.nameLoc} ?`,
       a: `Masteria forme aux 5 principaux outils d'IA générative en entreprise : ChatGPT (OpenAI), Claude (Anthropic), Microsoft Copilot, Google Gemini et Mistral AI. Pour ${city.name}, deux outils ont des pages dédiées avec contenu local complet : ChatGPT et Claude IA. Pour Microsoft Copilot, Google Gemini et Mistral AI, nous proposons des formations identiques en intra dans vos locaux ${city.nameLoc} : il suffit de nous contacter pour un devis personnalisé.`,
@@ -219,8 +228,12 @@ export default function GeoIAGenericPage() {
       a: `Nous proposons 24 programmes métier : marketing, ressources humaines, finance, commercial, communication, management, assistanat de direction, SEO, service client, informatique, formation, achats, QSE, gestion de projet, marchés publics, immobilier, commerce, santé, juridique, comptabilité, assurance, BTP, tourisme, et un socle transverse pour tous publics. Chaque programme est conçu pour la fonction visée, avec des cas d'usage et des exercices pratiques tirés du quotidien de ces métiers.`,
     },
     {
-      q: `La formation IA ${city.nameLoc} est-elle finançable OPCO ?`,
-      a: `Oui. Masteria est certifié Qualiopi, condition indispensable pour la prise en charge par votre OPCO en ${city.region}. ${city.opco} Nous gérons l'intégralité du dossier de financement à votre place.`,
+      q: isFrance
+        ? `La formation IA ${city.nameLoc} est-elle finançable OPCO ?`
+        : `Comment financer une formation IA ${city.nameLoc} ?`,
+      a: isFrance
+        ? `Oui. Masteria est certifié Qualiopi, condition indispensable pour la prise en charge par votre OPCO en ${city.region}. ${city.opco} Nous préparons le dossier avec vous ; la demande est déposée avant la session.`
+        : city.opco,
     },
     {
       q: `Quels sont les pré-requis pour participer ?`,
@@ -302,7 +315,7 @@ export default function GeoIAGenericPage() {
           </div>
 
           <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
-            {city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. Certifié Qualiopi, financé jusqu'à 100 % par votre OPCO. Devis personnalisé sous 24 h.`}
+            {city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. ${isFrance ? "Certifié Qualiopi, finançable par votre OPCO jusqu'à 100 %." : 'Certifié Qualiopi en France ; hors de France, la formation relève du budget formation de votre entreprise.'} Devis personnalisé sous 24 h.`}
           </p>
 
           <h1 style={{
@@ -319,10 +332,15 @@ export default function GeoIAGenericPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
           </p>
 
+          {guide?.intro && (
+            <p style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 720 }}>{guide.intro}</p>
+          )}
+
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
             {[
               city.situations ? ['Pour qui', '#pour-qui'] : null,
+              guide?.guide ? ['Guide terrain', '#guide'] : null,
               city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
               ['Outils', '#outils'],
               ['Métiers', '#metiers'],
@@ -348,7 +366,7 @@ export default function GeoIAGenericPage() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
-              { icon: Wallet,     label: '100 % OPCO' },
+              isFrance ? { icon: Wallet, label: '100 % OPCO' } : { icon: Globe, label: 'Intra ou distanciel' },
               { icon: Briefcase,  label: '5 outils, 24 métiers' },
               { icon: Clock,      label: 'Devis sous 24 h' },
             ].map(({ icon: Icon, label }) => (
@@ -452,6 +470,9 @@ export default function GeoIAGenericPage() {
           </div>
         </section>
       )}
+
+      {/* ── GUIDE TERRAIN : contenu propre à la ville ── */}
+      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color="#2563EB" background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
 
       {/* ── INDUSTRIES & TISSU LOCAL ── */}
       {city.industriesDeep && city.industriesDeep.length > 0 && (
@@ -665,7 +686,7 @@ export default function GeoIAGenericPage() {
                       ? 'Intra 1 980 €/jour pour le groupe (≈ 165 €/personne). Accompagnement individuel sur mesure 1 980 €/jour.'
                       : 'Intra 1 980 €/jour pour le groupe. Accompagnement individuel sur mesure 1 980 €/jour. Facturation adaptée à votre pays.'],
                     ['Financement', isFrance
-                      ? "Jusqu'à 100 % par votre OPCO. Masteria gère l'intégralité du dossier."
+                      ? "Jusqu'à 100 % par votre OPCO, selon votre branche. Nous préparons le dossier avec vous."
                       : 'Dispositifs de financement locaux selon votre pays ; nous vous orientons lors du cadrage.'],
                   ].map(([t, d]) => (
                     <div key={t} style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -774,38 +795,6 @@ export default function GeoIAGenericPage() {
       )}
       {city.founderNote && <FounderNote bg="#fff" />}
 
-      {/* ── CAS D'USAGE LOCAUX ── */}
-      {city.localCases && city.localCases.length > 0 && (
-        <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
-          <div style={{ maxWidth: 980, margin: '0 auto' }}>
-            <FadeIn>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Cas d'usage observés</div>
-              <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
-                Trois équipes formées {city.nameLoc}
-              </h2>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, marginBottom: 28, maxWidth: 720 }}>
-                Profils anonymisés, tous accompagnés par Masteria sur les 12 derniers mois. Les cas d'usage reflètent les vrais enjeux des entreprises {city.nameLoc} en 2026.
-              </p>
-            </FadeIn>
-            <FadeIn delay={80}>
-              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
-                {city.localCases.map((c, i) => (
-                  <div key={i} style={{ background: '#fff', borderRadius: 14, padding: 24, border: '1px solid #E5E7EB' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 8 }}>Cas {i + 1}</div>
-                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10, lineHeight: 1.35 }}>
-                      {c.profile}
-                    </h3>
-                    <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.65, margin: 0 }}>
-                      {c.usage}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-      )}
-
       {/* ── COUVERTURE & ACCÈS ── */}
       <section style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
@@ -852,12 +841,14 @@ export default function GeoIAGenericPage() {
               {city.opco}
             </p>
             <p style={{ fontSize: 14, color: '#6B7280', marginBottom: 20, maxWidth: 700 }}>
-              Masteria gère l'intégralité du dossier de financement à votre place. Vous n'avez aucune démarche administrative à faire.
+              {isFrance
+                ? "Nous préparons avec vous le dossier de prise en charge (programme, convention) ; la demande est déposée auprès de votre OPCO avant la session."
+                : "Pas d'OPCO hors de France : nous établissons un devis et un programme détaillés, utilisables pour votre budget formation et pour les dispositifs locaux auxquels votre entreprise a droit."}
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 18 }}>
               {(city.countryCode === 'FR'
-                ? ["OPCO (jusqu'à 100 %)", 'Plan de développement des compétences', 'CPF collectif', 'Autofinancement']
-                : ['Plan de formation entreprise', 'Fonds sectoriels cantonaux', 'Conventions collectives', 'Autofinancement']
+                ? ["OPCO (jusqu'à 100 %)", 'Plan de développement des compétences', 'Autofinancement']
+                : ["Budget formation de l'entreprise", 'Dispositifs locaux selon éligibilité', 'Autofinancement']
               ).map(f => (
                 <span key={f} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 99, padding: '7px 14px', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>
                   <CheckCircle2 size={13} color="#2563EB" strokeWidth={2.5} /> {f}
@@ -881,7 +872,7 @@ export default function GeoIAGenericPage() {
                 Acteurs de référence dans la région
               </h2>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 18, maxWidth: 720 }}>
-                {city.ecosystemIntro || "Notre programme s'inscrit dans l'écosystème IA local. Nous échangeons régulièrement avec les acteurs suivants pour rester à jour sur les enjeux régionaux."}
+                {city.ecosystemIntro || "Les acteurs qui structurent l'écosystème IA local, utiles pour prolonger la formation : recherche, communautés et accompagnement des entreprises."}
               </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {city.localExperts.map((e, i) => (
@@ -953,7 +944,7 @@ export default function GeoIAGenericPage() {
             Former vos équipes à l'IA {city.nameLoc} ?
           </h2>
           <p style={{ fontSize: 16, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 28 }}>
-            Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. Financement OPCO en {city.region} pris en charge par Masteria.
+            Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. {isFrance ? `Finançable par votre OPCO en ${city.region}.` : 'Intra dans vos locaux ou distanciel.'}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', padding: '15px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, fontFamily: 'DM Sans, sans-serif' }}>

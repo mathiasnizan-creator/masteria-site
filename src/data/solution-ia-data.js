@@ -25,7 +25,7 @@ export const SOLUTIONS = [
     goal: "Donner à un métier un assistant connecté à vos données et vos outils",
     budgetRange: 'Dès ~15 000 € · 100 000 €+ à grande échelle',
     timeline: 'Prototype sur un premier périmètre en quelques semaines, puis déploiement par paliers',
-    offTheShelfLabel: 'Assistant générique (ChatGPT, Copilot grand public)',
+    offTheShelfLabel: 'Assistant du marché (ChatGPT, Microsoft Copilot, Claude)',
     alsoKnownAs: ['copilote IA', "copilote d'entreprise", 'assistant IA interne', 'assistant métier IA'],
     keyTakeaways: [
       "Branché sur vos documents, vos bases et vos outils : il répond avec vos sources et applique vos droits d'accès.",
@@ -40,7 +40,7 @@ export const SOLUTIONS = [
     h1: "Copilote IA interne : un assistant métier connecté à vos données",
     metaTitle: 'Copilote IA interne sur mesure | Masteria',
     metaDesc:
-      "Copilote IA interne connecté à vos données et outils : réponses sourcées, rédaction, actions encadrées. Sur mesure, code livré. Cadrage gratuit.",
+      "Copilote IA interne connecté à vos données et outils : réponses sourcées, rédaction, actions encadrées. Sur mesure, code livré. 30 min de cadrage offertes.",
     directAnswer:
       "Un copilote IA interne est un assistant conçu pour un métier précis, branché sur vos données et vos applications. Il répond avec des sources, rédige vos documents et déclenche des actions encadrées. Masteria le développe sur mesure, l'intègre à votre système d'information et vous en transfère le code.",
     whatItIs:
@@ -69,11 +69,11 @@ export const SOLUTIONS = [
       { sector: 'Services et conseil', usage: "Un copilote qui retrouve une clause, un précédent ou une méthodologie dans la base de connaissances du cabinet, et prépare un premier livrable à partir des modèles maison." },
       { sector: 'Industrie', usage: "Un copilote branché sur la documentation technique et qualité, qui répond aux questions des équipes terrain et prépare des fiches à partir des données produit." },
       { sector: 'Banque, finance et assurance', usage: "Un copilote interne qui aide les conseillers à formuler une réponse conforme à partir des procédures, avec traçabilité et validation humaine sur les points réglementaires." },
-      { sector: 'Fonctions support (RH, achats)', usage: "Un copilote qui répond aux questions récurrentes des collaborateurs (congés, notes de frais, procédures) à partir des documents internes, et délaisse les sujets sensibles à un humain." },
+      { sector: 'Fonctions support (RH, achats)', usage: "Un copilote qui répond aux questions récurrentes des collaborateurs (congés, notes de frais, procédures) à partir des documents internes, et renvoie les sujets sensibles à un humain." },
     ],
     sectorLinks: [
       { label: 'IA pour le juridique', href: '/ia-juridique' },
-      { label: 'IA pour les RH', href: '/ia-services-conseil' },
+      { label: 'IA pour les services et le conseil', href: '/ia-services-conseil' },
       { label: 'IA pour la finance', href: '/ia-banque-assurance' },
     ],
     onsiteDevNote:
@@ -118,7 +118,7 @@ export const SOLUTIONS = [
     h1: "Assistant documentaire IA : interroger votre base documentaire en langage naturel",
     metaTitle: 'Assistant documentaire IA (RAG) et GED intelligente sur mesure | Masteria',
     metaDesc:
-      "Assistant documentaire IA (RAG) sur votre base : réponses sourcées, recherche en langage naturel dans vos documents. Code livré. Cadrage gratuit.",
+      "Assistant documentaire IA (RAG) sur votre base : réponses sourcées, recherche en langage naturel dans vos documents. Code livré. 30 min de cadrage offertes.",
     directAnswer:
       "Un assistant documentaire IA rend votre base documentaire interrogeable en langage naturel. Au lieu de chercher dans des dossiers, vos équipes posent une question et obtiennent une réponse synthétique avec les sources citées. Masteria le construit en RAG sur vos documents, l'intègre à vos outils et vous en livre le code.",
     whatItIs:
@@ -142,7 +142,7 @@ export const SOLUTIONS = [
       },
     ],
     techApproach:
-      "Le cœur technique est le RAG (retrieval-augmented generation) : vos documents sont découpés, indexés dans une base vectorielle, puis les passages les plus pertinents sont récupérés et fournis au modèle pour générer une réponse ancrée dans vos contenus, avec citations. Nous travaillons en multi-LLM (Claude, GPT, Mistral) et sélectionnons le modèle selon le cas, le coût et la confidentialité. L'ingestion gère les formats réels (PDF, bureautique, exports d'outils métier) et une logique de mise à jour pour que l'index suive l'évolution de votre documentation. Les droits d'accès sont respectés au niveau de la récupération : un utilisateur ne reçoit que des réponses issues de documents auxquels il a droit. Selon vos contraintes, l'hébergement et l'indexation peuvent rester dans l'Union européenne, et les contenus sensibles cloisonnés. Aucune réutilisation de vos données pour entraîner des modèles.",
+      "Le cœur technique est le RAG (retrieval-augmented generation) : vos documents sont découpés, indexés pour une recherche hybride (mots-clés et vecteurs), puis les passages les plus pertinents sont récupérés et fournis au modèle pour générer une réponse ancrée dans vos contenus, avec citations. Nous travaillons en multi-LLM (Claude, GPT, Mistral) et sélectionnons le modèle selon le cas, le coût et la confidentialité. L'ingestion gère les formats réels (PDF, bureautique, exports d'outils métier) et une logique de mise à jour pour que l'index suive l'évolution de votre documentation. Les droits d'accès sont respectés au niveau de la récupération : un utilisateur ne reçoit que des réponses issues de documents auxquels il a droit. Selon vos contraintes, l'hébergement et l'indexation peuvent rester dans l'Union européenne, et les contenus sensibles cloisonnés. Aucune réutilisation de vos données pour entraîner des modèles.",
     useCasesBySector: [
       { sector: 'Cabinets juridiques', usage: "Interroger une base de contrats, de jurisprudence interne et de modèles pour retrouver une clause ou un précédent, avec le document source en appui." },
       { sector: 'Industrie et qualité', usage: "Rendre la documentation technique, les normes et les procédures qualité interrogeables par les équipes terrain et bureau d'études." },
@@ -190,7 +190,7 @@ export const SOLUTIONS = [
     keyTakeaways: [
       "L'agent qualifie la demande, répond à partir de votre base de connaissances et agit dans votre outil de ticketing.",
       "Sur les cas sensibles ou complexes, il passe la main à un conseiller avec un résumé du contexte.",
-      "Objectif : absorber le premier niveau et les demandes répétitives, pas remplacer la relation humaine.",
+      "Objectif : absorber le premier niveau et les demandes répétitives, et garder les conseillers sur les échanges qui demandent du jugement.",
       "Chaque interaction est tracée ; le code et la configuration vous sont livrés.",
     ],
     name: 'Agent IA de support client',
@@ -200,11 +200,11 @@ export const SOLUTIONS = [
     h1: "Agent IA de support client : traiter les demandes de bout en bout",
     metaTitle: 'Agent IA de support client sur mesure | Masteria',
     metaDesc:
-      "Agent IA de support client : qualification, réponses sourcées, escalade humaine sur les cas sensibles. Sur mesure, code livré. Cadrage gratuit.",
+      "Agent IA de support client : qualification, réponses sourcées, escalade humaine sur les cas sensibles. Sur mesure, code livré. 30 min de cadrage offertes.",
     directAnswer:
       "Un agent IA de support client qualifie les demandes, répond à partir de votre base de connaissances et escalade les cas sensibles vers un humain. Branché sur votre outil de ticketing et vos données, il absorbe les demandes répétitives et fait gagner du temps à vos équipes. Masteria le développe sur mesure et vous en livre le code.",
     whatItIs:
-      "Un agent IA de support client est un assistant qui prend en charge les demandes entrantes (chat, e-mail, formulaire, espace client) et les traite de bout en bout dans un périmètre défini. Il comprend la demande, la qualifie, cherche la réponse dans votre base de connaissances et vos procédures, formule une réponse sourcée, puis exécute une action simple si nécessaire (créer ou mettre à jour un ticket, envoyer un récapitulatif, router vers le bon service). Sur les demandes complexes, sensibles ou hors périmètre, il passe la main à un conseiller humain avec un résumé du contexte, plutôt que d'improviser. L'objectif n'est pas de remplacer le support mais de le décharger des demandes répétitives à faible valeur (suivi, questions fréquentes, premiers niveaux) pour que les équipes se concentrent sur les cas qui exigent un jugement humain. Chaque interaction est tracée, ce qui permet de mesurer ce qui est réellement absorbé et d'améliorer la base au fil du temps.",
+      "Un agent IA de support client est un assistant qui prend en charge les demandes entrantes (chat, e-mail, formulaire, espace client) et les traite de bout en bout dans un périmètre défini. Il comprend la demande, la qualifie, cherche la réponse dans votre base de connaissances et vos procédures, formule une réponse sourcée, puis exécute une action simple si nécessaire (créer ou mettre à jour un ticket, envoyer un récapitulatif, router vers le bon service). Sur les demandes complexes, sensibles ou hors périmètre, il passe la main à un conseiller humain avec un résumé du contexte, plutôt que d'improviser. L'objectif est de décharger le support des demandes répétitives à faible valeur (suivi, questions fréquentes, premiers niveaux) pour que les équipes se concentrent sur les cas qui exigent un jugement humain. Chaque interaction est tracée, ce qui permet de mesurer ce qui est réellement absorbé et d'améliorer la base au fil du temps.",
     howWeBuild: [
       {
         title: 'Cadrage du périmètre de support',
@@ -234,7 +234,7 @@ export const SOLUTIONS = [
     sectorLinks: [
       { label: 'IA pour le e-commerce', href: '/ia-retail-ecommerce' },
       { label: "IA pour l'assurance", href: '/ia-banque-assurance' },
-      { label: 'IA pour les RH', href: '/ia-services-conseil' },
+      { label: 'IA pour les services et le conseil', href: '/ia-services-conseil' },
     ],
     onsiteDevNote:
       "Au-delà du forfait au projet, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, en régie ou en équipe dédiée. Pour un agent de support relié à des données clients sensibles ou à un outil de ticketing interne, ce modèle maintient le code dans votre périmètre et facilite le calibrage continu avec vos conseillers. Nous le présentons comme une possibilité d'engagement, à arbitrer au cadrage.",
@@ -262,13 +262,13 @@ export const SOLUTIONS = [
     slug: 'automatisation-documentaire-ia',
     goal: "Traiter automatiquement les documents entrants, sans ressaisie",
     budgetRange: 'Dès ~12 000 € · 100 000 €+ à grande échelle',
-    timeline: 'Prototype sur un flux prioritaire (ex. factures fournisseurs), puis extension',
+    timeline: 'Prototype sur un flux prioritaire (ex. factures étrangères ou bons de livraison), puis extension',
     offTheShelfLabel: 'OCR classique',
     alsoKnownAs: ['traitement automatique de documents', 'extraction de données par IA', 'IDP (intelligent document processing)', 'lecture automatique de factures'],
     keyTakeaways: [
       "La chaîne lit, extrait, classe et route vos documents (factures, contrats, formulaires) vers vos systèmes, sans ressaisie.",
       "L'IA générative comprend des mises en page variées là où l'OCR classique bute.",
-      "Un score de confiance arbitre : cas clairs automatisés, cas incertains validés par un humain, chaque décision tracée.",
+      "Des contrôles de gestion arbitrent : pièces conformes traitées automatiquement, écarts validés par un humain, chaque décision tracée.",
       "Code et règles de traitement livrés : vous ajoutez de nouveaux types de documents en autonomie.",
     ],
     name: 'Automatisation du traitement documentaire',
@@ -278,7 +278,7 @@ export const SOLUTIONS = [
     h1: "Automatisation du traitement documentaire : de la pièce reçue à la donnée exploitable",
     metaTitle: 'Automatisation documentaire IA sur mesure | Masteria',
     metaDesc:
-      "Automatisation documentaire IA : lecture, extraction, classification et routage de vos documents sans ressaisie. Sur mesure, code livré. Cadrage gratuit.",
+      "Automatisation documentaire IA : lecture, extraction, classement et routage de vos documents sans ressaisie. Code livré. 30 min de cadrage offertes.",
     directAnswer:
       "L'automatisation du traitement documentaire fait passer un document reçu (facture, contrat, formulaire, courrier) à une donnée exploitable, sans ressaisie. L'IA lit, extrait les informations clés, classe et route vers le bon système, avec un contrôle humain sur les cas incertains. Masteria développe cette chaîne sur mesure et vous en livre le code.",
     whatItIs:
@@ -290,7 +290,7 @@ export const SOLUTIONS = [
       },
       {
         title: 'Prototype sur un type de document',
-        desc: "Nous construisons la chaîne sur un flux prioritaire (par exemple les factures fournisseurs) avec vos vrais documents. Vous mesurez la qualité de l'extraction et le taux de cas traités automatiquement.",
+        desc: "Nous construisons la chaîne sur un flux prioritaire (par exemple les factures de fournisseurs étrangers ou les bons de livraison) avec vos vrais documents. Vous mesurez la qualité de l'extraction et le taux de cas traités automatiquement.",
       },
       {
         title: 'Développement et intégration',
@@ -304,13 +304,13 @@ export const SOLUTIONS = [
     techApproach:
       "La chaîne combine la lecture de documents (extraction de texte sur PDF natifs et scannés) et un modèle de langage pour comprendre et structurer l'information, en approche multi-LLM selon le type de document, le coût et la confidentialité. L'extraction renvoie des champs structurés et un score de confiance, ce qui pilote l'arbitrage entre traitement automatique et validation humaine. Le routage vers vos systèmes (comptabilité, ERP, GED, CRM) passe par des connecteurs API ou MCP, sans ressaisie. Chaque pièce traitée est journalisée avec sa décision et la personne qui l'a validée, pour l'auditabilité. Les documents sensibles peuvent rester cloisonnés et, selon vos exigences de conformité, l'ensemble du traitement peut s'opérer dans l'Union européenne. Aucune réutilisation de vos documents pour entraîner des modèles.",
     useCasesBySector: [
-      { sector: 'Comptabilité et finance', usage: "Lecture et extraction des factures fournisseurs, contrôle de cohérence et intégration en comptabilité, avec validation humaine sur les écarts." },
+      { sector: 'Comptabilité et finance', usage: "Lecture des factures reçues hors plateforme (fournisseurs étrangers, PDF de PME jusqu'à l'obligation d'émission de septembre 2027), contrôle de cohérence et intégration en comptabilité, avec validation humaine sur les écarts." },
       { sector: 'Cabinets et services juridiques', usage: "Extraction des informations clés de contrats entrants (parties, dates, clauses, échéances) et alimentation d'un suivi, avec relecture humaine." },
       { sector: 'Industrie et achats', usage: "Traitement des bons de commande, accusés de réception et documents fournisseurs, et alimentation de l'ERP sans ressaisie." },
       { sector: 'Assurance et mutuelles', usage: "Lecture des pièces de dossiers (justificatifs, formulaires), extraction et classement, avec routage vers le gestionnaire et traçabilité." },
     ],
     sectorLinks: [
-      { label: 'IA pour la comptabilité', href: '/ia-services-conseil' },
+      { label: 'IA pour les services et le conseil', href: '/ia-services-conseil' },
       { label: "IA pour l'assurance", href: '/ia-banque-assurance' },
       { label: 'IA pour le juridique', href: '/ia-juridique' },
     ],
@@ -356,7 +356,7 @@ export const SOLUTIONS = [
     h1: "Agent IA commercial : prospection, propositions et CRM augmentés",
     metaTitle: 'Agent IA commercial sur mesure | Masteria',
     metaDesc:
-      "Agent IA commercial : qualification de prospects, propositions, mise à jour du CRM, connecté à vos outils. Sur mesure, code livré. Cadrage gratuit.",
+      "Agent IA commercial : qualification de prospects, propositions, mise à jour du CRM, connecté à vos outils. Sur mesure, code livré. 30 min de cadrage offertes.",
     directAnswer:
       "Un agent IA commercial appuie le cycle de vente : il recherche et qualifie des prospects, prépare des propositions à partir de vos modèles et tient le CRM à jour. Branché sur vos données et vos outils, il décharge les commerciaux des tâches répétitives pour qu'ils se concentrent sur la relation. Masteria le développe sur mesure et vous en livre le code.",
     whatItIs:
@@ -380,7 +380,7 @@ export const SOLUTIONS = [
       },
     ],
     techApproach:
-      "L'agent s'appuie sur une approche multi-LLM (Claude, GPT, Mistral) choisie selon le cas et le coût, et sur du RAG pour ancrer les propositions et les réponses dans votre catalogue, vos modèles et votre terminologie. La connexion au CRM (et aux outils d'e-mail ou de calendrier) passe par des API documentées et des connecteurs MCP, avec un périmètre d'action strict : l'agent prépare et propose, et toute action sortante sensible (envoi d'un message, modification d'une opportunité) reste sous validation humaine. Les données de prospection sont traitées dans le respect du RGPD, et le démarchage encadré pour éviter l'envoi de masse non sollicité. La journalisation assure la traçabilité des actions. Selon vos exigences, l'hébergement peut se faire dans l'Union européenne et les données commerciales sensibles rester cloisonnées.",
+      "L'agent s'appuie sur une approche multi-LLM (Claude, GPT, Mistral) choisie selon le cas et le coût, et sur du RAG pour ancrer les propositions et les réponses dans votre catalogue, vos modèles et votre terminologie. La connexion au CRM (et aux outils d'e-mail ou de calendrier) passe par des API documentées et des connecteurs MCP, avec un périmètre d'action strict : l'agent prépare et propose, et toute action sortante sensible (envoi d'un message, modification d'une opportunité) reste sous validation humaine. Les données de prospection sont traitées dans le respect du RGPD, et la prospection suit les règles de consentement de l'article L34-5 du Code des postes et des communications électroniques et, pour le téléphone, de l'article L223-1 du Code de la consommation. La journalisation assure la traçabilité des actions. Selon vos exigences, l'hébergement peut se faire dans l'Union européenne et les données commerciales sensibles rester cloisonnées.",
     useCasesBySector: [
       { sector: 'PME et ETI B2B', usage: "Un agent qui qualifie les comptes, prépare les propositions à partir des modèles maison et tient le CRM à jour, pour rendre du temps de vente aux commerciaux." },
       { sector: 'Conseil et services professionnels', usage: "Un agent qui prépare les premières trames de proposition et les comptes rendus de rendez-vous à partir des notes, avec relecture humaine." },
@@ -388,7 +388,7 @@ export const SOLUTIONS = [
       { sector: 'Immobilier', usage: "Un agent qui qualifie les demandes entrantes, prépare les dossiers et tient à jour le suivi des contacts, l'agent restant sous le contrôle du négociateur." },
     ],
     sectorLinks: [
-      { label: 'IA pour la vente', href: '/ia-retail-ecommerce' },
+      { label: "IA pour le retail et l'e-commerce", href: '/ia-retail-ecommerce' },
       { label: "IA pour l'immobilier", href: '/ia-immobilier-btp' },
       { label: 'IA pour le marketing', href: '/agence-ia-marketing' },
     ],
@@ -434,9 +434,9 @@ export const SOLUTIONS = [
     h1: "Chatbot IA sur mesure : un assistant conversationnel à votre image",
     metaTitle: 'Chatbot IA sur mesure | Masteria',
     metaDesc:
-      "Chatbot IA sur mesure connecté à vos données, intégré à votre site et vos canaux, avec votre ton. Code livré au client. Cadrage gratuit.",
+      "Chatbot IA sur mesure connecté à vos données, intégré à votre site et vos canaux, avec votre ton. Code livré au client. 30 min de cadrage offertes.",
     directAnswer:
-      "Un chatbot IA sur mesure, conçu par notre agence chatbot IA, est un assistant conversationnel développé pour votre usage : connecté à vos données, intégré à votre site ou à vos canaux, avec votre ton et vos garde-fous. Il répond, oriente et accompagne vos visiteurs ou vos équipes. Masteria le conçoit, l'intègre et vous en transmet le code, sans abonnement à une plateforme fermée.",
+      "Un chatbot IA sur mesure est un assistant conversationnel développé pour votre usage : connecté à vos données, intégré à votre site ou à vos canaux, avec votre ton et vos garde-fous. Il répond, oriente et accompagne vos visiteurs ou vos équipes. Masteria le conçoit, l'intègre et vous en transmet le code, sans abonnement à une plateforme fermée.",
     whatItIs:
       "Un chatbot IA sur mesure est un assistant conversationnel conçu pour un usage et un public précis : visiteurs de votre site, clients de votre espace, ou collaborateurs en interne. À la différence d'un chatbot générique acheté sur étagère, il est branché sur vos contenus réels (catalogue, base de connaissances, FAQ, procédures), il adopte le ton de votre marque, et il respecte des garde-fous explicites sur ce qu'il peut dire et faire. Il sert à répondre aux questions fréquentes, orienter un visiteur vers la bonne page ou le bon interlocuteur, qualifier une demande entrante, ou accompagner un parcours (avant-vente, prise de rendez-vous, premier niveau de support). Quand une demande dépasse son périmètre, il passe la main à un humain plutôt que d'improviser. L'intérêt du sur-mesure tient à la maîtrise : vous contrôlez les sources sur lesquelles il s'appuie, son comportement, son intégration à votre site ou à vos canaux (messagerie, espace client), et vous restez propriétaire de la solution au lieu de dépendre d'un abonnement à une plateforme fermée.",
     howWeBuild: [
@@ -512,7 +512,7 @@ export const SOLUTIONS = [
     h1: "Intégration LLM & RAG : brancher l'IA dans vos outils existants",
     metaTitle: 'Intégration LLM & RAG dans vos outils | Masteria',
     metaDesc:
-      "Intégration LLM & RAG dans vos outils existants : API, connecteurs MCP, réponses sourcées, sans refonte du SI. Sur mesure, code livré. Cadrage gratuit.",
+      "Intégration LLM et RAG dans vos outils : API, connecteurs MCP, réponses sourcées, sans refonte du SI. Code livré. 30 min de cadrage offertes.",
     directAnswer:
       "Intégrer un LLM et du RAG, c'est brancher un modèle de langage et la recherche sur vos données directement dans vos outils existants (CRM, ERP, intranet, applications métier), via API et connecteurs, sans refonte de votre SI. Vos applications gagnent des capacités IA ancrées dans vos contenus. Masteria développe et intègre ces briques, et vous en livre le code.",
     whatItIs:
@@ -546,7 +546,7 @@ export const SOLUTIONS = [
     sectorLinks: [
       { label: "IA pour l'industrie", href: '/ia-industrie' },
       { label: 'IA pour la finance', href: '/ia-banque-assurance' },
-      { label: 'IA pour les RH', href: '/ia-services-conseil' },
+      { label: 'IA pour les services et le conseil', href: '/ia-services-conseil' },
     ],
     onsiteDevNote:
       "Au-delà du forfait au projet, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, en régie ou en équipe dédiée. Pour intégrer un LLM et du RAG dans un système d'information sensible ou réglementé, ce modèle garde le code dans votre périmètre, travaille au plus près de vos équipes techniques et facilite la reprise en interne. Nous le présentons comme une possibilité d'engagement, à arbitrer au cadrage.",
