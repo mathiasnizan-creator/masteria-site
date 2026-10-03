@@ -5,8 +5,10 @@ import CadrageLink from './CadrageLink'
 import { useIsDesktop, useMediaQuery } from '../hooks/useMediaQuery'
 
 /*
- * « De la première question à l'usage quotidien » : toutes les expertises de Masteria
- * en parcours de cinq étapes (handoff design du 03/10/2026), adapté à la charte du site :
+ * « Notre accompagnement · De l'audit à vos équipes augmentées par l'IA » (titre choisi par
+ * Mathias ; la maquette disait « De la première question à l'usage quotidien ») : toutes
+ * les expertises de Masteria en parcours de cinq étapes (handoff design du 03/10/2026),
+ * adapté à la charte du site :
  * fond sombre des sections d'ancrage (#0A0F1E), bleu seul accent (l'ambre et le vert de
  * la maquette passent en bleu), Nunito et DM Sans (pas de police monospace pour les
  * étiquettes), orange réservé au bouton principal. Remplace sur la home le bandeau
@@ -280,10 +282,10 @@ export default function ParcoursExpertises() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 760 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: BLUE_L }}>
             <span aria-hidden="true" style={{ width: 22, height: 2, background: BLUE_L }} />
-            Nos expertises
+            Notre accompagnement
           </div>
           <h2 id="parcours-titre" style={{ margin: 0, fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 'clamp(28px, 3.6vw, 44px)', letterSpacing: '-0.025em', lineHeight: 1.12, color: '#fff' }}>
-            De la première question à l'usage quotidien
+            De l'audit à vos équipes <span style={{ color: BLUE_L }}>augmentées par l'IA</span>
           </h2>
           <p style={{ margin: 0, fontSize: 16.5, lineHeight: 1.7, color: T2 }}>
             Entrez à l'étape où vous en êtes. Chaque étape s'appuie sur la précédente, avec la même équipe du début à la fin.

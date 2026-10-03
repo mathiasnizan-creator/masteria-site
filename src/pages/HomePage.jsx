@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, MapPin, ShieldCheck, Layers, Compass, Cpu, Phone, Mail,
-  ArrowRight, ShoppingCart, Handshake, Code2, Check, Plus, Clock, Globe,
+  BadgeCheck, ShieldCheck, Layers, Phone, Mail,
+  ArrowRight, ShoppingCart, Handshake, Code2, Plus, Clock, Globe,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
@@ -92,54 +92,19 @@ const CLIENTS = [
 ]
 const SECTEURS_LIGNE = "et des PME, ETI et grands groupes de l'industrie, de la distribution, de l'énergie, de l'immobilier, de l'assurance, du conseil et de la santé"
 
-/* Les trois métiers, conseil et développement d'abord. */
-const PILIERS = [
-  {
-    Icon: Compass,
-    num: '01',
-    kicker: 'Conseil & développement',
-    title: 'Auditer et conseiller',
-    desc: "Où l'IA crée de la valeur chez vous, dans quel ordre, avec quels garde-fous. Nous lisons vos processus flux par flux, chiffrons les gisements, puis posons la stratégie, la gouvernance et le cadre de conformité.",
-    recoit: ['Cartographie des flux et des données', 'Matrice impact et faisabilité', 'Feuille de route chiffrée', "Charte d'usage, registre, AI Act et RGPD"],
-    links: [
-      ['Audit IA', '/audit-ia'],
-      ['Diagnostic IA', '/diagnostic-ia'],
-      ['Conseil en stratégie IA', '/conseil-strategie-ia'],
-      ['Gouvernance et AI Act', '/gouvernance-ia'],
-      ['Accompagnement IA', '/accompagnement-ia'],
-    ],
-    cta: ['Le conseil en intelligence artificielle', '/conseil-intelligence-artificielle'],
-  },
-  {
-    Icon: Cpu,
-    num: '02',
-    kicker: 'Conseil & développement',
-    title: 'Développer vos outils',
-    desc: "Agents IA, assistants branchés sur vos documents, automatisations et applications métier reliées à votre CRM, à votre ERP et à vos outils internes. Au forfait ou en régie, avec des développeurs détachables sur site.",
-    recoit: ['Assistants et agents en production', 'Intégrations CRM, ERP et connecteurs MCP', 'Code source et documentation', "Guide d'utilisation et règles de mise à jour"],
-    links: [
-      ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
-      ['Agents IA en entreprise', '/agents-ia-entreprise'],
-      ["Agence d'automatisation IA", '/agence-automatisation-ia'],
-      ['Solutions IA par type de livrable', '/solutions-ia'],
-    ],
-    cta: ['Agence de développement IA', '/agence-developpement-ia'],
-  },
-  {
-    Icon: GraduationCap,
-    num: '03',
-    kicker: 'Formation',
-    title: 'Former vos équipes',
-    desc: "Un outil ne vaut que par ceux qui s'en servent. Nous formons sur tous les LLM du marché, par outil et par métier, à partir des dossiers de vos équipes, en présentiel ou à distance.",
-    recoit: ['Ateliers sur vos propres fichiers', 'Prompts et assistants prêts à l\'emploi', 'Supports accessibles après la formation', 'Attestation, formation certifiée Qualiopi'],
-    links: [
-      ['Formation ChatGPT', '/formation-chatgpt'],
-      ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
-      ['Formation Claude', '/formation-claude-ia'],
-      ['Formation Google Gemini', '/formation-gemini-entreprise'],
-    ],
-    cta: ['Toutes les formations IA', '/formation-intelligence-artificielle'],
-  },
+/* Offres conseil et développement, déclarées en ItemList (JSON-LD) ; les liens visibles
+   sont portés par le parcours des expertises et la section « Explorer Masteria ». */
+const SERVICES_CONSEIL_DEV = [
+  ['Audit IA', '/audit-ia'],
+  ['Diagnostic IA', '/diagnostic-ia'],
+  ['Conseil en stratégie IA', '/conseil-strategie-ia'],
+  ['Gouvernance et AI Act', '/gouvernance-ia'],
+  ['Accompagnement IA', '/accompagnement-ia'],
+  ['Agence de développement IA', '/agence-developpement-ia'],
+  ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
+  ['Agents IA en entreprise', '/agents-ia-entreprise'],
+  ["Agence d'automatisation IA", '/agence-automatisation-ia'],
+  ['Solutions IA par type de livrable', '/solutions-ia'],
 ]
 
 /* Études de cas, présentées en liste discrète plus bas dans la page. */
@@ -246,7 +211,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Audit, conseil et développement IA',
-    itemListElement: [...PILIERS[0].links, ...PILIERS[1].links].map(([name, href], i) => ({
+    itemListElement: SERVICES_CONSEIL_DEV.map(([name, href], i) => ({
       '@type': 'ListItem',
       position: i + 1,
       item: {
@@ -385,64 +350,6 @@ export default function HomePage() {
 
       {/* ════════════════════════ PARCOURS DES EXPERTISES (ancre sombre) ════════════════════════ */}
       <ParcoursExpertises />
-
-      {/* ════════════════════════ TROIS MÉTIERS (éditorial asymétrique) ════════════════════════ */}
-      <section style={{ background: '#fff', padding: SECTION_PAD }}>
-        <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 360px) 1fr' : '1fr', gap: 'clamp(36px, 6vw, 88px)' }}>
-          <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : undefined}>
-            <Kicker>Nos expertises</Kicker>
-            <h2 style={h2Style}>Deux expertises, une même équipe</h2>
-            <p style={{ ...leadStyle, marginBottom: 24 }}>
-              Le conseil et le développement d'un côté, la formation de l'autre. Nous pensons et construisons vos outils IA, puis nous formons les équipes qui vont s'en servir&nbsp;: un projet d'IA se joue sur la marche entre la décision et l'usage, et nos deux expertises la couvrent en entier.
-            </p>
-            <p style={{ fontSize: 14.5, color: MUTED, lineHeight: 1.7, margin: 0 }}>
-              Un budget à anticiper ? Voir le <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 700, textDecoration: 'none' }}>prix d'un projet IA</Link> et notre dossier sur le <Link to="/roi-ia-entreprise" style={{ color: c, fontWeight: 700, textDecoration: 'none' }}>ROI de l'IA en entreprise</Link>.
-            </p>
-          </div>
-
-          <div>
-            {PILIERS.map(({ Icon, num, kicker, title, desc, recoit, links, cta }, i) => (
-              <article key={title} style={{ padding: i === 0 ? '0 0 44px' : '44px 0', borderBottom: i < PILIERS.length - 1 ? `1px solid ${LINE}` : 'none' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 13, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={22} strokeWidth={1.9} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                    {num} · {kicker}
-                  </span>
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.4vw, 28px)', fontWeight: 900, color: INK, margin: '0 0 12px', letterSpacing: '-0.015em' }}>{title}</h3>
-                <p style={{ fontSize: 16, color: TEXT, lineHeight: 1.75, margin: '0 0 26px', maxWidth: 680 }}>{desc}</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
-                  <div style={{ background: '#F9FAFB', border: `1px solid ${LINE}`, borderRadius: 14, padding: '18px 20px' }}>
-                    <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: 12 }}>Ce que vous recevez</div>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 9 }}>
-                      {recoit.map(r => (
-                        <li key={r} style={{ display: 'flex', gap: 10, fontSize: 14.5, color: INK, lineHeight: 1.45 }}>
-                          <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" /> {r}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div style={{ padding: '18px 4px' }}>
-                    <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: 12 }}>Nos offres</div>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexDirection: 'column', gap: 9 }}>
-                      {links.map(([label, href]) => (
-                        <li key={href}>
-                          <Link to={href} style={{ fontSize: 14.5, color: INK, fontWeight: 600, textDecoration: 'none', borderBottom: `1px solid ${LINE}`, paddingBottom: 1 }}>{label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to={cta[1]} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
-                      {cta[0]} <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ════════════════════════ MÉTHODE EN SIX TEMPS ════════════════════════ */}
       <section style={{ background: '#EFF6FF', padding: SECTION_PAD, borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE' }}>
@@ -707,6 +614,7 @@ export default function HomePage() {
                 ['Automatisation IA', '/agence-automatisation-ia'],
                 ['Agence IA à Lyon', '/agence-ia'],
                 ["Prix d'un projet IA", '/prix-projet-ia'],
+                ["ROI de l'IA en entreprise", '/roi-ia-entreprise'],
               ] },
               { title: 'Formation par outil', links: [
                 ['Formation ChatGPT', '/formation-chatgpt'],
