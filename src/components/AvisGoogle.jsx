@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import { Star, ExternalLink, Pause, Play } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Star, ExternalLink, Pause, Play, X } from 'lucide-react'
 import { NOTE_GOOGLE, FICHE_GOOGLE_URL, AVIS_GOOGLE } from '../data/avis-google'
 
 /*
  * Avis Google qui défilent, avec la note de la fiche (sans le nombre d'avis, à la demande
  * de Mathias). Les textes viennent de data/avis-google.js, reproduits sans modification ;
  * tant que la liste est vide, seuls la note et le lien vers la fiche s'affichent.
- * Défilement : piste doublée (la copie est masquée aux lecteurs d'écran), pause au survol,
- * au focus et par bouton (WCAG 2.2.2), arrêt complet quand le visiteur réduit les animations.
+ * Défilement : piste doublée (la copie est inerte et masquée aux lecteurs d'écran), pause
+ * au survol, au focus, par bouton (WCAG 2.2.2) et pendant la lecture d'un avis ; arrêt
+ * complet quand le visiteur réduit les animations. Cartes de même hauteur : texte limité à
+ * six lignes, l'avis complet s'ouvre dans une fenêtre (texte intégral, jamais réécrit).
  * Variantes : « section » (bloc autonome, pages formation) et « bloc » (inséré dans une
  * section existante, home).
  */
@@ -29,7 +31,11 @@ const CSS = `
 .avis-zone:hover .avis-piste,.avis-zone:focus-within .avis-piste,.avis-zone[data-pause="true"] .avis-piste{animation-play-state:paused}
 @keyframes avis-defile{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.avis-piste{animation:none}.avis-zone{overflow-x:auto!important}}
+.avis-dialog::backdrop{background:rgba(15,23,42,.45)}
 `
+
+/* Au-delà, le texte dépasse les six lignes de la carte : bouton « Lire l'avis en entier ». */
+const estLong = (texte) => texte.length > 230 || texte.split('\n').length > 3
 
 function Etoiles({ size = 16, note = 5 }) {
   return (
@@ -41,11 +47,16 @@ function Etoiles({ size = 16, note = 5 }) {
   )
 }
 
-function Carte({ avis, cache = false }) {
+function Carte({ avis, cache = false, onLire }) {
   return (
-    <figure aria-hidden={cache || undefined} style={{ flex: 'none', width: 'min(340px, 78vw)', boxSizing: 'border-box', margin: 0, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 16, padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+    <figure inert={cache || undefined} aria-hidden={cache || undefined} style={{ flex: 'none', width: 'min(340px, 78vw)', boxSizing: 'border-box', margin: 0, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 16, padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Etoiles size={14} note={avis.note} />
-      <blockquote style={{ margin: 0, fontSize: 14.5, color: TEXT, lineHeight: 1.65 }}>{avis.texte}</blockquote>
+      <blockquote style={{ margin: 0, fontSize: 14.5, color: TEXT, lineHeight: 1.65, whiteSpace: 'pre-line', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 6, overflow: 'hidden' }}>{avis.texte}</blockquote>
+      {estLong(avis.texte) && (
+        <button type="button" onClick={() => onLire(avis)} style={{ alignSelf: 'flex-start', background: 'none', border: 'none', padding: 0, fontSize: 13.5, fontWeight: 700, color: BLUE, cursor: 'pointer' }}>
+          Lire l'avis en entier
+        </button>
+      )}
       <figcaption style={{ marginTop: 'auto', fontSize: 13, color: MUTED }}>
         <strong style={{ color: INK, fontWeight: 700 }}>{avis.auteur}</strong> · avis Google, {moisAnnee(avis.date)}
       </figcaption>
@@ -55,6 +66,14 @@ function Carte({ avis, cache = false }) {
 
 export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
   const [pause, setPause] = useState(false)
+  const [lu, setLu] = useState(null)
+  const fenetre = useRef(null)
+  useEffect(() => {
+    const d = fenetre.current
+    if (!d) return
+    if (lu && !d.open) d.showModal()
+    if (!lu && d.open) d.close()
+  }, [lu])
   // Assez de cartes pour que la piste dépasse la largeur de l'écran, puis doublée pour boucler.
   const tour = AVIS_GOOGLE.length
     ? Array.from({ length: Math.ceil(5 / AVIS_GOOGLE.length) }, () => AVIS_GOOGLE).flat()
@@ -79,10 +98,10 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
   )
 
   const defilement = tour.length > 0 && (
-    <div className="avis-zone" data-pause={pause} style={{ overflow: 'hidden', marginTop: 28, WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)', maskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)' }}>
+    <div className="avis-zone" data-pause={pause || Boolean(lu)} style={{ overflow: 'hidden', marginTop: 28, WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)', maskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)' }}>
       <div className="avis-piste" style={{ '--avis-duree': `${tour.length * 9}s`, alignItems: 'stretch' }}>
-        {tour.map((a, i) => <Carte key={`a${i}`} avis={a} cache={i >= AVIS_GOOGLE.length} />)}
-        {tour.map((a, i) => <Carte key={`b${i}`} avis={a} cache />)}
+        {tour.map((a, i) => <Carte key={`a${i}`} avis={a} cache={i >= AVIS_GOOGLE.length} onLire={setLu} />)}
+        {tour.map((a, i) => <Carte key={`b${i}`} avis={a} cache onLire={setLu} />)}
       </div>
     </div>
   )
@@ -99,6 +118,27 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
     </div>
   )
 
+  const lecture = tour.length > 0 && (
+    <dialog ref={fenetre} className="avis-dialog" aria-labelledby="avis-lecture-titre" onClose={() => setLu(null)}
+      onClick={e => { if (e.target === e.currentTarget) setLu(null) }}
+      style={{ margin: 'auto', border: 'none', borderRadius: 18, padding: 0, width: 'min(560px, calc(100vw - 32px))', maxHeight: 'calc(100vh - 48px)', overflowY: 'auto', boxShadow: '0 24px 60px -20px rgba(15,23,42,0.35)' }}>
+      {lu && (
+        <div style={{ padding: '24px 26px 26px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 12 }}>
+            <Etoiles size={16} note={lu.note} />
+            <button type="button" onClick={() => setLu(null)} aria-label="Fermer l'avis" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 34, height: 34, borderRadius: 99, border: `1px solid ${LINE}`, background: '#fff', cursor: 'pointer', color: TEXT }}>
+              <X size={16} strokeWidth={2.2} aria-hidden="true" />
+            </button>
+          </div>
+          <p id="avis-lecture-titre" style={{ margin: '0 0 12px', fontSize: 14, color: MUTED }}>
+            <strong style={{ color: INK, fontWeight: 700 }}>{lu.auteur}</strong> · avis Google, {moisAnnee(lu.date)}
+          </p>
+          <blockquote style={{ margin: 0, fontSize: 15.5, color: TEXT, lineHeight: 1.7, whiteSpace: 'pre-line' }}>{lu.texte}</blockquote>
+        </div>
+      )}
+    </dialog>
+  )
+
   if (variant === 'bloc') {
     return (
       <div>
@@ -107,6 +147,7 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
         {resume}
         {defilement}
         {pied}
+        {lecture}
       </div>
     )
   }
@@ -121,6 +162,7 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
         {resume}
         {defilement}
         {pied}
+        {lecture}
       </div>
     </section>
   )

@@ -49,6 +49,22 @@ const carteDeLaPage = slug =>
    navigation interne le canonical de la première page chargée restait à côté
    de celui de la page affichée. Le JSON-LD, rendu dans <main>, n'est pas
    concerné : React remplace le contenu de #root au premier rendu. */
+/* Dates au format ISO 8601 complet (date, heure, fuseau). Les pages saisissent un jour
+   (« 2026-10-02 ») : Google l'accepte pour un Article mais pas pour une ProfilePage
+   (Search Console, 03/10/2026 : « Valeur de date et heure incorrecte pour dateModified »
+   sur /mathias-nizan). On fixe 09:00, heure de Paris (heure d'été du dernier dimanche
+   de mars au dernier dimanche d'octobre). Une valeur déjà horodatée passe telle quelle. */
+function dateHeureISO(d) {
+  if (!d || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return d
+  const [a, m, j] = d.split('-').map(Number)
+  const dernierDimanche = (mois) => {
+    const fin = new Date(Date.UTC(a, mois, 0))
+    return fin.getUTCDate() - fin.getUTCDay()
+  }
+  const ete = (m > 3 && m < 10) || (m === 3 && j >= dernierDimanche(3)) || (m === 10 && j < dernierDimanche(10))
+  return `${d}T09:00:00${ete ? '+02:00' : '+01:00'}`
+}
+
 const BALISES_DU_HTML = typeof document === 'undefined'
   ? []
   : Array.from(document.querySelectorAll([
@@ -277,8 +293,10 @@ export default function SEOHead({
     mainEntity: mainEntityId ? { '@id': mainEntityId } : undefined,
     // Signal de fraîcheur (émis uniquement si la page fournit une date) — favorise
     // le crawl de re-fraîcheur (SEO) et la citation par les moteurs génératifs (GEO).
-    datePublished: datePublished || undefined,
-    dateModified: dateModified || datePublished || undefined,
+    datePublished: dateHeureISO(datePublished) || undefined,
+    dateModified: dateHeureISO(dateModified || datePublished) || undefined,
+    // ProfilePage : Google lit dateCreated et dateModified (date et heure obligatoires)
+    dateCreated: webPageType === 'ProfilePage' ? dateHeureISO(datePublished) || undefined : undefined,
     // GEO opt-in : zones à lire en priorité + sources d'autorité, portées par la
     // WebPage canonique de la page (rétro-compatible : absentes si non fournies).
     speakable: speakable?.length
@@ -431,8 +449,8 @@ export default function SEOHead({
         description,
         image: articleData.image ? [articleData.image, OG_4X3, OG_CARRE] : imagesStructurees,
         thumbnailUrl: OG_CARRE,
-        datePublished: articleData.datePublished,
-        dateModified: articleData.dateModified || articleData.datePublished,
+        datePublished: dateHeureISO(articleData.datePublished),
+        dateModified: dateHeureISO(articleData.dateModified || articleData.datePublished),
         author: { '@id': `${SITE_URL}/#mathias-nizan` },
         creator: { '@id': `${SITE_URL}/#mathias-nizan` },
         editor: { '@id': `${SITE_URL}/#mathias-nizan` },
