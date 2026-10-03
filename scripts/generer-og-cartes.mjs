@@ -281,7 +281,12 @@ try {
     // « load » attend la feuille Google Fonts : avec « domcontentloaded », la première
     // carte d'un lot partait avant elle, en police de secours (constat du 03/10/2026
     // sur accueil.jpg, toujours rendue la première).
-    await page.setContent(html, { waitUntil: 'load', timeout: 20000 });
+    try {
+      await page.setContent(html, { waitUntil: 'load', timeout: 15000 });
+    } catch {
+      // Google Fonts lent ou injoignable : le contenu est posé, on rend quand même
+      // (police de secours) plutôt que d'interrompre le build (constat du 03/10/2026).
+    }
     // Les polices viennent de Google Fonts : hors ligne, on part au bout de 5 s
     // avec la police de secours plutôt que de bloquer le build.
     await Promise.race([
