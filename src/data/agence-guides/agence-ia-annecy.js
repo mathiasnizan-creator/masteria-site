@@ -79,16 +79,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : trois assistants pour une équipe de cinq personnes qui travaille sur Odoo",
-      contexte: "L'entreprise distribue du matériel photovoltaïque depuis trois entrepôts français vers des clients répartis dans dix-sept pays. Cinq personnes la font tourner, et toute l'activité passe par Odoo ; le directeur commercial et le directeur des opérations se relaient l'un l'autre. La direction cherchait à vendre davantage à effectif égal. Certains salariés passaient déjà par leurs comptes personnels d'IA ; la direction, elle, posait une condition : ne jamais croire l'outil sur parole.",
+      h3: "Retour de mission : trois assistants à construire pour une équipe de trois personnes qui travaille sur Odoo",
+      contexte: "L'entreprise distribue du matériel photovoltaïque depuis trois entrepôts français vers des clients à l'export. Trois personnes la font tourner, et toute l'activité passe par Odoo ; le directeur commercial et le directeur des opérations se relaient l'un l'autre. La direction cherchait à vendre davantage à effectif égal. Certains salariés passaient déjà par leurs comptes personnels d'IA ; la direction, elle, posait une condition : ne jamais croire l'outil sur parole.",
       etapes: [
         "Mener trois entretiens en visio, avec la direction puis avec chacun des deux directeurs, et étudier les fichiers d'entrepôt, le suivi des marges et un courriel type adressé aux transporteurs.",
         "Décrire pas à pas quatre flux (vendre, livrer et encaisser, prospecter, piloter), puis classer douze gisements de temps sur deux axes : le gain possible et la facilité de mise en œuvre à trois mois.",
         "Confier trois chantiers à trois porteurs : faire consulter les transporteurs quinze jours avant chaque livraison, convertir les fichiers d'entrepôt en fichier d'import Odoo après contrôle des totaux, transformer chaque demande entrante en lignes de devis.",
-        "Fermer les comptes personnels au profit d'un abonnement d'équipe géré par l'entreprise, et adopter une charte d'une page, huit règles en tout, sous la responsabilité d'un référent IA.",
-        "Suivre un plan sur trois mois : relever les points de départ pendant les deux journées de formation sur site, puis mesurer cinq indicateurs trente jours plus tard.",
+        "Fermer les comptes personnels au profit d'un abonnement d'équipe géré par l'entreprise, et adopter une charte d'usage, sous la responsabilité d'un référent IA.",
+        "Suivre un plan sur trois mois : relever les points de départ pendant les deux journées de formation sur site, prévues en octobre 2026, puis mesurer les gains un mois plus tard.",
       ],
-      resultat: "La direction dispose du diagnostic et de trois décisions à prendre, résumées sur une seule page : l'outil commun, les chantiers et les règles d'usage. Pour le troisième mois, les cibles sont posées comme telles, à vérifier au bilan : un devis parti en moins de douze heures, la moitié du temps actuel pour interroger les transporteurs, des relances automatiques pour toute la clientèle, huit réceptions sur dix enregistrées sans ressaisie, et les trois utilisateurs concernés qui ouvrent les assistants chaque semaine.",
+      resultat: "La direction dispose depuis septembre 2026 d'un diagnostic et de trois décisions à prendre : l'outil commun, les chantiers et les règles d'usage. Pour le troisième mois, les cibles sont posées comme telles, à vérifier au bilan : un devis parti en moins de douze heures, la moitié du temps actuel pour interroger les transporteurs, des relances automatiques pour toute la clientèle, huit réceptions sur dix enregistrées sans ressaisie, et les trois utilisateurs concernés qui ouvrent les assistants chaque semaine.",
       lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
     },
     pieges: [

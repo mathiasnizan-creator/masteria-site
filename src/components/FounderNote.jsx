@@ -36,7 +36,7 @@ const ECHOS_ARTICLE_URL = 'https://www.lesechos.fr/travailler-mieux/travailler-a
 
 /* Mention presse. Affiche le logo officiel si /assets/lesechos-logo.svg est présent,
  * sinon bascule sur un libellé texte propre (fallback onError). */
-function PressMention() {
+export function PressMention() {
   const [logoOk, setLogoOk] = useState(true)
   return (
     <a

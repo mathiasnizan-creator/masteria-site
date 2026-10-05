@@ -122,6 +122,7 @@ export default function SEOHead({
                     // Utilisé par la Veille IA, bilingue depuis août 2026.
   htmlLang = 'fr',  // valeur de <html lang> : 'fr' par défaut, 'en' sur les pages anglaises
   mainEntityId,     // @id de l'entité principale de la page (ex. ProfilePage → '#mathias-nizan')
+  author,           // E-E-A-T : true → la WebPage porte author = Mathias Nizan (#mathias-nizan)
 }) {
   // React 19 insère les balises de la page sans retirer celles du HTML (titre et
   // description par défaut du shell, jeu complet des pages prérendues, cf.
@@ -294,6 +295,7 @@ export default function SEOHead({
     image: imagesStructurees,
     thumbnailUrl: OG_CARRE,
     mainEntity: mainEntityId ? { '@id': mainEntityId } : undefined,
+    author: author ? { '@id': `${SITE_URL}/#mathias-nizan` } : undefined,
     // Signal de fraîcheur (émis uniquement si la page fournit une date) — favorise
     // le crawl de re-fraîcheur (SEO) et la citation par les moteurs génératifs (GEO).
     datePublished: dateHeureISO(datePublished) || undefined,

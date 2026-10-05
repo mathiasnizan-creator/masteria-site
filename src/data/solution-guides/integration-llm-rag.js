@@ -124,16 +124,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : onze assistants reliés au CRM, à l'ERP et à la base articles",
-      contexte: "Chez un distributeur informatique B2B, filiale française d'un groupe européen, 58 commerciaux perdaient leur temps utile en cotations, en relances de devis, en réponses aux cahiers des charges et en analyses de stock. La direction voulait augmenter leur capacité sans recruter, avec les logiciels déjà en place, de la base articles au CRM en passant par l'ERP. Le projet excluait tout nouveau logiciel.",
+      h3: "Retour de mission : onze compétences Claude conçues pour le CRM, l'ERP et la base articles",
+      contexte: "Chez un distributeur informatique B2B, filiale française d'un groupe européen, 58 salariés perdaient leur temps commercial utile en cotations, en relances de devis, en réponses aux cahiers des charges et en analyses de stock. La direction voulait augmenter leur capacité sans recruter, avec les logiciels déjà en place, de la base articles au CRM en passant par l'ERP. Le projet excluait tout nouveau logiciel.",
       etapes: [
         "La direction choisit avec nous les tâches qui rendent le plus de temps, puis le circuit de validation et les règles de déploiement.",
-        "Dix commerciaux volontaires deviennent référents après deux jours de formation ; chacun en ressort avec une compétence Claude reliée à ses propres données.",
-        "Avant toute diffusion, la direction relit chaque assistant et arrête trois points : les données qu'il peut lire, les sources qu'il cite, les décisions qui restent au commercial.",
-        "La mise en service s'étale sur plusieurs semaines, relances de devis en tête ; les référents ajustent les assistants au fil des retours.",
-        "Les 48 autres commerciaux suivent cinq sessions de deux jours sur ces mêmes assistants, puis l'équipe de référents prend le relais.",
+        "Dix volontaires deviennent référents après deux jours de formation, en juin 2026 ; chacun en ressort avec une compétence Claude livrée avec des données de démonstration, qu'il remplace par celles de l'entreprise avant la production.",
+        "Avant toute diffusion, la direction relit chaque compétence et arrête trois points : les données qu'elle peut lire, les sources qu'elle cite, les décisions qui restent au commercial.",
+        "La relance des devis passe en tête, validée sur de vrais devis avant la formation ; les référents ajustent les compétences au fil des retours.",
+        "Le déploiement de ces mêmes compétences aux quelque cinquante autres collaborateurs est prévu d'octobre à décembre 2026 ; l'équipe de référents prendra ensuite le relais.",
       ],
-      resultat: "Les onze assistants traitent la cotation depuis le mail d'un client, les réponses aux cahiers des charges appuyées sur l'ERP, les relances, et la surveillance de la marge, du stock et des livraisons. Une partie tourne déjà en production. Le but reste une cible, écrite comme telle : que 58 personnes pèsent autant qu'une équipe de 70. Pour une DSI, la pièce la plus utile tient en une liste validée par la direction : pour chaque assistant, les données qu'il a le droit de lire.",
+      resultat: "Les onze compétences couvrent la cotation depuis le mail d'un client, les réponses aux cahiers des charges appuyées sur l'ERP, les relances, et la surveillance de la marge, du stock et des livraisons. Chacune passe en production une fois ses données de démonstration remplacées par celles de l'entreprise. Le but reste une cible, écrite comme telle : que 58 personnes pèsent autant qu'une équipe de 70. Pour une DSI, la pièce la plus utile tient en une liste validée par la direction : pour chaque compétence, les données qu'elle a le droit de lire.",
       lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
     },
     pieges: [

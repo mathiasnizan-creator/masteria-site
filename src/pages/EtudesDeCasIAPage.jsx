@@ -6,6 +6,8 @@ import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
+import MissionsFormationDetail from '../components/MissionsFormationDetail'
+import { MISSIONS } from '../data/missions-formation'
 
 /*
  * Page « Études de cas IA » — la PREUVE (E-E-A-T + conversion).
@@ -26,8 +28,8 @@ const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Études de cas IA : 4 missions en entreprise | Masteria'
-const META_DESC = "Quatre missions IA anonymisées : Copilot dans l'industrie, assistants d'appels d'offres, diagnostic d'une PME, force de vente outillée. Méthode, résultats."
+const META_TITLE = 'Études de cas IA : 10 missions en entreprise | Masteria'
+const META_DESC = "Dix missions IA anonymisées : Copilot dans l'industrie, compétences Claude pour des commerciaux, diagnostic d'une PME, formations Claude et Gemini."
 const KEYWORDS = "étude de cas ia, études de cas ia entreprise, cas client ia, exemple déploiement ia entreprise, étude de cas conseil ia, exemple audit ia, retour d'expérience ia, assistants ia entreprise, projet ia entreprise exemple, adoption ia entreprise"
 
 /* ── Design system local (aligné sur les pages money) ── */
@@ -73,11 +75,11 @@ const FAQ = [
   },
   {
     q: "Quelle est la méthode d'accompagnement de Masteria ?",
-    a: "Six temps, quel que soit le secteur : cadrer avec la direction, cartographier les flux de travail avec les personnes qui font le travail, prioriser les gisements par impact et faisabilité à trois mois, concevoir les assistants et les ateliers sur les fichiers de l'entreprise, former par métier en posant le cadre d'usage, puis mesurer à J+30 et relancer une deuxième vague. Chaque étude de cas ci-dessus détaille ces six temps tels qu'ils ont été menés.",
+    a: "Six temps, quel que soit le secteur : cadrer avec la direction, cartographier les flux de travail avec les personnes qui font le travail, prioriser les gisements par impact et faisabilité à trois mois, concevoir les assistants et les ateliers sur les fichiers de l'entreprise, former par métier en posant le cadre d'usage, puis mesurer à J+30 et relancer une deuxième vague. Chaque étude de cas ci-dessus détaille ces six temps tels qu'ils ont été menés ou prévus.",
   },
   {
     q: "Quels types d'entreprises accompagnez-vous ?",
-    a: "Des PME de quelques personnes, des ETI et des groupes internationaux. Les quatre cas présentés couvrent un distributeur IT B2B (force commerciale de 58 personnes), un groupe industriel international (comité de direction, managers pilotes, sites à l'étranger), un cabinet indépendant de conseil financier (une vingtaine de consultants sur deux sites) et un distributeur photovoltaïque de cinq personnes. Le dispositif s'adapte à la taille : équipe de référents chez le distributeur, déploiement par paliers chez l'industriel, assistants par pôle au cabinet, trois chantiers et une charte chez le distributeur photovoltaïque.",
+    a: "Des PME de quelques personnes, des ETI et des groupes internationaux. Les quatre cas présentés couvrent un distributeur IT B2B (58 salariés), un groupe industriel international (comité de direction, managers pilotes, sites à l'étranger), un cabinet indépendant de conseil financier (une vingtaine de consultants sur deux sites) et un distributeur photovoltaïque de trois personnes. Le dispositif s'adapte à la taille : équipe de référents chez le distributeur, déploiement par paliers chez l'industriel, assistants par pôle au cabinet, trois chantiers et une charte chez le distributeur photovoltaïque.",
   },
   {
     q: "Comment mesurez-vous les résultats ?",
@@ -93,7 +95,7 @@ const FAQ = [
   },
   {
     q: 'Comment garantissez-vous la confidentialité des données pendant ces missions ?',
-    a: "Chaque mission démarre par un cadre d'usage écrit : offres entreprise dont les données ne servent pas à entraîner les modèles, règles sur les données sensibles, sources citées et validation humaine sur ce qui engage l'entreprise. C'est ce cadre qui a permis à un cabinet travaillant sur des marchés publics, à un groupe industriel ou à un distributeur qui manipule des stocks de déployer l'IA sans exposer leurs informations.",
+    a: "Chaque mission démarre par un cadre d'usage écrit : offres entreprise dont les données ne servent pas à entraîner les modèles, règles sur les données sensibles, sources citées et validation humaine sur ce qui engage l'entreprise. C'est ce cadre qui permet à un cabinet travaillant sur des marchés publics, à un groupe industriel ou à un distributeur qui manipule des stocks de déployer l'IA sans exposer leurs informations.",
   },
 ]
 
@@ -131,6 +133,15 @@ const methodeJsonLd = {
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: METHODE_COMMUNE.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.title, description: s.desc })),
 }
+
+// Missions de formation récentes (ItemList), si la liste n'est pas vide
+const missionsJsonLd = MISSIONS.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': 'https://www.master-ia.fr/etudes-de-cas-ia#missions-formation',
+  name: 'Missions de formation récentes de Masteria',
+  itemListElement: MISSIONS.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.titre, description: `${m.qui} · ${m.format} · ${m.date}`, url: `https://www.master-ia.fr/etudes-de-cas-ia#mission-${m.id}` })),
+} : null
 
 function FAQItem({ q, a }) {
   const [open, setOpen] = useState(false)
@@ -220,7 +231,7 @@ function CaseSection({ k, index, isDesktop }) {
         {/* déployé + résultat */}
         <div style={{ ...(isDesktop ? { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 4vw, 48px)' } : {}), marginTop: 40 }}>
           <div>
-            <h3 style={{ ...h3, marginBottom: 12 }}>Ce qui a été déployé</h3>
+            <h3 style={{ ...h3, marginBottom: 12 }}>Ce qui a été livré</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 9 }}>
               {k.livrables.map(l => (
                 <li key={l} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: body, lineHeight: 1.6 }}>
@@ -341,8 +352,8 @@ export default function EtudesDeCasIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-07-30"
-        dateModified="2026-09-03"
-        extraJsonLd={[articleJsonLd, casesJsonLd, methodeJsonLd]}
+        dateModified="2026-10-05"
+        extraJsonLd={[articleJsonLd, casesJsonLd, methodeJsonLd, missionsJsonLd].filter(Boolean)}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -370,16 +381,16 @@ export default function EtudesDeCasIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.7vw, 48px)', fontWeight: 900, lineHeight: 1.06, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 860 }}>
             Études de cas IA en entreprise
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>quatre missions, une méthode en six temps, des résultats pour les équipes et l'organisation</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>quatre accompagnements en six temps, six formations récentes, des résultats pour les équipes et l'organisation</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en juillet 2026, mis à jour en septembre 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en juillet 2026, mis à jour en octobre 2026
           </p>
 
           {/* GEO : réponse directe citable */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le comité de direction et les managers d'un groupe industriel international, les consultants d'un cabinet de conseil financier qui répondent à des appels d'offres, un distributeur photovoltaïque de cinq personnes, la force de vente d'un distributeur IT : <strong style={{ color: '#fff', fontWeight: 700 }}>quatre organisations accompagnées de bout en bout par Masteria</strong>, avec la même méthode. Cadrer, cartographier, prioriser, concevoir sur leurs fichiers, former par métier, mesurer.
+            Le comité de direction et les managers d'un groupe industriel international, les consultants d'un cabinet de conseil financier qui répondent à des appels d'offres, un distributeur photovoltaïque de trois personnes, la force de vente d'un distributeur IT : <strong style={{ color: '#fff', fontWeight: 700 }}>quatre organisations accompagnées de bout en bout par Masteria</strong>, avec la même méthode. Cadrer, cartographier, prioriser, concevoir sur leurs fichiers, former par métier, mesurer.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 700 }}>
@@ -401,10 +412,10 @@ export default function EtudesDeCasIAPage() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
-                ['Industrie · groupe international', "Cadrage, 24 managers pilotes formés sur 13 ateliers construits avec les fichiers du groupe, matinée stratégique du comité de direction, puis sessions en anglais aux États-Unis, en Inde et au Mexique."],
+                ['Industrie · groupe international', "Cadrage, 24 managers pilotes formés sur 13 ateliers construits avec les fichiers du groupe, matinée stratégique du comité de direction, trois sessions en septembre 2026 dont deux en anglais, puis les sites des États-Unis et du Mexique prévus en octobre 2026 et de l'Inde en décembre."],
                 ['Conseil financier · secteur public', "Quatre assistants d'appels d'offres par pôle d'expertise, co-construits en quatre ateliers avec les consultants, une journée de formation sur des marchés récents."],
-                ['Distribution photovoltaïque · PME', "Diagnostic par flux, douze gisements chiffrés, trois chantiers avec porteur, charte en huit règles, feuille de route de 90 jours avec cinq indicateurs."],
-                ['Distribution IT B2B', "58 commerciaux formés en six sessions, 10 référents, 11 assistants Claude métier, les premiers en production."],
+                ['Distribution photovoltaïque · PME', "Diagnostic par flux de travail, trois chantiers avec un porteur chacun, une charte d'usage et une feuille de route de 90 jours, avant une formation sur site en octobre 2026."],
+                ['Distribution IT B2B', "Dix référents formés en juin 2026, onze compétences Claude construites avec eux, puis un déploiement à toute l'entreprise prévu d'octobre à décembre 2026."],
                 ['Pourquoi anonymisées ?', "À la demande des clients, qui ne communiquent pas sur leur avance IA. Références vérifiables en privé, sous NDA."],
               ].map(([k, v], i) => (
                 <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -427,6 +438,7 @@ export default function EtudesDeCasIAPage() {
             ['#industrie', 'Cas 02 · Industrie'],
             ['#conseil-financier', 'Cas 03 · Conseil financier'],
             ['#photovoltaique', 'Cas 04 · Photovoltaïque'],
+            ...(MISSIONS.length ? [['#missions-formation', 'Missions de formation']] : []),
             ['#cadre', 'Notre cadre'],
             ['#faq', 'FAQ'],
           ].map(([href, label]) => (
@@ -441,7 +453,7 @@ export default function EtudesDeCasIAPage() {
           <div style={kickerStyle}>La méthode</div>
           <h2 style={h2Style}>Six temps, quelle que soit la mission</h2>
           <p style={leadStyle}>
-            Une PME de cinq personnes et un groupe de plusieurs milliers de salariés ne reçoivent pas le même dispositif. Ils reçoivent la même méthode : on cadre avec la direction, on cartographie les flux avec ceux qui font le travail, on priorise à trois mois, on construit sur les fichiers de l'entreprise, on forme par métier en posant le cadre, on mesure. Chaque étude de cas ci-dessous déroule ces six temps tels qu'ils ont été menés.
+            Une PME de trois personnes et un groupe de plusieurs milliers de salariés ne reçoivent pas le même dispositif. Ils reçoivent la même méthode : on cadre avec la direction, on cartographie les flux avec ceux qui font le travail, on priorise à trois mois, on construit sur les fichiers de l'entreprise, on forme par métier en posant le cadre, on mesure. Chaque étude de cas ci-dessous déroule ces six temps tels qu'ils ont été menés ou prévus.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18, marginTop: 28 }}>
             {METHODE_COMMUNE.map(s => (
@@ -460,20 +472,23 @@ export default function EtudesDeCasIAPage() {
       {/* ── LES 4 CAS ── */}
       {CASES.map((k, i) => <CaseSection key={k.id} k={k} index={i} isDesktop={isDesktop} />)}
 
+      {/* ── MISSIONS DE FORMATION RÉCENTES ── */}
+      <MissionsFormationDetail pad={SECTION_PAD} />
+
       {/* ── NOTRE CADRE (discrétion + intégrité) ── */}
       <section id="cadre" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>Notre cadre</div>
           <h2 style={h2Style}>Ce que ces quatre missions ont en commun</h2>
           <p style={leadStyle}>
-            Quatre secteurs, quatre tailles d'organisation, un même fil conducteur : sur chaque mission, Masteria articule le conseil (cadrer avec la direction, prioriser, poser le cadre), la construction (des assistants branchés sur les données de l'entreprise) et la formation (des équipes capables de faire vivre le dispositif), puis mesure le résultat et le dit tel qu'il est.
+            Quatre secteurs, quatre tailles d'organisation, un même fil conducteur : sur chaque mission, Masteria articule le conseil (cadrer avec la direction, prioriser, poser le cadre), la construction (des assistants conçus pour les données de l'entreprise) et la formation (des équipes capables de faire vivre le dispositif), puis mesure le résultat et le dit tel qu'il est.
           </p>
           <p style={mutedStyle}>
             Et une règle que nous assumons : la discrétion. Nos clients gardent leur avance pour eux, nous gardons leurs noms pour nous.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
             {[
-              { icon: BadgeCheck, t: "Sur les dossiers de l'entreprise", d: "Chaque atelier et chaque assistant est construit sur les fichiers, données et documents de l'entreprise, jamais sur des exemples génériques." },
+              { icon: BadgeCheck, t: "Sur les dossiers de l'entreprise", d: "Chaque atelier et chaque assistant est conçu pour les fichiers, données et documents de l'entreprise, jamais pour des exemples génériques." },
               { icon: ShieldCheck, t: 'Un cadre de confidentialité écrit', d: "Offres entreprise sans entraînement sur vos données, règles d'usage, sources citées, validation humaine sur ce qui engage : le cadre est posé avant le premier prompt." },
               { icon: Lock, t: 'Anonymat public, vérification privée', d: "Les cas sont anonymisés à la demande des clients. En discussion avancée, nous organisons une mise en relation sous accord de confidentialité." },
             ].map(({ icon: Icon, t, d }) => (

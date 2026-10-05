@@ -969,7 +969,7 @@ export default function GouvernanceIAPage() {
       <CaseStudyCards
         ids={['industrie', 'photovoltaique']}
         title="Deux gouvernances installées, du comité de direction à la PME"
-        intro="Un Data manager qui porte la politique d'usage d'un groupe international, un référent IA et une charte en huit règles dans une PME de cinq personnes : la méthode en six temps et ce qu'elle a changé pour les équipes et l'organisation."
+        intro="Un Data manager qui porte la politique d'usage d'un groupe international, un référent IA et une charte d'usage dans une PME de trois personnes : la méthode en six temps et ce qu'elle a changé pour les équipes et l'organisation."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

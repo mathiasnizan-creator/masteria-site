@@ -80,16 +80,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : onze assistants validés par la direction avant d'équiper 58 commerciaux",
-      contexte: "Le client est un distributeur informatique B2B (qui vend à d'autres entreprises), filiale française d'un groupe européen. Ses 58 commerciaux perdaient du temps sur des tâches qui se répètent : chiffrer une demande, relancer un devis, rédiger la réponse à un cahier des charges, prospecter, surveiller les stocks. La direction voulait que l'équipe abatte davantage de travail à effectif constant, avec ses logiciels habituels : l'ERP (le logiciel de gestion de l'entreprise), le catalogue d'articles et le CRM (où vit l'historique de chaque client).",
+      h3: "Retour de mission : onze compétences Claude validées par la direction avant d'équiper 58 salariés",
+      contexte: "Le client est un distributeur informatique B2B (qui vend à d'autres entreprises), filiale française d'un groupe européen. Ses 58 salariés perdaient du temps commercial sur des tâches qui se répètent : chiffrer une demande, relancer un devis, rédiger la réponse à un cahier des charges, prospecter, surveiller les stocks. La direction voulait que l'équipe abatte davantage de travail à effectif constant, avec ses logiciels habituels : l'ERP (le logiciel de gestion de l'entreprise), le catalogue d'articles et le CRM (où vit l'historique de chaque client).",
       etapes: [
         "Sélectionner avec la direction les tâches qui rapportent le plus, et décider qui valide quoi avant toute diffusion.",
-        "Former pendant deux jours dix commerciaux volontaires, qui construisent chacun une compétence Claude, c'est-à-dire un ensemble d'instructions et de fichiers que l'assistant mobilise pour une tâche, à partir de leurs propres données.",
-        "Soumettre chaque assistant à la direction, qui contrôle les données autorisées, la citation des sources et ce qui reste du ressort du commercial.",
-        "Ouvrir les mêmes onze assistants au reste de la force de vente, soit 48 personnes, lors de cinq sessions de deux jours coanimées par les dix référents.",
-        "Mettre les assistants en service semaine après semaine, la relance des devis d'abord, puis laisser aux référents leurs mises à jour et l'accueil des nouvelles recrues.",
+        "Former pendant deux jours, en juin 2026, dix référents volontaires, qui construisent chacun une compétence Claude, c'est-à-dire un ensemble d'instructions et de fichiers que l'assistant mobilise pour une tâche, sur leur propre flux de travail.",
+        "Soumettre chaque compétence à la direction, qui contrôle les données autorisées, la citation des sources et ce qui reste du ressort du commercial.",
+        "Planifier d'octobre à décembre 2026 le déploiement des mêmes onze compétences aux quelque cinquante autres collaborateurs, avec les dix référents.",
+        "Passer en production une fois les données de démonstration remplacées par celles de l'entreprise, la relance des devis ayant déjà été validée sur de vrais devis avant la formation, puis laisser aux référents les mises à jour et l'accueil des nouvelles recrues.",
       ],
-      resultat: "Les 58 commerciaux ont suivi la formation, et la relance des devis tourne déjà avec son assistant, le premier des onze à entrer en service. Dans chaque équipe, un référent fait évoluer les outils. La direction se fixe une cible : obtenir de 58 personnes le volume de travail d'une équipe de 70, à effectif constant. Les indicateurs commerciaux de l'entreprise diront si elle est atteinte.",
+      resultat: "Les dix référents sont formés depuis juin 2026 ; chacun porte sa compétence et la fait évoluer, et la relance des devis a été validée sur de vrais devis avant la formation. Le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. La direction se fixe une cible : obtenir de 58 personnes le volume de travail d'une équipe de 70, à effectif constant. Les indicateurs commerciaux de l'entreprise diront si elle est atteinte.",
       lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
     },
     pieges: [

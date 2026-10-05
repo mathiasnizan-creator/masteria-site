@@ -14,7 +14,7 @@ import { geoGuidePromise } from '../data/terrain-guides'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
-import { GEO_DESTINATIONS, GEO_CITIES, GEO_TOOLS, geoSlug, geoIaSlug } from '../data/geo-data'
+import { GEO_DESTINATIONS, GEO_CITIES, GEO_TOOLS, geoSlug, geoIaSlug, geoPageExists } from '../data/geo-data'
 import { METIERS } from '../data/catalog-meta'
 
 // ToolLogo attend 'chatgpt' ou 'claude' — notre slug est 'claude-ia' (URL friendly)
@@ -151,7 +151,7 @@ export default function GeoIAGenericPage() {
     itemListElement: GEO_TOOLS.map((t, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      url: `https://www.master-ia.fr/${geoSlug(t.slug, city.slug)}`,
+      url: `https://www.master-ia.fr/${geoPageExists(t.slug, city.slug) ? geoSlug(t.slug, city.slug) : t.hubSlug}`,
       name: `Formation ${t.shortName} ${city.nameLoc}`,
     })),
   } : null
@@ -366,7 +366,7 @@ export default function GeoIAGenericPage() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
-              isFrance ? { icon: Wallet, label: '100 % OPCO' } : { icon: Globe, label: 'Intra ou distanciel' },
+              isFrance ? { icon: Wallet, label: 'Finançable OPCO' } : { icon: Globe, label: 'Intra ou distanciel' },
               { icon: Briefcase,  label: '5 outils, 24 métiers' },
               { icon: Clock,      label: 'Devis sous 24 h' },
             ].map(({ icon: Icon, label }) => (
@@ -547,7 +547,7 @@ export default function GeoIAGenericPage() {
           <FadeIn delay={80}>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
               {GEO_TOOLS.map(tool => {
-                const targetSlug = isCountry ? tool.hubSlug : geoSlug(tool.slug, city.slug)
+                const targetSlug = isCountry || !geoPageExists(tool.slug, city.slug) ? tool.hubSlug : geoSlug(tool.slug, city.slug)
                 return (
                   <Link key={tool.slug} to={`/${targetSlug}`} style={{
                     display: 'block', textDecoration: 'none',
@@ -957,7 +957,7 @@ export default function GeoIAGenericPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources france={isFrance} />
     </>
   )
 }

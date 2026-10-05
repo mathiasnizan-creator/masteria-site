@@ -36,7 +36,7 @@ const FIXED_URLS = [
   'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco',
 ]
 
-export default function OfficialSources({ tool, extra }) {
+export default function OfficialSources({ tool, extra, france = true, lean = false }) {
   const vendor = vendorFor(tool)
   const extras = (extra || []).filter(x => x && x.url && !FIXED_URLS.includes(x.url))
   return (
@@ -45,22 +45,26 @@ export default function OfficialSources({ tool, extra }) {
         <h2 id="sources-officielles" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
           Sources et références officielles
         </h2>
-        <p style={{ ...noteStyle, fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
-          Pour vérifier nos engagements (certification qualité, financement) et approfondir l'outil concerné&nbsp;:
-        </p>
+        {!lean && (
+          <p style={{ ...noteStyle, fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Pour vérifier nos engagements (certification qualité, financement) et approfondir l'outil concerné&nbsp;:
+          </p>
+        )}
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
           <li>
             <a href="https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation" target="_blank" rel="noopener noreferrer" style={linkStyle}>Qualiopi, Ministère du Travail</a>
-            <span style={noteStyle}> : la certification qualité qui rend nos formations finançables.</span>
+            {!lean && <span style={noteStyle}>{france ? ' : la certification qualité qui rend nos formations finançables.' : ' : la certification qualité de Masteria, délivrée en France.'}</span>}
           </li>
-          <li>
-            <a href="https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco" target="_blank" rel="noopener noreferrer" style={linkStyle}>Les OPCO, Ministère du Travail</a>
-            <span style={noteStyle}> : le fonctionnement du financement de la formation par votre opérateur de compétences.</span>
-          </li>
+          {france && (
+            <li>
+              <a href="https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco" target="_blank" rel="noopener noreferrer" style={linkStyle}>Les OPCO, Ministère du Travail</a>
+              {!lean && <span style={noteStyle}> : le fonctionnement du financement de la formation par votre opérateur de compétences.</span>}
+            </li>
+          )}
           {vendor && (
             <li>
               <a href={vendor.url} target="_blank" rel="noopener noreferrer" style={linkStyle}>{vendor.label}</a>
-              <span style={noteStyle}> : la documentation de l'éditeur sur l'outil que nous formons.</span>
+              {!lean && <span style={noteStyle}> : la documentation de l'éditeur sur l'outil que nous formons.</span>}
             </li>
           )}
           {extras.map(x => (

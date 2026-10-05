@@ -93,12 +93,12 @@ export default {
       contexte: "Le groupe est un industriel international du packaging, avec des sites en Europe, aux États-Unis et en Inde. Le choix de Microsoft 365 Copilot vient de l'informatique du groupe, qui abandonne son assistant conversationnel interne au moment où l'ERP migre vers S/4HANA, la dernière génération de SAP. Le premier palier vise 24 managers pilotes, qui doivent rentrer au bureau avec des usages tirés de leur propre poste.",
       etapes: [
         "Avant tout atelier, le périmètre de Copilot est fixé avec le Data manager et les référents métiers, à distance puis lors d'une journée sur site : OneDrive et SharePoint entrent, les serveurs partagés restent dehors.",
-        "Les exercices partent des fichiers du groupe : treize ateliers, dont quatre sur des classeurs Excel qui montent jusqu'à 56 000 lignes (prix, activité sur cinq ans, allocation des coûts, base RH).",
+        "Les exercices partent des fichiers du groupe : treize ateliers, dont plusieurs sur de gros classeurs Excel (prix, activité, coûts, base RH).",
         "Un atelier traite le référencement fournisseur : à partir d'un mail réel, l'assistant isole le Kbis, le RIB et les contacts qui serviront à créer la fiche dans SAP.",
         "Entre les deux sessions, les fiches de satisfaction de la première servent à corriger l'organisation de la seconde, dans un bilan rendu sous cinq jours.",
         "Le comité de direction consacre ensuite une matinée, en anglais, aux décisions qui lui reviennent : les données à exclure, l'audit des accès, le premier cas d'agent, le financement de l'adoption.",
       ],
-      resultat: "À chaud, la session pilote obtient 11 recommandations sur 11 et une note de 4,9 sur 5 pour l'utilité au poste. Quatre participants demandent déjà le niveau suivant, avec les données SAP et la Power Platform. Le Data manager tient la politique d'usage et la bibliothèque de prompts, et le dispositif sert de socle aux sessions en anglais aux États-Unis, en Inde et au Mexique. Pour un autre industriel, l'enseignement est pratique : fixer le périmètre des droits d'accès avant le premier atelier.",
+      resultat: "Deux mois après, des managers décrivent ce qu'ils en font : l'analyse de fichiers, une présentation pour un directeur d'usine, l'analyse d'un appel d'offres. Quatre participants de la session pilote demandent déjà le niveau suivant, avec les données SAP et la Power Platform. Le Data manager tient la politique d'usage et la bibliothèque de prompts, et le dispositif, repris en septembre 2026 dans trois sessions dont deux en anglais, sert de socle aux sites des États-Unis et du Mexique, prévus en octobre 2026, puis de l'Inde, en décembre 2026. Pour un autre industriel, l'enseignement est pratique : fixer le périmètre des droits d'accès avant le premier atelier.",
       lien: { href: "/etudes-de-cas-ia#industrie", label: "Lire l'étude de cas complète" },
     },
     pieges: [
@@ -152,7 +152,7 @@ export default {
     },
     {
       q: "Intervenez-vous sur plusieurs sites, en France et à l'étranger ?",
-      a: "Oui. Depuis nos bureaux de Lyon, nous venons dans l'usine pour le cadrage, l'observation des flux et la passation ; le reste du projet se mène à distance. Le retour de mission présenté plus haut montre un dispositif validé en France, puis repris en anglais sur des sites aux États-Unis, en Inde et au Mexique.",
+      a: "Oui. Depuis nos bureaux de Lyon, nous venons dans l'usine pour le cadrage, l'observation des flux et la passation ; le reste du projet se mène à distance. Le retour de mission présenté plus haut montre un dispositif validé en France, repris en anglais en septembre 2026, puis prévu sur les sites des États-Unis et du Mexique en octobre 2026 et de l'Inde en décembre 2026.",
     },
     {
       q: "Qui garde la main sur l'outil après la mission ?",

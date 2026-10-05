@@ -1048,7 +1048,7 @@ export default function BlogArticlePage() {
             }}>
               Ressources liées
             </h2>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
+            <nav aria-label="Ressources liées"><ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
               {article.internalLinks.map((l, i) => (
                 <li key={i}>
                   <Link
@@ -1070,7 +1070,7 @@ export default function BlogArticlePage() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul></nav>
           </div>
         </section>
       )}
@@ -1159,7 +1159,7 @@ export default function BlogArticlePage() {
               {[
                 { label: 'Qualiopi', color: '#2563EB', bg: '#EFF6FF', border: '#BFDBFE' },
                 { label: '+1500 formés', color: '#F97316', bg: '#FFF7ED', border: '#FED7AA' },
-                { label: '4,9/5', star: true, color: '#16A34A', bg: '#F0FDF4', border: '#BBF7D0' },
+                { label: 'Cité dans Les Échos', color: '#16A34A', bg: '#F0FDF4', border: '#BBF7D0' },
               ].map(b => (
                 <span key={b.label} style={{
                   fontSize: 11, fontWeight: 700,
@@ -1199,7 +1199,7 @@ export default function BlogArticlePage() {
 
       {/* ── Related articles ── */}
       {related.length > 0 && (
-        <section style={{ padding: 'clamp(40px, 5vw, 72px) clamp(20px, 4vw, 32px)', background: '#fff', borderTop: '1px solid #F1F5F9' }}>
+        <nav aria-label="À lire aussi" style={{ padding: 'clamp(40px, 5vw, 72px) clamp(20px, 4vw, 32px)', background: '#fff', borderTop: '1px solid #F1F5F9' }}>
           <div style={{ maxWidth: 1080, margin: '0 auto' }}>
             <div style={{
               fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
@@ -1224,7 +1224,7 @@ export default function BlogArticlePage() {
               {related.map((a) => {
                 const c = getTagColor(a.tag)
                 return (
-                  <Link key={a.slug} to={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
+                  <Link key={a.slug} to={a.externalPath || `/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                     <div
                       style={{
                         background: '#fff',
@@ -1279,7 +1279,7 @@ export default function BlogArticlePage() {
               })}
             </div>
           </div>
-        </section>
+        </nav>
       )}
     </article>
   )

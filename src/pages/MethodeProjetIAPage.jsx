@@ -728,7 +728,7 @@ export default function MethodeProjetIAPage() {
       <CaseStudyCards
         ids={['photovoltaique', 'industrie', 'distribution']}
         title="La méthode en six temps, telle qu'elle a été menée"
-        intro="Trois missions où chaque étape est décrite comme elle s'est passée : cadrage, cartographie, priorisation, conception, formation, mesure. Avec ce que ça a changé pour les équipes et pour l'organisation."
+        intro="Trois missions où chaque étape est décrite comme elle s'est passée ou comme elle est prévue : cadrage, cartographie, priorisation, conception, formation, mesure. Avec ce que ça change pour les équipes et pour l'organisation."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

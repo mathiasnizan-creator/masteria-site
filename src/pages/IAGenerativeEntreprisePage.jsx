@@ -780,7 +780,7 @@ export default function IAGenerativeEntreprisePage() {
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
       <CaseStudyCards
         ids={['industrie', 'conseil-financier', 'photovoltaique']}
-        title="Trois déploiements d'IA générative, méthode et résultats"
+        title="Trois missions d'IA générative, méthode et résultats"
         intro="Comité de direction et managers d'un groupe industriel, consultants d'un cabinet de conseil financier, PME de la distribution photovoltaïque : la même méthode en six temps, avec ce que chaque mission a changé."
       />
 

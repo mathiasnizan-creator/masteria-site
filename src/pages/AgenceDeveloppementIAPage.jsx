@@ -718,8 +718,8 @@ export default function AgenceDeveloppementIAPage() {
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
       <CaseStudyCards
         ids={['distribution', 'photovoltaique', 'conseil-financier']}
-        title="Ce que nous avons construit, sur trois cas documentés"
-        intro="Des assistants branchés sur un ERP et un CRM, sur des fichiers d'entrepôt et Odoo, sur les mémoires et références d'un cabinet : la méthode en six temps et ses résultats."
+        title="Ce que nous construisons, sur trois cas documentés"
+        intro="Des compétences Claude conçues pour un ERP et un CRM, des assistants à construire sur des fichiers d'entrepôt et Odoo, d'autres nourris des mémoires et références d'un cabinet : la méthode en six temps et ses résultats."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

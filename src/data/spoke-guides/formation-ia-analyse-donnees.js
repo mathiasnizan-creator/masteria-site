@@ -25,7 +25,7 @@ export default {
         paras: [
           "OpenAI décrit le fichier que ChatGPT lit le mieux : des en-têtes explicites sur la première ligne, une ligne par enregistrement, des noms de colonnes en langage courant. Le fichier ne doit mêler ni plusieurs tableaux sans rapport sur une même feuille, ni des lignes ou colonnes vides qui coupent les données, ni des valeurs enfermées dans une image. Microsoft donne le même conseil pour Copilot : nommer dans la demande les colonnes à analyser rend la réponse plus juste.",
           "Les exports d'ERP (le progiciel qui gère commandes, stocks et factures) et de CRM (le fichier clients) cachent des défauts qui reviennent d'un mois à l'autre : lignes de sous-total au milieu des données, dates enregistrées comme du texte, montants suivis du symbole de la devise, codes produits privés de leurs zéros initiaux. Le premier exercice de la formation consiste à repérer ces défauts dans vos propres exports et à les faire corriger par l'IA sur un onglet séparé, l'original restant intact.",
-          "Les exercices partent des fichiers de l'entreprise. Pour un groupe international de l'emballage, Masteria a préparé treize ateliers à l'intention de ses managers pilotes ; quatre d'entre eux portaient sur des classeurs Excel du groupe, jusqu'à 56 000 lignes : l'analyse des prix, cinq années d'activité, l'allocation des coûts et une base RH.",
+          "Les exercices partent des fichiers de l'entreprise. Pour un groupe international de l'emballage, Masteria a préparé des ateliers à l'intention de ses managers pilotes, dont plusieurs sur de gros classeurs Excel du groupe : prix, activité, coûts et base RH.",
         ],
       },
       {
@@ -33,7 +33,7 @@ export default {
         paras: [
           "La FAQ de Microsoft le dit sans détour : Copilot dans Excel peut se tromper ou mal interpréter une information, et l'éditeur déconseille de s'y fier pour des décisions sensibles en finance, en droit ou en santé. La formation installe un contrôle en quatre gestes : recompter les lignes traitées, recalculer un total avec SOMME ou un tableau croisé fait à la main, contrôler les filtres actifs, puis demander à l'outil la méthode appliquée.",
           "Chaque outil laisse une trace à contrôler. ChatGPT montre le code exécuté. Quand Copilot classe des commentaires par thème, un numéro en exposant renvoie aux données qu'il a lues. Claude pour Excel cite les cellules d'où vient sa réponse. Dans un classeur partagé, Copilot résume aussi l'historique des modifications, qu'Excel conserve jusqu'à 365 jours, ce qui permet de savoir qui a changé une valeur, et quand.",
-          "Une mission de conseil menée par Masteria pour un distributeur de solutions photovoltaïques applique la même règle à un flux quotidien. L'assistant conçu pour transformer les fichiers envoyés par les entrepôts en fichier prêt à importer dans Odoo, l'ERP de l'entreprise, contrôle les totaux au passage, et une personne valide avant l'import. L'IA prépare, un humain vérifie et signe : la règle vaut pour toute analyse destinée à un décideur.",
+          "Une mission de conseil menée par Masteria pour un distributeur de solutions photovoltaïques applique la même règle à un flux quotidien. L'assistant prévu pour transformer les fichiers envoyés par les entrepôts en fichier prêt à importer dans Odoo, l'ERP de l'entreprise, contrôlera les totaux au passage, et une personne validera avant l'import. L'IA prépare, un humain vérifie et signe : la règle vaut pour toute analyse destinée à un décideur.",
         ],
       },
       {

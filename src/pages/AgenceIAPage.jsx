@@ -640,8 +640,8 @@ export default function AgenceIAPage() {
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
       <CaseStudyCards
         ids={['distribution', 'photovoltaique', 'conseil-financier']}
-        title="Trois missions de l'agence, des assistants en production"
-        intro="Onze assistants pour une force de vente, trois chantiers outillés pour une PME, quatre assistants d'appels d'offres pour un cabinet : conçus sur les fichiers de l'entreprise, pris en main en formation, mesurés."
+        title="Trois missions de l'agence, des assistants conçus avec les équipes"
+        intro="Onze compétences Claude pour une équipe commerciale, trois chantiers à outiller pour une PME, quatre assistants d'appels d'offres pour un cabinet : chaque outil est conçu pour les fichiers de l'entreprise et se prend en main en formation."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

@@ -702,7 +702,7 @@ export default function PrixProjetIAPage() {
       <CaseStudyCards
         ids={['photovoltaique', 'distribution', 'conseil-financier']}
         title="Ce que recouvre une mission, sur trois cas documentés"
-        intro="Un diagnostic et trois chantiers pour une PME, onze assistants pour une force de vente de 58 personnes, quatre assistants d'appels d'offres pour un cabinet : la méthode en six temps et ses résultats, pour situer votre projet."
+        intro="Un diagnostic et trois chantiers pour une PME, onze compétences Claude pour une entreprise de 58 salariés, quatre assistants d'appels d'offres pour un cabinet : la méthode en six temps et ses résultats, pour situer votre projet."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

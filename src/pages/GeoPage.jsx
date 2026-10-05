@@ -7,12 +7,14 @@ import {
 import { useState, use } from 'react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import AvisGoogle from '../components/AvisGoogle'
+import MissionsRecentes from '../components/MissionsRecentes'
 import TerrainGuide from '../components/TerrainGuide'
 import { geoGuidePromise } from '../data/terrain-guides'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
 import { useIsMobile } from '../hooks/useMediaQuery'
-import { GEO_CITIES, GEO_TOOLS, geoSlug, geoIaSlug } from '../data/geo-data'
+import { GEO_CITIES, GEO_TOOLS, geoSlug, geoIaSlug, geoPageExists } from '../data/geo-data'
 
 // ToolLogo attend 'chatgpt' ou 'claude' — notre slug est 'claude-ia' (URL friendly)
 const toolLogoSlug = (slug) => slug === 'claude-ia' ? 'claude' : slug
@@ -44,6 +46,8 @@ export default function GeoPage() {
   // Guide terrain propre à la page outil × ville (src/data/geo-guides/<slug>.js)
   const guidePromise = geoGuidePromise(slug)
   const guide = guidePromise ? use(guidePromise) : null
+  // Page propre : le guide fournit tout le texte, le gabarit masque ses blocs partagés avec les autres pages de la ville
+  const propre = Boolean(guide?.pagePropre)
 
   const tool = GEO_TOOLS.find(t => slug.startsWith(`formation-${t.slug}-`))
   const city = tool ? GEO_CITIES.find(c => slug === geoSlug(tool.slug, c.slug)) : null
@@ -70,8 +74,10 @@ export default function GeoPage() {
   const metaDesc = guide?.metaDesc ?? (isIntraOnly
     ? `Formation ${tool.name} ${city.nameLoc} : intra-entreprise dans vos locaux, programme sur mesure. Certifié Qualiopi${isFrance ? ', finançable OPCO' : ''}. Devis sous 24 h.`
     : `Formation ${tool.name} ${city.nameLoc} : intra-entreprise ou accompagnement individuel sur mesure. Certifié Qualiopi${isFrance ? ', finançable OPCO' : ''}. Devis sous 24 h.`)
-  const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug).slice(0, 5)
-  const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug)
+  // Toutes les villes qui ont une page pour cet outil (avant : les 5 premières
+  // de la liste, ce qui laissait Rennes sans lien entrant).
+  const otherCities = GEO_CITIES.filter(c => c.slug !== city.slug && geoPageExists(tool.slug, c.slug))
+  const otherTool = GEO_TOOLS.find(t => t.slug !== tool.slug && geoPageExists(t.slug, city.slug))
 
   // Hiérarchie locale : la page outil×ville est rattachée à la page ville
   // (formation-ia-{ville}), page canonique de l'intention « formation ia {ville} ».
@@ -225,7 +231,7 @@ export default function GeoPage() {
     },
     citation: [
       { '@type': 'CreativeWork', name: 'Qualiopi — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-      { '@type': 'CreativeWork', name: 'Les OPCO — Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+      ...(isFrance ? [{ '@type': 'CreativeWork', name: 'Les OPCO, Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' }] : []),
       ...(guide?.sources || []).map(s => ({ '@type': 'CreativeWork', name: s.name, url: s.url })),
     ],
   }
@@ -285,10 +291,10 @@ export default function GeoPage() {
 
           {/* GEO first-paragraph (sans pricing) */}
           <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
-            {isIntraOnly
-              ? `Masteria forme vos équipes à ${tool.name} directement dans vos locaux ${city.nameLoc}. Programme construit sur vos cas d'usage réels, jusqu'à 12 participants, ${isFrance ? `certifié Qualiopi et finançable jusqu'à 100 % par votre OPCO en ${city.region}` : 'facturé hors taxes sur devis détaillé'}. Devis personnalisé sous 24 h.`
-              : `La formation ${tool.name} ${city.nameLoc} se décline en intra-entreprise dans vos locaux (jusqu'à 12 participants) ou en accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Certifié Qualiopi${isFrance ? ", finançable jusqu'à 100 % par votre OPCO" : ''}. Devis personnalisé sous 24 h.`
-            }
+            {propre && guide.resume ? guide.resume : (<>{isIntraOnly
+              ? `Masteria forme vos équipes à ${tool.name} directement dans vos locaux ${city.nameLoc}. Programme construit sur vos cas d'usage réels, jusqu'à 12 participants, ${isFrance ? `certifié Qualiopi et finançable par votre OPCO selon votre branche en ${city.region}` : 'facturé hors taxes sur devis détaillé'}. Devis personnalisé sous 24 h.`
+              : `La formation ${tool.name} ${city.nameLoc} se décline en intra-entreprise dans vos locaux (jusqu'à 12 participants) ou en accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Certifié Qualiopi${isFrance ? ", finançable par votre OPCO selon votre branche" : ''}. Devis personnalisé sous 24 h.`
+            }</>)}
           </p>
 
           <h1 style={{
@@ -313,10 +319,10 @@ export default function GeoPage() {
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
             {[
               guide?.guide ? ['Guide terrain', '#guide'] : null,
-              city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
-              ['Programme', '#programme'],
-              ['Formats', '#formats'],
-              ['Financement', '#financement'],
+              !propre && city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
+              !propre || guide.programme ? ['Programme', '#programme'] : null,
+              !propre || guide.formats ? ['Formats', '#formats'] : null,
+              !propre || guide.financement ? ['Financement', '#financement'] : null,
               ['FAQ', '#geo-faq'],
             ].filter(Boolean).map(([label, href]) => (
               <a key={href} href={href} style={{
@@ -328,14 +334,17 @@ export default function GeoPage() {
             ))}
           </nav>
 
-          <p style={{ fontSize: isMobile ? 15 : 17, color: '#4B5563', lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
-            {city.desc}
-          </p>
+          {!propre && (
+            <p style={{ fontSize: isMobile ? 15 : 17, color: '#4B5563', lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
+              {city.desc}
+            </p>
+          )}
 
+          {!propre && (
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
-              isFrance ? { icon: Wallet, label: '100 % OPCO' } : { icon: Globe, label: 'Intra ou distanciel' },
+              isFrance ? { icon: Wallet, label: 'Finançable OPCO' } : { icon: Globe, label: 'Intra ou distanciel' },
               { icon: Users,      label: isIntraOnly ? 'Intra-entreprise' : 'Intra & individuel' },
               { icon: Clock,      label: 'Devis sous 24 h' },
             ].map(({ icon: Icon, label }) => (
@@ -348,6 +357,7 @@ export default function GeoPage() {
               </span>
             ))}
           </div>
+          )}
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Link to="/contact" style={{
@@ -373,6 +383,7 @@ export default function GeoPage() {
       </section>
 
       {/* ── POURQUOI SE FORMER ── */}
+{!propre && (<>
       <section id="secteurs" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 980, margin: '0 auto' }}>
           <FadeIn>
@@ -429,11 +440,34 @@ export default function GeoPage() {
           )}
         </div>
       </section>
+      </>)}
 
       {/* ── GUIDE TERRAIN (contenu propre à la page outil × ville) ── */}
       <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={tool.color} background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
 
+
+      {propre && guide.programme && (
+        <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 12 }}>{guide.programme.titre}</h2>
+            {guide.programme.intro && <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }}>{guide.programme.intro}</p>}
+            <ul style={{ margin: 0, paddingLeft: 20, display: 'grid', gap: 10, fontSize: 15, color: '#374151', lineHeight: 1.65 }}>
+              {(guide.programme.items || []).map(it => <li key={it}>{it}</li>)}
+            </ul>
+          </div>
+        </section>
+      )}
+      {propre && [guide.formats && { id: 'formats', ...guide.formats }, guide.acces && { id: 'acces', ...guide.acces }, guide.financement && { id: 'financement', ...guide.financement }].filter(Boolean).map((b, k) => (
+        <section key={b.id} id={b.id} style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: k % 2 ? '#fff' : '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 21 : 27, fontWeight: 900, color: '#0A0A0A', marginBottom: 14 }}>{b.titre}</h2>
+            {(b.paras || []).map((t, i) => <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{t}</p>)}
+          </div>
+        </section>
+      ))}
+
       {/* ── PROGRAMME ── */}
+{!propre && (<>
       <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
@@ -460,8 +494,10 @@ export default function GeoPage() {
           </FadeIn>
         </div>
       </section>
+      </>)}
 
       {/* ── FORMAT (intra ou Lyon inter+intra) ── */}
+{!propre && (<>
       {isIntraOnly ? (
         <section id="formats" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
@@ -531,8 +567,10 @@ export default function GeoPage() {
           </div>
         </section>
       )}
+      </>)}
 
       {/* ── COUVERTURE & ACCÈS ── */}
+{!propre && (<>
       <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
@@ -565,8 +603,10 @@ export default function GeoPage() {
           </FadeIn>
         </div>
       </section>
+      </>)}
 
       {/* ── FINANCEMENT ── */}
+{!propre && (<>
       <section id="financement" style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
@@ -584,7 +624,7 @@ export default function GeoPage() {
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 18 }}>
               {(city.countryCode === 'FR'
-                ? ["OPCO (jusqu'à 100 %)", 'Plan de développement des compétences', 'Autofinancement']
+                ? ['OPCO, selon votre branche', 'Plan de développement des compétences', 'Autofinancement']
                 : ["Budget formation de l'entreprise", 'Dispositifs locaux selon éligibilité', 'Autofinancement']
               ).map(f => (
                 <span key={f} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 99, padding: '7px 14px', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>
@@ -598,8 +638,10 @@ export default function GeoPage() {
           </FadeIn>
         </div>
       </section>
+      </>)}
 
       {/* ── ÉCOSYSTÈME LOCAL (E-E-A-T) ── */}
+{!propre && (<>
       {city.localExperts && city.localExperts.length > 0 && (
         <section style={{ padding: isMobile ? '40px 20px' : '56px 32px', background: '#fff' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
@@ -624,6 +666,13 @@ export default function GeoPage() {
           </div>
         </section>
       )}
+      </>)}
+
+      {/* ── ÉTUDES DE CAS ET RETOURS ── missions comparables sur cet outil (anonymisées) */}
+      <MissionsRecentes page={slug} outil={tool.slug === 'claude-ia' ? 'Claude' : tool.slug === 'chatgpt' ? 'ChatGPT' : undefined} metier={undefined} color={tool.color} bg="#fff" max={2} compact />
+
+      {/* ── AVIS GOOGLE ── tous les avis, ceux qui parlent de l'outil en tête */}
+      <AvisGoogle bg="#F5F3EE" priorite={[tool.slug === 'claude-ia' ? 'Claude' : 'ChatGPT', city.name]} pertinents={2} titre={propre ? `Avis Google sur nos formations ${tool.shortName}` : undefined} />
 
       {/* ── FAQ ── */}
       <section id="geo-faq" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
@@ -637,8 +686,8 @@ export default function GeoPage() {
         </div>
       </section>
 
-      {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: isMobile ? '40px 20px' : '52px 32px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+      {/* ── MAILLAGE INTERNE ── (liens de navigation : balisé en <nav>) */}
+      <nav aria-label="Autres formations" style={{ display: 'block', padding: isMobile ? '40px 20px' : '52px 32px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 980, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 28 }}>
@@ -683,18 +732,18 @@ export default function GeoPage() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </nav>
 
       {/* ── CTA FINAL ── */}
       <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#0A0A0A', textAlign: 'center' }}>
         <div style={{ maxWidth: 560, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 24 : 34, fontWeight: 900, color: '#fff', marginBottom: 12, letterSpacing: '-0.02em' }}>
-            {isIntraOnly
+            {propre && guide.cta?.fin?.titre ? guide.cta.fin.titre : isIntraOnly
               ? `Former vos équipes à ${tool.shortName} ${city.nameLoc} ?`
               : `Prêt à démarrer ${city.nameLoc} ?`}
           </h2>
           <p style={{ fontSize: 16, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 28 }}>
-            {isIntraOnly
+            {propre && guide.cta?.fin?.texte ? guide.cta.fin.texte : isIntraOnly
               ? `Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. ${isFrance ? `Finançable par votre OPCO en ${city.region}.` : 'Intra dans vos locaux ou distanciel.'}`
               : `Formation intra-entreprise dans vos locaux ou accompagnement individuel sur mesure. Devis sous 24 h, finançable par votre OPCO.`}
           </p>
@@ -709,7 +758,7 @@ export default function GeoPage() {
         </div>
       </section>
 
-      <OfficialSources tool={tool?.slug} />
+      <OfficialSources tool={tool?.slug} france={isFrance} lean={propre} />
     </>
   )
 }

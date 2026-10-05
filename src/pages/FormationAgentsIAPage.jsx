@@ -31,7 +31,7 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * INTÉGRITÉ : faits produit vérifiés août 2026 (agents d'espace de travail
  * ChatGPT, Agent Builder/Copilot Studio, Projets/Skills Claude, Gems/
  * NotebookLM/Workspace Studio selon édition, Vibe pour Mistral). Preuve :
- * uniquement les chiffres publiés sur /etudes-de-cas-ia (11 assistants IA,
+ * uniquement les chiffres publiés sur /etudes-de-cas-ia (11 compétences Claude,
  * distributeur IT B2B). Tarif : 1 980 € HT/jour groupe, jamais de promesse
  * OPCO, pas de CPF. Entités Wikipédia vérifiées (curl 200) le 2026-08-28.
  */
@@ -717,7 +717,7 @@ export default function FormationAgentsIAPage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
-            Cette exigence vient du terrain : chez un distributeur IT B2B, onze assistants IA ont été conçus avec les équipes et déployés fonction par fonction. La démarche est détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas</Link>.
+            Cette exigence vient du terrain : chez un distributeur IT B2B, onze compétences Claude ont été conçues avec dix référents et validées par la direction avant tout déploiement. La démarche est détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas</Link>.
           </p>
         </div>
       </section>
@@ -830,7 +830,7 @@ export default function FormationAgentsIAPage() {
                 Des formateurs qui déploient des agents en entreprise
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les agents montrés en formation ressemblent à ceux que nous construisons en mission : chez un distributeur IT B2B, onze assistants IA conçus avec les équipes et déployés fonction par fonction, une démarche détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues.
+                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les agents montrés en formation ressemblent à ceux que nous construisons en mission : chez un distributeur IT B2B, onze compétences Claude conçues avec dix référents et validées par la direction avant leur déploiement, une démarche détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

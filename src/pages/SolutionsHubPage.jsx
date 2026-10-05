@@ -404,8 +404,8 @@ export default function SolutionsHubPage() {
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
       <CaseStudyCards
         ids={['distribution', 'photovoltaique', 'conseil-financier']}
-        title="Trois solutions en service, méthode et résultats"
-        intro="Assistants commerciaux, assistants de flux logistique et commercial, assistants d'appels d'offres : trois missions documentées, avec ce qu'elles ont changé pour les équipes et l'organisation."
+        title="Trois solutions conçues avec les équipes, méthode et résultats"
+        intro="Assistants commerciaux, assistants de flux logistique et commercial, assistants d'appels d'offres : trois missions documentées, avec ce qu'elles changent pour les équipes et l'organisation."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

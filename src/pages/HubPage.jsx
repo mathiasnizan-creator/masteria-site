@@ -12,8 +12,12 @@ import FounderNote from '../components/FounderNote'
 import ToolLogo from '../components/ToolLogo'
 import { HUBS, SPOKES, METIERS } from '../data/seo-pages'
 import { HUB_CONTENT } from '../data/hub-content'
-import { GEO_CITIES, GEO_TOOLS, geoSlug } from '../data/geo-data'
+import { GEO_CITIES, GEO_TOOLS, geoSlug, geoPageExists } from '../data/geo-data'
 import ApresLaFormation from '../components/ApresLaFormation'
+import { PressMention } from '../components/FounderNote'
+import AvisGoogle from '../components/AvisGoogle'
+import ClaudeFactsBox from '../components/ClaudeFactsBox'
+import MissionsRecentes from '../components/MissionsRecentes'
 
 const METIER_ICONS = {
   marketing:             Megaphone,
@@ -32,6 +36,10 @@ const METIER_ICONS = {
   achats:                ShoppingCart,
   transverse:            Sparkles,
 }
+
+// '2026-10-05' → '5 octobre 2026' (sans Date : même rendu au prérendu et chez le visiteur, quel que soit le fuseau)
+const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+const dateFr = iso => { const [a, m, j] = iso.split('-'); return `${Number(j) === 1 ? '1er' : Number(j)} ${MOIS_FR[Number(m) - 1]} ${a}` }
 
 /* ── Composant accordéon FAQ ──────────────────────────────────── */
 function FaqItem({ q, a }) {
@@ -101,6 +109,12 @@ export default function HubPage() {
     return base
   })()
 
+  // Outil tel que l'écrivent les études de cas (data/missions-formation.js)
+  const outilMissions = { chatgpt: 'ChatGPT', claude: 'Claude', copilot: 'Copilot', gemini: 'Gemini', mistral: 'Mistral', 'multi-outils': 'Multi-outils' }[hub.id]
+
+  // Page propre (hub Claude) : sections communes aux hubs masquées, textes propres au hub affichés
+  const propre = Boolean(hub.pagePropre)
+
   const isSprintHub = hub.id === 'sprint-ia'
   const courseData = {
     name: hub.h1,
@@ -153,6 +167,10 @@ export default function HubPage() {
         breadcrumbs={breadcrumbs}
         faqItems={faq}
         extraJsonLd={spokeItemList}
+        datePublished={hub.datePublished}
+        dateModified={hub.dateModified}
+        author={hub.author}
+        speakable={[...(hub.definition ? ['#definition'] : []), ...(hub.claudeFaits ? ['#claude-faits'] : [])]}
       />
 
       {/* NAV */}
@@ -211,9 +229,21 @@ export default function HubPage() {
         }}>
           {hub.h1}
         </h1>
+        {hub.definition && (
+          <p id="definition" style={{ fontSize: 17, color: '#0A0A0A', fontWeight: 500, maxWidth: 720, margin: '0 auto 20px', lineHeight: 1.7, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '18px 22px', textAlign: 'left' }}>
+            {hub.definition}
+          </p>
+        )}
         <p style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }}>
           {hub.intro}
         </p>
+        {hub.dateModified && (
+          <p style={{ fontSize: 13, color: '#6B7280', margin: '0 auto 24px' }}>
+            Page revue le {dateFr(hub.dateModified)} par{' '}
+            <Link to="/mathias-nizan" style={{ color: '#374151', fontWeight: 600 }}>Mathias Nizan</Link>, qui a fondé Masteria en 2022
+          </p>
+        )}
+        {propre && <div style={{ display: 'flex', justifyContent: 'center', margin: '0 auto 28px' }}><PressMention /></div>}
         <p style={{ fontSize: 16, color: hub.color, maxWidth: 580, margin: '0 auto 40px', fontStyle: 'italic', fontWeight: 600 }}>
           {hub.pitch}
         </p>
@@ -226,7 +256,7 @@ export default function HubPage() {
         </Link>
 
         {/* Badges réassurance */}
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center', marginTop: 40 }}>
+        {!propre && <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center', marginTop: 40 }}>
           {[
             { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
             { icon: Wallet,            label: 'Finançable OPCO' },
@@ -241,10 +271,11 @@ export default function HubPage() {
               {label}
             </span>
           ))}
-        </div>
+        </div>}
       </section>
 
       {/* BADGES DE CONFIANCE, chiffres clés */}
+      {!propre && (
       <section style={{
         background: '#fff', padding: '32px 40px',
         display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap',
@@ -253,7 +284,7 @@ export default function HubPage() {
         {[
           { label: '+1 500 formés', sub: 'depuis 2022' },
           { label: 'finançable', sub: 'via OPCO' },
-          { label: '98% satisfaction', sub: 'taux moyen' },
+          { label: '5 outils IA', sub: 'indépendants des éditeurs' },
           { label: 'Qualiopi', sub: 'certifié' },
         ].map(b => (
           <div key={b.label} style={{ textAlign: 'center' }}>
@@ -262,6 +293,7 @@ export default function HubPage() {
           </div>
         ))}
       </section>
+      )}
 
       {/* POURQUOI SE FORMER */}
       {why.length > 0 && (
@@ -273,9 +305,11 @@ export default function HubPage() {
             }}>
               Pourquoi former vos équipes à {toolShort} ?
             </h2>
-            <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
-              Des bénéfices concrets, mesurables dès le retour en poste.
-            </p>
+            {!propre && (
+              <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
+                Des bénéfices concrets, mesurables dès le retour en poste.
+              </p>
+            )}
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
@@ -309,6 +343,8 @@ export default function HubPage() {
         </section>
       )}
 
+      {hub.claudeFaits && <ClaudeFactsBox color={hub.color} bg="#fff" />}
+
       {/* GRILLE DES SPOKES */}
       <section style={{ padding: '80px 40px', background: why.length ? '#F9FAFB' : '#fff', maxWidth: 1100, margin: '0 auto' }}>
         <h2 style={{
@@ -317,8 +353,8 @@ export default function HubPage() {
         }}>
           {toolShort} adapté à chaque métier
         </h2>
-        <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
-          Chaque formation est construite autour des cas d'usage réels de votre fonction.
+        <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: propre ? 760 : 600 }}>
+          {propre && hub.spokesIntro ? hub.spokesIntro : "Chaque formation est construite autour des cas d'usage réels de votre fonction."}
         </p>
         <div style={{
           display: 'grid',
@@ -341,6 +377,7 @@ export default function HubPage() {
             if ((hub.id === 'claude' || hub.id === 'claude-ia')) {
               cardTitle = `Formation Claude IA pour les équipes ${spoke.metier}`
             }
+            if (propre) cardTitle = spoke.toolSlug === 'claude-code' ? 'Claude Code, pour les développeurs' : `Claude et le métier : ${spoke.metier}`
             return (
               <Link
                 key={spoke.slug}
@@ -370,7 +407,7 @@ export default function HubPage() {
                     {cardTitle}
                   </h3>
                   <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, marginBottom: 16 }}>
-                    {metierData?.desc || spoke.intro?.slice(0, 120) + '…'}
+                    {(propre && hub.spokeDescs?.[spoke.slug]) || metierData?.desc || spoke.intro?.slice(0, 120) + '…'}
                   </p>
                   <span style={{ color: spoke.toolColor, fontWeight: 700, fontSize: 14 }}>
                     Voir le programme →
@@ -382,7 +419,29 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* ENCART : formation dédiée à renvoyer depuis le hub (ex. Claude Code) */}
+      {hub.encart && (
+        <section style={{ padding: '0 40px 56px', background: why.length ? '#F9FAFB' : '#fff' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${hub.color}`, borderRadius: 14, padding: '22px 26px' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{hub.encart.titre}</h2>
+            <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+              {hub.encart.avant}<Link to={hub.encart.href} style={{ color: hub.color, fontWeight: 700 }}>{hub.encart.ancre}</Link>{hub.encart.apres}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {propre && hub.choisir && (
+        <section style={{ padding: '0 40px 64px', background: why.length ? '#F9FAFB' : '#fff' }}>
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{hub.choisir.titre}</h2>
+            {hub.choisir.paras.map((t, i) => <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{t}</p>)}
+          </div>
+        </section>
+      )}
+
       {/* SECTION ÉQUIPE PLURIDISCIPLINAIRE — formation sur mesure */}
+      {!propre && (
       <section style={{
         padding: 'clamp(56px, 8vw, 88px) clamp(18px, 4vw, 40px)',
         background: '#FAFAF7',
@@ -481,8 +540,10 @@ export default function HubPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* CTA MILIEU DE PAGE */}
+      {!propre && (
       <section style={{
         padding: '48px 40px',
         background: `linear-gradient(135deg, ${hub.color} 0%, ${hub.color}dd 100%)`,
@@ -512,6 +573,7 @@ export default function HubPage() {
           </Link>
         </div>
       </section>
+      )}
 
       {/* PROGRAMME TYPE */}
       {programme.length > 0 && (
@@ -523,9 +585,11 @@ export default function HubPage() {
             }}>
               Programme de formation {toolShort}
             </h2>
+            {!propre && (
             <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
               {isSprintHub ? '3 heures · Format webinar ou présentiel · Certifié Qualiopi · Déployable à grande échelle' : '2 jours · 14 heures · Certifié Qualiopi · Adapté à votre secteur'}
             </p>
+            )}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: 24 }}>
               {programme.map((day, i) => (
                 <div key={i} style={{
@@ -557,6 +621,7 @@ export default function HubPage() {
                 </div>
               ))}
             </div>
+            {!propre && (
             <div style={{ marginTop: 40, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <Link to="/contact" style={{
                 background: '#2563EB', color: '#fff', padding: '14px 28px',
@@ -572,11 +637,34 @@ export default function HubPage() {
                 Questions sur le financement OPCO
               </Link>
             </div>
+            )}
           </div>
         </section>
       )}
 
-      <ApresLaFormation outil={(hub.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()} />
+      {/* ── ÉTUDES DE CAS ET RETOURS DES PARTICIPANTS ── */}
+      {outilMissions && (
+        <MissionsRecentes page={hub.slug} outil={outilMissions} casIds={hub.casIds || []} color={hub.color} compact titre={propre ? 'Ce que disent les participants de nos formations Claude' : undefined} />
+      )}
+
+      {/* ── AVIS GOOGLE ── tous les avis, les plus proches de l'outil en tête */}
+      <AvisGoogle bg="#F5F3EE" priorite={hub.avisPriorite || (outilMissions ? [outilMissions] : undefined)} pertinents={3} titre={propre ? 'Les avis Google qui parlent de nos formations Claude' : undefined} />
+
+      {propre && hub.apres ? (
+        <section style={{ padding: '64px 40px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{hub.apres.titre}</h2>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>{hub.apres.texte}</p>
+            <p style={{ margin: 0, fontSize: 14.5 }}>
+              <Link to="/outils-ia-sur-mesure" style={{ color: hub.color, fontWeight: 700 }}>Outils IA sur mesure</Link>
+              {' · '}
+              <Link to="/contact?type=projet&rdv=30" style={{ color: hub.color, fontWeight: 700 }}>Réserver 30 minutes de cadrage</Link>
+            </p>
+          </div>
+        </section>
+      ) : (
+        <ApresLaFormation outil={(hub.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()} />
+      )}
 
       {/* FAQ */}
       {faq.length > 0 && (
@@ -588,9 +676,11 @@ export default function HubPage() {
             }}>
               Questions fréquentes sur la formation {toolShort}
             </h2>
-            <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 40, maxWidth: 580 }}>
-              Tout ce que vous devez savoir avant de vous inscrire.
-            </p>
+            {!propre && (
+              <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 40, maxWidth: 580 }}>
+                Tout ce que vous devez savoir avant de vous inscrire.
+              </p>
+            )}
             <div>
               {faq.map((item, i) => (
                 <FaqItem key={i} q={item.q} a={item.a} />
@@ -601,6 +691,7 @@ export default function HubPage() {
       )}
 
       {/* MAILLAGE INTERNE, autres formations */}
+      {!propre && (
       <section style={{ padding: '48px 40px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 16 }}>
@@ -629,6 +720,7 @@ export default function HubPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* SECTION VILLES */}
       {(() => {
@@ -643,11 +735,11 @@ export default function HubPage() {
                   Formation {geoTool.shortName} dans votre ville
                 </h2>
                 <p style={{ fontSize: 15, color: '#6B7280', maxWidth: 560 }}>
-                  Sessions en présentiel ou distanciel partout en France. Certifié Qualiopi, finançable via votre OPCO local.
+                  {propre && hub.villesIntro ? hub.villesIntro : "Une page par ville où nous intervenons le plus souvent ; ailleurs, en présentiel chez vous ou à distance. En France, finançable par votre OPCO selon votre branche ; à Genève et Bruxelles, sur devis en euros HT."}
                 </p>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: 12 }}>
-                {GEO_CITIES.map(city => (
+              <nav aria-label="Formation par ville" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: 12 }}>
+                {GEO_CITIES.filter(city => geoPageExists(geoTool.slug, city.slug)).map(city => (
                   <Link
                     key={city.slug}
                     to={`/${geoSlug(geoTool.slug, city.slug)}`}
@@ -663,12 +755,13 @@ export default function HubPage() {
                   >
                     <MapPin size={15} color="#2563EB" strokeWidth={2.5} style={{ flexShrink: 0 }} />
                     <div>
-                      <div style={{ fontSize: 13.5, fontWeight: 700, color: '#0A0A0A' }}>{city.name}</div>
+                      <div style={{ fontSize: 13.5, fontWeight: 700, color: '#0A0A0A' }}>Formation {geoTool.shortName} {city.name}</div>
                       <div style={{ fontSize: 11.5, color: '#6B7280' }}>{city.region}</div>
                     </div>
                   </Link>
                 ))}
-              </div>
+              </nav>
+              {!propre && (
               <div style={{
                 marginTop: 20,
                 display: 'flex', alignItems: 'center', gap: 14,
@@ -681,6 +774,7 @@ export default function HubPage() {
                   <Link to="/contact" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'underline' }}>Contactez-nous pour un devis.</Link>
                 </p>
               </div>
+              )}
             </div>
           </section>
         )
@@ -694,9 +788,9 @@ export default function HubPage() {
             Formations sur les autres outils IA
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15.5, marginBottom: 28, maxWidth: 640 }}>
-            Vos équipes utilisent plusieurs assistants ? Découvrez nos autres parcours, ou comparez les outils avant de choisir.
+            {propre && hub.autresOutilsIntro ? hub.autresOutilsIntro : 'Vos équipes utilisent plusieurs assistants ? Découvrez nos autres parcours, ou comparez les outils avant de choisir.'}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
+          <nav aria-label="Formations sur les autres outils" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
             {HUBS.filter(h => ['chatgpt', 'copilot', 'gemini', 'claude', 'mistral'].includes(h.id) && h.slug !== hub.slug).map(h => {
               const short = (h.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()
               return (
@@ -706,13 +800,16 @@ export default function HubPage() {
                 </Link>
               )
             })}
-          </div>
+          </nav>
+          {!propre && (
           <p style={{ color: '#6B7280', fontSize: 14.5, marginTop: 24, lineHeight: 1.7 }}>
             Voir aussi : <Link to="/formation-intelligence-artificielle" style={{ color: '#2563EB', fontWeight: 600 }}>le catalogue des formations IA</Link>, la <Link to="/formation-multi-outils" style={{ color: '#2563EB', fontWeight: 600 }}>formation multi-outils</Link>, ou le comparatif <Link to="/quelle-est-la-meilleure-ia" style={{ color: '#2563EB', fontWeight: 600 }}>quelle est la meilleure IA</Link> pour trancher. Et pour juger sur pièces, nos <Link to="/etudes-de-cas-ia" style={{ color: '#2563EB', fontWeight: 600 }}>études de cas IA</Link> détaillent quatre missions menées en entreprise, du conseil à la formation.
           </p>
+          )}
         </div>
       </section>
 
+      {!propre && (
       <section style={{
         background: '#F5F3EE', color: '#0A0A0A',
         padding: '80px 40px', textAlign: 'center',
@@ -734,8 +831,10 @@ export default function HubPage() {
           Contacter notre équipe
         </Link>
       </section>
+      )}
 
       {/* ── E-E-A-T : qui vous forme (cabinet + réseau, preuves) ── */}
+      {!propre && (
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
@@ -762,10 +861,11 @@ export default function HubPage() {
           </div>
         </div>
       </section>
+      )}
 
-      <FounderNote />
+      {!propre && <FounderNote />}
 
-      <OfficialSources tool={hub.tool} />
+      <OfficialSources tool={hub.tool} lean={propre} />
     </>
   )
 }

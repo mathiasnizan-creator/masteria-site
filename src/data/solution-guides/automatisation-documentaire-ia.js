@@ -130,13 +130,13 @@ export default {
     },
     cas: {
       h3: "Retour de mission : fichiers d'entrepôt et demandes de devis chez un distributeur sur Odoo",
-      contexte: "Ce distributeur de solutions photovoltaïques gère tout dans Odoo, son ERP, avec une équipe de cinq personnes, des clients répartis dans dix-sept pays et trois entrepôts en France. Le temps se perd aux abords du logiciel : des demandes reçues par mail retapées en lignes de devis, des numéros de série recopiés à la main depuis des fichiers d'entrepôt illisibles pour la scannette. La direction a posé sa condition au départ : rien de ce que produit l'IA ne fait foi sans contrôle.",
+      contexte: "Ce distributeur de solutions photovoltaïques gère tout dans Odoo, son ERP, avec une équipe de trois personnes, des clients à l'export et trois entrepôts en France. Le temps se perd aux abords du logiciel : des demandes reçues par mail retapées en lignes de devis, des numéros de série recopiés à la main depuis des fichiers d'entrepôt illisibles pour la scannette. La direction a posé sa condition au départ : rien de ce que produit l'IA ne fait foi sans contrôle.",
       etapes: [
         "La direction, les opérations et le commercial passent chacun un entretien, conduit flux par flux, avec les pièces sur la table : fichiers d'entrepôt, mail type d'un transporteur, suivi des marges.",
         "La cartographie couvre quatre flux et fait apparaître douze gisements de temps, chacun avec le volume annoncé par l'équipe, sa difficulté et ce qu'il doit à l'ERP.",
-        "Trois assistants sont montés en une seule journée à partir des fichiers de l'entreprise. L'un transforme un fichier d'entrepôt en fichier d'import Odoo et vérifie les totaux ; un autre tire des demandes entrantes les lignes d'un devis.",
+        "Trois assistants sont à monter en une seule journée à partir des fichiers de l'entreprise, avant la formation. L'un transformera un fichier d'entrepôt en fichier d'import Odoo et vérifiera les totaux ; un autre tirera des demandes entrantes les lignes d'un devis.",
         "Partout, l'assistant prépare et une personne valide. Huit règles d'usage tiennent sur une page, et un référent IA reçoit les signalements d'erreur.",
-        "La feuille de route court sur 90 jours : points de départ relevés pendant la formation, premier bilan à trente jours sur cinq indicateurs.",
+        "La feuille de route court sur 90 jours : points de départ relevés pendant la formation prévue en octobre 2026, premier bilan un mois plus tard.",
       ],
       resultat: "Les cibles, posées avant la formation pour un horizon de trois mois, restent des cibles tant qu'aucune mesure ne les confirme : huit réceptions sur dix traitées sans ressaisie, un devis envoyé sous douze heures. L'import direct dans Odoo attend une deuxième vague, déjà cadrée. La chaîne commence donc par un fichier qu'une personne relit avant de l'importer, et l'écriture directe dans l'ERP viendra après les mesures.",
       lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },

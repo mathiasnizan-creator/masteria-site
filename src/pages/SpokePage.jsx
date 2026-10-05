@@ -14,6 +14,9 @@ import { spokeGuidePromise } from '../data/terrain-guides'
 import { SPOKES, HUBS } from '../data/seo-pages'
 import ApresLaFormation from '../components/ApresLaFormation'
 import AvisGoogle from '../components/AvisGoogle'
+import ClaudeFactsBox from '../components/ClaudeFactsBox'
+import MissionsRecentes from '../components/MissionsRecentes'
+import { PressMention } from '../components/FounderNote'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
 const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
@@ -84,7 +87,7 @@ function FAQItem({ q, a, color }) {
 const WHY_MASTERIA = [
   { icon: '\uD83C\uDFAF', title: 'Spécialisés à 100 % sur l\'IA', desc: "Masteria ne fait que ça. Chaque formateur pratique l'IA au quotidien dans des contextes professionnels réels. La différence se sent dans les exemples choisis, les pièges anticipés et les raccourcis partagés." },
   { icon: '\uD83D\uDCC1', title: 'On travaille sur vos fichiers', desc: "Zéro cas fictif. Chaque exercice s'appuie sur les documents réels de vos participants. Ce que vos équipes apprennent le matin, elles le réutilisent l'après-midi sur leurs vrais sujets." },
-  { icon: '\uD83D\uDC65', title: 'Programme construit pour votre métier', desc: "Les cas d'usage, les exercices et les prompts sont sélectionnés autour des vraies missions de votre fonction. C'est ce qui explique nos 98 % de satisfaction post-formation." },
+  { icon: '\uD83D\uDC65', title: 'Programme construit pour votre métier', desc: "Les cas d'usage, les exercices et les prompts sont sélectionnés autour des vraies missions de votre fonction. C'est ce qui les rend utilisables dès le retour au poste." },
   { icon: '\uD83D\uDCB3', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Masteria prend en charge le montage du dossier. Dans la majorité des cas, la formation ne coûte rien à l'entreprise." },
 ]
 
@@ -190,6 +193,18 @@ export default function SpokePage() {
         objectives: guide.objectives ?? baseSpoke.objectives,
         updatedAt: guide.updatedAt ?? baseSpoke.updatedAt,
         updatedLabel: guide.updatedLabel ?? baseSpoke.updatedLabel,
+        prerequis: guide.prerequis ?? baseSpoke.prerequis,
+        casIds: guide.casIds ?? baseSpoke.casIds,
+        // Mode « page propre » : le guide fournit tout le texte, le gabarit masque ses blocs communs
+        pagePropre: guide.pagePropre ?? false,
+        resume: guide.resume,
+        enBref: guide.enBref,
+        tarifs: guide.tarifs,
+        apres: guide.apres,
+        cta: guide.cta,
+        terrain: guide.terrain,
+        liensAssocies: guide.liensAssocies,
+        avisPriorite: guide.avisPriorite ?? baseSpoke.avisPriorite,
       }
     : baseSpoke
 
@@ -206,6 +221,12 @@ export default function SpokePage() {
   const relatedSpokes = SPOKES.filter(s => spoke.relatedSpokes?.includes(s.slug))
   const c = spoke.toolColor
   const cLight = spoke.toolColorLight
+  // Outil tel que l'écrivent les études de cas (data/missions-formation.js) et les avis
+  const outilMissions = { chatgpt: 'ChatGPT', claude: 'Claude', 'claude-code': 'Claude', copilot: 'Copilot', gemini: 'Gemini', mistral: 'Mistral', 'multi-outils': 'Multi-outils' }[spoke.toolSlug]
+  const isClaude = spoke.toolSlug === 'claude' || spoke.toolSlug === 'claude-code'
+  const prerequis = spoke.prerequis || 'Aucun prérequis technique, maîtrise des outils bureautiques courants'
+  // Page propre (guide complet) : chaque bloc affiché vient du guide, aucun texte commun aux autres pages
+  const propre = Boolean(spoke.pagePropre)
 
   // Détection durée : Sprint IA (3h), 1 jour, 2 jours (défaut)
   const isSprint = spoke.toolSlug === 'sprint-ia'
@@ -261,7 +282,7 @@ export default function SpokePage() {
     objectives: spoke.objectives,
     modules: spoke.modules, // pour HowTo schema
     about: spoke.label ? `Formation ${spoke.label} en entreprise` : `Formation ${spoke.tool} pour les équipes ${spoke.metier} en entreprise`,
-    prerequisites: 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
+    prerequisites: prerequis,
   }
 
   const breadcrumbs = [
@@ -290,7 +311,8 @@ export default function SpokePage() {
         keywords={spoke.keywords}
         datePublished={spoke.datePublished}
         dateModified={spoke.updatedAt || spoke.datePublished}
-        speakable={['#geo-summary', ...(spoke.faq?.length ? ['#faq'] : [])]}
+        speakable={['#geo-summary', ...(isClaude ? ['#claude-faits'] : []), ...(spoke.faq?.length ? ['#faq'] : [])]}
+        author
         citations={[
           { name: 'Qualiopi, Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
           { name: 'Les OPCO, Ministère du Travail', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
@@ -333,8 +355,13 @@ export default function SpokePage() {
 
           {/* GEO-optimized first paragraph : réponse directe à la query pour citation LLM */}
           <p id="geo-summary" style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
-            {heroSentence}
+            {propre && spoke.resume ? spoke.resume : heroSentence}
           </p>
+          {propre && (
+            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '-6px 0 20px', maxWidth: 680 }}>
+              Par <Link to="/mathias-nizan" style={{ color: '#374151', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria · {spoke.updatedLabel || ''}
+            </p>
+          )}
 
           <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
             {spoke.intro}
@@ -365,14 +392,14 @@ export default function SpokePage() {
           <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '20px 26px', marginTop: 28, maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 12 }}>En bref</div>
             <dl style={{ margin: 0 }}>
-              {[
+              {(propre && spoke.enBref?.length ? spoke.enBref : [
                 { label: 'Formation', value: spoke.label ? `Formation ${spoke.label}` : `${spoke.tool} pour ${spoke.metier}` },
                 { label: 'Durée', value: is3h ? '3 heures (Sprint IA)' : isOneDay ? '1 jour (7 h de formation effective)' : '2 jours (14 h de formation effective)' },
                 { label: 'Formats', value: "Intra-entreprise dans vos locaux (jusqu'à 12 participants), accompagnement individuel sur mesure, présentiel ou distanciel" },
                 { label: 'Tarif', value: is3h ? '1 980 € HT par session, intra comme individuel · devis sous 24 h' : '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
                 { label: 'Financement', value: "Organisme certifié Qualiopi, finançable par votre OPCO selon votre branche ; programme et convention préparés avec vous" },
-                { label: 'Prérequis', value: 'Aucun prérequis technique, maîtrise des outils bureautiques courants' },
-              ].map((row, i) => (
+                { label: 'Prérequis', value: prerequis },
+              ]).map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
                   <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
                   <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{row.value}</dd>
@@ -404,10 +431,10 @@ export default function SpokePage() {
       </section>
 
       {/* ── CHIFFRES CLÉS ── */}
-      <section style={{ background: useLightHero ? '#fff' : '#1C1C1C', padding: '40px', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap', borderBottom: useLightHero ? '1px solid #E5E7EB' : 'none' }}>
+      {!propre && <section style={{ background: useLightHero ? '#fff' : '#1C1C1C', padding: '40px', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap', borderBottom: useLightHero ? '1px solid #E5E7EB' : 'none' }}>
         {[
           { num: '+1 500', label: "professionnels formés à l'IA" },
-          { num: '98 %', label: 'de taux de satisfaction' },
+          { num: '100+', label: 'formations au catalogue' },
           { num: '24', label: 'métiers couverts' },
           { num: '5', label: 'outils IA du marché' },
         ].map(s => (
@@ -416,7 +443,7 @@ export default function SpokePage() {
             <p style={{ fontSize: 13, color: useLightHero ? '#4B5563' : '#9CA3AF', margin: '6px 0 0' }}>{s.label}</p>
           </div>
         ))}
-      </section>
+      </section>}
 
       {/* ── À QUI S'ADRESSE ── */}
       {spoke.audience?.length > 0 && (
@@ -473,9 +500,11 @@ export default function SpokePage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
               {programTitle}
             </h2>
-            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 56 }}>
-              {isSprint || isOneDay ? programIntro : "14h de formation effective. Chaque module alterne démonstration en direct et exercice sur vos vrais fichiers métier."}
-            </p>
+            {!propre && (
+              <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 56 }}>
+                {isSprint || isOneDay ? programIntro : "14h de formation effective. Chaque module alterne démonstration en direct et exercice sur vos vrais fichiers métier."}
+              </p>
+            )}
 
             {[{ label: isSprint ? 'Session de 3 heures' : (isOneDay ? 'La journée' : 'Jour 1'), modules: modulesJ1 }, { label: 'Jour 2', modules: modulesJ2 }].filter(day => day.modules.length > 0).map(day => (
               <div key={day.label} style={{ marginBottom: 56 }}>
@@ -551,12 +580,18 @@ export default function SpokePage() {
       <section style={{ padding: '48px 40px', background: `linear-gradient(135deg, ${c} 0%, ${c}dd 100%)`, color: '#fff' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
-            <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
-              Prêt à former {equipeCible(spoke)}&nbsp;?
-            </h2>
-            <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
-              Réponse sous 24h · Programme adapté à votre contexte · Finançable OPCO
-            </p>
+            {propre && spoke.cta?.milieu ? (
+              <p style={{ fontSize: 'clamp(17px, 2vw, 21px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, lineHeight: 1.4 }}>{spoke.cta.milieu}</p>
+            ) : (
+              <>
+                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
+                  Prêt à former {equipeCible(spoke)}&nbsp;?
+                </h2>
+                <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
+                  Réponse sous 24h · Programme adapté à votre contexte · Finançable OPCO
+                </p>
+              </>
+            )}
           </div>
           <Link to="/contact" style={{ background: '#fff', color: c, padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
             Contacter notre équipe →
@@ -583,7 +618,24 @@ export default function SpokePage() {
         </div>
       </section>
 
+      {isClaude && !propre && <ClaudeFactsBox color={c} bg="#fff" compact />}
+
       {/* ── TARIFS ── */}
+      {propre && spoke.tarifs ? (
+        <section id="tarifs" style={{ padding: '72px 40px', background: '#F9FAFB', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 20 }}>{spoke.tarifs.titre}</h2>
+            {(spoke.tarifs.paras || []).map((t, i) => (
+              <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px' }}>{t}</p>
+            ))}
+            {isClaude && (
+              <p style={{ fontSize: 13.5, color: '#6B7280', margin: '18px 0 0' }}>
+                Modèles, contexte et prix des offres Claude : <Link to="/formation-claude-ia#claude-faits" style={{ color: c, fontWeight: 600 }}>repères vérifiés le 5 octobre 2026</Link>.
+              </p>
+            )}
+          </div>
+        </section>
+      ) : (
       <section id="tarifs" style={{ padding: '80px 40px', background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
@@ -636,9 +688,10 @@ export default function SpokePage() {
           </p>
         </div>
       </section>
+      )}
 
       {/* ── FORMATEUR (E-E-A-T : Expérience & Expertise) ── */}
-      <section id="formateur" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
+      {!propre && <section id="formateur" style={{ padding: '80px 40px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
             Un mot du fondateur
@@ -655,7 +708,7 @@ export default function SpokePage() {
               />
             </div>
             <div style={{ flex: 1, minWidth: 260 }}>
-              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 4px' }}>{TRAINER.name}</h3>
+              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 4px' }}><Link to="/mathias-nizan" style={{ color: 'inherit', textDecoration: 'none', borderBottom: '1px solid #D1D5DB' }}>{TRAINER.name}</Link></h3>
               <p style={{ fontSize: 14, color: c, fontWeight: 600, margin: '0 0 16px' }}>{TRAINER.role}</p>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 20 }}>{buildTrainerBio(spoke)}</p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -663,13 +716,14 @@ export default function SpokePage() {
                   <span key={cred} style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 13, fontWeight: 600 }}>{cred}</span>
                 ))}
               </div>
+              <div style={{ marginTop: 18 }}><PressMention /></div>
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ── POURQUOI MASTERIA ── */}
-      <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
+      {!propre && <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
             Pourquoi Masteria pour cette {nomFormation(spoke)} ?
@@ -690,14 +744,46 @@ export default function SpokePage() {
             <cite style={{ fontSize: 14, color: '#6B7280', fontStyle: 'normal' }}>{TRAINER.name}, fondateur de Masteria</cite>
           </blockquote>
         </div>
-      </section>
+      </section>}
 
       {/* ── AVIS GOOGLE ── note de la fiche et avis qui défilent ; remplacent les témoignages
           rédigés de data/testimonials.js, retirés le 03/10/2026 (faux avis = pratique trompeuse). */}
-      <AvisGoogle bg="#F5F3EE" />
+      {/* ── ÉTUDES DE CAS ET RETOURS DES PARTICIPANTS ── missions comparables (outil, métier) */}
+      {propre && spoke.terrain && (
+        <section id="terrain" style={{ padding: '72px 40px', background: '#fff', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: c, marginBottom: 10 }}>Sur le terrain</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{spoke.terrain.titre}</h2>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{spoke.terrain.texte}</p>
+            {spoke.terrain.lien && (
+              <Link to={spoke.terrain.lien} style={{ fontSize: 14, color: c, fontWeight: 700, textDecoration: 'none' }}>Lire l'étude de cas →</Link>
+            )}
+          </div>
+        </section>
+      )}
+
+      {outilMissions && (
+        <MissionsRecentes page={spoke.slug} outil={outilMissions} metier={spoke.metierSlug} casIds={spoke.casIds || []} color={c} bg="#fff" compact />
+      )}
+
+      <AvisGoogle bg="#F5F3EE" priorite={[...(outilMissions ? [outilMissions] : []), ...(spoke.avisPriorite || [])]} pertinents={3} />
 
       {/* ── APRÈS LA FORMATION ── pont vers le conseil et le développement */}
-      <ApresLaFormation metierSlug={spoke.metierSlug} outil={spoke.tool} />
+      {propre && spoke.apres ? (
+        <section style={{ padding: '64px 40px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{spoke.apres.titre}</h2>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>{spoke.apres.texte}</p>
+            <p style={{ margin: 0, fontSize: 14.5 }}>
+              <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 700 }}>Outils IA sur mesure</Link>
+              {' · '}
+              <Link to="/contact?type=projet&rdv=30" style={{ color: c, fontWeight: 700 }}>Réserver 30 minutes de cadrage</Link>
+            </p>
+          </div>
+        </section>
+      ) : (
+        <ApresLaFormation metierSlug={spoke.metierSlug} outil={spoke.tool} />
+      )}
 
       {/* ── FAQ ── */}
       {spoke.faq?.length > 0 && (
@@ -716,7 +802,19 @@ export default function SpokePage() {
       )}
 
       {/* ── MAILLAGE INTERNE ── */}
-      {relatedSpokes.length > 0 && (
+      {propre && spoke.liensAssocies?.length > 0 && (
+        <section style={{ padding: '56px 40px', background: '#F9FAFB' }}>
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(19px, 2.4vw, 25px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 16px' }}>Pour aller plus loin</h2>
+            <nav aria-label="Pour aller plus loin"><ul style={{ margin: 0, paddingLeft: 18, display: 'grid', gap: 10, fontSize: 15, lineHeight: 1.6 }}>
+              {spoke.liensAssocies.map(l => (
+                <li key={l.href}><Link to={l.href} style={{ color: c, fontWeight: 600 }}>{l.label}</Link></li>
+              ))}
+            </ul></nav>
+          </div>
+        </section>
+      )}
+      {!propre && relatedSpokes.length > 0 && (
         <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
           <div style={{ maxWidth: 960, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
@@ -760,22 +858,24 @@ export default function SpokePage() {
       <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 580, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
-            Parlons de {equipeCible(spoke)}
+            {propre && spoke.cta?.fin?.titre ? spoke.cta.fin.titre : <>Parlons de {equipeCible(spoke)}</>}
           </h2>
           <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
-            Dites-nous combien de personnes vous souhaitez former et leur niveau actuel. On revient vers vous sous 24 heures avec {is3h ? 'un Sprint IA adapté à vos équipes' : isOneDay ? 'un programme adapté sur 1 journée' : 'un programme adapté sur 2 jours'}.
+            {propre && spoke.cta?.fin?.texte ? spoke.cta.fin.texte : (<>Dites-nous combien de personnes vous souhaitez former et leur niveau actuel. On revient vers vous sous 24 heures avec {is3h ? 'un Sprint IA adapté à vos équipes' : isOneDay ? 'un programme adapté sur 1 journée' : 'un programme adapté sur 2 jours'}.</>)}
           </p>
           <Link to="/contact" style={{ display: 'inline-block', background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
             Contacter notre équipe →
           </Link>
-          <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Formation certifiée Qualiopi · Finançable OPCO · +1 500 professionnels formés · 98 % de satisfaction
-          </p>
+          {!propre && (
+            <p style={{ fontSize: 13, color: '#6B7280' }}>
+              Formation certifiée Qualiopi · Finançable OPCO · +1 500 professionnels formés
+            </p>
+          )}
         </div>
       </section>
 
       {/* ── E-E-A-T : qui vous forme (cabinet + réseau, preuves) ── */}
-      <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+      {!propre && <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui vous forme</div>
@@ -800,9 +900,9 @@ export default function SpokePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
-      <OfficialSources tool={spoke.tool} />
+      <OfficialSources tool={spoke.tool} lean={propre} />
     </>
   )
 }

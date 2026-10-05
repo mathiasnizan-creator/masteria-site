@@ -95,16 +95,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : transporteurs, fichiers d'entrepôt et demandes de clients, trois points d'entrée outillés",
-      contexte: "Cinq personnes, trois entrepôts en France, des clients dans dix-sept pays et un seul logiciel de gestion, Odoo. Chez ce distributeur photovoltaïque, le temps partait à recopier ce que d'autres envoyaient. Les devis naissaient de mails ressaisis ligne à ligne. Quinze jours avant chaque livraison, la consultation des transporteurs se faisait à la main. Les numéros de série étaient retapés, la scannette ne sachant pas lire les fichiers venus des entrepôts. Un commissionnaire marseillais retrouvera là ses propres points d'entrée.",
+      h3: "Retour de mission : transporteurs, fichiers d'entrepôt et demandes de clients, trois points d'entrée à outiller",
+      contexte: "Trois personnes, trois entrepôts en France, des clients à l'export et un seul logiciel de gestion, Odoo. Chez ce distributeur photovoltaïque, le temps partait à recopier ce que d'autres envoyaient. Les devis naissaient de mails ressaisis ligne à ligne. Quinze jours avant chaque livraison, la consultation des transporteurs se faisait à la main. Les numéros de série étaient retapés, la scannette ne sachant pas lire les fichiers venus des entrepôts. Un commissionnaire marseillais retrouvera là ses propres points d'entrée.",
       etapes: [
         "Les trois responsables de l'entreprise (direction, ventes, opérations) ont été interrogés en visio, chacun sur ses flux ; parmi les pièces étudiées figuraient le mail type d'un transporteur et les fichiers des entrepôts.",
         "La vente, la livraison avec l'encaissement, le développement commercial et le pilotage ont été décrits étape par étape ; douze gisements de temps en sont sortis, rangés par impact et par faisabilité sur trois mois.",
-        "En une journée, trois assistants ont été construits sur les fichiers de l'entreprise : l'un consulte les transporteurs à J-15 et propose un choix, un autre convertit les fichiers d'entrepôt au format d'import d'Odoo en contrôlant les totaux, le troisième transforme les demandes reçues des clients en lignes de devis.",
-        "L'entreprise a abandonné les comptes individuels au profit d'un abonnement collectif qu'elle administre, adopté une charte tenant sur une page (huit règles) et nommé un référent IA chargé des signalements d'erreur.",
+        "Trois assistants sont à construire en une journée sur les fichiers de l'entreprise, avant la formation : l'un consultera les transporteurs à J-15 et proposera un choix, un autre convertira les fichiers d'entrepôt au format d'import d'Odoo en contrôlant les totaux, le troisième transformera les demandes reçues des clients en lignes de devis.",
+        "Le diagnostic propose de remplacer les comptes individuels par un abonnement collectif administré par l'entreprise, avec une charte d'usage signée avant la formation, et un référent IA chargé des signalements d'erreur.",
         "Le plan d'action tient en 90 jours et se termine par une mesure à J+30 de cinq indicateurs, dont l'usage hebdomadaire des assistants par l'équipe.",
       ],
-      resultat: "La direction dispose d'un diagnostic et de trois décisions résumées sur une seule page : l'outillage commun, les trois chantiers et la charte d'usage. Les objectifs à trois mois, posés avant la formation, restent des cibles tant que la mesure de J+30 n'a pas eu lieu : douze heures au plus entre une demande et l'envoi du devis, deux fois moins de temps passé à consulter les transporteurs, 80 % des réceptions traitées sans ressaisie. Un transitaire marseillais peut en retenir le principe : l'assistant prépare, une personne valide.",
+      resultat: "La direction dispose depuis septembre 2026 d'un diagnostic et de trois décisions : l'outillage commun, les trois chantiers et la charte d'usage. La formation de deux jours sur site est prévue en octobre 2026. Les objectifs à trois mois, posés avant la formation, restent des cibles tant que la mesure de J+30 n'a pas eu lieu : douze heures au plus entre une demande et l'envoi du devis, deux fois moins de temps passé à consulter les transporteurs, 80 % des réceptions traitées sans ressaisie. Un transitaire marseillais peut en retenir le principe : l'assistant prépare, une personne valide.",
       lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
     },
     pieges: [
@@ -142,7 +142,7 @@ export default {
     },
     {
       q: "Travaillez-vous avec des PME marseillaises de quelques personnes ?",
-      a: "Oui. Le distributeur photovoltaïque de notre retour de mission compte cinq personnes : trois assistants y ont été construits en une journée sur les fichiers de l'entreprise, dans un plan de 90 jours. Pour une petite structure, nous limitons le périmètre à deux ou trois flux, et la direction convertit elle-même le temps relevé en euros.",
+      a: "Oui. Le distributeur photovoltaïque de notre retour de mission compte trois personnes : trois assistants y seront construits en une journée sur les fichiers de l'entreprise, avant la formation, dans un plan de 90 jours. Pour une petite structure, nous limitons le périmètre à deux ou trois flux, et la direction convertit elle-même le temps relevé en euros.",
     },
     {
       q: "Que reste-t-il chez nous à la fin du projet ?",

@@ -751,7 +751,7 @@ export default function AccompagnementIAPage() {
       <CaseStudyCards
         ids={['industrie', 'distribution', 'conseil-financier']}
         title="Trois accompagnements dans la durée, documentés"
-        intro="Un déploiement par paliers du comité de direction aux sites internationaux, une force de vente outillée par vagues avec ses référents, un cabinet dont les consultants font évoluer leurs assistants seuls : la méthode en six temps et ses résultats."
+        intro="Un déploiement par paliers du comité de direction aux sites internationaux, une force commerciale dont dix référents portent onze compétences Claude avant le déploiement à toute l'entreprise, un cabinet dont les consultants font évoluer leurs assistants seuls : la méthode en six temps et ses résultats."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

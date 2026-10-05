@@ -95,16 +95,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : 58 commerciaux, onze assistants, et les relances de devis en premier",
-      contexte: "Le client de ce retour de mission est un distributeur informatique B2B, rattaché comme filiale française à un groupe européen, dont la force commerciale compte 58 personnes. La prospection, l'analyse de stock, les cotations, les relances et les réponses à des cahiers des charges absorbaient le temps commercial utile. La direction voulait donner à ces 58 commerciaux la productivité d'une équipe bien plus large, sur les outils existants : l'ERP, la base articles et le CRM. Pour une entreprise nantaise qui cherche à améliorer sa performance commerciale, le parallèle tient à la méthode.",
+      h3: "Retour de mission : 58 salariés, onze compétences Claude, et les relances de devis en premier",
+      contexte: "Le client de ce retour de mission est un distributeur informatique B2B, rattaché comme filiale française à un groupe européen, qui compte 58 salariés. La prospection, l'analyse de stock, les cotations, les relances et les réponses à des cahiers des charges absorbaient le temps commercial utile. La direction voulait donner à ces 58 salariés la productivité d'une équipe bien plus large, sur les outils existants : l'ERP, la base articles et le CRM. Pour une entreprise nantaise qui cherche à améliorer sa performance commerciale, le parallèle tient à la méthode.",
       etapes: [
         "Cadrage avec la direction : choix des tâches au meilleur rendement (cotation, relances, cahiers des charges, prospection, stocks) et circuit de validation, avec les logiciels déjà en service.",
-        "Deux jours de formation pour dix commerciaux volontaires, les référents : chacun repart avec une compétence Claude (un assistant réglé pour une tâche précise) conçue sur ses propres données et son propre flux de travail.",
-        "Relecture et validation de chaque assistant par la direction : données autorisées, sources citées, ce qui reste à la main du commercial.",
-        "Cinq sessions de deux jours pour les 48 autres commerciaux, animées avec les référents, sur les mêmes assistants.",
-        "Les assistants entrent en service les uns après les autres ; le premier traite les relances de devis, et les référents corrigent puis enrichissent l'ensemble des onze.",
+        "Deux jours de formation en juin 2026 pour dix volontaires, les référents : chacun repart avec une compétence Claude (un assistant réglé pour une tâche précise) conçue sur son propre flux de travail, avec des données de démonstration.",
+        "Relecture et validation de chaque compétence par la direction : données autorisées, sources citées, ce qui reste à la main du commercial.",
+        "Un déploiement aux quelque cinquante autres collaborateurs, prévu d'octobre à décembre 2026 avec les référents, sur les mêmes compétences.",
+        "Avant la production, chaque référent remplace les données de démonstration par celles de l'entreprise ; la relance des devis a été validée sur de vrais devis avant la formation, et les référents corrigent puis enrichissent l'ensemble des onze.",
       ],
-      resultat: "Les 58 commerciaux sont formés en six sessions de deux jours, et les premiers assistants servent déjà au quotidien. L'objectif reste un objectif : la force de frappe d'une équipe de 70 avec 58 personnes, à effectif constant. Pour une PME nantaise, la leçon porte sur l'ordre des chantiers : la relance de devis passe en premier parce qu'elle se compte chaque semaine.",
+      resultat: "Les dix référents sont formés depuis juin 2026, et la relance des devis a été validée sur de vrais devis avant la formation ; le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. L'objectif reste un objectif : la force de frappe d'une équipe de 70 avec 58 personnes, à effectif constant. Pour une PME nantaise, la leçon porte sur l'ordre des chantiers : la relance de devis passe en premier parce qu'elle se compte chaque semaine.",
       lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
     },
     pieges: [
@@ -134,7 +134,7 @@ export default {
     },
     {
       q: "Par quel processus commencer pour mesurer un premier gain ?",
-      a: "Par celui qui se compte sans effort : la relance de devis, ou le délai entre la demande d'un client et l'envoi du devis. Les chiffres de départ existent déjà dans votre CRM ou votre messagerie, et le résultat se lit à J+30. Chez le distributeur aux 58 commerciaux de notre retour de mission, les relances de devis ont ouvert la mise en production.",
+      a: "Par celui qui se compte sans effort : la relance de devis, ou le délai entre la demande d'un client et l'envoi du devis. Les chiffres de départ existent déjà dans votre CRM ou votre messagerie, et le résultat se lit à J+30. Chez le distributeur de 58 salariés de notre retour de mission, la relance des devis a été validée sur de vrais devis avant même la formation.",
     },
     {
       q: "Combien coûte une mission de conseil ou un développement d'IA à Nantes ?",

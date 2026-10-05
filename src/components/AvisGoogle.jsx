@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { Star, ExternalLink, Pause, Play, X } from 'lucide-react'
 import { NOTE_GOOGLE, FICHE_GOOGLE_URL, AVIS_GOOGLE } from '../data/avis-google'
 
@@ -47,12 +47,12 @@ function Etoiles({ size = 16, note = 5 }) {
   )
 }
 
-function Carte({ avis, cache = false, onLire }) {
+function Carte({ avis, cache = false, onLire, court = false }) {
   return (
     <figure inert={cache || undefined} aria-hidden={cache || undefined} style={{ flex: 'none', width: 'min(340px, 78vw)', boxSizing: 'border-box', margin: 0, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 16, padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 12 }}>
       <Etoiles size={14} note={avis.note} />
-      <blockquote style={{ margin: 0, fontSize: 14.5, color: TEXT, lineHeight: 1.65, whiteSpace: 'pre-line', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 6, overflow: 'hidden' }}>{avis.texte}</blockquote>
-      {estLong(avis.texte) && (
+      <blockquote style={{ margin: 0, fontSize: 14.5, color: TEXT, lineHeight: 1.65, whiteSpace: 'pre-line', display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 6, overflow: 'hidden' }}>{court ? extrait(avis.texte, 120) : avis.texte}</blockquote>
+      {(court ? extrait(avis.texte, 120) !== avis.texte : estLong(avis.texte)) && (
         <button type="button" onClick={() => onLire(avis)} style={{ alignSelf: 'flex-start', background: 'none', border: 'none', padding: 0, fontSize: 13.5, fontWeight: 700, color: BLUE, cursor: 'pointer' }}>
           Lire l'avis en entier
         </button>
@@ -64,7 +64,29 @@ function Carte({ avis, cache = false, onLire }) {
   )
 }
 
-export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
+const sAbonner = () => () => {}
+
+/* Avis les plus proches de la page en tête (ex. ['Claude'] sur les pages Claude), ordre
+   d'origine conservé ensuite. Tous les avis restent affichés : on ne fait que les trier. */
+const scorer = priorite => {
+  const motifs = (priorite || []).map(m => new RegExp(m, 'i'))
+  return a => motifs.reduce((n, re) => n + (re.test(a.texte) ? 1 : 0), 0)
+}
+const trier = (avis, priorite) => {
+  if (!priorite?.length) return avis
+  const score = scorer(priorite)
+  return avis.map((a, i) => ({ a, i, s: score(a) })).sort((x, y) => y.s - x.s || x.i - y.i).map(x => x.a)
+}
+/* Extrait affiché dans le HTML (mode « pertinents ») : début de l'avis coupé à un mot, suivi de « … ».
+   L'avis complet, sans modification, s'ouvre en un clic. */
+const extrait = (texte, max = 170) => {
+  if (texte.length <= max) return texte
+  const coupe = texte.slice(0, max)
+  return coupe.slice(0, coupe.lastIndexOf(' ')).replace(/[\s,;:.!?]+$/, '') + '…'
+}
+
+export default function AvisGoogle({ variant = 'section', bg = '#fff', priorite, titre = 'Nos clients en parlent sur Google', pertinents }) {
+  const [tous, setTous] = useState(false)
   const [pause, setPause] = useState(false)
   const [lu, setLu] = useState(null)
   const fenetre = useRef(null)
@@ -74,9 +96,14 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
     if (lu && !d.open) d.showModal()
     if (!lu && d.open) d.close()
   }, [lu])
+  // La copie de la piste (qui ne sert qu'à boucler le défilement) n'est ajoutée qu'après
+  // le chargement, jamais au prérendu : le HTML lu par les moteurs contient chaque avis
+  // une seule fois au lieu de deux.
+  const boucle = useSyncExternalStore(sAbonner, () => !window.__MASTERIA_PRERENDER__, () => false)
+  const avis = trier(AVIS_GOOGLE, priorite)
   // Assez de cartes pour que la piste dépasse la largeur de l'écran, puis doublée pour boucler.
-  const tour = AVIS_GOOGLE.length
-    ? Array.from({ length: Math.ceil(5 / AVIS_GOOGLE.length) }, () => AVIS_GOOGLE).flat()
+  const tour = avis.length
+    ? Array.from({ length: Math.ceil(5 / avis.length) }, () => avis).flat()
     : []
 
   const resume = (
@@ -99,10 +126,30 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
 
   const defilement = tour.length > 0 && (
     <div className="avis-zone" data-pause={pause || Boolean(lu)} style={{ overflow: 'hidden', marginTop: 28, WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)', maskImage: 'linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)' }}>
-      <div className="avis-piste" style={{ '--avis-duree': `${tour.length * 9}s`, alignItems: 'stretch' }}>
-        {tour.map((a, i) => <Carte key={`a${i}`} avis={a} cache={i >= AVIS_GOOGLE.length} onLire={setLu} />)}
-        {tour.map((a, i) => <Carte key={`b${i}`} avis={a} cache onLire={setLu} />)}
+      <div className="avis-piste" style={{ '--avis-duree': `${tour.length * 9}s`, alignItems: 'stretch', animationName: boucle ? undefined : 'none' }}>
+        {tour.map((a, i) => <Carte key={`a${i}`} avis={a} cache={i >= avis.length} onLire={setLu} />)}
+        {boucle && tour.map((a, i) => <Carte key={`b${i}`} avis={a} cache onLire={setLu} />)}
       </div>
+    </div>
+  )
+
+  // Mode « pertinents » (pages propres) : les avis les plus proches de la page en extraits dans le
+  // HTML, les autres affichés à la demande (jamais au prérendu) ; tous restent accessibles.
+  const score = scorer(priorite)
+  const enTete = pertinents
+    ? (avis.filter(a => score(a) > 0).length ? avis.filter(a => score(a) > 0) : avis).slice(0, pertinents)
+    : []
+  const autres = pertinents ? avis.filter(a => !enTete.includes(a)) : []
+  const grille = pertinents && (
+    <div style={{ marginTop: 24 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 16 }}>
+        {[...enTete, ...(tous ? autres : [])].map((a, i) => <Carte key={`p${i}`} avis={a} onLire={setLu} court />)}
+      </div>
+      {!tous && autres.length > 0 && (
+        <button type="button" onClick={() => setTous(true)} style={{ marginTop: 16, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '8px 16px', fontSize: 13.5, fontWeight: 700, color: BLUE, cursor: 'pointer' }}>
+          Voir les {autres.length} autres avis
+        </button>
+      )}
     </div>
   )
 
@@ -157,11 +204,13 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff' }) {
       <style>{CSS}</style>
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
         <h2 id="avis-google" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: INK, letterSpacing: '-0.01em', margin: '0 0 22px' }}>
-          Nos clients en parlent sur Google
+          {titre}
         </h2>
         {resume}
-        {defilement}
-        {pied}
+        {pertinents ? grille : defilement}
+        {pertinents
+          ? <p style={{ margin: '14px 0 0', fontSize: 12.5, color: MUTED }}>Extraits ; chaque avis s'ouvre en entier, sans modification.</p>
+          : pied}
         {lecture}
       </div>
     </section>

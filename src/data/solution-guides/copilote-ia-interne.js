@@ -128,12 +128,12 @@ export default {
       contexte: "Un groupe international du packaging a préféré Microsoft 365 Copilot à l'assistant conversationnel qu'il avait bâti en interne. Ses plusieurs milliers de salariés se répartissent entre l'Europe, l'Inde et les États-Unis, et le déploiement a lieu en pleine migration vers S/4HANA, l'ERP de SAP dans sa version actuelle. Avant de généraliser, le groupe voulait que des managers pilotes repartent avec des usages applicables dès leur retour au bureau.",
       etapes: [
         "Au cadrage, les référents métiers et le Data manager écrivent ce que Copilot pourra lire : OneDrive et SharePoint, et rien sur les serveurs partagés.",
-        "Les usages se construisent dans treize ateliers, à partir des fichiers du groupe : des tableaux Excel de 56 000 lignes au plus, des documents Word, la messagerie Outlook, des présentations PowerPoint à la charte.",
+        "Les usages se construisent dans treize ateliers, à partir des fichiers du groupe : de gros tableaux Excel, des documents Word, la messagerie Outlook, des présentations PowerPoint à la charte.",
         "Deux ateliers portent sur des assistants ; l'un d'eux lit le mail d'un fournisseur et en tire les contacts, le RIB et l'extrait Kbis qui alimentent sa fiche dans SAP.",
         "Entre les deux sessions de managers, le bilan à chaud entraîne trois corrections : licences Copilot vérifiées, tables organisées par métier, plage protégée pour les assistants à la fin du second jour.",
-        "Le Data manager devient le gardien de la politique d'usage et des prompts partagés entre les 24 managers pilotes ; des sessions en anglais suivent sur les sites américains, indiens et mexicains.",
+        "Le Data manager devient le gardien de la politique d'usage et des prompts partagés entre les 24 managers pilotes ; trois sessions suivent en septembre 2026, dont deux en anglais, avant les sites des États-Unis et du Mexique, prévus en octobre 2026, puis de l'Inde, en décembre 2026.",
       ],
-      resultat: "Les onze participants de la session pilote recommandent tous la formation, et ils notent son utilité pour leur poste 4,9 sur 5, à chaud. Quatre d'entre eux réclament déjà la suite : les données SAP, Power Platform (les outils d'automatisation de Microsoft), des assistants plus poussés ; un module avancé est cadré pour y répondre. Cette demande montre où s'arrête le copilote du marché : il couvre les fichiers bureautiques, et l'accès aux données de gestion demande un travail de connexion.",
+      resultat: "Quatre participants sur onze de la session pilote réclament déjà la suite : les données SAP, Power Platform (les outils d'automatisation de Microsoft), des assistants plus poussés ; un module avancé est cadré pour y répondre. Cette demande montre où s'arrête le copilote du marché : il couvre les fichiers bureautiques, et l'accès aux données de gestion demande un travail de connexion.",
       lien: { href: "/etudes-de-cas-ia#industrie", label: "Lire l'étude de cas complète" },
     },
     pieges: [

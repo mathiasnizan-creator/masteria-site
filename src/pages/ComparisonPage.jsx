@@ -4,6 +4,7 @@ import { ArrowRight, Check, X, Minus, Trophy, Clock, Calendar, BadgeCheck, Walle
 import SEOHead from '../components/SEOHead'
 import Pictogram from '../components/Pictogram'
 import { COMPARISONS } from '../data/comparisons'
+import { PressMention } from '../components/FounderNote'
 
 const SITE_URL = 'https://www.master-ia.fr'
 
@@ -27,6 +28,8 @@ export default function ComparisonPage({ slug: propSlug }) {
   const slug = propSlug || params.slug
 
   const data = COMPARISONS[slug]
+  // Textes de section propres à ce comparatif (sinon formulations communes à tous les comparatifs)
+  const T = data?.textes || {}
   if (!data) {
     return (
       <div style={{ padding: 80, textAlign: 'center' }}>
@@ -193,6 +196,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               <Clock size={14} /> Lecture : {data.readTime}
             </span>
           </div>
+          {data.casIds && <div style={{ marginTop: 16 }}><PressMention /></div>}
         </div>
       </section>
 
@@ -464,7 +468,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 56px',
             }}>
-              {data.criteria.length} critères analysés objectivement, basés sur l'usage réel par 1 500+ professionnels formés.
+              {data.criteria.length} critères, vérifiés sur les sources des éditeurs et confrontés à nos formations sur les deux outils.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
@@ -809,7 +813,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 700, margin: '0 auto 56px',
             }}>
-              {data.realCases.length} scénarios professionnels concrets exploitant les fonctionnalités des offres professionnelles (projets, artefacts, analyse de données, connecteurs et MCP, agents de recherche).
+              {T.cas || `${data.realCases.length} scénarios professionnels concrets exploitant les fonctionnalités des offres professionnelles (projets, artefacts, analyse de données, connecteurs et MCP, agents de recherche).`}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -932,7 +936,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
             }}>
-              Basé sur les retours de 1 500+ professionnels formés depuis 2022.
+              {T.metiers || "D'après les formations que nous menons par métier depuis 2022."}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -1083,7 +1087,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
             }}>
-              Les pièges les plus courants observés sur les déploiements IA en entreprise depuis 2022.
+              {T.erreurs || 'Les pièges les plus courants observés sur les déploiements IA en entreprise depuis 2022.'}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -1145,7 +1149,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 15, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 600, margin: '0 auto 36px',
             }}>
-              Quelques alternatives parfois citées dans les réflexions d'achat.
+              {T.alternatives || "Quelques alternatives parfois citées dans les réflexions d'achat."}
             </p>
 
             <div style={{
@@ -1172,6 +1176,18 @@ export default function ComparisonPage({ slug: propSlug }) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ═════════════ ÉTUDES DE CAS (E-E-A-T) ═════════════ */}
+      {data.terrain && (
+        <section id="terrain" style={{ padding: 'clamp(40px, 6vw, 64px) clamp(18px, 4vw, 32px)', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 28px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{data.terrain.titre}</h2>
+            {(data.terrain.paras || []).map((t, i) => (
+              <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }} dangerouslySetInnerHTML={{ __html: formatBold(t) }} />
+            ))}
           </div>
         </section>
       )}
@@ -1222,7 +1238,7 @@ export default function ComparisonPage({ slug: propSlug }) {
 
       {/* ═════════════ LIENS RELATÉS (maillage interne) ═════════════ */}
       {data.relatedLinks && (
-        <section style={{
+        <nav aria-label="Pour aller plus loin" style={{
           padding: 'clamp(40px, 6vw, 72px) clamp(18px, 4vw, 32px)',
           background: '#fff',
           borderTop: '1px solid #E5E7EB',
@@ -1254,7 +1270,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               ))}
             </div>
           </div>
-        </section>
+        </nav>
       )}
 
       {/* ═════════════ CTA FORMATION ═════════════ */}
@@ -1269,13 +1285,13 @@ export default function ComparisonPage({ slug: propSlug }) {
             fontSize: 'clamp(26px, 4vw, 42px)', fontWeight: 900,
             letterSpacing: '-0.02em', marginBottom: 18, lineHeight: 1.2,
           }}>
-            Vous hésitez encore ? Testez avant de choisir.
+            {T.ctaTitre || 'Vous hésitez encore ? Testez avant de choisir.'}
           </h2>
           <p style={{
             fontSize: 17, color: '#D1D5DB', lineHeight: 1.65,
             marginBottom: 36, maxWidth: 600, margin: '0 auto 36px',
           }}>
-            Nos formations multi-outils permettent à vos équipes de tester les 5 IA principales sur leurs cas d'usage réels avant de décider. 2 jours, certifié Qualiopi, finançable OPCO.
+            {T.ctaTexte || "Nos formations multi-outils permettent à vos équipes de tester les 5 IA principales sur leurs cas d'usage réels avant de décider. 2 jours, certifié Qualiopi, finançable OPCO."}
           </p>
 
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
@@ -1359,8 +1375,10 @@ function ToolCard({ tool }) {
 
 function formatBold(text) {
   if (!text) return ''
-  // Convert **text** to <strong>text</strong>
-  return text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+  // **texte** → <strong>, et [libellé](/chemin) → lien interne (maillage depuis les données)
+  return text
+    .replace(/\[([^\]]+)\]\((\/[^)]*)\)/g, '<a href="$2" style="color:#2563EB;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor">$1</a>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
 }
 
 function linkify(text) {

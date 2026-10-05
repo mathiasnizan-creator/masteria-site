@@ -1018,7 +1018,7 @@ export default function AgentsIAEntreprisePage() {
       <CaseStudyCards
         ids={['photovoltaique', 'distribution', 'conseil-financier']}
         title="Trois missions avec des assistants qui préparent, et des humains qui valident"
-        intro="Consultation des transporteurs, fichiers d'entrepôt vers l'ERP, cotations et relances, mémoires d'appels d'offres : des assistants en production, dans un cadre où ce qui engage l'entreprise reste validé par une personne."
+        intro="Consultation des transporteurs, fichiers d'entrepôt vers l'ERP, cotations et relances, mémoires d'appels d'offres : des assistants conçus avec les équipes, dans un cadre où ce qui engage l'entreprise reste validé par une personne."
       />
 
       <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>

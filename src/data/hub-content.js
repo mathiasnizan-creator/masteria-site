@@ -330,100 +330,88 @@ export const HUB_CONTENT = {
 
     why: [
       {
-        title: 'Traiter des documents longs et complexes avec une précision inégalée',
-        body: "Sur les offres payantes, Claude ingère et analyse en une seule conversation jusqu'à un million de tokens avec ses modèles actuels (Opus 5.5, Sonnet 5.5) : de quoi lire un contrat de plusieurs centaines de pages, un rapport annuel complet ou une série d'études sectorielles. Pour les métiers qui traitent de gros volumes documentaires (juridique, finance, compliance, conseil), cette capacité représente un gain de productivité sans équivalent.",
+        title: 'Lire un dossier entier en une seule conversation',
+        body: "Avec un abonnement payant, Fable 5.1, Opus 5.5 et Sonnet 5.5 gardent jusqu'à un million de tokens sous les yeux dans un même échange. Comptez, selon le repère d'Anthropic, quelque 500 pages pour 200 000 tokens : un contrat et ses annexes, un rapport annuel ou un dossier d'appel d'offres entrent d'un seul bloc. La formation apprend à exploiter cette capacité sans la surestimer : demander les numéros de page, vérifier un échantillon de citations, découper le dossier quand il dépasse la fenêtre.",
       },
       {
-        title: 'Obtenir des réponses plus nuancées, prudentes et calibrées pour un usage professionnel',
-        body: "Claude est connu dans la communauté des professionnels IA pour ses réponses particulièrement soignées sur les sujets sensibles : il signale ses incertitudes, refuse de surconfirmer ce qu'il ne sait pas et formule des mises en garde appropriées. Pour les équipes juridiques, RH ou financières, cette prudence réduit le risque d'utiliser des sorties IA non vérifiées dans des contextes à enjeux. La formation Masteria montre comment tirer parti de cette fiabilité accrue tout en maximisant la productivité.",
+        title: 'Choisir le bon modèle pour chaque tâche',
+        body: "Au 5 octobre 2026, la gamme d'Anthropic compte quatre modèles. Le plus capable, Fable 5.1, sert aux travaux de longue haleine ; Opus 5.5 est le choix conseillé au quotidien ; Sonnet 5.5 répond vite et coûte moins ; Haiku 4.5 reste le plus vif. Fable 5.1 est réservé aux offres payantes et consomme plus vite les limites d'usage. Les participants apprennent à passer de l'un à l'autre selon l'enjeu de la tâche, plutôt que de tout confier au modèle le plus puissant.",
       },
       {
-        title: 'Maîtriser l\'outil IA le plus performant sur les tâches de rédaction et d\'analyse complexe',
-        body: "Les benchmarks indépendants publiés en 2024 et 2025 placent systématiquement Claude Sonnet et Claude Opus en tête sur les tâches de rédaction professionnelle longue, d'analyse de documents et de raisonnement structuré. Pour les équipes dont la production principale est documentaire ou analytique, consultants, juristes, analystes financiers, communicants, choisir Claude plutôt qu'un autre outil signifie des sorties de meilleure qualité avec moins de corrections nécessaires.",
+        title: 'Installer des réflexes de vérification',
+        body: "Un modèle de langage peut écrire une phrase fausse avec assurance. La formation installe trois réflexes sur vos propres documents : exiger la page ou le passage source de chaque affirmation, faire calculer les chiffres par l'exécution de code plutôt que de les laisser écrire, laisser la décision finale à la personne qui signe. Ces règles entrent dans les instructions de vos projets et de vos compétences, pour s'appliquer à toute l'équipe.",
       },
       {
         "title": "Claude, l'outil des documents longs et de l'écrit exigeant",
-        "body": "Claude apporte aux équipes rédactionnelles un socle de travail complet. Les Projets rassemblent des instructions et des fichiers de connaissance pour partager un même contexte à toute l'équipe. Les Artifacts servent à co-éditer un document, une page ou un visuel dans la conversation. Les styles et la mémoire ancrent vos préférences et le ton maison d'une conversation à l'autre. La recherche approfondie instruit une question en lisant ses sources, les connecteurs relient Claude aux outils de l'entreprise, et Claude produit directement des fichiers Word, Excel ou PowerPoint. Les compétences (Skills) formalisent une procédure d'équipe dans un dossier contenant un fichier SKILL.md ; la compétence se déclenche d'elle-même quand la demande correspond. La formation installe chacune de ces fonctions sur vos documents et vos procédures réels."
+        "body": "Claude apporte aux équipes rédactionnelles un socle de travail complet. Les Projets rassemblent des instructions et des fichiers de connaissance pour partager un même contexte à toute l'équipe. Les Artifacts servent à co-éditer un document, une page ou un visuel dans la conversation. Les styles et la mémoire ancrent vos préférences et le ton maison d'une conversation à l'autre. La recherche approfondie instruit une question en lisant ses sources, les connecteurs relient Claude aux outils de l'entreprise, et Claude produit directement des fichiers Word, Excel ou PowerPoint. Les compétences (Skills) formalisent une procédure d'équipe dans un dossier contenant un fichier SKILL.md ; Claude va chercher la compétence tout seul lorsque la demande en relève. La formation installe chacune de ces fonctions sur vos documents et vos procédures."
       },
     ],
 
     programme: [
       {
         day: 1,
-        title: 'Claude Opus 4.8 et fonctionnalités enterprise (Projects, Skills, Artifacts)',
+        title: "Claude sur vos documents : réglages, méthode et projets d'équipe",
         items: [
-          'Panorama 2026 : différences Claude Free, Pro, Team, Enterprise (sécurité, administration, fenêtre de contexte selon le modèle)',
-          'Claude Opus 4.8 vs Sonnet 5 vs Haiku 4.5 : choisir le bon modèle selon la tâche (analyse profonde, équilibre, rapidité)',
-          'Extended Thinking : activer le raisonnement étendu pour problèmes complexes (juridique, financier, code, stratégie)',
-          'Projects : créer un espace persistant avec base documentaire dédiée (charte, brand voice, FAQ interne, références)',
-          'Skills (lancées fin 2025) : compétences téléchargeables spécialisées (Excel, code, recherche, ingénierie financière)',
-          'Artifacts : édition collaborative de code, visualisations HTML/SVG, schémas, dashboards en temps réel',
-          'Constitutional AI : comprendre l\'alignement Claude pour des sorties prudentes et nuancées sur sujets sensibles',
+          "Panorama au jour de la session : offres Gratuit, Pro, Max, Team et Enterprise, modèles Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 4.5, et ce que chaque offre change pour vos données",
+          "Régler son compte : instructions personnalisées, mémoire, styles d'écriture, et ce que Claude garde d'une conversation à l'autre",
+          "Méthode de demande sur un document long : contexte, consigne, format attendu, citation des pages, puis vérification d'un échantillon",
+          "Réflexion étendue : quand l'activer, et ce qu'elle change sur un raisonnement juridique, financier ou stratégique",
+          "Projet d'équipe sur un dossier de l'entreprise : instructions, fichiers de connaissance, partage, et contrôle que chacun obtient des réponses ancrées dans le même contexte",
+          "Artifacts et fichiers : co-éditer un livrable, produire un document Word ou une présentation PowerPoint, analyser un tableur par exécution de code",
+          "Recherche approfondie : cadrer une question de votre activité, laisser Claude lire les sources, contrôler ce qu'il en retient avant de citer le rapport",
         ],
       },
       {
         day: 2,
-        title: 'Computer Use, MCP, Claude Code, agents autonomes',
+        title: 'Compétences, connecteurs et agents : industrialiser les usages',
         items: [
-          'Computer Use : agent Claude qui prend le contrôle de votre ordinateur pour exécuter des tâches multi-étapes (navigation, formulaires)',
-          'MCP (Model Context Protocol) : standard ouvert pour connecter Claude à vos outils internes (CRM, base de données, API)',
-          'Claude Code en CLI : agent autonome pour développeurs (refactor, debug, génération de tests, code review)',
-          'Sub-agents : déléguer des sous-tâches à plusieurs Claude spécialisés en parallèle (recherche, rédaction, analyse)',
-          'Fenêtre d\'un million de tokens sur les modèles actuels : rapports annuels, contrats longs, bases de code entières en une conversation',
-          'API Anthropic : intégrer Claude dans vos outils internes (cas concrets sans compétence dev avancée)',
-          'Comparatif Claude / GitHub Copilot / Cursor pour le code : quand utiliser chaque outil selon la tâche',
-          'Plan d\'action 30 jours : industrialiser Claude dans les rituels d\'équipe, gouvernance des données, bibliothèque de Projects et Skills',
+          "Compétences (Skills) : formaliser une procédure du métier dans un dossier et son fichier SKILL.md, la tester, puis la faire provisionner pour l'organisation",
+          "Connecteurs et MCP, le protocole ouvert qui relie Claude aux outils de l'entreprise : messagerie, documents partagés, CRM, avec les droits de chacun",
+          "Cowork : confier à Claude une tâche sur un dossier de fichiers, suivre son plan, relire le travail rendu",
+          "Claude dans Excel, PowerPoint et Word, et Claude dans Chrome : travailler dans le fichier ou la page plutôt que dans la conversation",
+          "Claude Code pour vos développeurs : ce que l'agent de codage fait sur un dépôt, et quand passer à la formation Claude Code dédiée de 2 jours",
+          "Garde-fous : consignes cachées dans un document ou une page web (injection de prompt), permissions des connecteurs, relecture humaine, RGPD et article 4 de l'AI Act",
+          "Plan d'action à 30 jours : bibliothèque de projets et de compétences, référents d'équipe, indicateurs de suivi",
         ],
-      },
-      {
-        "day": 1,
-        "title": "Fonctionnalités avancées de Claude",
-        "items": [
-          "Monter un Projet d'équipe sur un dossier réel : rédiger les instructions, charger les fichiers de connaissance, partager l'espace et vérifier que chacun obtient des réponses ancrées dans le même contexte",
-          "Co-éditer un livrable en Artifact : Claude produit une première version du document ou de la page, chacun demande ses retouches, la version retenue rejoint vos gabarits",
-          "Créer une compétence (Skill) sur une procédure du métier : le dossier et son fichier SKILL.md, le test en conditions réelles, puis le provisionnement par l'owner de l'organisation",
-          "Lancer une recherche approfondie sur une question réelle de votre activité : cadrer la demande, laisser Claude lire les sources, puis contrôler ce qu'il en retient avant de citer le rapport",
-          "Produire un fichier Word ou PowerPoint à partir d'un travail mené en conversation : Claude génère le document, vous le relisez et l'ajustez avant diffusion"
-        ]
       },
     ],
 
     faq: [
       {
         q: 'Qu\'est-ce que Claude (Anthropic) et en quoi est-il différent de ChatGPT ?',
-        a: "Claude est l'assistant IA développé par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI (l'éditeur de ChatGPT). Claude et ChatGPT sont tous deux des assistants IA de grande qualité, mais avec des points forts distincts. Claude se distingue par sa fenêtre contextuelle très large (jusqu'à un million de tokens sur les modèles actuels des offres payantes), ses performances supérieures sur les tâches de rédaction professionnelle longue et d'analyse de documents, et une approche de sécurité particulièrement rigoureuse développée sous le nom de \"Constitutional AI\". ChatGPT dispose d'un écosystème de plugins plus riche et d'une intégration DALL-E pour la génération d'images.",
+        a: "Claude est l'assistant IA développé par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI (l'éditeur de ChatGPT). Les deux outils couvrent l'essentiel des usages de bureau. Ce qui sépare le plus Claude de son concurrent, c'est la quantité de texte qu'il garde en mémoire de travail : jusqu'à un million de tokens avec un abonnement payant, quand ChatGPT Business plafonne à 256 000 en mode raisonnement, d'après notre comparatif vérifié le 5 octobre 2026. ChatGPT garde l'avantage sur la génération d'images, que Claude ne propose pas. Le comparatif ChatGPT vs Claude reprend les deux outils critère par critère : modèles, contexte, agents, prix par siège et données.",
       },
       {
         q: 'Pourquoi se former à Claude plutôt qu\'à ChatGPT ?',
-        a: "Le choix dépend de votre métier. Claude est particulièrement adapté aux professionnels qui traitent de gros volumes documentaires (juristes, consultants, analystes, financiers, directeurs de projets) et aux équipes qui valorisent la prudence et la nuance dans les réponses IA. Si votre travail consiste principalement à produire et analyser des documents longs, Claude vous donnera des sorties de meilleure qualité avec moins de corrections. Si votre équipe a déjà investi dans l'écosystème OpenAI (GPTs, API, intégrations), continuer avec ChatGPT peut être plus pertinent. Masteria propose des formations pour les deux outils.",
+        a: "Le choix dépend de votre métier et de votre environnement. Claude convient aux équipes qui lisent et produisent des documents longs (juristes, consultants, analystes, financiers, chefs de projet) et à celles qui veulent formaliser leurs procédures en compétences partagées. Si votre équipe a déjà construit ses usages sur ChatGPT (GPTs, intégrations, API), il peut être plus simple de continuer. Masteria forme aux deux outils et, quand une organisation hésite, compare les deux sur ses propres dossiers avant de choisir.",
       },
       {
         q: 'Claude est-il sécurisé pour les données confidentielles d\'entreprise ?',
-        a: "Anthropic propose une offre Claude for Enterprise qui intègre des garanties de confidentialité renforcées : les données ne sont pas utilisées pour entraîner les modèles, un accord de traitement des données (DPA) est disponible, et des options de déploiement sur infrastructure dédiée existent pour les organisations avec des exigences de souveraineté strictes. Pour la version standard de Claude.ai, les données sont soumises à la politique de confidentialité d'Anthropic, qui exclut leur utilisation pour l'entraînement des modèles si l'option est désactivée. La formation Masteria inclut un module sur les niveaux de confidentialité selon la version utilisée.",
+        a: "Sur les offres Team et Enterprise, les conversations et fichiers de l'organisation ne servent pas à entraîner les modèles, et un accord de traitement des données (DPA) encadre le traitement. Sur les offres individuelles (Gratuit, Pro, Max), chaque utilisateur choisit dans ses réglages si ses conversations peuvent servir à améliorer les modèles : pour des données d'entreprise, ce réglage se vérifie avant la première utilisation. La formation consacre un temps à ces différences et aux règles internes qui en découlent : quelles données passent par Claude, sur quel compte, et ce qui reste hors de l'outil.",
       },
       {
         q: 'La formation Claude est-elle finançable par l\'OPCO ?',
-        a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation Claude finançable via votre OPCO dans le cadre du Plan de Développement des Compétences. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 personnes (3 960 € pour les 2 jours de 14 h, soit ~330 € par personne pour 12 participants). L'accompagnement individuel sur mesure est facturé 1 980 € par jour. La formation est disponible en présentiel dans toute la France et à l'international (Europe, États-Unis, Inde), ainsi qu'en distanciel.",
+        a: "En France, oui. Masteria est certifié Qualiopi : l'opérateur de compétences de votre branche peut financer la formation Claude sur le plan de développement, dans la limite de ses règles et de ses fonds. Côté budget, une équipe de douze personnes au plus suit les deux jours en intra pour 3 960 € HT, soit 330 € HT par tête quand le groupe est complet ; une journée en individuel coûte 1 980 € HT. À Genève ou à Bruxelles, il n'y a pas d'OPCO : le devis est établi en euros hors taxes. Programme détaillé, convention et attestations : le dossier que réclame l'opérateur vous est remis avant la session.",
       },
       {
         q: 'Quels métiers bénéficient le plus de Claude ?',
-        a: "Les métiers qui traitent de gros volumes documentaires tirent le plus grand bénéfice de Claude. En premier lieu : les juristes et avocats (analyse de contrats longs, recherche de clauses, comparaison de versions), les consultants (synthèse de due diligences, rapports d'analyse, notes de recommandation), les analystes financiers (lecture de rapports annuels, extraction de données financières), les profils compliance et audit, et les directeurs de projets complexes. Les équipes de communication et de RH bénéficient également de la qualité rédactionnelle supérieure de Claude sur les contenus longs.",
+        a: "Les métiers qui traitent de gros volumes documentaires tirent le plus grand bénéfice de Claude. En premier lieu : les juristes et avocats (analyse de contrats longs, recherche de clauses, comparaison de versions), les consultants (synthèse de due diligences, rapports d'analyse, notes de recommandation), les analystes financiers (lecture de rapports annuels, extraction de données financières), les profils compliance et audit, et les directeurs de projets complexes. Les équipes de communication et de RH s'en servent aussi pour les contenus longs et les communications sensibles.",
       },
       {
         q: 'Claude peut-il vraiment analyser des documents de 100 pages ?',
-        a: "Oui. Sur les offres payantes, Claude Opus 5.5 et Claude Sonnet 5.5 disposent en conversation d'une fenêtre contextuelle d'un million de tokens ; Anthropic estime que 200 000 tokens représentent environ 500 pages. En pratique, on peut soumettre un contrat de 100 pages et demander à Claude d'en extraire toutes les clauses de résiliation, d'identifier les obligations des parties ou de comparer deux versions du même document. Cette capacité est vérifiée et testée en formation Masteria sur des documents réels fournis par les participants. La précision diminue légèrement sur les documents les plus volumineux, la formation inclut les stratégies pour maintenir la qualité.",
+        a: "Oui, et bien au-delà. Avec un abonnement payant, une conversation avec Fable 5.1, Opus 5.5 ou Sonnet 5.5 peut contenir plusieurs centaines de pages d'un coup. Sur un contrat de cent pages, on peut demander toutes les clauses de résiliation avec leur numéro de page, la liste des obligations de chaque partie ou l'écart entre deux versions. En formation, chacun le fait sur un document qu'il apporte, puis contrôle trois citations tirées au hasard : plus le dossier est volumineux, plus cette vérification compte.",
       },
       {
         "q": "Claude s'entraîne-t-il sur nos conversations ?",
-        "a": "Sur les plans Team et Enterprise, non : les conversations et les fichiers de votre organisation ne servent pas à entraîner les modèles. C'est un engagement de l'offre entreprise d'Anthropic, à distinguer des usages grand public, dont les réglages diffèrent. Cette distinction structure le cadre d'usage travaillé en formation : quelles données passent par Claude, sur quel compte, et ce qui reste hors de l'outil. Un temps dédié reprend vos règles internes de confidentialité, pour que chaque participant sache répondre à la question avant de coller un document dans une conversation."
+        "a": "Pas sur Team ni sur Enterprise : les échanges et les fichiers d'une organisation abonnée restent en dehors de l'entraînement des modèles, sauf si un utilisateur envoie volontairement un retour par pouce levé ou baissé. Les comptes individuels fonctionnent autrement, puisque chacun y décide lui-même de l'usage de ses conversations. Avant le premier exercice, chaque participant vérifie donc sur quel compte il travaille, et l'équipe écrit noir sur blanc quelles pièces peuvent entrer dans Claude et lesquelles restent dehors."
       },
       {
         "q": "Qu'est-ce qu'une compétence (Skill) et à quoi ça sert ?",
-        "a": "Une compétence est une procédure formalisée que Claude applique de lui-même. Concrètement, c'est un dossier contenant un fichier SKILL.md : le nom et la description servent de déclencheur, et la compétence s'active quand la demande d'un utilisateur correspond. Un membre de l'équipe la crée et la teste, puis l'owner de l'organisation la provisionne pour tout le monde. L'intérêt : une procédure maîtrisée par une personne devient un geste disponible pour toute l'équipe, avec le même niveau d'exigence. Le format est ouvert et repris par une quarantaine d'outils, ce qui protège le travail investi. En formation, chaque équipe construit une première compétence sur une procédure réelle de son métier."
+        "a": "C'est une façon de travailler que Claude retrouve chaque fois qu'il en a besoin. Concrètement, un dossier porte un fichier SKILL.md où figurent le nom de la procédure, sa description et ses consignes. Quand une demande correspond à cette description, Claude charge la compétence sans qu'on la lui rappelle. Une personne de l'équipe l'écrit et l'essaie sur des cas variés ; le propriétaire de l'organisation la met ensuite à disposition de tous sur Team ou Enterprise. Le format, Agent Skills, est un standard ouvert depuis le 18 décembre 2025, ce qui évite d'enfermer le travail dans un seul outil. En formation, chaque équipe repart avec une première compétence bâtie sur une procédure de son service."
       },
       {
         "q": "À qui s'adressent Cowork et Claude Code ?",
-        "a": "Ce sont deux outils distincts de l'application Claude classique. Cowork est un agent qui travaille directement dans vos fichiers : on lui confie une tâche sur un dossier, il la mène et rend un travail à relire ; il s'adresse aux métiers qui traitent des dossiers entiers de documents. Claude Code est l'outil des développeurs, qui l'utilisent sur leur code. La formation les situe dans le paysage : qui en a l'usage, ce que cela suppose côté licences et côté cadre, et par où commencer. Les équipes concernées repartent orientées ; pour les autres, l'application Claude et ses Projets couvrent déjà l'essentiel des besoins."
+        "a": "Depuis le 16 septembre 2026, Cowork est intégré à l'appli Claude, en commençant par les abonnements Pro et Max : on lui confie une tâche sur un dossier de fichiers, il annonce son plan, la mène, puis rend un travail à relire. Il sert surtout aux métiers qui manipulent des dossiers entiers, comme la gestion, les achats ou les études. Claude Code, lui, s'adresse aux développeurs et travaille sur un dépôt de code, depuis le terminal ou l'éditeur ; il dispose de sa propre formation de deux jours. Pour la plupart des équipes, la conversation, les projets et les compétences suffisent au départ."
       },
     ],
   },

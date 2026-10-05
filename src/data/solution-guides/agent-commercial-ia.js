@@ -7,7 +7,7 @@ export default {
   guide: {
     kicker: "Guide projet · agent commercial",
     h2: "Un agent commercial rapporte d'abord sur la cotation et la relance, là où il lit vos prix et vos devis",
-    lead: "Les outils du marché savent déjà chercher un prospect et lui écrire. En mode « Research and engage », l'agent de qualification de Dynamics 365 Sales envoie lui-même ses e-mails d'approche et ses relances, selon la documentation de Microsoft mise à jour en juillet 2026. Le temps commercial qui reste à reprendre se trouve dans ce qu'un outil de prospection ne lit pas : vos tarifs, vos stocks, vos devis ouverts, vos cahiers des charges. Chez un distributeur IT B2B dont nous avons formé les 58 commerciaux, le premier assistant mis en production a traité les relances de devis.",
+    lead: "Les outils du marché savent déjà chercher un prospect et lui écrire. En mode « Research and engage », l'agent de qualification de Dynamics 365 Sales envoie lui-même ses e-mails d'approche et ses relances, selon la documentation de Microsoft mise à jour en juillet 2026. Le temps commercial qui reste à reprendre se trouve dans ce qu'un outil de prospection ne lit pas : vos tarifs, vos stocks, vos devis ouverts, vos cahiers des charges. Chez un distributeur IT B2B de 58 salariés dont nous avons formé les dix référents, la relance des devis a été la première compétence validée sur de vrais devis, avant même la formation.",
     sections: [
       {
         h3: "L'agent commercial travaille en interne, pour le vendeur",
@@ -58,16 +58,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : la relance de devis, premier assistant mis en production pour 58 commerciaux",
-      contexte: "Ce distributeur de matériel informatique pour les entreprises, filiale d'un groupe européen, emploie en France une force de vente de 58 personnes. Une large part de leur journée partait dans des tâches qui entourent la vente : chiffrer une demande reçue par e-mail, relancer un devis resté sans réponse, répondre à un cahier des charges, vérifier un stock, réactiver un client qui n'achète plus. La direction a posé une contrainte : vendre davantage à effectif constant, avec le CRM, l'ERP et la base articles déjà en place.",
+      h3: "Retour de mission : la relance de devis, première compétence validée sur de vrais devis chez un distributeur de 58 salariés",
+      contexte: "Ce distributeur de matériel informatique pour les entreprises, filiale d'un groupe européen, emploie 58 salariés en France. Une large part de leur journée partait dans des tâches qui entourent la vente : chiffrer une demande reçue par e-mail, relancer un devis resté sans réponse, répondre à un cahier des charges, vérifier un stock, réactiver un client qui n'achète plus. La direction a posé une contrainte : vendre davantage à effectif constant, avec le CRM, l'ERP et la base articles déjà en place.",
       etapes: [
         "Avec la direction, classer les tâches commerciales selon le temps qu'elles prennent et ce qu'elles rapportent, puis décider qui valide un assistant avant sa diffusion.",
-        "Confier la conception à dix vendeurs volontaires, formés pendant deux jours : chacun construit une compétence Claude sur ses propres données et sa façon de travailler.",
-        "Faire écrire par la direction, assistant par assistant, ce qu'il a le droit de consulter, les sources qu'il cite et ce que le vendeur garde pour lui.",
-        "Mettre en production la relance de devis en premier, puis les autres assistants au fil des semaines, corrigés par les référents à l'usage.",
-        "Former les 48 autres commerciaux en cinq sessions de deux jours animées avec les référents, qui accueillent ensuite les nouveaux arrivants et font évoluer les assistants.",
+        "Confier la conception à dix référents volontaires, formés pendant deux jours en juin 2026 : chacun construit une compétence Claude sur sa façon de travailler, avec des données de démonstration.",
+        "Faire écrire par la direction, compétence par compétence, ce qu'elle a le droit de consulter, les sources qu'elle cite et ce que le vendeur garde pour lui.",
+        "Valider la relance de devis en premier, sur de vrais devis, avant la formation ; pour les autres compétences, chaque référent remplace les données de démonstration par celles de l'entreprise avant la production.",
+        "Prévoir d'octobre à décembre 2026 le déploiement aux quelque cinquante autres collaborateurs, avec les référents, qui accueilleront ensuite les nouveaux arrivants et feront évoluer les compétences.",
       ],
-      resultat: "Toute la force de vente est formée et dispose de onze assistants métier. Pour un commercial, ils couvrent la cotation à partir d'un e-mail client, la relance des devis, la substitution vers les marques propres, les réponses aux cahiers des charges tirées de l'ERP, la prospection et la réactivation de clients, le suivi de la marge, des stocks et des livraisons. Pour chaque assistant, la part qui reste au vendeur est écrite. La direction vise, avec ses 58 vendeurs, l'équivalent commercial d'une équipe de 70 personnes : c'est une cible, et la mesure dira si elle est atteinte.",
+      resultat: "Les dix référents sont formés et onze compétences Claude sont construites. Pour un commercial, elles couvrent la cotation à partir d'un e-mail client, la relance des devis, la substitution vers les marques propres, les réponses aux cahiers des charges tirées de l'ERP, la prospection et la réactivation de clients, le suivi de la marge, des stocks et des livraisons. Pour chaque compétence, la part qui reste au vendeur est écrite. Le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. La direction vise, avec ses 58 salariés, l'équivalent commercial d'une équipe de 70 personnes : c'est une cible, et la mesure dira si elle est atteinte.",
       lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
     },
     pieges: [

@@ -175,7 +175,7 @@ export const GEO_CITIES = [
     caseStudies: {
       ids: ['conseil-financier', 'distribution', 'industrie'],
       title: 'Des déploiements documentés, menés depuis Lyon',
-      intro: "Masteria travaille depuis Lyon pour des organisations de toute la France. Trois missions de formation, décrites en six temps avec leurs résultats : un cabinet de conseil financier formé sur ses deux sites de Paris et de Lyon, une force de vente de 58 commerciaux, et le déploiement de Copilot d'un groupe industriel international.",
+      intro: "Masteria travaille depuis Lyon pour des organisations de toute la France. Trois missions de formation, décrites en six temps avec leurs résultats : un cabinet de conseil financier formé sur ses deux sites de Paris et de Lyon, les dix référents d'un distributeur IT de 58 salariés, et le déploiement de Copilot d'un groupe industriel international.",
     },
     founderNote: true,
     ecosystemIntro: "Nos programmes s'appuient sur le tissu de recherche et d'innovation de la métropole. Ces acteurs structurent l'écosystème IA lyonnais.",
@@ -1116,4 +1116,13 @@ export function getAllGeoCombinations() {
     }
   }
   return combos
+}
+
+// Vrai si la page outil×ville existe (même règle que getAllGeoCombinations).
+// À utiliser pour tout lien vers une page outil×ville : une ville `iaOnly`
+// sans l'outil dans `tools` n'a pas de page (404 ou 308 vers le hub).
+export function geoPageExists(toolSlug, citySlug) {
+  const city = GEO_CITIES.find(c => c.slug === citySlug)
+  if (!city) return false
+  return !city.iaOnly || (city.tools || []).includes(toolSlug)
 }

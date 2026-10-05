@@ -1020,8 +1020,8 @@ export default function RoiIAEntreprisePage() {
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
       <CaseStudyCards
         ids={['photovoltaique', 'distribution', 'industrie']}
-        title="Trois missions où le gain est écrit comme une cible, puis mesuré"
-        intro="Des indicateurs relevés en séance et revus à J+30 dans une PME, des assistants en production dans une force de vente, une session pilote mesurée question par question dans un groupe industriel : la chaîne de conversion en pratique."
+        title="Trois missions où le gain est écrit comme une cible avant d'être mesuré"
+        intro="Des indicateurs à relever en séance et à revoir à J+30 dans une PME, onze compétences Claude et une cible écrite comme telle dans une équipe commerciale, une session pilote mesurée question par question dans un groupe industriel : la chaîne de conversion en pratique."
       />
 
       {/* ── FAQ ── */}

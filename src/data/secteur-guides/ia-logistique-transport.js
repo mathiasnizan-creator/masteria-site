@@ -88,16 +88,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : un distributeur photovoltaïque reprend la main sur ses consultations de transporteurs",
-      contexte: "Le point de départ est une PME de cinq personnes qui distribue des solutions photovoltaïques depuis trois entrepôts français vers dix-sept pays, avec Odoo pour ERP. Côté transport, deux gestes coûtent cher. Chaque livraison donne lieu à une consultation manuelle des transporteurs, quinze jours avant le départ. Chaque réception oblige à recopier des numéros de série, parce que la scannette ne lit pas le fichier de l'entrepôt. La direction accepte l'IA à une condition : elle prépare, quelqu'un contrôle.",
+      h3: "Retour de mission : un distributeur photovoltaïque fait de ses consultations de transporteurs un chantier prioritaire",
+      contexte: "Le point de départ est une PME de trois personnes qui distribue des solutions photovoltaïques depuis trois entrepôts français vers des clients à l'export, avec Odoo pour ERP. Côté transport, deux gestes coûtent cher. Chaque livraison donne lieu à une consultation manuelle des transporteurs, quinze jours avant le départ. Chaque réception oblige à recopier des numéros de série, parce que la scannette ne lit pas le fichier de l'entrepôt. La direction accepte l'IA à une condition : elle prépare, quelqu'un contrôle.",
       etapes: [
         "Le flux « livrer et encaisser » est décrit geste par geste, à partir de trois entretiens à distance (direction, commerce, opérations) et des pièces de l'entreprise, dont le mail que l'équipe envoie d'habitude aux transporteurs.",
         "Les tâches sont ensuite pesées une à une (volume déclaré, lien avec Odoo) et classées par impact et faisabilité à trois mois.",
-        "Deux des assistants retenus touchent la logistique : l'un rédige la consultation des transporteurs quinze jours avant la livraison et propose un choix ; l'autre transforme le fichier de l'entrepôt en import Odoo et vérifie les totaux avant l'intégration.",
-        "Un cadre accompagne les outils : une charte de huit règles, un référent IA qui reçoit les erreurs signalées, un rituel mensuel de trente minutes.",
-        "Le calendrier prévoit 90 jours. Les points de départ sont relevés pendant la formation, et le bilan à J+30 porte sur cinq indicateurs, parmi lesquels la durée d'une consultation et la part des réceptions saisies sans reprise.",
+        "Deux des trois assistants à construire avant la formation touchent la logistique : l'un rédigera la consultation des transporteurs quinze jours avant la livraison et proposera un choix ; l'autre transformera le fichier de l'entrepôt en import Odoo et vérifiera les totaux avant l'intégration.",
+        "Un cadre accompagne les outils : une charte d'usage, un référent IA qui reçoit les erreurs signalées et un point mensuel.",
+        "Le calendrier prévoit 90 jours. Les points de départ seront relevés pendant la formation d'octobre 2026, et le bilan, un mois plus tard, porte sur quelques indicateurs simples, dont la durée d'une consultation et les réceptions saisies sans reprise.",
       ],
-      resultat: "À ce stade, le diagnostic est remis et trois décisions attendent la direction. Les objectifs à trois mois restent des cibles jusqu'au bilan : diviser par deux le temps de consultation des transporteurs, réussir huit réceptions sur dix sans ressaisie. La leçon vaut pour tout chargeur : le temps de départ se relève avant de construire quoi que ce soit.",
+      resultat: "À ce stade, le diagnostic a été présenté à la direction en septembre 2026 et trois décisions l'attendent. Les objectifs à trois mois restent des cibles jusqu'au bilan : diviser par deux le temps de consultation des transporteurs, réussir huit réceptions sur dix sans ressaisie. La leçon vaut pour tout chargeur : le temps de départ se relève avant de construire quoi que ce soit.",
       lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
     },
     pieges: [
@@ -151,7 +151,7 @@ export default {
     },
     {
       q: "Travaillez-vous pour les transporteurs comme pour les chargeurs ?",
-      a: "Oui. Côté transporteur ou commissionnaire, les cas portent sur l'exploitation, les litiges et l'information GES ; côté chargeur, sur la consultation, la réception et le contrôle des factures. Le retour de mission présenté plus haut concerne un chargeur : un distributeur qui expédie depuis trois entrepôts vers des clients de dix-sept pays.",
+      a: "Oui. Côté transporteur ou commissionnaire, les cas portent sur l'exploitation, les litiges et l'information GES ; côté chargeur, sur la consultation, la réception et le contrôle des factures. Le retour de mission présenté plus haut concerne un chargeur : un distributeur qui expédie depuis trois entrepôts vers des clients à l'export.",
     },
     {
       q: "L'OPCO peut-il financer le projet ?",

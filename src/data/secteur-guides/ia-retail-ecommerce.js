@@ -85,16 +85,16 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : chez un distributeur B2B, la base articles devient la source des assistants commerciaux",
-      contexte: "Le cas vient de la distribution professionnelle : un distributeur informatique qui vend à des entreprises, rattaché à un groupe européen, avec 58 commerciaux. Les cotations, les relances et les réponses aux cahiers des charges se recomposaient souvent de mémoire, alors que l'ERP, la base articles et le CRM contenaient l'information. Pour un site marchand, la leçon est directe : un assistant utile lit le référentiel avant d'écrire.",
+      h3: "Retour de mission : chez un distributeur B2B, la base articles comme source des compétences commerciales",
+      contexte: "Le cas vient de la distribution professionnelle : un distributeur informatique qui vend à des entreprises, rattaché à un groupe européen, avec 58 salariés. Les cotations, les relances et les réponses aux cahiers des charges se recomposaient souvent de mémoire, alors que l'ERP, la base articles et le CRM contenaient l'information. Pour un site marchand, la leçon est directe : un assistant utile lit le référentiel avant d'écrire.",
       etapes: [
         "Partir des tâches qui puisent dans la base articles : chiffrer une demande arrivée par mail, répondre à un cahier des charges, suggérer une marque propre à la place d'une référence.",
-        "Confier la conception aux vendeurs eux-mêmes : dix volontaires, formés pendant deux jours, bâtissent chacun une compétence Claude (des consignes et des fichiers réunis pour une tâche précise) sur leurs propres données.",
-        "Faire arbitrer par la direction, assistant par assistant, ce que l'outil lit dans l'ERP et le CRM, ce qu'il doit citer et ce qui reste au commercial.",
-        "Étendre le dispositif aux 48 autres vendeurs pendant cinq sessions de deux jours, avec les référents comme relais dans chaque groupe.",
-        "Démarrer par la relance de devis, puis brancher les autres assistants au fil des semaines, sous la garde des référents.",
+        "Confier la conception aux équipes elles-mêmes : dix référents volontaires, formés pendant deux jours en juin 2026, bâtissent chacun une compétence Claude (des consignes et des fichiers réunis pour une tâche précise) sur leur propre flux de travail, avec des données de démonstration.",
+        "Faire arbitrer par la direction, compétence par compétence, ce que l'outil lit dans l'ERP et le CRM, ce qu'il doit citer et ce qui reste au commercial.",
+        "Prévoir l'extension du dispositif aux quelque cinquante autres collaborateurs, d'octobre à décembre 2026, avec les référents comme relais dans chaque groupe.",
+        "Démarrer par la relance de devis, validée sur de vrais devis avant la formation, puis brancher les autres compétences sur les données de l'entreprise à la place des données de démonstration, sous la garde des référents.",
       ],
-      resultat: "Les onze assistants lisent la base articles, l'ERP et le CRM, et l'un d'eux propose de remplacer une référence par une marque propre du distributeur, un geste de merchandising qu'un catalogue structuré rend possible. Les premiers tournent en production. La direction vise une cible fixée au départ : que 58 commerciaux produisent comme une équipe de 70, sans embauche.",
+      resultat: "Les onze compétences sont conçues pour lire la base articles, l'ERP et le CRM, et l'une d'elles propose de remplacer une référence par une marque propre du distributeur, un geste de merchandising qu'un catalogue structuré rend possible. La relance des devis a été validée sur de vrais devis avant la formation, et le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. La direction vise une cible fixée au départ : que 58 salariés produisent comme une équipe de 70, sans embauche.",
       lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
     },
     pieges: [

@@ -2982,7 +2982,8 @@ const BASE_SPOKES = [
     datePublished: '2026-06-16',
     updatedAt: '2026-07-01',
     updatedLabel: 'Programme à jour · juillet 2026',
-    metaTitle: 'Formation Claude Code · Qualiopi · OPCO | Masteria',
+    metaTitle: 'Formation Claude Code en entreprise · Qualiopi · OPCO | Masteria',
+    prerequis: "Pratique du développement, d'un terminal et de Git ; un dépôt de travail (le vôtre ou un dépôt d'entraînement fourni) et un compte Claude Pro, Max, Team ou Enterprise, ou un accès à l'API",
     metaDesc: "Formation Claude Code pour développeurs : refactoring, tests, CI/CD et MCP avec l'agent de codage d'Anthropic. 2 jours sur votre codebase. Qualiopi, OPCO.",
     h1: 'Formation Claude Code : le développement assisté par agents IA',
     intro: "Claude Code est l'outil de développement agentique d'Anthropic : un agent qui lit votre codebase, modifie plusieurs fichiers, exécute les tests et prépare les pull requests, depuis le terminal, l'IDE ou le CI. Cette formation Claude Code de 2 jours, construite sur votre propre code, apprend à vos développeurs à déléguer des tâches d'ingénierie complètes sans perdre le contrôle : conventions d'équipe, permissions, revue systématique.",
@@ -3414,6 +3415,9 @@ export const SPOKES = ALL_BASE_SPOKES.map(spoke => {
     metaDesc: enriched.metaDesc ?? spoke.metaDesc,
     h1: enriched.h1 ?? spoke.h1,
     intro: enriched.intro ?? spoke.intro,
+    // Études de cas à afficher (ids de etudes-de-cas.js) et mots qui trient les avis Google
+    casIds: enriched.casIds ?? spoke.casIds,
+    avisPriorite: enriched.avisPriorite ?? spoke.avisPriorite,
     // Enrich with modules, audience, objectives
     modules: enriched.modules,
     audience: enriched.audience,

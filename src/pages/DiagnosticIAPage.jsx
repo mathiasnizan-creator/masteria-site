@@ -743,7 +743,7 @@ export default function DiagnosticIAPage() {
       <CaseStudyCards
         ids={['photovoltaique', 'distribution']}
         title="Ce qu'un cadrage bien mené produit ensuite"
-        intro="Un diagnostic par flux qui débouche sur trois chantiers et une charte, un cadrage de cas d'usage qui débouche sur onze assistants et une force de vente formée : deux missions documentées, méthode et résultats."
+        intro="Un diagnostic par flux qui débouche sur trois chantiers et une charte, un cadrage de cas d'usage qui débouche sur onze compétences Claude et dix référents formés : deux missions documentées, méthode et résultats."
       />
 
       {/* ── FAQ (éditorial asymétrique) ── */}

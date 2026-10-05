@@ -53,15 +53,15 @@ export default {
     },
     cas: {
       h3: "Retour de mission : un diagnostic par flux chez un distributeur photovoltaïque",
-      contexte: "Un distributeur de solutions photovoltaïques emploie cinq personnes, exploite trois entrepôts en France et vend dans dix-sept pays. Tout passe par Odoo, son ERP (progiciel de gestion intégré), et par deux dirigeants qui se remplacent l'un l'autre. La direction voulait vendre plus sans recruter, à une condition : l'IA n'étant pas une vérité absolue, chaque assistant devait comporter des contrôles. Son quotidien relève de deux de nos pages sectorielles, le commerce et la logistique.",
+      contexte: "Un distributeur de solutions photovoltaïques emploie trois personnes, exploite trois entrepôts en France et vend à l'export. Tout passe par Odoo, son ERP (progiciel de gestion intégré), et par deux dirigeants qui se remplacent l'un l'autre. La direction voulait vendre plus sans recruter, à une condition : l'IA n'étant pas une vérité absolue, chaque assistant devait comporter des contrôles. Son quotidien relève de deux de nos pages sectorielles, le commerce et la logistique.",
       etapes: [
         "Mener trois entretiens en visioconférence, avec la direction, le commercial et les opérations, sur une grille qui suit le travail : qui fait quoi, avec quel outil, à quel rythme.",
         "Décrire quatre flux étape par étape (vendre, livrer et encaisser, développer, piloter) et relever douze gisements de temps avec leur volume déclaré.",
         "Positionner chaque gisement selon son impact et sa faisabilité à trois mois, puis retenir trois chantiers, chacun avec un porteur.",
-        "Concevoir trois assistants : consultation des transporteurs avant livraison, conversion des fichiers d'entrepôt en import Odoo avec contrôle des totaux, transformation des demandes entrantes en lignes de devis.",
-        "Poser une charte de huit règles, désigner un référent et fixer cinq indicateurs à revoir lors d'un bilan à trente jours.",
+        "Définir trois assistants, à construire en une journée avant la formation : consultation des transporteurs avant livraison, conversion des fichiers d'entrepôt en import Odoo avec contrôle des totaux, transformation des demandes entrantes en lignes de devis.",
+        "Poser une charte d'usage, désigner un référent et fixer quelques indicateurs à revoir un mois après la formation.",
       ],
-      resultat: "Le diagnostic est livré, et la direction dispose de trois décisions écrites en une page : le socle, les chantiers, la charte. Les cibles sont fixées avant la formation, dont un devis envoyé sous douze heures et huit réceptions sur dix sans ressaisie ; ce sont des cibles, que le bilan à trente jours confrontera aux mesures. Le flux a désigné les chantiers, et le cadre (charte, référent, ligne au registre RGPD) en a fixé les garde-fous.",
+      resultat: "Le diagnostic a été présenté en septembre 2026, et la direction dispose de trois décisions : le socle, les chantiers, la charte. Les objectifs, dont des devis plus rapides et la fin des ressaisies, sont fixés avant la formation d'octobre 2026 ; ce sont des cibles, que le bilan d'un mois confrontera aux mesures. Le flux a désigné les chantiers, et le cadre (charte, référent, ligne au registre RGPD) en a fixé les garde-fous.",
       lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
     },
     pieges: [

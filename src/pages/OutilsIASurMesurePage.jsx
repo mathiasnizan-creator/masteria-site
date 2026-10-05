@@ -679,8 +679,8 @@ export default function OutilsIASurMesurePage() {
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
       <CaseStudyCards
         ids={['photovoltaique', 'distribution', 'conseil-financier']}
-        title="Trois outils sur mesure, construits sur les fichiers de l'entreprise"
-        intro="Trois assistants pour une PME de cinq personnes, onze pour une force de vente, quatre pour les appels d'offres d'un cabinet : conçus sur les données en place, pris en main en formation, mesurés."
+        title="Trois outils sur mesure, conçus pour les fichiers de l'entreprise"
+        intro="Trois assistants à construire pour une PME de trois personnes, onze compétences Claude pour une équipe commerciale, quatre assistants pour les appels d'offres d'un cabinet : chaque outil est conçu pour les données en place et se prend en main en formation."
       />
 
       {/* ── 6. FAQ (éditorial asymétrique) ── */}

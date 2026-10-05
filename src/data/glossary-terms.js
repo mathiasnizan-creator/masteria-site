@@ -80,7 +80,7 @@ export const GLOSSARY_TERMS = [
     term: 'Modèle de fondation (Foundation Model)',
     category: 'fondamentaux',
     definition:
-      "Grand modèle pré-entraîné sur des données massives, conçu pour être adapté à de multiples cas d'usage. GPT-5, Claude Sonnet 5, Gemini Pro et Mistral Large sont des modèles de fondation.",
+      "Grand modèle pré-entraîné sur des données massives, conçu pour être adapté à de multiples cas d'usage. GPT-6, Claude Opus 5.5, Gemini et Mistral Large sont des modèles de fondation.",
   },
   {
     id: 'inference',
@@ -110,7 +110,7 @@ export const GLOSSARY_TERMS = [
     term: 'Claude',
     category: 'modeles',
     definition:
-      "Famille de modèles développée par Anthropic, fondée par d'anciens d'OpenAI. Connu pour sa sécurité, son alignement (Constitutional AI) et ses excellentes capacités en analyse de longs documents et en code. Versions phares : Claude Sonnet 5, Claude Haiku 4.5, Claude Opus 4.8.",
+      "Assistant IA et famille de modèles d'Anthropic, entreprise fondée en 2021 par d'anciens d'OpenAI. Claude lit jusqu'à un million de tokens par conversation sur les offres payantes, ce qui le rend adapté aux documents longs et au code. Modèles au 5 octobre 2026 : Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 4.5. Anthropic entraîne ses modèles selon une « constitution », un texte de principes publié.",
   },
   {
     id: 'gemini',
