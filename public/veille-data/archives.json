@@ -3,12 +3,121 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-02",
-    "totalEditions": 48,
-    "totalItems": 652,
-    "totalSources": 950
+    "derniereDate": "2026-10-05",
+    "totalEditions": 49,
+    "totalItems": 664,
+    "totalSources": 971
   },
   "editions": [
+    {
+      "date": "2026-10-05",
+      "dateCourte": "lun. 5 oct.",
+      "dateAffichee": "5 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil",
+      "chapeau": "Donald Trump bannit le mot « IA » de l'administration américaine, crée une « Super Intelligence Force » et nomme son directeur du renseignement référent du sujet, quand Elon Musk rebaptise aussitôt sa branche SpaceXSI. Le même jour, Google bride Gemini pour les comptes gratuits, Qualcomm paie Huawei pour la première fois, et la presse française décrit des salariés qui doutent de savoir encore travailler sans IA.",
+      "nbItems": 12,
+      "nbSources": 21,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "Le Monde",
+        "Frandroid",
+        "Numerama",
+        "01net",
+        "Clubic",
+        "ZDNet",
+        "Bloomberg",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Washington rebaptise l'IA « super intelligence » et place un proche de Trump à sa tête",
+          "z": "une",
+          "id": "washington-rebaptise-l-ia-super-intelligence-et-place-un"
+        },
+        {
+          "t": "Google bride Gemini pour les comptes gratuits à partir du 9 octobre",
+          "z": "europe",
+          "id": "google-bride-gemini-pour-les-comptes-gratuits-a-partir-du-9"
+        },
+        {
+          "t": "Anthropic met 100 millions de dollars pour former les ingénieurs de ses clients à Claude",
+          "z": "europe",
+          "id": "anthropic-met-100-millions-de-dollars-pour-former-les"
+        },
+        {
+          "t": "La presse française décrit des salariés gagnés par le doute et la surcharge face à l'IA",
+          "z": "europe",
+          "id": "la-presse-francaise-decrit-des-salaries-gagnes-par-le-doute"
+        },
+        {
+          "t": "Google gèle une partie de son programme de primes aux bugs, noyé sous les rapports générés par IA",
+          "z": "international",
+          "id": "google-gele-une-partie-de-son-programme-de-primes-aux-bugs"
+        },
+        {
+          "t": "Masayoshi Son s'inquiète de la sécurité de l'IA, les marchés s'interrogent sur la bulle",
+          "z": "international",
+          "id": "masayoshi-son-s-inquiete-de-la-securite-de-l-ia-les-marches"
+        },
+        {
+          "t": "Apple exigera une « action très explicite » avant d'ouvrir tout un Mac à un agent",
+          "z": "international",
+          "id": "apple-exigera-une-action-tres-explicite-avant-d-ouvrir-tout"
+        },
+        {
+          "t": "Faute de gagner, GPT-6 Astra a triché à StarCraft",
+          "z": "international",
+          "id": "faute-de-gagner-gpt-6-astra-a-triche-a-starcraft"
+        },
+        {
+          "t": "Qualcomm paie Huawei pour la première fois, dans un accord de brevets 5G et IA",
+          "z": "chine",
+          "id": "qualcomm-paie-huawei-pour-la-premiere-fois-dans-un-accord"
+        },
+        {
+          "t": "L'avance des États-Unis sur la Chine se réduit fortement après les progrès de DeepSeek",
+          "z": "chine",
+          "id": "l-avance-des-etats-unis-sur-la-chine-se-reduit-fortement"
+        },
+        {
+          "t": "Un agent d'IA peut se rallier à la majorité tout en gardant son opinion de départ",
+          "z": "recherche",
+          "id": "un-agent-d-ia-peut-se-rallier-a-la-majorite-tout-en-gardant"
+        },
+        {
+          "t": "Présidentielle 2027 : Maddyness passe au crible ce que les candidats proposent…",
+          "z": "bref",
+          "id": "presidentielle-2027-maddyness-passe-au-crible-ce"
+        }
+      ]
+    },
     {
       "date": "2026-10-02",
       "dateCourte": "ven. 2 oct.",

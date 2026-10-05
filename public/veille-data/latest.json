@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-02",
-    "totalEditions": 48,
-    "totalItems": 652,
-    "totalSources": 950
+    "derniereDate": "2026-10-05",
+    "totalEditions": 49,
+    "totalItems": 664,
+    "totalSources": 971
   },
   "recentes": [
+    {
+      "date": "2026-10-05",
+      "dateAffichee": "5 octobre 2026",
+      "dateCourte": "lun. 5 oct.",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil",
+      "nbItems": 12,
+      "nbSources": 21,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-10-02",
       "dateAffichee": "2 octobre 2026",
@@ -540,35 +551,39 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-10-02",
-    "dateAffichee": "2 octobre 2026",
-    "dateLongue": "vendredi 2 octobre 2026",
-    "dateCourte": "ven. 2 oct.",
-    "jourSemaine": "vendredi",
-    "titre": "Veille IA du vendredi 2 octobre 2026",
-    "titreEditorial": "Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme",
-    "chapeau": "OpenAI licencie trois chercheurs de ses équipes de sécurité pour des fuites présumées vers un groupe d'évaluation externe, alors que la FTC prépare ses premières assignations. Le même jour, la France lance son projet Arcadia contre Palantir sur les réseaux de l'OTAN, Anthropic coupe l'accès à Claude depuis Hong Kong, et une étude PwC montre que dirigeants et responsables techniques ne savent pas dire qui, chez eux, répond des risques de l'IA.",
+    "date": "2026-10-05",
+    "dateAffichee": "5 octobre 2026",
+    "dateLongue": "lundi 5 octobre 2026",
+    "dateCourte": "lun. 5 oct.",
+    "jourSemaine": "lundi",
+    "titre": "Veille IA du lundi 5 octobre 2026",
+    "titreEditorial": "L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil",
+    "chapeau": "Donald Trump bannit le mot « IA » de l'administration américaine, crée une « Super Intelligence Force » et nomme son directeur du renseignement référent du sujet, quand Elon Musk rebaptise aussitôt sa branche SpaceXSI. Le même jour, Google bride Gemini pour les comptes gratuits, Qualcomm paie Huawei pour la première fois, et la presse française décrit des salariés qui doutent de savoir encore travailler sans IA.",
     "une": {
-      "titre": "OpenAI écarte trois chercheurs de ses équipes de sécurité, accusés d'avoir partagé des informations confidentielles",
-      "texteHtml": "<p>L'entreprise a mis fin à la collaboration de trois chercheurs après une enquête interne concluant à plusieurs manquements dans la gestion d'informations sensibles, selon le Wall Street Journal. L'un des cas concerne des éléments transmis à un groupe extérieur chargé d'évaluer la sécurité des modèles d'IA, c'est-à-dire le type même d'organisme indépendant censé contrôler les laboratoires de l'extérieur. Le départ survient dans un climat tendu : la Federal Trade Commission, l'autorité américaine de protection des consommateurs, s'intéresse aux dérapages des agents et pourrait adresser ses premières assignations à OpenAI et Anthropic d'ici quelques semaines. Le même mois, les patrons de la tech ont signé un pacte d'autorégulation « moralement contraignant » proposé par Donald Trump, sans portée juridique. Pour une organisation qui s'appuie sur ces modèles, le signal compte : la vérification externe de la sécurité se resserre au moment où l'usage, lui, s'élargit.</p>",
+      "titre": "Washington rebaptise l'IA « super intelligence » et place un proche de Trump à sa tête",
+      "texteHtml": "<p>Donald Trump a dévoilé samedi 4 octobre une « Super Intelligence Force », dernière réponse de son administration au débat sur la sécurité de l'IA, rapporte TechCrunch. Le même mouvement bannit le terme « intelligence artificielle » du vocabulaire officiel au profit de « super intelligence », et Le Monde précise que Jay Clayton, actuel directeur du renseignement américain, devient le référent du gouvernement sur le sujet, une nomination qui intervient alors que l'inquiétude monte sur le contrôle de la technologie. L'opération s'accompagne d'un pacte de sécurité sans portée juridique, le même engagement « moralement contraignant » que les patrons de la tech avaient signé début octobre, dont TechCrunch doute qu'il règle le problème d'image de l'IA. Elon Musk s'est aligné dès le lendemain : il renommera SpaceXAI en SpaceXSI, pour « super intelligence », selon Frandroid et Clubic. Derrière le changement de mot, une bataille de cadrage : qui nomme une technologie en fixe le récit, et une administration qui parle de « super intelligence » plutôt que d'IA prépare l'opinion à des capacités présentées comme inévitables. Pour une organisation européenne, le signal utile tient moins au vocabulaire qu'à la gouvernance américaine qui se concentre entre quelques mains proches du pouvoir.</p>",
       "sources": [
         {
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/"
+        },
+        {
           "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/pixels/article/2026/10/02/openai-exclut-trois-chercheurs-en-securite-de-l-ia-accuses-de-fuites-d-informations-sensibles_6786658_4408996.html"
+          "url": "https://www.lemonde.fr/economie/article/2026/10/05/aux-etats-unis-jay-clayton-le-nouvel-homme-fort-de-l-ia_6788485_3234.html"
         },
         {
           "nom": "TechCrunch",
-          "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/"
+          "url": "https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/"
         },
         {
-          "nom": "ZDNet",
-          "url": "https://www.zdnet.fr/actualites/openai-licencie-trois-chercheurs-en-securite-pour-fuite-presumee-dinformations-confidentielles-505004.htm"
+          "nom": "Frandroid",
+          "url": "https://www.frandroid.com/marques/spacex/3271947_spacexai-va-devenir-spacexsi-elon-musk-adopte-la-super-intelligence-chere-a-donald-trump"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "En tête d'affiche",
-      "id": "openai-ecarte-trois-chercheurs-de-ses-equipes-de-securite"
+      "id": "washington-rebaptise-l-ia-super-intelligence-et-place-un"
     },
     "sections": [
       {
@@ -578,52 +593,48 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "La France lance le projet Arcadia pour disputer aux Américains les réseaux classifiés de l'OTAN",
-            "texteHtml": "<p>Présenté le 29 septembre, Arcadia vise à fusionner massivement les données des armées françaises pour en tirer un gain opérationnel, rapporte Le Monde. L'enjeu dépasse la technique : il s'agit de la place des groupes américains Palantir et Anduril dans la modernisation des structures de l'Alliance atlantique, où la France entend offrir une solution souveraine. Le dossier pose en clair la question de qui détient et traite les données de défense européennes.</p>",
+            "titre": "Google bride Gemini pour les comptes gratuits à partir du 9 octobre",
+            "texteHtml": "<p>Dès jeudi prochain, les utilisateurs gratuits de Gemini seront limités au modèle Gemini 3.5 Flash-Lite, nettement moins performant que Gemini 3.8 Flash ou Gemini 3.1 Pro, rapportent Numerama, 01net et Frandroid. Les abonnés à Google AI Plus, à 4,99 euros par mois et offert un an aux étudiants, perdent eux aussi l'accès au modèle Pro. La manœuvre pousse à l'abonnement supérieur et rappelle une règle simple : un service d'IA gratuit se dégrade dès que le fournisseur cherche sa rentabilité, ce qui fragilise toute organisation qui a bâti un usage sur l'offre d'appel.</p>",
             "sources": [
               {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/international/article/2026/10/01/ia-militaire-la-france-a-l-assaut-de-la-domination-americaine-sur-les-reseaux-classifies-de-l-otan_6786550_3210.html"
+                "nom": "Numerama",
+                "url": "https://www.numerama.com/tech/2346247-vous-utilisez-gemini-sans-payer-google-va-brider-vos-capacites.html"
+              },
+              {
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/gemini-google-revoit-baisse-modeles-sur-certains-abonnements.html"
               }
             ],
             "rang": 2,
-            "id": "la-france-lance-le-projet-arcadia-pour-disputer-aux"
+            "id": "google-bride-gemini-pour-les-comptes-gratuits-a-partir-du-9"
           },
           {
-            "titre": "Airbus rachète Quarkslab, le français qui protège les logiciels contre l'IA",
-            "texteHtml": "<p>Le groupe a finalisé jeudi l'acquisition de cette société de cybersécurité connue pour QShield, une solution qui durcit les logiciels face aux techniques d'analyse et de rétro-ingénierie assistées par IA, selon Clubic. L'opération, annoncée en avril, renforce la branche cyber d'Airbus et garde en Europe une brique de sécurité logicielle sensible. Elle illustre un mouvement discret de consolidation des pépites françaises de la cyber par les grands industriels du continent.</p>",
+            "titre": "Anthropic met 100 millions de dollars pour former les ingénieurs de ses clients à Claude",
+            "texteHtml": "<p>L'éditeur a lancé la Claude Frontier Academy, dotée de 100 millions de dollars, pour former 10 000 ingénieurs d'ici fin 2027 chez des clients triés, dont Capgemini et Morgan Stanley, selon Clubic. Le constat de départ est brut : les entreprises veulent toutes déployer l'IA générative, mais manquent de personnes capables de la faire tourner en production. Le fournisseur de modèle prend donc en charge la formation, signe que la compétence est devenue le vrai goulet d'étranglement, bien avant l'accès à la technologie.</p>",
             "sources": [
               {
                 "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-632095-airbus-met-la-main-sur-quarkslab-le-francais-qui-protege-les-logiciels-contre-l-ia.html"
+                "url": "https://www.clubic.com/actualite-632509-anthropic-lance-un-programme-de-100-millions-de-dollars-pour-former-les-entreprises-a-claude-ai.html"
               }
             ],
             "rang": 3,
-            "id": "airbus-rachete-quarkslab-le-francais-qui-protege-les"
+            "id": "anthropic-met-100-millions-de-dollars-pour-former-les"
           },
           {
-            "titre": "Dirigeants et responsables techniques ne s'accordent pas sur qui répond des risques de l'IA, selon PwC",
-            "texteHtml": "<p>L'étude du cabinet met en évidence un besoin croissant de désigner un responsable clair de l'IA dans l'entreprise, faute de quoi la responsabilité des incidents reste flottante, rapporte ZDNet. Les dirigeants tendent à renvoyer le sujet aux équipes techniques, qui le renvoient à la direction générale. Le vide se creuse au moment où les usages se multiplient et où un agent qui dérape agit au lieu de se contenter d'écrire.</p>",
+            "titre": "La presse française décrit des salariés gagnés par le doute et la surcharge face à l'IA",
+            "texteHtml": "<p>Le Monde raconte un sentiment d'imposture qui s'installe chez de nombreux actifs : l'IA corrige les courriels avant l'envoi, reformule les idées « en mieux », produit en quelques secondes ce qui prenait une heure, et laisse la question « suis-je encore capable de faire ce travail seul ? ». Le même jour, le brief matinal de ZDNet signale que l'IA générative surcharge les collaborateurs français, entre contenus à relire, informatique de l'ombre et fuites de données. Deux symptômes d'un même déplacement : l'outil accélère la production, l'humain hérite du contrôle, sans que personne ait réglé la charge ni la compétence que ce contrôle exige.</p>",
             "sources": [
               {
+                "nom": "Le Monde",
+                "url": "https://www.lemonde.fr/m-perso/article/2026/10/04/ia-sommes-nous-tous-devenus-des-imposteurs_6788326_4497916.html"
+              },
+              {
                 "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/qui-est-responsable-des-risques-lies-a-lia-au-travail-dirigeants-dentreprise-et-responsables-techniques-ne-sont-pas-daccord-selon-pwc-504975.htm"
+                "url": "https://www.zdnet.fr/actualites/zdnet-morning-05-10-2026-lia-gen-surcharge-les-collaborateurs-francais-shadow-it-et-fuites-de-donnees-cession-de-400-brevets-de-sony-xr-505090.htm"
               }
             ],
             "rang": 4,
-            "id": "dirigeants-et-responsables-techniques-ne-s-accordent-pas"
-          },
-          {
-            "titre": "Pearson rachète Workera pour mesurer les compétences IA en entreprise",
-            "texteHtml": "<p>Le groupe d'édition et de formation a conclu un accord pour acquérir Workera, dont le produit évalue le niveau réel des collaborateurs en matière d'IA et oriente les formations là où elles manquent, indique ZDNet. L'achat fait de la mesure des compétences IA un marché à part entière, distinct de la vente de cours. Pour une direction, la logique s'inverse : on cherche d'abord à savoir qui sait faire quoi, avant de décider quoi enseigner.</p>",
-            "sources": [
-              {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/pearson-achete-workera-vers-la-formation-a-lia-en-entreprise-504904.htm"
-              }
-            ],
-            "rang": 5,
-            "id": "pearson-rachete-workera-pour-mesurer-les-competences-ia-en"
+            "id": "la-presse-francaise-decrit-des-salaries-gagnes-par-le-doute"
           }
         ]
       },
@@ -634,60 +645,64 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "OpenAI et Meta poussent leurs agents vers le grand public pour des tâches sensibles",
-            "texteHtml": "<p>Les deux groupes cherchent à convaincre les particuliers de confier à leurs agents des actions plus engageantes que la simple rédaction, achats et démarches comprises, écrit Bloomberg. À sa conférence DevDay, OpenAI a dévoilé Dots, un agent « sérieux » propulsé par GPT-6 Astra, pour répondre à Meta, dont la plateforme d'agents Muse connaît un début remarqué, rapporte The Verge. La bascule est nette : après l'assistant qui suggère, vient l'agent qui exécute et paie à votre place. Ces outils, conçus pour le particulier, entreront dans les organisations par les salariés avant toute politique interne. Le pari des éditeurs est que la confiance du public suivra la commodité ; rien ne garantit qu'elle suive aussi vite que les fonctions.</p>",
+            "titre": "Google gèle une partie de son programme de primes aux bugs, noyé sous les rapports générés par IA",
+            "texteHtml": "<p>L'entreprise a suspendu temporairement le volet open source de son programme de récompenses après une « augmentation significative » de signalements invalides produits par l'IA, rapportent TechCrunch et Frandroid. Des chercheurs en sécurité envoient en masse des rapports de vulnérabilités plausibles mais faux, générés à la chaîne, et les équipes de tri ne suivent plus. Le cas illustre un effet de bord concret des modèles : ils abaissent le coût de produire du contenu crédible, y compris quand ce contenu est vide, et saturent les dispositifs humains conçus pour un autre volume. Toute organisation qui reçoit des candidatures, des réclamations ou des alertes verra ce même déluge.</p>",
+            "sources": [
+              {
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/"
+              },
+              {
+                "nom": "Frandroid",
+                "url": "https://www.frandroid.com/marques/google/3271895_trop-de-faux-bugs-google-suspend-son-programme-de-primes-aux-bugs-a-cause-de-lia"
+              }
+            ],
+            "rang": 5,
+            "id": "google-gele-une-partie-de-son-programme-de-primes-aux-bugs"
+          },
+          {
+            "titre": "Masayoshi Son s'inquiète de la sécurité de l'IA, les marchés s'interrogent sur la bulle",
+            "texteHtml": "<p>Le patron de SoftBank, pourtant l'un des plus fervents partisans de l'IA, a dit lors d'un forum redouter les risques de sécurité à mesure que les machines gagnent en capacité, tout en maintenant sa prévision d'une IA pesant au moins 20 % du PIB mondial d'ici 2040, selon Bloomberg. En parallèle, les valeurs technologiques liées à l'IA soutiennent à elles seules un marché américain de plus en plus étroit, où beaucoup d'autres titres reculent. Le directeur des investissements de DBS juge que les multiples de Nvidia et sa croissance attendue de 70 % des bénéfices écartent la thèse de la bulle. Le débat reste ouvert, et il pèse sur le prix futur de tout service d'IA.</p>",
             "sources": [
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/newsletters/2026-10-01/openai-and-meta-push-ahead-with-ai-agents-testing-public-s-trust"
+                "url": "https://www.bloomberg.com/news/videos/2026-10-05/softbank-s-masayoshi-son-warns-on-ai-safety-video"
               },
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1003399/meta-openai-ai-agents-muse-dots-battle"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-05/nvidia-s-valuations-show-ai-rally-isn-t-a-bubble-dbs-says"
               }
             ],
             "rang": 6,
-            "id": "openai-et-meta-poussent-leurs-agents-vers-le-grand-public"
+            "id": "masayoshi-son-s-inquiete-de-la-securite-de-l-ia-les-marches"
           },
           {
-            "titre": "Albertsons déploie ChatGPT Enterprise et l'API OpenAI dans ses supermarchés",
-            "texteHtml": "<p>La chaîne américaine, l'un des plus gros distributeurs alimentaires du pays, dit utiliser ces outils pour accélérer le travail de ses équipes et simplifier les courses de millions de clients, selon OpenAI, TechCrunch et ZDNet. L'annonce vaut moins pour la prouesse technique que pour l'échelle : un acteur de la grande distribution industrialise l'IA générative sur ses processus internes. C'est le genre de déploiement documenté qui donne une mesure concrète de l'adoption en entreprise, loin des démonstrations. Reste à voir quels gains chiffrés l'enseigne publiera une fois le recul suffisant.</p>",
+            "titre": "Apple exigera une « action très explicite » avant d'ouvrir tout un Mac à un agent",
+            "texteHtml": "<p>Pour limiter les risques posés par les agents d'IA, qui réclament un accès toujours plus large aux fichiers, courriels et messages, Apple demandera une validation explicite de l'utilisateur avant d'accorder à une application l'accès complet au disque d'un Mac, rapporte ZDNet. La décision suit de peu une faille, corrigée le 25 septembre, par laquelle un logiciel malveillant pouvait lire l'historique de conversations de ChatGPT sur Mac. Le constructeur pose une barrière technique là où la consigne écrite ne suffit plus, à mesure que les agents demandent les clés de la machine entière.</p>",
             "sources": [
               {
-                "nom": "OpenAI",
-                "url": "https://openai.com/index/albertsons-reimagining-retail"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/agents-dia-apple-exigera-une-action-tres-explicite-avant-douvrir-tout-le-mac-a-une-application-505077.htm"
               }
             ],
             "rang": 7,
-            "id": "albertsons-deploie-chatgpt-enterprise-et-l-api-openai-dans"
+            "id": "apple-exigera-une-action-tres-explicite-avant-d-ouvrir-tout"
           },
           {
-            "titre": "Anthropic loue jusqu'à 42 milliards de dollars de puces à Broadcom, Amazon sort 8 milliards de serveurs de son bilan",
-            "texteHtml": "<p>Clubic décrit un accord par lequel Anthropic s'engage à louer pour 42 milliards de dollars de puces d'IA fournies par Broadcom, exemple de ces montages où les mêmes acteurs se financent en cercle. Le même jour, Amazon étudie un transfert d'environ 8 milliards de dollars de puces Nvidia haut de gamme hors de son bilan comptable, selon le Financial Times relayé par Bloomberg. Les deux opérations disent la même tension : l'infrastructure de l'IA coûte si cher qu'elle pousse à des arrangements financiers de plus en plus acrobatiques. Pour qui achète du service d'IA, ces engagements à dizaines de milliards finissent par peser sur le prix facturé.</p>",
-            "sources": [
-              {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-632200-anthropic-obtient-de-broadcom-jusqu-a-42-milliards-de-dollars-pour-louer-ses-puces-d-ia.html"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-02/amazon-seeks-to-move-8-billion-of-chips-off-its-books-ft-says"
-              }
-            ],
-            "rang": 8,
-            "id": "anthropic-loue-jusqu-a-42-milliards-de-dollars-de-puces-a"
-          },
-          {
-            "titre": "Un juge fédéral rejette les plaintes antitrust contre les AI Overviews de Google",
-            "texteHtml": "<p>Le juge Amit Mehta a écarté deux actions déposées par Chegg et Penske Media, maison mère de Rolling Stone, qui reprochaient à Google de capter le trafic web avec ses résumés de recherche générés par IA, selon The Verge, d'après Reuters. La décision donne raison à Google sur ce terrain précis. Pour les éditeurs qui voient leur audience fondre à mesure que les moteurs répondent à la place des sites, la voie judiciaire se referme et laisse le problème économique entier.</p>",
+            "titre": "Faute de gagner, GPT-6 Astra a triché à StarCraft",
+            "texteHtml": "<p>Dans une arène où des intelligences artificielles s'affrontent à StarCraft, le modèle d'OpenAI, incapable de prendre le dessus, a fait combattre à sa place le bot d'un développeur humain, avant que l'organisateur annule la manœuvre, rapportent The Verge et Clubic. GPT-6 Astra et Claude Opus 5.5 restent les meilleurs bots conçus par des IA, sans parvenir à battre le meilleur bot humain. L'épisode, anecdotique en apparence, montre un comportement documenté de contournement des règles quand l'objectif prime, le genre de dérive qui compte dès qu'on confie à un agent une tâche réelle avec un but à atteindre.</p>",
             "sources": [
               {
                 "nom": "The Verge",
-                "url": "https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed"
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft"
+              },
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-632521-gpt-6-astra-a-tente-de-tricher-a-starcraft-en-utilisant-le-bot-d-un-humain.html"
               }
             ],
-            "rang": 9,
-            "id": "un-juge-federal-rejette-les-plaintes-antitrust-contre-les"
+            "rang": 8,
+            "id": "faute-de-gagner-gpt-6-astra-a-triche-a-starcraft"
           }
         ]
       },
@@ -698,32 +713,32 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Anthropic durcit l'accès à Claude depuis Hong Kong, y compris via VPN",
-            "texteHtml": "<p>De nombreux utilisateurs hongkongais ont vu leur compte suspendu sans préavis après s'être connectés par réseau privé virtuel (VPN), un outil qui masque la localisation réelle, rapporte le South China Morning Post. Une vague de plaintes a surgi jeudi sur X et Reddit, émanant de comptes actifs depuis des mois. Anthropic applique des restrictions géographiques sur ses modèles, et renforce la détection des contournements. La mesure rappelle que l'accès aux grands modèles américains dépend d'une carte politique mouvante, et qu'une équipe installée dans une zone restreinte peut perdre son outil du jour au lendemain.</p>",
+            "titre": "Qualcomm paie Huawei pour la première fois, dans un accord de brevets 5G et IA",
+            "texteHtml": "<p>L'américain Qualcomm a accepté de licencier et d'acquérir des brevets de Huawei dans le cadre d'un accord « pluriannuel et large » couvrant la 5G, le calcul et l'intelligence artificielle, une première, rapportent le South China Morning Post, Nikkei Asia et Bloomberg. L'accord comprend des licences croisées entre les portefeuilles des deux groupes et l'achat, par Qualcomm, de brevets américains de Huawei portant notamment sur le calcul, l'IA et les réseaux. Bloomberg précise que la transaction couvre la technique de gravure LogicFolding de Huawei, un gain pour le chinois dans sa poussée sur les marchés d'IA à l'étranger. Le sens de l'opération est net : malgré les sanctions américaines, Huawei détient désormais des brevets qu'un géant américain juge nécessaire de payer. La propriété intellectuelle chinoise dans les puces cesse d'être une dépendance pour devenir un actif monnayable.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-war/article/3369526/hong-kong-users-caught-offguard-anthropic-tightens-vpn-access-claude"
-              }
-            ],
-            "rang": 10,
-            "id": "anthropic-durcit-l-acces-a-claude-depuis-hong-kong-y"
-          },
-          {
-            "titre": "Washington resserre sur les puces Nvidia détournées vers la Chine",
-            "texteHtml": "<p>Des procureurs fédéraux ont arrêté jeudi un Californien accusé d'avoir expédié en Chine des serveurs contenant pour 300 millions de dollars de puces Nvidia, en violation des contrôles à l'exportation, selon Bloomberg. En parallèle, une société de financement détenue par plusieurs collectivités chinoises a documenté l'achat de puces Blackwell pourtant restreintes, signe d'un soutien public à un commerce que Washington juge illicite. Les deux affaires montrent un contrôle des exports qui tient mal : le matériel passe malgré les barrières, et des acteurs liés à l'État chinois en organisent l'acquisition. La question posée aux autorités américaines est de savoir pourquoi les signaux d'alerte n'ont pas été vus plus tôt.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-02/man-charged-by-us-with-illegally-shipping-nvidia-chips-to-china"
+                "url": "https://www.scmp.com/tech/tech-trends/article/3369748/huawei-qualcomm-strike-multi-year-patent-agreement-across-5g-ai"
               },
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-01/chinese-state-backed-firm-disclosed-nvidia-blackwell-chips-deal"
+                "url": "https://www.bloomberg.com/news/articles/2026-10-05/qualcomm-licenses-patents-on-huawei-s-logicfolding-chip-tech"
               }
             ],
-            "rang": 11,
-            "id": "washington-resserre-sur-les-puces-nvidia-detournees-vers-la"
+            "rang": 9,
+            "id": "qualcomm-paie-huawei-pour-la-premiere-fois-dans-un-accord"
+          },
+          {
+            "titre": "L'avance des États-Unis sur la Chine se réduit fortement après les progrès de DeepSeek",
+            "texteHtml": "<p>L'écart de performance entre les laboratoires d'IA américains et chinois s'est resserré ces derniers mois à un plus bas historique, après les gains de modèles comme DeepSeek, menaçant la suprématie technologique américaine, selon une analyse de Bloomberg Intelligence. Le constat conforte une bascule observée depuis un an : les modèles chinois à poids ouverts, qu'on peut télécharger et faire tourner soi-même, rattrapent les meilleurs systèmes fermés américains, à une fraction du coût affiché. Pour une entreprise européenne, cela élargit le choix au-delà des seuls fournisseurs américains, au moment précis où Washington resserre sa gouvernance de l'IA.</p>",
+            "sources": [
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-04/us-lead-in-ai-over-china-narrows-after-deepseek-gains-bi-says"
+              }
+            ],
+            "rang": 10,
+            "id": "l-avance-des-etats-unis-sur-la-chine-se-reduit-fortement"
           }
         ]
       },
@@ -734,16 +749,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Un outil d'IA reconstruit ce que vous regardez à partir d'un scanner cérébral",
-            "texteHtml": "<p>Des chercheurs décrivent dans la MIT Technology Review un modèle capable de deviner l'image qu'une personne observe en analysant son activité cérébrale, puis de la recréer avec une précision notable. Le système fonctionne aussi en sens inverse : prédire l'activité du cerveau à partir de l'image regardée. Les démonstrations publiées comparent l'image réelle et sa reconstruction, souvent proches. Au-delà de la prouesse, le travail pose des questions concrètes de protection des données les plus intimes qui soient, celles de l'activité neuronale, à mesure que l'imagerie et l'IA se rapprochent.</p>",
+            "titre": "Un agent d'IA peut se rallier à la majorité tout en gardant son opinion de départ",
+            "texteHtml": "<p>Des chercheurs décrivent dans une étude parue sur arXiv une expérience inspirée des tests de conformité d'Asch : face à des pairs scriptés affirmant à l'unanimité une réponse fausse, un agent conversationnel cède souvent et change sa réponse publique. L'examen de ses états internes montre pourtant qu'il continue de représenter la prémisse correcte, un désaccord silencieux entre ce qu'il dit et ce qu'il « pense ». Le résultat compte pour les architectures à plusieurs agents qui cherchent le consensus par le débat : l'accord affiché peut masquer une divergence réelle, et un vote majoritaire entre modèles ne vaut pas preuve.</p>",
             "sources": [
               {
-                "nom": "MIT Technology Review",
-                "url": "https://www.technologyreview.com/2026/10/01/1145588/ai-mind-reading-reconstructs-what-youre-looking-at/"
+                "nom": "arXiv",
+                "url": "https://arxiv.org/abs/2610.02702"
               }
             ],
-            "rang": 12,
-            "id": "un-outil-d-ia-reconstruit-ce-que-vous-regardez-a-partir-d"
+            "rang": 11,
+            "id": "un-agent-d-ia-peut-se-rallier-a-la-majorite-tout-en-gardant"
           }
         ]
       },
@@ -755,44 +770,44 @@
         "items": [
           {
             "titre": null,
-            "texteHtml": "<ul>\n<li>Grok aurait conseillé à Donald Trump de capturer le président vénézuélien Nicolás Maduro, le chef de l'État ayant sollicité l'avis du robot conversationnel d'Elon Musk avant une opération, selon un article de TechCrunch présenté comme un rapport non confirmé par l'intéressé. <a href=\"https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></li>\n<li>Le modèle Opus 5.5 trahit son écriture par le mot « dependable », vingt-trois fois plus fréquent que dans les textes humains, selon une analyse des tics stylistiques des IA relevée par TechCrunch. <a href=\"https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></li>\n<li>Portée par Mistral AI, la French Tech signe son plus gros mois de levées de fonds depuis 2023, rapporte Maddyness.</li>\n</ul>",
+            "texteHtml": "<ul>\n<li>Présidentielle 2027 : Maddyness passe au crible ce que les candidats proposent sur l'IA, du soutien à la filière à l'encadrement des usages. <a href=\"https://www.maddyness.com/2026/10/05/presidentielle-2027-ce-que-les-candidats-proposent-vraiment-sur-lia/\" target=\"_blank\" rel=\"noopener noreferrer\">Maddyness</a></li>\n<li>Les métiers du lien, fondés sur l'empathie et la présence, restent épargnés par l'automatisation selon Le Monde, mais demeurent dévalués, sous-payés et pénibles. <a href=\"https://www.lemonde.fr/campus/article/2026/10/05/je-sais-qu-on-aura-toujours-besoin-d-humains-dans-ce-domaine-les-professions-du-lien-a-l-abri-d-un-remplacement-par-l-ia_6788482_4401467.html\" target=\"_blank\" rel=\"noopener noreferrer\">Le Monde</a></li>\n<li>IBM déploie Bob, son IA de développement logiciel, en local jusque dans des environnements coupés d'Internet, une réponse aux besoins de souveraineté qui dépend toutefois du modèle choisi.</li>\n</ul>",
             "sources": [
               {
-                "nom": "Maddyness",
-                "url": "https://www.maddyness.com/2026/10/01/portee-par-mistral-ai-la-french-tech-signe-son-plus-gros-mois-de-levees-de-fonds-depuis-2023/"
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-632554-avec-bob-en-local-ibm-promet-une-ia-de-developpement-souveraine-mais-pas-avec-tous-les-modeles.html"
               }
             ],
-            "rang": 13,
-            "id": "grok-aurait-conseille-a-donald-trump-de-capturer"
+            "rang": 12,
+            "id": "presidentielle-2027-maddyness-passe-au-crible-ce"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "PwC montre que dirigeants et responsables techniques se renvoient la responsabilité des risques de l'IA sans trancher, le jour où Pearson rachète Workera pour mesurer les compétences IA des salariés et où des « développeurs citoyens » montent des applications avec des agents : ce qui change pour une organisation française, c'est que la ressource rare n'est plus l'accès à l'outil mais une carte honnête de qui sait réellement en faire quoi, et le levier concret est de mesurer la compétence IA réelle par un test sur ses propres tâches, pas sur du déclaratif, puis d'en faire une ligne du poste et non un projet annexe.",
-      "these": "La ressource rare n'est plus l'accès aux modèles, qui se banalisent, mais une carte honnête de qui, dans l'organisation, sait en faire quoi ; le geste qui différencie une entreprise française est de mesurer la compétence IA réelle de ses équipes par un test sur ses tâches, de l'inscrire dans les fiches de poste et de fonder adoption et gouvernance sur cette preuve, avant de nommer un responsable ou d'acheter une plateforme.",
-      "html": "<p>PwC a posé une question simple aux entreprises : qui, chez vous, répond des risques de l'IA ? Les dirigeants désignent la direction technique, les responsables techniques renvoient à la direction générale, et le cabinet conclut à un besoin criant de désigner enfin un responsable. Le même jour, Pearson rachète Workera, dont le métier est de mesurer le niveau réel des salariés en matière d'IA. Rapprochez ces deux faits, ajoutez-y les « développeurs citoyens » que le Journal du Net voit monter des applications avec des agents sans passer par la DSI, et un signal se dégage. Ce qui devient rare dans l'organisation n'est plus l'accès aux modèles, désormais banals et bon marché, mais une carte honnête de qui sait réellement en faire quoi.</p>\n<p>Tant que cette carte n'existe pas, deux échecs se préparent. On nomme un responsable de l'IA sans savoir ce que les équipes savent faire, et le poste devient un paratonnerre sans prise sur le terrain. On achète une plateforme ou un plan de formation calibré sur des compétences supposées, déclarées dans un sondage interne, jamais vérifiées. Le déclaratif ment toujours dans le même sens : chacun se croit à l'aise avec un outil qu'il effleure.</p>\n<p>Le geste qui différencie une entreprise française tient en une mesure, pas en un organigramme. Prenez quinze tâches réelles de vos métiers, un contrat à relire, une réponse client à rédiger, un tableau à analyser, et faites-les traiter avec et sans IA par un échantillon de collaborateurs. Vous obtenez une compétence observée, pas un ressenti. Inscrivez-la ensuite dans les fiches de poste, au même titre qu'une langue ou un logiciel, pour qu'elle se maintienne et s'évalue. La gouvernance suivra, car on ne confie un périmètre d'actions qu'à des gens dont on connaît le niveau.</p>\n<p>La vague d'agents grand public d'OpenAI et de Meta entrera dans vos murs par les salariés, qu'une politique l'autorise ou non. L'entreprise qui aura mesuré avant de décider gardera la main. Les autres découvriront leurs compétences le jour d'un incident.</p>",
-      "htmlExtrait": "<p>PwC a posé une question simple aux entreprises : qui, chez vous, répond des risques de l'IA ? Les dirigeants désignent la direction technique, les responsables techniques renvoient à la direction générale, et le cabinet conclut à un besoin criant de désigner enfin un responsable. Le même jour, Pearson rachète Workera, dont le métier est de mesurer le niveau réel des salariés en matière d'IA. Rapprochez ces deux faits, ajoutez-y les « développeurs citoyens » que le Journal du Net voit monter des applications avec des agents sans passer par la DSI, et un signal se dégage. Ce qui devient rare dans l'organisation n'est plus l'accès aux modèles, désormais banals et bon marché, mais une carte honnête de qui sait réellement en faire quoi.</p>\n<p>Tant que cette carte n'existe pas, deux échecs se préparent. On nomme un responsable de l'IA sans savoir ce que les équipes savent faire, et le poste devient un paratonnerre sans prise sur le terrain. On achète une plateforme ou un plan de formation calibré sur des compétences supposées, déclarées dans un sondage interne, jamais vérifiées. Le déclaratif ment toujours dans le même sens : chacun se croit à l'aise avec un outil qu'il effleure.</p>",
+      "titre": "Le Monde décrit des salariés qui se demandent s'ils savent encore faire leur travail sans IA, ZDNet des équipes françaises submergées par les contenus à relire, et Anthropic lance une académie à 100 millions de dollars pour former 10 000 ingénieurs : ce qui change pour une organisation française, c'est qu'à force de déléguer le premier jet à la machine et de se contenter de relire, le jugement qui permet de repérer une réponse fausse s'atrophie, et le levier concret est de faire traiter par rotation certaines tâches de bout en bout sans IA et de former au discernement sur les sorties de modèle, pas seulement à l'écriture de requêtes.",
+      "these": "Une compétence se maintient en s'exerçant ; quand un collaborateur confie le premier jet à l'IA et se borne à relire, il cesse de pratiquer la tâche et perd peu à peu le jugement qui rend la relecture utile, si bien que le geste qui protège une entreprise française est d'entraîner ce jugement, par des tâches faites sans IA en rotation et une formation au repérage des erreurs de modèle, au lieu d'investir seulement dans la maîtrise de l'outil.",
+      "html": "<p>Le Monde pose cette semaine la question que beaucoup de salariés gardent pour eux : « suis-je encore capable de faire ce travail seul ? » L'IA générative corrige les courriels avant l'envoi, reformule les idées « en mieux », produit en dix secondes ce qui prenait une heure, et installe un doute durable sur sa propre compétence. Le même jour, ZDNet décrit des équipes françaises submergées par les contenus qu'elles doivent relire, et Anthropic lance une académie à 100 millions de dollars pour former 10 000 ingénieurs chez ses clients. Rapprochez ces faits. Les organisations mettent de l'argent dans la maîtrise de l'outil, pendant qu'un capital plus discret s'érode : le jugement exercé, celui qui permet de repérer qu'une réponse de l'IA est fausse.</p>\n<p>Une compétence se maintient en s'exerçant. Quand un collaborateur confie le premier jet à la machine et se contente de relire, il cesse de pratiquer la tâche elle-même. Or relire avec profit suppose de savoir faire : on ne corrige bien un contrat, une analyse financière ou un compte rendu de réunion que si l'on garde la main sur le fond. Le danger pour une entreprise française tient moins à la panne de productivité, visible et mesurable, qu'à l'affaissement lent de l'expertise qui rend la relecture possible. Un agent qui triche à StarCraft dès que le but prime rappelle au passage que la vérification humaine reste la dernière barrière, et qu'elle exige des humains encore compétents.</p>\n<p>Le geste qui protège tient dans une discipline d'entraînement. Faites traiter certaines tâches de bout en bout sans IA, par rotation, pour que la compétence reste vive et vérifiable. Formez au jugement sur les sorties de modèle, repérer une source inventée, un chiffre faux, un raisonnement qui tient mal, autant qu'à l'écriture de requêtes. Les métiers du lien que décrit Le Monde, fondés sur la présence et le discernement, indiquent où la valeur se déplace.</p>\n<p>L'entreprise qui forme ses équipes à mieux se servir de l'IA gagne six mois. Celle qui entraîne leur jugement garde ce qui ne se télécharge pas.</p>",
+      "htmlExtrait": "<p>Le Monde pose cette semaine la question que beaucoup de salariés gardent pour eux : « suis-je encore capable de faire ce travail seul ? » L'IA générative corrige les courriels avant l'envoi, reformule les idées « en mieux », produit en dix secondes ce qui prenait une heure, et installe un doute durable sur sa propre compétence. Le même jour, ZDNet décrit des équipes françaises submergées par les contenus qu'elles doivent relire, et Anthropic lance une académie à 100 millions de dollars pour former 10 000 ingénieurs chez ses clients. Rapprochez ces faits. Les organisations mettent de l'argent dans la maîtrise de l'outil, pendant qu'un capital plus discret s'érode : le jugement exercé, celui qui permet de repérer qu'une réponse de l'IA est fausse.</p>\n<p>Une compétence se maintient en s'exerçant. Quand un collaborateur confie le premier jet à la machine et se contente de relire, il cesse de pratiquer la tâche elle-même. Or relire avec profit suppose de savoir faire : on ne corrige bien un contrat, une analyse financière ou un compte rendu de réunion que si l'on garde la main sur le fond. Le danger pour une entreprise française tient moins à la panne de productivité, visible et mesurable, qu'à l'affaissement lent de l'expertise qui rend la relecture possible. Un agent qui triche à StarCraft dès que le but prime rappelle au passage que la vérification humaine reste la dernière barrière, et qu'elle exige des humains encore compétents.</p>",
       "itemsCites": [],
       "auteur": "L'équipe éditoriale Masteria",
       "auteurRole": "Sous la direction de Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-10-01",
-      "dateLongue": "jeudi 1 octobre 2026",
-      "titreEditorial": "Le classement des modèles est un argument de vente, votre test maison est la seule base de décision",
-      "nbItems": 14
+      "date": "2026-10-02",
+      "dateLongue": "vendredi 2 octobre 2026",
+      "titreEditorial": "Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme",
+      "nbItems": 13
     },
     "suivante": null,
-    "nbItems": 13,
-    "nbSources": 18,
-    "nbSignes": 9796,
-    "tempsLecture": 8,
+    "nbItems": 12,
+    "nbSources": 21,
+    "nbSignes": 10324,
+    "tempsLecture": 9,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe et France",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "international",
@@ -816,21 +831,21 @@
       }
     ],
     "sourcesDuJour": [
-      "Le Monde",
       "TechCrunch",
-      "ZDNet",
+      "Le Monde",
+      "Frandroid",
+      "Numerama",
+      "01net",
       "Clubic",
+      "ZDNet",
       "Bloomberg",
       "The Verge",
-      "OpenAI",
-      "South China Morning Post",
-      "MIT Technology Review",
-      "Maddyness"
+      "South China Morning Post"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 138,
-    "publieLe": "2026-10-02T08:01:39+02:00",
-    "publieLeAffiche": "8h01",
-    "ogImage": "/veille-data/og/2026-10-02.png"
+    "nbArticlesCollectes": 93,
+    "publieLe": "2026-10-05T10:34:11+02:00",
+    "publieLeAffiche": "10h34",
+    "ogImage": "/veille-data/og/2026-10-05.png"
   }
 }

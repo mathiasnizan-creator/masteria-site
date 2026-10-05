@@ -243,7 +243,12 @@
     "titreEditorial": "The model ranking is a sales pitch, your in-house test is the only basis for a decision",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-05",
+    "dateLongue": "Monday 5 October 2026",
+    "titreEditorial": "AI drafts everything and erodes your teams' judgement: train discernment, not just the tool",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 18,
   "nbSignes": 9209,

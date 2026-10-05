@@ -2,25 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-10-02</loc>
+    <loc>https://www.master-ia.fr/veille-ia/2026-10-05</loc>
     <news:news>
       <news:publication>
         <news:name>Veille IA Masteria</news:name>
         <news:language>fr</news:language>
       </news:publication>
-      <news:publication_date>2026-10-02T08:01:39+02:00</news:publication_date>
-      <news:title>Veille IA du 2 octobre 2026 : Mesurez qui sait réellement se servir de l&#x27;IA avant de nommer un responsable ou d&#x27;acheter une plateforme</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-10-01</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-01T06:08:07+02:00</news:publication_date>
-      <news:title>Veille IA du 1 octobre 2026 : Le classement des modèles est un argument de vente, votre test maison est la seule base de décision</news:title>
+      <news:publication_date>2026-10-05T10:34:11+02:00</news:publication_date>
+      <news:title>Veille IA du 5 octobre 2026 : L&#x27;IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l&#x27;outil</news:title>
     </news:news>
   </url>
 </urlset>

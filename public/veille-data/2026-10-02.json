@@ -243,7 +243,12 @@
     "titreEditorial": "Le classement des modèles est un argument de vente, votre test maison est la seule base de décision",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-05",
+    "dateLongue": "lundi 5 octobre 2026",
+    "titreEditorial": "L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 18,
   "nbSignes": 9796,

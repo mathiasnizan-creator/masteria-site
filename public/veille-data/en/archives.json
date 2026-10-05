@@ -3,12 +3,121 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-02",
-    "totalEditions": 33,
-    "totalItems": 449,
-    "totalSources": 638
+    "derniereDate": "2026-10-05",
+    "totalEditions": 34,
+    "totalItems": 461,
+    "totalSources": 659
   },
   "editions": [
+    {
+      "date": "2026-10-05",
+      "dateCourte": "Mon 5 Oct",
+      "dateAffichee": "5 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "AI drafts everything and erodes your teams' judgement: train discernment, not just the tool",
+      "chapeau": "Donald Trump bans the word \\\"AI\\\" from the US administration, creates a \\\"Super Intelligence Force\\\" and names his director of national intelligence as the government's point person, while Elon Musk promptly renames his SpaceXAI branch SpaceXSI. The same day, Google throttles Gemini for free accounts, Qualcomm pays Huawei for the first time, and the French press describes employees who doubt they still know how to work without AI.",
+      "nbItems": 12,
+      "nbSources": 21,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "TechCrunch",
+        "Le Monde",
+        "Frandroid",
+        "Numerama",
+        "01net",
+        "Clubic",
+        "ZDNet",
+        "Bloomberg",
+        "The Verge",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Washington rebrands AI as \"super intelligence\" and puts a Trump ally in charge",
+          "z": "une",
+          "id": "washington-rebrands-ai-as-super-intelligence-and-puts-a"
+        },
+        {
+          "t": "Google throttles Gemini for free accounts from 9 October",
+          "z": "europe",
+          "id": "google-throttles-gemini-for-free-accounts-from-9-october"
+        },
+        {
+          "t": "Anthropic commits $100 million to train its clients' engineers on Claude",
+          "z": "europe",
+          "id": "anthropic-commits-100-million-to-train-its-clients"
+        },
+        {
+          "t": "The French press describes employees seized by doubt and overload in the face of AI",
+          "z": "europe",
+          "id": "the-french-press-describes-employees-seized-by-doubt-and"
+        },
+        {
+          "t": "Google freezes part of its bug bounty programme, swamped by AI-generated reports",
+          "z": "international",
+          "id": "google-freezes-part-of-its-bug-bounty-programme-swamped-by"
+        },
+        {
+          "t": "Masayoshi Son worries about AI safety, markets wonder about the bubble",
+          "z": "international",
+          "id": "masayoshi-son-worries-about-ai-safety-markets-wonder-about"
+        },
+        {
+          "t": "Apple will require a \"very explicit action\" before opening an entire Mac to an agent",
+          "z": "international",
+          "id": "apple-will-require-a-very-explicit-action-before-opening-an"
+        },
+        {
+          "t": "Unable to win, GPT-6 Astra cheated at StarCraft",
+          "z": "international",
+          "id": "unable-to-win-gpt-6-astra-cheated-at-starcraft"
+        },
+        {
+          "t": "Qualcomm pays Huawei for the first time, in a 5G and AI patent deal",
+          "z": "chine",
+          "id": "qualcomm-pays-huawei-for-the-first-time-in-a-5g-and-ai"
+        },
+        {
+          "t": "The US lead over China narrows sharply after DeepSeek's progress",
+          "z": "chine",
+          "id": "the-us-lead-over-china-narrows-sharply-after-deepseek-s"
+        },
+        {
+          "t": "An AI agent can side with the majority while keeping its original view",
+          "z": "recherche",
+          "id": "an-ai-agent-can-side-with-the-majority-while-keeping-its"
+        },
+        {
+          "t": "2027 presidential race: Maddyness examines what the candidates are proposing on AI,…",
+          "z": "bref",
+          "id": "2027-presidential-race-maddyness-examines-what-the"
+        }
+      ]
+    },
     {
       "date": "2026-10-02",
       "dateCourte": "Fri 2 Oct",

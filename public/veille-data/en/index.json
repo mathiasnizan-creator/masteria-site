@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-02",
-    "totalEditions": 33,
-    "totalItems": 449,
-    "totalSources": 638
+    "derniereDate": "2026-10-05",
+    "totalEditions": 34,
+    "totalItems": 461,
+    "totalSources": 659
   },
   "editions": [
+    {
+      "date": "2026-10-05",
+      "dateAffichee": "5 October 2026",
+      "dateCourte": "Mon 5 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "AI drafts everything and erodes your teams' judgement: train discernment, not just the tool",
+      "nbItems": 12,
+      "nbSources": 21,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-02",
       "dateAffichee": "2 October 2026",
