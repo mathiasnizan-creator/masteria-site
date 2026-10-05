@@ -437,12 +437,13 @@ export default function HomePage() {
               <p style={{ ...leadStyle, marginBottom: 24 }}>
                 ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI&nbsp;: nous formons vos équipes sur tous les LLM du marché, par outil et par métier, à partir de leurs propres dossiers. En présentiel ou à distance, en intra-entreprise ou en accompagnement individuel. Plus de 1 500 professionnels formés depuis 2022.
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 18px', border: `1px solid ${LINE}`, borderRadius: 14, marginBottom: 26 }}>
-                <picture style={{ display: 'block', width: 120, flexShrink: 0 }}>
+              <div style={{ padding: '22px 24px', border: `1px solid ${LINE}`, borderRadius: 14, background: '#fff', marginBottom: 26 }}>
+                {/* Logo à la même taille que dans le hero (168 px) : à 120 px, Mathias le jugeait illisible (05/10/2026). */}
+                <picture style={{ display: 'block', width: 168, marginBottom: 14 }}>
                   <source type="image/webp" srcSet="/assets/qualiopi-logo.webp" />
                   <img src="/assets/qualiopi-logo.png" alt="Certification Qualiopi des actions de formation de Masteria" width="842" height="509" loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: 'auto' }} />
                 </picture>
-                <p style={{ fontSize: 13.5, color: TEXT, lineHeight: 1.55, margin: 0 }}>
+                <p style={{ fontSize: 14, color: TEXT, lineHeight: 1.6, margin: 0 }}>
                   Certification qualité délivrée au titre des actions de formation. Finançable par votre OPCO.
                 </p>
               </div>

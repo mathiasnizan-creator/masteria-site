@@ -1,7 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
-import CadrageLink from './CadrageLink'
 import { useIsDesktop, useMediaQuery } from '../hooks/useMediaQuery'
 
 /*
@@ -11,8 +8,11 @@ import { useIsDesktop, useMediaQuery } from '../hooks/useMediaQuery'
  * adapté à la charte du site :
  * fond sombre des sections d'ancrage (#0A0F1E), bleu seul accent (l'ambre et le vert de
  * la maquette passent en bleu), Nunito et DM Sans (pas de police monospace pour les
- * étiquettes), orange réservé au bouton principal. Remplace sur la home le bandeau
- * « Des équipes augmentées par l'IA ».
+ * étiquettes). Remplace sur la home le bandeau « Des équipes augmentées par l'IA ».
+ * Épurée le 05/10/2026 à la demande de Mathias : plus de listes de liens sous les
+ * étapes (« trop chargé »), ni de ligne « équipe », plus de bandeau « Point d'entrée
+ * offert », et l'étape 04
+ * ne cite plus « Claude · Copilot » (Masteria forme sur tous les outils).
  * Vignettes décoratives (aria-hidden), boucle de 7 s synchronisée, lancée quand la
  * section devient visible ; état final affiché si le visiteur réduit les animations.
  * Intégrité : aucun gain présenté comme un résultat (le « +6 h/sem » de la maquette est
@@ -30,7 +30,6 @@ const INK = '#0A0A0A'
 const MUTED = '#6B7280'
 const BLUE = '#2563EB'
 const BLUE_L = '#60A5FA'
-const ORANGE = '#EA580C'
 const MONO = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace'
 
 const CSS = `
@@ -45,10 +44,6 @@ const CSS = `
 @keyframes pxSettle{0%{opacity:0;transform:translate(-16px,16px)}12%,86%{opacity:1;transform:none}94%,100%{opacity:0}}
 @keyframes pxSpin{to{transform:rotate(360deg)}}
 .parcours:not(.parcours-actif) *{animation-play-state:paused!important}
-.parcours-lien{transition:opacity .2s cubic-bezier(.22,1,.36,1)}
-.parcours-lien:hover{opacity:.7}
-.parcours-cta{transition:transform .2s cubic-bezier(.22,1,.36,1),filter .2s}
-.parcours-cta:hover{transform:scale(1.02);filter:brightness(.92)}
 @media (prefers-reduced-motion:reduce){.parcours *{animation:none!important}}
 `
 
@@ -151,10 +146,7 @@ function SceneConstruire() {
 function SceneAdopter() {
   return (
     <div style={{ ...vignette, gap: 10 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={etiquette}>Atelier avancé</span>
-        <span style={{ fontSize: 10, color: T2 }}>Claude · Copilot</span>
-      </div>
+      <span style={etiquette}>Atelier avancé</span>
       <div style={{ ...carteBlanche, padding: 9, display: 'flex', flexDirection: 'column', gap: 6 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 10, fontWeight: 600, ...anim('pxIn', '7s', '.2s') }}>
           <span style={{ width: 14, height: 14, borderRadius: 4, background: BG, color: '#fff', fontSize: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none' }}>P</span>
@@ -228,24 +220,19 @@ function ScenePiloter() {
 
 const ETAPES = [
   {
-    num: '01', titre: 'Comprendre', desc: "Savoir où l'IA vous fera gagner du temps.", equipe: 'Consultants', Scene: SceneComprendre,
-    liens: [['Test de maturité IA', '/test-maturite-ia'], ['Diagnostic IA', '/diagnostic-ia'], ['Audit IA', '/audit-ia'], ['Acculturation IA', '/acculturation-ia']],
+    num: '01', titre: 'Comprendre', desc: "Savoir où l'IA vous fera gagner du temps.", Scene: SceneComprendre,
   },
   {
-    num: '02', titre: 'Cadrer', desc: 'Prioriser, sécuriser, décider.', equipe: 'Consultants · pilotage', Scene: SceneCadrer,
-    liens: [['Conseil stratégie IA', '/conseil-strategie-ia'], ['Conseil data & IA', '/conseil-data-ia'], ['Gouvernance & AI Act', '/gouvernance-ia'], ['Audit de conformité', '/audit-conformite-ai-act'], ['Formation dirigeants', '/formation-ia-dirigeants']],
+    num: '02', titre: 'Cadrer', desc: 'Prioriser, sécuriser, décider.', Scene: SceneCadrer,
   },
   {
-    num: '03', titre: 'Construire', desc: 'Des outils branchés sur vos données.', equipe: 'Développeurs IA', Scene: SceneConstruire,
-    liens: [['Outils IA sur mesure', '/outils-ia-sur-mesure'], ['Agents IA', '/agents-ia-entreprise'], ['Automatisation IA', '/agence-automatisation-ia'], ['Solutions RAG & copilotes', '/solutions-ia']],
+    num: '03', titre: 'Construire', desc: 'Des outils branchés sur vos données.', Scene: SceneConstruire,
   },
   {
-    num: '04', titre: 'Adopter', desc: "Former ceux qui s'en servent.", equipe: 'Formateurs · Qualiopi', Scene: SceneAdopter,
-    liens: [['Formations par outil', '/formation-intelligence-artificielle'], ['Formations par métier', '/formation-intelligence-artificielle#filtres'], ['Agents & automatisation', '/formation-agents-ia'], ['Sprint IA', '/formation-sprint-ia'], ['Coaching individuel', '/coaching-ia']],
+    num: '04', titre: 'Adopter', desc: "Former ceux qui s'en servent.", Scene: SceneAdopter,
   },
   {
-    num: '05', titre: 'Piloter & rayonner', desc: 'Durer, mesurer, être visible.', equipe: 'Équipe mixte', Scene: ScenePiloter,
-    liens: [['Accompagnement IA', '/accompagnement-ia'], ['Chief AI Officer partagé', '/chief-ai-officer'], ['Audit GEO & SEO IA', '/audit-geo-ia'], ['Agence IA marketing', '/agence-ia-marketing'], ['Veille IA quotidienne', '/veille-ia']],
+    num: '05', titre: 'Piloter & rayonner', desc: 'Durer, mesurer, être visible.', Scene: ScenePiloter,
   },
 ]
 
@@ -293,7 +280,7 @@ export default function ParcoursExpertises() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: `repeat(${colonnes}, minmax(0, 1fr))`, gap: '36px 16px' }}>
-          {ETAPES.map(({ num, titre, desc, equipe, Scene, liens }) => (
+          {ETAPES.map(({ num, titre, desc, Scene }) => (
             <div key={num} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               <div aria-hidden="true"><Scene /></div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -301,29 +288,10 @@ export default function ParcoursExpertises() {
                 <h3 style={{ margin: 0, fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 22, color: '#fff' }}>{titre}</h3>
                 <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5, color: T2, minHeight: colonnes > 1 ? 42 : undefined }}>{desc}</p>
               </div>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0, borderTop: `1px solid ${LINE_D2}` }}>
-                {liens.map(([libelle, to]) => (
-                  <li key={libelle} style={{ borderBottom: `1px solid ${LINE_D}` }}>
-                    <Link to={to} className="parcours-lien" style={{ color: '#fff', fontSize: 15, padding: '10px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
-                      <span>{libelle}</span>
-                      <ArrowRight size={14} strokeWidth={2} style={{ color: '#64748B', flex: 'none' }} aria-hidden="true" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ fontSize: 12.5, color: T3, marginTop: 'auto' }}>{equipe}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px 24px', flexWrap: 'wrap', background: TILE, border: `1px solid ${LINE_D}`, borderRadius: 14, padding: '24px 28px' }}>
-          <span style={{ fontSize: 16, color: '#fff', lineHeight: 1.55 }}>
-            <strong>Point d'entrée offert&nbsp;:</strong> 30 minutes de cadrage pour savoir à quelle étape vous êtes.
-          </span>
-          <CadrageLink className="parcours-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: ORANGE, color: '#fff', padding: '13px 22px', borderRadius: 11, fontWeight: 800, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 8px 22px -10px rgba(234,88,12,0.6)' }}>
-            Réserver 30 minutes <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
-          </CadrageLink>
-        </div>
       </div>
     </section>
   )
