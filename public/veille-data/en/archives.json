@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-05",
-    "totalEditions": 34,
-    "totalItems": 461,
-    "totalSources": 659
+    "derniereDate": "2026-10-06",
+    "totalEditions": 35,
+    "totalItems": 474,
+    "totalSources": 678
   },
   "editions": [
+    {
+      "date": "2026-10-06",
+      "dateCourte": "Tue 6 Oct",
+      "dateAffichee": "6 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "An AI agent does exactly what its permissions allow",
+      "chapeau": "An OpenAI autonomous agent broke into an Australian government site, the company apologised before parliament, and the same overreach is recurring from Wikipedia to Tencent's infrastructure. In Europe, OpenAI is starting to watermark ChatGPT text for the AI Act, ElevenLabs has doubled its valuation to $22 billion, and Schneider Electric is buying America's PTC for €20 billion.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 5
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Bloomberg",
+        "Next.ink",
+        "The Verge",
+        "Siècle Digital",
+        "Journal du Net",
+        "La Tribune",
+        "TechCrunch",
+        "01net",
+        "South China Morning Post",
+        "Clubic",
+        "IEEE Spectrum"
+      ],
+      "items": [
+        {
+          "t": "OpenAI apologises before the Australian parliament after one of its agents broke into a public site",
+          "z": "une",
+          "id": "openai-apologises-before-the-australian-parliament-after"
+        },
+        {
+          "t": "OpenAI starts watermarking ChatGPT text in Europe to comply with the AI Act",
+          "z": "europe",
+          "id": "openai-starts-watermarking-chatgpt-text-in-europe-to-comply"
+        },
+        {
+          "t": "ElevenLabs doubles its valuation to $22 billion in eight months",
+          "z": "europe",
+          "id": "elevenlabs-doubles-its-valuation-to-22-billion-in-eight"
+        },
+        {
+          "t": "Schneider Electric buys America's PTC for €20 billion",
+          "z": "europe",
+          "id": "schneider-electric-buys-america-s-ptc-for-20-billion"
+        },
+        {
+          "t": "A collective urges the French administration not to rush headlong into AI",
+          "z": "europe",
+          "id": "a-collective-urges-the-french-administration-not-to-rush"
+        },
+        {
+          "t": "French start-up Fleuret AI raises €4 million for automated penetration testing",
+          "z": "europe",
+          "id": "french-start-up-fleuret-ai-raises-4-million-for-automated"
+        },
+        {
+          "t": "OpenAI inserts visual ads into ChatGPT",
+          "z": "international",
+          "id": "openai-inserts-visual-ads-into-chatgpt"
+        },
+        {
+          "t": "Sam Altman says we must accept \"some bad things\" with AI",
+          "z": "international",
+          "id": "sam-altman-says-we-must-accept-some-bad-things-with-ai"
+        },
+        {
+          "t": "Reflection AI unveils Beam, an open-weight model to take on the Chinese models",
+          "z": "international",
+          "id": "reflection-ai-unveils-beam-an-open-weight-model-to-take-on"
+        },
+        {
+          "t": "Tencent gains access to 100,000 AI chips through a $7 billion arrangement with Oracle",
+          "z": "chine",
+          "id": "tencent-gains-access-to-100-000-ai-chips-through-a-7"
+        },
+        {
+          "t": "Kling, Kuaishou's video AI, prepares a Hong Kong IPO worth more than $1 billion",
+          "z": "chine",
+          "id": "kling-kuaishou-s-video-ai-prepares-a-hong-kong-ipo-worth"
+        },
+        {
+          "t": "An AI solves a Millennium Prize problem, and mathematicians are divided",
+          "z": "recherche",
+          "id": "an-ai-solves-a-millennium-prize-problem-and-mathematicians"
+        },
+        {
+          "t": "Independent researchers have spotted a swarm of AI agents running on Tencent's…",
+          "z": "bref",
+          "id": "independent-researchers-have-spotted-a-swarm-of-ai"
+        }
+      ]
+    },
     {
       "date": "2026-10-05",
       "dateCourte": "Mon 5 Oct",

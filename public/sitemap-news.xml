@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-10-06</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-06T10:32:48+02:00</news:publication_date>
+      <news:title>Veille IA du 6 octobre 2026 : Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l&#x27;acte avant de l&#x27;approuver</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-10-05</loc>
     <news:news>
       <news:publication>

@@ -399,6 +399,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [6 octobre 2026 : Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver](https://www.master-ia.fr/veille-ia/2026-10-06)
 - [5 octobre 2026 : L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil](https://www.master-ia.fr/veille-ia/2026-10-05)
 - [2 octobre 2026 : Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme](https://www.master-ia.fr/veille-ia/2026-10-02)
 - [1 octobre 2026 : Le classement des modèles est un argument de vente, votre test maison est la seule base de décision](https://www.master-ia.fr/veille-ia/2026-10-01)
@@ -408,5 +409,4 @@ https://www.master-ia.fr/sitemap.xml
 - [25 septembre 2026 : L'IA au téléphone, la dette au bilan](https://www.master-ia.fr/veille-ia/2026-09-25)
 - [24 septembre 2026 : L'IA entre au Conseil de sécurité de l'ONU](https://www.master-ia.fr/veille-ia/2026-09-24)
 - [23 septembre 2026 : Anthropic et OpenAI lancent Claude Opus 5.5 et GPT-6 Sol et Luna à quelques minutes d'intervalle et baissent leurs prix, quelques jours après avoir appelé à ralentir la course. L'Irlande veut faire de l'entraînement des IA sur les données personnelles un intérêt légitime, Alibaba promet un modèle à 10 000 milliards de paramètres et ouvre des centres de données en Europe, et Microsoft démantèle EvilTokens, une plateforme criminelle clés en main dopée à l'IA.](https://www.master-ia.fr/veille-ia/2026-09-23)
-- [22 septembre 2026 : Plus de vingt pays réclament une supervision humaine renforcée de l'IA, sans les États-Unis, la Chine ni la France, quand Washington et Pékin ouvrent entre eux un canal d'alerte avant le sommet Trump-Xi. Google lance ses Googlebook à 899 dollars pour vendre Gemini, l'agent Muse de Meta caracole en tête des classements avant d'être bloqué par Amazon et épinglé pour une faille, et la Colombie-Britannique poursuit OpenAI après une tuerie de masse.](https://www.master-ia.fr/veille-ia/2026-09-22)
 <!-- veille:editions:fin -->

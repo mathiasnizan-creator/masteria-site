@@ -247,7 +247,12 @@
     "titreEditorial": "Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-06",
+    "dateLongue": "mardi 6 octobre 2026",
+    "titreEditorial": "Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 21,
   "nbSignes": 10324,

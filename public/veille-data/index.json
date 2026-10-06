@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-05",
-    "totalEditions": 49,
-    "totalItems": 664,
-    "totalSources": 971
+    "derniereDate": "2026-10-06",
+    "totalEditions": 50,
+    "totalItems": 677,
+    "totalSources": 990
   },
   "editions": [
+    {
+      "date": "2026-10-06",
+      "dateAffichee": "6 octobre 2026",
+      "dateCourte": "mar. 6 oct.",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-05",
       "dateAffichee": "5 octobre 2026",

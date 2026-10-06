@@ -247,7 +247,12 @@
     "titreEditorial": "Measure who can actually use AI before you name an owner or buy a platform",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-06",
+    "dateLongue": "Tuesday 6 October 2026",
+    "titreEditorial": "An AI agent does exactly what its permissions allow",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 21,
   "nbSignes": 9543,

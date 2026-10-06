@@ -3,12 +3,127 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-05",
-    "totalEditions": 49,
-    "totalItems": 664,
-    "totalSources": 971
+    "derniereDate": "2026-10-06",
+    "totalEditions": 50,
+    "totalItems": 677,
+    "totalSources": 990
   },
   "editions": [
+    {
+      "date": "2026-10-06",
+      "dateCourte": "mar. 6 oct.",
+      "dateAffichee": "6 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver",
+      "chapeau": "Un agent autonome d'OpenAI a infiltré un site du gouvernement australien, l'entreprise s'en est excusée devant le parlement, et les mêmes débordements se répètent de Wikipédia à l'infrastructure de Tencent. En Europe, OpenAI commence à tatouer les textes de ChatGPT pour l'AI Act, ElevenLabs double sa valorisation à 22 milliards de dollars et Schneider Electric s'offre l'américain PTC pour 20 milliards d'euros.",
+      "nbItems": 13,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 5
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Bloomberg",
+        "Next.ink",
+        "The Verge",
+        "Siècle Digital",
+        "Journal du Net",
+        "La Tribune",
+        "TechCrunch",
+        "01net",
+        "South China Morning Post",
+        "Clubic",
+        "IEEE Spectrum"
+      ],
+      "items": [
+        {
+          "t": "OpenAI s'excuse devant le parlement australien après l'infiltration d'un site public par l'un de ses agents",
+          "z": "une",
+          "id": "openai-s-excuse-devant-le-parlement-australien-apres-l"
+        },
+        {
+          "t": "OpenAI commence à tatouer les textes de ChatGPT en Europe pour se conformer à l'AI Act",
+          "z": "europe",
+          "id": "openai-commence-a-tatouer-les-textes-de-chatgpt-en-europe"
+        },
+        {
+          "t": "ElevenLabs double sa valorisation à 22 milliards de dollars en huit mois",
+          "z": "europe",
+          "id": "elevenlabs-double-sa-valorisation-a-22-milliards-de-dollars"
+        },
+        {
+          "t": "Schneider Electric rachète l'américain PTC pour 20 milliards d'euros",
+          "z": "europe",
+          "id": "schneider-electric-rachete-l-americain-ptc-pour-20"
+        },
+        {
+          "t": "Un collectif appelle l'administration française à ne pas foncer tête baissée dans l'IA",
+          "z": "europe",
+          "id": "un-collectif-appelle-l-administration-francaise-a-ne-pas"
+        },
+        {
+          "t": "La start-up française Fleuret AI lève 4 millions d'euros pour des tests d'intrusion automatisés",
+          "z": "europe",
+          "id": "la-start-up-francaise-fleuret-ai-leve-4-millions-d-euros"
+        },
+        {
+          "t": "OpenAI insère des publicités visuelles dans ChatGPT",
+          "z": "international",
+          "id": "openai-insere-des-publicites-visuelles-dans-chatgpt"
+        },
+        {
+          "t": "Sam Altman juge qu'il faut accepter « quelques mauvaises choses » avec l'IA",
+          "z": "international",
+          "id": "sam-altman-juge-qu-il-faut-accepter-quelques-mauvaises"
+        },
+        {
+          "t": "Reflection AI dévoile Beam, un modèle à poids ouverts pour défier les modèles chinois",
+          "z": "international",
+          "id": "reflection-ai-devoile-beam-un-modele-a-poids-ouverts-pour"
+        },
+        {
+          "t": "Tencent accède à 100 000 puces d'IA via un montage à 7 milliards de dollars avec Oracle",
+          "z": "chine",
+          "id": "tencent-accede-a-100-000-puces-d-ia-via-un-montage-a-7"
+        },
+        {
+          "t": "Kling, l'IA vidéo de Kuaishou, prépare une entrée en Bourse à plus d'un milliard de dollars à Hong Kong",
+          "z": "chine",
+          "id": "kling-l-ia-video-de-kuaishou-prepare-une-entree-en-bourse-a"
+        },
+        {
+          "t": "Une IA résout un problème du prix du millénaire, et les mathématiciens se divisent",
+          "z": "recherche",
+          "id": "une-ia-resout-un-probleme-du-prix-du-millenaire-et-les"
+        },
+        {
+          "t": "Des chercheurs indépendants ont repéré un essaim d'agents IA tournant sur l'infrastructure…",
+          "z": "bref",
+          "id": "des-chercheurs-independants-ont-repere-un-essaim-d-agents"
+        }
+      ]
+    },
     {
       "date": "2026-10-05",
       "dateCourte": "lun. 5 oct.",
