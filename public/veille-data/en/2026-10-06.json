@@ -247,7 +247,12 @@
     "titreEditorial": "AI drafts everything and erodes your teams' judgement: train discernment, not just the tool",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-07",
+    "dateLongue": "Wednesday 7 October 2026",
+    "titreEditorial": "AI pricing at work shifts from seat to meter",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 19,
   "nbSignes": 8854,

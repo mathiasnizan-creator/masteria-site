@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-06",
-    "totalEditions": 50,
-    "totalItems": 677,
-    "totalSources": 990
+    "derniereDate": "2026-10-07",
+    "totalEditions": 51,
+    "totalItems": 689,
+    "totalSources": 1010
   },
   "editions": [
+    {
+      "date": "2026-10-07",
+      "dateAffichee": "7 octobre 2026",
+      "dateCourte": "mer. 7 oct.",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé",
+      "nbItems": 12,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-06",
       "dateAffichee": "6 octobre 2026",

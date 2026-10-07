@@ -247,7 +247,12 @@
     "titreEditorial": "L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-07",
+    "dateLongue": "mercredi 7 octobre 2026",
+    "titreEditorial": "Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 19,
   "nbSignes": 9655,

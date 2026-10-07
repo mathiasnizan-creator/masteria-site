@@ -3,12 +3,124 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-06",
-    "totalEditions": 50,
-    "totalItems": 677,
-    "totalSources": 990
+    "derniereDate": "2026-10-07",
+    "totalEditions": 51,
+    "totalItems": 689,
+    "totalSources": 1010
   },
   "editions": [
+    {
+      "date": "2026-10-07",
+      "dateCourte": "mer. 7 oct.",
+      "dateAffichee": "7 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé",
+      "chapeau": "Mistral relance la France avec Mistral Large 4, surnommé « Le Chonk », un modèle de frontière à mille milliards de paramètres entraîné en Europe et bientôt ouvert. Le même jour, Microsoft, Google et OpenAI font passer le prix de l'IA du siège mensuel au compteur à l'usage, pendant qu'OpenAI publie 722 démonstrations mathématiques qui irritent les chercheurs.",
+      "nbItems": 12,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Next.ink",
+        "TechCrunch",
+        "Journal du Net",
+        "Clubic",
+        "The Verge",
+        "Wired",
+        "OpenAI",
+        "Siècle Digital",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "The Diplomat",
+        "Google DeepMind"
+      ],
+      "items": [
+        {
+          "t": "Mistral dévoile Mistral Large 4, « Le Chonk », et revient dans la course aux modèles de frontière",
+          "z": "une",
+          "id": "mistral-devoile-mistral-large-4-le-chonk-et-revient-dans-la"
+        },
+        {
+          "t": "Microsoft, Google et OpenAI font passer leurs contrats d'IA du siège au compteur",
+          "z": "europe",
+          "id": "microsoft-google-et-openai-font-passer-leurs-contrats-d-ia"
+        },
+        {
+          "t": "La French Tech signe un mois de septembre record à 3,78 milliards d'euros levés",
+          "z": "europe",
+          "id": "la-french-tech-signe-un-mois-de-septembre-record-a-3-78"
+        },
+        {
+          "t": "Thales décuple le débit de ses chiffreurs souverains pour protéger les centres de données",
+          "z": "europe",
+          "id": "thales-decuple-le-debit-de-ses-chiffreurs-souverains-pour"
+        },
+        {
+          "t": "OpenAI publie 722 manuscrits mathématiques et agace une partie des chercheurs",
+          "z": "international",
+          "id": "openai-publie-722-manuscrits-mathematiques-et-agace-une"
+        },
+        {
+          "t": "Google retire l'accès gratuit aux modèles Gemini Flash et Pro",
+          "z": "international",
+          "id": "google-retire-l-acces-gratuit-aux-modeles-gemini-flash-et"
+        },
+        {
+          "t": "Anthropic offre un an de Claude Team et 1 000 dollars de crédits aux jeunes pousses",
+          "z": "international",
+          "id": "anthropic-offre-un-an-de-claude-team-et-1-000-dollars-de"
+        },
+        {
+          "t": "Ray Dalio, Nassim Taleb et le fonds Temasek alertent sur une bulle de l'IA",
+          "z": "international",
+          "id": "ray-dalio-nassim-taleb-et-le-fonds-temasek-alertent-sur-une"
+        },
+        {
+          "t": "La Chine enchaîne les sorties de modèles au point de provoquer une « fatigue »",
+          "z": "chine",
+          "id": "la-chine-enchaine-les-sorties-de-modeles-au-point-de"
+        },
+        {
+          "t": "La Corée du Sud mise 60 milliards de dollars de puces pour relancer sa Bourse",
+          "z": "chine",
+          "id": "la-coree-du-sud-mise-60-milliards-de-dollars-de-puces-pour"
+        },
+        {
+          "t": "Google DeepMind publie EmbeddingGemma 2, un modèle d'embeddings multimodal, ouvert et léger",
+          "z": "recherche",
+          "id": "google-deepmind-publie-embeddinggemma-2-un-modele-d"
+        },
+        {
+          "t": "Google a suspendu depuis le 1er octobre son programme de primes aux…",
+          "z": "bref",
+          "id": "google-a-suspendu-depuis-le-1er-octobre-son"
+        }
+      ]
+    },
     {
       "date": "2026-10-06",
       "dateCourte": "mar. 6 oct.",

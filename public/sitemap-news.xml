@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-10-07</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-07T07:22:42+02:00</news:publication_date>
+      <news:title>Veille IA du 7 octobre 2026 : Le prix de l&#x27;IA au travail bascule du siège au compteur : l&#x27;avantage va désormais à l&#x27;organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-10-06</loc>
     <news:news>
       <news:publication>

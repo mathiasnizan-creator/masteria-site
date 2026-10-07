@@ -3,12 +3,124 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-06",
-    "totalEditions": 35,
-    "totalItems": 474,
-    "totalSources": 678
+    "derniereDate": "2026-10-07",
+    "totalEditions": 36,
+    "totalItems": 486,
+    "totalSources": 698
   },
   "editions": [
+    {
+      "date": "2026-10-07",
+      "dateCourte": "Wed 7 Oct",
+      "dateAffichee": "7 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "AI pricing at work shifts from seat to meter",
+      "chapeau": "Mistral puts France back in the race with Mistral Large 4, nicknamed \\\"Le Chonk\\\", a frontier model with a trillion parameters trained in Europe and soon to be open. The same day, Microsoft, Google and OpenAI move AI pricing from the monthly seat to a usage meter, while OpenAI releases 722 mathematical proofs that irritate researchers.",
+      "nbItems": 12,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Next.ink",
+        "TechCrunch",
+        "Journal du Net",
+        "Clubic",
+        "The Verge",
+        "Wired",
+        "OpenAI",
+        "Siècle Digital",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "The Diplomat",
+        "Google DeepMind"
+      ],
+      "items": [
+        {
+          "t": "Mistral unveils Mistral Large 4, \"Le Chonk\", and returns to the frontier-model race",
+          "z": "une",
+          "id": "mistral-unveils-mistral-large-4-le-chonk-and-returns-to-the"
+        },
+        {
+          "t": "Microsoft, Google and OpenAI move their AI contracts from the seat to the meter",
+          "z": "europe",
+          "id": "microsoft-google-and-openai-move-their-ai-contracts-from"
+        },
+        {
+          "t": "French Tech posts a record September with €3.78 billion raised",
+          "z": "europe",
+          "id": "french-tech-posts-a-record-september-with-3-78-billion"
+        },
+        {
+          "t": "Thales multiplies the throughput of its sovereign encryptors tenfold to protect data centres",
+          "z": "europe",
+          "id": "thales-multiplies-the-throughput-of-its-sovereign"
+        },
+        {
+          "t": "OpenAI releases 722 mathematical manuscripts and annoys part of the research community",
+          "z": "international",
+          "id": "openai-releases-722-mathematical-manuscripts-and-annoys"
+        },
+        {
+          "t": "Google removes free access to the Gemini Flash and Pro models",
+          "z": "international",
+          "id": "google-removes-free-access-to-the-gemini-flash-and-pro"
+        },
+        {
+          "t": "Anthropic gives startups a year of Claude Team and $1,000 in credits",
+          "z": "international",
+          "id": "anthropic-gives-startups-a-year-of-claude-team-and-1-000-in"
+        },
+        {
+          "t": "Ray Dalio, Nassim Taleb and the Temasek fund warn of an AI bubble",
+          "z": "international",
+          "id": "ray-dalio-nassim-taleb-and-the-temasek-fund-warn-of-an-ai"
+        },
+        {
+          "t": "China's run of model releases is reaching the point of \"fatigue\"",
+          "z": "chine",
+          "id": "china-s-run-of-model-releases-is-reaching-the-point-of"
+        },
+        {
+          "t": "South Korea bets $60 billion in chips to revive its stock market",
+          "z": "chine",
+          "id": "south-korea-bets-60-billion-in-chips-to-revive-its-stock"
+        },
+        {
+          "t": "Google DeepMind releases EmbeddingGemma 2, a multimodal, open and lightweight embedding model",
+          "z": "recherche",
+          "id": "google-deepmind-releases-embeddinggemma-2-a-multimodal-open"
+        },
+        {
+          "t": "Google has suspended, since 1 October, its bug bounty programme for open-source…",
+          "z": "bref",
+          "id": "google-has-suspended-since-1-october-its-bug"
+        }
+      ]
+    },
     {
       "date": "2026-10-06",
       "dateCourte": "Tue 6 Oct",
