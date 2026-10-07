@@ -132,6 +132,8 @@ export const SLUGS_AVEC_CARTE = new Set([
   "en/ai-watch/2026-10-01",
   "en/ai-watch/2026-10-02",
   "en/ai-watch/2026-10-05",
+  "en/ai-watch/2026-10-06",
+  "en/ai-watch/2026-10-07",
   "en/ai-watch/publications",
   "etudes-de-cas-ia",
   "financement-formation-ia",

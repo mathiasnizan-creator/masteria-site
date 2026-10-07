@@ -156,7 +156,7 @@ async function launchBrowser() {
       '--no-default-browser-check',
       '--disable-features=VizDisplayCompositor',
       // Empreinte mémoire minimale (machine sous forte pression RAM/swap) :
-      '--single-process',
+      // '--single-process' retiré le 07/10/2026 : Chrome ne démarre plus avec ce flag (« Code: null »).
       '--renderer-process-limit=1',
       '--disable-extensions',
       '--disable-background-networking',
